@@ -187,6 +187,15 @@ nav[class*="guilds_"], nav[class*="guilds_"] [class*="scroller_"], [class*="side
   box-shadow: 0 0 0 3px var(--n19-tertiary);
 }
 
+/* Server icons: today's icons are 40px inside a 48px SVG shifted 4px left; at 2019's 48px the item and its SVG content
+   must both be 48px and centered in the 72px rail (checked on the signed-in app: every icon's center at x=36). */
+[data-list-id="guildsnav"] svg[class*="shiftSVG_"] > foreignObject { width: 48px !important; height: 48px !important; }
+[data-list-id="guildsnav"] :is([class^="listItem_"], [class*=" listItem_"]) { display: flex !important; justify-content: center !important; }
+[data-list-id="guildsnav"] :is([class^="listItem_"], [class*=" listItem_"]) > span:not([class]),
+[data-list-id="guildsnav"] [class*="listItemWrapper_"],
+[data-list-id="guildsnav"] [class*="listItemWrapper_"] > :is([class^="wrapper_"], [class*=" wrapper_"]) { width: 48px !important; height: 48px !important; }
+/* The channel and DM lists end above the 56px user panel instead of running under it. */
+[class*="sidebar_"] :is([class^="sidebarList_"], [class*=" sidebarList_"]) > nav { padding-bottom: 56px !important; }
 /* Channel list: #2f3136, square corners, 48px header with the 2019 drop line. */
 [class*="sidebarList_"], [class*="sidebarList_"] > nav, [class*="privateChannels_"] {
   background: var(--n19-secondary) !important; border: 0 !important; border-radius: 0 !important;
@@ -202,7 +211,7 @@ nav[class*="guilds_"], nav[class*="guilds_"] [class*="scroller_"], [class*="side
 }
 #channels :is([class^="mainContent_"], [class*=" mainContent_"]):hover :is(h2, h3, [class*="name_"]) { color: var(--n19-int-hover) !important; }
 /* Channels: 32px rows, 3px corners, "# name" in 16px medium grey; white when unread, selected on a grey slab. */
-#channels :is([class^="link_"], [class*=" link_"]) { border-radius: 3px !important; min-height: 32px; padding: 0 8px !important; margin-left: 8px !important; }
+#channels :is([class^="link_"], [class*=" link_"]) { border-radius: 3px !important; min-height: 32px; padding: 6px 8px !important; box-sizing: border-box !important; margin-left: 8px !important; }
 #channels :is([class^="link_"], [class*=" link_"]) :is([class^="name_"], [class*=" name_"]) { font-size: 16px !important; font-weight: 500 !important; line-height: 20px; }
 #channels :is([class^="link_"], [class*=" link_"]) :is([class^="iconContainer_"], [class*=" iconContainer_"]) { color: var(--n19-muted) !important; }
 #channels li[class*="containerDefault_"] { --interactive-text-default: var(--n19-channels); }
@@ -308,10 +317,10 @@ form:is([class^="form_"], [class*=" form_"]) { padding: 0 16px !important; }
 [class*="channelTextArea_"] [role="textbox"] { font-size: 1rem !important; line-height: 1.375rem; color: var(--n19-text); }
 [class*="channelTextArea_"] [class*="attachButton_"] { border-right: 1px solid var(--n19-line) !important; border-radius: 0 !important; margin-right: 4px !important; }
 [class*="channelTextArea_"] [class*="buttons_"] :is(
-  button[aria-label="Open GIF picker"], button[aria-label="Open sticker picker"], button[aria-label="Apps"],
-  button[aria-label="Record Voice Message"], button[aria-label="Send Voice Message"], button[aria-label="Send Message"]),
-[class*="channelTextArea_"] [class*="buttons_"] > :has(> button:is([aria-label="Open GIF picker"], [aria-label="Open sticker picker"], [aria-label="Apps"], [aria-label="Record Voice Message"])),
-[class*="channelTextArea_"] [class*="buttons_"] > :has(> * > button:is([aria-label="Open GIF picker"], [aria-label="Open sticker picker"], [aria-label="Apps"])),
+  [aria-label="Open GIF picker"], [aria-label="Open sticker picker"], [aria-label="Apps"],
+  [aria-label="Record Voice Message"], [aria-label="Send Voice Message"], [aria-label="Send Message"]),
+[class*="channelTextArea_"] [class*="buttons_"] > :has(> :is([aria-label="Open GIF picker"], [aria-label="Open sticker picker"], [aria-label="Apps"], [aria-label="Record Voice Message"])),
+[class*="channelTextArea_"] [class*="buttons_"] > :has(> * > :is([aria-label="Open GIF picker"], [aria-label="Open sticker picker"], [aria-label="Apps"])),
 [class*="channelTextArea_"] :is([class*="stickerButton_"], [class*="sparkles_"], [class*="appLauncher"]) { display: none !important; }
 /* The typing indicator and slow-mode line under the composer, 2019 size. */
 form:is([class^="form_"], [class*=" form_"]) [class*="typing_"] { font-size: 14px; color: var(--n19-header-2); }
@@ -369,7 +378,7 @@ form:is([class^="form_"], [class*=" form_"]) [class*="typing_"] { font-size: 14p
 [class*="panels_"] > :is([class*="quest"], [class*="Quest"]),
 [class*="channelTextArea_"] ~ :is([class*="appLauncher"], [class*="AppLauncher"]),
 [class*="hiddenAppLauncherAnchor_"], [class*="appLauncherOnboarding"], [class*="questBar"], [class*="QuestBar"] { display: none !important; }
-button[aria-label="Activities"], [role="button"][aria-label="Activities"] { display: none !important; }
+[aria-label="Activities"], [role="button"][aria-label="Activities"] { display: none !important; }
 /* Threads (2021), forums (2021), media channels (2023), polls (2024), AI summaries (2023). */
 [class*="threadMessageAccessory"], [class*="threadSuggestionBar_"], [class*="subtitleHasThreads_"] ~ ul,
 #channels :is([class*="typeThread_"], [class*="spine"]), #channels li:has(> * [class*="typeThread_"]),
@@ -458,3 +467,10 @@ html[data-wf-site] .footer_new { background: #23272a !important; background-imag
 /* ---- Scrollbars ------------------------------------------------------------------------------------------------ */
 [class*="scroller"]::-webkit-scrollbar-thumb { background-color: var(--n19-thumb) !important; border-radius: 4px; }
 [class*="auto_"]::-webkit-scrollbar-track, [class*="scrollerBase_"]::-webkit-scrollbar-track { background-color: var(--n19-track) !important; }
+
+/* Checked on the signed-in app: the chat bar's GIF, sticker and Apps entries are div[role=button], not <button>; they
+   are hidden with their wrappers. A message that replies to another keeps its avatar level with the name, below the
+   reply line. */
+[class*="channelTextArea_"] :is(.expression-picker-chat-input-button, [class*="buttonContainer_"]):has(> :is([aria-label="Open GIF picker"], [aria-label="Open sticker picker"], [aria-label="Apps"], [aria-label="Record Voice Message"], [aria-label="Send Voice Message"])),
+[class*="channelTextArea_"] :is([aria-label="Open GIF picker"], [aria-label="Open sticker picker"], [aria-label="Apps"], [aria-label="Record Voice Message"], [aria-label="Send Voice Message"]) { display: none !important; }
+[data-list-id="chat-messages"] [class*="cozyMessage_"][class*="groupStart_"][class*="hasReply_"] > [class*="contents_"] > img[class*="avatar_"] { top: 42px !important; }

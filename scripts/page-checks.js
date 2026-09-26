@@ -17,6 +17,9 @@ function net19PageChecks() {
   const label = e => (e.getAttribute('aria-label') || e.getAttribute('placeholder') || e.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 40);
   const box = (e, r = e.getBoundingClientRect()) => ({ x: Math.round(r.left), y: Math.round(r.top), w: Math.round(r.width), h: Math.round(r.height) });
   const deepHit = (x, y) => { let h = document.elementFromPoint(x, y); while (h && h.shadowRoot) { const inner = h.shadowRoot.elementFromPoint(x, y); if (!inner || inner === h) break; h = inner; } return h; };
+  // A point scrolled out of a scrolling or clipping ancestor isn't visible, so nothing there can be clicked anyway.
+  const clipped = (e, x, y) => { for (let a = e.parentElement; a && a !== document.body; a = a.parentElement) { const c = getComputedStyle(a);
+    if (/auto|scroll|hidden|clip/.test(c.overflowX + c.overflowY)) { const q = a.getBoundingClientRect(); if (x < q.left || x > q.right || y < q.top || y > q.bottom) return true; } } return false; };
   const within = (hit, e) => !!hit && (hit === e || e.contains(hit) || (hit.getRootNode() !== document && e.contains(hit.getRootNode().host)));
 
   // covered: probe the center (and, for fields, a point near the left where people click) of every visible control.
@@ -29,11 +32,13 @@ function net19PageChecks() {
     const points = [[r.left + r.width / 2, r.top + r.height / 2]];
     if (field) points.push([r.left + Math.min(24, r.width / 4), r.top + r.height / 2]);
     for (const [x, y] of points) {
-      if (x < 0 || y < 0 || x >= W || y >= H) continue;
+      if (x < 0 || y < 0 || x >= W || y >= H || clipped(e, x, y)) continue;
       const hit = deepHit(x, y);
       if (within(hit, e)) continue;
       // A label wrapping the field, or a field's own decoration inside a shared wrapper, still focuses it on click.
       if (field && hit && (hit.closest('label')?.contains(e) || (hit.tagName === 'LABEL' && hit.htmlFor === e.id))) continue;
+      // A link or button laid over its sibling on purpose (an image's "open original" link) is the control people hit.
+      if (!field && hit && hit.closest('a[href], button, [role=button]') && hit.closest('a[href], button, [role=button]').parentElement?.contains(e)) continue;
       // Another control inside this one's box that is meant to be clicked (a clear button over a field's right end) is fine
       // at the right edge, but never at the field's center or left.
       out.covered.push({ what: `${field ? 'field' : 'control'} "${label(e)}" ${name(e)}`, detail: `covered by ${hit ? name(hit) : 'nothing (outside page)'}`, ...box(e) });
@@ -53,7 +58,7 @@ function net19PageChecks() {
     const k = kids.sort((a, b) => b.getBoundingClientRect().width - a.getBoundingClientRect().width)[0];
     const q = k.getBoundingClientRect();
     const dx = (q.left + q.width / 2) - (r.left + r.width / 2), dy = (q.top + q.height / 2) - (r.top + r.height / 2);
-    if (Math.abs(dx) > 3 || Math.abs(dy) > 3) out.offcenter.push({ what: `${name(k)} in ${name(holder)}`, detail: `off by ${Math.round(dx)},${Math.round(dy)}px`, ...box(holder) });
+    if (Math.abs(dx) > 2 || Math.abs(dy) > 2) out.offcenter.push({ what: `${name(k)} in ${name(holder)}`, detail: `off by ${Math.round(dx)},${Math.round(dy)}px`, ...box(holder) });
   }
   // Narrow full-height rails (a server list, an icon nav): every item's center should share the rail's center line.
   for (const rail of document.querySelectorAll('nav, aside, [role=navigation], [role=tree], [class*="rail" i], [class*="guild" i], [class*="sidebar" i]')) {
@@ -63,7 +68,7 @@ function net19PageChecks() {
     const items = [...rail.querySelectorAll('img, svg, [class*="avatar" i], [class*="icon" i]')].filter(shown).filter(k => { const q = k.getBoundingClientRect(); return q.width >= 24 && q.width <= r.width - 4 && q.height >= 24; });
     const center = r.left + r.width / 2;
     let bad = 0;
-    for (const k of items) { const q = k.getBoundingClientRect(); if (Math.abs(q.left + q.width / 2 - center) > 4) bad++; }
+    for (const k of items) { const q = k.getBoundingClientRect(); if (Math.abs(q.left + q.width / 2 - center) > 2) bad++; }
     if (items.length >= 3 && bad / items.length > .5) out.offcenter.push({ what: `items in rail ${name(rail)}`, detail: `${bad}/${items.length} icons off the rail's center line`, ...box(rail) });
   }
 
@@ -89,7 +94,7 @@ function net19PageChecks() {
     const padTop = parseFloat(c.paddingTop) || 0, padBottom = parseFloat(c.paddingBottom) || 0;
     if (Math.abs(padTop - padBottom) > 4) continue;  // deliberately uneven padding (a label above a rule)
     const dy = text - (r.top + r.height / 2);
-    if (Math.abs(dy) > 4) out.textoffcenter.push({ what: `"${label(e)}" ${name(e)}`, detail: `text ${Math.round(dy)}px off middle of a ${Math.round(r.height)}px box`, ...box(e) });
+    if (Math.abs(dy) > 3) out.textoffcenter.push({ what: `"${label(e)}" ${name(e)}`, detail: `text ${Math.round(dy)}px off middle of a ${Math.round(r.height)}px box`, ...box(e) });
   }
 
   // overlap: text lines from different elements drawing over each other.
