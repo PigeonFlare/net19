@@ -13,7 +13,7 @@ import { THEMES } from '../src/themes.ts';
 
 const URLS = JSON.parse(readFileSync(new URL('./audit-urls.json', import.meta.url), 'utf8'));
 const pick = process.argv.slice(2);
-const OUT = resolve(process.env.OUT || 'test-results/nav'), ext = resolve(process.env.EXT || 'dist/extension');
+const OUT = resolve(process.env.OUT || 'test-results/nav'), ext = resolve(process.env.EXT || '.');
 const MAX = +(process.env.MAX || 12);
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
 // Brand domains a site links to from its own header, footer and menus, which people take for part of the same site.

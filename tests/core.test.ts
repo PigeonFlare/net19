@@ -20,12 +20,12 @@ test('settings keep only the two switches', () => {
 });
 
 test('net19 only touches the sites it has a theme for', () => {
-  const manifest = JSON.parse(readFileSync('static/manifest.json', 'utf8'));
+  const manifest = JSON.parse(readFileSync('manifest.json', 'utf8'));
   assert.deepEqual(manifest.host_permissions, THEMED_DOMAINS.map(domain => `*://*.${domain}/*`));
   assert.ok(!manifest.web_accessible_resources && !manifest.permissions.includes('offscreen') && !manifest.permissions.includes('webNavigation'));
   assert.match(manifest.content_security_policy.extension_pages, /connect-src 'none'/);
   for (const theme of THEMES) {
-    assert.ok(existsSync(`static/themes/${theme.id}.css`) && existsSync(`static/themes/${theme.id}.js`), theme.id);
+    assert.ok(existsSync(`themes/${theme.id}.css`) && existsSync(`themes/${theme.id}.js`), theme.id);
     for (const pattern of themeMatches(theme)) assert.ok(theme.domains.some(domain => pattern.includes(domain)), pattern);
   }
   assert.equal(themeFor('www.youtube.com')?.id, 'youtube');
@@ -66,8 +66,8 @@ test('signed-in Reddit opens on old.reddit.com; signed out it stays put', () => 
 });
 
 test('theme stylesheets follow the styling-rule contract', () => {
-  for (const file of readdirSync('static/themes').filter(name => name.endsWith('.css'))) {
-    const css = readFileSync(`static/themes/${file}`, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
+  for (const file of readdirSync('themes').filter(name => name.endsWith('.css'))) {
+    const css = readFileSync(`themes/${file}`, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
     // Text is never swapped with generated content: label nesting differs between accounts and layouts.
     assert.ok(!/content:\s*["'][^"']+["']/.test(css), `${file}: generated text`);
     // Layout values a site computes in script (grid columns) are not overridden.
@@ -78,8 +78,8 @@ test('theme stylesheets follow the styling-rule contract', () => {
     // Every color decision has a dark counterpart when the theme defines tokens.
     if (/--n19-[a-z0-9-]+\s*:/.test(css)) assert.ok(/data-net19-mode="dark"/.test(css) || !/html\s*\{\s*--n19/.test(css), `${file}: tokens without a dark variant`);
   }
-  for (const file of readdirSync('static/themes').filter(name => name.endsWith('.js') && !['palette.js', 'guard.js'].includes(name))) {
-    const js = readFileSync(`static/themes/${file}`, 'utf8');
+  for (const file of readdirSync('themes').filter(name => name.endsWith('.js') && !['palette.js', 'guard.js'].includes(name))) {
+    const js = readFileSync(`themes/${file}`, 'utf8');
     assert.ok(/globalThis\.net19Theme\s*=/.test(js), `${file}: no theme config`);
     // Themes follow the site's own light/dark choice; they never switch it.
     assert.ok(!/removeAttribute\('dark'\)|classList\.remove\([^)]*dark/i.test(js), `${file}: overrides the site's mode`);

@@ -13,7 +13,7 @@ let context: BrowserContext, worker: Worker, extensionId: string, requests: stri
 
 test.beforeEach(async ({}, info) => {
   await mkdir(info.outputDir, { recursive: true }); requests = []; unexpected = [];
-  const extension = resolve('dist/extension');
+  const extension = resolve('.');
   context = await chromium.launchPersistentContext(resolve(info.outputDir, 'profile'), { channel: 'chromium', headless: true, viewport: { width: 1280, height: 800 },
     colorScheme: 'dark', args: [`--disable-extensions-except=${extension}`, `--load-extension=${extension}`] });
   await context.route(/^https?:\/\//, async route => {

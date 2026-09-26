@@ -1,6 +1,6 @@
 # Chrome Web Store submission kit
 
-The package is `downloads/net19-0.9.0.zip`. Its root contains:
+The package is `artifacts/net19-<version>.zip`, made by `npm run package`. Its root contains:
 
 - `manifest.json`;
 - the bundled worker and popup;
@@ -26,7 +26,7 @@ Keep the package, lockfile, manifest and displayed version aligned.
 
 **Description:**
 
-net19 restyles 95 of the most visited US websites and social apps to look as they did in 2019, from Google, YouTube, Wikipedia, Reddit and Discord to Walmart, Weather.com, Zillow and the BBC. Each look is designed by hand. It applies before the page first appears and follows your device's light or dark setting.
+net19 restyles 110 of the most visited US websites, social apps and news sites to look as they did in 2019, from Google, YouTube, Wikipedia, Reddit and Discord to Walmart, Weather.com, Zillow and the BBC. Each look is designed by hand. It applies before the page first appears and follows your device's light or dark setting.
 
 Two sites still serve their older design themselves, and net19 uses it:
 
@@ -62,7 +62,7 @@ net19 makes no network requests and does not run on any other website. There is 
 
 Assets:
 
-- `dist/extension/icons/128.png`;
+- `icons/128.png`;
 - `docs/images/popup.png`;
 - optionally, `docs/images/promo-440.png` (440 × 280).
 

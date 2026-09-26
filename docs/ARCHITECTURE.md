@@ -6,8 +6,8 @@ net19 is a set of handmade themes and a service worker that registers them. It d
 
 `src/themes.ts` lists the themes. Each is two bundled files:
 
-- `static/themes/<id>.css`: rules written against `--n19-*` tokens, with light values on `html` and dark values on `html[data-net19-mode="dark"]`, plus the site's own design variables re-pointed at those tokens.
-- `static/themes/<id>.js`: sets `globalThis.net19Theme`. It says:
+- `themes/<id>.css`: rules written against `--n19-*` tokens, with light values on `html` and dark values on `html[data-net19-mode="dark"]`, plus the site's own design variables re-pointed at those tokens.
+- `themes/<id>.js`: sets `globalThis.net19Theme`. It says:
   - how to read the site's own light/dark mode;
   - optionally, a map from the site's current palette colors to 2019 colors;
   - optionally, `only: 'dark'` for designs that were dark-only in 2019.
@@ -79,7 +79,7 @@ Settings are `{ enabled, disabledHosts }`. Only the popup can change them. Switc
 
 | Permission | Purpose |
 | --- | --- |
-| Host access to the themed domains (98 domains for 95 themes) | Register the themes and navigation rules on those sites only |
+| Host access to the themed domains (116 domains for 114 themes) | Register the themes and navigation rules on those sites only |
 | `scripting` | Register the document-start theme scripts |
 | `declarativeNetRequestWithHostAccess` | Wikipedia's legacy-skin parameter and the old.reddit.com redirect |
 | `cookies` | Check whether a Reddit session exists, so old.reddit.com is only used when it works |

@@ -3,7 +3,8 @@
 //  - faint text, measured from the screenshot's pixels (so filters, blur and translucency are all accounted for),
 //  - post-2019 features still visible (AI / ask / generate labels, "ask" placeholders),
 //  - header items off the row's vertical center, and buttons drawn inside text fields,
-//  - a search field that does not take a real mouse click and typing (reported as BLOCKED).
+//  - a search field that does not take a real mouse click and typing (reported as BLOCKED),
+//  - the page checks in page-checks.js: covered controls (c), off-center icons and text (o), overlapping text (x).
 // Output: test-results/audit/<id>/<scheme>-<state>.png (flags boxed) and test-results/audit/report.jsonl
 // usage: npm run build && npm run audit -- [id ...]   (default: every site in scripts/audit-urls.json)
 // Needs network access to the sites. Some sites answer automated browsers with a bot check; those states are
@@ -13,10 +14,11 @@ import { resolve } from 'node:path';
 import { mkdirSync, appendFileSync } from 'node:fs';
 import sharp from 'sharp';
 import { readFileSync } from 'node:fs';
+const PAGE_CHECKS = readFileSync(new URL('./page-checks.js', import.meta.url), 'utf8').replace(/^if \(typeof module[^\n]*$/m, '');
 const ALL = JSON.parse(readFileSync(new URL('./audit-urls.json', import.meta.url), 'utf8'));
 const pick = process.argv.slice(2);
 const URLS = process.env.URLS ? JSON.parse(process.env.URLS) : Object.fromEntries(Object.entries(ALL).filter(([id]) => !pick.length || pick.includes(id)));
-const OUT = resolve(process.env.OUT || 'test-results/audit'), ext = resolve(process.env.EXT || 'dist/extension');
+const OUT = resolve(process.env.OUT || 'test-results/audit'), ext = resolve(process.env.EXT || '.');
 const SCHEMES = (process.env.SCHEMES || 'light,dark').split(',');
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
 const MODERN = /\b(AI|Gemini|Copilot|Grok|ChatGPT|Rufus|Meta AI|Shorts|Reels|Quests|Communities|Spaces)\b|^ask\b(?! question)|create images?|brainstorm|ask about|generate|help me write|or ask a question|ask anything/i;
@@ -113,8 +115,10 @@ for (const [id, url] of Object.entries(URLS)) for (const scheme of SCHEMES) {
     const info = await p.evaluate(inPage).catch(e => ({ err: e.message.slice(0, 80) }));
     if (info.err) { result.states[state] = info; return; }
     const faintOnes = await faint(png, info.texts);
-    result.states[state] = { mode: info.mode, flip: info.flip, title: info.title, faint: faintOnes.map(f => `${f.t} (${f.ratio})`), modern: info.modern.map(m => m.t), misaligned: info.misaligned.map(m => `${m.t} ${m.dy}px`), inside: info.inside.map(m => m.t || 'button'), inked: info.texts.filter(t => t.ink).length };
-    const boxes = [...faintOnes.map(b => ({ ...b, c: 'magenta' })), ...info.modern.map(b => ({ ...b, c: 'orange' })), ...info.misaligned.map(b => ({ ...b, c: 'cyan' })), ...info.inside.map(b => ({ ...b, c: 'lime' }))];
+    const checks = await p.evaluate(`(() => { ${PAGE_CHECKS}; return net19PageChecks(); })()`).catch(() => ({ covered: [], offcenter: [], textoffcenter: [], overlap: [] }));
+    result.states[state] = { mode: info.mode, flip: info.flip, title: info.title, faint: faintOnes.map(f => `${f.t} (${f.ratio})`), modern: info.modern.map(m => m.t), misaligned: info.misaligned.map(m => `${m.t} ${m.dy}px`), inside: info.inside.map(m => m.t || 'button'), inked: info.texts.filter(t => t.ink).length,
+      covered: checks.covered.map(c => `${c.what} ${c.detail}`), offcenter: checks.offcenter.map(c => `${c.what} ${c.detail}`), textoffcenter: checks.textoffcenter.map(c => `${c.what} ${c.detail}`), overlap: checks.overlap.map(c => `${c.what} ${c.detail}`) };
+    const boxes = [...faintOnes.map(b => ({ ...b, c: 'magenta' })), ...info.modern.map(b => ({ ...b, c: 'orange' })), ...info.misaligned.map(b => ({ ...b, c: 'cyan' })), ...info.inside.map(b => ({ ...b, c: 'lime' })), ...checks.covered.map(b => ({ ...b, c: 'red' })), ...checks.offcenter.map(b => ({ ...b, c: 'yellow' })), ...checks.textoffcenter.map(b => ({ ...b, c: 'yellow' })), ...checks.overlap.map(b => ({ ...b, c: 'blue' }))];
     await mark(png, boxes, `${OUT}/${id}/${scheme}-${state}.png`);
   };
   try {
@@ -142,6 +146,6 @@ for (const [id, url] of Object.entries(URLS)) for (const scheme of SCHEMES) {
     if (menu && await menu.isVisible().catch(() => false)) { await menu.click({ timeout: 3000 }).catch(() => {}); await p.waitForTimeout(1200); await record('menu'); }
   } catch (e) { result.err = e.message.slice(0, 100); }
   appendFileSync(`${OUT}/report.jsonl`, JSON.stringify(result) + '\n');
-  console.log(id, scheme, result.blocked ? 'BLOCKED: ' + result.blocked : '', Object.entries(result.states).map(([k, v]) => `${k}:${(v.faint?.length || 0)}f/${(v.modern?.length || 0)}m/${(v.misaligned?.length || 0)}a/${(v.inside?.length || 0)}i`).join(' '));
+  console.log(id, scheme, result.blocked ? 'BLOCKED: ' + result.blocked : '', Object.entries(result.states).map(([k, v]) => `${k}:${(v.faint?.length || 0)}f/${(v.modern?.length || 0)}m/${(v.misaligned?.length || 0)}a/${(v.inside?.length || 0)}i/${(v.covered?.length || 0)}c/${(v.offcenter?.length || 0) + (v.textoffcenter?.length || 0)}o/${(v.overlap?.length || 0)}x`).join(' '));
   await ctx.close();
 }

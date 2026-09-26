@@ -16,6 +16,4 @@ const promo = `<svg xmlns="http://www.w3.org/2000/svg" width="440" height="280" 
 await writeFile('docs/images/promo.svg', promo);
 await sharp(Buffer.from(promo)).png().toFile('docs/images/promo-440.png');
 const version = JSON.parse(await readFile('package.json', 'utf8')).version;
-await mkdir('downloads', { recursive: true });
-for (const suffix of ['.zip', '.zip.sha256']) await cp(`artifacts/net19-${version}${suffix}`, `downloads/net19-${version}${suffix}`);
-console.log(`Prepared public screenshots, original promotional artwork and net19 ${version} ZIP.`);
+console.log(`Prepared public screenshots, original promotional artwork for net19 ${version}.`);

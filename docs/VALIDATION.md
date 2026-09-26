@@ -1,4 +1,4 @@
-# Validation of 0.9.0
+# Validation of 0.10.0
 
 ## Automated checks
 
@@ -168,3 +168,23 @@ Two shared fixes came out of this round:
 
 - The page flip never keeps `<body>` as drawn. Keeping it had left Telegram's login page half flipped.
 - The readability guard reads colors written as `oklab()` or `oklch()` (Tailwind v4, used by X). Before, it had misjudged those backgrounds as nearly black.
+
+## Every page, and real signed-in pages (0.10.0)
+
+**Every page is covered.** Themes now cover all pages of their sites, not a few paths. `scripts/audit-nav.mjs` opens each site's header menus and app launcher, follows the first-party links in the header, menus and footer, and records whether each destination is styled. Before the change, Google kept its look on only 2 of 10 destinations. After it, every destination the audit reached was styled. Pages were each walked by hand as well, in light and dark:
+- search → results → item;
+- article, product and video pages;
+- sign-in, help and about pages.
+
+**Checked in a real signed-in browser.** Discord, YouTube and Instagram were checked with the user's own accounts. Nothing was posted or changed on them.
+
+**Page checks.** `scripts/page-checks.js` runs inside the page. It is part of the stress audit and is used on signed-in pages. It flags:
+- clickable elements that another element covers;
+- icons off the center of their button or rail;
+- text off the vertical middle of its row;
+- text drawn over other text.
+
+On Discord these checks found three problems that screenshots had missed, all now fixed:
+- server icons 4px off-center;
+- channel names 6px above the middle of their rows;
+- GIF and Apps buttons that were never hidden, because they are `div[role=button]`, not `<button>`.

@@ -1,16 +1,16 @@
 import { zipSync } from 'fflate';
 import { readdir, readFile, mkdir, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
-const root = new URL('../dist/extension/', import.meta.url);
+const root = new URL('../', import.meta.url);
+// Only the extension's own files: the manifest, the generated scripts, the popup, icons and themes.
+const EXTENSION = /^(?:icons\/(?:\d+\.png|icon\.svg)|(?:background|popup)\.js|popup\.html|ui\.css|themes\/[a-z0-9]+\.(?:css|js)|manifest\.json)$/;
 const files = {};
 async function collect(directory, prefix = '') {
   for (const entry of (await readdir(directory, { withFileTypes: true })).sort((a, b) => a.name.localeCompare(b.name))) {
     const name = prefix + entry.name;
-    if (entry.isDirectory()) await collect(new URL(entry.name + '/', directory), name + '/');
-    else {
-      if (!/^(?:icons\/(?:\d+\.png|icon\.svg)|(?:background|popup)\.js|popup\.html|ui\.css|themes\/[a-z]+\.(?:css|js)|manifest\.json)$/.test(name)) throw new Error(`Unexpected package file: ${name}`);
-      files[name] = new Uint8Array(await readFile(new URL(entry.name, directory)));
-    }
+    if (entry.isDirectory()) { if (!prefix && ['icons', 'themes'].includes(entry.name)) await collect(new URL(entry.name + '/', directory), name + '/'); }
+    else if (EXTENSION.test(name)) files[name] = new Uint8Array(await readFile(new URL(entry.name, directory)));
+    else if (prefix) throw new Error(`Unexpected file in the extension: ${name}`);
   }
 }
 await collect(root);

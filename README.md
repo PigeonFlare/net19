@@ -2,21 +2,32 @@
 
 A Chrome extension that shows popular websites as they looked in **2019**.
 
-[Download net19 0.9.0](https://github.com/henry-xli/net19/raw/refs/heads/main/downloads/net19-0.9.0.zip) · [Privacy](PRIVACY.md) · [Architecture](docs/ARCHITECTURE.md) · [Validation](docs/VALIDATION.md)
+[Download net19](https://github.com/henry-xli/net19/archive/refs/heads/main.zip) · [Privacy](PRIVACY.md) · [Architecture](docs/ARCHITECTURE.md) · [Validation](docs/VALIDATION.md)
 
 ## Install or update
 
-1. Download the ZIP and **extract it**. Chrome's **Load unpacked** accepts a folder, not a ZIP.
-2. Open `chrome://extensions` and turn on **Developer mode**.
-3. Click **Load unpacked** and select the extracted folder containing `manifest.json`.
+This folder is the extension: `manifest.json` sits at the top, and it always holds the current version only.
 
-To update an existing unpacked installation, replace its folder contents and click the extension's **Reload** button once.
+1. Get the folder:
+   - clone it with `git clone https://github.com/henry-xli/net19.git`, or
+   - click **Code → Download ZIP** on GitHub and extract it.
+2. Open `chrome://extensions` and turn on **Developer mode**.
+3. Click **Load unpacked** and select the `net19` folder itself.
+
+To update:
+
+- If you cloned it, run `git pull` in the folder.
+- If you downloaded the ZIP, replace the folder's contents.
+
+Then click the extension's **Reload** button once. Its card in `chrome://extensions` shows the version you are running.
 
 ## Sites
 
-The 2019 look is designed by hand for 95 sites. The references are the [Web Design Museum](https://www.webdesignmuseum.org/gallery/)'s captures, or the Wayback Machine's 2019 captures where the museum has none.
+The 2019 look is designed by hand for 110 sites. The references are the [Web Design Museum](https://www.webdesignmuseum.org/gallery/)'s captures, or the Wayback Machine's 2019 captures where the museum has none.
 
-The sites are most of [SE Ranking's top 100 US websites](https://seranking.com/top-websites-us.html), plus Twitch, Bing, Stack Overflow and the chat and social apps Discord, Telegram Web, WhatsApp Web, Tumblr and Messenger. From that list, net19 leaves out:
+The sites are most of [SE Ranking's top 100 US websites](https://seranking.com/top-websites-us.html), plus Twitch, Bing and Stack Overflow. It also covers the chat and social apps Discord, Telegram Web, WhatsApp Web, Tumblr and Messenger, the major news sites whose design changed after 2019, and Google beyond Search: Gmail, Drive and Docs, News, Maps, Account, the Store and the rest.
+
+Every page of a covered site gets its look, not just the home page. Menus, app launchers, footers and search results all lead to pages that stay 2019. From that list, net19 leaves out:
 
 - adult sites and video-download sites;
 - banks;
@@ -58,7 +69,7 @@ The popup has two switches: net19 on or off, and net19 on or off for the current
 ## Limits
 
 - Where a site's structure has changed since 2019, the theme restyles the current layout rather than rebuilding the old one.
-- Signed-in pages could not be opened in a real signed-in session, so they are best-effort. Their themes were built from each site's own shipped stylesheets and checked on local copies of the markup. This covers the Discord, Telegram, WhatsApp and Messenger apps, the Tumblr dashboard, and signed-in Facebook, Instagram, X, LinkedIn, Netflix and Quora.
+- Signed-in pages were checked in a real signed-in browser for Discord, YouTube and Instagram. For the other signed-in apps, the themes were built from each site's own shipped stylesheets and checked on local copies of the markup, so they are best-effort. That covers Telegram, WhatsApp and Messenger, the Tumblr dashboard, Gmail and Drive, and signed-in Facebook, X, LinkedIn, Netflix and Quora.
 - Some sites block automated browsers, so their themes were checked only on recent Wayback copies: Booking.com, Getty Images, Expedia and Shutterstock among them. Booking.com's theme could not be checked at all, so it only changes colors and corner radii.
 - A site redesign can break parts of a theme until the theme is updated.
 
@@ -77,6 +88,6 @@ npm run check
 npm run package
 ```
 
-- `src/` and `static/` are the source; the themes are in `static/themes/`.
-- `dist/extension/` is the unpacked extension.
-- `artifacts/net19-0.9.0.zip` is the packaged build, with a SHA-256 file beside it.
+- The folder is loaded as it is. Theme files are in `themes/`; the service worker and popup are written in `src/`.
+- `npm run build` writes `background.js`, `popup.js` and the PNG icons next to `manifest.json`. These generated files are committed, so the folder works without building.
+- `npm run package` makes the Chrome Web Store ZIP in `artifacts/`, which is not committed.
