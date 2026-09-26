@@ -11,6 +11,6 @@ globalThis.net19Theme = { later: /^ask fedex$/i };
   };
   let queued = false;
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
-  const start = () => { fix(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  const start = () => { fix(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); };
+  start();  // from document_start: the header is fixed as soon as it is parsed, without waiting for DOMContentLoaded
 })();

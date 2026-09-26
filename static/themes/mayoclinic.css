@@ -41,7 +41,7 @@ header[data-testid="cmp-header"] .cmp-tab__button .cmp-icon { transform: scale(.
 .cmp-hero-card:has(.cmp-hero-card__media-fullBleed) { max-height: 420px !important; overflow: hidden !important; }
 .cmp-hero-card__media-fullBleed .cmp-media__asset-container { height: 420px !important; width: 100% !important; aspect-ratio: auto !important; }
 .cmp-hero-card__media-fullBleed :is(.cmp-media-video, .cmp-media__poster, video) { width: 100% !important; height: 100% !important; max-width: none !important; object-fit: cover !important; aspect-ratio: auto !important; }
-.cmp-hero-card h1 { font-size: 44px !important; line-height: 50px !important; font-weight: 700 !important; }
+.cmp-hero-card:has(.cmp-hero-card__media-fullBleed) h1 { font-size: 44px !important; line-height: 50px !important; font-weight: 700 !important; }
 /* Buttons: square solid blue with white bold uppercase text */
 a.cmp-hero-card__button:not(:first-child), .cmp-button__link.cmp-button--primary, a[class*="cmp-button__inner--type-primary"], a[class*="cmp-button__inner--type-secondary"] {
   background: var(--n19-blue) !important; border: none !important; border-radius: 0 !important; color: var(--n19-on-blue) !important;
@@ -51,7 +51,7 @@ a.cmp-hero-card__button:not(:first-child) *, a[class*="cmp-button__inner--type-p
 
 /* Headings: regular weight, black; section titles in 2019 were plain Helvetica, not a display serif */
 main h1, main h2 { font-weight: 400 !important; color: var(--n19-text); }
-.cmp-hero-card h1 { color: #fff; }
+.cmp-hero-card:has(.cmp-hero-card__media-fullBleed) h1 { color: #fff; }
 /* Type set over a photo (the home hero on its video poster, the photo teasers in the menus): the poster and photo are
    not behind the text in the DOM, so a transparent gradient marks these boxes as "over a picture" for the readability
    check, which would otherwise read the white page behind them and ink the white type dark. */
@@ -73,3 +73,17 @@ a.cmp-button__inner--type-alphabetFacet * { color: var(--n19-text) !important; f
 a.cmp-button__inner--type-alphabetFacet:hover { background: var(--n19-blue) !important; }
 a.cmp-button__inner--type-alphabetFacet:hover * { color: #fff !important; }
 main [role="tablist"] :is(a, button, [role="tab"]) { border-radius: 0 !important; }
+
+/* Disease & condition pages: in 2019 the title sat on the white page (no blue gradient band), and the section tabs
+   were square gray tabs, the current one white, instead of translucent pills. */
+form#mayoform > .main > header { background: var(--n19-page) !important; border-bottom: 1px solid var(--n19-rule) !important; }
+form#mayoform > .main > header h1, form#mayoform > .main > header h1 a { color: var(--n19-text) !important; font-weight: 400 !important; text-decoration: none !important; }
+form#mayoform > .main > header :is(a, p, span):not([id^="et_genericNavigation_"], h1 *) { color: var(--n19-blue) !important; }
+/* The back chevron and calendar icons are white SVG backgrounds drawn for the blue band; on white they are drawn dark */
+form#mayoform > .main > header a:not([id^="et_genericNavigation_"])::before, form#mayoform > .main > header a:not([id^="et_genericNavigation_"])::after { filter: brightness(.25) !important; }
+form#mayoform > .main > header svg { color: var(--n19-blue) !important; fill: currentColor; }
+form#mayoform > .main > header hr, form#mayoform > .main > header [class*="divider"] { border-color: var(--n19-rule) !important; }
+form#mayoform > .main > header a[id^="et_genericNavigation_"] { border-radius: 0 !important; background: var(--n19-box) !important; color: var(--n19-text) !important;
+  border: 1px solid var(--n19-box) !important; font-size: 14px !important; }
+form#mayoform > .main > header a[id^="et_genericNavigation_"][aria-current="true"] { background: var(--n19-page) !important; border-color: var(--n19-rule) !important; border-bottom-color: var(--n19-page) !important; font-weight: 700 !important; }
+form#mayoform > .main > header > .row, form#mayoform > .main > header > div { border-color: var(--n19-rule) !important; }

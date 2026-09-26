@@ -87,3 +87,19 @@ a.a-link-normal:hover .a-text-normal, h2 a.a-link-normal:hover, #bylineInfo:hove
 #productTitle { font-family: Arial, sans-serif !important; font-size: 21px !important; line-height: 1.3 !important; font-weight: 400 !important; }
 /* Deal badges were plain red text, not filled pills */
 #gwm-Deck [class*="deal-badge"] [class*="badge-label"], #gwm-Deck .a-badge-label { border-radius: 0 !important; }
+
+/* Post-2019 features: the AI review summary ("Customers say", 2023), Rufus (2024), "N bought in past month" (2022) on product
+   pages, and in search results the reviews block's second row ("N bought in past month", "Top Reviewed for ..."). The badge
+   today called "Overall Pick" reads "Amazon's Choice" again (amazon.js). A Rufus container that wraps page content is
+   never taken for the assistant itself. */
+[data-csa-c-painter="review-highlights-experience"], [data-csa-c-slot-id="cr-product-insights-detail-page"], #cr-product-insights-cards,
+#nav-rufus-disco, .rufus-docked-panel,
+:is([id^="rufus-"], [data-csa-c-slot-id*="rufus" i], [data-csa-c-content-id*="rufus" i]):not(:has(#dp, #search, #pageContent, #centerCol, #gw-layout, #nav-main)),
+#socialProofingAsinFaceout_feature_div, #social-proofing-faceout-title-tk_bought,
+[data-cy="reviews-block"] > .a-row.a-size-base { display: none !important; }
+/* Help: the 2019 help hub ("Hello. What can we help you with?") was a white page with bordered boxes, not a teal banner */
+.page-wrapper.hero-banner { background: var(--n19-card) !important; border-bottom: 1px solid var(--n19-divider) !important; }
+.page-wrapper.hero-banner > .fs-page-container > :is(h1, h2, p, div:not([class*="card"])) { color: var(--n19-text) !important; }
+.page-wrapper.hero-banner .fs-heading { font-size: 28px !important; font-weight: 400 !important; }
+/* Deals and filter chips: 2019 filters were plain square buttons */
+[data-testid="grid-filter-bar"] button, [class*="FilterPill"], [class*="filter-pill"] { border-radius: 3px !important; }

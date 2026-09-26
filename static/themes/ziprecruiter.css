@@ -5,10 +5,11 @@ html[data-net19-mode="dark"] { --n19-header: #1f2326; --n19-header-text: #e6e8ea
   --n19-field-border: #4a5157; --n19-strip: #262b2f; --n19-button-2: #1f2326; }
 body, body :is(p, span, a, button, input, select, textarea, h1, h2, h3, h4, li, label, div) { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
 
-/* Header: white bar, dark links, the logo's white wordmark turned dark */
-header .bg-black { background: var(--n19-header) !important; border-bottom: 1px solid var(--n19-header-edge) !important; }
-header .bg-black :is(a, button, p, span):not([class*="bg-button"], [class*="bg-button"] *) { color: var(--n19-header-text) !important; }
-header .bg-black svg { color: var(--n19-header-text) !important; }
+/* Header: white bar, dark links, the logo's white wordmark turned dark. (Only the bar itself: the header also holds a
+   bg-black notification badge and the menu's dimming overlay, which keep their own look.) */
+header .bg-black:not(.absolute, .fixed, .rounded-full, [class*="opacity-"]) { background: var(--n19-header) !important; border-bottom: 1px solid var(--n19-header-edge) !important; }
+header .bg-black:not(.absolute, .fixed, .rounded-full, [class*="opacity-"]) :is(a, button, p, span):not([class*="bg-button"], [class*="bg-button"] *) { color: var(--n19-header-text) !important; }
+header .bg-black:not(.absolute, .fixed, .rounded-full, [class*="opacity-"]) svg { color: var(--n19-header-text) !important; }
 html:not([data-net19-mode="dark"]) header img[src*="whitetext"] { filter: invert(1) hue-rotate(180deg) saturate(1.4); }
 
 /* Buttons: 2019 green pills */
@@ -28,13 +29,12 @@ section.bg-\[\#F2F4F4\] { background: var(--n19-strip) !important; }
 .xl\:text-inverse-primary, .xl\:text-inverse-primary :is(p, h1, h2, span):not([class*="bg-button"] *) { color: var(--n19-header-text) !important; }
 
 /* 2019 proportions: a compact 60px header with a 28px logo; the landing headline is a 34px bold line, not a 65px poster */
-header .bg-black { height: 60px !important; justify-content: center !important; }
-header .bg-black > .mx-auto { height: 60px !important; align-items: center !important; }
-header .bg-black img[class*="h-\[28px\]"] { height: 28px !important; width: auto !important; }
+header .bg-black:not(.absolute, .fixed, .rounded-full, [class*="opacity-"]) { height: 60px !important; justify-content: center !important; }
+header .bg-black:not(.absolute, .fixed, .rounded-full, [class*="opacity-"]) > .mx-auto { height: 60px !important; align-items: center !important; }
+header .bg-black:not(.absolute, .fixed, .rounded-full, [class*="opacity-"]) img[class*="h-\[28px\]"] { height: 28px !important; width: auto !important; }
 header #action_nav a { height: 34px !important; padding: 0 18px !important; }
 .xl\:bg-black p[class*="text-\[50px\]"] { font-size: 34px !important; line-height: 1.2 !important; }
 .xl\:bg-black p.text-\[21px\], section p.text-\[21px\] { font-size: 16px !important; line-height: 1.5 !important; }
 section [class*="md:text-\[37px\]"] { font-size: 30px !important; }
 .xl\:bg-black .text-green { color: var(--n19-green) !important; }
-.xl\:bg-black > div:first-child, .xl\:bg-black > div:first-child p { text-align: left !important; }
-.xl\:bg-black > div:first-child { margin-left: 120px !important; }
+

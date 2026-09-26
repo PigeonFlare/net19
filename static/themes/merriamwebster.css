@@ -94,3 +94,10 @@ header#home-header .home-search-stack { background: none !important; box-shadow:
 header#home-header .home-button-switcher { background: var(--n19-steel) !important; border-radius: 0 !important; }
 header#home-header .home-button-switcher .btn-switch { background: var(--n19-navy) !important; border-radius: 0 !important; box-shadow: none !important; }
 header#home-header #home-search-term { border-radius: 0 !important; }
+
+/* Pages on the newer global header (Word of the Day, games, grammar): the same steel bar and small uppercase links */
+.storybook-global-header header, .storybook-global-header header[class*="bg-[#0f3850]"] { background: var(--n19-bar) !important; }
+.storybook-global-header header nav > a, .storybook-global-header header nav summary { font-size: 11px !important; font-weight: 400 !important; text-transform: uppercase !important;
+  letter-spacing: .0625em !important; color: var(--n19-nav-text) !important; border-radius: 0 !important; border-left: 1px solid var(--n19-rule); height: 14px !important; line-height: 14px !important; }
+.storybook-global-header header nav > a:first-child { border-left: 0; }
+.storybook-global-header .gh-more-dropdown { border-radius: 0 !important; }

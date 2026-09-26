@@ -26,7 +26,8 @@ header[data-automation="top-nav"] > div:first-child > div:first-child { visibili
 header[data-automation="top-nav"] > div:first-child > div:nth-child(2) { grid-column: 1 !important; grid-row: 1 !important; justify-self: start !important; margin-left: 12px !important; }
 header[data-automation="top-nav"] { position: relative !important; }
 header[data-automation="top-nav"] > div:nth-child(2) { position: absolute !important; top: 15px !important; left: 215px !important; width: auto !important; height: 38px !important; }
-header[data-automation="top-nav"] + * { margin-top: -42px !important; }
+/* (the pull-up only belongs under the home page's full-bleed hero; elsewhere it would slide the page under the header) */
+body:has(section[data-automation="UniversalHomeHero"]) header[data-automation="top-nav"] + * { margin-top: -42px !important; }
 header[data-automation="top-nav"] nav[aria-label="Primary navigation"] { background: transparent !important; width: auto !important; }
 header[data-automation="top-nav"] nav[aria-label="Primary navigation"] > ul > li > a { text-transform: uppercase !important; font-weight: 700 !important; font-size: 14px !important; letter-spacing: 0 !important; padding: 0 14px !important; }
 header[data-automation="top-nav"] nav[aria-label="Primary navigation"] > ul > li > a svg { display: none !important; }

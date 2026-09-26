@@ -20,3 +20,9 @@ header.wt-bb-xs, #gnav-header { border-bottom-color: var(--n19-rule) !important;
 .v2-listing-card, .v2-listing-card img, .wt-card, .listing-link img, [data-listing-card-v2] img, [class*="card"] > img { border-radius: 0 !important; }
 /* Home hero banners and photo tiles had square corners in 2019 */
 [class*="shoppable-hero"], [class*="shoppable-hero"] img, main .wt-rounded-02, main img.wt-rounded, main [class*="hp-carousel__card"] { border-radius: 0 !important; }
+/* Search results: listing cards were a photo, title, shop and price; the "Add to cart / More like this" row (2023) and the
+   "See how it's made" video label (2023) go; filter chips have 2019's small corners */
+.v2-listing-card .search-half-unit-mt:has(form[action*="/cart/listing"]), .listing-card-video-process-label { display: none !important; }
+.wt-chip-group [class*="wt-chip"], [data-clg-id="WtChipGroup"] :is(button, a, label) { border-radius: 3px !important; }
+/* Listing page: "What buyers say, summarized by AI" (the AI review summary and its tag chips, 2024) goes */
+[data-appears-component-name="reviews_feature_tags"] { display: none !important; }

@@ -23,6 +23,9 @@
 // so parts are found from their ids, test ids and layout.
 (() => {
   const root = document.documentElement;
+  // The Business site and the Help Center share this theme; their own page rules are scoped by this mark.
+  const site = /^(business|help|newsroom)\./.exec(location.hostname);
+  if (site) root.setAttribute('data-n19-pin-site', site[1]);
   const sheet = document.createElement('style');
   sheet.id = 'net19-pinterest-layout';
   let railWidth = '';
@@ -63,4 +66,21 @@
     addEventListener('resize', later, { passive: true });
   };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+})();
+// Pinterest's 2023 brand faces (Pin Sans, Pinterest Sans) are drawn with 2019's system Helvetica instead. Parts of the
+// Help Center render inside shadow roots that page rules cannot reach, but fonts are document-wide: the same family
+// names are declared again here, after the site's own declarations, so they win everywhere.
+(() => {
+  const FAMILIES = ['Pin Sans', 'PinSans', 'PinterestSansPro', 'Pinterest Sans', 'Pinterest Sans Pro'];
+  const face = (family, weight, bold) => `@font-face{font-family:"${family}";font-weight:${weight};font-style:normal;src:${bold
+    ? 'local("HelveticaNeue-Bold"),local("Helvetica Neue Bold"),local("Helvetica-Bold"),local("Arial Bold"),local("Arial-BoldMT")'
+    : 'local("HelveticaNeue"),local("Helvetica Neue"),local("Helvetica"),local("Arial"),local("ArialMT")'};}`;
+  const css = FAMILIES.map(f => face(f, '100 550', false) + face(f, '551 1000', true)).join('');
+  const add = () => {
+    let node = document.getElementById('net19-pinterest-faces');
+    if (!node) { node = document.createElement('style'); node.id = 'net19-pinterest-faces'; node.textContent = css; }
+    if (document.head && document.head.lastElementChild !== node) document.head.append(node);
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', add, { once: true }); else add();
+  addEventListener('load', add, { once: true });
 })();

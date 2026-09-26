@@ -1,0 +1,129 @@
+/* net19 handmade theme: Gmail, 2019 (the 2018 redesign in Material 2). A white header with the hamburger, the red-envelope
+   "Gmail" lockup and an 8px-rounded #f1f3f4 search field that turns white with a shadow on focus; a white left drawer with
+   the white "Compose" button (24px-rounded, shadowed, colored +); labels in Roboto 14px with Inbox bold and the active one
+   on a right-rounded #fce8e6 tab in red #d93025; the message list flat and edge to edge, 40px rows, unread rows bold on
+   white and read rows on #f2f6fc, selected rows #c2dbff; the right side panel with Calendar, Keep and Tasks. Post-2019 parts
+   are hidden: the Chat/Spaces/Meet rail and sections, Gemini (button, side panel, "Summarize this email"), "Help me write",
+   emoji reactions, "Share in chat", package-tracking chips and "Manage subscriptions"; the 2022 tonal pastel-blue surfaces
+   and the rounded 16px list container go back to white. Gmail's own Dark theme gets a dark palette of the same layout. */
+
+/* ---- 2019 palette ---- */
+html {
+  --n19-page: #fff; --n19-text: #202124; --n19-text-2: #5f6368; --n19-text-3: #80868b; --n19-icon: #5f6368;
+  --n19-border: #dadce0; --n19-divider: #f1f3f4; --n19-hover: #f1f3f4; --n19-field: #f1f3f4; --n19-field-focus: #fff;
+  --n19-active: #fce8e6; --n19-active-text: #d93025; --n19-row-unread: #fff; --n19-row-read: #f2f6fc; --n19-row-selected: #c2dbff;
+  --n19-row-line: rgba(100,121,143,.122); --n19-accent: #1a73e8; --n19-accent-text: #1967d2; --n19-on-accent: #fff;
+  --n19-compose: #fff; --n19-compose-text: #3c4043; --n19-compose-hover: #fafafb;
+  --n19-shadow: 0 1px 2px 0 rgba(60,64,67,.302), 0 1px 3px 1px rgba(60,64,67,.149);
+  --n19-shadow-hover: 0 1px 3px 0 rgba(60,64,67,.302), 0 4px 8px 3px rgba(60,64,67,.149);
+  --n19-row-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
+  --n19-font: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; --n19-title-font: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+  --n19-logo: url("https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x.png");
+  --n19-plus: url("https://www.gstatic.com/images/icons/material/colored_icons/2x/create_32dp.png");
+}
+html[data-net19-mode="dark"] {
+  --n19-page: #202124; --n19-text: #e8eaed; --n19-text-2: #9aa0a6; --n19-text-3: #80868b; --n19-icon: #9aa0a6;
+  --n19-border: #5f6368; --n19-divider: #3c4043; --n19-hover: #303134; --n19-field: #3c4043; --n19-field-focus: #303134;
+  --n19-active: #5c2b29; --n19-active-text: #f28b82; --n19-row-unread: #2d2e30; --n19-row-read: #202124; --n19-row-selected: #394457;
+  --n19-row-line: rgba(255,255,255,.1); --n19-accent: #8ab4f8; --n19-accent-text: #8ab4f8; --n19-on-accent: #202124;
+  --n19-compose: #3c4043; --n19-compose-text: #e8eaed; --n19-compose-hover: #464a4e;
+  --n19-shadow: 0 1px 2px 0 rgba(0,0,0,.3), 0 1px 3px 1px rgba(0,0,0,.15);
+  --n19-shadow-hover: 0 1px 3px 0 rgba(0,0,0,.3), 0 4px 8px 3px rgba(0,0,0,.15);
+  --n19-row-shadow: inset 1px 0 0 #5f6368, inset -1px 0 0 #5f6368, 0 1px 2px 0 rgba(0,0,0,.3), 0 1px 3px 1px rgba(0,0,0,.15);
+  --n19-logo: url("https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_2x.png");
+}
+
+/* ---- Google's Material 3 tokens used by Gmail's shared parts (header, menus, dialogs, side panel) ---- */
+html:root, html body {
+  --gm3-sys-color-primary: var(--n19-accent) !important; --gm3-sys-color-on-primary: var(--n19-on-accent) !important;
+  --gm3-sys-color-primary-container: #e8f0fe !important; --gm3-sys-color-on-primary-container: var(--n19-accent-text) !important;
+  --gm3-sys-color-secondary-container: #e8f0fe !important; --gm3-sys-color-on-secondary-container: var(--n19-accent-text) !important;
+  --gm3-sys-color-surface: var(--n19-page) !important; --gm3-sys-color-surface-container-lowest: var(--n19-page) !important;
+  --gm3-sys-color-surface-container-low: var(--n19-page) !important; --gm3-sys-color-surface-container: var(--n19-page) !important;
+  --gm3-sys-color-surface-container-high: var(--n19-field) !important; --gm3-sys-color-surface-container-highest: var(--n19-field) !important;
+  --gm3-sys-color-on-surface: var(--n19-text) !important; --gm3-sys-color-on-surface-variant: var(--n19-text-2) !important;
+  --gm3-sys-color-outline-variant: var(--n19-border) !important;
+}
+html[data-net19-mode="dark"]:root, html[data-net19-mode="dark"] body {
+  --gm3-sys-color-primary-container: #394457 !important; --gm3-sys-color-secondary-container: #394457 !important;
+}
+
+/* ---- the page: white, not the 2022 #f6f8fc tonal blue (image themes keep their picture in .a4t) ---- */
+.wl { background-color: var(--n19-page) !important; }
+.nH.bkK, .bkK > .nH, .aeF, .aqn.aIH, .aqn, header#gb, .nH.w-asV .nH.oy8Mbf { background-color: var(--n19-page) !important; }
+body, .aeF, .bkK, .aqn, .Cp, .ae4 { font-family: var(--n19-font); }
+
+/* ---- header: logo lockup and the 8px gray search field ---- */
+header#gb { border-bottom: 1px solid transparent !important; box-shadow: none !important; }
+header#gb a[href*="#inbox"] img, header#gb img[src*="logo_gmail"], header#gb img[src*="gmail_2020q4"] {
+  content: var(--n19-logo) !important; width: 109px !important; height: 40px !important; }
+header#gb form[role="search"], header#gb form.aJf {
+  background: var(--n19-field) !important; border-radius: 8px !important; box-shadow: none !important; max-width: 720px !important; }
+header#gb form[role="search"]:focus-within { background: var(--n19-field-focus) !important; box-shadow: var(--n19-shadow) !important; }
+header#gb form[role="search"] > div, header#gb form[role="search"] table, header#gb form[role="search"] td { background: transparent !important; }
+header#gb form[role="search"] input[name="q"] { background: transparent !important; color: var(--n19-text) !important; font-family: var(--n19-font) !important; font-size: 16px !important; }
+
+/* in a flipped (dark) page the 2019 artwork keeps its real colors */
+html[data-net19-flip] header#gb a[href*="#inbox"] img, html[data-net19-flip] header#gb img[src*="logo_gmail"],
+html[data-net19-flip] .z0 > .L3::before, html[data-net19-flip] .aic .T-I.T-I-KE.L3::before { filter: contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
+
+/* ---- the 2020 Chat/Spaces/Meet rail beside the drawer (present when .aeN is followed by the label drawer .aqn) ---- */
+.aeN:has(~ .aqn.aIH) { display: none !important; }
+/* Chat and Meet sections at the foot of the drawer (2020), Meet in the drawer, "Share in chat" (2021) */
+.aeN .akc, .aqn .akc, [role="navigation"][aria-label="Meet" i], [role="navigation"][aria-label="Chat" i], [role="navigation"][aria-label="Spaces" i],
+.MiOZsd, .BT1YO { display: none !important; }
+
+/* ---- Compose: white, 24px corners, shadow, the colored + ---- */
+.aic .z0 { padding: 8px 0 16px 8px !important; }
+.aic .T-I.T-I-KE.L3, .z0 > .L3 {
+  background: var(--n19-compose) !important; color: var(--n19-compose-text) !important; border-radius: 24px !important; height: 48px !important;
+  min-width: 56px !important; box-shadow: var(--n19-shadow) !important; font-family: var(--n19-title-font) !important; font-size: 14px !important;
+  font-weight: 500 !important; letter-spacing: .25px !important; line-height: 48px !important; padding: 0 24px 0 0 !important; border: 0 !important; }
+.aic .T-I.T-I-KE.L3:hover, .z0 > .L3:hover { background: var(--n19-compose-hover) !important; box-shadow: var(--n19-shadow-hover) !important; }
+.z0 > .L3::before, .aic .T-I.T-I-KE.L3::before {
+  background: var(--n19-plus) center / 32px 32px no-repeat !important; -webkit-mask: none !important; mask: none !important;
+  min-width: 56px !important; width: 56px !important; height: 48px !important; }
+
+/* ---- labels: Roboto 14px, Inbox bold, the active one on a right-rounded red-tinted tab ---- */
+.aqn .TO, .aeN .TO { margin-left: 0 !important; padding-left: 0 !important; }
+.aqn .TO .TN, .aeN .TO .TN { border-radius: 0 16px 16px 0 !important; }
+.aqn .TO .nU, .aeN .TO .nU, .aqn .TO .bsU, .aeN .TO .bsU { font-family: var(--n19-font) !important; font-size: 14px !important; color: var(--n19-text) !important; }
+.aqn .TO:hover .TN, .aeN .TO:hover .TN, .aqn .TO.NQ .TN, .aeN .TO.NQ .TN { background: var(--n19-hover) !important; }
+.aqn .TO.nZ .TN, .aeN .TO.nZ .TN, .aqn .TO.nZ:hover .TN, .aeN .TO.nZ:hover .TN { background: var(--n19-active) !important; }
+.aqn .TO.nZ .nU, .aeN .TO.nZ .nU, .aqn .TO.nZ .bsU, .aeN .TO.nZ .bsU, .aqn .TO.nZ a, .aeN .TO.nZ a { color: var(--n19-active-text) !important; font-weight: 700 !important; }
+.aqn .TO.nZ .qj, .aeN .TO.nZ .qj { filter: invert(27%) sepia(89%) saturate(2400%) hue-rotate(349deg) brightness(88%) contrast(96%) !important; }
+.aqn .TO.nZ .qj[style*="background-color"], .aeN .TO.nZ .qj[style*="background-color"] { filter: none !important; }
+/* "Manage subscriptions" (2025) and any label row whose link guard.js hid as post-2019 (Purchases, 2025) */
+.aqn .aim:has(a[href*="#sub"]), .aeN .aim:has(a[href*="#sub"]), .aqn .aim:has(.nU [data-net19-hidden]), .aeN .aim:has(.nU [data-net19-hidden]) { display: none !important; }
+
+/* ---- the message list: flat, edge to edge, 40px rows ---- */
+.bkK > .nH, .nH.bkK .nH.aE3, .aeF > .nH { border-radius: 0 !important; box-shadow: none !important; }
+.G-atb, .aKh, .aeF .ae4, .aeF .Cp { background-color: var(--n19-page) !important; }
+.G-atb { border-bottom: 1px solid var(--n19-divider) !important; }
+.zA { box-shadow: inset 0 -1px 0 0 var(--n19-row-line) !important; }
+.zA.zE { background: var(--n19-row-unread) !important; }
+.zA.yO { background: var(--n19-row-read) !important; }
+.zA.x7, .zA.x7.yO, .zA.x7.zE { background: var(--n19-row-selected) !important; }
+.zA:hover { box-shadow: var(--n19-row-shadow) !important; z-index: 2; }
+.zA > td { font-family: var(--n19-font) !important; font-size: 14px !important; }
+.zA.zE .yW, .zA.zE .bog, .zA.zE .xW { font-weight: 700 !important; color: var(--n19-text) !important; }
+.zA.yO .yW, .zA.yO .bog { font-weight: 400 !important; }
+.zA .y2 { color: var(--n19-text-2) !important; }
+/* inbox tabs: the colored 2019 underlines are Gmail's own; square the GM3 tab corners */
+.aKh .aAy { border-radius: 0 !important; }
+
+/* ---- the reading view ---- */
+.iY .ha h2.hP { font-family: var(--n19-title-font) !important; font-size: 22px !important; font-weight: 400 !important; }
+.iY .gD, .iY .go { font-family: var(--n19-font) !important; }
+.amn .T-I, .ams { border-radius: 4px !important; }
+/* emoji reactions (2023) and their button */
+.iY .wrsVRe, .iY .R1Zuwf { display: none !important; }
+
+/* ---- Gemini (2024): header button, side panel, promos, "Summarize this email" ---- */
+.XyWBof, .GYfbG, .KYatzc, .eJPjde, .einvLd, .N5.x4Und, div.Zmxtcf { display: none !important; }
+
+/* ---- the compose window: 2019's dark-gray title bar and square blue Send ---- */
+.aoI .aDh, .nH.Hd .aDh { background: #404040 !important; }
+.aoI .aDh .aYF, .aoI .aDh .Ha, .aoI .aDh .Hm img { color: #fff !important; }
+.aoI .T-I.aoO { border-radius: 4px !important; background: var(--n19-accent) !important; color: var(--n19-on-accent) !important; }
+.aoI .dC .T-I.hG { border-radius: 0 4px 4px 0 !important; background: var(--n19-accent) !important; }

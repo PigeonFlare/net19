@@ -12,9 +12,10 @@ html[data-net19-mode="dark"] { --n19-page: #222; --n19-wrap: #121212; --n19-bar:
 body, button, input, select, textarea, .usa-button, .usa-banner { font-family: var(--n19-font) !important; }
 h1, h2, h3, h4, .heading-title, .title, .action-title { font-family: var(--n19-font) !important; }
 
-/* The page: a centred 1190px white column on gray, as the legacy NCBI "wrap" was */
-body:has(> header.ncbi-header), .site-content:has(> header.ncbi-header) { background-color: var(--n19-page) !important; }
-header.ncbi-header, header.ncbi-header ~ :is(main, #ncbi-footer) { max-width: 1190px !important; width: 100% !important; box-sizing: border-box !important; margin-left: auto !important; margin-right: auto !important;
+/* The page: a centred 1190px white column on gray, as the legacy NCBI "wrap" was (PubMed only: the NCBI sign-in and
+   account pages share the header but lay a full-bleed picture behind it) */
+html:has(meta[name="ncbi_app"][content="pubmed"]) :is(body:has(> header.ncbi-header), .site-content:has(> header.ncbi-header)) { background-color: var(--n19-page) !important; }
+html:has(meta[name="ncbi_app"][content="pubmed"]) :is(header.ncbi-header, header.ncbi-header ~ :is(main, #ncbi-footer)) { max-width: 1190px !important; width: 100% !important; box-sizing: border-box !important; margin-left: auto !important; margin-right: auto !important;
   background-color: var(--n19-wrap); box-shadow: 0 0 6px rgba(0,0,0,.35); }
 /* The "official website" banner was added in 2020 */
 section.usa-banner { display: none !important; }
@@ -81,3 +82,36 @@ header.ncbi-header .header-button, #account_login { background: transparent !imp
 /* The field's clear (x) button is today's; it is placed for today's wide field and in the 2019 band lands on the logo.
    2019's plain field had none. */
 #home-page .intro #search-form .form-field .clear-btn { display: none !important; }
+
+/* PMC and the other newer NCBI pages (USWDS): the same thin #369 bar with a small logo and plain "Log in" text */
+header.usa-header > .ncbi-header { background: var(--n19-bar) !important; }
+header.usa-header > .ncbi-header .ncbi-header__container { height: 34px !important; min-height: 0 !important; padding-top: 0 !important; padding-bottom: 0 !important; }
+header.usa-header > .ncbi-header .ncbi-header__logo-container { height: 34px !important; display: flex !important; align-items: center !important; }
+header.usa-header > .ncbi-header .ncbi-header__logo-image { height: 22px !important; width: auto !important; }
+header.usa-header > .ncbi-header .ncbi-header__desktop-buttons { top: auto !important; height: 34px !important; display: flex !important; align-items: center !important; }
+header.usa-header > .ncbi-header :is(.ncbi-header__desktop-button, .ncbi-header__login-dropdown > button, .ncbi-header__login-dropdown > a) {
+  height: auto !important; min-height: 0 !important; padding: 0 0 0 16px !important; font-size: 13px !important; font-weight: 400 !important; letter-spacing: 0 !important;
+  color: #fff !important; text-decoration: underline !important; background: transparent !important; border: 0 !important; box-shadow: none !important; }
+header.usa-header:has(> .ncbi-header) { min-height: 0 !important; height: auto !important; }
+/* PMC home: the light gray search band with the logo, a small field and the #47a Search button; plain portlets below without illustrations */
+section.usa-hero:has(.pmc-hero__search) { background: linear-gradient(#e0e0e0, var(--n19-band)) !important; border-bottom: 1px solid var(--n19-band-edge) !important; padding: 16px 0 12px !important; min-height: 0 !important; }
+section.usa-hero:has(.pmc-hero__search) .grid-col-fill { display: grid !important; grid-template-columns: 200px minmax(0, 640px) !important; column-gap: 20px !important; align-items: center !important; }
+section.usa-hero:has(.pmc-hero__search) .grid-row { padding: 0 !important; margin: 0 !important; }
+.pmc-hero__logo { grid-row: 1 / span 3; margin: 0 !important; }
+.pmc-hero__logo img { width: 170px !important; height: auto !important; }
+.pmc-hero__search, .pmc-hero__links, .pmc-hero__text { grid-column: 2; margin: 0 !important; }
+.pmc-hero__search .usa-input { height: 26px !important; min-height: 0 !important; border-radius: 0 !important; border: 1px solid var(--n19-field-border) !important; font-size: 14px !important; padding: 2px 6px !important; box-shadow: inset 0 1px 2px rgba(0,0,0,.15) !important; }
+.pmc-hero__search .usa-button { background: var(--n19-btn) !important; border-radius: 5px !important; height: 24px !important; min-height: 0 !important; width: auto !important; padding: 0 8px !important; margin: 1px 0 0 6px !important;
+  font-size: 13px !important; font-weight: 700 !important; box-shadow: 1px 1px 2px rgba(0,0,0,.4) !important; }
+.pmc-hero__search .usa-search__submit-text { display: inline !important; font-size: 13px !important; line-height: 1 !important; }
+.pmc-hero__search .usa-search__submit-icon { display: none !important; }
+.pmc-hero__links a, .pmc-hero__links { font-size: 13px !important; color: var(--n19-link-2) !important; text-decoration: none !important; }
+.pmc-hero__text, .pmc-hero__text p { font-size: 13px !important; line-height: 1.5 !important; color: var(--n19-text) !important; margin-top: 6px !important; max-width: none !important; }
+.usa-card--home .usa-card__media { display: none !important; }
+.usa-card--home .usa-card__container { border: 0 !important; border-radius: 0 !important; box-shadow: none !important; margin: 0 8px 12px !important; }
+.usa-card--home :is(.usa-card__header, .usa-card__body) { padding: 0 !important; text-align: left !important; }
+.usa-card--home .usa-card__heading { background: var(--n19-head-bg) !important; border-top: 3px solid var(--n19-head-rule) !important; border-bottom: 3px solid var(--n19-head-rule) !important;
+  padding: 4px 6px !important; margin: 0 0 6px !important; font-size: 16px !important; font-weight: 700 !important; text-align: left !important; }
+.usa-card--home .usa-card__heading a { color: var(--n19-head) !important; text-decoration: none !important; }
+.usa-card--home .usa-card__body p { font-size: 13px !important; line-height: 1.4 !important; color: var(--n19-meta) !important; padding-left: 6px !important; }
+section.usa-section:has(> .grid-container > .usa-card-group) { padding-top: 16px !important; }

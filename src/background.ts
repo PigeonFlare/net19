@@ -30,9 +30,9 @@ function syncScripts(): Promise<unknown> {
     await chrome.declarativeNetRequest.updateDynamicRules({ removeRuleIds: oldRules.map(rule => rule.id),
       addRules: navigationRules(config, theme => signedIn.has(theme.id)) });
     const desired: chrome.scripting.RegisteredContentScript[] = THEMES.filter(active).map(theme => ({
-      id: `net19-theme-${theme.id}`, matches: themeMatches(theme), css: [`themes/${theme.id}.css`],
+      id: `net19-theme-${theme.id}`, matches: themeMatches(theme), ...(theme.exclude ? { excludeMatches: theme.exclude } : {}), css: [`themes/${theme.id}.css`],
       js: [`themes/${theme.id}.js`, 'themes/palette.js', 'themes/guard.js'], runAt: 'document_start', allFrames: false, persistAcrossSessions: true }));
-    const signature = (list: chrome.scripting.RegisteredContentScript[]) => JSON.stringify(list.map(s => [s.id, s.matches, s.css, s.js]).sort());
+    const signature = (list: chrome.scripting.RegisteredContentScript[]) => JSON.stringify(list.map(s => [s.id, s.matches, s.excludeMatches ?? [], s.css, s.js]).sort());
     // Anything else registered by an earlier version (the archive pipeline's content script) is removed too.
     const current = registered.filter(script => script.id.startsWith('net19-'));
     if (signature(current) !== signature(desired)) {

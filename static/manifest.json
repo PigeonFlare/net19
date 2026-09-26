@@ -12,6 +12,9 @@
   ],
   "host_permissions": [
     "*://*.google.com/*",
+    "*://*.about.google/*",
+    "*://*.blog.google/*",
+    "*://*.store.google/*",
     "*://*.youtube.com/*",
     "*://*.wikipedia.org/*",
     "*://*.reddit.com/*",
@@ -108,7 +111,22 @@
     "*://*.usnews.com/*",
     "*://*.ca.gov/*",
     "*://*.booking.com/*",
-    "*://*.istockphoto.com/*"
+    "*://*.istockphoto.com/*",
+    "*://*.washingtonpost.com/*",
+    "*://*.nbcnews.com/*",
+    "*://*.cbsnews.com/*",
+    "*://*.usatoday.com/*",
+    "*://*.wsj.com/*",
+    "*://*.apnews.com/*",
+    "*://*.reuters.com/*",
+    "*://*.npr.org/*",
+    "*://*.huffpost.com/*",
+    "*://*.politico.com/*",
+    "*://*.bloomberg.com/*",
+    "*://*.businessinsider.com/*",
+    "*://*.theverge.com/*",
+    "*://*.techcrunch.com/*",
+    "*://*.latimes.com/*"
   ],
   "background": {
     "service_worker": "background.js",

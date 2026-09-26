@@ -1,7 +1,7 @@
 // net19 handmade theme: nytimes. The site has a single (light) design, so the light palette applies and palette.js
 // inverts the page for dark devices. Reading-time labels ("5 MIN READ", added in 2023) have no stable class, so they
 // are found by their text and hidden.
-globalThis.net19Theme = {};
+globalThis.net19Theme = { later: /^(?:listen(?: to (?:this )?article)?(?: · [0-9:]+ min)?|share full article|gift (?:this )?article|read in app|open in app|play (?:wordle|connections|spelling bee|the mini|strands)|the athletic)$/i };
 (() => {
   const READ = /^\s*\d+\s+min\s+read\s*$/i;
   const fix = () => {

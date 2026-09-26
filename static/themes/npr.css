@@ -1,0 +1,86 @@
+/* net19 handmade theme: NPR, 2019. A white masthead with the red-black-blue npr blocks, a #4a4a4a section bar with white
+   condensed capitals (News, Arts & Life, Music, Shows & Podcasts, Search) beside their small icons; a #f9f9f9 page with
+   white teaser cards; headlines in Gotham (Helvetica where it is missing) at 700, gray #767676 sans teasers under
+   condensed gray section slugs; story pages with a light 35px Gotham headline, gray date and bordered byline chips,
+   and Georgia 17/29px body copy in #333. NPR had no dark mode in 2019; its current one follows the device, so the
+   same shapes get a dark palette there. */
+html { --n19-bar: #4a4a4a; --n19-bar-text: #fff; --n19-head: #fff; --n19-text: #333; --n19-title: #333; --n19-meta: #767676; --n19-teaser: #767676;
+  --n19-page: #f9f9f9; --n19-card: #fff; --n19-rule: #dfdfdf; --n19-link: #2c63ae; --n19-red: #d0021b;
+  --npr19-sans: "Gotham SSm", "Gotham", Helvetica, Arial, sans-serif; --npr19-cond: "Knockout 31 4r", "HelveticaNeue-CondensedBold", "Helvetica Neue", "Arial Narrow", Arial, sans-serif;
+  --npr19-serif: Georgia, serif;
+  --bg-secondary: var(--n19-page); }
+html[data-net19-mode="dark"] { --n19-bar: #2b2b2b; --n19-bar-text: #f2f2f2; --n19-head: #161616; --n19-text: #ddd; --n19-title: #eee; --n19-meta: #a3a3a3; --n19-teaser: #a8a8a8;
+  --n19-page: #0f0f0f; --n19-card: #1b1b1b; --n19-rule: #333; --n19-link: #8ab4f0; --n19-red: #ff5a5a; }
+
+/* ---- Masthead: white top row, then the dark-gray section bar ---- */
+.npr-header .navigation__top-level-wrap { background: var(--n19-head) !important; border-bottom: 1px solid var(--n19-rule) !important; }
+/* Newsletters and NPR+ (2023) are not part of the 2019 masthead */
+.npr-header :is(.navigation__newsletters, .navigation__plus) { visibility: hidden !important; }
+.npr-header .navigation__plus { display: none !important; }
+.npr-header :is(.navigation__shop, .navigation__donate, .navigation__account, .navigation__toggle--player) > a,
+.npr-header :is(.navigation__donate, .navigation__toggle--player) { font-family: var(--npr19-cond) !important; font-stretch: condensed; font-weight: 700 !important; letter-spacing: .7px !important;
+  font-size: 14px !important; text-transform: uppercase !important; color: #4a4a4a !important; }
+html[data-net19-mode="dark"] .npr-header :is(.navigation__shop, .navigation__donate, .navigation__account) > a { color: #ddd !important; }
+/* Donate: red condensed capitals beside a small heart, no pill (June 2019 stylesheet) */
+.npr-header .navigation__donate > a, .npr-header a.navigation__donate, .npr-header a[data-net19-donate] { background: transparent !important; color: #d0021b !important; padding: 0 !important;
+  border: none !important; border-radius: 0 !important; box-shadow: none !important; font-family: var(--npr19-cond) !important; font-stretch: condensed; font-weight: 700 !important; font-size: 14px !important;
+  letter-spacing: normal !important; text-transform: uppercase !important; }
+.npr-header a[data-net19-donate] svg, .npr-header .navigation__donate svg { color: #d0021b !important; fill: currentColor !important; }
+.npr-header :is([class*="donate"], :has(> .navigation__donate)) { background: transparent !important; box-shadow: none !important; border-radius: 0 !important; }
+html[data-net19-mode="dark"] .npr-header a[data-net19-donate] { color: #ff4d5e !important; }
+#main-menu.menu--main, .npr-header .menu--main { background: var(--n19-bar) !important; }
+.npr-header .menu--main .menu__item, .npr-header .menu--main .menu__item-inner > a { font-family: var(--npr19-cond) !important; font-stretch: condensed; font-weight: 700 !important; font-size: 14px !important;
+  letter-spacing: .7px !important; text-transform: uppercase !important; color: var(--n19-bar-text) !important; }
+.npr-header .menu--main .menu__item-inner > a { padding: 0 18px 0 20px !important; }
+.npr-header .menu--main .menu__item-inner > a:hover { opacity: .85; text-decoration: none !important; }
+.npr-header .menu--main .menu__item-inner > a svg { color: var(--n19-bar-text) !important; fill: currentColor; }
+/* Dropdowns stay white panels with dark condensed links */
+.npr-header .submenu { background: var(--n19-card) !important; border-radius: 0 !important; box-shadow: 0 2px 6px rgba(0, 0, 0, .25) !important; }
+.npr-header .submenu a { font-family: var(--npr19-sans) !important; text-transform: none !important; letter-spacing: 0 !important; color: var(--n19-text) !important; }
+
+/* ---- Page, cards and teasers ---- */
+#main-section, section#main-section, body #wrapper { background: var(--n19-page) !important; }
+body:is(.tmplHomePage, .agg, .tmplStory, .tmplSearch, .tmplPodcastsDirectory, .tmplProgram, .tmplPodcast, .tmplTopic, .tmplSeries) { background: var(--n19-page) !important; }
+:is(.bucketwrap.promocard, .story-wrap, .item, #contentWrap .bucketwrap) { border-radius: 0 !important; }
+#contentWrap .bucketwrap.promocard, #contentWrap .card-wrap .bucketwrap { background: var(--n19-card) !important; box-shadow: 0 1px 2px rgba(0, 0, 0, .12) !important; }
+:is(.story-text, .item-info, .hp-item) .title, :is(.story-text, .item-info) .title a, h2.title, h2.title a {
+  font-family: var(--npr19-sans) !important; font-weight: 700 !important; color: var(--n19-title) !important; letter-spacing: 0 !important; }
+:is(.story-text, .item-info) .title a:hover { color: var(--n19-link) !important; text-decoration: none !important; }
+.teaser, .teaser a, p.teaser { font-family: var(--npr19-sans) !important; color: var(--n19-teaser) !important; font-size: 14px !important; line-height: 1.6 !important;
+  letter-spacing: .02em !important; font-weight: 400 !important; }
+.teaser time, .teaser span.date { color: #aaa !important; }
+:is(.slug, .slug-wrap > .slug, h3.slug, .slug a, .story-text .slug-wrap a) { font-family: var(--npr19-cond) !important; font-stretch: condensed; font-weight: 700 !important; text-transform: uppercase !important;
+  letter-spacing: 1.08px !important; color: var(--n19-meta) !important; font-size: 13px !important; }
+.credit-caption, .credit-caption .credit, .caption, .caption p { font-family: var(--npr19-sans) !important; }
+.credit-caption .credit { font-style: italic !important; color: #666 !important; }
+/* Section and program headers keep their white band */
+.contentheader, .branding, .program-header, .podcast-section, .podcast-header { background: var(--n19-card) !important; }
+
+/* ---- Story pages ---- */
+.storytitle h1, .storytitle h2 { font-family: var(--npr19-sans) !important; font-weight: 400 !important; font-size: 35px !important; line-height: 1.2 !important;
+  letter-spacing: -.00625em !important; color: var(--n19-title) !important; }
+.story-meta, .story-meta__one, .dateblock, .dateblock time, .program-block, .program-block a { font-family: var(--npr19-sans) !important; font-size: 12px !important; color: var(--n19-meta) !important;
+  text-transform: none !important; letter-spacing: 0 !important; }
+.dateblock span.date, .dateblock span.time { text-transform: uppercase !important; letter-spacing: .5px !important; }
+.program-block a { color: var(--n19-link) !important; }
+.byline--block { border: 1px solid #e0e0e0 !important; border-radius: 0 !important; height: 34px !important; }
+.byline__name--block, .byline__name--block a { font-family: var(--npr19-sans) !important; text-transform: uppercase !important; font-size: 12px !important; color: var(--n19-link) !important; }
+.storytext p, #storytext > p { font-family: var(--npr19-serif) !important; font-size: 17px !important; line-height: 29px !important; color: var(--n19-text) !important; margin-bottom: 20px !important; }
+.storytext p a { color: var(--n19-link) !important; text-decoration: none !important; }
+.storytext p a:hover { text-decoration: underline !important; }
+.storytext h2, .storytext h3 { font-family: var(--npr19-sans) !important; font-weight: 700 !important; color: var(--n19-title) !important; }
+.bucketwrap.image .caption p { font-size: 12px !important; line-height: 20px !important; color: var(--n19-meta) !important; }
+/* The audio bar: 2019's dark-gray player strip rather than today's blue band */
+.audio-module { background: #333 !important; border-radius: 0 !important; }
+.audio-module .audio-tool-label { font-family: var(--npr19-sans) !important; }
+
+/* ---- Post-2019: NPR+ bonus labels and upsells, sticky subscribe bars ---- */
+.global-stickybar, #global-stickybar-mount-piano-wrap, .global-header-sticky-cta-wrap, .global-header-cta-wrap, [class*="plus-promo"], [class*="npr-plus"],
+.bucketwrap.internallink.insettwocolumn.inset2col.plus, [data-net19-later] { display: none !important; }
+.episode-type-tag--bonus, .submenu__item--npr-plus, .menu__item--plus, .npr-plus-interstitial-mount, .resaudio.is-plus-exclusive .audio-module-plus { display: none !important; }
+
+/* ---- Footer ---- */
+.npr-footer { font-family: var(--npr19-sans) !important; }
+.npr-footer__header { font-family: var(--npr19-cond) !important; font-stretch: condensed; letter-spacing: 1.08px !important; }
+/* Section logos are dark drawings made for a white band; on the dark palette they are turned light */
+html[data-net19-mode="dark"] .branding__image-title { filter: invert(1) hue-rotate(180deg) !important; }

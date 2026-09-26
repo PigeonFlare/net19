@@ -214,3 +214,17 @@ html { --n19-tip: #0e1113; }
 html[data-net19-mode="dark"] { --n19-tip: #fff; }
 rpl-tooltip > [slot="content"], rpl-tooltip > [slot="shortcut"] { background: var(--n19-tip) !important; }
 [data-net19-hidden] { display: none !important; }
+
+/* ---- Every other page (search, profiles, community pages) ------------------------------------------------------------ */
+/* 2019 buttons and panels had 4px corners, not 2023's pills and 16px cards; round icon buttons and avatars stay round */
+shreddit-app :is(a, button).button:not(.icon):not([class~="rounded-full"]), shreddit-app :is(a, button)[class~="button"]:not([class~="icon"]) { border-radius: 4px !important; }
+shreddit-app :is([class~="rounded-4"], [class~="xs:rounded-4"], [class~="rounded-2"], [class~="xs:rounded-2"], [class~="rounded-3"]) { border-radius: 4px !important; }
+.community-banner { border-radius: 0 !important; }
+/* Tabs (search's Posts / Communities / Comments, a profile's Overview / Posts / Comments): 2019's flat uppercase text
+   tabs with a blue underline on the current one, no gray pills */
+shreddit-app :is(faceplate-tabgroup, [role="tablist"]) > :is(a, button)[class~="button"]:not([class~="icon"]),
+shreddit-app :is(faceplate-tabgroup, [role="tablist"]) faceplate-tracker > :is(a, button)[class~="button"]:not([class~="icon"]) {
+  background: transparent !important; border-radius: 0 !important; color: var(--n19-meta) !important; font-size: 14px !important; font-weight: 700 !important;
+  text-transform: uppercase !important; letter-spacing: .3px !important; box-shadow: none !important; }
+shreddit-app :is(faceplate-tabgroup, [role="tablist"]) :is(a, button)[class~="button"]:is([faceplate-tab-selected], [aria-selected="true"], [aria-current="page"], [aria-current="true"]) {
+  color: var(--n19-link) !important; box-shadow: inset 0 -2px 0 var(--n19-link) !important; }

@@ -1,0 +1,156 @@
+/* net19 handmade theme: The Verge, 2019 (the 2016 "Chorus" design, before the 2022 redesign): a 44px black bar with the
+   white wordmark and uppercase Arial Narrow–style section links with magenta carets; Helvetica everywhere, bold #222
+   headlines over 12px gray "By NAME | date" bylines whose names are magenta (#e2127a); a river of white cards split by
+   #e7e7e8 hairlines; article pages with a 46px bold headline, an italic gray dek, magenta underlined links and purple
+   (#393092) pull quotes; section titles in magenta caps under a purple bracket line. Dark keeps the same layout on the
+   black of the 2019 masthead and hero grid. */
+html { --n19-bar: #000; --n19-bar-text: #fff; --n19-magenta: #e2127a; --n19-magenta-dark: #b30e61; --n19-purple: #393092;
+  --n19-page: #fff; --n19-text: #222; --n19-body: #424242; --n19-meta: #6a6a6a; --n19-rule: #e7e7e8; --n19-soft: #efeff0; --n19-head: #000; }
+html[data-net19-mode="dark"] { --n19-bar: #000; --n19-bar-text: #fff; --n19-magenta: #f0368f; --n19-magenta-dark: #e2127a; --n19-purple: #8a80e0;
+  --n19-page: #000; --n19-text: #f2f2f2; --n19-body: #d9d9d9; --n19-meta: #9a9a9a; --n19-rule: #333; --n19-soft: #1a1a1a; --n19-head: #fff; }
+
+/* 2019 type: Helvetica for text and headlines, a narrow bold face for the big display lines (Heroic in 2019) */
+html body, html body .duet--app, html body [data-duet-theme] {
+  --font-polysans: Helvetica, "Helvetica Neue", Arial, sans-serif !important;
+  --font-fkroman: Helvetica, "Helvetica Neue", Arial, sans-serif !important;
+  --font-polysans-mono: Helvetica, "Helvetica Neue", Arial, sans-serif !important;
+  --font-manuka: "Arial Narrow", "Helvetica Neue Condensed", "Roboto Condensed", Helvetica, sans-serif !important;
+}
+html body[data-duet-theme] { background: var(--n19-page) !important; color: var(--n19-text); font-family: Helvetica, "Helvetica Neue", Arial, sans-serif; }
+html body [class*="duet--page-layout"], html body .duet--app { background-color: var(--n19-page) !important; }
+
+/* ---- Top bar: black, 44px, full width; wordmark white; links uppercase narrow caps with magenta carets ---- */
+.duet--app > div:has(nav[aria-label="Top Navigation"]) { background: var(--n19-bar) !important; }
+.duet--app > div:has(nav[aria-label="Top Navigation"]) > div, .duet--app > div:has(nav[aria-label="Top Navigation"]) > div > div { background-color: transparent !important; }
+/* the oversized masthead wordmark that sits over section and article headers (2022) */
+.duet--app > div:has(nav[aria-label="Top Navigation"]) a:has(> svg[role="img"]):not(nav a) { display: none !important; }
+.duet--app > div:has(nav[aria-label="Top Navigation"]) :has(nav[aria-label="Top Navigation"]) { height: auto !important; min-height: 0 !important; }
+.duet--app > div:has(nav[aria-label="Top Navigation"]) div:has(> nav[aria-label="Top Navigation"]) { height: 44px !important; min-height: 44px !important; padding: 0 !important; position: relative !important; }
+nav[aria-label="Top Navigation"] { position: static !important; width: 100% !important; max-width: 1100px !important; margin: 0 auto !important; padding: 0 !important; height: 44px !important;
+  border: 0 !important; box-shadow: none !important; background: var(--n19-bar) !important; }
+nav[aria-label="Top Navigation"] > ul { height: 44px !important; align-items: center !important; justify-content: flex-start !important; gap: 0 !important; border: 0 !important; box-shadow: none !important; }
+nav[aria-label="Top Navigation"] > ul > div:first-child { margin-right: 28px !important; order: -1; }
+nav[aria-label="Top Navigation"] > ul > div:first-child svg { height: 22px !important; width: auto !important; color: #fff !important; fill: #fff !important; }
+nav[aria-label="Top Navigation"] > ul > div:first-child svg * { fill: #fff !important; }
+nav[aria-label="Top Navigation"] li { margin: 0 !important; padding: 0 !important; }
+nav[aria-label="Top Navigation"] li::before, nav[aria-label="Top Navigation"] li::after { display: none !important; }
+nav[aria-label="Top Navigation"] li > a { padding: 0 13px 0 0 !important; margin-right: 20px !important; height: 44px !important; display: inline-flex !important; align-items: center !important; position: relative !important; }
+nav[aria-label="Top Navigation"] li > a > span { padding: 0 !important; margin: 0 !important; font: 500 15px/44px "Arial Narrow", "Helvetica Neue", Helvetica, Arial, sans-serif !important; letter-spacing: .05em !important;
+  text-transform: uppercase !important; color: var(--n19-bar-text) !important; }
+nav[aria-label="Top Navigation"] li > a::after { content: "" !important; display: block !important; position: absolute !important; right: 0 !important; left: auto !important; bottom: auto !important; top: 20px !important;
+  width: 0 !important; height: 0 !important; background: none !important; border: 4px solid transparent !important; border-top-color: var(--n19-magenta) !important; border-bottom: 0 !important; transform: none !important; }
+nav[aria-label="Top Navigation"] > ul > div:first-child::before, nav[aria-label="Top Navigation"] > ul > div:first-child::after, nav[aria-label="Top Navigation"] > ul > div:first-child a::after { display: none !important; }
+nav[aria-label="Top Navigation"] li > a:hover > span { color: var(--n19-magenta) !important; }
+nav[aria-label="Top Navigation"] li:last-child { margin-left: auto !important; }
+nav[aria-label="Top Navigation"] button, nav[aria-label="Top Navigation"] button svg { color: var(--n19-bar-text) !important; }
+/* the slashes between links and the rule under them are 2022 */
+nav[aria-label="Top Navigation"] li > a > span::before, nav[aria-label="Top Navigation"] li > a > span::after { display: none !important; }
+/* the mobile / sticky bar keeps its layout but turns black too */
+.duet--navigation--sticky-nav, .duet--navigation--sticky-nav > * { background: var(--n19-bar) !important; color: var(--n19-bar-text) !important; }
+.duet--navigation--sticky-nav a, .duet--navigation--sticky-nav button, .duet--navigation--sticky-nav svg { color: var(--n19-bar-text) !important; }
+
+/* ---- Giant sideways / background wordmarks and "header pattern" artwork: 2022 decoration ---- */
+.duet--homepage--hero svg[role="img"]:not(a svg):not(button svg), .duet--layout--header-pattern > svg, .duet--layout--header-pattern svg[role="img"]:not(a svg):not(button svg) { display: none !important; }
+
+/* ---- Cards (homepage, sections, search): Helvetica bold #222 headlines, 12px gray bylines, hairline dividers ---- */
+.duet--content-cards--content-card { font-family: Helvetica, Arial, sans-serif !important; border-radius: 0 !important; }
+.duet--content-cards--content-card :is(h2, h3) a, .duet--content-cards--content-card div:not(:has(img)) > a[href]:not([aria-label]) {
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif !important; font-weight: 700 !important; letter-spacing: 0 !important;
+  color: var(--n19-text) !important; text-transform: none !important; }
+.duet--content-cards--content-card :is(h2, h3) a:hover, .duet--content-cards--content-card div:not(:has(img)) > a[href]:not([aria-label]):hover { color: var(--n19-magenta) !important; box-shadow: none !important; }
+.duet--content-cards--content-card p.duet--article--dangerously-set-cms-markup { font: 400 15px/1.45 Helvetica, Arial, sans-serif !important; color: var(--n19-meta) !important; letter-spacing: 0 !important; }
+.duet--content-cards--content-card span:has(> span > span), .duet--content-cards--content-card .duet--article--timestamp {
+  font: 400 12px/1.4 Helvetica, Arial, sans-serif !important; letter-spacing: 0 !important; text-transform: none !important; color: var(--n19-meta) !important; }
+.duet--content-cards--content-card span:has(> span > span) span span { color: var(--n19-magenta) !important; }
+.duet--content-cards--content-card img { border-radius: 0 !important; }
+/* the lead story: 2019's black hero tile with a big narrow caps headline */
+.duet--homepage--hero > .duet--content-cards--content-card:first-child div:not(:has(img)):has(> a[href]:not([aria-label])), .duet--homepage--hero > .duet--content-cards--content-card:first-child div:not(:has(img)) > a[href]:not([aria-label]) {
+  font-family: "Arial Narrow", "Helvetica Neue Condensed", Helvetica, sans-serif !important; font-weight: 700 !important; text-transform: uppercase !important;
+  font-size: 44px !important; line-height: .95 !important; letter-spacing: .005em !important; }
+.duet--homepage--hero > .duet--content-cards--content-card:first-child > div:last-child > div { background: var(--n19-bar) !important; }
+.duet--homepage--hero > .duet--content-cards--content-card:first-child > div:last-child > div :is(a, p, span) { color: #fff !important; }
+.duet--homepage--hero > .duet--content-cards--content-card:first-child > div:last-child > div span:has(> span > span) span span { color: var(--n19-magenta) !important; }
+/* section headings ("Weekend reads", "Most Popular"): magenta caps under a purple bracket line, as 2019's rail headers */
+header > div > h2:has(> span + span), .duet--homepage--most-popular > h2 { font: 400 26px/1 "Arial Narrow", Helvetica, sans-serif !important; letter-spacing: .02em !important; text-transform: uppercase !important;
+  color: var(--n19-magenta) !important; border-bottom: 2px solid var(--n19-purple) !important; padding-bottom: 8px !important; }
+header > div > h2:has(> span + span) > span { color: inherit !important; font: inherit !important; }
+header > div > h2:has(> span + span) > span ~ span { color: var(--n19-meta) !important; text-transform: none !important; font: 400 15px/1.3 Helvetica, Arial, sans-serif !important; }
+/* numbered most-popular list: plain magenta numerals, no lilac discs */
+.duet--homepage--most-popular ol > li > div:first-child { background: transparent !important; color: var(--n19-magenta) !important; border-radius: 0 !important;
+  font: 700 28px/1 "Arial Narrow", Helvetica, sans-serif !important; }
+/* the latest-posts river on the right: 2019 compact entries */
+[id="storyStream-panel"] .duet--content-cards--quick-post, .duet--content-cards--quick-post { border-color: var(--n19-rule) !important; background: transparent !important; }
+.duet--content-cards--quick-post img[width="34"] { display: none !important; }
+.duet--content-cards--quick-post :is(p, div) { font-family: Helvetica, Arial, sans-serif !important; }
+.duet--content-cards--quick-post span:has(+ .duet--article--timestamp) { font: 400 12px/1.4 Helvetica, Arial, sans-serif !important; text-transform: none !important; letter-spacing: 0 !important; color: var(--n19-magenta) !important; }
+/* the paid-subscription link (2024) */
+a.duet--cta--button[href*="subscribe" i], a[href^="/subscribe"], a[href^="https://www.theverge.com/subscribe"], a[href*="/subscription" i].duet--cta--button { display: none !important; }
+/* tabs over the river ("Latest" / "Following"): one plain magenta caps label */
+[role="tablist"] > div[aria-hidden="true"] { display: none !important; }
+[role="tablist"] { background: transparent !important; border-radius: 0 !important; box-shadow: none !important; }
+[role="tablist"] [role="tab"] { background: transparent !important; color: var(--n19-magenta) !important; border-radius: 0 !important;
+  font: 400 22px/1 "Arial Narrow", Helvetica, sans-serif !important; letter-spacing: .02em !important; }
+[role="tablist"] [role="tab"][aria-selected="true"] { border-bottom: 2px solid var(--n19-purple) !important; }
+
+/* ---- Buttons: square magenta, uppercase ---- */
+.duet--cta--button:not(.duet--cta--skip-to-content) { border-radius: 0 !important; font-family: Helvetica, Arial, sans-serif !important; letter-spacing: .06em !important; }
+
+/* ---- Article ---- */
+.duet--article--lede, .duet--ledes--feature-lede, .duet--article--lede > * { background: var(--n19-page) !important; }
+/* the feature lede's colored backdrop (2022) */
+.duet--ledes--feature-lede div:empty { background: transparent !important; }
+.duet--article--lede h1 { font: 700 46px/1.1 Helvetica, "Helvetica Neue", Arial, sans-serif !important; letter-spacing: -.005em !important; color: var(--n19-head) !important; text-transform: none !important; }
+.duet--article--lede h1 + p { font: italic 300 22px/1.35 Helvetica, Arial, sans-serif !important; color: var(--n19-meta) !important; letter-spacing: 0 !important; }
+.duet--article--lede ul li button span { font: 400 14px/1 "Arial Narrow", Helvetica, sans-serif !important; letter-spacing: .1em !important; text-transform: uppercase !important; color: var(--n19-magenta) !important; }
+.duet--article--lede ul li button svg { display: none !important; }
+.duet--article--article-byline, .duet--article--lede .duet--article--timestamp { font: 400 13px/1.4 Helvetica, Arial, sans-serif !important; color: var(--n19-meta) !important; letter-spacing: 0 !important; text-transform: none !important; }
+.duet--article--article-byline span[role="button"] span { color: var(--n19-magenta) !important; font-weight: 400 !important; }
+.duet--article--article-byline span[role="button"] svg { display: none !important; }
+.duet--article--share-buttons button { border-radius: 0 !important; color: var(--n19-meta) !important; background: transparent !important; }
+.duet--layout--entry-body, .duet--layout--entry-body .duet--article--standard-paragraph, .duet--layout--entry-body p {
+  font-family: Helvetica, "Helvetica Neue", Arial, sans-serif !important; font-size: 18px !important; line-height: 1.6 !important; letter-spacing: 0 !important; color: var(--n19-body) !important; }
+.duet--layout--entry-body :is(h2, h3) { font-family: Helvetica, Arial, sans-serif !important; font-weight: 700 !important; color: var(--n19-head) !important; letter-spacing: 0 !important; }
+.duet--layout--entry-body p a, .duet--article--standard-paragraph a { color: var(--n19-magenta) !important; box-shadow: inset 0 -1px 0 var(--n19-magenta) !important; text-decoration: none !important; }
+.duet--layout--entry-body p a:hover { color: var(--n19-magenta-dark) !important; }
+.duet--article--blockquote, .duet--layout--entry-body blockquote { border-left: 3px solid var(--n19-purple) !important; padding-left: 24px !important; background: transparent !important; }
+.duet--media--caption, .duet--media--caption cite { font: 400 13px/1.4 Helvetica, Arial, sans-serif !important; color: var(--n19-meta) !important; font-style: normal !important; letter-spacing: 0 !important; }
+.duet--layout--rail h2 { font: 400 26px/1 "Arial Narrow", Helvetica, sans-serif !important; text-transform: uppercase !important; color: var(--n19-magenta) !important; letter-spacing: .02em !important; }
+/* Verge Score badge: 2019's plain square score */
+.duet--content-cards--content-card div:has(> p + p:last-child):not(:has(a, div)) { border-radius: 0 !important; background: var(--n19-magenta) !important; }
+.duet--content-cards--content-card div:has(> p + p:last-child):not(:has(a, div)) p { color: #fff !important; font-family: Helvetica, Arial, sans-serif !important; }
+
+/* ---- The menu drawer: 2019's black flyout with white caps and magenta accents ---- */
+[id^="drawer_"][role="dialog"] > section, [id^="drawer_"][role="dialog"] > section > div { background: var(--n19-bar) !important; color: #fff !important; }
+[id^="drawer_"][role="dialog"] :is(a, button, li, h2, h3, span, div) { color: #fff !important; font-family: Helvetica, Arial, sans-serif !important; border-radius: 0 !important; }
+[id^="drawer_"][role="dialog"] nav button { font: 500 16px/1.2 "Arial Narrow", Helvetica, sans-serif !important; letter-spacing: .05em !important; text-transform: uppercase !important; }
+[id^="drawer_"][role="dialog"] nav a:hover, [id^="drawer_"][role="dialog"] nav button:hover { color: var(--n19-magenta) !important; }
+[id^="drawer_"][role="dialog"] input { background: #fff !important; color: #222 !important; border: 0 !important; border-radius: 0 !important; }
+[id^="drawer_"][role="dialog"] [role="group"][aria-label="Color theme"] button { border: 1px solid #555 !important; background: transparent !important; }
+[id^="drawer_"][role="dialog"] [role="group"][aria-label="Color theme"] button[aria-pressed="true"] { border-color: var(--n19-magenta) !important; color: var(--n19-magenta) !important; }
+
+/* ---- Search: a plain field with a hairline border ---- */
+form[aria-label="Search Form"] input, main form input[type="text"], main form input[type="search"] { border-radius: 0 !important; border-color: var(--n19-rule) !important; box-shadow: none !important;
+  font-family: Helvetica, Arial, sans-serif !important; }
+form[aria-label="Search Form"] input:focus, main form input:focus { border-color: var(--n19-magenta) !important; }
+
+/* ---- Footer: black, as 2019 ---- */
+.duet--navigation--footer, .duet--navigation--footer * { background-color: var(--n19-bar) !important; }
+.duet--navigation--footer :is(a, p, span, li, h2, h3) { color: #fff !important; font-family: Helvetica, Arial, sans-serif !important; }
+.duet--navigation--footer svg { color: #fff !important; }
+.duet--navigation--footer a:has(> svg) { border-color: #fff !important; }
+
+/* ---- Post-2019: follow popovers, "Gift" and notification buttons, AI and subscription promos ---- */
+aside[id^="popover-"] button:has(> span > svg) { display: none !important; }
+/* the "AI" section link joined the bar in 2023 */
+nav[aria-label="Top Navigation"] li:has(> a[href*="ai-artificial-intelligence"]) { display: none !important; }
+
+/* ---- Section fronts: the name in narrow caps on a black band, as 2019's hub mastheads ---- */
+.duet--page-layout--category main h1.duet--article--dangerously-set-cms-markup { font: 700 64px/1 "Arial Narrow", "Helvetica Neue Condensed", Helvetica, sans-serif !important; text-transform: uppercase !important;
+  letter-spacing: .01em !important; color: #fff !important; background: var(--n19-bar) !important; padding: 28px 30px !important; margin: 0 0 16px !important; }
+.duet--page-layout--category main div:has(> div > div > h1.duet--article--dangerously-set-cms-markup) { min-height: 0 !important; padding-top: 16px !important; }
+.duet--page-layout--category main h1 ~ * p, .duet--group--description, .duet--group--description p { font: 400 16px/1.5 Helvetica, Arial, sans-serif !important; color: var(--n19-meta) !important; }
+
+/* ---- Article lede: no follow rings around topics and authors; plain gray share glyphs ---- */
+.duet--article--lede ul li button span:has(> svg), .duet--article--article-byline span[role="button"] span:has(> svg) { display: none !important; }
+.duet--article--share-buttons button { border: 1px solid var(--n19-rule) !important; }
+.duet--article--share-buttons button svg { color: var(--n19-meta) !important; }

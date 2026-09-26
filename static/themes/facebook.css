@@ -170,3 +170,5 @@ div[role="banner"] :is([aria-label="Menu"], [aria-label="Meta AI"], [aria-label=
 [data-n19-fb="foot"] :is(span, a) { font-family: Helvetica, Arial, sans-serif !important; font-size: 12px !important; color: var(--n19-foot-link) !important; }
 [data-n19-fb="foot"] a[href*="meta.ai"] { display: none !important; }
 [data-n19-fb="foot"] div:has(> span > a), [data-n19-fb="foot"] div:has(> span:only-child) { padding-left: 0 !important; padding-right: 10px !important; }
+/* Help Center: the search field as 2019's plain box with 3px corners (marked by facebook.js) */
+[data-n19-fb-search] { border-radius: 3px !important; box-shadow: none !important; border: 1px solid var(--n19-button-line) !important; }

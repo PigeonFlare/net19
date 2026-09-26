@@ -1,12 +1,22 @@
 // net19 handmade theme: YouTube, 2019. YouTube marks its dark theme with html[dark]; both modes are restyled.
-globalThis.net19Theme = {
-  detect: () => document.documentElement.hasAttribute('dark') ? 'dark' : 'light',
-  watch: ['dark', 'class'],
-};
+// YouTube Music was a dark-only app in 2019, so it stays dark on a light device. Each YouTube
+// property is marked on <html data-n19-yt="www|music|studio|tv|m|other"> so page rules can be scoped to it.
+globalThis.net19Theme = (() => {
+  const host = location.hostname;
+  const yt = (/^(music|studio|tv|m)\./.exec(host) || [, /^(www\.)?youtube\.com$/.test(host) ? 'www' : 'other'])[1];
+  document.documentElement.setAttribute('data-n19-yt', yt);
+  return {
+    detect: () => document.documentElement.hasAttribute('dark') ? 'dark' : 'light',
+    watch: ['dark', 'class'],
+    only: () => yt === 'music' ? 'dark' : undefined,
+  };
+})();
 // Text that did not exist in 2019, changed in place: the search field said "Search" (not "Search or ask a question"),
 // and "Ask YouTube" (an assistant entry point with no stable label) is hidden by its visible text.
 (() => {
   const fix = () => {
+    // YouTube Music's field said just "Search" in 2019
+    for (const input of document.querySelectorAll('ytmusic-search-box input')) if (input.placeholder && input.placeholder !== 'Search') input.placeholder = 'Search';
     const masthead = document.querySelector('#masthead, ytd-masthead');
     if (!masthead) return;
     for (const input of masthead.querySelectorAll('input[name="search_query"]')) if (input.placeholder !== 'Search') input.placeholder = 'Search';
@@ -42,4 +52,16 @@ globalThis.net19Theme = {
     new MutationObserver(later).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
   };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+})();
+// Shorts (2020) did not exist in 2019: a Short opens as an ordinary video on the watch page, whether it is reached by an
+// address or by a click inside YouTube's single-page app.
+(() => {
+  if (!/^(www\.)?youtube\.com$/.test(location.hostname)) return;
+  const toWatch = () => {
+    const m = /^\/shorts\/([\w-]{6,})/.exec(location.pathname);
+    if (m) location.replace(`/watch?v=${m[1]}`);
+  };
+  toWatch();
+  document.addEventListener('yt-navigate-finish', toWatch);
+  addEventListener('popstate', toWatch);
 })();

@@ -69,3 +69,7 @@ div.box-entry-group-nav { height: auto !important; }
 blockquote.box-examples, blockquote.box-examples > em, blockquote.box-examples p { border-left: 0 !important; padding-left: 0 !important; }
 /* The entry's decorative background picture (not in 2019) would otherwise be treated as a photo on dark devices */
 .box-item-entry { background-image: none !important; }
+/* Home page: the header also holds the "Dictionary for the Real World" line and the big search box; the blue band
+   grows around them (a fixed 88px band left the white line on the gray page) */
+body.pg-dcom-home .wrapper-site-hdr, body.pg-dcom-home header#id-site-hdr { height: auto !important; min-height: 88px !important; }
+body.pg-dcom-home .wrapper-site-hdr { padding-bottom: 28px !important; }

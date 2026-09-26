@@ -26,8 +26,10 @@ main.club-bg-skin, main.club-bg-skin .container--max-width { background: var(--n
 #react-header .header__nav-top__logo img { height: 44px !important; width: auto !important; }
 #react-header .header__nav-top > [class*="SearchWidgetContainer"] { order: 1; align-self: center !important; margin-left: auto !important; position: relative !important; left: auto !important; right: auto !important; }
 #react-header .header__nav-top__login-container { order: 2; align-self: center !important; margin-right: 16px !important; }
-#react-header .header__nav-top__nav-container { position: relative !important; order: 3; flex: 0 0 100% !important; height: 46px !important; border-top: 1px solid var(--n19-rule) !important; padding-left: 12px !important; }
-#react-header .header__nav-top__nav-container :is(nav, ul, li, [class*="NavItemInner"]) { height: 46px !important; }
+#react-header .header__nav-top__nav-container { position: relative !important; order: 3; flex: 0 0 100% !important; height: auto !important; min-height: 46px !important; border-top: 1px solid var(--n19-rule) !important; padding-left: 12px !important; }
+#react-header .header__nav-top__nav-container :is(li, [class*="NavItemInner"]) { height: 46px !important; }
+/* Club headers (/yankees, player pages) carry more links than fit on one row; the row grows instead of spilling onto the page */
+#react-header .header__nav-top__nav-container :is(nav, ul) { height: auto !important; min-height: 46px !important; }
 #react-header .header__nav-top__nav-container [class*="RevenueNavBar"] { margin-left: 0 !important; }
 #react-header .header__nav-top__nav-item__link, #react-header .header__nav-top__nav-item__link span, #react-header .header__nav-top__button span {
   font-family: var(--n19-font-body) !important; font-weight: 400 !important; font-size: 12px !important; text-transform: uppercase !important; letter-spacing: 0 !important; color: #fff !important;
@@ -51,3 +53,6 @@ main p { font-family: var(--n19-font-body) !important; }
 [class*="HeadlineStackContainer"] li[data-testid="headline-stack"]::marker { color: var(--n19-bullet); font-size: 11px; }
 [class*="HeadlineStackContainer"] li[data-testid="headline-stack"] > a { display: inline !important; padding: 0 !important; min-height: 0 !important; }
 [class*="HeadlineStackContainer"] [class*="HeadlineText"] { font-family: var(--n19-font-body) !important; font-size: 13px !important; font-weight: 400 !important; line-height: 17px !important; color: var(--n19-head) !important; }
+/* Menu entries that came after 2019: MLB Play (the free-games hub, 2023) and AUSL (the softball league, 2025) */
+#react-header li[class*="StyledNavItem"]:has(> [class*="NavItemInner"] > a[href^="/play"]), #react-header li[class*="StyledNavItem"]:has(> [class*="NavItemInner"] > a[href^="/ausl"]),
+#react-header .header__subnav__group > li:has(> a[href^="/ausl"]), #react-header .header__subnav__group > li:has(> a[href^="/play"]) { display: none !important; }

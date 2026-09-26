@@ -1,0 +1,77 @@
+/* net19 handmade theme: USA TODAY, 2019: the blue #009bff dot and "USA TODAY" wordmark on white, then a white 40px
+   navigation bar under a pale #d2d2d2 rule with small uppercase letter-spaced section names in black, each underlined
+   on hover in its section color (news blue, sports red, life purple, money green, tech orange, travel teal); cards
+   with Unify Sans headlines and uppercase letter-spaced section labels in those colors; stories with a big Unify Sans
+   headline, a small gray byline and dateline without author photos, round share buttons and serif body copy. None
+   of the later header promo tiles, "Subscribe now $1" offers, "Add Topic" follow buttons, Google preferred-source
+   links or app promos. The site has no dark mode, so palette.js inverts it on dark devices. */
+html { --n19-ink: #000; --n19-text: #303030; --n19-meta: #666; --n19-rule: #d2d2d2; --n19-hair: #e6e6e6; --n19-blue: #009bff; --n19-link: #1d5a82;
+  --n19-news: #009bff; --n19-sports: #eb1e00; --n19-life: #9600b4; --n19-money: #00a53c; --n19-tech: #fa5f00; --n19-travel: #00c3c3; --n19-opinion: #ffc000; --n19-hover: #eee; }
+html[data-net19-mode="dark"] { --n19-ink: #f2f2f2; --n19-text: #e0e0e0; --n19-meta: #aaa; --n19-rule: #3a3a3a; --n19-hair: #2c2c2c; --n19-blue: #33adff; --n19-link: #6fb3e0;
+  --n19-news: #33adff; --n19-sports: #ff4a33; --n19-life: #c24fd8; --n19-money: #2fc463; --n19-tech: #ff8a3d; --n19-travel: #2fd6d6; --n19-opinion: #ffcf40; --n19-hover: #222; }
+
+/* ---- Header: logo row, then the white uppercase nav bar ---- */
+header.gnt_n { height: 92px !important; background: #fff !important; box-shadow: 0 1px 0 var(--n19-rule) !important; }
+/* The promo tiles above the nav ("Find us on Google", newsletters, USA 250, the app) and the "$1" offer are later */
+header.gnt_n .gnt_n_fl, header.gnt_n .gnt_n_sm { display: none !important; }
+header.gnt_n nav.gnt_n_mn { height: 40px !important; background: #fff !important; border-top: 1px solid var(--n19-rule) !important; top: 52px !important; }
+header.gnt_n nav.gnt_n_mn a.gnt_n_mn_l { color: #000 !important; font-family: "Unify Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important; font-size: 11px !important; font-weight: 700 !important;
+  text-transform: uppercase !important; letter-spacing: .08em !important; line-height: 40px !important; height: 40px !important; padding: 0 12px !important;
+  box-shadow: none !important; text-shadow: none !important; }
+header.gnt_n nav.gnt_n_mn a.gnt_n_mn_l:hover { background: var(--n19-hover) !important; box-shadow: inset 0 -2px 0 var(--n19-sec, var(--n19-news)) !important; }
+header.gnt_n nav.gnt_n_mn a[href^="/sports"] { --n19-sec: var(--n19-sports); }
+header.gnt_n nav.gnt_n_mn a:is([href^="/life"], [href^="/entertainment"]) { --n19-sec: var(--n19-life); }
+header.gnt_n nav.gnt_n_mn a[href^="/money"] { --n19-sec: var(--n19-money); }
+header.gnt_n nav.gnt_n_mn a[href^="/tech"] { --n19-sec: var(--n19-tech); }
+header.gnt_n nav.gnt_n_mn a[href^="/travel"] { --n19-sec: var(--n19-travel); }
+header.gnt_n nav.gnt_n_mn a[href^="/opinion"] { --n19-sec: var(--n19-opinion); }
+header.gnt_n nav.gnt_n_mn :is(.gnt_n_dd_bt, .gnt_n_se_a, .gnt_n_wt, .gnt_n_us_a) { color: #000 !important; fill: #000 !important; height: 40px !important; line-height: 40px !important; }
+header.gnt_n nav.gnt_n_mn :is(.gnt_n_dd_bt, .gnt_n_se_a, .gnt_n_us_a) svg { fill: #000 !important; }
+header.gnt_n nav.gnt_n_mn .gnt_n_wt { font-size: 12px !important; text-decoration: none !important; }
+header.gnt_n nav.gnt_n_mn .gnt_n_us_a { font-size: 11px !important; text-transform: uppercase !important; letter-spacing: .08em !important; text-decoration: none !important; }
+header.gnt_n nav.gnt_n_mn a.gnt_n_us_sb { background: var(--n19-blue) !important; border-radius: 0 !important; height: 40px !important; line-height: 40px !important;
+  font-size: 11px !important; text-transform: uppercase !important; letter-spacing: .08em !important; }
+header.gnt_n nav.gnt_n_mn :is(.gnt_n_dd_bt, .gnt_n_se_a, .gnt_n_us_a, .gnt_n_wt):hover { background: var(--n19-hover) !important; }
+/* The current section: 2019's 3px underline in the section color instead of the later [brackets] */
+header.gnt_n nav.gnt_n_mn a.gnt_n_mn_l__se { box-shadow: inset 0 -3px 0 var(--n19-sec, var(--n19-news)) !important; }
+header.gnt_n nav.gnt_n_mn a.gnt_n_mn_l::before, header.gnt_n nav.gnt_n_mn a.gnt_n_mn_l::after { content: none !important; }
+/* The "more" drop-down and account menus */
+header.gnt_n .gnt_n_dd { border-top: 1px solid var(--n19-rule) !important; border-radius: 0 !important; }
+header.gnt_n .gnt_n_dd_ls_a { font-family: "Unify Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+header.gnt_n .gnt_n_dd_ls_a:hover { background: var(--n19-hover) !important; }
+/* The black "$1 for the first 4 weeks" subscription banner above the header */
+aside.gnt_nb:has(> iframe.gnt_nb_if) { display: none !important; }
+
+/* ---- Fronts: section labels uppercase and letter-spaced in their colors ---- */
+.gnt_sbt__ms::before { text-transform: uppercase !important; letter-spacing: .1em !important; font-size: 10px !important; font-weight: 700 !important; }
+.gnt_m_he, .gnt_m_tl_c, .gnt_m_sb_hl { letter-spacing: -.01em !important; }
+.gnt_m_th, .gnt_m_tt::after { border-color: var(--n19-rule) !important; }
+.gnt_m_he__br::after, .gnt_m_tl_c__br::after, .gnt_m_sb_hl__br::after { font-family: Georgia, "Times New Roman", serif !important; }
+
+/* Section fronts: the later full-width color gradient behind the front becomes a plain white page */
+div.gnt_bc { background: none !important; }
+
+/* ---- Story page ---- */
+.gnt_ar_lbl_a { font-size: 12px !important; letter-spacing: .1em !important; color: var(--n19-news) !important; }
+/* "Add Topic" follow buttons (2023) */
+.gnt_ar_fyt { display: none !important; }
+h1.gnt_ar_hl { font-family: "Unify Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important; font-weight: 400 !important; font-size: 36px !important; line-height: 1.15 !important; letter-spacing: -.02em !important; color: var(--n19-ink) !important; }
+/* Byline: name and "USA TODAY" on one small line, no author photo */
+img.gnt_ar_by_i { display: none !important; }
+.gnt_ar_by a.gnt_ar_by_a { font-size: 13px !important; color: var(--n19-link) !important; margin-left: 0 !important; }
+.gnt_ar_by .gnt_ar_pb { font-family: "Unify Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important; font-size: 13px !important; margin-left: 0 !important; color: var(--n19-meta) !important; }
+.gnt_ar_by :is(a.gnt_ar_by_a, .gnt_ar_pb) { padding-left: 0 !important; margin-left: 0 !important; left: 0 !important; }
+.gnt_ar_by { padding-left: 0 !important; min-height: 0 !important; }
+.gnt_ar_dt { font-size: 12px !important; color: var(--n19-meta) !important; }
+/* Body copy: a plain serif at 2019's size */
+.gnt_ar_b p.gnt_ar_b_p { font-family: Georgia, "Times New Roman", serif !important; font-size: 18px !important; line-height: 1.6 !important; color: var(--n19-text) !important; }
+.gnt_ar_b a.gnt_ar_b_a { color: var(--n19-link) !important; text-decoration: none !important; border-bottom: 1px solid var(--n19-rule) !important; }
+.gnt_ar_b a.gnt_ar_b_a:hover { border-bottom-color: var(--n19-link) !important; }
+.gnt_ar_b h2, .gnt_ar_b h3 { font-family: "Unify Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+.gnt_ar_b_sp { font-family: "Unify Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+/* Google preferred-source and app promos inside stories and rails (2024-25) */
+a[href*="google.com/preferences/source"], .gnt_n_fl_l__li, a[href*="app.adjust.com"]:not(footer a) { display: none !important; }
+
+/* ---- Footer ---- */
+.gnt_ft { border-top: 1px solid var(--n19-rule) !important; }
+.gnt_ft_a { font-family: "Unify Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !important; }

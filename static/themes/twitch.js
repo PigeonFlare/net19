@@ -42,6 +42,13 @@ globalThis.net19Theme = {
         }
       }
     }
+    // The content-classification notice ("May Contain Labeled Content", 2023) on category and channel pages
+    for (const p of document.querySelectorAll('p, h2, h3, strong, span')) {
+      if (p.children.length || !/^May Contain Labeled Content$/i.test(p.textContent.trim())) continue;
+      let box = p.parentElement;
+      while (box && box !== document.body && !box.querySelector('button')) box = box.parentElement;
+      if (box && box !== document.body && box.textContent.length < 400 && !box.hasAttribute('data-net19-hidden')) box.setAttribute('data-net19-hidden', '');
+    }
     links();
   };
   let queued = false;

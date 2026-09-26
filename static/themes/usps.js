@@ -13,8 +13,8 @@ globalThis.net19Theme = {};
   };
   let queued = false;
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
-  const start = () => { fix(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  const start = () => { fix(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); };
+  start();  // from document_start: the header is fixed as soon as it is parsed, without waiting for DOMContentLoaded
 })();
 // On a dark device the page is flipped by palette.js. The navy Quick Tools tab (a ::before fill) would turn pale lavender
 // under its inverted white words; it is kept as drawn, so it stays white on navy as in 2019.
@@ -28,8 +28,8 @@ globalThis.net19Theme = {};
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
   const start = () => {
     later();
-    new MutationObserver(later).observe(document.body, { childList: true, subtree: true });
+    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
     new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-flip'] });
   };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  start();  // from document_start: the header is fixed as soon as it is parsed, without waiting for DOMContentLoaded
 })();

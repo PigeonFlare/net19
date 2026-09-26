@@ -9,20 +9,25 @@ html { --n19-font: Arial, Tahoma, "Bitstream Vera Sans", sans-serif; --n19-green
 html[data-net19-mode="dark"] { --n19-green: #00a680; --n19-green-hover: #00c294; --n19-ink: #f2f2f2; --n19-text: #ccc;
   --n19-rule: #3a3a3a; --n19-card: #1e1e1e; --n19-shadow: 0 2px 8px rgba(0,0,0,.6); }
 :root:root body, :root:root body :not(svg):not(svg *) { font-family: var(--n19-font) !important; }
+/* Every page: 2019's small 3-4px corners instead of today's pills and 8-12px cards (the design system's radius tokens);
+   people's round avatars stay round */
+html:root { --radius-medium: 3px !important; --radius-large: 4px !important; --radius-xlarge: 4px !important; --radius-full: 3px !important; }
+a[href*="/Profile/"] :is(img, picture, picture *) { border-radius: 50% !important; }
 [data-automation="desktop-cart-and-profile"] a[href*="RegistrationController"] {
   background: var(--n19-green) !important; color: #fff !important; border-radius: 3px !important; text-transform: uppercase !important; letter-spacing: .5px !important;
   font-size: 13px !important; font-weight: 700 !important; min-height: 32px !important; height: 32px !important; padding: 0 14px !important;
 }
 [data-automation="desktop-cart-and-profile"] a[href*="RegistrationController"]:hover { background: var(--n19-green-hover) !important; }
 /* Header: a hairline under the white bar, plain 14px bold links */
-header { border-bottom: 1px solid var(--n19-rule) !important; }
+header:not(main header) { border-bottom: 1px solid var(--n19-rule) !important; }
 header nav [data-automation^="topNav"] :is(a, button) { font-size: 14px !important; font-weight: 700 !important; color: var(--n19-text) !important; border-radius: 3px !important; }
-/* Home: "Where to?" and the white pill search with a soft shadow and a green Search button */
+/* Home: "Where to?" and the white pill search with a soft shadow and a green Search button (the search form in the
+   page body; the header search on inner pages and every other form keep their own look) */
 main h1:first-of-type { color: var(--n19-ink) !important; }
-div:has(> form input[placeholder]) { border: none !important; box-shadow: var(--n19-shadow) !important; background: var(--n19-card) !important; }
-form:has(input[placeholder]) button:not([type="submit"]):last-of-type { background: var(--n19-green) !important; border-color: var(--n19-green) !important; color: #fff !important; font-weight: 700 !important; font-size: 15px !important; }
-form:has(input[placeholder]) button:not([type="submit"]):last-of-type * { color: #fff !important; }
-form:has(input[placeholder]) button:not([type="submit"]):last-of-type:hover { background: var(--n19-green-hover) !important; }
+main div:has(> form[role="search"]) { border: none !important; box-shadow: var(--n19-shadow) !important; background: var(--n19-card) !important; }
+main form[role="search"] button:not([type="submit"]):last-of-type { background: var(--n19-green) !important; border-color: var(--n19-green) !important; color: #fff !important; font-weight: 700 !important; font-size: 15px !important; }
+main form[role="search"] button:not([type="submit"]):last-of-type * { color: #fff !important; }
+main form[role="search"] button:not([type="submit"]):last-of-type:hover { background: var(--n19-green-hover) !important; }
 /* The product row: a white strip of bold tiles between thin rules */
 [data-automation="tab-list"] { background: var(--n19-card) !important; border: 1px solid var(--n19-rule) !important; gap: 0 !important; padding: 10px 0 !important; }
 [data-automation="tab-list"] > button, [data-automation="tab-list"] [role="tab"] { border-radius: 0 !important; padding: 6px 22px !important; border-left: 1px solid var(--n19-rule) !important; }
@@ -33,5 +38,5 @@ form:has(input[placeholder]) button:not([type="submit"]):last-of-type:hover { ba
 [data-automation="tab-list"] [role="tab"] svg { fill: var(--n19-green) !important; }
 /* Photo tiles: small corners */
 main a img, main picture img, main a > div:has(picture) { border-radius: 2px !important; }
-/* AI entry points (marked by tripadvisor.js) */
-[data-net19-hidden] { display: none !important; }
+/* AI entry points (marked by tripadvisor.js) and the AI "Reviews summary" at the top of a place's reviews (2024) */
+[data-net19-hidden], #GAI_REVIEWS { display: none !important; }

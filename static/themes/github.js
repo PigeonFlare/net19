@@ -4,15 +4,22 @@
 // which the stylesheet rebuilds as drawn, so that page is treated as light and never flipped.
 globalThis.net19Theme = {
   home: () => location.pathname === '/' && !!document.querySelector('body.logged-out, .lp-Home'),
+  // Signed-out brand pages (/about, /enterprise, /features/...) are drawn dark whatever the device: GitHub forces
+  // data-color-mode="dark" on them. Flipping such a page to light turned its hero type dark on a dark photo, so it is
+  // treated as a dark-only page and kept as drawn.
+  brand: () => !!document.body?.classList.contains('logged-out') && document.documentElement.getAttribute('data-color-mode') === 'dark' && !globalThis.net19Theme.home(),
   detect() {
     if (globalThis.net19Theme.home()) return 'light';
+    if (globalThis.net19Theme.brand()) return 'dark';
     const root = document.documentElement;
     const mode = root.getAttribute('data-color-mode');
     const system = matchMedia('(prefers-color-scheme: dark)').matches;
     const theme = mode === 'dark' || mode === 'auto' && system ? root.getAttribute('data-dark-theme') : root.getAttribute('data-light-theme');
     return /dark/.test(theme || (mode === 'dark' ? 'dark' : '')) ? 'dark' : 'light';
   },
-  only: () => globalThis.net19Theme.home() ? 'light' : undefined,
+  only: () => globalThis.net19Theme.home() ? 'light' : globalThis.net19Theme.brand() ? 'dark' : undefined,
+  // Post-2019 entry points shown by label: Copilot (2021), the docs' "Copy markdown" for AI tools, Spaces and agents.
+  later: /^(?:open in github copilot app|github copilot|copilot(?: chat| spaces?| app)?|ask copilot|copy markdown|agents?|spaces|new agent task|assign to copilot)$/i,
   watch: ['data-color-mode', 'data-light-theme', 'data-dark-theme'],
   // Primer's light colors moved back to the 2019 palette: text, muted text, link blue, the #fafbfc wash, borders,
   // the header, the orange selected-tab edge and the green primary button.
@@ -29,6 +36,11 @@ globalThis.net19Theme = {
       label.setAttribute('data-net19-label', '');
       label.textContent = 'Search GitHub';
       search.append(label);
+    }
+    // docs.github.com: the search button read "Search GitHub Docs" (today: "Search or ask Copilot")
+    for (const el of document.querySelectorAll('header button, header [role="button"]')) {
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      for (let node = walker.nextNode(); node; node = walker.nextNode()) if (/^\s*Search or ask Copilot\s*$/i.test(node.data)) node.data = 'Search GitHub Docs';
     }
     for (const button of document.querySelectorAll('#repo-content-pjax-container button[data-variant="primary"], react-partial button[data-variant="primary"]')) {
       const walker = document.createTreeWalker(button, NodeFilter.SHOW_TEXT);

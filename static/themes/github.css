@@ -132,3 +132,20 @@ table[aria-labelledby="folders-and-files"] .react-directory-row:hover { backgrou
 .react-directory-filename-column svg.icon-directory, .react-directory-filename-column svg[class*="directory" i] { color: var(--n19-folder) !important; fill: var(--n19-folder) !important; }
 .react-directory-filename-column svg:not([class*="directory" i]) { color: var(--n19-file) !important; }
 .react-directory-commit-message a, .react-directory-commit-age { color: var(--n19-text-2) !important; }
+
+/* ---- Pages across github.com and docs.github.com ---- */
+/* Issue and pull request state badges: 2019's 3px-cornered labels, not pills; a closed issue was red */
+.State, [class*="StateLabel"], [data-testid="header-state"] { border-radius: 3px !important; }
+.State--closed:not(.State--merged), [class*="StateLabel"][class*="issueClosed" i] { background-color: #cb2431 !important; }
+/* Achievements (2022) on profiles; the issues sidebar's "Feedback · Preview" link (2025) */
+.border-top:has(> h2 + div .achievement-badge-sidebar), .border-top:has(.achievement-badge-sidebar) { display: none !important; }
+li:has(> a[href*="issues-sidebar-feedback"]), a[href*="issues-sidebar-feedback"] { display: none !important; }
+/* Copilot entry points inside pages (the issue sidebar's "Open in GitHub Copilot app", repo "Code" menu tabs) */
+main a[href*="/features/copilot"], main a[href*="/features/ai/github-app"], main li:has(> a[href*="/features/ai/github-app"]),
+#repository-container-header a[href*="copilot" i] { display: none !important; }
+/* Marketplace: a flat page head instead of the violet wash */
+[class*="MarketplaceHeader"], .marketplace-hero, main section:has(> div > h1):has(input[placeholder*="apps and actions" i]) { background-image: none !important; }
+/* docs.github.com (2019's help.github.com): the system font, square controls, no Copilot column on the start page */
+[class*="Primer_Brand__"], [class*="Primer_Brand__"] *:not(code, pre, code *, pre *), .markdown-body, main h1, main h2, main h3 { font-family: var(--n19-font) !important; }
+[class*="ProductSelectionCard_cell"]:has(a[href$="/copilot"]) { display: none !important; }
+header[class*="SubdomainNavBar"] button, header[class*="SubdomainNavBar"] input { border-radius: 3px !important; }

@@ -27,3 +27,16 @@ globalThis.net19Theme = {};
   };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();
+// The "Find Food" button next to the address field on city, cuisine and near-me pages carries no stable label; it is found
+// by its text and marked for ubereats.css (the landing page's own button has a test id).
+(() => {
+  const mark = () => {
+    for (const el of document.querySelectorAll('main a, main button')) {
+      if (!el.hasAttribute('data-n19-find') && /^\s*Find food\s*$/i.test(el.textContent) && !el.querySelector('img')) el.setAttribute('data-n19-find', '');
+    }
+  };
+  let queued = false;
+  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
+  const start = () => { later(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
+  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+})();

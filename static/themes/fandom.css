@@ -45,3 +45,6 @@ html[data-net19-mode="dark"] { --n19-nav: #002a32; --n19-nav-link: #00d6d6; --n1
 .portable-infobox, .portable-infobox .pi-title, .portable-infobox .pi-image, .page-content .toc, .page-content #toc,
 .page__right-rail .rail-module, .page-content .thumbinner, .page-content .wikia-gallery-item, .page-content img { border-radius: 0 !important; }
 .page__right-rail .rail-module { border: 1px solid var(--n19-page-border) !important; }
+/* The explore rail's Saved and Progress entries (2024-25) did not exist */
+#global-explore-navigation .global-explore-navigation__item:has(> * > :is(.global-explore-navigation__saved-link, .global-explore-navigation__progress-link)),
+#global-explore-navigation :is(.global-explore-navigation__saved-link, .global-explore-navigation__progress-link) { display: none !important; }

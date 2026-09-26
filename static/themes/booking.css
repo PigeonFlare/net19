@@ -49,3 +49,6 @@ li[role="option"]:has(> div > [data-testid="autocomplete-result"] > [data-testid
 
 /* Section titles in the system face */
 main h2 { font-family: var(--n19-font) !important; }
+/* Search results: "Smart filters" (describe what you want to a language model, 2024) goes from the filter column; the
+   plain filters under it stay */
+[data-testid="filters-search-widget"] { display: none !important; }

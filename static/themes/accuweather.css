@@ -24,3 +24,5 @@ html[data-net19-mode="dark"] { --n19-page: #161616; --n19-hero: #1a1a1a; --n19-c
 .page-hero::before, .page-hero::after { background: none !important; }
 .page-hero .page-hero-content { min-height: 0 !important; padding-top: 16px !important; padding-bottom: 20px !important; }
 body.home, .template-root { background: var(--n19-page) !important; }
+/* Not in 2019: the "For Business | Warnings | Data Suite..." strip (2023) and the Premium+ upsell pill (2021) */
+.basic-header .afb-nav-container, .header-upsell, a.upsell-ad[href*="/g-account/offerings"] { display: none !important; }

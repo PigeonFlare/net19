@@ -1,0 +1,114 @@
+/* net19 handmade theme: AP News, 2019. A light-gray (#ececec) masthead with the red AP letters at its left and plain
+   dark section links in normal case; a #f5f5f5 page with white hub cards; headlines in AP's condensed sans at medium
+   weight (not today's heavy caps) in #2c2c2c; 60x8px red bars under hub and section titles; stories set in a serif
+   (FreightText, here Georgia) at 18/27px with #104ba5 links; blue topic tags; a #2c2c2c footer. AP has no dark mode,
+   so a dark device gets the engine's inverted page; the dark tokens are only a fallback. */
+html { --n19-bar: #ececec; --n19-bar-text: #2c2c2c; --n19-red: #ff322e; --n19-text: #2c2c2c; --n19-meta: #787878; --n19-link: #104ba5;
+  --n19-tag: #0a3175; --n19-rule: #d8d8d8; --n19-page: #f5f5f5; --n19-card: #fff; --n19-foot: #2c2c2c;
+  --color-header-bg-theme: var(--n19-bar); --color-header-text-theme: var(--n19-bar-text); --color-footer-bg-theme: var(--n19-foot);
+  --color-hat-bg-theme: var(--n19-bar); --color-hat-text-theme: var(--n19-bar-text); --color-primary-theme: var(--n19-red);
+  --color-button-bg-theme: #104ba5; --color-button-border-theme: #104ba5; --color-category-text-theme: var(--n19-meta);
+  --ap19-cond: 'GoodOT-Cond', APvar, 'Arial Narrow', Arial, sans-serif; --ap19-sans: 'GoodOT', Helvetica, Arial, sans-serif;
+  --ap19-serif: 'FreightText', Georgia, serif; }
+html[data-net19-mode="dark"] { --n19-bar: #262626; --n19-bar-text: #e6e6e6; --n19-red: #ff4a46; --n19-text: #e6e6e6; --n19-meta: #9a9a9a;
+  --n19-link: #7fa8ff; --n19-tag: #9db8ff; --n19-rule: #3a3a3a; --n19-page: #161616; --n19-card: #1e1e1e; --n19-foot: #0e0e0e; }
+
+/* ---- Masthead: a 64px light-gray bar, red AP letters, dark normal-case links, no trending or live strip ---- */
+.Page-header-stickyWrap, .Page-header-stickyWrap .Page-header, .Page-header-bar, .Page-trendingZephr-wrapper { background: var(--n19-bar) !important; }
+.Page-header-bar { box-shadow: none !important; height: 64px !important; }
+.Page-header-stickyWrap { border-bottom: 1px solid var(--n19-rule) !important; }
+.Page-header-bar-logo a { display: block !important; width: 60px !important; height: 44px !important;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='8 46 160 96'%3E%3Cpath fill='%23ff322e' d='M40.49 49.03 10.9 139.64h21.42l20.1-64.05 10.07 32.02H49.46l-5.2 18.28h23.98l4.33 13.75H94.6L65.02 49.03H40.49ZM128.26 49.03H97.51v90.61h21.27V67.3h8.57c9.94 0 15.6 4.85 15.6 13.6 0 8.59-5.66 13.59-15.6 13.59h-1.38v18.28h2.3c22.95 0 36.41-11.8 36.41-31.87 0-20.47-13.46-31.87-36.42-31.87Z'/%3E%3C/svg%3E") left center / contain no-repeat !important; }
+.Page-header-bar-logo a > picture, .Page-header-bar-logo a > img { opacity: 0 !important; }
+.Page-header-bar :is(.MainNavigationItem-text, .MainNavigationItem-text a, .MainNavigationItem-more, .Page-header-menu-trigger, .SearchOverlay-search-button, .Page-header-sign-in, .Page-header-sign-in a) { color: var(--n19-bar-text) !important; }
+.Page-header-bar :is(.MainNavigationItem-text a, .MainNavigationItem-more) { font-family: var(--ap19-sans) !important; font-stretch: 100% !important; font-size: 16px !important;
+  font-weight: 400 !important; text-transform: none !important; letter-spacing: 0 !important; }
+.Page-header-bar :is(.burger-menu, .icon-magnify, .close-x) { color: var(--n19-bar-text) !important; }
+.Page-header-bar :is(.burger-menu, .close-x) { fill: currentColor !important; }
+.Page-header-bar .icon-magnify { fill: none !important; }
+/* The chevrons are drawn in a fixed near-white; darkened to read on the light bar */
+.Page-header-bar :is(.MainNavigationItem-text, .MainNavigationItem-more) svg, .Page-header-bar .burger-menu { filter: brightness(.18) !important; }
+.Page-header-bar .MainNavigationItem-text a:hover, .Page-header-bar .MainNavigationItem-more:hover { text-decoration: underline !important; }
+/* The trending-topics strip with its red LIVE flag is 2023 chrome */
+.Page-header-stickyWrap :is(.Page-trendingZephr-wrapper, .Page-trendingZephr, .Page-header-trending, .PageListTrending), .Page-trendingZephr-trendingBar,
+.Page-header-leaderboardAd { display: none !important; }
+/* Post-2019 entitlements, "Add AP News on Google", sign-in pill and comment counts */
+.Page-trendingZephr-entitlements, #desktop-entitlements, .Page-actions-google-trigger, .Page-actions-commentCounter, .PagePromo-commentCount,
+.CommentCount-template, .PagePromo-readingtime, .PagePromo-byline-live, .PageListTrending-LiveTag, bsp-news-letter, .PageListStandardB-NewsLetter, .ReadingTime-template, .Zephr-bar, .viafoura, .Newsletter-Banner, [class*="Zephr-mod"] { display: none !important; }
+
+/* ---- Page and type ---- */
+body.Page-body { background: var(--n19-page) !important; color: var(--n19-text) !important; }
+.Page-content, .Page-twoColumn, .SectionPage, .StoryPage, .Page-main { background: transparent !important; }
+:is(.PagePromo-title, .PageList-header-title, .Page-headline, .PageListStandardE-items-secondary-title, .VideoPlaylistItemCard-title, .PagePromoTrending) {
+  font-family: var(--ap19-cond) !important; font-stretch: 75% !important; color: var(--n19-text) !important; letter-spacing: 0 !important; text-transform: none !important; }
+.PagePromo-title, .PagePromo-title a, .PagePromo-title span { font-weight: 500 !important; }
+.PagePromo-title a:hover, .PagePromo-title a:hover span { color: var(--n19-link) !important; text-decoration: none !important; }
+.PagePromo-description, .PagePromo-description * { font-family: var(--ap19-serif) !important; font-stretch: 100% !important; font-size: 16px !important; line-height: 24px !important;
+  color: #393939 !important; font-weight: 400 !important; }
+html[data-net19-mode="dark"] .PagePromo-description, html[data-net19-mode="dark"] .PagePromo-description * { color: #bdbdbd !important; }
+.PagePromo-byline, .PagePromo-date, .Timestamp, .PagePromo-byline-container { font-family: var(--ap19-sans) !important; font-stretch: 100% !important; color: #797979 !important;
+  font-size: 12px !important; font-weight: 400 !important; text-transform: none !important; letter-spacing: 0 !important; }
+.PagePromo-media img, .Figure img, .Image { border-radius: 0 !important; }
+
+/* Hub cards: headline lists on white cards between hairlines */
+.PageList-items-item { border-color: #ececec !important; }
+.PageList-header-title { font-family: var(--ap19-sans) !important; font-stretch: 100% !important; font-weight: 700 !important; font-size: 18px !important;
+  line-height: 24px !important; text-transform: uppercase !important; position: relative; padding-top: 14px !important; }
+.PageList-header-title::before { content: ""; position: absolute; left: 0; top: 0; width: 60px; height: 8px; background: var(--n19-red); }
+.PageList-header, .PageList-header-alternativedivider { border: none !important; }
+:is(.PageListStandardE, .PageListRightRailA, .PageListStandardD, .PageListStandardB, .PageListCarouselA, .PageListEnhancementGeneric)[data-module],
+:is(.PageListStandardE, .PageListRightRailA, .PageListStandardD, .PageListStandardB, .PageListCarouselA) { background: var(--n19-card) !important; }
+:is(.PageListStandardE, .PageListRightRailA, .PageListStandardD, .PageListStandardB) { padding: 16px !important; box-sizing: border-box; }
+.PagePromo-media--backgroundSecondary, .PagePromo-media { background: transparent !important; }
+
+/* ---- Story: condensed headline, byline, red bar, serif body ---- */
+.StoryPage-lede, .StoryPage-lede-content { background: transparent !important; color: var(--n19-text) !important; }
+.StoryPage-lede .Page-breadcrumbs a { color: var(--n19-meta) !important; font-family: var(--ap19-sans) !important; font-stretch: 100% !important; font-weight: 400 !important;
+  text-transform: uppercase !important; font-size: 12px !important; }
+h1.Page-headline { font-size: 50px !important; line-height: 56px !important; font-weight: 500 !important; }
+.Page-byline, .Page-authors, .Page-authors * { font-family: var(--ap19-sans) !important; font-stretch: 100% !important; color: var(--n19-text) !important; font-weight: 400 !important;
+  font-size: 16px !important; text-transform: uppercase; }
+.Page-authors { text-transform: none; }
+.Page-authors a { text-transform: uppercase !important; }
+.Page-dateModified, .Page-dateModified * { font-family: var(--ap19-sans) !important; font-stretch: 100% !important; color: #797979 !important; font-size: 16px !important; font-weight: 400 !important; }
+.StoryPage-actions-wrapper { position: relative; padding-bottom: 24px !important; border-bottom: 1px solid var(--n19-rule) !important; margin-bottom: 8px !important; }
+.StoryPage-actions-wrapper::after { content: ""; position: absolute; left: 0; bottom: -4px; width: 60px; height: 8px; background: var(--n19-red); }
+.Page-actions-trigger { background: transparent !important; border: 1px solid var(--n19-rule) !important; border-radius: 0 !important; color: var(--n19-link) !important;
+  font-family: var(--ap19-sans) !important; font-stretch: 100% !important; font-weight: 400 !important; text-transform: none !important; }
+.Page-actions-trigger svg { fill: currentColor !important; }
+.RichTextStoryBody, .RichTextStoryBody > p, .RichTextBody > p { font-family: var(--ap19-serif) !important; font-stretch: 100% !important; font-size: 18px !important;
+  line-height: 27px !important; font-weight: 400 !important; color: var(--n19-text) !important; }
+.RichTextStoryBody > p { margin: 12px 0 !important; }
+.RichTextBody a, .RichTextBody a:visited { color: var(--n19-link) !important; text-decoration: none !important; border-bottom: none !important; background-image: none !important; }
+.RichTextBody a:hover { text-decoration: underline !important; }
+.RichTextStoryBody h2, .RichTextStoryBody h3 { font-family: var(--ap19-sans) !important; font-stretch: 100% !important; font-weight: 700 !important; color: var(--n19-text) !important; }
+.Figure-caption, .Figure-caption * { font-family: var(--ap19-sans) !important; font-stretch: 100% !important; color: var(--n19-meta) !important; font-size: 14px !important; font-weight: 400 !important; }
+.Infobox { background: var(--n19-card) !important; border: none !important; }
+.Page-main .Page-lead, .Page-storyBody { background: transparent !important; }
+.Page-storyBody { background: var(--n19-card) !important; padding-top: 24px !important; }
+
+/* ---- Section (hub) pages: a big uppercase title over the red bar and a gray rule, no dark band ---- */
+.Page-pageLead { background: transparent !important; background-image: none !important; color: var(--n19-text) !important; border-bottom: 1px solid #b4b4b4 !important;
+  max-width: 1200px; margin: 0 auto 24px !important; padding: 24px 0 8px !important; }
+.Page-pageLead::before, .Page-pageLead::after { display: none !important; }
+.Page-pageLead .PageList-header { padding: 0 !important; margin: 0 0 12px !important; border: none !important; }
+.Page-pageLead .PageList-header::before, .Page-pageLead .PageList-header::after { display: none !important; }
+.Page-pageLead h1.PageList-header-title { font-family: var(--ap19-sans) !important; font-stretch: 100% !important; font-weight: 700 !important; font-size: 48px !important;
+  line-height: 56px !important; color: var(--n19-text) !important; text-transform: uppercase !important; padding: 0 0 16px !important; }
+.Page-pageLead h1.PageList-header-title::before { top: auto; bottom: 0; }
+.SectionNavigation, .SectionNavigation-items, .SectionPage-sectionNavigation { background: transparent !important; }
+.SectionNavigationItem-text, .SectionNavigationItem-text a { color: var(--n19-tag) !important; font-family: var(--ap19-sans) !important; font-stretch: 100% !important;
+  font-weight: 400 !important; text-transform: none !important; font-size: 15px !important; }
+
+/* ---- Footer: #2c2c2c with light type ---- */
+.Page-footer, .Page-footer-container { background: var(--n19-foot) !important; color: #fff !important; }
+.Page-footer :is(a, .FooterNavigationItem-text) { color: #fff !important; font-family: var(--ap19-sans) !important; font-stretch: 100% !important; font-weight: 300 !important; }
+/* App-store badges in the footer are a later promotion */
+.Page-footer a:is([href*="play.google.com"], [href*="apps.apple.com"]) { display: none !important; }
+/* Search: the overlay drops from the light bar; square fields and a plain hover */
+.SearchOverlay-search-button:hover svg { background-color: rgba(0, 0, 0, .08) !important; }
+.SearchOverlay-search-input, .SearchResultsModule-formInput { border-radius: 0 !important; font-family: var(--ap19-sans) !important; font-stretch: 100% !important; }
+.SearchResultsModule-count-mobile, .SearchResultsModuleBasic-results-header { font-family: var(--ap19-sans) !important; font-stretch: 100% !important; color: var(--n19-meta) !important; }
+.SearchResultsModule-filters-apply button, .VideoPlaylistModule-playlistToggle, .VideoPlaylistModule-playlistNavigation button { border-radius: 0 !important; }
+/* Video pages keep their dark player band; titles in the 2019 condensed type */
+.VideoLead-videoTitle, .VideoPlaylistModule-title { font-family: var(--ap19-cond) !important; font-stretch: 75% !important; font-weight: 500 !important; text-transform: none !important; }

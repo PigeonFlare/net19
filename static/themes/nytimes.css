@@ -1,8 +1,9 @@
 /* net19 handmade theme: The New York Times, 2019: the centered 430px blackletter logo under a small "English · Español ·
    中文" edition line; a slate-blue #6288a5 "LOG IN" button with a darker border; a flat row of 12px Franklin section
    links (no drop-down arrows) between a pale hairline and a single black rule; story columns without the later
-   "free to read" frame, reading-time labels, or cross-product tabs (Games, Cooking, Wirecutter, The Athletic). The
-   site has no dark mode, so palette.js inverts it on dark devices. */
+   "free to read" frame, reading-time labels, or cross-product tabs (Games, Cooking, Wirecutter, The Athletic); articles with a 40px Cheltenham bold
+   headline in a 600px column over 20px/30px Imperial body copy, no "Listen" bar or gift button. The site has no dark
+   mode, so palette.js inverts it on dark devices. */
 html { --n19-text: #121212; --n19-text-2: #333; --n19-muted: #666; --n19-rule: #000; --n19-hair: #ebebeb; --n19-hover: #f7f7f7;
   --n19-login: #6288a5; --n19-login-border: #326891; --n19-login-hover: #326891; }
 html[data-net19-mode="dark"] { --n19-text: #e8e8e8; --n19-text-2: #ccc; --n19-muted: #999; --n19-rule: #e8e8e8; --n19-hair: #333; --n19-hover: #222;
@@ -45,3 +46,18 @@ nav[aria-label="Main"] li:is([data-navid="Games"], [data-navid="Cooking"], [data
 [data-is-always-free] > .U5yBoa_fdrPackageHeader, [data-is-always-free] > div:first-child:has(> p > strong) { display: none !important; }
 [data-net19-hidden] { display: none !important; }
 section[data-testid="block-Briefings"] { display: none !important; }
+
+/* ---- Article pages, 2019 (captured June 2019): a 40px/48px Cheltenham bold headline in a 600px column, 20px/30px
+   Imperial body copy, the byline in 15px bold Franklin #333 and the date in gray Franklin; no "Listen" audio bar, no
+   gift ("Share full article") button, no "Read in app" prompts. ---- */
+article#story h1[data-testid="headline"] { font-family: nyt-cheltenham, georgia, "times new roman", times, serif !important; font-weight: 700 !important; font-style: italic !important;
+  font-size: 40px !important; line-height: 48px !important; color: var(--n19-text) !important; letter-spacing: 0 !important; max-width: 600px !important; margin-left: auto !important; margin-right: auto !important; }
+article#story #article-summary { font-family: nyt-imperial, georgia, serif !important; font-size: 20px !important; line-height: 30px !important; color: var(--n19-text-2) !important; max-width: 600px !important; margin-left: auto !important; margin-right: auto !important; }
+article#story [data-testid="byline"], article#story .last-byline, article#story [itemprop="author"] { font-family: nyt-franklin, helvetica, arial, sans-serif !important; font-size: 15px !important; font-weight: 700 !important; color: var(--n19-text-2) !important; letter-spacing: .02em !important; }
+article#story header time, article#story [data-testid="todays-date"] { font-family: nyt-franklin, helvetica, arial, sans-serif !important; font-size: 13px !important; color: var(--n19-muted) !important; }
+article#story section[name="articleBody"] p { font-family: nyt-imperial, georgia, "times new roman", times, serif !important; font-size: 20px !important; line-height: 30px !important; color: var(--n19-text-2) !important; }
+article#story section[name="articleBody"] p a { color: #326891 !important; text-decoration: underline !important; }
+article#story figcaption, article#story figcaption * { font-family: nyt-imperial, georgia, serif !important; font-size: 15px !important; line-height: 21px !important; color: var(--n19-muted) !important; }
+[data-testid="audio-player"], [data-testid*="listen" i], [class*="AudioPlayer"], button[aria-label^="Listen to"], [data-testid="share-tools"] button[aria-label*="gift" i] { display: none !important; }
+/* The 2023+ top bar above the masthead (Games, Cooking, Wirecutter, The Athletic tabs) and "Play" promos */
+[data-testid="masthead-cross-product-nav"], [data-testid*="cross-product" i], section[data-testid*="games" i], [data-testid="games-promo"], [data-block-tracking-id*="Games"] { display: none !important; }

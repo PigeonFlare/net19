@@ -27,5 +27,16 @@ main#main-content-wrapper > header .rounded-4xl.bg-white:not(:has(> button)) { d
 /* The band runs the full width: under the rail's logo and across the gutter beside it, so the logo sits on the band as in 2019 */
 main#main-content-wrapper > header { margin-left: -32px !important; width: calc(100% + 32px) !important; }
 main#main-content-wrapper > header > div { padding-left: 32px !important; }
-div.z-nav > nav { background: linear-gradient(var(--n19-band) 72px, transparent 72px) !important; }
-div.z-nav > nav > div:first-child { height: 72px !important; margin-bottom: 0 !important; }
+/* (only on pages that have the band: news, article and other pages without it keep a plain rail, so the logo does not sit in a lone blue box) */
+html:has(main#main-content-wrapper > header) div.z-nav > nav { background: linear-gradient(var(--n19-band) 72px, transparent 72px) !important; }
+html:has(main#main-content-wrapper > header) div.z-nav > nav > div:first-child { height: 72px !important; margin-bottom: 0 !important; }
+/* Cards drawn over a picture (the current-conditions card's sky, video and story cards) keep it in a pointer-events:none
+   layer that the readability check cannot see; a transparent gradient marks the card as "over a picture" so its white
+   type is not inked dark. */
+section:has(> .pointer-events-none.absolute.inset-0) { background-image: linear-gradient(transparent, transparent) !important; }
+/* The older app pages (sign-in, account, some news pages) use their own header and left rail: the same blue band with
+   a square white search field, and no "Upgrade to Premium" button in the rail */
+header[class*="MainMenuHeader--MainMenuHeader"] { background: var(--n19-band) !important; border-bottom: 0 !important; }
+header[class*="MainMenuHeader--MainMenuHeader"] [class*="MainMenuHeader--wrapperRight"] :is(span, button, svg):not(.searchWrapper *) { color: var(--n19-band-text) !important; fill: currentColor; }
+header[class*="MainMenuHeader--MainMenuHeader"] [class*="SearchInput--SearchInput"], header[class*="MainMenuHeader--MainMenuHeader"] input[id$="LocationSearch_input"] { border-radius: 2px !important; background: #fff !important; }
+a[class*="PremiumButton--link"][href^="/subscribe"] { display: none !important; }

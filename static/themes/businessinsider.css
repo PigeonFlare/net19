@@ -1,0 +1,88 @@
+/* net19 handmade theme: Business Insider, 2019: a slim white header with the small two-line "BUSINESS INSIDER"
+   wordmark in teal-navy (#185f7d) at the left and tiny uppercase letter-spaced section links (TECH · FINANCE ·
+   POLITICS …); a white river of bold Helvetica-style headlines (#111) with 14px gray summaries and teal-blue
+   (#1d607c) links; small letter-spaced teal caps for kickers ("WHAT'S HAPPENING"); article pages with a 43px bold
+   headline over a hairline rule, "Name  time" bylines, round outline share buttons and 18px body text. No read/watch/
+   listen modes, no gift or save buttons, no AI search. BI has no dark mode, so a dark device gets the engine's
+   inverted page; the dark tokens are only a fallback. */
+html { --n19-page: #fff; --n19-text: #111; --n19-body: #111; --n19-meta: #848f91; --n19-rule: #d8d8d8; --n19-brand: #185f7d; --n19-link: #1d607c;
+  --n19-font: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+html[data-net19-mode="dark"] { --n19-page: #121212; --n19-text: #f2f2f2; --n19-body: #ddd; --n19-meta: #9aa3a5; --n19-rule: #3a3a3a; --n19-brand: #5aa6c7; --n19-link: #5aa6c7; }
+
+/* 2019 type: one Helvetica family, bold headlines, no display grotesque */
+html body :is(h1, h2, h3, h4, p, a, span, li, button, input, figcaption, time, label, div)[class] { font-family: var(--n19-font) !important; }
+html body :is(.headline-medium, .headline-semibold, .headline-regular, .heading-xl, .heading-sm, .heading-xs, .display-lg, .display-sm, .display-xs, .label-lg-strong, .label-md-strong, .label-sm-strong, .body-xs-strong, [class*="font-weight-garnett"]) {
+  font-family: var(--n19-font) !important; letter-spacing: 0 !important; }
+
+/* ---- Masthead: white, slim; small teal wordmark; tiny spaced caps for sections ---- */
+header.masthead { background: var(--n19-page) !important; border-bottom: 1px solid #edeeef !important; box-shadow: none !important; }
+header.masthead .main-section { min-height: 0 !important; padding-top: 8px !important; padding-bottom: 8px !important; }
+header.masthead .logo-link svg, header.masthead svg.logo-inline { color: var(--n19-brand) !important; fill: var(--n19-brand) !important; }
+header.masthead .logo-link svg *, header.masthead svg.logo-inline * { fill: var(--n19-brand) !important; }
+header.homepage-masthead .logo-link { width: 330px !important; height: 30px !important; }
+header.homepage-masthead .logo-link svg { width: 330px !important; height: 30px !important; }
+header.masthead:not(.homepage-masthead) .logo-link svg { height: 22px !important; width: auto !important; }
+header.masthead .masthead-date, header.masthead .masthead-date span { white-space: nowrap !important; font: 400 11px/1.4 var(--n19-font) !important; letter-spacing: .1em !important; text-transform: uppercase !important; color: var(--n19-meta) !important; }
+.masthead-subnav .subnav-item-link, .subnav .subnav-item-link { font: 400 11px/44px var(--n19-font) !important; letter-spacing: .2em !important; text-transform: uppercase !important; color: #111 !important; }
+.masthead-subnav .subnav-item-link:hover { color: var(--n19-link) !important; }
+.masthead-subnav .subnav-item::before, .masthead-subnav .subnav-item::after, .masthead-subnav .subnav-item + .subnav-item { border-color: var(--n19-rule) !important; }
+/* sections that joined after 2019 */
+.masthead-subnav .subnav-item:has(> a[href*="/level-up"]), .masthead-subnav .subnav-item:has(> a[href*="/games"]), .masthead-subnav .subnav-item:has(> a[href*="/community"]) { display: none !important; }
+header.masthead :is(.masthead-icon-button, .menu-button, .account-btn button) svg { color: var(--n19-meta) !important; fill: var(--n19-meta) !important; }
+/* the Read / Watch / Listen modes switch and its tour (2025) */
+header.masthead .modes-section, .immersive-modes-container, .immersive-modes-onboarding-launcher, .modes-section-sentinel { display: none !important; }
+/* sticky account prompts and the app promotion */
+.app-cta-wrapper { display: none !important; }
+
+/* ---- Touts (river, sections, rails) ---- */
+.tout-title, .tout-title-link { font: 700 20px/1.25 var(--n19-font) !important; letter-spacing: 0 !important; color: var(--n19-text) !important; }
+.tout.as-vertical .tout-title, .tout.as-vertical .tout-title-link { font-size: 17px !important; }
+.tout-title-link:hover { color: var(--n19-link) !important; text-decoration: none !important; }
+.tout-text, .tout-text p, .tout .tout-summary { font: 400 14px/1.45 var(--n19-font) !important; color: var(--n19-text) !important; }
+.tout-tag, .tout-tag-link, .tout-top .label-sm, .tout .caps { font: 400 11px/1.4 var(--n19-font) !important; letter-spacing: .15em !important; text-transform: uppercase !important; color: var(--n19-link) !important; background: transparent !important; }
+.tout-image img, .tout img, .lazy-holder, .lazy-image { border-radius: 0 !important; }
+/* read times and "EXCLUSIVE" pills are 2020s; kickers stay as teal caps */
+.tout-read-time { display: none !important; }
+:is(.tout, .post-top) :is([class*="exclusive" i], .tout-label, [class*="label-tag"], [class*="badge"]) { background: transparent !important; color: var(--n19-link) !important; border-radius: 0 !important; padding: 0 !important;
+  font: 400 11px/1.4 var(--n19-font) !important; letter-spacing: .15em !important; text-transform: uppercase !important; }
+/* section headings: teal letter-spaced caps over a hairline */
+.section-heading, .tout-layout-heading, .links-list-heading, .vertical-section .heading, h2.header, h3.header { font: 400 13px/1.4 var(--n19-font) !important; letter-spacing: .2em !important; text-transform: uppercase !important;
+  color: var(--n19-link) !important; border-bottom: 1px solid var(--n19-rule) !important; padding-bottom: 10px !important; }
+.section-heading::after, [class*="section-title"]::after { display: none !important; }
+/* filter pills over the latest feed: square outline tabs */
+.filter-button, .js-filter { border-radius: 0 !important; }
+
+/* ---- Article ---- */
+.post-top .breadcrumb, .post-overline a { font: 400 11px/1.4 var(--n19-font) !important; letter-spacing: .2em !important; text-transform: uppercase !important; color: var(--n19-link) !important; }
+.post-headline h1.headline, h1.headline.heading-xl { font: 700 43px/1.22 var(--n19-font) !important; letter-spacing: 0 !important; color: var(--n19-text) !important;
+  padding-bottom: 17px !important; border-bottom: 1px solid var(--n19-rule) !important; margin-bottom: 6px !important; }
+.post-byline, .post-byline :is(span, a) { font: 400 14px/1.4 var(--n19-font) !important; color: var(--n19-text) !important; letter-spacing: -.3px !important; }
+.post-byline .byline-author-text, .post-byline .byline-author a { font-weight: 400 !important; }
+.post-details .timestamp, time.timestamp { font: 400 14px/1.4 var(--n19-font) !important; color: var(--n19-meta) !important; }
+.image-caption, .image-caption-text, .image-source-text { font: 400 14px/1.45 var(--n19-font) !important; color: var(--n19-text) !important; background: transparent !important; }
+.post-body-content > p, .post-story-body-content > p { font: 400 18px/1.8 var(--n19-font) !important; color: var(--n19-body) !important; }
+.post-body-content a, .post-story-body-content a { color: var(--n19-link) !important; text-decoration: none !important; }
+.post-body-content :is(h2, h3) { font-weight: 700 !important; color: var(--n19-text) !important; }
+.post-body-content ul li, .post-body-content ol li { font: 400 18px/1.6 var(--n19-font) !important; }
+/* share tools: the 2019 row of round outline buttons; gift, save and listen are 2023-24 */
+.share-bar :is(button, [role="button"]) { border: 1px solid var(--n19-meta) !important; border-radius: 50% !important; width: 30px !important; height: 30px !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; }
+.share-bar .gift-article-callout-target, .share-bar .save-article, .audio-player-share, .gift-article { display: none !important; }
+.figure.as-notched, .figure.as-notched * { border-radius: 0 !important; clip-path: none !important; }
+
+/* ---- Buttons and fields: square ---- */
+body :is(.subscribe-link, .newsletter-link, .btn, .button)[class] { border-radius: 0 !important; }
+/* the AI sparkle on the search icon (2024) */
+.search-sparkle-path, .sparkle-filled-icon { display: none !important; }
+/* story labels ("Exclusive"): plain teal caps, no blue pill */
+:is(.tout, .post-top, section) span.label:has(> .label-text) { background: transparent !important; color: var(--n19-link) !important; border-radius: 0 !important; padding: 0 !important; }
+span.label > .label-text { font: 400 11px/1.4 var(--n19-font) !important; letter-spacing: .15em !important; text-transform: uppercase !important; color: var(--n19-link) !important; }
+/* section fronts: the name plain bold, its underline in the 2019 teal instead of the 2020s electric blue */
+.vertical-subnav .current-vertical { font: 700 30px/1.2 var(--n19-font) !important; color: var(--n19-text) !important; }
+.vertical-subnav .current-vertical::after, .vertical-subnav .current-vertical::before { background: var(--n19-brand) !important; border-color: var(--n19-brand) !important; }
+.vertical-subnav .subnav-item-link { font: 400 11px/44px var(--n19-font) !important; letter-spacing: .15em !important; text-transform: uppercase !important; color: #111 !important; }
+/* the trending strip under the masthead: plain links */
+.trending-bar a { font: 400 12px/1.4 var(--n19-font) !important; color: #111 !important; }
+/* the "AI generated" summary at the top of search results (2024) */
+.answers-search .js-summary-section, .answers-search .results-section:has(.content-disclaimer) { display: none !important; }
+.answers-search input.js-search-input { border-radius: 0 !important; border-color: var(--n19-rule) !important; }
+.answers-search [class*="trending"] a, .answers-search [class*="trending"] button { border-radius: 0 !important; }

@@ -1,0 +1,95 @@
+/* net19 handmade theme: HuffPost, 2019. A black 78px masthead with the green (#0dbe98) italic HUFFPOST wordmark in the
+   middle and a black band of white condensed section names; a white page; the "splash" lead set in huge black
+   ProximaNova Condensed Extrabold capitals; ProximaNova Condensed Bold card headlines in black under small spaced gray
+   labels; zone titles in italic caps under a 4px green rule; story pages with a 52px condensed headline, a 20px gray dek,
+   a bold byline and ProximaNova 18px body copy. HuffPost has no dark mode, so a dark device gets the engine's inverted
+   page; the dark tokens are only a fallback. */
+html { --n19-bar: #000; --n19-bar-text: #fff; --n19-green: #0dbe98; --n19-text: #000; --n19-sub: #313131; --n19-label: #444; --n19-meta: #757575;
+  --n19-rule: #dbdbdb; --n19-page: #fff; --n19-link: #2469a8;
+  --hp19-cond: "ProximaNovaCond", "ProximaNovaCondFallback", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  --hp19-sans: "ProximaNova", "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif; }
+html[data-net19-mode="dark"] { --n19-bar: #000; --n19-bar-text: #fff; --n19-green: #0dbe98; --n19-text: #eee; --n19-sub: #ccc; --n19-label: #bbb; --n19-meta: #999;
+  --n19-rule: #333; --n19-page: #121212; --n19-link: #7fb0e0; }
+
+/* ---- Masthead: black bar, green wordmark, black section band ---- */
+#masthead .nav__header, .nav__header, .subnav-container, nav#nav.subnav, .subnav, .nav-sticky { background: var(--n19-bar) !important; }
+/* The leaderboard slot above the masthead sits on the page, not on a green band */
+.desktop-nav, .desktop-sticky-nav, .top-ad-recirc, .zone--ad-recirc { background: transparent !important; }
+#masthead { position: relative !important; z-index: 3 !important; }
+#masthead .nav__header { height: 78px !important; min-height: 0 !important; border: none !important; background: var(--n19-bar) !important; }
+#masthead .nav__content { height: 78px !important; align-items: center !important; }
+#masthead :is(.hamburger-btn, .search-icon) svg { color: var(--n19-bar-text) !important; }
+#masthead .nav__right__container :is(a, span, button, .nav__right__profile) { color: var(--n19-bar-text) !important; font-family: var(--hp19-sans) !important; font-weight: 700 !important; }
+/* The notification bell, the anniversary pill, the "Power our journalism" ask and the AI sparkle on the search glass came later */
+.notification-center, .nav__history-button, .support-button, .nav__support-dek, .search-icon__sparkle, .alert-banner__container:empty { display: none !important; }
+/* The wordmark sits in the middle of the 78px bar, above the section band */
+.subnav-container { position: relative !important; z-index: 4 !important; }
+.subnav__main-logo__container { height: 0 !important; min-height: 0 !important; margin: 0 !important; padding: 0 !important; position: relative !important; overflow: visible !important; background: transparent !important; }
+.subnav__main-logo { position: absolute !important; left: 50% !important; top: -58px !important; transform: translateX(-50%) !important; height: 38px !important; display: flex !important; align-items: center !important; }
+.subnav__main-logo h1, .subnav__main-logo .front-title { height: auto !important; margin: 0 !important; padding: 0 !important; }
+svg.subnav__main-logo__svg { height: 34px !important; width: auto !important; max-width: 260px !important; margin: 0 !important; display: block !important; }
+svg.subnav__main-logo__svg, svg.subnav__main-logo__svg * { fill: var(--n19-green) !important; color: var(--n19-green) !important; }
+nav#nav.subnav { height: 36px !important; min-height: 0 !important; border-top: 1px solid #242424 !important; border-bottom: none !important; }
+.subnav__content { height: 36px !important; }
+.subnav__item { font-family: var(--hp19-cond) !important; font-weight: 700 !important; font-size: 13px !important; letter-spacing: 1.4px !important; text-transform: uppercase !important;
+  color: var(--n19-bar-text) !important; }
+.subnav__item:hover, .subnav__item--current { color: var(--n19-green) !important; text-decoration: none !important; }
+/* The left menu: a white panel with black type, as in 2019, instead of the green drawer */
+.left-nav { background: #fff !important; }
+.left-nav :is(.left-nav__menu__item, .left-nav__editions-menu__toggle, .left-nav__footer__link, .left-nav__copyright) { color: #000 !important; }
+.left-nav .left-nav__menu__item--heading .left-nav__menu__item { font-family: var(--hp19-cond) !important; font-weight: 800 !important; text-transform: uppercase !important; letter-spacing: 1px !important; }
+.left-nav .left-nav__close svg, .left-nav .left-nav__close svg * { fill: #000 !important; stroke: #000; }
+
+/* ---- Front page: splash and cards ---- */
+.splash__headline, .splash__headline__link, .splash__headline--primary-headline, .splash__headline--headline {
+  font-family: var(--hp19-cond) !important; font-weight: 800 !important; font-style: normal !important; text-transform: uppercase !important; color: var(--n19-text) !important;
+  letter-spacing: 0 !important; text-shadow: none !important; }
+.splash__headline--primary-headline, .splash .splash__headline:first-of-type { font-size: 88px !important; line-height: .92 !important; }
+.splash__headline-image { display: none !important; }
+.card__headline, .card__headline__text, .card__headline a { font-family: var(--hp19-cond) !important; font-weight: 700 !important; font-style: normal !important;
+  color: var(--n19-text) !important; letter-spacing: 0 !important; text-transform: none !important; }
+.card--small .card__headline, .card--small .card__headline__text { font-size: 18px !important; line-height: 20px !important; }
+.card--medium .card__headline, .card--medium .card__headline__text { font-size: 24px !important; line-height: 26px !important; }
+.card--big .card__headline, .card--big .card__headline__text { font-size: 32px !important; line-height: 34px !important; }
+.card__headline:hover .card__headline__text { text-decoration: underline !important; }
+.card__label, .card__label__text, .card__text__top, .card__text__top a { font-family: var(--hp19-cond) !important; font-weight: 700 !important; font-size: 13px !important;
+  letter-spacing: 1.4px !important; text-transform: uppercase !important; color: var(--n19-label) !important; }
+.card__byline, .card__byline *, .author-list--card { font-family: var(--hp19-sans) !important; color: var(--n19-meta) !important; font-size: 12px !important; }
+.card__image, .card__image__src, .img-sized__img { border-radius: 0 !important; }
+.zone__title__container { border-top: 4px solid var(--n19-green) !important; padding-top: 12px !important; background: transparent !important; border-bottom: none !important; }
+.zone__title { border: none !important; background: transparent !important; }
+.zone__title::before, .zone__title::after, .zone__title__container::before, .zone__title__container::after { display: none !important; }
+.zone__title, .zone__title *, .zone__title__text { font-family: var(--hp19-cond) !important; font-weight: 800 !important; font-style: italic !important; text-transform: uppercase !important;
+  letter-spacing: 1px !important; color: var(--n19-text) !important; font-size: 19px !important; }
+.see-more__button { background: #000 !important; color: #fff !important; border-radius: 0 !important; font-family: var(--hp19-cond) !important; font-weight: 700 !important;
+  text-transform: uppercase !important; letter-spacing: 1px !important; }
+/* Themed zones were drawn on colored bands in the 2020s; 2019 kept them on white */
+.zone--theme-news, .zone--theme-life, .zone--theme-shopping, .zone--theme-voices, .zone--featured, .zone--daily-checklist,
+.zone--layout-topic-splash, .top-zones, body:not(.front-page) .top-container, .apage-flex-container-top, .a-page__top-content-container { background: transparent !important; background-image: none !important; }
+:is(.apage-flex-container-top, .a-page__top-content-container) :is(h1, h2, .card__headline, .card__headline__text, .card__description, .zone__title, .zone__title *) { color: var(--n19-text) !important; }
+.zone--layout-topic-splash :is(.card__headline, .card__headline__text, .card__description, .card__byline, .card__byline *) { color: var(--n19-text) !important; }
+
+/* ---- Story pages ---- */
+.entry-head-container { background: var(--n19-page) !important; }
+.entry__header h1.headline, .top-header h1.headline { font-family: var(--hp19-cond) !important; font-weight: 800 !important; font-size: 52px !important; line-height: 52px !important;
+  letter-spacing: .5px !important; color: var(--n19-text) !important; text-transform: none !important; font-style: normal !important; }
+.entry__header .dek, .entry__header .dek p { font-family: var(--hp19-sans) !important; font-size: 20px !important; line-height: 24px !important; color: var(--n19-sub) !important; }
+.entry__byline__author, .entry__byline__author a, .entry__byline__author span { font-family: var(--hp19-sans) !important; font-weight: 700 !important; color: var(--n19-text) !important;
+  font-size: 14px !important; letter-spacing: .5px !important; }
+.entry__header .timestamp, .entry__header .timestamp * { font-family: var(--hp19-sans) !important; font-size: 13px !important; color: var(--n19-meta) !important; }
+.entry__content-list .cli-text p, .entry__content-list .primary-cli p { font-family: var(--hp19-sans) !important; font-size: 18px !important; line-height: 28px !important; color: var(--n19-text) !important; }
+.entry__content-list .cli-text p a { color: var(--n19-link) !important; text-decoration: none !important; border-bottom: 1px solid currentColor !important; }
+.entry__content-list .cli-text h3, .entry__content-list .cli-text h2 { font-family: var(--hp19-cond) !important; color: #444 !important; font-weight: 800 !important; }
+.entry__tag, .entry__tags a { font-family: var(--hp19-cond) !important; text-transform: uppercase !important; letter-spacing: 1px !important; border-radius: 0 !important; }
+/* Share tools: square black icon buttons; comments (closed in 2018) and bookmarks (2020s) are hidden */
+.social-buttons__icons__item--comments, .social-buttons__icons__item--spotim-commenting, .social-buttons__icons__item--bookmark, .comments__container, #comments-button { display: none !important; }
+.share-bar .social-buttons__icons__item__svg-wrapper { background: #000 !important; border-radius: 0 !important; border: none !important; }
+.share-bar .social-buttons__icons__item__svg-wrapper svg, .share-bar .social-buttons__icons__item__svg-wrapper svg * { fill: #fff !important; color: #fff !important; }
+/* The "Save the news" membership banner, campaign toasters and the back-to-home pill are post-2019 */
+.big-banner, [class*="big-banner__"], #campaign-toaster, .front-support-huffpost-loading, .back-to-home__container, .entry__right-rail .catch-up__loading { display: none !important; }
+
+/* ---- Footer ---- */
+.site-footer, .site-footer__wrapper { background: #000 !important; }
+.site-footer :is(a, .site-footer__link, .site-footer__corp-link, .site-footer__branding, .site-footer__branding *) { color: #fff !important; }
+.site-footer__logo__svg, .site-footer__logo__svg * { fill: var(--n19-green) !important; }
+[data-net19-live] { display: none !important; }

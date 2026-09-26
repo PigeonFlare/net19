@@ -13,5 +13,12 @@ div:has(> input[data-testid="location-typeahead-input"]), div:has(> div > input[
    which would otherwise read the page color behind them and re-ink the black type. */
 main > div:has(h1):has(input[id^="location-typeahead-home"]) { background-image: linear-gradient(transparent, transparent) !important; }
 body:has(main input[id^="location-typeahead-home"]) [data-testid="header-v2-wrapper"] { background-image: linear-gradient(transparent, transparent) !important; }
-/* The Uber One subscription (2021) and its "$0 Delivery Fee" banner did not exist in 2019 */
-div:has(> a[href^="/uber-one"]), a[href^="/uber-one"] { display: none !important; }
+/* The Uber One subscription (2021) and its "$0 Delivery Fee" banner did not exist in 2019 (the banner is the link's own
+   wrapper; a menu or list that merely includes an Uber One entry keeps its other entries) */
+div:has(> a[href^="/uber-one"]:only-child), a[href^="/uber-one"] { display: none !important; }
+/* Every page: the header's Log in / Sign up and Delivery/Pickup controls were square, not pills; the "Find Food" button of
+   the city, cuisine and near-me pages is the same green square button as the landing page's (marked by ubereats.js) */
+[data-testid="header-v2-wrapper"] :is(a, button, [role="radiogroup"], [role="radio"], [role="tab"]):not(:has(img)) { border-radius: 0 !important; }
+[data-n19-find] { background: var(--n19-green) !important; color: #fff !important; border-radius: 0 !important; }
+[data-n19-find]:hover { background: var(--n19-green-hover) !important; }
+main :is(a, button)[class]:not(:has(img)):is([data-baseweb="button"], [data-baseweb="tab"]) { border-radius: 0 !important; }

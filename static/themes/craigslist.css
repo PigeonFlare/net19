@@ -7,3 +7,17 @@ body, button, input, select, textarea { font-family: Arial, Helvetica, sans-seri
 .cl-goto-home > .icon { display: none !important; }
 .cl-link-table .heading .emoji { display: none !important; }
 .cl-link-table .heading { background: var(--n19-ban) !important; border-top: 1px solid var(--n19-ban-edge) !important; border-bottom: 1px solid var(--n19-ban-edge) !important; font-weight: 700 !important; }
+/* Search results in list view: 2019's one-line rows: date, title link, price, (neighborhood), "pic", hide. The 2022 app
+   stacks the location over the title and gives relative times ("7m ago"); craigslist.js writes the 2019 "Sep 26" date back. */
+.cl-search-result.cl-search-view-mode-list { font-size: 15px !important; }
+.cl-search-view-mode-list .result-node { align-items: baseline !important; }
+.cl-search-view-mode-list .result-data { display: flex !important; flex-wrap: wrap !important; align-items: baseline !important; column-gap: 6px !important; row-gap: 0 !important; }
+.cl-search-view-mode-list .result-data > p, .cl-search-view-mode-list .result-data > .meta { display: contents !important; }
+.cl-search-view-mode-list .result-data .meta > span[title] { order: 1 !important; color: #888 !important; font-size: 13px !important; white-space: nowrap !important; }
+.cl-search-view-mode-list .result-data .posting-title { order: 2 !important; }
+.cl-search-view-mode-list .result-data .posting-title .label { color: var(--n19-link) !important; }
+.cl-search-view-mode-list .result-data .priceinfo { order: 3 !important; font-size: 13px !important; }
+.cl-search-view-mode-list .result-data .result-location { order: 4 !important; font-size: 13px !important; color: #555 !important; }
+.cl-search-view-mode-list .result-data .pic-button { order: 5 !important; font-size: 11px !important; color: #999 !important; }
+.cl-search-view-mode-list .result-data .cl-banish-button { order: 6 !important; font-size: 11px !important; }
+.cl-search-view-mode-list .result-data .separator { display: none !important; }

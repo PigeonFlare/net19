@@ -1,6 +1,7 @@
 // net19 handmade theme: Walmart. The site has a single (light) design; the default background-luminance detection
-// keeps it light. The palette map moves today's action blue (#0053e2 and its pressed navy) back to 2019's #0071ce.
+// keeps it light. `later` names Sparky (the 2024 AI assistant) for guard.js. The palette map moves today's action blue (#0053e2 and its pressed navy) back to 2019's #0071ce.
 globalThis.net19Theme = {
+  later: /^(?:ask sparky|sparky|chat with sparky|try sparky|meet sparky)$/i,
   light: { '#0053e2': '#0071ce', '#002e99': '#004c91' },
   dark: { '#0053e2': '#0071ce', '#002e99': '#004c91' },
 };
@@ -38,4 +39,15 @@ globalThis.net19Theme = {
     new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-flip'] });
   };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+})();
+// Social-proof badges ("100+ bought since yesterday", 2023) did not exist; the same badge component also carries 2019's
+// "Rollback" and "Best seller" flags, so only the ones with that wording are hidden (walmart.css hides [data-net19-hidden]).
+(() => {
+  const SOCIAL = /\bbought (?:since yesterday|in (?:the )?past)/i;
+  const mark = () => {
+    for (const badge of document.querySelectorAll('[data-testid="badgeTagComponent"]:not([data-net19-hidden])')) if (SOCIAL.test(badge.textContent)) badge.setAttribute('data-net19-hidden', '');
+  };
+  let queued = false;
+  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
+  new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
 })();

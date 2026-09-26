@@ -53,6 +53,7 @@ globalThis.net19Theme = {
     slot[name="comment-insight"], slot[name="comment-share-as-post-topline"] { display: none !important; }
   `;
   const AWARD = `.glow, .rpl-cab--content { display: none !important; } button { background: transparent !important; border: 0 !important; padding: 4px !important; }`;
+  const JOIN = `button { border-radius: 4px !important; text-transform: uppercase !important; font-size: 12px !important; font-weight: 700 !important; letter-spacing: .5px !important; min-width: 96px !important; }`;
   const FIELD = `.label-container, [part="container"] { border-radius: 4px !important; }`;
   // Slotted comment buttons live in the page, so they are styled there (see ACTIONS below).
   const SEARCH = `
@@ -116,6 +117,8 @@ globalThis.net19Theme = {
     }
     for (const row of document.querySelectorAll('shreddit-comment-action-row')) add(row.shadowRoot, COMMENT);
     for (const award of document.querySelectorAll('award-button')) add(award.shadowRoot, AWARD);
+    // JOIN: 2019's 4px-cornered uppercase button, drawn inside the join button's shadow root
+    for (const join of document.querySelectorAll('shreddit-join-button')) add(join.shadowRoot, JOIN);
     for (const box of document.querySelectorAll('comment-body-header faceplate-textarea-input, shreddit-composer faceplate-textarea-input')) add(box.shadowRoot, FIELD);
     for (const comment of document.querySelectorAll('shreddit-comment[score]')) {
       const meta = comment.querySelector(':scope > details > summary [slot="commentMeta"] .author-name-meta');

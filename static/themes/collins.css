@@ -34,3 +34,5 @@ h2.h2_entry { font-weight: 400 !important; font-size: 30px !important; }
 .dc .word-frequency-container .level.roundRed { background-color: var(--n19-freq) !important; }
 .dc .word-frequency-container .level { border-radius: 50% !important; }
 .hom > .gramGrp > .pos, .hom > .gramGrp.pos, .type-drv .gramGrp .pos { color: var(--n19-text) !important; font-weight: 400 !important; font-size: 16px !important; }
+/* Wordle (2021) helpers in the right column and menus did not exist */
+.miniWordle, a[href*="/games/wordle-helper"], span:has(> a[href*="/games/wordle-helper"]) { display: none !important; }

@@ -32,3 +32,8 @@ a.bluecta:hover { background: var(--n19-red-hover) !important; }
 .link-cta-subtle, .button__text--subtle { border-radius: 0 !important; }
 .button__solid.emphasized, a.link-cta.emphasized, a.red-car.red-care-one { background-color: var(--n19-red) !important; border-color: var(--n19-red) !important; color: #fff !important; border-radius: 0 !important; }
 .button__outlined.emphasized { border-color: var(--n19-red) !important; color: var(--n19-red) !important; border-radius: 0 !important; }
+
+/* Search and category results (React Native Web): the 20px-rounded product tiles and filter panel (the atomic class for
+   that radius), the pill section tabs and the pill pickup/delivery buttons get 2019's square corners */
+.r-y47klf { border-radius: 2px !important; }
+.search-header--sections-list-item, .fulfillment-buttons-container > *, .fulfillment-buttons-container :is(button, a, [role="button"]) { border-radius: 2px !important; }

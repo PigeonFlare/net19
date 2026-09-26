@@ -46,3 +46,12 @@ main :is(h2, h3) { letter-spacing: normal !important; }
 [theme="night"] store-button[appearance*="button"] a, [theme="dark"] store-button[appearance*="button"] a { background: #fff !important; color: #000 !important; border: 2px solid #fff !important; }
 store-button a { border-radius: 0 !important; font-size: 15px !important; }
 store-tag { border-radius: 0 !important; }
+
+/* ---- learn.microsoft.com (2019's docs.microsoft.com) and support.microsoft.com ---- */
+/* Not in 2019: the Ask Learn assistant, "Summarize this article for me", and the support pages' Copilot and "AI in Windows" sections */
+[data-bi-name^="ask-learn-assistant"], [data-ask-learn-flyout-entry], [data-ask-learn-modal-entry], #ms--ai-summary, #ms--ai-summary + *:empty,
+#supMainContent :is(h2[id*="copilot" i], h2[id*="-ai-" i], h2[id$="-ai" i]), #supMainContent :is(h2[id*="copilot" i], h2[id*="-ai-" i], h2[id$="-ai" i]) + * { display: none !important; }
+/* Learn: plain dark headlines (no violet gradient type), square buttons, tags and boxes */
+.gradient-text-vivid, [class*="gradient-text"] { background: none !important; -webkit-text-fill-color: currentColor !important; color: var(--n19-text) !important; }
+html.theme-light, html.theme-dark, html.theme-high-contrast { --border-radius: 0 !important; --border-radius-rounded: 2px !important; }
+html[class*="theme-"] :is(.button, .tag, .card, .box, input.input, .search-box, .autocomplete input) { border-radius: 2px !important; }

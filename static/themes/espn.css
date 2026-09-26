@@ -65,3 +65,5 @@ html[data-net19-flip] #global-header h2.logo-header > a { filter: contrast(1.136
    it gets the card colors the other rail modules use. */
 .sideLogin { background-color: var(--n19-card) !important; }
 .sideLogin .sideLogin__headline { color: var(--n19-text) !important; }
+/* Section pages (NFL, NBA...): the sub-nav's "Odds" and "Where To Watch" entries came later too */
+#global-nav-secondary li.sub:has(> a[href*="/odds" i]), #global-nav-secondary li.sub:has(> a[href*="where-to-watch" i]) { display: none !important; }

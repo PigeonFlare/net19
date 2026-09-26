@@ -1,5 +1,7 @@
 /* net19 handmade theme: Fox News, 2019: Roboto on a navy #003366 bar with a red top rule and nothing above it (no black
-   strip of sister-network logos), stories in square white boxes with hairline borders, square navy kicker labels and red "Watch TV" button. The 2019 look is close to today's, so this is mostly shapes. */
+   strip of sister-network logos), stories in square white boxes with hairline borders, square navy kicker labels and red "Watch TV" button;
+   articles with a centered 60px black-weight headline, a hairline byline/share row and 18px/28px body copy with navy
+   links underlined in light blue; a navy footer. No OutKick, AI, Games or Deals sections, no "listen" player. */
 html { --n19-navy: #003366; --n19-red: #c20017; --n19-box-border: #e0e0e0; --n19-page: #f5f5f5; --n19-box: #fff; }
 html[data-net19-mode="dark"] { --n19-navy: #0d2a4a; --n19-red: #e0192f; --n19-box-border: #333; --n19-page: #111; --n19-box: #1b1b1b; }
 html:root, body { --cm-video-label-border-radius: 0px !important; --cm-video-repeat-border-radius: 0px !important; --border-color: var(--n19-box-border) !important; }
@@ -22,3 +24,52 @@ body, input, button { font-family: Roboto, "Helvetica Neue", Helvetica, Arial, s
 /* Not in 2019: the "AI" section (2023) in the menu bar and its entries in the expanded menus */
 .site-header li:has(> a[href*="/artificial-intelligence"]), .site-header .menu-item:has(> a[href*="/artificial-intelligence"]),
 .expandable-nav li:has(> a[href*="/artificial-intelligence"]) { display: none !important; }
+
+/* ---- Header (every page): 2019's flat menu words without drop-down carets, no topic row, no newer sections ---- */
+.site-header .primary-nav ul .has-dropdown > a:first-child::after { display: none !important; }
+.site-header .nav-row-lower .topic-nav { display: none !important; }
+/* OutKick (bought 2021), the AI section, Games and Deals (2020s) in the menu bar, the "More" panel and the footer */
+.site-header .menu-item:has(> a[href*="outkick"]),
+.site-header .menu-item:has(> a[href$="/ai"]), .site-header .menu-item:has(> a[href*="/artificial-intelligence"]),
+.more-section-item:has(> .more-section-item-title a[href*="/games"]), .more-section-item:has(> .more-section-item-title a[href*="/deals"]),
+.more-section-item:has(> .more-section-item-title a[href*="outkick"]), .more-subsection-item:has(a[href*="outkick"]), .more-subsection-item:has(a[href*="/games"]) { display: none !important; }
+/* 2019's search field and buttons were square */
+.site-header .resp_site_search, .site-header .resp_site_submit, .site-header .button a, .site-header .button button, .site-header .user-login a { border-radius: 0 !important; }
+
+/* ---- Article pages, 2019 (article-new.rs.css, Dec 2019): centered header; 60px/66px black-weight headline
+   (letter-spacing -1.2px, 992px wide), 24px/32px light subhead, a hairline (#cedfef) row with the byline and round
+   colored share buttons; 18px/28px body in #222 with navy links underlined in light blue. ---- */
+.article-header .headline { font-size: 60px !important; line-height: 66px !important; font-weight: 900 !important; letter-spacing: -1.2px !important; max-width: 992px !important; margin-left: auto !important; margin-right: auto !important; }
+.article-header .sub-headline { font-size: 24px !important; line-height: 32px !important; font-weight: 300 !important; }
+.article-header .eyebrow, .article-header .eyebrow a { background: transparent !important; padding: 0 !important; color: #4b78a7 !important; font-size: 14px !important; font-weight: 700 !important; text-transform: uppercase !important; }
+.author-byline { color: #666 !important; }
+.author-byline a { font-weight: 600 !important; letter-spacing: 0 !important; }
+.article-header .article-meta-lower { border-top: 1px solid #cedfef !important; border-bottom: 1px solid #cedfef !important; }
+html[data-net19-mode="dark"] .article-header .article-meta-lower { border-color: #2a3d52 !important; }
+.article-social .social-icons a { border-radius: 50% !important; }
+.article-social .social-icons li.fb a { background-color: #3b5998 !important; }
+.article-social .social-icons li.tw a { background-color: #1da1f2 !important; }
+.article-social .social-icons li.flipboard a { background-color: #e12828 !important; }
+.article-body p, .article-body ul, .article-body ol { font-size: 18px !important; line-height: 28px !important; font-weight: 400 !important; }
+.article-body p a { color: #036 !important; border-bottom: 2px solid #a7c6e5 !important; text-decoration: none !important; }
+.article-body p a:hover { background: #edf6ff !important; }
+html[data-net19-mode="dark"] .article-body p a { color: #8fb8e6 !important; border-color: #2b4c6e !important; }
+html[data-net19-mode="dark"] .article-body p a:hover { background: transparent !important; }
+.article-body .caption, .article-body .caption p { font-size: 14px !important; line-height: 20px !important; }
+/* Not in 2019: the "listen to this article" player (BeyondWords), emoji reactions, "Add Fox News on Google", Threads and
+   Slack share buttons, the "NEW" flags */
+.beyondwords-wrapper, #beyondwords-wrapper, .hedgehog-container:has(hedgehog-reactions), .article-social .googlePreferred,
+.social-icons li.threads, .social-icons li.slack, .social-icons li.spotify, .label-bg { display: none !important; }
+/* Related topics: plain uppercase links rather than rounded pills */
+.related-topics .categories li, .related-topics .categories a, .pill, .tag { border-radius: 0 !important; }
+
+/* ---- Footer: 2019's navy (#036) band ---- */
+.site-footer { background-color: var(--n19-navy) !important; }
+.site-footer .footer-lower { border-top: 1px solid #174676 !important; }
+.site-footer .social-icons li.threads, .site-footer .social-icons li.spotify, .site-footer .social-icons li.slack, .site-footer .social-icons li.tt, .site-footer .social-icons li.tiktok { display: none !important; }
+/* The "Recommended Videos / Recommended Articles" carousel under the bar (2020s recirculation) */
+.recommended-navbar { display: none !important; }
+/* Fox News video site: square navigation tabs instead of the white rounded "Watch Live" pill */
+.nav-item.watch-live, .nav-item.watch-live a, .nav-item a { border-radius: 0 !important; }
+/* Hover drop-downs under the menu words (2020s): square navy panels without the floating shadow */
+.site-header .primary-nav .dropdown-content { border-radius: 0 !important; box-shadow: none !important; }

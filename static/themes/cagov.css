@@ -29,3 +29,10 @@ header.global-header .section-default { box-shadow: none !important; border-bott
 .section-primary .btn, .btn.rounded-5 { border-radius: 0 !important; }
 .section-primary .btn-outline-light { background: var(--n19-button) !important; border-color: var(--n19-button) !important; color: #fff !important; }
 .section-primary .btn-outline-light:hover { background: var(--n19-button-hover) !important; }
+/* Inner pages (Services, Departments, Search...): the blue title band becomes the same light-grey panel as the home
+   search area, with dark type and without the line-art drawing; tiles and buttons are square */
+main .section-primary.lineart.bg-p2 { background-color: var(--n19-panel) !important; background-image: none !important; }
+main .section-primary.lineart.bg-p2 :is(h1, h2, p, li, span) { color: var(--n19-panel-text) !important; }
+main .section-primary.lineart.bg-p2 a { color: var(--n19-blue) !important; }
+html[data-net19-mode="dark"] main .section-primary.lineart.bg-p2 a { color: #7cc4e8 !important; }
+main a.link-grid, main .btn, main [class*="bg-gray-50"] { border-radius: 0 !important; }

@@ -45,3 +45,7 @@ input[data-testid="search-input"] ~ div span, input[data-testid="search-input"]:
 [data-testid="signup-bar"] { border-radius: 0 !important; }
 /* Artists stayed round in 2019 */
 [data-encore-id="card"][aria-labelledby*=":artist:"] :is(img, [data-testid="card-image"], [data-testid="card-image"] > div) { border-radius: 50% !important; }
+/* support.spotify.com: the search field became an AI assistant (2025); its "AI-powered tool" note goes, and spotify.js
+   gives the field 2019's plain "Search" hint (the field itself stays, so searching still works) */
+[class*="EntryPoint_footer"] { display: none !important; }
+[class*="EntryPoint_textareaWrapper"] { border-radius: 4px !important; box-shadow: none !important; background-image: none !important; }

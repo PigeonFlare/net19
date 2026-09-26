@@ -1,8 +1,10 @@
 // net19 handmade theme: Tripadvisor. The site has a single (light) design; the default background-luminance detection
-// keeps it light. The palette map turns today's forest-green ink (#002b11) back to 2019's near-black #000a12 (2019 CSS).
+// keeps it light. The palette map turns today's forest-green ink (#002b11) back to 2019's near-black #000a12 (2019 CSS),
+// and today's bright brand green (#00eb5b: "Check availability", the logo mark) and rating green (#00852f: the bubbles)
+// back to 2019's teal-green #00a680.
 globalThis.net19Theme = {
-  light: { '#002b11': '#000a12', '#335541': '#4a4a4a' },
-  dark: { '#002b11': '#000a12', '#335541': '#4a4a4a' },
+  light: { '#002b11': '#000a12', '#335541': '#4a4a4a', '#00eb5b': '#00a680', '#00852f': '#00a680' },
+  dark: { '#002b11': '#000a12', '#335541': '#4a4a4a', '#00eb5b': '#00a680', '#00852f': '#00a680' },
 };
 // "Plan with AI" and "Ask AI" did not exist in 2019. They carry no stable label to select by, so they are found by
 // their visible text (buttons and links only).

@@ -38,6 +38,7 @@ main .wag-card, main .card, main .quicklinkcardv1, main .wag-slim-banner, main .
 main .quicklinkcardv1 { border: 1px solid var(--n19-tile-line) !important; box-shadow: none !important; }
 main .quicklinkcardv1 .iconText { color: var(--n19-link) !important; font-weight: 400 !important; font-size: 13px !important; }
 main .card__basic { border: 1px solid var(--n19-tile-line) !important; background-color: var(--n19-tile) !important; }
-main h2, main h3 { font-family: var(--n19-font) !important; font-weight: 400 !important; color: var(--n19-text) !important; }
+/* (the heading color is a default only: headings set on dark banners keep their own light ink) */
+main h2, main h3 { font-family: var(--n19-font) !important; font-weight: 400 !important; color: var(--n19-text); }
 main a:not([class*="btn"]):not(.card):not(.wag-card):not(.quicklinkcardv1) { color: var(--n19-link); }
 main [class*="btn"], main button { border-radius: 3px !important; }

@@ -82,3 +82,15 @@ header.s-topbar { background: var(--n19-bar) !important; border-top: 3px solid #
 .s-sidebarwidget__yellow .s-sidebarwidget--item a { color: var(--n19-link) !important; }
 .s-sidebarwidget__yellow .s-sidebarwidget--item svg { display: none !important; }
 #hot-network-questions h4 { font-size: 18px !important; }
+
+/* ---- Question pages ---- */
+/* Chat moved into the left nav in 2024; 2019's question page had no community-activity box, code copy buttons (2023)
+   or circled vote buttons (2023): the votes were plain gray arrows */
+#left-sidebar li:has(> #nav-chat), #sidebar > div[id^="fragment-container"], .s-prose .js-copy-button, .js-copy-button:has(+ pre), pre + .js-copy-button { display: none !important; }
+.js-voting-container :is(.js-vote-up-btn, .js-vote-down-btn) { border: 0 !important; background: transparent !important; box-shadow: none !important; border-radius: 0 !important; color: var(--n19-group-border) !important; }
+.js-voting-container :is(.js-vote-up-btn, .js-vote-down-btn) svg { width: 36px !important; height: 36px !important; }
+.js-voting-container .js-vote-count { font-size: 20px !important; color: var(--n19-text-2) !important; }
+#question-header h1, #question-header h1 a { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important; font-size: 27px !important; font-weight: 400 !important; line-height: 1.35 !important; color: var(--n19-text) !important; }
+#question-header + div { border-bottom-color: var(--n19-divider) !important; }
+.s-prose { font-size: 15px !important; line-height: 1.4 !important; }
+.s-prose pre, .s-code-block { border-radius: 3px !important; }

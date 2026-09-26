@@ -36,3 +36,10 @@ main h2[class*="display-"] { font-size: 20px !important; font-weight: 700 !impor
 main [class*="rounded-"]:is(div, a, img, figure, section, article, span), main [class*="rounded-"] img { border-radius: 0 !important; }
 main [class*="shadow-"]:is(div, a, article, section) { box-shadow: none !important; }
 main [class*="bg-ls-level-2"], main [class*="bg-white"] { background-color: var(--n19-card) !important; }
+/* Team, roster and stats pages (the "d3" templates): the blue tab boxes become 2019's navy; links in NFL navy */
+.d3-o-tabbed-controls-selector li > a { border-color: var(--n19-navy) !important; color: var(--n19-navy) !important; border-radius: 0 !important; font-family: var(--n19-font) !important; font-weight: 700 !important; }
+.d3-o-tabbed-controls-selector li.active > a { background: var(--n19-navy) !important; color: #fff !important; }
+html[data-net19-mode="dark"] .d3-o-tabbed-controls-selector li:not(.active) > a { color: #c8d1dd !important; border-color: #c8d1dd !important; }
+.d3-l-wrap :is(h1, h2, h3) { font-family: var(--n19-font) !important; font-style: normal !important; }
+/* Partner links the 2019 bar did not have: The Athletic and ESPN Fantasy (2025 partnerships) */
+nav[aria-label="Site"] li:has(> a[href*="the-athletic"]), nav[aria-label="Site"] li:has(> a[href*="theathletic.com"]), nav[aria-label="Site"] li:has(> a[href*="fantasy.espn.com"]), nav[aria-label="Site"] li:has(> a[href*="espn.com/fantasy"]) { display: none !important; }

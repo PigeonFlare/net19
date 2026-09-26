@@ -60,3 +60,15 @@ html:root, body {
 /* Home page banners: full width with square corners, straight under the category row */
 main .page-grid-container:has(> [class*="dp-hero"]) { padding-left: 0 !important; padding-right: 0 !important; }
 main [class*="dp-hero"][class*="-module"] { border-radius: 0 !important; }
+
+/* Search results: listing titles are blue links again; All / Auction / Buy It Now are plain tabs with a rule under the
+   current one, not rounded chips; the "Find more like this" visual-similarity button and its tip (image search, later)
+   go */
+.su-card-container__header :is(a, a *):not(svg, svg *) { color: var(--n19-link) !important; }
+.su-card-container__header a:hover :is(span, div) { text-decoration: underline !important; }
+.fake-tabs__item > a { border-radius: 0 !important; background: transparent !important; border: 0 !important; border-bottom: 2px solid transparent !important; color: var(--n19-text) !important; }
+.fake-tabs__item--current > a { border-bottom-color: var(--n19-text) !important; font-weight: 700 !important; }
+.s-card__searchsimilar, .s-tourtip { display: none !important; }
+/* Item page: the "Shop live events" banner (eBay Live, 2024) goes; photos sit in square frames, not 16px-rounded cards */
+.x-evo-atf-top-river:has(a[href*="/ebaylive"]) { display: none !important; }
+.ux-image-carousel, .ux-image-carousel-item, .ux-image-filmstrip-carousel-item, .ux-image-grid-item { border-radius: 0 !important; }

@@ -55,3 +55,5 @@ html[data-net19-home] #__next h2 { text-transform: uppercase !important; font-si
 /* Article pages: headlines in the condensed face, teal links */
 article h1, main h1 { font-family: var(--n19-cond) !important; font-weight: 700 !important; color: var(--n19-text) !important; }
 article a:not([class*="button"]) { color: var(--n19-teal-dark); }
+/* The "Save article" bookmark beside article titles belongs to the post-2019 Healthline account */
+[data-slot="sheet-trigger"]:has(> button[aria-label="Save article"]), button[aria-label="Save article"] { display: none !important; }

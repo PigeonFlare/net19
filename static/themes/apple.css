@@ -66,3 +66,7 @@ main .button-secondary:not(.tile-ctas .button) { border-radius: 4px !important; 
 #globalfooter, .globalfooter, footer#ac-globalfooter { background: var(--n19-foot) !important; }
 :is(#globalfooter, .globalfooter) :is(p, li, span, a, h3, button, .gf-sosumi, .footnotes) { color: var(--n19-muted) !important; }
 :is(#globalfooter, .globalfooter) :is(.globalfooter-divider, .ac-gf-footer-legal) { border-color: var(--n19-foot-rule) !important; }
+
+/* Apple Vision Pro (2023) was not in the 2019 bar, nor in the product strips under a section's title */
+html #globalnav .globalnav-item:has(> a[href*="/apple-vision-pro/"]), html #globalnav .globalnav-item:has(> div > a[href*="/apple-vision-pro/"]),
+.chapternav-item:has(> a[href*="/apple-vision-pro/"]) { display: none !important; }

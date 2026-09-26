@@ -1,6 +1,7 @@
 // net19 handmade theme: OpenAI, 2019. openai.com follows the device's color scheme and paints its page background
 // accordingly, so the default luminance detection picks the matching mode.
-globalThis.net19Theme = {};
+// ChatGPT (2022) calls to action in the header and pages did not exist.
+globalThis.net19Theme = { later: /^(?:try chatgpt|download chatgpt|start now on chatgpt|ask chatgpt)$/i };
 // Home page: the "What can I help with?" assistant box that opens the page is hidden, and the release cards after it
 // become 2019's pink cover. Both are found by structure (the classes are generated) and marked with attributes.
 (() => {

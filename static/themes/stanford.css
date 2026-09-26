@@ -30,3 +30,9 @@ main a[class*="rounded"], main button[class*="rounded"] { border-radius: 0 !impo
 /* Dark devices: the page is flipped and the white link bar flipped back (palette.js marks it data-net19-reflip); that
    filter makes the bar the wordmark's containing block, so the wordmark is lifted back into the red row and un-flipped. */
 html[data-net19-flip] header nav.main-nav[data-net19-reflip] > a.logo { top: -48px !important; filter: contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
+/* The wordmark is drawn over the red row but sits in the white link bar in the page, where the readability check would
+   read it as white-on-white and ink it dark: it carries the cardinal itself so its white type is read against red. */
+header nav.main-nav > a.logo { background-color: var(--n19-cardinal) !important; }
+/* Search page: the AI answer panel ("Thinking...", an AI summary above the results) is post-2019; the field is square */
+main#main-content > div:not([class]):has(> section.cc) { display: none !important; }
+main#main-content > div.bg-bg-subtle :is(form, div, input, button) { border-radius: 0 !important; }

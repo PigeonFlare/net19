@@ -82,9 +82,23 @@
   // as CSS backgrounds (banners, cards), and bars or panels whose own background is already dark (for a dark
   // device) or already light (for a light device) — a navy header or black footer stays as the site drew it
   // instead of turning pastel. Decisions are read for a whole batch first and written after, so layout is computed once.
+  // Computed colors are rgb()/rgba() for plain sRGB, but color(srgb ...), oklab(), oklch() or lab() when a site mixes or
+  // writes them that way (color-mix() hovers, Tailwind v4). Those are converted by painting one pixel, and cached.
+  const colorCache = new Map();
+  let pen = null;
   const rgba = color => {
-    const m = color.match(/[\d.]+/g);
-    return m ? [+m[0], +m[1], +m[2], m.length > 3 ? +m[3] : 1] : null;
+    color = String(color);
+    if (/^rgba?\(/.test(color)) { const m = color.match(/[\d.]+/g); return m ? [+m[0], +m[1], +m[2], m.length > 3 ? +m[3] : 1] : null; }
+    if (!/^(?:color|oklab|oklch|lab|lch|hsla?|hwb)\(/.test(color)) return null;
+    if (colorCache.has(color)) return colorCache.get(color);
+    let out = null;
+    try {
+      pen ||= new OffscreenCanvas(1, 1).getContext('2d', { willReadFrequently: true });
+      pen.clearRect(0, 0, 1, 1); pen.fillStyle = color; pen.fillRect(0, 0, 1, 1);
+      const d = pen.getImageData(0, 0, 1, 1).data;
+      out = d[3] ? [Math.round(d[0] * 255 / d[3]), Math.round(d[1] * 255 / d[3]), Math.round(d[2] * 255 / d[3]), d[3] / 255] : [0, 0, 0, 0];
+    } catch { out = null; }
+    colorCache.set(color, out); return out;
   };
   const lum = ([r, g, b]) => (.2126 * r + .7152 * g + .0722 * b) / 255;
   // The color that FLIP turns into `c`: contrast, hue-rotate(180deg) and invert undone channel by channel.

@@ -164,3 +164,25 @@ globalThis.net19Theme = {
   };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();
+// Help Center (2025): its search field is an AI assistant prompt, a 28px pill with a send arrow and an "AI terms" note.
+// 2019's Help Center search was a plain field with 3px corners: the pill is squared (marked here, styled in
+// facebook.css) and the AI terms note is hidden.
+(() => {
+  if (!/^\/help\b/.test(location.pathname)) return;
+  const fix = () => {
+    for (const input of document.querySelectorAll('input[type="search"], input[placeholder="Search" i], textarea[placeholder="Search" i]')) {
+      for (let e = input.parentElement, i = 0; e && i < 5; e = e.parentElement, i++) {
+        if (parseFloat(getComputedStyle(e).borderTopLeftRadius) >= 16) { if (!e.hasAttribute('data-n19-fb-search')) e.setAttribute('data-n19-fb-search', ''); break; }
+      }
+    }
+    for (const note of document.querySelectorAll('span, div')) {
+      if (note.childElementCount > 3 || note.hasAttribute('data-net19-hidden')) continue;
+      const t = note.textContent.trim();
+      if (/^By using this service, you agree to Meta.s AI terms\b/.test(t) && t.length < 200) note.setAttribute('data-net19-hidden', '');
+    }
+  };
+  let queued = false;
+  const later = () => { if (queued) return; queued = true; setTimeout(() => { queued = false; fix(); }, 300); };
+  const start = () => { fix(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
+  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+})();

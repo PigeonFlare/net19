@@ -1,7 +1,9 @@
 /* net19 handmade theme: New York Post, 2019 (checked against the June 2019 homepage and its nypost-2016 stylesheet): one
    slim flat red (#cc3333) bar about 55px tall with the white Post logo centered at 45px, plain white uppercase Futura-style
    "Sections" / "Search" links on the left and "Tips" / "Log in" on the right (no outlined buttons), no black section strip
-   under it; headlines in a plain grotesk bold in #2a2a2a, square corners. The Post has no dark mode. */
+   under it; headlines in a plain grotesk bold in #2a2a2a, square corners; articles with a 42px/44px headline, a red
+   "By" link and 16px/24px Proxima Nova body copy. No sticky trending strip, promotions, Post Sports+ or podcast boxes.
+   The Post has no dark mode. */
 html { --n19-red: #cc3333; --n19-red-hover: #7e3332; --n19-rule: #cc3333; --n19-text: #2a2a2a; --n19-meta: #717171; }
 html[data-net19-mode="dark"] { --n19-red: #e05555; --n19-red-hover: #f07070; --n19-rule: #e05555; --n19-text: #e6e6e6; --n19-meta: #aaa; }
 html:root { --wp--custom--utility--radius: 0 !important; }
@@ -22,8 +24,9 @@ html:root { --wp--custom--utility--radius: 0 !important; }
 .site-header :is(.button--login, .site-header-cta a, .site-header-cta button):hover { color: var(--n19-red-hover) !important; background: transparent !important; }
 /* The black strip under the bar (edition picker, section links) did not exist in 2019; the links are in "Sections" */
 .site-header__bar, .site-header__subnav--homepage { display: none !important; }
-.site-header__subnav:not(.site-header__subnav--homepage) { background: #fff !important; border-bottom: 1px solid #ddd !important; }
-.site-header__subnav:not(.site-header__subnav--homepage) a { color: var(--n19-text) !important; }
+/* The white strip for section links under the bar and the sticky "Trending now" picture strip came later too: the
+   section links live in "Sections", as in 2019 */
+.site-header__subnav, .site-header .recirc--trending { display: none !important; }
 
 /* Headlines: a plain Helvetica/Arial bold in dark gray rather than today's heavy, tightly set display cut */
 .story__headline, .story__headline a { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; font-weight: 700 !important; color: var(--n19-text) !important; letter-spacing: 0 !important; }
@@ -32,3 +35,31 @@ html:root { --wp--custom--utility--radius: 0 !important; }
 .content-header--lines .content-header__heading, .section-heading { letter-spacing: 0 !important; }
 .content-header--lines::before, .content-header--lines::after { border-color: var(--n19-rule) !important; background-color: var(--n19-rule) !important; }
 .button, .wp-block-button__link, [class*="btn"] { border-radius: 0 !important; }
+
+/* ---- Article pages, 2019 (nypost-2016 stylesheet): a 42px/44px bold grotesk headline in #2a2a2a; "By Name" (red
+   link) on the left and the date on the right in 13px; 16px/24px Proxima Nova body in #2a2a2a; gray captions with
+   the credit after them; no stamp-shaped section flags, no "Preferred Source" button, no audio player. ---- */
+.single .article-header .headline, .article-header h1.headline { font-family: "neue-haas-grotesk-ny-post", "Helvetica Neue", Helvetica, Arial, sans-serif !important; font-size: 42px !important; line-height: 44px !important;
+  font-weight: 700 !important; color: var(--n19-text) !important; letter-spacing: 0 !important; text-transform: none !important; }
+.article-header__top .flag { background: transparent !important; border: 0 !important; padding: 0 !important; box-shadow: none !important; transform: none !important; clip-path: none !important; }
+.article-header__top .flag, .article-header__top .flag a, .article-header__top .flag span { color: var(--n19-red) !important; font: 700 13px/16px futura-pt, "Futura PT", Futura, "Trebuchet MS", Arial, sans-serif !important; text-transform: uppercase !important; letter-spacing: .02em !important; }
+.article-header__top .flag::before, .article-header__top .flag::after { display: none !important; }
+.article-header__meta .meta, .article-header__meta .meta a, .article-header__meta .byline__author, .single .byline, .single .date { font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important; font-size: 13px !important; line-height: 16px !important; color: var(--n19-text) !important; }
+.article-header__meta .byline a { color: var(--n19-red) !important; }
+.article-header__google-preferred-source, .google-preferred-sources, [class*="listen-to-article" i], [class*="audio-player" i], [id*="trinity" i], .trinity-tts-pb { display: none !important; }
+.single__content p, .entry-content p, .single__content li { font-family: "proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif !important; font-size: 16px !important; line-height: 24px !important; color: var(--n19-text) !important; font-weight: 400 !important; }
+.single__content p a, .entry-content p a { color: var(--n19-red) !important; text-decoration: none !important; }
+.single__content p a:hover, .entry-content p a:hover { text-decoration: underline !important; }
+.featured-image figcaption, .wp-caption figcaption, .single figcaption { font-family: "proxima-nova", Helvetica, Arial, sans-serif !important; font-size: 13px !important; line-height: 16px !important; color: var(--n19-meta) !important; }
+.single figcaption .credit { color: #b3b3b3 !important; text-transform: none !important; }
+.tag-list__tag, .tag-list a { border-radius: 0 !important; }
+/* Related and trending lists: small bold headlines in #2a2a2a */
+.recirc__headline, .recirc__headline a, .more-stories__story a, .widget--now-on__story a { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; color: var(--n19-text) !important; font-weight: 700 !important; letter-spacing: 0 !important; }
+.recirc__heading, .widget--now-on__heading { font-family: futura-pt, "Futura PT", Futura, "Trebuchet MS", Arial, sans-serif !important; text-transform: uppercase !important; letter-spacing: .02em !important; }
+
+/* ---- Every page: later additions ---- */
+/* Page Six banner button in the bar, the podcast "Listen now" box, Post Sports+ (2024) in menus and rails */
+.site-header-cta:has(.site-header-cta__image), .widget-wrapper.widget_custom_html:has(a[href*="podcasts.apple.com"]), .widget-wrapper:has(.widget--sports-plus-columnists),
+.menu-item-sports-plus-logo, .menu-item:has(> a[href*="/sports-plus"]), .section-subnav .menu-item:has(> a[href*="sports-betting"]) { display: none !important; }
+/* The row of house promotions above the front (podcast, shop, Post Wanted), a 2020s addition */
+.module--promo:has(.story--promo) { display: none !important; }

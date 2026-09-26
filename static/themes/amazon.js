@@ -1,11 +1,16 @@
 // net19 handmade theme: amazon. The site has a single (light) design, so the light palette applies and dark devices
 // get the engine's inverted page. The 2019 nav wording is restored in place: the later "All" menu button reads
-// "Departments", "Hello, sign in" is "Hello, Sign in", and "Delivering to" is "Deliver to".
+// "Departments", "Hello, sign in" is "Hello, Sign in", and "Delivering to" is "Deliver to", and the "Overall Pick" badge is "Amazon's Choice" again.
 globalThis.net19Theme = {};
 (() => {
   const WORDS = [['#nav-hamburger-menu .hm-icon-label', /^\s*All\s*$/, 'Departments'], ['#nav-link-accountList-nav-line-1', /^Hello, sign in$/, 'Hello, Sign in'],
     ['#glow-ingress-line1', /^(\s*)Delivering to\b/, '$1Deliver to']];
   const fix = () => {
+    // "Overall Pick" (2023) is the Amazon's Choice badge renamed; its label went back to the 2019 words.
+    for (const el of document.querySelectorAll('[id$="-ac-desktop-declarative"] span, #acBadge_feature_div span')) {
+      const text = el.firstChild;
+      if (el.childElementCount === 0 && text?.nodeType === 3 && /^\s*Overall Pick\s*$/.test(text.data)) text.data = "Amazon's Choice";
+    }
     for (const [selector, from, to] of WORDS) {
       const el = document.querySelector(selector);
       const text = el?.firstChild;
@@ -16,8 +21,7 @@ globalThis.net19Theme = {};
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
   const start = () => {
     fix();
-    const nav = document.getElementById('navbar');
-    if (nav) new MutationObserver(later).observe(nav, { childList: true, subtree: true, characterData: true });
+    new MutationObserver(later).observe(document.body, { childList: true, subtree: true, characterData: true });
   };
   if (document.readyState !== 'loading') start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();

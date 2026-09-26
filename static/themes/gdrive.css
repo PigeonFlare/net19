@@ -1,0 +1,332 @@
+/* net19 handmade theme: Google Drive and the Docs editors, 2019 (Google Material 2, as refreshed in 2018). Drive: a white
+   header with the Drive logo and an 8px-rounded #f1f3f4 search field; a white "New" button rounded with a shadow and the
+   colored +; the left nav (My Drive, Shared with me, Recent, Starred, Trash, Storage) with a right-rounded #e8f0fe active tab
+   in #1967d2; files as a flat list and a grid of 1px #dadce0 cards on a white page. Docs, Sheets and Slides: the document
+   lists open on a gray #f1f3f4 "Start a new document" template band with the grid below; the editors have a white title bar
+   (product icon, title, star and folder), the File Edit View... menu bar, a flat white toolbar between 1px #dadce0 rules
+   with gray icons, and a blue #1a73e8 4px "Share" button. Google's own design tokens are re-pointed at the 2019 palette, so
+   menus and dialogs follow. Post-2019 parts are hidden: Gemini and "Help me create", smart-canvas building blocks, the
+   Meet button, the rounded GM3 toolbar and pill buttons. Dark follows Drive's and Docs' own dark setting. */
+
+/* ---- 2019 palette ---- */
+html {
+  --n19-page: #fff; --n19-canvas: #f8f9fa; --n19-band: #f1f3f4; --n19-field: #f1f3f4; --n19-field-focus: #fff;
+  --n19-text: #202124; --n19-text-2: #5f6368; --n19-text-3: #80868b; --n19-icon: #5f6368; --n19-border: #dadce0;
+  --n19-accent: #1a73e8; --n19-accent-hover: #1765cc; --n19-accent-text: #1967d2; --n19-accent-soft: #e8f0fe;
+  --n19-hover: #f1f3f4; --n19-select: #e8f0fe; --n19-on-accent: #fff; --n19-sheets: #188038; --n19-slides: #f4b400;
+  --n19-shadow: 0 1px 2px 0 rgba(60,64,67,.302), 0 1px 3px 1px rgba(60,64,67,.149);
+  --n19-shadow-hover: 0 1px 3px 0 rgba(60,64,67,.302), 0 4px 8px 3px rgba(60,64,67,.149);
+  --n19-rgb-text: 32,33,36; --n19-rgb-text-2: 95,99,104; --n19-rgb-accent: 26,115,232; --n19-rgb-on-accent: 255,255,255; --n19-rgb-accent-text: 25,103,210;
+  --n19-font: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; --n19-title-font: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+}
+html[data-net19-mode="dark"] {
+  --n19-page: #202124; --n19-canvas: #28292c; --n19-band: #2d2e30; --n19-field: #3c4043; --n19-field-focus: #303134;
+  --n19-text: #e8eaed; --n19-text-2: #9aa0a6; --n19-text-3: #80868b; --n19-icon: #9aa0a6; --n19-border: #5f6368;
+  --n19-accent: #8ab4f8; --n19-accent-hover: #aecbfa; --n19-accent-text: #8ab4f8; --n19-accent-soft: #394457;
+  --n19-hover: #303134; --n19-select: #394457; --n19-on-accent: #202124; --n19-sheets: #81c995; --n19-slides: #fdd663;
+  --n19-shadow: 0 1px 2px 0 rgba(0,0,0,.3), 0 1px 3px 1px rgba(0,0,0,.15);
+  --n19-shadow-hover: 0 1px 3px 0 rgba(0,0,0,.3), 0 4px 8px 3px rgba(0,0,0,.15);
+  --n19-rgb-text: 232,234,237; --n19-rgb-text-2: 154,160,166; --n19-rgb-accent: 138,180,248; --n19-rgb-on-accent: 32,33,36; --n19-rgb-accent-text: 138,180,248;
+}
+
+/* ---- Google's Material 3 tokens (editors, Drive, menus, dialogs, the side panel) re-pointed at the 2019 palette ---- */
+html:root, html body, html .docsDarkMode, html .docsSystemMode, html .s8Kcyb {
+  --gm3-sys-color-primary: var(--n19-accent) !important; --gm3-sys-color-primary-rgb: var(--n19-rgb-accent) !important;
+  --gm3-sys-color-on-primary: var(--n19-on-accent) !important; --gm3-sys-color-on-primary-rgb: var(--n19-rgb-on-accent) !important;
+  --gm3-sys-color-primary-container: var(--n19-accent-soft) !important; --gm3-sys-color-on-primary-container: var(--n19-accent-text) !important;
+  --gm3-sys-color-on-primary-container-rgb: var(--n19-rgb-accent-text) !important;
+  --gm3-sys-color-primary-fixed: var(--n19-accent-soft) !important; --gm3-sys-color-on-primary-fixed: var(--n19-accent-text) !important;
+  --gm3-sys-color-secondary-container: var(--n19-accent-soft) !important; --gm3-sys-color-on-secondary-container: var(--n19-accent-text) !important;
+  --gm3-sys-color-surface: var(--n19-page) !important; --gm3-sys-color-surface-bright: var(--n19-page) !important;
+  --gm3-sys-color-surface-container-lowest: var(--n19-page) !important; --gm3-sys-color-surface-container-low: var(--n19-page) !important;
+  --gm3-sys-color-surface-container: var(--n19-page) !important; --gm3-sys-color-surface-container-high: var(--n19-field) !important;
+  --gm3-sys-color-surface-container-highest: var(--n19-field) !important; --gm3-sys-color-surface-variant: var(--n19-field) !important;
+  --gm3-sys-color-background: var(--n19-page) !important;
+  --gm3-sys-color-on-surface: var(--n19-text) !important; --gm3-sys-color-on-surface-rgb: var(--n19-rgb-text) !important;
+  --gm3-sys-color-on-surface-variant: var(--n19-text-2) !important; --gm3-sys-color-on-surface-variant-rgb: var(--n19-rgb-text-2) !important;
+  --gm3-sys-color-outline: var(--n19-text-3) !important; --gm3-sys-color-outline-variant: var(--n19-border) !important;
+}
+/* Drive's own "dt" tokens: Google's 2019 Material values, from the GM2 set Drive still ships */
+html:root, html body {
+  --dt-background: #fff !important; --dt-on-background: rgb(60,64,67) !important;
+  --dt-on-background-secondary: rgb(95,99,104) !important; --dt-outline: rgb(128,134,139) !important;
+  --dt-outline-variant: rgb(218,220,224) !important; --dt-on-disabled: rgba(60,64,67,0.38) !important;
+  --dt-disabled: rgba(60,64,67,0.12) !important; --dt-inverse-on-surface: rgb(218,220,224) !important;
+  --dt-inverse-surface: rgb(32,33,36) !important; --dt-on-surface-variant: rgb(95,99,104) !important;
+  --dt-on-surface-secondary: rgb(95,99,104) !important; --dt-on-surface: rgb(60,64,67) !important;
+  --dt-surface-tint: rgb(241,243,244) !important; --dt-surface-variant: rgb(241,243,244) !important;
+  --dt-surface: #fff !important; --dt-surface-container-lowest: #fff !important;
+  --dt-surface-container-low: #fff !important; --dt-surface-container: #fff !important;
+  --dt-surface-container-high: #fff !important; --dt-surface-container-highest: rgb(241,243,244) !important;
+  --dt-surface-dim: #d3dbe5 !important; --dt-surface-bright: #fff !important; --dt-scrim: rgba(32,33,36,0.6) !important;
+  --dt-scrim-2x: rgb(32,33,36) !important; --dt-shadow: #000 !important;
+  --dt-on-primary-container: rgb(60,64,67) !important; --dt-on-primary: #fff !important;
+  --dt-primary-action-state-layer: rgb(25,103,210) !important; --dt-primary-action-stateful: rgb(24,90,188) !important;
+  --dt-primary-action: rgb(25,103,210) !important; --dt-primary-container-icon: rgb(25,103,210) !important;
+  --dt-primary-container-link: rgb(25,103,210) !important; --dt-primary-container: rgb(232,240,254) !important;
+  --dt-primary-icon: #fff !important; --dt-primary-link: #fff !important;
+  --dt-primary-outline: rgb(24,90,188) !important; --dt-primary: rgb(26,115,232) !important;
+  --dt-inverse-primary: rgb(138,180,248) !important; --dt-on-secondary-container: rgb(60,64,67) !important;
+  --dt-on-secondary: #fff !important; --dt-secondary-action-state-layer: rgb(60,64,67) !important;
+  --dt-secondary-action-stateful: rgb(32,33,36) !important; --dt-secondary-action: rgb(60,64,67) !important;
+  --dt-secondary-container-icon: rgb(60,64,67) !important; --dt-secondary-container-link: rgb(25,103,210) !important;
+  --dt-secondary-container: rgb(241,243,244) !important; --dt-secondary-icon: #fff !important;
+  --dt-secondary-link: #fff !important; --dt-secondary-outline: rgb(60,64,67) !important;
+  --dt-secondary: rgb(60,64,67) !important; --dt-on-tertiary-container: rgb(60,64,67) !important;
+  --dt-on-tertiary: #fff !important; --dt-tertiary-action-state-layer: rgb(19,115,51) !important;
+  --dt-tertiary-action-stateful: rgb(13,101,45) !important; --dt-tertiary-action: rgb(19,115,51) !important;
+  --dt-tertiary-container-icon: rgb(19,115,51) !important; --dt-tertiary-container-link: rgb(19,115,51) !important;
+  --dt-tertiary-container: rgb(230,244,234) !important; --dt-tertiary-icon: #fff !important;
+  --dt-tertiary-link: #fff !important; --dt-tertiary-outline: rgb(19,115,51) !important;
+  --dt-tertiary: rgb(24,128,56) !important; --dt-tertiary-fixed-dim: rgb(129,201,149) !important;
+  --dt-on-tertiary-fixed: rgb(13,101,45) !important; --dt-on-neutral-container: rgb(60,64,67) !important;
+  --dt-on-neutral: #fff !important; --dt-neutral-action-state-layer: rgb(60,64,67) !important;
+  --dt-neutral-action-stateful: rgb(32,33,36) !important; --dt-neutral-action: rgb(60,64,67) !important;
+  --dt-neutral-container-icon: rgb(60,64,67) !important; --dt-neutral-container-link: rgb(25,103,210) !important;
+  --dt-neutral-container: rgb(241,243,244) !important; --dt-neutral-icon: #fff !important;
+  --dt-neutral-link: #fff !important; --dt-neutral-outline: rgb(60,64,67) !important;
+  --dt-neutral: rgb(60,64,67) !important; --dt-error-action-state-layer: rgb(197,34,31) !important;
+  --dt-error-action-stateful: rgb(179,20,18) !important; --dt-error-action: rgb(197,34,31) !important;
+  --dt-error-container-icon: rgb(197,34,31) !important; --dt-error-container-link: rgb(197,34,31) !important;
+  --dt-error-container: rgb(252,232,230) !important; --dt-error-icon: #fff !important; --dt-error-link: #fff !important;
+  --dt-error-outline: rgb(179,20,18) !important; --dt-error: rgb(217,48,37) !important;
+  --dt-on-error-container: rgb(60,64,67) !important; --dt-on-error: #fff !important;
+  --dt-on-warning-container: rgb(60,64,67) !important; --dt-on-warning: rgb(32,33,36) !important;
+  --dt-warning-action-state-layer: rgb(234,134,0) !important; --dt-warning-action-stateful: rgb(32,33,36) !important;
+  --dt-warning-action: rgb(60,64,67) !important; --dt-warning-container-icon: rgb(60,64,67) !important;
+  --dt-warning-container-link: rgb(60,64,67) !important; --dt-warning-container: rgb(254,247,224) !important;
+  --dt-warning-icon: rgb(60,64,67) !important; --dt-warning-link: rgb(60,64,67) !important;
+  --dt-warning-outline: rgb(234,134,0) !important; --dt-warning: rgb(249,171,0) !important;
+}
+html[data-net19-mode="dark"]:root, html[data-net19-mode="dark"] body {
+  --dt-background: rgb(32,33,36) !important; --dt-on-background: rgb(232,234,237) !important;
+  --dt-on-background-secondary: rgb(154,160,166) !important; --dt-outline: rgb(95,99,104) !important;
+  --dt-outline-variant: rgb(189,193,198) !important; --dt-on-disabled: rgba(232,234,237,0.38) !important;
+  --dt-disabled: rgba(232,234,237,0.12) !important; --dt-inverse-on-surface: rgb(60,64,67) !important;
+  --dt-inverse-surface: rgb(241,243,244) !important; --dt-on-surface-secondary: rgb(154,160,166) !important;
+  --dt-on-surface-variant: rgb(154,160,166) !important; --dt-on-surface: rgb(232,234,237) !important;
+  --dt-surface-tint: rgb(60,64,67) !important; --dt-surface-variant: rgb(60,64,67) !important;
+  --dt-surface: rgb(32,33,36) !important; --dt-surface-container-lowest: rgb(32,33,36) !important;
+  --dt-surface-container-low: rgb(32,33,36) !important; --dt-surface-container: rgb(32,33,36) !important;
+  --dt-surface-container-high: rgb(54,55.11,58.11) !important; --dt-surface-container-highest: rgb(60,64,67) !important;
+  --dt-surface-dim: #131313 !important; --dt-surface-bright: #37393b !important;
+  --dt-scrim: rgba(32,33,36,0.87) !important; --dt-scrim-2x: rgb(241,243,244) !important; --dt-shadow: #000 !important;
+  --dt-on-primary-container: rgb(210,227,252) !important; --dt-on-primary: rgb(32,33,36) !important;
+  --dt-primary-action-state-layer: rgb(138,180,248) !important;
+  --dt-primary-action-stateful: rgb(174,203,250) !important; --dt-primary-action: rgb(138,180,248) !important;
+  --dt-primary-container-icon: rgb(210,227,252) !important; --dt-primary-container-link: rgb(210,227,252) !important;
+  --dt-primary-container: rgb(57.44,68.28,86.88) !important; --dt-primary-icon: rgb(32,33,36) !important;
+  --dt-primary-link: rgb(32,33,36) !important; --dt-primary-outline: rgb(138,180,248) !important;
+  --dt-primary: rgb(138,180,248) !important; --dt-inverse-primary: rgb(26,115,232) !important;
+  --dt-on-secondary-container: rgb(241,243,244) !important; --dt-on-secondary: rgb(218,220,224) !important;
+  --dt-secondary-action-state-layer: rgb(218,220,224) !important;
+  --dt-secondary-action-stateful: rgb(232,234,237) !important; --dt-secondary-action: rgb(218,220,224) !important;
+  --dt-secondary-container-icon: rgb(241,243,244) !important;
+  --dt-secondary-container-link: rgb(241,243,244) !important;
+  --dt-secondary-container: rgb(76.64,77.88,81.12) !important; --dt-secondary-icon: rgb(218,220,224) !important;
+  --dt-secondary-link: rgb(218,220,224) !important; --dt-secondary-outline: rgb(218,220,224) !important;
+  --dt-secondary: rgb(32,33,36) !important; --dt-on-tertiary-container: rgb(206,234,214) !important;
+  --dt-on-tertiary: rgb(32,33,36) !important; --dt-tertiary-action-state-layer: rgb(129,201,149) !important;
+  --dt-tertiary-action-stateful: rgb(168,218,181) !important; --dt-tertiary-action: rgb(129,201,149) !important;
+  --dt-tertiary-container-icon: rgb(206,234,214) !important; --dt-tertiary-container-link: rgb(206,234,214) !important;
+  --dt-tertiary-container: rgb(55.28,73.32,63.12) !important; --dt-tertiary-icon: rgb(32,33,36) !important;
+  --dt-tertiary-link: rgb(32,33,36) !important; --dt-tertiary-outline: rgb(129,201,149) !important;
+  --dt-tertiary: rgb(129,201,149) !important; --dt-tertiary-fixed-dim: rgb(129,201,149) !important;
+  --dt-on-tertiary-fixed: rgb(13,101,45) !important; --dt-on-neutral-container: rgb(232,234,237) !important;
+  --dt-on-neutral: rgb(32,33,36) !important; --dt-neutral-action-state-layer: rgb(232,234,237) !important;
+  --dt-neutral-action-stateful: #fff !important; --dt-neutral-action: rgb(232,234,237) !important;
+  --dt-neutral-container-icon: rgb(232,234,237) !important; --dt-neutral-container-link: rgb(174,203,250) !important;
+  --dt-neutral-container: rgb(60,64,67) !important; --dt-neutral-icon: rgb(32,33,36) !important;
+  --dt-neutral-link: rgb(32,33,36) !important; --dt-neutral-outline: rgb(232,234,237) !important;
+  --dt-neutral: rgb(232,234,237) !important; --dt-error-action-state-layer: rgb(242,139,130) !important;
+  --dt-error-action-stateful: rgb(246,174,169) !important; --dt-error-action: rgb(242,139,130) !important;
+  --dt-error-container-icon: rgb(250,210,207) !important; --dt-error-container-link: rgb(250,210,207) !important;
+  --dt-error-container: rgb(82.4,58.44,58.56) !important; --dt-error-icon: rgb(32,33,36) !important;
+  --dt-error-link: rgb(32,33,36) !important; --dt-error-outline: rgb(242,139,130) !important;
+  --dt-error: rgb(242,139,130) !important; --dt-on-error-container: rgb(250,210,207) !important;
+  --dt-on-error: rgb(32,33,36) !important; --dt-on-warning-container: rgb(254,239,195) !important;
+  --dt-on-warning: rgb(32,33,36) !important; --dt-warning-action-state-layer: rgb(253,214,99) !important;
+  --dt-warning-action-stateful: rgb(253,226,147) !important; --dt-warning-action: rgb(253,214,99) !important;
+  --dt-warning-container-icon: rgb(254,239,195) !important; --dt-warning-container-link: rgb(254,239,195) !important;
+  --dt-warning-container: rgb(85.03999999999999,76.44,51.12) !important; --dt-warning-icon: rgb(32,33,36) !important;
+  --dt-warning-link: rgb(32,33,36) !important; --dt-warning-outline: rgb(253,214,99) !important;
+  --dt-warning: rgb(253,214,99) !important;
+}
+html body { --dt-primary-container: var(--n19-accent-soft) !important; --dt-on-primary-container: var(--n19-accent-text) !important; }
+
+/* ================================================================================================================
+   The editors (Docs, Sheets, Slides, Drawings): body.docs-gm. GM3 shapes live under .docs-grille-gm3; each is undone.
+   ================================================================================================================ */
+body.docs-gm #docs-chrome, body.docs-gm #docs-chrome:not(.docs-hub-chrome) { background: var(--n19-page) !important; border-bottom-color: transparent !important; }
+body.docs-gm #docs-header, body.docs-gm #docs-titlebar-container, body.docs-gm #docs-menubars { background: transparent !important; }
+/* title: Google Sans 18px in near-black; untitled and hover borders as in 2019 */
+body.docs-gm .docs-title-input, body.docs-gm .docs-title-input-label, body.docs-gm .docs-title-input-label-inner {
+  font-family: var(--n19-title-font) !important; font-size: 18px !important; color: var(--n19-text) !important; }
+body.docs-gm .docs-title-input { border-radius: 2px !important; }
+/* the File Edit View... menu bar: 14px, square hover */
+body.docs-gm .docs-menubar { font-family: var(--n19-font) !important; }
+body.docs-gm .docs-menubar .goog-control { font-size: 14px !important; color: var(--n19-text) !important; border-radius: 4px !important; }
+body.docs-gm .docs-menubar .goog-control-disabled { color: var(--n19-text-3) !important; }
+body.docs-gm .docs-menubar .goog-control-hover, body.docs-gm .docs-menubar .goog-control-open { background-color: var(--n19-hover) !important; }
+/* title badges (star, move, save state): square, gray */
+body.docs-gm .docs-titlebar-badge { border-radius: 4px !important; }
+body.docs-gm #docs-star.docs-titlebar-badge { color: var(--n19-icon) !important; }
+body.docs-gm .docs-save-indicator-badge, body.docs-gm .docs-titlebar-badge .docs-save-indicator-text { color: var(--n19-text-2) !important; font-family: var(--n19-font) !important; }
+
+/* the toolbar: a flat white row between 1px gray rules, not the 2021 rounded #edf2fa pill */
+body.docs-gm.docs-grille-gm3 .docs-material #docs-toolbar-wrapper, body.docs-gm .docs-material #docs-toolbar-wrapper {
+  background: var(--n19-page) !important; border: 0 !important; border-top: 1px solid var(--n19-border) !important;
+  border-bottom: 1px solid var(--n19-border) !important; border-radius: 0 !important; margin: 0 !important; padding: 0 8px !important;
+  min-height: 38px !important; box-shadow: none !important; font-family: var(--n19-font) !important; }
+body.docs-gm.docs-grille-gm3 .docs-main-toolbars .goog-toolbar-button, body.docs-gm.docs-grille-gm3 .docs-main-toolbars .goog-toolbar-menu-button,
+body.docs-gm.docs-grille-gm3 .docs-main-toolbars .goog-toolbar-combo-button, body.docs-gm.docs-grille-gm3 #docs-align-palette .goog-toolbar-button,
+body.docs-gm.docs-grille-gm3.docs-body-pageless .docs-main-toolbars .goog-toolbar-button {
+  background-color: transparent !important; border-radius: 2px !important; }
+body.docs-gm.docs-grille-gm3 .docs-main-toolbars .goog-toolbar-button-hover, body.docs-gm.docs-grille-gm3 .docs-main-toolbars .goog-toolbar-menu-button-hover,
+body.docs-gm.docs-grille-gm3 .docs-main-toolbars .goog-toolbar-combo-button-hover { background-color: var(--n19-hover) !important; }
+body.docs-gm.docs-grille-gm3 .docs-main-toolbars .goog-toolbar-button-checked, body.docs-gm.docs-grille-gm3 .docs-main-toolbars .goog-toolbar-menu-button-open,
+body.docs-gm.docs-grille-gm3 .docs-main-toolbars .goog-toolbar-button-active { background-color: var(--n19-select) !important; }
+body.docs-gm.docs-grille-gm3 .docs-main-toolbars .goog-toolbar-button-checked .docs-icon-img { background-color: var(--n19-accent-text) !important; }
+body.docs-gm .docs-main-toolbars .goog-toolbar-combo-button-input, body.docs-gm #docs-font-family .goog-toolbar-menu-button-caption,
+body.docs-gm #headingStyleSelect .goog-toolbar-menu-button-caption, body.docs-gm .docs-main-toolbars .docs-toolbar-text-button {
+  font-family: var(--n19-font) !important; color: var(--n19-text) !important; }
+body.docs-gm.docs-grille-gm3 .docs-main-toolbars .goog-toolbar-separator.goog-inline-block { border-color: var(--n19-border) !important; }
+body.docs-gm .docs-toolbar-more-toolbar, body.docs-gm .trix-palette { background-color: var(--n19-page) !important; border-radius: 0 !important; box-shadow: var(--n19-shadow) !important; }
+body.docs-gm .docs-material #docs-header .docs-titlebar-buttons { background: transparent !important; }
+/* "Menus" search in the toolbar: a plain field, not a white pill */
+body.docs-gm.docs-grille-gm3 #docs-omnibox-toolbar .docs-omnibox-input { border-radius: 4px !important; background: var(--n19-field) !important; font-family: var(--n19-font) !important; }
+body.docs-gm.docs-grille-gm3 #docs-omnibox-toolbar .docs-omnibox-input:not(:focus):not([aria-expanded=true]) { background: transparent !important; }
+body.docs-gm.docs-grille-gm3 #docs-omnibox-toolbar .docs-omnibox-input::placeholder { font-family: var(--n19-font) !important; }
+/* mode badges ("View only", "Editing"): 2019 rectangles */
+body.docs-gm.docs-grille-gm3 #docs-access-level-indicator.goog-flat-menu-button, body.docs-gm.docs-grille-gm3 #docs-toolbar-mode-switcher .goog-flat-menu-button,
+body.docs-gm.docs-grille-gm3 #docs-toolbar-mode-switcher { border-radius: 4px !important; }
+body.docs-gm.docs-grille-gm3 #docs-access-level-indicator.goog-flat-menu-button { background: var(--n19-select) !important; color: var(--n19-accent-text) !important; }
+/* hover and active fills: Google writes these as color-mix(), which the flip cannot read; plain 2019 grays instead */
+body.docs-gm .ac-row.ac-active, body.docs-gm .ac-row:hover, body.docs-gm .docs-titlebar-badge:hover, body.docs-gm .docs-titlebar-badge:active,
+body.docs-gm .docs-titlebar-badge.docs-titlebar-badge-selected, body.docs-gm .docs-titlebar-badge .docs-save-indicator-icon:hover,
+body.docs-gm .goog-toolbar-button-hover, body.docs-gm .goog-toolbar-menu-button-hover, body.docs-gm .goog-flat-menu-button-hover { background-color: var(--n19-hover) !important; }
+
+/* Share: the blue #1a73e8 button with 4px corners (2019), not the 2021 pill */
+body.docs-gm #docs-titlebar-share-client-button .jfk-button, body.docs-gm #docs-titlebar-share-client-button .jfk-button-disabled,
+body.docs-gm #docs-titlebar-share-client-button .jfk-button:focus, body.docs-gm #docs-titlebar-share-client-button .jfk-button.jfk-button-hover {
+  background: var(--n19-accent) !important; color: var(--n19-on-accent) !important; border: 1px solid transparent !important;
+  border-radius: 4px !important; height: 36px !important; padding: 0 16px 0 12px !important; line-height: 34px !important;
+  font-family: var(--n19-title-font) !important; font-size: 14px !important; font-weight: 500 !important; letter-spacing: .25px !important;
+  box-shadow: none !important; opacity: 1 !important; }
+body.docs-gm #docs-titlebar-share-client-button .jfk-button.jfk-button-hover { background: var(--n19-accent-hover) !important; box-shadow: var(--n19-shadow) !important; }
+body.docs-gm #docs-titlebar-share-client-button .scb-button-icon { filter: brightness(0) invert(1) !important; opacity: 1 !important; }
+html[data-net19-mode="dark"] body.docs-gm #docs-titlebar-share-client-button .scb-button-icon { filter: brightness(0) !important; }
+/* the 2021 split arrow beside Share (quick share actions) folds away; Share opens the same dialog */
+body.docs-gm #scb-quick-actions-menu-button, body.docs-gm .scb-quick-actions-menu-button { display: none !important; }
+body.docs-gm .docs-titlebar-buttons .jfk-button-standard, body.docs-gm .docs-titlebar-buttons .goog-flat-menu-button-collapse-left {
+  border-radius: 4px !important; font-family: var(--n19-title-font) !important; }
+/* Sign in (signed out): the same 4px blue button */
+body.docs-gm .docs-titlebar-buttons a.gb_4a, body.docs-gm #docs-titlebar-container ~ * a[href*="ServiceLogin"],
+body.docs-gm .docs-titlebar-buttons a[href*="ServiceLogin"] { border-radius: 4px !important; background: var(--n19-accent) !important; color: var(--n19-on-accent) !important; }
+
+/* around the page: 2019 light gray canvas */
+body.docs-gm .kix-appview-editor, body.docs-gm .kix-appview-editor-container { background: var(--n19-canvas) !important; }
+/* Slides filmstrip: square thumbnails with the 2019 yellow selection */
+body.docs-gm .punch-filmstrip-thumbnail-background, body.docs-gm .punch-filmstrip-thumbnail-border-selected,
+body.docs-gm .punch-filmstrip-thumbnail-border, body.docs-gm .punch-filmstrip-selected-thumbnail-pagenumber { border-radius: 0 !important; }
+/* Sheets: gray tab bar with white active tab in green (2019) */
+body.docs-gm #grid-bottom-bar, body.docs-gm .grid-bottom-bar { background: var(--n19-band) !important; }
+body.docs-gm .docs-sheet-tab { border-radius: 0 !important; font-family: var(--n19-font) !important; }
+body.docs-gm .docs-sheet-active-tab { background: var(--n19-page) !important; box-shadow: 0 1px 3px 1px rgba(60,64,67,.15) !important; }
+body.docs-gm .docs-sheet-active-tab .docs-sheet-tab-name { color: var(--n19-sheets) !important; font-weight: 500 !important; }
+body.docs-gm #t-formula-bar-input, body.docs-gm .waffle-name-box { font-family: var(--n19-font) !important; }
+/* menus: 2019 GM2 menus with square corners */
+body.docs-gm .goog-menu.docs-material, body.docs-gm .goog-menu.shell-menu { border-radius: 4px !important; background: var(--n19-page) !important; box-shadow: 0 2px 6px 2px rgba(60,64,67,.15) !important; }
+body.docs-gm .goog-menu .goog-menuitem-highlight, body.docs-gm .goog-menu .goog-menuitem-hover { background: var(--n19-hover) !important; }
+body.docs-gm .goog-menuitem-content, body.docs-gm .goog-menuitem-label { font-family: var(--n19-font) !important; }
+
+/* ---- post-2019 editor features ---- */
+/* Gemini: side panel, "Ask Gemini"/"Help me write/create" bubbles, summaries, image generation, formula-bar buttons, promos */
+body.docs-gm .appsElementsSidekickBarkickBarkick, body.docs-gm .appsElementsSidekickBarkickMinimizedButton,
+body.docs-gm [class^="appsDocsAiSidekickWizSidekicksidebar"], body.docs-gm .appsDocsAiSummariesPregenSummariesBubbleContainer,
+body.docs-gm [class*="FormulaBarContainerGemini"], body.docs-gm .FormulaBarContainerSummarizeButtonRight,
+body.docs-gm [class^="waffleInlineGeminiEntrypoint"], body.docs-gm .waffleSidekickPromoBubbleBase,
+body.docs-gm .docs-link-bubble-sidekick-prompt-button-card-component, body.docs-gm .getting-started-dialog-gemini,
+body.docs-gm .appsDocsGettingStartedEntryPointSelectionViewGeminiBadge,
+body.docs-gm #kix-ai-text-generator-bubble, body.docs-gm [id^="kix-ai-text-generator"],
+body.docs-gm .goog-menuitem:has(.docs-icon-img[class*="spark-"]), body.docs-gm .goog-menuitem:has([class*="docs-icon-spark"]),
+body.docs-gm .docs-lfccc-menu-item-gemini-style-match { display: none !important; }
+/* smart canvas (2021): building blocks sidebar and promos; the "@" insert menu stays usable */
+body.docs-gm .building-blocks-sidebar, body.docs-gm .building-blocks-intro-promo-base { display: none !important; }
+/* Meet (2020): "Join a call here or present this tab to the call" */
+body.docs-gm #docs-meet-in-editors-entrypointbutton { display: none !important; }
+/* emoji reactions on comments (2023) */
+body.docs-gm .docos-emoji-reaction-doco-view, body.docs-gm .docos-replyview-emoji-controls, body.docs-gm .docos-emoji-counter-button-post { display: none !important; }
+/* comment cards: 2019 flat cards */
+body.docs-gm .docos-anchoreddocoview, body.docs-gm .docos-docoview-active { border-radius: 4px !important; }
+
+/* ---- 2019 product icons (Google's own 2014-2020 artwork on gstatic) ---- */
+body.docs-gm .docs-branding-icon:has(> .docs-branding-icon-img) { background: center / contain no-repeat !important; overflow: hidden !important; }
+body.docs-gm .docs-branding-icon > .docs-branding-icon-img { visibility: hidden !important; }
+body.docs-gm .docs-branding-icon:has(> [class*="docs-icon-docs-"]) { background-image: url("https://www.gstatic.com/images/branding/product/2x/docs_48dp.png") !important; }
+body.docs-gm .docs-branding-icon:has(> [class*="docs-icon-sheets-"]) { background-image: url("https://www.gstatic.com/images/branding/product/2x/sheets_48dp.png") !important; }
+body.docs-gm .docs-branding-icon:has(> [class*="docs-icon-slides-"]) { background-image: url("https://www.gstatic.com/images/branding/product/2x/slides_48dp.png") !important; }
+body.docs-gm .docs-branding-icon:has(> [class*="docs-icon-drawings-"]) { background-image: url("https://www.gstatic.com/images/branding/product/2x/drawings_48dp.png") !important; }
+body.docs-gm .docs-branding-icon:has(> .docs-branding-icon-drive) { background-image: url("https://www.gstatic.com/images/branding/product/2x/drive_48dp.png") !important; }
+/* Drive's header logo and wordmark: the 2014 triangle and gray "Drive" in Product Sans 22px */
+#gb img[src*="logo_drive"], #gb img[src*="/drive_2020q4"], #gb img[src*="drive_2026"] { content: url("https://www.gstatic.com/images/branding/product/2x/drive_48dp.png") !important; width: 40px !important; height: 40px !important; }
+#drive-main-page #gb a[aria-label="Drive"] > span:not([aria-hidden]), #drive-main-page #gb [aria-label="Drive"] + div {
+  color: var(--n19-text-2) !important; font-family: "Product Sans", "Google Sans", Arial, sans-serif !important; font-size: 22px !important; }
+/* in a flipped (dark) page the 2019 artwork keeps its real colors */
+html[data-net19-flip] #gb img[src*="logo_drive"], html[data-net19-flip] #gb img[src*="drive_2026"], html[data-net19-flip] #gb img[src*="/drive_2020q4"],
+html[data-net19-flip] body.docs-gm .docs-branding-icon {
+  filter: contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
+/* OneGoogle "Sign in": 2019's blue button with 4px corners */
+#gb a[href*="ServiceLogin"], #gb a[href*="accounts.google.com/"][aria-label="Sign in"] { border-radius: 4px !important; background: var(--n19-accent) !important; color: var(--n19-on-accent) !important; }
+#gb a[href*="ServiceLogin"] span { color: inherit !important; }
+
+/* ================================================================================================================
+   Drive (drive.google.com): a white header, 8px gray search, white "New" with the colored +, right-rounded active nav tab.
+   Drive's markup is obfuscated; these rules key on its stable attributes (guidedhelpid, roles, links).
+   ================================================================================================================ */
+#drive-main-page #gb form[role="search"], #drive-main-page [role="search"] form {
+  background: var(--n19-field) !important; border-radius: 8px !important; box-shadow: none !important; }
+#drive-main-page #gb form[role="search"]:focus-within { background: var(--n19-field-focus) !important; box-shadow: var(--n19-shadow) !important; }
+#drive-main-page #gb form[role="search"] * { background-color: transparent; }
+#drive-main-page #gb form[role="search"] input { font-family: var(--n19-font) !important; font-size: 16px !important; color: var(--n19-text) !important; }
+/* the "New" button: white, pill-rounded, shadowed, with the colored + */
+#drive-main-page [guidedhelpid="new_menu_button"] {
+  background: var(--n19-page) !important; color: var(--n19-text) !important; border-radius: 24px !important; height: 48px !important;
+  box-shadow: var(--n19-shadow) !important; font-family: var(--n19-title-font) !important; font-size: 14px !important; font-weight: 500 !important;
+  padding: 0 24px 0 56px !important; border: 0 !important; position: relative !important;
+  background-image: url("https://www.gstatic.com/images/icons/material/colored_icons/2x/create_32dp.png") !important;
+  background-repeat: no-repeat !important; background-position: 12px center !important; background-size: 32px 32px !important; }
+#drive-main-page [guidedhelpid="new_menu_button"]:hover { box-shadow: var(--n19-shadow-hover) !important; background-color: #f8f9fa !important; }
+#drive-main-page [guidedhelpid="new_menu_button"] svg { visibility: hidden !important; width: 0 !important; }
+/* left nav: right-rounded #e8f0fe tab for the current place */
+#drive-main-page [role="navigation"] [aria-selected="true"], #drive-main-page [role="navigation"] [aria-current="page"],
+#drive-main-page [role="tree"] [role="treeitem"][aria-selected="true"] > div:first-child {
+  background: var(--n19-select) !important; color: var(--n19-accent-text) !important; border-radius: 0 16px 16px 0 !important; }
+#drive-main-page [role="navigation"] [aria-selected="true"] svg, #drive-main-page [role="navigation"] [aria-current="page"] svg { fill: var(--n19-accent-text) !important; color: var(--n19-accent-text) !important; }
+#drive-main-page [role="navigation"] a, #drive-main-page [role="navigation"] [role="treeitem"] { font-family: var(--n19-font) !important; }
+/* "Home" (2023) and "Spam" (2021) nav entries */
+#drive-main-page [role="navigation"] a[href$="/drive/home"], #drive-main-page [role="navigation"] a[href*="/drive/home?"],
+#drive-main-page [role="navigation"] a[href$="/drive/spam"] { display: none !important; }
+/* the main pane: flat on white, not the 2021 rounded card */
+#drive-main-page [guidedhelpid="main_container"], #drive-main-page [role="main"] { border-radius: 0 !important; background: var(--n19-page) !important; }
+/* file list and grid: 1px #dadce0 rules and cards */
+#drive-main-page table[role="grid"] tr { border-color: var(--n19-border) !important; }
+#drive-main-page table[role="grid"] td, #drive-main-page table[role="grid"] th { font-family: var(--n19-font) !important; }
+#drive-main-page [role="grid"] [role="gridcell"] [data-target="doc"], #drive-main-page [role="grid"] div[data-target="doc"] {
+  border: 1px solid var(--n19-border) !important; border-radius: 6px !important; box-shadow: none !important; }
+#drive-main-page [role="grid"] div[data-target="doc"][aria-selected="true"] { background: var(--n19-select) !important; border-color: var(--n19-select) !important; }
+/* the 2023 filter chips (Type, People, Modified): square 2019 chips */
+#drive-main-page [role="toolbar"] [role="button"][aria-haspopup], #drive-main-page [aria-label*="filter" i] [role="button"] { border-radius: 4px !important; }
+/* Gemini in Drive */
+#drive-main-page [aria-label*="Gemini" i], #drive-main-page [data-tooltip*="Gemini" i] { display: none !important; }
+
+/* ================================================================================================================
+   Docs, Sheets, Slides and Forms home lists (docs.google.com/<app>/u/0/): the gray "Start a new document" band, grid below.
+   ================================================================================================================ */
+.docs-homescreen-templates-templateview { background: var(--n19-band) !important; border-radius: 0 !important; }
+.docs-homescreen-templates-templateview-preview, .docs-homescreen-grid-item-thumbnail { border: 1px solid var(--n19-border) !important; border-radius: 0 !important; }
+.docs-homescreen-templates-templateview-preview:hover { border-color: var(--n19-accent) !important; }
+.docs-homescreen-grid-item { border: 1px solid var(--n19-border) !important; border-radius: 4px !important; box-shadow: none !important; }
+.docs-homescreen-grid-item:hover { border-color: var(--n19-accent) !important; }
+.docs-homescreen-gb-container form[role="search"], .docs-homescreen-gb-container [role="search"] { background: var(--n19-field) !important; border-radius: 8px !important; }
+.docs-homescreen-gb-container form[role="search"]:focus-within { background: var(--n19-field-focus) !important; box-shadow: var(--n19-shadow) !important; }

@@ -228,3 +228,9 @@ main [role="tablist"] [role="presentation"]:has(> a[role="tab"]:is([href$="/high
 [data-n19-tw="row"] ~ footer nav a, [data-n19-tw="row"] ~ footer nav > span { color: var(--n19-text-2) !important; font-size: 13px !important; }
 [data-n19-tw="row"] ~ footer nav a { margin: 0 8px !important; }
 [data-n19-tw="row"] ~ footer nav span > span { display: none !important; }
+/* ---- The company pages (about.x.com, legal pages at x.com/tos, /privacy): the bird in the u01b nav instead of the X,
+   and the pill buttons squared to 2019's 4px ---------------------------------------------------------------------- */
+.u01b__logo svg.u01b__icon-home { visibility: hidden !important; }
+.u01b__logo:has(> svg.u01b__icon-home) { background: var(--n19-bird) no-repeat center / 28px 28px !important; }
+html[data-net19-mode="dark"] .u01b__logo:has(> svg.u01b__icon-home) { background-image: var(--n19-bird-dark) !important; }
+:is(.u01b__nav-home, .u01b__nav-controls, .u01b) :is(a, button)[class*="button"], .u01b__nav-controls :is(a, button):not(.u01b__logo) { border-radius: 4px !important; }

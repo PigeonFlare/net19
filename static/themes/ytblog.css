@@ -41,3 +41,13 @@ html:root, html .yt-page, html [class*="category--"] {
 .yt-homepage-hero-refresh__video-bg-container { visibility: hidden !important; }
 .yt-page [class*="__date"], .yt-page [class*="read-time"], .yt-author-byline__content__job { color: var(--n19-text-2) !important; }
 .yt-article-rel-tags__link, .yt-link { color: var(--n19-link) !important; border-color: var(--n19-link) !important; }
+/* Search: the Google AI overview panel (2025) and the AI-style "Suggested searches" questions are post-2019; the plain
+   result list and the search field stay */
+section.yt-ai-overview, .yt-header__suggested, .yt-ai-search-header__wrapper > .yt-suggested-searches { display: none !important; }
+.yt-ai-search-header__wrapper { background: var(--n19-band) !important; background-image: none !important; }
+.yt-ai-search-header__wrapper :is(input, form, [class*="input"]) { border-radius: 2px !important; }
+/* Category pages: no pastel-wash hero; a plain white header with a modest title, as the Blogger label pages had */
+section.yt-category-hero-refresh { background: var(--n19-page) !important; min-height: 0 !important; height: auto !important; padding-top: 32px !important; padding-bottom: 16px !important; border-bottom: 1px solid var(--n19-rule) !important; }
+section.yt-category-hero-refresh::before, section.yt-category-hero-refresh::after { display: none !important; }
+.yt-category-hero-refresh__title { font-size: 36px !important; line-height: 1.2 !important; color: var(--n19-text) !important; }
+.yt-category-hero-refresh__subtitle { font-size: 16px !important; color: var(--n19-text-2) !important; }

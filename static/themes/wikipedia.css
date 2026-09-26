@@ -5,7 +5,7 @@
    layout, tabs and sidebar. */
 
 /* ---- the 2019 logo (the 25th-anniversary logo is a 2026 addition) ---- */
-body.skin-vector-legacy #p-logo a.mw-wiki-logo {
+html[lang="en"] body.skin-vector-legacy #p-logo a.mw-wiki-logo {
   background-image: url("https://en.wikipedia.org/static/images/project-logos/enwiki.png") !important;
   background-image: image-set(url("https://en.wikipedia.org/static/images/project-logos/enwiki.png") 1x, url("https://en.wikipedia.org/static/images/project-logos/enwiki-2x.png") 2x) !important;
   background-size: 135px 155px !important; background-position: center center !important; background-repeat: no-repeat !important; width: 160px !important; height: 160px !important; }
@@ -52,3 +52,12 @@ html[data-net19-mode="dark"] body.skin-vector-legacy figure[typeof] > figcaption
 html[data-net19-mode="dark"] body.skin-vector-legacy .spoken-wikipedia, html[data-net19-mode="dark"] body.skin-vector-legacy .sistersitebox,
 html[data-net19-mode="dark"] body.skin-vector-legacy .side-box, html[data-net19-mode="dark"] body.skin-vector-legacy .portalbox, html[data-net19-mode="dark"] body.skin-vector-legacy .reflist { background: var(--n19-box) !important; color: var(--n19-text) !important; border-color: var(--n19-border) !important; }
 html[data-net19-mode="dark"] body.skin-vector-legacy figure[typeof] { background: var(--n19-box) !important; border-color: var(--n19-border) !important; }
+
+/* ---- Sidebar tools added after 2019: shortened URL and QR code (2023), the legacy-parser switch (2025), "Expand all",
+   and the "Abstract Wikipedia" sister link (2020) ---- */
+body.skin-vector-legacy :is(#t-urlshortener, #t-urlshortener-qrcode, #t-parsermigration, #t-expand-all, li:has(> a[href*="abstract.wikipedia" i])),
+body.skin-vector-legacy #p-tb li:has(> a[href*="useparsoid" i]) { display: none !important; }
+/* ---- Pages Wikipedia only serves in the 2022 skin until the legacy one loads (wikipedia.js asks for it) ---- */
+html[data-net19-reskin] body { visibility: hidden !important; }
+/* Dark variant: the logo is a picture with black lettering; it is shown inverted so the wordmark reads on the dark sidebar */
+html[data-net19-mode="dark"] body.skin-vector-legacy #p-logo a.mw-wiki-logo { filter: invert(.9) hue-rotate(180deg) !important; }

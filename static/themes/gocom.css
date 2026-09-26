@@ -1,9 +1,10 @@
 /* net19 handmade theme: ABC (go.com: ABC News and ABC.com), 2019: on ABC News, a plain white 72px masthead running the
    full page width, the small abc NEWS logo at the far left with the menu right after it in small bold uppercase
-   letter-spaced words ("VIDEO  LIVE  SHOWS"), no streaming-service button; Helvetica/Arial bold headlines in black,
-   gray timestamps, square photos and video frames and flat white story blocks. ABC.com's 2019 look (black bar, white
+   letter-spaced words ("VIDEO  LIVE  SHOWS"), no streaming-service button; Proxima Nova (Arial where it is missing) bold headlines in black,
+   gray timestamps, square photos and video frames and flat white story blocks; stories with a 36px/42px
+   headline and 18px/27px #333 body copy. ABC.com's 2019 look (black bar, white
    menu words, dark page) is essentially today's, so it is left as it is. Neither site has a separate dark mode. */
-html { --n19-text: #000; --n19-meta: #999; --n19-rule: #e5e5e5; --n19-card: #fff; --n19-font: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+html { --n19-text: #000; --n19-meta: #999; --n19-rule: #e5e5e5; --n19-card: #fff; --n19-font: "Proxima-Nova", "Proxima Nova", proxima-nova, Arial, Helvetica, sans-serif; }
 html[data-net19-mode="dark"] { --n19-text: #fff; --n19-meta: #999; --n19-rule: #333; --n19-card: #141414; }
 
 /* ABC News masthead: full width, logo at the left edge, the menu words right after it */
@@ -16,7 +17,7 @@ nav.navigation .navigation__menu > :first-child:not(.navLogo):not(:has(> .navLog
 nav.navigation .navigation__group--main { order: 0 !important; }
 nav.navigation .navLogo__icon { height: 40px !important; width: 116px !important; background-size: contain !important; background-position: left center !important; }
 nav.navigation .navigation__group--main { margin-left: 0 !important; justify-content: flex-start !important; }
-nav.navigation .navMenu25__text { text-transform: uppercase !important; letter-spacing: .08em !important; font: 700 13px/40px var(--n19-font) !important; color: var(--n19-text) !important; }
+nav.navigation .navMenu25__text { text-transform: uppercase !important; letter-spacing: .08em !important; font: 700 13px/40px var(--n19-font) !important; }
 /* The "Stream on Disney+" button did not exist in 2019 */
 nav.navigation .navigation__stream { display: none !important; }
 /* The trending strip under the bar: small plain words */
@@ -30,3 +31,27 @@ nav.navigation--has-subnav h2, nav.navigation--has-subnav h2 a, nav.navigation--
 /* Square media and story blocks */
 nav.navigation ~ * main img, main figure.Image, main .MediaPlaceholder, main [class*="IndividualVideo"], [class*="FittWebPlayerContainer"],
 [class*="FittWebPlayerContainer"] video, .page-home main img, .page-home main picture, .page-home main figure, .page-home main [class*="Image"] { border-radius: 0 !important; }
+
+/* ---- ABC News story pages (prism markup), 2019 (story_.css): Proxima Nova throughout; a 36px/42px bold black
+   headline; the author in 13px bold uppercase black and the time in 13px #b2b0b1; 18px/27px body copy in #333;
+   square photos with gray captions; no "Preferred source" button, no rounded pills. ---- */
+[data-testid="prism-headline"] h1, [data-testid="prism-headline"] h1 span { font-family: var(--n19-font) !important; font-size: 36px !important; line-height: 42px !important; font-weight: 700 !important; color: var(--n19-text) !important; letter-spacing: 0 !important; }
+[data-testid="prism-headline"] > p, [data-testid="prism-headline"] > p span { font-family: var(--n19-font) !important; font-size: 20px !important; line-height: 26px !important; font-weight: 400 !important; color: #666 !important; }
+[data-testid="prism-byline"], [data-testid="prism-byline"] * { font-family: var(--n19-font) !important; }
+[data-testid="prism-byline"] a { font-weight: 700 !important; color: var(--n19-text) !important; font-size: 13px !important; text-transform: uppercase !important; }
+[data-testid="prism-byline"] > div > div > div:last-child { color: #b2b0b1 !important; font-size: 13px !important; }
+[class*="Byline__withGooglePreferredSource"] [class*="GooglePreferred"]:not([class*="Byline__withGooglePreferredSource"]), [data-testid*="google-preferred" i], [aria-label*="preferred source" i] { display: none !important; }
+[data-testid="prism-article-body"] p { font-family: var(--n19-font) !important; font-size: 18px !important; line-height: 27px !important; color: #333 !important; letter-spacing: 0 !important; }
+html[data-net19-mode="dark"] [data-testid="prism-article-body"] p { color: #ddd !important; }
+[data-testid="prism-article-body"] p a { color: #275390 !important; text-decoration: none !important; }
+[data-testid="prism-article-body"] p a:hover { text-decoration: underline !important; }
+[data-testid="prism-caption"], [data-testid="prism-caption"] span { font-family: var(--n19-font) !important; font-size: 13px !important; line-height: 18px !important; color: var(--n19-meta) !important; }
+[data-testid="prism-image"], [data-testid="prism-image"] img, [data-testid="prism-card"], [data-testid="prism-card"] img, [data-testid="prism-ratio-frame"], .MediaPlaceholder, .MediaPlaceholder img, [data-testid="prism-Badge"], [data-testid="prism-Tag"], [data-testid="prism-Button"] { border-radius: 0 !important; }
+[data-testid="prism-card"] h2, [data-testid="prism-card"] h3, [data-testid="prism-card"] h2 *, [data-testid="prism-card"] h3 * { font-family: var(--n19-font) !important; letter-spacing: 0 !important; }
+/* Section fronts, live-updates and video pages share the same cards and headlines */
+main :is(h1, h2, h3)[class] { letter-spacing: 0 !important; }
+/* Keep the logo centered in the bar */
+nav.navigation .navigation__menu { align-items: center !important; }
+nav.navigation .navLogo { align-self: center !important; height: auto !important; }
+/* Section fronts (Food, GMA, Politics...): square pictures and cards */
+main [data-testid^="prism-"], main [data-testid^="prism-"] > :is(div, a, picture, img) { border-radius: 0 !important; }

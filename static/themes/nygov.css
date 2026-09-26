@@ -1,10 +1,11 @@
 /* net19 handmade theme: NY.gov, 2019: Proxima Nova with heavy white hero headlines on a full-bleed photo, bold black menu links, #24387e navy blocks, square outlined buttons and cards with no rounding. */
 html { --n19-strip: #0c1428; --n19-divider: #d6d6d6; --n19-navy: #24387e; --n19-text: #000; --n19-card-border: #24387e; --n19-card-text: #24387e; --n19-card-bg: #fff; }
 html[data-net19-mode="dark"] { --n19-strip: #0c1428; --n19-divider: #444; --n19-navy: #2e4596; --n19-text: #f2f2f2; --n19-card-border: #8ea3e6; --n19-card-text: #c7d2f5; --n19-card-bg: #1c1c1c; }
-/* The official-site strip: dark navy with small white capitals */
-.nygov-unav .trustBar__top { background: var(--n19-strip) !important; }
-.nygov-unav .trustBar__top :is(p, span, button) { color: #fff !important; text-transform: uppercase !important; font-weight: 700 !important; letter-spacing: .08em !important; font-size: 13px !important; }
-.nygov-unav .trustBar__topButton svg { fill: #fff !important; color: #fff !important; }
+/* The "An official website of New York State / Here's how you know" strip came with the 2021 redesign; the 2019 universal
+   header was a plain white 81px bar. Hidden on ny.gov and on the agency sites' universal header alike. */
+.nygov-unav .trustBar__container, .nys-unav .nys-trustbar--mob, .nys-unav .nys-trustbar--inline, #nys-universal-navigation [class^="nys-trustbar"] { display: none !important; }
+/* The agency sites' "Ask a Question" chat assistant (post-2019) */
+#oda-custom-launcher, .oda-chat-wrapper { display: none !important; }
 /* Logo set off by a thin divider; menu in 20px regular black words; pill search field */
 .nygov-unav .nygov-unav__header { border-right: 1px solid var(--n19-divider) !important; padding-right: 60px !important; }
 .nygov-unav__links .o-universalMainMenu__links { gap: 40px !important; }
@@ -28,3 +29,5 @@ html[data-net19-mode="dark"] { --n19-strip: #0c1428; --n19-divider: #444; --n19-
 .a-hero__btn, a[class*="a-btn"], button[class*="a-btn"] { border-radius: 0 !important; }
 /* 2019 call-to-action type: small bold uppercase with wide letter-spacing */
 .a-hero__btn, .m-landingHero a[class*="btn"], .m-landingHero button { text-transform: uppercase !important; letter-spacing: .15em !important; font-size: 13px !important; font-weight: 700 !important; }
+/* Service tiles and the "find services" button: square, as every 2019 box was */
+.m-category-tile__link, .nysds-find-services-button, .o-categories-tiles [class*="tile"] { border-radius: 0 !important; }

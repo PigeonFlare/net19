@@ -45,6 +45,13 @@ globalThis.net19Theme = {
       if (block.hasAttribute('data-net19-hidden') || block.querySelector('input, textarea, [contenteditable], ul[aria-label]')) continue;
       if (PROMO.test(block.textContent || '')) block.setAttribute('data-net19-hidden', '');
     }
+    // Communities (2023): the right column's "Related Communities" card on search and tag pages
+    for (const head of document.querySelectorAll('aside h1, aside h2, aside h3, aside div, aside span')) {
+      if (head.firstElementChild || !/^Related Communities$/i.test(head.textContent.trim())) continue;
+      let card = head.parentElement;
+      while (card && card.parentElement && card.parentElement.tagName !== 'ASIDE' && !card.querySelector('a, button')) card = card.parentElement;
+      if (card && card.tagName !== 'ASIDE' && !/Related Tags|Recommended Blogs|Sponsored/i.test(card.textContent) && !card.querySelector('input, textarea, [contenteditable]') && !card.hasAttribute('data-net19-hidden')) card.setAttribute('data-net19-hidden', '');
+    }
     // "Blazed" labels on promoted posts (2022)
     for (const el of document.querySelectorAll('article header span, article header div')) {
       if (!el.firstElementChild && /^\s*Blazed\s*$/i.test(el.textContent) && !el.hasAttribute('data-net19-hidden')) el.setAttribute('data-net19-hidden', '');

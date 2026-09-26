@@ -107,3 +107,6 @@ nav.top-nav [data-a-target="top-nav-get-bits-button"]:hover { background: rgba(2
 [data-test-selector*="discovery-feed"], [data-a-target*="discovery-feed"] { display: none !important; }
 /* The fixed "Join the Twitch community!" sign-up bar came later (marked by twitch.js) */
 [data-net19-hidden] { display: none !important; }
+/* Buttons everywhere (Follow on a category, Manage Settings, Log In / Sign Up in dialogs): 2019's 4px corners, not the
+   2021 pills; round icon buttons keep their shape */
+button[class*="ScCoreButton"]:not([class*="ScButtonIcon"]), a[class*="ScCoreButton"]:not([class*="ScButtonIcon"]) { border-radius: 4px !important; }

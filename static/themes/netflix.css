@@ -39,3 +39,15 @@ button[data-uia^="top-10-element"], button[data-uia^="top-10-element"] img { bor
 /* Section titles and FAQ in the 2019 sizes */
 [data-uia="nmhp-top-10"] h2, [data-uia="nmhp-full-value-props"] h2, h2[data-uia="nmhp-faq-text-title"] { font-size: 32px !important; font-weight: 700 !important; }
 [data-uia^="nmhp-faq-q-"], [data-uia^="nmhp-faq-a-"] { background: #303030 !important; }
+/* The landing's email field: the translucent layer drawn over it goes, so the 2019 white field shows */
+div[data-uia="field-email+container"] div:not(:has(input)):not(:has(label)) { background-color: transparent !important; }
+div[data-uia="field-email+container"] label { color: var(--n19-field-label) !important; }
+
+/* Sign-in (2019): a black page, the form in a 75% black box with 4px corners, #333 fields without borders */
+[data-uia="loc"]:has(form[data-uia^="responsive-full-page-container-layout"]) * { background-image: none !important; }
+form[data-uia="responsive-full-page-container-layout+container"] { background: rgba(0,0,0,.75) !important; border-radius: 4px !important; padding: 60px 68px 40px !important; box-sizing: border-box !important; }
+form[data-uia="responsive-full-page-container-layout+container"] h1[data-uia="header"] { font-size: 32px !important; font-weight: 700 !important; }
+form[data-uia="responsive-full-page-container-layout+container"] div[data-uia^="field-"][data-uia$="+container"] { background: #333 !important; border-radius: 4px !important; border: 0 !important; }
+form[data-uia="responsive-full-page-container-layout+container"] div[data-uia^="field-"][data-uia$="+container"] div:not(:has(input)):not(:has(label)) { background-color: transparent !important; border-color: transparent !important; }
+form[data-uia="responsive-full-page-container-layout+container"] div[data-uia^="field-"][data-uia$="+container"] input { background: transparent !important; color: #fff !important; }
+form[data-uia="responsive-full-page-container-layout+container"] button[type="submit"] { border-radius: 4px !important; background: var(--n19-red) !important; }

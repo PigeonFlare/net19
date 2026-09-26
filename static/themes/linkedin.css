@@ -127,3 +127,18 @@ main .hue-web-entity__image.rounded-\[50\%\] { border-radius: 50% !important; }
 /* "Explore content categories" (the 2023 collaborative-article hubs) */
 main .right-rail > section.top-content-categories { display: none !important; }
 [data-net19-hidden] { display: none !important; }
+
+/* ---- Signed-out jobs, sign-up and sign-in pages ------------------------------------------------------------------- */
+/* The jobs search in the bar: white fields with a thin gray frame, not the 2022 blue-gray slab */
+nav.nav section.search-bar { background: var(--n19-card) !important; border-radius: 2px !important; box-shadow: inset 0 0 0 1px rgba(0,0,0,.3) !important; }
+nav.nav section.search-bar :is(.switcher-tabs__placeholder, .dismissable-input) { border-color: rgba(0,0,0,.15) !important; }
+/* Filters: 2019's rectangular dropdown buttons, not round pills */
+:is(.filter-button, .pill, a.pill, button.pill, .filters__list .pill) { border-radius: 2px !important; }
+/* Sign-up, sign-in and "Agree & Join" buttons, and the sign-in dialogs' panels: square 2px corners */
+:is(button[type="submit"], input[type="submit"], .join-form__form-body-submit-button, .sign-in-form__submit-btn, .sign-in-form__submit-btn--full-width,
+  .btn__primary--large, .btn__secondary--large, .from__button--floating) { border-radius: 2px !important; }
+:is(.contextual-sign-in-modal__left-content, .contextual-sign-in-modal__modal-dismiss, .modal__main, .authwall-join-form, .join-form) { border-radius: 2px !important; }
+/* Every other signed-out call to action ("Sign in to create job alert", the sign-in dialogs' buttons) */
+body:not(:has(#global-nav)) :is(button, a):is([class*="btn"], [class*="cta"], [class*="__button"]):not([class*="icon"]):not([class*="dismiss"]):not([class*="close"]) { border-radius: 2px !important; }
+/* The 2025 sign-in page (hashed class names): its pill buttons draw their shape on the button or its inner span */
+body:not(:has(#global-nav)) :is(button, button > span):not([role="switch"]):not(:has(> input)) { border-radius: 2px !important; }

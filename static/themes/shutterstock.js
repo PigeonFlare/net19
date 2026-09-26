@@ -20,7 +20,8 @@ globalThis.net19Theme = {
     if (h1 && h1.textContent !== H1) h1.textContent = H1;
     const p = h1?.nextElementSibling;
     if (p?.tagName === 'P' && p.textContent !== SUB) p.textContent = SUB;
-    for (const h2 of document.querySelectorAll('#main-content h2')) {
+    // Only on the home page, whose sections were checked: elsewhere the nearest themed wrapper can be the whole page.
+    if (hero) for (const h2 of document.querySelectorAll('#main-content h2')) {
       if (!/\bAI\b/.test(h2.textContent)) continue;
       const box = h2.closest('#main-content .theme-light, #main-content section');
       if (box && !box.hasAttribute('data-net19-later-section')) box.setAttribute('data-net19-later-section', '');

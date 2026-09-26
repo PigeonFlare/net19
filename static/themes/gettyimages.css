@@ -31,10 +31,11 @@ body, button, input, select, textarea { font-family: Lato, "Helvetica Neue", Ari
 /* "AI Solutions" did not exist in 2019 */
 #site-top-header-wrapper [data-testid="AIGenerator"], [data-testid="ai-free-banner"] { display: none !important; }
 
-/* Hero: lavender band, one large regular headline, no AI statement under it */
-.site-width > div > div:has(> div > div > h1) { background: var(--n19-hero) !important; }
-.site-width > div > div > div > div > h1 { font-size: 46px !important; font-weight: 400 !important; color: var(--n19-text) !important; letter-spacing: 0 !important; font-family: Lato, "Helvetica Neue", Arial, sans-serif !important; }
-.site-width > div > div > div > div > h1 ~ :is(p, a) { display: none !important; }
+/* Hero (home page only, marked by gettyimages.js; the same nesting holds the title on other pages): lavender band, one
+   large regular headline, no AI statement under it */
+html[data-n19-home] .site-width > div > div:has(> div > div > h1) { background: var(--n19-hero) !important; }
+html[data-n19-home] .site-width > div > div > div > div > h1 { font-size: 46px !important; font-weight: 400 !important; color: var(--n19-text) !important; letter-spacing: 0 !important; font-family: Lato, "Helvetica Neue", Arial, sans-serif !important; }
+html[data-n19-home] .site-width > div > div > div > div > h1 ~ :is(p, a) { display: none !important; }
 [data-testid="container-search-bar"] > div > div > div { border-radius: 0 !important; }
 
 /* CREATIVE / EDITORIAL / VIDEO / MUSIC tabs */

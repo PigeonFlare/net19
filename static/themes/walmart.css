@@ -55,3 +55,9 @@ span.bg-secondary.sticky > div.header-navigation :is(button, a):hover { text-dec
 
 /* Page: square tiles and cards */
 main .br3, main .br2, main .br4, main [data-testid="flex-container"] img { border-radius: 0 !important; }
+
+/* Sparky, Walmart's AI shopping assistant (2024), did not exist in 2019: its header button, floating launcher and panel
+   entry points go (guard.js also hides any control labelled with it, via `later` in walmart.js) */
+:is(button, a)[aria-label*="Sparky" i], [data-testid="sparky-fab-bubble"], .sparky-fab-wrapper, a[href^="/sparky"], a[href*="walmart.com/sparky"] { display: none !important; }
+/* (not the "sparky-layout-wrapper": it wraps the whole page, beside the assistant's docked-panel spacer) */
+[data-testid="badgeTagComponent"][data-net19-hidden] { display: none !important; }

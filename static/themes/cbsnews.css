@@ -1,0 +1,73 @@
+/* net19 handmade theme: CBS News, 2019: a near-black #101010 header with the white eye logo and small uppercase
+   Proxima Nova section links spaced 2px apart (the second row set off by #7F7F7F dividers, "Live" in red), over a
+   white page of Publico Headline bold headlines, gray 10px uppercase letter-spaced timestamps and hairline-bordered
+   "view more" buttons; articles with a big Publico Headline title, gray Proxima bylines and Publico Text body copy
+   (the 2025 TT Norms type is set back). No "Add CBS News on Google" or The Free Press promotions. The site has no
+   dark mode, so palette.js inverts it on dark devices and keeps the black header as drawn. */
+html { --n19-ink: #101010; --n19-bar: #101010; --n19-bar-text: #f2f2f2; --n19-bar-rule: #7f7f7f; --n19-meta: #7f7f7f; --n19-hair: #e8e8e8; --n19-live: #c80339; --n19-soft: #f2f2f2; }
+html[data-net19-mode="dark"] { --n19-ink: #f2f2f2; --n19-bar: #101010; --n19-bar-text: #f2f2f2; --n19-bar-rule: #7f7f7f; --n19-meta: #a0a0a0; --n19-hair: #333; --n19-live: #e0305a; --n19-soft: #1c1c1c; }
+
+/* ---- Header: black bar, uppercase Proxima links ---- */
+header[data-component="navigation"], header[data-component="navigation"] .site-header__container, header.header--with-sub-navigation, header.header--with-sub-navigation .site-header__container,
+.site-header__container--sticky { background: var(--n19-bar) !important; color: var(--n19-bar-text) !important; border-color: #222 !important; box-shadow: none !important; }
+header[data-component="navigation"] { height: 56px !important; }
+header[data-component="navigation"] .site-nav__wrapper { top: 12px !important; }
+header[data-component="navigation"] .site-logo__icon, header[data-component="navigation"] .site-logo__container a { color: #fff !important; fill: #fff !important; }
+header[data-component="navigation"] .site-logo__icon svg, header[data-component="navigation"] .site-logo__icon path { fill: #fff !important; }
+:is(header[data-component="navigation"], header.header--with-sub-navigation) .site-nav__item-title, :is(header[data-component="navigation"], header.header--with-sub-navigation) .site-nav__anchor {
+  color: var(--n19-bar-text) !important; fill: var(--n19-bar-text) !important; }
+header[data-component="navigation"] .site-nav__item-title { font-family: "Proxima Nova", Roboto, Helvetica, sans-serif !important; font-size: 12px !important; font-weight: 700 !important;
+  text-transform: uppercase !important; letter-spacing: 2px !important; }
+header[data-component="navigation"] .site-nav__item-title svg, header[data-component="navigation"] .site-nav__anchor svg { fill: currentColor !important; stroke: currentColor; }
+header[data-component="navigation"] .site-nav__item.is--live .site-nav__item-title { color: #fff !important; }
+header[data-component="navigation"] .site-nav__item.is--live .site-nav__item-title::before { background: var(--n19-live) !important; }
+/* The section row: 12px uppercase between #7F7F7F dividers */
+header.header--with-sub-navigation { border-top: 1px solid #2a2a2a !important; }
+header.header--with-sub-navigation .site-nav > .site-nav__item { border-right: 1px solid var(--n19-bar-rule) !important; padding: 0 10px !important; height: 16px !important; margin-top: 8px !important; display: flex !important; align-items: center !important; }
+header.header--with-sub-navigation .site-nav > .site-nav__item:last-child { border-right: 0 !important; }
+header.header--with-sub-navigation .site-nav__item-title { font-family: "Proxima Nova", Roboto, Helvetica, sans-serif !important; font-size: 13px !important; font-weight: 700 !important;
+  letter-spacing: .3px !important; padding: 0 !important; }
+header.header--with-sub-navigation .site-nav__item-title:hover, header[data-component="navigation"] .site-nav__item-title:hover { color: #fff !important; text-decoration: underline !important; }
+header[data-component="navigation"] .site-nav__item:is(:hover, :focus-within), header.header--with-sub-navigation .site-nav__item:is(:hover, :focus-within) { background: transparent !important; }
+header[data-component="navigation"] .site-nav__item:is(:hover, :focus-within) > .site-nav__item-title { background: #333 !important; color: #fff !important; }
+/* The Free Press (2025) was not a CBS News section */
+.site-nav__flyout-item:has(a[href*="thefp.com"]), .site-nav__flyout li:has(> a[href*="thefp.com"]),
+.site-nav__item:has(> a[href*="thefp.com"]), header.header--with-sub-navigation .site-nav > .site-nav__item:has(> a[href*="thefp.com"]) { display: none !important; }
+/* Drop-down flyouts under the black bar stay black too */
+header[data-component="navigation"] .site-nav__flyout { background: var(--n19-bar) !important; color: var(--n19-bar-text) !important; border: 0 !important; border-radius: 0 !important; }
+header[data-component="navigation"] .site-nav__flyout a, header[data-component="navigation"] .site-nav__flyout-item a { color: var(--n19-bar-text) !important; }
+
+/* ---- Fronts: Publico headlines, gray letter-spaced metadata, hairline "view more" ---- */
+.item__hed { font-family: "Publico Headline", Georgia, "Times New Roman", serif !important; font-weight: 700 !important; letter-spacing: 0 !important; }
+.item__dek { font-family: "Publico Text", Georgia, "Times New Roman", serif !important; }
+.item__metadata, .item__metadata li { font-family: "Proxima Nova", Roboto, Helvetica, sans-serif !important; font-size: 10px !important; letter-spacing: 1.6px !important;
+  text-transform: uppercase !important; color: var(--n19-meta) !important; }
+.item--asset-label:not(.is-topic) { border-radius: 0 !important; font-family: "Proxima Nova", Roboto, Helvetica, sans-serif !important; font-size: 10px !important; letter-spacing: 1.6px !important; }
+.component__title { font-family: "Publico Headline", Georgia, "Times New Roman", serif !important; font-weight: 700 !important; }
+.component__view-more { border: 1px solid var(--n19-hair) !important; border-radius: 3px !important; font-family: "Proxima Nova", Roboto, Helvetica, sans-serif !important;
+  font-size: 12px !important; font-weight: 700 !important; letter-spacing: 1.6px !important; text-transform: uppercase !important; }
+.item__related-links a { font-family: "Proxima Nova", Roboto, Helvetica, sans-serif !important; }
+
+/* ---- Article: 2019 type instead of TT Norms ---- */
+.content__title, h1.content__title { font-family: "Publico Headline", Georgia, "Times New Roman", serif !important; font-weight: 700 !important; font-size: 40px !important; line-height: 1.1 !important; letter-spacing: -.01em !important; }
+.content__header .item--asset-label.is-topic { font-family: "Proxima Nova", Roboto, Helvetica, sans-serif !important; font-size: 12px !important; font-weight: 700 !important;
+  letter-spacing: 1.6px !important; text-transform: uppercase !important; color: var(--n19-meta) !important; }
+.content__meta, .content__meta *, .byline__author__popover-btn { font-family: "Proxima Nova", Roboto, Helvetica, sans-serif !important; font-size: 14px !important; color: var(--n19-meta) !important; }
+.content__meta--byline .byline__author__popover-btn__label { color: var(--n19-ink) !important; font-weight: 700 !important; }
+.content__body > p, .content__body > p *, .content__body li, .content__body blockquote { font-family: "Publico Text", Georgia, "Times New Roman", serif !important; font-size: 19px !important; line-height: 1.5 !important; font-weight: 400 !important; }
+.content__body > p strong, .content__body > p b { font-weight: 700 !important; }
+.content__body > p a { text-decoration: underline !important; text-decoration-thickness: 1px !important; text-underline-offset: 2px !important; }
+.content__body h2, .content__body h3 { font-family: "Publico Headline", Georgia, serif !important; font-weight: 700 !important; }
+.content .component__title, aside.recirculation h3, .card-recirc h4 { font-family: "Proxima Nova", Roboto, Helvetica, sans-serif !important; font-weight: 700 !important; }
+.card-recirc { border-radius: 0 !important; }
+.content figcaption, .content__body figcaption, .embed__caption { font-family: "Proxima Nova", Roboto, Helvetica, sans-serif !important; font-size: 13px !important; color: var(--n19-meta) !important; }
+/* Post-2019 promotions: Google preferred source (2025), The Free Press (2025) */
+.content__google, a.content__google-button { display: none !important; }
+.component__heading-wrapper.freepress, .component__heading-wrapper.freepress + ul, .component:has(> .component__heading-wrapper.freepress) { display: none !important; }
+
+/* ---- Video pages: headline in Publico, meta in Proxima ---- */
+.content--video .content__title, .video-player__title, .player-overlay__title { font-family: "Publico Headline", Georgia, serif !important; font-weight: 700 !important; }
+
+/* ---- Footer ---- */
+.FooterLinks-title { font-family: "Proxima Nova", Roboto, Helvetica, sans-serif !important; text-transform: uppercase !important; letter-spacing: 1.6px !important; font-size: 12px !important; }
+.FooterLinks-item a { font-family: "Proxima Nova", Roboto, Helvetica, sans-serif !important; }

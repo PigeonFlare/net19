@@ -53,3 +53,6 @@ header nav .nav-diy-icons svg { color: var(--n19-navy) !important; }
 /* Banners, tiles and buttons: square corners */
 #app :is(img, picture, a, button, section, [class*="banner" i], [class*="card" i], [class*="tile" i]) { border-radius: 0 !important; }
 #app .backyard.button { border-radius: 2px !important; }
+/* Product page: the "Ask Mylow" question box (AI, 2023), the footer's "AI Assist" link and the "1K+ bought last week"
+   social-proof badge (2023) go */
+[data-component-name="EntryPointMyLow"], a[href="/ai"], li:has(> a[href="/ai"]:only-child), .badge:has(.social-proof-message-wrapper) { display: none !important; }

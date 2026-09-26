@@ -42,8 +42,9 @@ main.ipc-page-wrapper .ipc-page-content-container--center > :not(:first-child), 
   background-color: var(--n19-content) !important; color: var(--n19-text) !important;
 }
 main.ipc-page-wrapper { background: var(--n19-content) !important; }
-/* The trailer area: 2019's charcoal instead of pure black */
-main.ipc-page-wrapper .ipc-page-content-container--center > :first-child { background-color: var(--n19-hero) !important; }
+/* The trailer area: 2019's charcoal instead of pure black
+   (only when that first block is the trailer area: on title and name pages the first block is the light page body itself) */
+main.ipc-page-wrapper .ipc-page-content-container--center > :first-child:not(.ipc-page-background--base) { background-color: var(--n19-hero) !important; }
 main.ipc-page-wrapper .ipc-page-content-container--center > :not(:first-child) :is(.ipc-page-section, .ipc-page-grid, .ipc-page-background),
 #__next > footer.imdb-footer :is(.footer__sign-in, .ipc-page-section) { background-color: var(--n19-content) !important; }
 main.ipc-page-wrapper .ipc-page-content-container--center > :not(:first-child) :is(.ipc-chip, .ipc-chip__text, .ipc-slate-card__title, .ipc-slate-card__title-text,
@@ -53,6 +54,8 @@ main.ipc-page-wrapper .ipc-page-content-container--center > :not(:first-child) .
 main.ipc-page-wrapper .ipc-title--baseAlt .ipc-title__text, #__next > section.ipc-page-background .ipc-title__text { color: var(--n19-text) !important; font-weight: 400 !important; }
 main.ipc-page-wrapper .ipc-title--category-title .ipc-title__text { font-size: 24px !important; }
 main.ipc-page-wrapper .ipc-title--category-title::before, main.ipc-page-wrapper .ipc-title--category-title .ipc-title__text::before { display: none !important; }
+/* Every section heading (search results, lists, name pages) lost the yellow bar too */
+main.ipc-page-wrapper .ipc-title::before, main.ipc-page-wrapper .ipc-title .ipc-title__text::before { display: none !important; }
 main.ipc-page-wrapper .ipc-title--category-title { padding-left: 16px !important; }
 /* Links: 2019 blue */
 main.ipc-page-wrapper .ipc-page-content-container--center > :not(:first-child) :is(a.ipc-link, .ipc-link--baseAlt, .ipc-title-link-wrapper .ipc-title__text) { color: var(--n19-link) !important; }

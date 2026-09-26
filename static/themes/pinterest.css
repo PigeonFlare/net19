@@ -103,3 +103,10 @@ a[href*="/shuffles"], a[href^="https://shuffles"], a[href*="/collage"], [data-te
 /* Reactions on a pin (2021), the "Download image" upsell button is kept; the Unauth app upsell and QR banners */
 [data-test-id="react-button"], [data-test-id="reaction-count"], [data-test-id="UnauthAppUpsellButton"], [data-test-id="floating-app-upsell"], [data-test-id="qr-code-banner"],
 [data-n19-pin="later"] { display: none !important; }
+
+/* ---- Pinterest's other sites: the Business site and the Help Center (marked by pinterest.js) ---------------------- */
+/* 2019's system Helvetica everywhere, not the 2023 Pin Sans / Pinterest Sans */
+html[data-n19-pin-site] body :is(h1, h2, h3, h4, h5, h6, p, a, span, div, li, button, input, label, strong, em) { font-family: var(--n19-font) !important; letter-spacing: normal !important; }
+/* business.pinterest.com: a plain white bar across the top, not the 2024 floating rounded card */
+.V2DefaultNav__card { border-radius: 0 !important; box-shadow: 0 1px 0 rgba(0,0,0,.08) !important; }
+html[data-n19-pin-site="business"] .v2design-grid-wrapper:has(> .V2DefaultNav__card) { max-width: none !important; }

@@ -35,3 +35,11 @@ html[data-net19-flip] { --n19-hero-text: #000; }
 [class*="styles_heroSearch"] button[class*="CDS_Button_circle"] svg { fill: #fff !important; color: #fff !important; }
 [class*="styles_curvedWrapper"] { border-radius: 0 !important; }
 [class*="styles_card"], article[class*="styles_reviewCard"], section[class*="styles_reviewCard"] { border-radius: 4px !important; }
+/* Company page: the AI "Review summary" and "What people talk about most" topic cards (2024) and the platform-integrity
+   banner (2023) were not on the 2019 page. */
+[class*="styles_businessInfoColumnBottom"] > [class*="styles_summaryContainer"], [data-review-incentives-banner-variant-accordion] { display: none !important; }
+/* 2019's square-ish white boxes: the page panel, the rating card and review cards lose today's 16-24px rounding */
+[class*="styles_pageWrapper"], [class*="styles_ratingDistributionCard"], [class*="styles_carouselReviewCard"], [class*="styles_topicSummaryCard"],
+[class*="CDS_Card_card"] { border-radius: 4px !important; }
+/* Category pages: the filter pills become 4px buttons */
+button[class*="variant_button"], [class*="styles_filtersWrapper"] button { border-radius: 4px !important; }

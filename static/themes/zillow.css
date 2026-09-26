@@ -36,3 +36,9 @@ h1[class*="StyledHeading-c11n"], h1[class*="Text-c11n"] { font-family: "Ivar Dis
 /* On a dark device the page is inverted but the hero photo is not, so the headline's white is written as black to come out white */
 html[data-net19-flip] { --n19-hero-text: #000; }
 .with-product-nav__top-and-main h1[class*="StyledHeading-c11n"] { color: var(--n19-hero-text) !important; }
+/* The left icon rail (Search, Updates, Favorites, Plan, Inbox; 2025) did not exist: the page takes the full width again */
+.with-product-nav__product-nav { display: none !important; }
+.with-product-nav__wrapper { grid-template-columns: 0 minmax(0, 1fr) !important; }
+/* The headline sits on the hero photo (a sibling layer): a transparent gradient marks its box as "over a picture" so the
+   readability check leaves the white type alone */
+.with-product-nav__top-and-main div:has(> div > h1[class*="StyledHeading-c11n"]) { background-image: linear-gradient(transparent, transparent) !important; }

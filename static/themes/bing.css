@@ -45,6 +45,10 @@ html[data-net19-mode="dark"] { --n19-title: #8ab4f8; --n19-url: #81c995; --n19-f
 #b_header .b_searchboxForm #sb_search { order: 10 !important; }
 #b_results > li.b_algo { display: flex !important; flex-direction: column !important; }
 #b_results > li.b_algo > h2 { order: -1 !important; margin: 0 0 2px !important; }
+/* In the flex column, absolutely placed parts without offsets would sit at its top: Wikipedia's license line goes back under the answer */
+#b_results > li.b_algo > .b_wiki_license { position: static !important; }
+/* The scope bar's "Search" (Copilot Search, 2025) was not in 2019 */
+#b-scopeListItem-copilotsearch, .b_scopebar li:has(> a[href*="/copilotsearch"]) { display: none !important; }
 #b_results > li.b_algo h2 a, #b_results > li.b_algo h2 { color: var(--n19-title) !important; font-size: 20px !important; line-height: 24px !important; font-family: "Segoe UI", Arial, sans-serif !important; }
 #b_results > li.b_algo .b_tpcn { margin: 0 !important; height: auto !important; }
 #b_results > li.b_algo .b_tpcn .tpic, #b_results > li.b_algo .b_tpcn .tptt { display: none !important; }
@@ -52,3 +56,8 @@ html[data-net19-mode="dark"] { --n19-title: #8ab4f8; --n19-url: #81c995; --n19-f
 #b_results > li.b_algo cite { color: var(--n19-url) !important; font-size: 14px !important; }
 #b_results > li.b_algo .b_caption p { color: var(--n19-snippet) !important; font-size: 13px !important; line-height: 20px !important; }
 #b_results > li.b_algo, #b_results > li { border-radius: 0 !important; box-shadow: none !important; }
+/* Images and Videos: no "Create" (Image Creator, 2023), "Inspiration" feed, "Shorts" tab or "New Version" toggle */
+#imgcrtr_key, #imginspn_key, .b_primary_nav_item:has(> a[href*="/images/create"]), .b_primary_nav_item:has(> a[href*="shorts" i]), .vnt-root,
+li:has(> a[href*="/videos/shorts" i]) { display: none !important; }
+/* Images and Videos: square search box and related-search chips, as the rest of 2019's Bing */
+#b_header #sb_form, #b_header .b_searchboxForm, .b_searchbox, #b_header .sb_form_ac { border-radius: 0 !important; }

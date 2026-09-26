@@ -63,3 +63,9 @@ header.global-navigation-site-header a[data-stid="listYourProperty-link"] { bord
 /* A dark button on a yellow promo card is drawn by a pseudo-element; the button itself gets the same fill so its
    white label is judged (and stays) readable */
 .uitk-card-has-primary-theme :is(a, button).uitk-button-primary { background-color: var(--n19-promo-button) !important; color: #fff !important; }
+/* Every page (results, property, trips, help): fields had 2px corners, and the icon-only search button was a square blue
+   button, not a circle */
+:is(input.uitk-field-input, button.uitk-fake-input, .uitk-field select) { border-radius: 2px !important; }
+#search_button.uitk-button-only-icon, button[data-stid="search-button"].uitk-button-only-icon { border-radius: 3px !important; }
+/* Property page: the "Get AI-powered answers about the property" banner (the AI property expert, 2024) goes */
+#ai-property-expert-banner, [data-stid^="ai-property-expert"] { display: none !important; }
