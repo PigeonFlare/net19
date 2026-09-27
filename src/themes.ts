@@ -176,6 +176,13 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'miraheze', name: 'Miraheze', domains: ['miraheze.org'],
     query: { pattern: '^https://meta\\.miraheze\\.org/wiki/[^?#]*(#.*)?$', params: [['useskin', 'vector']] } },
   { id: 'localwiki', name: 'LocalWiki', domains: ['localwiki.org'] },
+  // Games and gaming sites whose design changed a lot after 2019 (0.12.0).
+  { id: 'steam', name: 'Steam', domains: ['steampowered.com', 'steamcommunity.com'] },
+  { id: 'itchio', name: 'itch.io', domains: ['itch.io'] },
+  { id: 'poki', name: 'Poki', domains: ['poki.com'] },
+  { id: 'xbox', name: 'Xbox', domains: ['xbox.com'] },
+  { id: 'chess', name: 'Chess.com', domains: ['chess.com'] },
+  { id: 'ign', name: 'IGN', domains: ['ign.com'] },
 ];
 
 export function themeMatches(theme: HandmadeTheme): string[] {

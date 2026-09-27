@@ -204,21 +204,23 @@ function net19Contrast() {
   const behind = (el, x, y) => {
     const stack = document.elementsFromPoint(x, y);
     let i = stack.indexOf(el); if (i < 0) i = stack.findIndex(s => s.contains(el));
-    let color = null, painter = null;
+    let color = null, painter = null, shade = null;
     for (const s of stack.slice(Math.max(0, i))) {
       if (s !== el && el.contains(s)) continue;
       const c = getComputedStyle(s);
-      if (/^(IMG|VIDEO|CANVAS|IFRAME|EMBED|OBJECT)$/.test(s.tagName) || /url\(/.test(c.backgroundImage)) return { picture: s };
+      if (/^(IMG|VIDEO|CANVAS|IFRAME|EMBED|OBJECT)$/.test(s.tagName) || /url\(/.test(c.backgroundImage)) return { picture: s, shade };
+      // A gradient shade laid over a picture (Gmail darkens its theme photos under the drawer) belongs with the picture.
+      if (!shade && /gradient\(/.test(c.backgroundImage)) shade = s;
       const bg = parse(c.backgroundColor);
       if (!bg || bg[3] < .05) continue;
       // A picture inside this surface, skipped by hit testing, is drawn over its background.
       const pic = !color && hidden(x, y, stack, el);
-      if (pic && s.contains(pic)) return { picture: pic };
+      if (pic && s.contains(pic)) return { picture: pic, shade };
       color = color ? over(color, shownAs(bg, parity(s))) : shownAs(bg, parity(s));
       painter ||= s;
       if (bg[3] >= .95) return { color, painter };
     }
-    if (!color) { const pic = hidden(x, y, stack, el); if (pic) return { picture: pic }; }
+    if (!color) { const pic = hidden(x, y, stack, el); if (pic) return { picture: pic, shade }; }
     // Nothing opaque: the browser's own canvas, white unless the page asks for a dark one (and flipped with the root).
     const dark = getComputedStyle(document.documentElement).colorScheme.includes('dark') && !getComputedStyle(document.documentElement).colorScheme.includes('light');
     const base = shownAs(dark ? [18, 18, 18, 1] : [255, 255, 255, 1], parity(document.documentElement));
@@ -235,6 +237,7 @@ function net19Contrast() {
     const tp = parity(el);
     if (b.picture) {
       const shadow = getComputedStyle(el).textShadow;
+      if (b.shade && parity(b.shade) !== parity(b.picture) && b.picture.getBoundingClientRect().width > 200) { report(el, `text over a picture whose shade is ${parity(b.shade) ? 'inverted' : 'as drawn'} and the picture ${parity(b.picture) ? 'inverted' : 'as drawn'}`, r); return; }
       if (parity(b.picture) !== tp && b.picture.getBoundingClientRect().width > 200) report(el, `${what} ${tp ? 'inverted' : 'as drawn'} over a picture shown ${tp ? 'as drawn' : 'inverted'}${shadow !== 'none' ? ' (the site gave it a shadow for that picture)' : ''}`, r);
       return;
     }

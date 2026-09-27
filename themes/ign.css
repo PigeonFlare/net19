@@ -1,0 +1,49 @@
+/* net19 handmade theme: IGN, 2019 (Wayback: the May 2019 home page; its stylesheets are still served by
+   oystatic.ignimgs.com). 2019's IGN was a plain white page under a white header with a soft shadow, near-black #252627
+   text, heavy black headings, IGN red #bf1313 for labels, dates and the few solid buttons (4px corners), links that
+   turn blue #4062bb and underline on hover, square thumbnails, and hairline rgba(37,38,39,.15) dividers. It had no
+   dark theme; IGN's own dark theme (which follows the device) gets the same design in dark neutrals instead of
+   today's blue-grey. The logo is left as IGN serves it: the 2019 wordmark was inline markup, not a hosted file. */
+html { --n19-page: #fff; --n19-alt: #fff; --n19-surface: rgba(37,38,39,.05); --n19-text: #252627; --n19-heading: #000; --n19-muted: #4c4c4c; --n19-faint: #6e707d;
+  --n19-red: #bf1313; --n19-red-hover: #a2362e; --n19-red-text: #bf1313; --n19-hover: #4062bb; --n19-line: rgba(37,38,39,.15); --n19-header: #fff; --n19-shadow: 0 2px 4px 0 rgba(0,0,0,.08); }
+html[data-net19-mode="dark"] { --n19-page: #1c1d1e; --n19-alt: #252627; --n19-surface: rgba(255,255,255,.06); --n19-text: #e3e3e3; --n19-heading: #fff; --n19-muted: #b8bbbf; --n19-faint: #97a0a8;
+  --n19-red: #d3222a; --n19-red-hover: #e1454c; --n19-red-text: #e1454c; --n19-hover: #8aa2e6; --n19-line: rgba(255,255,255,.15); --n19-header: #252627; --n19-shadow: 0 2px 4px 0 rgba(0,0,0,.4); }
+
+/* IGN's design variables (set on html[data-theme]) re-pointed to the 2019 palette */
+html[data-theme]:root {
+  --theme-elements-background-color: var(--n19-page) !important; --theme-elements-page-background: var(--n19-page) !important;
+  --theme-elements-background-altColor: var(--n19-alt) !important; --theme-elements-background-surfaceColor: var(--n19-surface) !important;
+  --theme-elements-sidebar-background-color: var(--n19-header) !important;
+  --theme-elements-text-default: var(--n19-text) !important; --theme-elements-text-heading: var(--n19-heading) !important;
+  --theme-elements-text-muted: var(--n19-muted) !important; --theme-elements-text-inactive: var(--n19-faint) !important;
+  --theme-elements-text-hover: var(--n19-hover) !important; --theme-elements-text-data: var(--n19-red-text) !important; --ignRed: var(--n19-red-text) !important;
+  --theme-elements-icon-default: var(--n19-text) !important; --theme-elements-border: var(--n19-line) !important; --theme-elements-divider: var(--n19-line) !important;
+  --theme-palette-primary: var(--n19-red) !important; --theme-elements-badge-background: var(--n19-red) !important;
+  --theme-elements-boxShadow-card: 0 1px 2px rgba(0,0,0,.12) !important;
+  --fontFamilyVar: "Helvetica Neue", Helvetica, Arial, sans-serif !important; --fontFamilyNoVar: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+/* Header: white (dark grey in dark) with 2019's soft shadow instead of a rule */
+header.header, .sidebar-page-header { background: var(--n19-header) !important; }
+header.header { box-shadow: var(--n19-shadow) !important; border-bottom: 0 !important; }
+
+/* Solid buttons (Join for free and the like) in IGN red with 4px corners; outlined ones square-cornered too */
+.button.button--primary { background: var(--n19-red) !important; color: #fff !important; border-color: var(--n19-red) !important; border-radius: 4px !important; }
+.button.button--primary:hover { background: var(--n19-red-hover) !important; }
+.button.button--secondary, .button.button--secondary-alt { border-radius: 4px !important; }
+
+/* Square thumbnails and cards, as in 2019 */
+.progressive-image, .item-thumbnail, .item-image, .content-item .aspect-ratio, .deck .card, .deck-items .card, .card .image-container,
+.object-thumbnail, .object-image, .carousel .aspect-ratio, .title-block { border-radius: 0 !important; }
+
+/* Headlines: dark and bold, blue with an underline on hover (2019's link hover) */
+a:hover .item-title, a.item-title:hover, .item-title a:hover { color: var(--n19-hover) !important; text-decoration: underline !important; }
+.item-publish-date, .comment-count { color: var(--n19-red-text) !important; }
+/* The video and section blocks set their own IGN red for headings; in dark it is the lighter red that reads on dark */
+.five-up { --theme-elements-text-data: var(--n19-red-text) !important; }
+html[data-net19-mode="dark"] :is(.filter-title, .page-header) [style*="#bf1313" i] { color: var(--n19-red-text) !important; }
+
+/* Post-2019 features: Daily Games (2024), the vertical-video "IGN Shorts" shelves (2022), IGN Plus (2023), the
+   playables promo in the side bar, and the "Set us as your source" Google promo (2025) */
+html body :is(.homepage-daily-games, .playables-daily, .object-box-shorts, section.carousel-section:has(.vertical-video-shelf-button),
+  .plus-promo, .sidebar-playables-promo, .preferred-source-container, [data-net19-hidden]) { display: none !important; }

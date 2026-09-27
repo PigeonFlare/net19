@@ -72,6 +72,8 @@ html[data-net19-flip] .z0 > .L3::before, html[data-net19-flip] .aic .T-I.T-I-KE.
    straight on the photo in the theme's own white or dark text, and the search field is a panel on it. In a flipped
    page they stay as drawn with the photo (gmail.js names them to palette.js); the search field flips with the page. ---- */
 html[data-n19-picture] header#gb { background: transparent !important; }
+/* labels in white text (the theme's dark text background) keep a firm shadow, so they read on the light parts of any photo */
+html[data-n19-picture="white"] :is(.aeN, .aqn) .TO:not(.nZ) :is(.nU, .bsU, a) { text-shadow: 0 0 3px rgba(0,0,0,.75), 0 1px 2px rgba(0,0,0,.65) !important; }
 
 /* "AI Inbox" (2025) in the drawer */
 .aeN .CL:has(> a[data-net19-hidden]), .aqn .CL:has(> a[data-net19-hidden]) { display: none !important; }

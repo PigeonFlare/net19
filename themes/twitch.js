@@ -47,7 +47,10 @@ globalThis.net19Theme = {
       if (p.children.length || !/^May Contain Labeled Content$/i.test(p.textContent.trim())) continue;
       let box = p.parentElement;
       while (box && box !== document.body && !box.querySelector('button')) box = box.parentElement;
-      if (box && box !== document.body && box.textContent.length < 400 && !box.hasAttribute('data-net19-hidden')) box.setAttribute('data-net19-hidden', '');
+      if (!box || box === document.body || box.textContent.length >= 400) continue;
+      // The notice's card frame (an article with a shadow) wraps only the notice: it goes with it.
+      while (box.parentElement && box.parentElement.children.length === 1 && box.parentElement.textContent.length < 400 && !/^(SECTION|MAIN|BODY)$/.test(box.parentElement.tagName)) box = box.parentElement;
+      if (!box.hasAttribute('data-net19-hidden')) box.setAttribute('data-net19-hidden', '');
     }
     links();
   };

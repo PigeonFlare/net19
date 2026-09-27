@@ -7,8 +7,8 @@
 html { --n19-page: #faf9fa; --n19-surface: #fff; --n19-rail: #faf9fa; --n19-rail-hover: #efeef1; --n19-text: #19171c; --n19-text-alt: #322f37; --n19-text-2: #6e6779;
   --n19-border: #dad8de; --n19-purple: #6441a4; --n19-purple-hover: #7d5bbe; --n19-purple-dark: #4b367c; --n19-link: #6441a4; --n19-bar: #6441a4;
   --n19-bar-link: rgba(255,255,255,.8); --n19-band: rgba(255,255,255,.1); --n19-field: #fff; --n19-field-border: #dad8de; --n19-field-text: #433f4a;
-  --n19-placeholder: #a49fad; --n19-field-button: #efeef1; --n19-field-icon: #6441a4; --n19-tag: #efeef1; --n19-tag-text: #322f37; --n19-live: #e21212; }
-html[data-net19-mode="dark"] { --n19-page: #0f0e11; --n19-surface: #19171c; --n19-rail: #19171c; --n19-rail-hover: #232127; --n19-text: #dad8de; --n19-text-alt: #b8b5c0; --n19-text-2: #898395;
+  --n19-placeholder: #898395; --n19-field-button: #efeef1; --n19-field-icon: #6441a4; --n19-tag: #efeef1; --n19-tag-text: #322f37; --n19-live: #e21212; }
+html[data-net19-mode="dark"] { --n19-page: #0f0e11; --n19-surface: #19171c; --n19-rail: #19171c; --n19-rail-hover: #322f37; --n19-text: #dad8de; --n19-text-alt: #b8b5c0; --n19-text-2: #898395;
   --n19-border: #2c2541; --n19-purple: #6441a4; --n19-purple-hover: #7d5bbe; --n19-purple-dark: #4b367c; --n19-link: #b19dd8; --n19-bar: #4b367c;
   --n19-bar-link: rgba(255,255,255,.8); --n19-band: rgba(255,255,255,.1); --n19-field: #0f0e11; --n19-field-border: #392e5c; --n19-field-text: #faf9fa;
   --n19-placeholder: #898395; --n19-field-button: #2c2541; --n19-field-icon: #dad8de; --n19-tag: #2c2541; --n19-tag-text: #dad8de; --n19-live: #e21212; }
@@ -101,12 +101,29 @@ nav.top-nav [data-a-target="top-nav-get-bits-button"]:hover { background: rgba(2
 
 /* Post-2019 features: the category tiles on Browse (2021), stories in the side bar (2024), Guest Star (2022), the hype-train
    line on side-bar cards (2020, marked by twitch.js), chat's community highlights and Hype Chat (2020–23) */
-.vertical-selector-card__container, [class*="vertical-selector__wrapper"], [class*="storiesLeftNavSection"],
-[class*="guest-star"], [data-a-target*="guest-star"], [data-test-selector*="guest-star"],
+html body :is(.vertical-selector-card__container, [class*="vertical-selector__wrapper"], [class*="storiesLeftNavSection"],
+[data-a-target*="guest-star"], [data-test-selector*="guest-star"],
 .community-highlight-stack__card, [class*="community-highlight-stack"], [data-test-selector*="hype-chat"], [class*="hype-chat"],
-[data-test-selector*="discovery-feed"], [data-a-target*="discovery-feed"] { display: none !important; }
+[data-test-selector*="discovery-feed"], [data-a-target*="discovery-feed"],
+/* channel points under chat (2020) */
+[data-test-selector="community-points-summary"], .community-points-summary,
+/* the content-classification chip on the player ("Intended for certain audiences", 2023) */
+.disclosure-tool) { display: none !important; }
 /* The fixed "Join the Twitch community!" sign-up bar came later (marked by twitch.js) */
-[data-net19-hidden] { display: none !important; }
+html [data-net19-hidden][data-net19-hidden] { display: none !important; }
 /* Buttons everywhere (Follow on a category, Manage Settings, Log In / Sign Up in dialogs): 2019's 4px corners, not the
    2021 pills; round icon buttons keep their shape */
 button[class*="ScCoreButton"]:not([class*="ScButtonIcon"]), a[class*="ScCoreButton"]:not([class*="ScButtonIcon"]) { border-radius: 4px !important; }
+/* Cards: 2019 had no hover accent (the purple corners and the card sliding up came with the September 2019 rebrand),
+   and Guest Star cards (2022) show as an ordinary stream thumbnail */
+.tw-hover-accent-effect > [class*="ScCorner"], .tw-hover-accent-effect > [class*="ScEdge"] { display: none !important; }
+.guest-star-live-card-border, .guest-star-live-card-clip-edge { background: none !important; padding: 0 !important; border: 0 !important; clip-path: none !important; box-shadow: none !important; }
+/* Follow is a square purple button (its 2021 pill comes from a wrapper); Subscribe was purple too, Gift a Sub (2021) a
+   plain light button beside it */
+div:has(> [data-a-target="follow-button"]), div:has(> [data-a-target="unfollow-button"]) { border-radius: 4px !important; background: transparent !important; }
+:is(div:has(> * > [data-a-target="follow-button"]), div:has(> * > * > [data-a-target="follow-button"]), div:has(> * > * > * > [data-a-target="follow-button"]),
+  div:has(> * > * > * > * > [data-a-target="follow-button"])):not(:has([data-a-target="subscribe-button"])) { border-radius: 4px !important; }
+[data-a-target="follow-button"]:hover { background: var(--n19-purple-hover) !important; }
+[data-a-target="subscribe-button"] { background: var(--n19-purple) !important; color: #fff !important; }
+[data-a-target="subscribe-button"]:hover { background: var(--n19-purple-hover) !important; }
+[data-a-target="subscribe-button"] *, [data-a-target="follow-button"] * { color: #fff !important; fill: currentColor; }

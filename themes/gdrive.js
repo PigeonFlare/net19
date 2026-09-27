@@ -28,3 +28,6 @@ globalThis.net19Theme = {
   keepLabels: /^(?:meeting notes|meetings)$/i,
 };
 })();
+// The editors measure their toolbar once to decide what fits; after the page and its fonts have loaded (with the 2019
+// type and spacing), they are asked to measure again, so no toolbar button ends up under another.
+if (location.hostname === 'docs.google.com') addEventListener('load', () => setTimeout(() => dispatchEvent(new Event('resize')), 800), { once: true });

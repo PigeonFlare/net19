@@ -145,7 +145,14 @@
     "*://*.wikivoyage.org/*",
     "*://*.wikimedia.org/*",
     "*://*.miraheze.org/*",
-    "*://*.localwiki.org/*"
+    "*://*.localwiki.org/*",
+    "*://*.steampowered.com/*",
+    "*://*.steamcommunity.com/*",
+    "*://*.itch.io/*",
+    "*://*.poki.com/*",
+    "*://*.xbox.com/*",
+    "*://*.chess.com/*",
+    "*://*.ign.com/*"
   ],
   "background": {
     "service_worker": "background.js",

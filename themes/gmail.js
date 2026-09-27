@@ -24,7 +24,7 @@
     watch: ['class', 'style'],
     // Picture themes: the bar and drawer are drawn for the photo behind them and stay as drawn with it in a flipped
     // page; the search field on the bar flips with the page.
-    keep: 'html[data-n19-picture] :is(header#gb, .aeN, .aqn)',
+    keep: 'html[data-n19-picture] :is(header#gb, .aeN, .aqn, .wp, .wq)',
     reflip: 'html[data-n19-picture] header#gb form',
     searchLabel: 'Search mail',
     later: /^(?:ai inbox|ask gmail|ask gemini|gemini|summari[sz]e this (?:email|conversation|thread)|summary|help me write|polish|refine|formali[sz]e|elaborate|shorten|smart compose|chat|spaces|meet|new meeting|join a meeting|start a meeting|my meetings|new chat|share in chat|react(?:ion)?s?|add reaction|add emoji reaction|emoji reaction|track package|track your package|package tracking|arriving (?:today|tomorrow|soon)|out for delivery|manage subscriptions|subscriptions|purchases|google one|get more storage with google one)$/i,
@@ -34,9 +34,14 @@
   const picture = () => {
     const layer = document.querySelector('.a4t');
     const on = !!layer && /url\(/.test(layer.style.backgroundImage || getComputedStyle(layer).backgroundImage);
-    if (on === document.documentElement.hasAttribute('data-n19-picture')) return;
-    document.documentElement.toggleAttribute('data-n19-picture', on);
+    const label = on && document.querySelector('.aeN .TO .nU, .aqn .TO .nU, .aeN a[href$="#starred"]');
+    const white = label && /^rgba?\((2[3-5]\d),\s*(2[3-5]\d),\s*(2[3-5]\d)/.test(getComputedStyle(label).color);
+    const value = on ? (white ? 'white' : 'dark') : null;
+    if (value === document.documentElement.getAttribute('data-n19-picture')) return;
+    if (value) document.documentElement.setAttribute('data-n19-picture', value); else document.documentElement.removeAttribute('data-n19-picture');
     globalThis.net19Theme.rejudge?.();
+    // The label color is read again once gmail.css has followed the new value (its own label color no longer applies).
+    if (value === 'dark') requestAnimationFrame(() => requestAnimationFrame(picture));
   };
   let queued = false;
   const start = () => {
