@@ -8,6 +8,7 @@ const PAGE = (title: string) => `<!doctype html><html><head><meta charset="utf-8
   `<img id="photo" width="200" height="100" src="/photo.jpg"><img id="logo" width="120" height="30" src="/logo.svg">` +
   `<dialog id="modal">modal</dialog>` +
   `<input id="q" placeholder="Search or ask a question"><button id="gen">🍌 Create images</button><a id="ask" href="/x">Ask Question</a>` +
+  `<div id="results" data-net19-hidden style="display:none"><a href="/1"><h3>One</h3></a><a href="/2"><h3>Two</h3></a><a href="/3"><h3>Three</h3></a></div>` +
   `<div id="menu" style="background:rgba(250,250,252,.95);width:300px;height:40px"><a id="faint" href="/y" style="color:#fff">Find a Store</a></div></main></body></html>`;
 let context: BrowserContext, worker: Worker, extensionId: string, requests: string[], unexpected: string[];
 
@@ -69,6 +70,7 @@ test('post-2019 features are hidden and unreadable text is given readable ink, o
   await expect(page.locator('#q')).toHaveAttribute('placeholder', 'Search');
   await expect(page.locator('#faint')).toHaveAttribute('data-net19-ink', 'dark');
   await expect(page.locator('#bar')).not.toHaveAttribute('data-net19-ink', /.*/);   // readable text is left alone
+  await expect(page.locator('#results')).toBeVisible();   // a hiding marker on a block of results is taken back
 });
 
 test('Wikipedia opens in its legacy skin', async () => {

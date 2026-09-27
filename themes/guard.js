@@ -1,4 +1,4 @@
-// net19 guard: two safety nets shared by every theme, running after the theme and palette.js.
+// net19 guard: three safety nets shared by every theme, running after the theme and palette.js.
 //
 // 1. Features that did not exist in 2019 (AI assistants, image generation, "ask" search) are hidden wherever a site
 //    shows them, by their visible label, and search fields that invite questions go back to plain "Search". Themes
@@ -7,6 +7,8 @@
 //    visible text is checked against the background it actually sits on. Text that has become unreadable (a theme
 //    rule reaching into a menu it was not written for, a panel kept as drawn inside a flipped page) is given a dark or
 //    light ink that reads on that background. Text over photos and gradients is left alone: its background is unknown.
+// 3. Content protection: a theme's hiding marker that lands on a block of real page content (several linked headings
+//    or articles) is taken back, so a rule meant for one post-2019 widget can never wipe the page.
 (() => {
   const theme = globalThis.net19Theme;
   if (!theme || globalThis.net19GuardStarted) return;
@@ -155,6 +157,35 @@
     }
   };
 
+  // ---- 3. Content protection -------------------------------------------------------------------------------------
+  // Themes hide post-2019 features by marking blocks (data-net19-hidden, or a theme's own data-net19-* / data-n19-*
+  // marker that its stylesheet hides). A marker that lands on a block holding the page's real content, such as a
+  // wrapper around several search results or articles, would wipe the page (a Google query whose AI Overview shared a
+  // wrapper with the results lost the whole first page). Such a marker is taken back and the block stays visible.
+  const CONTENT = 'a[href] :is(h1, h2, h3), :is(h1, h2, h3) a[href], article';
+  const ROOT_MARKS = /^data-(?:net19|n19)-(?:mode|flip|canvas)$/;
+  const marks = el => [...el.attributes].filter(a => /^data-(?:net19|n19)-/.test(a.name) && !ROOT_MARKS.test(a.name));
+  const protectedBlocks = new WeakSet();
+  const protect = () => {
+    const hiders = new Map();
+    for (const item of document.querySelectorAll(CONTENT)) {
+      if (item.checkVisibility ? item.checkVisibility() : item.getClientRects().length) continue;
+      for (let e = item.parentElement; e && e !== document.body && e !== root; e = e.parentElement) {
+        if (getComputedStyle(e).display !== 'none') continue;
+        if (marks(e).length || protectedBlocks.has(e)) hiders.set(e, (hiders.get(e) || 0) + 1);
+        break;
+      }
+    }
+    for (const [el, count] of hiders) {
+      if (count < 3) continue;
+      protectedBlocks.add(el);
+      for (const a of marks(el)) el.removeAttribute(a.name);
+      if (el.style.display === 'none') el.style.removeProperty('display');
+      if (getComputedStyle(el).display === 'none') el.style.setProperty('display', 'block', 'important');
+      console.warn('net19: kept a block of page content that a theme rule tried to hide', el);
+    }
+  };
+
   // ---- Scheduling ------------------------------------------------------------------------------------------------
   // Hiding runs on every batch of new content, before it is painted. The readability check runs when the page has
   // settled after a change (load, the mode or flip changing, a menu or list opening), at most every 600 ms.
@@ -167,12 +198,13 @@
       const wait = 600 - (performance.now() - lastRun);
       if (wait > 0) { soon(wait); return; }
       dirty = false; lastRun = performance.now();
-      (globalThis.requestIdleCallback || (f => f()))(() => check(), { timeout: 300 });
+      (globalThis.requestIdleCallback || (f => f()))(() => { protect(); check(); }, { timeout: 300 });
     }, delay);
   };
   const start = () => {
     (document.head || root).append(inkSheet);
     hideLater(document.body);
+    protect();
     new MutationObserver(records => {
       let added = false;
       for (const r of records) {

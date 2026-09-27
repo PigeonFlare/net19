@@ -14,9 +14,14 @@ globalThis.net19Theme = {
   const hide = () => {
     for (const heading of document.querySelectorAll('h1, h2, div[role="heading"], strong')) {
       if (heading.textContent.trim() !== 'AI Overview' || heading.closest('[data-net19-hidden]')) continue;
+      // Climb to the largest block that holds the overview and nothing else: stop below any ancestor that also holds a
+      // search result (a linked heading) or another section. Without this, a query whose overview shares a wrapper with
+      // the web results ("twitter in 2019") lost the whole first page.
+      const result = 'a[href] h3, h3 a[href], [data-hveid] a[href] h3';
+      const others = el => [...el.querySelectorAll(result)].some(h => !heading.contains(h) && !block.contains(h));
       let block = heading;
-      while (block.parentElement && !['rso', 'center_col', 'search', 'rcnt', 'main'].includes(block.parentElement.id) && block.parentElement !== document.body) block = block.parentElement;
-      if (block.parentElement && block.parentElement !== document.body) { block.setAttribute('data-net19-hidden', ''); block.style.setProperty('display', 'none', 'important'); }
+      while (block.parentElement && block.parentElement !== document.body && !['rso', 'center_col', 'search', 'rcnt', 'main'].includes(block.parentElement.id) && !others(block.parentElement)) block = block.parentElement;
+      if (block !== heading && !block.querySelector(result)) { block.setAttribute('data-net19-hidden', ''); block.style.setProperty('display', 'none', 'important'); }
     }
   };
   let queued = false;
