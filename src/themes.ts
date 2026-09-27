@@ -32,7 +32,7 @@ export const THEMES: HandmadeTheme[] = [
     exclude: [...GOOGLE_SEARCH, '*://mail.google.com/*', '*://drive.google.com/*', '*://docs.google.com/*', '*://news.google.com/*'] },
   { id: 'youtube', name: 'YouTube', domains: ['youtube.com'] },
   { id: 'wikipedia', name: 'Wikipedia', domains: ['wikipedia.org'],
-    query: { pattern: '^https://[a-z-]+\\.wikipedia\\.org/wiki/[^?#]*$', params: [['useskin', 'vector']] } },
+    query: { pattern: '^https://[a-z-]+\\.wikipedia\\.org/wiki/[^?#]*(#.*)?$', params: [['useskin', 'vector']] } },
   // Reddit as it looked through 2021 for anyone signed in on old.reddit.com: the list with vote arrows, blue titles and the right sidebar.
   { id: 'reddit', name: 'Reddit', domains: ['reddit.com'], matches: ['*://old.reddit.com/*'],
     legacy: { pattern: '^https://(?:www\\.)?reddit\\.com(/(?:(?:r|u|user|comments|search|domain|hot|new|rising|controversial|top|best)(?:[/?#].*)?|[?#].*)?)$',
@@ -148,6 +148,34 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'theverge', name: 'The Verge', domains: ['theverge.com'] },
   { id: 'techcrunch', name: 'TechCrunch', domains: ['techcrunch.com'] },
   { id: 'latimes', name: 'Los Angeles Times', domains: ['latimes.com'] },
+  // Sites outside the US and wikis (0.11.0): only sites that existed with today's functionality in 2019.
+  { id: 'whatsappsite', name: 'WhatsApp', domains: ['whatsapp.com'], matches: ['*://www.whatsapp.com/*', '*://whatsapp.com/*', '*://faq.whatsapp.com/*', '*://business.whatsapp.com/*', '*://blog.whatsapp.com/*'] },
+  { id: 'telegramsite', name: 'Telegram', domains: ['telegram.org'], matches: ['*://telegram.org/*', '*://*.telegram.org/*'], exclude: ['*://web.telegram.org/*'] },
+  { id: 'wechat', name: 'WeChat', domains: ['wechat.com'], exclude: ['*://web.wechat.com/*'] },
+  { id: 'viber', name: 'Viber', domains: ['viber.com'] },
+  { id: 'line', name: 'LINE', domains: ['line.me'] },
+  { id: 'yandex', name: 'Yandex', domains: ['yandex.ru'] },
+  { id: 'yahoojp', name: 'Yahoo! JAPAN', domains: ['yahoo.co.jp'] },
+  { id: 'seznam', name: 'Seznam.cz', domains: ['seznam.cz'] },
+  { id: 'trendyol', name: 'Trendyol', domains: ['trendyol.com'] },
+  { id: 'ozon', name: 'Ozon', domains: ['ozon.ru'] },
+  { id: 'wildberries', name: 'Wildberries', domains: ['wildberries.ru'] },
+  { id: 'baidu', name: 'Baidu', domains: ['baidu.com'] },
+  { id: 'namuwiki', name: 'Namuwiki', domains: ['namu.wiki'] },
+  { id: 'handwiki', name: 'HandWiki', domains: ['handwiki.org'] },
+  { id: 'tvtropes', name: 'TV Tropes', domains: ['tvtropes.org'] },
+  { id: 'bulbapedia', name: 'Bulbapedia', domains: ['bulbagarden.net'], matches: ['*://bulbapedia.bulbagarden.net/*'],
+    query: { pattern: '^https://bulbapedia\\.bulbagarden\\.net/wiki/[^?#]*(#.*)?$', params: [['useskin', 'monobook']] } },
+  // Wikimedia's other wikis still serve the 2019 legacy Vector skin behind the same URL parameter as Wikipedia.
+  { id: 'wiktionary', name: 'Wiktionary', domains: ['wiktionary.org'],
+    query: { pattern: '^https://[a-z-]+\\.wiktionary\\.org/wiki/[^?#]*(#.*)?$', params: [['useskin', 'vector']] } },
+  { id: 'wikivoyage', name: 'Wikivoyage', domains: ['wikivoyage.org'],
+    query: { pattern: '^https://[a-z-]+\\.wikivoyage\\.org/wiki/[^?#]*(#.*)?$', params: [['useskin', 'vector']] } },
+  { id: 'commons', name: 'Wikimedia Commons', domains: ['wikimedia.org'], matches: ['*://commons.wikimedia.org/*'],
+    query: { pattern: '^https://commons\\.wikimedia\\.org/wiki/[^?#]*(#.*)?$', params: [['useskin', 'vector']] } },
+  { id: 'miraheze', name: 'Miraheze', domains: ['miraheze.org'],
+    query: { pattern: '^https://meta\\.miraheze\\.org/wiki/[^?#]*(#.*)?$', params: [['useskin', 'vector']] } },
+  { id: 'localwiki', name: 'LocalWiki', domains: ['localwiki.org'] },
 ];
 
 export function themeMatches(theme: HandmadeTheme): string[] {

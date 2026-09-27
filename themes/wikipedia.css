@@ -61,3 +61,8 @@ body.skin-vector-legacy #p-tb li:has(> a[href*="useparsoid" i]) { display: none 
 html[data-net19-reskin] body { visibility: hidden !important; }
 /* Dark variant: the logo is a picture with black lettering; it is shown inverted so the wordmark reads on the dark sidebar */
 html[data-net19-mode="dark"] body.skin-vector-legacy #p-logo a.mw-wiki-logo { filter: invert(.9) hue-rotate(180deg) !important; }
+
+/* ---- Tab labels sit in the middle of their 40px tabs (the skin set them 5px low), and the no-script full-text
+   button that the Go button covers is put away, as the skin's own script did in 2019 ---- */
+body.skin-vector-legacy .vector-menu-tabs-legacy li a { padding-top: calc(1.25em - 5px) !important; }
+body.skin-vector-legacy #simpleSearch #mw-searchButton.mw-fallbackSearchButton { visibility: hidden !important; }

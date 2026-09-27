@@ -1,0 +1,46 @@
+/* net19 handmade theme: Trendyol, 2019. A white header with the wordmark on the left, a pill search field in the
+   middle (1px #e0e0e0 border, 21px corners, #faf9f9 fill, the orange #f27a1a magnifier), and small icons over 12px
+   labels on the right; under it a white 40px category bar framed by 1px #ebebeb with the departments in semibold
+   16px #333 capitals (KADIN, ERKEK, ÇOCUK...), the chosen one in orange. Orange #f27a1a on every accent: buttons,
+   prices on sale, the "Sepete Ekle" button, the chosen filters. Product cards were flat white tiles with a 1px
+   #e6e6e6 border and 3px corners. Nothing added after 2019 (the "Yeni" badges on the menu, the AI shopping
+   assistant). The 2019 logo (with the orange ".com" tag) is no longer hosted, so the current wordmark is kept. */
+html { --n19-orange: #f27a1a; --n19-orange-hover: #e46a08; --n19-text: #333; --n19-text-2: #666; --n19-page: #fff; --n19-field: #faf9f9;
+  --n19-field-border: #e0e0e0; --n19-bar-border: #ebebeb; --n19-card-border: #e6e6e6; --n19-font: "Source Sans Pro", "source_sans_proregular", "Segoe UI", Arial, sans-serif; }
+html[data-net19-mode="dark"] { --n19-text: #e6e6e6; --n19-text-2: #aaa; --n19-page: #1c1c1c; --n19-field: #262626; --n19-field-border: #444;
+  --n19-bar-border: #3a3a3a; --n19-card-border: #3a3a3a; }
+
+/* ---- Header ---------------------------------------------------------------------------------------------------- */
+/* The search field: a light pill with a hairline border, the orange magnifier at the right end */
+#navigation button.suggestion-placeholder, #navigation .search-bar-wrapper input, #navigation div.search-bar-wrapper [class*="search-input"] {
+  background-color: var(--n19-field) !important; border: 1px solid var(--n19-field-border) !important; border-radius: 21px !important; box-shadow: none !important; }
+#navigation button.suggestion-placeholder { flex-direction: row-reverse !important; justify-content: space-between !important; height: 40px !important; align-self: center !important; }
+#navigation button.suggestion-placeholder > span:not(.search-icon-svg) { font-size: 14px !important; color: var(--n19-text-2) !important; }
+/* The user links: 12px labels under 20px icons (the icon sits in the link's top padding, the label at its foot) */
+#navigation .navigation-menu-wrapper .menu-item { height: 44px !important; align-self: center !important; }
+#navigation .navigation-menu-wrapper :is(a.navigation-menu-user, a.favorites-wrapper, a.basket-wrapper-link) { position: relative !important; display: flex !important;
+  flex-direction: column !important; align-items: center !important; justify-content: flex-end !important; gap: 0 !important;
+  height: 44px !important; box-sizing: border-box !important; padding-top: 26px !important; padding-bottom: 0 !important; }
+#navigation .navigation-menu-wrapper :is(a.navigation-menu-user, a.favorites-wrapper, a.basket-wrapper-link) > div:first-child { position: absolute !important;
+  top: 0 !important; left: 50% !important; transform: translateX(-50%) !important; margin: 0 !important; }
+#navigation .navigation-menu-wrapper p.navigation-text { font-size: 12px !important; font-weight: 400 !important; color: var(--n19-text) !important; line-height: 15px !important; margin: 0 !important; white-space: nowrap !important; }
+/* The category bar: a framed white strip, semibold capitals, the chosen department in orange */
+#navigation .bottom-navigation-wrapper { border-top: 1px solid var(--n19-bar-border) !important; border-bottom: 1px solid var(--n19-bar-border) !important;
+  box-shadow: 0 1px 1px 0 rgba(0,0,0,.05) !important; background: var(--n19-page) !important; }
+#navigation .bottom-navigation { height: 40px !important; align-items: center !important; }
+#navigation .bottom-navigation p.section-name, #navigation .bottom-navigation .category-tab-text { text-transform: uppercase !important; font-weight: 600 !important;
+  font-size: 15px !important; color: var(--n19-text) !important; font-family: var(--n19-font) !important; display: flex !important; align-items: center !important; }
+#navigation .bottom-navigation a.section-item.active p.section-name, #navigation .bottom-navigation a.section-item:hover p.section-name { color: var(--n19-orange) !important; }
+#navigation .bottom-navigation a.section-item { border-bottom: 0 !important; }
+
+/* ---- Buttons and accents: 2019 orange, 3px corners -------------------------------------------------------------- */
+:is(button, a)[class*="add-to-basket" i], :is(button, a)[class*="add-to-cart" i], button[data-testid="add-to-cart-button"], button[class*="basket-button" i] {
+  background-color: var(--n19-orange) !important; border-color: var(--n19-orange) !important; border-radius: 3px !important; color: #fff !important; }
+:is(button, a)[class*="add-to-basket" i]:hover, button[data-testid="add-to-cart-button"]:hover { background-color: var(--n19-orange-hover) !important; }
+button.buy-now-button, button.quick-filter, button.select-box, button.quick-look { border-radius: 3px !important; }
+/* Product cards: flat tiles with a hairline border */
+.p-card-wrppr, [class*="product-card" i]:not([class*="product-card-" i]), a.product-card { border-radius: 3px !important; }
+
+/* ---- Not in 2019 -------------------------------------------------------------------------------------------------- */
+/* "Yeni" (new) badges on the menu */
+#navigation .bottom-navigation .badge.new { display: none !important; }

@@ -1,0 +1,109 @@
+/* net19 handmade theme: WeChat (wechat.com), 2019. The 2019 home page (wechat.com/en, unchanged through the year) was
+   one full-screen blurred photograph of a video call with the iPhone X mockup of a four-way call on the left; on the
+   right the white two-bubble mark, the thin white slogan, black "App Store" / "Android" badges and a row of three
+   bordered squares (Windows, Mac, Web); a thin gray footer line along the bottom ("Help Center · About · Platform ·
+   English", copyright, Terms · Privacy). All pictures are WeChat's own 2019 files, still served by res.wx.qq.com.
+   The green arc banner, the round platform buttons and the white cards (2023) are gone. The Weixin/WeChat green was
+   #1aad19 (WeUI 1.x) rather than today's #07c160, which the help center and the Android download dialog get back.
+   Text pages (Contact Us, Terms, Privacy) still use their 2019 stylesheet and are left as drawn. Newsroom
+   (newsroom.wechat.com) and Safety Center (safety.wechat.com) did not exist in 2019 and are left alone. */
+html { --n19-green: #1aad19; --n19-green-hover: #179b16; --n19-foot: #a8a8a8; --n19-foot-line: rgba(255, 255, 255, .12);
+  --n19-square: rgba(255, 255, 255, .2); --n19-square-hover: #8b8b8b; --n19-page: #fff; --n19-text: #353535;
+  --n19-font: "PingHei", "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+  --n19-wc-photo: url("https://res.wx.qq.com/a/wx_fed/wechat-main-page-oversea/res/static/img/3cBQnDIp2EgSXSBL63MSClIDLoFbew1ygXJy6OxmqUEfvjgxaElbuilGY9ihEe50JN3FvIcjL4djHmNOIQCbX6.jpg");
+  --n19-wc-phone: url("https://res.wx.qq.com/a/wx_fed/wechat-main-page-oversea/res/static/img/1rKlkuOrthp7ZKS09etWhnzqVygE5TJ72pPtOq0ZWjuJr5oq_WmAfeB3JeGjk8NkOrBvDJoiOs4Cb3CjXEsVFR.png");
+  --n19-wc-mark: url("https://res.wx.qq.com/a/wx_fed/wechat-main-page-oversea/res/static/img/1tBMRgVg_gHjp2b0iuXw0-yoGlOHhmM5uyWxcJ1qzYDIH_76av5xLm-GAZ1iLBATMvUs1hNCjr9CJMpp4AzXFr.png");
+  --n19-wc-appstore: url("https://res.wx.qq.com/a/wx_fed/wechat-main-page-oversea/res/static/img/3la2DYJfsCUJEkfcYx8LsqJZKFaIoU-MjYKW4D2HIvlSmEiNVcO3gUO1IJlJks3HY6hv_Hx6bSryLtit6HQNYo.png");
+  --n19-wc-android: url("https://res.wx.qq.com/a/wx_fed/wechat-main-page-oversea/res/static/img/3EV8qa_SiXqRYmwxc8acsrnkiGZiPJrVSq72-kuvWla_n5wGYwA7qkWAkBusVcoRR49b0Pv6eHnWPAP7l7kxo-.png");
+  --n19-wc-win: url("https://res.wx.qq.com/a/wx_fed/wechat-main-page-oversea/res/static/img/1UgCAK6K1U4mha7UOSm-GOXyJQPQ25P5YQVrslBEkprbp1oKon_mENBNULOSGPIQnNXRiAZFlFA-VClyggVGdL.png");
+  --n19-wc-mac: url("https://res.wx.qq.com/a/wx_fed/wechat-main-page-oversea/res/static/img/8cJROOvDdfdfgAW5r9nRbR5DYbWUZyrPExh5tMr1eazac0Ri4CzBrHWm-f3JFbJpp3Ij3UatnQLcpu6FlOSH4.png"); }
+html[data-net19-mode="dark"] { --n19-green: #1aad19; --n19-green-hover: #179b16; --n19-foot: #a8a8a8; --n19-foot-line: rgba(255, 255, 255, .12);
+  --n19-square: rgba(255, 255, 255, .2); --n19-square-hover: #8b8b8b; --n19-page: #fff; --n19-text: #353535; }
+
+/* ---- Home: one photograph behind the whole page (the page was the same in light and dark) ------------------------ */
+.wrap:has(> .main-content > .banner) { background: #3a3a3a var(--n19-wc-photo) no-repeat center / cover !important; background-attachment: fixed !important;
+  min-height: 100vh !important; display: flex !important; flex-direction: column !important; font-family: var(--n19-font) !important; }
+.wrap:has(> .main-content > .banner) > .main-content { flex: 1 0 auto !important; display: flex !important; flex-direction: column !important; }
+.main-content > .banner { flex: 1 0 auto !important; height: auto !important; padding: 0 !important; min-height: 640px !important; background: transparent !important; overflow: visible !important; }
+.main-content > .banner > .banner__inner { display: none !important; }
+/* The phone on the left (28% of a 1200px column), the brand column on the right */
+.main-content > .banner > .banner__bd { position: relative !important; box-sizing: border-box !important; max-width: 1200px !important; margin: 0 auto !important;
+  top: auto !important; left: auto !important; transform: none !important; min-height: 620px !important;
+  padding: 150px 0 60px calc(28% + 25px) !important; margin-top: 0 !important; text-align: center !important; }
+.main-content > .banner > .banner__bd::before { content: "" !important; position: absolute !important; left: 0 !important; top: 78px !important;
+  width: 28% !important; aspect-ratio: 620 / 1245 !important; background: var(--n19-wc-phone) no-repeat top center / contain !important; pointer-events: none !important; }
+/* The two-bubble mark alone, 83px (WeChat's own 2019 file); the wordmark came with the slogan, not above it */
+.banner__bd > .banner__logo { width: 83px !important; height: 83px !important; margin: 0 auto 25px !important;
+  background: var(--n19-wc-mark) no-repeat center / 100% !important; }
+.banner__bd .banner__desc_wrap { margin: 0 auto 36px !important; max-width: 680px !important; }
+.banner__bd .banner__desc { font-size: 44px !important; line-height: 1.25 !important; font-weight: 300 !important; letter-spacing: 0 !important;
+  color: #fff !important; font-family: "Helvetica Neue", "PingHei", Helvetica, Arial, sans-serif !important; margin: 0 !important; }
+/* Downloads: the App Store and Android badges on one row, three bordered squares (Windows, Mac) under them */
+.banner__bd .banner__download { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; gap: 0 !important;
+  width: 351px !important; max-width: 100% !important; margin: 0 auto !important; height: auto !important; }
+.banner__download > .banner__download-item { position: relative !important; box-sizing: border-box !important; margin: 0 !important; border-radius: 0 !important;
+  background-color: transparent !important; box-shadow: none !important; transform: none !important; }
+.banner__download > :is(.banner__download-item_ios, .banner__download-item_android) { width: 173px !important; height: 51px !important;
+  margin: 0 0 40px !important; background: no-repeat center / 100% !important; }
+.banner__download > .banner__download-item_ios { background-image: var(--n19-wc-appstore) !important; }
+.banner__download > .banner__download-item_android { background-image: var(--n19-wc-android) !important; margin-left: 5px !important; }
+.banner__download > :is(.banner__download-item_ios, .banner__download-item_android):hover { opacity: .75 !important; }
+.banner__download > :is(.banner__download-item_macos, .banner__download-item_windows) { width: 69px !important; height: 61px !important;
+  border: 1px solid var(--n19-square) !important; display: flex !important; align-items: center !important; justify-content: center !important; }
+.banner__download > .banner__download-item_macos { order: 3 !important; }
+.banner__download > .banner__download-item_windows { order: 2 !important; }
+.banner__download > :is(.banner__download-item_ios, .banner__download-item_android) { order: 0 !important; }
+.banner__download > :is(.banner__download-item_macos, .banner__download-item_windows):hover { background-color: var(--n19-square-hover) !important; }
+.banner__download > .banner__download-item_windows { border-right: none !important; }
+.banner__download > .banner__download-item_windows i { background: var(--n19-wc-win) no-repeat center / 100% !important; }
+.banner__download > .banner__download-item_macos i { background: var(--n19-wc-mac) no-repeat center / 100% !important; }
+.banner__download > :is(.banner__download-item_macos, .banner__download-item_windows) i { width: 35px !important; height: 35px !important; margin: 0 !important; }
+.banner__download > :is(.banner__download-item_ios, .banner__download-item_android) i { display: none !important; }
+/* The labels stay for screen readers only: the badges and squares were pictures in 2019 */
+.banner__download > .banner__download-item > span { position: absolute !important; width: 1px !important; height: 1px !important; overflow: hidden !important;
+  clip-path: inset(50%) !important; white-space: nowrap !important; margin: 0 !important; padding: 0 !important; }
+/* The language switch in the corner stays, in the photo's white */
+.banner .lang_change :is(a, button, span) { color: rgba(255, 255, 255, .8) !important; font-size: 13px !important; }
+
+/* ---- The link cards and footer become 2019's thin gray line along the bottom of the photo ------------------------ */
+.wrap:has(> .main-content > .banner) .links { background: transparent !important; padding: 0 !important; margin: 0 !important; height: auto !important;
+  border-top: 1px solid var(--n19-foot-line) !important; }
+.wrap:has(> .main-content > .banner) .links__list { display: flex !important; justify-content: center !important; gap: 0 !important; margin: 0 auto !important;
+  padding: 12px 0 0 !important; width: auto !important; max-width: none !important; }
+.wrap:has(> .main-content > .banner) .links__list > li { width: auto !important; height: auto !important; margin: 0 !important; flex: none !important; }
+.wrap:has(> .main-content > .banner) .links__list > li > a { display: inline-block !important; width: auto !important; height: auto !important; padding: 6px 9px !important;
+  background: transparent !important; box-shadow: none !important; border-radius: 0 !important; color: var(--n19-foot) !important; font-size: 12px !important;
+  line-height: 18px !important; font-family: var(--n19-font) !important; }
+.wrap:has(> .main-content > .banner) .links__list > li > a:hover { color: #fff !important; }
+.wrap:has(> .main-content > .banner) .links__list > li > a > i { display: none !important; }
+.wrap:has(> .main-content > .banner) .footer-wrp, .wrap:has(> .main-content > .banner) .footer { background: transparent !important; box-shadow: none !important; }
+.wrap:has(> .main-content > .banner) .footer { padding: 4px 0 18px !important; height: auto !important; }
+.wrap:has(> .main-content > .banner) .footer__bd { display: flex !important; flex-wrap: wrap !important; justify-content: center !important; align-items: center !important;
+  gap: 4px 14px !important; width: auto !important; max-width: 1200px !important; margin: 0 auto !important; }
+.wrap:has(> .main-content > .banner) .footer :is(a, span, div) { color: var(--n19-foot) !important; font-size: 12px !important; font-family: var(--n19-font) !important; }
+.wrap:has(> .main-content > .banner) .footer a:hover { color: #fff !important; }
+.wrap:has(> .main-content > .banner) .footer__links, .wrap:has(> .main-content > .banner) .footer__copyright,
+.wrap:has(> .main-content > .banner) .footer__social { margin: 0 !important; display: flex !important; align-items: center !important; }
+.wrap:has(> .main-content > .banner) .footer__links { order: 2 !important; }
+.wrap:has(> .main-content > .banner) .footer__copyright { order: 1 !important; }
+.wrap:has(> .main-content > .banner) .footer__social { order: 3 !important; gap: 10px !important; }
+.wrap:has(> .main-content > .banner) .footer__social-link, .wrap:has(> .main-content > .banner) .footer__social-link img { width: 20px !important; height: 20px !important; }
+.wrap:has(> .main-content > .banner) .footer__social-link { opacity: .7 !important; }
+.wrap:has(> .main-content > .banner) .footer__social-link:hover { opacity: 1 !important; }
+
+/* ---- The Android download dialog: WeUI 1.x green ------------------------------------------------------------ */
+.download__btn_primary { background-color: var(--n19-green) !important; }
+.download__btn_primary:hover { background-color: var(--n19-green-hover) !important; }
+
+/* ---- Help center (cs.help.wechat.com): a flat WeUI-green band instead of the green arc, square white tiles ------- */
+html:has(#main-content) header#header.header { background-color: var(--n19-green) !important; }
+#main-content .banner__inner { background: var(--n19-green) !important; border-radius: 0 !important; left: 0 !important; width: 100% !important; transform: none !important; }
+#home-category-section .blocks-item { border-radius: 0 !important; box-shadow: none !important; border: 1px solid #e5e5e5 !important; }
+#main-content input#query { border-radius: 3px !important; }
+
+/* ---- Narrow windows: like 2019's own narrow layout, the brand column alone, without the phone ---------------- */
+@media (max-width: 800px) {
+  .main-content > .banner > .banner__bd { padding: 90px 16px 40px !important; min-height: 0 !important; }
+  .main-content > .banner > .banner__bd::before { display: none !important; }
+  .banner__bd .banner__desc { font-size: 28px !important; }
+}

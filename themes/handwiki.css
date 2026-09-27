@@ -1,0 +1,61 @@
+/* net19 handmade theme: HandWiki, 2019. In late 2019 HandWiki (MediaWiki 1.33) wore the Foundation-based "Pivot" skin
+   with its own colors: a deep purple title bar with "HandWiki" in white (the orange W), a pale teal page, the
+   globe-and-ring "W" logo over a left column whose sections open with purple-to-blue gradient labels in bold small
+   capitals, #0645ad links, and the article on a light gray card between thin gray rules, with Helvetica Neue titles
+   and a hairline under each section heading. Today's Timeless layout is kept and dressed that way. The skin had no
+   dark mode; a dark device gets the same page flipped by palette.js. */
+html { --n19-bar: #392583; --n19-page: #e7f3f3; --n19-card: #f9f9f9; --n19-rule: #ccc; --n19-text: #222; --n19-link: #0645ad;
+  --n19-link-hover: #0b0080; --n19-label-from: #392583; --n19-label-to: #1f8cd7; --n19-hairline: #ddd; --n19-foot: #aaa; }
+html[data-net19-mode="dark"] { --n19-bar: #392583; --n19-page: #e7f3f3; --n19-card: #f9f9f9; --n19-rule: #ccc; --n19-text: #222; --n19-link: #0645ad;
+  --n19-link-hover: #0b0080; --n19-label-from: #392583; --n19-label-to: #1f8cd7; --n19-hairline: #ddd; --n19-foot: #aaa; } /* flipped whole by palette.js */
+
+/* ---- Title bar: deep purple, white "HandWiki" (its orange W is the site's own), no color stripes under it ---- */
+body.skin-timeless #mw-header-container { background: var(--n19-bar) !important; box-shadow: none !important; border: 0 !important; }
+body.skin-timeless :is(#mw-header-hack, #mw-header-nav-hack) { display: none !important; }
+body.skin-timeless #p-banner, body.skin-timeless #p-banner b { color: #fff !important; font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important; }
+body.skin-timeless #personal h2, body.skin-timeless #personal h2 span { color: #fff !important; font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important; font-size: 1rem !important; }
+/* the gray menu, tools and user icons Timeless puts in the bar (narrow windows) read white on the purple */
+body.skin-timeless :is(#site-navigation, #site-tools, #personal) > h2 { filter: brightness(0) invert(1); }
+body.skin-timeless #simpleSearch { background: #fff !important; border: 1px solid var(--n19-rule) !important; border-radius: 0 !important; box-shadow: inset 0 1px 2px rgba(0, 0, 0, .1) !important; }
+
+/* ---- The page: pale teal, the article on a light gray card between thin gray rules ---- */
+body.skin-timeless, body.skin-timeless #mw-content-block { background: var(--n19-page) !important; }
+body.skin-timeless #mw-content { background: var(--n19-card) !important; border: 0 !important; border-left: 1px solid var(--n19-rule) !important;
+  border-right: 1px solid var(--n19-rule) !important; border-radius: 0 !important; box-shadow: none !important; color: var(--n19-text); }
+body.skin-timeless #firstHeading { font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important; font-size: 1.9rem !important;
+  font-weight: 400 !important; color: var(--n19-text) !important; border-bottom: 0 !important; }
+body.skin-timeless #siteSub { font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important; color: #6f6f6f !important; }
+body.skin-timeless .mw-parser-output :is(h1, h2, h3, h4, h5, h6) { font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important; color: var(--n19-text); }
+body.skin-timeless .mw-parser-output h2 { border-bottom: 1px solid var(--n19-hairline) !important; }
+body.skin-timeless #mw-content a:not(.new, .external, .cdx-button, [role="button"]),
+body.skin-timeless #mw-content .mw-parser-output a.external { color: var(--n19-link); }
+body.skin-timeless #mw-content a:not(.new, .cdx-button, [role="button"]):hover { color: var(--n19-link-hover); }
+body.skin-timeless #mw-page-header-links a { font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif !important; }
+
+/* ---- Left column: the 2019 globe logo, gradient section labels, plain link lists on the page color ---- */
+/* the logo HandWiki used in 2019, still served at /wiki/resources/assets/wiki.png (170 x 90) */
+body.skin-timeless #p-logo a.timeless-logo img { content: url("https://handwiki.org/wiki/resources/assets/wiki.png"); width: 170px !important; height: 90px !important;
+  max-width: 100% !important; object-fit: contain; display: block !important; margin: 0 auto !important; }
+/* dark device: the logo is a picture and keeps its real colors inside the flipped page */
+html[data-net19-flip] body.skin-timeless #p-logo a.timeless-logo img { filter: contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
+body.skin-timeless #mw-site-navigation, body.skin-timeless #mw-related-navigation { background: transparent !important; }
+body.skin-timeless :is(#mw-site-navigation, #mw-related-navigation) .sidebar-chunk { background: transparent !important; border: 0 !important; box-shadow: none !important; border-radius: 0 !important; }
+body.skin-timeless :is(#mw-site-navigation, #mw-related-navigation) .sidebar-chunk h3 {
+  background: var(--n19-label-from) !important; background-image: linear-gradient(to right, var(--n19-label-from), var(--n19-label-to)) !important;
+  color: #fff !important; font-variant: small-caps; font-weight: 700 !important; font-size: 1.1em !important; line-height: 1.5 !important;
+  padding: .25em .5em !important; margin: 0 0 .35em !important; border: 0 !important; }
+body.skin-timeless :is(#mw-site-navigation, #mw-related-navigation) .sidebar-chunk h3::after { display: none !important; }
+body.skin-timeless :is(#mw-site-navigation, #mw-related-navigation) .sidebar-chunk li a { color: var(--n19-link) !important; font-size: 1rem; padding-left: .5em; }
+body.skin-timeless :is(#mw-site-navigation, #mw-related-navigation) .sidebar-chunk li a:hover { color: var(--n19-link-hover) !important; background: transparent !important; }
+body.skin-timeless .deskContent .dropbtn { background: var(--n19-label-from) !important; background-image: linear-gradient(to right, var(--n19-label-from), var(--n19-label-to)) !important;
+  color: #fff !important; font-variant: small-caps; font-weight: 700 !important; border-radius: 0 !important; }
+
+/* ---- Footer: the page color with a gray rule, dark text, blue links ---- */
+body.skin-timeless #mw-footer-container { background: var(--n19-card) !important; color: var(--n19-text) !important; border-top: 1px solid var(--n19-foot) !important; box-shadow: none !important; }
+body.skin-timeless #mw-footer-container a { color: var(--n19-link) !important; }
+body.skin-timeless #mw-footer-container :is(li, div, span, p) { color: var(--n19-text); }
+
+/* ---- Added after 2019: the site's dark-mode switch and bookmark button beside the title, the "Tip of the Day"
+   pop-up in the corner, and the star rating under each article ---- */
+body.skin-timeless :is(#darkswitch, #hwbookmark, div[id^="rating_"]) { display: none !important; }
+body .swal2-container.swal2-bottom-end { display: none !important; }

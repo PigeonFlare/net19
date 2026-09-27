@@ -2,11 +2,11 @@
 
 Effective September 26, 2026. Applies to net19 0.10.0.
 
-Net19 restyles 110 popular websites to look as they did in 2019. It has no developer-operated server, account system, analytics, advertisements, remote AI, or telemetry.
+Net19 restyles 135 popular websites to look as they did in 2019. It has no developer-operated server, account system, analytics, advertisements, remote AI, or telemetry.
 
 ## What leaves your device
 
-Nothing. Net19 makes no network requests of its own. Its themes are stylesheets and small scripts bundled inside the extension. A few themes show a site's own older logo or icon images (Google, Bing, Wikipedia), which your browser loads from that same site like any other part of the page.
+Nothing. Net19 makes no network requests of its own. Its themes are stylesheets and small scripts bundled inside the extension. A few themes show a site's own older logo or icon images, such as Google, Bing and Wikipedia's, the Twitter bird from abs.twimg.com, Reddit's snoo from redditstatic.com and WeChat's pictures from res.wx.qq.com. Your browser loads these from that site's own servers like any other part of the page.
 
 Two themes send you to an older version of a site on that site's own servers:
 
@@ -15,7 +15,7 @@ Two themes send you to an older version of a site on that site's own servers:
 
 ## Access and storage
 
-Net19 has access only to the 110 sites it themes (listed in `src/themes.ts`). It does not run on any other site and cannot read them.
+Net19 has access only to the 135 sites it themes (listed in `src/themes.ts`). It does not run on any other site and cannot read them.
 
 Chrome local extension storage holds your settings: whether net19 is on, and which sites you switched off. Updating from an earlier version deletes the archive profiles and other data those versions kept.
 

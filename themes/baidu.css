@@ -1,0 +1,117 @@
+/* net19 handmade theme: Baidu, 2019. The white home with the 2019 "Bai[paw]du 百度" logo (bd_logo1.png, deep blue paw),
+   a plain 1px gray search field with the square blue #3385ff "百度一下" button beside it, and bold underlined 13px
+   links at the top. Results: the small 101x33 logo, the same field and button, a #f8f8f8 tab bar whose current tab
+   is bold with a 2px #38f underline, #00c underlined titles with red #c00 keywords, 13px #333 text, a right column
+   behind a 1px #e1e1e1 rule and square 34px page numbers. Hidden: 文心/ERNIE Bot entries, AI answers, the Wenxin
+   assistant bubble, 库库AI and 百度搭子, and the app download QR. Baidu has no dark mode: the device's dark setting
+   flips the page (palette.js). */
+html { --n19-page: #fff; --n19-text: #333; --n19-text-2: #666; --n19-link: #00c; --n19-hit: #c00; --n19-url: #008000;
+  --n19-blue: #3385ff; --n19-blue-hover: #317ef3; --n19-blue-edge: #2d78f4; --n19-field: #b8b8b8; --n19-focus: #4791ff;
+  --n19-bar: #f8f8f8; --n19-rule: #e1e1e1; --n19-tab: #38f;
+  --n19-font: Arial, "Microsoft YaHei", "PingFang SC", "Hiragino Sans GB", sans-serif;
+  /* Baidu's own 2019 logo files, still served from www.baidu.com */
+  --n19-logo: url("https://www.baidu.com/img/bd_logo1.png?where=super");
+  --n19-logo-small: url("https://www.baidu.com/img/baidu_resultlogo@2.png"); }
+html[data-net19-mode="dark"] { --n19-page: #1f1f1f; --n19-text: #ddd; --n19-text-2: #aaa; --n19-link: #8ab4f8; --n19-hit: #f28b82;
+  --n19-url: #7fbf7f; --n19-field: #5f6368; --n19-bar: #2a2a2a; --n19-rule: #3c4043; }
+
+/* ---- Type --------------------------------------------------------------------------------------------------------- */
+/* Only the header and field take 2019's Arial: result cards size their clamped lines to the site's own font */
+#head :is(a, span, textarea, button), #s_top_wrap a, #s_tab :is(a, b, span), #page { font-family: var(--n19-font) !important; }
+
+/* ---- Logos: bd_logo1.png on the home, the 2019 101x33 result logo on results -------------------------------------- */
+#lg img#s_lg_img:is([src*="/logo/pc/index"], [src*="PCtm_"], [src*="bd_logo"]), #lg img.index-logo-srcnew:is([src*="/logo/pc/index"], [src*="PCtm_"]) {
+  content: var(--n19-logo) !important; width: 270px !important; height: 129px !important; }
+#result_logo img.index-logo-src, #result_logo img.index-logo-peak { content: var(--n19-logo-small) !important; width: 101px !important; height: 33px !important; }
+
+/* ---- The search field: a 1px gray box with the square blue button on its right ------------------------------------- */
+#chat-input-main .chat-input-wrapper-border, #chat-input-main .chat-input-wrapper-box-shadow { display: none !important; }
+#chat-input-main .chat-input-wrapper { border: 1px solid var(--n19-field) !important; border-radius: 0 !important; box-shadow: none !important;
+  background: var(--n19-page) !important; }
+#chat-input-main .chat-input-wrapper:hover { border-color: #999 !important; }
+#chat-input-main .chat-input-wrapper:focus-within { border-color: var(--n19-focus) !important; }
+#chat-input-main .chat-input-container { border-radius: 0 !important; background: transparent !important; }
+#chat-input-main .right-tools-wrapper { background: transparent !important; }
+#chat-textarea { font-size: 16px !important; color: var(--n19-text) !important; }
+#chat-submit-button { background: var(--n19-blue) !important; border: 0 !important; border-bottom: 1px solid var(--n19-blue-edge) !important;
+  border-radius: 0 !important; box-shadow: none !important; color: #fff !important; font-size: 16px !important; letter-spacing: 1px; }
+#chat-submit-button:hover { background: var(--n19-blue-hover) !important; }
+#chat-submit-button * { color: #fff !important; }
+#chat-submit-button::before, #chat-submit-button::after { display: none !important; }
+/* Results header: the button fills the field's right end, as the 2019 button sat flush against the field */
+#chat-input-main.one-line-input .chat-input-tool { right: 0 !important; top: 0 !important; bottom: 0 !important; height: auto !important; }
+#chat-input-main.one-line-input .right-tools-wrapper { height: 100% !important; padding-right: 0 !important; top: 0 !important; margin: 0 !important; }
+#chat-input-main.one-line-input #chat-submit-button { height: 100% !important; border-bottom: 0 !important; width: 100px !important; }
+/* Home: one row, like the 2019 field, instead of the two-line chat box */
+.pc-home-index #chat-input-main.two-line-input .chat-input-container { display: flex !important; flex-direction: row !important;
+  align-items: center !important; min-height: 0 !important; height: 42px !important; padding: 0 0 0 12px !important; }
+.pc-home-index #chat-input-main.two-line-input #chat-input-area { flex: 1 1 auto !important; min-width: 0 !important; margin: 0 !important; padding: 0 !important; }
+.pc-home-index #chat-input-main.two-line-input #chat-textarea { height: 24px !important; min-height: 24px !important; max-height: 24px !important;
+  line-height: 24px !important; padding: 0 !important; margin: 0 !important; overflow: hidden !important; white-space: nowrap !important; }
+.pc-home-index #chat-input-main.two-line-input .chat-input-tool { flex: 0 0 auto !important; height: 42px !important; margin: 0 !important; padding: 0 !important;
+  position: static !important; width: auto !important; display: flex !important; align-items: stretch !important; }
+.pc-home-index #chat-input-main.two-line-input .right-tools-wrapper { position: static !important; height: 42px !important; padding: 0 !important; margin: 0 !important;
+  display: flex !important; align-items: center !important; gap: 0 !important; }
+.pc-home-index #chat-input-main.two-line-input #right-tool { margin: 0 12px 0 0 !important; }
+.pc-home-index #chat-input-main.two-line-input #chat-submit-button { height: 42px !important; width: 108px !important; border-bottom: 0 !important; margin: 0 !important; }
+.pc-home-index #chat-input-main.two-line-input, .pc-home-index #chat-input-main.two-line-input .chat-input-wrapper { height: auto !important; min-height: 0 !important; }
+.pc-home-index .ai-input, .pc-home-index .ai-input .san-card, .pc-home-index .ai-input [class*="chat-input-background_"], .pc-home-index #input-root {
+  height: auto !important; min-height: 0 !important; background: transparent !important; }
+.pc-home-index .ai-input [class*="chat-input-background_"]::before, .pc-home-index .ai-input [class*="chat-input-background_"]::after { display: none !important; }
+
+/* 2019's field and button were 641px wide together */
+.pc-home-index #main-wrapper.ai-input { width: 654px !important; max-width: 100% !important; margin-left: auto !important; margin-right: auto !important; }
+
+/* ---- Home: 2019's top links (bold, underlined, 13px) and the square blue 登录 ----------------------------------------- */
+#s-top-left a.mnav, #s-top-left a.s-bri, #u1 .s-top-right-text { color: var(--n19-text) !important; font-size: 13px !important; font-weight: 700 !important; text-decoration: underline !important; }
+#s-top-left a.mnav:hover, #s-top-left a.s-bri:hover { color: var(--n19-link) !important; }
+#s-top-loginbtn { background: var(--n19-blue) !important; border: 0 !important; border-bottom: 1px solid var(--n19-blue) !important; border-radius: 0 !important; color: #fff !important;
+  font-size: 13px !important; }
+#s-top-loginbtn:hover { background: var(--n19-blue-hover) !important; }
+/* The hot list keeps its content with 2019's plain type: #333 links, no colored AI chips */
+#s-hotsearch-wrapper .title-content-title { color: var(--n19-text) !important; }
+#s-hotsearch-wrapper a:hover .title-content-title { color: var(--n19-link) !important; text-decoration: underline !important; }
+/* Footer: 2019's gray #999 links */
+#bottom_layer .text-color { color: #999 !important; }
+
+/* ---- Post-2019: Wenxin (ERNIE Bot) and AI entries, app download ---------------------------------------------------- */
+[class*="panel-list_"]:has(> [class*="guide-bub_"]), [class*="guide-bub_"], #csaitab, #s-top-left a.mnav[href*="chat.baidu.com"],
+#s-top-left a.mnav[href*="yiyan.baidu.com"], a.s-tab-csaitab, #s_qrcode_feed_new, [class*="right-aside-qrcode-accessibility_"] [class*="action-item-download_"], #content_left > [tpl="new_baikan_index"],
+#content_left > [tpl^="ai_"], #content_left > [tpl*="wenxin"], #content_left > [tpl="recommend_list"] { display: none !important; }
+
+/* ---- Results: header, tab bar ------------------------------------------------------------------------------------- */
+.pc-fresh-wrapper #head { border-bottom: 1px solid #ebebeb !important; box-shadow: none !important; }
+.pc-fresh-wrapper #u a.toindex, .pc-fresh-wrapper #u a.pf { color: var(--n19-text) !important; text-decoration: underline !important; font-size: 13px !important; }
+.pc-fresh-wrapper #u a.lb { background: var(--n19-blue) !important; color: #fff !important; border-radius: 0 !important; font-size: 13px !important; }
+.pc-fresh-wrapper #u a.lb:hover { background: var(--n19-blue-hover) !important; }
+#s_tab { background: var(--n19-bar) !important; }
+#s_tab .s-tab-item, #s_tab .s-tab-item span { color: var(--n19-text-2) !important; font-size: 14px !important; }
+#s_tab .s-tab-item:hover, #s_tab .s-tab-item:hover span { color: #323232 !important; }
+#s_tab b.cur-tab { color: #323232 !important; font-weight: 700 !important; font-size: 14px !important; }
+#s_tab b.cur-tab::after { background: var(--n19-tab) !important; height: 2px !important; border-radius: 0 !important; }
+
+/* ---- Results: #00c underlined titles, red keywords, 13px text ------------------------------------------------------ */
+#content_left h3 a, #content_left h3.t a, #content_left .c-title a { color: var(--n19-link) !important; text-decoration: underline !important; }
+#content_left h3 a:visited { color: #609 !important; }
+#content_left h3 a em, #content_left .c-title em { color: var(--n19-hit) !important; text-decoration: underline !important; }
+#content_left .c-container em, #content_left [class*="content-right_"] em { color: var(--n19-hit) !important; }
+#content_left .c-container :is(.c-abstract, [class*="content-right_"], .c-span-last) { color: var(--n19-text) !important; }
+/* Cards lose today's rounded, tinted frames */
+#content_left .c-container :is(.cosc-card-content-border, [class*="content-border"], .cu-border) { border-radius: 0 !important; box-shadow: none !important; }
+#content_left .result-op.c-container > div > [class*="_aladdin_"] { background-image: none !important; }
+
+/* ---- Right column: a 1px rule on its left ------------------------------------------------------------------------- */
+#content_right { border-left: 1px solid var(--n19-rule) !important; padding-left: 16px !important; }
+#content_right .cr-content, #con-ar > div { border-radius: 0 !important; }
+
+/* ---- Page numbers: 34px squares with a 1px #e1e2e3 frame; the current one plain and bold ---------------------------- */
+#page a, #page strong { background: transparent !important; border-radius: 0 !important; }
+#page a [class^="page-item_"], #page a.n { background: var(--n19-page) !important; border: 1px solid #e1e2e3 !important; border-radius: 0 !important; color: var(--n19-link) !important; }
+#page a:hover [class^="page-item_"], #page a.n:hover { background: #f2f8ff !important; border-color: var(--n19-tab) !important; }
+#page strong [class^="page-item_"] { background: transparent !important; border: 0 !important; color: var(--n19-text) !important; font-weight: 700 !important; }
+
+/* ---- 百度知道 (zhidao.baidu.com): 2019's square field and #38f buttons ---------------------------------------------- */
+input#kw.hdi { border-radius: 0 !important; }
+button#search-btn.btn-global { border-radius: 0 !important; background: var(--n19-blue) !important; }
+button#search-btn.btn-global:hover { background: var(--n19-blue-hover) !important; }
+a#ask-btn-new.i-ask-link { border-radius: 0 !important; }

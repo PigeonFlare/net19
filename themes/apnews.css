@@ -17,9 +17,8 @@ html[data-net19-mode="dark"] { --n19-bar: #262626; --n19-bar-text: #e6e6e6; --n1
 .Page-header-stickyWrap, .Page-header-stickyWrap .Page-header, .Page-header-bar, .Page-trendingZephr-wrapper { background: var(--n19-bar) !important; }
 .Page-header-bar { box-shadow: none !important; height: 64px !important; }
 .Page-header-stickyWrap { border-bottom: 1px solid var(--n19-rule) !important; }
-.Page-header-bar-logo a { display: block !important; width: 60px !important; height: 44px !important;
-  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='8 46 160 96'%3E%3Cpath fill='%23ff322e' d='M40.49 49.03 10.9 139.64h21.42l20.1-64.05 10.07 32.02H49.46l-5.2 18.28h23.98l4.33 13.75H94.6L65.02 49.03H40.49ZM128.26 49.03H97.51v90.61h21.27V67.3h8.57c9.94 0 15.6 4.85 15.6 13.6 0 8.59-5.66 13.59-15.6 13.59h-1.38v18.28h2.3c22.95 0 36.41-11.8 36.41-31.87 0-20.47-13.46-31.87-36.42-31.87Z'/%3E%3C/svg%3E") left center / contain no-repeat !important; }
-.Page-header-bar-logo a > picture, .Page-header-bar-logo a > img { opacity: 0 !important; }
+.Page-header-bar-logo a { display: block !important; width: 60px !important; height: 44px !important; }
+.Page-header-bar-logo a :is(picture, img, svg) { width: 100% !important; height: 100% !important; object-fit: contain !important; }
 .Page-header-bar :is(.MainNavigationItem-text, .MainNavigationItem-text a, .MainNavigationItem-more, .Page-header-menu-trigger, .SearchOverlay-search-button, .Page-header-sign-in, .Page-header-sign-in a) { color: var(--n19-bar-text) !important; }
 .Page-header-bar :is(.MainNavigationItem-text a, .MainNavigationItem-more) { font-family: var(--ap19-sans) !important; font-stretch: 100% !important; font-size: 16px !important;
   font-weight: 400 !important; text-transform: none !important; letter-spacing: 0 !important; }

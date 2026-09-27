@@ -190,3 +190,12 @@ globalThis.net19Theme = {
   };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();
+// The tab icon: the 2019 bird favicon, which Twitter's CDN still serves, instead of the X.
+(() => {
+  const BIRD = 'https://abs.twimg.com/favicons/twitter.2.ico';
+  const swap = () => {
+    for (const link of document.querySelectorAll('link[rel~="icon"], link[rel="shortcut icon"]')) if (link.href !== BIRD) link.href = BIRD;
+  };
+  const start = () => { swap(); new MutationObserver(swap).observe(document.head || document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] }); };
+  if (document.head) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+})();

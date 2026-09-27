@@ -1,0 +1,43 @@
+/* net19 handmade theme: namu.wiki, 2019: the "senkawa" skin. A flat teal #008275 navigation bar (white icons and
+   labels, #38a59a on hover) with a square white search box, a #efefef page behind the white article, square cards
+   and sidebars framed in #ccc, bootstrap-blue #0275d8 links, and Open Sans / Apple SD Gothic Neo / 나눔고딕 type.
+   The teal is the value senkawa's own layout.css used throughout 2019 (captures from May and September 2019).
+   Today's "espejo" skin is built on --espejo-* variables, so the 2019 look is set there and reaches every page:
+   articles, recent changes, search, history, discussions and the edit view. The 2019 logo file
+   (skins/senkawa/img/namuwiki_logo_kor_white_small.png) is no longer served, so the current logo stays.
+   namu.wiki has its own dark mode (body.theseed-dark-mode); it keeps its dark surfaces under the same teal bar.
+   Hidden: the 실시간 검색어 (live search terms) card, which came after 2019 (found by its /Go?q= links). */
+html { --n19-teal: #008275; --n19-teal-hover: #38a59a; --n19-page: #efefef; --n19-card: #fff; --n19-rule: #ccc; --n19-text: #373a3c; --n19-link: #0275d8;
+  --n19-field: #fff; --n19-field-text: #000;
+  --n19-font: "Open Sans", Arial, "Apple SD Gothic Neo", "Noto Sans CJK KR", "본고딕", "KoPubDotum Medium", "나눔바른고딕", "나눔고딕", NanumGothic, "맑은고딕", "Malgun Gothic", sans-serif; }
+html[data-net19-mode="dark"] { --n19-page: #111; --n19-card: #1c1d1f; --n19-rule: #444; --n19-text: #e0e0e0;
+  --n19-link: #ec9f19; --n19-field: #1c1d1f; --n19-field-text: #e0e0e0; }
+
+/* ---- The skin's variables, on the root and on body (where namu.wiki sets its light and dark palettes) ------------- */
+html:root, html body, html body.theseed-light-mode, html body.theseed-dark-mode {
+  --espejo-page-font-family-var: var(--n19-font) !important;
+  --espejo-nav-bar-background-color: var(--n19-teal) !important;
+  --espejo-nav-bar-text-color: #fff !important;
+  --espejo-nav-bar-item-hover-color: var(--n19-teal-hover) !important;
+  --espejo-nav-bar-border-color: var(--n19-teal) !important;
+  --espejo-nav-bar-child-radius-var: 0 !important;
+  --espejo-brand1-color: var(--n19-teal) !important;
+  --espejo-brand2-color: var(--n19-teal) !important;
+  --espejo-nav-control-background-color: var(--n19-teal) !important;
+  --espejo-nav-control-text-color: #fff !important;
+  --espejo-background-color: var(--n19-page) !important;
+  --espejo-card-border-color: var(--n19-rule) !important;
+  --espejo-card-border-radius-var: 0 !important;
+  --espejo-dropdown-menu-item-border-radius-var: 0 !important;
+  --espejo-article-title-namespace-underline-color: none !important;
+}
+html:not([data-net19-mode="dark"]) body:not(.theseed-dark-mode) { --espejo-link-color: #0275d8 !important; --espejo-link-hover-color: #014c8c !important;
+  --espejo-card-background-color: #fff !important; --espejo-component-border-color: var(--n19-rule) !important; }
+
+/* ---- Type ----------------------------------------------------------------------------------------------------------- */
+#app { font-family: var(--n19-font) !important; }
+
+/* ---- Post-2019: the live search terms card ------------------------------------------------------------------------ */
+/* Its title is drawn as an SVG, so the card is found by its links: live terms open /Go?q=…. The card is the block holding
+   those links and nothing of the article, the search form or the recent changes list. */
+#app div:not(article *):has(a[href^="/Go?q="]):not(:has(article, h1, form, input, a[href="/RecentChanges"])) { display: none !important; }

@@ -25,12 +25,11 @@ body.wp-theme-tc-24 :is(h1, h2, h3, h4, p, a, span, li, figcaption, input, butto
   .wp-block-techcrunch-site-header__inner-container { height: 100% !important; background: var(--n19-page) !important; border: 0 !important; padding: 0 !important; overflow-y: auto; }
   .wp-block-techcrunch-site-header__inner { flex-direction: column !important; align-items: flex-start !important; justify-content: flex-start !important; gap: 0 !important;
     padding: 30px 20px 30px 30px !important; color: var(--n19-meta) !important; max-width: none !important; }
-  /* the green TC mark, 60px wide, where the white lockup was */
+  /* the site's own small TC mark, 60px wide, where the lockup was */
   .wp-block-techcrunch-site-header__logo-small, .home .wp-block-techcrunch-site-header__logo-small[aria-hidden] { display: block !important; position: relative !important; opacity: 1 !important;
     width: 60px !important; min-width: 0 !important; height: 31px !important; margin: 0 0 26px !important; order: 0; }
-  .wp-block-techcrunch-site-header__logo-small a { display: block !important; width: 60px !important; height: 31px !important;
-    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 47 24'%3E%3Cpath fill='%230a9e01' d='M23.3143 0V7.99297H15.5429V24H7.77143V7.99297H0V0H23.3143Z'/%3E%3Cpath fill='%230a9e01' d='M46.6285 16.0369V24H23.3142V8.05713H31.0856V16.0369H46.6285Z'/%3E%3Cpath fill='%230a9e01' d='M46.6286 0H31.0286V8.05714H46.6286V0Z'/%3E%3C/svg%3E") left center / contain no-repeat !important; }
-  .wp-block-techcrunch-site-header__logo-small img { opacity: 0 !important; }
+  .wp-block-techcrunch-site-header__logo-small a { display: block !important; width: 60px !important; height: 31px !important; }
+  .wp-block-techcrunch-site-header__logo-small img { width: 100% !important; height: 100% !important; object-fit: contain !important; }
   .wp-block-techcrunch-site-header__logo-mobile { display: none !important; }
   /* search and the full menu first, as 2019's "Search" and "More" entries */
   .wp-block-techcrunch-menu-utility { order: 1; width: 100% !important; margin: 0 0 14px !important; }

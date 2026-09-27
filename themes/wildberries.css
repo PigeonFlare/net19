@@ -1,0 +1,30 @@
+/* net19 handmade theme: Wildberries, 2019. The header was the brand's magenta-to-purple band (#cb11ab to #481173)
+   with the white wordmark, a white search field with small corners and white icon links with labels on the right;
+   under it a white page. Accents were magenta #cb11ab (the "Добавить в корзину" button, links, the cart counter),
+   sale prices in red and discount tags as small red rectangles. Corners were small: 4px buttons and fields, square
+   product photos. Nothing added after 2019 in the header strip (Wibes, travel, RWB jobs, WB Club, Track, Resale,
+   new builds, the pharmacy, business accounts) and no search by photo. The 2019 "WILDBERRIES" logo is not served as
+   a file any more (the site draws its logo inline), so the current wordmark is kept. */
+html { --n19-magenta: #cb11ab; --n19-magenta-hover: #b00e94; --n19-purple: #481173; --n19-red: #f91155; --n19-text: #242424; --n19-page: #fff; --n19-radius: 4px; }
+html[data-net19-mode="dark"] { --n19-text: #e6e6e6; --n19-page: #161616; }
+
+/* ---- Header: the 2019 magenta-to-purple band -------------------------------------------------------------------- */
+/* (the solid magenta under the gradient lets palette.js keep the band as drawn on a flipped dark page) */
+header#header.header { background-color: var(--n19-magenta) !important; background-image: linear-gradient(90deg, var(--n19-magenta) 0%, var(--n19-purple) 100%) !important; }
+header#header .navbar-pc__link, header#header .navbar-pc__link p, header#header .simple-menu__link { color: #fff !important; }
+/* The search field: white with 4px corners */
+#searchBlock .search-catalog__block, #searchBlock .search-catalog__input-wrapper { border-radius: var(--n19-radius) !important; }
+header#header .nav-element__burger { border-radius: var(--n19-radius) !important; }
+
+/* ---- Product cards: square photos, rectangular tags -------------------------------------------------------------- */
+.product-card .product-card__img-wrap, .product-card .product-card__img-wrap img { border-radius: 0 !important; }
+.product-card .mo-badge { border-radius: 2px !important; }
+
+/* ---- Buttons: 4px corners ---------------------------------------------------------------------------------------- */
+button.mo-button:is(.mo-button_view_fill, .mo-button_view_fillLight), a.btn-main, button.btn-main { border-radius: var(--n19-radius) !important; }
+
+/* ---- Not in 2019 -------------------------------------------------------------------------------------------------- */
+/* Header strip links that came later: Wibes (2024), hotels, flights, tours (2024), RWB jobs, WB Club, Track, Resale,
+   new builds, the pharmacy, business accounts; and search by photo */
+header#header li:is(.j-wibes, .j-hotels, .j-avia, .j-funSun, .j-resale, .j-wbClub, .j-realty, .j-wbTrack, .j-work, .j-eapteka, .j-business),
+#searchByImageContainer { display: none !important; }

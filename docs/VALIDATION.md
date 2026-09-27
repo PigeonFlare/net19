@@ -198,3 +198,13 @@ On the other 15 sites the flags were checked and set aside:
 - the sites' own cookie banners;
 - rotating carousels;
 - Wikipedia's legacy skin, which is served as the site drew it in 2019.
+
+## Content protection (0.11.0)
+
+A Google search for "twitter in 2019" lost every result on page 1. The rule that hides the AI Overview climbed from its heading to the largest wrapper that held no other result; on that query Google put the overview and the results in one wrapper, so the rule hid them all. It now stops at the first wrapper that holds any other result heading. Checked in a real signed-in Chrome: "twitter in 2019" keeps its 9 results, and two queries with an AI Overview keep their 6 results with the overview hidden.
+
+Two checks now catch this class of bug on any site:
+- `themes/guard.js` takes back any net19 hiding marker that lands on a block holding 3 or more linked headings or articles, and logs a warning;
+- `scripts/audit-diff.mjs` reports CONTENT LOST when linked headings or articles drop below 75%, or text below 60%, of the page without net19. `URLS='{"id":"https://..."}'` tests any page, such as a search results page.
+
+Logos are never drawn. Twitter's bird comes from abs.twimg.com and Reddit's snoo from redditstatic.com. AP and TechCrunch keep their current logos.

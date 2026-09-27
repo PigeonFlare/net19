@@ -28,7 +28,8 @@ const BRAND = {
   amazon: ['amazon.jobs', 'aboutamazon.com'],
   nytimes: ['nyt.com'],
 };
-const registrable = host => host.replace(/^www\./, '').split('.').slice(-2).join('.');
+// The registrable domain: the last two labels, or three under a two-part public suffix (yahoo.co.jp, bbc.co.uk).
+const registrable = host => { const l = host.replace(/^www\./, '').split('.'); return l.slice(/^(co|com|ne|or|ac|go|net|org|gov|edu)\.[a-z]{2}$/.test(l.slice(-2).join('.')) ? -3 : -2).join('.'); };
 const siteOf = id => THEMES.find(t => t.id === id);
 
 async function collect(p) {

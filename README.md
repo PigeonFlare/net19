@@ -23,9 +23,11 @@ Then click the extension's **Reload** button once. Its card in `chrome://extensi
 
 ## Sites
 
-The 2019 look is designed by hand for 110 sites. The references are the [Web Design Museum](https://www.webdesignmuseum.org/gallery/)'s captures, or the Wayback Machine's 2019 captures where the museum has none.
+The 2019 look is designed by hand for 135 sites. The references are the [Web Design Museum](https://www.webdesignmuseum.org/gallery/)'s captures, or the Wayback Machine's 2019 captures where the museum has none.
 
 The sites are most of [SE Ranking's top 100 US websites](https://seranking.com/top-websites-us.html), plus Twitch, Bing and Stack Overflow. It also covers the chat and social apps Discord, Telegram Web, WhatsApp Web, Tumblr and Messenger, the major news sites whose design changed after 2019, and Google beyond Search: Gmail, Drive and Docs, News, Maps, Account, the Store and the rest.
+
+Outside the US it covers WhatsApp and Telegram's own sites, WeChat, Viber, LINE, Yandex, Yahoo! JAPAN, Seznam, Baidu, Trendyol, Ozon and Wildberries. The wikis are Fandom, namu.wiki, HandWiki, TV Tropes, Bulbapedia, Wiktionary, Wikivoyage, Wikimedia Commons, Miraheze and LocalWiki. LocalWiki still serves its 2019 design, so its theme only adds dark mode.
 
 Every page of a covered site gets its look, not just the home page. Menus, app launchers, footers and search results all lead to pages that stay 2019. From that list, net19 leaves out:
 
@@ -50,9 +52,9 @@ Most sites have no dark mode, and some keep their own setting. When a site shows
 
 Brand colors keep their hue but change lightness, so a purple button in light mode becomes a lighter purple in dark mode. Netflix and Spotify's player were dark-only in 2019 and stay dark.
 
-Two sites still serve their older design themselves:
+Some sites still serve their older design themselves:
 
-- **Wikipedia** articles open in its legacy Vector skin.
+- **Wikipedia**, Wiktionary, Wikivoyage, Commons and Miraheze's Meta wiki open in the legacy Vector skin, and Bulbapedia in its MonoBook skin.
 - **Reddit**, while you are signed in, opens on old.reddit.com: the list with vote arrows, blue titles and the sidebar Reddit used through 2021. Old Reddit has no dark mode, so when your device is dark, net19 gives the same layout a dark palette. Signed out, old.reddit.com only offers a sign-in page, so Reddit stays on its current app with 2019 colors and a flat list.
 
 On social sites the themes also hide what those sites added after 2019. Examples:

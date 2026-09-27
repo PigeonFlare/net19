@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "net19",
-  "version": "0.10.0",
+  "version": "0.11.0",
   "description": "Websites as they looked in 2019.",
   "minimum_chrome_version": "120",
   "permissions": [
@@ -126,7 +126,26 @@
     "*://*.businessinsider.com/*",
     "*://*.theverge.com/*",
     "*://*.techcrunch.com/*",
-    "*://*.latimes.com/*"
+    "*://*.latimes.com/*",
+    "*://*.wechat.com/*",
+    "*://*.viber.com/*",
+    "*://*.line.me/*",
+    "*://*.yandex.ru/*",
+    "*://*.yahoo.co.jp/*",
+    "*://*.seznam.cz/*",
+    "*://*.trendyol.com/*",
+    "*://*.ozon.ru/*",
+    "*://*.wildberries.ru/*",
+    "*://*.baidu.com/*",
+    "*://*.namu.wiki/*",
+    "*://*.handwiki.org/*",
+    "*://*.tvtropes.org/*",
+    "*://*.bulbagarden.net/*",
+    "*://*.wiktionary.org/*",
+    "*://*.wikivoyage.org/*",
+    "*://*.wikimedia.org/*",
+    "*://*.miraheze.org/*",
+    "*://*.localwiki.org/*"
   ],
   "background": {
     "service_worker": "background.js",
