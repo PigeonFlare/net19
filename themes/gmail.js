@@ -34,18 +34,21 @@
   const picture = () => {
     const layer = document.querySelector('.a4t');
     const on = !!layer && /url\(/.test(layer.style.backgroundImage || getComputedStyle(layer).backgroundImage);
-    const label = on && document.querySelector('.aeN .TO .nU, .aqn .TO .nU, .aeN a[href$="#starred"]');
+    const label = on && document.querySelector('.aeN .TO:not(.nZ) .nU, .aqn .TO:not(.nZ) .nU');
     const white = label && /^rgba?\((2[3-5]\d),\s*(2[3-5]\d),\s*(2[3-5]\d)/.test(getComputedStyle(label).color);
     const value = on ? (white ? 'white' : 'dark') : null;
     if (value === document.documentElement.getAttribute('data-n19-picture')) return;
     if (value) document.documentElement.setAttribute('data-n19-picture', value); else document.documentElement.removeAttribute('data-n19-picture');
-    globalThis.net19Theme.rejudge?.();
+    // palette.js starts after this file: until it has, the page is judged when it starts, with the value already set.
+    if (globalThis.net19Theme.rejudge) globalThis.net19Theme.rejudge(); else requestAnimationFrame(() => globalThis.net19Theme.rejudge?.());
     // The label color is read again once gmail.css has followed the new value (its own label color no longer applies).
     if (value === 'dark') requestAnimationFrame(() => requestAnimationFrame(picture));
   };
   let queued = false;
   const start = () => {
     picture();
+    // Gmail builds the drawer and the photo's shading after the first paint: judge once more when the page has loaded.
+    addEventListener('load', () => setTimeout(() => globalThis.net19Theme.rejudge?.(), 600), { once: true });
     new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; picture(); }); } })
       .observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['style'] });
   };

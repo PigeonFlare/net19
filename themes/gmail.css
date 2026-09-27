@@ -63,6 +63,8 @@ header#gb form[role="search"], header#gb form.aJf {
 header#gb form[role="search"]:focus-within { background: var(--n19-field-focus) !important; box-shadow: var(--n19-shadow) !important; }
 header#gb form[role="search"] > div, header#gb form[role="search"] table, header#gb form[role="search"] td { background: transparent !important; }
 header#gb form[role="search"] input[name="q"] { background: transparent !important; color: var(--n19-text) !important; font-family: var(--n19-font) !important; font-size: 16px !important; }
+header#gb form[role="search"] input::placeholder, header#gb form.aJf input::placeholder { color: var(--n19-text-2) !important; opacity: 1 !important; }
+header#gb form[role="search"] :is(button, [role="button"]) svg { fill: var(--n19-icon) !important; }
 
 /* in a flipped (dark) page the 2019 artwork keeps its real colors */
 html[data-net19-flip] header#gb a[href*="#inbox"] img, html[data-net19-flip] header#gb img[src*="logo_gmail"],

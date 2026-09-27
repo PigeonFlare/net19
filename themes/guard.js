@@ -63,14 +63,25 @@
   const ratio = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05); };
   const over = (top, under) => { const a = top[3]; return [0, 1, 2].map(i => top[i] * a + under[i] * (1 - a)).concat(1); };
   const invert = c => [255 - c[0], 255 - c[1], 255 - c[2], c[3]];
-  // How many times the page flip applies to an element (odd: it is shown inverted).
+  // Whether an element is shown inverted: every invert() filter on it or an ancestor turns it over once (the page flip,
+  // the turned-back photos inside it, a theme's own filters). Read from computed filters and cached for one check.
+  let flips = new Map();
   const parity = el => {
-    if (!root.hasAttribute('data-net19-flip')) return 0;
-    let n = 1;
-    for (let e = el; e && e !== root; e = e.parentElement) {
-      if (e.hasAttribute('data-net19-keep')) n--; else if (e.hasAttribute('data-net19-reflip')) n++;
-    }
-    return ((n % 2) + 2) % 2;
+    if (!el || el.nodeType !== 1) return 0;
+    if (flips.has(el)) return flips.get(el);
+    let p = parity(el.parentElement);
+    const f = getComputedStyle(el).filter;
+    const m = f && f !== 'none' && f.match(/invert\(([\d.]+)\)/);
+    if (m && +m[1] > .5) p ^= 1;
+    flips.set(el, p);
+    return p;
+  };
+  // A gradient behind text (a header shading from one blue to another) is taken as the average of its colors.
+  const gradient = image => {
+    if (/url\(/.test(image) || !/gradient\(/.test(image)) return null;
+    const stops = (image.match(/rgba?\([^)]*\)/g) || []).map(rgba).filter(Boolean);
+    if (!stops.length) return null;
+    return [0, 1, 2, 3].map(i => stops.reduce((sum, c) => sum + c[i], 0) / stops.length);
   };
   const MEDIA = 'img, picture, video, canvas, svg image, iframe';
   // The solid color behind an element, or null when a photo, gradient or media element may be behind it.
@@ -78,7 +89,8 @@
     const layers = [];
     for (let e = el; e; e = e.parentElement) {
       const style = getComputedStyle(e);
-      if (style.backgroundImage !== 'none') return null;
+      let shade = null;
+      if (style.backgroundImage !== 'none') { shade = gradient(style.backgroundImage); if (!shade) return null; }
       if (e !== el) for (const child of e.children) {
         if (child.matches(MEDIA) || child.querySelector?.(':scope > img, :scope > video, :scope > picture')) {
           const a = child.getBoundingClientRect(), b = el.getBoundingClientRect();
@@ -86,6 +98,8 @@
         }
       }
       const color = rgba(style.backgroundColor);
+      if (shade && shade[3] > 0) layers.push({ color: shade, el: e });
+      if (shade && shade[3] >= .95) break;
       if (color && color[3] > 0) {
         layers.push({ color, el: e });
         if (color[3] >= .95) break;
@@ -103,7 +117,7 @@
     return { color: base, flip: flipBase };
   };
   // Before changing any text: whatever is painted under its middle (sibling layers included) must not be a picture.
-  const painted = e => { const st = getComputedStyle(e); return st.backgroundImage !== 'none' || ['::before', '::after'].some(p => getComputedStyle(e, p).backgroundImage !== 'none'); };
+  const painted = e => { const st = getComputedStyle(e); return /url\(/.test(st.backgroundImage) || ['::before', '::after'].some(p => /url\(/.test(getComputedStyle(e, p).backgroundImage)); };
   const overPicture = (el, box) => {
     const x = Math.min(innerWidth - 1, Math.max(0, box.left + Math.min(box.width, 60) / 2)), y = Math.min(innerHeight - 1, Math.max(0, box.top + box.height / 2));
     for (const hit of document.elementsFromPoint(x, y)) {
@@ -129,6 +143,7 @@
   };
   const check = () => {
     if (!document.body) return;
+    flips = new Map();
     const view = { w: innerWidth, h: innerHeight };
     const changes = [];
     for (const el of textElements()) {
@@ -145,10 +160,18 @@
       const inText = parity(el) === bg.flip ? bg.color : invert(bg.color);
       const shown = over(text, inText);
       const current = el.getAttribute('data-net19-ink');
-      if (ratio(shown, inText) >= 2.2) { if (current) changes.push([el, null]); continue; }
+      // WCAG's floor for large text (24px, or 18.66px bold) is 3:1 and for the rest 4.5:1; net19 repairs what falls
+      // below 2.2:1 and 3:1, the same limits as the lowcontrast page check.
+      const size = parseFloat(style.fontSize), large = size >= 24 || (size >= 18.6 && +style.fontWeight >= 600);
+      // White or black lettering on a strong brand color (Twitter's blue buttons, WhatsApp's green bar) is how those
+      // sites drew it in 2019 and reads well from 2.5:1.
+      const vivid = Math.max(...inText.slice(0, 3)) - Math.min(...inText.slice(0, 3)) > 90;
+      const plain = Math.max(...shown.slice(0, 3)) - Math.min(...shown.slice(0, 3)) < 24;
+      const floor = large ? 2.2 : vivid && plain ? 2.5 : 3;
+      if (ratio(shown, inText) >= floor) { if (current) changes.push([el, null]); continue; }
       if (!current && overPicture(el, box)) continue;
       if (!original.has(el)) original.set(el, text);
-      const ink = lum(inText) > .4 ? 'dark' : 'light';
+      const ink = ratio([29, 29, 31, 1], inText) >= ratio([245, 245, 247, 1], inText) ? 'dark' : 'light';
       if (current !== ink) changes.push([el, ink]);
     }
     for (const [el, ink] of changes) {

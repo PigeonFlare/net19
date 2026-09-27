@@ -89,7 +89,16 @@ function net19PageChecks() {
     if (!lines.length) continue;
     const top = Math.min(...lines.map(q => q.top)), bottom = Math.max(...lines.map(q => q.bottom));
     if (bottom - top > r.height * .8 || bottom - top > 28) continue;   // several lines, or text that fills the box
-    text = (top + bottom) / 2;
+    // An icon stacked above or below the label (LinkedIn's and Walmart's header items): the pair is what sits in the
+    // middle, so the icon's box joins the text's.
+    let t0 = top, b0 = bottom;
+    for (const k of e.querySelectorAll('svg, img, [class*="icon" i]')) {
+      if (!shown(k)) continue;
+      const q = k.getBoundingClientRect();
+      if (q.width < 8 || q.height < 8 || q.height > r.height) continue;
+      if (q.bottom <= top + 1 || q.top >= bottom - 1) { t0 = Math.min(t0, q.top); b0 = Math.max(b0, q.bottom); }
+    }
+    text = (t0 + b0) / 2;
     const c = getComputedStyle(e);
     const padTop = parseFloat(c.paddingTop) || 0, padBottom = parseFloat(c.paddingBottom) || 0;
     if (Math.abs(padTop - padBottom) > 4) continue;  // deliberately uneven padding (a label above a rule)
@@ -245,9 +254,20 @@ function net19Contrast() {
     t = [...t.slice(0, 3), t[3] * alpha(el)];
     const shown = over(shownAs(t, tp), b.color);
     const cr = ratio(shown, b.color);
-    if (cr < 3) report(el, `${what} contrast ${cr.toFixed(2)}:1 (${shown.slice(0, 3).map(Math.round)} on ${b.color.slice(0, 3).map(Math.round)})`, r);
+    const st = getComputedStyle(el), size = parseFloat(st.fontSize), large = what === 'text' && (size >= 24 || (size >= 18.6 && +st.fontWeight >= 600));
+    const vivid = Math.max(...b.color.slice(0, 3)) - Math.min(...b.color.slice(0, 3)) > 90, plain = Math.max(...shown.slice(0, 3)) - Math.min(...shown.slice(0, 3)) < 24;
+    if (cr < (large ? 2.2 : vivid && plain ? 2.5 : 3)) report(el, `${what} contrast ${cr.toFixed(2)}:1 (${shown.slice(0, 3).map(Math.round)} on ${b.color.slice(0, 3).map(Math.round)})`, r);
   };
-  const visible = e => { const c = getComputedStyle(e); return c.visibility === 'visible' && c.display !== 'none' && +c.opacity > .05; };
+  // Screen-reader-only text (clipped to nothing, or in a 1px box that hides its overflow) is not shown to anyone.
+  const clippedAway = e => {
+    for (let n = e, i = 0; n && n !== document.body && i < 4; n = n.parentElement, i++) {
+      const c = getComputedStyle(n);
+      if (/rect\(0(px)?,? 0(px)?,? 0(px)?,? 0(px)?\)|rect\(1px,? 1px,? 1px,? 1px\)/.test(c.clip) || /inset\(50%\)|inset\(100%\)|circle\(0/.test(c.clipPath)) return true;
+      if (/hidden|clip/.test(c.overflow) && (n.offsetWidth <= 2 || n.offsetHeight <= 2)) return true;
+    }
+    return false;
+  };
+  const visible = e => { const c = getComputedStyle(e); return c.visibility === 'visible' && c.display !== 'none' && +c.opacity > .05 && !clippedAway(e); };
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   let n = 0;
   for (let t = walker.nextNode(); t && n < 1500; t = walker.nextNode()) {

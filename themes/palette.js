@@ -131,6 +131,31 @@
   };
   const SKIP = /^(IMG|VIDEO|CANVAS|IFRAME|SVG|svg|PATH|path|SCRIPT|STYLE|LINK|META|BR)$/;
   const keepSel = theme.keep || '', reflipSel = theme.reflip || '';
+  // Text, badges and shading laid over a picture (a hero headline, a video's length, a map's controls) are drawn for
+  // that picture: when the picture keeps its real colors, so must they. The picture's host is the largest ancestor
+  // with the picture's own box; when it holds anything besides the picture, the whole host is kept instead.
+  const overlaid = (media, decided, context) => {
+    const r = media.getBoundingClientRect();
+    if (r.width < 120 || r.height < 64) {
+      if (media.tagName === 'IMG' && !media.complete) media.addEventListener('load', () => { if (media.isConnected && !media.hasAttribute('data-net19-flat')) { const d = new Map(); overlaid(media, d, () => 'flipped'); for (const [e, v] of d) if (!e.closest('[data-net19-keep]')) e.setAttribute(`data-net19-${v}`, ''); } }, { once: true });
+      return false;
+    }
+    if (media.hasAttribute('data-net19-flat')) return false;
+    let host = null;
+    for (let n = media.parentElement, i = 0; n && n !== document.body && i < 6; n = n.parentElement, i++) {
+      const q = n.getBoundingClientRect();
+      if (Math.abs(q.width - r.width) > Math.max(8, r.width * .08) || Math.abs(q.height - r.height) > Math.max(8, r.height * .08)) break;
+      host = n;
+    }
+    if (!host || !host.querySelector(':scope *:not(img, picture, source, video, canvas, svg, svg *)')) return false;
+    // A host that holds a whole app or page section (Gmail's theme photo sits behind everything) is not an overlay.
+    const text = (host.textContent || '').replace(/\s+/g, ' ').trim();
+    if (text.length > 400 || host.getElementsByTagName('*').length > 80 || host.querySelector('input, textarea, [role="navigation"], nav, main')) return false;
+    if (!text && !host.querySelector('[style*="gradient"], [class*="gradient" i], [class*="overlay" i], [class*="shade" i]')) return false;
+    if (context(host) !== 'flipped' || host.closest('[data-net19-keep]')) return false;
+    decided.set(host, 'keep');
+    return true;
+  };
   const keepPhotos = roots => {
     const decided = new Map(), scrimColor = new Map(); // element -> 'keep' | 'reflip' | 'scrim'
     const context = el => {    // 'kept' inside a kept part, 'none' inside a flipped-again one, otherwise 'flipped'
@@ -150,7 +175,11 @@
       for (const el of list) {
         if (seen.has(el)) continue;
         seen.add(el);
-        if (el.tagName === 'IMG') { flatIcon(el); continue; }
+        if (el.tagName === 'IMG' || el.tagName === 'VIDEO' || el.tagName === 'CANVAS') {
+          if (el.tagName === 'IMG') flatIcon(el);
+          overlaid(el, decided, context);
+          continue;
+        }
         // The page itself is never kept: keeping <body> would undo the flip for everything on it.
         if (el === document.body) continue;
         if (SKIP.test(el.tagName) || el.hasAttribute('data-net19-keep') || el.hasAttribute('data-net19-reflip') || el.hasAttribute('data-net19-scrim')) continue;
@@ -178,7 +207,8 @@
         const w = el.offsetWidth, h = el.offsetHeight;
         if (w < 96 || h < 24 || (photo && h < (surely ? 64 : 200))) { small.add(el); continue; }
         if (where === 'kept') decided.set(el, 'reflip');
-        else if (photo || color[3] >= .9) decided.set(el, 'keep');
+        else if (photo) { if (!overlaid(el, decided, context)) decided.set(el, 'keep'); }
+        else if (color[3] >= .9) decided.set(el, 'keep');
         else { decided.set(el, 'scrim'); scrimColor.set(el, style.backgroundColor); }
       }
     }
