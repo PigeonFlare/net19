@@ -1,6 +1,13 @@
-import { type Settings } from './shared';
+import { type Settings } from './settings';
 import { themeFor, themePaused, type HandmadeTheme } from './themes';
-import { send, type State } from './ui';
+
+type State = { settings: Settings };
+
+async function send<T>(type: string, extra: object = {}): Promise<T> {
+  const response = await chrome.runtime.sendMessage({ type, ...extra });
+  if (response?.error) throw new Error(response.error);
+  return response as T;
+}
 
 const power = document.getElementById('power') as HTMLInputElement;
 const siteSwitch = document.getElementById('site-switch') as HTMLInputElement;

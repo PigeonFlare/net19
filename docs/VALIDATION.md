@@ -171,14 +171,14 @@ Two shared fixes came out of this round:
 
 ## Every page, and real signed-in pages (0.10.0)
 
-**Every page is covered.** Themes now cover all pages of their sites, not a few paths. `scripts/audit-nav.mjs` opens each site's header menus and app launcher, follows the first-party links in the header, menus and footer, and records whether each destination is styled. Before the change, Google kept its look on only 2 of 10 destinations. After it, every destination the audit reached was styled. Pages were each walked by hand as well, in light and dark:
+**Every page is covered.** Themes now cover all pages of their sites, not a few paths. `scripts/audit/nav.mjs` opens each site's header menus and app launcher, follows the first-party links in the header, menus and footer, and records whether each destination is styled. Before the change, Google kept its look on only 2 of 10 destinations. After it, every destination the audit reached was styled. Pages were each walked by hand as well, in light and dark:
 - search → results → item;
 - article, product and video pages;
 - sign-in, help and about pages.
 
 **Checked in a real signed-in browser.** Discord, YouTube and Instagram were checked with the user's own accounts. Nothing was posted or changed on them.
 
-**Page checks.** `scripts/page-checks.js` runs inside the page. It is part of the stress audit and is used on signed-in pages. It flags:
+**Page checks.** `scripts/audit/page-checks.js` runs inside the page. It is part of the stress audit and is used on signed-in pages. It flags:
 - clickable elements that another element covers;
 - icons off the center of their button or rail;
 - text off the vertical middle of its row;
@@ -189,7 +189,7 @@ On Discord these checks found three problems that screenshots had missed, all no
 - channel names 6px above the middle of their rows;
 - GIF and Apps buttons that were never hidden, because they are `div[role=button]`, not `<button>`.
 
-`scripts/audit-diff.mjs` runs the page checks on every site twice, once without net19 and once with it, and reports only what net19 introduced. The first full run found problems on 32 of 113 sites. On 17 of them the theme was the cause, and all are fixed:
+`scripts/audit/diff.mjs` runs the page checks on every site twice, once without net19 and once with it, and reports only what net19 introduced. The first full run found problems on 32 of 113 sites. On 17 of them the theme was the cause, and all are fixed:
 - labels a few pixels off the middle of their bars (BBC, MLB, CA.gov, Cleveland Clinic, TikTok);
 - links that couldn't be clicked (TechCrunch's logo, two-line headlines on NIH, Business Insider and the New York Post, an invisible link on ESPN);
 - things drawn over other things (Rotten Tomatoes' nav, Target's account menu, Yahoo's trending list, MapQuest's carousel).
@@ -204,8 +204,8 @@ On the other 15 sites the flags were checked and set aside:
 A Google search for "twitter in 2019" lost every result on page 1. The rule that hides the AI Overview climbed from its heading to the largest wrapper that held no other result; on that query Google put the overview and the results in one wrapper, so the rule hid them all. It now stops at the first wrapper that holds any other result heading. Checked in a real signed-in Chrome: "twitter in 2019" keeps its 9 results, and two queries with an AI Overview keep their 6 results with the overview hidden.
 
 Two checks now catch this class of bug on any site:
-- `themes/guard.js` takes back any net19 hiding marker that lands on a block holding 3 or more linked headings or articles, and logs a warning;
-- `scripts/audit-diff.mjs` reports CONTENT LOST when linked headings or articles drop below 75%, or text below 60%, of the page without net19. `URLS='{"id":"https://..."}'` tests any page, such as a search results page.
+- `src/content/guard.js` takes back any net19 hiding marker that lands on a block holding 3 or more linked headings or articles, and logs a warning;
+- `scripts/audit/diff.mjs` reports CONTENT LOST when linked headings or articles drop below 75%, or text below 60%, of the page without net19. `URLS='{"id":"https://..."}'` tests any page, such as a search results page.
 
 Logos are never drawn. Twitter's bird comes from abs.twimg.com and Reddit's snoo from redditstatic.com. AP and TechCrunch keep their current logos.
 
@@ -222,7 +222,7 @@ Three things had let these through:
 - The signed-in apps were only checked in light mode.
 
 What changed:
-- `scripts/page-checks.js` reports `lowcontrast`: text measured as it is actually shown, after every `invert()` filter on the way (palette.js's flip computed exactly, hue-rotate included) and every translucent layer and gradient behind it.
+- `scripts/audit/page-checks.js` reports `lowcontrast`: text measured as it is actually shown, after every `invert()` filter on the way (palette.js's flip computed exactly, hue-rotate included) and every translucent layer and gradient behind it.
   - It covers text, placeholders, typed text and carets, including an editor's own DOM caret over its canvas.
   - It flags text flipped over a picture kept in its real colors, and text over a picture whose shading was flipped.
   - It skips screen-reader-only text, faded-out text, text under a dialog, and clipped map tiles.

@@ -1,7 +1,7 @@
 import { chromium } from '@playwright/test';
 import { resolve } from 'node:path';
 import { readFileSync, mkdirSync, appendFileSync } from 'node:fs';
-const ALL = JSON.parse(readFileSync(new URL('./audit-urls.json', import.meta.url), 'utf8'));
+const ALL = JSON.parse(readFileSync(new URL('./urls.json', import.meta.url), 'utf8'));
 const CHECKS = readFileSync(new URL('./page-checks.js', import.meta.url), 'utf8').replace(/^if \(typeof module[^\n]*$/m, '');
 const pick = process.argv.slice(2), ext = resolve(process.env.EXT || '.'), OUT = resolve(process.env.OUT || 'test-results/diff');
 const scheme = process.env.SCHEME || 'light';

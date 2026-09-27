@@ -21,75 +21,26 @@ To update:
 
 Then click the extension's **Reload** button once. Its card in `chrome://extensions` shows the version you are running.
 
-## Sites
+## What you get
 
-The 2019 look is designed by hand for 141 sites. The references are the [Web Design Museum](https://www.webdesignmuseum.org/gallery/)'s captures, or the Wayback Machine's 2019 captures where the museum has none.
-
-The sites are most of [SE Ranking's top 100 US websites](https://seranking.com/top-websites-us.html), plus Twitch, Bing and Stack Overflow. It also covers the chat and social apps Discord, Telegram Web, WhatsApp Web, Tumblr and Messenger, the major news sites whose design changed after 2019, and Google beyond Search: Gmail, Drive and Docs, News, Maps, Account, the Store and the rest.
-
-Outside the US it covers WhatsApp and Telegram's own sites, WeChat, Viber, LINE, Yandex, Yahoo! JAPAN, Seznam, Baidu, Trendyol, Ozon and Wildberries. The game sites are Steam, itch.io, Poki, Xbox, Chess.com, IGN and Twitch, and the wikis are Fandom, namu.wiki, HandWiki, TV Tropes, Bulbapedia, Wiktionary, Wikivoyage, Wikimedia Commons, Miraheze and LocalWiki. LocalWiki still serves its 2019 design, so its theme only adds dark mode.
-
-Every page of a covered site gets its look, not just the home page. Menus, app launchers, footers and search results all lead to pages that stay 2019. From that list, net19 leaves out:
-
-- adult sites and video-download sites;
-- banks;
-- chatgpt.com, which didn't exist in 2019;
-- a few entries that aren't browsable sites, such as amazonaws.com.
-
-The full list is in `src/themes.ts`. net19 does nothing on any other site.
-
-Where a site's 2019 design is essentially today's (Craigslist, Netflix, Best Buy and a few others), its theme only changes type, colors and corners.
-
-Each look is a set of styling rules on the site's own design variables. Everything the site draws, including menus, popups and content that loads while scrolling, gets the same palette. The look applies before the first paint.
-
-Your device's light or dark setting decides how every site looks. Sites that had a dark theme in 2019 (YouTube, Twitch, Twitter and others) use their own dark design when they are set to follow the device.
-
-Most sites have no dark mode, and some keep their own setting. When a site shows the other mode, net19 flips the whole themed page so it matches your device:
-
-- menus, pop-ups, dialogs and content that loads later all flip with it;
-- photos, videos, maps and embeds keep their real colors;
-- parts that already suit the mode stay as they are, such as a dark navy header on a dark device.
-
-Brand colors keep their hue but change lightness, so a purple button in light mode becomes a lighter purple in dark mode. Netflix and Spotify's player were dark-only in 2019 and stay dark.
-
-Some sites still serve their older design themselves:
-
-- **Wikipedia**, Wiktionary, Wikivoyage, Commons and Miraheze's Meta wiki open in the legacy Vector skin, and Bulbapedia in its MonoBook skin.
-- **Reddit**, while you are signed in, opens on old.reddit.com: the list with vote arrows, blue titles and the sidebar Reddit used through 2021. Old Reddit has no dark mode, so when your device is dark, net19 gives the same layout a dark palette. Signed out, old.reddit.com only offers a sign-in page, so Reddit stays on its current app with 2019 colors and a flat list.
-
-On social sites the themes also hide what those sites added after 2019. Examples:
-
-- YouTube's threaded comment lines, @handles, "Translate" and the pill-shaped player;
-- Discord's server tags, avatar decorations, Quests and the Apps launcher;
-- Stories, reactions and Premium badges on Telegram;
-- the Channels, Communities and Meta AI tabs on WhatsApp;
-- Reels, Threads, Notes and Meta AI on Facebook and Instagram;
-- Grok, views counts and Premium on X.
-
-The popup has two switches: net19 on or off, and net19 on or off for the current site.
+- **141 popular sites in their 2019 design:** Google, YouTube, Wikipedia, Reddit, Amazon, the big news, social and game sites, and more ([full list](src/themes.ts)). Each is designed by hand, applies before the page first paints, and covers every page you click to.
+- **Everything else stays normal:** small and personal websites, and any site not on the list, load exactly as they are.
+- **Two switches:** the popup turns net19 on or off, and on or off for the site you're on.
+- **Your light or dark setting:** every themed site follows it, and photos and videos keep their real colors.
+- **Only the design changes:** search results and recommendations stay as the site gives them. Features added after 2019 are removed, such as Google's AI answers, YouTube Shorts and assistant buttons.
+- **Older frontends where they still exist:** Wikipedia opens in its legacy skin, and Reddit opens on old.reddit.com while you're signed in.
+- **Private:** no network requests of its own, and nothing stored but the two switches ([privacy policy](PRIVACY.md)).
 
 ## Limits
 
-- Where a site's structure has changed since 2019, the theme restyles the current layout rather than rebuilding the old one.
-- Signed-in pages were checked in a real signed-in browser for Discord, YouTube and Instagram. For the other signed-in apps, the themes were built from each site's own shipped stylesheets and checked on local copies of the markup, so they are best-effort. That covers Telegram, WhatsApp and Messenger, the Tumblr dashboard, Gmail and Drive, and signed-in Facebook, X, LinkedIn, Netflix and Quora.
-- Some sites block automated browsers, so their themes were checked only on recent Wayback copies: Booking.com, Getty Images, Expedia and Shutterstock among them. Booking.com's theme could not be checked at all, so it only changes colors and corner radii.
-- A site redesign can break parts of a theme until the theme is updated.
-
-## Privacy
-
-net19 makes no network requests and has access only to the themed sites. It stores only its two switches. For Reddit, it checks whether Reddit's session cookie exists, and nothing more. [Full privacy policy](PRIVACY.md).
+- Where a site's layout changed since 2019, net19 restyles today's layout rather than rebuilding the old one.
+- A site redesign can break parts of its theme until the theme is updated.
 
 ## Development
 
-Requires Node.js 22+ and Chromium installed by Playwright.
-
 ```sh
 npm ci
-npx playwright install chromium
 npm run check
-npm run package
 ```
 
-- The folder is loaded as it is. Theme files are in `themes/`; the service worker and popup are written in `src/`.
-- `npm run build` writes `background.js`, `popup.js` and the PNG icons next to `manifest.json`. These generated files are committed, so the folder works without building.
-- `npm run package` makes the Chrome Web Store ZIP in `artifacts/`, which is not committed.
+Themes live in `themes/`, and everything else hand-written lives in `src/`. `npm run build` regenerates `background.js`, `popup.js` and `content.js`, which are committed so the folder loads without building. [Architecture](docs/ARCHITECTURE.md) maps out the rest.

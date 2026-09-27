@@ -4,7 +4,7 @@ import { mkdirSync, appendFileSync } from 'node:fs';
 import sharp from 'sharp';
 import { readFileSync } from 'node:fs';
 const PAGE_CHECKS = readFileSync(new URL('./page-checks.js', import.meta.url), 'utf8').replace(/^if \(typeof module[^\n]*$/m, '');
-const ALL = JSON.parse(readFileSync(new URL('./audit-urls.json', import.meta.url), 'utf8'));
+const ALL = JSON.parse(readFileSync(new URL('./urls.json', import.meta.url), 'utf8'));
 const pick = process.argv.slice(2);
 const URLS = process.env.URLS ? JSON.parse(process.env.URLS) : Object.fromEntries(Object.entries(ALL).filter(([id]) => !pick.length || pick.includes(id)));
 const OUT = resolve(process.env.OUT || 'test-results/audit'), ext = resolve(process.env.EXT || '.');

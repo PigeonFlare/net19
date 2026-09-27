@@ -3,7 +3,7 @@ import { readFile } from 'node:fs/promises';
 import sharp from 'sharp';
 
 const root = new URL('../', import.meta.url);
-await build({ entryPoints: ['src/background.ts', 'src/popup.ts'],
+await build({ entryPoints: { background: 'src/background.ts', popup: 'src/popup.ts', content: 'src/content/index.js' },
   outdir: root.pathname, bundle: true, platform: 'browser', target: 'chrome120', format: 'iife',
   minify: true, legalComments: 'eof', logLevel: 'warning' });
 const icon = await readFile(new URL('icons/icon.svg', root));

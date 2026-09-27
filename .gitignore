@@ -7,3 +7,4 @@ playwright-report/
 .env.*
 *.log
 .work-state.md
+downloads/

@@ -110,19 +110,33 @@
       for (const [e, v] of d) e.setAttribute(`data-net19-${v}`, '');
     }
   });
+  const judgedAt = new WeakMap();
   const rescanMedia = () => {
     if (!document.documentElement.hasAttribute('data-net19-flip')) return;
     const d = new Map();
+    const outside = e => (e.closest('[data-net19-keep]') ? 'kept' : 'flipped');
     for (const media of document.querySelectorAll('img, video, canvas')) {
       if (media.closest('[data-net19-keep]') || media.hasAttribute('data-net19-flat')) continue;
-      overlaid(media, d, e => (e.closest('[data-net19-keep]') ? 'kept' : 'flipped'));
-    }
-    for (const el of document.body.getElementsByTagName('*')) {
-      if (d.has(el) || el.hasAttribute('data-net19-keep') || el.closest('[data-net19-keep]')) continue;
-      const image = getComputedStyle(el).backgroundImage;
-      if (image.includes('gradient(') && !image.includes('url(') && shadeOver(el)) d.set(el, 'keep');
+      const size = `${media.offsetWidth}x${media.offsetHeight}`;
+      if (judgedAt.get(media) === size) continue;
+      judgedAt.set(media, size);
+      if (overlaid(media, d, outside) || media.offsetWidth < 120 || media.offsetHeight < 64) continue;
+      for (const shade of shadesNear(media)) if (!d.has(shade) && !shade.closest('[data-net19-keep]') && shadeOver(shade)) d.set(shade, 'keep');
     }
     for (const [e, v] of d) e.setAttribute(`data-net19-${v}`, '');
+  };
+  const shadesNear = media => {
+    const found = [];
+    for (let n = media.parentElement, i = 0; n && n !== document.body && i < 3; n = n.parentElement, i++) {
+      const all = n.getElementsByTagName('*');
+      if (all.length > 60) break;
+      for (const e of all) {
+        if (e === media || e.contains(media)) continue;
+        const image = getComputedStyle(e).backgroundImage;
+        if (image.includes('gradient(') && !image.includes('url(')) found.push(e);
+      }
+    }
+    return found;
   };
   const shadeOver = el => {
     const r = el.getBoundingClientRect();

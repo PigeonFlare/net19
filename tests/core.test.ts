@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
-import { settingsFrom } from '../src/shared';
+import { settingsFrom } from '../src/settings';
 import { navigationRules } from '../src/navigation';
 import { THEMES, THEMED_DOMAINS, themeFor, themeMatches, themePaused } from '../src/themes';
 
@@ -72,7 +72,7 @@ test('theme stylesheets follow the styling-rule contract', () => {
     assert.ok(!/(^|})\s*html\s*,\s*body\s*\{[^}]*background/.test(css), `${file}: html/body background`);
     if (/--n19-[a-z0-9-]+\s*:/.test(css)) assert.ok(/data-net19-mode="dark"/.test(css) || !/html\s*\{\s*--n19/.test(css), `${file}: tokens without a dark variant`);
   }
-  for (const file of readdirSync('themes').filter(name => name.endsWith('.js') && !['palette.js', 'guard.js'].includes(name))) {
+  for (const file of readdirSync('themes').filter(name => name.endsWith('.js'))) {
     const js = readFileSync(`themes/${file}`, 'utf8');
     assert.ok(/globalThis\.net19Theme\s*=/.test(js), `${file}: no theme config`);
     assert.ok(!/removeAttribute\('dark'\)|classList\.remove\([^)]*dark/i.test(js), `${file}: overrides the site's mode`);

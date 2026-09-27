@@ -1,9 +1,9 @@
 import { chromium } from '@playwright/test';
 import { resolve } from 'node:path';
 import { mkdirSync, appendFileSync, readFileSync } from 'node:fs';
-import { THEMES } from '../src/themes.ts';
+import { THEMES } from '../../src/themes.ts';
 
-const URLS = JSON.parse(readFileSync(new URL('./audit-urls.json', import.meta.url), 'utf8'));
+const URLS = JSON.parse(readFileSync(new URL('./urls.json', import.meta.url), 'utf8'));
 const pick = process.argv.slice(2);
 const OUT = resolve(process.env.OUT || 'test-results/nav'), ext = resolve(process.env.EXT || '.');
 const MAX = +(process.env.MAX || 12);

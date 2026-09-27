@@ -3,7 +3,7 @@
 The package is `artifacts/net19-<version>.zip`, made by `npm run package`. Its root contains:
 
 - `manifest.json`;
-- the bundled worker and popup;
+- the bundled worker, popup and theme engine;
 - the theme stylesheets and scripts;
 - icons.
 

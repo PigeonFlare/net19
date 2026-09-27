@@ -116,8 +116,10 @@
     ':is(input,textarea)[data-net19-ink="dark"]{caret-color:#1d1d1f!important}:is(input,textarea)[data-net19-ink="dark"]::placeholder{color:#5f6368!important;-webkit-text-fill-color:#5f6368!important;opacity:1!important}' +
     ':is(input,textarea)[data-net19-ink="light"]{caret-color:#f5f5f7!important}:is(input,textarea)[data-net19-ink="light"]::placeholder{color:#bdc1c6!important;-webkit-text-fill-color:#bdc1c6!important;opacity:1!important}';
   const original = new WeakMap();
+  let textCache = null;
   const textElements = () => {
-    const found = new Set();
+    if (textCache) return textCache;
+    const found = textCache = new Set();
     const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
       acceptNode: n => n.nodeValue.trim().length > 1 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP,
     });
@@ -219,7 +221,10 @@
     new MutationObserver(records => {
       let added = false;
       for (const r of records) {
-        if (r.type === 'childList') for (const n of r.addedNodes) { if (n.nodeType === 1) { hideLater(n); added = true; } }
+        if (r.type === 'childList') {
+          textCache = null;
+          for (const n of r.addedNodes) { if (n.nodeType === 1) { hideLater(n); added = true; } }
+        }
         else if (r.target === root || r.attributeName !== 'data-net19-ink') added = true;
         if (r.type === 'attributes' && r.attributeName === 'placeholder' && ASKING.test(r.target.getAttribute('placeholder') || '')) hideLater(r.target.parentElement || r.target);
       }
