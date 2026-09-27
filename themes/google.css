@@ -44,7 +44,8 @@ form[role="search"] .RNNXgb :is(textarea[name="q"], input[name="q"]), form[role=
 form[role="search"] .RNNXgb { height: 44px !important; min-height: 44px !important; }
 form[role="search"] .RNNXgb .SDkEP, form[role="search"] .RNNXgb .dRYYxd, form[role="search"] .RNNXgb .iblpc, form[role="search"] .RNNXgb .a4bIc { height: 44px !important; min-height: 0 !important; }
 form[role="search"] .RNNXgb .ywK6Rd { height: 44px !important; }
-form[role="search"] .RNNXgb textarea[name="q"] { padding: 10px 0 !important; line-height: 22px !important; margin: 0 !important; min-height: 0 !important; }
+form[role="search"] .RNNXgb textarea[name="q"] { padding: 10px 0 !important; line-height: 22px !important; margin: 0 !important; min-height: 0 !important;
+  height: 22px !important; max-height: 22px !important; box-sizing: content-box !important; white-space: pre !important; overflow-wrap: normal !important; overflow: hidden !important; resize: none !important; }
 form[role="search"] .RNNXgb input[name="q"] { height: 42px !important; padding-top: 0 !important; padding-bottom: 0 !important; margin: 0 !important; }
 form[role="search"] .RNNXgb button[aria-label="Search"], form[role="search"] .RNNXgb :is([aria-label="Search by voice"], [aria-label=" Clear"], [aria-label="Clear"]) {
   height: 42px !important; min-height: 0 !important; padding: 0 !important; display: flex !important; align-items: center !important; justify-content: center !important; }

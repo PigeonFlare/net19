@@ -32,7 +32,7 @@ const GOOGLE_APPS: Record<string, string[]> = {
   gclassroom: ['*://classroom.google.com/*'],
   gchat: ['*://chat.google.com/*'],
   gaccount: ['*://myaccount.google.com/*'],
-  glauncher: ['*://ogs.google.com/*'],
+  glauncher: ['*://ogs.google.com/*widget/app*'],
 };
 
 export const THEMES: HandmadeTheme[] = [

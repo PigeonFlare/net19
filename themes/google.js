@@ -19,9 +19,19 @@ globalThis.net19Theme = {
       const others = el => [...el.querySelectorAll(result)].some(h => !block.contains(h));
       const adds = el => (el.innerText || '').length - (block.innerText || '').length > 300;
       while (block.parentElement && block.parentElement !== document.body && !['rso', 'center_col', 'search', 'rcnt', 'main'].includes(block.parentElement.id) && !others(block.parentElement) && !adds(block.parentElement)) block = block.parentElement;
-      if ((block !== anchor || anchor.matches('[data-subtree]')) && block.querySelectorAll(result).length <= own) { block.setAttribute('data-net19-hidden', ''); block.style.setProperty('display', 'none', 'important'); }
+      if ((block !== anchor || anchor.matches('[data-subtree]')) && block.querySelectorAll(result).length <= own) hideBlock(block);
+    }
+    for (const block of document.querySelectorAll('[data-net19-ai]')) {
+      let shell = block.parentElement;
+      while (shell && shell !== document.body && !STOP.includes(shell.id) && !shell.querySelector(RESULT) && (shell.innerText || '').trim().length <= 40) {
+        hideBlock(shell);
+        shell = shell.parentElement;
+      }
     }
   };
+  const STOP = ['rso', 'center_col', 'search', 'rcnt', 'main'];
+  const RESULT = 'a[href] h3, h3 a[href]';
+  const hideBlock = el => { el.setAttribute('data-net19-hidden', ''); el.setAttribute('data-net19-ai', ''); el.style.setProperty('display', 'none', 'important'); };
   let queued = false;
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; hide(); }); };
   const start = () => { hide(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
