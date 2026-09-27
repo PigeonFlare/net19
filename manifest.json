@@ -152,7 +152,19 @@
     "*://*.poki.com/*",
     "*://*.xbox.com/*",
     "*://*.chess.com/*",
-    "*://*.ign.com/*"
+    "*://*.ign.com/*",
+    "*://*.patreon.com/*",
+    "*://*.givesendgo.com/*",
+    "*://*.fundrazr.com/*",
+    "*://*.fundly.com/*",
+    "*://*.freefunder.com/*",
+    "*://*.buymeacoffee.com/*",
+    "*://*.crowdfundr.com/*",
+    "*://*.kickstarter.com/*",
+    "*://*.indiegogo.com/*",
+    "*://*.givebutter.com/*",
+    "*://*.donorbox.org/*",
+    "*://*.zeffy.com/*"
   ],
   "background": {
     "service_worker": "background.js",
