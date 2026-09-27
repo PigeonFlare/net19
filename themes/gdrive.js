@@ -1,8 +1,3 @@
-// net19 handmade theme: Google Drive and the Docs editors, 2019 (Material 2). Palette tokens live in gdrive.css.
-// Drive keeps its own light/dark setting; it is read from a Drive token the theme leaves untouched (the yellow file-type
-// color, #fbbc04 light and #ffe082 dark). The editors mark their dark setting with a docsDarkMode class.
-// Post-2019 controls are hidden by label: Gemini, "Help me create", summaries, Meet, and the 2021 smart-canvas entries.
-// Slides' viewers (preview, present, embed, published) are black stages in every era: they are never flipped.
 (() => {
 const viewer = () => /^\/presentation\/(?:u\/\d+\/)?d\/[^/]+\/(?:preview|present|embed|pub)|^\/presentation\/d\/e\//.test(location.pathname);
 globalThis.net19Theme = {
@@ -20,14 +15,9 @@ globalThis.net19Theme = {
     return location.hostname === 'docs.google.com' ? 'light' : undefined;
   },
   watch: ['class', 'style'],
-  // In a flipped (dark) page the document itself goes dark too: the page Docs draws on its canvas flips with the rest,
-  // so the caret, selection and comment anchors drawn over it (in the page's DOM) stay visible and the editor is one
-  // mode, not a white sheet in a dark frame.
   flat: '.kix-appview-editor canvas',
   later: /^(?:upgrade|ask gemini\b.*|gemini in (?:drive|docs|sheets|slides)|help me (?:create|organi[sz]e|visuali[sz]e|analy[sz]e)|summari[sz]e (?:this )?(?:file|folder|document|doc|presentation|spreadsheet)|ask about (?:this )?(?:file|folder|document)|catch me up|beautify this (?:slide|image)|generate (?:an )?(?:image|video|audio|table)|create (?:a )?(?:video|audio overview)|listen to (?:this )?doc|audio overview|building blocks|smart chips|meet|present (?:tab )?to (?:a )?(?:call|meeting)|join (?:a )?call(?: here)?|try gemini|get gemini|google one ai premium|google ai (?:pro|ultra)|workspace labs|emoji reactions?|react(?:ion)?s?|add (?:emoji )?reaction)$/i,
   keepLabels: /^(?:meeting notes|meetings)$/i,
 };
 })();
-// The editors measure their toolbar once to decide what fits; after the page and its fonts have loaded (with the 2019
-// type and spacing), they are asked to measure again, so no toolbar button ends up under another.
 if (location.hostname === 'docs.google.com') addEventListener('load', () => setTimeout(() => dispatchEvent(new Event('resize')), 800), { once: true });

@@ -1,5 +1,3 @@
-// net19 handmade theme: Stack Overflow, 2019, light and dark. Stack Overflow sets body.theme-dark, or
-// body.theme-system to follow the device.
 globalThis.net19Theme = {
   detect() {
     const body = document.body?.classList;
@@ -8,7 +6,6 @@ globalThis.net19Theme = {
   },
   watch: ['class'],
 };
-// The question list was titled "All Questions" in 2019 (today: "Newest Questions"); the heading's text is changed in place.
 (() => {
   const fix = () => {
     const h1 = document.querySelector('#mainbar h1');

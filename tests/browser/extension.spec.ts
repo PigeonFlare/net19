@@ -2,7 +2,6 @@ import { chromium, expect, test, type BrowserContext, type Page, type Worker } f
 import { mkdir } from 'node:fs/promises';
 import { resolve } from 'node:path';
 
-// Every site is a local fixture: nothing reaches the network, and any request to a host that is not listed fails the test.
 const PAGE = (title: string) => `<!doctype html><html><head><meta charset="utf-8"><title>${title}</title></head><body style="background:#fff;color:#111"><header><a href="/">${title}</a></header><main><h1>${title}</h1>` +
   `<div id="bar" style="background:#13233a;color:#fff;width:600px;height:40px">already dark</div>` +
   `<img id="photo" width="200" height="100" src="/photo.jpg"><img id="logo" width="120" height="30" src="/logo.svg">` +
@@ -47,18 +46,15 @@ test('a themed site is styled from its first paint; any other site is left alone
 });
 
 test('the device decides light or dark: a light site is flipped for a dark device, with photos and dark bars kept', async () => {
-  const page = await open('https://www.youtube.com/');   // the fixture has no dark mode of its own; the device is dark
+  const page = await open('https://www.youtube.com/');
   const html = page.locator('html');
   await expect(html).toHaveAttribute('data-net19-mode', 'light');
   await expect(html).toHaveAttribute('data-net19-flip', '');
   expect(await html.evaluate(el => getComputedStyle(el).filter)).toContain('invert(1)');
   expect(await page.locator('#photo').evaluate(el => getComputedStyle(el).filter)).toMatch(/^contrast.*invert\(1\)$/);
-  // Drawn images (SVG logos, small PNG icons) flip with the page, so dark glyphs stay visible.
   expect(await page.locator('#logo').evaluate(el => getComputedStyle(el).filter)).toBe('none');
   await expect(page.locator('#bar')).toHaveAttribute('data-net19-keep', '');
-  // A headline laid over a photo keeps its real colors with the photo: the photo's host is kept whole.
   await expect(page.locator('#hero')).toHaveAttribute('data-net19-keep', '');
-  // Modal dialogs are drawn in the top layer, outside the root's filter, so they carry the filter themselves.
   await page.locator('#modal').evaluate((el: HTMLDialogElement) => el.showModal());
   expect(await page.locator('#modal').evaluate(el => getComputedStyle(el).filter)).toContain('invert(1)');
   await page.emulateMedia({ colorScheme: 'light' });
@@ -69,11 +65,11 @@ test('the device decides light or dark: a light site is flipped for a dark devic
 test('post-2019 features are hidden and unreadable text is given readable ink, on every themed site', async () => {
   const page = await context.newPage(); await page.emulateMedia({ colorScheme: 'light' }); await page.goto('https://www.youtube.com/');
   await expect(page.locator('#gen')).toBeHidden();
-  await expect(page.locator('#ask')).toBeVisible();   // 2019 had "Ask Question" on Stack Overflow: only listed features go
+  await expect(page.locator('#ask')).toBeVisible();
   await expect(page.locator('#q')).toHaveAttribute('placeholder', 'Search');
   await expect(page.locator('#faint')).toHaveAttribute('data-net19-ink', 'dark');
-  await expect(page.locator('#bar')).not.toHaveAttribute('data-net19-ink', /.*/);   // readable text is left alone
-  await expect(page.locator('#results')).toBeVisible();   // a hiding marker on a block of results is taken back
+  await expect(page.locator('#bar')).not.toHaveAttribute('data-net19-ink', /.*/);
+  await expect(page.locator('#results')).toBeVisible();
 });
 
 test('Wikipedia opens in its legacy skin', async () => {

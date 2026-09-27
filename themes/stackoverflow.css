@@ -1,9 +1,3 @@
-/* net19 handmade theme: Stack Overflow, 2019: Arial; a #fafafb top bar under a 3px orange rule, a light blue "Log in"
-   and a #0095ff "Sign up" with the inner highlight; a plain left nav (13px gray links, indented, the current page
-   bold on #eff0f1 with an orange right edge, no icons, no AI Assist or Agents entries); "All Questions" with a bordered
-   Newest / Active / Bountied button group; stacked 17px vote, answer and view counts over 11px labels, the answer
-   count outlined green; #e1ecf4 tags; a yellow Featured-on-Meta box and no purple Agents promotion. Stack Overflow's
-   own dark mode keeps the same shapes on dark tokens. */
 html { --n19-bar: #fafafb; --n19-bar-shadow: rgba(12,13,14,.15); --n19-text: #242729; --n19-text-2: #6a737c; --n19-nav: #535a60; --n19-link: #07c; --n19-divider: #e4e6e8;
   --n19-tag-bg: #e1ecf4; --n19-tag-text: #39739d; --n19-tag-hover: #cee0ed; --n19-nav-selected: #eff0f1; --n19-answered: #45a163; --n19-accepted: #5eba7d;
   --n19-login-bg: #e1ecf4; --n19-login-text: #39739d; --n19-login-border: #7aa7c7; --n19-group-border: #9fa6ad; --n19-group-selected: #d6d9dc; --n19-group-text: #3b4045;
@@ -14,7 +8,6 @@ html[data-net19-mode="dark"] { --n19-bar: #3d3d3d; --n19-bar-shadow: rgba(0,0,0,
   --n19-yellow: #464236; --n19-yellow-head: #4f4a3a; --n19-yellow-border: #5c5541; }
 body, input, textarea, button, .s-prose, .s-btn, .s-input { font-family: Arial, "Helvetica Neue", Helvetica, sans-serif !important; }
 
-/* Top bar */
 header.s-topbar { background: var(--n19-bar) !important; border-top: 3px solid #f48024 !important; box-shadow: 0 1px 0 var(--n19-bar-shadow) !important; }
 .s-topbar .s-input { border-radius: 3px !important; }
 .s-topbar .s-topbar--content > ol.s-navigation a, .s-topbar .s-navigation--item { font-size: 13px !important; color: var(--n19-nav) !important; border-radius: 1000px; }
@@ -28,9 +21,7 @@ header.s-topbar { background: var(--n19-bar) !important; border-top: 3px solid #
 .s-btn__primary:hover, .s-topbar .s-topbar--content a.s-btn:not(.s-btn__outlined):hover { background: #07c !important; }
 .s-btn__outlined, .s-btn { border-radius: 3px !important; }
 
-/* Left nav: 13px gray links, indented; the current page bold on #eff0f1 with an orange right edge; no icons */
 #left-sidebar li:has(> #nav-askstack), #left-sidebar li:has(> #nav-sofa), #left-sidebar .js-freemium-cta { display: none !important; }
-/* Challenges (2024), Articles and the Collectives block (2021) were not in the 2019 nav */
 #left-sidebar li:has(> #nav-challenges), #left-sidebar li:has(> #nav-articles),
 #left-sidebar li.ml8.mt32:has(+ li.js-collectives-navcta-toggle), #left-sidebar li.js-collectives-navcta-toggle { display: none !important; }
 #left-sidebar .nav-links li.pb24 { padding-bottom: 8px !important; }
@@ -44,7 +35,6 @@ header.s-topbar { background: var(--n19-bar) !important; border-top: 3px solid #
 }
 #left-sidebar .tt-uppercase { font-size: 11px !important; font-weight: 400 !important; color: var(--n19-text-2) !important; }
 
-/* Page title and the sort buttons: a bordered button group, the selected one gray */
 #mainbar h1.fs-headline1 { font-size: 27px !important; font-weight: 400 !important; }
 #mainbar .s-btn-group { gap: 0 !important; background: transparent !important; border: none !important; padding: 0 !important; border-radius: 0 !important; }
 #mainbar .s-btn-group > .s-btn { background: transparent !important; color: var(--n19-group-text) !important; border: 1px solid var(--n19-group-border) !important; border-radius: 0 !important;
@@ -55,7 +45,6 @@ header.s-topbar { background: var(--n19-bar) !important; border-top: 3px solid #
 #mainbar .s-btn-group > .s-btn.s-btn__dropdown { padding-right: 24px !important; }
 #mainbar .s-btn-group .s-btn--badge { background: #0077cc !important; color: #fff !important; border-radius: 2px !important; }
 
-/* Question list: 2019's stacked counts, 15px titles, tags */
 .s-post-summary { border-bottom-color: var(--n19-divider) !important; padding: 12px 8px 12px 0 !important; }
 .s-post-summary--stats { width: 58px !important; min-width: 58px !important; margin: 0 16px 0 8px !important; align-items: center !important; gap: 8px !important; flex-direction: column !important; }
 .s-post-summary--stats-item { flex-direction: column !important; align-items: center !important; gap: 0 !important; width: 58px !important; padding: 2px 0 !important;
@@ -73,7 +62,6 @@ header.s-topbar { background: var(--n19-bar) !important; border-top: 3px solid #
 .s-post-summary--meta .subcommunity-topic-avatar { display: none !important; }
 .s-post-summary .s-user-card__minimal .s-user-card--time { color: var(--n19-text-2) !important; }
 
-/* Right column: the yellow Meta box as in 2019; the purple Agents box and the Collectives list did not exist */
 #sidebar > .s-sidebarwidget.bg-purple-100, #sidebar > .js-join-leave-container { display: none !important; }
 .s-sidebarwidget__yellow { background: var(--n19-yellow) !important; border-color: var(--n19-yellow-border) !important; border-radius: 3px !important; }
 .s-sidebarwidget__yellow .s-sidebarwidget--header { background: var(--n19-yellow-head) !important; font-size: 12px !important; font-weight: 700 !important; color: var(--n19-text-2) !important;
@@ -83,9 +71,6 @@ header.s-topbar { background: var(--n19-bar) !important; border-top: 3px solid #
 .s-sidebarwidget__yellow .s-sidebarwidget--item svg { display: none !important; }
 #hot-network-questions h4 { font-size: 18px !important; }
 
-/* ---- Question pages ---- */
-/* Chat moved into the left nav in 2024; 2019's question page had no community-activity box, code copy buttons (2023)
-   or circled vote buttons (2023): the votes were plain gray arrows */
 #left-sidebar li:has(> #nav-chat), #sidebar > div[id^="fragment-container"], .s-prose .js-copy-button, .js-copy-button:has(+ pre), pre + .js-copy-button { display: none !important; }
 .js-voting-container :is(.js-vote-up-btn, .js-vote-down-btn) { border: 0 !important; background: transparent !important; box-shadow: none !important; border-radius: 0 !important; color: var(--n19-group-border) !important; }
 .js-voting-container :is(.js-vote-up-btn, .js-vote-down-btn) svg { width: 36px !important; height: 36px !important; }

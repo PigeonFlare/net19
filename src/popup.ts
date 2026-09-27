@@ -2,7 +2,6 @@ import { type Settings } from './shared';
 import { themeFor, themePaused, type HandmadeTheme } from './themes';
 import { send, type State } from './ui';
 
-// Two switches: net19 everywhere, and net19 on the current site. The site switch only appears on a site net19 themes.
 const power = document.getElementById('power') as HTMLInputElement;
 const siteSwitch = document.getElementById('site-switch') as HTMLInputElement;
 let settings: Settings;
@@ -30,7 +29,7 @@ void (async () => {
   const [state, [tab]] = await Promise.all([send<State>('STATE'), chrome.tabs.query({ active: true, currentWindow: true })]);
   settings = state.settings;
   let host = '';
-  try { if (tab?.url && !tab.incognito && /^https?:$/.test(new URL(tab.url).protocol)) host = new URL(tab.url).hostname; } catch { /* not a web page */ }
+  try { if (tab?.url && !tab.incognito && /^https?:$/.test(new URL(tab.url).protocol)) host = new URL(tab.url).hostname; } catch { }
   theme = host ? themeFor(host) : undefined;
   if (theme) {
     document.getElementById('site')!.textContent = theme.domains.find(domain => host === domain || host.endsWith(`.${domain}`)) ?? theme.domains[0];

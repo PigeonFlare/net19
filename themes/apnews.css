@@ -1,8 +1,3 @@
-/* net19 handmade theme: AP News, 2019. A light-gray (#ececec) masthead with the red AP letters at its left and plain
-   dark section links in normal case; a #f5f5f5 page with white hub cards; headlines in AP's condensed sans at medium
-   weight (not today's heavy caps) in #2c2c2c; 60x8px red bars under hub and section titles; stories set in a serif
-   (FreightText, here Georgia) at 18/27px with #104ba5 links; blue topic tags; a #2c2c2c footer. AP has no dark mode,
-   so a dark device gets the engine's inverted page; the dark tokens are only a fallback. */
 html { --n19-bar: #ececec; --n19-bar-text: #2c2c2c; --n19-red: #ff322e; --n19-text: #2c2c2c; --n19-meta: #787878; --n19-link: #104ba5;
   --n19-tag: #0a3175; --n19-rule: #d8d8d8; --n19-page: #f5f5f5; --n19-card: #fff; --n19-foot: #2c2c2c;
   --color-header-bg-theme: var(--n19-bar); --color-header-text-theme: var(--n19-bar-text); --color-footer-bg-theme: var(--n19-foot);
@@ -13,7 +8,6 @@ html { --n19-bar: #ececec; --n19-bar-text: #2c2c2c; --n19-red: #ff322e; --n19-te
 html[data-net19-mode="dark"] { --n19-bar: #262626; --n19-bar-text: #e6e6e6; --n19-red: #ff4a46; --n19-text: #e6e6e6; --n19-meta: #9a9a9a;
   --n19-link: #7fa8ff; --n19-tag: #9db8ff; --n19-rule: #3a3a3a; --n19-page: #161616; --n19-card: #1e1e1e; --n19-foot: #0e0e0e; }
 
-/* ---- Masthead: a 64px light-gray bar, red AP letters, dark normal-case links, no trending or live strip ---- */
 .Page-header-stickyWrap, .Page-header-stickyWrap .Page-header, .Page-header-bar, .Page-trendingZephr-wrapper { background: var(--n19-bar) !important; }
 .Page-header-bar { box-shadow: none !important; height: 64px !important; }
 .Page-header-stickyWrap { border-bottom: 1px solid var(--n19-rule) !important; }
@@ -25,17 +19,13 @@ html[data-net19-mode="dark"] { --n19-bar: #262626; --n19-bar-text: #e6e6e6; --n1
 .Page-header-bar :is(.burger-menu, .icon-magnify, .close-x) { color: var(--n19-bar-text) !important; }
 .Page-header-bar :is(.burger-menu, .close-x) { fill: currentColor !important; }
 .Page-header-bar .icon-magnify { fill: none !important; }
-/* The chevrons are drawn in a fixed near-white; darkened to read on the light bar */
 .Page-header-bar :is(.MainNavigationItem-text, .MainNavigationItem-more) svg, .Page-header-bar .burger-menu { filter: brightness(.18) !important; }
 .Page-header-bar .MainNavigationItem-text a:hover, .Page-header-bar .MainNavigationItem-more:hover { text-decoration: underline !important; }
-/* The trending-topics strip with its red LIVE flag is 2023 chrome */
 .Page-header-stickyWrap :is(.Page-trendingZephr-wrapper, .Page-trendingZephr, .Page-header-trending, .PageListTrending), .Page-trendingZephr-trendingBar,
 .Page-header-leaderboardAd { display: none !important; }
-/* Post-2019 entitlements, "Add AP News on Google", sign-in pill and comment counts */
 .Page-trendingZephr-entitlements, #desktop-entitlements, .Page-actions-google-trigger, .Page-actions-commentCounter, .PagePromo-commentCount,
 .CommentCount-template, .PagePromo-readingtime, .PagePromo-byline-live, .PageListTrending-LiveTag, bsp-news-letter, .PageListStandardB-NewsLetter, .ReadingTime-template, .Zephr-bar, .viafoura, .Newsletter-Banner, [class*="Zephr-mod"] { display: none !important; }
 
-/* ---- Page and type ---- */
 body.Page-body { background: var(--n19-page) !important; color: var(--n19-text) !important; }
 .Page-content, .Page-twoColumn, .SectionPage, .StoryPage, .Page-main { background: transparent !important; }
 :is(.PagePromo-title, .PageList-header-title, .Page-headline, .PageListStandardE-items-secondary-title, .VideoPlaylistItemCard-title, .PagePromoTrending) {
@@ -49,7 +39,6 @@ html[data-net19-mode="dark"] .PagePromo-description, html[data-net19-mode="dark"
   font-size: 12px !important; font-weight: 400 !important; text-transform: none !important; letter-spacing: 0 !important; }
 .PagePromo-media img, .Figure img, .Image { border-radius: 0 !important; }
 
-/* Hub cards: headline lists on white cards between hairlines */
 .PageList-items-item { border-color: #ececec !important; }
 .PageList-header-title { font-family: var(--ap19-sans) !important; font-stretch: 100% !important; font-weight: 700 !important; font-size: 18px !important;
   line-height: 24px !important; text-transform: uppercase !important; position: relative; padding-top: 14px !important; }
@@ -60,7 +49,6 @@ html[data-net19-mode="dark"] .PagePromo-description, html[data-net19-mode="dark"
 :is(.PageListStandardE, .PageListRightRailA, .PageListStandardD, .PageListStandardB) { padding: 16px !important; box-sizing: border-box; }
 .PagePromo-media--backgroundSecondary, .PagePromo-media { background: transparent !important; }
 
-/* ---- Story: condensed headline, byline, red bar, serif body ---- */
 .StoryPage-lede, .StoryPage-lede-content { background: transparent !important; color: var(--n19-text) !important; }
 .StoryPage-lede .Page-breadcrumbs a { color: var(--n19-meta) !important; font-family: var(--ap19-sans) !important; font-stretch: 100% !important; font-weight: 400 !important;
   text-transform: uppercase !important; font-size: 12px !important; }
@@ -86,7 +74,6 @@ h1.Page-headline { font-size: 50px !important; line-height: 56px !important; fon
 .Page-main .Page-lead, .Page-storyBody { background: transparent !important; }
 .Page-storyBody { background: var(--n19-card) !important; padding-top: 24px !important; }
 
-/* ---- Section (hub) pages: a big uppercase title over the red bar and a gray rule, no dark band ---- */
 .Page-pageLead { background: transparent !important; background-image: none !important; color: var(--n19-text) !important; border-bottom: 1px solid #b4b4b4 !important;
   max-width: 1200px; margin: 0 auto 24px !important; padding: 24px 0 8px !important; }
 .Page-pageLead::before, .Page-pageLead::after { display: none !important; }
@@ -99,15 +86,11 @@ h1.Page-headline { font-size: 50px !important; line-height: 56px !important; fon
 .SectionNavigationItem-text, .SectionNavigationItem-text a { color: var(--n19-tag) !important; font-family: var(--ap19-sans) !important; font-stretch: 100% !important;
   font-weight: 400 !important; text-transform: none !important; font-size: 15px !important; }
 
-/* ---- Footer: #2c2c2c with light type ---- */
 .Page-footer, .Page-footer-container { background: var(--n19-foot) !important; color: #fff !important; }
 .Page-footer :is(a, .FooterNavigationItem-text) { color: #fff !important; font-family: var(--ap19-sans) !important; font-stretch: 100% !important; font-weight: 300 !important; }
-/* App-store badges in the footer are a later promotion */
 .Page-footer a:is([href*="play.google.com"], [href*="apps.apple.com"]) { display: none !important; }
-/* Search: the overlay drops from the light bar; square fields and a plain hover */
 .SearchOverlay-search-button:hover svg { background-color: rgba(0, 0, 0, .08) !important; }
 .SearchOverlay-search-input, .SearchResultsModule-formInput { border-radius: 0 !important; font-family: var(--ap19-sans) !important; font-stretch: 100% !important; }
 .SearchResultsModule-count-mobile, .SearchResultsModuleBasic-results-header { font-family: var(--ap19-sans) !important; font-stretch: 100% !important; color: var(--n19-meta) !important; }
 .SearchResultsModule-filters-apply button, .VideoPlaylistModule-playlistToggle, .VideoPlaylistModule-playlistNavigation button { border-radius: 0 !important; }
-/* Video pages keep their dark player band; titles in the 2019 condensed type */
 .VideoLead-videoTitle, .VideoPlaylistModule-title { font-family: var(--ap19-cond) !important; font-stretch: 75% !important; font-weight: 500 !important; text-transform: none !important; }

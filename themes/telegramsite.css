@@ -1,32 +1,19 @@
-/* net19 handmade theme: telegram.org, 2019. The site kept its 2019 layout; what changed since is a restyle layer
-   (telegram-theme.css, 2025: the system font everywhere, medium-weight headers, rounded bars, card-style blog lists,
-   the docs side-nav rail, a light/dark toggle) plus a few header changes. telegramsite.js switches that layer off, so
-   the site's own 2019 stylesheet draws the page again: Lucida Grande 12/18px, #0088cc links, the white navbar whose
-   active and hovered tabs get a square 3px #179cde underline, "Recent News" behind a 5px blue rule, the gray
-   "Telegram" word image under the round logo and a plain "Twitter" link with the bird. There was no dark mode in
-   2019: on a dark device the page is flipped by palette.js. Post-2019: the theme toggle and the "Safety" tab (the
-   header had "Protocol" there) and the "Follow on X" wording. */
 html { --n19-page: #fff; --n19-text: #000; --n19-link: #0088cc; --n19-rule: #179cde; --n19-news: #ecf3fa; --n19-line: #e8e8e8;
   --n19-font: "Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif; }
 html[data-net19-mode="dark"] { --n19-page: #fff; --n19-text: #000; --n19-link: #0088cc; --n19-rule: #179cde; --n19-news: #ecf3fa; --n19-line: #e8e8e8; }
 
-/* ---- Post-2019: the light/dark toggle (2025) ------------------------------------------------------------------- */
 .theme-toggle { display: none !important; }
 
-/* ---- Navbar: the 2019 square underline on the active and hovered tab, not the rounded animated bar ---------------- */
 .navbar-tg .nav > li > a:after { display: none !important; }
 .navbar-tg .nav > li:not(.top_lang_select):not(.navbar-twitter) > a:hover, .navbar-tg .nav > li.active > a {
   box-shadow: 0 3px 0 0 var(--n19-rule) !important; }
-/* The bird, from telegram.org's own 2019 image (still served at the 2019 path) */
 .navbar-tg .navbar-twitter .icon-twitter { background: url("https://telegram.org/img/twitter_2x.png") 0 0 / 21px 17px no-repeat !important;
   width: 21px !important; height: 17px !important; }
 .navbar-tg .navbar-twitter .icon-twitter > *, .navbar-tg .navbar-twitter .icon-twitter:before { display: none !important; }
 
-/* ---- "Recent News": a straight 5px rule on the left, not the rounded bar -------------------------------------- */
 .tl_main_side_blog .side_blog_wrap:before, .tl_blog_side_blog .side_blog_wrap:before { display: none !important; }
 .tl_main_side_blog .side_blog_wrap, .tl_blog_side_blog .side_blog_wrap { border-left: 5px solid var(--n19-rule) !important; padding-left: 17px !important; }
 
-/* ---- The home page's "Telegram" word: the 2019 raster word image, as telegram.org still serves it ---------------- */
 svg.tl_main_logo_title_image { background: url("https://telegram.org/img/Telegram_2x.png") center / 144px 36px no-repeat !important;
   width: 144px !important; height: 36px !important; }
 svg.tl_main_logo_title_image > * { visibility: hidden !important; }

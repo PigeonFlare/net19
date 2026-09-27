@@ -1,4 +1,3 @@
-// net19 handmade theme: Shutterstock marks its theme with html.theme-dark / html.theme-light; both are restyled.
 globalThis.net19Theme = {
   detect() {
     const root = document.documentElement.classList;
@@ -7,10 +6,8 @@ globalThis.net19Theme = {
     return undefined;
   },
   watch: ['class'],
-  // Post-2019 menu entries and buttons (3D arrived with TurboSquid in 2021)
   later: /^(?:3D|AI data licensing|AI tools|Search Assistant|AI image generator|AI generator)$/i,
 };
-// 2019 wording in the home hero, and the "AI-powered editing" showcase hidden as a whole.
 (() => {
   const H1 = 'Stock assets to power your creativity';
   const SUB = 'Explore over 270 million royalty-free images, stock footage clips, and music tracks.';
@@ -20,7 +17,6 @@ globalThis.net19Theme = {
     if (h1 && h1.textContent !== H1) h1.textContent = H1;
     const p = h1?.nextElementSibling;
     if (p?.tagName === 'P' && p.textContent !== SUB) p.textContent = SUB;
-    // Only on the home page, whose sections were checked: elsewhere the nearest themed wrapper can be the whole page.
     if (hero) for (const h2 of document.querySelectorAll('#main-content h2')) {
       if (!/\bAI\b/.test(h2.textContent)) continue;
       const box = h2.closest('#main-content .theme-light, #main-content section');

@@ -1,11 +1,3 @@
-/* net19 handmade theme: Chess.com, 2019 (Wayback: the June 2019 home page and the December 2019 base stylesheet).
-   2019's Chess.com was a dark brown #312e2b page with a darker side bar of plain white-on-dark glyph icons, content
-   in white boxes with 3px corners, #312e2b text, blue #005e94 links that turn orange #e6912c on hover, ORANGE
-   primary buttons (#e6912c with a darker bottom edge, drawn here in 2019's own hover shade #d37e19 so white labels keep 3:1; the green buttons came in 2020), light grey secondary buttons,
-   and the system font everywhere (the heavy "Chess Sans" headings are from 2022). Late 2019 added a dark mode: the
-   same page with translucent dark boxes. Chess.com keeps its own light/dark choice as html.light-mode / .dark-mode;
-   net19 follows the device and re-points the site's design tokens to the matching 2019 palette, so the page is never
-   flipped (the boards, pieces and photos stay as drawn). */
 html { --n19-orange: #d37e19; --n19-orange-hover: #bd6c12; --n19-orange-edge: #ad6d21; --n19-link: #005e94; --n19-link-hover: #e6912c;
   --n19-text: #312e2b; --n19-text-2: #666463; --n19-page: #312e2b; --n19-rail: #272522; --n19-rail-text: rgba(255,255,255,.65); --n19-rail-hover: rgba(255,255,255,.08);
   --n19-basic: #dbd9d7; --n19-basic-hover: #bfbeba; --n19-basic-edge: #a7a6a2; --n19-basic-text: #666463; --n19-box: #fff; }
@@ -13,7 +5,6 @@ html[data-net19-mode="dark"] { --n19-orange: #d37e19; --n19-orange-hover: #bd6c1
   --n19-text: rgba(255,255,255,.8); --n19-text-2: rgba(255,255,255,.65); --n19-page: #312e2b; --n19-rail: #272522; --n19-rail-text: rgba(255,255,255,.65); --n19-rail-hover: rgba(255,255,255,.08);
   --n19-basic: rgba(255,255,255,.1); --n19-basic-hover: rgba(255,255,255,.2); --n19-basic-edge: transparent; --n19-basic-text: rgba(255,255,255,.65); --n19-box: rgba(0,0,0,.2); }
 
-/* Light: Chess.com's own light palette (white boxes on the brown page), whichever mode the account chose */
 html[data-net19-mode="light"]:root {
   --color-bg-black-eval: #4B4847 !important; --color-bg-bronze: #E3C29C !important; --color-bg-container-dark: #312E2B !important;
   --color-bg-container-light: #F1F1F1 !important; --color-bg-draw: #666564 !important; --color-bg-draw-eval: #BEBDB9 !important;
@@ -74,7 +65,6 @@ html[data-net19-mode="light"]:root {
   --color-text-link: var(--n19-link) !important; --color-text-link-hovered: var(--n19-link-hover) !important; --color-text-boldest: #312e2b !important;
   --color-text-default: #312e2b !important; --color-text-subtle: #8c8a88 !important; --color-text-placeholder: #8c8a88 !important; --color-bg-item-hovered: #f1f1f1 !important;
 }
-/* Dark: the late-2019 dark mode (translucent dark boxes), for an account that chose the light theme too */
 html[data-net19-mode="dark"]:root {
   --color-bg-black-eval: rgba(255, 255, 255, .1) !important; --color-bg-bronze: #D5A47D !important;
   --color-bg-container-dark: rgba(0, 0, 0, .2) !important; --color-bg-container-light: rgba(255, 255, 255, .08) !important;
@@ -143,10 +133,8 @@ html[data-net19-mode="dark"]:root {
   --globalSiteBackground: #312E2B !important;
   --color-text-link-hovered: var(--n19-link-hover) !important;
 }
-/* Both: the system font, 3px corners */
 html:root { --font-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif !important; --radius-5: .3rem !important; }
 
-/* Primary buttons: 2019's flat orange with a darker bottom edge (not the green gradient); secondary ones light grey */
 .cc-button-component.cc-button-primary { background: var(--n19-orange) !important; background-image: none !important; color: #fff !important;
   box-shadow: inset 0 -1px 0 var(--n19-orange-edge) !important; border-radius: 3px !important; text-shadow: none !important; }
 .cc-button-component.cc-button-primary:hover { background: var(--n19-orange-hover) !important; }
@@ -157,7 +145,6 @@ html:root { --font-family-heading: -apple-system, BlinkMacSystemFont, "Segoe UI"
 .cc-button-component.cc-button-secondary :is(span, .cc-icon-glyph) { color: inherit !important; }
 a:not(.cc-button-component):not([class*="sidebar"]):hover { color: var(--n19-link-hover); }
 
-/* Side bar: 2019's darker column with plain glyph icons — the colored 2020 icons shown as white glyphs, grey labels */
 #sidebar-main-menu.sidebar-container { background: var(--n19-rail) !important; }
 #sidebar-main-menu .sidebar-link-icon:not(.sidebar-play-icon) { filter: grayscale(1) brightness(1.9) !important; opacity: .65 !important; }
 #sidebar-main-menu .sidebar-play-icon { opacity: .65 !important; }
@@ -166,12 +153,8 @@ a:not(.cc-button-component):not([class*="sidebar"]):hover { color: var(--n19-lin
 #sidebar-main-menu a.sidebar-link.cc-button-ghost:hover { background: var(--n19-rail-hover) !important; }
 #sidebar-main-menu a.sidebar-link.cc-button-ghost:hover .sidebar-link-text { color: #fff !important; }
 
-/* Post-2019: the "Train" hub in the side bar (2025); the sticky "Ready to Play Chess? … Scan to download" app bar (2023) */
 #sidebar-main-menu [data-pin="train"], html body :is(.ready-to-play-banner-component, .desktop-qr-banner-component, [data-net19-hidden]) { display: none !important; }
 
-/* Light: Chess.com's dark theme also writes many parts with translucent white (move lists, the live-player count, tab
-   titles, the game-over card). Inside the white boxes those whites become the matching translucent blacks, and form
-   controls and scroll bars are drawn light. */
 html[data-net19-mode="light"] { color-scheme: light !important; }
 html[data-net19-mode="light"] :is(.sidebar-component, .cc-section, .cc-modal-component, .cc-popover, dialog, .game-over-modal-component, .cc-container-component) {
   --color-transparent-white-2: rgba(0,0,0,.02); --color-transparent-white-5: rgba(0,0,0,.04); --color-transparent-white-8: rgba(0,0,0,.06);

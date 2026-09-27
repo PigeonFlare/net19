@@ -1,5 +1,3 @@
-// net19 handmade theme: Google News, 2019. The palette lives in gnews.css (mapped onto News's own --gn-c-* tokens). News
-// draws its dark theme with the same tokens: the mode is read from --gn-c-background, which the theme leaves alone.
 globalThis.net19Theme = {
   detect() {
     const probe = getComputedStyle(document.documentElement).getPropertyValue('--gn-c-background').trim().toLowerCase();
@@ -11,7 +9,6 @@ globalThis.net19Theme = {
   later: /^(?:ai summary|summari[sz]e(?: this)?(?: story| article)?|ask about this story)$/i,
   keepLabels: /^(?:top stories|for you|following|home)$/i,
 };
-// 2019 words for today's labels: the cluster link "See more headlines & perspectives" said "View full coverage".
 (() => {
   const fix = () => {
     for (const el of document.querySelectorAll('main a[aria-label^="See more headlines" i] div, main a[href*="/stories/"] > div')) {
@@ -20,13 +17,11 @@ globalThis.net19Theme = {
     for (const h of document.querySelectorAll('main h1, main h2')) {
       if (!h.children.length && /^Your\s+briefing$/i.test(h.textContent.trim())) h.textContent = 'Headlines';
     }
-    // The drawer's current section (the strip marks it only by its own styling): the entry whose address is this page.
     const here = location.pathname.replace(/^\/(home)?$/, '/home');
     for (const a of document.querySelectorAll('body > c-wiz[role="navigation"] a[role="tab"]')) {
       let path = '';
       const href = a.getAttribute('href');
-      if (href) try { path = new URL(a.href).pathname; } catch {}   // a.href honors the page's <base>
-      // Topic ids differ in their last characters between links and the page they open (language suffixes).
+      if (href) try { path = new URL(a.href).pathname; } catch {}
       const on = !!path && (path === here || (path.startsWith('/topics/') && here.startsWith('/topics/') && path.slice(0, 48) === here.slice(0, 48)));
       if (on !== a.hasAttribute('data-n19-current')) a.toggleAttribute('data-n19-current', on);
     }

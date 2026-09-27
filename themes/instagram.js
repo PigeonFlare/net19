@@ -1,6 +1,3 @@
-// net19 handmade theme: Instagram, 2019. Instagram follows the device theme unless changed in its settings;
-// it marks the result with a __ig-dark-mode / __ig-light-mode class (__fb-dark-mode / __fb-light-mode on the
-// logged-out page) when present.
 globalThis.net19Theme = {
   detect() {
     const classes = document.documentElement.classList;
@@ -9,18 +6,12 @@ globalThis.net19Theme = {
     return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   },
   watch: ['class'],
-  // Controls that arrived after 2019 (guard.js hides them by label): Reels (2020), Shop (2020), the "Create" entry of
-  // the 2021 navigation, Threads (2023), Notes (2022), broadcast channels (2023), Meta AI (2024), Meta Verified and
-  // subscriptions (2022/2023), "Also from Meta", remixes and templates (2021/2022) and "Edited" labels (2023).
   later: /^(?:reels|threads|meta ai|ask meta ai|shop|create|new post|notes?|your note|leave a note|broadcast channels?|channels|subscribe|subscriptions?|meta verified|also from meta|remix|use template|use audio|original audio|edited|suggested reels)$/i,
   keepLabels: /^(?:create new account|sign up|log in)$/i,
 };
 (() => {
   const mark = (el, name) => { if (el && el.getAttribute('data-n19-ig') !== name) el.setAttribute('data-n19-ig', name); };
 
-  // ---- Logged-out home: the page is built from atomic class names only, so its parts are found from the login form
-  // and marked with data-n19-ig for the stylesheet: the two-column row, its left (pictures) and right (form) columns
-  // and the rule between them, the white box around the heading and form, and the buttons below the fields.
   const landing = () => {
     const form = document.querySelector('form#login_form');
     if (!form || !form.isConnected) return;
@@ -49,11 +40,9 @@ globalThis.net19Theme = {
     mark(meta?.parentElement, 'meta');
   };
 
-  // ---- The app: the navigation rail, the logged-out bar, feed posts, the profile tabs and grid --------------------
   const LATER_ICONS = ['Reels', 'Threads', 'New post', 'Meta AI', 'Also from Meta', 'Shop', 'Notes', 'Broadcast channel', 'Channels'];
   const clickable = el => el.closest('a, [role="link"], [role="button"], button') || el;
   const app = () => {
-    // The 2022 navigation: the fixed column holding the Home and Explore links.
     const home = document.querySelector('a[href="/"] svg[aria-label="Home"], svg[aria-label="Home"]');
     if (home && !document.querySelector('[data-n19-ig="rail"]')) {
       for (let up = home.parentElement; up && up !== document.body; up = up.parentElement) {
@@ -68,14 +57,12 @@ globalThis.net19Theme = {
         if (item !== svg && !item.closest('[data-n19-ig="later"]')) mark(item, 'later');
       }
     }
-    // Logged out: the top bar is the row holding the Log In / Sign Up links above main.
     const login = document.querySelector('a[href^="/accounts/login"][role="link"]:not(main a, footer a)');
     if (login && !document.querySelector('[data-n19-ig="bar"]')) {
       for (let up = login.parentElement; up && up !== document.body; up = up.parentElement) {
         if (up.offsetWidth >= innerWidth - 20 && up.offsetHeight < 90 && getComputedStyle(up).backgroundColor !== 'rgba(0, 0, 0, 0)') { mark(up, 'bar'); break; }
       }
     }
-    // Feed posts: the column is widened to 614px when the post's picture fills the post.
     const article = document.querySelector('main article');
     if (article && !document.querySelector('[data-n19-ig="feedcol"]') && location.pathname === '/') {
       const img = [...article.querySelectorAll('img')].sort((a, b) => b.offsetWidth - a.offsetWidth)[0];
@@ -85,8 +72,6 @@ globalThis.net19Theme = {
         if (col !== article) mark(col, 'feedcol');
       }
     }
-    // Inside a bordered post, the header, icons, likes, caption and comment rows get the 2019 16px side padding;
-    // the picture (the part holding the widest image) stays edge to edge.
     for (const post of document.querySelectorAll('main article:not([data-n19-ig])')) {
       const width = post.offsetWidth, media = [...post.querySelectorAll('img, video')].filter(m => m.offsetWidth >= width * .9);
       if (!width || !media.length) continue;
@@ -99,7 +84,6 @@ globalThis.net19Theme = {
       };
       walk(post, 0);
     }
-    // The time under a post (small) becomes the 2019 uppercase stamp; the "Add a comment…" row and its "Post" button.
     for (const time of document.querySelectorAll('main time:not([data-n19-ig]), [role="dialog"] article time:not([data-n19-ig])')) {
       if (parseFloat(getComputedStyle(time).fontSize) <= 12.5) mark(time.closest('a') || time, 'stamp');
       else time.setAttribute('data-n19-ig', 'time');
@@ -112,12 +96,10 @@ globalThis.net19Theme = {
         for (const b of form.querySelectorAll('[role="button"], button[type="submit"]')) if (/^Post$/i.test(b.textContent.trim())) mark(b, 'post-button');
       }
     }
-    // "Edited" labels (2023) and the Notes bubble over profile pictures (2022)
     for (const span of document.querySelectorAll('main span:not([data-n19-ig]):not(:has(*))')) {
       const t = span.textContent.trim();
       if (t === 'Edited' || t === '· Edited' || t === 'Note...' || t === 'Your note') mark(span, 'later');
     }
-    // Profile tabs: uppercase labels after 12px icons; the Reels tab goes (IGTV was the 2019 video tab).
     for (const tab of document.querySelectorAll('main [role="tablist"] a:not([data-n19-ig])')) {
       const svg = tab.querySelector('svg[aria-label]');
       const name = svg?.getAttribute('aria-label') || '';
@@ -130,7 +112,6 @@ globalThis.net19Theme = {
         (svg.parentElement || tab).after(text);
       }
     }
-    // Profile grid: squares in rows (or grids) with 28px gaps. Tall Explore tiles (spanning two rows) keep their shape.
     if (document.querySelector('main header') || location.pathname.startsWith('/explore')) {
       for (const link of document.querySelectorAll('main a[href*="/p/"]:not([data-n19-ig]), main a[href*="/reel/"]:not([data-n19-ig])')) {
         if (!link.querySelector('img')) continue;

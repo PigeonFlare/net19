@@ -1,39 +1,24 @@
-/* net19 handmade theme: Yandex, 2019. The yandex.ru of 2019 was white and flat: the black-and-red "Яндекс" wordmark,
-   a search field in a 2px yellow #fc0 frame with the yellow "Найти" arrow button, Arial text, link blue #1a0dab
-   (visited #551a8b, red #d00 on hover), green #070 addresses, and results as plain rows, not cards. Services had
-   the same white header with a 1px shadow: Погода put its "Яндекс" + "Погода" wordmarks over a #eceef2 page of white
-   12px cards with a red underline under the chosen tab; Маркет had the white header with the yellow-framed search
-   field; Переводчик was a white page with plain panels. Nothing added after 2019 (Alice AI chat, Нейро answers,
-   YandexGPT, Market AI, Translator AI, the prize wheel, app promos). The logos are Yandex's own 2019 files, still
-   served by yastatic.net. (The portal home now redirects to dzen.ru, another company's site, and is not themed.) */
 html { --n19-yellow: #fc0; --n19-yellow-press: #f2cf46; --n19-link: #1a0dab; --n19-visited: #551a8b; --n19-hover: #d00;
   --n19-path: #070; --n19-text: #000; --n19-text-2: #999; --n19-page: #fff; --n19-gray-page: #eceef2; --n19-card: #fff;
   --n19-rule: #e6e6e6; --n19-field: #fff; --n19-tab-active: #f33;
   --n19-font: Arial, "Helvetica Neue", Helvetica, sans-serif;
-  /* Yandex's own 2019 wordmarks, still hosted on yastatic.net */
   --n19-logo-ys: url("https://yastatic.net/islands/_/RQWGFypkIRAzEbaERs_Sq8zKRzY.svg");
   --n19-logo-pogoda: url("https://yastatic.net/s3/weather-frontend/10.15.4/i/service-name/ru.svg"); }
 html[data-net19-mode="dark"] { --n19-link: #8ab4f8; --n19-visited: #c58af9; --n19-hover: #ff6b6b; --n19-path: #5bb974; --n19-text: #e8e8e8;
   --n19-text-2: #9a9a9a; --n19-page: #1f1f1f; --n19-gray-page: #161616; --n19-card: #262626; --n19-rule: #3a3a3a; --n19-field: #262626; }
-/* The black 2019 wordmarks are shown light on a dark page */
 html[data-net19-mode="dark"]:not([data-net19-flip]) { --n19-logo-filter: invert(1) hue-rotate(180deg); }
 
-/* ---- Results (yandex.ru/search) ------------------------------------------------------------------------------ */
 html[data-n19-ya="serp"] body :is(.serp-item, .HeaderDesktop, .HeaderForm, .HeaderNav, .Organic, .Path, .OrganicText, .SerpFooter) { font-family: var(--n19-font) !important; }
-/* The "Яндекс" wordmark instead of today's Я-circle logo; the link inside stays clickable */
 html[data-n19-ya="serp"] .HeaderLogo { background: var(--n19-logo-ys) no-repeat left center / 86px 35px !important; min-width: 86px !important; filter: var(--n19-logo-filter, none); }
 html[data-n19-ya="serp"] .HeaderLogo > * { opacity: 0 !important; }
-/* The field: a 2px yellow frame with square corners, the yellow "Найти" button flush against it */
 html[data-n19-ya="serp"] .HeaderForm-InputWrapper, html[data-n19-ya="serp"] .HeaderForm-InputContainer { border-radius: 0 !important; }
 html[data-n19-ya="serp"] .HeaderForm { border-radius: 0 !important; box-shadow: none !important; }
 html[data-n19-ya="serp"] .HeaderForm-InputContainer { border: 2px solid var(--n19-yellow) !important; background: var(--n19-field) !important; box-shadow: none !important; }
 html[data-n19-ya="serp"] .HeaderForm-Submit { background: var(--n19-yellow) !important; color: #000 !important; border-radius: 0 !important; }
 html[data-n19-ya="serp"] .HeaderForm-Submit:active { background: var(--n19-yellow-press) !important; }
 html[data-n19-ya="serp"] .HeaderForm-Submit * { color: #000 !important; }
-/* Tabs: plain 14px links, the chosen one in black with a 2px underline */
 html[data-n19-ya="serp"] .HeaderNav-Tab { font-size: 14px !important; color: #555 !important; background: transparent !important; border-radius: 0 !important; }
 html[data-n19-ya="serp"] .HeaderNav-Tab_selected { color: var(--n19-text) !important; box-shadow: inset 0 -2px 0 var(--n19-text) !important; }
-/* Results: plain rows, not cards */
 html[data-n19-ya="serp"] .serp-item.serp-item_card, html[data-n19-ya="serp"] .serp-item_card { background: transparent !important; box-shadow: none !important; border-radius: 0 !important; }
 html[data-n19-ya="serp"] .OrganicTitle-Link, html[data-n19-ya="serp"] .OrganicTitle-Link .OrganicTitle-LinkText { color: var(--n19-link) !important; }
 html[data-n19-ya="serp"] .OrganicTitle-Link:visited, html[data-n19-ya="serp"] .OrganicTitle-Link:visited .OrganicTitle-LinkText { color: var(--n19-visited) !important; }
@@ -42,31 +27,21 @@ html[data-n19-ya="serp"] .OrganicTitle { font-size: 18px !important; font-weight
 html[data-n19-ya="serp"] :is(.Path, .Path-Item, .Organic-Path, .Organic-Path a) { color: var(--n19-path) !important; }
 html[data-n19-ya="serp"] .OrganicText { color: var(--n19-text) !important; font-size: 13px !important; }
 
-/* ---- Погода (yandex.ru/pogoda) --------------------------------------------------------------------------------- */
 html[data-n19-ya="pogoda"] body, html[data-n19-ya="pogoda"] [class*="AppLayoutTypeMain_contentWrapper__"], html[data-n19-ya="pogoda"] [class*="AppLayoutTypeMain_center__"] { background-color: var(--n19-gray-page) !important; }
 html[data-n19-ya="pogoda"] header[class*="AppHeader_header__"] { background-color: var(--n19-page) !important; box-shadow: 0 1px 0 rgba(0,0,0,.08) !important; }
-/* The wordmarks: "Яндекс" (86×35) and "Погода" (68×28) as 2019 drew them, on the site's own two links */
 html[data-n19-ya="pogoda"] a[class*="AppLogo_rootLogo__"], html[data-n19-ya="pogoda"] a[class*="AppLogo_serviceLogo__"] { display: inline-block !important; flex: none !important; filter: var(--n19-logo-filter, none); }
 html[data-n19-ya="pogoda"] a[class*="AppLogo_rootLogo__"] { width: 86px !important; height: 35px !important; background: var(--n19-logo-ys) no-repeat center / 86px 35px !important; margin-right: 6px !important; }
 html[data-n19-ya="pogoda"] a[class*="AppLogo_serviceLogo__"] { width: 68px !important; height: 28px !important; background: var(--n19-logo-pogoda) no-repeat center / 68px 28px !important; margin-top: 3px !important; }
 html[data-n19-ya="pogoda"] a:is([class*="AppLogo_rootLogo__"], [class*="AppLogo_serviceLogo__"]) > :is(img, picture, svg) { opacity: 0 !important; width: 100% !important; height: 100% !important; }
-/* Header tabs: no pills; the chosen tab has a red underline */
 html[data-n19-ya="pogoda"] a[class*="AppHeaderNavigationItem_list__link__"], html[data-n19-ya="pogoda"] button[class*="AppHeaderNavigation_more__"] { background: transparent !important; border-radius: 0 !important; }
 html[data-n19-ya="pogoda"] nav[class*="AppHeaderNavigation_navigation__"] a[class*="AppHeaderNavigationItem_list__link_active__"] { box-shadow: inset 0 -2px 0 var(--n19-tab-active) !important; }
-/* The search field: a plain box with 3px corners */
 html[data-n19-ya="pogoda"] input[class*="Suggest_input__"] { border-radius: 3px !important; border: 1px solid rgba(0,0,0,.15) !important; background: var(--n19-field) !important; }
-/* Round icon buttons were plain icons */
 html[data-n19-ya="pogoda"] header :is(button[class*="AppFindMeButton_button__"], button[class*="FavoriteButton_favorite__button__"], button[class*="AppSettings_button__"]) { background: transparent !important; }
-/* Cards: white, 12px corners */
 html[data-n19-ya="pogoda"] section[class*="AppLayoutTypeMain_content_type_main__"] { background-color: var(--n19-card) !important; border-radius: 12px !important; }
 
-/* ---- Маркет (market.yandex.ru): square yellow-framed search field ---------------------------------------------- */
 html[data-n19-ya="market"] form#HeaderSearchLightId > div, html[data-n19-ya="market"] form#HeaderSearchLightId > div > div, html[data-n19-ya="market"] form#HeaderSearchLightId > div > div > div { border-radius: 3px !important; }
 
-/* ---- Not in 2019 --------------------------------------------------------------------------------------------------- */
-/* Alice AI chat suggestions and the app promo on Погода; the prize wheel and Market AI in Маркет's header */
 html[data-n19-ya="pogoda"] [class*="AliceChat_scroll__"], html[data-n19-ya="pogoda"] [class*="AppPromoInner_container__"],
 html[data-n19-ya="market"] li:has(> [id$="/header/ecomAssistantModalTrigger"]), html[data-n19-ya="market"] li:has(> [id$="/header/balanceBadge"]),
 html[data-n19-ya="market"] [id="ecomAssistantModalTrigger"],
-/* The "Ask Translator AI" bar under the translation box, and the "Переводчик AI" model switch in it */
 html[data-n19-ya="translate"] #gptTutorEntry, html[data-n19-ya="translate"] button[data-tracking-data*="typeTranslationButton"] { display: none !important; }

@@ -1,18 +1,9 @@
-/* net19 handmade theme: Google Search, 2019 as Chrome showed it: "Gmail  Images", the apps grid and a small flat blue Sign in
-   at the top right; the multicolor logo higher on the page; a 44px rounded search box with a thin gray border, a gray
-   magnifier and the colored microphone, a shadow only on hover or with suggestions open; flat light-gray "Google Search" and
-   "I'm Feeling Lucky" buttons; a light-gray footer. Results: title first, green URL under it, gray snippet. Palette tokens
-   are mapped onto Google's own design variables, so menus, suggestion lists and dialogs follow; a dark variant follows
-   Google's own dark mode, which google.js reads and palette.js marks as html[data-net19-mode]. */
-
-/* ---- 2019 palette: light ---- */
 :root {
   --n19-bg: #fff; --n19-surface: #f8f9fa; --n19-surface-2: #f1f3f4; --n19-text: #222; --n19-text-2: #545454; --n19-text-3: #70757a;
   --n19-link: #1a0dab; --n19-visited: #609; --n19-url: #006621; --n19-accent: #1a73e8; --n19-accent-soft: #e8f0fe; --n19-on-accent: #fff;
   --n19-border: #dfe1e5; --n19-border-soft: #ebebeb; --n19-shadow: 0 1px 6px rgba(32,33,36,.28); --n19-button: #f2f2f2; --n19-button-text: #5f6368;
   --n19-button-hover-border: #c6c6c6; --n19-footer: #f2f2f2; --n19-footer-border: #e4e4e4; --n19-footer-text: #5f6368;
 }
-/* ---- the same palette for dark mode (Google's own mode, read by google.js) ---- */
 :root[data-net19-mode="dark"] {
   --n19-bg: #202124; --n19-surface: #303134; --n19-surface-2: #3c4043; --n19-text: #e8eaed; --n19-text-2: #bdc1c6; --n19-text-3: #9aa0a6;
   --n19-link: #8ab4f8; --n19-visited: #c58af9; --n19-url: #81c995; --n19-accent: #8ab4f8; --n19-accent-soft: #394457; --n19-on-accent: #202124;
@@ -20,7 +11,6 @@
   --n19-button-hover-border: #5f6368; --n19-footer: #171717; --n19-footer-border: #3c4043; --n19-footer-text: #9aa0a6;
 }
 
-/* ---- Google's own tokens, re-pointed at the palette (names are Google's) ---- */
 html:root, html #gb, html body {
   --xhUGwc: var(--n19-bg) !important; --cIehld: var(--n19-bg) !important; --ZXiaGf: var(--n19-bg) !important; --EpFNW: var(--n19-bg) !important;
   --YLNNHc: var(--n19-text) !important; --COEmY: var(--n19-text) !important; --bcxd3b: var(--n19-text) !important; --Xqboce: var(--n19-text) !important;
@@ -40,27 +30,20 @@ html:root, html #gb, html body {
 }
 body, input, textarea, button { font-family: arial, sans-serif !important; }
 
-/* ---- Search box: 2019 shape on every page (home, results, suggestion list) ---- */
 form[role="search"] .RNNXgb { background: var(--n19-bg) !important; border: 1px solid var(--n19-border) !important; border-radius: 24px !important; box-shadow: none !important; }
 form[role="search"] .RNNXgb:hover, form[role="search"] .emcav .RNNXgb { box-shadow: var(--n19-shadow) !important; border-color: transparent !important; }
 form[role="search"] .SDkEP, form[role="search"] .fM33ce, form[role="search"] .dRYYxd { background: transparent !important; }
 form[role="search"] .aajZCb, .UUbT9, .erkvQe { background: var(--n19-bg) !important; box-shadow: var(--n19-shadow) !important; border-radius: 0 0 24px 24px !important; }
 textarea[name="q"], input[name="q"] { color: var(--n19-text) !important; background: transparent !important; font-size: 16px !important; }
-/* 2019 had a microphone only: no "+", Lens or AI Mode controls */
 form[role="search"] button.UbbAWe, form[role="search"] div.etxtjc:not(:has([aria-label="Search by voice" i])), form[role="search"] button.plR5qb, form[role="search"] [aria-label="AI Mode" i],
 form[role="search"] [role="button"][aria-label="Search by image" i] { display: none !important; }
-/* the colored microphone stays at the field's right end in every variant (signed in, AI Mode homepage) */
 form[role="search"] [aria-label="Search by voice" i] { display: flex !important; visibility: visible !important; opacity: 1 !important; }
-/* the typed line is plain text: no underline, outline or bottom rule inside the field */
 form[role="search"] .RNNXgb :is(textarea[name="q"], input[name="q"]), form[role="search"] .RNNXgb .a4bIc {
   text-decoration: none !important; outline: none !important; border: 0 !important; box-shadow: none !important; }
 
-/* Homepage: 44px box; the logo sits higher, as in 2019 (a fixed 231px logo block under the 60px bar) */
 form[role="search"] .RNNXgb { height: 44px !important; min-height: 44px !important; }
 form[role="search"] .RNNXgb .SDkEP, form[role="search"] .RNNXgb .dRYYxd, form[role="search"] .RNNXgb .iblpc, form[role="search"] .RNNXgb .a4bIc { height: 44px !important; min-height: 0 !important; }
 form[role="search"] .RNNXgb .ywK6Rd { height: 44px !important; }
-/* In the 44px box the typed line sits in the middle (Google's own padding is for its 48-52px box: 4px low), and the
-   search and voice buttons are 44px squares with their icons centered. */
 form[role="search"] .RNNXgb textarea[name="q"] { padding: 10px 0 !important; line-height: 22px !important; margin: 0 !important; min-height: 0 !important; }
 form[role="search"] .RNNXgb input[name="q"] { height: 42px !important; padding-top: 0 !important; padding-bottom: 0 !important; margin: 0 !important; }
 form[role="search"] .RNNXgb button[aria-label="Search"], form[role="search"] .RNNXgb :is([aria-label="Search by voice"], [aria-label=" Clear"], [aria-label="Clear"]) {
@@ -69,17 +52,12 @@ form[role="search"] .RNNXgb button[aria-label="Search"] { width: 44px !important
 form[role="search"] .RNNXgb button[aria-label="Search"] > :is(div, span) { display: flex !important; align-items: center !important; justify-content: center !important; margin: 0 !important; width: 24px !important; height: 24px !important; }
 #sI1XGe .naW5gc { margin-top: 87px !important; }
 #sI1XGe { height: 179px !important; max-height: 179px !important; }
-/* the colored microphone */
 form[role="search"] [aria-label="Search by voice"] { background: url("https://www.google.com/images/branding/googlemic/2x/googlemic_color_24dp.png") center / 24px 24px no-repeat !important; }
 form[role="search"] [aria-label="Search by voice"] > svg { visibility: hidden !important; }
-/* Homepage: the multicolor logo, gray buttons */
 div:has(> svg[viewBox="0 0 272 92"]) {
   background: url("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png") center bottom / 272px 92px no-repeat !important;
 }
 div:has(> svg[viewBox="0 0 272 92"]) > svg { visibility: hidden !important; }
-/* Drawn as a background, the multicolor logo would flip with a flipped page (orange-brown and pink letters): under the
-   flip it is turned back with palette.js's exact inverse filter and keeps its colors; so do the colored microphone and
-   the results logo. */
 html[data-net19-flip] :is(div:has(> svg[viewBox="0 0 272 92"]), form[role="search"] [aria-label="Search by voice"], a#logo, a[href*="webhp"]:has(svg[viewBox="0 0 272 92"])) {
   filter: contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
 input[name="btnK"], input[name="btnI"] {
@@ -88,19 +66,15 @@ input[name="btnK"], input[name="btnI"] {
 }
 input[name="btnK"]:hover, input[name="btnI"]:hover { border-color: var(--n19-button-hover-border) !important; color: var(--n19-text) !important; box-shadow: 0 1px 1px rgba(0,0,0,.1) !important; }
 
-/* Results header: the small multicolor logo */
 a#logo svg, #logo img, a[href*="webhp"] svg[viewBox="0 0 272 92"] { visibility: hidden !important; }
 a#logo, a[href*="webhp"]:has(svg[viewBox="0 0 272 92"]) {
   background: url("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png") left center / 92px 30px no-repeat !important;
 }
 
-/* Results tabs: blue text and underline on the selected one; later tabs hidden */
 div[role="navigation"] a, #hdtb a, [role="list"] a[role="link"] { color: var(--n19-text-3) !important; }
 div[role="navigation"] [aria-current="page"], div[role="navigation"] [selected], #hdtb .hdtb-msel { color: var(--n19-accent) !important; border-color: var(--n19-accent) !important; }
 a[href*="udm=50"], a[href*="udm=39"], a[href*="udm=18"], a[href*="udm=14"] { display: none !important; }
 
-/* Results: title first, green URL beneath, gray snippet; no favicons or site names (added in 2020) */
-/* Google draws the site line above the title by flipping the block upside down twice; undo both flips */
 #search :has(> a.zReHs), #rso :has(> a.zReHs), #search a.zReHs > *, #rso a.zReHs > * { transform: none !important; }
 #search a.zReHs, #rso a.zReHs { display: inline-flex !important; flex-direction: column !important; }
 #search a.zReHs > br, #rso a.zReHs > br { display: none !important; }
@@ -112,29 +86,22 @@ a[href*="udm=50"], a[href*="udm=39"], a[href*="udm=18"], a[href*="udm=14"] { dis
 #search .VwiC3b, #search [data-sncf] { color: var(--n19-text-2) !important; font-size: 14px !important; line-height: 1.58 !important; }
 #rcnt, #center_col, #search, #rhs { background: transparent !important; }
 
-/* Footer: #f2f2f2, 40px, gray links; 2019 order "Advertising  Business  About  How Search works" */
 .Ij8KCd, #footcnt, .fbar { background: var(--n19-footer) !important; border-top: 1px solid var(--n19-footer-border) !important; }
 .Ij8KCd a, .fbar a, .Ij8KCd [role="button"], .Ij8KCd [role="button"] * { color: var(--n19-footer-text) !important; font-size: 14px !important; }
 .Ij8KCd .g55egf > a { line-height: 40px !important; height: 40px !important; padding-top: 0 !important; padding-bottom: 0 !important; }
 .Ij8KCd .osh6F { display: flex !important; }
-/* "Settings" (a menu button, not a link) sat 3px below the other footer words */
 .Ij8KCd .CcNe6e { display: inline-flex !important; align-items: center !important; height: 40px !important; vertical-align: top !important; }
 .Ij8KCd .osh6F > a[href*="/ads"] { order: 1; } .Ij8KCd .osh6F > a[href*="/services"] { order: 2; }
 .Ij8KCd .osh6F > a[href*="about.google"] { order: 3; } .Ij8KCd .osh6F > a[href*="howsearchworks"] { order: 4; }
-/* the links at the top right: near-black 13px */
 #gb a.gb_6, #gb a[href*="mail.google.com"], #gb a[href*="imghp"] { color: var(--n19-text) !important; font-size: 13px !important; }
 
-/* Sign in: the 2019 flat blue button (Google's own geometry is left alone so the bar stays aligned) */
 html { --n19-signin: #4285f4; --n19-signin-text: #fff; }
 html[data-net19-mode="dark"] { --n19-signin: #8ab4f8; --n19-signin-text: #202124; }
 #gb a.gb_A, #gb a[href*="ServiceLogin"] { background: var(--n19-signin) !important; color: var(--n19-signin-text) !important; border-radius: 4px !important; font-weight: 700 !important;
   font-size: 13px !important; height: 30px !important; line-height: 28px !important; min-height: 0 !important; padding: 0 12px !important; box-sizing: border-box !important; border: 1px solid transparent !important; }
-/* its 48px slot top-aligns the 30px button 5px above "Gmail  Images" and the apps grid: put it on their center line */
 #gb a.gb_A, #gb a[href*="ServiceLogin"] { margin-top: 5px !important; }
 #gb a.gb_A span, #gb a[href*="ServiceLogin"] span { font-size: 13px !important; line-height: 28px !important; padding: 0 !important; }
 
-/* Signed-in homepage: the "I'm feeling lucky" pill chip (marked by google.js; guard.js hides the AI chips beside it)
-   drawn as the 2019 flat gray button, without its icon */
 [data-net19-lucky], [data-net19-gsearch] {
   display: inline-flex !important; align-items: center !important; justify-content: center !important; background: var(--n19-button) !important;
   border: 1px solid var(--n19-button) !important; border-radius: 4px !important; box-shadow: none !important; height: 36px !important; min-height: 0 !important;
@@ -146,8 +113,6 @@ html[data-net19-mode="dark"] { --n19-signin: #8ab4f8; --n19-signin-text: #202124
 [data-net19-lucky], [data-net19-gsearch] { box-sizing: border-box !important; line-height: 34px !important; vertical-align: top !important; }
 [data-net19-gsearch] { cursor: pointer !important; }
 
-/* The homepage logo slot when Google put something else there (a doodle, the small signed-in mark) or shrank the logo
-   (marked by google.js): the 2019 272x92 multicolor logo, bottom-aligned in the slot as above. Google's own file. */
 [data-net19-logo] { display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: flex-end !important;
   height: 179px !important; max-height: 179px !important; min-height: 179px !important; overflow: hidden !important; }
 [data-net19-logo] > * { display: none !important; }

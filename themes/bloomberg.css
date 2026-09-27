@@ -1,16 +1,8 @@
-/* net19 handmade theme: Bloomberg, 2019 (as the Wayback Machine's June and December 2019 captures show it): the thin
-   black "Bloomberg the Company & Its Products" strip, then a white masthead with the black "Bloomberg" logotype centered
-   (50px), a white row of 14px black section links ruled off in black, and the markets data strip; below, a white grid of
-   story modules — small section labels over BW Haas Grotesk Bold headlines (black, 18px, tight 1.1 leading), gray
-   datelines and dotted rules; module titles over a heavy black bar; article pages with a big black headline, "By Name"
-   and date in plain black, share links in a left column and Publico serif body text. Bloomberg has no dark mode on the
-   web, so a dark device gets the engine's inverted page; the dark tokens are only a fallback. */
 html { --n19-page: #fff; --n19-text: #000; --n19-meta: #767676; --n19-rule: #e6e6e6; --n19-strip: #000;
   --n19-sans: BWHaasGroteskWeb, BWHaasGrotesk-55Roman-Web, "Neue Haas Grotesk Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
   --n19-serif: PublicoText, "Publico Text", Georgia, Cambria, "Times New Roman", serif; }
 html[data-net19-mode="dark"] { --n19-page: #111; --n19-text: #f2f2f2; --n19-meta: #9a9a9a; --n19-rule: #333; }
 
-/* ---- Masthead: white, the logotype black and centered; search and the edition picker stay at the sides ---- */
 [class*="nav-ui-LogoBar__logoBarContainer"] { background: var(--n19-page) !important; border-bottom: 0 !important; height: auto !important; }
 [class*="nav-ui-LogoBar__bar"] { position: relative !important; justify-content: center !important; min-height: 76px !important; }
 [class*="nav-ui-LogoBar__logoBarContainer"] [class*="nav-ui-Logo__logo"] { background: transparent !important; margin: 0 auto !important; }
@@ -20,37 +12,30 @@ html[data-net19-mode="dark"] { --n19-page: #111; --n19-text: #f2f2f2; --n19-meta
 [class*="nav-ui-LogoBar__searchButton"], [class*="nav-ui-LogoBar__searchButton"] svg { color: var(--n19-text) !important; fill: var(--n19-text) !important; }
 [class*="nav-ui-LogoBar__search__"] input { border-radius: 0 !important; }
 
-/* ---- Section links: a white row of plain 14px black links between rules ---- */
 [class*="nav-ui-MenuDesktop__menuDesktopContainer"] { background: var(--n19-page) !important; border-top: 1px solid var(--n19-rule) !important; border-bottom: 1px solid var(--n19-text) !important; }
 [class*="nav-ui-MenuDesktop__menuDesktopContainer"] :is(a, li, span, div[class*="regionText"]) { color: var(--n19-text) !important; font: 400 14px/1.5 var(--n19-sans) !important; letter-spacing: 0 !important; }
 [class*="nav-ui-MenuDesktop__menuDesktopContainer"] a:hover { text-decoration: underline !important; color: var(--n19-text) !important; }
 [class*="nav-ui-MenuDesktop__menuDesktopContainer"] svg { color: var(--n19-text) !important; fill: var(--n19-text) !important; }
 [class*="nav-ui-MenuDesktop__liveNow"] { color: #e3120b !important; font-weight: 700 !important; }
-/* the topic row under the bar ("Google: …") as 2019's "Quick Links" */
 [class*="ContextualNav_contextualNav"] { border-radius: 0 !important; }
 [class*="ContextualNav_title"] { font: 700 14px/1.5 var(--n19-sans) !important; color: var(--n19-text) !important; }
 [class*="ContextualNav_contextualNavItemContainer"] a { font: 400 14px/1.5 var(--n19-sans) !important; color: var(--n19-text) !important; }
 [class*="ContextualNav_contextualNavItemContainer"] { border-color: transparent !important; }
 
-/* ---- Home and section fronts: bold black headlines, small plain labels, gray datelines ---- */
 [class*="typography_coreHeadline"], [class*="StoryBlock_storyLink"] [class*="headline" i], [class*="StoryBlock_headline"] {
   font-family: var(--n19-sans) !important; font-weight: 700 !important; letter-spacing: -.01em !important; color: var(--n19-text) !important; line-height: 1.1 !important; }
 [class*="StoryBlock_storyLink"]:hover [class*="typography_coreHeadline"] { text-decoration: underline !important; }
 [class*="typography_articleLabel"], [class*="StoryBlock_eyebrow"], [class*="StoryBlock_label"] { font: 400 14px/1.3 var(--n19-sans) !important; letter-spacing: 0 !important; text-transform: none !important; color: var(--n19-text) !important; }
 [class*="StoryBlock_summary"], [class*="StoryBlock_abstract"], [class*="typography_coreBody"] { font-family: var(--n19-sans) !important; color: var(--n19-text) !important; }
 [class*="StoryBlock_timestamp"], [class*="StoryBlock_byline"], [class*="typography_coreLabel"] { color: var(--n19-meta) !important; font-family: var(--n19-sans) !important; }
-/* module titles over a heavy black bar (2019's "BloombergOpinion" box) */
 [class*="ModuleHeader_ModuleHeader"] { border-top: 6px solid var(--n19-text) !important; padding-top: 10px !important; }
 [class*="ModuleHeader_title"], [class*="ModuleHeader_title"] a { font: 700 20px/1.2 var(--n19-sans) !important; color: var(--n19-text) !important; letter-spacing: -.01em !important; text-transform: none !important; }
 [class*="ModuleHeader_navItem"] a { font: 400 14px/1.3 var(--n19-sans) !important; color: var(--n19-text) !important; }
-/* related-story boxes: square, dotted rules */
 [class*="PhoenixRelatedItems_relatedListContainer"] { border-radius: 0 !important; border-color: var(--n19-text) !important; border-style: dotted !important; }
 [class*="PhoenixRelatedItems"] a { font: 400 15px/1.3 var(--n19-sans) !important; color: var(--n19-text) !important; }
 [class*="Media_image"] img, [class*="Media_image"], [class*="styles_animatedCard"], [class*="media-ui-Slider"] img { border-radius: 0 !important; }
-/* the rounded video cards of 2024 become square */
 [class*="styles_animatedCard"], [class*="VideoCard"], [class*="videoCard"] { border-radius: 0 !important; }
 
-/* ---- Article ---- */
 [class*="ArticleEyebrow_sectionTitle"] a, [class*="ArticleEyebrow_subsectionTitle"] { font: 400 20px/1.2 var(--n19-sans) !important; color: var(--n19-text) !important; }
 h1[class*="ArticleHeadline_headline"] { font: 700 44px/1.08 var(--n19-sans) !important; letter-spacing: -.015em !important; color: var(--n19-text) !important; }
 [class*="ArticleByline_articleBylineAuthors"], [class*="ArticleByline_articleBylineAuthors"] a { font: 400 18px/1.4 var(--n19-sans) !important; color: var(--n19-text) !important; }
@@ -59,15 +44,11 @@ figcaption[class*="media-ui-Caption"], figcaption[class*="media-ui-Caption"] :is
 [class*="BasicContent_content"] :is(p, li), [class*="ArticleBody"] :is(p, li), [class*="body-content"] :is(p, li) { font: 400 18px/1.6 var(--n19-serif) !important; color: var(--n19-text) !important; }
 [class*="BasicContent_content"] p a, [class*="ArticleBody"] p a { color: var(--n19-text) !important; text-decoration: underline !important; }
 [class*="BasicContent_content"] :is(h2, h3) { font-family: var(--n19-sans) !important; font-weight: 700 !important; color: var(--n19-text) !important; }
-/* share buttons: plain black glyphs in the left column; gift and save are 2022-23 */
 [class*="media-ui-SocialShare"] button { border-radius: 0 !important; border-color: transparent !important; }
 button[aria-label="Gift this article"], [class*="BasicContent_bookmarkContainer"], [class*="bookmarksButton"] { display: none !important; }
 
-/* ---- Buttons and fields: square ---- */
 #__next :is(button, input)[class*="outlined-button"], #__next [class*="atomics-Button-root"] { border-radius: 0 !important; }
-/* "Takeaways by Bloomberg AI" summaries and AI feedback prompts (2025) */
 [class*="AiTakeaways" i], [class*="aiSummary" i], [class*="AISummary"], [class*="Takeaways_"], [class*="AiFeedback" i] { display: none !important; }
-/* section fronts: the name set like 2019's "Bloomberg Markets" logotype, centered, not bold */
 [class*="SectionFrontHeaderBrand_title"], [class*="SectionFrontHeader"] h1 { font: 500 50px/1 var(--n19-sans) !important; letter-spacing: -.01em !important; text-align: center !important; color: var(--n19-text) !important; }
 [class*="SectionFrontHeaderBrand_title"] { display: block !important; width: 100% !important; font-weight: 500 !important; }
 [class*="SectionFrontHeader"] nav a, [class*="SectionFrontHeader"] ul a { font: 400 14px/1.5 var(--n19-sans) !important; color: var(--n19-text) !important; }

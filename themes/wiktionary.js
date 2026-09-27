@@ -1,12 +1,4 @@
-// net19 handmade theme: Wiktionary, 2019, in its own legacy Vector skin (served by Wikimedia itself). The skin had no
-// dark mode, so on a dark device palette.js flips the page (pictures keep their real colors); a reader's own dark
-// gadget, which paints the page dark, is left alone.
 globalThis.net19Theme = {};
-// The worker adds useskin=vector to plain entry addresses. Pages reached with a query (full-text search results,
-// history, diffs, special pages with parameters) or a #section (links from categories and search results) would
-// otherwise open in the 2022 skin, so:
-// - links and forms on legacy pages carry useskin=vector along, so those pages open in the legacy skin directly;
-// - a 2022-skin page reached some other way asks for the same address in the legacy skin (hidden until it arrives).
 (() => {
   if (!/^[a-z-]+\.wiktionary\.org$/.test(location.hostname) || location.hostname === 'www.wiktionary.org') return;
   const root = document.documentElement;

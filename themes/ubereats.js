@@ -1,9 +1,4 @@
-// net19 handmade theme: ubereats. Uber Eats' dark theme follows the device; the palette engine detects which one
-// is showing from the page background, so the light or dark tokens apply to match.
 globalThis.net19Theme = {};
-// The landing page sets black type and the transparent header straight on a full-window food photo. On a dark device
-// the page is flipped by palette.js and the photo turned back, which would leave white type on the light photo: the
-// hero and the header floating over it are kept as drawn instead (as the 2019 site, which had no dark mode, showed them).
 (() => {
   const root = document.documentElement;
   const photo = el => [el, ...el.querySelectorAll('div')].slice(0, 60).some(d => getComputedStyle(d).backgroundImage.includes('url('));
@@ -27,8 +22,6 @@ globalThis.net19Theme = {};
   };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();
-// The "Find Food" button next to the address field on city, cuisine and near-me pages carries no stable label; it is found
-// by its text and marked for ubereats.css (the landing page's own button has a test id).
 (() => {
   const mark = () => {
     for (const el of document.querySelectorAll('main a, main button')) {

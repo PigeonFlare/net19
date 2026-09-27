@@ -1,7 +1,4 @@
-// net19 handmade theme: FedEx, 2019. fedex.com has no dark mode; default detection keeps it light.
-// "Ask FedEx" is the post-2019 virtual assistant; guard.js hides any control carrying that label.
 globalThis.net19Theme = { later: /^ask fedex$/i };
-// The 2019 menu called today's "Design & Print" section "Printing Services".
 (() => {
   const fix = () => {
     for (const span of document.querySelectorAll('.fxg-global-nav .fxg-dropdown-js > .fxg-mouse')) {
@@ -12,5 +9,5 @@ globalThis.net19Theme = { later: /^ask fedex$/i };
   let queued = false;
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
   const start = () => { fix(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); };
-  start();  // from document_start: the header is fixed as soon as it is parsed, without waiting for DOMContentLoaded
+  start();
 })();

@@ -1,8 +1,3 @@
-/* net19 handmade theme: Reddit on old.reddit.com, the design Reddit served through 2021 (Web Design Museum,
-   "Reddit in 2021"): blue-gray header with the subreddit bar and hot/new/rising tabs, a numbered list with vote arrows,
-   blue titles, gray taglines and the sidebar with search, login and the "Submit" buttons.
-   In light mode that is exactly what old.reddit.com draws, so nothing is changed. Old Reddit never had a dark mode;
-   when the device is dark, the same layout gets a dark palette on the tokens below. */
 html[data-net19-mode="dark"] {
   color-scheme: dark;
   --n19-page: #161617; --n19-surface: #1f1f21; --n19-surface-2: #29292b; --n19-border: #38383b; --n19-border-2: #4a4a4e;
@@ -15,11 +10,9 @@ html[data-net19-mode="dark"] {
   --n19-login: #1b2632; --n19-login-border: #3a5a80;
 }
 
-/* Page */
 html[data-net19-mode="dark"] body, html[data-net19-mode="dark"] body > .content, html[data-net19-mode="dark"] .footer-parent,
 html[data-net19-mode="dark"] .listing-page .content, html[data-net19-mode="dark"] .side { background-color: var(--n19-page) !important; color: var(--n19-text) !important; }
 
-/* Subreddit bar and header */
 html[data-net19-mode="dark"] #sr-header-area, html[data-net19-mode="dark"] #sr-more-link {
   background-color: var(--n19-bar) !important; border-bottom-color: var(--n19-border) !important; color: var(--n19-bar-text) !important; }
 html[data-net19-mode="dark"] #sr-header-area a, html[data-net19-mode="dark"] .sr-bar a, html[data-net19-mode="dark"] #sr-more-link,
@@ -29,12 +22,10 @@ html[data-net19-mode="dark"] #header { background-color: var(--n19-header) !impo
 html[data-net19-mode="dark"] #header-bottom-right { background-color: var(--n19-header-2) !important; color: var(--n19-text-2) !important; }
 html[data-net19-mode="dark"] #header-bottom-right a, html[data-net19-mode="dark"] #header .pagename a, html[data-net19-mode="dark"] #header .redditname a { color: var(--n19-tab-text) !important; }
 html[data-net19-mode="dark"] #header-bottom-right .separator { color: var(--n19-meta) !important; }
-/* The default logo is one image with dark lettering; it is lightened so the word stays readable. */
 html[data-net19-mode="dark"] #header-img.default-header { filter: invert(1) hue-rotate(180deg) brightness(1.15); }
 html[data-net19-mode="dark"] .tabmenu li a { background-color: var(--n19-tab) !important; color: var(--n19-tab-text) !important; }
 html[data-net19-mode="dark"] .tabmenu li.selected a { background-color: var(--n19-page) !important; color: var(--n19-orangered) !important; border-color: var(--n19-header-border) !important; }
 
-/* Links list */
 html[data-net19-mode="dark"] .link .title, html[data-net19-mode="dark"] .link a.title { color: var(--n19-title) !important; }
 html[data-net19-mode="dark"] .link a.title:visited, html[data-net19-mode="dark"] .link.visited a.title { color: var(--n19-title-visited) !important; }
 html[data-net19-mode="dark"] .rank, html[data-net19-mode="dark"] .score.unvoted, html[data-net19-mode="dark"] .midcol .score { color: var(--n19-score) !important; }
@@ -60,7 +51,6 @@ html[data-net19-mode="dark"] .infobar, html[data-net19-mode="dark"] .linkinfo, h
 html[data-net19-mode="dark"] .link .usertext-body .md, html[data-net19-mode="dark"] .panestack-title, html[data-net19-mode="dark"] .content .details,
 html[data-net19-mode="dark"] .sitetable .thing.link .expando { background-color: var(--n19-surface) !important; border-color: var(--n19-border-2) !important; color: var(--n19-text) !important; }
 
-/* Text, comments and forms */
 html[data-net19-mode="dark"] .md, html[data-net19-mode="dark"] .md p, html[data-net19-mode="dark"] .md li, html[data-net19-mode="dark"] .md h1,
 html[data-net19-mode="dark"] .md h2, html[data-net19-mode="dark"] .md h3, html[data-net19-mode="dark"] .md h4, html[data-net19-mode="dark"] .md h5,
 html[data-net19-mode="dark"] .md h6, html[data-net19-mode="dark"] .md td, html[data-net19-mode="dark"] .md th, html[data-net19-mode="dark"] .md strong,
@@ -78,7 +68,6 @@ html[data-net19-mode="dark"] .usertext-buttons button, html[data-net19-mode="dar
 html[data-net19-mode="dark"] form.toggle button, html[data-net19-mode="dark"] input[type="submit"] {
   background-color: var(--n19-surface-2) !important; border-color: var(--n19-border-2) !important; color: var(--n19-text) !important; }
 
-/* Sidebar: search, login and the Submit buttons */
 html[data-net19-mode="dark"] .side .spacer, html[data-net19-mode="dark"] .sidecontentbox .content, html[data-net19-mode="dark"] .side .md {
   background-color: transparent !important; border-color: var(--n19-border) !important; }
 html[data-net19-mode="dark"] .login-form-side, html[data-net19-mode="dark"] .login-form-side .submit { background-color: var(--n19-login) !important; border-color: var(--n19-login-border) !important; color: var(--n19-text-2) !important; }
@@ -91,7 +80,6 @@ html[data-net19-mode="dark"] .side .linkinfo .date { color: var(--n19-text-2) !i
 html[data-net19-mode="dark"] .listing-chooser, html[data-net19-mode="dark"] .listing-chooser .grippy, html[data-net19-mode="dark"] .listing-chooser li.selected {
   background-color: var(--n19-surface) !important; border-color: var(--n19-border) !important; }
 
-/* Footer */
 html[data-net19-mode="dark"] .footer .col, html[data-net19-mode="dark"] .footer, html[data-net19-mode="dark"] .footer-parent .bottommenu {
   background-color: var(--n19-page) !important; border-color: var(--n19-border) !important; color: var(--n19-meta) !important; }
 html[data-net19-mode="dark"] .footer .col .title { color: var(--n19-text) !important; }

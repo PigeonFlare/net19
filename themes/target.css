@@ -1,54 +1,36 @@
-/* net19 handmade theme: Target, 2019: a solid #cc0000 header with a white bullseye, bold white nav and a white pill search, a white utility bar of gray links beneath, 4px buttons and square cards. */
 html { --n19-red: #c00; --n19-red-dark: #a00; --n19-on-red: #fff; --n19-bar: #fff; --n19-bar-text: #666; --n19-bar-border: #d6d6d6; --n19-text: #333; }
 html[data-net19-mode="dark"] { --n19-red: #c00; --n19-red-dark: #a00; --n19-on-red: #fff; --n19-bar: #1f1f1f; --n19-bar-text: #bbb; --n19-bar-border: #3a3a3a; --n19-text: #eee; }
-/* Target's Nicollet design system tokens: 2019 had small radii */
 html:root {
   --radius-button: 4px !important; --radius-card: 0px !important; --radius-input: 4px !important; --radius-label: 2px !important; --radius-menu: 4px !important;
   --radius-asset: 0px !important; --radius-messaging: 4px !important; --radius-modal: 4px !important; --radius-filter: 4px !important;
 }
-/* Header: red bar on top, white utility bar below it. Store, help and weekly-ad pages build the same header with
-   styles_utilityWrapper / styles_primaryWrapper in place of the ...HeaderWrapper classes. */
 div:has(> :is([class*="styles_utilityHeaderWrapper"], [class*="styles_utilityWrapper"])) { display: flex !important; flex-direction: column !important; }
 div:has(> :is([class*="styles_utilityHeaderWrapper"], [class*="styles_utilityWrapper"])) > * { order: 3; }
 :is([class*="styles_utilityHeaderWrapper"], [class*="styles_utilityWrapper"]) { order: 2 !important; background: var(--n19-bar) !important; border-bottom: 1px solid var(--n19-bar-border) !important; }
-/* Moved below the red bar, the utility row shares its z-index and would paint over the bar's popovers (the account
-   "Sign in for the best experience" card) and over the sticky bar as the page scrolls; it goes one layer beneath. */
 :is([class*="styles_utilityHeaderWrapper"], [class*="styles_utilityWrapper"]) { z-index: 1048 !important; }
 :is([class*="styles_utilityHeaderWrapper"], [class*="styles_utilityWrapper"]) a, :is([class*="styles_utilityHeaderWrapper"], [class*="styles_utilityWrapper"]) button, :is([class*="styles_utilityHeaderWrapper"], [class*="styles_utilityWrapper"]) span { color: var(--n19-bar-text) !important; }
 :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) { order: 1 !important; background: var(--n19-red) !important; box-shadow: none !important; }
 :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) [class*="styles_styledRef"] { background: transparent !important; }
 :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) a, :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) a:not([class*="logoLink"]) *, :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) button:not(form button), :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) button:not(form button) * { color: var(--n19-on-red) !important; }
 :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) a:not([class*="logoLink"]) svg, :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) a:not([class*="logoLink"]) svg *, :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) button:not(form button) svg { fill: var(--n19-on-red) !important; color: var(--n19-on-red) !important; }
-/* The red bullseye sits on a white disc, reading as the 2019 white-on-red logo (the logo keeps its own red) */
 :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) a[class*="logoLink"] { color: var(--n19-red) !important; }
 :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) a[class*="logoLink"] svg { background: #fff !important; border-radius: 50% !important; padding: 3px !important; box-sizing: border-box !important; }
 :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) a:not([class*="logoLink"]):hover { background: var(--n19-red-dark) !important; }
-/* The white pill search field of 2019 */
 :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) form[class*="styles_searchForm"], :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) input[data-test*="SearchInput"] { background: #fff !important; border-radius: 20px !important; color: #333 !important; }
 :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) form svg { fill: #666 !important; color: #666 !important; }
-/* Buttons and cards */
 [class*="styles_ndsButton"] { border-radius: 4px !important; }
 [class*="styles_storycardWrapper"], [class*="styles_ndsPicture"] img, [class*="ProductCard"] img { border-radius: 0 !important; }
-/* Story cards with the headline set over the photo (custom or flex text position): the photo is not behind the text in
-   the DOM, so a transparent gradient marks the card as "over a picture" for the readability check, which would otherwise
-   read the card's white backing and ink the white headline dark. */
 [class*="styles_storycardWrapper"]:has(:is([class*="customTextPosition"], [class*="flexTextPosition"])) { background-image: linear-gradient(transparent, transparent) !important; }
-/* "Ask Target" (an AI shopping assistant) did not exist in 2019 */
 [class*="AskAiButton_button"], [aria-label="Ask Target"], [class*="styles_agenticChatWrapper"] { display: none !important; }
-/* Search: the 2019 field ended in a light gray magnifier button; voice search did not exist */
 :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) form button[aria-label*="voice" i], :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) form [class*="voice" i] { display: none !important; }
 :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) button[data-test="@web/Search/SearchButton"] { display: flex !important; align-items: center !important; justify-content: center !important;
   visibility: visible !important; opacity: 1 !important; font-size: 0 !important; color: transparent !important;
   background: #f0f0f0 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Ccircle cx='8' cy='8' r='6' fill='none' stroke='%23666' stroke-width='2'/%3E%3Cpath d='M12.5 12.5 18 18' stroke='%23666' stroke-width='2.4' stroke-linecap='round'/%3E%3C/svg%3E") center / 20px 20px no-repeat !important; border-left: 1px solid #d6d6d6 !important; border-radius: 0 20px 20px 0 !important; width: 48px !important;
   position: absolute !important; right: 0 !important; top: 0 !important; bottom: 0 !important; left: auto !important; height: auto !important; margin: 0 !important; }
-/* The button's own glyph (the word "search" in transparent ink, or a late icon) gives way to the drawn magnifier above */
 :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) button[data-test="@web/Search/SearchButton"] > * { display: none !important; }
 :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) form[class*="styles_searchForm"] { position: relative !important; overflow: hidden !important; }
 :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) input[data-test*="SearchInput"]::placeholder { color: #888 !important; }
-/* Nav labels: bold white 17px; the utility links are small 13px gray text */
 :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) a[data-test="@web/Header/MainMenuLink"], :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) a[class*="spacedPrimaryHeaderLink"] { font-size: 17px !important; font-weight: 700 !important; }
 :is([class*="styles_utilityHeaderWrapper"], [class*="styles_utilityWrapper"]) a, :is([class*="styles_utilityHeaderWrapper"], [class*="styles_utilityWrapper"]) button, :is([class*="styles_utilityHeaderWrapper"], [class*="styles_utilityWrapper"]) span { font-size: 13px !important; }
 body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; }
-/* Utility row: "Target Circle 360" (the 2024 paid membership) was not one of its links; "Target Circle Card" was still
-   called RedCard (renamed in target.js) */
 a[data-test="@web/GlobalHeader/UtilityHeader/TargetCircle360"] { display: none !important; }

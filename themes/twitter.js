@@ -1,6 +1,3 @@
-// net19 handmade theme: Twitter, late 2019. Two apps serve x.com: signed out, a newer app that marks
-// html[data-theme="light" | "dark"]; signed in, the React Native Web app whose Default, Dim and Lights out backgrounds
-// (all from 2019) are painted on <body>. Dark in the signed-out app becomes 2019's Dim; Lights out keeps its black.
 globalThis.net19Theme = {
   detect() {
     const root = document.documentElement;
@@ -14,12 +11,9 @@ globalThis.net19Theme = {
     return .2126 * r + .7152 * g + .0722 * b < 90 ? 'dark' : 'light';
   },
   watch: ['style', 'class', 'data-theme'],
-  // Later additions guard.js hides wherever they show up as a control
   later: /^(?:grok|ask grok|explain this post|analy[sz]e (?:this )?post|grok actions|profile summary|get verified|subscribe|subscribe to premium|upgrade to premium\+?|premium\+?|verified orgs|creator studio|monetization|communities|spaces|start a space|jobs|articles|business|everyone can reply|schedule|live on x|get the app|download the app)$/i,
   keepLabels: /^(?:messages|home|explore|notifications|bookmarks|lists|profile|more|search|tweet|reply|retweet|like|share)$/i,
 };
-// Wording and small marks. 2019 said "Tweet" and "Retweet", not "Post" and "Repost"; its sidebar said "What's happening";
-// titles ended in "/ Twitter". Only whole labels on controls, tabs, headings and counters are changed, never tweet text.
 (() => {
   const EXACT = new Map([
     ['Post', 'Tweet'], ['Posts', 'Tweets'], ['Post all', 'Tweet all'], ['Repost', 'Retweet'], ['Reposts', 'Retweets'], ['Reposted', 'Retweeted'],
@@ -38,10 +32,8 @@ globalThis.net19Theme = {
     if (!el || el.closest(SKIP)) return;
     let to = EXACT.get(text);
     if (to === undefined && COUNT.test(text)) to = text.replace(COUNT, '$1 Tweets');
-    // React splits "74.3K posts" into separate text nodes
     if (to === undefined && /^posts?$/i.test(text) && COUNT.test(el.textContent.replace(/\s+/g, ' ').trim())) to = 'Tweets';
     if (to === undefined) {
-      // The profile's "Replies" tab was "Tweets & replies"; the home tabs are shown as 2019's two timelines
       const tab = el.closest('[role="tab"]');
       if (tab && text === 'Replies' && tab.closest('main [role="tablist"]')) to = 'Tweets & replies';
       else if (tab && tab.closest('[data-n19-tw="hometabs"]')) to = text === 'For you' ? 'Top Tweets' : text === 'Following' ? 'Latest Tweets' : undefined;
@@ -54,12 +46,10 @@ globalThis.net19Theme = {
     for (let n = walker.nextNode(); n; n = walker.nextNode()) rewrite(n);
   };
   const marks = () => {
-    // Home timeline tabs (For you / Following, 2023)
     for (const list of document.querySelectorAll('[data-testid="primaryColumn"] [role="tablist"]:not([data-n19-tw])')) {
       const labels = [...list.querySelectorAll('[role="tab"]')].map(t => t.textContent.trim());
       if (labels.includes('For you') && labels.includes('Following')) { list.setAttribute('data-n19-tw', 'hometabs'); walk(list); }
     }
-    // Views under a tweet's timestamp (2022), with the "·" before it
     for (const label of document.querySelectorAll('main article a[href*="/status/"] > div:last-child')) {
       if (label.textContent.trim() !== 'Views') continue;
       const link = label.parentElement;
@@ -68,31 +58,25 @@ globalThis.net19Theme = {
       const dot = link.previousElementSibling;
       if (dot && dot.textContent.trim() === '·') dot.setAttribute('data-n19-tw', 'views');
     }
-    // Gray (government) checkmarks in the signed-in app; gold ones carry a gradient and are hidden by CSS
     for (const svg of document.querySelectorAll('svg[data-testid="icon-verified"]:not([data-n19-tw-seen])')) {
       svg.setAttribute('data-n19-tw-seen', '');
       const fill = getComputedStyle(svg.querySelector('path') || svg).fill;
       if (/130,\s*154,\s*171/.test(fill) || /130,\s*154,\s*171/.test(getComputedStyle(svg).color)) svg.setAttribute('data-n19-tw', 'badge');
     }
-    // Sidebar modules that came later: Premium, Live on X (Spaces), Today's News, Grok stories
     for (const h of document.querySelectorAll('[data-testid="sidebarColumn"] :is(h2, [role="heading"]), aside section h2')) {
       if (!/^(?:subscribe to premium|live on x|today’s news|today's news|get verified|upgrade to premium\+?|explore|trending with grok|happening now)$/i.test(h.textContent.trim())) continue;
       let module = h;
       while (module.parentElement && [...module.parentElement.children].filter(c => c.querySelector('h2, [role="heading"]')).length < 2) module = module.parentElement;
       if (module && module.parentElement && !module.querySelector('input, textarea, [contenteditable]') && !module.hasAttribute('data-n19-tw')) module.setAttribute('data-n19-tw', 'later');
     }
-    // The "Scan to get the app" QR card (2024), on every signed-out page
     for (const button of document.querySelectorAll('body button:is(:has(img), :has(svg), :has(canvas))')) if (!button.hasAttribute('data-n19-tw') && /^scan to get the app/i.test(button.textContent.trim())) button.setAttribute('data-n19-tw', 'qr');
-    // "Search Twitter"
     for (const input of document.querySelectorAll('[data-testid="SearchBox_Search_Input"], aside input[placeholder="Search"], header input[placeholder="Search"], [role="search"] input[placeholder="Search"]')) {
       if (input.placeholder !== 'Search Twitter') input.placeholder = 'Search Twitter';
     }
     if (/ \/ X$| on X: /.test(document.title)) document.title = document.title.replace(/ \/ X$/, ' / Twitter').replace(/ on X: /, ' on Twitter: ');
   };
-  // Signed in, colors come from React Native Web's atomic stylesheet (today's #0f1419 text, #536471 grays, #eff3f4
-  // rules, #1d9bf0 blue). Its rules are copied once each into an override sheet with 2019's values for the mode shown.
   const BLUE = { '29,155,240': '#1da1f2', '26,140,216': '#1a91da' };
-  const MAPS = {   // text colors (color, fill, stroke) and surface colors (backgrounds, borders) per 2019 background
+  const MAPS = {
     light: { fg: { ...BLUE, '15,20,25': '#14171a', '83,100,113': '#657786' }, bg: { ...BLUE, '239,243,244': '#e6ecf0', '247,249,249': '#f5f8fa', '207,217,222': '#ccd6dd' } },
     dim: { fg: { ...BLUE, '247,249,249': '#ffffff', '139,152,165': '#8899a6' }, bg: { ...BLUE, '30,39,50': '#192734', '39,51,64': '#253341' } },
     black: { fg: { ...BLUE, '231,233,234': '#d9d9d9', '113,118,123': '#6e767d' }, bg: { ...BLUE, '22,24,28': '#15181c' } },
@@ -134,16 +118,11 @@ globalThis.net19Theme = {
     }).observe(document.body, { childList: true, subtree: true, characterData: true });
     const title = document.querySelector('title');
     if (title) new MutationObserver(later).observe(title, { childList: true, characterData: true, subtree: true });
-    // React Native Web adds rules with insertRule, which no observer sees: new rules are picked up every 1.5 s.
     setInterval(() => { if (!document.hidden) recolor(); }, 1500);
     new MutationObserver(recolor).observe(document.documentElement, { attributes: true, attributeFilter: ['data-net19-mode', 'data-n19-tw-bg'] });
   };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();
-// The signed-out landing page (utility class names only, and more than one variant of its login block) is marked
-// from its heading and username field with data-n19-tw for twitter.css, which turns it into 2019's split page: a
-// blue bird panel on the left, the username field and "Log in" in a row at the top right, and the sign-up block in
-// the middle of the right half. Its 2019 wording is put back in the existing text nodes.
 (() => {
   const WORDS = new Map([['Happening now', 'See what’s happening in the world right now'], ['Continue with phone', 'Sign up'],
     ['Continue', 'Log in'], ['Email or username', 'Phone, email, or username']]);
@@ -162,12 +141,10 @@ globalThis.net19Theme = {
     for (const child of row.children) mark(child, child.contains(form) ? 'main' : 'panel');
     const main = row.querySelector('[data-n19-tw="main"]');
     mark(h1, 'title');
-    // The username field and its submit control go to the top-right row; everything between them and the column is static.
     const field = input.closest('label') || input.parentElement;
     const go = [...form.querySelectorAll('button, [role="button"], div')].find(el => /^(Continue|Log in)$/.test(text(el)) && !el.querySelector('input'));
     const goBox = go && (go.closest('button, [role="button"]') || [...form.children].find(c => c.contains(go)) || go);
     mark(field, 'field');
-    // The caption over the typed line becomes the field's placeholder, as in 2019
     for (const el of field.querySelectorAll('span, div')) if (!el.querySelector('input') && el.textContent.trim()) mark(el, 'cap');
     if (input.placeholder !== 'Phone, email, or username') input.placeholder = 'Phone, email, or username';
     mark(goBox, 'go');
@@ -194,7 +171,6 @@ globalThis.net19Theme = {
   };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();
-// The tab icon: the 2019 bird favicon, which Twitter's CDN still serves, instead of the X.
 (() => {
   const BIRD = 'https://abs.twimg.com/favicons/twitter.2.ico';
   const swap = () => {

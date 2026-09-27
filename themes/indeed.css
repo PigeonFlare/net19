@@ -1,8 +1,3 @@
-/* net19 handmade theme: Indeed, 2019: a thin white top bar of small gray 13px tabs with a blue underline under the
-   current one; on the home page the rainbow-free "indeed" logo sits at the left of two separate square-cornered
-   white fields with gray borders (blue when focused) and a bright blue (#085ff7) pill "Find Jobs" button; Helvetica/
-   Arial type, blue links and job titles, neutral grays, an orange rule above the footer, flat job cards with small
-   corners. Indeed has no dark mode on the web; palette.js flips the page on dark devices. */
 html { --n19-font: "Helvetica Neue", Helvetica, Arial, sans-serif; --n19-title: #2164f3; --n19-button: #085ff7; --n19-button-hover: #0452d8;
   --n19-bar: #fff; --n19-bar-line: #e4e4e4; --n19-tab: #666; --n19-tab-on: #000; --n19-field: #fff; --n19-field-line: #949494;
   --n19-focus: #2164f3; --n19-text: #333; --n19-orange: #ff6421; --n19-link: #085ff7; }
@@ -13,10 +8,8 @@ html:root {
   --fonts-default: var(--n19-font) !important;
   --border-radius-sm: 3px !important; --border-radius-md: 4px !important; --border-radius-lg: 6px !important;
 }
-/* Indeed forces its face with "html body * { font-family: ... !important }"; this outranks it */
 :root:root body, :root:root body * { font-family: var(--n19-font) !important; }
 
-/* Top bar: 52px, a hairline under it, small gray tabs, the current one black with a blue underline */
 #gnav-main-container, #gnav-main-container > div > div > div:first-child { background: var(--n19-bar) !important; }
 #gnav-main-container > div > div > div:first-child { height: 52px !important; min-height: 0 !important; border-bottom: 1px solid var(--n19-bar-line) !important; box-shadow: none !important; }
 #gnav-main-container ul, #gnav-main-container ul > li, #gnav-main-container ul > li > div, #gnav-main-container li div, #gnav-main-container > div > div > div:first-child > div { height: 52px !important; min-height: 0 !important; }
@@ -29,7 +22,6 @@ html:root {
 #gnav-main-container a[aria-current="page"]::after, #gnav-main-container a[aria-current="page"]::before { display: none !important; }
 #gnav-main-container ul a[href*="account/login" i] { color: var(--n19-tab) !important; font-weight: 400 !important; }
 
-/* Home: the logo moved to the left of the search fields, as in 2019 (the bar has no logo there) */
 html[data-n19-home] #gnav-main-container a#indeed-globalnav-logo { display: none !important; }
 html[data-n19-home] #gnav-main-container ul { margin-left: 20px !important; }
 [data-testid="jobsearch-Content"] { position: relative !important; }
@@ -41,7 +33,6 @@ html[data-n19-home] #gnav-main-container ul { margin-left: 20px !important; }
 [data-testid="account-focused-homepage"] > div:nth-child(2) { padding-top: 16px !important; }
 [data-testid="account-focused-homepage"] h2 { font-size: 18px !important; font-weight: 700 !important; color: var(--n19-text) !important; }
 
-/* Search: two separate white fields with square-ish corners and gray borders, and a blue pill "Find Jobs" button */
 #jobsearch > div:first-child { border: none !important; border-radius: 0 !important; box-shadow: none !important; background: transparent !important; gap: 16px !important; }
 #jobsearch > div:first-child > div:first-child > div { gap: 8px !important; }
 #jobsearch > div:first-child > div:first-child > div > div[class*="e15p7aqh"] { display: none !important; }
@@ -56,16 +47,11 @@ html[data-n19-home] #gnav-main-container ul { margin-left: 20px !important; }
 #jobsearch .yosegi-InlineWhatWhere-primaryButton:hover { background: var(--n19-button-hover) !important; }
 .yosegi-InlineWhatWhere-primaryButton { background: var(--n19-button) !important; border-color: var(--n19-button) !important; }
 .yosegi-InlineWhatWhere-primaryButton:hover { background: var(--n19-button-hover) !important; }
-/* The large "Get Started" call to action: the 2019 blue pill */
 [data-testid="account-focused-homepage"] button { background: var(--n19-button) !important; border-radius: 22px !important; }
 
-/* Links: the 2019 bright blue */
 [data-testid="jobsearch-Footer-promos"] a, #gnav-footer-container a { color: var(--n19-link) !important; }
 #gnav-footer-container footer a { color: var(--n19-text) !important; font-size: 12px !important; }
-/* Footer: the orange rule */
 .jobsearch-Footer { border-top: 5px solid var(--n19-orange) !important; }
 
-/* Flatter job cards and job pane */
 .job_seen_beacon, .cardOutline, .resultWithShelf, .slider_container, .jobsearch-RightPane, #jobsearch-ViewjobPaneWrapper, .jobsearch-ViewJobLayout--embedded { border-radius: 4px !important; }
-/* Job titles in the result list: the 2019 link blue */
 .jobTitle, .jobTitle a, h2.jobTitle span[title], .jcs-JobTitle { color: var(--n19-title) !important; }

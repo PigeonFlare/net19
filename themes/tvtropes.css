@@ -1,35 +1,19 @@
-/* net19 handmade theme: TV Tropes, 2019. The site still serves the 2017 redesign it had in 2019 (the #3c4b5e slate
-   header with its white "tv tropes" logo and the Random Trope / Random Media tape buttons, the grey page with a white
-   article card, the slate action bar, the subpage pills, the right sidebar with the display toggles, and the Night
-   Vision theme), so the look is kept and only what changed since is taken back: the 16px header links, the 40px page
-   titles, and the features added after 2019 are hidden (the app-store banner, the favourites heart counter beside
-   "Follow", the "To Do" action, Tech Wishlist, the home page's Latest Reviews and Community Podcasts blocks, and the
-   video examples' star ratings and comment counts). The header's Browse and Indexes links come back in theme JS. */
-
-/* Header: 2019 links were 16px (today 14-15px scaled with the viewport) */
 #main-header-nav a { font-size: 16px !important; }
 
-/* Page titles: 40px on desktop in 2019 (34px today) */
 @media (min-width: 1000px) {
   #main-content #main-entry h1.entry-title { font-size: 40px !important; line-height: 40px !important; }
 }
 
-/* App-store banner (2023) and the page offset it adds on phones */
 .outer-promo-banner, #footer-outer-promo-banner { display: none !important; }
 @media (max-width: 765px) {
   body.app-promo { margin-top: 71px !important; }
   body.app-promo #main-header-bar { margin-top: 0 !important; }
 }
 
-/* Favourites heart counter beside "Follow" (2020s): 2019 showed the Follow button alone */
 .watch_rank_wrap > .thumb-vote-area { display: none !important; }
-/* "To Do" in the page action bar */
 .action-bar li.link-todo { display: none !important; }
-/* Tech Wishlist (2021) in the sidebar and mobile menu */
 a[href="/pmwiki/query.php?type=wl"] { display: none !important; }
 
-/* Home page: Latest Reviews and the Community Podcasts block (marked in theme JS), and video example star ratings and
-   comment counts */
 [data-n19-tvt-later] { display: none !important; }
 .section-block:has(> div > .podcast_photo) { display: none !important; }
 .video-star-rating, .video-comment-count { display: none !important; }

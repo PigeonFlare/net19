@@ -18,10 +18,6 @@ async function signedInThemes(): Promise<Set<string>> {
   return ids;
 }
 
-// Registers each theme as a document_start stylesheet plus its config script and the shared palette engine, and
-// installs the legacy-frontend navigation rules. Top-level pages only: embedded frames (account menus, players,
-// ads) are transparent overlays drawn by their own origin. Scripts are only re-registered when the desired set
-// changes, because an unregister/register cycle leaves a moment in which a loading page would miss its theme.
 function syncScripts(): Promise<unknown> {
   sync = sync.catch(() => undefined).then(async () => {
     const [config, registered, signedIn] = await Promise.all([settings(), chrome.scripting.getRegisteredContentScripts(), signedInThemes()]);
@@ -33,7 +29,6 @@ function syncScripts(): Promise<unknown> {
       id: `net19-theme-${theme.id}`, matches: themeMatches(theme), ...(theme.exclude ? { excludeMatches: theme.exclude } : {}), css: [`themes/${theme.id}.css`],
       js: [`themes/${theme.id}.js`, 'themes/palette.js', 'themes/guard.js'], runAt: 'document_start', allFrames: false, persistAcrossSessions: true }));
     const signature = (list: chrome.scripting.RegisteredContentScript[]) => JSON.stringify(list.map(s => [s.id, s.matches, s.excludeMatches ?? [], s.css, s.js]).sort());
-    // Anything else registered by an earlier version (the archive pipeline's content script) is removed too.
     const current = registered.filter(script => script.id.startsWith('net19-'));
     if (signature(current) !== signature(desired)) {
       if (current.length) await chrome.scripting.unregisterContentScripts({ ids: current.map(script => script.id) });
@@ -43,7 +38,6 @@ function syncScripts(): Promise<unknown> {
   return sync;
 }
 
-// Earlier versions kept archived style profiles and per-tab navigation rules. None of that is used any more.
 async function cleanUp(): Promise<void> {
   const stored = await chrome.storage.local.get(null);
   const stale = Object.keys(stored).filter(key => key !== SETTINGS_KEY);
@@ -80,6 +74,5 @@ chrome.runtime.onMessage.addListener((message, sender, respond) => {
 });
 chrome.runtime.onInstalled.addListener(() => { void cleanUp().catch(() => undefined).then(syncScripts).catch(() => undefined); });
 chrome.runtime.onStartup.addListener(() => { void syncScripts().catch(() => undefined); });
-// Signing in or out of a site whose legacy frontend needs an account switches its redirect on or off.
 const sessionCookies = THEMES.flatMap(theme => theme.legacy?.signedIn ? [theme.legacy.signedIn.name] : []);
 chrome.cookies.onChanged.addListener(({ cookie }) => { if (sessionCookies.includes(cookie.name)) void syncScripts().catch(() => undefined); });

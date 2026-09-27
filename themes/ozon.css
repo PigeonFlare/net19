@@ -1,43 +1,26 @@
-/* net19 handmade theme: Ozon, 2019. After the April 2019 rebrand ozon.ru was a white page with the bright blue
-   #005bff (the "OZON" wordmark in #0069ff, the "Каталог" button, the search button, "В корзину") and the new
-   raspberry #f91155 for discounts. The header ran the full width with a 1px rule under it: the logo, a blue
-   "Каталог" button, the "Везде | Искать на Ozon" field in a blue 2px frame with a blue search button, and the user
-   icons on the right; a row of plain #001a34 text links under it. Corners were small (4px) everywhere: buttons,
-   the field, product tiles, the price box. Prices were plain dark #001a34, not green card prices. The logo is the
-   2019 file Ozon's CDN still serves (cdn1.ozone.ru/s3/cms/6e/ta9/logo_ozon.svg). */
 html { --n19-blue: #005bff; --n19-blue-hover: #004ed6; --n19-logo-blue: #0069ff; --n19-raspberry: #f91155; --n19-text: #001a34; --n19-text-2: #707f8d;
   --n19-page: #fff; --n19-rule: #e5e8eb; --n19-panel: #fff; --n19-radius: 4px;
   --n19-logo: url("https://cdn1.ozone.ru/s3/cms/6e/ta9/logo_ozon.svg"); }
 html[data-net19-mode="dark"] { --n19-text: #e8edf2; --n19-text-2: #9aa7b3; --n19-page: #121212; --n19-rule: #2c3136; --n19-panel: #1c1f22; }
 
-/* The page is white, not today's #f5f7fa "wallpaper" behind rounded white panels */
 [data-widget="wallpaper"] { background-color: var(--n19-page) !important; }
-/* ---- Header: full width, square, a hairline under it ------------------------------------------------------------- */
 [data-widget="header"] { border-radius: 0 !important; box-shadow: 0 1px 0 var(--n19-rule) !important; }
-/* The 2019 wordmark in place of today's logo image (same box, same link) */
 img[data-n19-oz="logo"] { content: var(--n19-logo) !important; object-fit: contain !important; object-position: left center !important; }
-/* "Каталог": a blue button with 4px corners */
 [data-widget="catalogMenu"] button, [data-widget="catalogMenu"] button > div { border-radius: var(--n19-radius) !important; }
-/* The search field: blue frame, square corners, blue button */
 [data-widget="searchBarDesktop"] *:not(svg, svg *) { border-radius: var(--n19-radius) !important; }
 [data-widget="searchBarDesktop"] form > div:first-child { border-radius: 2px 0 0 2px !important; }
 [data-widget="searchBarDesktop"] form > button[type="submit"], [data-widget="searchBarDesktop"] form > button[type="submit"] > div { border-radius: 0 2px 2px 0 !important; }
-/* The text menu under the header: plain dark links */
 [data-widget="horizontalMenu"] a, [data-widget="horizontalMenu"] button { color: var(--n19-text) !important; }
 [data-widget="horizontalMenu"] a:hover, [data-widget="horizontalMenu"] button:hover { color: var(--n19-blue) !important; }
 
-/* ---- Product tiles (home, search, category) ------------------------------------------------------------------- */
 .tile-root { border-radius: var(--n19-radius) !important; }
 .tile-root > a.tile-clickable-element:first-child { border-radius: var(--n19-radius) var(--n19-radius) 0 0 !important; }
 .tile-root > div button, .tile-root > div button > div { border-radius: var(--n19-radius) !important; }
-/* Prices: plain dark, the discount in raspberry */
 .tile-root span.tsHeadline500Medium { color: var(--n19-text) !important; }
 .tile-root span.tsHeadline500Medium ~ span.tsBodyControl400Small:last-child, .tile-root span.tsHeadline500Medium ~ span.tsBodyControl400Small:last-child * { color: var(--n19-raspberry) !important; }
 
-/* ---- Search results: filters in plain boxes --------------------------------------------------------------------- */
 [data-widget="filtersDesktop"], [data-widget="searchResultsSort"], [data-widget="searchResultsSort"] * { border-radius: var(--n19-radius) !important; }
 
-/* ---- Product page ------------------------------------------------------------------------------------------------ */
 [data-widget="webSale"], [data-widget="webSale"] > div { border-radius: var(--n19-radius) !important; }
 [data-widget="webAddToCart"] button, [data-widget="webOneClickButton"], [data-widget="webOneClickButton"] > div,
 [data-widget="webPrice"] button, [data-widget="webPrice"] button > span { border-radius: var(--n19-radius) !important; }
@@ -45,9 +28,6 @@ img[data-n19-oz="logo"] { content: var(--n19-logo) !important; object-fit: conta
 [data-widget="webAddToCart"] button:hover { background-color: var(--n19-blue-hover) !important; }
 [data-widget="webGallery"] img { border-radius: 0 !important; }
 
-/* ---- Cart --------------------------------------------------------------------------------------------------------- */
 [data-widget^="total"] :is(button, button > div), [data-widget*="Cart" i] button:not(:has(svg:only-child)) { border-radius: var(--n19-radius) !important; }
 
-/* ---- Not in 2019 -------------------------------------------------------------------------------------------------- */
-/* Ozon Bank (2023) in the header menu */
 [data-widget="horizontalMenu"] li:has(> a[href*="/fintech"]) { display: none !important; }

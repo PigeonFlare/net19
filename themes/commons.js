@@ -1,18 +1,8 @@
-// net19 handmade theme: Wikimedia Commons, 2019, in its own legacy Vector skin (served by Wikimedia itself). The skin had no
-// dark mode, so on a dark device palette.js flips the page (pictures keep their real colors); a reader's own dark
-// gadget, which paints the page dark, is left alone.
 globalThis.net19Theme = {};
-// The worker adds useskin=vector to plain page addresses. Pages reached with a query (full-text search results,
-// history, diffs, special pages with parameters) or a #section (links from categories and search results) would
-// otherwise open in the 2022 skin, so:
-// - links and forms on legacy pages carry useskin=vector along, so those pages open in the legacy skin directly;
-// - a 2022-skin page reached some other way asks for the same address in the legacy skin (hidden until it arrives).
 (() => {
   if (location.hostname !== 'commons.wikimedia.org') return;
   const root = document.documentElement;
   const url = new URL(location.href);
-  // Special:MediaSearch (2021) replaced the search results page Commons had in 2019. The header search, links and
-  // direct visits go to Special:Search with the same terms instead.
   const MEDIA = /^\/wiki\/Special:MediaSearch\/?$/i;
   const media = u => u.origin === location.origin && (MEDIA.test(decodeURIComponent(u.pathname)) || /^Special:MediaSearch$/i.test(u.searchParams.get('title') || ''));
   const classic = u => {

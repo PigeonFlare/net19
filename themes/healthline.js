@@ -1,7 +1,4 @@
-// net19 handmade theme: healthline. Healthline has a single (light) design; the default background-luminance
-// detection keeps it light and the engine inverts the page on dark devices.
 globalThis.net19Theme = {};
-// The home page is marked so its section titles can take 2019's uppercase style without touching article headings.
 (() => {
   const mark = () => document.documentElement.toggleAttribute('data-net19-home', location.pathname === '/');
   mark();

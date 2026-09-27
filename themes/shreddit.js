@@ -1,15 +1,6 @@
-// net19 handmade theme: Reddit signed out (www.reddit.com), as the 2019 redesign, in light and night mode. Reddit
-// marks dark mode with html.theme-dark. Posts, comment action rows and the search field draw inside shadow roots, which
-// page stylesheets cannot reach, so the 2019 rules for them are added there: the vote arrows stacked in a gray column
-// on the card's left edge, the gray bold "Comments Share Save" row, the plain 4px search field without the "Ask"
-// pill or "Trending today". Small text fixes bring back 2019 wording: "Posted by u/name", "12 points", "5 hours ago",
-// "123 Comments".
 globalThis.net19Theme = {
   detect: () => document.documentElement.classList.contains('theme-dark') ? 'dark' : 'light',
   watch: ['class'],
-  // Post-2019 controls, by label: Chat (2023), Reddit Answers and the "Ask" search (2024–25), the app QR, avatar
-  // builder and collectibles (2021–22), achievements (2024), Recap (2021), Reddit Pro and the contributor program (2023),
-  // Advertise (2022), translations (2024).
   later: /^(?:open chat|chat|chats|start chat|answers|reddit answers|ask|ask reddit answers|new answers|get (?:the )?app|get the reddit app|scan (?:this|the) qr code.*|edit avatar|create avatar|style avatar|avatar|collectible avatars|collectibles|vault|achievements|view achievements|reddit recap|recap|reddit pro|try reddit pro(?:\s*beta)?|contributor program|earn|advertise on reddit|advertise|translate|translate to english|show original|view translation|translations?|see translation|auto-translate)$/i,
   keepLabels: /^(?:askreddit|r\/ask\w*)$/i,
 };
@@ -41,7 +32,6 @@ globalThis.net19Theme = {
     slot[name="post-stats-entry-point"], slot[name="post-insights-panel"] { display: none !important; }
     award-button [data-n19-count], award-button .award-count { display: none !important; }
   `;
-  // On the post page the column is not a gray strip: 2019 drew the arrows on the white card itself.
   const PDP = `[data-testid="action-row"] > span:has(shreddit-vote-animations) { top: 8px !important; }`;
   const COMMENT = `
     .rpl-vote-button-group { background: transparent !important; border: 0 !important; }
@@ -55,7 +45,6 @@ globalThis.net19Theme = {
   const AWARD = `.glow, .rpl-cab--content { display: none !important; } button { background: transparent !important; border: 0 !important; padding: 4px !important; }`;
   const JOIN = `button { border-radius: 4px !important; text-transform: uppercase !important; font-size: 12px !important; font-weight: 700 !important; letter-spacing: .5px !important; min-width: 96px !important; }`;
   const FIELD = `.label-container, [part="container"] { border-radius: 4px !important; }`;
-  // Slotted comment buttons live in the page, so they are styled there (see ACTIONS below).
   const SEARCH = `
     .reddit-search-bar { background: var(--n19-field) !important; border: 1px solid var(--n19-field-border) !important; border-radius: 4px !important; box-shadow: none !important; }
     .reddit-search-bar:hover, .reddit-search-bar:focus-within { background: var(--n19-card) !important; border-color: var(--n19-blue) !important; }
@@ -77,7 +66,6 @@ globalThis.net19Theme = {
   const add = (root, css) => { if (!root || styled.has(root)) return; styled.add(root); const node = document.createElement('style'); node.textContent = css; root.append(node); };
   const deep = (root, css) => { for (const host of root.querySelectorAll('*')) if (host.shadowRoot) { add(host.shadowRoot, css); deep(host.shadowRoot, css); } };
 
-  // "5 hr. ago" / "5h ago" -> "5 hours ago", as 2019 wrote it.
   const UNITS = { s: 'second', sec: 'second', m: 'minute', min: 'minute', h: 'hour', hr: 'hour', d: 'day', day: 'day', w: 'week', wk: 'week', mo: 'month', y: 'year', yr: 'year' };
   const longTime = text => text.replace(/^(\d+)\s*(s|sec|m|min|h|hr|d|day|w|wk|mo|y|yr)s?\.?\s+ago$/i, (_, n, u) => `${n} ${UNITS[u.toLowerCase()]}${n === '1' ? '' : 's'} ago`);
   const times = scope => {
@@ -91,11 +79,9 @@ globalThis.net19Theme = {
   const scan = () => {
     for (const post of document.querySelectorAll('shreddit-post, shreddit-ad-post')) {
       if (post.shadowRoot) { add(post.shadowRoot, POST + (post.getAttribute('view-context') === 'CommentsPage' ? PDP : '')); }
-      // "Posted by u/name" before the time, as the 2019 card read
       const author = post.getAttribute('author');
       const bar = post.querySelector(':scope > [slot="credit-bar"] [id^="feed-post-credit-bar"]');
       const community = bar?.querySelector('a[data-testid="subreddit-name"]');
-      // In a subreddit's own feed the first link is already the author: "Posted by" goes before it
       if (community && /^\s*u\//.test(community.textContent) && !bar.querySelector('[data-n19-posted]') && post.tagName === 'SHREDDIT-POST') {
         mark(bar, 'data-n19-posted', 'Posted by', s => community.closest('span.flex, faceplate-hovercard')?.before(s));
       }
@@ -111,13 +97,11 @@ globalThis.net19Theme = {
       }
       const pdp = post.querySelector(':scope > #pdp-credit-bar [slot="authorName"]');
       if (pdp && !pdp.querySelector('[data-n19-posted]')) mark(pdp, 'data-n19-posted', 'Posted by u/', s => pdp.prepend(s));
-      // "2.1K" -> "2.1k Comments"
       const comments = post.shadowRoot?.querySelector('a[data-post-click-location="comments-button"] .rpl-cab--content');
       if (comments && !comments.querySelector('[data-n19-label]')) mark(comments, 'data-n19-label', ' Comments', s => comments.append(s));
     }
     for (const row of document.querySelectorAll('shreddit-comment-action-row')) add(row.shadowRoot, COMMENT);
     for (const award of document.querySelectorAll('award-button')) add(award.shadowRoot, AWARD);
-    // JOIN: 2019's 4px-cornered uppercase button, drawn inside the join button's shadow root
     for (const join of document.querySelectorAll('shreddit-join-button')) add(join.shadowRoot, JOIN);
     for (const box of document.querySelectorAll('comment-body-header faceplate-textarea-input, shreddit-composer faceplate-textarea-input')) add(box.shadowRoot, FIELD);
     for (const comment of document.querySelectorAll('shreddit-comment[score]')) {

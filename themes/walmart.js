@@ -1,11 +1,8 @@
-// net19 handmade theme: Walmart. The site has a single (light) design; the default background-luminance detection
-// keeps it light. `later` names Sparky (the 2024 AI assistant) for guard.js. The palette map moves today's action blue (#0053e2 and its pressed navy) back to 2019's #0071ce.
 globalThis.net19Theme = {
   later: /^(?:ask sparky|sparky|chat with sparky|try sparky|meet sparky)$/i,
   light: { '#0053e2': '#0071ce', '#002e99': '#004c91' },
   dark: { '#0053e2': '#0071ce', '#002e99': '#004c91' },
 };
-// 2019 wording: the header search field simply said "Search".
 (() => {
   const fix = () => {
     for (const input of document.querySelectorAll('header input.search-bar')) if (input.placeholder !== 'Search') input.placeholder = 'Search';
@@ -18,9 +15,6 @@ globalThis.net19Theme = {
   };
   if (document.readyState !== 'loading') start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();
-// On a dark device the page is flipped by palette.js. The home page's promo cards set their headline straight on the
-// card's photo (dark navy on a light picture), so flipped, the text would turn light on the unflipped photo: those
-// cards are kept as drawn instead.
 (() => {
   const root = document.documentElement;
   const SEL = 'main div.card-wrapper';
@@ -40,8 +34,6 @@ globalThis.net19Theme = {
   };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();
-// Social-proof badges ("100+ bought since yesterday", 2023) did not exist; the same badge component also carries 2019's
-// "Rollback" and "Best seller" flags, so only the ones with that wording are hidden (walmart.css hides [data-net19-hidden]).
 (() => {
   const SOCIAL = /\bbought (?:since yesterday|in (?:the )?past)/i;
   const mark = () => {

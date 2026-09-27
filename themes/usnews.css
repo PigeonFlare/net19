@@ -1,22 +1,15 @@
-/* net19 handmade theme: U.S. News & World Report, 2019: a near-black (#111) masthead in two rows, the logo centered
-   on top with the menu button at the right and the section bar under it in small bold uppercase letter-spaced words,
-   no search banner under the masthead (only a slim search strip remains), Arial headlines in black, and square white boxes topped by a 3px U.S. News red rule
-   with centered uppercase box titles ("TOP STORIES"). Section pages still use U.S. News's 2019 layout; only the later
-   "Decision Points" and "U.S. News Live" entries and rounded buttons change. U.S. News has no dark mode. */
 html { --n19-bar: #111; --n19-bar-text: #fff; --n19-red: #c4212a; --n19-text: #111; --n19-text-2: #555; --n19-line: #ddd; --n19-box: #fff;
   --n19-font: Arial, "Helvetica Neue", Helvetica, sans-serif; }
 html[data-net19-mode="dark"] { --n19-bar: #000; --n19-bar-text: #fff; --n19-red: #e0444c; --n19-text: #eee; --n19-text-2: #aaa; --n19-line: #444; --n19-box: #1a1a1a; }
 html:root { --font-primary: var(--n19-font) !important; --font-secondary: var(--n19-font) !important; }
 main#app h1, main#app h2, main#app h3, main#app h4, main#app h5, main#app p, main#app a, main#app span, main#app li { font-family: var(--n19-font) !important; }
 
-/* Masthead and section bar */
 main#app > div.MuiBox-root, main#app > div.MuiBox-root > div.MuiBox-root { background: var(--n19-bar) !important; }
 main#app > div.MuiBox-root a:not(.MuiButton-root), main#app > div.MuiBox-root a:not(.MuiButton-root) span {
   color: var(--n19-bar-text) !important; text-transform: uppercase !important; letter-spacing: .1em !important; font-size: 13px !important; font-weight: 700 !important;
   border-color: #555 !important;
 }
 main#app > div.MuiBox-root .MuiButton-root { border-radius: 2px !important; }
-/* Two rows: the logo centered on top, the section words centered under it; menu button and Sign in at the sides */
 main#app > div.MuiBox-root > .MuiContainer-root { height: auto !important; max-width: none !important; position: relative !important; }
 main#app > div.MuiBox-root > .MuiContainer-root > .MuiStack-root { height: auto !important; flex: 1 1 auto !important; }
 main#app > div.MuiBox-root > .MuiContainer-root > .MuiStack-root > div:nth-child(2) { flex-wrap: wrap !important; justify-content: center !important; height: auto !important; row-gap: 0 !important; }
@@ -29,7 +22,6 @@ main#app > div.MuiBox-root > .MuiContainer-root > .MuiStack-root > div:nth-child
 main#app > div.MuiBox-root > .MuiContainer-root > .MuiStack-root > div:nth-child(2) > .MuiStack-root a { font-size: 11px !important; letter-spacing: .14em !important; padding: 0 14px !important; }
 main#app > div.MuiBox-root > .MuiContainer-root > .MuiStack-root > div:nth-child(3) { position: absolute !important; right: 72px !important; top: 12px !important; }
 main#app > div.MuiBox-root > .MuiContainer-root > .MuiStack-root > div:nth-child(3) .MuiButton-root { background: transparent !important; border: 1px solid #555 !important; font-size: 11px !important; min-height: 0 !important; padding: 4px 10px !important; }
-/* The search banner ("We Help You Make the Best Decisions") was not there in 2019: a slim light strip with the field */
 main#app > section.MuiBox-root { background: #f2f2f2 !important; background-image: none !important; border-bottom: 1px solid var(--n19-line) !important; }
 main#app > section.MuiBox-root::before, main#app > section.MuiBox-root::after { display: none !important; }
 main#app > section.MuiBox-root > .MuiContainer-root { padding-top: 10px !important; padding-bottom: 10px !important; display: flex !important; align-items: center !important; justify-content: center !important; gap: 24px !important; }
@@ -40,7 +32,6 @@ main#app > section.MuiBox-root > .MuiContainer-root > div { margin: 0 !important
 main#app > section.MuiBox-root > .MuiContainer-root > div img { display: none !important; }
 main#app > section.MuiBox-root > .MuiContainer-root > div a { color: #0b6db7 !important; font-size: 13px !important; text-transform: none !important; letter-spacing: 0 !important; font-weight: 400 !important; }
 
-/* Boxes: square, red top rule, centered uppercase titles */
 main#app aside.MuiBox-root { border-radius: 0 !important; border: 1px solid var(--n19-line) !important; border-top: 3px solid var(--n19-red) !important; background: var(--n19-box) !important; }
 main#app aside.MuiBox-root > div:first-child { background: var(--n19-box) !important; border-radius: 0 !important; border-bottom: 1px solid var(--n19-line) !important; text-align: center !important; }
 main#app aside.MuiBox-root > div:first-child h2 { text-transform: uppercase !important; letter-spacing: .08em !important; font-size: 14px !important; font-weight: 700 !important; }
@@ -48,15 +39,10 @@ main#app aside.MuiBox-root > div { border-radius: 0 !important; }
 main#app article.MuiBox-root, main#app article img { border-radius: 0 !important; }
 main#app h2.MuiTypography-h5, main#app header.MuiBox-root h3 { text-transform: uppercase !important; letter-spacing: .06em !important; }
 
-/* ---- Section fronts and articles on the older "header__" layout (news, health, education, money...): that layout is
-   the one U.S. News used in 2019, so only later additions change: "Sign In" was a plain square outlined button, and
-   the "Decision Points" (2024) and "U.S. News Live" (2023) entries did not exist. ---- */
 [class*="account-button__SignInLink"], [class*="account-button__SignInLink"] span { border-radius: 0 !important; }
 [class*="header__RootNavListItem"]:has(> a[href*="us-news-decision-points"]), [class*="header__RootNavListItem"]:has(> a[href*="/news/live-events"]),
 li:has(> a[class*="item__ItemStyled"][href*="us-news-decision-points"]) { display: none !important; }
-/* Story cards and boxes: square */
 main#app [class*="Card"], main#app [class*="Box-w0dun1"][class*="rounded" i], main#app img { border-radius: 0 !important; }
-/* Homepage search strip: the search button sits flush at the end of the 32px field, square */
 main#app > section.MuiBox-root form .MuiInputBase-root { padding-right: 0 !important; }
 main#app > section.MuiBox-root form > button { top: 0 !important; right: 0 !important; bottom: auto !important; }
 main#app > section.MuiBox-root form button { height: 32px !important; width: 36px !important; min-width: 0 !important; border-radius: 0 !important; box-shadow: none !important; margin: 0 !important; background: #0b6db7 !important; color: #fff !important; transform: none !important; }

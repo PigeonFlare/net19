@@ -1,5 +1,3 @@
-// net19 handmade theme: Indeed. Indeed has a single (light) design; the default background-luminance detection keeps
-// it light. The palette maps move today's navy action blue and warm grays back to 2019's #085ff7 and neutral grays.
 (() => {
   const map = {
     '#004fcb': '#085ff7', '#003a9b': '#0452d8', '#002970': '#0444b4',
@@ -7,10 +5,8 @@
   };
   globalThis.net19Theme = { light: map, dark: map };
 })();
-// 2019 wording: the search button said "Find Jobs" and the first tab "Find Jobs" (not "Search" and "Home").
 (() => {
   const fix = () => {
-    // The home page (where the logo sits beside the search fields) is marked for the stylesheet.
     const home = !!document.getElementById('jobsearch-HomePage');
     if (document.documentElement.hasAttribute('data-n19-home') !== home) document.documentElement.toggleAttribute('data-n19-home', home);
     const button = document.querySelector('#jobsearch .yosegi-InlineWhatWhere-primaryButton span');

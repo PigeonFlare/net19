@@ -1,23 +1,14 @@
-/* net19 handmade theme: Uber Eats, 2019: square-cornered controls (no pills), #3e9920 green primary "find food" button, outlined square sign-in, UberMove type on white and #f5f5f5. */
 html { --n19-green: #3e9920; --n19-green-hover: #347f1b; --n19-outline: #e2e2e2; --n19-surface: #fff; --n19-text: #000; }
 html[data-net19-mode="dark"] { --n19-green: #3e9920; --n19-green-hover: #4aad29; --n19-outline: #444; --n19-surface: #141414; --n19-text: #fff; }
-/* Uber's BaseWeb buttons were square in 2019; today's are pills and rounded rectangles. */
 [data-baseweb="button"], button[data-testid="find-food-button"], [data-testid="header-v2-wrapper"] a[href*="auth.uber.com"],
 [data-baseweb="input"], [data-baseweb="select"] > div, input[data-testid="location-typeahead-input"] { border-radius: 0 !important; }
 button[data-testid="find-food-button"] { background: var(--n19-green) !important; color: #fff !important; }
 button[data-testid="find-food-button"]:hover { background: var(--n19-green-hover) !important; }
 [data-testid="header-v2-wrapper"] a[href*="auth.uber.com"] { box-shadow: inset 0 0 0 1px var(--n19-outline) !important; }
 div:has(> input[data-testid="location-typeahead-input"]), div:has(> div > input[data-testid="location-typeahead-input"]) { border-radius: 0 !important; }
-/* Landing page: type set straight on the full-window food photo (a sibling layer, not a background of the text's boxes).
-   A transparent gradient marks the hero and the header floating over it as "over a picture" for the readability check,
-   which would otherwise read the page color behind them and re-ink the black type. */
 main > div:has(h1):has(input[id^="location-typeahead-home"]) { background-image: linear-gradient(transparent, transparent) !important; }
 body:has(main input[id^="location-typeahead-home"]) [data-testid="header-v2-wrapper"] { background-image: linear-gradient(transparent, transparent) !important; }
-/* The Uber One subscription (2021) and its "$0 Delivery Fee" banner did not exist in 2019 (the banner is the link's own
-   wrapper; a menu or list that merely includes an Uber One entry keeps its other entries) */
 div:has(> a[href^="/uber-one"]:only-child), a[href^="/uber-one"] { display: none !important; }
-/* Every page: the header's Log in / Sign up and Delivery/Pickup controls were square, not pills; the "Find Food" button of
-   the city, cuisine and near-me pages is the same green square button as the landing page's (marked by ubereats.js) */
 [data-testid="header-v2-wrapper"] :is(a, button, [role="radiogroup"], [role="radio"], [role="tab"]):not(:has(img)) { border-radius: 0 !important; }
 [data-n19-find] { background: var(--n19-green) !important; color: #fff !important; border-radius: 0 !important; }
 [data-n19-find]:hover { background: var(--n19-green-hover) !important; }

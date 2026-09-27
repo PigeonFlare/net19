@@ -1,37 +1,25 @@
-/* net19 handmade theme: The Washington Post, 2019: a slim white top bar (sections menu and search at left, the small
-   blackletter logo in the middle, a plain "Sign in" and a square blue Subscribe at right) over a white page with
-   #d5d5d5 hairlines; bold PostoniWide headlines in #2a2a2a, 12px Franklin bold kickers and bylines, light Franklin
-   blurbs, #1955a5 links; article pages with a gray Franklin section kicker, a large bold Postoni headline, a boxed
-   row of share tools and 18px Georgia body copy. No "Ask The Post AI", listening, gift or Google-preference extras.
-   The site's own dark mode is followed with the same shapes on a near-black page. */
 html { --n19-page: #fff; --n19-text: #111; --n19-head: #2a2a2a; --n19-meta: #6b6b6b; --n19-soft: #444; --n19-hair: #d5d5d5;
   --n19-rule: #2a2a2a; --n19-link: #1955a5; --n19-btn: #1955a5; --n19-btn-hover: #0e3f82; --n19-box: #f7f7f7; }
 html[data-net19-mode="dark"] { --n19-page: #111; --n19-text: #e6e6e6; --n19-head: #f0f0f0; --n19-meta: #a6a6a6; --n19-soft: #c4c4c4; --n19-hair: #3a3a3a;
   --n19-rule: #d0d0d0; --n19-link: #6fa3e6; --n19-btn: #1955a5; --n19-btn-hover: #2a6cc4; --n19-box: #1c1c1c; }
 
-/* ---- Top bar: 2019's 46px white strip with a hairline under it ---- */
 #sf-primary-nav nav[aria-label="Primary"] { height: 46px !important; min-height: 46px !important; border-bottom: 1px solid var(--n19-hair) !important; box-shadow: none !important; }
 #sf-primary-nav { height: auto !important; }
 #sf-primary-nav nav[aria-label="Primary"] > div { align-items: center !important; }
 [data-testid="sc-header-sections-menu-button"] { border-radius: 0 !important; border-color: transparent !important; }
 [data-testid="sc-header-sections-menu-button"]:hover { background: var(--n19-box) !important; }
-/* Subscribe: a square Post-blue box, not the 2023 pill; Sign in in plain Franklin bold */
 a[data-testid="subs-offer-header-nav"] { border-radius: 2px !important; background: var(--n19-btn) !important; border-color: var(--n19-btn) !important; height: 30px !important;
   padding: 0 12px !important; font-size: 13px !important; }
 a[data-testid="subs-offer-header-nav"] span { font-size: 13px !important; letter-spacing: .02em !important; }
 a[data-testid="subs-offer-header-nav"]:hover { background: var(--n19-btn-hover) !important; }
-/* Every other Subscribe (the sections flyout, promos) is the same square box */
 a[href*="subscribe.washingtonpost.com"]:is([class*="wpds-c-kSOqLF"], [role="button"]) { border-radius: 2px !important; background: var(--n19-btn) !important; border-color: var(--n19-btn) !important; }
 a[data-testid="sc-account-login-link"] { font-size: 13px !important; border-radius: 0 !important; }
 
-/* ---- Homepage masthead and the link row under it ---- */
 ul[data-qa="header-nav-links-ul"] a, ul[data-qa="product-nav-links-ul"] a { border-radius: 0 !important; }
 ul[data-qa="header-nav-links-ul"] a :is(p, span), ul[data-qa="product-nav-links-ul"] a :is(p, span) { font-size: 13px !important; font-weight: 700 !important; letter-spacing: .01em !important; }
 ul[data-qa="header-nav-links-ul"] a:hover :is(p, span) { color: var(--n19-link) !important; }
-/* WP Intelligence (2023) and Ripple (2025) were not part of the 2019 site */
 ul[data-qa="product-nav-links-ul"] li:has(a[href*="wpintelligence"]), ul[data-qa="product-nav-links-ul"] li:has(a[href*="/ripple"]) { display: none !important; }
 
-/* ---- Homepage grid: bold Postoni headlines, light Franklin blurbs, hairline rules ---- */
 .hpgrid .headline h2, .hpgrid .headline h3 { font-family: Postoni, "PostoniWide", "Bodoni 72", "Bodoni MT", Didot, Georgia, serif !important; font-weight: 700 !important;
   letter-spacing: -.01em !important; color: var(--n19-head) !important; }
 .hpgrid .headline a:hover { color: var(--n19-link) !important; text-decoration: none !important; }
@@ -43,7 +31,6 @@ ul[data-qa="product-nav-links-ul"] li:has(a[href*="wpintelligence"]), ul[data-qa
   font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: .06em !important; text-decoration: none !important; }
 .hpgrid figcaption { font-size: 11px !important; color: var(--n19-meta) !important; }
 
-/* ---- Article topper ---- */
 nav[data-testid="secondary-nav"] a { font-family: Franklin, "Helvetica Neue", Helvetica, Arial, sans-serif !important; font-size: 13px !important; border: 0 !important; }
 nav[data-testid="secondary-nav"] a[data-qa="secondary-nav-primary-link"] { color: var(--n19-meta) !important; }
 header[data-qa="main-full"] nav[data-testid="secondary-nav"] { border-bottom: 1px solid var(--n19-hair) !important; }
@@ -51,17 +38,14 @@ header[data-qa="main-full"] nav[data-testid="secondary-nav"] { border-bottom: 1p
   font-weight: 700 !important; font-size: 46px !important; line-height: 1.12 !important; letter-spacing: -.02em !important; color: var(--n19-head) !important; }
 [data-testid="article-topper"] p[data-testid="subheadline"] { font-size: 18px !important; line-height: 1.4 !important; color: var(--n19-soft) !important; }
 [data-testid="article-topper"] [data-testid="timestamp"], [data-testid="article-topper"] [data-testid="timestamp"] * { font-size: 14px !important; color: var(--n19-meta) !important; }
-/* Byline: bold Franklin name in Post blue, no avatar photo */
 [data-testid="byline-container"] [data-testid="author-avatar"] { display: none !important; }
 [data-testid="article-byline"] { font-size: 15px !important; }
 [data-testid="article-byline"] a { font-weight: 700 !important; color: var(--n19-link) !important; text-decoration: none !important; }
 [data-testid="article-byline"] a:hover { text-decoration: underline !important; }
-/* Share tools: 2019's boxed row, square cells divided by hairlines */
 [data-testid="article-actions-bar"] button, [data-testid="article-actions-bar"] a[role="button"] { border-radius: 0 !important; border: 1px solid var(--n19-hair) !important; height: 38px !important;
   min-width: 42px !important; margin: 0 -1px 0 0 !important; background: transparent !important; box-shadow: none !important; }
 [data-testid="article-actions-bar"] button:hover { background: var(--n19-box) !important; }
 [data-testid="article-actions-bar"] a[aria-label="Make us preferred on Google"], a[href*="google.com/preferences/source"] { display: none !important; }
-/* Body copy: Georgia 18px on a 28px line, links in Post blue */
 .article-body p.font-copy, [data-qa="article-body"] p { font-family: Georgia, "Times New Roman", serif !important; font-size: 18px !important; line-height: 1.6 !important; color: var(--n19-text) !important; }
 [data-qa="article-body"] p a, .article-body p a { color: var(--n19-link) !important; text-decoration: none !important; border-bottom: 1px solid var(--n19-hair) !important; }
 [data-qa="article-body"] p a:hover { border-bottom-color: var(--n19-link) !important; }
@@ -69,7 +53,6 @@ header[data-qa="main-full"] nav[data-testid="secondary-nav"] { border-bottom: 1p
 figcaption[data-testid="lede-art-caption"], [data-qa="article-body"] figcaption { font-size: 14px !important; line-height: 1.35 !important; color: var(--n19-meta) !important; }
 button[data-qa="comments-btn"] { border-radius: 2px !important; }
 
-/* ---- Section fronts and search: bold Postoni list headlines on hairlines ---- */
 [data-testid="card-item"] h3[data-testid="card-title"] { font-family: Postoni, "PostoniWide", "Bodoni 72", Didot, Georgia, serif !important; font-weight: 700 !important; letter-spacing: -.01em !important; color: var(--n19-head) !important; }
 [data-testid="card-item"] a:hover h3 { color: var(--n19-link) !important; }
 [data-testid="card-item"] p { color: var(--n19-soft) !important; }
@@ -82,7 +65,6 @@ nav[data-qa="secondary-nav"][aria-label="Section"] a { font-size: 13px !importan
 main form [data-testid="input-text-container"] { border-radius: 0 !important; border-color: var(--n19-hair) !important; }
 main section > div > a[href] p[class]:first-child { letter-spacing: -.01em; }
 
-/* ---- Footer: Franklin columns on a hairline ---- */
 footer[aria-label="Site footer"] { border-top: 1px solid var(--n19-hair) !important; }
 footer[aria-label="Site footer"] h2[data-qa="footer-section-title"] { text-transform: uppercase !important; font-size: 12px !important; letter-spacing: .06em !important; }
 footer[aria-label="Site footer"] li:has(> a[href*="wpintelligence"]), footer[aria-label="Site footer"] li:has(> a[href*="onelink.me"]) { display: none !important; }

@@ -1,22 +1,13 @@
-/* net19 handmade theme: POLITICO, 2019. A white masthead with the red (#dc0228) POLITICO wordmark in the middle, the
-   menu button at the left and small spaced capitals (Magazine, The Agenda, Pro, Search) at the right, over a black bar
-   of section links; plain column headings ("QUICK POPS", "TOP NEWS") in spaced capitals between hairlines; bold
-   DIN/Helvetica headlines in black with red spaced category labels and gray "BY" bylines; story pages with a red
-   category kicker, a 40px bold headline, a gray uppercase byline and date, square Facebook and Twitter share buttons,
-   and Georgia 18px body copy. POLITICO has no dark mode, so a dark device gets the engine's inverted page; the dark
-   tokens are only a fallback. */
 html { --n19-red: #dc0228; --n19-kicker: #b70000; --n19-text: #000; --n19-sub: #666; --n19-meta: #696d70; --n19-rule: #e8e8e8; --n19-bar: #000; --n19-bar-text: #fff;
   --n19-page: #fff; --n19-link: #0a7cc4;
   --pol19-sans: "din-2014", "Helvetica Neue", Helvetica, Arial, sans-serif; --pol19-serif: Georgia, Times, "Times New Roman", serif; }
 html[data-net19-mode="dark"] { --n19-red: #ff3b52; --n19-kicker: #ff5a5a; --n19-text: #eee; --n19-sub: #bbb; --n19-meta: #a0a4a7; --n19-rule: #333; --n19-bar: #000; --n19-bar-text: #fff;
   --n19-page: #121212; --n19-link: #5fb4ec; }
 
-/* ---- Masthead (homepage and section templates) ---- */
 header#js-top-header.header { background: var(--n19-page) !important; border-bottom: none !important; }
 header#js-top-header .header__branding svg, header#js-top-header .header__branding svg * { fill: var(--n19-red) !important; color: var(--n19-red) !important; }
 header#js-top-header .actions-lineup__item > a, header#js-top-header .actions-lineup__item a.js-tealium-tracking { font-family: var(--pol19-sans) !important; font-weight: 700 !important;
   font-size: 12px !important; letter-spacing: .15rem !important; text-transform: uppercase !important; color: var(--n19-text) !important; }
-/* The row of section links under the masthead becomes 2019's black bar */
 .homepageNav, .articleNav { --nav-fade-color: var(--n19-bar); background: var(--n19-bar) !important; border: none !important; }
 .homepageNav__list, .articleNav__list { background: var(--n19-bar) !important; }
 :is(a.homepageNav__link, a.articleNav__link) { color: var(--n19-bar-text) !important; font-family: var(--pol19-sans) !important; font-weight: 700 !important; font-size: 12px !important;
@@ -25,10 +16,8 @@ header#js-top-header .actions-lineup__item > a, header#js-top-header .actions-li
 .homepageNav__list-item { border-color: #333 !important; }
 .homepageNav :is(.swiper-button-next, .swiper-button-prev, [class*="arrow"]) { color: #fff !important; background: var(--n19-bar) !important; }
 
-/* ---- Front page columns ---- */
 .content-heading { border-color: rgba(180, 180, 180, .35) !important; }
 .content-heading .heading, .content-heading .heading b { font-family: var(--pol19-sans) !important; font-size: 12px !important; letter-spacing: .1rem !important; text-transform: uppercase !important; color: var(--n19-text) !important; }
-/* 2019's headings had no red ring: "QUICK POPS" in plain capitals */
 .content-heading .bt-icon--circle { display: none !important; }
 .media-item__summary .headline, .media-item__summary .headline a, .summary .headline a { font-family: var(--pol19-sans) !important; font-weight: 700 !important; color: var(--n19-text) !important; letter-spacing: -.01rem !important; }
 .media-item__summary .headline a:hover { color: #0e9af3 !important; }
@@ -37,10 +26,8 @@ header#js-top-header .actions-lineup__item > a, header#js-top-header .actions-li
 .media-item__summary .dek, .media-item__summary .dek p, .media-item__summary > p { font-family: var(--pol19-serif) !important; color: var(--n19-sub) !important; }
 .media-item__summary .meta, .media-item__summary .meta *, .media-item__summary .authors { font-family: var(--pol19-sans) !important; font-size: 10px !important; letter-spacing: .15rem !important;
   text-transform: uppercase !important; color: var(--n19-meta) !important; }
-/* Live flags, "Pro" upsells and newsletter slabs from later redesigns */
 .media-item .live-flag, .pro-promo, [class*="pro-upsell"] { display: none !important; }
 
-/* ---- Story pages (current article template) ---- */
 header.sticky.top-0 { border-bottom: 1px solid var(--n19-rule) !important; }
 header.sticky.top-0 a[aria-label="Politico home"] svg { color: var(--n19-red) !important; fill: var(--n19-red) !important; }
 [data-testid="pro-switcher-label"] { font-family: var(--pol19-sans) !important; font-weight: 700 !important; font-size: 12px !important; letter-spacing: .15rem !important; }
@@ -56,7 +43,5 @@ p[data-testid="plain-text-block"] { font-family: var(--pol19-serif) !important; 
 p[data-testid="plain-text-block"] a { color: var(--n19-link) !important; text-decoration: none !important; }
 p[data-testid="plain-text-block"] a:hover { text-decoration: underline !important; }
 [data-testid="site-caption"] { font-family: var(--pol19-sans) !important; color: var(--n19-sub) !important; }
-/* "Add POLITICO on Google" (2025) and audio/summary widgets are post-2019 */
 [data-testid="google-preferred-source-button"], [data-testid*="audio-player"], [data-testid*="ai-summary"] { display: none !important; }
-/* Share buttons: 2019's square colored buttons */
 [data-testid*="share"] :is(a, button) { border-radius: 0 !important; }

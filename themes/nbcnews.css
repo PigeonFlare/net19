@@ -1,14 +1,6 @@
-/* net19 handmade theme: NBC News, 2019: an 80px white header with the colored peacock and a black "NBC NEWS"
-   wordmark, 18px uppercase Founders Grotesk Condensed shortcuts in #2a2a2a and a black hamburger (the later navy
-   bar and navy trending strip become white with a hairline); condensed Founders Grotesk headlines, blue #3061ff
-   Founders Grotesk Mono unibrows and short thick blue rules over section titles; articles with a large condensed
-   headline, a light Publico dek, a mono timestamp and Publico Text body copy. No audio "listen" players, Google
-   preferred-source links, subscriber badges or the 2024 Tipline link. The site has no dark mode, so palette.js
-   inverts it on dark devices. */
 html { --n19-ink: #2a2a2a; --n19-head-bg: #fff; --n19-hair: #ccc; --n19-blue: #3061ff; --n19-meta: #555; --n19-hover: #f2f2f2; }
 html[data-net19-mode="dark"] { --n19-ink: #e8e8e8; --n19-head-bg: #111; --n19-hair: #3a3a3a; --n19-blue: #6f91ff; --n19-meta: #aaa; --n19-hover: #222; }
 
-/* ---- Header: white, 80px, dark type ---- */
 #hfs-header .hfsh .local, #hfs-header .hfsh.vertical .local, #hfs-header .hfsh.small .local { background-color: var(--n19-head-bg) !important; background-image: none !important; color: var(--n19-ink) !important;
   border-bottom: 1px solid var(--n19-hair) !important; }
 #hfs-header .hfsh:not(.active) .local .logo-wrap { background: transparent !important; }
@@ -22,44 +14,31 @@ html[data-net19-mode="dark"] { --n19-ink: #e8e8e8; --n19-head-bg: #111; --n19-ha
 #hfs-header .hfsh .hamburger span { background-color: #000 !important; }
 #hfs-header .hfsh.active .hamburger span { background-color: #fff !important; }
 #hfs-header .hfsh .local-insert, #hfs-header .hfsh .local-insert * { color: var(--n19-ink) !important; }
-/* The spacer under the fixed header follows the taller bar */
 #hfs-header .hfsh.init + .hfsh-spacer { height: 80px !important; }
-/* NBC Select subscription button (2025) in the header */
 #hfs-header .shortcuts > a[href*="/subscribe"], #hfs-header .local-insert a[href*="/subscribe"] { display: none !important; }
-/* The 2024 Tipline link */
 #hfs-header .shortcuts-list li:has(a[href*="tipline"]), .menu-list-item:has(a[href*="tipline"]) { display: none !important; }
-/* The trending strip (added after 2019, navy): a quiet white row of mono links on a hairline */
 nav.quick-links, nav[class*="quickLinks"] { background: var(--n19-head-bg) !important; border-bottom: 1px solid var(--n19-hair) !important; }
 nav.quick-links a, nav.quick-links span, nav[class*="quickLinks"] a span { color: var(--n19-ink) !important; }
 nav.quick-links span[class*="caption"] { font-family: FoundersGroteskMono, Courier, "Courier New", monospace !important; font-size: 12px !important; font-weight: 400 !important;
   text-transform: uppercase !important; letter-spacing: -.02em !important; }
 nav.quick-links a:hover span { color: var(--n19-blue) !important; }
 nav.quick-links [class*="shadow"] { display: none !important; }
-/* The menu panel: 2019's dark #2a2a2a overlay behind white type is kept as the site draws it (menu, search) */
 #hfs-header .menu .search-form input { border-radius: 0 !important; }
 
-/* ---- Fronts ---- */
 [data-testid="unibrow-text"], .unibrow span { font-family: FoundersGroteskMono, Courier, "Courier New", monospace !important; text-transform: uppercase !important; }
 .package-title, [data-testid="package-title-top-border"] { border-radius: 0 !important; }
 [data-testid="bacon__header"], [data-testid="vertvideo__header__top-border"] { border-radius: 0 !important; }
-/* Photo heroes (section fronts): the photo and its shade are kept as drawn on dark devices, so the white title and
-   links on them are given the ink that the page flip turns back into white */
 html[data-net19-flip] .bg-background__wrapper.bg-use-background :is(h1, h2, p, a, span) { color: #111 !important; }
-/* NBC Select subscriber badges (2025) */
 [data-testid="subscriber-badge"], .subscriber-badge { display: none !important; }
 
-/* ---- Article ---- */
-/* The navy band behind the headline (the later 'vertical' hero) becomes 2019's plain white page */
 .article-hero__bg-container::before { display: none !important; }
 .article-hero-headline__htag { font-family: FoundersGroteskCond, "Arial Narrow", Arial, sans-serif !important; letter-spacing: -.01em !important; }
 [data-testid="article-dek"] { font-family: PublicoHeadline, Georgia, "Times New Roman", serif !important; font-weight: 300 !important; }
 .article-body__content p.body-graf, .article-body__content > p { font-family: PublicoText, Georgia, "Times New Roman", serif !important; font-size: 18px !important; line-height: 1.5 !important; }
 .article-body__content p a { color: var(--n19-blue) !important; text-decoration: none !important; border-bottom: 2px solid var(--n19-blue) !important; }
 [data-testid="article-body-timestamp"] time { font-family: FoundersGroteskMono, Courier, "Courier New", monospace !important; }
-/* Post-2019: audio "listen" player (2024), Google preferred-source link (2025) */
 .article-decibel-wrapper, [data-testid="decibel-player"] { display: none !important; }
 a[data-testid="social-cta-link"][href*="google.com/preferences"], a[href*="google.com/preferences/source"] { display: none !important; }
 [data-testid="share-dropdown-button"], [data-testid="save-button"] { border-radius: 0 !important; }
 
-/* ---- Search page ---- */
 .gsc-control-cse, .gsc-input-box { border-radius: 0 !important; }

@@ -1,15 +1,6 @@
-/* net19 handmade theme: Viber (viber.com), 2019. viber.com still runs the WordPress theme it launched in 2019 (the
-   December 2019 capture has the same header, "Rakuten Viber" logo file logov2.svg, purple #7360f2 hero, Roboto Light
-   headings, #323232 text, outlined purple pills, green "Download Viber" buttons, and the same footer columns), so
-   the pages are left as Viber draws them. What came after 2019 is taken out: the "The New Social" block on the home
-   page (a 2020 Communities promotion) and, through viber.js, links to Viber Pay (2023) and to the AI and ChatGPT
-   features (2023–2025) in the blog's category bar and the help center. forbusiness.viber.com (2022) did not exist in
-   2019 and is left alone. Viber had no dark mode on the web: a dark device flips the page. */
 html { --n19-purple: #7360f2; --n19-text: #323232; --n19-page: #fff; }
 html[data-net19-mode="dark"] { --n19-purple: #7360f2; --n19-text: #323232; --n19-page: #fff; }
 
-/* ---- Home: "The New Social" (2020) ------------------------------------------------------------------------------ */
 .page-template-template-home .new-social { display: none !important; }
 
-/* ---- Help center (help.viber.com): the ChatGPT, AI, Viber Pay, Viber Plus and Viber Dating category tiles (2023–2025) */
 li.categories_item:has(> a.categories_link:is([href*="-ChatGPT"], [href*="-AI-on-Viber"], [href*="-Viber-Pay"], [href*="-Viber-Plus"], [href*="-Viber-Dating"])) { display: none !important; }

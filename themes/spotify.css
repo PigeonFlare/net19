@@ -1,51 +1,33 @@
-/* net19 handmade theme: Spotify web player, 2019: a flush, square layout: a pure black left rail and top bar against
-   a #181818 main view (no floating rounded panels), square cover art and cards, the 2019 green (#1db954), and
-   uppercase, letter-spaced pill buttons. The web player is always dark; spotify.com's light pages get the same
-   green and button type through the light tokens. */
 html { --n19-rail: #fff; --n19-main: #fff; --n19-green: #1db954; --n19-green-hover: #1ed760; }
 html[data-net19-mode="dark"] { --n19-rail: #000; --n19-main: #181818; --n19-green: #1db954; --n19-green-hover: #1ed760; }
 html:root, html.encore-dark-theme {
   --encore-corner-radius-base: 0px !important; --encore-corner-radius-larger: 0px !important; --encore-corner-radius-larger-2: 0px !important;
   --encore-corner-radius-larger-3: 2px !important; --essential-bright-accent: var(--n19-green) !important;
 }
-/* Flush panels: the rail is black, the main view #181818 */
 #Desktop_LeftSidebar_Id, #Desktop_LeftSidebar_Id nav > div, #Desktop_LeftSidebar_Id .YourLibraryX { background: var(--n19-rail) !important; border-radius: 0 !important; }
 #main-view, .Root__main-view, #Desktop_PanelContainer_Id, aside[data-testid*="panel" i] { border-radius: 0 !important; }
 #main-view { background: var(--n19-main) !important; }
-/* Buttons: uppercase, letter-spaced pills */
 [class*="legacy-button-primary"] [class*="button-primary__inner"], [class*="legacy-button-secondary"], [class*="legacy-button"] [class*="button-secondary__inner"],
 [data-encore-id="buttonPrimary"] > span, [data-encore-id="buttonSecondary"] {
   text-transform: uppercase !important; letter-spacing: .12em !important; font-size: 12px !important;
 }
 [data-encore-id="buttonPrimary"] [class*="button-primary__inner"]:not([class*="inverted-light"]) { background-color: var(--n19-green) !important; }
-/* Cover art and tiles: square */
 [data-encore-id="card"], [data-encore-id="card"] img, [data-testid="card-image"], [data-testid="cover-art-image"], img[data-testid*="image"] { border-radius: 0 !important; }
-/* 2019 layout: panels sit flush against each other (no 8px gutters or outer padding) */
 [data-testid="root"] > div:has(> #global-nav-bar) { gap: 0 !important; padding: 0 !important; }
-/* With the outer padding gone, the bar's -8px margins pushed it above the window, leaving its controls pressed to the
-   top edge; it sits flush at 0 instead, 64px tall with everything on one centered line */
 #global-nav-bar { background: var(--n19-rail) !important; margin: 0 !important; width: auto !important; height: 64px !important; align-items: center !important; }
-/* Left rail: flat black, library prompts as plain text blocks instead of rounded gray cards */
 #Desktop_LeftSidebar_Id section { background: transparent !important; border-radius: 0 !important; padding-top: 8px !important; padding-bottom: 8px !important; }
 #Desktop_LeftSidebar_Id h1 { text-transform: uppercase !important; letter-spacing: .16em !important; font-size: 11px !important; color: #b3b3b3 !important; }
-/* Search: the 2019 white pill with black text */
 input[data-testid="search-input"] { background: #fff !important; color: #000 !important; height: 40px !important; min-height: 0 !important; block-size: 40px !important; }
 input[data-testid="search-input"] ~ div span, input[data-testid="search-input"]::placeholder { color: #7f7f7f !important; }
 #global-nav-bar form svg { color: #000 !important; fill: currentColor; }
 #global-nav-bar form:has(input[data-testid="search-input"]) { margin-top: 4px !important; }
-/* Shelves: 28px bold titles and small uppercase "SEE ALL" links */
 #main-view main section h2 { font-size: 28px !important; line-height: 34px !important; letter-spacing: -.02em !important; }
 #main-view main section h2 a:hover { text-decoration: underline !important; }
 #main-view main a[href^="/section/"]:not([data-testid]) > span { text-transform: uppercase !important; letter-spacing: .16em !important; font-size: 11px !important; }
-/* Header buttons: "SIGN UP" plain white letter-spaced text, "LOG IN" a white pill */
 [data-testid="signup-button"], [data-testid="login-button"] { text-transform: uppercase !important; letter-spacing: .12em !important; font-size: 12px !important; }
 [data-testid="signup-button"] { color: #fff !important; }
 [data-testid="login-button"] > span { min-block-size: 0 !important; block-size: 40px !important; padding-block: 0 !important; display: inline-flex !important; align-items: center !important; }
-/* The sign-up bar: flush with square corners */
 [data-testid="signup-bar"] { border-radius: 0 !important; }
-/* Artists stayed round in 2019 */
 [data-encore-id="card"][aria-labelledby*=":artist:"] :is(img, [data-testid="card-image"], [data-testid="card-image"] > div) { border-radius: 50% !important; }
-/* support.spotify.com: the search field became an AI assistant (2025); its "AI-powered tool" note goes, and spotify.js
-   gives the field 2019's plain "Search" hint (the field itself stays, so searching still works) */
 [class*="EntryPoint_footer"] { display: none !important; }
 [class*="EntryPoint_textareaWrapper"] { border-radius: 4px !important; box-shadow: none !important; background-image: none !important; }

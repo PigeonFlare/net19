@@ -1,6 +1,3 @@
-// net19 handmade theme: Steam, 2019. The store and the community were dark-only in 2019, as they are today, so the
-// page is never flipped. Post-2019 menu entries are hidden by label: the Points Shop (2020), Steam Families (2024),
-// Steam Deck (2022) and later hardware, the "Open in Desktop App" prompt and digital gift cards.
 globalThis.net19Theme = {
   only: 'dark',
   detect: () => 'dark',

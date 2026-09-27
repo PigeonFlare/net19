@@ -1,16 +1,8 @@
-/* net19 handmade theme: Wikipedia, 2019. Articles use Wikipedia's own legacy Vector skin (the 2010-2022 design) with the
-   plain 2019 puzzle-globe logo ("Wikipedia, The Free Encyclopedia", no anniversary badge); www.wikipedia.org keeps its
-   2019 portal: the wordmark, ten languages around the globe, a square search field with a blue button and a plain
-   "Read Wikipedia in your language" button. A dark variant of the article skin serves dark-mode devices, keeping its
-   layout, tabs and sidebar. */
-
-/* ---- the 2019 logo (the 25th-anniversary logo is a 2026 addition) ---- */
 html[lang="en"] body.skin-vector-legacy #p-logo a.mw-wiki-logo {
   background-image: url("https://en.wikipedia.org/static/images/project-logos/enwiki.png") !important;
   background-image: image-set(url("https://en.wikipedia.org/static/images/project-logos/enwiki.png") 1x, url("https://en.wikipedia.org/static/images/project-logos/enwiki-2x.png") 2x) !important;
   background-size: 135px 155px !important; background-position: center center !important; background-repeat: no-repeat !important; width: 160px !important; height: 160px !important; }
 
-/* ---- Portal (www.wikipedia.org): 2019 spacing and a plain language button ---- */
 body .central-textlogo { margin-top: 26px !important; margin-bottom: -4px !important; }
 body .lang-list-button { font-weight: 400 !important; font-size: 13px !important; }
 html[data-net19-mode="dark"] body.skin-vector-legacy { --n19-page: #101418; --n19-content: #202122; --n19-text: #eaecf0; --n19-text-2: #a2a9b1;
@@ -38,8 +30,6 @@ html[data-net19-mode="dark"] body.skin-vector-legacy .infobox-header, html[data-
   background: var(--n19-box-2) !important; color: var(--n19-text) !important; }
 html[data-net19-mode="dark"] body.skin-vector-legacy #searchInput, html[data-net19-mode="dark"] body.skin-vector-legacy #simpleSearch { background: var(--n19-box) !important; color: var(--n19-text) !important; border-color: var(--n19-border) !important; }
 html[data-net19-mode="dark"] body.skin-vector-legacy #footer, html[data-net19-mode="dark"] body.skin-vector-legacy #footer li { color: var(--n19-text-2) !important; }
-/* dark variant, continued: the sidebar's sister-project links, the contents numbers and toggles, navbox rows, and the
-   caption and audio panels the skin draws #f8f9fa. */
 html[data-net19-mode="dark"] body.skin-vector-legacy #mw-panel a, html[data-net19-mode="dark"] body.skin-vector-legacy #mw-panel a span { color: var(--n19-link) !important; }
 html[data-net19-mode="dark"] body.skin-vector-legacy #mw-panel a:visited, html[data-net19-mode="dark"] body.skin-vector-legacy #mw-panel a:visited span { color: var(--n19-link-visited) !important; }
 html[data-net19-mode="dark"] body.skin-vector-legacy .tocnumber { color: var(--n19-text-2) !important; }
@@ -53,16 +43,10 @@ html[data-net19-mode="dark"] body.skin-vector-legacy .spoken-wikipedia, html[dat
 html[data-net19-mode="dark"] body.skin-vector-legacy .side-box, html[data-net19-mode="dark"] body.skin-vector-legacy .portalbox, html[data-net19-mode="dark"] body.skin-vector-legacy .reflist { background: var(--n19-box) !important; color: var(--n19-text) !important; border-color: var(--n19-border) !important; }
 html[data-net19-mode="dark"] body.skin-vector-legacy figure[typeof] { background: var(--n19-box) !important; border-color: var(--n19-border) !important; }
 
-/* ---- Sidebar tools added after 2019: shortened URL and QR code (2023), the legacy-parser switch (2025), "Expand all",
-   and the "Abstract Wikipedia" sister link (2020) ---- */
 body.skin-vector-legacy :is(#t-urlshortener, #t-urlshortener-qrcode, #t-parsermigration, #t-expand-all, li:has(> a[href*="abstract.wikipedia" i])),
 body.skin-vector-legacy #p-tb li:has(> a[href*="useparsoid" i]) { display: none !important; }
-/* ---- Pages Wikipedia only serves in the 2022 skin until the legacy one loads (wikipedia.js asks for it) ---- */
 html[data-net19-reskin] body { visibility: hidden !important; }
-/* Dark variant: the logo is a picture with black lettering; it is shown inverted so the wordmark reads on the dark sidebar */
 html[data-net19-mode="dark"] body.skin-vector-legacy #p-logo a.mw-wiki-logo { filter: invert(.9) hue-rotate(180deg) !important; }
 
-/* ---- Tab labels sit in the middle of their 40px tabs (the skin set them 5px low), and the no-script full-text
-   button that the Go button covers is put away, as the skin's own script did in 2019 ---- */
 body.skin-vector-legacy .vector-menu-tabs-legacy li a { padding-top: calc(1.25em - 5px) !important; }
 body.skin-vector-legacy #simpleSearch #mw-searchButton.mw-fallbackSearchButton { visibility: hidden !important; }

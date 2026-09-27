@@ -1,14 +1,3 @@
-// Stress audit: loads each themed site with the built extension, in light and dark, and exercises it:
-// hovers the header's menu items, opens a menu, focuses the search field and types. In every state it flags
-//  - faint text, measured from the screenshot's pixels (so filters, blur and translucency are all accounted for),
-//  - post-2019 features still visible (AI / ask / generate labels, "ask" placeholders),
-//  - header items off the row's vertical center, and buttons drawn inside text fields,
-//  - a search field that does not take a real mouse click and typing (reported as BLOCKED),
-//  - the page checks in page-checks.js: covered controls (c), off-center icons and text (o), overlapping text (x).
-// Output: test-results/audit/<id>/<scheme>-<state>.png (flags boxed) and test-results/audit/report.jsonl
-// usage: npm run build && npm run audit -- [id ...]   (default: every site in scripts/audit-urls.json)
-// Needs network access to the sites. Some sites answer automated browsers with a bot check; those states are
-// recorded as they are, so read the screenshots before trusting a clean result.
 import { chromium } from '@playwright/test';
 import { resolve } from 'node:path';
 import { mkdirSync, appendFileSync } from 'node:fs';
@@ -38,7 +27,7 @@ function inPage() {
     if (r.width < 4 || r.height < 6) continue;
     const cx = Math.min(innerWidth - 1, r.left + Math.min(r.width, 40) / 2), cy = r.top + r.height / 2;
     const hit = document.elementFromPoint(cx, cy);
-    if (!hit || !(hit === el || el.contains(hit) || hit.contains(el))) continue;   // covered by something else
+    if (!hit || !(hit === el || el.contains(hit) || hit.contains(el))) continue;
     texts.push({ t: t.slice(0, 40), x: r.left, y: r.top, w: r.width, h: r.height, ink: el.closest('[data-net19-ink]')?.getAttribute('data-net19-ink') || '' });
   }
   const controls = [...document.querySelectorAll('button,a,[role=button],[role=tab],[role=menuitem],input,textarea')].filter(vis);
@@ -49,7 +38,6 @@ function inPage() {
     const ph = c.getAttribute('placeholder');
     if (ph && /ask|chat/i.test(ph)) { const r = c.getBoundingClientRect(); modern.push({ t: 'placeholder: ' + ph, x: r.left, y: r.top, w: r.width, h: r.height }); }
   }
-  // Header geometry: items in the top band, grouped into rows by vertical center.
   const header = controls.concat([...document.querySelectorAll('img,svg')].filter(vis)).map(e => ({ e, r: e.getBoundingClientRect() }))
     .filter(({ r }) => r.top >= 0 && r.bottom < 140 && r.height < 70 && r.width < 700);
   const top = header.filter(({ e }) => !header.some(o => o.e !== e && o.e.contains(e) && o.r.height < 70));
@@ -125,14 +113,12 @@ for (const [id, url] of Object.entries(URLS)) for (const scheme of SCHEMES) {
     await p.goto(url, { waitUntil: 'load', timeout: 40000 }).catch(() => {});
     await p.waitForTimeout(3500);
     await record('load');
-    // Hover the first few menu items in the header band.
     const triggers = await p.$$eval('header a, header button, nav a, nav button, [role=navigation] a, [aria-haspopup]:not([aria-haspopup=false]), [aria-expanded]', els => els.map((e, i) => { const r = e.getBoundingClientRect(); return { i, x: r.left + r.width / 2, y: r.top + r.height / 2, ok: r.width > 8 && r.height > 8 && r.top >= 0 && r.top < 130 && getComputedStyle(e).visibility === 'visible' }; }).filter(e => e.ok).slice(0, 6)).catch(() => []);
     let n = 0;
     for (const t of triggers) { await p.mouse.move(t.x, t.y); await p.waitForTimeout(900); await record(`hover${++n}`); }
     await p.mouse.move(5, 850);
     const search = await p.$('input[type=search], input[name=q], input[name=search_query], textarea[name=q], input[role=combobox], input[placeholder*="earch" i], input[aria-label*="earch" i]');
     if (search && await search.isVisible().catch(() => false)) {
-      // A real mouse click on the field's visible center, as a person would: it must take focus and accept typing.
       const box = await search.boundingBox();
       if (box) await p.mouse.click(box.x + Math.min(box.width / 2, 60), box.y + box.height / 2); else await search.click({ timeout: 3000 }).catch(() => {});
       await p.waitForTimeout(300);

@@ -5,7 +5,6 @@ import { settingsFrom } from '../src/shared';
 import { navigationRules } from '../src/navigation';
 import { THEMES, THEMED_DOMAINS, themeFor, themeMatches, themePaused } from '../src/themes';
 
-// RE2 and JavaScript agree on the constructs these patterns use.
 const rule = (id: string) => THEMES.find(theme => theme.id === id)!;
 const legacy = (url: string) => {
   const { pattern, substitution, except } = rule('reddit').legacy!;
@@ -68,20 +67,14 @@ test('signed-in Reddit opens on old.reddit.com; signed out it stays put', () => 
 test('theme stylesheets follow the styling-rule contract', () => {
   for (const file of readdirSync('themes').filter(name => name.endsWith('.css'))) {
     const css = readFileSync(`themes/${file}`, 'utf8').replace(/\/\*[\s\S]*?\*\//g, '');
-    // Text is never swapped with generated content: label nesting differs between accounts and layouts.
     assert.ok(!/content:\s*["'][^"']+["']/.test(css), `${file}: generated text`);
-    // Layout values a site computes in script (grid columns) are not overridden.
     assert.ok(!/--ytd-rich-grid-items-per-row/.test(css), `${file}: script-computed layout variable`);
-    // The page background is set through the site's own variables or theme tokens, never by painting html/body
-    // outright, which also paints transparent overlays and hides the site's mode from detection.
     assert.ok(!/(^|})\s*html\s*,\s*body\s*\{[^}]*background/.test(css), `${file}: html/body background`);
-    // Every color decision has a dark counterpart when the theme defines tokens.
     if (/--n19-[a-z0-9-]+\s*:/.test(css)) assert.ok(/data-net19-mode="dark"/.test(css) || !/html\s*\{\s*--n19/.test(css), `${file}: tokens without a dark variant`);
   }
   for (const file of readdirSync('themes').filter(name => name.endsWith('.js') && !['palette.js', 'guard.js'].includes(name))) {
     const js = readFileSync(`themes/${file}`, 'utf8');
     assert.ok(/globalThis\.net19Theme\s*=/.test(js), `${file}: no theme config`);
-    // Themes follow the site's own light/dark choice; they never switch it.
     assert.ok(!/removeAttribute\('dark'\)|classList\.remove\([^)]*dark/i.test(js), `${file}: overrides the site's mode`);
   }
 });

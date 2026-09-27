@@ -1,14 +1,9 @@
-// net19 handmade theme: CNN, 2019. CNN has a single (light) design, so the default background-luminance detection
-// keeps it light and the engine inverts the page on dark devices.
 globalThis.net19Theme = { later: /^(?:listen|cnn audio|download the cnn app|subscribe to stream|games)$/i };
-// The black "Subscribe to stream" band (CNN's 2024 streaming subscription) is a promotion with no stable class:
-// its zone is marked by its title text and hidden by cnn.css.
 (() => {
   const fix = () => {
     for (const title of document.querySelectorAll('.product-zone--t-dark .product-zone__title')) {
       if (/^\s*Subscribe to stream/i.test(title.textContent || '')) title.closest('.product-zone')?.setAttribute('data-net19-promo', '');
     }
-    // "For Subscribers" kickers (2024 paywall) on cards and live posts
     for (const label of document.querySelectorAll('.container__text-label:not([data-net19-hidden]), .headline__kicker:not([data-net19-hidden])')) {
       if (/^\s*For Subscribers\s*$/i.test(label.textContent || '')) label.setAttribute('data-net19-hidden', '');
     }

@@ -1,19 +1,13 @@
-// Theme-caused layout problems: runs the page checks (page-checks.js) on each site's start page twice, without net19
-// and with it, and reports only what net19 introduced — controls it covers, icons and text it moves off center,
-// text it makes overlap, and content it wipes out (linked headings, articles, visible text). What the site does on its own (a cookie banner over the page, a carousel) is left out.
-// usage: npm run build && node scripts/audit-diff.mjs [id ...]   (SCHEME=light|dark, OUT=test-results/diff)
 import { chromium } from '@playwright/test';
 import { resolve } from 'node:path';
 import { readFileSync, mkdirSync, appendFileSync } from 'node:fs';
 const ALL = JSON.parse(readFileSync(new URL('./audit-urls.json', import.meta.url), 'utf8'));
 const CHECKS = readFileSync(new URL('./page-checks.js', import.meta.url), 'utf8').replace(/^if \(typeof module[^\n]*$/m, '');
-// URLS='{"id":"https://..."}' tests other pages than each site's start page (search results, articles).
 const pick = process.argv.slice(2), ext = resolve(process.env.EXT || '.'), OUT = resolve(process.env.OUT || 'test-results/diff');
 const scheme = process.env.SCHEME || 'light';
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
 const proxy = process.env.HTTPS_PROXY ? [`--proxy-server=${process.env.HTTPS_PROXY}`] : [];
 mkdirSync(OUT, { recursive: true });
-// Items are compared by what they are, not where: a theme may move things around without breaking them.
 const key = item => item.what.replace(/\s+/g, ' ');
 async function run(url, withExtension) {
   const ctx = await chromium.launchPersistentContext('', { channel: 'chromium', headless: true, viewport: { width: 1280, height: 860 }, colorScheme: scheme, userAgent: UA,
@@ -43,7 +37,6 @@ for (const [id, url] of TARGETS) {
       added[k] = after[k].filter(item => !had.has(key(item)));
     }
   }
-  // Content net19 wiped out: linked headings and articles, and the page's visible text, compared with the same page without it.
   const lost = before && after && !before.error && !after.error && ((before.content >= 4 && after.content < before.content * .75) || after.text < before.text * .6)
     ? `content ${before.content} -> ${after.content}, text ${before.text} -> ${after.text}` : '';
   appendFileSync(`${OUT}/report.jsonl`, JSON.stringify({ id, url, scheme, added, lost, error: before?.error || after?.error }) + '\n');

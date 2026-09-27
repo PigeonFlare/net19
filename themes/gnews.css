@@ -1,12 +1,3 @@
-/* net19 handmade theme: Google News, 2019 (the 2018 redesign). A white header with the "Google News" logo, a wide 8px-rounded
-   gray (#f1f3f4) search field and a flat blue 4px "Sign in"; a 256px navigation drawer on the left (Top stories, For you,
-   Following, Saved, then U.S., World, Local, Business, Technology, Entertainment, Sports, Science, Health) with 24px gray
-   icons and a right-rounded blue tab for the current section; on a white page, story clusters in white cards with a 1px
-   #dadce0 border and 8px corners; headlines in Google Sans (20px lead, 16px related) #202124, the source and time 12px
-   #5f6368, and a blue "View full coverage" link. The 2023 tab strip becomes that drawer on wide windows; AI summaries and
-   Gemini are hidden. News had no dark theme in 2019: its later dark theme is drawn in GM2 dark (#202124). */
-
-/* ---- palette ---- */
 html {
   --n19-bg: #fff; --n19-field: #f1f3f4; --n19-text: #202124; --n19-text-2: #5f6368; --n19-text-3: #80868b; --n19-nav: #3c4043; --n19-icon: #80868b;
   --n19-accent: #1a73e8; --n19-accent-soft: rgba(66,133,244,.149); --n19-on-accent: #fff; --n19-border: #dadce0; --n19-divider: #e8eaed; --n19-hover: #f1f3f4;
@@ -33,7 +24,6 @@ html[data-net19-mode="dark"] {
   --n19-header-shadow: 0 1px 2px 0 rgba(0,0,0,.6), 0 2px 6px 2px rgba(0,0,0,.3);
 }
 
-/* ---- News's own tokens, re-pointed ---- */
 html:root, html body {
   --gn-c-primary: var(--n19-accent) !important; --gn-c-color-link: var(--n19-accent) !important; --gn-c-on-primary: var(--n19-on-accent) !important;
   --gn-c-on-surface: var(--n19-text) !important; --gn-c-on-background: var(--n19-text) !important; --gn-c-on-surface-variant: var(--n19-text-2) !important;
@@ -48,12 +38,10 @@ html:root, html body {
 }
 body { color: var(--n19-text); }
 
-/* ---- type: Roboto for text, Google Sans for headlines, the logo and the drawer ---- */
 body :is(p, li, span, div, a, time, button, input, label, figcaption):not(i, .notranslate, [class*="icon" i], [class*="symbol" i], [aria-hidden="true"]:not(:has(*))) {
   font-family: var(--n19-sans) !important; }
 body :is(h1, h2, h3, h4, [role="heading"]), body :is(h1, h2, h3, h4) :is(a, span):not(i, .notranslate) { font-family: var(--n19-display) !important; }
 
-/* ---- header: white with a soft shadow, the 8px gray search field (720px at most), a flat blue 4px Sign in ---- */
 header#gb { background: var(--n19-bg) !important; box-shadow: var(--n19-header-shadow) !important; }
 header#gb :is(a, div, span)[class*="gb_"]:not(:has(*)):not(:empty) { font-family: var(--n19-display) !important; }
 header#gb form[role="search"] { background: var(--n19-field) !important; border-radius: 8px !important; border: 1px solid transparent !important; box-shadow: none !important; max-width: 720px !important; }
@@ -62,11 +50,9 @@ header#gb form[role="search"] input[aria-label] { font-family: var(--n19-sans) !
 header#gb a[href*="ServiceLogin"] { background: var(--n19-accent) !important; color: var(--n19-on-accent) !important; border-radius: 4px !important; border: 1px solid transparent !important;
   font: 500 14px/34px var(--n19-sans) !important; height: 36px !important; min-height: 0 !important; padding: 0 23px !important; box-shadow: none !important; box-sizing: border-box !important; }
 header#gb a[href*="ServiceLogin"] * { font: inherit !important; color: inherit !important; }
-/* wiz buttons everywhere on News: 4px */
 :is(.VfPpkd-LgbsSe, .VfPpkd-LgbsSe .VfPpkd-Jh9lGc, .VfPpkd-LgbsSe .VfPpkd-J1Ukfc-LhBDec) { border-radius: 4px !important; }
 .VfPpkd-LgbsSe-OWXEXe-k8QpJ:not(:disabled) { background-color: var(--n19-accent) !important; color: var(--n19-on-accent) !important; }
 
-/* ---- the navigation drawer (wide windows): the 2023 tab strip, stood up on the left ---- */
 @media (min-width: 1024px) {
   body > c-wiz[role="navigation"] { position: fixed !important; top: 64px !important; left: 0 !important; bottom: 0 !important; right: auto !important; width: 280px !important; height: auto !important;
     display: block !important; overflow-x: hidden !important; overflow-y: auto !important; background: var(--n19-bg) !important; border: 0 !important; box-shadow: none !important; padding: 16px 0 24px !important; box-sizing: border-box !important; }
@@ -80,7 +66,6 @@ header#gb a[href*="ServiceLogin"] * { font: inherit !important; color: inherit !
   body > c-wiz[role="navigation"] > [role="tablist"] > [role="tab"] > a:hover { color: var(--n19-accent) !important; background: var(--n19-hover) !important; }
   body > c-wiz[role="navigation"] > [role="tablist"] > [role="tab"] > a:is([aria-selected="true"], [aria-current="page"], [aria-current="true"], [data-n19-current]),
   body > c-wiz[role="navigation"] > [role="tablist"] > [role="tab"]:is([aria-selected="true"], [aria-current]) > a { color: var(--n19-accent) !important; background: var(--n19-accent-soft) !important; font-weight: 500 !important; }
-  /* the section icons: 24px, gray, blue on the current and hovered section */
   body > c-wiz[role="navigation"] > [role="tablist"] > [role="tab"] > a::before { content: "" !important; position: absolute !important; left: 24px !important; top: 9px !important; width: 24px !important; height: 24px !important;
     background-color: var(--n19-icon) !important; -webkit-mask: var(--n19-i, var(--n19-i-home)) center / 24px 24px no-repeat !important; mask: var(--n19-i, var(--n19-i-home)) center / 24px 24px no-repeat !important; }
   body > c-wiz[role="navigation"] > [role="tablist"] > [role="tab"] > a:is(:hover, [aria-selected="true"], [aria-current="page"], [aria-current="true"], [data-n19-current])::before { background-color: var(--n19-accent) !important; }
@@ -98,41 +83,33 @@ header#gb a[href*="ServiceLogin"] * { font: inherit !important; color: inherit !
   body > c-wiz[role="navigation"] a[href*="CAAqJggKIiBDQkFTRWdvSUwyMHZNRFp1ZEdv"] { --n19-i: var(--n19-i-sports); }
   body > c-wiz[role="navigation"] a[href*="CAAqJggKIiBDQkFTRWdvSUwyMHZNRFp0Y1Rj"] { --n19-i: var(--n19-i-science); }
   body > c-wiz[role="navigation"] a[href*="CAAqIQgKIhtDQkFTRGdvSUwyMHZNR3QwTlRF"] { --n19-i: var(--n19-i-health); }
-  /* the divider between the personal entries and the sections; the strip's "More" overflow menu has nothing left to hold */
   body > c-wiz[role="navigation"] > [role="tablist"] > :not([role="tab"]) { height: 1px !important; min-height: 0 !important; width: 232px !important; margin: 12px 0 12px 16px !important; background: var(--n19-divider) !important; border: 0 !important; }
   body > c-wiz[role="navigation"] > [role="tablist"] > :not([role="tab"]) > * { display: none !important; }
   body > c-wiz[role="navigation"] > :not([role="tablist"]):has(button[aria-label="More"]) { display: none !important; }
-  /* the page beside the drawer, starting under the 64px header (the strip's 48px row is gone) */
   body > c-wiz:has(main) { padding-left: 280px !important; box-sizing: border-box !important; }
   body > c-wiz:has(main) main { margin-left: auto !important; margin-right: auto !important; max-width: min(1040px, calc(100vw - 280px - 48px)) !important; }
   body > c-wiz:has(main) > div > div:first-child:empty { height: 16px !important; min-height: 0 !important; }
 }
-/* narrower windows keep the strip: 2019's section bar was flat gray text with a blue current section */
 @media (max-width: 1023px) {
   body > c-wiz[role="navigation"] { background: var(--n19-bg) !important; box-shadow: var(--n19-header-shadow) !important; }
   body > c-wiz[role="navigation"] [role="tab"] > a { font: 500 14px var(--n19-display) !important; color: var(--n19-text-2) !important; }
 }
 
-/* ---- the page: white; the story panels as 2019 cards (1px #dadce0, 8px corners) ---- */
 body > c-wiz:has(main), body > c-wiz:has(main) > div, main { background: var(--n19-bg) !important; }
 main :is(h1, h2) { font: 400 22px/1.3 var(--n19-display) !important; color: var(--n19-text) !important; letter-spacing: 0 !important; }
 main section :is(.Ly25Ed, .isdDAc, .sQBzPb) {
   background: var(--n19-bg) !important; border: 1px solid var(--n19-border) !important; border-radius: 8px !important; box-shadow: none !important; }
 main h3 a, main h3 { font: 500 16px/1.4 var(--n19-display) !important; color: var(--n19-accent) !important; }
-/* the lead headline of a cluster 20px Google Sans, related headlines 16px, all #202124 */
 main a[data-n-tid="29"] { font: 500 16px/1.4 var(--n19-display) !important; color: var(--n19-text) !important; }
 main figure ~ a[data-n-tid="29"], main :has(> figure) > a[data-n-tid="29"] { font-size: 20px !important; line-height: 1.25 !important; }
 main a[data-n-tid="29"]:hover { text-decoration: underline !important; }
 main :is(a[href*="./stories/"], a[href*="/stories/"]):not([aria-label^="See more"]):not(:has(svg:only-child)) { font-family: var(--n19-display) !important; color: var(--n19-text) !important; }
-/* source and time: 12px gray */
 main [data-n-tid="9"] { font: 400 12px var(--n19-sans) !important; color: var(--n19-text-2) !important; }
 main time, main time + div, main time ~ div span { font: 400 12px var(--n19-sans) !important; color: var(--n19-text-2) !important; }
 main figure img, main figure { border-radius: 8px !important; }
-/* "See more headlines & perspectives" (a gray pill) back to the blue "View full coverage" link */
 main a[aria-label^="See more headlines" i], main a[href*="/stories/"]:has(> svg + div) { background: transparent !important; border: 0 !important; border-radius: 4px !important; justify-content: flex-start !important;
   color: var(--n19-accent) !important; font: 500 14px var(--n19-sans) !important; padding: 0 8px !important; margin-left: -8px !important; width: auto !important; min-height: 36px !important; }
 main a[aria-label^="See more headlines" i] *, main a[href*="/stories/"]:has(> svg + div) * { color: var(--n19-accent) !important; fill: var(--n19-accent) !important; font: inherit !important; }
 main a[aria-label^="See more headlines" i]:hover { background: rgba(26,115,232,.04) !important; }
 
-/* ---- post-2019: AI summaries and briefings, Gemini ---- */
 :is(a[href*="gemini.google.com"], [aria-label*="Gemini" i]:is(button, a, [role="button"])) { display: none !important; }

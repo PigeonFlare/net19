@@ -1,6 +1,4 @@
-// net19 handmade theme: timeanddate.com, 2019. The site has no dark mode; default detection keeps it light.
 globalThis.net19Theme = {};
-// Each 2019 box title was led by a square in its section's color; the section is read from the title.
 (() => {
   const COLORS = [
     [/calculat|timer|countdown|rechner/i, '#ed1c66'], [/sun|moon|space|astronom|eclipse|sonne|mond/i, '#ffc907'],

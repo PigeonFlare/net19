@@ -7,7 +7,7 @@ for (const filename of ['popup.png']) {
   const matches = [];
   for (const dir of await readdir('test-results', { withFileTypes: true })) {
     if (!dir.isDirectory()) continue;
-    try { await readFile(resolve('test-results', dir.name, filename)); matches.push(resolve('test-results', dir.name, filename)); } catch { /* Only copy the intended screenshots. */ }
+    try { await readFile(resolve('test-results', dir.name, filename)); matches.push(resolve('test-results', dir.name, filename)); } catch { }
   }
   if (matches.length !== 1) throw new Error(`Expected exactly one verified ${filename} screenshot`);
   await cp(matches[0], `docs/images/${filename}`);

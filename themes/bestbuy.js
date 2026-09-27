@@ -1,7 +1,4 @@
-// net19 handmade theme: Best Buy, 2019. Best Buy has no dark mode, so the default luminance detection applies.
 globalThis.net19Theme = {};
-// On a dark device the page is flipped by palette.js. The home hero banner is a navy-to-teal gradient (a CSS gradient,
-// which the flip turns pale blue under black type); it is kept as drawn, white type on Best Buy blue as in 2019.
 (() => {
   const root = document.documentElement;
   const SEL = '[data-testid="hero-banner"]';

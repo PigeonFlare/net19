@@ -1,10 +1,3 @@
-/* net19 handmade theme: LINE (line.me), 2019. The 2019 site (line.me/en/, until the 2020 "Life on LINE" page) was a
-   white page under a fixed 66px white header with a 3px #3b3b3b rule: the green LINE wordmark (LINE's own 2016 file,
-   still served by static.line-scdn.net), 14px #444 links split by thin gray bars, a bordered language box; a 440px
-   photo banner; thin Roboto headings (weight 100–300) in #3b3b3b over 13px #444 text; LINE green #00c402 for the
-   current item and hovers; and a #3b3b3b footer with 12px #838383 links split by bars. line.js marks the page type on
-   <html data-n19-line> so the rules stay on line.me's own pages (help.line.me gets the green and type only); LINE's
-   other services under line.me (store, creator, manga, …) are left as drawn. */
 html { --n19-green: #00c402; --n19-green-dark: #00a302; --n19-text: #444; --n19-head: #3b3b3b; --n19-rule: #3b3b3b; --n19-sep: #cfcfcf;
   --n19-box: #dfdfdf; --n19-page: #fff; --n19-panel: #fff; --n19-foot: #3b3b3b; --n19-foot-text: #838383; --n19-foot-sep: #494949;
   --n19-font: "Roboto", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -12,13 +5,10 @@ html { --n19-green: #00c402; --n19-green-dark: #00a302; --n19-text: #444; --n19-
 html[data-net19-mode="dark"] { --n19-green: #00c402; --n19-green-dark: #00a302; --n19-text: #444; --n19-head: #3b3b3b; --n19-rule: #3b3b3b; --n19-sep: #cfcfcf;
   --n19-box: #dfdfdf; --n19-page: #fff; --n19-panel: #fff; --n19-foot: #3b3b3b; --n19-foot-text: #838383; --n19-foot-sep: #494949; }
 
-/* ---- line.me: type ---------------------------------------------------------------------------------------------- */
 html[data-n19-line="lp"] body { font-family: var(--n19-font) !important; color: var(--n19-text) !important; }
 html[data-n19-line="lp"] body :is(h1, h2, h3, p, a, li, span, div) { font-family: var(--n19-font) !important; }
 
-/* Layout rules follow LINE's own breakpoint (879px): narrower windows keep the phone layout, which had its own look. */
 @media (min-width: 879px) {
-  /* ---- Header: 66px, white, a 3px rule; logo, links and language box in one 960px row -------------------------------- */
   html[data-n19-line="lp"] body > header { height: 66px !important; background: #fff !important; border-bottom: 3px solid var(--n19-rule) !important;
     box-shadow: none !important; backdrop-filter: none !important; }
   html[data-n19-line="lp"] body > header > div { position: relative !important; box-sizing: border-box !important; max-width: 960px !important; height: 66px !important;
@@ -46,7 +36,6 @@ html[data-n19-line="lp"] body :is(h1, h2, h3, p, a, li, span, div) { font-family
   html[data-n19-line="lp"] body > header ul.langMenuTop .iconLang { display: none !important; }
   html[data-n19-line="lp"] body > header ul.langMenuTop li.currentLang { position: relative !important; flex: 1 !important; }
 
-  /* ---- Photo banner: 440px, the title in thin white type ----------------------------------------------------------- */
   html[data-n19-line="lp"] #mvArea { height: 440px !important; min-height: 0 !important; margin-top: 69px !important; overflow: hidden !important; }
   html[data-n19-line="lp"] #mvArea .mvTxt { top: 70px !important; bottom: auto !important; }
   html[data-n19-line="lp"] #mvArea .mvTxt, html[data-n19-line="lp"] #mvArea .mvTxt :is(div, span) { color: #fff !important; -webkit-text-fill-color: #fff !important; }
@@ -57,7 +46,6 @@ html[data-n19-line="lp"] body :is(h1, h2, h3, p, a, li, span, div) { font-family
   html[data-n19-line="lp"] #mvArea::before, html[data-n19-line="lp"] #mvArea::after { pointer-events: none !important; }
 }
 
-/* ---- Sections: white, thin #3b3b3b headings, 13–14px #444 text -------------------------------------------------- */
 html[data-n19-line="lp"] main > section, html[data-n19-line="lp"] #mainTitleArea { background: var(--n19-page) !important; }
 html[data-n19-line="lp"] main :is(h2, h3) { color: var(--n19-head) !important; font-weight: 100 !important; letter-spacing: 0 !important; }
 html[data-n19-line="lp"] main h2 { font-size: 60px !important; line-height: 1.1 !important; }
@@ -66,7 +54,6 @@ html[data-n19-line="lp"] main a:hover { color: var(--n19-green) !important; }
 html[data-n19-line="lp"] main :is(.productMenu, .productMenuWrap) :is(.current, .active, [aria-selected="true"]) { color: var(--n19-green) !important; }
 
 @media (min-width: 879px) {
-  /* ---- Footer: the dark #3b3b3b band with gray links split by bars ---------------------------------------------- */
   html[data-n19-line="lp"] body > div > footer, html[data-n19-line="lp"] body footer.en, html[data-n19-line="lp"] body > div > footer[class] {
     max-width: none !important; width: 100% !important; margin: 0 !important; box-sizing: border-box !important; background: var(--n19-foot) !important;
     padding: 26px 0 28px !important; box-shadow: 0 0 0 100vmax var(--n19-foot) !important; clip-path: inset(0 -100vmax) !important; }
@@ -78,5 +65,4 @@ html[data-n19-line="lp"] main :is(.productMenu, .productMenuWrap) :is(.current, 
     border-left: 1px solid var(--n19-foot-sep) !important; margin: 0 9px 0 7px !important; vertical-align: -1px !important; }
 }
 
-/* ---- help.line.me: the 2019 green and type ---------------------------------------------------------------------- */
 html[data-n19-line="help"] body { font-family: var(--n19-font) !important; }

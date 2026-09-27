@@ -1,12 +1,3 @@
-// net19 page checks: run inside a page (Playwright's page.evaluate, or pasted into a real signed-in browser) after a
-// theme has applied. They catch the kinds of breakage a screenshot glance misses:
-//  - covered: a field, button or link whose center is covered by another element, so a real click never reaches it
-//    (how YouTube's search field became unclickable);
-//  - offcenter: an icon or avatar off the center of the square button, tile or narrow rail that holds it (Discord's
-//    server icons sitting left in their rail);
-//  - textoffcenter: one line of text off the vertical middle of the fixed-height button, tab or row that holds it;
-//  - overlap: two different lines of text drawn over each other.
-// Returns { covered, offcenter, textoffcenter, overlap }, each a list of { what, detail, x, y, w, h }.
 // eslint-disable-next-line no-unused-vars
 function net19PageChecks() {
   const out = { covered: [], offcenter: [], textoffcenter: [], overlap: [] };
@@ -17,12 +8,10 @@ function net19PageChecks() {
   const label = e => (e.getAttribute('aria-label') || e.getAttribute('placeholder') || e.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 40);
   const box = (e, r = e.getBoundingClientRect()) => ({ x: Math.round(r.left), y: Math.round(r.top), w: Math.round(r.width), h: Math.round(r.height) });
   const deepHit = (x, y) => { let h = document.elementFromPoint(x, y); while (h && h.shadowRoot) { const inner = h.shadowRoot.elementFromPoint(x, y); if (!inner || inner === h) break; h = inner; } return h; };
-  // A point scrolled out of a scrolling or clipping ancestor isn't visible, so nothing there can be clicked anyway.
   const clipped = (e, x, y) => { for (let a = e.parentElement; a && a !== document.body; a = a.parentElement) { const c = getComputedStyle(a);
     if (/auto|scroll|hidden|clip/.test(c.overflowX + c.overflowY)) { const q = a.getBoundingClientRect(); if (x < q.left || x > q.right || y < q.top || y > q.bottom) return true; } } return false; };
   const within = (hit, e) => !!hit && (hit === e || e.contains(hit) || (hit.getRootNode() !== document && e.contains(hit.getRootNode().host)));
 
-  // covered: probe the center (and, for fields, a point near the left where people click) of every visible control.
   const controls = [...document.querySelectorAll('input:not([type=hidden]):not([type=checkbox]):not([type=radio]), textarea, [contenteditable=true], [role=textbox], [role=searchbox], [role=combobox], button, a[href], [role=button], [role=tab]')]
     .filter(e => shown(e) && !e.disabled).slice(0, 600);
   for (const e of controls) {
@@ -35,18 +24,13 @@ function net19PageChecks() {
       if (x < 0 || y < 0 || x >= W || y >= H || clipped(e, x, y)) continue;
       const hit = deepHit(x, y);
       if (within(hit, e)) continue;
-      // A label wrapping the field, or a field's own decoration inside a shared wrapper, still focuses it on click.
       if (field && hit && (hit.closest('label')?.contains(e) || (hit.tagName === 'LABEL' && hit.htmlFor === e.id))) continue;
-      // A link or button laid over its sibling on purpose (an image's "open original" link) is the control people hit.
       if (!field && hit && hit.closest('a[href], button, [role=button]') && hit.closest('a[href], button, [role=button]').parentElement?.contains(e)) continue;
-      // Another control inside this one's box that is meant to be clicked (a clear button over a field's right end) is fine
-      // at the right edge, but never at the field's center or left.
       out.covered.push({ what: `${field ? 'field' : 'control'} "${label(e)}" ${name(e)}`, detail: `covered by ${hit ? name(hit) : 'nothing (outside page)'}`, ...box(e) });
       break;
     }
   }
 
-  // offcenter: a single visible icon/avatar/image inside a small square-ish button or tile, or items in a narrow rail.
   const media = 'svg, img, [class*="icon" i], [class*="avatar" i]';
   for (const holder of document.querySelectorAll('button, a, [role=button], [role=treeitem], [role=listitem], li')) {
     if (!shown(holder)) continue;
@@ -60,7 +44,6 @@ function net19PageChecks() {
     const dx = (q.left + q.width / 2) - (r.left + r.width / 2), dy = (q.top + q.height / 2) - (r.top + r.height / 2);
     if (Math.abs(dx) > 2 || Math.abs(dy) > 2) out.offcenter.push({ what: `${name(k)} in ${name(holder)}`, detail: `off by ${Math.round(dx)},${Math.round(dy)}px`, ...box(holder) });
   }
-  // Narrow full-height rails (a server list, an icon nav): every item's center should share the rail's center line.
   for (const rail of document.querySelectorAll('nav, aside, [role=navigation], [role=tree], [class*="rail" i], [class*="guild" i], [class*="sidebar" i]')) {
     if (!shown(rail)) continue;
     const r = rail.getBoundingClientRect();
@@ -72,7 +55,6 @@ function net19PageChecks() {
     if (items.length >= 3 && bad / items.length > .5) out.offcenter.push({ what: `items in rail ${name(rail)}`, detail: `${bad}/${items.length} icons off the rail's center line`, ...box(rail) });
   }
 
-  // textoffcenter: one line of text in a fixed-height control or row (18–64px tall) off its vertical middle.
   for (const e of document.querySelectorAll('button, a, [role=button], [role=tab], [role=menuitem], [role=option], [role=treeitem], li, input, h1, h2, h3')) {
     if (!shown(e)) continue;
     const r = e.getBoundingClientRect();
@@ -88,9 +70,7 @@ function net19PageChecks() {
     }
     if (!lines.length) continue;
     const top = Math.min(...lines.map(q => q.top)), bottom = Math.max(...lines.map(q => q.bottom));
-    if (bottom - top > r.height * .8 || bottom - top > 28) continue;   // several lines, or text that fills the box
-    // An icon stacked above or below the label (LinkedIn's and Walmart's header items): the pair is what sits in the
-    // middle, so the icon's box joins the text's.
+    if (bottom - top > r.height * .8 || bottom - top > 28) continue;
     let t0 = top, b0 = bottom;
     for (const k of e.querySelectorAll('svg, img, [class*="icon" i]')) {
       if (!shown(k)) continue;
@@ -101,23 +81,19 @@ function net19PageChecks() {
     text = (t0 + b0) / 2;
     const c = getComputedStyle(e);
     const padTop = parseFloat(c.paddingTop) || 0, padBottom = parseFloat(c.paddingBottom) || 0;
-    if (Math.abs(padTop - padBottom) > 4) continue;  // deliberately uneven padding (a label above a rule)
+    if (Math.abs(padTop - padBottom) > 4) continue;
     const dy = text - (r.top + r.height / 2);
     if (Math.abs(dy) > 3) out.textoffcenter.push({ what: `"${label(e)}" ${name(e)}`, detail: `text ${Math.round(dy)}px off middle of a ${Math.round(r.height)}px box`, ...box(e) });
   }
 
-  // Fields: the line people type on, off the middle of the box drawn around it (a search pill, a bordered field). The
-  // typed line sits at the top of a textarea and in the middle of an input's content box.
   for (const f of document.querySelectorAll('input:not([type=hidden]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=submit]):not([type=button]), textarea')) {
     if (!shown(f)) continue;
     const r = f.getBoundingClientRect(), c = getComputedStyle(f);
     if (r.height > 80 || r.width < 40) continue;
-    // A floating label sits in the top of the field (Netflix, Twitter): its uneven padding places the typed line on purpose.
     if ((parseFloat(c.paddingTop) || 0) - (parseFloat(c.paddingBottom) || 0) > 8) continue;
     const bt = parseFloat(c.borderTopWidth) || 0, bb = parseFloat(c.borderBottomWidth) || 0, pt = parseFloat(c.paddingTop) || 0, pb = parseFloat(c.paddingBottom) || 0;
     const lh = parseFloat(c.lineHeight) || parseFloat(c.fontSize) * 1.2;
     const line = f.tagName === 'TEXTAREA' ? r.top + bt + pt + lh / 2 : r.top + bt + pt + (r.height - bt - bb - pt - pb) / 2;
-    // The box people see: the field itself when it draws a border or background, else the nearest ancestor that does.
     let frame = null;
     for (let e = f, i = 0; e && i < 6; e = e.parentElement, i++) {
       const s = getComputedStyle(e), q = e.getBoundingClientRect();
@@ -131,7 +107,6 @@ function net19PageChecks() {
     if (Math.abs(dy) > 3) out.textoffcenter.push({ what: `field "${label(f)}" ${name(f)}`, detail: `typed line ${Math.round(dy)}px off middle of its ${Math.round(q.height)}px box ${name(frame)}`, ...box(f) });
   }
 
-  // overlap: text lines from different elements drawing over each other.
   const lines = [];
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   for (let n = walker.nextNode(); n && lines.length < 900; n = walker.nextNode()) {
@@ -145,8 +120,6 @@ function net19PageChecks() {
     if (a.el === b.el || a.el.contains(b.el) || b.el.contains(a.el)) continue;
     const ox = Math.min(a.q.right, b.q.right) - Math.max(a.q.left, b.q.left), oy = Math.min(a.q.bottom, b.q.bottom) - Math.max(a.q.top, b.q.top);
     if (ox > 6 && oy > Math.min(a.q.height, b.q.height) * .4) {
-      // Text that sits on another layer on purpose (a caption over a picture) is drawn by a positioned ancestor; it only
-      // counts when both lines are in normal flow.
       out.overlap.push({ what: `"${a.t}" / "${b.t}"`, detail: `${name(a.el)} over ${name(b.el)}`, ...box(null, a.q) });
       if (out.overlap.length > 30) break;
     }
@@ -155,12 +128,6 @@ function net19PageChecks() {
   return out;
 }
 
-// lowcontrast: text as it is actually shown, after every CSS filter on the way (palette.js's page flip and the
-// turned-back photos inside it), measured against what is painted behind it. Reports:
-//  - text below a 3:1 contrast ratio with the surface behind it (dark text on a dark page, a faint placeholder);
-//  - text flipped over a picture kept in its real colors, or the other way round (white text made dark over a photo);
-//  - a text caret the same color as the surface it blinks on.
-// Each item is { what, detail, x, y, w, h }.
 function net19Contrast() {
   const out = [], seen = new Set();
   const W = innerWidth, H = innerHeight;
@@ -181,8 +148,6 @@ function net19Contrast() {
   const L = ([r, g, b]) => .2126 * lin(r) + .7152 * lin(g) + .0722 * lin(b);
   const ratio = (a, b) => { const [x, y] = [L(a), L(b)].sort((p, q) => q - p); return (x + .05) / (y + .05); };
   const over = (top, under) => { const a = top[3]; return [0, 1, 2].map(i => top[i] * a + under[i] * (1 - a)).concat(1); };
-  // Filters: each invert() on an element or its ancestors turns what it draws over; count them to know whether a color is
-  // shown as written or inverted (hue-rotate and mild contrast barely move lightness).
   const flips = new Map();
   const parity = el => {
     if (!el || el.nodeType !== 1) return 0;
@@ -193,8 +158,6 @@ function net19Contrast() {
     if (m && +m[1] > .5) p ^= 1;
     flips.set(el, p); return p;
   };
-  // An odd number of flips shows a color through palette.js's filter, invert(1) hue-rotate(180deg) contrast(.88), which
-  // is computed whole: hue-rotate moves the lightness of strong colors a lot.
   const flip = ([r, g, b, a]) => {
     const [ir, ig, ib] = [r, g, b].map(v => 1 - v / 255);
     const rot = [-.574 * ir + 1.43 * ig + .144 * ib, .426 * ir + .43 * ig + .144 * ib, .426 * ir + 1.43 * ig - .856 * ib];
@@ -203,8 +166,6 @@ function net19Contrast() {
   const shownAs = (c, p) => p ? flip(c) : c;
   const alpha = el => { let a = 1; for (let n = el; n && n.nodeType === 1; n = n.parentElement) a *= +getComputedStyle(n).opacity; return a; };
   const name = e => (e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + (typeof e.className === 'string' && e.className ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '')).slice(0, 60);
-  // Pictures that hit testing skips (pointer-events:none): a background photo behind the whole app (Gmail's themes), the
-  // canvas an editor draws its page on (Google Docs).
   let layerList = null;
   const layers = () => layerList ||= [...document.querySelectorAll('body *')].filter(e => {
     const q = e.getBoundingClientRect();
@@ -217,18 +178,15 @@ function net19Contrast() {
     if (stack.includes(l) || l.contains(above)) return false;
     const q = l.getBoundingClientRect();
     if (!(x >= q.left && x <= q.right && y >= q.top && y <= q.bottom)) return false;
-    // Cut off by a clipping ancestor (map tiles past the edge of their map) means not painted there.
     for (let a = l.parentElement; a && a !== document.body; a = a.parentElement) {
       const c = getComputedStyle(a);
       if (/hidden|clip|auto|scroll/.test(c.overflowX + c.overflowY)) { const b = a.getBoundingClientRect(); if (x < b.left || x > b.right || y < b.top || y > b.bottom) return false; }
     }
     return true;
   });
-  // What is painted behind a point: the first element under `el` in the hit stack with an opaque color, a picture or a canvas.
   const behind = (el, x, y) => {
     const stack = document.elementsFromPoint(x, y);
     let i = stack.indexOf(el);
-    // Text under something else (a consent dialog, a menu) is not what anyone sees there.
     if (i < 0 && getComputedStyle(el).pointerEvents !== 'none' && stack[0] && !el.contains(stack[0])) return { covered: true };
     if (i < 0) i = stack.findIndex(s => s.contains(el));
     let color = null, painter = null, shade = null;
@@ -236,8 +194,6 @@ function net19Contrast() {
       if (s !== el && el.contains(s)) continue;
       const c = getComputedStyle(s);
       if (/^(IMG|VIDEO|CANVAS|IFRAME|EMBED|OBJECT)$/.test(s.tagName) || /url\(/.test(c.backgroundImage)) return { picture: s, shade };
-      // A gradient shade laid over a picture (Gmail darkens its theme photos under the drawer) belongs with the picture;
-      // over a plain surface it counts as the average of its colors.
       if (/gradient\(/.test(c.backgroundImage)) {
         shade ||= s;
         const stops = (c.backgroundImage.match(/rgba?\([^)]*\)/g) || []).map(parse).filter(Boolean);
@@ -249,7 +205,6 @@ function net19Contrast() {
       }
       const bg = parse(c.backgroundColor);
       if (!bg || bg[3] < .05) continue;
-      // A picture inside this surface, skipped by hit testing, is drawn over its background.
       const pic = !color && hidden(x, y, stack, el);
       if (pic && s.contains(pic)) return { picture: pic, shade };
       color = color ? over(color, shownAs(bg, parity(s))) : shownAs(bg, parity(s));
@@ -257,7 +212,6 @@ function net19Contrast() {
       if (bg[3] >= .95) return { color, painter };
     }
     if (!color) { const pic = hidden(x, y, stack, el); if (pic) return { picture: pic, shade }; }
-    // Nothing opaque: the browser's own canvas, white unless the page asks for a dark one (and flipped with the root).
     const dark = getComputedStyle(document.documentElement).colorScheme.includes('dark') && !getComputedStyle(document.documentElement).colorScheme.includes('light');
     const base = shownAs(dark ? [18, 18, 18, 1] : [255, 255, 255, 1], parity(document.documentElement));
     return { color: color ? over(color, base) : base, painter: painter || document.documentElement };
@@ -280,7 +234,7 @@ function net19Contrast() {
     }
     let t = parse(colorText); if (!t) return;
     const a = alpha(el);
-    if (a < .1 || t[3] < .1) return;   // faded out on purpose (a skip link until focused, a tooltip between showings)
+    if (a < .1 || t[3] < .1) return;
     t = [...t.slice(0, 3), t[3] * a];
     const shown = over(shownAs(t, tp), b.color);
     const cr = ratio(shown, b.color);
@@ -288,7 +242,6 @@ function net19Contrast() {
     const chroma = c => Math.max(...c.slice(0, 3)) - Math.min(...c.slice(0, 3));
     if (cr < (large ? 2.2 : chroma(b.color) > 90 || chroma(shown) > 90 ? 2.5 : 3)) report(el, `${what} contrast ${cr.toFixed(2)}:1 (${shown.slice(0, 3).map(Math.round)} on ${b.color.slice(0, 3).map(Math.round)})`, r);
   };
-  // Screen-reader-only text (clipped to nothing, or in a 1px box that hides its overflow) is not shown to anyone.
   const clippedAway = e => {
     for (let n = e, i = 0; n && n !== document.body && i < 4; n = n.parentElement, i++) {
       const c = getComputedStyle(n);
@@ -310,7 +263,6 @@ function net19Contrast() {
     const c = getComputedStyle(el);
     judge(el, c.webkitTextFillColor && c.webkitTextFillColor !== c.color && parse(c.webkitTextFillColor)?.[3] ? c.webkitTextFillColor : c.color, r);
   }
-  // Empty fields show their placeholder; typed text and the caret use the field's color and caret-color.
   for (const f of document.querySelectorAll('input:not([type=hidden]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=submit]):not([type=button]):not([type=image]):not([type=reset]), textarea')) {
     const r = f.getBoundingClientRect();
     if (r.width < 20 || r.height < 10 || r.bottom < 0 || r.top > H || !visible(f)) continue;
@@ -319,7 +271,6 @@ function net19Contrast() {
     else if (f.value) judge(f, c.color, r, 'typed text');
     judge(f, c.caretColor === 'auto' ? c.color : c.caretColor, r, 'caret');
   }
-  // Editors that draw their own caret (Google Docs, code editors): a thin element named like a cursor.
   for (const k of document.querySelectorAll('[class*="cursor-caret" i], [class*="caret" i]:not(input), .cursor')) {
     const r = k.getBoundingClientRect();
     if (r.width > 4 || r.height < 8 || !visible(k)) continue;

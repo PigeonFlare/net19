@@ -1,13 +1,3 @@
-// net19 handmade themes: palette engine.
-//
-// A theme describes its 2019 look as styling rules, not as per-element overrides:
-//   net19Theme = { detect(), light: { from: to, ... }, dark: { from: to, ... } }
-// `from` is a color from the site's current design system and `to` is its 2019 counterpart. Every CSS custom
-// property on the page root that currently holds a `from` color is re-pointed to `to`. Because sites build every
-// surface (menus, popups, dialogs, content that loads later) from those properties, the whole site moves to the
-// 2019 palette at once, with no boundary between restyled and default parts. Light and dark are separate
-// palettes: the site's own mode is followed, never overridden. The chosen mode is exposed as
-// html[data-net19-mode] so a theme's stylesheet can use its --n19-* tokens for the few shape rules it needs.
 (() => {
   const theme = globalThis.net19Theme;
   if (!theme || globalThis.net19PaletteStarted) return;
@@ -19,7 +9,7 @@
     if (!/^(#|rgb|hsl)/.test(text)) return null;
     canvas.fillStyle = '#010203';
     canvas.fillStyle = text;
-    const result = canvas.fillStyle; // "#rrggbb" or "rgba(r, g, b, a)"
+    const result = canvas.fillStyle;
     return result === '#010203' && text !== '#010203' ? null : result;
   };
   const tables = {};
@@ -42,9 +32,6 @@
   const hasMap = tables.light.size > 0 || tables.dark.size > 0;
   let sheet = null;
   let lastMode = '';
-  // Read the site's own variable values with net19's override sheet switched off. Toggling `disabled` is not a
-  // DOM mutation, so it does not wake any observer (an earlier version re-inserted the element and re-triggered
-  // itself on every animation frame).
   const siteValues = () => {
     if (sheet?.sheet) sheet.sheet.disabled = true;
     const values = [];
@@ -61,29 +48,16 @@
     if (sheet?.sheet) sheet.sheet.disabled = false;
     return values;
   };
-  // The device decides light or dark. When the site itself shows the other mode (most sites have no dark mode; some
-  // keep their own setting), the whole themed page is flipped: an inverting filter on the root with photos, video and
-  // embeds turned back, so the 2019 look appears in the device's mode everywhere at once — menus, popups and content
-  // that loads later included, with no boundary between restyled and unstyled parts. Top-layer elements (modal
-  // dialogs, popovers, fullscreen) are drawn outside the root's filter, so they get the same filter themselves.
-  // Themes whose site was dark-only in 2019 set `only: 'dark'` (or a function returning it) and are never flipped.
   const device = matchMedia('(prefers-color-scheme: dark)');
   const FLIP = 'invert(1) hue-rotate(180deg) contrast(.88)';
-  const UNFLIP = 'contrast(1.13636) hue-rotate(180deg) invert(1)'; // exact inverse of FLIP, applied first
+  const UNFLIP = 'contrast(1.13636) hue-rotate(180deg) invert(1)';
   const MEDIA = 'img,video,canvas,iframe,embed,object,image,[data-net19-keep]';
   const flipCSS = `html[data-net19-flip]{filter:${FLIP}!important}` +
     `html[data-net19-flip] :is(dialog:modal,:popover-open,:fullscreen):not(${MEDIA}){filter:${FLIP}!important}` +
     `html[data-net19-flip] :is(${MEDIA}):not([data-net19-keep] *,:fullscreen,img[src*=".svg" i],img[src^="data:image/svg" i],[data-net19-flat]${theme.flat ? ',' + theme.flat : ''}){filter:${UNFLIP}!important}` +
-    // Inside a part that was kept as drawn, light panels (a search suggestion list under a dark header) flip again.
     `html[data-net19-flip] [data-net19-keep] [data-net19-reflip]{filter:${FLIP}!important}` +
     `html[data-net19-flip] [data-net19-reflip] :is(${MEDIA}){filter:${UNFLIP}!important}`;
   let flipSheet = null, keepObserver = null, target = 'dark', interactions = false;
-  // Parts of the page that already look right in the target mode are turned back rather than flipped: photos drawn
-  // as CSS backgrounds (banners, cards), and bars or panels whose own background is already dark (for a dark
-  // device) or already light (for a light device) — a navy header or black footer stays as the site drew it
-  // instead of turning pastel. Decisions are read for a whole batch first and written after, so layout is computed once.
-  // Computed colors are rgb()/rgba() for plain sRGB, but color(srgb ...), oklab(), oklch() or lab() when a site mixes or
-  // writes them that way (color-mix() hovers, Tailwind v4). Those are converted by painting one pixel, and cached.
   const colorCache = new Map();
   let pen = null;
   const rgba = color => {
@@ -101,14 +75,11 @@
     colorCache.set(color, out); return out;
   };
   const lum = ([r, g, b]) => (.2126 * r + .7152 * g + .0722 * b) / 255;
-  // The color that FLIP turns into `c`: contrast, hue-rotate(180deg) and invert undone channel by channel.
   const unflip = ([r, g, b, a]) => {
     const [cr, cg, cb] = [r, g, b].map(v => Math.min(1, Math.max(0, (v / 255 - .5) / .88 + .5)));
     const [hr, hg, hb] = [-.574 * cr + 1.43 * cg + .144 * cb, .426 * cr + .43 * cg + .144 * cb, .426 * cr + 1.43 * cg - .856 * cb];
     return `rgba(${[hr, hg, hb].map(v => Math.round(255 * (1 - Math.min(1, Math.max(0, v))))).join(',')},${a})`;
   };
-  // Translucent scrims and caption overlays keep their own color, but whatever sits on them (a consent dialog over a
-  // dimmed page) still flips: only their background is set to the color that flips back to the original.
   const scrims = new Map();
   const scrim = color => {
     let id = scrims.get(color);
@@ -118,11 +89,9 @@
     }
     return id;
   };
-  let seen = new WeakSet(), small = new Set(); // each element is classified once, unless it was too small to judge
+  let seen = new WeakSet(), small = new Set();
   const DRAWN = /\.(png|gif|svg)(\b|[?#"'])|image\/(png|gif|svg)/i;
   const PHOTO = /\.(jpe?g|webp|avif)(\b|[?#"'])|image\/(jpeg|webp|avif)|[?&](fm|format)=(jpe?g|webp|avif)/i;
-  // PNG, GIF and SVG images drawn small are logos and icons: dark glyphs on a transparent background would vanish on
-  // a dark page if turned back, so they flip with it. Larger ones, and all photo formats, keep their real colors.
   const flatIcon = img => {
     const src = img.currentSrc || img.src || '';
     if (!/\.(png|gif)(\b|[?#])|^data:image\/(png|gif)/i.test(src)) return;
@@ -131,9 +100,6 @@
   };
   const SKIP = /^(IMG|VIDEO|CANVAS|IFRAME|SVG|svg|PATH|path|SCRIPT|STYLE|LINK|META|BR)$/;
   const keepSel = theme.keep || '', reflipSel = theme.reflip || '';
-  // Text, badges and shading laid over a picture (a hero headline, a video's length, a map's controls) are drawn for
-  // that picture: when the picture keeps its real colors, so must they. The picture's host is the largest ancestor
-  // with the picture's own box; when it holds anything besides the picture, the whole host is kept instead.
   const sizes = new ResizeObserver(entries => {
     for (const { target: media, contentRect: box } of entries) {
       if (box.width < 2 || box.height < 2) continue;
@@ -144,8 +110,6 @@
       for (const [e, v] of d) e.setAttribute(`data-net19-${v}`, '');
     }
   });
-  // Pictures whose layout was not final when first seen (still loading, custom elements not yet upgraded) are looked
-  // at again once the page has loaded, and a little later.
   const rescanMedia = () => {
     if (!document.documentElement.hasAttribute('data-net19-flip')) return;
     const d = new Map();
@@ -177,7 +141,6 @@
   const overlaid = (media, decided, context) => {
     const r = media.getBoundingClientRect();
     if (r.width < 120 || r.height < 64) {
-      // Not laid out yet (lazy or still loading): judged once it has a size.
       if (r.width < 2 || r.height < 2 || (media.tagName === 'IMG' && !media.complete)) sizes.observe(media);
       return false;
     }
@@ -185,13 +148,11 @@
     let host = null;
     for (let n = media.parentElement, i = 0; n && n !== document.body && i < 6; n = n.parentElement, i++) {
       const q = n.getBoundingClientRect();
-      // Wrappers that draw no box of their own (<picture>, display:contents) are passed through.
       if ((q.width < 1 && q.height < 1) || n.tagName === 'PICTURE') continue;
       if (Math.abs(q.width - r.width) > Math.max(8, r.width * .08) || Math.abs(q.height - r.height) > Math.max(8, r.height * .08)) break;
       host = n;
     }
     if (!host || !host.querySelector(':scope *:not(img, picture, source, video, canvas, svg, svg *)')) return false;
-    // A host that holds a whole app or page section (Gmail's theme photo sits behind everything) is not an overlay.
     const text = (host.textContent || '').replace(/\s+/g, ' ').trim();
     const hr = host.getBoundingClientRect();
     if (text.length > 2000 || host.getElementsByTagName('*').length > 250 || host.querySelector('[role="navigation"], nav, main, [role="main"]') ||
@@ -202,8 +163,8 @@
     return true;
   };
   const keepPhotos = roots => {
-    const decided = new Map(), scrimColor = new Map(); // element -> 'keep' | 'reflip' | 'scrim'
-    const context = el => {    // 'kept' inside a kept part, 'none' inside a flipped-again one, otherwise 'flipped'
+    const decided = new Map(), scrimColor = new Map();
+    const context = el => {
       for (let n = el.parentElement, i = 0; n && i < 40; n = n.parentElement, i++) {
         const d = decided.get(n) || (n.hasAttribute('data-net19-reflip') ? 'reflip' : n.hasAttribute('data-net19-keep') ? 'keep' : '');
         if (d === 'keep') return 'kept';
@@ -213,7 +174,6 @@
     };
     for (const root of roots) {
       if (!root?.isConnected) continue;
-      // Containers that were too small to judge before (a closed flyout) are judged again when content arrives in them.
       const grown = [];
       for (let n = root.parentElement, i = 0; n && i < 8; n = n.parentElement, i++) if (small.has(n)) { small.delete(n); seen.delete(n); grown.unshift(n); }
       const list = root.querySelectorAll ? [...grown, root, ...root.querySelectorAll('*')] : grown;
@@ -225,27 +185,18 @@
           overlaid(el, decided, context);
           continue;
         }
-        // The page itself is never kept: keeping <body> would undo the flip for everything on it.
         if (el === document.body) continue;
         if (SKIP.test(el.tagName) || el.hasAttribute('data-net19-keep') || el.hasAttribute('data-net19-reflip') || el.hasAttribute('data-net19-scrim')) continue;
-        // A theme can name parts that are drawn for a picture behind them (a bar and a drawer over a photo backdrop):
-        // they stay as drawn, like the picture, and named panels inside them flip again.
         if (keepSel && el.matches(keepSel)) { if (context(el) === 'flipped') decided.set(el, 'keep'); continue; }
         if (reflipSel && el.matches(reflipSel)) { if (context(el) === 'kept') decided.set(el, 'reflip'); continue; }
-        // Style first (one recalculation per batch); context and size, which needs layout, only for the few candidates.
         const style = getComputedStyle(el);
-        // Photographs are turned back; drawn backgrounds (PNG and SVG illustrations, textures, icons) flip with the page.
-        // Without a file type in the address, only large backgrounds are taken for photographs.
         const image = style.backgroundImage;
-        // A gradient shade laid over a picture (a card's headline area darkening the photo under it) is drawn for that
-        // picture: when it overlaps one, it and its text keep their real colors with the picture.
         if (!image.includes('url(') && image.includes('gradient(') && shadeOver(el) && context(el) === 'flipped') { decided.set(el, 'keep'); continue; }
         const photo = image.includes('url(') && !DRAWN.test(image);
         const surely = photo && PHOTO.test(image);
         const color = photo ? null : rgba(style.backgroundColor);
         if (!photo && (!color || color[3] < .15)) continue;
         const l = color && lum(color);
-        // Strong brand colors (a red or blue bar) are kept as drawn too: flipped they would turn pastel.
         const vivid = color && color[3] >= .9 && Math.max(color[0], color[1], color[2]) - Math.min(color[0], color[1], color[2]) > 90;
         const suits = color && (vivid || (target === 'dark' ? l < .36 : l > .75));
         const opposite = color && color[3] >= .9 && (target === 'dark' ? l > .75 : l < .3);
@@ -279,16 +230,12 @@
       (document.head || root).append(flipSheet);
     }
     root.setAttribute('data-net19-flip', '');
-    // A page that paints no background of its own shows the browser's white canvas, which the root's filter does not
-    // reach: then the root is given that white itself, so it flips with the page.
     const canvas = () => {
       const bare = [root, document.body].every(n => !n || (rgba(getComputedStyle(n).backgroundColor) || [0, 0, 0, 0])[3] === 0);
       if (bare) root.setAttribute('data-net19-canvas', '');
     };
     canvas();
     addEventListener('load', canvas, { once: true });
-    // New content is classified once per frame, in requestAnimationFrame: that runs before the frame is painted, and
-    // the style and layout it reads are the ones the browser computes for that paint anyway.
     let added = [document.body], frame = 0;
     const flush = () => { frame = 0; const roots = added; added = []; keepPhotos(roots); };
     frame = requestAnimationFrame(flush);
@@ -297,8 +244,6 @@
       if (added.length && !frame) frame = requestAnimationFrame(flush);
     });
     keepObserver.observe(document.body || root, { childList: true, subtree: true });
-    // Menus and flyouts that were already in the page but closed only get a size when opened, often by a class change
-    // rather than new content: after a click, key press or focus, closed containers that have opened are judged again.
     if (!interactions) {
       interactions = true;
       const recheck = () => setTimeout(() => requestAnimationFrame(() => {
@@ -315,7 +260,6 @@
     addEventListener('load', () => { keepPhotos([document.body]); rescanMedia(); setTimeout(rescanMedia, 2000); }, { once: true });
     if (document.readyState === 'complete') setTimeout(rescanMedia, 1000);
   };
-  // A theme whose kept parts depend on page state (Gmail's picture themes) asks for the page to be judged again.
   theme.rejudge = () => {
     if (!document.documentElement.hasAttribute('data-net19-flip')) return;
     for (const el of document.querySelectorAll('[data-net19-keep],[data-net19-reflip],[data-net19-scrim]')) for (const a of ['data-net19-keep', 'data-net19-reflip', 'data-net19-scrim']) el.removeAttribute(a);
@@ -325,14 +269,14 @@
   const apply = (force = false) => {
     const root = document.documentElement;
     if (!root) return;
-    if (sheet?.sheet) sheet.sheet.disabled = true; // detection must see the site, not the theme
+    if (sheet?.sheet) sheet.sheet.disabled = true;
     const mode = detect();
     if (sheet?.sheet) sheet.sheet.disabled = false;
     if (root.getAttribute('data-net19-mode') !== mode) root.setAttribute('data-net19-mode', mode);
     const fixed = typeof theme.only === 'function' ? theme.only() : theme.only;
     const wanted = fixed === 'dark' || fixed === 'light' ? fixed : device.matches ? 'dark' : 'light';
     setFlip(wanted !== mode, wanted);
-    if (!hasMap || mode === lastMode && !force) return; // palette maps only change with the mode or new stylesheets
+    if (!hasMap || mode === lastMode && !force) return;
     lastMode = mode;
     const table = tables[mode];
     const declared = new Map();
@@ -347,7 +291,6 @@
     const text = body ? `${selectors}{${body}}` : '';
     if (sheet.textContent !== text) sheet.textContent = text;
   };
-  // Mode changes are cheap to check; a palette re-scan after new stylesheets is batched to at most every 400 ms.
   let queued = false, rescan = false, timer = 0;
   const later = full => {
     rescan = rescan || full;
@@ -371,7 +314,6 @@
     addEventListener('load', () => later(true), { once: true });
     device.addEventListener?.('change', () => later(true));
   };
-  // Stylesheets in <head> are parsed by the time <body> starts: decide then, before the first paint.
   if (document.body) watch();
   else new MutationObserver((_, observer) => { if (document.body) { observer.disconnect(); watch(); } })
     .observe(document.documentElement || document, { childList: true, subtree: true });

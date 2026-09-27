@@ -1,20 +1,11 @@
-/* net19 handmade theme: CNN, 2019 as the Web Design Museum shows it: a 40px near-black (#0c0c0c) bar with the red square
-   CNN logo at its left edge, white 15px section links and the menu button at the far right; a red-labelled "TRENDING:"
-   line; a 1100px page of three columns, the lead headline and photo in the wide left column; bold #262626 lead
-   headlines over plain 16px headline lists split by hairlines; section titles on light gray bars; articles and live pages with
-   a wide CNN Sans Light headline and 18px/30px light sans body copy (no serif, reading times, author photos, "For
-   Subscribers" badges or AI summaries), no "Listen" link or app promos. CNN has no dark mode,
-   so a dark device gets the engine's inverted page; the dark tokens are only a fallback. */
 html { --n19-bar: #0c0c0c; --n19-bar-text: #fff; --n19-red: #c00; --n19-text: #262626; --n19-meta: #595959; --n19-rule: #e6e6e6;
   --n19-title-bar: #f2f2f2; --n19-page: #fff; }
 html[data-net19-mode="dark"] { --n19-bar: #0c0c0c; --n19-bar-text: #fff; --n19-red: #e03030; --n19-text: #e6e6e6; --n19-meta: #aaa; --n19-rule: #333;
   --n19-title-bar: #222; --n19-page: #121212; }
 
-/* Top bar: 40px, near-black, full width; no gray rule under it */
 nav#pageHeader, nav#pageHeader .header__inner, nav#pageHeader .header__subnav-mount { background: var(--n19-bar) !important; }
 nav#pageHeader:not(.header--active), nav#pageHeader:not(.header--active) .header__container { height: 40px !important; min-height: 40px !important; }
 nav#pageHeader.header--active .header__container { min-height: 40px !important; }
-/* The open menu (nav.header--active) keeps its full height so its panel shows */
 nav#pageHeader.header--active { min-height: 40px !important; }
 nav#pageHeader .header__container { max-width: none !important; padding: 0 16px 0 0 !important; position: relative !important; }
 .header__navigation-separator { display: none !important; }
@@ -22,13 +13,11 @@ nav#pageHeader :is(.header__nav-item-link, .header__video-link, .header__audio-l
 nav#pageHeader svg { fill: currentColor !important; }
 nav#pageHeader .header__menu-icon svg, nav#pageHeader .header__search-icon svg { color: var(--n19-bar-text) !important; }
 nav#pageHeader .header__menu-icon svg *, nav#pageHeader .header__search-icon svg * { stroke: currentColor; }
-/* The logo is a red 40px square with white letters, flush with the bar's left end */
 nav#pageHeader .brand-logo { order: -2; margin: 0 !important; }
 nav#pageHeader .brand-logo__logo-link { display: flex !important; align-items: center !important; justify-content: center !important;
   background: var(--n19-red) !important; width: 40px !important; height: 40px !important; padding: 0 !important; }
 nav#pageHeader .brand-logo__logo-link svg { width: 34px !important; height: 17px !important; color: #fff !important; }
 nav#pageHeader .brand-logo__logo-link svg path { fill: #fff !important; }
-/* Section links: white 15px regular type; the menu button moves to the right end, as in 2019 */
 nav#pageHeader .header__nav-item { margin: 0 !important; padding: 0 !important; }
 nav#pageHeader .header__nav-item-link { font-size: 15px !important; font-weight: 400 !important; padding: 0 9px !important; }
 nav#pageHeader .header__nav { margin-left: 8px !important; }
@@ -37,29 +26,22 @@ nav#pageHeader .header__right { padding-right: 40px !important; }
 nav#pageHeader :is(.header__video-link, .header__audio-link) { font-size: 13px !important; font-weight: 700 !important; }
 nav#pageHeader .header__video-link svg, nav#pageHeader .header__video-link::before, nav#pageHeader .header__audio-link svg { display: none !important; }
 nav#pageHeader .header__video-link { margin-right: 16px !important; }
-/* Sign in is plain white text; the red Subscribe button is a 2020s promotion */
 nav#pageHeader .header__subscribe-button { display: none !important; }
 nav#pageHeader .userAccountButton { background: transparent !important; border: none !important; font-size: 13px !important; font-weight: 700 !important; }
 
-/* Dark zones keep light type */
 [class*="zone--t-dark"] { --n19-text: #fff; --n19-title-bar: #262626; --n19-rule: #404040; }
-/* The streaming-subscription promotion band (2024) did not exist; cnn.js marks it */
 [data-net19-promo] { display: none !important; }
 
-/* Page: 1100px wide */
 .layout__wrapper.layout-homepage__wrapper, .layout-homepage .layout__content-wrapper > .layout__wrapper { max-width: 1132px !important; margin: 0 auto !important; padding: 20px 16px 0 !important; }
-/* Trending line: red uppercase labels, regular dark links, gray separators */
 .container_ribbon .container__text-label--type-trending, .container_ribbon .container__text-label { color: var(--n19-red) !important; font-weight: 400 !important; text-transform: uppercase !important; }
 .container_ribbon .container__headline-text { font-size: 15px !important; font-weight: 400 !important; color: var(--n19-text) !important; }
 .container_ribbon .container__item { border-bottom: none !important; }
 .container_ribbon__field-links { border-bottom: none !important; }
 
-/* The first zone: the lead package moves to a wide left column (447px), the two stacks follow (306px each) */
 .zone__items.layout--wide-center { gap: 0 20px !important; }
 .zone__items.layout--wide-center > .stack_condensed { order: -1; flex: 0 0 calc(40.6% - 13px) !important; width: auto !important; max-width: none !important; }
 .zone__items.layout--wide-center > .stack { flex: 1 1 0 !important; width: auto !important; max-width: none !important; min-width: 0 !important; }
 
-/* Headlines: bold #262626 leads, plain 16px list items between hairlines (CNN's own rules are specific, hence the long selectors) */
 .container .container__headline, .container .container__headline-text { color: var(--n19-text) !important; }
 .container .container__title_url-text.container_lead-package__title_url-text, h2.container__title_url-text { color: var(--n19-text) !important; font-size: 40px !important; line-height: 44px !important; font-weight: 500 !important; letter-spacing: -.3px !important; }
 .container__title--emphatic, .container__title--emphatic * { text-transform: none !important; }
@@ -73,44 +55,31 @@ nav#pageHeader .userAccountButton { background: transparent !important; border: 
 .container_ribbon .container__field-links > .container__item { border-bottom: none !important; }
 .container__headline-text:hover { text-decoration: underline !important; }
 .container__item-media img, .image__container img, .image img { border-radius: 0 !important; }
-/* Kicker labels ("Analysis", "Live Updates") in 2019's red */
 .container__text-label:not([class*="ribbon"]) { color: var(--n19-red) !important; font-weight: 400 !important; }
-/* Section titles: bold dark type on a light gray bar */
 .container .container__title-text, .container__title:not(.container__title--emphatic) h2 { color: var(--n19-text) !important; text-transform: none !important; font-size: 17px !important; font-weight: 700 !important; border-left: none !important; padding-left: 0 !important; }
 .container__title:not(.container__title--emphatic) { background: var(--n19-title-bar) !important; border: none !important; padding: 7px 8px !important; margin-bottom: 8px !important; min-height: 0 !important; height: auto !important; }
 .container .container__title:not(.container__title--emphatic) .container__title-text { line-height: 22px !important; margin: 0 !important; }
 .container__title:not(.container__title--emphatic)::before, .container__title:not(.container__title--emphatic)::after { display: none !important; }
 .zone__title, .product-zone__title:not([class*="t-dark"] *) { color: var(--n19-text); }
 .zone--t-light .zone__title-text, .product-zone--t-light .product-zone__title { font-size: 28px !important; font-weight: 700 !important; text-transform: none !important; }
-/* Article pages: the same dark headline type */
 .headline__text, h1.headline__text { color: var(--n19-text) !important; font-weight: 700 !important; }
 .article__content p, .paragraph { color: var(--n19-text) !important; }
 
-/* ---- Every page: header extras, footer and badges that came after 2019 ---- */
-/* "Listen" (CNN Audio, 2021) and the app-download badges; the Games front (2024) in the menus */
 nav#pageHeader .header__audio-link, .footer__audio-link, .footer__audio-link-mobile, .footer__audio-link-desktop,
 .header__app-download, .footer__app-download, .footer__app-download-section, .footer__app-download-divider, .footer__app-download-copy,
 .header__subscription-text, .footer__subscribe-button { display: none !important; }
 nav#pageHeader :is(li, .header__nav-item):has(> a[href$="/games"]), .subnav__section:has(> a[href$="/games"]), .footer__nav-item:has(> a[href$="/games"]) { display: none !important; }
-/* AI summaries of an article ("Key points", 2024) */
 .ai-article-summary, [class*="ai-summary" i], [class*="article-summary" i] { display: none !important; }
-/* Footer: 2019's near-black footer, gray section heads, light gray links, square search */
 footer#pageFooter { background: var(--n19-bar) !important; }
 footer#pageFooter .social-links__item:has(a[href*="threads"]), footer#pageFooter .social-links__item:has(a[href*="tiktok"]), footer#pageFooter .social-links__item:has(a[href*="linkedin"]) { display: none !important; }
 footer#pageFooter .search-bar__input, footer#pageFooter form, footer#pageFooter [class*="search-bar"] { border-radius: 0 !important; }
-/* The newer rounded "Live Updates" gradient pill becomes 2019's flat red label */
 .container__live-label, [class*="live-label"], .headline_live-story__live-indicator-text, [class*="live-indicator"] { background: var(--n19-red) !important; background-image: none !important; border-radius: 0 !important; box-shadow: none !important; }
-/* On cards the "Live Updates" pill (gradient, rounded, shadowed) becomes 2019's plain red words */
 .container__text-label:is(.container__text-label--type-updates, .container__text-label--type-live, .container__text-label--type-live-story):not(.container_ribbon__text-label) {
   background: transparent !important; background-image: none !important; border-radius: 0 !important; box-shadow: none !important; color: var(--n19-red) !important; padding: 0 !important; font-weight: 700 !important; }
 .container__text-label:is(.container__text-label--type-updates, .container__text-label--type-live, .container__text-label--type-live-story):not(.container_ribbon__text-label) * { color: var(--n19-red) !important; }
-/* Square corners everywhere: images, video frames, cards and buttons */
 .image__container, .image__picture, .image__picture img, [class*="image_large"] img, [class*="video-resource"], [class*="video-resource"] img, .media__video, .container__item-media, .card, .search-bar__input, .search-bar__submit,
 .byline__image, .byline__image-link img { border-radius: 0 !important; }
 
-/* ---- Article pages (standard and 2023 "elevate" templates) ----
-   2019: one wide headline in CNN Sans Light at 62px/66px #262626; "By Name, CNN" in bold 14px with the date in gray;
-   18px/30px CNN Sans Light body in #262626 (not a serif); captions 16px #595959; no reading time, no badges, no author photos. */
 .headline__text, h1.headline__text, [class*="headline_elevate__text"], [class*="headline-elevate__text"] { font-family: cnn_sans_display, helveticaneue, "Helvetica Neue", Helvetica, Arial, sans-serif !important;
   font-weight: 300 !important; font-size: 62px !important; line-height: 66px !important; letter-spacing: 0 !important; border-left-color: transparent !important; color: var(--n19-text) !important; }
 .headline__subscription-text, .breadcrumb__read-time, .breadcrumb__read-time-separator, [class*="breadcrumb_elevate__read-time"] { display: none !important; }
@@ -131,11 +100,8 @@ html[data-net19-mode="dark"] :is(.article__content p a, .paragraph-elevate a, .a
   font-size: 14px !important; line-height: 20px !important; color: #595959 !important; }
 html[data-net19-mode="dark"] :is(.image__caption, .image__credit, [class*="image_large-elevate__caption"], [class*="image_large-elevate__credit"], figcaption) { color: #aaa !important; }
 .footnote-elevate, .footnote { font-family: cnn_sans_display, helveticaneue, Helvetica, Arial, sans-serif !important; font-style: italic !important; color: #8c8c8c !important; }
-/* Related links under the story: plain 16px headlines split by hairlines */
 .related-content, [class*="related-content"] { border-radius: 0 !important; }
 
-/* ---- Live-updates pages: 2019's plain post list ----
-   A bold headline over each post, the gray time above it, no filter chips, no floating buttons, no author photos. */
 .headline_live-story__text { font-family: cnn_sans_display, helveticaneue, Helvetica, Arial, sans-serif !important; font-weight: 300 !important; font-size: 46px !important; line-height: 52px !important; letter-spacing: 0 !important; color: var(--n19-text) !important; border-left-color: transparent !important; }
 .social-share_labelled-list__share:has([class*="threads" i]), [class*="social-share"] li:has(a[href*="threads"]), [class*="social-share"] :is(a, button)[aria-label*="Threads" i] { display: none !important; }
 .live-story-filter-tags, .live-story__floating-buttons, .live-story__scroll-to-top, .live-story-post .byline__images, .live-story-post .social-share_compact { display: none !important; }
@@ -145,9 +111,7 @@ html[data-net19-mode="dark"] :is(.image__caption, .image__credit, [class*="image
 .live-story-post__content p, .live-story-post__body p { font-family: cnn_sans_display, helveticaneue, Helvetica, Arial, sans-serif !important; font-size: 16px !important; line-height: 26px !important; font-weight: 300 !important; color: var(--n19-text) !important; }
 .live-story__load-more-updates, .live-story__load-updates, .live-story-post__collapse-button { border-radius: 0 !important; }
 
-/* ---- Video pages: 2019's headline over the player, square frames ---- */
 .video-resource__headline { font-family: cnn_sans_display, helveticaneue, Helvetica, Arial, sans-serif !important; font-weight: 700 !important; }
 
-/* ---- Search: a square field with the red square button ---- */
 .search-bar__input, .search-bar__submit, .search-bar { border-radius: 0 !important; }
 .search__results-list .container__headline-text, .search-results__list .container__headline-text { font-weight: 700 !important; }

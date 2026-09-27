@@ -1,21 +1,9 @@
-// net19 guard: three safety nets shared by every theme, running after the theme and palette.js.
-//
-// 1. Features that did not exist in 2019 (AI assistants, image generation, "ask" search) are hidden wherever a site
-//    shows them, by their visible label, and search fields that invite questions go back to plain "Search". Themes
-//    hide what they know about; this catches what a site adds later or shows only to some accounts.
-// 2. Readability: after the theme, the light/dark flip and every interaction (a menu opening on hover, a search list),
-//    visible text is checked against the background it actually sits on. Text that has become unreadable (a theme
-//    rule reaching into a menu it was not written for, a panel kept as drawn inside a flipped page) is given a dark or
-//    light ink that reads on that background. Text over photos and gradients is left alone: its background is unknown.
-// 3. Content protection: a theme's hiding marker that lands on a block of real page content (several linked headings
-//    or articles) is taken back, so a rule meant for one post-2019 widget can never wipe the page.
 (() => {
   const theme = globalThis.net19Theme;
   if (!theme || globalThis.net19GuardStarted) return;
   globalThis.net19GuardStarted = true;
   const root = document.documentElement;
 
-  // ---- 1. Post-2019 features -------------------------------------------------------------------------------------
   const LATER = /^(?:ask (?:ai|anything|youtube|meta ai|gemini|copilot|rufus|target|about (?:files|this (?:page|video|result))|the chatbot)|ai mode|ai overviews?|try ai mode|ai search|search with ai|ai assist(?:ant)?|ai generator|ai image generator|create images?|create an image|generate(?: an)? images?|imagine with ai|brainstorm|help me write|write with ai|summari[sz]e(?: with ai)?|explain with ai|gemini|google gemini|copilot|microsoft copilot|grok|meta ai|chatgpt|rufus|magic apron|mylow|arti)$/i;
   const extra = theme.later instanceof RegExp ? theme.later : null;
   const keep = theme.keepLabels instanceof RegExp ? theme.keepLabels : null;
@@ -40,9 +28,6 @@
     }
   };
 
-  // ---- 2. Readability --------------------------------------------------------------------------------------------
-  // Computed colors come back as rgb()/rgba() for sRGB, but as oklab(), oklch(), lab() or color() when a site writes
-  // them that way (Tailwind v4). Those are converted by painting one pixel, and cached.
   const colorCache = new Map();
   let pen = null;
   const rgba = c => {
@@ -62,17 +47,12 @@
   const lum = c => .2126 * channel(c[0]) + .7152 * channel(c[1]) + .0722 * channel(c[2]);
   const ratio = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05); };
   const over = (top, under) => { const a = top[3]; return [0, 1, 2].map(i => top[i] * a + under[i] * (1 - a)).concat(1); };
-  // palette.js's page flip, invert(1) hue-rotate(180deg) contrast(.88), applied to one color: how a color written in a
-  // flipped part is shown on screen. Hue-rotate changes lightness a lot for strong colors (a pink turns light pink, not
-  // the teal that a plain inversion gives), so the whole filter is computed.
   const flip = ([r, g, b, a]) => {
     const [ir, ig, ib] = [r, g, b].map(v => 1 - v / 255);
     const rot = [-.574 * ir + 1.43 * ig + .144 * ib, .426 * ir + .43 * ig + .144 * ib, .426 * ir + 1.43 * ig - .856 * ib];
     return rot.map(v => Math.round(255 * Math.min(1, Math.max(0, (Math.min(1, Math.max(0, v)) - .5) * .88 + .5)))).concat(a);
   };
   const shownAs = (c, p) => (p ? flip(c) : c);
-  // Whether an element is shown inverted: every invert() filter on it or an ancestor turns it over once (the page flip,
-  // the turned-back photos inside it, a theme's own filters). Read from computed filters and cached for one check.
   let flips = new Map();
   const parity = el => {
     if (!el || el.nodeType !== 1) return 0;
@@ -84,7 +64,6 @@
     flips.set(el, p);
     return p;
   };
-  // A gradient behind text (a header shading from one blue to another) is taken as the average of its colors.
   const gradient = image => {
     if (/url\(/.test(image) || !/gradient\(/.test(image)) return null;
     const stops = (image.match(/rgba?\([^)]*\)/g) || []).map(rgba).filter(Boolean);
@@ -92,7 +71,6 @@
     return [0, 1, 2, 3].map(i => stops.reduce((sum, c) => sum + c[i], 0) / stops.length);
   };
   const MEDIA = 'img, picture, video, canvas, svg image, iframe';
-  // The solid color behind an element, or null when a photo, gradient or media element may be behind it.
   const backdrop = el => {
     const layers = [];
     for (let e = el; e; e = e.parentElement) {
@@ -114,14 +92,12 @@
       }
       if (e === root) break;
     }
-    // Composited as shown on screen: each layer through the filters that apply to it.
     let base = shownAs([255, 255, 255, 1], parity(root));
     const last = layers[layers.length - 1];
     if (last && last.color[3] >= .95) { base = shownAs(last.color, parity(last.el)); layers.pop(); }
     for (let i = layers.length - 1; i >= 0; i--) base = over(shownAs(layers[i].color, parity(layers[i].el)), base);
     return { color: base };
   };
-  // Before changing any text: whatever is painted under its middle (sibling layers included) must not be a picture.
   const painted = e => { const st = getComputedStyle(e); return /url\(/.test(st.backgroundImage) || ['::before', '::after'].some(p => /url\(/.test(getComputedStyle(e, p).backgroundImage)); };
   const overPicture = (el, box) => {
     const x = Math.min(innerWidth - 1, Math.max(0, box.left + Math.min(box.width, 60) / 2)), y = Math.min(innerHeight - 1, Math.max(0, box.top + box.height / 2));
@@ -129,7 +105,7 @@
       if (hit === el || el.contains(hit)) continue;
       if (hit.matches(MEDIA) || painted(hit)) return true;
       const color = rgba(getComputedStyle(hit).backgroundColor);
-      if (color && color[3] >= .95) return false;   // an opaque surface ends the stack below the text
+      if (color && color[3] >= .95) return false;
     }
     return false;
   };
@@ -137,7 +113,6 @@
   inkSheet.textContent = '[data-net19-hidden]{display:none!important}' +
     '[data-net19-ink="dark"],[data-net19-ink="dark"] *{color:#1d1d1f!important;-webkit-text-fill-color:#1d1d1f!important}' +
     '[data-net19-ink="light"],[data-net19-ink="light"] *{color:#f5f5f7!important;-webkit-text-fill-color:#f5f5f7!important}' +
-    // Fields: typed text, the caret and the placeholder.
     ':is(input,textarea)[data-net19-ink="dark"]{caret-color:#1d1d1f!important}:is(input,textarea)[data-net19-ink="dark"]::placeholder{color:#5f6368!important;-webkit-text-fill-color:#5f6368!important;opacity:1!important}' +
     ':is(input,textarea)[data-net19-ink="light"]{caret-color:#f5f5f7!important}:is(input,textarea)[data-net19-ink="light"]::placeholder{color:#bdc1c6!important;-webkit-text-fill-color:#bdc1c6!important;opacity:1!important}';
   const original = new WeakMap();
@@ -165,15 +140,10 @@
       if (text[3] < .2) continue;
       const bg = backdrop(el);
       if (!bg) { if (el.hasAttribute('data-net19-ink')) changes.push([el, null]); continue; }
-      const pt = parity(el), inText = bg.color;   // the surface as shown
+      const pt = parity(el), inText = bg.color;
       const shown = over(shownAs(text, pt), inText);
       const current = el.getAttribute('data-net19-ink');
-      // WCAG's floor for large text (24px, or 18.66px bold) is 3:1 and for the rest 4.5:1; net19 repairs what falls
-      // below 2.2:1 and 3:1, the same limits as the lowcontrast page check.
       const size = parseFloat(style.fontSize), large = size >= 24 || (size >= 18.6 && +style.fontWeight >= 600);
-      // White or black lettering on a strong brand color (Twitter's blue buttons, WhatsApp's green bar) is how those
-      // sites drew it in 2019 and reads well from 2.5:1.
-      // A strong brand color as the text itself (Twitter's #1da1f2 links, Healthline's teal labels) reads the same way.
       const chroma = c => Math.max(...c.slice(0, 3)) - Math.min(...c.slice(0, 3));
       const floor = large ? 2.2 : chroma(inText) > 90 || chroma(shown) > 90 ? 2.5 : 3;
       if (ratio(shown, inText) >= floor) { if (current) changes.push([el, null]); continue; }
@@ -182,7 +152,6 @@
       const ink = ratio(shownAs([29, 29, 31, 1], pt), inText) >= ratio(shownAs([245, 245, 247, 1], pt), inText) ? 'dark' : 'light';
       if (current !== ink) changes.push([el, ink]);
     }
-    // Fields: what shows is the typed text, or the placeholder while empty.
     for (const f of document.querySelectorAll('input:not([type=hidden]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=submit]):not([type=button]):not([type=image]):not([type=reset]), textarea')) {
       const box = f.getBoundingClientRect();
       if (box.width < 20 || box.height < 10 || box.bottom < 0 || box.top > view.h) continue;
@@ -207,11 +176,6 @@
     }
   };
 
-  // ---- 3. Content protection -------------------------------------------------------------------------------------
-  // Themes hide post-2019 features by marking blocks (data-net19-hidden, or a theme's own data-net19-* / data-n19-*
-  // marker that its stylesheet hides). A marker that lands on a block holding the page's real content, such as a
-  // wrapper around several search results or articles, would wipe the page (a Google query whose AI Overview shared a
-  // wrapper with the results lost the whole first page). Such a marker is taken back and the block stays visible.
   const CONTENT = 'a[href] :is(h1, h2, h3), :is(h1, h2, h3) a[href], article';
   const ROOT_MARKS = /^data-(?:net19|n19)-(?:mode|flip|canvas)$/;
   const marks = el => [...el.attributes].filter(a => /^data-(?:net19|n19)-/.test(a.name) && !ROOT_MARKS.test(a.name));
@@ -236,9 +200,6 @@
     }
   };
 
-  // ---- Scheduling ------------------------------------------------------------------------------------------------
-  // Hiding runs on every batch of new content, before it is painted. The readability check runs when the page has
-  // settled after a change (load, the mode or flip changing, a menu or list opening), at most every 600 ms.
   let dirty = true, timer = 0, lastRun = 0;
   const soon = (delay = 250) => {
     if (timer) return;
@@ -266,13 +227,11 @@
     }).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style', 'hidden', 'open', 'aria-expanded', 'placeholder'] });
     new MutationObserver(() => { dirty = true; soon(50); }).observe(root, { attributes: true, attributeFilter: ['data-net19-mode', 'data-net19-flip', 'class'] });
     for (const type of ['pointerover', 'focusin', 'click', 'keyup']) addEventListener(type, () => soon(), { capture: true, passive: true });
-    // Colors chosen mid-animation (a ribbon fading from blue to white) are checked again when it ends.
     for (const type of ['transitionend', 'animationend']) addEventListener(type, () => { dirty = true; soon(200); }, { capture: true, passive: true });
     addEventListener('scroll', () => { dirty = true; soon(300); }, { capture: true, passive: true });
     addEventListener('load', () => { dirty = true; soon(100); }, { once: true });
     soon(100);
   };
-  // Starts as soon as <body> exists, so labels hidden here are never painted.
   if (document.body) start();
   else new MutationObserver((_, observer) => { if (document.body) { observer.disconnect(); start(); } })
     .observe(root || document, { childList: true, subtree: true });

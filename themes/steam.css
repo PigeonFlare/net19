@@ -1,19 +1,9 @@
-/* net19 handmade theme: Steam, 2019. The store and the community were dark-only in 2019 (as today), so the theme
-   never flips (steam.js: only 'dark'). The 2019 look: a 940px page on #1b2838 with the blue-glow top
-   (colored_body_top2.png); the global header's 176x44 "STEAM" logo PNG and plain 14px STORE / COMMUNITY / ABOUT /
-   SUPPORT in #b8b6b4, white when current (no blue underline); the store's 35px nav bar in translucent Steam blue
-   (rgba(62,126,167,.8)) with 13px light-weight tabs split by thin rules, the pale-blue gradient on hover and in its
-   flyouts (black items, #212d3d on hover), and the #316282 "search the store" field with the small blue search
-   button; section headings in 14px uppercase with 2px letter spacing. Hidden: things added after 2019 (the
-   "Open in Desktop App" banner, Steam Deck compatibility panels and filters, accessibility filters, Points Shop,
-   Steam Families, gift-card promos, Bluesky). */
 html {
   --n19-page: #1b2838; --n19-text: #c6d4df; --n19-text-2: #8f98a0; --n19-link: #67c1f5; --n19-head: #171a21;
   --n19-menu: #b8b6b4; --n19-bar: #376d91; --n19-tab: #d9dadd; --n19-tab-rule: rgba(16, 21, 25, .3);
   --n19-fly-top: #e3eaef; --n19-fly-bottom: #c7d5e0; --n19-fly-ink: #000; --n19-fly-hover: #212d3d; --n19-fly-sub: #4f94bc;
   --n19-search: #316282; --n19-search-ink: #000;
   --n19-font: "Motiva Sans", Arial, Helvetica, sans-serif;
-  /* Steam's own 2019 files, still served by its CDN */
   --n19-logo: url("https://store.fastly.steamstatic.com/public/shared/images/header/globalheader_logo.png");
   --n19-glow: url("https://store.fastly.steamstatic.com/public/images/v6/colored_body_top2.png?v=2");
   --n19-search-btn: url("https://store.fastly.steamstatic.com/public/images/v6/search_icon_btn.png");
@@ -26,7 +16,6 @@ html[data-net19-mode="dark"] {
   --n19-search: #316282; --n19-search-ink: #000;
 }
 
-/* ---- Global header (store and community) --------------------------------------------------------------------- */
 div#global_header, div#global_header .content { background: var(--n19-head) !important; }
 div#global_header .content { max-width: 940px !important; }
 div#global_header #logo_holder img { content: var(--n19-logo) !important; width: 176px !important; height: 44px !important; }
@@ -35,23 +24,18 @@ div#global_header .menuitem { font-family: var(--n19-font) !important; font-size
 div#global_header .menuitem:hover, div#global_header .menuitem.supernav_active, div#global_header .menuitem.active { color: #fff !important; }
 div#global_header .menuitem.supernav_active::after { display: none !important; }
 
-/* ---- Store: the 940px page on the 2019 blue glow -------------------------------------------------------------- */
 body.v6.widestore { --store-page-width: 940px !important; }
 body.v6.widestore .page_content, body.v6.widestore div#store_header .content { max-width: 940px !important; }
 body.v6:is(.infinite_scrolling, .search_page, .no_home_gutter) { background: var(--n19-glow) center top no-repeat var(--n19-page) !important; }
 
-/* App pages: the wishlist/follow bar keeps to the column */
 body.v6.app .queue_and_playtime { max-width: 940px !important; margin-left: auto !important; margin-right: auto !important; }
 
-/* The home page's own column (it has its own 1300px frame) */
 .home_page_body_ctn .home_pagecontent_ctn { max-width: 940px !important; padding-left: 0 !important; padding-right: 0 !important; margin-left: auto !important; margin-right: auto !important; }
 
-/* Section headings: 14px light uppercase with 2px letter spacing */
 body.v6 :is(.home_title, .home_section_title, .home_page_content h2, .page_content h2.pageheader) {
   font-family: var(--n19-font) !important; font-weight: 300 !important; font-size: 14px !important; text-transform: uppercase !important;
   letter-spacing: 2px !important; color: #fff !important; }
 
-/* ---- Store nav: the 2019 bar ----------------------------------------------------------------------------------- */
 [data-featuretarget="store-menu-v7"] .Panel > .Panel.Focusable:has(form) { height: auto !important; padding-top: 24px !important; max-width: none !important; width: auto !important; margin: 0 32px !important;
   pointer-events: none !important; }
 [data-featuretarget="store-menu-v7"] .Panel > .Panel.Focusable:has(form) > div, [data-featuretarget="store-menu-v7"] .Panel > .Panel.Focusable:has(form) + div { pointer-events: auto !important; }
@@ -74,7 +58,6 @@ body.v6 :is(.home_title, .home_section_title, .home_page_content h2, .page_conte
   background: linear-gradient(to bottom, var(--n19-fly-top) 5%, var(--n19-fly-bottom) 95%) !important; color: #000 !important; }
 [data-featuretarget="store-menu-v7"] .Panel > .Panel.Focusable:has(form) button:not(form button):is(:hover, [aria-expanded="true"], :focus-visible) > div { text-shadow: 1px 1px 0 rgba(255, 255, 255, .25) !important; }
 
-/* The "search the store" field */
 [data-featuretarget="store-menu-v7"] form:has(input[name="term"]) > * { align-self: center !important; }
 [data-featuretarget="store-menu-v7"] div:has(> form input[name="term"]) { height: 35px !important; display: flex !important; align-items: center !important;
   justify-content: flex-end !important; padding-right: 4px !important; flex: 0 0 auto !important; width: auto !important; min-width: 0 !important; margin-left: auto !important; }
@@ -95,7 +78,6 @@ body.v6 :is(.home_title, .home_section_title, .home_page_content h2, .page_conte
 [data-featuretarget="store-menu-v7"] form:has(input[name="term"]) > button:hover { background-image: var(--n19-search-btn-over) !important; }
 [data-featuretarget="store-menu-v7"] form:has(input[name="term"]) > button svg { visibility: hidden !important; }
 
-/* Flyouts: the pale-blue gradient panel with black items */
 [data-featuretarget="store-menu-v7"] .Panel > .Panel.Focusable:has(form) + div > div > .Panel {
   max-width: 940px !important; margin: 0 auto !important; box-sizing: border-box !important; padding: 8px 5px !important;
   background: linear-gradient(to bottom, var(--n19-fly-top) 5%, var(--n19-fly-bottom) 95%) !important; box-shadow: 0 0 12px rgba(0, 0, 0, .5) !important; }
@@ -104,23 +86,19 @@ body.v6 :is(.home_title, .home_section_title, .home_page_content h2, .page_conte
 [data-featuretarget="store-menu-v7"] .Panel > .Panel.Focusable:has(form) + div a:not(:has(img)):is(:hover, :focus-visible) { color: #fff !important; background: var(--n19-fly-hover) !important; }
 [data-featuretarget="store-menu-v7"] .Panel > .Panel.Focusable:has(form) + div :is(div, span):not(:has(*)):not(a *) { color: var(--n19-fly-sub) !important; }
 
-/* Footer: 2019's translucent black band, #8f98a0 text in a 940px column */
 [data-featuretarget="footer"] footer#footer { background: linear-gradient(to bottom, rgba(0, 0, 0, .3) 0%, rgba(0, 0, 0, .5) 100%) !important;
   padding-left: max(16px, calc((100% - 940px) / 2)) !important; padding-right: max(16px, calc((100% - 940px) / 2)) !important; box-sizing: border-box !important; }
 [data-featuretarget="footer"] footer#footer :is(div, span, p, a) { font-family: Arial, Helvetica, sans-serif !important; }
 [data-featuretarget="footer"] footer#footer :is(div, span, p) { color: #8f98a0; }
 
-/* Sign in: plain 2019 page (no game-art collage), the blue "hoverfade" button; sign-in by QR code (2022) is hidden */
 .login_featuretarget_ctn :is(div, section), .page_content:has(> .login_featuretarget_ctn), .page_content:has(.login_featuretarget_ctn) { background-image: none !important; }
 [data-featuretarget="login"] form button[type="submit"] { background: rgba(103, 193, 245, .2) !important; color: #67c1f5 !important; border-radius: 2px !important;
   box-shadow: none !important; font-family: var(--n19-font) !important; font-size: 15px !important; }
 [data-featuretarget="login"] form button[type="submit"]:hover { background: linear-gradient(135deg, #67c1f5 0%, #417a9b 100%) !important; color: #fff !important; }
 [data-featuretarget="login"] form + div:has(label) { display: none !important; }
 
-/* Community search fields: a light caret on their dark fields (Steam leaves it black) */
 :is(.community_home_search_app_input, .community_home_search_players_input), .appHubSearchTextForm input[type="image"] { caret-color: #fff !important; }
 
-/* ---- Post-2019 features ---------------------------------------------------------------------------------------- */
 .banner_open_in_steam, [data-featuretarget="open-in-desktop-client"],
 [data-featuretarget="deck-verified-results"], [data-featuretarget="store-sidebar-accessibility-info"],
 #deck_compatibility_search_filter, .block[data-collapse-name="accessibilityfeatures"], .block[data-collapse-name="deck_compatibility"],

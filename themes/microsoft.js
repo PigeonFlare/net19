@@ -1,8 +1,4 @@
-// www.microsoft.com has no site dark mode; default detection keeps it light. learn.microsoft.com marks its own mode with
-// html.theme-dark, which the default background check also reads.
 globalThis.net19Theme = { later: /^(?:ask learn|summarize this article(?: for me)?|ask copilot|try copilot(?: free)?|get copilot|copilot(?: pro| app)?|microsoft 365 copilot(?: app)?)$/i };
-// On a dark device the page is flipped by palette.js. Heroes set their type straight on their photos (white on the top one, dark on the pale product blocks), so flipped, their white text would turn dark on
-// the photo: those parts are kept as drawn instead.
 (() => {
   const root = document.documentElement;
   const SEL = 'store-hero-featured-xl-video, store-hero-featured-slider-item';

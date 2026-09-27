@@ -1,7 +1,3 @@
-/* net19 handmade theme: OANDA currency converter, 2019: Arial text, a plain white header with small uppercase section
-   links and a square lime-green call to action, a regular-weight 35px "Currency Converter" title, the converter on a flat light-grey panel with
-   white square boxed fields, amounts in OANDA orange (a shade deeper than 2019's #f7941d so the digits read at 3:1), lime-green accents, no card shadows. The converter rules are keyed
-   to its own card; elsewhere on oanda.com only the type, header and square buttons change. OANDA has no dark mode. */
 html { --n19-bar: #fff; --n19-rule: #e5e5e5; --n19-panel: #e6e6e6; --n19-field: #fff; --n19-field-border: #c8c8c8; --n19-text: #333; --n19-amount: #d17a00; --n19-green: #8dc63f; --n19-font: Arial, "Helvetica Neue", Helvetica, sans-serif; }
 html[data-net19-mode="dark"] { --n19-bar: #1a1a1a; --n19-rule: #333; --n19-panel: #2b2b2b; --n19-field: #1e1e1e; --n19-field-border: #555; --n19-text: #e6e6e6; --n19-amount: #ffa53d; --n19-green: #9bd14c; }
 
@@ -10,8 +6,6 @@ main p, main a, main td, main th, main label, main li, .card-content span, .card
   font-family: var(--n19-font) !important;
 }
 #oa-flat-nav-bar *, #top-bar-desktop * { font-family: var(--n19-font) !important; }
-/* Header: white, the top links on white too; section links in small regular uppercase; the lime-green call to action
-   is a small square uppercase box, like 2019's "OPEN AN ACCOUNT". */
 #top-bar-desktop { background: var(--n19-bar) !important; height: 26px !important; }
 #top-bar-desktop a, #top-bar-desktop button { background: transparent !important; font-size: 12px !important; text-transform: uppercase !important; color: var(--n19-text) !important; }
 #oa-flat-nav-bar { box-shadow: none !important; border-bottom: 1px solid var(--n19-rule) !important; }
@@ -21,7 +15,6 @@ main p, main a, main td, main th, main label, main li, .card-content span, .card
 .h1_title, .h1_title * { font-size: 35px !important; font-weight: 400 !important; color: var(--n19-text) !important; letter-spacing: 0 !important; }
 .h1_title_indexed, .h1_title_indexed * { font-weight: 400 !important; color: var(--n19-text) !important; letter-spacing: 0 !important; }
 
-/* The converter: flat grey panel, no drop shadow */
 .card-currency_converter_row .content-cards__card__inner { background: var(--n19-panel) !important; box-shadow: none !important; border-radius: 0 !important; }
 .card-currency_converter_row .MuiFilledInput-root, .card-currency_converter_row .MuiOutlinedInput-root {
   background: var(--n19-field) !important; border-radius: 0 !important; box-shadow: inset 0 0 0 1px var(--n19-field-border) !important;
@@ -32,6 +25,5 @@ main p, main a, main td, main th, main label, main li, .card-content span, .card
 .card-currency_converter_row .MuiOutlinedInput-input, .card-currency_converter_row .MuiSelect-root { color: var(--n19-text) !important; }
 .card-currency_converter_row .MuiButton-root { border-radius: 0 !important; }
 
-/* Other content cards on the converter pages lose their shadows too */
 .content-cards__card__inner.drop-shadow { box-shadow: none !important; border: 1px solid var(--n19-field-border) !important; }
 .card-currency_converter_row .content-cards__card__inner.drop-shadow { border: 0 !important; }

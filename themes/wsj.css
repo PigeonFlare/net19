@@ -1,31 +1,18 @@
-/* net19 handmade theme: The Wall Street Journal, 2019: the black Dow Jones strip, the wide "THE WALL STREET
-   JOURNAL." masthead over a gray date-and-links strap, one row of 14px Retina section names in #333 that turn WSJ
-   blue #0080c3 on hover, and a hairline under the header; fronts of bold Escrow Condensed headlines with Exchange
-   summaries, 2px black rules over each section and #eaeaea hairlines between stories; articles with an Escrow
-   headline, an Exchange dek, a plain "By" line with the author in blue, a row of share tools and 17px Exchange body
-   copy. No "Listen" audio buttons, follow buttons or inline stock-change chips. The site's own dark mode is
-   followed where it draws one; otherwise palette.js inverts the page on dark devices. */
 html { --n19-ink: #111; --n19-text: #333; --n19-meta: #666; --n19-hair: #eaeaea; --n19-rule: #000; --n19-blue: #0080c3; --n19-strap: #ccc; }
 html[data-net19-mode="dark"] { --n19-ink: #eee; --n19-text: #ccc; --n19-meta: #999; --n19-hair: #333; --n19-rule: #ddd; --n19-blue: #4db3e6; --n19-strap: #444; }
 
-/* ---- Header ---- */
 header[class*="-MainHeader"] { border-bottom: 1px solid var(--n19-strap) !important; }
-/* The strap under the masthead: 12px links divided by #ccc bars */
 header [class*="-MastHeadContainer"] [class*="-NavItems"] > li:not(:last-child) { border-right: 1px solid var(--n19-strap) !important; }
 header [class*="-NavItems"] a, header [class*="-NavItems"] button { font-family: Retina, Arial, Helvetica, sans-serif !important; font-size: 12px !important; color: var(--n19-meta) !important; }
 header [class*="-NavItems"] a:hover, header [class*="-NavItems"] button:hover { color: var(--n19-blue) !important; text-decoration: none !important; }
-/* Section row: 14px Retina in #333, capitalized, blue on hover */
 header nav [class*="-SectionLink"], header nav [class*="-SectionLink"] [class*="-NavItemLabel"] { font-family: Retina, Arial, Helvetica, sans-serif !important; font-size: 14px !important;
   font-weight: 400 !important; text-transform: capitalize !important; color: var(--n19-text) !important; letter-spacing: 0 !important; }
 header nav [class*="-SectionLink"]:hover, header nav [class*="-SectionLink"]:hover [class*="-NavItemLabel"] { color: var(--n19-blue) !important; text-decoration: none !important; }
 header nav [class*="-SectionLink"][aria-current], header nav [class*="-SectionLink"][aria-current] [class*="-NavItemLabel"] { font-weight: 500 !important; color: #000 !important; }
 html[data-net19-mode="dark"] header nav [class*="-SectionLink"][aria-current] [class*="-NavItemLabel"] { color: #fff !important; }
 
-/* The black Dow Jones strip is drawn inside a shadow root that the page flip cannot sort out: on dark devices it is
-   turned back so it stays black, as in 2019 */
 html[data-net19-flip] nav-hat { filter: contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
 
-/* ---- Fronts: Escrow headlines, Exchange summaries, black straps and hairlines ---- */
 [data-testid="flexcard-headline"], [class*="-HeadlineTextBlock"] { font-family: "Escrow Condensed", Georgia, "Times New Roman", serif !important; font-weight: 700 !important; }
 [data-testid="flexcard-text"] { font-family: Exchange, Georgia, "Times New Roman", serif !important; color: var(--n19-text) !important; }
 [class*="-CardLink"]:hover [class*="-HeadlineTextBlock"], [class*="-CardLink"]:hover [data-testid="flexcard-headline"] { color: var(--n19-blue) !important; }
@@ -33,11 +20,9 @@ html[data-net19-flip] nav-hat { filter: contrast(1.13636) hue-rotate(180deg) inv
 [class*="-StrapLink"]:hover [class*="-StrapLinkLabel"] { color: var(--n19-blue) !important; }
 [class*="-BylineContainer"] { text-transform: none !important; letter-spacing: 0 !important; font-family: Retina, Arial, Helvetica, sans-serif !important; font-weight: 400 !important; }
 [data-testid="flashline"], [class*="-FlashlineWrapper"] { letter-spacing: .03em !important; }
-/* Follow buttons (2022) and inline stock-change chips (2023) */
 [class*="-FollowButton"], [data-testid="follow-button"] { display: none !important; }
 [class*="-ChicletStyle"] { display: none !important; }
 
-/* ---- Article ---- */
 h1[class*="-StyledHeadline"] { font-family: "Escrow Condensed", Georgia, "Times New Roman", serif !important; font-weight: 700 !important; letter-spacing: 0 !important; }
 h2[class*="-NormalDek"], h2[class*="Dek-"] { font-family: Exchange, Georgia, "Times New Roman", serif !important; font-size: 20px !important; line-height: 1.4 !important; font-weight: 400 !important; color: var(--n19-meta) !important; }
 .article-header [data-testid="breadcrumb-link"] { font-family: Retina, Arial, Helvetica, sans-serif !important; text-transform: none !important; }

@@ -1,31 +1,19 @@
-/* net19 handmade theme: Yahoo! JAPAN, 2019. The portal home was already the dense three-column page it is today: a
-   red "YAHOO! JAPAN" logo between service icons, a pale #f1f5ff search band with the blue 検索 button, pale-blue
-   #e6ecfe side boxes framed in #9eb4db, and the tabbed topic list. What set 2019 apart is kept or put back here:
-   the 2017 logo file (s.yimg.jp/images/top/sp2/cmn/logo-170307.png, still served), topic tabs drawn as 2019's
-   pale-blue folder tabs with the chosen one white and bold, and no AI entries (the AIモード tab, the Agent i button,
-   AI greetings in the top line, AI answer cards), no "ピックアップ" deal box and no set-as-start-page pop-ups.
-   Search results get 2019's #f9f9f9 header with a #e7e7e7 rule, square field and button, underlined #000d99 titles,
-   green #008000 URLs and #444 snippets. Yahoo! JAPAN has no dark mode: the device's dark setting flips the page. */
 html { --n19-page: #fff; --n19-text: #333; --n19-link: #1d3994; --n19-link-2: #000d99; --n19-visited: #941d55; --n19-url: #008000;
   --n19-snippet: #444; --n19-band: #f1f5ff; --n19-box: #e6ecfe; --n19-frame: #9eb4db; --n19-frame-2: #beccea; --n19-tab-off: #eef2fb;
   --n19-head: #f9f9f9; --n19-head-rule: #e7e7e7; --n19-blue: #4070ff; --n19-blue-hover: #3460ff; --n19-field: #999;
-  /* Yahoo! JAPAN's own 2019 logo file, still hosted on its CDN */
   --n19-logo: url("https://s.yimg.jp/images/top/sp2/cmn/logo-170307.png"); }
 html[data-net19-mode="dark"] { --n19-page: #1f1f1f; --n19-text: #ddd; --n19-link: #9db4ff; --n19-link-2: #9db4ff; --n19-visited: #d59ac0;
   --n19-url: #7fbf7f; --n19-snippet: #bbb; --n19-band: #262b36; --n19-box: #232837; --n19-frame: #46526b; --n19-frame-2: #3a4459;
   --n19-tab-off: #2a303d; --n19-head: #262626; --n19-head-rule: #3a3a3a; --n19-field: #666; }
 
-/* ---- Post-2019: AI entries, deal box and start-page pop-ups ------------------------------------------------------- */
 #agenti, #eyebrow > a[href*="/aichat"], a[href*="search.yahoo.co.jp/aichat"], a[href*="search.yahoo.co.jp/chat?"], #tool_pickup, #Perorin,
 .AiAssistant, .VerticalTab__aiAssistButton, .sw-Card[class*="AnswerAi"], .sw-Perorin, .sw-AiButton,
 :is(a, button)[class*="aiAgent" i], :is(a, button)[class*="aiAssist" i] { display: none !important; }
 #ContentWrapper .sw-CardBase:has(> .sw-Card[class*="AnswerAi"]:only-child), #contents .sw-CardBase:has(> .sw-Card[class*="AnswerAi"]:only-child) { display: none !important; }
 
-/* ---- Home: the 2019 logo file ------------------------------------------------------------------------------------ */
 #Masthead > h1:has(> a[href="https://www.yahoo.co.jp"]) { background-image: var(--n19-logo) !important; background-size: contain !important;
   background-repeat: no-repeat !important; background-position: center !important; }
 
-/* ---- Home: topic tabs as 2019's folder tabs: pale blue, the chosen one white, bold and open to the list ------------ */
 #tabTopics [role="tablist"] { border-bottom: 1px solid var(--n19-frame) !important; }
 #tabTopics [role="tab"] { background-color: var(--n19-tab-off) !important; border-top: 1px solid var(--n19-frame-2) !important; }
 #tabTopics [role="tab"] + [role="tab"] { border-left: 1px solid var(--n19-frame-2) !important; }
@@ -35,7 +23,6 @@ html[data-net19-mode="dark"] { --n19-page: #1f1f1f; --n19-text: #ddd; --n19-link
 #tabScoreboard [role="tab"] { background-color: var(--n19-tab-off) !important; }
 #tabScoreboard [role="tab"][aria-selected="true"] { background-color: var(--n19-page) !important; }
 
-/* ---- Search results (search.yahoo.co.jp): 2019's gray header, square field and button ------------------------------ */
 #header.Header, #header.Header .Header__fixedItem, #header.Header .sw-Expand { background-color: var(--n19-head) !important; }
 #header.Header { border-bottom: 1px solid var(--n19-head-rule) !important; box-shadow: none !important; }
 #header.Header .SearchBox__form { border-radius: 0 !important; box-shadow: none !important; }
@@ -48,7 +35,6 @@ html[data-net19-mode="dark"] { --n19-page: #1f1f1f; --n19-text: #ddd; --n19-link
 #header.Header .User__loginLink { border-radius: 0 !important; }
 #SaA-tg-list > li > strong { font-weight: 700 !important; color: var(--n19-text) !important; }
 #SaA-tg-list > li > a { color: #444 !important; }
-/* Results: underlined #000d99 titles, green URLs, #444 snippets */
 #contents .Algo .sw-Card__titleInner, #contents .Algo .sw-Card__titleInner h3 { color: var(--n19-link-2) !important; }
 #contents .Algo .sw-Card__titleInner h3 { text-decoration: underline !important; }
 #contents .Algo .sw-Card__titleInner:visited, #contents .Algo .sw-Card__titleInner:visited h3 { color: var(--n19-visited) !important; }

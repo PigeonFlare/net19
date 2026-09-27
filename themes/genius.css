@@ -1,7 +1,5 @@
-/* net19 handmade theme: Genius, 2019: two-row header (yellow bar with search left, centered GENIUS logo and SIGN UP right, then a black bar of centered uppercase section links). */
 html { --n19-yellow: #ffff64; --n19-bar-text: #000; --n19-sub: #000; --n19-sub-text: #fff; --n19-sub-rule: rgba(255,255,255,.6); --n19-search: #fff; --n19-search-text: #000; }
 html[data-net19-mode="dark"] { --n19-yellow: #ffff64; --n19-bar-text: #000; --n19-sub: #000; --n19-sub-text: #fff; --n19-sub-rule: rgba(255,255,255,.6); --n19-search: #fff; --n19-search-text: #000; }
-/* The single-row sticky nav becomes the 2019 two-row header; its pieces are re-placed on a grid, nothing is hidden. */
 nav[class*="StickyNav-desktop__Container"] {
   display: grid !important; grid-template-columns: 1fr auto 1fr !important; grid-template-rows: 40px 40px !important; align-items: center !important;
   height: 80px !important; padding: 0 !important; background: var(--n19-yellow) !important; color: var(--n19-bar-text) !important;

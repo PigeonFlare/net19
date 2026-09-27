@@ -1,8 +1,3 @@
-/* net19 handmade theme: GitHub, 2019: a #24292e header with plain 16px white links, a translucent "Search GitHub"
-   field, a plain "Sign in" and an outlined "Sign up"; the signed-out home page's #2b3137 hero with the headline and
-   lead on the left and the sign-up form in a light #fafbfc box on the right; repositories under a #fafbfc page head
-   with folder tabs topped in orange, blue file names in a compact list under a pale blue commit bar, gradient buttons
-   with 3px corners and square avatars, all in the system font. The dark variant keeps every shape on dark tokens. */
 html { --n19-header: #24292e; --n19-header-text: #fff; --n19-header-dim: rgba(255,255,255,.75); --n19-header-field: rgba(255,255,255,.125); --n19-header-border: #444d56;
   --n19-hero: #2b3137; --n19-hero-lead: rgba(255,255,255,.6); --n19-signup-box: #fafbfc; --n19-signup-text: #24292e; --n19-signup-note: #6a737d; --n19-signup-green: #2ebc4f; --n19-signup-green-hover: #28a745;
   --n19-bg: #fff; --n19-bg-2: #fafbfc; --n19-bg-3: #f6f8fa; --n19-text: #24292e; --n19-text-2: #586069; --n19-link: #0366d6; --n19-border: #e1e4e8; --n19-row-border: #eaecef;
@@ -21,7 +16,6 @@ html[data-net19-mode="dark"] { --n19-header: #161b22; --n19-header-text: #f0f6fc
 html { --borderRadius-small: 3px; --borderRadius-medium: 3px; --borderRadius-default: 3px; --borderRadius-large: 3px; --fontStack-sansSerif: var(--n19-font); --fontStack-system: var(--n19-font); }
 body, .font-mktg, .HeaderMktg, header.HeaderMktg :is(button, a, span, input), [class*="Primer_Brand__"] { font-family: var(--n19-font) !important; }
 
-/* Header on every page: flat #24292e */
 .AppHeader, .AppHeader .AppHeader-globalBar, header.HeaderMktg.HeaderMktg.HeaderMktg[data-marketing-header][role="banner"], header.HeaderMktg, .Header { background: var(--n19-header) !important; box-shadow: none !important; backdrop-filter: none !important; }
 .AppHeader .AppHeader-globalBar a, .AppHeader .AppHeader-globalBar button, .AppHeader .AppHeader-context-item-label, header.HeaderMktg a, header.HeaderMktg button,
 .AppHeader .AppHeader-globalBar svg, header.HeaderMktg svg { color: var(--n19-header-text) !important; }
@@ -29,7 +23,6 @@ body, .font-mktg, .HeaderMktg, header.HeaderMktg :is(button, a, span, input), [c
   background: var(--n19-header-field) !important; border: 1px solid var(--n19-header-border) !important; border-radius: 3px !important;
 }
 .AppHeader .AppHeader-localBar { background: var(--n19-bg-2) !important; }
-/* Signed-out header: 16px regular links, a 240px translucent search field, "Sign in" as a plain link, "Sign up" outlined */
 header.HeaderMktg nav :is(button, a), header.HeaderMktg nav li > a { font-size: 16px !important; font-weight: 400 !important; }
 header.HeaderMktg nav > ul > li > div > button:hover, header.HeaderMktg nav > ul > li > a:hover { color: var(--n19-header-dim) !important; }
 header.HeaderMktg button[aria-label^="Search or jump" i] {
@@ -43,13 +36,11 @@ header.HeaderMktg button[aria-label^="Search or jump" i] [data-net19-label] { po
 header.HeaderMktg a[href^="/login"] { background: transparent !important; border: none !important; padding: 0 4px !important; font-size: 16px !important; font-weight: 400 !important; }
 header.HeaderMktg a[href^="/signup"] { background: transparent !important; border: 1px solid var(--n19-header-border) !important; border-radius: 3px !important; padding: 4px 8px !important; font-size: 16px !important; font-weight: 400 !important; }
 
-/* Signed-out home page: the #2b3137 hero, headline and lead left, sign-up form in a light box right */
 .lp-Home #hero, .lp-Home .lp-Intro { background: var(--n19-hero) !important; }
 .lp-Home .lp-Intro-gradient, .lp-Home .lp-IntroVisuals { display: none !important; }
 .lp-Home .lp-Intro > .lp-Spacer:not(.lp-IntroTop-spacer):not(.lp-IntroVisuals-spacer) { height: 0 !important; }
-.lp-Home .lp-IntroTop-spacer { height: 136px !important; }  /* clear the 72px header that overlays the hero, then 64px */
+.lp-Home .lp-IntroTop-spacer { height: 136px !important; }
 .lp-Home .lp-IntroVisuals-spacer { height: 96px !important; }
-/* The hero sits in the page (not pinned while the demo slides over it), with no glow around the demo */
 .lp-Home .lp-IntroHero { position: relative !important; top: auto !important; left: auto !important; transform: none !important; opacity: 1 !important; filter: none !important; }
 .lp-Home .lp-HeroCarousel-background, .lp-Home .lp-Intro::after, .lp-Home .lp-HeroCarousel-content::before { display: none !important; }
 .lp-Home .lp-IntroHero { display: grid !important; grid-template-columns: 7fr 5fr; align-items: center; column-gap: 48px; max-width: 1012px; margin: 0 auto !important; padding: 0 16px; box-sizing: border-box; }
@@ -74,17 +65,12 @@ header.HeaderMktg a[href^="/signup"] { background: transparent !important; borde
 }
 .lp-Home .lp-IntroHero .CtaForm button[type="submit"]:hover, .lp-Home .lp-IntroHero .CtaFormControl-container > button:hover { background: var(--n19-signup-green-hover) !important; }
 .lp-Home .lp-IntroHero .CtaForm button * { color: #fff !important; font-size: 16px !important; }
-/* The Copilot app did not exist */
 .lp-Home .CtaForm-secondaryAction { display: none !important; }
-/* Nor the framed demo video under the hero (Copilot and coding agents at work): the 2019 hero ended with the sign-up box */
 .lp-Home .lp-HeroCarousel, .lp-Home .HeroCarouselControls { display: none !important; }
-/* Header menus: no post-2019 AI entries. The whole "AI code creation" group of the Platform menu (it opens with Copilot),
-   and single Copilot, MCP and AI-topic links elsewhere (Enterprise's "Copilot for Business", Resources' "AI"). */
 header.HeaderMktg nav li:has(> [class*="NavGroup-module__group"] > ul > li:first-child > a[href*="/features/copilot"]),
 header.HeaderMktg nav li:has(> a[href*="/features/copilot"]), header.HeaderMktg nav li:has(> a[href$="github.com/mcp"]),
 header.HeaderMktg nav li:has(> a[href*="topic=ai"]) { display: none !important; }
 
-/* Buttons */
 .btn:not(.btn-primary):not(.btn-danger), .Button--secondary, button[data-variant="default"], a[data-variant="default"] {
   background: linear-gradient(-180deg, var(--n19-btn-from), var(--n19-btn-to) 90%) !important; border: 1px solid var(--n19-btn-border) !important;
   border-radius: 3px !important; color: var(--n19-btn-text) !important; box-shadow: none !important; font-weight: 600 !important;
@@ -96,21 +82,17 @@ header.HeaderMktg nav li:has(> a[href*="topic=ai"]) { display: none !important; 
 }
 .btn-primary:hover, .Button--primary:hover, button[data-variant="primary"]:hover { background: linear-gradient(-180deg, var(--n19-primary-hover-from), var(--n19-primary-hover-to) 90%) !important; }
 
-/* Square avatars */
 .avatar, .avatar-user, img.avatar, img[data-testid="github-avatar"], [class*="Avatar"] img, img[class*="Avatar"], [data-component="Avatar"] { border-radius: 3px !important; }
 
-/* Boxes, counters, fields */
 .Box, .rounded-2, [class*="Box-sc-"] { border-radius: 3px !important; }
 .Counter { background: var(--n19-counter) !important; }
 .form-control, .FormControl-input, input.form-control, [class*="TextInput-wrapper"] { border-radius: 3px !important; border-color: var(--n19-field-border) !important; box-shadow: var(--n19-field-inset) !important; }
 .Label, .IssueLabel { border-radius: 2px !important; font-weight: 600 !important; }
 
-/* Repository head: #fafbfc band with a hairline, 20px title (owner regular, name bold), no "Public" badge */
 #repository-container-header { background: var(--n19-bg-2) !important; border-bottom: 1px solid var(--n19-border) !important; }
 #repository-container-header strong[itemprop="name"] a, #repository-container-header [itemprop="author"] a { font-size: 20px !important; }
 #repository-container-header [itemprop="author"] a { font-weight: 400 !important; }
 #repository-container-header .Label--secondary { display: none !important; }
-/* Repository tabs: the selected one is a folder tab with a colored top edge */
 .UnderlineNav { box-shadow: none !important; }
 .UnderlineNav-item { border-radius: 3px 3px 0 0 !important; border: 1px solid transparent !important; border-top-width: 3px !important; padding: 7px 15px 8px !important; margin-bottom: -1px !important; }
 .UnderlineNav-item.selected, .UnderlineNav-item[aria-current]:not([aria-current="false"]) {
@@ -119,7 +101,6 @@ header.HeaderMktg nav li:has(> a[href*="topic=ai"]) { display: none !important; 
 .UnderlineNav-item.selected::after, .UnderlineNav-item[aria-current]::after { display: none !important; }
 .UnderlineNav-item:hover { background: transparent; border-bottom-color: transparent !important; }
 
-/* File list: a pale blue commit bar, compact rows, blue file names, blue folder icons */
 [data-testid="latest-commit"] { color: var(--n19-text-2); }
 [class*="DirectoryContent-module__Box_3"], div:has(> [class*="LatestCommit-module__Box"]) { background: var(--n19-commit-bar) !important; border-color: var(--n19-commit-border) !important; border-radius: 3px 3px 0 0 !important; }
 table[aria-labelledby="folders-and-files"] { border-radius: 0 0 3px 3px !important; }
@@ -133,19 +114,13 @@ table[aria-labelledby="folders-and-files"] .react-directory-row:hover { backgrou
 .react-directory-filename-column svg:not([class*="directory" i]) { color: var(--n19-file) !important; }
 .react-directory-commit-message a, .react-directory-commit-age { color: var(--n19-text-2) !important; }
 
-/* ---- Pages across github.com and docs.github.com ---- */
-/* Issue and pull request state badges: 2019's 3px-cornered labels, not pills; a closed issue was red */
 .State, [class*="StateLabel"], [data-testid="header-state"] { border-radius: 3px !important; }
 .State--closed:not(.State--merged), [class*="StateLabel"][class*="issueClosed" i] { background-color: #cb2431 !important; }
-/* Achievements (2022) on profiles; the issues sidebar's "Feedback · Preview" link (2025) */
 .border-top:has(> h2 + div .achievement-badge-sidebar), .border-top:has(.achievement-badge-sidebar) { display: none !important; }
 li:has(> a[href*="issues-sidebar-feedback"]), a[href*="issues-sidebar-feedback"] { display: none !important; }
-/* Copilot entry points inside pages (the issue sidebar's "Open in GitHub Copilot app", repo "Code" menu tabs) */
 main a[href*="/features/copilot"], main a[href*="/features/ai/github-app"], main li:has(> a[href*="/features/ai/github-app"]),
 #repository-container-header a[href*="copilot" i] { display: none !important; }
-/* Marketplace: a flat page head instead of the violet wash */
 [class*="MarketplaceHeader"], .marketplace-hero, main section:has(> div > h1):has(input[placeholder*="apps and actions" i]) { background-image: none !important; }
-/* docs.github.com (2019's help.github.com): the system font, square controls, no Copilot column on the start page */
 [class*="Primer_Brand__"], [class*="Primer_Brand__"] *:not(code, pre, code *, pre *), .markdown-body, main h1, main h2, main h3 { font-family: var(--n19-font) !important; }
 [class*="ProductSelectionCard_cell"]:has(a[href$="/copilot"]) { display: none !important; }
 header[class*="SubdomainNavBar"] button, header[class*="SubdomainNavBar"] input { border-radius: 3px !important; }

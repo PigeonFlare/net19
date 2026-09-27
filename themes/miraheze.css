@@ -1,27 +1,15 @@
-/* net19 handmade theme: Miraheze, 2019. The farm's wikis in Vector, Meta included, are shown in MediaWiki's legacy
-   Vector skin (the 2019 Vector, served by Miraheze itself with useskin=vector; miraheze.js asks for it): white
-   content card on the pale gray #f6f6f6 frame, blue-gray tabs, each wiki's own logo in the sidebar (Meta's
-   honeycomb is the same file as in 2019), serif headings and the plain suggestion list under the search field.
-   The farm-wide parts added since are put away. The skin had no dark mode; a dark device gets the page flipped. */
 html { --n19-page: #f6f6f6; --n19-content: #fff; }
-html[data-net19-mode="dark"] { --n19-page: #f6f6f6; --n19-content: #fff; } /* the light page, flipped whole by palette.js */
+html[data-net19-mode="dark"] { --n19-page: #f6f6f6; --n19-content: #fff; }
 body.skin-vector-legacy { background-color: var(--n19-page); }
 body.skin-vector-legacy .mw-body { background-color: var(--n19-content); }
 
-/* ---- Tab labels sit in the middle of their 40px tabs (the skin set them 5px low), and the no-script full-text
-   button that the Go button covers is put away, as the skin's own script did in 2019 ---- */
 body.skin-vector-legacy .vector-menu-tabs-legacy li a { padding-top: calc(1.25em - 5px) !important; }
 body.skin-vector-legacy #simpleSearch #mw-searchButton.mw-fallbackSearchButton { visibility: hidden !important; }
 
-/* ---- Added after 2019, farm-wide: the "Dark mode" switch in the personal bar (net19 follows the device), the QR
-   code tool, the parser switch, "Expand all", the footer's Donate link and "Hosted by Miraheze" badge, the diff
-   page's Visual/Wikitext and Inline switches (2022-23), the empty bottom dock, and any Vector 2022 parts that leak
-   into the legacy skin. ("Get shortened URL" stays: Miraheze had it in 2019.) ---- */
 body.skin-vector-legacy :is(#pt-darkmode, #t-urlshortener-qrcode, #t-parsermigration, #parsermigration-switch-to-legacy,
   #t-collapsible-toggle-all, #t-expand-all, #footer-places-donate, #footer-mirahezeico, #footer-info-renderedwith, #p-dock-bottom),
 body.skin-vector-legacy :is(.ve-init-mw-diffPage-diffMode, .mw-diffPage-inlineToggle-container),
 body.skin-vector-legacy :is(#vector-sticky-header, .vector-sticky-header, #vector-appearance, #vector-appearance-pinned-container,
   .vector-appearance-landmark, .vector-client-prefs-landmark, .vector-page-toolbar, .vector-column-end) { display: none !important; }
 
-/* ---- Pages that arrive in Vector 2022 until the legacy one loads ---- */
 html[data-net19-reskin] body { visibility: hidden !important; }

@@ -1,5 +1,3 @@
-// net19 handmade theme: namu.wiki, 2019 ("senkawa"). namu.wiki keeps its own dark mode: body.theseed-dark-mode when
-// set, body.theseed-light-mode when forced light, otherwise it follows the device.
 globalThis.net19Theme = {
   detect: () => {
     const body = document.body;

@@ -1,6 +1,3 @@
-// net19 handmade theme: YouTube, 2019. YouTube marks its dark theme with html[dark]; both modes are restyled.
-// YouTube Music was a dark-only app in 2019, so it stays dark on a light device. Each YouTube
-// property is marked on <html data-n19-yt="www|music|studio|tv|m|other"> so page rules can be scoped to it.
 globalThis.net19Theme = (() => {
   const host = location.hostname;
   const yt = (/^(music|studio|tv|m)\./.exec(host) || [, /^(www\.)?youtube\.com$/.test(host) ? 'www' : 'other'])[1];
@@ -11,11 +8,8 @@ globalThis.net19Theme = (() => {
     only: () => yt === 'music' ? 'dark' : undefined,
   };
 })();
-// Text that did not exist in 2019, changed in place: the search field said "Search" (not "Search or ask a question"),
-// and "Ask YouTube" (an assistant entry point with no stable label) is hidden by its visible text.
 (() => {
   const fix = () => {
-    // YouTube Music's field said just "Search" in 2019
     for (const input of document.querySelectorAll('ytmusic-search-box input')) if (input.placeholder && input.placeholder !== 'Search') input.placeholder = 'Search';
     const masthead = document.querySelector('#masthead, ytd-masthead');
     if (!masthead) return;
@@ -24,7 +18,6 @@ globalThis.net19Theme = (() => {
       if (/^\s*Ask YouTube\s*$/i.test(node.textContent || '') && !node.closest('[data-net19-hidden]')) node.setAttribute('data-net19-hidden', '');
     }
   };
-  // Comments: 2019 showed display names, not @handles (2022), and folded replies under "View 12 replies".
   const comments = () => {
     for (const span of document.querySelectorAll('ytd-comment-view-model #author-text span, ytd-comment-view-model #header-author #channel-name #text')) {
       const t = span.textContent;
@@ -38,7 +31,6 @@ globalThis.net19Theme = (() => {
       if (/^[\d.,]+[KMB]?\s+repl(?:y|ies)$/i.test(t)) span.textContent = 'View ' + t;
     }
   };
-  // The search field is focused on any click in its box, whatever variant YouTube draws around it.
   document.addEventListener('pointerup', event => {
     const box = event.target instanceof Element && event.target.closest('yt-searchbox');
     if (!box || event.target.closest('button, a, [role="option"], [role="listbox"]')) return;
@@ -53,8 +45,6 @@ globalThis.net19Theme = (() => {
   };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();
-// Shorts (2020) did not exist in 2019: a Short opens as an ordinary video on the watch page, whether it is reached by an
-// address or by a click inside YouTube's single-page app.
 (() => {
   if (!/^(www\.)?youtube\.com$/.test(location.hostname)) return;
   const toWatch = () => {
@@ -64,8 +54,6 @@ globalThis.net19Theme = (() => {
   toWatch();
   document.addEventListener('yt-navigate-finish', toWatch);
   addEventListener('popstate', toWatch);
-  // "Shorts" as a choice: the search filter dialog's Type option and any chip that filters a feed to Shorts. These have no
-  // stable attribute, so they are found by their exact text; each is one small control, never a list of results.
   const SHORTS = /^\s*Shorts\s*$/i;
   const mark = () => {
     for (const el of document.querySelectorAll('ytd-search-filter-renderer, yt-chip-cloud-chip-renderer, chip-view-model')) {

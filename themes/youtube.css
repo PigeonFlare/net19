@@ -1,7 +1,3 @@
-/* net19 handmade theme: YouTube, 2019 as the Web Design Museum shows it ("YouTube in 2019"): a white bar with a square
-   search field and a gray search button, a blue "Sign in" button; a plain guide with a red selected "Home" row and red
-   uppercase section titles; videos in white cards on a light gray page, square thumbnails, blue 13px titles and small
-   gray metadata. The dark variant keeps every shape on dark tokens. */
 html { --n19-page: #f1f1f1; --n19-card: #fff; --n19-card-shadow: 0 1px 2px rgba(0,0,0,.1); --n19-bar: #fff; --n19-bar-border: #e8e8e8;
   --n19-rail: #fff; --n19-text: #222; --n19-text-2: #767676; --n19-title: #167ac6; --n19-related-title: #222; --n19-red: #e62117;
   --n19-field: #fff; --n19-field-border: #ccc; --n19-field-inset: inset 0 1px 2px #eee; --n19-button: #f8f8f8; --n19-button-border: #d3d3d3;
@@ -13,7 +9,6 @@ html[data-net19-mode="dark"] { --n19-page: #121212; --n19-card: #1e1e1e; --n19-c
   --n19-button-text: #ddd; --n19-icon: #9a9a9a; --n19-hover: #2a2a2a; --n19-divider: #333; --n19-blue: #167ac6; --n19-badge: rgba(0,0,0,.8);
   --n19-subscribed: #2b2b2b; --n19-subscribed-text: #aaa; --n19-sentiment: #606060; }
 
-/* YouTube's own design variables, so menus, dialogs and the suggestion list follow the same palette */
 html:root, html[dark], html ytd-app {
   --yt-spec-base-background: var(--n19-page) !important; --yt-spec-general-background-a: var(--n19-page) !important;
   --yt-spec-general-background-b: var(--n19-page) !important; --yt-spec-general-background-c: var(--n19-card) !important;
@@ -26,10 +21,8 @@ html:root, html[dark], html ytd-app {
 ytd-app { background: var(--n19-page) !important; }
 ytd-app, ytd-app input, ytd-app button { font-family: Roboto, Arial, sans-serif !important; }
 
-/* Masthead: a flat white bar with a hairline */
 #masthead-container #background, ytd-masthead #background, ytd-masthead, #masthead-container { background: var(--n19-bar) !important; }
 #masthead-container { border-bottom: 1px solid var(--n19-bar-border) !important; }
-/* Search: a square field and a separate gray button, 30px tall; no inner icon, no voice button */
 yt-searchbox .ytSearchboxComponentInputContainer { height: 30px !important; align-items: stretch !important; }
 yt-searchbox .ytSearchboxComponentInputBox {
   background: var(--n19-field) !important; border: 1px solid var(--n19-field-border) !important; border-right: none !important;
@@ -43,7 +36,6 @@ yt-searchbox .ytSearchboxComponentSearchButton {
 }
 yt-searchbox .ytSearchboxComponentSearchButton .yt-icon-shape { width: 20px !important; height: 20px !important; }
 #voice-search-button { display: none !important; }
-/* Suggestions: a plain square list of text, no pictures */
 yt-searchbox .ytSearchboxComponentSuggestionsContainer, .sbdd_b {
   background: var(--n19-card) !important; border: 1px solid var(--n19-field-border) !important; border-radius: 0 !important;
   box-shadow: 0 2px 4px rgba(0,0,0,.2) !important; padding: 4px 0 !important;
@@ -53,7 +45,6 @@ yt-searchbox .ytSearchboxComponentSuggestionsContainer [role="option"] { min-hei
 yt-searchbox .ytSearchboxComponentSuggestionsContainer [role="option"] b, yt-searchbox .ytSearchboxComponentSuggestionsContainer [role="option"] strong { font-weight: 500 !important; }
 yt-searchbox .ytSuggestionComponentIcon { display: none !important; }
 yt-searchbox .ytSearchboxComponentSuggestionsContainer [role="option"] { padding-left: 10px !important; }
-/* Right side: flat icons; "Create" is the plain upload-style icon button; Sign in is a small blue button */
 ytd-masthead #buttons :is(button, a).ytSpecButtonShapeNextHost:not([aria-label="Sign in" i]) { background: transparent !important; border: none !important; border-radius: 0 !important; color: var(--n19-icon) !important; }
 ytd-masthead #buttons ytd-button-renderer:has([aria-label^="Create" i]) .ytSpecButtonShapeNextButtonTextContent { display: none !important; }
 ytd-masthead #buttons ytd-button-renderer:has([aria-label^="Create" i]) :is(button, a) { padding: 0 8px !important; }
@@ -66,7 +57,6 @@ ytd-masthead #buttons yt-icon, ytd-masthead #buttons .yt-icon-shape { color: var
 #masthead a[aria-label="Sign in" i] * { color: #fff !important; }
 ytd-masthead #avatar-btn img, ytd-masthead #avatar-btn yt-img-shadow { border-radius: 50% !important; }
 
-/* Guide: white rail, 13px rows, red selected row with white text, red uppercase section titles */
 #guide-content, tp-yt-app-drawer #contentContainer, #guide-inner-content, ytd-mini-guide-renderer { background: var(--n19-rail) !important; }
 #guide-content { border-right: 1px solid var(--n19-bar-border) !important; }
 ytd-guide-entry-renderer, ytd-guide-entry-renderer #endpoint, ytd-guide-entry-renderer tp-yt-paper-item, ytd-mini-guide-entry-renderer #endpoint { border-radius: 0 !important; }
@@ -91,21 +81,16 @@ ytd-guide-section-renderer { border-bottom: 1px solid var(--n19-divider) !import
 ytd-guide-entry-renderer:has(a[title="Shorts"]), ytd-mini-guide-entry-renderer:has(a[title="Shorts"]), ytd-mini-guide-entry-renderer[aria-label="Shorts"] { display: none !important; }
 #footer.ytd-guide-renderer, ytd-guide-renderer #footer { font-size: 11px !important; }
 
-/* 2019 had no feed filter chips and no Shorts */
 ytd-browse[page-subtype="home"] ytd-feed-filter-chip-bar-renderer, ytd-browse[page-subtype="home"] #chips-wrapper,
 ytd-search-header-renderer chip-bar-view-model, ytd-search-header-renderer yt-chip-cloud-renderer,
 ytd-rich-section-renderer:has([is-shorts]), ytd-rich-section-renderer:has(grid-shelf-view-model), ytd-reel-shelf-renderer, grid-shelf-view-model { display: none !important; }
 ytd-browse[page-subtype="home"] #frosted-glass, ytd-app #frosted-glass.with-chipbar { display: none !important; }
 ytd-browse[page-subtype="home"] ytd-rich-grid-renderer > #header:has(ytd-feed-filter-chip-bar-renderer) { display: none !important; }
-/* "Ask YouTube" and other assistant entry points did not exist (also removed by youtube.js when unlabeled) */
 yt-searchbox [aria-label^="Ask" i], #masthead [aria-label^="Ask YouTube" i], [data-net19-hidden] { display: none !important; }
-/* Other chips (a channel's Latest / Popular / Oldest) become flat text choices */
 .ytChipShapeChip { background: transparent !important; border-radius: 0 !important; color: var(--n19-text-2) !important; text-transform: uppercase !important; font-weight: 500 !important; }
 .ytChipShapeActive { color: var(--n19-text) !important; box-shadow: inset 0 -2px 0 var(--n19-red) !important; }
 
-/* Feeds: the grid sits in one white card on the gray page, narrower and denser (YouTube still decides the columns) */
 ytd-rich-grid-renderer { max-width: 900px !important; margin: 0 auto !important; container-type: inline-size; --ytd-rich-grid-row-margin: 18px !important; }
-/* Four small videos to a row, as in 2019, wherever the card is wide enough; the list reflows, nothing is dropped */
 @container (min-width: 700px) {
   ytd-browse ytd-rich-grid-renderer > #contents > ytd-rich-item-renderer { width: calc(25% - 16px) !important; max-width: none !important; margin: 0 8px 20px !important; }
 }
@@ -115,7 +100,6 @@ ytd-browse ytd-rich-grid-renderer > #contents {
 ytd-rich-item-renderer #avatar-container, ytd-rich-item-renderer yt-decorated-avatar-view-model, ytd-rich-item-renderer .ytLockupMetadataViewModelAvatar,
 ytd-rich-item-renderer .yt-lockup-metadata-view-model__avatar { display: none !important; }
 
-/* Video cards: square thumbnails, blue 13px titles, small gray metadata */
 ytd-thumbnail, ytd-thumbnail a, ytd-thumbnail img, yt-image img, .yt-core-image, .ytCoreImageHost, yt-thumbnail-view-model, .ytThumbnailViewModelImage,
 .ytLockupViewModelContentImage, yt-touch-feedback-shape, .ytSpecTouchFeedbackShapeHost, .ytSpecTouchFeedbackShapeHoverEffect, .ytSpecTouchFeedbackShapeStroke, .ytSpecTouchFeedbackShapeFill,
 #movie_player, .html5-video-player, ytd-player, #ytd-player, ytd-playlist-thumbnail, yt-interaction, yt-collection-thumbnail-view-model,
@@ -133,14 +117,10 @@ yt-lockup-view-model:hover .ytLockupMetadataViewModelMenuButton, .ytLockupMetada
 badge-shape.ytBadgeShapeThumbnailBadge, badge-shape.ytBadgeShapeThumbnailDefault {
   background: var(--n19-badge) !important; border-radius: 2px !important; font-size: 11px !important; font-weight: 500 !important; padding: 0 4px !important; height: 16px !important; line-height: 16px !important;
 }
-/* Search results: in a white card; 18px blue titles, as in 2019 */
 ytd-search ytd-section-list-renderer > #contents > ytd-item-section-renderer { background: var(--n19-card) !important; box-shadow: var(--n19-card-shadow) !important; padding: 12px 16px !important; margin-top: 12px !important; }
 ytd-search :is(ytd-video-renderer #video-title, yt-lockup-view-model .ytLockupMetadataViewModelTitle) { font-size: 18px !important; line-height: 24px !important; font-weight: 400 !important; }
 ytd-search :is(.ytContentMetadataViewModelMetadataText, .ytContentMetadataViewModelMetadataRow, #metadata-line span, #channel-name a) { font-size: 13px !important; line-height: 18px !important; }
 
-/* Watch page, as in 2019: flat on the page color, no cards and no rounded boxes. The title, then the action row on the
-   right with a hairline under it, then the owner row (avatar, name, subscribers, SUBSCRIBE on the far right), then the
-   description indented under the name, then comments; "Up next" on the right. */
 ytd-watch-flexy { --n19-watch-indent: 64px; }
 ytd-watch-flexy ytd-watch-metadata { background: transparent !important; box-shadow: none !important; padding: 0 !important; margin-top: 16px !important; }
 ytd-watch-metadata #above-the-fold { display: grid !important; grid-template-columns: minmax(0, 1fr) auto !important; margin: 0 !important; border-bottom: 1px solid var(--n19-divider) !important; padding-bottom: 12px !important; }
@@ -166,7 +146,6 @@ ytd-watch-metadata #description #description-inline-expander { font-size: 14px !
 ytd-watch-metadata #description :is(tp-yt-paper-button#expand, tp-yt-paper-button#collapse, #expand, #collapse):not([hidden]) {
   display: block !important; margin: 8px 0 0 !important; padding: 0 !important; background: transparent !important;
   font-size: 13px !important; font-weight: 500 !important; text-transform: uppercase !important; letter-spacing: .007em !important; color: var(--n19-text-2) !important; }
-/* Watch action row: icon and uppercase label buttons with no plates; a thin gray sentiment bar under like / dislike */
 ytd-watch-metadata #actions :is(button, a) { background: transparent !important; border: 0 !important; box-shadow: none !important; border-radius: 0 !important;
   color: var(--n19-text-2) !important; text-transform: uppercase !important; font-size: 13px !important; font-weight: 500 !important; padding: 0 8px !important; }
 ytd-watch-metadata #actions :is(button, a) yt-light-shape, ytd-watch-metadata #actions yt-light-shape, ytd-watch-metadata #actions yt-touch-feedback-shape { display: none !important; }
@@ -174,28 +153,21 @@ ytd-watch-metadata #actions .ytSegmentedLikeDislikeButtonViewModelSegmentedButto
 ytd-watch-metadata #actions .ytSegmentedLikeDislikeButtonViewModelSegmentedButtonsWrapper::after, ytd-watch-metadata #actions .ytSegmentedLikeDislikeButtonViewModelSegmentedButtonsWrapper::before { display: none !important; }
 ytd-watch-metadata #actions [aria-pressed="true"] { color: var(--n19-blue) !important; }
 ytd-watch-metadata #actions yt-icon, ytd-watch-metadata #actions .yt-icon-shape { color: var(--n19-icon) !important; }
-/* Actions that arrived after 2019: download for everyone, clips, Thanks, the AI "Ask" button, remix / create */
 ytd-watch-metadata #actions :is(ytd-download-button-renderer, yt-button-view-model:has(button[aria-label="Clip" i]), yt-button-view-model:has(button[aria-label="Thanks" i]),
   yt-button-view-model:has(button[aria-label^="Ask" i]), yt-button-view-model:has(button[aria-label^="Remix" i]), yt-button-view-model:has(button[aria-label="Create" i])) { display: none !important; }
-/* Description extras added after 2019: transcript, AI summary, "how this content was made", key concepts, podcast / course cards */
 ytd-video-description-transcript-section-renderer, ytd-structured-description-content-renderer :is(yt-video-attributes-section-view-model, ytd-video-description-course-section-renderer,
   ytd-video-description-education-section-renderer, how-this-was-made-section-view-model, ytd-video-description-infocards-section-renderer),
 ytd-watch-metadata ytd-expandable-metadata-renderer, ytd-watch-metadata #teaser-carousel, ytd-watch-metadata yt-video-summary-view-model,
 ytd-watch-metadata :is(#ai-summary, [class*="AiSummary"], [class*="aiSummary"]) { display: none !important; }
-/* Up next: plain list, 168px thumbnails, 14px titles; no filter chips (2021) */
 ytd-watch-flexy #secondary { background: transparent !important; box-shadow: none !important; padding-top: 0 !important; padding-bottom: 0 !important; margin-top: 16px !important; }
-/* (its right padding stays: without it the "Up next" titles ran to the window edge and were cut off) */
 ytd-watch-next-secondary-results-renderer :is(yt-related-chip-cloud-renderer, yt-chip-cloud-renderer, #chips-wrapper) { display: none !important; }
 ytd-watch-flexy #secondary .ytLockupMetadataViewModelTitle, ytd-watch-flexy #secondary #video-title { color: var(--n19-related-title) !important; font-size: 14px !important; line-height: 20px !important; }
 ytd-watch-flexy #secondary .ytLockupViewModelHost, ytd-watch-flexy #secondary ytd-compact-video-renderer { margin-bottom: 8px !important; }
 ytd-watch-flexy #secondary .ytLockupMetadataViewModelAvatar { display: none !important; }
 
-/* Player: the 2019 solid red progress bar and square controls; no chapter title in the control bar */
 .ytp-play-progress, .ytp-swatch-background-color { background: #f00 !important; background-image: none !important; }
 .ytp-scrubber-button, .ytp-swatch-background-color-secondary { background: #f00 !important; }
 .ytp-chapter-container, .ytp-chapter-title { display: none !important; }
-/* The 2025 "delhi" player draws its controls as translucent pills; 2019's were plain white glyphs on a dark gradient.
-   No heat map over the progress bar (2022) and no autoplay switch inside the player (2020). */
 .html5-video-player :is(.ytp-play-button, .ytp-volume-area, .ytp-time-wrapper, .ytp-right-controls, .ytp-prev-button, .ytp-next-button) {
   background: transparent !important; border-radius: 0 !important; box-shadow: none !important; backdrop-filter: none !important; }
 .html5-video-player .ytp-time-display, .html5-video-player .ytp-time-display span { font-size: 13px !important; color: #ddd !important; }
@@ -203,9 +175,6 @@ ytd-watch-flexy #secondary .ytLockupMetadataViewModelAvatar { display: none !imp
 .html5-video-player .ytp-progress-list { border-radius: 0 !important; }
 .html5-video-player .ytp-heat-map-container, .html5-video-player .ytp-autonav-toggle { display: none !important; }
 
-/* Comments, as in 2019: "1,234 Comments" and SORT BY; 40px avatars, 13px names and dates, 14px text, a REPLY text button,
-   replies folded under a blue "View 12 replies" link and indented under the comment with 24px avatars. No thread lines
-   (2023), no translate button (2023), no Super Thanks chips (2021). */
 ytd-watch-flexy ytd-comments { background: transparent !important; box-shadow: none !important; padding: 0 !important; margin-top: 24px !important; }
 ytd-comments-header-renderer #count, ytd-comments-header-renderer #count * { font-size: 16px !important; font-weight: 400 !important; color: var(--n19-text) !important; }
 ytd-comments-header-renderer #sort-menu :is(tp-yt-paper-button, yt-sort-filter-sub-menu-renderer, #label, #icon-label, yt-dropdown-menu) { text-transform: uppercase !important; font-size: 13px !important; font-weight: 500 !important; color: var(--n19-text-2) !important; }
@@ -226,7 +195,6 @@ ytd-comment-engagement-bar :is(#reply-button-end, #reply-button) :is(button, a) 
 ytd-comment-view-model :is(.threadline, .continuation), ytd-comment-replies-renderer :is(.ytSubThreadThreadline, .ytSubThreadConnection, .ytSubThreadContinuation, .ytSubThreadShadow, .thread-hitbox),
 ytd-comment-thread-renderer .threadline, ytd-comment-view-model .translate-button, ytd-comment-view-model :is(#paid-comment-chip, #paid-comment-background) { display: none !important; }
 ytd-comment-replies-renderer { margin-left: 56px !important; }
-/* 2019 replies were one flat level: replies to replies sit with the others, not indented again */
 ytd-comment-replies-renderer ytd-comment-replies-renderer, ytd-comment-replies-renderer yt-sub-thread yt-sub-thread { margin-left: 0 !important; }
 ytd-comment-replies-renderer :is(ytd-continuation-item-renderer, #continuation, #button-container) :is(button, a) {
   background: transparent !important; box-shadow: none !important; border-radius: 0 !important; padding: 0 !important; font-size: 13px !important; font-weight: 500 !important; color: var(--n19-blue) !important; }
@@ -241,28 +209,22 @@ ytd-comment-replies-renderer :is(#more-replies, #less-replies, #more-replies-sub
 ytd-comment-replies-renderer :is(#more-replies-sub-thread, #less-replies-sub-thread, .show-replies-button) :is(img, yt-img-shadow, .ytSpecAvatarShapeHost) { display: none !important; }
 ytd-comment-replies-renderer ytd-comment-view-model { margin-top: 12px !important; }
 
-/* Subscribe: red, uppercase, square */
 ytd-subscribe-button-renderer button, yt-subscribe-button-view-model button, #subscribe-button a, #subscribe-button button, :is(a, button)[aria-label^="Subscribe" i] {
   background: var(--n19-red) !important; color: #fff !important; border-radius: 2px !important; text-transform: uppercase !important; font-weight: 500 !important;
 }
 ytd-subscribe-button-renderer[subscribed] button, :is(a, button)[aria-label^="Unsubscribe" i] { background: var(--n19-subscribed) !important; color: var(--n19-subscribed-text) !important; }
-/* Watch actions: flat, uppercase labels instead of pills */
 ytd-watch-metadata #actions button, segmented-like-dislike-button-view-model button {
   background: transparent !important; border-radius: 0 !important; text-transform: uppercase !important; color: var(--n19-text-2) !important;
 }
-/* Tabs on channel pages: uppercase, red underline */
 yt-tab-shape .yt-tab-shape__tab, yt-tab-shape .ytTabShapeTab { text-transform: uppercase !important; font-weight: 500 !important; font-size: 13px !important; color: var(--n19-text-2) !important; }
 yt-tab-shape[aria-selected="true"] .yt-tab-shape__tab, yt-tab-shape[aria-selected="true"] .ytTabShapeTab { color: var(--n19-text) !important; }
 yt-tab-group-shape .yt-tab-group-shape-wiz__slider, yt-tab-group-shape .ytTabGroupShapeSlider { background: var(--n19-red) !important; }
 yt-page-header-view-model img, yt-image-banner-view-model, yt-image-banner-view-model img, .yt-page-header-view-model__page-header-banner img { border-radius: 0 !important; }
-/* Menus and dialogs: square */
 tp-yt-iron-dropdown #contentWrapper > *, ytd-popup-container tp-yt-paper-dialog, yt-sheet-view-model, ytd-multi-page-menu-renderer { border-radius: 2px !important; }
-/* The guide's sign-in prompt: a small blue button */
 ytd-guide-signin-promo-renderer :is(a, button).ytSpecButtonShapeNextHost { background: var(--n19-blue) !important; border: 1px solid var(--n19-blue) !important; border-radius: 2px !important; color: #fff !important; height: 28px !important; padding: 0 10px !important; font-size: 12px !important; }
 ytd-guide-signin-promo-renderer :is(a, button).ytSpecButtonShapeNextHost * { color: #fff !important; }
 ytd-guide-signin-promo-renderer .ytSpecButtonShapeNextIcon { display: none !important; }
 ytd-guide-signin-promo-renderer #description, ytd-guide-signin-promo-renderer yt-formatted-string { font-size: 13px !important; color: var(--n19-text) !important; }
-/* Search results and the watch page's related list use 2019's small thumbnails: 246px and 168px wide */
 ytd-search ytd-video-renderer ytd-thumbnail[size] { flex: none !important; width: 246px !important; min-width: 246px !important; max-width: 246px !important; }
 ytd-search ytd-video-renderer { --ytd-search-thumbnail-width: 246px; }
 ytd-search .ytLockupViewModelHorizontal > .ytLockupViewModelContentImage { flex: none !important; width: 246px !important; max-width: 246px !important; }
@@ -271,27 +233,19 @@ ytd-search ytd-video-renderer ytd-expandable-metadata-renderer { display: none !
 ytd-search ytd-video-renderer #channel-info { margin: 2px 0 !important; }
 ytd-search ytd-video-renderer #channel-thumbnail { display: none !important; }
 ytd-watch-flexy #secondary .ytLockupViewModelHorizontal > .ytLockupViewModelContentImage, ytd-watch-flexy #secondary ytd-thumbnail[size] { flex: none !important; width: 168px !important; max-width: 168px !important; min-width: 168px !important; }
-/* Watch actions: plain icon-and-label buttons, no pill backgrounds */
 ytd-watch-metadata #actions :is(button, a).ytSpecButtonShapeNextHost, ytd-watch-metadata #actions like-button-view-model, ytd-watch-metadata #actions dislike-button-view-model,
 ytd-watch-metadata #actions .ytSegmentedLikeDislikeButtonViewModelSegmentedButtonsWrapper, ytd-watch-metadata #actions yt-button-shape { background: transparent !important; border-radius: 0 !important; }
-/* Signed-in variants of the search field ("Search or ask a question", guard.js restores "Search") draw the search
-   button round inside the field and widen it: square, flush and 2019-sized in every variant. */
 yt-searchbox.ytSearchboxComponentDesktop { max-width: 728px !important; }
 yt-searchbox button:not(.ytSearchboxComponentClearButton):not([aria-label^="Ask" i]) {
   border-radius: 0 2px 2px 0 !important; background: var(--n19-button) !important; border: 1px solid var(--n19-button-border) !important;
   box-shadow: none !important; height: 30px !important; min-width: 65px !important; margin: 0 !important; color: var(--n19-icon) !important;
 }
-/* The button stays positioned (relative, in the flow): its touch-feedback layer is absolutely placed and, with a static
-   button, would stretch over the whole field and take every click meant for the text (the signed-in search box). */
 yt-searchbox .ytSearchboxComponentInputBox :is(button:not(.ytSearchboxComponentClearButton), [role="button"]) { position: relative !important; inset: auto !important; transform: none !important; flex: none !important; }
 yt-searchbox :is(yt-touch-feedback-shape, yt-light-shape) { display: none !important; }
 yt-searchbox .ytSearchboxComponentInputBox:has(button:not(.ytSearchboxComponentClearButton)) { padding-right: 0 !important; overflow: hidden !important; }
-/* Masthead icon buttons: flat, with no filled hover plates */
 ytd-masthead #buttons yt-touch-feedback-shape, ytd-masthead #voice-search-button yt-touch-feedback-shape { display: none !important; }
 ytd-masthead #buttons :is(button, a).ytSpecButtonShapeNextHost:not([aria-label="Sign in" i]) { background: transparent !important; }
 
-/* 2019 masthead geometry: one 56px row, the search field and button 30px tall on the row's center line, and the search
-   centered on the page whatever the two sides hold (signed-in accounts carry more buttons on the right). */
 yt-searchbox .ytSearchboxComponentInputBox { box-sizing: border-box !important; }
 yt-searchbox .ytSearchboxComponentInputContainer { margin-top: 5px !important; }
 @media (min-width: 900px) {
@@ -302,9 +256,6 @@ yt-searchbox .ytSearchboxComponentInputContainer { margin-top: 5px !important; }
   ytd-masthead #center yt-searchbox.ytSearchboxComponentDesktop { margin: 0 !important; width: 100% !important; max-width: none !important; }
 }
 
-/* The signed-in "unified" search ("Search or ask a question"): a 48px rounded box whose search button is a round icon
-   inside the field, with attach (+), query-builder and AI suggestion chips, which opens into a rounded panel. It is
-   drawn as the 2019 field and button in every state; the assistant parts are hidden. */
 yt-searchbox.ytSearchboxComponentHostUnified { height: 40px !important; max-height: none !important; }
 yt-searchbox.ytSearchboxComponentHostIsFocused.ytSearchboxComponentHostUnified {
   flex-direction: row !important; margin: 0 !important; padding: 0 !important; border-radius: 0 !important; box-shadow: none !important; height: 40px !important; max-width: none !important; }
@@ -320,7 +271,6 @@ yt-searchbox .ytSearchboxComponentInputBoxUnified :is(.ytSearchboxComponentInput
 yt-searchbox :is(.ytSearchboxComponentInnerSearchIconUnified, .ytSearchboxComponentAddMultimodalContextButtonContainer, .ytSearchboxComponentAddMultimodalContextButton,
   .ytSearchboxComponentMultimodalContextContainer, .ytSearchboxComponentQueryBuilderButton, .ytSearchboxComponentAiSuggestionsContainer,
   .ytSearchboxComponentAiSuggestionChipsContainer, .ytSearchboxComponentYtdTextInputAssistantWrapper, .ytSearchboxComponentReportButton):not(:has(textarea, input[name="search_query"])) { display: none !important; }
-/* Its round search button becomes the flush gray 2019 button at the field's right end */
 yt-searchbox .ytSearchboxComponentActions { width: auto !important; margin: -1px -1px -1px 0 !important; padding: 0 !important; gap: 0 !important; align-self: stretch !important; }
 yt-searchbox .ytSearchboxComponentActions .ytSearchboxComponentActionsButton { padding: 0 !important; margin: 0 !important; }
 yt-searchbox .ytSearchboxComponentActions :is(button, a, [role="button"], yt-button-shape, button-view-model, yt-touch-feedback-shape, div) { border-radius: 0 !important; }
@@ -328,27 +278,20 @@ yt-searchbox .ytSearchboxComponentActions :is(button, a) { width: 65px !importan
 yt-searchbox .ytSearchboxComponentActions yt-touch-feedback-shape { display: none !important; }
 yt-searchbox .ytSearchboxComponentSuggestionsContainerUnified { position: absolute !important; top: 100% !important; border-radius: 0 !important; }
 
-/* Right side, in both class spellings YouTube ships: flat icon buttons; "Create" keeps only its icon, with no box */
 ytd-masthead #buttons :is(button, a):is(.ytSpecButtonShapeNextHost, .yt-spec-button-shape-next):not([aria-label="Sign in" i]) {
   background: transparent !important; border: none !important; box-shadow: none !important; border-radius: 0 !important; color: var(--n19-icon) !important; }
 ytd-masthead #buttons :is(ytd-button-renderer, button-view-model, yt-button-view-model, yt-button-shape):has([aria-label^="Create" i])
   :is(.ytSpecButtonShapeNextButtonTextContent, .yt-spec-button-shape-next__button-text-content) { display: none !important; }
 ytd-masthead #buttons :is(button, a)[aria-label^="Create" i] { padding: 0 8px !important; min-width: 40px !important; width: 40px !important; justify-content: center !important; }
 ytd-masthead #buttons :is(button, a)[aria-label^="Create" i] :is(.ytSpecButtonShapeNextIcon, .yt-spec-button-shape-next__icon) { margin: 0 !important; }
-/* The empty-feed "Try searching to get started" prompt: flat text in the feed card, not a floating rounded panel */
 ytd-feed-nudge-renderer, ytd-feed-nudge-renderer div { border-radius: 0 !important; box-shadow: none !important; border-color: transparent !important; }
 
-/* ==== YouTube Music (music.youtube.com), as 2019's dark app ==========================================================
-   One black bar: the logo, then "Home  Explore  Library" as text tabs (white for the current one, gray for the others),
-   then a quiet "Search" that opens into a field; no side guide (2022), no mood chips over the home shelves (2021).
-   Square-ish 2px corners on artwork and buttons, content on the near-black page. */
 html[data-n19-yt="music"] ytmusic-app, html[data-n19-yt="music"] ytmusic-app:not([guide-collapsed]) { --ytmusic-guide-width: 0px !important; }
 html[data-n19-yt="music"] :is(#mini-guide, #mini-guide-background, #guide-spacer) { display: none !important; }
 html[data-n19-yt="music"] ytmusic-nav-bar #guide-button { display: none !important; }
 html[data-n19-yt="music"] ytmusic-nav-bar .left-content { width: auto !important; padding-left: 24px !important; }
 html[data-n19-yt="music"] ytmusic-nav-bar .center-content { margin-left: 340px !important; }
 html[data-n19-yt="music"] ytmusic-guide-section-renderer { border: 0 !important; }
-/* The guide drawer becomes the row of text tabs in the bar */
 html[data-n19-yt="music"] ytmusic-app tp-yt-app-drawer#guide { position: fixed !important; top: 0 !important; left: 150px !important; right: auto !important; bottom: auto !important;
   width: auto !important; height: 64px !important; z-index: 5 !important; visibility: visible !important; transform: none !important; }
 html[data-n19-yt="music"] tp-yt-app-drawer#guide #contentContainer { position: static !important; width: auto !important; height: 64px !important; transform: none !important; padding: 0 !important; border: 0 !important;
@@ -367,27 +310,18 @@ html[data-n19-yt="music"] ytmusic-guide-entry-renderer tp-yt-paper-item { height
 html[data-n19-yt="music"] ytmusic-guide-entry-renderer :is(.guide-icon, yt-icon, .subtitle-group, yt-interaction, .stroke, .fill) { display: none !important; }
 html[data-n19-yt="music"] ytmusic-guide-entry-renderer .title { font-size: 20px !important; font-weight: 500 !important; line-height: 64px !important; color: rgba(255,255,255,.5) !important; }
 html[data-n19-yt="music"] ytmusic-guide-entry-renderer[active] .title, html[data-n19-yt="music"] ytmusic-guide-entry-renderer tp-yt-paper-item:hover .title { color: #fff !important; }
-/* Search: a magnifier and "Search" in the bar, a plain dark field once opened */
 html[data-n19-yt="music"] ytmusic-search-box:not([opened]):not([has-query]) .search-box { background: transparent !important; border-color: transparent !important; }
 html[data-n19-yt="music"] ytmusic-search-box .search-box, html[data-n19-yt="music"] ytmusic-search-box #suggestion-list, html[data-n19-yt="music"] ytmusic-search-suggestions-section { border-radius: 2px !important; }
 html[data-n19-yt="music"] ytmusic-search-box { max-width: 420px !important; }
-/* The bar: black, with no divider line */
 html[data-n19-yt="music"] #nav-bar-background { background: #000 !important; }
 html[data-n19-yt="music"] #nav-bar-divider { display: none !important; }
-/* No mood / genre chips over the home page (2021) */
 html[data-n19-yt="music"] ytmusic-browse-response ytmusic-chip-cloud-renderer, html[data-n19-yt="music"] #header ytmusic-chip-cloud-renderer { display: none !important; }
-/* Artwork and buttons: 2px corners; round avatars stay round */
 html[data-n19-yt="music"] :is(ytmusic-two-row-item-renderer, ytmusic-responsive-list-item-renderer) :is(.image, img, yt-img-shadow, ytmusic-thumbnail-renderer) { border-radius: 2px !important; }
 html[data-n19-yt="music"] :is(ytmusic-two-row-item-renderer[aspect-ratio="MUSIC_TWO_ROW_ITEM_THUMBNAIL_ASPECT_RATIO_SQUARE"], ytmusic-responsive-list-item-renderer) :is(.image, img) { border-radius: 2px !important; }
 html[data-n19-yt="music"] ytmusic-nav-bar :is(a, button)[aria-label="Sign in" i], html[data-n19-yt="music"] ytmusic-guide-signin-promo-renderer :is(a, button) { border-radius: 2px !important; }
 html[data-n19-yt="music"] tp-yt-app-drawer#guide, html[data-n19-yt="music"] #guide-wrapper :is(#guide-content, #guide-inner-content, #sections) { border: 0 !important; box-shadow: none !important; }
-/* Buttons (Shuffle, Mix, Play all, Sign in): 2019's uppercase labels on 2px-cornered buttons */
 html[data-n19-yt="music"] ytmusic-app :is(button, a):is(.ytSpecButtonShapeNextHost, .yt-spec-button-shape-next) { border-radius: 2px !important; text-transform: uppercase !important; letter-spacing: .5px !important; }
 
-/* ==== www.youtube.com page types beyond home, watch and search ======================================================= */
-/* Channel page, as 2019: the banner, then one row with an 80px avatar, the 24px name, the subscriber count and the red
-   SUBSCRIBE; no description line or link list in the header (they lived on ABOUT); tabs HOME VIDEOS PLAYLISTS COMMUNITY
-   CHANNELS ABOUT. Shorts (2022), Live (2022), Podcasts (2023), Releases, Store and Courses tabs did not exist. */
 ytd-browse[page-subtype="channels"] yt-page-header-view-model yt-decorated-avatar-view-model, ytd-browse[page-subtype="channels"] yt-page-header-view-model yt-decorated-avatar-view-model yt-avatar-shape,
 ytd-browse[page-subtype="channels"] yt-page-header-view-model yt-decorated-avatar-view-model img { width: 80px !important; height: 80px !important; min-width: 80px !important; }
 ytd-browse[page-subtype="channels"] yt-page-header-view-model yt-decorated-avatar-view-model { overflow: hidden !important; border-radius: 50% !important; }
@@ -397,7 +331,6 @@ ytd-browse[page-subtype="channels"] yt-page-header-view-model :is(yt-description
 ytd-browse[page-subtype="channels"] yt-page-header-view-model yt-content-metadata-view-model, ytd-browse[page-subtype="channels"] yt-page-header-view-model yt-content-metadata-view-model * { font-size: 13px !important; color: var(--n19-text-2) !important; }
 yt-tab-group-shape yt-tab-shape:is([tab-title="Shorts"], [tab-title="Live"], [tab-title="Podcasts"], [tab-title="Releases"], [tab-title="Store"], [tab-title="Courses"], [tab-title="Membership"]) { display: none !important; }
 ytd-tabbed-page-header yt-tab-group-shape, ytd-tabbed-page-header #tabs-inner-container { background: var(--n19-card) !important; }
-/* Playlist page, as 2019: a white side panel (no colored blur, no rounded card), dark text, a flat PLAY ALL button */
 ytd-browse[page-subtype="playlist"] yt-page-header-view-model .ytPageHeaderViewModelBackground { border-radius: 0 !important; background: var(--n19-card) !important; box-shadow: var(--n19-card-shadow) !important; }
 ytd-browse[page-subtype="playlist"] yt-page-header-view-model .ytPageHeaderViewModelBackground > * { display: none !important; }
 ytd-browse[page-subtype="playlist"] yt-page-header-view-model :is(h1, h1 *, .ytAttributedStringHost, yt-dynamic-text-view-model *) { color: var(--n19-text) !important; }
@@ -409,21 +342,15 @@ ytd-browse[page-subtype="playlist"] yt-page-header-view-model :is(a, button).ytS
   background: var(--n19-button) !important; border: 1px solid var(--n19-button-border) !important; color: var(--n19-button-text) !important; text-transform: uppercase !important; font-size: 13px !important; font-weight: 500 !important; }
 ytd-browse[page-subtype="playlist"] yt-page-header-view-model :is(a, button).ytSpecButtonShapeNextIconButton { background: transparent !important; color: var(--n19-icon) !important; }
 ytd-browse[page-subtype="playlist"] yt-page-header-view-model :is(a, button).ytSpecButtonShapeNextHost * { color: inherit !important; }
-/* Signed-out prompts (Subscriptions, Library, History): the 2019 blue SIGN IN button, not the 2020s outlined pill */
 ytd-background-promo-renderer :is(a, button).ytSpecButtonShapeNextHost, ytd-message-renderer :is(a, button).ytSpecButtonShapeNextHost {
   background: var(--n19-blue) !important; border: 1px solid var(--n19-blue) !important; border-radius: 2px !important; color: #fff !important; text-transform: uppercase !important; font-size: 14px !important; font-weight: 500 !important; }
 ytd-background-promo-renderer :is(a, button).ytSpecButtonShapeNextHost *, ytd-message-renderer :is(a, button).ytSpecButtonShapeNextHost * { color: #fff !important; }
 ytd-background-promo-renderer .ytSpecButtonShapeNextIcon { display: none !important; }
-/* The Shorts player, if a Short is reached before youtube.js sends it to the ordinary watch page: square corners */
 ytd-shorts :is(#shorts-player, .html5-video-player, ytd-reel-video-renderer #player-container, .player-container) { border-radius: 0 !important; }
-/* ==== YouTube Studio (studio.youtube.com): 2019's "Studio beta" was already this app's Material layout; only harmless
-   changes reach it here: uppercase Material button labels and 2px corners instead of the 2023 pills. ================ */
 html[data-n19-yt="studio"] :is(ytcp-button, ytcp-button-shape) :is(button, .ytcp-button-shape-impl) { border-radius: 2px !important; }
 html[data-n19-yt="studio"] ytcp-button .label, html[data-n19-yt="studio"] ytcp-button-shape .ytSpecButtonShapeNextButtonTextContent { text-transform: uppercase !important; letter-spacing: .5px !important; }
 html[data-n19-yt="music"] ytmusic-nav-bar #right-content :is(a, button, .sign-in-link) { border-radius: 2px !important; }
 
-/* ==== Shorts (2020) everywhere: shelves, single results, grid items, tabs, filters and the guide entry ================
-   Only Shorts go; every other result and recommendation stays in YouTube's own order. */
 ytd-rich-section-renderer:has(:is(ytm-shorts-lockup-view-model, ytm-shorts-lockup-view-model-v2, ytd-rich-shelf-renderer[is-shorts], ytd-reel-shelf-renderer)),
 ytd-rich-shelf-renderer[is-shorts], ytd-reel-shelf-renderer, ytd-reel-item-renderer, ytm-shorts-lockup-view-model, ytm-shorts-lockup-view-model-v2,
 ytd-rich-item-renderer:has(:is(ytm-shorts-lockup-view-model, ytm-shorts-lockup-view-model-v2, a[href^="/shorts/"])),
@@ -432,9 +359,6 @@ yt-lockup-view-model:has(a[href^="/shorts/"] :is(img, yt-image, yt-thumbnail-vie
 ytd-guide-entry-renderer:has(a[href^="/shorts"]), ytd-mini-guide-entry-renderer:has(a[href^="/shorts"]),
 yt-tab-shape[tab-title="Shorts" i] { display: none !important; }
 
-/* ==== Search results: rows as in 2019 ===============================================================================
-   A channel row lines up with the video rows: its avatar is centered in the same 246px column as the thumbnails, the
-   name and details start where the video titles start, and SUBSCRIBE sits on the row's middle at the right. */
 ytd-search ytd-channel-renderer #content-section { display: flex !important; align-items: center !important; }
 ytd-search ytd-channel-renderer #avatar-section { flex: none !important; width: 246px !important; min-width: 246px !important; max-width: 246px !important; margin: 0 16px 0 0 !important; display: flex !important; justify-content: center !important; }
 ytd-search ytd-channel-renderer #avatar-section > a, ytd-search ytd-channel-renderer #avatar { width: 246px !important; max-width: 246px !important; min-width: 0 !important; margin: 0 !important; display: flex !important; justify-content: center !important; align-items: center !important; }
@@ -446,14 +370,10 @@ ytd-search ytd-channel-renderer #channel-title, ytd-search ytd-channel-renderer 
 ytd-search ytd-channel-renderer :is(#metadata, #metadata *, #description, #description *) { font-size: 13px !important; line-height: 18px !important; color: var(--n19-text-2) !important; }
 ytd-search ytd-channel-renderer #buttons { flex: none !important; align-self: center !important; display: flex !important; align-items: center !important; margin-left: 16px !important; }
 ytd-search ytd-channel-renderer #subscribe-button { margin: 0 !important; }
-/* the video rows: channel line close under the title line, as 2019's single metadata block */
 ytd-search ytd-video-renderer #channel-info { padding: 4px 0 !important; }
-/* The side "watch card" (an artist or channel with its top video, 2019 had it too): square, on the page's card color */
 ytd-search #secondary :is(ytd-universal-watch-card-renderer, ytd-universal-watch-card-renderer #hero, ytd-watch-card-rich-header-renderer, ytd-watch-card-hero-video-renderer, ytd-single-hero-image-renderer, ytd-thumbnail, img, yt-image, #header) { border-radius: 0 !important; }
 ytd-search #secondary ytd-universal-watch-card-renderer { background: var(--n19-card) !important; box-shadow: var(--n19-card-shadow) !important; overflow: hidden !important; }
 
-/* ==== SUBSCRIBE: one size everywhere (search rows, the watch page, channel headers, the side card) ====================
-   2019's button: 36px tall, 16px sides, 14px uppercase; "Subscribed" is the gray variant with the same geometry. */
 :is(ytd-subscribe-button-renderer, yt-subscribe-button-view-model, #subscribe-button, ytd-channel-renderer #buttons, ytd-watch-card-rich-header-renderer) :is(a, button).ytSpecButtonShapeNextHost,
 :is(a, button).ytSpecButtonShapeNextHost[aria-label^="Subscribe" i] {
   height: 36px !important; min-height: 36px !important; padding: 0 16px !important; font-size: 14px !important; line-height: 36px !important; font-weight: 500 !important;
@@ -462,8 +382,6 @@ ytd-search #secondary ytd-universal-watch-card-renderer { background: var(--n19-
 :is(ytd-subscribe-button-renderer[subscribed], yt-subscribe-button-view-model) :is(a, button):is([aria-label^="Subscribed" i], [aria-label^="Unsubscribe" i], .ytSpecButtonShapeNextTonal) {
   background: var(--n19-subscribed) !important; color: var(--n19-subscribed-text) !important; }
 :is(ytd-subscribe-button-renderer[subscribed], yt-subscribe-button-view-model) :is(a, button):is([aria-label^="Subscribed" i], [aria-label^="Unsubscribe" i], .ytSpecButtonShapeNextTonal) * { color: inherit !important; }
-/* the description snippet: up to two wrapped lines, as 2019 showed it (YouTube's one clipped line ran on, hidden, under
-   the side card) */
 ytd-search ytd-video-renderer .metadata-snippet-container-one-line { white-space: normal !important; display: -webkit-box !important; -webkit-box-orient: vertical !important;
   -webkit-line-clamp: 2 !important; overflow: hidden !important; max-height: 36px !important; line-height: 18px !important; }
 ytd-search ytd-video-renderer .metadata-snippet-container-one-line .metadata-snippet-text { white-space: normal !important; }

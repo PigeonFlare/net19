@@ -1,11 +1,3 @@
-// Navigation audit: does the 2019 look survive the clicks people actually make?
-// For each themed site it loads the start page with the built extension. It opens the header's menus and app
-// launchers, then collects the links a person would click there: header, navigation, menus, footer. It keeps
-// the first-party ones (the site's own domains, plus its brand domains listed below), follows one link per
-// destination (host + first path segment), and records whether net19 styled the page it lands on.
-// A page is styled when html[data-net19-mode] is set.
-// Output: test-results/nav/<id>/<n>.png and test-results/nav/report.jsonl. Unstyled destinations print as MISS.
-// usage: npm run build && node --import tsx scripts/audit-nav.mjs [id ...]   (MAX=12 destinations per site)
 import { chromium } from '@playwright/test';
 import { resolve } from 'node:path';
 import { mkdirSync, appendFileSync, readFileSync } from 'node:fs';
@@ -16,7 +8,6 @@ const pick = process.argv.slice(2);
 const OUT = resolve(process.env.OUT || 'test-results/nav'), ext = resolve(process.env.EXT || '.');
 const MAX = +(process.env.MAX || 12);
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
-// Brand domains a site links to from its own header, footer and menus, which people take for part of the same site.
 const BRAND = {
   google: ['about.google', 'blog.google', 'store.google', 'g.co', 'withgoogle.com', 'google.co', 'youtube.com', 'gmail.com'],
   microsoft: ['microsoft365.com', 'office.com', 'live.com', 'bing.com', 'xbox.com', 'msn.com'],
@@ -28,12 +19,10 @@ const BRAND = {
   amazon: ['amazon.jobs', 'aboutamazon.com'],
   nytimes: ['nyt.com'],
 };
-// The registrable domain: the last two labels, or three under a two-part public suffix (yahoo.co.jp, bbc.co.uk).
 const registrable = host => { const l = host.replace(/^www\./, '').split('.'); return l.slice(/^(co|com|ne|or|ac|go|net|org|gov|edu)\.[a-z]{2}$/.test(l.slice(-2).join('.')) ? -3 : -2).join('.'); };
 const siteOf = id => THEMES.find(t => t.id === id);
 
 async function collect(p) {
-  // Open header menus and launchers so their links become visible, one at a time.
   const openers = await p.$$('header [aria-haspopup]:not([aria-haspopup=false]), header button[aria-expanded=false], [role=banner] [aria-haspopup], a[aria-label*="apps" i], [aria-label="Google apps"], nav [aria-haspopup]');
   const links = new Map();
   const grab = async () => {
@@ -67,7 +56,6 @@ for (const [id, url] of targets) {
   try {
     await p.goto(url, { waitUntil: 'load', timeout: 40000 }).catch(() => {}); await p.waitForTimeout(3000);
     const links = (await collect(p)).filter(l => { try { const u = new URL(l.href); return /^https?:$/.test(u.protocol) && own.has(registrable(u.hostname)) && !/logout|signout|sign_out|log_out/i.test(u.href); } catch { return false; } });
-    // Header, navigation and footer links first; one link per destination (host + first path segment).
     const order = { header: 0, nav: 1, footer: 2, body: 3 };
     const seen = new Set([new URL(url).hostname + '/' + (new URL(url).pathname.split('/')[1] || '')]);
     const chosen = [];

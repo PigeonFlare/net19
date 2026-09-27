@@ -1,21 +1,13 @@
-/* net19 handmade theme: Los Angeles Times, 2019 (the Brightspot relaunch of that year): the classic blackletter logo on
-   white, then a charcoal (#333) bar of tiny uppercase letter-spaced section links; headlines in the Kis display serif at
-   regular weight (never bold), Georgia body text, Benton Gothic for small uppercase letter-spaced labels and bylines
-   ("By NAME" in caps); module titles in serif capitals over a 4px black rule, topic chips as black tags with white caps,
-   and square corners everywhere. The Times has no dark mode, so a dark device gets the engine's inverted page; the dark
-   tokens are only a fallback. */
 html { --n19-page: #fff; --n19-text: #000; --n19-body: #333; --n19-meta: #666; --n19-rule: #ccc; --n19-bar: #333; --n19-bar-text: #fff; --n19-link: #087da1; --n19-red: #eb0000;
   --n19-serif: FBKisDisplay, var(--cms-font-brand-heading, "Times New Roman"), Georgia, serif; --n19-text-font: Georgia, "Times New Roman", serif;
   --n19-sans: BentonGothic, var(--cms-font-service-text, Helvetica), "Helvetica Neue", Arial, sans-serif; }
 html[data-net19-mode="dark"] { --n19-page: #121212; --n19-text: #f2f2f2; --n19-body: #ddd; --n19-meta: #999; --n19-rule: #444; --n19-bar: #333; --n19-link: #3dabbf; }
 
-/* ---- Header: logo on white; "Sections" and search as small caps text buttons ---- */
 ps-header header { background: var(--n19-page) !important; border-bottom: 1px solid var(--n19-rule) !important; box-shadow: none !important; }
 ps-header header > button:first-child, ps-header header button[aria-label*="earch" i], ps-header header .dss-header a, ps-header header a[href*="login" i] {
   border: 0 !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important; }
 ps-header header > button:first-child span, ps-header header .dss-header :is(a, button, span) { font: 400 11px/1 var(--n19-sans) !important; letter-spacing: .12em !important; text-transform: uppercase !important; color: var(--n19-text) !important; }
 
-/* ---- The 2019 charcoal bar: tiny uppercase letter-spaced section links ---- */
 .page-subheader, .page-subheader > div { background: var(--n19-bar) !important; border: 0 !important; min-height: 44px !important; height: 44px !important; }
 .page-subheader nav, .page-subheader gn-quicklinks { margin-top: 0 !important; margin-bottom: 0 !important; height: 44px !important; }
 .page-subheader gn-quicklinks > ul { min-height: 44px !important; height: 44px !important; margin: 0 !important; }
@@ -23,22 +15,17 @@ ps-header header > button:first-child span, ps-header header .dss-header :is(a, 
 .page-subheader gn-quicklinks li > a { font: 700 10px/44px var(--n19-sans) !important; letter-spacing: .12em !important; text-transform: uppercase !important; color: var(--n19-bar-text) !important; min-height: 0 !important; }
 .page-subheader gn-quicklinks li > a:hover { color: #ccc !important; opacity: 1 !important; }
 .page-subheader gn-quicklinks li > button svg { fill: var(--n19-bar-text) !important; width: 8px !important; height: 8px !important; }
-/* the pipe item, "Live Stream" and "Games" joined the bar after 2019 */
 .page-subheader gn-quicklinks li:has(> a[href="#"]), .page-subheader gn-quicklinks li:has(> a[href*="/games"]), .page-subheader gn-quicklinks li:has(> a[href*="00000192-"]) { display: none !important; }
-/* the dropdowns under the bar: white panels with square corners */
 .page-subheader gn-quicklinks [class*="submenu"], .page-subheader gn-quicklinks ul ul { border-radius: 0 !important; }
 
-/* ---- Section fronts: the name in serif capitals; sub-navigation as small caps ---- */
 h1.page-heading { font: 400 40px/1.1 var(--n19-serif) !important; letter-spacing: .02em !important; text-transform: uppercase !important; color: var(--n19-text) !important; }
 .page-heading ~ * a, .page-header-navigation a { font: 400 11px/1.4 var(--n19-sans) !important; letter-spacing: .12em !important; text-transform: uppercase !important; color: var(--n19-body) !important; }
 
-/* ---- Module titles ("Top Headlines", "Latest Business"): serif caps over a heavy black rule ---- */
 :is(h2, h3)[class*="font-cms-font-service-heading"] { font: 400 17px/1.3 var(--n19-serif) !important; letter-spacing: .06em !important; text-transform: uppercase !important; color: var(--n19-text) !important;
   padding-bottom: 12px !important; border-bottom: 4px solid var(--n19-text) !important; }
 :is(h2, h3)[class*="font-cms-font-service-heading"] svg { display: none !important; }
 [class*="border-t-cms-color-brand-border"] { border-top-width: 1px !important; border-top-color: var(--n19-rule) !important; }
 
-/* ---- Story promos: Kis serif at regular weight; small uppercase labels; Georgia summaries ---- */
 .promo-title, .promo-title a { font-family: var(--n19-serif) !important; font-weight: 400 !important; letter-spacing: 0 !important; color: var(--n19-text) !important; }
 .promo-title a:hover { color: var(--n19-link) !important; text-decoration: none !important; }
 .promo-medium .promo-title, .promo-large .promo-title { font-size: 26px !important; line-height: 1.15 !important; }
@@ -47,13 +34,10 @@ h1.page-heading { font: 400 40px/1.1 var(--n19-serif) !important; letter-spacing
 .promo-description { font: 400 16px/1.45 var(--n19-text-font) !important; color: var(--n19-body) !important; }
 .promo :is(.promo-author, .promo-timestamp, time, [class*="timestamp"]) { font: 400 10px/1.4 var(--n19-sans) !important; letter-spacing: .1em !important; text-transform: uppercase !important; color: var(--n19-meta) !important; }
 .promo img, .promo-media, .promo-media * { border-radius: 0 !important; }
-/* topic chips: black tags with white caps */
 .list-p .promo-link, a.promo-link[style*="background"], .list-menu a.promo-link { background: #000 !important; color: #fff !important; border-radius: 0 !important;
   font: 400 10px/20px var(--n19-sans) !important; letter-spacing: .12em !important; text-transform: uppercase !important; padding: 0 9px !important; }
-/* "For subscribers" flags on promos arrived with the 2020 paywall push */
 .promo [class*="subscriber" i], .promo-label-subscriber { display: none !important; }
 
-/* ---- Article ---- */
 .breadcrumbs a { display: inline-block !important; background: var(--n19-bar) !important; color: #fff !important; font: 400 10px/20px var(--n19-sans) !important; letter-spacing: .12em !important;
   text-transform: uppercase !important; padding: 0 8px !important; text-decoration: none !important; }
 .breadcrumbs { text-align: center !important; }
@@ -68,14 +52,11 @@ article.story .published-date, article.story .published-date span { font: 400 11
 :is(.ct-rich-text-children, .rich-text-article-body) > p { font: 400 18px/1.55 var(--n19-text-font) !important; color: var(--n19-body) !important; margin: 0 0 20px !important; }
 :is(.ct-rich-text-children, .rich-text-article-body) a { color: var(--n19-link) !important; text-decoration: none !important; }
 :is(.ct-rich-text-children, .rich-text-article-body) :is(h2, h3) { font-family: var(--n19-serif) !important; font-weight: 400 !important; }
-/* the action bar: square outline buttons; like, listen and its "Click here to listen" bubble are 2023-24 */
 ps-actionbar button { border-radius: 0 !important; }
 ps-actionbar li:has(> button[aria-label*="Like" i]), ps-actionbar li:has(> button[aria-label*="Listen" i]), gn-popover[data-id="audioPlayer"] { display: none !important; }
 
-/* ---- Buttons and form fields: square ---- */
 .page-body :is(button, input, select)[class*="rounded"] { border-radius: 0 !important; }
 
-/* ---- The sections flyout and the search box ---- */
 ps-header [class*="lg:w-80"] :is(a, button, span) { font: 700 11px/1.4 var(--n19-sans) !important; letter-spacing: .12em !important; text-transform: uppercase !important; color: var(--n19-text) !important; }
 ps-header [class*="lg:w-80"] li { border-bottom: 1px solid #e6e6e6 !important; }
 ps-header input[type="text"], ps-header input[type="search"], ps-header form input { border: 1px solid var(--n19-rule) !important; border-radius: 0 !important; box-shadow: none !important; outline: none !important;

@@ -2,7 +2,6 @@ import { zipSync } from 'fflate';
 import { readdir, readFile, mkdir, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 const root = new URL('../', import.meta.url);
-// Only the extension's own files: the manifest, the generated scripts, the popup, icons and themes.
 const EXTENSION = /^(?:icons\/(?:\d+\.png|icon\.svg)|(?:background|popup)\.js|popup\.html|ui\.css|themes\/[a-z0-9]+\.(?:css|js)|manifest\.json)$/;
 const files = {};
 async function collect(directory, prefix = '') {

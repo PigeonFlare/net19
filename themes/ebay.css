@@ -1,26 +1,19 @@
-/* net19 handmade theme: eBay, 2019 (the Web Design Museum capture): a 30px white top strip of 12px #333 links with a light rule under it;
-   Helvetica Neue in the header; a square search field with a thin #c7c7c7 edge, the "All Categories" box joined to it, and a
-   #0654ba "Search" button with 3px corners and 16px white text; a centered 12px #555 category row between #ddd rules; #0654ba links;
-   flat, square tiles without drop shadows; full-width home banners with square corners. */
 html { --n19-link: #0654ba; --n19-button: #0654ba; --n19-button-hover: #00509d; --n19-text: #333; --n19-text-2: #555; --n19-field: #fff;
   --n19-field-edge: #c7c7c7; --n19-rule: #e5e5e5; --n19-nav-rule: #ddd; --n19-header-font: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif; }
 html[data-net19-mode="dark"] { --n19-link: #6ea2f0; --n19-button: #0654ba; --n19-button-hover: #1b6bd0; --n19-text: #ddd; --n19-text-2: #aaa; --n19-field: #1e1e1e;
   --n19-field-edge: #555; --n19-rule: #333; --n19-nav-rule: #3a3a3a; --n19-header-font: "Helvetica Neue", Helvetica, Arial, Verdana, sans-serif; }
 
-/* eBay's own design tokens, so buttons, links and menus built from them follow */
 html:root, body {
   --color-foreground-link-primary: var(--n19-link) !important; --color-foreground-link-visited: var(--n19-link) !important;
   --color-background-accent: var(--n19-button) !important; --color-foreground-accent: var(--n19-link) !important;
   --btn-primary-background-color: var(--n19-button) !important; --btn-primary-border-color: var(--n19-button) !important;
 }
 
-/* Header: Helvetica Neue, the top strip with small links and a light rule */
 #gh, #gh button, #gh input, #gh select, .gh-header, .gh-header :is(button, input, select, a) { font-family: var(--n19-header-font) !important; }
 #gh-top, .gh-nav, .gh-header__top { border-bottom: 1px solid var(--n19-rule) !important; }
 #gh-top :is(a, button, span), .gh-nav :is(a, button, span), .gh-header__top :is(a, button, span) { font-size: 12px !important; }
 #gh-ug a, .gh-identity a, .gh-identity__greeting a { color: var(--n19-link) !important; }
 
-/* Search: a square field with a thin gray edge, the category box joined to it, and a blue 3px-cornered button */
 #gh-ac-box, #gh-ac-box2, .gh-search-input__wrap, .gh-search__wrap, #gh-f .gh-search__wrap {
   border-radius: 3px 0 0 3px !important; border: 1px solid var(--n19-field-edge) !important; background: var(--n19-field) !important; box-shadow: none !important;
 }
@@ -34,41 +27,30 @@ html:root, body {
 #gh-search-btn:hover, #gh-btn:hover, button.gh-search-button:hover { background: var(--n19-button-hover) !important; }
 #gh-as-a, .gh-search__advanced, a[href*="/sch/ebayadvsearch"] { font-size: 11px !important; color: var(--n19-text-2) !important; }
 
-/* Category row: centered 12px #555 links between thin rules */
 .hl-cat-nav, #vl-flyout-nav, .vl-flyout-nav { border-top: 1px solid var(--n19-nav-rule) !important; border-bottom: 1px solid var(--n19-nav-rule) !important; }
 .vl-flyout-nav__container, .vl-flyout-nav ul, .hl-cat-nav ul { justify-content: center !important; }
 .vl-flyout-nav li > a, .vl-flyout-nav li > span > a, .hl-cat-nav li a { font-size: 12px !important; color: var(--n19-text-2) !important; }
 
-/* Buttons: 2019's flatter 3px corners in place of pills */
 .btn--primary, .fake-btn--primary, button.btn--primary { background: var(--n19-button) !important; border-color: var(--n19-button) !important; border-radius: 3px !important; }
 .btn--secondary, .fake-btn--secondary { border-color: var(--n19-button) !important; color: var(--n19-link) !important; border-radius: 3px !important; }
-/* Tiles and listing images: square, flat */
 .s-item__image-wrapper, .s-item__image, .s-card, .brwrvr__item-card, .vl-card, .hl-card, .s-card__media-wrapper, .su-card-container__media { border-radius: 0 !important; box-shadow: none !important; }
 .s-item__title, .s-item__link, .s-card__title { color: var(--n19-link) !important; }
 .s-item__price, .x-price-primary, .s-card__price { color: var(--n19-text) !important; font-weight: 700 !important; }
 
-/* Search field: no magnifier inside and no camera (image search came to the desktop site later); the button sized to
-   its label, as in 2019 */
 .gh-search__wrap { border-width: 1px !important; }
 .gh-search-input__wrap > svg, .gh-search-input__wrap .gh-search-input__icon, .gh-search__wrap > svg:first-child { display: none !important; }
 .gh-search-input__camera-btn { display: none !important; }
 #gh-ac { padding-left: 10px !important; }
 #gh-search-btn { width: auto !important; min-width: 90px !important; padding: 0 22px !important; height: 40px !important; align-self: center !important; }
-/* Category row: plain text links; "eBay Live" (2024) is not one of them */
 .vl-flyout-nav li.vl-flyout-nav--pulsating-dot-live { display: none !important; }
 .vl-flyout-nav li > a, .vl-flyout-nav li > span > a { background: transparent !important; border-radius: 0 !important; }
-/* Home page banners: full width with square corners, straight under the category row */
 main .page-grid-container:has(> [class*="dp-hero"]) { padding-left: 0 !important; padding-right: 0 !important; }
 main [class*="dp-hero"][class*="-module"] { border-radius: 0 !important; }
 
-/* Search results: listing titles are blue links again; All / Auction / Buy It Now are plain tabs with a rule under the
-   current one, not rounded chips; the "Find more like this" visual-similarity button and its tip (image search, later)
-   go */
 .su-card-container__header :is(a, a *):not(svg, svg *) { color: var(--n19-link) !important; }
 .su-card-container__header a:hover :is(span, div) { text-decoration: underline !important; }
 .fake-tabs__item > a { border-radius: 0 !important; background: transparent !important; border: 0 !important; border-bottom: 2px solid transparent !important; color: var(--n19-text) !important; }
 .fake-tabs__item--current > a { border-bottom-color: var(--n19-text) !important; font-weight: 700 !important; }
 .s-card__searchsimilar, .s-tourtip { display: none !important; }
-/* Item page: the "Shop live events" banner (eBay Live, 2024) goes; photos sit in square frames, not 16px-rounded cards */
 .x-evo-atf-top-river:has(a[href*="/ebaylive"]) { display: none !important; }
 .ux-image-carousel, .ux-image-carousel-item, .ux-image-filmstrip-carousel-item, .ux-image-grid-item { border-radius: 0 !important; }

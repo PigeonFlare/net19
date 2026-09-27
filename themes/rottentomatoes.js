@@ -1,6 +1,4 @@
-globalThis.net19Theme = {};  // Rotten Tomatoes has no dark mode; default detection keeps it light.
-// 2019 wording in the header: the search field said "Search movies, TV, actors, more..." and the first top link
-// (to the page that explains the scores) read "What's the Tomatometer®?".
+globalThis.net19Theme = {};
 (() => {
   const HINT = 'Search movies, TV, actors, more...';
   const fix = () => {
@@ -13,8 +11,6 @@ globalThis.net19Theme = {};  // Rotten Tomatoes has no dark mode; default detect
   };
   let queued = false;
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); keep(); }); };
-  // On a dark device the page is inverted by palette.js; the header (red bar, gray trending strip) is drawn in shadow roots
-  // the engine cannot see into, so it is kept as drawn: a red bar reads the same in both modes, as the 2019 header did.
   const root = document.documentElement;
   const keep = () => {
     const header = document.querySelector('#main > header, body > #main > header');

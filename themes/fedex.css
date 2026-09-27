@@ -1,4 +1,3 @@
-/* net19 handmade theme: FedEx, 2019: Roboto type on the #4d148c purple bar, square light-gray tool tiles, square orange TRACK button. */
 html { --n19-purple: #4d148c; --n19-orange: #ff6200; --n19-tile: #fafafa; --n19-text: #333; --n19-link: #007ab7; }
 html[data-net19-mode="dark"] { --n19-purple: #4d148c; --n19-orange: #ff6200; --n19-tile: #2a2a2a; --n19-text: #e6e6e6; --n19-link: #5bb8e8; }
 html:root {
@@ -9,25 +8,18 @@ html:root {
 }
 body, button, input, select, textarea, h1, h2, h3, h4, h5, h6, p, a, li, label, span:not([class*="icon"]) { font-family: Roboto, "Helvetica Neue", Arial, sans-serif !important; }
 
-/* Hero tool strip: square light tiles instead of one rounded card */
 .homepage-b-links { border-radius: 0 !important; background: var(--n19-tile) !important; }
 h1, h2, .fxg-title { font-weight: 300 !important; }
 
-/* Buttons: primary stays square and orange, uppercase */
 .cc-aem-c-button, .fxg-button { border-radius: 0 !important; }
 .cc-aem-c-button--primary, .fxg-button--orange { background: var(--n19-orange) !important; color: #fff !important; text-transform: uppercase !important; letter-spacing: .03em !important; }
 .fxg-field input, .fxg-tracking-module input { border-radius: 0 !important; }
 
-/* 2019 header: plain white 14px menu words with no chevrons, "Sign Up or Log In" as text without the person icon */
 .fxg-global-nav .fxg-dropdown-js::after, .fxg-global-nav .fxg-dropdown-js::before, .fxg-global-nav .fxg-mouse::after, .fxg-global-nav .fxg-mouse::before { display: none !important; }
 .fxg-global-nav .fxg-dropdown-js, .fxg-global-nav .fxg-dropdown-js .fxg-mouse { font-size: 14px !important; font-weight: 400 !important; }
 .fxg-user-options__sign-in img.fxg-user-options__icon { display: none !important; }
-/* The sign-in link and search icon sat 6px above the menu words' center line; drop them onto it */
 .fxg-nav .fdx-utilityWrap { margin-top: 6px !important; }
 
-/* The "Ship, manage, track, deliver" hero lays its headline over a sibling photo; a black backdrop under the photo keeps
-   its white type seen as white-on-dark (otherwise the readability guard reads the page white behind it and inks it dark). */
 .fxg-hero.fxg-hero_homepage:has(> .fxg-hero__image) { background-color: #000 !important; }
 
-/* "ASK FEDEX", the floating virtual-assistant button (post-2019), and its chat frame */
 .nuance-chat-floating-container, #nuanMessagingFrame, #inqChatStage { display: none !important; }

@@ -1,11 +1,3 @@
-/* net19 handmade theme: Telegram Web, 2019 (the "webogram" client): a light gray-blue page (#e7ebf0) with the app as a
-   centered 1010px window under a flat #5682a3 blue bar (hamburger and "Telegram" on the left, the peer's name and
-   status in white on the right); a white chat list with 48px round avatars, bold names, gray previews, small gray dates
-   and green pill badges; the conversation as a flat list (42px avatar, blue bold name, gray time on the right, 13px text), no
-   bubbles and no wallpaper; a bordered composer with attach and emoji icons and a blue "SEND" text button. The same look
-   is mapped onto both of today's clients (web.telegram.org/k and /a). Telegram's own dark setting gets a dark palette of
-   the same layout. Post-2019 parts (stories, reactions, premium badges and emoji status, folders, topics icons, gifts
-   and stars, mini-app buttons, chat wallpaper patterns) are hidden. */
 html {
   --n19-page: #e7ebf0; --n19-window: #fff; --n19-window-border: #dfe5ec; --n19-head: #5682a3; --n19-head-hover: #497799;
   --n19-head-text: #fff; --n19-head-muted: #b9cfe3; --n19-text: #000; --n19-name: #222; --n19-muted: #808080; --n19-date: #a4a9ae;
@@ -29,9 +21,6 @@ html[data-net19-mode="dark"] {
   --n19-send-label: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='44' height='18'%3E%3Ctext x='22' y='13.5' text-anchor='middle' font-family='Open Sans,Lucida Grande,Arial,sans-serif' font-size='13' font-weight='700' fill='%236ab3f3'%3ESEND%3C/text%3E%3C/svg%3E");
 }
 
-/* ================================================================================================================
-   Telegram K (web.telegram.org/k). Its palette lives in custom properties set inline on <html> and on each .chat.
-   ================================================================================================================ */
 html:root, html.night, html .chat, html #page-chats {
   --primary-color: var(--n19-head) !important; --primary-color-rgb: 86,130,163 !important; --light-primary-color: rgba(86,130,163,.08) !important;
   --surface-color: var(--n19-window) !important; --background-color: var(--n19-window) !important; --body-background-color: var(--n19-page) !important;
@@ -45,13 +34,11 @@ html:root, html.night, html .chat, html #page-chats {
   --main-column-border-radius: 0 !important; --chat-input-border-radius: 2px !important; --page-chats-padding: 0px !important;
 }
 html.night { --primary-color-rgb: 43,82,120 !important; }
-/* The animated gradient wallpaper and its pattern (2021) go; the page is a flat gray-blue */
 html body > div:first-child:has(> [class*="_Layer_"]) [class*="_Layer_"], html body [class*="_Layer_"]:has(> [class*="_Slot_"]) { display: none !important; }
 html #page-chats { background: var(--n19-page) !important; font-family: var(--n19-font) !important; }
 html #page-chats .chat-background, html #page-chats .chat-background-item { display: none !important; }
 
 @media only screen and (min-width: 926px) {
-  /* The app as one centered window: chat list 31%, conversation 69% */
   html #main-columns { max-width: 1010px !important; min-width: 0 !important; margin: 0 auto !important; position: relative !important; background: var(--n19-window) !important;
     border-left: 1px solid var(--n19-window-border) !important; border-right: 1px solid var(--n19-window-border) !important; box-sizing: border-box !important; }
   html #column-left { flex: 0 0 31% !important; width: 31% !important; min-width: 280px !important; max-width: none !important; margin: 0 !important;
@@ -61,7 +48,6 @@ html #page-chats .chat-background, html #page-chats .chat-background-item { disp
 }
 @media only screen and (max-width: 925px) { html #column-center { inset: 0 !important; } html #column-left { margin: 0 !important; border-radius: 0 !important; } }
 
-/* ---- Left column header: the blue bar with the hamburger and "Telegram", the search field under it ---- */
 html #column-left .item-main > .sidebar-header.main-search-sidebar-header {
   flex-wrap: wrap !important; align-items: flex-start !important; padding: 0 !important; min-height: 0 !important; height: auto !important;
   background: linear-gradient(var(--n19-head) 0 48px, var(--n19-window) 48px) !important;
@@ -84,14 +70,12 @@ html #column-left .input-search .input-search-icon { font-size: 16px !important;
 html #column-left .input-search .input-search-placeholder { font-size: 12px !important; inset-inline-start: 30px !important; top: 7px !important; line-height: 16px !important; color: #9aa2ab !important; }
 html #column-left .input-search .input-search-clear { top: 0 !important; height: 30px !important; width: 30px !important; }
 
-/* ---- Folder tabs (2020), the folders rail and the stories list (2023) ---- */
 html #column-left .folders-tabs-scrollable, html #column-left .chatlist-overlay .menu-horizontal-scrollable, html .folders-sidebar,
 html #column-left .stories-list, html #column-left [class*="_ListContainer_"] { display: none !important; }
 html #column-left .chatlist-overlay .folders-tabs-gradient-container { display: none !important; }
 html #column-left #folders-container .folders-scrollable { padding-top: 0 !important; }
 html body.has-folders-sidebar { --folders-sidebar-offset: 0px !important; }
 
-/* ---- Chat list rows ---- */
 html #column-left ul.chatlist { padding: 0 !important; margin: 0 !important; background: var(--n19-window) !important; }
 html #column-left .chatlist-chat { border-radius: 0 !important; min-height: 72px !important; height: 72px !important; padding-block: 12px !important;
   padding-inline: 76px 16px !important; margin: 0 !important; }
@@ -113,13 +97,11 @@ html #column-left .chatlist-chat.active { --background: var(--n19-active) !impor
 html #column-left .chatlist-chat.active :is(.row-title, .peer-title, .row-subtitle, .message-time, .row-title-right, .primary-text, .dialog-subtitle-badge-pinned, .message-status) { color: #fff !important; }
 html #column-left .chatlist-chat.active .message-time { color: var(--n19-active-muted) !important; }
 html #column-left .chatlist-chat.active .badge.unread { background-color: #fff !important; color: var(--n19-active) !important; }
-/* Stories rings (2023), premium stars and emoji status (2022), reactions and poll-vote badges (2021+), topic icons (2022) */
 html #column-left .chatlist-chat :is(.avatar-stories-svg, .avatar-stories-simple-svg, .premium-icon, .emoji-status, .dialog-subtitle-badge-reaction,
   .dialog-subtitle-badge-pollvote, .topic-icon, .emoji-topic-icon, .avatar-badge, .peer-title-direct-badge, .bot-verification-icon) { display: none !important; }
 html #column-left .chatlist-chat .avatar-stories-simple { --stories-width: 0px; }
 html .avatar :is(.avatar-stories-svg, .avatar-stories-simple-svg) { display: none !important; }
 
-/* ---- Conversation header: the blue bar with the peer's name and status ---- */
 html .chat { --chat-topbar-height: 48px !important; }
 html .chat .sidebar-header.topbar { max-width: none !important; border-radius: 0 !important; box-shadow: none !important; margin: 0 !important; transform: none !important;
   background-color: var(--n19-head) !important; padding-inline: 8px 4px !important; }
@@ -131,11 +113,9 @@ html .chat .topbar :is(.peer-title, .user-title, .top) { color: var(--n19-head-t
 html .chat .topbar .bottom, html .chat .topbar .bottom .info, html .chat .topbar .bottom :is(.online, .i18n) { color: var(--n19-head-muted) !important; font-size: 13px !important; font-weight: 400 !important; }
 html .chat .topbar .chat-utils .btn-icon, html .chat .topbar .sidebar-close-button { color: var(--n19-head-muted) !important; border-radius: 0 !important; }
 html .chat .topbar .chat-utils .btn-icon:hover { color: var(--n19-head-text) !important; background: var(--n19-head-hover) !important; }
-/* Pinned bar: flat, under the blue bar; the 2022 translation bar goes */
 html .chat .pinned-translation { display: none !important; }
 html .chat .topbar-floating-plates .pinned-container { border-radius: 0 !important; box-shadow: 0 1px 0 var(--n19-divider) !important; max-width: none !important; }
 
-/* ---- Messages: a flat list, no bubbles, no tails, no wallpaper ---- */
 html #column-center .bubbles { background: var(--n19-window) !important; }
 html .chat .bubbles-inner { max-width: 590px !important; }
 html .chat .bubble:not(.service) { --border-start-start-radius: 0 !important; --border-start-end-radius: 0 !important; --border-end-end-radius: 0 !important; --border-end-start-radius: 0 !important;
@@ -162,11 +142,9 @@ html .chat .bubble.service .bubble-content, html .chat .bubble.service .service-
   font-size: 12px !important; font-weight: 400 !important; }
 html .chat .bubble.is-date .bubble-content { background: transparent !important; }
 html .chat .bubble.is-date .service-msg { background: transparent !important; color: var(--n19-muted) !important; font-weight: 700 !important; }
-/* Reactions (2021): on messages, on hover and in the context menu */
 html .chat .bubble :is(.reactions, reactions-element, .reaction, .bubble-hover-reaction), html .btn-menu-reactions, html .btn-menu-reactions-container,
 html .chat .bubble .bubble-beside-button.with-hover:not(.forward) { display: none !important; }
 
-/* ---- Composer: a white panel with a bordered textarea, attach and emoji icons and a blue SEND label ---- */
 html .chat .chat-input { background: var(--n19-window) !important; border-top: 1px solid var(--n19-divider) !important; padding: 12px 0 14px !important; }
 html .chat .chat-input-container { max-width: 590px !important; padding: 0 16px !important; }
 html .chat .chat-input .rows-wrapper { border-radius: 2px !important; box-shadow: none !important; background: var(--n19-window) !important; border: 1px solid var(--n19-field-border) !important; }
@@ -179,11 +157,9 @@ html .chat .chat-input .btn-send-container { margin-inline-start: 8px !important
 html .chat .chat-input .btn-send { width: 56px !important; background: var(--n19-send-label) center / 44px 18px no-repeat !important; box-shadow: none !important; border-radius: 0 !important; color: transparent !important; }
 html .chat .chat-input .btn-send :is(.tgico, .btn-send-effect-container, .c-ripple, .btn-send-stars-badge) { visibility: hidden !important; }
 html .chat .chat-input .btn-send:hover { opacity: .8; }
-/* Mini-app and bot-menu buttons (2022+) and the gift button */
 html .chat .chat-input :is(.new-message-bot-commands, .btn-send-stars-badge) { display: none !important; }
 html #column-left .chatlist-chat .dialog-stars-badge, html .profile-pinned-gifts, html .search-super-pinned-gifts-wrap { display: none !important; }
 
-/* ---- Menus: square white panels with blue-gray items ---- */
 html .btn-menu { border-radius: 0 0 2px 2px !important; background: var(--n19-menu) !important; box-shadow: 0 1px 2px rgba(0,0,0,.2) !important; border: 1px solid var(--n19-menu-border) !important;
   backdrop-filter: none !important; padding: 9px 0 7px !important; }
 html .btn-menu .btn-menu-item { font-size: 13px !important; color: var(--n19-menu-text) !important; border-radius: 0 !important; margin: 0 !important; height: auto !important; padding: 8px 20px 8px 16px !important; }
@@ -191,7 +167,6 @@ html .btn-menu .btn-menu-item .tgico, html .btn-menu .btn-menu-item-icon { color
 html.no-touch .btn-menu .btn-menu-item:hover { background: var(--n19-menu-hover) !important; }
 html .btn-menu .btn-menu-item.danger { color: #c05f5a !important; }
 
-/* ---- Sign-in pages: the blue band, "Telegram" and a white 404px card ---- */
 html #auth-pages { background: linear-gradient(var(--n19-head) 0 226px, var(--n19-page) 226px) !important; font-family: var(--n19-font) !important; }
 html #auth-pages::before { content: ""; position: absolute; top: 24px; left: 50%; margin-left: -202px; width: 76px; height: 18px; background: var(--n19-title) no-repeat; pointer-events: none; z-index: 1; }
 html #auth-pages > button[class*="_themeButton_"] { display: none !important; }
@@ -209,9 +184,6 @@ html #auth-pages .btn-primary:not(.btn-primary-transparent) { background: var(--
 html #auth-pages .input-field-input { font-size: 13px !important; }
 html #auth-pages .input-field :is(.input-field-input, .input-field-border) { border-radius: 2px !important; }
 
-/* ================================================================================================================
-   Telegram A (web.telegram.org/a). Its palette lives in custom properties on :root and <body>.
-   ================================================================================================================ */
 html:root, html.theme-light, html.theme-dark, html body#root {
   --color-primary: var(--n19-head) !important; --color-primary-shade: var(--n19-head-hover) !important; --color-primary-shade-darker: var(--n19-head-hover) !important;
   --color-background: var(--n19-window) !important; --color-background-secondary: var(--n19-window) !important; --color-background-selected: var(--n19-hover) !important;
@@ -225,7 +197,6 @@ html:root, html.theme-light, html.theme-dark, html body#root {
   --message-text-size: 13px !important; --theme-background-color: var(--n19-page) !important;
 }
 html body#root { font-family: var(--n19-font) !important; }
-/* The wallpaper layer with its canvas pattern (2021) */
 html #Main > div:not([id]):has(> canvas:only-child) { display: none !important; }
 html #MiddleColumn .MessageList.with-default-bg, html #MiddleColumn .MessageList { background: var(--n19-window) !important; }
 
@@ -239,7 +210,6 @@ html #MiddleColumn .MessageList.with-default-bg, html #MiddleColumn .MessageList
 }
 html #LeftColumn, html #LeftColumn-main { border-radius: 0 !important; }
 
-/* ---- Left column header ---- */
 html #LeftColumn .LeftMainHeader .left-header { flex-wrap: wrap !important; padding: 0 !important; height: auto !important; min-height: 0 !important;
   background: linear-gradient(var(--n19-head) 0 48px, var(--n19-window) 48px) !important; align-items: flex-start !important; }
 html #LeftColumn .LeftMainHeader .main-menu { height: 48px !important; display: flex !important; align-items: center !important; margin: 0 !important; padding-inline-start: 6px !important; position: relative !important; }
@@ -254,13 +224,11 @@ html #LeftColumn .LeftMainHeader .SearchInput.has-focus { background: var(--n19-
 html #LeftColumn .LeftMainHeader .SearchInput input { font-size: 12px !important; height: 28px !important; color: var(--n19-text) !important; }
 html #LeftColumn .LeftMainHeader .SearchInput .icon-container-left { width: 30px !important; color: var(--n19-icon) !important; }
 html #LeftColumn .LeftMainHeader .SearchInput .search-icon { font-size: 16px !important; }
-/* Stories: the toggler inside the search field and the ribbon (2023); folders (2020) */
 html #LeftColumn #StoryToggler, html #LeftColumn .ChatFolders.with-story-ribbon > div:not(.ChatFolders-content):not(.Transition) { display: none !important; }
 html #LeftColumn .ChatFolders .TabList, html #LeftColumn .ChatFolders-content > div:not(.Transition):has(.TabList) { display: none !important; }
 html #LeftColumn-main .ChatFolders-content.with-tabs > .Transition { margin-top: 0 !important; }
 html #LeftColumn-main .ChatFolders-content.with-tabs .chat-list { padding-top: 0 !important; }
 
-/* ---- Chat list rows ---- */
 html #LeftColumn .chat-list { padding: 0 !important; background: var(--n19-window) !important; }
 html #LeftColumn .ListItem.Chat { height: 64px !important; }
 html #LeftColumn .ListItem.Chat .ListItem-button { border-radius: 0 !important; padding: 8px 16px !important; height: 64px !important; min-height: 64px !important; }
@@ -282,14 +250,11 @@ html #LeftColumn .ListItem.Chat.selected .ListItem-button { background: var(--n1
 html #LeftColumn .ListItem.Chat.selected :is(.fullName, .last-message, .last-message-summary, .sender-name, .colon, .icon) { color: #fff !important; }
 html #LeftColumn .ListItem.Chat.selected .LastMessageMeta .time { color: var(--n19-active-muted) !important; }
 html #LeftColumn .ListItem.Chat.selected .chat-badge-transition > div:has(> span) { background: #fff !important; color: var(--n19-active) !important; }
-/* Premium stars and emoji status beside names (2022), paid-subscription stars, gift sparkles; verified and scam marks stay */
 html .title > :not(.fullName):not(.VerifiedIcon):not(.FakeIcon):not(h3):not(.icon-muted):not(.icon) { display: none !important; }
 html .title > .fullName ~ :is(.custom-emoji, [class*="statusTransition"]) { display: none !important; }
 html #LeftColumn .avatar-subscription, html #LeftColumn .avatar-community-chevron { display: none !important; }
-/* Reactions and unread-reaction badges in the list */
 html #LeftColumn .ListItem.Chat .chat-badge-transition > div:has(> .icon-heart), html #LeftColumn .ListItem.Chat .chat-badge-transition > div:has(> .icon-heart-outline) { display: none !important; }
 
-/* ---- Conversation header ---- */
 html #MiddleColumn .MiddleHeader { position: absolute !important; top: 0 !important; left: 0 !important; right: 0 !important; width: auto !important; max-width: none !important; height: 48px !important;
   border-radius: 0 !important; box-shadow: none !important; margin: 0 !important; background: var(--n19-head) !important; padding: 0 4px 0 16px !important; transform: none !important; }
 html #MiddleColumn .MiddleHeader .header-tools { background: transparent !important; }
@@ -304,10 +269,8 @@ html #MiddleColumn .MiddleHeader .HeaderActions .Button:hover { color: var(--n19
 html #MiddleColumn .MiddleHeader .back-button .Button { color: var(--n19-head-text) !important; }
 html #MiddleColumn .MiddleHeader .ChatInfo .title > :not(.fullName):not(.VerifiedIcon):not(.FakeIcon) { display: none !important; }
 html #MiddleColumn .MiddleHeaderPanesIsland { top: 48px !important; }
-/* The 2022 translation bar and the 2023 "boost"/ad panes above messages */
 html #MiddleColumn .MiddleHeaderPanesIsland [class*="translat" i] { display: none !important; }
 
-/* ---- Messages: a flat list ---- */
 html #MiddleColumn .MessageList .messages-container { width: 100% !important; max-width: 590px !important; padding-top: 56px !important; }
 html #MiddleColumn .Message { padding-inline-start: 57px !important; margin-bottom: 0 !important; }
 html #MiddleColumn .MessageList.no-avatars .Message { padding-inline-start: 16px !important; }
@@ -332,12 +295,10 @@ html #MiddleColumn .Message .message-title-name > :not(.sender-title):not(.admin
 html #MiddleColumn .sticky-date span, html #MiddleColumn .ActionMessage .action-message-content { background: transparent !important; color: var(--n19-muted) !important; font-weight: 700 !important;
   font-size: 12px !important; border-radius: 0 !important; backdrop-filter: none !important; }
 html #MiddleColumn .ActionMessage:not(.sticky-date) .action-message-content { background: var(--n19-service) !important; color: var(--n19-service-text) !important; font-weight: 400 !important; }
-/* Reactions (2021), the quick-reaction button and the reaction picker */
 html #MiddleColumn .Message :is(.message-reaction, .quick-reaction, .paid-reaction), html .ReactionSelector, html .MessageContextMenu .ReactionSelector { display: none !important; }
 html #MiddleColumn .Message .Reactions { display: inline !important; margin: 0 !important; }
 html #MiddleColumn .Message::before { background-color: var(--n19-hover) !important; }
 
-/* ---- Composer ---- */
 html #MiddleColumn .middle-column-footer { width: 100% !important; max-width: 590px !important; box-sizing: border-box !important; padding: 12px 16px 14px !important;
   border-image: linear-gradient(var(--n19-divider) 0 1px, var(--n19-window) 1px) fill 0 / 0 / 0 100vw !important; }
 html #MiddleColumn .Composer { flex-wrap: nowrap !important; background: transparent !important; box-shadow: none !important; padding: 0 !important; margin: 0 !important; border-radius: 0 !important; width: 100% !important; align-items: center !important; }
@@ -349,10 +310,8 @@ html #MiddleColumn .Composer .composer-action-button, html #MiddleColumn .Compos
 html #MiddleColumn .Composer > .Button.main-button { width: 56px !important; min-width: 56px !important; box-shadow: none !important; border-radius: 0 !important; color: transparent !important;
   background: var(--n19-send-label) center / 44px 18px no-repeat !important; margin-inline-start: 8px !important; }
 html #MiddleColumn .Composer > .Button.main-button > :not(.ripple-container) { visibility: hidden !important; }
-/* Bot-menu / mini-app buttons, the gift and stars buttons (2022+) */
 html #MiddleColumn .Composer :is(.bot-menu, .composer-action-button.gift) { display: none !important; }
 
-/* ---- Menus ---- */
 html .Menu .bubble { border-radius: 0 0 2px 2px !important; background: var(--n19-menu) !important; box-shadow: 0 1px 2px rgba(0,0,0,.2) !important; border: 1px solid var(--n19-menu-border) !important;
   backdrop-filter: none !important; padding: 9px 0 7px !important; }
 html .MessageContextMenu .bubble { border: none !important; box-shadow: none !important; background: transparent !important; padding: 0 !important; }
@@ -362,7 +321,6 @@ html .Menu .MenuItem { font-size: 13px !important; color: var(--n19-menu-text) !
 html .Menu .MenuItem .icon { color: var(--n19-icon) !important; }
 html .Menu .MenuItem:hover, html .Menu .MenuItem:focus { background: var(--n19-menu-hover) !important; }
 
-/* ---- Sign-in pages ---- */
 html .Transition.is-auth { background: linear-gradient(var(--n19-head) 0 226px, var(--n19-page) 226px) !important; }
 html .Auth { background: transparent !important; }
 html .Auth .auth-form { max-width: 404px !important; background: var(--n19-window) !important; border-radius: 2px !important; box-shadow: var(--n19-card-shadow) !important; padding: 44px 65px !important;

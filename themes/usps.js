@@ -1,6 +1,4 @@
-// net19 handmade theme: USPS, 2019. usps.com has no dark mode; default detection keeps it light.
 globalThis.net19Theme = {};
-// The 2019 main menu read "Mail & Ship", "Track & Manage" and "Postal Store" where today's says "Send", "Receive" and "Shop".
 (() => {
   const words = { Send: 'Mail & Ship', Receive: 'Track & Manage', Shop: 'Postal Store' };
   const fix = () => {
@@ -14,10 +12,8 @@ globalThis.net19Theme = {};
   let queued = false;
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
   const start = () => { fix(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); };
-  start();  // from document_start: the header is fixed as soon as it is parsed, without waiting for DOMContentLoaded
+  start();
 })();
-// On a dark device the page is flipped by palette.js. The navy Quick Tools tab (a ::before fill) would turn pale lavender
-// under its inverted white words; it is kept as drawn, so it stays white on navy as in 2019.
 (() => {
   const root = document.documentElement;
   const mark = () => {
@@ -31,5 +27,5 @@ globalThis.net19Theme = {};
     new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
     new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-flip'] });
   };
-  start();  // from document_start: the header is fixed as soon as it is parsed, without waiting for DOMContentLoaded
+  start();
 })();

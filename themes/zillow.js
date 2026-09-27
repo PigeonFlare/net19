@@ -1,5 +1,4 @@
-globalThis.net19Theme = {};  // Zillow has no dark mode; default detection keeps it light.
-// The 2019 header named the same sections "Home Loans", "Agent finder", "List your rental" and "Help".
+globalThis.net19Theme = {};
 (() => {
   const words = { 'Get a mortgage': 'Home Loans', 'Find an agent': 'Agent finder', 'Manage rentals': 'List your rental', 'Get help': 'Help' };
   const fix = () => {

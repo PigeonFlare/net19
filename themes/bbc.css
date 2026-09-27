@@ -1,36 +1,26 @@
-/* net19 handmade theme: BBC, 2019: a slim 40px black global bar with the small white BBC blocks at the far left and sign-in and
-   menu at the right, bold white 13px Helvetica section links split by thin rules in a black band under it (no
-   "Watch Live" or "Subscribe" buttons); on News, the #bb1919 red masthead and nav band; Helvetica/Arial bold headlines instead of Reith Serif; articles
-   with a 32px bold headline, the date in a small gray box and 16px/22px #404040 body copy; Sport, Weather, iPlayer,
-   Sounds and the About/Help pages keep their own mastheads under the same bar. No "Save" or Google buttons. */
 html { --n19-bar: #000; --n19-bar-text: #fff; --n19-bar-rule: #3a3a3a; --n19-news: #bb1919; --n19-news-dark: #a91717; --n19-news-rule: rgba(255,255,255,.35);
   --n19-head: #222; --n19-body: #404040; --n19-font: Helvetica, Arial, freesans, sans-serif; }
 html[data-net19-mode="dark"] { --n19-bar: #000; --n19-bar-text: #fff; --n19-bar-rule: #3a3a3a; --n19-news: #bb1919; --n19-news-dark: #a91717; --n19-news-rule: rgba(255,255,255,.35);
   --n19-head: #eee; --n19-body: #ccc; --n19-font: Helvetica, Arial, freesans, sans-serif; }
-/* Global bar: black, with the logo shown as white blocks and every control in white. */
 header#bbc-header { background: var(--n19-bar) !important; border-bottom: 0 !important; }
 header#bbc-header :is(a, span, button:not([class*="SubscribeButton"])) { color: var(--n19-bar-text) !important; background-color: transparent !important; font-family: var(--n19-font) !important; font-weight: 700 !important; }
 header#bbc-header button svg, header#bbc-header [class*="HeaderMenuButton"] svg path { fill: var(--n19-bar-text) !important; }
 header#bbc-header [class*="HeaderLogo"] svg { color: var(--n19-bar-text) !important; fill: var(--n19-bar-text) !important; }
 header#bbc-header [class*="SubscribeButton"] { border-radius: 0 !important; font-family: var(--n19-font) !important; }
-/* Section links sat in the same black band, bold, separated by thin vertical rules. */
 nav#main-navigation-container { background: var(--n19-bar) !important; border: 0 !important; box-shadow: none !important; }
 nav#main-navigation-container a { color: var(--n19-bar-text) !important; font-family: var(--n19-font) !important; font-weight: 700 !important; font-size: 13px !important; }
 nav#main-navigation-container ul[class*="MainNavigationWrapper"] > li { border-left: 1px solid var(--n19-bar-rule) !important; padding: 0 6px !important; }
 nav#main-navigation-container ul[class*="MainNavigationWrapper"] > li:last-child { border-right: 1px solid var(--n19-bar-rule) !important; }
 nav#main-navigation-container a[aria-current], nav#main-navigation-container a[aria-current] * { box-shadow: inset 0 -4px 0 var(--n19-bar-text) !important; }
 nav#main-navigation-container a::after, nav#main-navigation-container a::before { background-color: var(--n19-bar-text) !important; }
-/* News pages: the red masthead band carries the section navigation. */
 html[data-net19-section="news"] nav#main-navigation-container, html[data-net19-section="news"] nav#main-navigation-container nav[class*="SubNavigation"] { background: var(--n19-news) !important; }
 html[data-net19-section="news"] nav#main-navigation-container ul[class*="MainNavigationWrapper"] > li { border-color: var(--n19-news-rule) !important; }
 html[data-net19-section="news"] nav#main-navigation-container nav[class*="SubNavigation"] { border-top: 1px solid var(--n19-news-dark) !important; }
 nav#main-navigation-container nav[class*="SubNavigation"] a { font-weight: 400 !important; }
-/* Headlines: 2019 used Helvetica/Arial bold everywhere (Reith arrived later). */
 [data-testid="card-headline"], main h1, main h2, main h3, article h1, #main-heading { font-family: var(--n19-font) !important; font-weight: 700 !important; letter-spacing: 0 !important; }
 [data-testid="card-headline"] { color: var(--n19-head) !important; }
 main p, article p, [data-testid="card-description"] { font-family: var(--n19-font) !important; }
 
-/* The header shrinks to a 40px bar with the logo at the left; the section links follow in a slim black band */
 header#bbc-header [class*="HeaderContentStyled"] { height: 40px !important; min-height: 0 !important; display: flex !important; justify-content: flex-start !important; align-items: center !important; padding: 0 16px !important; }
 header#bbc-header [class*="HeaderLogoContainerStyled"] { order: 0 !important; width: auto !important; flex: 0 0 auto !important; justify-content: flex-start !important; }
 header#bbc-header [class*="HeaderLogoStyled"], header#bbc-header [class*="HeaderLogoStyled"] > div { width: 84px !important; height: 24px !important; }
@@ -41,14 +31,9 @@ header#bbc-header [class*="WatchLiveStyled"], header#bbc-header [class*="Subscri
 header#bbc-header { height: auto !important; min-height: 0 !important; padding-top: 0 !important; padding-bottom: 0 !important; }
 nav#main-navigation-container, nav#main-navigation-container section, nav#main-navigation-container nav[class*="NavigationWrapper"], nav#main-navigation-container ul[class*="MainNavigationWrapper"] { min-height: 0 !important; height: 34px !important; }
 nav#main-navigation-container { border-top: 1px solid var(--n19-bar-rule) !important; top: 40px !important; }
-/* The links keep their 42px padding box; trim it to the 34px bar so the labels sit on its middle. */
 nav#main-navigation-container ul[class*="MainNavigationWrapper"] > li a[class*="MainNavigationLink"] { padding-top: 8px !important; padding-bottom: 8px !important; }
 
-/* ---- bbc.com pages (header#bbc-header): post-2019 buttons and fonts ---- */
-/* "Save", "Add as preferred on Google" (2025), and the notification/for-you entries came after 2019 */
 button[data-action="save"], [data-testid="google_preferred"], [class*="GooglePreferredButton"], [class*="Byline-styles__GooglePreferredButtonContainerStyled"] { display: none !important; }
-/* Article: 2019's story-body: a 32px/36px bold headline in #222, the date in a small gray box, bold byline, a bold intro
-   paragraph, 16px/22px body copy in #404040, gray captions under the pictures, all in Helvetica/Arial. */
 main#bbc-main article [data-component="headline-block"] h1, main#bbc-main article h1[class*="Headline-styles"] {
   font-family: var(--n19-font) !important; font-size: 32px !important; line-height: 36px !important; font-weight: 700 !important; color: var(--n19-head) !important; letter-spacing: 0 !important; }
 main#bbc-main article [data-testid="byline"] time { display: inline-block !important; width: auto !important; flex: 0 0 auto !important; align-self: flex-start !important; font-family: var(--n19-font) !important; font-size: 14px !important; color: #5a5a5a !important; border: 1px solid #dcdcdc !important; padding: 2px 6px !important; line-height: 18px !important; }
@@ -61,37 +46,27 @@ main#bbc-main article [class*="Caption-styles"], main#bbc-main article figcaptio
 main#bbc-main article [class*="Image-styles__CreditStyled"] { font-family: var(--n19-font) !important; font-size: 11px !important; background: rgba(0,0,0,.6) !important; text-transform: uppercase !important; }
 main#bbc-main article [data-component="subheadline-block"] h2 { font-family: var(--n19-font) !important; font-size: 18px !important; font-weight: 700 !important; color: var(--n19-head) !important; }
 main#bbc-main [data-component="tags"] a, main#bbc-main [class*="Tag-styles__TagLink"] { border-radius: 0 !important; background: #f2f2f2 !important; color: #222 !important; font-family: var(--n19-font) !important; font-weight: 700 !important; }
-/* Cards and fronts: Helvetica bold headlines, square pictures */
 main#bbc-main [data-testid="card-media"] img, main#bbc-main [data-testid="card-media-wrapper"], main#bbc-main img { border-radius: 0 !important; }
 main#bbc-main [data-testid="card-description"], main#bbc-main [data-testid="card-metadata-lastupdated"], main#bbc-main [data-testid="card-metadata-tag"] { font-family: var(--n19-font) !important; }
 main#bbc-main [data-testid="card-metadata-tag"] { border-left-color: var(--n19-news) !important; }
-/* Section titles: bold dark words over a thin rule (no chevron arrows) */
 main#bbc-main [class*="SectionTitle-styles__SectionTitleStyled"] { font-family: var(--n19-font) !important; font-weight: 700 !important; }
-/* Search box on search results */
 main#bbc-main [data-testid="search-input-wrapper"], main#bbc-main [data-testid="search-input-field"], main#bbc-main [data-testid="search-input-search-button"] { border-radius: 0 !important; }
 
-/* ---- Pages on the shared "GlobalNavigation" bar (bbc.co.uk, Sport, News live pages): the 2019 orbit bar ----
-   Black, the white blocks at the left, 13px bold white words split by thin rules. */
 nav[class*="-GlobalNavigation"] { background: var(--n19-bar) !important; }
 nav[class*="-GlobalNavigation"] a[class*="NavigationLink"], nav[class*="-GlobalNavigation"] [class*="AccountText"] { color: var(--n19-bar-text) !important; font-family: var(--n19-font) !important; font-weight: 700 !important; font-size: 13px !important; }
 nav[class*="-GlobalNavigation"] li[class*="GlobalNavigationProduct"] { border-left: 1px solid var(--n19-bar-rule) !important; }
 nav[class*="-GlobalNavigation"] [class*="LogoIconWrapper"] svg { fill: var(--n19-bar-text) !important; color: var(--n19-bar-text) !important; }
-/* News masthead and section band on those pages: the 2019 red */
 html[data-net19-section="news"] [data-testid="masthead"][class*="-Masthead"] { background: var(--n19-news) !important; }
 html[data-net19-section="news"] [data-testid="masthead"][class*="-Masthead"] svg { fill: #fff !important; color: #fff !important; }
 html[data-net19-section="news"] nav[data-testid="navigation"][class*="-Navigation"], html[data-net19-section="news"] nav[data-testid="navigation"] [class*="PrimaryNavBarContainer"] { background: var(--n19-news-dark) !important; border: 0 !important; }
 html[data-net19-section="news"] nav[data-testid="navigation"] [class*="PrimaryNavBarContainer"] a, html[data-net19-section="news"] nav[data-testid="navigation"] [class*="PrimaryNavBarContainer"] [class*="LinkTextContainer"] { color: #fff !important; font-family: var(--n19-font) !important; }
-/* Live pages: posts with a bold headline and the gray time, split by hairlines */
 html[data-net19-section="news"] article[data-testid="content-post"] :is(h3, [class*="HeadlineWrap"]) { font-family: var(--n19-font) !important; font-weight: 700 !important; }
 html[data-net19-section="news"] [data-testid="timestamp"] [class*="-Time"] { font-family: var(--n19-font) !important; color: #5a5a5a !important; }
 html[data-net19-section="news"] [data-testid="postList"] p[class*="-Paragraph"], html[data-net19-section="news"] main p[class*="-Paragraph"] { font-family: var(--n19-font) !important; font-size: 16px !important; line-height: 22px !important; }
 html[data-net19-section="news"] main :is(h1, h2, h3) { font-family: var(--n19-font) !important; }
 
-/* ---- Orbit pages (iPlayer, Sounds, Weather, About and Help): 2019's orbit had no icons in front of its words ---- */
 #orb-banner .orbit-header-links svg { display: none !important; }
 #orb-banner .orbit-header-links a, #orb-banner .orbit-header-links span { font-family: var(--n19-font) !important; font-weight: 700 !important; font-size: 13px !important; }
-/* Everything inside bbc.com's main column (fronts, search results, video pages) in Helvetica/Arial, as in 2019 */
 main#bbc-main :is(p, h1, h2, h3, h4, span, a, li, time, figcaption) { font-family: var(--n19-font) !important; }
 html[data-net19-section="news"] main :is(p, span, li, a, strong, h2, h3, button) { font-family: var(--n19-font) !important; }
-/* Section sub-navigation (Culture, Audio, Travel...) sits in the same black band so its white words read */
 nav#main-navigation-container nav[class*="SubNavigation"] { background: var(--n19-bar) !important; border-top: 1px solid var(--n19-bar-rule) !important; }

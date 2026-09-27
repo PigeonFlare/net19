@@ -1,9 +1,3 @@
-/* net19 handmade theme: Seznam.cz, 2019. The portal's "default" skin of late 2019 (homepage-skin-default 2.0.314):
-   Arial-type system sans, #666 body text, red #de0000 links (#900 visited) and the red "Vyhledat" button, a square
-   search field with a 1px #ccc border and 4px corners, red search tabs above it with the chosen one in #111, and
-   gadget headers in navy #006 over a 1px #ffae00 rule. "Právě se hledá" was a line of plain red links, not chips
-   with trend icons. The results page (search.seznam.cz) had the same field and button, blue #1a0dab-type titles and
-   green addresses. The login page was a plain form with 4px corners. The logo is the same file today (kept). */
 html { --n19-red: #de0000; --n19-red-hover: #ab0000; --n19-visited: #900; --n19-text: #666; --n19-strong: #111; --n19-channel: #006;
   --n19-rule: #e1e1e1; --n19-gadget-rule: #ffae00; --n19-field-border: #ccc; --n19-field-hover: #aaa; --n19-focus: #7dbfff;
   --n19-page: #fff; --n19-field: #fff; --n19-serp-title: #1a0dab; --n19-serp-url: #007000; --n19-chip: #f4f4f4; }
@@ -11,55 +5,43 @@ html[data-net19-mode="dark"] { --n19-red: #ff4d4d; --n19-red-hover: #ff7070; --n
   --n19-channel: #9db4ff; --n19-rule: #3a3a3a; --n19-gadget-rule: #c98a00; --n19-field-border: #555; --n19-field-hover: #777;
   --n19-focus: #3d8fe0; --n19-page: #1c1c1c; --n19-field: #262626; --n19-serp-title: #8ab4f8; --n19-serp-url: #5bb974; --n19-chip: #2a2a2a; }
 
-/* ---- Portal (www.seznam.cz) -------------------------------------------------------------------------------- */
-/* Search tabs: red links, the chosen one in near-black, no pill behind them */
 .ogm-search__tabs button { color: var(--n19-red) !important; background: transparent !important; border-radius: 0 !important; }
 .ogm-search__tabs button:hover { text-decoration: underline !important; }
 .ogm-search__tabs button.atm-search-tab-button--active { color: var(--n19-strong) !important; }
 .ogm-search__tabs button.atm-search-tab-button--active:hover { text-decoration: none !important; }
-/* The field: square with 4px corners and a 1px #ccc border; blue glow only on focus */
 input.search-form__input { border: 1px solid var(--n19-field-border) !important; border-right: 0 !important; border-radius: 4px 0 0 4px !important;
   box-shadow: none !important; background: var(--n19-field) !important; }
 input.search-form__input:hover { border-color: var(--n19-field-hover) !important; }
 input.search-form__input:focus { border-color: var(--n19-focus) !important; box-shadow: 0 0 3px rgba(0,132,255,.4) !important; }
 .ogm-search-form__button.button--submit { border-radius: 0 4px 4px 0 !important; background-color: var(--n19-red) !important; }
 .ogm-search-form__button.button--submit:hover, .ogm-search-form__button.button--submit:focus { background-color: var(--n19-red-hover) !important; }
-/* "Právě se hledá": plain red links, no chip outline and no trend icon (2021) */
 nav a.atm-link:has(.mol-trending-topics-popover-opener__image) { border-color: transparent !important; background: transparent !important; box-shadow: none !important; padding-left: 0 !important; padding-right: 4px !important; }
 nav a.atm-link:has(.mol-trending-topics-popover-opener__image):hover span { text-decoration: underline !important; }
 nav a.atm-link .w-6.h-6:has(> .mol-trending-topics-popover-opener__image) { display: none !important; }
-/* Links: 2019 red, visited dark red */
 .gadget-container a.atm-link--styled.color-primary-1, .gadget-container a.atm-link.color-primary-1 { color: var(--n19-red) !important; }
 .gadget-container a.atm-link--show-visited:visited { color: var(--n19-visited) !important; }
-/* Gadget headers: bold navy titles over a 1px orange rule */
 h2.mol-gadget-header-title a, h2.mol-gadget-header-title .style-tags--gadget-title { color: var(--n19-channel) !important; }
 h2.mol-gadget-header-title { font-weight: 700 !important; }
 .gadget__header { border-bottom-color: var(--n19-gadget-rule) !important; }
-/* Buttons: 4px corners (2019's .button), not pills */
 .gadget-container a.button.button--submit, .gadget-container button.button { border-radius: 4px !important; }
 .gadget-container a.button.button--submit { background-color: var(--n19-red) !important; }
 .gadget-container a.button.button--submit:hover { background-color: var(--n19-red-hover) !important; }
 .gadget-container button.mr-2.font-14.line-height-20 { border-radius: 4px !important; }
 .gadget-container button.d-inline.font-12.font-weight-bold { border-radius: 4px !important; }
-/* News cards were flat rows, not rounded cards */
 .mol-content-card { border-radius: 0 !important; box-shadow: none !important; }
 .content-underlay--main-top { border-radius: 0 !important; }
 
-/* ---- Results (search.seznam.cz) -------------------------------------------------------------------------- */
 .SearchForm-input { border: 1px solid var(--n19-field-border) !important; border-right: 0 !important; border-radius: 4px 0 0 4px !important; box-shadow: none !important; background: var(--n19-field) !important; }
 .SearchForm-input:hover { border-color: var(--n19-field-hover) !important; }
 .SearchForm-input:focus { border-color: var(--n19-focus) !important; box-shadow: 0 0 3px rgba(0,132,255,.4) !important; }
 .SearchForm-button { border-radius: 0 4px 4px 0 !important; background-color: var(--n19-red) !important; }
 .SearchForm-button:hover { background-color: var(--n19-red-hover) !important; }
-/* Result titles: 2019 blue, underlined on hover */
 .Layout--left h3 a[href^="http"] { color: var(--n19-serp-title) !important; }
 .Layout--left h3 a[href^="http"]:hover { text-decoration: underline !important; }
 .Layout--left h3 a[href^="http"]:visited { color: #609 !important; }
 html[data-net19-mode="dark"] .Layout--left h3 a[href^="http"]:visited { color: #c58af9 !important; }
-/* Pills in the knowledge panel and tabs: 4px corners */
 .Layout--left button[role="checkbox"] { border-radius: 4px !important; }
 
-/* ---- Login (login.seznam.cz) ---------------------------------------------------------------------------- */
 form.login input#login-username, form.login input[type="password"] { border-radius: 4px !important; }
 form.login label.magic { border-radius: 4px !important; }
 form.login .submit-and-fido button[type="submit"], form.login button[type="submit"] { border-radius: 4px !important; background-color: var(--n19-red) !important; }

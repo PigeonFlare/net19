@@ -1,11 +1,3 @@
-/* net19 handmade theme: WhatsApp's site (www.whatsapp.com, blog.whatsapp.com, faq.whatsapp.com), 2019. The 2019 site
-   hung from a teal #1ebea5 header band: WhatsApp's white wordmark with the green phone-bubble (its own 2019 file, still
-   served by static.whatsapp.net) and white 13px uppercase links; white pages in the system font with light-weight
-   #32373b headings and #1cb39b accents; bright #01e675 "DOWNLOAD NOW" pills in 16px uppercase with wide letter
-   spacing, outlined pills with a 2px #77d7c8 border; pale teal bands; and a #273443 footer with 12px uppercase
-   rgba(255,255,255,.6) column headings over white links, above a #232f3c bar. The help center had the same band,
-   "How can we help you?" in light #00c2a4 type on the doodle picture, and teal topic links. Post-2019: the web
-   sign-up panel on the home page (2025), Meta AI (2024), Channels (2023) and WhatsApp Plus, in menus and footers. */
 html { --n19-teal: #1ebea5; --n19-teal-text: #1cb39b; --n19-teal-light: #00c2a4; --n19-green: #01e675; --n19-green-hover: #00d26a;
   --n19-outline: #77d7c8; --n19-page: #fff; --n19-text: #282828; --n19-head: #32373b; --n19-pale: #e8f7f4; --n19-navy: #273443; --n19-navy-2: #232f3c;
   --n19-deep: #075e54;
@@ -16,41 +8,33 @@ html[data-net19-mode="dark"] { --n19-teal: #1ebea5; --n19-teal-text: #1cb39b; --
   --n19-outline: #77d7c8; --n19-page: #fff; --n19-text: #282828; --n19-head: #32373b; --n19-pale: #e8f7f4; --n19-navy: #273443; --n19-navy-2: #232f3c;
   --n19-deep: #075e54; }
 
-/* ---- Type: the system font of 2019, not WhatsApp Sans ------------------------------------------------------------ */
 html:is([data-n19-wa="www"], [data-n19-wa="blog"]) body :is(div, span, a, p, h1, h2, h3, h4, h5, li, button, input, label, article, section) { font-family: var(--n19-font) !important; }
 [data-n19-wa-type="display"] { font-weight: 300 !important; letter-spacing: 0 !important; }
 
-/* ---- Surfaces: white page, pale teal panels, navy bands -------------------------------------------------------- */
 [data-n19-wa-bg="cream"] { background-color: var(--n19-page) !important; }
 [data-n19-wa-bg="mint"] { background-color: var(--n19-pale) !important; }
 [data-n19-wa-bg="dark"] { background-color: var(--n19-navy) !important; }
 [data-n19-wa-ink="green"] { color: var(--n19-teal-text) !important; }
 [data-n19-wa-bg="dark"] [data-n19-wa-ink="green"] { color: var(--n19-green) !important; }
 [data-n19-wa-ink="deep"] { color: var(--n19-deep) !important; }
-/* The big photo card of the home page loses its rounded corners (2019 had none) */
 #content-wrapper section ._ain8, #content-wrapper section ._ain8 :is(._aina, picture, img) { border-radius: 0 !important; }
 
-/* ---- Header: the teal band ------------------------------------------------------------------------------------ */
 header[data-n19-wa-part="head"] { background-color: var(--n19-teal) !important; box-shadow: none !important; border-bottom: 0 !important; }
 header[data-n19-wa-part="head"] a:is([href="https://www.whatsapp.com/"], [href="/"]):not(:is(._av3b, ._auta) a) { display: block !important; width: 124px !important; height: 35px !important;
   background: var(--n19-wa-logo) no-repeat left center / contain !important; }
 header[data-n19-wa-part="head"] a:is([href="https://www.whatsapp.com/"], [href="/"]):not(:is(._av3b, ._auta) a) > * { visibility: hidden !important; }
 header[data-n19-wa-part="head"] a:not([class*="_9u4i"]):not([class*="_9u4j"]):not(:is(._av3b, ._auta) a) { color: #fff !important; }
 header[data-n19-wa-part="head"] a:not([class*="_9u4i"]):not([class*="_9u4j"]):not(:is(._av3b, ._auta) a) :is(span, svg) { color: #fff !important; fill: currentColor; }
-/* The narrow layout's menu button is white on the band; its drawer keeps its white panel and dark links */
 header[data-n19-wa-part="head"] [role="button"]:not(._auta *) > svg { color: #fff !important; fill: #fff !important; }
 header[data-n19-wa-part="head"] ._av3e a:not(._av3b a), header[data-n19-wa-part="head"] ._av3e a:not(._av3b a) span {
   font-size: 13px !important; font-weight: 500 !important; letter-spacing: .02em !important; text-transform: uppercase !important; }
 header[data-n19-wa-part="head"] ._av3e a:not(._av3b a):hover span { text-decoration: none !important; opacity: .8 !important; }
-/* The Features menu keeps its white panel with dark links */
 header[data-n19-wa-part="head"] ._av3b { border-radius: 3px !important; }
 header[data-n19-wa-part="head"] ._av3b a, header[data-n19-wa-part="head"] ._av3b a span { color: #191919 !important; font-weight: 400 !important; }
 header[data-n19-wa-part="head"] ._av3b a:hover span { color: var(--n19-teal-text) !important; }
-/* Header buttons: "Log in" as a white outlined pill, "Download" as the 2019 bright green pill */
 header[data-n19-wa-part="head"] a[class*="_9u4j"]:not(._auta a) { background: transparent !important; border: 2px solid rgba(255, 255, 255, .85) !important; color: #fff !important; }
 header[data-n19-wa-part="head"] a[class*="_9u4j"]:not(._auta a) :is(span, svg) { color: #fff !important; }
 
-/* ---- Buttons: bright green pills in uppercase; outlined pills with the teal border -------------------------------- */
 a[class*="_9u4i"] { background-color: var(--n19-green) !important; border-color: var(--n19-green) !important; color: #fff !important; }
 a[class*="_9u4i"]:hover { background-color: var(--n19-green-hover) !important; border-color: var(--n19-green-hover) !important; }
 a[class*="_9u4i"] :is(span, svg) { color: #fff !important; }
@@ -61,7 +45,6 @@ a[class*="_9u4i"] span, a[class*="_9u4j"] span { text-transform: uppercase !impo
 footer[data-n19-wa-part="foot"] a[class*="_9u4j"] :is(span, svg) { color: #fff !important; }
 footer[data-n19-wa-part="foot"] a[class*="_9u4j"] { color: #fff !important; }
 
-/* ---- Footer: navy columns with uppercase headings, a darker bottom bar ---------------------------------------- */
 footer[data-n19-wa-part="foot"] { background-color: var(--n19-navy) !important; }
 footer[data-n19-wa-part="foot"] > div:last-child { background-color: var(--n19-navy-2) !important; }
 footer[data-n19-wa-part="foot"] h4 { color: rgba(255, 255, 255, .6) !important; font-size: 12px !important; font-weight: 600 !important; letter-spacing: .08em !important;
@@ -70,17 +53,12 @@ footer[data-n19-wa-part="foot"] ul a, footer[data-n19-wa-part="foot"] ul a span 
 footer[data-n19-wa-part="foot"] img._aeok { content: var(--n19-wa-logo) !important; width: 138px !important; height: 39px !important; object-fit: contain !important; }
 footer[data-n19-wa-part="foot"] a[href*="x.com/"] { display: inline-flex !important; }
 
-/* ---- Post-2019 features ---------------------------------------------------------------------------------------- */
-/* Web sign-up on the home page (2025): the form panel beside the hero text */
 #content-wrapper section article:has(> form input) { display: none !important; }
-/* Meta AI (2024), Channels (2023), WhatsApp Plus: menu and footer entries */
 :is(header, footer) a:is([href$="/meta-ai"], [href$="/channels"], [href$="/whatsapp-plus"], [href*="/meta-ai?"], [href*="/channels?"]) { display: none !important; }
 footer li:has(> a:is([href$="/meta-ai"], [href$="/channels"], [href$="/whatsapp-plus"])) { display: none !important; }
 
-/* ---- Blog: teal titles over a pale page -------------------------------------------------------------------- */
 html[data-n19-wa="blog"] #content-wrapper :is(h1, h2, h3) a, html[data-n19-wa="blog"] #content-wrapper a :is(h1, h2, h3) { color: var(--n19-teal-text) !important; }
 
-/* ---- Help center (faq.whatsapp.com): the teal band at the top, teal type ------------------------------------------ */
 html[data-n19-wa="faq"] body :is(div, span, a, p, h1, h2, h3, h4, li, input) { font-family: var(--n19-font) !important; }
 html[data-n19-wa="faq"] [role="banner"], html[data-n19-wa="faq"] div.x1ve1bff.x9l4bfa { background-color: var(--n19-teal) !important; }
 html[data-n19-wa="faq"] div.x1ve1bff.x9l4bfa :is(span, a, h1, div) { color: #fff !important; }

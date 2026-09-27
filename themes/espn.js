@@ -1,7 +1,3 @@
-// net19 handmade theme: espn. ESPN has a single (light) design, so the light palette applies and palette.js inverts
-// the page for dark devices. The left-rail headings gained emoji markers ("📍Watch on ESPN") that 2019 never had;
-// they are removed from the text in place. It also measures the hidden "Where to Watch" item so the items beside it
-// can close the gap (see espn.css).
 globalThis.net19Theme = {};
 (() => {
   const EMOJI = /^[\u{1F300}-\u{1FAFF}☀-➿️\s]+/u;

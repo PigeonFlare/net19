@@ -1,12 +1,3 @@
-/* net19 handmade theme: Bulbapedia, 2019. In 2019 Bulbapedia ran MediaWiki's MonoBook skin with its own green dress:
-   the "Bulbapedia" logo (Bulbasaur's bulb over the wordmark) on a pale green page, a white content page framed by a
-   1px #3E7614 line with a 1em rounded left edge, lowercase page tabs drawn as #A1CF31 green tabs with rounded tops
-   (the current one white), sans-serif text at 127% of x-small, 188% page titles and 150% section headings in normal
-   weight over a thin #aaa rule, #002bb8 links, a grey-boxed table of contents, and a white footer between #fabd23
-   rules. The site still serves that skin (?useskin=monobook): it is left exactly as drawn. The 2023 "BulbaVector" skin
-   it serves by default (a dark header bar, a centred card, rounded boxes) is restyled toward it: the header becomes a
-   light bar carrying the 2019 logo file (still hosted on archives.bulbagarden.net), the card takes the green frame, the
-   tabs, type and headings go back to MonoBook's. The 2023 floating "back to top" bars are hidden. */
 html {
   --n19-page: #fff; --n19-text: #000; --n19-link: #002bb8; --n19-visited: #5a3696; --n19-new: #ba0000;
   --n19-frame: #3e7614; --n19-tab: #a1cf31; --n19-tab-text: #002bb8; --n19-rule: #aaa; --n19-box: #f9f9f9;
@@ -21,7 +12,6 @@ html[data-net19-mode="dark"] {
   --n19-footer: #1b1f1a; --n19-footer-rule: #a07a1a; --n19-muted: #aaa;
 }
 
-/* ---- Header: a light bar with the 2019 logo and blue links instead of the dark 2023 bar ------------------------- */
 body.skin-bulbavector .bv-header { background: var(--n19-bar) !important; border-bottom: 1px solid var(--n19-bar-rule); box-shadow: none !important; }
 body.skin-bulbavector .bv-header__logo img.bv-logo--full, body.skin-bulbavector .bv-header__logo img.bv-logo--simplified {
   content: url("https://archives.bulbagarden.net/media/upload/2/25/Bulbapedia_logo.png"); width: auto !important; height: 48px !important;
@@ -35,16 +25,13 @@ body.skin-bulbavector .bv-header :is(.bv-header__nav__link, .bv-header__nav__but
 body.skin-bulbavector .bv-header :is(.bv-header__nav__link, .bv-header__nav__button):hover { text-decoration: underline; }
 body.skin-bulbavector .bv-header :is(.bv-header__nav__button, .bv-header__menu-btn, .bv-header__search-btn, .bv-header__search_close_btn) svg { color: var(--n19-bar-text) !important; }
 body.skin-bulbavector .bv-header :is(.bv-header__menu-btn, .bv-header__search-btn, .bv-header__search_close_btn) { color: var(--n19-bar-text) !important; }
-/* The magnifier is a dark-filled circle with a light outline, drawn for the dark bar: an outline in link blue here */
 body.skin-bulbavector .bv-header .bv-header__search-btn svg { fill: none !important; }
 body.skin-bulbavector .bv-header .bv-header__search-btn svg path { stroke: var(--n19-bar-text) !important; }
-/* MonoBook's search field: square, 1px #aaa */
 body.skin-bulbavector .bv-header #searchInput {
   border-radius: 0 !important; border: 1px solid var(--n19-rule) !important; background: var(--n19-field) !important; color: var(--n19-text) !important;
   font-family: var(--n19-font) !important; font-size: 13px !important; box-shadow: none !important;
 }
 
-/* ---- Content page: white, framed in green with the rounded left edge ----------------------------------------- */
 body.skin-bulbavector main#content.mw-body {
   background: var(--n19-page) !important; color: var(--n19-text) !important; border: 1px solid var(--n19-frame) !important;
   border-radius: 1em 0 0 1em !important; box-shadow: none !important; font-family: var(--n19-font) !important;
@@ -58,7 +45,6 @@ body.skin-bulbavector .mw-body-content a:not(.new):not(.external) { color: var(-
 body.skin-bulbavector .mw-body-content a:not(.new):not(.external):visited { color: var(--n19-visited); }
 body.skin-bulbavector .mw-body-content a.new { color: var(--n19-new); }
 
-/* Page title and section headings: normal weight over a thin grey rule */
 body.skin-bulbavector h1#firstHeading {
   font-family: var(--n19-font) !important; font-size: 188% !important; font-weight: normal !important; line-height: 1.2em !important;
   color: var(--n19-text) !important; border-bottom: 1px solid var(--n19-rule); padding: 0 0 .17em !important; margin-bottom: .1em !important;
@@ -71,7 +57,6 @@ body.skin-bulbavector .mw-parser-output h2 {
 body.skin-bulbavector .mw-parser-output h3 { font-family: var(--n19-font) !important; font-size: 132% !important; font-weight: bold !important; color: var(--n19-text) !important; }
 body.skin-bulbavector .mw-parser-output h4 { font-family: var(--n19-font) !important; font-size: 116% !important; font-weight: bold !important; }
 
-/* ---- Page tabs: lowercase green tabs with rounded tops, the current one white ------------------------------- */
 body.skin-bulbavector #bvToolbar { background: transparent !important; border-bottom: 1px solid var(--n19-frame) !important; border-radius: 1em 0 0 0 !important; }
 body.skin-bulbavector #bvToolbar :is(#p-namespaces, #p-views) ul { gap: .3em !important; align-items: flex-end; }
 body.skin-bulbavector #bvToolbar :is(#p-namespaces, #p-views) li {
@@ -86,7 +71,6 @@ body.skin-bulbavector #bvToolbar :is(#p-namespaces, #p-views) li > a {
 body.skin-bulbavector #bvToolbar :is(#p-namespaces, #p-views) li > a::after, body.skin-bulbavector #bvToolbar :is(#p-namespaces, #p-views) li::after { display: none !important; }
 body.skin-bulbavector #bvToolbar .bv-toolbar__dropdown__button { color: var(--n19-tab-text) !important; text-transform: lowercase; font-family: var(--n19-font) !important; font-size: 12px !important; }
 
-/* ---- Table of contents: MonoBook's grey box ------------------------------------------------------------------ */
 body.skin-bulbavector #bvTOC.bv-toc {
   background: var(--n19-box) !important; border: 1px solid var(--n19-rule) !important; border-radius: 0 !important;
   font-family: var(--n19-font) !important; font-size: 12px !important; box-shadow: none !important;
@@ -96,7 +80,6 @@ body.skin-bulbavector #bvTOC :is(li, a, span) { font-size: 12px !important; line
 body.skin-bulbavector #bvTOC li { padding-top: 0 !important; padding-bottom: 0 !important; margin-top: 0 !important; margin-bottom: 0 !important; }
 body.skin-bulbavector #bvTOC a { color: var(--n19-link) !important; padding-top: 0 !important; padding-bottom: 0 !important; }
 
-/* ---- Footer: white between two thin gold rules --------------------------------------------------------------- */
 body.skin-bulbavector #footer.bv-footer {
   background: var(--n19-footer) !important; color: var(--n19-text) !important; border-top: 1px solid var(--n19-footer-rule) !important;
   border-bottom: 1px solid var(--n19-footer-rule) !important; font-family: var(--n19-font) !important; font-size: 11px !important;
@@ -104,5 +87,4 @@ body.skin-bulbavector #footer.bv-footer {
 body.skin-bulbavector #footer.bv-footer a { color: var(--n19-link) !important; }
 body.skin-bulbavector #catlinks { border: 1px solid var(--n19-rule) !important; background: var(--n19-box) !important; border-radius: 0 !important; font-size: 12px; }
 
-/* ---- 2023 floating bars: "back to top" (desktop and phone) did not exist ------------------------------------------ */
 body.skin-bulbavector :is(#bvDesktopBackToTopBar, #bvBackToTopBtn, #bvDesktopBackToTopBtn) { display: none !important; }

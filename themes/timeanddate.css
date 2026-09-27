@@ -1,7 +1,3 @@
-/* net19 handmade theme: timeanddate.com, 2019: Helvetica/Arial throughout, #454545 text on a near-white #fdfdfd page; the 40px #333
-   menu bar with 13px light-gray links and small arrows in each section's color; white boxes with 5px corners, a #dfdbdb edge and a soft
-   glow, 18px bold box titles led by a colored square (blue world clock, green time zones, red calendar, pink calculators...), plain
-   13px bulleted #556bb5 link lists without illustrations, a pale box footer with small links, and green #7db500 buttons. */
 html { --n19-link: #556bb5; --n19-link-hover: #3d51a0; --n19-text: #454545; --n19-title: #454545; --n19-edge: #dfdbdb; --n19-glow: 0 0 4px #f2ecec;
   --n19-page: #fdfdfd; --n19-foot: rgba(220,220,240,.2); --n19-foot-edge: #eee; --n19-button: #7db500; --n19-button-hover: #6c9d00; --n19-bar: #333;
   --n19-bar-text: #f1f1f1; --n19-bullet: #999; --n19-marker: #209dd9; }
@@ -20,7 +16,6 @@ html:root {
 }
 .tad-layout-page { background-color: var(--n19-page); }
 
-/* Menu bar: 40px #333, 13px light links, small arrows in each section's 2019 color */
 #nav.site-nav-bar { background: var(--n19-bar) !important; }
 #nav .site-nav__title { font-size: 13px !important; font-family: Helvetica, Arial, sans-serif !important; color: var(--n19-bar-text) !important; }
 #nav .site-nav__title::after { font-size: 12px !important; width: 12px !important; color: #fff !important; opacity: .9; }
@@ -33,18 +28,15 @@ html:root {
 #nav .c-ap > .site-nav__title::after { color: #bf99df !important; }
 #nav .site-nav__sub-menu { border-radius: 0 !important; }
 
-/* Boxes: white, 5px corners, #dfdbdb edge with a soft glow, 13px text */
 .tad-box { border-radius: 5px !important; }
 .tad-box--large { border-color: var(--n19-edge) !important; box-shadow: var(--n19-glow) !important; }
 .tad-explore-box { color: var(--n19-text) !important; font-size: 13px !important; }
 .tad-explore-box > .tad-box__content { padding: 15px 22px 0 !important; }
-/* Box titles: 18px bold with the colored square in front (the section color comes from timeanddate.js) */
 .tad-explore-box__heading { font-size: 18px !important; font-weight: 700 !important; line-height: 1.1 !important; color: var(--n19-title) !important;
   border-left: 6px solid var(--n19-marker); padding-left: 7px !important; margin-left: -10px !important; }
 .tad-explore-box:nth-of-type(3n+2) .tad-explore-box__heading { border-left-color: #79ba43; }
 .tad-explore-box:nth-of-type(3n) .tad-explore-box__heading { border-left-color: #da0a06; }
 .tad-explore-box[data-n19-color] .tad-explore-box__heading { border-left-color: var(--n19-section) !important; }
-/* Lists: plain bulleted links, no illustrations or blurbs */
 .tad-explore-box .tad-teaser--list-compact { display: list-item !important; list-style: square outside !important; margin: 0 0 0 18px !important; padding-left: 5px !important; color: var(--n19-bullet) !important; }
 .tad-explore-box .tad-teaser--list-compact .tad-teaser__image, .tad-explore-box .tad-teaser--list-compact .tad-box__edge,
 .tad-explore-box .tad-teaser--list-compact .tad-teaser__abstract { display: none !important; }
@@ -53,15 +45,12 @@ html:root {
 .tad-explore-box .tad-teaser--list-compact:hover .tad-teaser__heading { text-decoration: underline; }
 .tad-explore-box__content { gap: 2px !important; font-size: 13px !important; }
 .tad-explore-box__content p { font-size: 13px !important; line-height: 1.5 !important; }
-/* Box footer: a pale strip with a rule above and small plain links */
 .tad-explore-box__footer { margin: 12px -22px 0 !important; padding: 10px 22px !important; border-top: 1px solid var(--n19-foot-edge); background: linear-gradient(var(--n19-foot), transparent); }
 .tad-explore-box__footer-link { background: transparent !important; padding: 0 !important; font-size: 13px !important; font-weight: 400 !important; text-decoration: none !important; border: none !important; }
 .tad-explore-box__footer-link:hover { text-decoration: underline !important; }
-/* Other teasers (news): 15px bold link titles, 13px text */
 .tad-teaser__heading.tad-text--title-block-bold { font-size: 15px !important; }
 .tad-teaser--list .tad-teaser__abstract { font-size: 13px !important; }
 
-/* Buttons and pickers: 2019's green submit buttons with a small shadow; square-ish fields */
 .picker-city__button, .tad-explore-box :is(button, input)[type="submit"], .tad-explore-box .tad-button--primary {
   background-color: var(--n19-button) !important; border: 1px solid rgba(0,0,0,.2) !important; box-shadow: 0 2px 2px rgba(0,0,0,.2) !important; color: #fff !important;
 }

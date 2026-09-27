@@ -1,29 +1,17 @@
-// Handmade themes: styling rules that recreate a site's 2019 look on its live pages, in a light and a dark
-// variant that follow the site's own mode. They ship inside the extension and apply at document_start.
-// net19 does nothing on any site that is not listed here.
 export type HandmadeTheme = {
   id: string;
   name: string;
-  domains: string[];           // registrable domains; the per-site switch pauses all of them
-  matches?: string[];          // narrower URL patterns when only some pages or hosts are themed
-  exclude?: string[];          // URL patterns inside `matches` that another theme styles instead
-  // Each theme is themes/<id>.css (styling rules on --n19-* tokens, with light and dark values) and
-  // themes/<id>.js (sets globalThis.net19Theme: how to read the site's own mode, and its palette map).
-  // Some sites still serve their own 2019-era frontend behind a URL parameter (Wikipedia's legacy Vector skin)...
+  domains: string[];
+  matches?: string[];
+  exclude?: string[];
   query?: { pattern: string; params: Array<[string, string]> };
-  // ...or on a separate host (old.reddit.com). `pattern` is an RE2 regular expression over the full URL and
-  // `substitution` its replacement; `except` URLs (share links the legacy host cannot resolve) are left alone. `signedIn` names the session cookie the legacy host needs: without it the
-  // legacy host only shows a sign-in page, so the redirect is used only while that cookie exists.
   legacy?: { pattern: string; substitution: string; except?: string; signedIn?: { url: string; name: string } };
 };
 
-// Google Search's own pages; the rest of google.com is styled by the Google app themes below.
 const GOOGLE_SEARCH = ['www.google.com', 'google.com'].flatMap(host => ['/', '/?*', '/search*', '/webhp*', '/imghp*'].map(path => `*://${host}${path}`));
 
 export const THEMES: HandmadeTheme[] = [
   { id: 'google', name: 'Google', domains: ['google.com'], matches: GOOGLE_SEARCH },
-  // Every other Google page people reach from Search's header, app launcher and footer: Gmail, Drive and Docs,
-  // News, and one theme in Google's 2019 Material style for the rest (Account, Maps, Photos, Translate, About, Store...).
   { id: 'gmail', name: 'Gmail', domains: ['google.com'], matches: ['*://mail.google.com/*'] },
   { id: 'gdrive', name: 'Google Drive and Docs', domains: ['google.com'], matches: ['*://drive.google.com/*', '*://docs.google.com/*'] },
   { id: 'gnews', name: 'Google News', domains: ['google.com'], matches: ['*://news.google.com/*'] },
@@ -33,11 +21,9 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'youtube', name: 'YouTube', domains: ['youtube.com'] },
   { id: 'wikipedia', name: 'Wikipedia', domains: ['wikipedia.org'],
     query: { pattern: '^https://[a-z-]+\\.wikipedia\\.org/wiki/[^?#]*(#.*)?$', params: [['useskin', 'vector']] } },
-  // Reddit as it looked through 2021 for anyone signed in on old.reddit.com: the list with vote arrows, blue titles and the right sidebar.
   { id: 'reddit', name: 'Reddit', domains: ['reddit.com'], matches: ['*://old.reddit.com/*'],
     legacy: { pattern: '^https://(?:www\\.)?reddit\\.com(/(?:(?:r|u|user|comments|search|domain|hot|new|rising|controversial|top|best)(?:[/?#].*)?|[?#].*)?)$',
       substitution: 'https://old.reddit.com\\1', except: '^https://(?:www\\.)?reddit\\.com/r/[^/]+/s/', signedIn: { url: 'https://www.reddit.com/', name: 'reddit_session' } } },
-  // Signed out, the current Reddit app is all there is; it gets the same colors and a flat list.
   { id: 'shreddit', name: 'Reddit', domains: ['reddit.com'], matches: ['*://www.reddit.com/*', '*://reddit.com/*', '*://new.reddit.com/*', '*://sh.reddit.com/*', '*://np.reddit.com/*'] },
   { id: 'github', name: 'GitHub', domains: ['github.com'] },
   { id: 'yahoo', name: 'Yahoo', domains: ['yahoo.com'] },
@@ -54,11 +40,8 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'instagram', name: 'Instagram', domains: ['instagram.com'] },
   { id: 'twitter', name: 'Twitter', domains: ['x.com', 'twitter.com'] },
   { id: 'linkedin', name: 'LinkedIn', domains: ['linkedin.com'] },
-  // The rest of the US top 100 (SE Ranking), in rank order. Sites without a 2019 design, adult and download sites,
-  // and banks are not themed.
   { id: 'yelp', name: 'Yelp', domains: ['yelp.com'] },
   { id: 'pinterest', name: 'Pinterest', domains: ['pinterest.com'] },
-  // Chat and social apps added in 0.9.0
   { id: 'discord', name: 'Discord', domains: ['discord.com'] },
   { id: 'telegram', name: 'Telegram', domains: ['telegram.org'], matches: ['*://web.telegram.org/*'] },
   { id: 'whatsapp', name: 'WhatsApp', domains: ['whatsapp.com'], matches: ['*://web.whatsapp.com/*'] },
@@ -132,7 +115,6 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'cagov', name: 'CA.gov', domains: ['ca.gov'], matches: ['*://www.ca.gov/*'] },
   { id: 'booking', name: 'Booking.com', domains: ['booking.com'] },
   { id: 'istockphoto', name: 'iStock', domains: ['istockphoto.com'] },
-  // News sites whose design changed a lot after 2019 (0.10.0)
   { id: 'washingtonpost', name: 'The Washington Post', domains: ['washingtonpost.com'] },
   { id: 'nbcnews', name: 'NBC News', domains: ['nbcnews.com'] },
   { id: 'cbsnews', name: 'CBS News', domains: ['cbsnews.com'] },
@@ -148,7 +130,6 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'theverge', name: 'The Verge', domains: ['theverge.com'] },
   { id: 'techcrunch', name: 'TechCrunch', domains: ['techcrunch.com'] },
   { id: 'latimes', name: 'Los Angeles Times', domains: ['latimes.com'] },
-  // Sites outside the US and wikis (0.11.0): only sites that existed with today's functionality in 2019.
   { id: 'whatsappsite', name: 'WhatsApp', domains: ['whatsapp.com'], matches: ['*://www.whatsapp.com/*', '*://whatsapp.com/*', '*://faq.whatsapp.com/*', '*://business.whatsapp.com/*', '*://blog.whatsapp.com/*'] },
   { id: 'telegramsite', name: 'Telegram', domains: ['telegram.org'], matches: ['*://telegram.org/*', '*://*.telegram.org/*'], exclude: ['*://web.telegram.org/*'] },
   { id: 'wechat', name: 'WeChat', domains: ['wechat.com'], exclude: ['*://web.wechat.com/*'] },
@@ -166,7 +147,6 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'tvtropes', name: 'TV Tropes', domains: ['tvtropes.org'] },
   { id: 'bulbapedia', name: 'Bulbapedia', domains: ['bulbagarden.net'], matches: ['*://bulbapedia.bulbagarden.net/*'],
     query: { pattern: '^https://bulbapedia\\.bulbagarden\\.net/wiki/[^?#]*(#.*)?$', params: [['useskin', 'monobook']] } },
-  // Wikimedia's other wikis still serve the 2019 legacy Vector skin behind the same URL parameter as Wikipedia.
   { id: 'wiktionary', name: 'Wiktionary', domains: ['wiktionary.org'],
     query: { pattern: '^https://[a-z-]+\\.wiktionary\\.org/wiki/[^?#]*(#.*)?$', params: [['useskin', 'vector']] } },
   { id: 'wikivoyage', name: 'Wikivoyage', domains: ['wikivoyage.org'],
@@ -176,7 +156,6 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'miraheze', name: 'Miraheze', domains: ['miraheze.org'],
     query: { pattern: '^https://meta\\.miraheze\\.org/wiki/[^?#]*(#.*)?$', params: [['useskin', 'vector']] } },
   { id: 'localwiki', name: 'LocalWiki', domains: ['localwiki.org'] },
-  // Games and gaming sites whose design changed a lot after 2019 (0.12.0).
   { id: 'steam', name: 'Steam', domains: ['steampowered.com', 'steamcommunity.com'] },
   { id: 'itchio', name: 'itch.io', domains: ['itch.io'] },
   { id: 'poki', name: 'Poki', domains: ['poki.com'] },
@@ -196,7 +175,6 @@ export function themeFor(hostname: string): HandmadeTheme | undefined {
   return THEMES.find(theme => theme.domains.some(domain => within(host, domain)));
 }
 
-// A paused host pauses the whole site it belongs to (www, old., m. and the site's other domains).
 export function themePaused(theme: HandmadeTheme, disabledHosts: string[]): boolean {
   return disabledHosts.some(host => theme.domains.some(domain => within(host, domain) || within(domain, host)));
 }

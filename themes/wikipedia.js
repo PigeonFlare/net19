@@ -1,12 +1,6 @@
-// net19 handmade theme: Wikipedia's legacy Vector skin (served by Wikipedia itself). The skin predates night mode,
-// so the dark variant follows the device setting.
 globalThis.net19Theme = {
   detect: () => matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
 };
-// The worker adds useskin=vector to plain article addresses. Pages reached with a query (full-text search results,
-// page history, diffs, special pages with parameters) would otherwise open in the 2022 skin, so:
-// - links and forms on legacy pages carry useskin=vector along, so those pages open in the legacy skin directly;
-// - a 2022-skin page reached some other way asks for the same address in the legacy skin (hidden until it arrives).
 (() => {
   if (!/\.wikipedia\.org$/.test(location.hostname) || /^(www\.)?wikipedia\.org$/.test(location.hostname)) return;
   const root = document.documentElement;

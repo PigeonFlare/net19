@@ -1,11 +1,3 @@
-// net19 handmade theme: Google's other pages (Account, sign-in, Maps, Translate, Photos, Calendar, Meet, Play, Shopping,
-// Finance, Policies, Business, Workspace, Support, the About site, the Blog and the Store), 2019: Google Material Theme
-// (GM2). Google's current apps are built from a few shared systems (GM3 wiz components, Glue, Material Web) whose color
-// tokens are re-pointed at their 2019 values by the palette maps below and by googleapps.css. What the tokens cannot
-// reach, because each app draws it with its own rules, is classified here by its drawn shape and marked for the
-// stylesheet: GM3's pill buttons (4px in 2019), pill search fields (8px gray fields), 12-28px cards and dialogs (8px), the
-// tonal surface tints (plain white or #f1f3f4) and the rounded "selected" pills in navigation drawers (a right-rounded
-// tab). Each Google product is marked on html[data-n19-g] so per-product rules stay on their own pages.
 (() => {
   const host = location.hostname, path = location.pathname;
   const key =
@@ -31,15 +23,12 @@
     : host === 'keep.google.com' ? 'keep'
     : 'other';
   document.documentElement?.setAttribute('data-n19-g', key);
-  // Gemini is itself a post-2019 product: nothing on its own site is hidden or reshaped, it only gets the palette.
   const gemini = key === 'gemini';
 
-  // The site's own mode: the page's background (body, then html, then the app's main container).
   const lum = c => { const m = String(c).match(/[\d.]+/g); if (!m || (m.length > 3 && +m[3] < .5)) return null; return (.2126 * m[0] + .7152 * m[1] + .0722 * m[2]) / 255; };
   globalThis.net19Theme = {
     detect() {
       const root = document.documentElement;
-      // Apps that mark their dark theme themselves.
       if (root.classList.contains('dark') || root.getAttribute('data-theme') === 'dark' || root.hasAttribute('dark') || document.body?.classList.contains('dark-theme')) return 'dark';
       for (const el of [document.body, root, document.querySelector('main, c-wiz, #app, [role="main"]')]) {
         if (!el) continue;
@@ -49,8 +38,6 @@
       return 'light';
     },
     watch: ['class', 'dark', 'data-theme', 'style'],
-    // GM3 (2021-) color roles back to their GM2 (2018-2020) counterparts. Every root variable holding one of these is
-    // re-pointed, whatever its name (--gm3-sys-color-*, --md-sys-color-*, --gn-c-*, --plexi-*, Maps' hashed tokens).
     light: {
       '#0b57d0': '#1a73e8', '#0842a0': '#1967d2', '#041e49': '#174ea6', '#00639b': '#1a73e8', '#004a77': '#1967d2', '#001d35': '#174ea6',
       '#d3e3fd': '#e8f0fe', '#c2e7ff': '#e8f0fe', '#a8c7fa': '#aecbfa', '#7fcfff': '#aecbfa',
@@ -70,7 +57,6 @@
   };
   if (gemini) return;
 
-  // ---- Shapes -----------------------------------------------------------------------------------------------------
   const BUTTON = 'button, a, [role="button"], [role="link"], input[type="submit"], input[type="button"], label';
   const TEXT_INPUT = 'input:not([type="hidden"]):not([type="checkbox"]):not([type="radio"]):not([type="range"]):not([type="file"]), textarea, [role="combobox"], [contenteditable="true"]';
   const NAV = 'nav, aside, g-menu, [role="navigation"], [role="tablist"][aria-orientation="vertical"], [role="menu"], [role="tree"], [class*="drawer" i], [class*="sidenav" i], [class*="side-nav" i]';
@@ -81,9 +67,7 @@
   const ATTRS = ['data-n19-shape', 'data-n19-fill'];
   let seen = new WeakSet();
   const radius = (value, w, h) => value.endsWith('%') ? parseFloat(value) / 100 * Math.min(w, h) : parseFloat(value) || 0;
-  // GM3's tonal surfaces are pale blue-grays (a little more blue than red, nearly white): any of them, not just the listed ones.
   const tint = rgb => { const [r, g, b] = rgb.split(',').map(Number); return Math.min(r, g, b) >= 224 && b - r >= 4 && b - r <= 24 && b >= g && rgb !== '232,240,254'; };
-  // ...and its pale-blue "selected" fills (#d3e3fd, #c2e7ff, #c7dbff).
   const pick = rgb => { if (SELECTED.has(rgb)) return true; const [r, , b] = rgb.split(',').map(Number); return b >= 245 && r >= 150 && b - r >= 35 && b - r <= 110; };
   const rgbOf = c => { const m = String(c).match(/[\d.]+/g); return m && (m.length < 4 || +m[3] > .6) ? m.slice(0, 3).map(Math.round).join(',') : null; };
   const classify = list => {
@@ -98,7 +82,7 @@
       const tinted = bg && !selected && (TINTS.has(bg) || DARK_TINTS.has(bg) || tint(bg));
       if ((tl === '0px' && br === '0px') && !tinted) continue;
       const w = el.offsetWidth, h = el.offsetHeight;
-      if (!w || !h) { seen.delete(el); continue; }   // closed menus and dialogs are judged when they open
+      if (!w || !h) { seen.delete(el); continue; }
       const r = Math.max(radius(tl, w, h), radius(br, w, h));
       let shape = '', fill = '';
       const pill = r >= h / 2 - 3;
@@ -106,7 +90,6 @@
         (el.matches(BUTTON) || (el.querySelector(BUTTON) && (bg || parseFloat(cs.borderTopWidth) > 0) && w <= 480))) shape = 'btn';
       else if (r >= 12 && h >= 32 && h <= 76 && w >= h * 2.5 && (el.matches(TEXT_INPUT) || el.querySelector(TEXT_INPUT))) shape = 'field';
       else if (r >= 12 && selected && h >= 28 && h <= 60 && w >= h * 2.5 && el.closest(NAV)) shape = 'tab';
-      // Full-height side panels (Maps' place panel) were flush rectangles in 2019.
       else if (r >= 11 && !pill && w >= 200 && w <= 640 && h >= innerHeight - 24) shape = 'flat';
       else if (r >= 11 && !pill && w >= 120 && h >= 56) shape = 'card';
       else if (r >= 12 && /^(IMG|VIDEO|PICTURE|CANVAS)$/.test(el.tagName) && w >= 48 && h >= 48 && !pill) shape = 'card';
@@ -119,9 +102,6 @@
       if (fill) el.setAttribute('data-n19-fill', fill);
     }
   };
-  // ---- Post-2019 text and icons ------------------------------------------------------------------------------------
-  // Notes that only exist because of AI features ("AI content may include mistakes") are hidden with their line, and the
-  // 2023 sparkle-magnifier icon ("search_spark", an icon-font ligature) goes back to the plain magnifier.
   const NOTE = /^(?:AI content may include mistakes|AI responses may include mistakes|Generative AI is experimental|AI Overview)\b/i;
   const SPARK = /^(?:search_spark|spark|gemini_spark|magic_button)$/;
   const texts = root => {
@@ -150,8 +130,6 @@
     if (list.length) classify(list);
   };
   const queue = root => { pending.add(root); if (!frame) frame = requestAnimationFrame(flush); };
-  // A selected item that changes state (a drawer entry, a tab) is judged again with its marks taken off first, so the
-  // stylesheet's own shape never feeds back into the decision.
   const rejudge = els => {
     for (const el of els) { for (const a of ATTRS) el.removeAttribute(a); seen.delete(el); }
     classify(els.filter(el => el.isConnected).map(el => (seen.add(el), el)));
@@ -167,7 +145,6 @@
       }
       if (again.length) requestAnimationFrame(() => rejudge([...new Set(again)]));
     }).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['aria-selected', 'aria-current', 'aria-expanded', 'open', 'data-selected'] });
-    // Stylesheets that arrive after the first pass (lazy product CSS) change shapes: look again whenever one has loaded.
     let sheetTimer = 0;
     const sheets = () => { clearTimeout(sheetTimer); sheetTimer = setTimeout(full, 60); };
     addEventListener('load', e => { if (e.target instanceof HTMLLinkElement || e.target === window || e.target === document) sheets(); }, true);

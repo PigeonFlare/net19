@@ -1,7 +1,4 @@
-// net19 handmade theme: kbb. Kelley Blue Book has a single (light) design; if it ever renders dark, the palette
-// engine detects that from the page background and the dark tokens apply.
 globalThis.net19Theme = {};
-// The 2019 homepage hero said "Car Shopping Made Easy / KBB.com is your one-stop resource" (today: "Kelley Knows Cars.").
 (() => {
   const fix = () => {
     const hero = document.getElementById('superheroSection');
