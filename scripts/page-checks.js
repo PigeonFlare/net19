@@ -193,7 +193,14 @@ function net19Contrast() {
     if (m && +m[1] > .5) p ^= 1;
     flips.set(el, p); return p;
   };
-  const shownAs = (c, p) => p ? [255 - c[0], 255 - c[1], 255 - c[2], c[3]] : c;
+  // An odd number of flips shows a color through palette.js's filter, invert(1) hue-rotate(180deg) contrast(.88), which
+  // is computed whole: hue-rotate moves the lightness of strong colors a lot.
+  const flip = ([r, g, b, a]) => {
+    const [ir, ig, ib] = [r, g, b].map(v => 1 - v / 255);
+    const rot = [-.574 * ir + 1.43 * ig + .144 * ib, .426 * ir + .43 * ig + .144 * ib, .426 * ir + 1.43 * ig - .856 * ib];
+    return rot.map(v => Math.round(255 * Math.min(1, Math.max(0, (Math.min(1, Math.max(0, v)) - .5) * .88 + .5)))).concat(a);
+  };
+  const shownAs = (c, p) => p ? flip(c) : c;
   const alpha = el => { let a = 1; for (let n = el; n && n.nodeType === 1; n = n.parentElement) a *= +getComputedStyle(n).opacity; return a; };
   const name = e => (e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + (typeof e.className === 'string' && e.className ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '')).slice(0, 60);
   // Pictures that hit testing skips (pointer-events:none): a background photo behind the whole app (Gmail's themes), the
@@ -220,14 +227,26 @@ function net19Contrast() {
   // What is painted behind a point: the first element under `el` in the hit stack with an opaque color, a picture or a canvas.
   const behind = (el, x, y) => {
     const stack = document.elementsFromPoint(x, y);
-    let i = stack.indexOf(el); if (i < 0) i = stack.findIndex(s => s.contains(el));
+    let i = stack.indexOf(el);
+    // Text under something else (a consent dialog, a menu) is not what anyone sees there.
+    if (i < 0 && getComputedStyle(el).pointerEvents !== 'none' && stack[0] && !el.contains(stack[0])) return { covered: true };
+    if (i < 0) i = stack.findIndex(s => s.contains(el));
     let color = null, painter = null, shade = null;
     for (const s of stack.slice(Math.max(0, i))) {
       if (s !== el && el.contains(s)) continue;
       const c = getComputedStyle(s);
       if (/^(IMG|VIDEO|CANVAS|IFRAME|EMBED|OBJECT)$/.test(s.tagName) || /url\(/.test(c.backgroundImage)) return { picture: s, shade };
-      // A gradient shade laid over a picture (Gmail darkens its theme photos under the drawer) belongs with the picture.
-      if (!shade && /gradient\(/.test(c.backgroundImage)) shade = s;
+      // A gradient shade laid over a picture (Gmail darkens its theme photos under the drawer) belongs with the picture;
+      // over a plain surface it counts as the average of its colors.
+      if (/gradient\(/.test(c.backgroundImage)) {
+        shade ||= s;
+        const stops = (c.backgroundImage.match(/rgba?\([^)]*\)/g) || []).map(parse).filter(Boolean);
+        if (stops.length) {
+          const avg = [0, 1, 2, 3].map(k => stops.reduce((sum, v) => sum + v[k], 0) / stops.length);
+          if (avg[3] >= .05) color = color ? over(color, shownAs(avg, parity(s))) : shownAs(avg, parity(s));
+          painter ||= s;
+        }
+      }
       const bg = parse(c.backgroundColor);
       if (!bg || bg[3] < .05) continue;
       // A picture inside this surface, skipped by hit testing, is drawn over its background.
@@ -251,6 +270,7 @@ function net19Contrast() {
   const judge = (el, colorText, r, what = 'text') => {
     const x = Math.min(W - 1, Math.max(0, r.left + Math.min(r.width / 2, 12))), y = Math.min(H - 1, Math.max(0, r.top + r.height / 2));
     const b = behind(el, x, y);
+    if (b.covered) return;
     const tp = parity(el);
     if (b.picture) {
       const shadow = getComputedStyle(el).textShadow;
@@ -265,8 +285,8 @@ function net19Contrast() {
     const shown = over(shownAs(t, tp), b.color);
     const cr = ratio(shown, b.color);
     const st = getComputedStyle(el), size = parseFloat(st.fontSize), large = what === 'text' && (size >= 24 || (size >= 18.6 && +st.fontWeight >= 600));
-    const vivid = Math.max(...b.color.slice(0, 3)) - Math.min(...b.color.slice(0, 3)) > 90, plain = Math.max(...shown.slice(0, 3)) - Math.min(...shown.slice(0, 3)) < 24;
-    if (cr < (large ? 2.2 : vivid && plain ? 2.5 : 3)) report(el, `${what} contrast ${cr.toFixed(2)}:1 (${shown.slice(0, 3).map(Math.round)} on ${b.color.slice(0, 3).map(Math.round)})`, r);
+    const chroma = c => Math.max(...c.slice(0, 3)) - Math.min(...c.slice(0, 3));
+    if (cr < (large ? 2.2 : chroma(b.color) > 90 || chroma(shown) > 90 ? 2.5 : 3)) report(el, `${what} contrast ${cr.toFixed(2)}:1 (${shown.slice(0, 3).map(Math.round)} on ${b.color.slice(0, 3).map(Math.round)})`, r);
   };
   // Screen-reader-only text (clipped to nothing, or in a 1px box that hides its overflow) is not shown to anyone.
   const clippedAway = e => {
@@ -306,6 +326,7 @@ function net19Contrast() {
     const c = getComputedStyle(k);
     const col = parse(c.borderLeftColor)?.[3] && parseFloat(c.borderLeftWidth) ? c.borderLeftColor : c.backgroundColor;
     const b = behind(k, r.left + r.width / 2, r.top + r.height / 2);
+    if (b.covered) continue;
     if (b.picture) {
       if (parity(b.picture) !== parity(k)) report(k, `caret ${parity(k) ? 'inverted' : 'as drawn'} over a canvas shown ${parity(b.picture) ? 'inverted' : 'as drawn'}`, r);
       continue;

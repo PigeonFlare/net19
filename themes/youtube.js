@@ -64,4 +64,16 @@ globalThis.net19Theme = (() => {
   toWatch();
   document.addEventListener('yt-navigate-finish', toWatch);
   addEventListener('popstate', toWatch);
+  // "Shorts" as a choice: the search filter dialog's Type option and any chip that filters a feed to Shorts. These have no
+  // stable attribute, so they are found by their exact text; each is one small control, never a list of results.
+  const SHORTS = /^\s*Shorts\s*$/i;
+  const mark = () => {
+    for (const el of document.querySelectorAll('ytd-search-filter-renderer, yt-chip-cloud-chip-renderer, chip-view-model')) {
+      if (!el.hasAttribute('data-net19-hidden') && SHORTS.test(el.textContent || '')) el.setAttribute('data-net19-hidden', '');
+    }
+  };
+  let queued = false;
+  const start = () => new MutationObserver(() => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); })
+    .observe(document.body, { childList: true, subtree: true });
+  if (document.body) { mark(); start(); } else document.addEventListener('DOMContentLoaded', () => { mark(); start(); }, { once: true });
 })();

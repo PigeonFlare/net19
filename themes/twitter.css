@@ -11,7 +11,7 @@ html { --n19-blue: #1da1f2; --n19-blue-hover: #1a91da; --n19-blue-press: #1681bf
   --n19-font: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Ubuntu, "Helvetica Neue", sans-serif;
   /* The real 2019 bird, as Twitter's own CDN still serves it (loaded by the page from abs.twimg.com, like any of its images) */
   --n19-bird: url("https://abs.twimg.com/icons/apple-touch-icon-192x192.png");
-  --n19-bird-big: url("https://abs.twimg.com/responsive-web/client-web/icon-ios.b1fc7275.png");
+  --n19-bird-big: url("https://abs.twimg.com/responsive-web/client-web/icon-ios.b1fc7275.png"); }
 /* Dark is 2019's "Dim" (#15202b); the signed-in app's own "Lights out" keeps its black (see html[data-n19-tw-bg]) */
 html[data-net19-mode="dark"] { --n19-page: #15202b; --n19-text: #fff; --n19-text-2: #8899a6; --n19-rule: #38444d; --n19-panel: #192734;
   --n19-hover: #192734; --n19-search: #253341; --n19-field: #192734; --n19-field-border: #38444d; }
@@ -70,7 +70,8 @@ html[data-net19-mode="dark"] :is([style^="color: rgb(113, 118, 123)"], [style*="
 :is([style^="color: rgb(29, 155, 240)"], [style*="; color: rgb(29, 155, 240)"]) { color: #1da1f2 !important; }
 
 /* ---- Type: the system font, not Chirp ---------------------------------------------------------------------------- */
-body :is(div, span, a, p, h1, h2, h3, label, input, textarea, button, li, time) { font-family: var(--n19-font) !important; }
+body :is(div, span, a, p, h1, h2, h3, label, input, textarea, button, li, time):not(.nsm7Bb-HzV7m-LgbsSe, .nsm7Bb-HzV7m-LgbsSe *) { font-family: var(--n19-font) !important; }
+/* (Google's own "Continue with Google" button keeps Google's font: its label box is sized for it) */
 
 /* ---- The bird instead of the X: Twitter's own 2019 logo file, still hosted on its CDN --------------------------- */
 svg[data-icon="icon-logo-x"], a[aria-label="X"] svg:has(path[d^="M21.742 21.75l-7.563"]), svg:has(> g > path[d^="M21.742 21.75l-7.563"]),
@@ -210,21 +211,38 @@ main [role="tablist"] [role="presentation"]:has(> a[role="tab"]:is([href$="/high
 [data-n19-tw="main"] [data-n19-tw="signup"] { background: var(--n19-blue) !important; }
 [data-n19-tw="main"] [data-n19-tw="signup"] :is(span, p, div) { color: #fff !important; }
 [data-n19-tw="main"] [data-n19-tw="signup"] svg { display: none !important; }
+/* The label and its icon sit together in the middle of the pill (the newer layout pins the icon to the left edge) */
+[data-n19-tw="main"] :is([data-n19-tw="signup"], [data-n19-tw="alt"]) div.flex { justify-content: center !important; gap: 8px !important; }
+[data-n19-tw="main"] :is([data-n19-tw="signup"], [data-n19-tw="alt"]) div.flex > :is(span, div) { flex: 0 0 auto !important; width: auto !important; margin: 0 !important; }
+[data-n19-tw="main"] [data-n19-tw="signup"] :is(div.flex, a) > span:has(> svg), [data-n19-tw="main"] a[data-n19-tw="signup"] > span:has(> svg) { display: none !important; }
+[data-n19-tw="main"] a:is([data-n19-tw="signup"], [data-n19-tw="alt"]) { display: flex !important; justify-content: center !important; align-items: center !important; gap: 8px !important; }
+[data-n19-tw="main"] a:is([data-n19-tw="signup"], [data-n19-tw="alt"]) > span { flex: 0 0 auto !important; width: auto !important; height: auto !important; }
 [data-n19-tw="main"] :is([data-n19-tw="alt"]):hover { background: var(--n19-blue-soft) !important; }
 [data-n19-tw="main"] p, [data-n19-tw="main"] p a { color: var(--n19-text-2) !important; font-size: 13px !important; }
+[data-n19-tw="main"] p a { white-space: nowrap !important; }
 [data-n19-tw="main"] [data-n19-tw="signup"] p { color: #fff !important; font-size: 15px !important; }
 [data-n19-tw="main"] [data-n19-tw="alt"] p { color: var(--n19-blue) !important; font-size: 15px !important; }
 /* The username field and "Log in" move to a row at the top right: a square field and an outlined pill */
 [data-n19-tw="field"] { position: absolute !important; top: 32px !important; right: 143px !important; width: 210px !important; height: 46px !important; box-sizing: border-box !important;
   border: 1px solid var(--n19-field-border) !important; border-radius: 0 !important; background: var(--n19-field) !important; padding: 4px 12px !important; margin: 0 !important;
   font-size: 14px !important; color: var(--n19-text) !important; justify-content: center !important; box-shadow: none !important; }
+[data-n19-tw="field"] { display: flex !important; flex-direction: column !important; }
 [data-n19-tw="field"] :is(span, label, div) { font-size: 10.5px !important; background: transparent !important; }
-[data-n19-tw="field"] input { font-size: 14px !important; color: var(--n19-text) !important; background: transparent !important; }
+/* 2019's field had its words as a placeholder inside it (twitter.js copies them there), not a caption over the typed line */
+[data-n19-tw="cap"] { display: none !important; }
+[data-n19-tw="field"] div:has(> input) { height: auto !important; min-height: 0 !important; padding: 0 !important; margin: 0 !important; }
+[data-n19-tw="field"] input::placeholder { color: var(--n19-text-2) !important; opacity: 1 !important; }
+[data-n19-tw="field"] input { font-size: 13px !important; color: var(--n19-text) !important; background: transparent !important; }
 [data-n19-tw="go"] { position: absolute !important; top: 32px !important; right: 65px !important; width: 66px !important; height: 46px !important; margin: 0 !important; padding: 0 !important;
   border-radius: 9999px !important; border: 1px solid var(--n19-blue) !important; background: transparent !important; display: flex !important; align-items: center !important; justify-content: center !important; overflow: hidden !important;
   color: var(--n19-blue) !important; font-size: 15px !important; font-weight: 700 !important; }
 [data-n19-tw="go"] * { background: transparent !important; border: none !important; color: var(--n19-blue) !important; font-size: 15px !important; font-weight: 700 !important; padding: 0 !important; min-width: 0 !important; width: auto !important; height: auto !important; }
 [data-n19-tw="go"]:hover { background: var(--n19-blue-soft) !important; }
+/* The newer form greys "Log in" out until something is typed; 2019's was always the blue outlined pill */
+[data-n19-tw="go"], [data-n19-tw="go"] * { opacity: 1 !important; }
+[data-n19-tw="main"] [data-n19-tw="go"] :is(p, span, div) { color: var(--n19-blue) !important; font-size: 15px !important; }
+/* A second, invisible copy of each button's label (the newer app's press animation) is left out */
+[data-n19-tw="main"] button:is([data-n19-tw="signup"], [data-n19-tw="alt"]) > div.flex ~ div.flex { display: none !important; }
 [data-n19-tw="or"], [data-n19-tw="qr"] { display: none !important; }
 /* Footer: a single row of plain gray 13px links, no separators */
 [data-n19-tw="row"] ~ footer nav { font-size: 13px !important; gap: 0 !important; padding: 12px 0 !important; background: var(--n19-page) !important; }

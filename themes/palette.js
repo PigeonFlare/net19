@@ -185,13 +185,17 @@
     let host = null;
     for (let n = media.parentElement, i = 0; n && n !== document.body && i < 6; n = n.parentElement, i++) {
       const q = n.getBoundingClientRect();
+      // Wrappers that draw no box of their own (<picture>, display:contents) are passed through.
+      if ((q.width < 1 && q.height < 1) || n.tagName === 'PICTURE') continue;
       if (Math.abs(q.width - r.width) > Math.max(8, r.width * .08) || Math.abs(q.height - r.height) > Math.max(8, r.height * .08)) break;
       host = n;
     }
     if (!host || !host.querySelector(':scope *:not(img, picture, source, video, canvas, svg, svg *)')) return false;
     // A host that holds a whole app or page section (Gmail's theme photo sits behind everything) is not an overlay.
     const text = (host.textContent || '').replace(/\s+/g, ' ').trim();
-    if (text.length > 400 || host.getElementsByTagName('*').length > 80 || host.querySelector('input, textarea, [role="navigation"], nav, main')) return false;
+    const hr = host.getBoundingClientRect();
+    if (text.length > 2000 || host.getElementsByTagName('*').length > 250 || host.querySelector('[role="navigation"], nav, main, [role="main"]') ||
+      hr.width * hr.height > .85 * innerWidth * innerHeight) return false;
     if (!text && !host.querySelector('[style*="gradient"], [class*="gradient" i], [class*="overlay" i], [class*="shade" i]')) return false;
     if (context(host) !== 'flipped' || host.closest('[data-net19-keep]')) return false;
     decided.set(host, 'keep');

@@ -6,6 +6,7 @@ import { resolve } from 'node:path';
 const PAGE = (title: string) => `<!doctype html><html><head><meta charset="utf-8"><title>${title}</title></head><body style="background:#fff;color:#111"><header><a href="/">${title}</a></header><main><h1>${title}</h1>` +
   `<div id="bar" style="background:#13233a;color:#fff;width:600px;height:40px">already dark</div>` +
   `<img id="photo" width="200" height="100" src="/photo.jpg"><img id="logo" width="120" height="30" src="/logo.svg">` +
+  `<a id="hero" href="/h" style="display:block;position:relative;width:400px;height:200px"><img src="/hero.jpg" width="400" height="200" style="display:block"><span style="position:absolute;left:10px;bottom:10px;color:#fff">Headline on the photo</span></a>` +
   `<dialog id="modal">modal</dialog>` +
   `<input id="q" placeholder="Search or ask a question"><button id="gen">🍌 Create images</button><a id="ask" href="/x">Ask Question</a>` +
   `<div id="results" data-net19-hidden style="display:none"><a href="/1"><h3>One</h3></a><a href="/2"><h3>Two</h3></a><a href="/3"><h3>Three</h3></a></div>` +
@@ -55,6 +56,8 @@ test('the device decides light or dark: a light site is flipped for a dark devic
   // Drawn images (SVG logos, small PNG icons) flip with the page, so dark glyphs stay visible.
   expect(await page.locator('#logo').evaluate(el => getComputedStyle(el).filter)).toBe('none');
   await expect(page.locator('#bar')).toHaveAttribute('data-net19-keep', '');
+  // A headline laid over a photo keeps its real colors with the photo: the photo's host is kept whole.
+  await expect(page.locator('#hero')).toHaveAttribute('data-net19-keep', '');
   // Modal dialogs are drawn in the top layer, outside the root's filter, so they carry the filter themselves.
   await page.locator('#modal').evaluate((el: HTMLDialogElement) => el.showModal());
   expect(await page.locator('#modal').evaluate(el => getComputedStyle(el).filter)).toContain('invert(1)');

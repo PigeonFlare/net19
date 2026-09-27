@@ -62,7 +62,15 @@
   const lum = c => .2126 * channel(c[0]) + .7152 * channel(c[1]) + .0722 * channel(c[2]);
   const ratio = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05); };
   const over = (top, under) => { const a = top[3]; return [0, 1, 2].map(i => top[i] * a + under[i] * (1 - a)).concat(1); };
-  const invert = c => [255 - c[0], 255 - c[1], 255 - c[2], c[3]];
+  // palette.js's page flip, invert(1) hue-rotate(180deg) contrast(.88), applied to one color: how a color written in a
+  // flipped part is shown on screen. Hue-rotate changes lightness a lot for strong colors (a pink turns light pink, not
+  // the teal that a plain inversion gives), so the whole filter is computed.
+  const flip = ([r, g, b, a]) => {
+    const [ir, ig, ib] = [r, g, b].map(v => 1 - v / 255);
+    const rot = [-.574 * ir + 1.43 * ig + .144 * ib, .426 * ir + .43 * ig + .144 * ib, .426 * ir + 1.43 * ig - .856 * ib];
+    return rot.map(v => Math.round(255 * Math.min(1, Math.max(0, (Math.min(1, Math.max(0, v)) - .5) * .88 + .5)))).concat(a);
+  };
+  const shownAs = (c, p) => (p ? flip(c) : c);
   // Whether an element is shown inverted: every invert() filter on it or an ancestor turns it over once (the page flip,
   // the turned-back photos inside it, a theme's own filters). Read from computed filters and cached for one check.
   let flips = new Map();
@@ -106,15 +114,12 @@
       }
       if (e === root) break;
     }
-    let base = [255, 255, 255, 1], baseEl = root;
+    // Composited as shown on screen: each layer through the filters that apply to it.
+    let base = shownAs([255, 255, 255, 1], parity(root));
     const last = layers[layers.length - 1];
-    if (last && last.color[3] >= .95) { base = last.color; baseEl = last.el; layers.pop(); }
-    const flipBase = parity(baseEl);
-    for (let i = layers.length - 1; i >= 0; i--) {
-      const layer = parity(layers[i].el) === flipBase ? layers[i].color : invert(layers[i].color);
-      base = over(layer, base);
-    }
-    return { color: base, flip: flipBase };
+    if (last && last.color[3] >= .95) { base = shownAs(last.color, parity(last.el)); layers.pop(); }
+    for (let i = layers.length - 1; i >= 0; i--) base = over(shownAs(layers[i].color, parity(layers[i].el)), base);
+    return { color: base };
   };
   // Before changing any text: whatever is painted under its middle (sibling layers included) must not be a picture.
   const painted = e => { const st = getComputedStyle(e); return /url\(/.test(st.backgroundImage) || ['::before', '::after'].some(p => /url\(/.test(getComputedStyle(e, p).backgroundImage)); };
@@ -131,7 +136,10 @@
   const inkSheet = document.createElement('style');
   inkSheet.textContent = '[data-net19-hidden]{display:none!important}' +
     '[data-net19-ink="dark"],[data-net19-ink="dark"] *{color:#1d1d1f!important;-webkit-text-fill-color:#1d1d1f!important}' +
-    '[data-net19-ink="light"],[data-net19-ink="light"] *{color:#f5f5f7!important;-webkit-text-fill-color:#f5f5f7!important}';
+    '[data-net19-ink="light"],[data-net19-ink="light"] *{color:#f5f5f7!important;-webkit-text-fill-color:#f5f5f7!important}' +
+    // Fields: typed text, the caret and the placeholder.
+    ':is(input,textarea)[data-net19-ink="dark"]{caret-color:#1d1d1f!important}:is(input,textarea)[data-net19-ink="dark"]::placeholder{color:#5f6368!important;-webkit-text-fill-color:#5f6368!important;opacity:1!important}' +
+    ':is(input,textarea)[data-net19-ink="light"]{caret-color:#f5f5f7!important}:is(input,textarea)[data-net19-ink="light"]::placeholder{color:#bdc1c6!important;-webkit-text-fill-color:#bdc1c6!important;opacity:1!important}';
   const original = new WeakMap();
   const textElements = () => {
     const found = new Set();
@@ -157,22 +165,41 @@
       if (text[3] < .2) continue;
       const bg = backdrop(el);
       if (!bg) { if (el.hasAttribute('data-net19-ink')) changes.push([el, null]); continue; }
-      const inText = parity(el) === bg.flip ? bg.color : invert(bg.color);
-      const shown = over(text, inText);
+      const pt = parity(el), inText = bg.color;   // the surface as shown
+      const shown = over(shownAs(text, pt), inText);
       const current = el.getAttribute('data-net19-ink');
       // WCAG's floor for large text (24px, or 18.66px bold) is 3:1 and for the rest 4.5:1; net19 repairs what falls
       // below 2.2:1 and 3:1, the same limits as the lowcontrast page check.
       const size = parseFloat(style.fontSize), large = size >= 24 || (size >= 18.6 && +style.fontWeight >= 600);
       // White or black lettering on a strong brand color (Twitter's blue buttons, WhatsApp's green bar) is how those
       // sites drew it in 2019 and reads well from 2.5:1.
-      const vivid = Math.max(...inText.slice(0, 3)) - Math.min(...inText.slice(0, 3)) > 90;
-      const plain = Math.max(...shown.slice(0, 3)) - Math.min(...shown.slice(0, 3)) < 24;
-      const floor = large ? 2.2 : vivid && plain ? 2.5 : 3;
+      // A strong brand color as the text itself (Twitter's #1da1f2 links, Healthline's teal labels) reads the same way.
+      const chroma = c => Math.max(...c.slice(0, 3)) - Math.min(...c.slice(0, 3));
+      const floor = large ? 2.2 : chroma(inText) > 90 || chroma(shown) > 90 ? 2.5 : 3;
       if (ratio(shown, inText) >= floor) { if (current) changes.push([el, null]); continue; }
       if (!current && overPicture(el, box)) continue;
       if (!original.has(el)) original.set(el, text);
-      const ink = ratio([29, 29, 31, 1], inText) >= ratio([245, 245, 247, 1], inText) ? 'dark' : 'light';
+      const ink = ratio(shownAs([29, 29, 31, 1], pt), inText) >= ratio(shownAs([245, 245, 247, 1], pt), inText) ? 'dark' : 'light';
       if (current !== ink) changes.push([el, ink]);
+    }
+    // Fields: what shows is the typed text, or the placeholder while empty.
+    for (const f of document.querySelectorAll('input:not([type=hidden]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=submit]):not([type=button]):not([type=image]):not([type=reset]), textarea')) {
+      const box = f.getBoundingClientRect();
+      if (box.width < 20 || box.height < 10 || box.bottom < 0 || box.top > view.h) continue;
+      const style = getComputedStyle(f);
+      if (style.visibility !== 'visible' || +style.opacity < .1) continue;
+      const current = f.getAttribute('data-net19-ink');
+      let color = original.get(f);
+      if (!color) color = rgba(!f.value && f.placeholder ? getComputedStyle(f, '::placeholder').color : style.color);
+      if (!color || color[3] < .2) continue;
+      const bg = backdrop(f);
+      if (!bg) continue;
+      const pt = parity(f), shown = over(shownAs(color, pt), bg.color);
+      const floor = !f.value && f.placeholder ? 2.5 : 3;
+      if (ratio(shown, bg.color) >= floor) { if (current) changes.push([f, null]); continue; }
+      if (!original.has(f)) original.set(f, color);
+      const ink = ratio(shownAs([29, 29, 31, 1], pt), bg.color) >= ratio(shownAs([245, 245, 247, 1], pt), bg.color) ? 'dark' : 'light';
+      if (current !== ink) changes.push([f, ink]);
     }
     for (const [el, ink] of changes) {
       if (ink) el.setAttribute('data-net19-ink', ink);

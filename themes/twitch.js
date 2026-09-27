@@ -1,7 +1,8 @@
-// net19 handmade theme: Twitch before the September 2019 rebrand, light and dark. Twitch marks its dark theme
-// with html.tw-root--theme-dark. Small DOM fixes bring back the 2019 page: the top bar's Esports and Music links next to
-// Browse, the side bar's "Recommended Channels" heading (signed out) instead of "Live Channels", and no hype-train line
-// on side-bar cards. The fixed "Join the Twitch community!" sign-up bar (no stable class) is hidden by its text.
+// net19 handmade theme: Twitch in 2019, light and dark. Twitch marks its dark theme with html.tw-root--theme-dark.
+// Small DOM fixes bring back the 2019 page: "Discover" and "Try Prime" (with Twitch's own crown icon) around Browse, the
+// side bar's "Recommended Channels" heading (signed out) instead of "Live Channels", "Recommended live channels" as the
+// first front-page shelf, the "Join the Twitch community!" box under the carousel in place of the fixed sign-up bar
+// (hidden by its text), and no hype-train line on side-bar cards.
 globalThis.net19Theme = {
   detect: () => document.documentElement.classList.contains('tw-root--theme-dark') ? 'dark' : 'light',
   watch: ['class'],
@@ -10,21 +11,65 @@ globalThis.net19Theme = {
   later: /^(?:stories|create a story|view stories|discovery feed|try the discovery feed|clips feed|watch clips feed|shorts|guest star|request to join|hype chat|send a hype chat)$/i,
 };
 (() => {
+  // A copy of the Browse item with another label and link (Discover before it, Try Prime after it)
+  const copyOf = (item, label, href) => {
+    const copy = item.cloneNode(true);
+    const a = copy.querySelector('a');
+    if (!a) return null;
+    a.href = href; a.setAttribute('aria-label', label); a.setAttribute('data-net19-link', ''); a.removeAttribute('data-a-target'); a.removeAttribute('data-test-selector');
+    a.removeAttribute('aria-current'); a.classList.remove('active');
+    for (const p of a.querySelectorAll('p')) p.textContent = label;
+    for (const d of a.querySelectorAll('[aria-label]')) d.setAttribute('aria-label', label);
+    copy.setAttribute('data-net19-link', '');
+    return copy;
+  };
   const links = () => {
     const browse = document.querySelector('nav.top-nav a[data-a-target="browse-link"]');
     const item = browse?.parentElement;
-    if (!item || item.parentElement.querySelector('[data-net19-link]')) return;
-    let after = item;
-    for (const [label, href] of [['Esports', '/directory/esports'], ['Music', '/directory/music']]) {
-      const copy = item.cloneNode(true);
-      const a = copy.querySelector('a');
-      if (!a) return;
-      a.href = href; a.setAttribute('aria-label', label); a.setAttribute('data-net19-link', ''); a.removeAttribute('data-a-target'); a.removeAttribute('data-test-selector'); a.classList.remove('active');
-      for (const p of a.querySelectorAll('p')) p.textContent = label;
-      for (const d of a.querySelectorAll('[aria-label]')) d.setAttribute('aria-label', label);
-      copy.setAttribute('data-net19-link', '');
-      after.after(copy); after = copy;
+    if (!item) return;
+    const added = item.parentElement.querySelector('a[data-net19-prime]');
+    if (added) {
+      // The crown may render after the links were added
+      const crown = !added.querySelector('[data-net19-prime-icon]') && document.querySelector('nav.top-nav [data-a-target="prime-offers-icon"] svg');
+      if (crown) { const icon = document.createElement('span'); icon.setAttribute('data-net19-prime-icon', ''); icon.append(crown.cloneNode(true)); added.prepend(icon); }
+      return;
     }
+    if (item.parentElement.querySelector('[data-net19-link]')) return;
+    const discover = copyOf(item, 'Discover', '/');
+    const prime = copyOf(item, 'Try Prime', 'https://gaming.amazon.com/');
+    if (!discover || !prime) return;
+    // Try Prime carries Twitch's own crown icon, taken from its Prime offers button
+    const pa = prime.querySelector('a'), crown = document.querySelector('nav.top-nav [data-a-target="prime-offers-icon"] svg');
+    pa.setAttribute('data-net19-prime', '');
+    if (crown) { const icon = document.createElement('span'); icon.setAttribute('data-net19-prime-icon', ''); icon.append(crown.cloneNode(true)); pa.prepend(icon); }
+    item.before(discover); item.after(prime);
+  };
+  // The sign-up bar pinned to the bottom became a box on the front page, under the carousel, in 2019's manner
+  const join = () => {
+    const main = document.querySelector('#front-page-main-content');
+    const box = main?.querySelector(':scope > [data-net19-join]');
+    const signup = document.querySelector('nav.top-nav [data-a-target="signup-button"]');
+    if (!main || !signup) { box?.remove(); return; }
+    const bar = [...document.querySelectorAll('.tw-callout-message')].find(c => /Join the Twitch community/i.test(c.textContent || ''));
+    if (box) {
+      // Twitch's own "coolcat" picture from the bar, which may render after the box
+      const img = !box.querySelector('img') && bar?.querySelector('img');
+      if (img?.src) { const i = document.createElement('img'); i.src = img.src; i.alt = ''; box.prepend(i); }
+      return;
+    }
+    const div = document.createElement('div');
+    div.setAttribute('data-net19-join', '');
+    const img = bar?.querySelector('img');
+    if (img?.src) { const i = document.createElement('img'); i.src = img.src; i.alt = ''; div.append(i); }
+    const text = document.createElement('div'), title = document.createElement('strong'), sub = document.createElement('span');
+    title.textContent = 'Join the Twitch community!';
+    sub.textContent = 'Discover the best live streams anywhere.';
+    text.append(title, sub);
+    const button = document.createElement('button');
+    button.type = 'button'; button.textContent = 'Sign Up';
+    button.addEventListener('click', () => document.querySelector('nav.top-nav [data-a-target="signup-button"]')?.click());
+    div.append(text, button);
+    main.prepend(div);
   };
   const fix = () => {
     for (const callout of document.querySelectorAll('.tw-callout-message')) {
@@ -52,7 +97,12 @@ globalThis.net19Theme = {
       while (box.parentElement && box.parentElement.children.length === 1 && box.parentElement.textContent.length < 400 && !/^(SECTION|MAIN|BODY)$/.test(box.parentElement.tagName)) box = box.parentElement;
       if (!box.hasAttribute('data-net19-hidden')) box.setAttribute('data-net19-hidden', '');
     }
+    // The first front-page shelf was "Recommended live channels"
+    for (const a of document.querySelectorAll('#front-page-main-content h2 > a[href="/directory/all"]')) {
+      if (!a.children.length && a.textContent.trim() === 'Live on Twitch') a.textContent = 'Recommended live channels';
+    }
     links();
+    join();
   };
   let queued = false;
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };

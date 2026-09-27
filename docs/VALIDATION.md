@@ -208,3 +208,51 @@ Two checks now catch this class of bug on any site:
 - `scripts/audit-diff.mjs` reports CONTENT LOST when linked headings or articles drop below 75%, or text below 60%, of the page without net19. `URLS='{"id":"https://..."}'` tests any page, such as a search results page.
 
 Logos are never drawn. Twitter's bird comes from abs.twimg.com and Reddit's snoo from redditstatic.com. AP and TechCrunch keep their current logos.
+
+## Dark mode and readability (0.12.0)
+
+Three pages looked wrong with the device in dark mode:
+- **Gmail with a photo theme:** the drawer's white labels had turned dark on the photo, and the search field was unreadable.
+- **Google Docs:** the page was white inside a dark frame, and the caret was invisible.
+- **Google Search:** the typed line sat 4px low.
+
+Three things had let these through:
+- The full with/without run of `audit-diff` ran in light mode only.
+- The page checks had no contrast check at all.
+- The signed-in apps were only checked in light mode.
+
+What changed:
+- `scripts/page-checks.js` reports `lowcontrast`: text measured as it is actually shown, after every `invert()` filter on the way (palette.js's flip computed exactly, hue-rotate included) and every translucent layer and gradient behind it.
+  - It covers text, placeholders, typed text and carets, including an editor's own DOM caret over its canvas.
+  - It flags text flipped over a picture kept in its real colors, and text over a picture whose shading was flipped.
+  - It skips screen-reader-only text, faded-out text, text under a dialog, and clipped map tiles.
+- `textoffcenter` also measures a field's typed line against the box drawn around it.
+- `audit-diff` compares `lowcontrast` too. `SCHEME=dark` and `SCHEME=light` are both part of every run.
+- `guard.js` repairs, at run time, any text the check would flag on a solid or gradient surface. The floors are:
+  - 3:1 for body text;
+  - 2.2:1 for large text;
+  - 2.5:1 for brand colors (Twitter blue, WhatsApp green).
+- palette.js keeps overlays with their pictures:
+  - hero headlines;
+  - video length badges;
+  - card shades and titles;
+  - map controls.
+
+  Themes can name parts with `keep`, `reflip` and `flat`.
+
+Sweeps with the new checks, 141 sites, with and without net19:
+- **Dark:** 55 sites were first flagged. Each was re-run after the fixes.
+- **Light:** full run.
+
+The remaining flags fall into four groups:
+- bot checks and slow loads (Cloudflare, "confirm you are human", Spotify and Telegram Web still loading at 4s);
+- consent banners and ad iframes over the page;
+- A/B-served home pages that differ between the two runs;
+- the sites' own two-line header labels.
+
+Checked in a real signed-in Chrome, dark and light:
+- Gmail with a photo theme;
+- Google Docs;
+- Google Search (home and results).
+
+All were clean in `lowcontrast` and `textoffcenter`.

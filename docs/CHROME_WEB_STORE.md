@@ -26,7 +26,7 @@ Keep the package, lockfile, manifest and displayed version aligned.
 
 **Description:**
 
-net19 restyles 135 of the most visited websites, social apps, news sites and wikis to look as they did in 2019, from Google, YouTube, Wikipedia, Reddit and Discord to Walmart, Weather.com, Zillow and the BBC. Each look is designed by hand. It applies before the page first appears and follows your device's light or dark setting.
+net19 restyles 141 of the most visited websites, social apps, news sites, game sites and wikis to look as they did in 2019, from Google, YouTube, Wikipedia, Reddit and Discord to Walmart, Weather.com, Zillow and the BBC. Each look is designed by hand. It applies before the page first appears and follows your device's light or dark setting.
 
 Two sites still serve their older design themselves, and net19 uses it:
 

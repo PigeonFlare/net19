@@ -31,6 +31,19 @@ The device's `prefers-color-scheme` decides the mode. When the site's own mode d
   - elements with a photo as a CSS background;
   - opaque bars and panels that already suit the target mode, such as a dark header for a dark device.
 - Translucent scrims (`data-net19-scrim`) get a background color that flips back to their own. Only the scrim itself is recolored, so a dialog sitting on it still flips.
+- Whatever is laid over a picture is kept with it, because it was drawn for that picture:
+  - a hero headline;
+  - a video's length badge;
+  - a card's gradient shade and title;
+  - a map's controls.
+
+  The picture's host (its largest ancestor with the picture's own box) is kept whole when it holds a small overlay. A gradient shade overlapping a picture is kept as well. Pictures that load late are judged again when they get a size, at load, and two seconds later.
+- A theme can name the parts the generic rules judge wrong:
+  - `keep`: parts drawn for a photo behind them, such as Gmail's bar and drawer on a picture theme;
+  - `reflip`: panels inside kept parts that flip again, such as Gmail's search field;
+  - `flat`: media that flips with the page, such as the canvas Google Docs draws its page on, so the DOM caret over it stays visible.
+
+  `theme.rejudge()` reclassifies the page after the state these depend on changes.
 
 Classification runs once per element in `requestAnimationFrame`, before the frame is painted. It reads style first and layout only for candidates.
 
@@ -38,16 +51,18 @@ On cnn.com, flipping adds about 150–250 ms of main-thread time during load. Th
 
 ### Guard
 
-`guard.js` runs after every theme and palette.js. It has two parts.
+`guard.js` runs after every theme and palette.js. It has three parts.
 
 **Post-2019 features.** Controls labelled as AI or assistant features that did not exist in 2019 are hidden by their label: "Create images", "Brainstorm", "Ask AI", "AI Mode", Copilot, Gemini, Grok, Rufus and similar. Placeholders such as "Search or ask a question" go back to "Search". A theme can add its own labels with a `later` regex, or protect labels with `keepLabels`.
 
 **Readability.** After loading, a change of mode, and every hover, click, key press, animation end or scroll, visible text is checked against the background it sits on:
 
-- The check accounts for translucent layers and for the page flip.
-- Text under about 2.2:1 contrast is given a dark or light ink.
-- Text over photos, gradients or media, including those in sibling layers, is left alone, because its background is unknown.
+- The check accounts for translucent layers and gradients (taken as the average of their colors). It also accounts for every `invert()` filter actually applied on the way: the page flip, the turned-back pictures, and a theme's own filters.
+- Text below 3:1 contrast is given whichever of a dark or light ink reads better. The floor is 2.2:1 for large text, and 2.5:1 for white or black lettering on a strong brand color.
+- Text over photos or media, including those in sibling layers, is left alone, because its background is unknown.
 - Ink is removed again once the text reads correctly without it.
+
+**Content protection.** A theme's hiding marker that lands on a block with several linked headings or articles is taken back.
 
 The looks follow the Web Design Museum's captures of each site (2019 where one exists, otherwise the nearest year), rebuilt by hand as rules for the live pages rather than copied.
 
@@ -79,7 +94,7 @@ Settings are `{ enabled, disabledHosts }`. Only the popup can change them. Switc
 
 | Permission | Purpose |
 | --- | --- |
-| Host access to the themed domains (135 domains for 135 themes) | Register the themes and navigation rules on those sites only |
+| Host access to the themed domains (142 domains for 141 themes) | Register the themes and navigation rules on those sites only |
 | `scripting` | Register the document-start theme scripts |
 | `declarativeNetRequestWithHostAccess` | Wikipedia's legacy-skin parameter and the old.reddit.com redirect |
 | `cookies` | Check whether a Reddit session exists, so old.reddit.com is only used when it works |

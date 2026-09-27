@@ -16,7 +16,8 @@ html[data-net19-mode="dark"] { --n19-nav: #232f3e; --n19-nav-text: #fff; --n19-n
 body, body #a-page { font-family: Arial, sans-serif !important; }
 
 /* Nav: one navy color for both rows (the belt was not yet the darker #131921) */
-#navbar, #nav-belt, #nav-main, #navbar.nav-sprite-v1 #nav-belt, #navbar.nav-sprite-v1 #nav-main, #nav-subnav { background: var(--n19-nav) !important; }
+#navbar, #nav-belt, #nav-main, #navbar.nav-sprite-v1 #nav-belt, #navbar.nav-sprite-v1 #nav-main { background: var(--n19-nav) !important; }
+/* (the department bar under the nav, #nav-subnav, stays the site's white strip with dark links, as in 2019) */
 #nav-main { height: 39px !important; }
 #nav-xshop .nav-a, #nav-main .nav-a { color: var(--n19-nav-link) !important; font-size: 13px !important; }
 #nav-xshop .nav-a:hover, #nav-main .nav-a:hover { color: var(--n19-nav-text) !important; text-decoration: underline !important; }
@@ -29,7 +30,9 @@ body, body #a-page { font-family: Arial, sans-serif !important; }
 #nav-search-bar-form, .nav-search-field, #nav-search .nav-fill { border-radius: 4px !important; }
 #nav-search-dropdown-card, .nav-search-scope { background: var(--n19-scope) !important; border-radius: 4px 0 0 4px !important; border-right: 1px solid var(--n19-scope-border) !important; }
 #nav-search-label-id { color: var(--n19-text-2) !important; font-size: 12px !important; }
-#nav-search-submit-button, .nav-search-submit, #nav-search-submit-text { background-color: var(--n19-go) !important; border-radius: 0 4px 4px 0 !important; }
+/* (the colour goes on the button's box and sprite span; the transparent Go input on top stays clear so the magnifier shows) */
+.nav-search-submit, #nav-search-submit-text { background-color: var(--n19-go) !important; border-radius: 0 4px 4px 0 !important; }
+#nav-search-submit-button { background: transparent !important; }
 .nav-search-submit:hover, .nav-search-submit:hover #nav-search-submit-text { background-color: var(--n19-go-hover) !important; }
 /* Location line: 2019 said "Deliver to" in small gray over the place */
 #glow-ingress-line1 { color: var(--n19-nav-dim) !important; font-size: 12px !important; }

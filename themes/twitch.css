@@ -1,17 +1,22 @@
-/* net19 handmade theme: Twitch, mid 2019 (before the September 2019 rebrand; Wayback core CSS of May 2019): a solid
-   #6441a4 purple top bar (#4b367c in the dark theme) with the white glitch logo, white Browse / Esports / Music links and
-   a square white search field; a "Recommended Channels" side bar; chat on the right with a purple "Chat" button; Log In and
-   Sign Up as small square purple buttons on a lighter band; Helvetica Neue at 12-14px; a pale #faf9fa page and side
-   bar with 30px round avatars; purple channel and game links; square thumbnails with a red rectangular LIVE tag.
-   Twitch has its own dark theme, which gets 2019's dark palette. */
-html { --n19-page: #faf9fa; --n19-surface: #fff; --n19-rail: #faf9fa; --n19-rail-hover: #efeef1; --n19-text: #19171c; --n19-text-alt: #322f37; --n19-text-2: #6e6779;
-  --n19-border: #dad8de; --n19-purple: #6441a4; --n19-purple-hover: #7d5bbe; --n19-purple-dark: #4b367c; --n19-link: #6441a4; --n19-bar: #6441a4;
-  --n19-bar-link: rgba(255,255,255,.8); --n19-band: rgba(255,255,255,.1); --n19-field: #fff; --n19-field-border: #dad8de; --n19-field-text: #433f4a;
-  --n19-placeholder: #898395; --n19-field-button: #efeef1; --n19-field-icon: #6441a4; --n19-tag: #efeef1; --n19-tag-text: #322f37; --n19-live: #e21212; }
-html[data-net19-mode="dark"] { --n19-page: #0f0e11; --n19-surface: #19171c; --n19-rail: #19171c; --n19-rail-hover: #322f37; --n19-text: #dad8de; --n19-text-alt: #b8b5c0; --n19-text-2: #898395;
-  --n19-border: #2c2541; --n19-purple: #6441a4; --n19-purple-hover: #7d5bbe; --n19-purple-dark: #4b367c; --n19-link: #b19dd8; --n19-bar: #4b367c;
-  --n19-bar-link: rgba(255,255,255,.8); --n19-band: rgba(255,255,255,.1); --n19-field: #0f0e11; --n19-field-border: #392e5c; --n19-field-text: #faf9fa;
-  --n19-placeholder: #898395; --n19-field-button: #2c2541; --n19-field-icon: #dad8de; --n19-tag: #2c2541; --n19-tag-text: #dad8de; --n19-live: #e21212; }
+/* net19 handmade theme: Twitch in 2019 (signed-out front page, light): a white top bar with the purple glitch logo,
+   "Discover", "Browse" and a "Try Prime" crown at the left, a square search field in the middle, a gray "Log In" and a
+   purple "Sign Up" at the right; a pale left column of "Recommended Channels" with 30px round avatars, red live dots and
+   viewer counts; the featured carousel (big center player, side thumbnails, the streamer's white blurb card); a
+   "Join the Twitch community!" box with a purple Sign Up; "Recommended live channels" as square thumbnails with a red
+   LIVE tag and a viewer count; Helvetica Neue at 12-14px, #6441a4 purple accents, square corners.
+   Twitch's own dark theme gets 2019's dark theme with the same layout: a #232127 top bar, #0e0c13 page, #19171c panels. */
+html { --n19-page: #faf9fa; --n19-surface: #fff; --n19-rail: #efeef1; --n19-rail-hover: #e5e3e8; --n19-text: #19171c; --n19-text-alt: #322f37; --n19-text-2: #6e6779;
+  --n19-border: #dad8de; --n19-purple: #6441a4; --n19-purple-hover: #7d5bbe; --n19-purple-dark: #4b367c; --n19-link: #6441a4;
+  --n19-bar: #fff; --n19-bar-border: #dad8de; --n19-bar-link: #322f37; --n19-bar-link-hover: #6441a4; --n19-bar-icon: #6441a4; --n19-logo: #6441a4;
+  --n19-field: #fff; --n19-field-border: #dad8de; --n19-field-text: #19171c; --n19-placeholder: #898395; --n19-field-button: #efeef1; --n19-field-icon: #6441a4;
+  --n19-button-2: #e5e3e8; --n19-button-2-hover: #dad8de; --n19-button-2-text: #19171c;
+  --n19-tag: #efeef1; --n19-tag-text: #322f37; --n19-live: #e91916; --n19-shade: rgba(0,0,0,.6); --n19-card-shadow: 0 1px 2px rgba(0,0,0,.1); }
+html[data-net19-mode="dark"] { --n19-page: #0e0c13; --n19-surface: #19171c; --n19-rail: #19171c; --n19-rail-hover: #232127; --n19-text: #dad8de; --n19-text-alt: #b8b5c0; --n19-text-2: #898395;
+  --n19-border: #2c2833; --n19-purple: #6441a4; --n19-purple-hover: #7d5bbe; --n19-purple-dark: #4b367c; --n19-link: #a991d4;
+  --n19-bar: #232127; --n19-bar-border: #0e0c13; --n19-bar-link: #dad8de; --n19-bar-link-hover: #a991d4; --n19-bar-icon: #dad8de; --n19-logo: #6441a4;
+  --n19-field: #0e0c13; --n19-field-border: #392e5c; --n19-field-text: #faf9fa; --n19-placeholder: #898395; --n19-field-button: #322f37; --n19-field-icon: #dad8de;
+  --n19-button-2: #322f37; --n19-button-2-hover: #3e3a45; --n19-button-2-text: #faf9fa;
+  --n19-tag: #322f37; --n19-tag-text: #dad8de; --n19-live: #e91916; --n19-shade: rgba(0,0,0,.6); --n19-card-shadow: 0 1px 2px rgba(0,0,0,.4); }
 
 /* Twitch's own design variables, so menus, cards and popups follow the 2019 palette */
 html:root, html.tw-root--theme-light, html.tw-root--theme-dark {
@@ -24,6 +29,8 @@ html:root, html.tw-root--theme-light, html.tw-root--theme-dark {
   --color-background-button-primary-default: var(--n19-purple) !important; --color-background-button-primary-hover: var(--n19-purple-hover) !important;
   --color-background-button-primary-active: var(--n19-purple) !important; --color-background-button-brand: var(--n19-purple) !important;
   --color-background-button-brand-hover: var(--n19-purple-hover) !important; --color-background-button-brand-active: var(--n19-purple) !important;
+  --color-background-button-secondary-default: var(--n19-button-2) !important; --color-background-button-secondary-hover: var(--n19-button-2-hover) !important;
+  --color-text-button-secondary: var(--n19-button-2-text) !important;
   --color-background-input-checked: var(--n19-purple) !important; --color-border-input-focus: var(--n19-purple-hover) !important;
   --color-background-tag-default: var(--n19-tag) !important; --color-text-tag: var(--n19-tag-text) !important; --color-fill-live: var(--n19-live) !important;
   --button-border-radius-default: 4px !important; --button-border-radius-small: 4px !important; --button-border-radius-large: 4px !important;
@@ -31,99 +38,138 @@ html:root, html.tw-root--theme-light, html.tw-root--theme-dark {
   --border-radius-medium: 4px !important; --border-radius-large: 6px !important;
   --font-base: "Helvetica Neue", Helvetica, Arial, sans-serif !important; --font-display: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
 }
-body, #root, button, input, [class*="CoreText"], [class*="ScTitleText"], h1, h2, h3, h4, p { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+body, #root, button, input, textarea, [class*="CoreText"], [class*="ScTitleText"], h1, h2, h3, h4, p { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
 body { background-color: var(--n19-page) !important; }
+.twilight-main, .root-scrollable, main { background-color: var(--n19-page) !important; }
 
-/* Top bar: solid purple, white glitch logo, white links */
-nav.top-nav .top-nav__menu { background: var(--n19-bar) !important; box-shadow: none !important; border: 0 !important; }
-nav.top-nav .tw-animated-glitch-logo svg [class*="ScBody"], nav.top-nav .tw-animated-glitch-logo svg [class*="ScFace"] { fill: #fff !important; }
-nav.top-nav .tw-animated-glitch-logo svg [class*="ScEyes"], nav.top-nav .tw-animated-glitch-logo svg [class*="ScEyes"] * { fill: var(--n19-bar) !important; }
-nav.top-nav .navigation-link, nav.top-nav .navigation-link p { color: var(--n19-bar-link) !important; font-size: 14px !important; font-weight: 400 !important; }
-nav.top-nav .navigation-link:hover, nav.top-nav .navigation-link:hover p, nav.top-nav .navigation-link.active p { color: #fff !important; }
-nav.top-nav .navigation-link::after, nav.top-nav .navigation-link div::after { background: #fff !important; }
-nav.top-nav [data-a-target="ellipsis-button"], nav.top-nav [data-a-target="prime-offers-icon"], nav.top-nav [data-a-target="user-menu-toggle"],
-nav.top-nav .top-nav__menu > div:last-child button[class*="ScCoreButton"]:not([data-a-target="login-button"]):not([data-a-target="signup-button"]) { color: #fff !important; }
+/* Top bar: white (#232127 in the dark theme) with a hairline, the purple glitch logo, dark 14px links */
+nav.top-nav .top-nav__menu { background: var(--n19-bar) !important; box-shadow: none !important; border: 0 !important; border-bottom: 1px solid var(--n19-bar-border) !important; box-sizing: border-box !important; }
+/* the glitch logo's own drawing in 2019's purple (body and eyes; the face stays white) */
+nav.top-nav .tw-animated-glitch-logo svg [class*="ScBody"] { fill: var(--n19-logo) !important; }
+nav.top-nav .navigation-link, nav.top-nav .navigation-link p { color: var(--n19-bar-link) !important; font-size: 14px !important; font-weight: 600 !important; }
+nav.top-nav .navigation-link:hover, nav.top-nav .navigation-link:hover p, nav.top-nav .navigation-link.active p, nav.top-nav .navigation-link[aria-current] p { color: var(--n19-bar-link-hover) !important; }
+nav.top-nav .navigation-link::after, nav.top-nav .navigation-link div::after, nav.top-nav .navigation-link__indicator-container { background: var(--n19-purple) !important; }
+nav.top-nav a.navigation-link { padding: 0 10px !important; text-decoration: none !important; }
+nav.top-nav [data-a-target="ellipsis-button"], nav.top-nav [data-a-target="prime-offers-icon"], nav.top-nav [data-a-target="user-menu-toggle"] > button,
+nav.top-nav .top-nav__menu > div:last-child button[class*="ScButtonIcon"] { color: var(--n19-bar-icon) !important; }
 nav.top-nav .top-nav__menu > div:last-child .tw-svg svg, nav.top-nav [data-a-target="ellipsis-button"] svg { fill: currentColor !important; }
-/* Search: a square white field with a separate pale button */
-nav.top-nav form[role="search"] input.tw-input { background: var(--n19-field) !important; border: 1px solid var(--n19-field-border) !important; box-shadow: none !important;
-  border-radius: 4px 0 0 4px !important; color: var(--n19-field-text) !important; height: 30px !important; font-size: 12px !important; }
-nav.top-nav form[role="search"] input.tw-input::placeholder { color: var(--n19-placeholder) !important; }
-nav.top-nav form[role="search"] .tw-combo-input__button-icon { background: var(--n19-field-button) !important; border-radius: 0 4px 4px 0 !important; height: 30px !important; width: 34px !important; color: var(--n19-field-icon) !important; }
-nav.top-nav form[role="search"] .tw-combo-input__button-icon svg { fill: currentColor !important; }
-/* Log In and Sign Up: small square purple buttons on a lighter band */
-nav.top-nav .anon-user { background: var(--n19-band) !important; box-sizing: content-box !important; padding: 9px 7px !important; margin: -9px 0 !important; align-items: center !important; }
-nav.top-nav [data-a-target="login-button"], nav.top-nav [data-a-target="signup-button"] {
-  background: var(--n19-purple) !important; color: #fff !important; border-radius: 4px !important; height: 30px !important; font-size: 12px !important; font-weight: 400 !important;
-}
-nav.top-nav [data-a-target="login-button"]:hover, nav.top-nav [data-a-target="signup-button"]:hover { background: var(--n19-purple-hover) !important; }
-nav.top-nav [data-a-target="login-button"] *, nav.top-nav [data-a-target="signup-button"] * { color: #fff !important; font-weight: 400 !important; }
+nav.top-nav button[class*="ScButtonIcon"]:hover { background: var(--n19-rail) !important; }
+/* "Try Prime" (added by twitch.js next to Browse, with Twitch's own crown icon); signed out it replaces the crown at the
+   right and its offers count, which 2019 showed only to signed-in users */
+nav.top-nav a[data-net19-prime] { display: flex !important; align-items: center !important; gap: 5px !important; height: 50px !important; }
+nav.top-nav a[data-net19-prime] svg { width: 20px !important; height: 20px !important; fill: currentColor !important; flex: none !important; display: block !important; }
+nav.top-nav a[data-net19-prime] [data-net19-prime-icon] { display: flex !important; align-items: center !important; color: var(--n19-bar-icon) !important; }
+nav.top-nav .top-nav__menu:has(.anon-user) .top-nav__prime { display: none !important; }
+/* Search: a square field with a separate pale button */
+nav.top-nav form[role="search"] input.tw-input, nav.top-nav form[role="search"] input[data-a-target="tw-input"] { background: var(--n19-field) !important; border: 1px solid var(--n19-field-border) !important; box-shadow: none !important;
+  border-radius: 4px 0 0 4px !important; color: var(--n19-field-text) !important; height: 32px !important; font-size: 13px !important; caret-color: var(--n19-field-text) !important; }
+nav.top-nav form[role="search"] input:focus { border-color: var(--n19-purple) !important; outline: 0 !important; }
+nav.top-nav form[role="search"] input::placeholder { color: var(--n19-placeholder) !important; }
+nav.top-nav form[role="search"] [data-a-target="tray-search-input"] { align-items: center !important; }
+nav.top-nav form[role="search"] button[aria-label="Search Button"] { background: var(--n19-field-button) !important; border: 1px solid var(--n19-field-border) !important; border-left: 0 !important;
+  border-radius: 0 4px 4px 0 !important; height: 32px !important; width: 36px !important; color: var(--n19-field-icon) !important; box-shadow: none !important; }
+nav.top-nav form[role="search"] button[aria-label="Search Button"] > div { height: 30px !important; }
+nav.top-nav form[role="search"] button[aria-label="Search Button"] svg { fill: currentColor !important; width: 20px !important; height: 20px !important; }
+nav.top-nav form[role="search"] .tw-combo-input__input + div { height: 32px !important; }
+/* Log In: a plain gray button; Sign Up: purple */
+nav.top-nav [data-a-target="login-button"], nav.top-nav [data-a-target="signup-button"] { border-radius: 4px !important; height: 30px !important; font-size: 13px !important; box-shadow: none !important; }
+nav.top-nav [data-a-target="login-button"] { background: var(--n19-button-2) !important; color: var(--n19-button-2-text) !important; }
+nav.top-nav [data-a-target="login-button"]:hover { background: var(--n19-button-2-hover) !important; }
+nav.top-nav [data-a-target="login-button"] * { color: var(--n19-button-2-text) !important; font-weight: 600 !important; }
+nav.top-nav [data-a-target="signup-button"] { background: var(--n19-purple) !important; color: #fff !important; }
+nav.top-nav [data-a-target="signup-button"]:hover { background: var(--n19-purple-hover) !important; }
+nav.top-nav [data-a-target="signup-button"] * { color: #fff !important; font-weight: 600 !important; }
+nav.top-nav [data-a-target="top-nav-get-bits-button"] { background: var(--n19-button-2) !important; color: var(--n19-button-2-text) !important; border-radius: 4px !important; box-shadow: none !important; height: 30px !important; font-size: 13px !important; }
+nav.top-nav [data-a-target="top-nav-get-bits-button"] * { color: var(--n19-button-2-text) !important; }
 
-/* Side bar: pale column with a hairline, uppercase header, 30px round avatars, compact 12-13px rows */
+/* Side bar: a pale column with a hairline, uppercase header, 30px round avatars, compact 12-13px rows, red live dots */
 .side-nav, .side-nav__overlay-wrapper, .side-bar-contents, #side-nav { background: var(--n19-rail) !important; }
 .side-nav { border-right: 1px solid var(--n19-border) !important; }
-.side-nav-header h2, .side-nav-header h3, [data-a-target="side-nav-header-expanded"] h2, [data-a-target="side-nav-header-expanded"] h3 {
-  text-transform: uppercase !important; font-size: 12px !important; font-weight: 600 !important; color: var(--n19-text-2) !important; letter-spacing: 0 !important;
+.side-nav-header h2, .side-nav-header h3, [data-a-target="side-nav-header-expanded"] h2, [data-a-target="side-nav-header-expanded"] h3, .side-nav-section > div:first-child h2 {
+  text-transform: uppercase !important; font-size: 12px !important; font-weight: 600 !important; color: var(--n19-text-alt) !important; letter-spacing: 0 !important;
 }
 .side-nav-card, .side-nav-card a { border-radius: 0 !important; }
 .side-nav-card a:hover { background: var(--n19-rail-hover) !important; }
 .side-nav-card [data-a-target="side-nav-title"] p, [data-a-target="side-nav-title"] { font-size: 13px !important; font-weight: 600 !important; color: var(--n19-text) !important; }
-.side-nav-card [data-a-target="side-nav-card-metadata"] p, [data-a-target="side-nav-card-metadata"] { font-size: 12px !important; color: var(--n19-text-2) !important; }
+.side-nav-card [data-a-target="side-nav-card-metadata"] p, [data-a-target="side-nav-card-metadata"], .side-nav-card [data-a-target="side-nav-live-status"] span { font-size: 12px !important; color: var(--n19-text-2) !important; }
 .side-nav-card .tw-avatar, .side-nav-card figure { width: 30px !important; height: 30px !important; }
+.side-nav-card [class*="ScChannelStatusIndicator"], .side-nav-card .tw-channel-status-indicator { background: var(--n19-live) !important; }
+.side-nav [data-a-target="side-nav-show-more-button"], .side-nav [data-a-target="side-nav-show-more-button"] * { color: var(--n19-link) !important; }
 
-/* Headings and cards: square thumbnails, purple channel and game links, bold dark titles */
-[data-a-target="front-page-main-content"] h2, [data-a-target="front-page-main-content"] h3 { font-size: 18px !important; font-weight: 400 !important; }
-[class*="ScAspectRatio"] img, .tw-image, [class*="preview-card-image"], .tw-hover-accent-effect, [class*="ScTransformWrapper"], [class*="ScWrapper"],
+/* Front page: the carousel's arrows and blurb card, and the 18px section headings */
+.carousel-player-nav-arrow__container { background: transparent !important; }
+.carousel-player-nav-arrow__container button { background: var(--n19-surface) !important; color: var(--n19-text) !important; border: 1px solid var(--n19-border) !important; border-radius: 4px !important; }
+.carousel-player-nav-arrow__container button svg { fill: currentColor !important; }
+[data-a-target="featured-item"] [class*="carousel-metadata"], .carousel-metadata { background: var(--n19-surface) !important; }
+#front-page-main-content h2.tw-title, #front-page-main-content h2[class*="ScTitleText"] { font-size: 18px !important; font-weight: 400 !important; color: var(--n19-text) !important; }
+#front-page-main-content h2.tw-title a { color: var(--n19-link) !important; }
+/* The "Join the Twitch community!" box (built by twitch.js from the sign-up bar, which it hides) */
+[data-net19-join] { display: flex !important; align-items: center !important; gap: 14px !important; box-sizing: border-box !important; margin: 0 0 24px !important; padding: 14px 18px !important;
+  background: var(--n19-surface) !important; border: 1px solid var(--n19-border) !important; border-radius: 0 !important; box-shadow: var(--n19-card-shadow) !important; color: var(--n19-text) !important; }
+[data-net19-join] img { width: 48px !important; height: 48px !important; flex: none !important; display: block !important; }
+[data-net19-join] > div { flex: 1 1 auto !important; min-width: 0 !important; display: flex !important; flex-direction: column !important; justify-content: center !important; gap: 3px !important; }
+[data-net19-join] strong { display: block !important; font-size: 16px !important; line-height: 20px !important; font-weight: 600 !important; color: var(--n19-text) !important; }
+[data-net19-join] span { display: block !important; font-size: 13px !important; line-height: 18px !important; color: var(--n19-text-2) !important; }
+[data-net19-join] button { flex: none !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; height: 30px !important; padding: 0 14px !important;
+  border: 0 !important; border-radius: 4px !important; background: var(--n19-purple) !important; color: #fff !important; font: 600 13px/30px "Helvetica Neue", Helvetica, Arial, sans-serif !important; cursor: pointer !important; }
+[data-net19-join] button:hover { background: var(--n19-purple-hover) !important; }
+
+/* Cards: square thumbnails, a red LIVE tag, a dark viewer count, purple channel and game links, bold dark titles */
+[class*="ScAspectRatio"] img, .tw-image:not(.tw-image-avatar), [class*="preview-card-image"], .tw-hover-accent-effect, [class*="ScTransformWrapper"], [class*="ScWrapper"],
 [data-a-target="featured-item"], [data-a-target="front-page-carousel"] video, .carousel-metadata, .tw-card-image, [data-a-target="tw-card-image"] { border-radius: 0 !important; }
 .tw-hover-accent-effect::before, .tw-hover-accent-effect::after, [class*="ScTransformWrapper"]::before, [class*="ScTransformWrapper"]::after { display: none !important; }
 [class*="ScTransformWrapper"] { transform: none !important; }
 [data-a-target="preview-card-title-link"] h3, [data-a-target="preview-card-title-link"] p, [data-a-target="tw-card-title"] { color: var(--n19-text) !important; font-size: 14px !important; font-weight: 600 !important; }
-[data-a-target="preview-card-channel-link"] p, [data-a-target="preview-card-channel-link"], [data-a-target="preview-card-game-link"],
+a[data-a-target="preview-card-channel-link"] h4 { color: var(--n19-text) !important; font-weight: 600 !important; }
+p[data-a-target="preview-card-channel-link"], [data-a-target="preview-card-channel-link"] p, [data-a-target="preview-card-game-link"],
 [data-a-target="preview-card-game-link"] p, [data-a-target="tw-box-art-card-link"] p { color: var(--n19-link) !important; font-size: 12px !important; }
 .tw-channel-status-text-indicator, [class*="ScChannelStatusTextIndicator"] { background: var(--n19-live) !important; border-radius: 2px !important; }
-[class*="ScMediaCardStatWrapper"] { background: rgba(0,0,0,.6) !important; border-radius: 0 !important; font-size: 12px !important; }
+.tw-channel-status-text-indicator *, [class*="ScChannelStatusTextIndicator"] * { color: #fff !important; }
+[class*="ScMediaCardStatWrapper"] { background: var(--n19-shade) !important; color: #fff !important; border-radius: 0 !important; font-size: 12px !important; }
 .tw-tag, [class*="ScTag"] { border-radius: 2px !important; font-size: 12px !important; }
-/* Top bar: the added Esports and Music links (twitch.js) read like Browse; the Get Bits button as 2019's plain light button */
-nav.top-nav a[data-net19-link] { text-decoration: none !important; }
-nav.top-nav a.navigation-link { padding: 0 10px !important; }
-nav.top-nav [data-a-target="top-nav-get-bits-button"] { background: rgba(255,255,255,.12) !important; color: #fff !important; border-radius: 4px !important; box-shadow: none !important; height: 30px !important; font-size: 12px !important; font-weight: 400 !important; }
-nav.top-nav [data-a-target="top-nav-get-bits-button"] * { color: #fff !important; fill: #fff !important; font-weight: 400 !important; }
-nav.top-nav [data-a-target="top-nav-get-bits-button"]:hover { background: rgba(255,255,255,.2) !important; }
+/* 2019 had no hover accent (purple corners and the card sliding up came with the September 2019 rebrand) */
+.tw-hover-accent-effect > [class*="ScCorner"], .tw-hover-accent-effect > [class*="ScEdge"] { display: none !important; }
+.guest-star-live-card-border, .guest-star-live-card-clip-edge { background: none !important; padding: 0 !important; border: 0 !important; clip-path: none !important; box-shadow: none !important; }
 
-/* Channel page: chat column in the 2019 manner — uppercase header, a square white field, a purple "Chat" button */
+/* Directory and category pages: a 2019-sized "Browse" heading and purple tab underline */
+main h1.tw-title { font-size: 36px !important; font-weight: 600 !important; letter-spacing: 0 !important; }
+[role="tablist"] [role="tab"][aria-selected="true"] p, [data-a-target*="tab"][aria-selected="true"] p { color: var(--n19-link) !important; }
+[role="tablist"] [role="tab"] [class*="ScActiveIndicator"], [role="tablist"] [role="tab"][aria-selected="true"]::after { background: var(--n19-purple) !important; }
+
+/* Channel page: chat column in the 2019 manner: uppercase header, a square field, a purple "Chat" button */
 .stream-chat-header, [data-test-selector="chat-room-header-label"] { text-transform: uppercase !important; font-size: 12px !important; font-weight: 600 !important; letter-spacing: 0 !important; }
-.chat-shell, .stream-chat, .chat-room, .chat-list--default, .chat-list--other { background: var(--n19-surface) !important; }
-.chat-input textarea, [data-a-target="chat-input"] { border-radius: 4px !important; background: var(--n19-field) !important; border: 1px solid var(--n19-field-border) !important; box-shadow: none !important; }
+.stream-chat-header { background: var(--n19-surface) !important; border-bottom: 1px solid var(--n19-border) !important; }
+.chat-shell, .stream-chat, .chat-room, .chat-list--default, .chat-list--other, .channel-root__right-column, .right-column { background: var(--n19-surface) !important; }
+.channel-root__right-column, .right-column { border-left: 1px solid var(--n19-border) !important; }
+.chat-wysiwyg-input-box { border-radius: 4px !important; background: var(--n19-field) !important; box-shadow: inset 0 0 0 1px var(--n19-field-border) !important; }
+.chat-wysiwyg-input-box:focus-within { box-shadow: inset 0 0 0 1px var(--n19-purple) !important; }
+.chat-wysiwyg-input-box [data-a-target="chat-input"], .chat-input textarea { background: transparent !important; border: 0 !important; box-shadow: none !important; color: var(--n19-field-text) !important; caret-color: var(--n19-field-text) !important; }
 [data-a-target="chat-send-button"] { background: var(--n19-purple) !important; color: #fff !important; border-radius: 4px !important; }
 [data-a-target="chat-send-button"] * { color: #fff !important; }
+[data-a-target="chat-send-button"]:disabled { opacity: .6 !important; }
 .channel-info-content h1, [data-a-target="stream-title"] { font-size: 14px !important; font-weight: 600 !important; }
+.channel-info-content, .channel-root__info, .channel-root__player { background: var(--n19-page) !important; }
 [data-a-target="follow-button"], [data-a-target="unfollow-button"], [data-a-target="subscribe-button"] { border-radius: 4px !important; }
+div:has(> [data-a-target="follow-button"]), div:has(> [data-a-target="unfollow-button"]), div:has(> [data-a-target="game-directory-follow-button"]), div:has(> [data-a-target="game-directory-unfollow-button"]) { border-radius: 4px !important; background: transparent !important; }
+/* the Follow button's 2021 pill comes from a clipping wrapper a few levels up (not the one holding Subscribe too) */
+:is(div:has(> * > [data-a-target="follow-button"]), div:has(> * > * > [data-a-target="follow-button"]), div:has(> * > * > * > [data-a-target="follow-button"]),
+  div:has(> * > * > * > * > [data-a-target="follow-button"])):not(:has([data-a-target="subscribe-button"])) { border-radius: 4px !important; }
 [data-a-target="follow-button"] { background: var(--n19-purple) !important; color: #fff !important; }
+[data-a-target="follow-button"]:hover, [data-a-target="subscribe-button"]:hover { background: var(--n19-purple-hover) !important; }
+[data-a-target="subscribe-button"] { background: var(--n19-purple) !important; color: #fff !important; }
+[data-a-target="subscribe-button"] *, [data-a-target="follow-button"] * { color: #fff !important; fill: currentColor; }
+/* Buttons everywhere (Follow on a category, Manage Settings, Log In / Sign Up in dialogs): 2019's 4px corners, not the
+   2021 pills; round icon buttons keep their shape */
+button[class*="ScCoreButton"]:not([class*="ScButtonIcon"]), a[class*="ScCoreButton"]:not([class*="ScButtonIcon"]) { border-radius: 4px !important; }
 
-/* Post-2019 features: the category tiles on Browse (2021), stories in the side bar (2024), Guest Star (2022), the hype-train
-   line on side-bar cards (2020, marked by twitch.js), chat's community highlights and Hype Chat (2020–23) */
+/* Post-2019 features: the category tiles on Browse (2021), stories in the side bar (2024), Guest Star (2022), chat's
+   community highlights and Hype Chat (2020–23), the discovery feed (2023), channel points (2020), the
+   content-classification chip on the player (2023) */
 html body :is(.vertical-selector-card__container, [class*="vertical-selector__wrapper"], [class*="storiesLeftNavSection"],
 [data-a-target*="guest-star"], [data-test-selector*="guest-star"],
 .community-highlight-stack__card, [class*="community-highlight-stack"], [data-test-selector*="hype-chat"], [class*="hype-chat"],
 [data-test-selector*="discovery-feed"], [data-a-target*="discovery-feed"],
-/* channel points under chat (2020) */
 [data-test-selector="community-points-summary"], .community-points-summary,
-/* the content-classification chip on the player ("Intended for certain audiences", 2023) */
 .disclosure-tool) { display: none !important; }
-/* The fixed "Join the Twitch community!" sign-up bar came later (marked by twitch.js) */
+/* Marked by twitch.js: the fixed sign-up bar (shown as a box instead), hype-train lines, labeled-content notices */
 html [data-net19-hidden][data-net19-hidden] { display: none !important; }
-/* Buttons everywhere (Follow on a category, Manage Settings, Log In / Sign Up in dialogs): 2019's 4px corners, not the
-   2021 pills; round icon buttons keep their shape */
-button[class*="ScCoreButton"]:not([class*="ScButtonIcon"]), a[class*="ScCoreButton"]:not([class*="ScButtonIcon"]) { border-radius: 4px !important; }
-/* Cards: 2019 had no hover accent (the purple corners and the card sliding up came with the September 2019 rebrand),
-   and Guest Star cards (2022) show as an ordinary stream thumbnail */
-.tw-hover-accent-effect > [class*="ScCorner"], .tw-hover-accent-effect > [class*="ScEdge"] { display: none !important; }
-.guest-star-live-card-border, .guest-star-live-card-clip-edge { background: none !important; padding: 0 !important; border: 0 !important; clip-path: none !important; box-shadow: none !important; }
-/* Follow is a square purple button (its 2021 pill comes from a wrapper); Subscribe was purple too, Gift a Sub (2021) a
-   plain light button beside it */
-div:has(> [data-a-target="follow-button"]), div:has(> [data-a-target="unfollow-button"]) { border-radius: 4px !important; background: transparent !important; }
-:is(div:has(> * > [data-a-target="follow-button"]), div:has(> * > * > [data-a-target="follow-button"]), div:has(> * > * > * > [data-a-target="follow-button"]),
-  div:has(> * > * > * > * > [data-a-target="follow-button"])):not(:has([data-a-target="subscribe-button"])) { border-radius: 4px !important; }
-[data-a-target="follow-button"]:hover { background: var(--n19-purple-hover) !important; }
-[data-a-target="subscribe-button"] { background: var(--n19-purple) !important; color: #fff !important; }
-[data-a-target="subscribe-button"]:hover { background: var(--n19-purple-hover) !important; }
-[data-a-target="subscribe-button"] *, [data-a-target="follow-button"] * { color: #fff !important; fill: currentColor; }

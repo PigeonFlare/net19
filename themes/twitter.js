@@ -26,10 +26,10 @@ globalThis.net19Theme = {
     ['Undo repost', 'Undo Retweet'], ['Quote', 'Retweet with comment'], ['Post your reply', 'Tweet your reply'], ['Post your reply!', 'Tweet your reply'],
     ['Trending now', 'What’s happening'], ['Chat', 'Messages'], ['Show more posts', 'Show more Tweets'], ['Show posts', 'Show Tweets'],
     ['Log in or sign up for X', 'New to Twitter?'], ['See what’s happening and join the conversation', 'Sign up now to get your own personalized timeline!'],
-    ['Continue with phone', 'Sign up'], ['Log in with username or email', 'Log in'], ['Search X', 'Search Twitter'],
+    ['Continue with phone', 'Sign up'], ['Log in with username or email', 'Log in'], ['Search X', 'Search Twitter'], ['Continue to X', 'Continue to Twitter'],
   ]);
   const COUNT = /^([\d.,]+\s*[KMB]?)\s+posts?$/i;
-  const PLACES = 'button, a, [role="button"], [role="tab"], [role="menuitem"], [role="link"], [role="heading"], h1, h2, h3, nav, label, [data-testid="User-Name"] ~ div, .public-DraftEditorPlaceholder-inner, [aria-live], aside, header';
+  const PLACES = 'button, a, [role="button"], [role="tab"], [role="menuitem"], [role="link"], [role="heading"], h1, h2, h3, nav, label, [data-testid="User-Name"] ~ div, .public-DraftEditorPlaceholder-inner, [aria-live], aside, header, main > .sticky';
   const SKIP = '[data-testid="tweetText"], article div[dir="auto"], [contenteditable="true"], script, style, input, textarea';
   const rewrite = node => {
     const raw = node.nodeValue, text = raw.replace(/\s+/g, ' ').trim();
@@ -81,6 +81,8 @@ globalThis.net19Theme = {
       while (module.parentElement && [...module.parentElement.children].filter(c => c.querySelector('h2, [role="heading"]')).length < 2) module = module.parentElement;
       if (module && module.parentElement && !module.querySelector('input, textarea, [contenteditable]') && !module.hasAttribute('data-n19-tw')) module.setAttribute('data-n19-tw', 'later');
     }
+    // The "Scan to get the app" QR card (2024), on every signed-out page
+    for (const button of document.querySelectorAll('body button:is(:has(img), :has(svg), :has(canvas))')) if (!button.hasAttribute('data-n19-tw') && /^scan to get the app/i.test(button.textContent.trim())) button.setAttribute('data-n19-tw', 'qr');
     // "Search Twitter"
     for (const input of document.querySelectorAll('[data-testid="SearchBox_Search_Input"], aside input[placeholder="Search"], header input[placeholder="Search"], [role="search"] input[placeholder="Search"]')) {
       if (input.placeholder !== 'Search Twitter') input.placeholder = 'Search Twitter';
@@ -165,6 +167,9 @@ globalThis.net19Theme = {
     const go = [...form.querySelectorAll('button, [role="button"], div')].find(el => /^(Continue|Log in)$/.test(text(el)) && !el.querySelector('input'));
     const goBox = go && (go.closest('button, [role="button"]') || [...form.children].find(c => c.contains(go)) || go);
     mark(field, 'field');
+    // The caption over the typed line becomes the field's placeholder, as in 2019
+    for (const el of field.querySelectorAll('span, div')) if (!el.querySelector('input') && el.textContent.trim()) mark(el, 'cap');
+    if (input.placeholder !== 'Phone, email, or username') input.placeholder = 'Phone, email, or username';
     mark(goBox, 'go');
     for (const start of [field, goBox]) for (let n = start?.parentElement; n && n !== main; n = n.parentElement) if (!n.hasAttribute('data-n19-tw')) mark(n, 'static');
     for (const el of main.querySelectorAll('a[href*="/onboarding/"], button, .jf-gsi-face')) {
@@ -172,7 +177,6 @@ globalThis.net19Theme = {
       mark(el, /mode=signup/.test(el.getAttribute('href') || '') || /^Continue with phone$|^Sign up$/.test(text(el)) ? 'signup' : 'alt');
     }
     for (const el of main.querySelectorAll('div')) if (text(el) === 'or' && !el.querySelector('input, button, a')) { mark(el, 'or'); break; }
-    for (const button of document.querySelectorAll('body > div button:has(img)')) if (/scan/i.test(button.textContent)) mark(button, 'qr');
     const walker = document.createTreeWalker(row, NodeFilter.SHOW_TEXT);
     for (let node = walker.nextNode(); node; node = walker.nextNode()) {
       const to = WORDS.get(node.nodeValue.trim());
@@ -186,7 +190,7 @@ globalThis.net19Theme = {
   const start = () => {
     if (location.pathname !== '/') return;
     fix();
-    new MutationObserver(() => { if (location.pathname === '/') later(); }).observe(document.body, { childList: true, subtree: true });
+    new MutationObserver(() => { if (location.pathname === '/') later(); }).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
   };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();

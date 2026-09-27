@@ -47,7 +47,13 @@ form[role="search"] .SDkEP, form[role="search"] .fM33ce, form[role="search"] .dR
 form[role="search"] .aajZCb, .UUbT9, .erkvQe { background: var(--n19-bg) !important; box-shadow: var(--n19-shadow) !important; border-radius: 0 0 24px 24px !important; }
 textarea[name="q"], input[name="q"] { color: var(--n19-text) !important; background: transparent !important; font-size: 16px !important; }
 /* 2019 had a microphone only: no "+", Lens or AI Mode controls */
-form[role="search"] button.UbbAWe, form[role="search"] div.etxtjc, form[role="search"] button.plR5qb, form[role="search"] [aria-label="AI Mode" i] { display: none !important; }
+form[role="search"] button.UbbAWe, form[role="search"] div.etxtjc:not(:has([aria-label="Search by voice" i])), form[role="search"] button.plR5qb, form[role="search"] [aria-label="AI Mode" i],
+form[role="search"] [role="button"][aria-label="Search by image" i] { display: none !important; }
+/* the colored microphone stays at the field's right end in every variant (signed in, AI Mode homepage) */
+form[role="search"] [aria-label="Search by voice" i] { display: flex !important; visibility: visible !important; opacity: 1 !important; }
+/* the typed line is plain text: no underline, outline or bottom rule inside the field */
+form[role="search"] .RNNXgb :is(textarea[name="q"], input[name="q"]), form[role="search"] .RNNXgb .a4bIc {
+  text-decoration: none !important; outline: none !important; border: 0 !important; box-shadow: none !important; }
 
 /* Homepage: 44px box; the logo sits higher, as in 2019 (a fixed 231px logo block under the 60px bar) */
 form[role="search"] .RNNXgb { height: 44px !important; min-height: 44px !important; }
@@ -129,10 +135,22 @@ html[data-net19-mode="dark"] { --n19-signin: #8ab4f8; --n19-signin-text: #202124
 
 /* Signed-in homepage: the "I'm feeling lucky" pill chip (marked by google.js; guard.js hides the AI chips beside it)
    drawn as the 2019 flat gray button, without its icon */
-[data-net19-lucky] {
+[data-net19-lucky], [data-net19-gsearch] {
   display: inline-flex !important; align-items: center !important; justify-content: center !important; background: var(--n19-button) !important;
   border: 1px solid var(--n19-button) !important; border-radius: 4px !important; box-shadow: none !important; height: 36px !important; min-height: 0 !important;
   padding: 0 16px !important; margin: 11px 4px !important; color: var(--n19-button-text) !important; font: 14px arial, sans-serif !important; }
 [data-net19-lucky] * { color: inherit !important; font: inherit !important; background: transparent !important; border: 0 !important; box-shadow: none !important; }
 [data-net19-lucky] :is(svg, img) { display: none !important; }
-[data-net19-lucky]:hover { border-color: var(--n19-button-hover-border) !important; color: var(--n19-text) !important; box-shadow: 0 1px 1px rgba(0,0,0,.1) !important; }
+[data-net19-lucky]:hover, [data-net19-gsearch]:hover { border-color: var(--n19-button-hover-border) !important; color: var(--n19-text) !important; box-shadow: 0 1px 1px rgba(0,0,0,.1) !important; }
+[data-net19-lucky] { text-transform: capitalize !important; }
+[data-net19-lucky], [data-net19-gsearch] { box-sizing: border-box !important; line-height: 34px !important; vertical-align: top !important; }
+[data-net19-gsearch] { cursor: pointer !important; }
+
+/* The homepage logo slot when Google put something else there (a doodle, the small signed-in mark) or shrank the logo
+   (marked by google.js): the 2019 272x92 multicolor logo, bottom-aligned in the slot as above. Google's own file. */
+[data-net19-logo] { display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: flex-end !important;
+  height: 179px !important; max-height: 179px !important; min-height: 179px !important; overflow: hidden !important; }
+[data-net19-logo] > * { display: none !important; }
+[data-net19-logo]::before { content: ""; display: block; flex: none; width: 272px; height: 92px;
+  background: url("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png") center / 272px 92px no-repeat; }
+html[data-net19-flip] [data-net19-logo]::before { filter: contrast(1.13636) hue-rotate(180deg) invert(1); }

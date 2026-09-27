@@ -183,7 +183,8 @@ ytd-video-description-transcript-section-renderer, ytd-structured-description-co
 ytd-watch-metadata ytd-expandable-metadata-renderer, ytd-watch-metadata #teaser-carousel, ytd-watch-metadata yt-video-summary-view-model,
 ytd-watch-metadata :is(#ai-summary, [class*="AiSummary"], [class*="aiSummary"]) { display: none !important; }
 /* Up next: plain list, 168px thumbnails, 14px titles; no filter chips (2021) */
-ytd-watch-flexy #secondary { background: transparent !important; box-shadow: none !important; padding: 0 !important; margin-top: 16px !important; }
+ytd-watch-flexy #secondary { background: transparent !important; box-shadow: none !important; padding-top: 0 !important; padding-bottom: 0 !important; margin-top: 16px !important; }
+/* (its right padding stays: without it the "Up next" titles ran to the window edge and were cut off) */
 ytd-watch-next-secondary-results-renderer :is(yt-related-chip-cloud-renderer, yt-chip-cloud-renderer, #chips-wrapper) { display: none !important; }
 ytd-watch-flexy #secondary .ytLockupMetadataViewModelTitle, ytd-watch-flexy #secondary #video-title { color: var(--n19-related-title) !important; font-size: 14px !important; line-height: 20px !important; }
 ytd-watch-flexy #secondary .ytLockupViewModelHost, ytd-watch-flexy #secondary ytd-compact-video-renderer { margin-bottom: 8px !important; }
@@ -420,3 +421,49 @@ ytd-shorts :is(#shorts-player, .html5-video-player, ytd-reel-video-renderer #pla
 html[data-n19-yt="studio"] :is(ytcp-button, ytcp-button-shape) :is(button, .ytcp-button-shape-impl) { border-radius: 2px !important; }
 html[data-n19-yt="studio"] ytcp-button .label, html[data-n19-yt="studio"] ytcp-button-shape .ytSpecButtonShapeNextButtonTextContent { text-transform: uppercase !important; letter-spacing: .5px !important; }
 html[data-n19-yt="music"] ytmusic-nav-bar #right-content :is(a, button, .sign-in-link) { border-radius: 2px !important; }
+
+/* ==== Shorts (2020) everywhere: shelves, single results, grid items, tabs, filters and the guide entry ================
+   Only Shorts go; every other result and recommendation stays in YouTube's own order. */
+ytd-rich-section-renderer:has(:is(ytm-shorts-lockup-view-model, ytm-shorts-lockup-view-model-v2, ytd-rich-shelf-renderer[is-shorts], ytd-reel-shelf-renderer)),
+ytd-rich-shelf-renderer[is-shorts], ytd-reel-shelf-renderer, ytd-reel-item-renderer, ytm-shorts-lockup-view-model, ytm-shorts-lockup-view-model-v2,
+ytd-rich-item-renderer:has(:is(ytm-shorts-lockup-view-model, ytm-shorts-lockup-view-model-v2, a[href^="/shorts/"])),
+:is(ytd-video-renderer, ytd-grid-video-renderer, ytd-compact-video-renderer, ytd-playlist-video-renderer):has(a#thumbnail[href^="/shorts/"]),
+yt-lockup-view-model:has(a[href^="/shorts/"] :is(img, yt-image, yt-thumbnail-view-model)),
+ytd-guide-entry-renderer:has(a[href^="/shorts"]), ytd-mini-guide-entry-renderer:has(a[href^="/shorts"]),
+yt-tab-shape[tab-title="Shorts" i] { display: none !important; }
+
+/* ==== Search results: rows as in 2019 ===============================================================================
+   A channel row lines up with the video rows: its avatar is centered in the same 246px column as the thumbnails, the
+   name and details start where the video titles start, and SUBSCRIBE sits on the row's middle at the right. */
+ytd-search ytd-channel-renderer #content-section { display: flex !important; align-items: center !important; }
+ytd-search ytd-channel-renderer #avatar-section { flex: none !important; width: 246px !important; min-width: 246px !important; max-width: 246px !important; margin: 0 16px 0 0 !important; display: flex !important; justify-content: center !important; }
+ytd-search ytd-channel-renderer #avatar-section > a, ytd-search ytd-channel-renderer #avatar { width: 246px !important; max-width: 246px !important; min-width: 0 !important; margin: 0 !important; display: flex !important; justify-content: center !important; align-items: center !important; }
+ytd-search ytd-channel-renderer #avatar yt-img-shadow, ytd-search ytd-channel-renderer #avatar img { width: 136px !important; height: 136px !important; border-radius: 50% !important; }
+ytd-search ytd-channel-renderer #info-section { flex: 1 1 auto !important; min-width: 0 !important; display: flex !important; align-items: center !important; margin: 0 !important; }
+ytd-search ytd-channel-renderer #main-link { flex: 1 1 auto !important; min-width: 0 !important; }
+ytd-search ytd-channel-renderer #info { display: flex !important; flex-direction: column !important; justify-content: center !important; }
+ytd-search ytd-channel-renderer #channel-title, ytd-search ytd-channel-renderer #channel-title #text { font-size: 18px !important; line-height: 24px !important; font-weight: 400 !important; color: var(--n19-text) !important; }
+ytd-search ytd-channel-renderer :is(#metadata, #metadata *, #description, #description *) { font-size: 13px !important; line-height: 18px !important; color: var(--n19-text-2) !important; }
+ytd-search ytd-channel-renderer #buttons { flex: none !important; align-self: center !important; display: flex !important; align-items: center !important; margin-left: 16px !important; }
+ytd-search ytd-channel-renderer #subscribe-button { margin: 0 !important; }
+/* the video rows: channel line close under the title line, as 2019's single metadata block */
+ytd-search ytd-video-renderer #channel-info { padding: 4px 0 !important; }
+/* The side "watch card" (an artist or channel with its top video, 2019 had it too): square, on the page's card color */
+ytd-search #secondary :is(ytd-universal-watch-card-renderer, ytd-universal-watch-card-renderer #hero, ytd-watch-card-rich-header-renderer, ytd-watch-card-hero-video-renderer, ytd-single-hero-image-renderer, ytd-thumbnail, img, yt-image, #header) { border-radius: 0 !important; }
+ytd-search #secondary ytd-universal-watch-card-renderer { background: var(--n19-card) !important; box-shadow: var(--n19-card-shadow) !important; overflow: hidden !important; }
+
+/* ==== SUBSCRIBE: one size everywhere (search rows, the watch page, channel headers, the side card) ====================
+   2019's button: 36px tall, 16px sides, 14px uppercase; "Subscribed" is the gray variant with the same geometry. */
+:is(ytd-subscribe-button-renderer, yt-subscribe-button-view-model, #subscribe-button, ytd-channel-renderer #buttons, ytd-watch-card-rich-header-renderer) :is(a, button).ytSpecButtonShapeNextHost,
+:is(a, button).ytSpecButtonShapeNextHost[aria-label^="Subscribe" i] {
+  height: 36px !important; min-height: 36px !important; padding: 0 16px !important; font-size: 14px !important; line-height: 36px !important; font-weight: 500 !important;
+  border-radius: 2px !important; text-transform: uppercase !important; letter-spacing: .007em !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; }
+:is(ytd-subscribe-button-renderer, yt-subscribe-button-view-model, #subscribe-button, ytd-channel-renderer #buttons) :is(a, button).ytSpecButtonShapeNextHost :is(.ytSpecButtonShapeNextButtonTextContent, .ytAttributedStringHost) { font-size: 14px !important; line-height: 36px !important; font-weight: 500 !important; }
+:is(ytd-subscribe-button-renderer[subscribed], yt-subscribe-button-view-model) :is(a, button):is([aria-label^="Subscribed" i], [aria-label^="Unsubscribe" i], .ytSpecButtonShapeNextTonal) {
+  background: var(--n19-subscribed) !important; color: var(--n19-subscribed-text) !important; }
+:is(ytd-subscribe-button-renderer[subscribed], yt-subscribe-button-view-model) :is(a, button):is([aria-label^="Subscribed" i], [aria-label^="Unsubscribe" i], .ytSpecButtonShapeNextTonal) * { color: inherit !important; }
+/* the description snippet: up to two wrapped lines, as 2019 showed it (YouTube's one clipped line ran on, hidden, under
+   the side card) */
+ytd-search ytd-video-renderer .metadata-snippet-container-one-line { white-space: normal !important; display: -webkit-box !important; -webkit-box-orient: vertical !important;
+  -webkit-line-clamp: 2 !important; overflow: hidden !important; max-height: 36px !important; line-height: 18px !important; }
+ytd-search ytd-video-renderer .metadata-snippet-container-one-line .metadata-snippet-text { white-space: normal !important; }
