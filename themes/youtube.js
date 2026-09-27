@@ -19,6 +19,9 @@ globalThis.net19Theme = (() => {
     }
   };
   const comments = () => {
+    for (const button of document.querySelectorAll('ytd-watch-metadata ytd-text-inline-expander #expand')) {
+      for (const node of button.childNodes) if (node.nodeType === 3 && /^\s*(?:\.{3}|…)\s*more\s*$/i.test(node.data)) node.data = 'Show more';
+    }
     for (const span of document.querySelectorAll('ytd-comment-view-model #author-text span, ytd-comment-view-model #header-author #channel-name #text')) {
       const t = span.textContent;
       if (/^\s*@/.test(t) && !span.querySelector('*')) span.textContent = t.replace(/^(\s*)@/, '$1');

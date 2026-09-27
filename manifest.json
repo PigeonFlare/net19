@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "net19",
-  "version": "0.13.0",
+  "version": "0.14.0",
   "description": "Websites as they looked in 2019.",
   "minimum_chrome_version": "120",
   "permissions": [
@@ -156,15 +156,12 @@
     "*://*.patreon.com/*",
     "*://*.givesendgo.com/*",
     "*://*.fundrazr.com/*",
-    "*://*.fundly.com/*",
     "*://*.freefunder.com/*",
     "*://*.buymeacoffee.com/*",
-    "*://*.crowdfundr.com/*",
     "*://*.kickstarter.com/*",
     "*://*.indiegogo.com/*",
     "*://*.givebutter.com/*",
-    "*://*.donorbox.org/*",
-    "*://*.zeffy.com/*"
+    "*://*.donorbox.org/*"
   ],
   "background": {
     "service_worker": "background.js",

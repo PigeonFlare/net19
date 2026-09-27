@@ -1,0 +1,87 @@
+html { --n19-red: #881817; --n19-red-hover: #6e1312; --n19-blue: #2d86c6; --n19-blue-hover: #226fa6; --n19-link: #0088cc; --n19-text: #333333; --n19-title: #222222; --n19-muted: #777777; --n19-band: #eeeeee; --n19-panel: #ffffff; --n19-edge: #dddddd; --n19-foot: #ffffff; --n19-foot-bar: #f5f5f5; }
+html[data-net19-mode="dark"] { --n19-red: #c9433f; --n19-red-hover: #db5a55; --n19-blue: #3a9ad9; --n19-blue-hover: #56ace3; --n19-link: #5cb3e6; --n19-text: #d8d8d8; --n19-title: #f0f0f0; --n19-muted: #9a9a9a; --n19-band: #202020; --n19-panel: #2a2a2a; --n19-edge: #3c3c3c; --n19-foot: #1c1c1c; --n19-foot-bar: #161616; }
+
+html:root {
+  --font-sans: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  --default-font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  --color-primary: var(--n19-blue) !important;
+  --color-primary-accent: var(--n19-blue-hover) !important;
+  --color-success: var(--n19-blue) !important;
+  --color-secondary: var(--n19-red) !important;
+  --color-secondary-accent: var(--n19-red-hover) !important;
+  --color-error: var(--n19-red) !important;
+  --color-red-700: var(--n19-red) !important;
+  --color-red-800: var(--n19-red-hover) !important;
+  --color-green-400: #6db6e6 !important;
+  --color-green-500: var(--n19-blue) !important;
+  --color-green-600: var(--n19-blue-hover) !important;
+  --color-green-700: #22709f !important;
+  --color-teal-400: #6db6e6 !important;
+  --color-teal-500: var(--n19-blue) !important;
+  --color-teal-600: var(--n19-blue-hover) !important;
+  --color-teal-700: #22709f !important;
+  --ui-primary: var(--n19-blue) !important;
+  --ui-color-primary-400: #6db6e6 !important;
+  --ui-color-primary-500: var(--n19-blue) !important;
+  --ui-color-primary-600: var(--n19-blue-hover) !important;
+  --ui-color-primary-700: #22709f !important;
+  --ui-success: var(--n19-blue) !important;
+  --radius-md: 4px !important;
+  --radius-lg: 4px !important;
+  --radius-xl: 5px !important;
+  --radius-2xl: 6px !important;
+  --radius-3xl: 6px !important;
+  --ui-radius: 4px !important;
+  --ui-text-dimmed: #888888 !important;
+}
+
+body, body :is(p, a, span:not(.iconify), li, label, input, textarea, select, button, h1, h2, h3, h4, h5, h6, div) { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; letter-spacing: normal !important; }
+
+img[alt="GiveSendGo Logo"] { content: url("https://s3.amazonaws.com/gsgbucket/images/GiveSendGo.png") !important; width: 160px !important; max-width: 160px !important; height: auto !important; object-fit: contain !important; }
+header.bg-white, .header-root header:not(.bg-transparent) { border-bottom: 1px solid var(--n19-edge) !important; box-shadow: none !important; }
+header :is(nav a, a[href="/login"], button[data-slot="base"]):not([href="/signup"]) { font-weight: 400 !important; font-size: 15px !important; }
+header a[href="/signup"] { background: transparent !important; border: 1px solid var(--n19-red) !important; color: var(--n19-red) !important; box-shadow: none !important; border-radius: 5px !important; font-weight: 400 !important; font-size: 15px !important; letter-spacing: normal !important; padding: 8px 14px !important; }
+header a[href="/signup"]:hover { background: var(--n19-red) !important; color: #fff !important; }
+header.bg-transparent a[href="/signup"] { border-color: #fff !important; color: #fff !important; }
+header.bg-transparent a[href="/signup"]:hover { background: #fff !important; color: var(--n19-red) !important; }
+
+body [class~="bg-[#bf1e2e]"] { background-color: var(--n19-red) !important; }
+body [class~="hover:bg-[#bf1e2e]"]:hover { background-color: var(--n19-red-hover) !important; }
+body [class~="bg-[#14b8a6]"] { background-color: var(--n19-blue) !important; }
+body [class~="hover:bg-[#14b8a6]"]:hover { background-color: var(--n19-red-hover) !important; }
+body [class~="bg-[#bf1e2e]"][class~="hover:bg-[#14b8a6]"]:hover { background-color: var(--n19-red-hover) !important; }
+body [class~="bg-[#14b8a6]"][class~="hover:bg-[#bf1e2e]"]:hover { background-color: var(--n19-blue-hover) !important; }
+body [class~="text-[#14b8a6]"], body [class~="text-[#18b8a8]"] { color: var(--n19-blue) !important; }
+body [class~="hover:text-[#bf1e2e]"]:hover { color: var(--n19-red) !important; }
+body :is(a, button)[data-slot="base"][class*="shadow-xl"] { box-shadow: none !important; }
+body :is(a, button)[data-slot="base"][class*="rounded-lg"] { border-radius: 4px !important; }
+
+section[style*="teal-hero.jpg"] { background-image: url("https://s3.amazonaws.com/gsgbucket/images/banners/NewStaticHeader.jpg") !important; background-size: cover !important; background-position: center top !important; min-height: 505px !important; padding-top: 0 !important; padding-bottom: 36px !important; justify-content: flex-end !important; align-items: flex-start !important; }
+section[style*="teal-hero.jpg"] > img[src*="help%20and%20hope"] { display: none !important; }
+section[style*="teal-hero.jpg"] > div.absolute:has(> svg) { display: none !important; }
+section[style*="teal-hero.jpg"] > div.relative { justify-content: flex-start !important; margin-top: 0 !important; max-width: none !important; margin-left: 0 !important; padding-left: 40px !important; }
+section[style*="teal-hero.jpg"] a[href="/signup"] { background-image: linear-gradient(var(--n19-red), var(--n19-red)) !important; width: auto !important; font-size: 16px !important; letter-spacing: normal !important; }
+
+.flex-grow h2, .flex-grow h1:not(.sr-only) { color: var(--n19-red); font-weight: 400 !important; }
+.flex-grow section[class*="bg-gradient"] h2, .flex-grow section:has(> img.absolute) h2, .flex-grow .text-white h2 { color: inherit; }
+.campaign-article > p.font-bold { font-weight: 700 !important; color: var(--n19-title) !important; font-size: 30px !important; }
+.campaign-article .ql-editor, .campaign-article .ql-editor :is(p, li, span) { font-size: 16px !important; line-height: 1.5 !important; }
+.flex-grow [data-slot="root"].shadow-md, .flex-grow [data-slot="root"][class*="bg-neutral-100"] { background: var(--n19-panel) !important; box-shadow: none !important; border: 1px solid var(--n19-edge) !important; border-radius: 4px !important; }
+.flex-grow [role="progressbar"] { border-radius: 0 !important; background: #d6d4d4 !important; height: 12px !important; }
+.flex-grow [role="progressbar"] > [data-slot="indicator"] { border-radius: 0 !important; background: var(--n19-blue) !important; }
+.flex-grow .rounded-xl.shadow-lg { border-radius: 4px !important; box-shadow: 0 1px 3px rgba(0, 0, 0, .2) !important; }
+
+footer[class~="bg-[#2c2b34]"] { background-color: var(--n19-foot) !important; color: var(--n19-text) !important; border-top: 1px solid var(--n19-edge) !important; }
+footer[class~="bg-[#2c2b34]"] :is(label, p, span, a, h2, h3, h4, li) { color: var(--n19-text) !important; }
+footer[class~="bg-[#2c2b34]"] a:hover { color: var(--n19-red) !important; }
+footer[class~="bg-[#2c2b34]"] :is(h2, h3, h4, h5) { color: var(--n19-red) !important; text-transform: uppercase !important; font-size: 15px !important; font-weight: 700 !important; }
+footer[class~="bg-[#2c2b34]"] [class*="bg-black/50"] { background-color: var(--n19-foot-bar) !important; border-top: 1px solid var(--n19-edge) !important; }
+footer[class~="bg-[#2c2b34]"] input { border: 1px solid #cccccc !important; }
+footer[class~="bg-[#2c2b34]"] button[type="submit"] { background-color: var(--n19-red) !important; }
+.min-h-screen > div.absolute[class*="w-[800px]"] { display: none !important; }
+.flex-grow section[class*="from-teal"] { background-image: none !important; background-color: var(--n19-band) !important; }
+.flex-grow section[class*="from-teal"] h2 { color: var(--n19-red) !important; }
+div.w-full:has(> img[class*="h-[80px]"]):has(+ footer) { display: none !important; }
+a[href="/giver-army"], a[href$="givesendgo.com/giver-army"] { display: none !important; }
+div.min-h-screen[style*="teal-hero.jpg"] { background-image: none !important; background-color: var(--n19-band) !important; }
+div.min-h-screen[style*="teal-hero.jpg"] .overflow-hidden.ring { border-radius: 4px !important; box-shadow: 0 1px 3px rgba(0, 0, 0, .2) !important; backdrop-filter: none !important; }

@@ -1,1 +1,0 @@
-globalThis.net19Theme = {};

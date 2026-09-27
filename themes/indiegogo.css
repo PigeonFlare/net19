@@ -1,0 +1,59 @@
+@font-face { font-family: "n19 Benton Sans"; font-weight: 100 550; font-style: normal; src: url("https://use.typekit.net/af/738ece/00000000000000003b9b2cf5/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff2"); }
+@font-face { font-family: "n19 Benton Sans"; font-weight: 551 650; font-style: normal; src: url("https://use.typekit.net/af/bb6c4e/00000000000000003b9b2cf8/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff2"); }
+@font-face { font-family: "n19 Benton Sans"; font-weight: 651 900; font-style: normal; src: url("https://use.typekit.net/af/343e47/00000000000000003b9b2cf9/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"); }
+@font-face { font-family: "n19 More Pro"; font-weight: 100 450; font-style: normal; src: url("https://use.typekit.net/af/4122b8/00000000000000003b9b06fe/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"); }
+@font-face { font-family: "n19 More Pro"; font-weight: 451 900; font-style: normal; src: url("https://use.typekit.net/af/f23ec9/00000000000000003b9b0701/27/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n5&v=3") format("woff2"); }
+
+html {
+  --n19-sans: "n19 Benton Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --n19-serif: "n19 More Pro", Georgia, "Times New Roman", serif;
+  --n19-page: #fff; --n19-alt: #f5f5f5; --n19-text: #2a2a2a; --n19-sub: #6a6a6a; --n19-faint: #a8a8a8; --n19-rule: #dddddd; --n19-rule-strong: #c8c8c8;
+  --n19-pink: #eb1478; --n19-pink-dark: #c50f64; --n19-pink-soft: #fdecf4; --n19-teal: #0eb4b6; --n19-field: #fff;
+}
+html[data-net19-mode="dark"] {
+  --n19-page: #1a1a1a; --n19-alt: #222; --n19-text: #eee; --n19-sub: #b0b0b0; --n19-faint: #8a8a8a; --n19-rule: #3a3a3a; --n19-rule-strong: #4a4a4a;
+  --n19-pink: #eb1478; --n19-pink-dark: #ff3d96; --n19-pink-soft: #3a1528; --n19-teal: #29c9cb; --n19-field: #222;
+}
+
+html:root {
+  --config-font-family-base: var(--n19-sans) !important;
+  --config-font-family-secondary: var(--n19-serif) !important;
+  --config-font-family-decorative: var(--n19-serif) !important;
+  --config-color-primary: var(--n19-pink) !important; --config-color-light-primary: var(--n19-pink) !important;
+  --config-color-accent: var(--n19-pink) !important; --config-color-light-accent: var(--n19-pink) !important;
+  --config-color-accent-variant: var(--n19-pink-dark) !important; --config-color-light-accent-variant: var(--n19-pink-dark) !important;
+  --config-color-background: var(--n19-alt) !important; --config-color-light-background: var(--n19-alt) !important;
+  --config-color-text: var(--n19-text) !important; --config-color-light-text: var(--n19-text) !important;
+  --color-primary-700: var(--n19-pink) !important; --color-primary-600: var(--n19-pink-dark) !important; --color-primary-500: var(--n19-pink-dark) !important;
+  --color-primary-50: var(--n19-pink-soft) !important; --color-background-emphasized: var(--n19-pink-soft) !important;
+  --color-divider-muted: var(--n19-rule) !important;
+  --config-border-radius-base: 0 !important; --config-border-radius-small: 0 !important; --config-border-radius-large: 0 !important;
+}
+
+html body, html body :is(div, span, p, a, li, label, button, input, textarea, select, strong, b, em, time, td, th, small, section, nav, footer, header, h3, h4, h5, h6):not([class*="_fa"], [class*="fa-"], [class*="_ga"]) { font-family: var(--n19-sans) !important; }
+html body :is(h1, h2, .gfu-heading, .gfu-hd--h1, .gfu-hd--h2) { font-family: var(--n19-serif) !important; font-weight: 500 !important; letter-spacing: 0 !important; }
+html body .gfu-project-card__title, html body .gfu-hd--h3, html body .gfu-hd--h4, html body h3.gfu-hd { font-family: var(--n19-sans) !important; font-weight: 700 !important; letter-spacing: 0 !important; }
+body, .gfu-layout { color: var(--n19-text) !important; }
+
+.gfu-header__navbar { border-bottom: 1px solid var(--n19-rule) !important; box-shadow: none !important; }
+.gfu-search-form-fields__input { border: 1px solid var(--n19-rule-strong) !important; border-radius: 0 !important; box-shadow: none !important; font-size: 14px !important; color: var(--n19-text) !important; background: var(--n19-field) !important; }
+.gfu-search-form-fields__search-button { border-radius: 0 !important; }
+.gfu-navbar-btn, .gfu-header__actions a { color: var(--n19-text) !important; font-weight: 700 !important; font-size: 14px !important; }
+.gfu-navbar-btn:hover, .gfu-header__actions a:hover .gfu-navbar-btn { color: var(--n19-pink) !important; }
+.gfu-cart-badge { background: var(--n19-pink) !important; }
+
+.gfu-btn { border-radius: 0 !important; text-transform: uppercase !important; letter-spacing: .1em !important; font-weight: 700 !important; box-shadow: none !important; }
+.gfu-btn--primary { background-color: var(--n19-pink) !important; border-color: var(--n19-pink) !important; color: #fff !important; }
+.gfu-btn--primary:hover { background-color: var(--n19-pink-dark) !important; border-color: var(--n19-pink-dark) !important; }
+.gfu-btn--accent, .gfu-btn--secondary { background-color: var(--n19-page) !important; border: 1px solid var(--n19-rule-strong) !important; color: var(--n19-pink) !important; }
+.gfu-search-form-fields__search-button.gfu-btn, .gfu-navbar-btn.gfu-btn, button.gfu-btn[aria-label] { text-transform: none !important; letter-spacing: 0 !important; }
+
+.gfu-card, .gfu-card__wrap, .gfu-card__media, .gfu-card__media-wrapper, .gfu-card__media img, .gfu-flip-card__side, ._rounded--common, ._bxsh--base, .gfu-launch-project-box, .gfu-collapsible, .gfu-field__input, .gfu-box, .gfu-media, .gfu-tag { border-radius: 0 !important; }
+.gfu-card, ._bxsh--base { box-shadow: none !important; border: 1px solid var(--n19-rule) !important; }
+.gfu-progress-bar { border-radius: 0 !important; height: 4px !important; }
+.gfu-progress-bar--accent, .gfu-progress-bar__value, .gfu-progress-bar > div { background-color: var(--n19-pink) !important; }
+._tc--accent { color: var(--n19-pink) !important; }
+.gfu-launch-project-box { background: var(--n19-alt) !important; }
+.gfu-project-card__title { font-size: 16px !important; line-height: 22px !important; color: var(--n19-text) !important; }
+.gfu-footer div:has(> .fa-lightbulb):has(> .gfu-bt--caption) { display: none !important; }
+.gfu-footer-section { background-image: none !important; }

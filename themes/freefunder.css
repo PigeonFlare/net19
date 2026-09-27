@@ -1,0 +1,109 @@
+@font-face { font-family: "n19 Lato"; font-style: normal; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/lato/v25/S6uyw4BMUTPHjx4wXiWtFCc.woff2") format("woff2"); }
+@font-face { font-family: "n19 Lato"; font-style: normal; font-weight: 700; font-display: swap; src: url("https://fonts.gstatic.com/s/lato/v25/S6u9w4BMUTPHh6UVSwiPGQ3q5d0.woff2") format("woff2"); }
+@font-face { font-family: "n19 Raleway"; font-style: normal; font-weight: 400; font-display: swap; src: url("https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvaorCIPrEVIT9d4cw.woff2") format("woff2"); }
+@font-face { font-family: "n19 Raleway"; font-style: normal; font-weight: 500; font-display: swap; src: url("https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVvoorCIPrEVIT9d4cw.woff2") format("woff2"); }
+@font-face { font-family: "n19 Raleway"; font-style: normal; font-weight: 600 700; font-display: swap; src: url("https://fonts.gstatic.com/s/raleway/v37/1Ptxg8zYS_SKggPN4iEgvnHyvveLxVs9pbCIPrEVIT9d4cw.woff2") format("woff2"); }
+
+html { --n19-navy: #053c79; --n19-page: #e8edf3; --n19-slate: #7891ad; --n19-slate-dark: #5f7995; --n19-button: #6f8aa8; --n19-panel: #ffffff; --n19-text: #333333; --n19-title: #333333; --n19-muted: #777777; --n19-link: #337ab7; --n19-edge: #dddddd; --n19-green: #5cb85c; --n19-track: #f5f5f5; --n19-on-slate: #ffffff; }
+html[data-net19-mode="dark"] { --n19-navy: #0d2f57; --n19-page: #1a1d21; --n19-slate: #5b6f86; --n19-slate-dark: #4b5d72; --n19-button: #5b6f86; --n19-panel: #24282d; --n19-text: #d6d9dd; --n19-title: #eef0f2; --n19-muted: #9aa1a9; --n19-link: #6fa8dc; --n19-edge: #3a3f45; --n19-green: #4cae4c; --n19-track: #33383e; --n19-on-slate: #ffffff; }
+
+body, body :is(p, a, span:not([class*="fa"]):not([class*="icon"]), li, label, input, textarea, select, button, td, th, div, small, strong) { font-family: "n19 Lato", Lato, "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
+body :is(h1, h2, h3, h4, h5, h6, .title, .title-two, .navbar-nav .nav-link) { font-family: "n19 Raleway", Raleway, Lato, "Helvetica Neue", sans-serif !important; letter-spacing: 0 !important; }
+body { color: var(--n19-text) !important; font-size: 16px !important; line-height: 1.42857 !important; }
+body :is(h1, h2, h3, h4, h5) { color: var(--n19-title) !important; font-weight: 500 !important; }
+body h1, body h2.old-h1-size { font-size: 36px !important; line-height: 1.2 !important; }
+body h2, body h1.old-h2-size { font-size: 30px !important; line-height: 1.2 !important; }
+body h3 { font-size: 24px !important; line-height: 1.25 !important; }
+body h4 { font-size: 18px !important; line-height: 1.3 !important; }
+body h5 { font-size: 16px !important; line-height: 1.3 !important; }
+body a { color: var(--n19-link); }
+body p { font-size: 16px !important; line-height: 1.5 !important; }
+
+body main#main, body main#main > section { background-color: var(--n19-page) !important; background-image: none !important; }
+body main#main section :is(.bg-square, .bg-right-square, .shape, .circle)::before, body main#main section :is(.bg-square, .bg-right-square)::after { display: none !important; }
+
+header { background: var(--n19-panel) !important; border-top: 5px solid var(--n19-navy) !important; box-shadow: 0 1px 4px rgba(0, 0, 0, .18) !important; }
+header nav#header { border-radius: 0 !important; box-shadow: none !important; background: transparent !important; margin: 0 auto !important; }
+header nav#header .navbar-nav .nav-link { color: var(--n19-text) !important; font-weight: 400 !important; font-size: 16px !important; }
+header nav#header .navbar-nav .nav-link.active, header nav#header .navbar-nav .nav-link:hover { color: var(--n19-navy) !important; text-decoration: none !important; }
+header nav#header .navbar-nav .nav-link.active::after, header nav#header .navbar-nav .nav-link::after { display: none !important; }
+
+body .btn-one, body .btn-two, body .btn-three, body .btn-four, body a.btn-one, body a.btn-two { background: var(--n19-button) !important; background-image: none !important; color: var(--n19-on-slate) !important; border: 1px solid var(--n19-panel) !important; box-shadow: 0 0 0 3px var(--n19-button) !important; border-radius: 4px !important; font-family: "n19 Lato", Lato, "Helvetica Neue", Arial, sans-serif !important; font-weight: 400 !important; text-transform: uppercase !important; letter-spacing: 1px !important; font-size: 14px !important; line-height: 20px !important; padding: 9px 20px !important; height: auto !important; min-height: 0 !important; }
+body .btn-one:hover, body .btn-two:hover, body .btn-three:hover, body .btn-four:hover { background: var(--n19-slate-dark) !important; box-shadow: 0 0 0 3px var(--n19-slate-dark) !important; color: #fff !important; }
+body .btn-four { border-radius: 0 4px 4px 0 !important; box-shadow: none !important; }
+
+body .item-content-holder, body .slide-item-grid .slide-item .item-content-holder { border-radius: 0 !important; box-shadow: 0 1px 4px rgba(0, 0, 0, .25) !important; background-color: var(--n19-panel) !important; }
+body .slide-item-grid .slide-item .item-content-holder .image-holder, body .item-content-holder .image-holder { border-radius: 0 !important; }
+body .slide-title a { color: var(--n19-text) !important; font-family: "n19 Raleway", Raleway, sans-serif !important; font-weight: 500 !important; }
+body .money-raised { color: var(--n19-text) !important; font-weight: 700 !important; font-family: "n19 Lato", Lato, sans-serif !important; }
+body :is(.slide-item, section.featured-on, .success-story-box-large, .hero-memorial-graphic) .bar { border-color: var(--n19-track) !important; border-bottom-color: var(--n19-green) !important; border-right-color: var(--n19-green) !important; }
+body .meter-pin { box-shadow: 0 1px 3px rgba(0, 0, 0, .2) !important; font-family: "n19 Lato", Lato, sans-serif !important; }
+body .item-footer :is(.location, .save), body .item-footer :is(.location, .save) a { color: var(--n19-link) !important; font-size: 12px !important; }
+
+.discover.sidebar .searchbar-holder { border-radius: 4px !important; border: 1px solid #cccccc !important; box-shadow: none !important; background: var(--n19-panel) !important; }
+.discover.sidebar .accordion-item { border-radius: 0 !important; box-shadow: 0 1px 4px rgba(0, 0, 0, .15) !important; }
+.discover.sidebar .accordion-header button { background: var(--n19-navy) !important; background-image: none !important; border-radius: 0 !important; font-family: "n19 Raleway", Raleway, sans-serif !important; font-weight: 500 !important; }
+.discover.sidebar .accordion-body li a { color: var(--n19-link) !important; font-weight: 400 !important; }
+.discover.sidebar .accordion-body li a:hover { color: #fff !important; background: var(--n19-navy) !important; }
+
+section.support-events { background: var(--n19-page) !important; }
+section.support-events .support-events-inner { background: var(--n19-navy) !important; background-image: none !important; border-radius: 0 !important; box-shadow: none !important; }
+body section.support-events .data-right :is(h1, h2, h3, h4, h5, h6, p, span, a, li, strong, small, div) { color: #fff !important; }
+body section.support-events .data-right .raised-people h5 { color: #fff !important; font-family: "n19 Lato", Lato, sans-serif !important; font-weight: 700 !important; }
+body section.support-events .data-right .btn-two { color: #fff !important; }
+body section.support-events .data-right :is(img, svg) { filter: brightness(0) invert(1); }
+section.support-events .data-right .raise-meter .bar { border-color: rgba(255, 255, 255, .25) !important; border-bottom-color: #fff !important; border-right-color: #fff !important; }
+section.support-events .camp-area { background: var(--n19-panel) !important; border-radius: 0 !important; box-shadow: none !important; }
+section.support-events .camp-area span { background: var(--n19-slate) !important; }
+section.support-events .recent-funderD { border-color: rgba(255, 255, 255, .25) !important; }
+.donation-contributors-section .tab-list { border-radius: 0 !important; box-shadow: none !important; border-bottom: 1px solid var(--n19-edge) !important; background: transparent !important; }
+.logintab_box .tab-list { border-radius: 4px !important; box-shadow: none !important; border: 1px solid var(--n19-edge) !important; }
+.logintab_box .tab-list .tab-item { background: transparent !important; background-image: none !important; box-shadow: none !important; border-radius: 4px !important; }
+.logintab_box .tab-toggle:nth-child(1):checked ~ .tab-list .tab-item:nth-child(1), .logintab_box .tab-toggle:nth-child(2):checked ~ .tab-list .tab-item:nth-child(2) { background: var(--n19-navy) !important; background-image: none !important; }
+.logintab_box .tab-toggle:nth-child(1):checked ~ .tab-list .tab-item:nth-child(1) .tab-trigger, .logintab_box .tab-toggle:nth-child(2):checked ~ .tab-list .tab-item:nth-child(2) .tab-trigger { color: #fff !important; }
+.logintab_box .tab-trigger { font-family: "n19 Raleway", Raleway, sans-serif !important; font-size: 20px !important; font-weight: 500 !important; letter-spacing: 0 !important; color: var(--n19-text); }
+section.login-page .inner-container-holder { background: var(--n19-panel) !important; border: 1px solid var(--n19-edge) !important; border-radius: 4px !important; box-shadow: 0 1px 4px rgba(0, 0, 0, .15) !important; padding: 30px !important; }
+section.login-page a.color-primary, .logintab_box a { color: var(--n19-link) !important; font-weight: 400 !important; }
+.faqtab_box .tab-list .tab-item { background: transparent !important; background-image: none !important; box-shadow: none !important; border-radius: 4px 4px 0 0 !important; color: var(--n19-link) !important; }
+.faqtab_box .tab-toggle:nth-child(1):checked ~ .tab-list .tab-item:nth-child(1), .faqtab_box .tab-toggle:nth-child(2):checked ~ .tab-list .tab-item:nth-child(2) { background: var(--n19-panel) !important; border: 1px solid var(--n19-edge) !important; border-bottom-color: var(--n19-panel) !important; color: #555555 !important; }
+.faqtab_box .tab-toggle:checked ~ .tab-list .tab-item .tab-trigger, .faqtab_box .tab-trigger { color: inherit !important; font-family: "n19 Lato", Lato, sans-serif !important; font-size: 16px !important; font-weight: 400 !important; letter-spacing: 0 !important; }
+.tab-trigger sup { background: #777777 !important; color: #fff !important; }
+.donation-contributors-section .tab-trigger { border-radius: 4px 4px 0 0 !important; background: transparent !important; background-image: none !important; color: var(--n19-link) !important; box-shadow: none !important; font-weight: 400 !important; }
+.donation-contributors-section .donation-contri-box { background: var(--n19-panel) !important; border-radius: 0 !important; box-shadow: 0 1px 4px rgba(0, 0, 0, .15) !important; }
+.donation-contributor-sidebar { border-radius: 0 !important; box-shadow: 0 1px 4px rgba(0, 0, 0, .15) !important; background: #f5f5f5 !important; }
+.donation-contributor-sidebar > h3 { background: transparent !important; color: var(--n19-text) !important; border-radius: 0 !important; border-bottom: 2px solid var(--n19-text) !important; margin: 0 20px !important; padding: 24px 0 12px !important; text-align: center !important; }
+
+section.create-freefunder-section { background: var(--n19-panel) !important; border-top: 5px solid var(--n19-navy) !important; }
+section.create-freefunder-section .inner-content, section.create-freefunder-section .inner-content-holder { background: transparent !important; background-image: none !important; box-shadow: none !important; border-radius: 0 !important; }
+section.create-freefunder-section :is(h2, h3, h4, p) { color: var(--n19-text) !important; font-family: "n19 Lato", Lato, sans-serif !important; font-size: 18px !important; font-weight: 400 !important; }
+
+footer#footer { background: var(--n19-slate) !important; background-image: none !important; border-top: 5px solid var(--n19-navy) !important; }
+footer#footer .footer { background: transparent !important; background-image: none !important; }
+footer#footer :is(p, a, h1, h2, h3, h4, h5, h6, li, span, label) { color: #fff !important; }
+footer#footer .f-menu a.nav-link { font-weight: 400 !important; font-size: 16px !important; }
+footer#footer :is(h4, h5, h6) { font-family: "n19 Raleway", Raleway, Georgia, serif !important; font-weight: 400 !important; }
+footer#footer #newsletter-signup-email { border-radius: 4px 0 0 4px !important; border: 1px solid #cccccc !important; color: #333 !important; height: 34px !important; font-size: 14px !important; }
+footer#footer #newsletter-signup-start-button { border-radius: 0 4px 4px 0 !important; background: #fff !important; color: #333 !important; box-shadow: none !important; border: 1px solid #cccccc !important; height: 34px !important; padding: 6px 12px !important; text-transform: none !important; letter-spacing: 0 !important; }
+footer#footer .copyright-section, footer#footer .copyright-section a { color: #fff !important; }
+
+body .form-control, body input.form-control, body textarea.form-control, body select.form-select { border-radius: 4px !important; border: 1px solid #cccccc !important; box-shadow: inset 0 1px 1px rgba(0, 0, 0, .075) !important; }
+body :is(.login-tab, .nav-pills, .tab-switch) :is(a, button, label) { border-radius: 4px !important; }
+body #section-hero.home-hero-section { background: url("https://www.freefunder.com/images/assets/dot.png") repeat, linear-gradient(rgba(18, 50, 65, .7), rgba(18, 50, 65, .7)), url("https://www.freefunder.com/images/assets/front_banner.jpg") center / cover no-repeat !important; min-height: 500px !important; }
+body #section-hero .hero-img-holder { display: none !important; }
+body #section-hero .hero-content { text-align: left !important; border-left: 3px solid var(--n19-slate) !important; padding-left: 20px !important; }
+body #section-hero .hero-content h1.title { color: #fff !important; font-family: "n19 Lato", Lato, "Helvetica Neue", Arial, sans-serif !important; font-weight: 400 !important; font-size: 50px !important; line-height: 1.2 !important; }
+body #section-hero .hero-content p { color: #fff !important; font-size: 20px !important; }
+body #section-about .about-img-holder img { content: url("https://www.freefunder.com/images/assets/family_smiles.jpg") !important; width: 100% !important; max-width: 420px !important; height: auto !important; box-shadow: none !important; border-radius: 0 !important; }
+body #section-about .about-img-holder :is(.shape, .circle, [class*="card"]) { display: none !important; }
+header::before, footer#footer .footer::before, section.create-freefunder-section .green-card::before, section.why-freefunder-section::before, section.why-freefunder-section::after, .slide-item.bg-circle::after { display: none !important; }
+body .image-holder.founded-tag::after { background: var(--n19-navy) !important; background-image: none !important; }
+body #section-hero.home-hero-section { display: flex !important; align-items: center !important; }
+body #section-hero .container { width: 100% !important; }
+body section.support-events .data-right .meter-pin, body section.support-events .data-right .meter-pin * { color: #333333 !important; }
+body #section-about .about-img-holder { padding-top: 40px !important; }
+#donation-popup { display: none !important; }
+footer#footer .f_logo img, footer#footer .f-social-media img { filter: brightness(0) invert(1) !important; }
+section.login-page::before, section.login-page::after, .bg-big-circle::before, .bg-big-circle::after { display: none !important; }
+.faqtab_box .tab-list .tab-item, .faqtab_box .tab-trigger, .faqtab_box .tab-list { box-shadow: none !important; }
+.faqtab_box .tab-list .tab-item::before, .faqtab_box .tab-list .tab-item::after, .faqtab_box .tab-trigger::before, .faqtab_box .tab-trigger::after, .faqtab_box .tab-list::before, .faqtab_box .tab-list::after { display: none !important; }
+body .donation-contributor-sidebar .contributor-box .contributor-flex .anony { color: #707070 !important; }

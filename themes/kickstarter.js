@@ -1,1 +1,3 @@
-globalThis.net19Theme = {};
+globalThis.net19Theme = {
+  keep: '.kds-bg-cover',
+};

@@ -191,15 +191,12 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'patreon', name: 'Patreon', domains: ['patreon.com'] },
   { id: 'givesendgo', name: 'GiveSendGo', domains: ['givesendgo.com'] },
   { id: 'fundrazr', name: 'FundRazr', domains: ['fundrazr.com'] },
-  { id: 'fundly', name: 'Fundly', domains: ['fundly.com'] },
   { id: 'freefunder', name: 'FreeFunder', domains: ['freefunder.com'] },
   { id: 'buymeacoffee', name: 'Buy Me a Coffee', domains: ['buymeacoffee.com'] },
-  { id: 'crowdfundr', name: 'Crowdfundr', domains: ['crowdfundr.com'] },
   { id: 'kickstarter', name: 'Kickstarter', domains: ['kickstarter.com'] },
   { id: 'indiegogo', name: 'Indiegogo', domains: ['indiegogo.com'] },
   { id: 'givebutter', name: 'Givebutter', domains: ['givebutter.com'] },
   { id: 'donorbox', name: 'Donorbox', domains: ['donorbox.org'] },
-  { id: 'zeffy', name: 'Zeffy', domains: ['zeffy.com'] },
 ];
 
 export function themeMatches(theme: HandmadeTheme): string[] {
