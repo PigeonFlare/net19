@@ -1,5 +1,5 @@
 import { settingsFrom, SETTINGS_KEY, type Settings } from './settings';
-import { THEMES, themeMatches, themePaused, type HandmadeTheme } from './themes';
+import { THEMES, themeFiles, themeMatches, themePaused, type HandmadeTheme } from './themes';
 import { navigationRules } from './navigation';
 
 let sync: Promise<unknown> = Promise.resolve();
@@ -26,9 +26,8 @@ function syncScripts(): Promise<unknown> {
     await chrome.declarativeNetRequest.updateDynamicRules({ removeRuleIds: oldRules.map(rule => rule.id),
       addRules: navigationRules(config, theme => signedIn.has(theme.id)) });
     const desired: chrome.scripting.RegisteredContentScript[] = THEMES.filter(active).map(theme => ({
-      id: `net19-theme-${theme.id}`, matches: themeMatches(theme), ...(theme.exclude ? { excludeMatches: theme.exclude } : {}), css: [`themes/${theme.id}.css`],
-      js: [`themes/${theme.id}.js`, 'content.js'], runAt: 'document_start', allFrames: false, persistAcrossSessions: true }));
-    const signature = (list: chrome.scripting.RegisteredContentScript[]) => JSON.stringify(list.map(s => [s.id, s.matches, s.excludeMatches ?? [], s.css, s.js]).sort());
+      id: `net19-theme-${theme.id}`, matches: themeMatches(theme), ...(theme.exclude ? { excludeMatches: theme.exclude } : {}), ...themeFiles(theme), runAt: 'document_start', allFrames: !!theme.frames, persistAcrossSessions: true }));
+    const signature = (list: chrome.scripting.RegisteredContentScript[]) => JSON.stringify(list.map(s => [s.id, s.matches, s.excludeMatches ?? [], s.css, s.js, !!s.allFrames]).sort());
     const current = registered.filter(script => script.id.startsWith('net19-'));
     if (signature(current) !== signature(desired)) {
       if (current.length) await chrome.scripting.unregisterContentScripts({ ids: current.map(script => script.id) });

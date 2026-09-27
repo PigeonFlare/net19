@@ -6,9 +6,34 @@ export type HandmadeTheme = {
   exclude?: string[];
   query?: { pattern: string; params: Array<[string, string]> };
   legacy?: { pattern: string; substitution: string; except?: string; signedIn?: { url: string; name: string } };
+  extends?: string;
+  frames?: boolean;
 };
 
+export function themeFiles(theme: HandmadeTheme): { css: string[]; js: string[] } {
+  const base = theme.extends;
+  return {
+    css: base ? [`themes/${base}.css`, `themes/${theme.id}.css`] : [`themes/${theme.id}.css`],
+    js: [`themes/${base ?? theme.id}.js`, 'content.js'],
+  };
+}
+
 const GOOGLE_SEARCH = ['www.google.com', 'google.com'].flatMap(host => ['/', '/?*', '/search*', '/webhp*', '/imghp*'].map(path => `*://${host}${path}`));
+
+const GOOGLE_APPS: Record<string, string[]> = {
+  gmaps: ['*://www.google.com/maps*', '*://google.com/maps*', '*://maps.google.com/*'],
+  gcalendar: ['*://calendar.google.com/*'],
+  gcontacts: ['*://contacts.google.com/*'],
+  gphotos: ['*://photos.google.com/*'],
+  gplay: ['*://play.google.com/*'],
+  gmeet: ['*://meet.google.com/*'],
+  gtranslate: ['*://translate.google.com/*'],
+  gkeep: ['*://keep.google.com/*'],
+  gclassroom: ['*://classroom.google.com/*'],
+  gchat: ['*://chat.google.com/*'],
+  gaccount: ['*://myaccount.google.com/*'],
+  glauncher: ['*://ogs.google.com/*'],
+};
 
 export const THEMES: HandmadeTheme[] = [
   { id: 'google', name: 'Google', domains: ['google.com'], matches: GOOGLE_SEARCH },
@@ -17,7 +42,8 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'gnews', name: 'Google News', domains: ['google.com'], matches: ['*://news.google.com/*'] },
   { id: 'googleapps', name: 'Google', domains: ['google.com', 'about.google', 'blog.google', 'store.google'],
     matches: ['*://*.google.com/*', '*://google.com/*', '*://about.google/*', '*://blog.google/*', '*://store.google/*', '*://*.store.google/*'],
-    exclude: [...GOOGLE_SEARCH, '*://mail.google.com/*', '*://drive.google.com/*', '*://docs.google.com/*', '*://news.google.com/*'] },
+    exclude: [...GOOGLE_SEARCH, '*://mail.google.com/*', '*://drive.google.com/*', '*://docs.google.com/*', '*://news.google.com/*', ...Object.values(GOOGLE_APPS).flat()] },
+  ...Object.entries(GOOGLE_APPS).map(([id, matches]): HandmadeTheme => ({ id, name: 'Google', domains: ['google.com'], matches, extends: 'googleapps', ...(id === 'glauncher' ? { frames: true } : {}) })),
   { id: 'youtube', name: 'YouTube', domains: ['youtube.com'] },
   { id: 'wikipedia', name: 'Wikipedia', domains: ['wikipedia.org'],
     query: { pattern: '^https://[a-z-]+\\.wikipedia\\.org/wiki/[^?#]*(#.*)?$', params: [['useskin', 'vector']] } },

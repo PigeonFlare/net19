@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { settingsFrom } from '../src/settings';
 import { navigationRules } from '../src/navigation';
-import { THEMES, THEMED_DOMAINS, themeFor, themeMatches, themePaused } from '../src/themes';
+import { THEMES, THEMED_DOMAINS, themeFiles, themeFor, themeMatches, themePaused } from '../src/themes';
 
 const rule = (id: string) => THEMES.find(theme => theme.id === id)!;
 const legacy = (url: string) => {
@@ -24,7 +24,7 @@ test('net19 only touches the sites it has a theme for', () => {
   assert.ok(!manifest.web_accessible_resources && !manifest.permissions.includes('offscreen') && !manifest.permissions.includes('webNavigation'));
   assert.match(manifest.content_security_policy.extension_pages, /connect-src 'none'/);
   for (const theme of THEMES) {
-    assert.ok(existsSync(`themes/${theme.id}.css`) && existsSync(`themes/${theme.id}.js`), theme.id);
+    for (const file of [...themeFiles(theme).css, ...themeFiles(theme).js]) assert.ok(existsSync(file), `${theme.id}: ${file}`);
     for (const pattern of themeMatches(theme)) assert.ok(theme.domains.some(domain => pattern.includes(domain)), pattern);
   }
   assert.equal(themeFor('www.youtube.com')?.id, 'youtube');

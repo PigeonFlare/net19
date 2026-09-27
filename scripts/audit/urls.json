@@ -138,5 +138,17 @@
   "poki": "https://poki.com/",
   "xbox": "https://www.xbox.com/en-US",
   "chess": "https://www.chess.com/",
-  "ign": "https://www.ign.com/"
+  "ign": "https://www.ign.com/",
+  "gmaps": "https://www.google.com/maps",
+  "gcalendar": "https://calendar.google.com/",
+  "gcontacts": "https://contacts.google.com/",
+  "gphotos": "https://photos.google.com/",
+  "gplay": "https://play.google.com/store/games",
+  "gmeet": "https://meet.google.com/",
+  "gtranslate": "https://translate.google.com/",
+  "gkeep": "https://keep.google.com/",
+  "gclassroom": "https://classroom.google.com/",
+  "gchat": "https://chat.google.com/",
+  "gaccount": "https://myaccount.google.com/",
+  "glauncher": "https://ogs.google.com/u/0/widget/app"
 }
