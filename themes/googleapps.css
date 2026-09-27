@@ -45,7 +45,7 @@ html[data-net19-mode="dark"]:not([data-n19-g="gemini"]):root, html[data-net19-mo
 }
 
 html:not([data-n19-g="gemini"]) body :is(p, li, td, th, dd, dt, label, input, textarea, select, button, a, span, div, time, small, strong, b, em, cite,
-  figcaption, summary, blockquote, section, article, form, nav, footer, main, aside, ul, ol, md-filled-button, md-outlined-button, md-text-button):not(i, .notranslate,
+  figcaption, summary, blockquote, section, article, form, nav, footer, main, aside, ul, ol, md-filled-button, md-outlined-button, md-text-button):not(i, .notranslate, [class*="material" i], .google-symbols,
   [class*="icon" i], [class*="symbol" i], [translate="no"], [aria-hidden="true"]:not(:has(*)):not([class*="text" i]), [aria-label*="logo" i], [aria-label*="logo" i] *) {
   font-family: var(--n19-sans) !important; }
 html:not([data-n19-g="gemini"]) body :is(h1, h2, h3, [role="heading"][aria-level="1"], [role="heading"][aria-level="2"], [class*="headline" i], [class*="display" i],
@@ -54,7 +54,7 @@ html:not([data-n19-g="gemini"]) body :is(h1, h2, h3, [class*="headline" i], [cla
   font-family: var(--n19-display) !important; }
 html:not([data-n19-g="gemini"]) body { color: var(--n19-text); }
 
-html:not([data-n19-g="gemini"]) header#gb a[href*="ServiceLogin"], html:not([data-n19-g="gemini"]) header#gb a[href*="accounts.google.com/"][aria-label] {
+html:not([data-n19-g="gemini"]) header#gb a[href*="ServiceLogin"], html:not([data-n19-g="gemini"]) header#gb a[href*="accounts.google.com/"][aria-label]:not([href*="SignOutOptions"]) {
   background: var(--n19-accent) !important; color: var(--n19-on-accent) !important; border-radius: 4px !important; border: 1px solid transparent !important;
   font: 500 14px/34px var(--n19-sans) !important; height: 36px !important; min-height: 0 !important; padding: 0 23px !important; box-shadow: none !important; box-sizing: border-box !important; }
 html:not([data-n19-g="gemini"]) header#gb a[href*="ServiceLogin"]:hover { box-shadow: 0 1px 2px 0 rgba(66,133,244,.3), 0 1px 3px 1px rgba(66,133,244,.15) !important; background: var(--n19-accent-hover) !important; }
@@ -67,8 +67,8 @@ html:not([data-n19-g="gemini"]) header#gb form[role="search"]:focus-within { bac
 
 html:not([data-n19-g="gemini"]) :is(.VfPpkd-LgbsSe, .VfPpkd-LgbsSe .VfPpkd-Jh9lGc, .VfPpkd-LgbsSe .VfPpkd-J1Ukfc-LhBDec, .VfPpkd-LgbsSe .VfPpkd-RLmnJb) { border-radius: 4px !important; }
 html:not([data-n19-g="gemini"]) .VfPpkd-LgbsSe { font-family: var(--n19-sans) !important; font-weight: 500 !important; letter-spacing: .25px !important; }
-html:not([data-n19-g="gemini"]) :is(.VfPpkd-LgbsSe-OWXEXe-k8QpJ, .VfPpkd-LgbsSe-OWXEXe-MV7yeb):not(:disabled) { background-color: var(--n19-accent) !important; color: var(--n19-on-accent) !important; }
-html:not([data-n19-g="gemini"]) :is(.VfPpkd-LgbsSe-OWXEXe-k8QpJ, .VfPpkd-LgbsSe-OWXEXe-MV7yeb):not(:disabled):hover { box-shadow: 0 1px 2px 0 rgba(66,133,244,.3), 0 1px 3px 1px rgba(66,133,244,.15) !important; }
+html:not([data-n19-g="gemini"]) :is(.VfPpkd-LgbsSe-OWXEXe-k8QpJ, .VfPpkd-LgbsSe-OWXEXe-MV7yeb):not(:disabled, [data-n19-hollow], [data-n19-probe]) { background-color: var(--n19-accent) !important; color: var(--n19-on-accent) !important; }
+html:not([data-n19-g="gemini"]) :is(.VfPpkd-LgbsSe-OWXEXe-k8QpJ, .VfPpkd-LgbsSe-OWXEXe-MV7yeb):not(:disabled, [data-n19-hollow], [data-n19-probe]):hover { box-shadow: 0 1px 2px 0 rgba(66,133,244,.3), 0 1px 3px 1px rgba(66,133,244,.15) !important; }
 html:not([data-n19-g="gemini"]) :is(.VfPpkd-LgbsSe-OWXEXe-INsAgc) { border: 1px solid var(--n19-border) !important; color: var(--n19-accent) !important; }
 html:not([data-n19-g="gemini"]) :is(.glue-button, [class*="glue-button--"], .glue-cta, .glue-fab) { border-radius: 4px !important; }
 html:not([data-n19-g="gemini"]) [data-n19-shape="btn"], html:not([data-n19-g="gemini"]) [data-n19-shape="btn"] > :is(span, div):only-of-type:empty { border-radius: 4px !important; }
@@ -130,13 +130,14 @@ html:is([data-n19-g="workspace"], [data-n19-g="business"], [data-n19-g="about"],
   :is(.button, [class*="button--"], [class*="Button_button"], [class*="cta"]):is(a, button) { border-radius: 4px !important; }
 html[data-n19-g="workspace"] header { box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15) !important; }
 
-html[data-n19-g="finance"] :is([role="region"][aria-label="Research panel"], #dbgrod, button[role="tab"]#research, .FlxBqd, .FRNsr) { display: none !important; }
+html[data-n19-g="finance"] :is([role="region"][aria-label="Research panel"], #dbgrod, button[role="tab"]#research, .FlxBqd) { display: none !important; }
+html[data-n19-g="finance"] :is(.FRNsr, [data-n19-veil]) { visibility: hidden !important; }
 html[data-n19-g="finance"] :is(textarea, input)[placeholder] { font-family: var(--n19-sans) !important; }
 
 html[data-n19-g="play"] { --n19-play: #689f38; --n19-play-hover: #558b2f; }
 html[data-n19-g="play"][data-net19-mode="dark"] { --n19-play: #8bc34a; --n19-play-hover: #9ccc65; }
-html[data-n19-g="play"] :is(.VfPpkd-LgbsSe-OWXEXe-k8QpJ, .VfPpkd-LgbsSe-OWXEXe-MV7yeb):not(:disabled) { background-color: var(--n19-play) !important; color: #fff !important; }
-html[data-n19-g="play"] :is(.VfPpkd-LgbsSe-OWXEXe-k8QpJ, .VfPpkd-LgbsSe-OWXEXe-MV7yeb):not(:disabled):hover { background-color: var(--n19-play-hover) !important; box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15) !important; }
+html[data-n19-g="play"] :is(.VfPpkd-LgbsSe-OWXEXe-k8QpJ, .VfPpkd-LgbsSe-OWXEXe-MV7yeb):not(:disabled, [data-n19-hollow], [data-n19-probe]) { background-color: var(--n19-play) !important; color: #fff !important; }
+html[data-n19-g="play"] :is(.VfPpkd-LgbsSe-OWXEXe-k8QpJ, .VfPpkd-LgbsSe-OWXEXe-MV7yeb):not(:disabled, [data-n19-hollow], [data-n19-probe]):hover { background-color: var(--n19-play-hover) !important; box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15) !important; }
 html[data-n19-g="play"] img[data-n19-shape="card"], html[data-n19-g="play"] [data-n19-shape="card"]:has(> img:only-child) { box-shadow: none !important; }
 html[data-n19-g="play"] [role="search"], html[data-n19-g="play"] [role="search"] > div { border-radius: 8px !important; }
 
@@ -144,3 +145,20 @@ html[data-n19-g="support"] h1 { color: var(--n19-accent) !important; }
 html[data-n19-g="support"] :is(form[role="search"], [role="search"]) { border-radius: 8px !important; }
 
 html[data-n19-g="policies"] :is(nav, [role="navigation"]):not(header *, [role="tablist"], :has([role="tab"])) a:is([aria-current], [aria-selected="true"]) { background: var(--n19-accent-soft) !important; color: var(--n19-accent-text) !important; border-radius: 0 999px 999px 0 !important; }
+
+html[data-n19-g="finance"] .Y8k45b { width: auto !important; margin-right: 0 !important; }
+html[data-n19-g="finance"] :is(a[href*="tab=analysis"]:has(.CjQc3e), div[jsname="ZI94Be"]) { display: none !important; }
+
+html[data-n19-g="books"] :is(#gb-ogen-opt-in-banner, #gb-ogen-opt-in-header-link) { display: none !important; }
+
+html[data-n19-g="arts"] a[data-gaaction="main-nav_clicked"]:is([data-galabel="lab"], [data-galabel="games"]), html[data-n19-g="arts"] a.zfaLP .uUqXFd { display: none !important; }
+
+html[data-n19-g="one"] :is(li:has(> a[class^="link_"][href*="/google-ai"]), li:has(> a[class^="mobileMenuLink_"][href*="/google-ai"]), g1-banner:has(a[href*="/ai-"])) { display: none !important; }
+
+html:is([data-n19-g="fi"], [data-n19-g="store"]) a.IvQv9b.rkH8Ae:is(.g4h7rc, .m2RiMc) { background-color: var(--n19-accent) !important; color: #fff !important; border-radius: 4px !important; }
+html:is([data-n19-g="fi"], [data-n19-g="store"]) a.IvQv9b.rkH8Ae:is(.g4h7rc, .m2RiMc)::after { background-color: var(--n19-accent) !important; border-radius: 4px !important; }
+html:is([data-n19-g="fi"], [data-n19-g="store"]) a.IvQv9b.rkH8Ae:is(.g4h7rc, .m2RiMc):hover::after { background-color: var(--n19-accent-hover) !important; }
+
+html[data-n19-g="wallet"] a#sdgBod > img { content: url("https://www.gstatic.com/instantbuy/svg/light_gpay.svg") !important; width: 48px !important; height: 20px !important; object-fit: contain !important; }
+html[data-n19-g="wallet"][data-net19-mode="dark"] a#sdgBod > img { content: url("https://www.gstatic.com/instantbuy/svg/dark_gpay.svg") !important; }
+html[data-n19-g="wallet"][data-net19-flip] .glue-header__logo-custom img { content: url("https://www.gstatic.com/instantbuy/svg/dark_gpay.svg") !important; object-fit: contain !important; }

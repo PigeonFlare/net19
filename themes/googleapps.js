@@ -16,11 +16,25 @@
     : host === 'workspace.google.com' ? 'workspace'
     : host === 'support.google.com' ? 'support'
     : host === 'gemini.google.com' ? 'gemini'
-    : host === 'about.google' || path.startsWith('/about') || path.startsWith('/intl/') ? 'about'
     : host === 'blog.google' ? 'blog'
     : /(^|\.)store\.google(\.com)?$/.test(host) ? 'store'
     : host === 'contacts.google.com' ? 'contacts'
     : host === 'keep.google.com' ? 'keep'
+    : host === 'earth.google.com' ? 'earth'
+    : host === 'books.google.com' || /^\/books(\/|$)/.test(path) ? 'books'
+    : host === 'voice.google.com' ? 'voice'
+    : /^\/(travel|flights)(\/|$)/.test(path) ? 'travel'
+    : /^\/(save|interests\/saved|collections)(\/|$)/.test(path) ? 'saved'
+    : host === 'artsandculture.google.com' ? 'arts'
+    : host === 'ads.google.com' ? 'ads'
+    : host === 'analytics.google.com' ? 'analytics'
+    : host === 'merchants.google.com' ? 'merchants'
+    : host === 'fi.google.com' ? 'fi'
+    : host === 'passwords.google.com' ? 'passwords'
+    : host === 'wallet.google.com' || host === 'pay.google.com' ? 'wallet'
+    : host === 'tasks.google.com' ? 'tasks'
+    : host === 'one.google.com' ? 'one'
+    : host === 'about.google' || path.startsWith('/about') || path.startsWith('/intl/') ? 'about'
     : 'other';
   document.documentElement?.setAttribute('data-n19-g', key);
   const gemini = key === 'gemini';
@@ -30,6 +44,12 @@
     detect() {
       const root = document.documentElement;
       if (root.classList.contains('dark') || root.getAttribute('data-theme') === 'dark' || root.hasAttribute('dark') || document.body?.classList.contains('dark-theme')) return 'dark';
+      if (host === 'ogs.google.com') {
+        const card = document.querySelector('[role="complementary"] > div');
+        const l = card && lum(getComputedStyle(card).backgroundColor);
+        if (l !== null && l !== undefined && card) return l < .35 ? 'dark' : 'light';
+        return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+      }
       for (const el of [document.body, root, document.querySelector('main, c-wiz, #app, [role="main"]')]) {
         if (!el) continue;
         const l = lum(getComputedStyle(el).backgroundColor);
@@ -54,6 +74,8 @@
     },
     later: /^(?:dive deeper with ai|ask gemini|try gemini(?: .*)?|gemini (?:in .{2,30}|advanced|app|apps|live)|open gemini|chat with gemini|get gemini(?: .*)?|help me (?:write|organi[sz]e|create|plan|visuali[sz]e)|ask maps|ask about (?:this )?(?:place|product|page)|ai overview|ai mode|ask (?:photos|play)|research|deep search|ai-powered .{2,30}|summari[sz]e (?:this )?(?:page|product|reviews?)|google ai (?:pro|ultra|plus)|try (?:ai|nano banana|veo|flow|notebooklm)|nano banana|notebooklm)$/i,
     ...(gemini ? { keepLabels: /[\s\S]/ } : {}),
+    ...(key === 'earth' ? { only: () => globalThis.net19Theme.detect() } : {}),
+    ...(key === 'arts' ? { keep: 'div[data-current-step-index][data-vertical]' } : {}),
   };
   if (gemini) return;
 
@@ -65,6 +87,7 @@
   const SELECTED = new Set(['211,227,253', '194,231,255', '211,227,252', '168,199,250', '232,240,254']);
   const SKIP = /^(SCRIPT|STYLE|LINK|META|NOSCRIPT|TEMPLATE|BR|HR|WBR|svg|SVG|path|PATH|g|G|IFRAME|SOURCE|TRACK|HTML|BODY|HEAD|TITLE|OPTION|C-DATA)$/;
   const ATTRS = ['data-n19-shape', 'data-n19-fill'];
+  const FILLED = '.VfPpkd-LgbsSe-OWXEXe-k8QpJ, .VfPpkd-LgbsSe-OWXEXe-MV7yeb';
   let seen = new WeakSet();
   const radius = (value, w, h) => value.endsWith('%') ? parseFloat(value) / 100 * Math.min(w, h) : parseFloat(value) || 0;
   const tint = rgb => { const [r, g, b] = rgb.split(',').map(Number); return Math.min(r, g, b) >= 224 && b - r >= 4 && b - r <= 24 && b >= g && rgb !== '232,240,254'; };
@@ -75,7 +98,7 @@
     for (const el of list) {
       if (SKIP.test(el.tagName) || el.closest('[data-net19-hidden]')) continue;
       const cs = getComputedStyle(el);
-      if (cs.display === 'none') continue;
+      if (cs.display === 'none' || el.matches('[role="separator"], hr')) continue;
       const tl = cs.borderTopLeftRadius, br = cs.borderBottomRightRadius;
       const bg = rgbOf(cs.backgroundColor);
       const selected = bg && pick(bg);
@@ -97,6 +120,11 @@
       else if (selected && shape === 'tab') fill = 'sel';
       if (shape || fill) out.push([el, shape, fill]);
     }
+    const filled = list.filter(el => el.matches(FILLED) && !el.hasAttribute('data-n19-hollow'));
+    for (const el of filled) el.setAttribute('data-n19-probe', '');
+    const hollow = filled.filter(el => !rgbOf(getComputedStyle(el).backgroundColor));
+    for (const el of filled) el.removeAttribute('data-n19-probe');
+    for (const el of hollow) el.setAttribute('data-n19-hollow', '');
     for (const [el, shape, fill] of out) {
       if (shape) el.setAttribute('data-n19-shape', shape);
       if (fill) el.setAttribute('data-n19-fill', fill);
@@ -104,18 +132,26 @@
   };
   const NOTE = /^(?:AI content may include mistakes|AI responses may include mistakes|Generative AI is experimental|AI Overview)\b/i;
   const SPARK = /^(?:search_spark|spark|gemini_spark|magic_button)$/;
+  const PROMO = key === 'travel' ? /^(?:Flexible\? Discover the best .{2,30} with AI|.{2,40} (?:with|using) AI|Plan (?:a|your) trip with AI)$/i : null;
+  const promoBlock = el => {
+    let block = el;
+    for (let up = el.parentElement; up && up !== document.body && up.offsetHeight <= 140 && up.offsetWidth <= 1100 && up.innerText.length <= 240; up = up.parentElement) block = up;
+    return block;
+  };
   const texts = root => {
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-    const hide = [], swap = [];
+    const hide = [], swap = [], veil = [];
     for (let n = walker.nextNode(); n; n = walker.nextNode()) {
       const t = n.nodeValue.trim();
       if (t.length < 5 || t.length > 90) continue;
       const el = n.parentElement;
       if (!el || el.closest('[data-net19-hidden], script, style')) continue;
       if (SPARK.test(t) && el.matches('i, .notranslate, [class*="symbol" i], [class*="icon" i]')) swap.push(el);
-      else if (NOTE.test(t) && !el.closest('main article, [role="article"], p')) hide.push(el.closest('div:not(:has(> div + div)), span') || el);
+      else if (PROMO && PROMO.test(t)) hide.push(promoBlock(el));
+      else if (NOTE.test(t) && !el.closest('main article, [role="article"], p')) (key === 'finance' ? veil : hide).push(el.closest('div:not(:has(> div + div)), span') || el);
     }
     for (const el of swap) el.textContent = 'search';
+    for (const el of veil) el.setAttribute('data-n19-veil', '');
     for (const el of hide) if (!el.querySelector('input, textarea, [contenteditable]')) el.setAttribute('data-net19-hidden', '');
   };
   const all = root => root.querySelectorAll ? [root, ...root.querySelectorAll('*')] : [];

@@ -19,6 +19,8 @@ net19 is a set of handmade themes and a service worker that registers them. It d
 
 ## Themes
 
+A theme can `extends` another: Google's apps (Maps, Calendar, Photos, Play and the rest) each add their own `themes/<id>.css` on top of `googleapps.css` and share `googleapps.js`, which marks the app as `html[data-n19-g]`.
+
 `src/themes.ts` lists the themes. Each is two bundled files:
 
 - `themes/<id>.css`: rules written against `--n19-*` tokens, with light values on `html` and dark values on `html[data-net19-mode="dark"]`, plus the site's own design variables re-pointed at those tokens.
@@ -101,7 +103,7 @@ On install, update, startup, settings changes, and Reddit session changes, the w
 - replaces its dynamic navigation rules.
 - removes anything an earlier version registered or stored: the archive content script, profile cache, session rules and warm-up state.
 
-Embedded frames are never themed: account menus, players and ads are transparent overlays drawn by their own origin.
+Embedded frames are themed only when a theme sets `frames` (Google's app launcher, an ogs.google.com frame); account menus, players and ads are otherwise left to their own origin.
 
 Settings are `{ enabled, disabledHosts }`. Only the popup can change them. Switching a site off pauses every host of that site (www, old., m., and its other domains).
 

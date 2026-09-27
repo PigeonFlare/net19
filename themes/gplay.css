@@ -1,0 +1,43 @@
+html { --n19-play-page: #eeeeee; --n19-play-card: #fff; --n19-play-head: #333; --n19-play-sub: #737373; --n19-play-green: #689f38; --n19-play-link: #33691e;
+  --n19-play-card-shadow: 0 1px 1px 0 rgba(0,0,0,.14), 0 2px 1px -1px rgba(0,0,0,.12), 0 1px 3px 0 rgba(0,0,0,.2); --n19-play-bar-shadow: 0 1px 0 0 rgba(0,0,0,.05), 0 1px 6px 0 rgba(0,0,0,.1);
+  --n19-play-logo: url("https://www.gstatic.com/images/branding/product/2x/play_prism_48dp.png"); }
+html[data-net19-mode="dark"] { --n19-play-page: #202124; --n19-play-card: #2d2e30; --n19-play-head: #e8eaed; --n19-play-sub: #9aa0a6; --n19-play-green: #8bc34a; --n19-play-link: #9ccc65;
+  --n19-play-card-shadow: 0 1px 2px 0 rgba(0,0,0,.6), 0 1px 3px 1px rgba(0,0,0,.3); --n19-play-bar-shadow: 0 1px 6px 0 rgba(0,0,0,.6); }
+
+html[data-n19-g="play"] {
+  &[data-net19-mode] body { background-color: var(--n19-play-page) !important; }
+  & header[role="banner"] { background: var(--n19-play-card) !important; box-shadow: var(--n19-play-bar-shadow) !important; border-bottom: 0 !important; }
+  & header[role="banner"] a[aria-label="Google Play logo"] > svg { background: var(--n19-play-logo) center / contain no-repeat !important; }
+  & header[role="banner"] a[aria-label="Google Play logo"] > svg > * { display: none !important; }
+  &[data-net19-flip] header[role="banner"] a[aria-label="Google Play logo"] > svg { filter: contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
+  & header[role="banner"] [role="tablist"] button[role="tab"] :is(.VfPpkd-jY41G-V67aGc, span) { font: 400 14px/20px var(--n19-sans) !important; color: var(--n19-play-sub) !important; letter-spacing: 0 !important; }
+  & header[role="banner"] [role="tablist"] button[role="tab"][aria-selected="true"] :is(.VfPpkd-jY41G-V67aGc, span) { font-weight: 500 !important; color: var(--n19-play-head) !important; }
+  & header[role="banner"] [role="tablist"] .VfPpkd-AznF2e-wEcVzc { border-color: var(--n19-play-green) !important; }
+
+  & a.D3Qfie { background: transparent !important; border: 0 !important; border-radius: 0 !important; box-shadow: none !important; padding: 0 12px !important; outline: 0 !important; }
+  & a.D3Qfie .Gggmbb { display: none !important; }
+  & a.D3Qfie :is(.ypTNYd, i) { color: var(--n19-play-sub) !important; }
+  & a.D3Qfie .ypTNYd { font-family: var(--n19-sans) !important; font-weight: 400 !important; }
+  & a.D3Qfie:is([aria-current], .KKjvXb, [aria-selected="true"]) { box-shadow: inset 0 -2px 0 var(--n19-play-green) !important; }
+  & a.D3Qfie:is([aria-current], .KKjvXb, [aria-selected="true"]) :is(.ypTNYd, i) { color: var(--n19-play-head) !important; }
+  & a.D3Qfie:is([aria-current], .KKjvXb, [aria-selected="true"]) .ypTNYd { font-weight: 500 !important; }
+
+  & .VfPpkd-WsjYwc.KC1dQ, & .VfPpkd-WsjYwc.KC1dQ :is(.VfPpkd-aGsRMb, .VfPpkd-EScbFb-JIbuQc, .Pdcv8e, .NZp2ef) { border-radius: 2px !important; }
+  & .VfPpkd-WsjYwc.KC1dQ { background: var(--n19-play-card) !important; box-shadow: var(--n19-play-card-shadow) !important; border: 0 !important; }
+  & .VfPpkd-WsjYwc.KC1dQ img.SzSlNc { border-radius: 2px 2px 0 0 !important; }
+  & .VfPpkd-WsjYwc.KC1dQ .n2q3zf { border-radius: 2px 0 !important; }
+  & .VfPpkd-WsjYwc.KC1dQ a.Si6A0c.ZD8Cqc > :not(:first-child) { padding: 6px 10px 10px !important; }
+  & .VfPpkd-WsjYwc.KC1dQ .YLCN0d { font: 400 20px/1.3 var(--n19-sans) !important; }
+
+  & :is(h1, h2, h3, [role="heading"]), & :is(h1, h2, h3, [role="heading"]) :is(span, a) { font-family: var(--n19-sans) !important; letter-spacing: 0 !important; }
+  & h1 { font: 400 28px/36px var(--n19-sans) !important; color: var(--n19-play-head) !important; }
+  & h2, & h2 span { font-weight: 400 !important; color: var(--n19-play-head) !important; }
+  & h1 ~ * a[href*="/store/apps/dev"], & a[href*="/store/apps/developer"] { color: var(--n19-play-link) !important; font-weight: 500 !important; }
+  & :is(.VfPpkd-LgbsSe, .VfPpkd-LgbsSe .VfPpkd-Jh9lGc) { border-radius: 4px !important; }
+  & :is(.VfPpkd-LgbsSe-OWXEXe-k8QpJ, .VfPpkd-LgbsSe-OWXEXe-MV7yeb):not(:disabled) { background-color: var(--n19-play-green) !important; color: #fff !important; }
+  & .VfPpkd-LgbsSe-OWXEXe-INsAgc { border-color: var(--n19-play-green) !important; color: var(--n19-play-link) !important; }
+  & .VfPpkd-LgbsSe .VfPpkd-vQzf8d { font: 500 14px/36px var(--n19-sans) !important; letter-spacing: .25px !important; }
+
+  & :is([role="dialog"], [role="alertdialog"], .VfPpkd-P5QLlc) { border-radius: 2px !important; }
+  & :is([role="menu"], .VfPpkd-xl07Ob) { border-radius: 2px !important; }
+}

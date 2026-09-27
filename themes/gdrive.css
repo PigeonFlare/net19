@@ -223,6 +223,7 @@ body.docs-gm #docs-sidekick-gen-ai-promo-button-container, body.docs-gm .appsEle
 body.docs-gm #docs-titlebar-container :is([aria-label^="Ask Gemini" i], [data-tooltip^="Ask Gemini" i], [aria-label^="Gemini" i], [aria-label^="Upgrade" i]) { display: none !important; }
 body.docs-gm .building-blocks-sidebar, body.docs-gm .building-blocks-intro-promo-base { display: none !important; }
 body.docs-gm #docs-meet-in-editors-entrypointbutton { display: none !important; }
+body.docs-gm :is(#workspace-onegoogle-pep-container, .docs-meet-in-editors-entrypoint-container, #docs-sidekick-gen-ai-promo-button-container) { display: none !important; }
 body.docs-gm .docos-emoji-reaction-doco-view, body.docs-gm .docos-replyview-emoji-controls, body.docs-gm .docos-emoji-counter-button-post { display: none !important; }
 body.docs-gm .docos-anchoreddocoview, body.docs-gm .docos-docoview-active { border-radius: 4px !important; }
 

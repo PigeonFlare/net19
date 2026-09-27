@@ -165,7 +165,8 @@ nav[class*="guilds_"], nav[class*="guilds_"] [class*="scroller_"], [class*="side
   box-shadow: 0 0 0 3px var(--n19-tertiary);
 }
 
-[data-list-id="guildsnav"] svg[class*="shiftSVG_"] > foreignObject { width: 48px !important; height: 48px !important; }
+[data-list-id="guildsnav"] svg[class*="shiftSVG_"] { top: 0 !important; left: 0 !important; }
+[data-list-id="guildsnav"] svg[class*="shiftSVG_"] > foreignObject { x: -4px; y: -4px; width: 48px !important; height: 48px !important; }
 [data-list-id="guildsnav"] :is([class^="listItem_"], [class*=" listItem_"]) { display: flex !important; justify-content: center !important; }
 [data-list-id="guildsnav"] :is([class^="listItem_"], [class*=" listItem_"]) > span:not([class]),
 [data-list-id="guildsnav"] [class*="listItemWrapper_"],

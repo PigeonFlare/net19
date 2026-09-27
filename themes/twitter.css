@@ -85,12 +85,12 @@ main div:has(> a[aria-label="Follow"]) button[data-slot="xds-button"], main div:
 main div:has(> a[aria-label="Follow"]) button[data-slot="xds-button"] *, main div:has(> a[aria-label="Mention"]) button[data-slot="xds-button"] * { color: var(--n19-blue) !important; font-weight: 700 !important; }
 
 div.overflow-hidden:has(> img:is([alt^="@"], [alt="Avatar"])), [data-testid^="UserAvatar-Container"], [data-testid^="UserAvatar-Container"] * { border-radius: 9999px !important; corner-shape: round !important; }
-article .w-10:has(img[alt^="@"]) { width: 49px !important; }
-article .size-10:has(> img[alt^="@"]) { width: 49px !important; height: 49px !important; }
-article > div > .flex.gap-2:has(> .w-10 img[alt^="@"]), article > .flex.gap-2:has(> .w-10 img[alt^="@"]) { gap: 10px !important; }
-[data-testid="tweet"] [data-testid="Tweet-User-Avatar"] { width: 49px !important; flex-basis: 49px !important; }
-[data-testid="tweet"] [data-testid="Tweet-User-Avatar"] [data-testid^="UserAvatar-Container"] { width: 49px !important; height: 49px !important; }
-[data-testid="tweet"] div:has(> [data-testid="Tweet-User-Avatar"]) { flex-basis: 49px !important; width: 49px !important; margin-right: 10px !important; }
+article .w-10:has(img[alt^="@"]):not(article article *) { width: 49px !important; }
+article .size-10:has(> img[alt^="@"]):not(article article *) { width: 49px !important; height: 49px !important; }
+article:not(article article) > div > .flex.gap-2:has(> .w-10 img[alt^="@"]), article:not(article article) > .flex.gap-2:has(> .w-10 img[alt^="@"]) { gap: 10px !important; }
+[data-testid="tweet"] [data-testid="Tweet-User-Avatar"]:not([role="link"] *) { width: 49px !important; flex-basis: 49px !important; }
+[data-testid="tweet"] [data-testid="Tweet-User-Avatar"]:not([role="link"] *) [data-testid^="UserAvatar-Container"] { width: 49px !important; height: 49px !important; }
+[data-testid="tweet"] div:has(> [data-testid="Tweet-User-Avatar"]):not(:has([data-testid="User-Name"]), [role="link"] *) { flex-basis: 49px !important; width: 49px !important; margin-right: 10px !important; }
 main a[href$="/photo"] > div.rounded-xs { border-radius: 9999px !important; }
 
 [data-testid="tweetText"], article div[dir="auto"].text-body { font-size: 15px !important; line-height: 1.3125 !important; }

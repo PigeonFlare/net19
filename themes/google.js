@@ -90,3 +90,19 @@ globalThis.net19Theme = {
   const start = () => { run(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();
+(() => {
+  const leaveAiMode = () => {
+    if (location.pathname !== '/search') return;
+    const params = new URLSearchParams(location.search);
+    const query = params.get('q');
+    if (params.get('udm') !== '50' || !query) return;
+    const plain = new URLSearchParams({ q: query });
+    for (const key of ['hl', 'gl', 'safe']) if (params.get(key)) plain.set(key, params.get(key));
+    location.replace('/search?' + plain);
+  };
+  leaveAiMode();
+  let queued = false;
+  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; leaveAiMode(); }); };
+  new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
+  addEventListener('popstate', leaveAiMode);
+})();
