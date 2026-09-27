@@ -35,6 +35,8 @@ main.club-bg-skin, main.club-bg-skin .container--max-width { background: var(--n
   font-family: var(--n19-font-body) !important; font-weight: 400 !important; font-size: 12px !important; text-transform: uppercase !important; letter-spacing: 0 !important; color: #fff !important;
 }
 #react-header .header__nav-top__nav-item__link { padding-left: 8px !important; padding-right: 8px !important; height: 46px !important; }
+/* The site pads the links 20px from the top for its taller bar; in the 46px row the labels sit on the middle. */
+#react-header .header__nav-top__nav-container a.header__nav-top__nav-item__link { padding-top: 0 !important; padding-bottom: 0 !important; align-items: center !important; }
 
 /* Lead story: a light, regular-weight 26px headline and gray summary text on a square white card. */
 main :is(article, section, [class*="Card"], [class*="card"]) { border-radius: 0 !important; }

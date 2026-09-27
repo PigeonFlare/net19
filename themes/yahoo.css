@@ -90,6 +90,9 @@ header#module-uh > div > div:first-child > div:last-child > a[href^="https://log
 #trending-search li > div:first-child span { position: static !important; background: transparent !important; color: var(--n19-text) !important; font-size: 13px !important; font-weight: 400 !important;
   width: auto !important; height: auto !important; display: inline !important; }
 #trending-search li a, #trending-search li a p { font-size: 13px !important; line-height: 28px !important; font-weight: 700 !important; color: var(--n19-head) !important; -webkit-line-clamp: 1 !important; }
+/* One line cut with an ellipsis rather than a clamp: a clamped title still lays out its hidden second line on top of the
+   next entry's line. */
+#trending-search li a p { display: block !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; }
 #trending-search li > :last-child:not(:nth-child(2)) { display: none !important; }
 
 /* ---- Hero: a short wide picture with the headline on a gray panel at its right ---- */

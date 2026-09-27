@@ -11,6 +11,9 @@ html:root {
 div:has(> :is([class*="styles_utilityHeaderWrapper"], [class*="styles_utilityWrapper"])) { display: flex !important; flex-direction: column !important; }
 div:has(> :is([class*="styles_utilityHeaderWrapper"], [class*="styles_utilityWrapper"])) > * { order: 3; }
 :is([class*="styles_utilityHeaderWrapper"], [class*="styles_utilityWrapper"]) { order: 2 !important; background: var(--n19-bar) !important; border-bottom: 1px solid var(--n19-bar-border) !important; }
+/* Moved below the red bar, the utility row shares its z-index and would paint over the bar's popovers (the account
+   "Sign in for the best experience" card) and over the sticky bar as the page scrolls; it goes one layer beneath. */
+:is([class*="styles_utilityHeaderWrapper"], [class*="styles_utilityWrapper"]) { z-index: 1048 !important; }
 :is([class*="styles_utilityHeaderWrapper"], [class*="styles_utilityWrapper"]) a, :is([class*="styles_utilityHeaderWrapper"], [class*="styles_utilityWrapper"]) button, :is([class*="styles_utilityHeaderWrapper"], [class*="styles_utilityWrapper"]) span { color: var(--n19-bar-text) !important; }
 :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) { order: 1 !important; background: var(--n19-red) !important; box-shadow: none !important; }
 :is([class*="styles_primaryHeaderWrapper"], [class*="styles_primaryWrapper"]) [class*="styles_styledRef"] { background: transparent !important; }

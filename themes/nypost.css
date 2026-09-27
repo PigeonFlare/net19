@@ -31,6 +31,8 @@ html:root { --wp--custom--utility--radius: 0 !important; }
 /* Headlines: a plain Helvetica/Arial bold in dark gray rather than today's heavy, tightly set display cut */
 .story__headline, .story__headline a { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; font-weight: 700 !important; color: var(--n19-text) !important; letter-spacing: 0 !important; }
 .story__headline a:hover { color: var(--n19-red) !important; }
+/* A two-line excerpt link otherwise leaves a dead gap between its lines, right at its middle; one block target instead. */
+.story__excerpt > a:only-child { display: block !important; }
 .story__meta, .meta, .byline { color: var(--n19-meta) !important; }
 .content-header--lines .content-header__heading, .section-heading { letter-spacing: 0 !important; }
 .content-header--lines::before, .content-header--lines::after { border-color: var(--n19-rule) !important; background-color: var(--n19-rule) !important; }

@@ -9,3 +9,16 @@ globalThis.net19Theme = {
   // "Headlines only" view switch (2023) and the StrictlyVC / ticket promotions.
   later: /^(?:headlines only|get your ticket|get tickets|buy tickets|25% off tickets now)$/i,
 };
+// In the 2019 left rail the small TC mark is the site's only logo (techcrunch.css shows it and hides the 2024 lockup),
+// but on the home page TechCrunch marks it inert and aria-hidden, so it can't be clicked or reached. It is released
+// while the rail is shown.
+(() => {
+  const RAIL = matchMedia('(min-width: 64em)');
+  const LOGO = '.wp-block-techcrunch-site-header__logo-small';
+  const fix = () => {
+    if (!RAIL.matches) return;
+    for (const logo of document.querySelectorAll(`${LOGO}[inert], ${LOGO}[aria-hidden="true"]`)) { logo.removeAttribute('inert'); logo.removeAttribute('aria-hidden'); }
+  };
+  const start = () => { fix(); new MutationObserver(fix).observe(document.body, { subtree: true, childList: true, attributes: true, attributeFilter: ['inert', 'aria-hidden'] }); };
+  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+})();

@@ -34,6 +34,8 @@ body, body :is(div, span, p, a, button, input, h1, h2, h3, h4, strong, label, te
 #app-header[style*="display: none"], #app-header { display: flex !important; background: var(--n19-bar) !important; box-shadow: 0 1px 1px var(--n19-rule) !important; height: 60px !important; }
 body:has(#app-header) [class*="--BaseBodyContainer"] { padding-top: 60px !important; box-sizing: border-box !important; }
 body:has(#app-header) [class*="--DivSideNavContainer"] { top: 60px !important; height: calc(100% - 60px) !important; }
+/* Explore's category chips are a fixed bar at the top of the window: it sits below the band instead of under it */
+body:has(#app-header) [class*="--DivCategoryListWrapper"] { top: 60px !important; }
 body:has(#app-header) :is([class*="--DivColumnListContainer"], [class*="--DivMainContainer"]#main-content-homepage_hot, #main-content-homepage_hot) { height: calc(100vh - 60px) !important; }
 body:has(#app-header) [data-e2e="recommend-list-item-container"] { height: calc(100vh - 60px) !important; min-height: calc(100vh - 60px) !important; }
 #app-header [class*="--DivHeaderWrapperMain"] { max-width: 1150px !important; margin: 0 auto !important; padding: 0 16px !important; }
@@ -59,6 +61,10 @@ body:has(#app-header) [data-e2e="recommend-list-item-container"] { height: calc(
 [class*="--DivSideNavContainer"] [class*="--DivScrollingContentContainer"] { top: 0 !important; padding-top: 8px !important; }
 [class*="--DivMainNavContainer"] { height: auto !important; min-height: 0 !important; justify-content: flex-start !important; gap: 0 !important; }
 [class*="--DivMainNavContainer"] button[class*="--StyledTUXNavButton"] { height: 48px !important; border-radius: 4px !important; background: transparent !important; }
+/* The 48px entries sit in 40px headings: wrap each heading around its button so rows don't overlap and labels center.
+   Zero specificity, so the rules hiding post-2019 entries still win. */
+:where([class*="--DivMainNavContainer"] > h2, [class*="--DivMainNavContainer"] > h2 > .TUXTooltip-reference, [class*="--DivMainNavContainer"] > h2 > .TUXTooltip-reference > a) { display: flex !important; }
+[class*="--DivMainNavContainer"] > h2:not([data-main-nav-separator]) { height: auto !important; }
 [class*="--DivMainNavContainer"] button[class*="--StyledTUXNavButton"]:hover { background: var(--n19-circle) !important; }
 [class*="--DivMainNavContainer"] button[class*="--StyledTUXNavButton"] .TUXButton-label { font-size: 18px !important; font-weight: 700 !important; color: var(--n19-text) !important; }
 [class*="--DivMainNavContainer"] a[aria-current="page"] .TUXButton-label, [class*="--DivMainNavContainer"] button[class*="--StyledTUXNavButton"][class*="active" i] .TUXButton-label,

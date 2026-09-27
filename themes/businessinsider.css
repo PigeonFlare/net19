@@ -38,6 +38,8 @@ header.masthead .modes-section, .immersive-modes-container, .immersive-modes-onb
 .tout-title, .tout-title-link { font: 700 20px/1.25 var(--n19-font) !important; letter-spacing: 0 !important; color: var(--n19-text) !important; }
 .tout.as-vertical .tout-title, .tout.as-vertical .tout-title-link { font-size: 17px !important; }
 .tout-title-link:hover { color: var(--n19-link) !important; text-decoration: none !important; }
+/* A two-line headline link otherwise leaves a dead gap between its lines, right at its middle; one block target instead. */
+.tout-title > a.tout-title-link { display: block !important; }
 .tout-text, .tout-text p, .tout .tout-summary { font: 400 14px/1.45 var(--n19-font) !important; color: var(--n19-text) !important; }
 .tout-tag, .tout-tag-link, .tout-top .label-sm, .tout .caps { font: 400 11px/1.4 var(--n19-font) !important; letter-spacing: .15em !important; text-transform: uppercase !important; color: var(--n19-link) !important; background: transparent !important; }
 .tout-image img, .tout img, .lazy-holder, .lazy-image { border-radius: 0 !important; }

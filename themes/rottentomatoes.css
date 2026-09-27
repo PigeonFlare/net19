@@ -30,6 +30,8 @@ rt-header search-results-controls rt-link[slot="search-submit"] { --textColor: #
 rt-header search-results-controls rt-button[slot="search-clear"] { --textColor: #777 !important; right: 40px !important; }
 /* Menu: 2019's big bold uppercase Neusa links, which wrap to a second row as they did */
 rt-header rt-header-nav { max-width: 500px; white-space: normal !important; }
+/* The bar grows with that second row; at the site's fixed 100px the wrapped links would sit under the trending strip. */
+rt-header { height: auto !important; min-height: 100px !important; }
 rt-header-nav-item > a[slot="link"] { font-size: 20px !important; font-weight: 700 !important; text-transform: uppercase !important; letter-spacing: 0 !important; }
 rt-header-nav-item temporary-display, rt-header-nav-item rt-badge { display: none !important; }
 

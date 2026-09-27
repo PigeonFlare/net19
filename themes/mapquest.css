@@ -35,11 +35,12 @@ button[data-testid="directions-cta-button"] svg { color: var(--n19-lime-text) !i
 .bg-primary-800, .bg-primary-700, .bg-primary-600 { background-color: var(--n19-lime) !important; }
 .hover\:bg-primary-700:hover, .hover\:bg-primary-900:hover { background-color: var(--n19-lime-hover) !important; }
 .text-primary, .text-primary-800, .text-primary-700, .text-primary-600 { color: var(--n19-link) !important; }
-/* Category buttons over the map: small white 4px boxes with a gray border, #333 text */
-[data-testid="map-chiclets"] a, nav[aria-label="Category navigation"] :is(button, a) { border-radius: 4px !important; border: 1px solid var(--n19-border) !important; box-shadow: 0 1px 2px rgba(0,0,0,.15) !important;
+/* Category buttons over the map: small white 4px boxes with a gray border, #333 text. (The "Curated lists near you"
+   carousel is a "Category navigation" too; its picture cards keep their own size, not the 34px button height.) */
+[data-testid="map-chiclets"] a, nav[aria-label="Category navigation"]:not(:has(a.group)) :is(button, a) { border-radius: 4px !important; border: 1px solid var(--n19-border) !important; box-shadow: 0 1px 2px rgba(0,0,0,.15) !important;
   background: var(--n19-panel) !important; color: var(--n19-text) !important; font-weight: 700 !important; font-size: 12px !important; height: 34px !important; }
-[data-testid="map-chiclets"] a.bg-primary-800, nav[aria-label="Category navigation"] :is(button, a).bg-primary { background: var(--n19-cyan) !important; border-color: var(--n19-cyan) !important; color: #fff !important; }
-[data-testid="map-chiclets"] a.bg-primary-800 *, nav[aria-label="Category navigation"] :is(button, a).bg-primary * { color: #fff !important; }
+[data-testid="map-chiclets"] a.bg-primary-800, nav[aria-label="Category navigation"]:not(:has(a.group)) :is(button, a).bg-primary { background: var(--n19-cyan) !important; border-color: var(--n19-cyan) !important; color: #fff !important; }
+[data-testid="map-chiclets"] a.bg-primary-800 *, nav[aria-label="Category navigation"]:not(:has(a.group)) :is(button, a).bg-primary * { color: #fff !important; }
 /* Headings: tight bold sans instead of Montserrat */
 h1, h2, h3 { font-weight: 700 !important; color: var(--n19-text); }
 /* Cards: 4px corners */

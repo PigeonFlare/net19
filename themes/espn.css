@@ -17,9 +17,10 @@ html[data-net19-mode="dark"] { --n19-page: #121213; --n19-card: #1d1e1f; --n19-r
 #global-nav > ul > li > a { padding: 0 10px !important; }
 #global-nav > ul > li > a:hover { background: var(--n19-red) !important; }
 /* "Where to Watch" (2023) is not in the 2019 bar. ESPN's own script folds every section link into "More Sports" when
-   the bar's items change size or position, so the item keeps its box, turns invisible, and the pillars to its left
+   the bar's items change size or position, so the item keeps its box, turns invisible (visibility, so it also leaves
+   the tab order and is not a hidden link under its neighbour), and the pillars to its left
    slide over it (espn.js measures it). */
-#global-nav li.where-to-watch { opacity: 0 !important; pointer-events: none !important; }
+#global-nav li.where-to-watch { visibility: hidden !important; pointer-events: none !important; }
 #global-nav li.where-to-watch ~ li.pillar { transform: translateX(var(--n19-wtw, 0px)); }
 
 

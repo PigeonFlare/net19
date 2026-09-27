@@ -41,6 +41,8 @@ header#bbc-header [class*="WatchLiveStyled"], header#bbc-header [class*="Subscri
 header#bbc-header { height: auto !important; min-height: 0 !important; padding-top: 0 !important; padding-bottom: 0 !important; }
 nav#main-navigation-container, nav#main-navigation-container section, nav#main-navigation-container nav[class*="NavigationWrapper"], nav#main-navigation-container ul[class*="MainNavigationWrapper"] { min-height: 0 !important; height: 34px !important; }
 nav#main-navigation-container { border-top: 1px solid var(--n19-bar-rule) !important; top: 40px !important; }
+/* The links keep their 42px padding box; trim it to the 34px bar so the labels sit on its middle. */
+nav#main-navigation-container ul[class*="MainNavigationWrapper"] > li a[class*="MainNavigationLink"] { padding-top: 8px !important; padding-bottom: 8px !important; }
 
 /* ---- bbc.com pages (header#bbc-header): post-2019 buttons and fonts ---- */
 /* "Save", "Add as preferred on Google" (2025), and the notification/for-you entries came after 2019 */

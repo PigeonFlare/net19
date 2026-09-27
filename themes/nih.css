@@ -70,6 +70,9 @@ header.ncbi-header .header-button, #account_login { background: transparent !imp
 #home-page .homepage-trending-and-latest { max-width: none !important; }
 #home-page .items-list li { border-color: #e5e5e5 !important; padding-top: 4px !important; padding-bottom: 4px !important; margin: 0 0 8px !important; line-height: 1.4 !important; }
 #home-page .items-list li :is(a, h3) { font-size: 13px !important; line-height: 1.4 !important; margin: 0 !important; font-weight: 400 !important; }
+/* At 1.4 line height the two lines of a wrapped title leave a gap no click reaches (it lands on the list item); a block
+   link makes the whole title one target. */
+#home-page .items-list li.full-docsum > a { display: block !important; }
 #home-page .pubmed-updates-section { border-left: none !important; }
 /* Result summaries: dark blue title, black authors, gray journal and dates */
 .docsum-authors, .full-authors, .short-authors { color: var(--n19-text) !important; font-size: 13px !important; }

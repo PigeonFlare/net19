@@ -29,7 +29,7 @@ header ul li > a, header ul li > button { white-space: nowrap !important; paddin
 header ul .text-brandBlue-500:hover { color: var(--n19-link) !important; }
 header a.bg-brandBlue-500 {
   background: var(--n19-orange) !important; color: #fff !important; border-radius: 0 !important; text-transform: uppercase !important;
-  letter-spacing: 1.5px !important; font-size: 14px !important; font-weight: 700 !important; height: 40px !important; padding-left: 20px !important; padding-right: 20px !important;
+  letter-spacing: 1.5px !important; font-size: 14px !important; font-weight: 700 !important; height: 40px !important; padding: 8px 20px !important; line-height: 24px !important; box-sizing: border-box !important;
 }
 header a.bg-brandBlue-500:hover { background: var(--n19-orange-hover) !important; }
 

@@ -188,3 +188,13 @@ On Discord these checks found three problems that screenshots had missed, all no
 - server icons 4px off-center;
 - channel names 6px above the middle of their rows;
 - GIF and Apps buttons that were never hidden, because they are `div[role=button]`, not `<button>`.
+
+`scripts/audit-diff.mjs` runs the page checks on every site twice, once without net19 and once with it, and reports only what net19 introduced. The first full run found problems on 32 of 113 sites. On 17 of them the theme was the cause, and all are fixed:
+- labels a few pixels off the middle of their bars (BBC, MLB, CA.gov, Cleveland Clinic, TikTok);
+- links that couldn't be clicked (TechCrunch's logo, two-line headlines on NIH, Business Insider and the New York Post, an invisible link on ESPN);
+- things drawn over other things (Rotten Tomatoes' nav, Target's account menu, Yahoo's trending list, MapQuest's carousel).
+
+On the other 15 sites the flags were checked and set aside:
+- the sites' own cookie banners;
+- rotating carousels;
+- Wikipedia's legacy skin, which is served as the site drew it in 2019.
