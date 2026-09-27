@@ -50,7 +50,8 @@ html[data-net19-mode="dark"]:root, html[data-net19-mode="dark"] body {
 
 /* ---- the page: white, not the 2022 #f6f8fc tonal blue (image themes keep their picture in .a4t) ---- */
 .wl { background-color: var(--n19-page) !important; }
-.nH.bkK, .bkK > .nH, .aeF, .aqn.aIH, .aqn, header#gb, .nH.w-asV .nH.oy8Mbf { background-color: var(--n19-page) !important; }
+.nH.bkK, .bkK > .nH, .aeF { background-color: var(--n19-page) !important; }
+html:not([data-n19-picture]) :is(.aqn.aIH, .aqn, header#gb, .nH.w-asV .nH.oy8Mbf) { background-color: var(--n19-page) !important; }
 body, .aeF, .bkK, .aqn, .Cp, .ae4 { font-family: var(--n19-font); }
 
 /* ---- header: logo lockup and the 8px gray search field ---- */
@@ -66,6 +67,14 @@ header#gb form[role="search"] input[name="q"] { background: transparent !importa
 /* in a flipped (dark) page the 2019 artwork keeps its real colors */
 html[data-net19-flip] header#gb a[href*="#inbox"] img, html[data-net19-flip] header#gb img[src*="logo_gmail"],
 html[data-net19-flip] .z0 > .L3::before, html[data-net19-flip] .aic .T-I.T-I-KE.L3::before { filter: contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
+
+/* ---- picture themes (a photo behind the whole app, in .a4t): as in 2019, the header and the label drawer are drawn
+   straight on the photo in the theme's own white or dark text, and the search field is a panel on it. In a flipped
+   page they stay as drawn with the photo (gmail.js names them to palette.js); the search field flips with the page. ---- */
+html[data-n19-picture] header#gb { background: transparent !important; }
+
+/* "AI Inbox" (2025) in the drawer */
+.aeN .CL:has(> a[data-net19-hidden]), .aqn .CL:has(> a[data-net19-hidden]) { display: none !important; }
 
 /* ---- the 2020 Chat/Spaces/Meet rail beside the drawer (present when .aeN is followed by the label drawer .aqn) ---- */
 .aeN:has(~ .aqn.aIH) { display: none !important; }
@@ -87,7 +96,8 @@ html[data-net19-flip] .z0 > .L3::before, html[data-net19-flip] .aic .T-I.T-I-KE.
 /* ---- labels: Roboto 14px, Inbox bold, the active one on a right-rounded red-tinted tab ---- */
 .aqn .TO, .aeN .TO { margin-left: 0 !important; padding-left: 0 !important; }
 .aqn .TO .TN, .aeN .TO .TN { border-radius: 0 16px 16px 0 !important; }
-.aqn .TO .nU, .aeN .TO .nU, .aqn .TO .bsU, .aeN .TO .bsU { font-family: var(--n19-font) !important; font-size: 14px !important; color: var(--n19-text) !important; }
+.aqn .TO .nU, .aeN .TO .nU, .aqn .TO .bsU, .aeN .TO .bsU { font-family: var(--n19-font) !important; font-size: 14px !important; }
+html:not([data-n19-picture]) :is(.aqn .TO .nU, .aeN .TO .nU, .aqn .TO .bsU, .aeN .TO .bsU) { color: var(--n19-text) !important; }
 .aqn .TO:hover .TN, .aeN .TO:hover .TN, .aqn .TO.NQ .TN, .aeN .TO.NQ .TN { background: var(--n19-hover) !important; }
 .aqn .TO.nZ .TN, .aeN .TO.nZ .TN, .aqn .TO.nZ:hover .TN, .aeN .TO.nZ:hover .TN { background: var(--n19-active) !important; }
 .aqn .TO.nZ .nU, .aeN .TO.nZ .nU, .aqn .TO.nZ .bsU, .aeN .TO.nZ .bsU, .aqn .TO.nZ a, .aeN .TO.nZ a { color: var(--n19-active-text) !important; font-weight: 700 !important; }

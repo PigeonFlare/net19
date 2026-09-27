@@ -97,6 +97,29 @@ function net19PageChecks() {
     if (Math.abs(dy) > 3) out.textoffcenter.push({ what: `"${label(e)}" ${name(e)}`, detail: `text ${Math.round(dy)}px off middle of a ${Math.round(r.height)}px box`, ...box(e) });
   }
 
+  // Fields: the line people type on, off the middle of the box drawn around it (a search pill, a bordered field). The
+  // typed line sits at the top of a textarea and in the middle of an input's content box.
+  for (const f of document.querySelectorAll('input:not([type=hidden]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=submit]):not([type=button]), textarea')) {
+    if (!shown(f)) continue;
+    const r = f.getBoundingClientRect(), c = getComputedStyle(f);
+    if (r.height > 80 || r.width < 40) continue;
+    const bt = parseFloat(c.borderTopWidth) || 0, bb = parseFloat(c.borderBottomWidth) || 0, pt = parseFloat(c.paddingTop) || 0, pb = parseFloat(c.paddingBottom) || 0;
+    const lh = parseFloat(c.lineHeight) || parseFloat(c.fontSize) * 1.2;
+    const line = f.tagName === 'TEXTAREA' ? r.top + bt + pt + lh / 2 : r.top + bt + pt + (r.height - bt - bb - pt - pb) / 2;
+    // The box people see: the field itself when it draws a border or background, else the nearest ancestor that does.
+    let frame = null;
+    for (let e = f, i = 0; e && i < 6; e = e.parentElement, i++) {
+      const s = getComputedStyle(e), q = e.getBoundingClientRect();
+      if (q.height > 90) break;
+      const drawn = (parseFloat(s.borderTopWidth) > 0 && s.borderTopStyle !== 'none') || (s.boxShadow !== 'none') || ((s.backgroundColor.match(/[\d.]+/g) || [0, 0, 0, 0])[3] ?? 1) > 0;
+      if (drawn && q.height >= r.height - 2 && q.height >= 24) { frame = e; break; }
+    }
+    if (!frame) continue;
+    const q = frame.getBoundingClientRect();
+    const dy = line - (q.top + q.height / 2);
+    if (Math.abs(dy) > 3) out.textoffcenter.push({ what: `field "${label(f)}" ${name(f)}`, detail: `typed line ${Math.round(dy)}px off middle of its ${Math.round(q.height)}px box ${name(frame)}`, ...box(f) });
+  }
+
   // overlap: text lines from different elements drawing over each other.
   const lines = [];
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
@@ -162,10 +185,20 @@ function net19Contrast() {
   const shownAs = (c, p) => p ? [255 - c[0], 255 - c[1], 255 - c[2], c[3]] : c;
   const alpha = el => { let a = 1; for (let n = el; n && n.nodeType === 1; n = n.parentElement) a *= +getComputedStyle(n).opacity; return a; };
   const name = e => (e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + (typeof e.className === 'string' && e.className ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '')).slice(0, 60);
+  // Pictures that hit testing skips (pointer-events:none): a background photo behind the whole app (Gmail's themes), the
+  // canvas an editor draws its page on (Google Docs).
   let layerList = null;
   const layers = () => layerList ||= [...document.querySelectorAll('body *')].filter(e => {
     const q = e.getBoundingClientRect();
-    return q.width >= 300 && q.height >= 300 && getComputedStyle(e).pointerEvents === 'none' && /url\(/.test(getComputedStyle(e).backgroundImage);
+    if (q.width < 200 || q.height < 200) return false;
+    const c = getComputedStyle(e);
+    return c.pointerEvents === 'none' && (/^(IMG|VIDEO|CANVAS)$/.test(e.tagName) || /url\(/.test(c.backgroundImage)) ||
+      e.tagName === 'CANVAS' && c.visibility === 'visible';
+  });
+  const hidden = (x, y, stack, above) => layers().find(l => {
+    if (stack.includes(l) || l.contains(above)) return false;
+    const q = l.getBoundingClientRect();
+    return x >= q.left && x <= q.right && y >= q.top && y <= q.bottom;
   });
   // What is painted behind a point: the first element under `el` in the hit stack with an opaque color, a picture or a canvas.
   const behind = (el, x, y) => {
@@ -178,16 +211,14 @@ function net19Contrast() {
       if (/^(IMG|VIDEO|CANVAS|IFRAME|EMBED|OBJECT)$/.test(s.tagName) || /url\(/.test(c.backgroundImage)) return { picture: s };
       const bg = parse(c.backgroundColor);
       if (!bg || bg[3] < .05) continue;
+      // A picture inside this surface, skipped by hit testing, is drawn over its background.
+      const pic = !color && hidden(x, y, stack, el);
+      if (pic && s.contains(pic)) return { picture: pic };
       color = color ? over(color, shownAs(bg, parity(s))) : shownAs(bg, parity(s));
       painter ||= s;
       if (bg[3] >= .95) return { color, painter };
     }
-    // Hit testing skips layers with pointer-events:none, such as a background photo behind the whole app (Gmail's themes).
-    if (!color) for (const layer of layers()) {
-      if (layer.contains(el)) continue;
-      const q = layer.getBoundingClientRect();
-      if (x >= q.left && x <= q.right && y >= q.top && y <= q.bottom) return { picture: layer };
-    }
+    if (!color) { const pic = hidden(x, y, stack, el); if (pic) return { picture: pic }; }
     // Nothing opaque: the browser's own canvas, white unless the page asks for a dark one (and flipped with the root).
     const dark = getComputedStyle(document.documentElement).colorScheme.includes('dark') && !getComputedStyle(document.documentElement).colorScheme.includes('light');
     const base = shownAs(dark ? [18, 18, 18, 1] : [255, 255, 255, 1], parity(document.documentElement));

@@ -53,6 +53,14 @@ form[role="search"] button.UbbAWe, form[role="search"] div.etxtjc, form[role="se
 form[role="search"] .RNNXgb { height: 44px !important; min-height: 44px !important; }
 form[role="search"] .RNNXgb .SDkEP, form[role="search"] .RNNXgb .dRYYxd, form[role="search"] .RNNXgb .iblpc, form[role="search"] .RNNXgb .a4bIc { height: 44px !important; min-height: 0 !important; }
 form[role="search"] .RNNXgb .ywK6Rd { height: 44px !important; }
+/* In the 44px box the typed line sits in the middle (Google's own padding is for its 48-52px box: 4px low), and the
+   search and voice buttons are 44px squares with their icons centered. */
+form[role="search"] .RNNXgb textarea[name="q"] { padding: 10px 0 !important; line-height: 22px !important; margin: 0 !important; min-height: 0 !important; }
+form[role="search"] .RNNXgb input[name="q"] { height: 42px !important; padding-top: 0 !important; padding-bottom: 0 !important; margin: 0 !important; }
+form[role="search"] .RNNXgb button[aria-label="Search"], form[role="search"] .RNNXgb :is([aria-label="Search by voice"], [aria-label=" Clear"], [aria-label="Clear"]) {
+  height: 42px !important; min-height: 0 !important; padding: 0 !important; display: flex !important; align-items: center !important; justify-content: center !important; }
+form[role="search"] .RNNXgb button[aria-label="Search"] { width: 44px !important; }
+form[role="search"] .RNNXgb button[aria-label="Search"] > :is(div, span) { display: flex !important; align-items: center !important; justify-content: center !important; margin: 0 !important; width: 24px !important; height: 24px !important; }
 #sI1XGe .naW5gc { margin-top: 87px !important; }
 #sI1XGe { height: 179px !important; max-height: 179px !important; }
 /* the colored microphone */

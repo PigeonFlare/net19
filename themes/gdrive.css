@@ -250,7 +250,8 @@ body.docs-gm .docs-link-bubble-sidekick-prompt-button-card-component, body.docs-
 body.docs-gm .appsDocsGettingStartedEntryPointSelectionViewGeminiBadge,
 body.docs-gm #kix-ai-text-generator-bubble, body.docs-gm [id^="kix-ai-text-generator"],
 body.docs-gm .goog-menuitem:has(.docs-icon-img[class*="spark-"]), body.docs-gm .goog-menuitem:has([class*="docs-icon-spark"]),
-body.docs-gm .docs-lfccc-menu-item-gemini-style-match { display: none !important; }
+body.docs-gm .docs-lfccc-menu-item-gemini-style-match,
+body.docs-gm #docs-titlebar-container :is([aria-label^="Ask Gemini" i], [data-tooltip^="Ask Gemini" i], [aria-label^="Gemini" i], [aria-label^="Upgrade" i]) { display: none !important; }
 /* smart canvas (2021): building blocks sidebar and promos; the "@" insert menu stays usable */
 body.docs-gm .building-blocks-sidebar, body.docs-gm .building-blocks-intro-promo-base { display: none !important; }
 /* Meet (2020): "Join a call here or present this tab to the call" */

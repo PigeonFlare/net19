@@ -73,7 +73,7 @@
   const MEDIA = 'img,video,canvas,iframe,embed,object,image,[data-net19-keep]';
   const flipCSS = `html[data-net19-flip]{filter:${FLIP}!important}` +
     `html[data-net19-flip] :is(dialog:modal,:popover-open,:fullscreen):not(${MEDIA}){filter:${FLIP}!important}` +
-    `html[data-net19-flip] :is(${MEDIA}):not([data-net19-keep] *,:fullscreen,img[src*=".svg" i],img[src^="data:image/svg" i],[data-net19-flat]){filter:${UNFLIP}!important}` +
+    `html[data-net19-flip] :is(${MEDIA}):not([data-net19-keep] *,:fullscreen,img[src*=".svg" i],img[src^="data:image/svg" i],[data-net19-flat]${theme.flat ? ',' + theme.flat : ''}){filter:${UNFLIP}!important}` +
     // Inside a part that was kept as drawn, light panels (a search suggestion list under a dark header) flip again.
     `html[data-net19-flip] [data-net19-keep] [data-net19-reflip]{filter:${FLIP}!important}` +
     `html[data-net19-flip] [data-net19-reflip] :is(${MEDIA}){filter:${UNFLIP}!important}`;
@@ -130,6 +130,7 @@
     if (img.complete) judge(); else img.addEventListener('load', judge, { once: true });
   };
   const SKIP = /^(IMG|VIDEO|CANVAS|IFRAME|SVG|svg|PATH|path|SCRIPT|STYLE|LINK|META|BR)$/;
+  const keepSel = theme.keep || '', reflipSel = theme.reflip || '';
   const keepPhotos = roots => {
     const decided = new Map(), scrimColor = new Map(); // element -> 'keep' | 'reflip' | 'scrim'
     const context = el => {    // 'kept' inside a kept part, 'none' inside a flipped-again one, otherwise 'flipped'
@@ -153,6 +154,10 @@
         // The page itself is never kept: keeping <body> would undo the flip for everything on it.
         if (el === document.body) continue;
         if (SKIP.test(el.tagName) || el.hasAttribute('data-net19-keep') || el.hasAttribute('data-net19-reflip') || el.hasAttribute('data-net19-scrim')) continue;
+        // A theme can name parts that are drawn for a picture behind them (a bar and a drawer over a photo backdrop):
+        // they stay as drawn, like the picture, and named panels inside them flip again.
+        if (keepSel && el.matches(keepSel)) { if (context(el) === 'flipped') decided.set(el, 'keep'); continue; }
+        if (reflipSel && el.matches(reflipSel)) { if (context(el) === 'kept') decided.set(el, 'reflip'); continue; }
         // Style first (one recalculation per batch); context and size, which needs layout, only for the few candidates.
         const style = getComputedStyle(el);
         // Photographs are turned back; drawn backgrounds (PNG and SVG illustrations, textures, icons) flip with the page.
@@ -230,6 +235,13 @@
       for (const type of ['click', 'keyup', 'focusin']) addEventListener(type, recheck, { capture: true, passive: true });
     }
     addEventListener('load', () => keepPhotos([document.body]), { once: true });
+  };
+  // A theme whose kept parts depend on page state (Gmail's picture themes) asks for the page to be judged again.
+  theme.rejudge = () => {
+    if (!document.documentElement.hasAttribute('data-net19-flip')) return;
+    for (const el of document.querySelectorAll('[data-net19-keep],[data-net19-reflip],[data-net19-scrim]')) for (const a of ['data-net19-keep', 'data-net19-reflip', 'data-net19-scrim']) el.removeAttribute(a);
+    seen = new WeakSet(); small = new Set();
+    keepPhotos([document.body]);
   };
   const apply = (force = false) => {
     const root = document.documentElement;

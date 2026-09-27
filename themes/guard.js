@@ -22,7 +22,7 @@
   const label = text => String(text || '').replace(/\s+/g, ' ').replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N})]+$/gu, '').trim();
   const later = text => { const t = label(text); return t.length > 1 && t.length < 40 && !keep?.test(t) && (LATER.test(t) || !!extra?.test(t)); };
   const CONTROL = 'button, a, [role="button"], [role="tab"], [role="menuitem"], [role="link"], [role="option"], [class*="chip" i]';
-  const ASKING = /\b(?:or ask\b|ask anything|ask (?:a|any|your) question|ask (?:ai|me|gemini|copilot|rufus)|chat with)/i;
+  const ASKING = /^ask (?:gmail|google|photos|drive|maps|youtube|docs)\b|\b(?:or ask\b|ask anything|ask (?:a|any|your) question|ask (?:ai|me|gemini|copilot|rufus)|chat with)/i;
   const hideLater = scope => {
     for (const el of scope.querySelectorAll?.(CONTROL) || []) {
       if (el.hasAttribute('data-net19-hidden')) continue;
@@ -36,7 +36,7 @@
       const text = field.getAttribute('placeholder');
       if (!ASKING.test(text)) continue;
       const plain = text.replace(/\s*(?:,|\bor\b)?\s*(?:ask|chat)\b.*$/i, '').trim();
-      field.setAttribute('placeholder', plain && plain !== text ? plain : 'Search');
+      field.setAttribute('placeholder', plain && plain !== text ? plain : theme.searchLabel || 'Search');
     }
   };
 

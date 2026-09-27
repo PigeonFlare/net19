@@ -9,19 +9,27 @@ globalThis.net19Theme = {
     return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
   },
 };
-// "AI Overview" did not exist in 2019. It has no stable id, so its top-level block is found by its heading.
+// "AI Overview" and the inline "AI Mode" answer (2025) did not exist in 2019. They have no stable id; each is found by its
+// heading, or by the AI answer's own subtree marker, and hidden as the largest block that holds it and nothing else.
 (() => {
+  const OVERVIEW = /^(?:AI Overview|AI Mode reply for\b.*|AI Mode response\b.*)$/;
   const hide = () => {
-    for (const heading of document.querySelectorAll('h1, h2, div[role="heading"], strong')) {
-      if (heading.textContent.trim() !== 'AI Overview' || heading.closest('[data-net19-hidden]')) continue;
-      // Climb to the largest block that holds the overview and nothing else: stop below any ancestor that also holds a
-      // search result (a linked heading) or another section. Without this, a query whose overview shares a wrapper with
-      // the web results ("twitter in 2019") lost the whole first page.
+    const anchors = [...document.querySelectorAll('[data-subtree="aimc"]'),
+      ...[...document.querySelectorAll('h1, h2, div[role="heading"], strong')].filter(h => OVERVIEW.test(h.textContent.replace(/\s+/g, ' ').trim()))];
+    for (const anchor of anchors) {
+      if (anchor.closest('[data-net19-hidden]')) continue;
+      // Climb to the largest block that holds the answer and nothing else: stop below any ancestor that also holds a
+      // search result (a linked heading) outside it. Without this, a query whose overview shares a wrapper with the web
+      // results ("twitter in 2019") lost the whole first page. The answer's own source cards count as part of it.
       const result = 'a[href] h3, h3 a[href], [data-hveid] a[href] h3';
-      const others = el => [...el.querySelectorAll(result)].some(h => !heading.contains(h) && !block.contains(h));
-      let block = heading;
-      while (block.parentElement && block.parentElement !== document.body && !['rso', 'center_col', 'search', 'rcnt', 'main'].includes(block.parentElement.id) && !others(block.parentElement)) block = block.parentElement;
-      if (block !== heading && !block.querySelector(result)) { block.setAttribute('data-net19-hidden', ''); block.style.setProperty('display', 'none', 'important'); }
+      const own = anchor.querySelectorAll(result).length;
+      let block = anchor;
+      const others = el => [...el.querySelectorAll(result)].some(h => !block.contains(h));
+      // Only wrappers that add little beyond the answer ("Show more", a feedback line) are climbed into: a wrapper that
+      // also holds another section (People also ask, videos) adds a lot of text of its own.
+      const adds = el => (el.innerText || '').length - (block.innerText || '').length > 300;
+      while (block.parentElement && block.parentElement !== document.body && !['rso', 'center_col', 'search', 'rcnt', 'main'].includes(block.parentElement.id) && !others(block.parentElement) && !adds(block.parentElement)) block = block.parentElement;
+      if ((block !== anchor || anchor.matches('[data-subtree]')) && block.querySelectorAll(result).length <= own) { block.setAttribute('data-net19-hidden', ''); block.style.setProperty('display', 'none', 'important'); }
     }
   };
   let queued = false;

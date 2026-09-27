@@ -22,7 +22,27 @@
       return DARK.test(id) ? 'dark' : 'light';
     },
     watch: ['class', 'style'],
-    later: /^(?:ask gemini|gemini|summari[sz]e this (?:email|conversation|thread)|summary|help me write|polish|refine|formali[sz]e|elaborate|shorten|smart compose|chat|spaces|meet|new meeting|join a meeting|start a meeting|my meetings|new chat|share in chat|react(?:ion)?s?|add reaction|add emoji reaction|emoji reaction|track package|track your package|package tracking|arriving (?:today|tomorrow|soon)|out for delivery|manage subscriptions|subscriptions|purchases|google one|get more storage with google one)$/i,
+    // Picture themes: the bar and drawer are drawn for the photo behind them and stay as drawn with it in a flipped
+    // page; the search field on the bar flips with the page.
+    keep: 'html[data-n19-picture] :is(header#gb, .aeN, .aqn)',
+    reflip: 'html[data-n19-picture] header#gb form',
+    searchLabel: 'Search mail',
+    later: /^(?:ai inbox|ask gmail|ask gemini|gemini|summari[sz]e this (?:email|conversation|thread)|summary|help me write|polish|refine|formali[sz]e|elaborate|shorten|smart compose|chat|spaces|meet|new meeting|join a meeting|start a meeting|my meetings|new chat|share in chat|react(?:ion)?s?|add reaction|add emoji reaction|emoji reaction|track package|track your package|package tracking|arriving (?:today|tomorrow|soon)|out for delivery|manage subscriptions|subscriptions|purchases|google one|get more storage with google one)$/i,
     keepLabels: /^(?:inbox|starred|snoozed|sent|drafts|spam|trash|all mail|important|scheduled|categories|more|less)$/i,
   };
+  // A picture theme paints its photo on .a4t; html[data-n19-picture] tells gmail.css and the keep rules above.
+  const picture = () => {
+    const layer = document.querySelector('.a4t');
+    const on = !!layer && /url\(/.test(layer.style.backgroundImage || getComputedStyle(layer).backgroundImage);
+    if (on === document.documentElement.hasAttribute('data-n19-picture')) return;
+    document.documentElement.toggleAttribute('data-n19-picture', on);
+    globalThis.net19Theme.rejudge?.();
+  };
+  let queued = false;
+  const start = () => {
+    picture();
+    new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; picture(); }); } })
+      .observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['style'] });
+  };
+  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();
