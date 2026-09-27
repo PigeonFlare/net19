@@ -49,6 +49,7 @@
     picture();
     // Gmail builds the drawer and the photo's shading after the first paint: judge once more when the page has loaded.
     addEventListener('load', () => setTimeout(() => globalThis.net19Theme.rejudge?.(), 600), { once: true });
+    for (const wait of [1500, 4000]) setTimeout(() => { picture(); globalThis.net19Theme.rejudge?.(); }, wait);
     new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; picture(); }); } })
       .observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['style'] });
   };

@@ -112,6 +112,8 @@ function net19PageChecks() {
     if (!shown(f)) continue;
     const r = f.getBoundingClientRect(), c = getComputedStyle(f);
     if (r.height > 80 || r.width < 40) continue;
+    // A floating label sits in the top of the field (Netflix, Twitter): its uneven padding places the typed line on purpose.
+    if ((parseFloat(c.paddingTop) || 0) - (parseFloat(c.paddingBottom) || 0) > 8) continue;
     const bt = parseFloat(c.borderTopWidth) || 0, bb = parseFloat(c.borderBottomWidth) || 0, pt = parseFloat(c.paddingTop) || 0, pb = parseFloat(c.paddingBottom) || 0;
     const lh = parseFloat(c.lineHeight) || parseFloat(c.fontSize) * 1.2;
     const line = f.tagName === 'TEXTAREA' ? r.top + bt + pt + lh / 2 : r.top + bt + pt + (r.height - bt - bb - pt - pb) / 2;
@@ -207,7 +209,13 @@ function net19Contrast() {
   const hidden = (x, y, stack, above) => layers().find(l => {
     if (stack.includes(l) || l.contains(above)) return false;
     const q = l.getBoundingClientRect();
-    return x >= q.left && x <= q.right && y >= q.top && y <= q.bottom;
+    if (!(x >= q.left && x <= q.right && y >= q.top && y <= q.bottom)) return false;
+    // Cut off by a clipping ancestor (map tiles past the edge of their map) means not painted there.
+    for (let a = l.parentElement; a && a !== document.body; a = a.parentElement) {
+      const c = getComputedStyle(a);
+      if (/hidden|clip|auto|scroll/.test(c.overflowX + c.overflowY)) { const b = a.getBoundingClientRect(); if (x < b.left || x > b.right || y < b.top || y > b.bottom) return false; }
+    }
+    return true;
   });
   // What is painted behind a point: the first element under `el` in the hit stack with an opaque color, a picture or a canvas.
   const behind = (el, x, y) => {
@@ -251,7 +259,9 @@ function net19Contrast() {
       return;
     }
     let t = parse(colorText); if (!t) return;
-    t = [...t.slice(0, 3), t[3] * alpha(el)];
+    const a = alpha(el);
+    if (a < .1 || t[3] < .1) return;   // faded out on purpose (a skip link until focused, a tooltip between showings)
+    t = [...t.slice(0, 3), t[3] * a];
     const shown = over(shownAs(t, tp), b.color);
     const cr = ratio(shown, b.color);
     const st = getComputedStyle(el), size = parseFloat(st.fontSize), large = what === 'text' && (size >= 24 || (size >= 18.6 && +st.fontWeight >= 600));
@@ -281,7 +291,7 @@ function net19Contrast() {
     judge(el, c.webkitTextFillColor && c.webkitTextFillColor !== c.color && parse(c.webkitTextFillColor)?.[3] ? c.webkitTextFillColor : c.color, r);
   }
   // Empty fields show their placeholder; typed text and the caret use the field's color and caret-color.
-  for (const f of document.querySelectorAll('input:not([type=hidden]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]), textarea')) {
+  for (const f of document.querySelectorAll('input:not([type=hidden]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=submit]):not([type=button]):not([type=image]):not([type=reset]), textarea')) {
     const r = f.getBoundingClientRect();
     if (r.width < 20 || r.height < 10 || r.bottom < 0 || r.top > H || !visible(f)) continue;
     const c = getComputedStyle(f);

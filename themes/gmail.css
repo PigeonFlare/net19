@@ -67,13 +67,19 @@ header#gb form[role="search"] input::placeholder, header#gb form.aJf input::plac
 header#gb form[role="search"] :is(button, [role="button"]) svg { fill: var(--n19-icon) !important; }
 
 /* in a flipped (dark) page the 2019 artwork keeps its real colors */
-html[data-net19-flip] header#gb a[href*="#inbox"] img, html[data-net19-flip] header#gb img[src*="logo_gmail"],
+html[data-net19-flip]:not([data-n19-picture]) header#gb a[href*="#inbox"] img, html[data-net19-flip]:not([data-n19-picture]) header#gb img[src*="logo_gmail"],
 html[data-net19-flip] .z0 > .L3::before, html[data-net19-flip] .aic .T-I.T-I-KE.L3::before { filter: contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
 
 /* ---- picture themes (a photo behind the whole app, in .a4t): as in 2019, the header and the label drawer are drawn
    straight on the photo in the theme's own white or dark text, and the search field is a panel on it. In a flipped
    page they stay as drawn with the photo (gmail.js names them to palette.js); the search field flips with the page. ---- */
 html[data-n19-picture] header#gb { background: transparent !important; }
+/* on a photo with white text, the 2019 lockup for dark backgrounds (white "Gmail") */
+html[data-n19-picture="white"] { --n19-logo: url("https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_2x.png"); }
+/* the search button: 2019's plain magnifier (Google's own icon file), not the 2025 sparkle */
+header#gb form button[aria-label="Search mail"] svg { visibility: hidden !important; }
+header#gb form button[aria-label="Search mail"] { background: url("https://www.gstatic.com/images/icons/material/system/2x/search_black_24dp.png") center / 24px 24px no-repeat !important; opacity: .7; }
+html[data-net19-mode="dark"] header#gb form button[aria-label="Search mail"] { background-image: url("https://www.gstatic.com/images/icons/material/system/2x/search_white_24dp.png") !important; }
 /* labels in white text (the theme's dark text background) keep a firm shadow, so they read on the light parts of any photo */
 html[data-n19-picture="white"] :is(.aeN, .aqn) .TO:not(.nZ) :is(.nU, .bsU, a) { text-shadow: 0 0 3px rgba(0,0,0,.75), 0 1px 2px rgba(0,0,0,.65) !important; }
 

@@ -73,3 +73,6 @@ html[data-net19-mode="dark"] .article-body p a:hover { background: transparent !
 .nav-item.watch-live, .nav-item.watch-live a, .nav-item a { border-radius: 0 !important; }
 /* Hover drop-downs under the menu words (2020s): square navy panels without the floating shadow */
 .site-header .primary-nav .dropdown-content { border-radius: 0 !important; box-shadow: none !important; }
+
+/* The logo is a white-on-navy box drawn as an SVG background: in a flipped (dark) page it keeps its real colors. */
+html[data-net19-flip] a.logo { filter: contrast(1.13636) hue-rotate(180deg) invert(1) !important; }

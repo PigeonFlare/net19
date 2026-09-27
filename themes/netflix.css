@@ -19,7 +19,7 @@ html[data-net19-mode="dark"] { --n19-red: #e50914; --n19-red-hover: #f40612; --n
 .curve-container { display: none !important; }
 h1[data-uia="nmhp-hero-headline"] { font-size: 50px !important; line-height: 1.1 !important; font-weight: 700 !important; max-width: 640px !important; }
 /* Email field: white, square, with a gray floating label */
-input[data-uia="field-email"] { background: #fff !important; color: #000 !important; border: 1px solid #8c8c8c !important; border-radius: 2px !important; height: 60px !important; }
+input[data-uia="field-email"] { background: #fff !important; color: #000 !important; caret-color: #000 !important; border: 1px solid #8c8c8c !important; border-radius: 2px !important; height: 60px !important; }
 label[data-uia="field-email+label"] { color: var(--n19-field-label) !important; }
 div[data-uia="field-email+container"] { border-radius: 2px !important; background: #fff !important; }
 div[data-uia="field-email+container"] > div { border-radius: 2px !important; }

@@ -134,10 +134,51 @@
   // Text, badges and shading laid over a picture (a hero headline, a video's length, a map's controls) are drawn for
   // that picture: when the picture keeps its real colors, so must they. The picture's host is the largest ancestor
   // with the picture's own box; when it holds anything besides the picture, the whole host is kept instead.
+  const sizes = new ResizeObserver(entries => {
+    for (const { target: media, contentRect: box } of entries) {
+      if (box.width < 2 || box.height < 2) continue;
+      sizes.unobserve(media);
+      if (!media.isConnected || !document.documentElement.hasAttribute('data-net19-flip') || media.hasAttribute('data-net19-flat')) continue;
+      const d = new Map();
+      overlaid(media, d, e => (e.closest('[data-net19-keep]') ? 'kept' : 'flipped'));
+      for (const [e, v] of d) e.setAttribute(`data-net19-${v}`, '');
+    }
+  });
+  // Pictures whose layout was not final when first seen (still loading, custom elements not yet upgraded) are looked
+  // at again once the page has loaded, and a little later.
+  const rescanMedia = () => {
+    if (!document.documentElement.hasAttribute('data-net19-flip')) return;
+    const d = new Map();
+    for (const media of document.querySelectorAll('img, video, canvas')) {
+      if (media.closest('[data-net19-keep]') || media.hasAttribute('data-net19-flat')) continue;
+      overlaid(media, d, e => (e.closest('[data-net19-keep]') ? 'kept' : 'flipped'));
+    }
+    for (const el of document.body.getElementsByTagName('*')) {
+      if (d.has(el) || el.hasAttribute('data-net19-keep') || el.closest('[data-net19-keep]')) continue;
+      const image = getComputedStyle(el).backgroundImage;
+      if (image.includes('gradient(') && !image.includes('url(') && shadeOver(el)) d.set(el, 'keep');
+    }
+    for (const [e, v] of d) e.setAttribute(`data-net19-${v}`, '');
+  };
+  const shadeOver = el => {
+    const r = el.getBoundingClientRect();
+    if (r.width < 96 || r.height < 48) return false;
+    for (let n = el.parentElement, i = 0; n && n !== document.body && i < 3; n = n.parentElement, i++) {
+      if (n.getElementsByTagName('*').length > 60) break;
+      for (const m of n.querySelectorAll('img, video, picture > img')) {
+        if (el.contains(m)) continue;
+        const q = m.getBoundingClientRect();
+        const ox = Math.min(q.right, r.right) - Math.max(q.left, r.left), oy = Math.min(q.bottom, r.bottom) - Math.max(q.top, r.top);
+        if (ox > 0 && oy > 0 && ox * oy > .25 * r.width * r.height && q.width >= 120 && q.height >= 64) return true;
+      }
+    }
+    return false;
+  };
   const overlaid = (media, decided, context) => {
     const r = media.getBoundingClientRect();
     if (r.width < 120 || r.height < 64) {
-      if (media.tagName === 'IMG' && !media.complete) media.addEventListener('load', () => { if (media.isConnected && !media.hasAttribute('data-net19-flat')) { const d = new Map(); overlaid(media, d, () => 'flipped'); for (const [e, v] of d) if (!e.closest('[data-net19-keep]')) e.setAttribute(`data-net19-${v}`, ''); } }, { once: true });
+      // Not laid out yet (lazy or still loading): judged once it has a size.
+      if (r.width < 2 || r.height < 2 || (media.tagName === 'IMG' && !media.complete)) sizes.observe(media);
       return false;
     }
     if (media.hasAttribute('data-net19-flat')) return false;
@@ -192,6 +233,9 @@
         // Photographs are turned back; drawn backgrounds (PNG and SVG illustrations, textures, icons) flip with the page.
         // Without a file type in the address, only large backgrounds are taken for photographs.
         const image = style.backgroundImage;
+        // A gradient shade laid over a picture (a card's headline area darkening the photo under it) is drawn for that
+        // picture: when it overlaps one, it and its text keep their real colors with the picture.
+        if (!image.includes('url(') && image.includes('gradient(') && shadeOver(el) && context(el) === 'flipped') { decided.set(el, 'keep'); continue; }
         const photo = image.includes('url(') && !DRAWN.test(image);
         const surely = photo && PHOTO.test(image);
         const color = photo ? null : rgba(style.backgroundColor);
@@ -264,7 +308,8 @@
       }), 250);
       for (const type of ['click', 'keyup', 'focusin']) addEventListener(type, recheck, { capture: true, passive: true });
     }
-    addEventListener('load', () => keepPhotos([document.body]), { once: true });
+    addEventListener('load', () => { keepPhotos([document.body]); rescanMedia(); setTimeout(rescanMedia, 2000); }, { once: true });
+    if (document.readyState === 'complete') setTimeout(rescanMedia, 1000);
   };
   // A theme whose kept parts depend on page state (Gmail's picture themes) asks for the page to be judged again.
   theme.rejudge = () => {
