@@ -94,11 +94,13 @@ Sites change their markup without notice, so every theme is built to fail soft.
 
 - the full theme's geometry hides or collapses more than 40% of what the safe layer shows (a theme can change this with `fitFloor`, a number or a function of the page);
 - it leaves less than a quarter as much on the first screen;
-- it pushes the page more than a quarter wider than the window.
+- it makes the page scroll sideways: more than a quarter of the window wider than the safe layer does, or 16 px below 1100 px wide.
 
 Pages with fewer than 12 such items are left undecided.
 
 The check takes about 10–100 ms, depending on the size of the page.
+
+**Small screens.** Themes are drawn for desktop widths. On a phone-sized screen (under 760 px) or a touch-only screen under 1000 px, `fit.js` starts on the safe layer at `document_start`, before anything paints, and skips the check, so a site's mobile layout keeps working with 2019 colors, fonts and dark mode and without post-2019 features. Width here is the smaller of the window and the screen, because a phone reports a 980 px window until the page's viewport tag is read. Resizing the window, rotating a device or zooming re-decides it. Verdicts made under 1100 px are stored apart from desktop ones, so a narrow split-screen window never sends a wide window to the safe layer. The attribute is put back if a site's framework rewrites `<html>`.
 
 **Falling back.** A page that no longer fits switches to the safe layer at once. Its section (host plus first path segment, such as `youtube.com/watch`) is remembered in `chrome.storage.local`, so later visits start on the safe layer. Every visit keeps checking, and two fitting visits in a row return the section to the full theme. Nothing is stored for sections that fit, and updating net19 clears the list.
 
@@ -141,6 +143,10 @@ Settings are `{ enabled, disabledHosts }`. Only the popup can change them. Switc
 | `storage` | The two switches, and the site sections currently on a theme's safe layer |
 
 The extension-page CSP allows no connections.
+
+## Browsers and devices
+
+net19 needs Chrome 120 or newer, or any browser built on the same Chromium with Manifest V3 extensions: Edge, Brave, Opera, Vivaldi and Arc on Windows, macOS, Linux and ChromeOS, and Android browsers that install Chrome Web Store extensions, such as Edge, Lemur and Yandex. Chrome itself on Android and every iOS browser cannot run extensions. Where a browser opens the popup as a tab or a sheet, the popup fills the width and finds the site from the tab that opened it.
 
 ## Limits
 

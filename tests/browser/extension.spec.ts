@@ -142,6 +142,22 @@ test('a theme that stops fitting a redesigned page steps back to its safe layer,
   await expect(html).not.toHaveAttribute('data-n19-safe', /.*/);
 });
 
+test('on a phone-sized or touch-only screen, layout rules step aside while colors and hidden features stay; a wide window gets them back', async () => {
+  const page = await context.newPage();
+  await page.setViewportSize({ width: 390, height: 800 });
+  await page.goto('https://www.youtube.com/');
+  const html = page.locator('html');
+  await expect(html).toHaveAttribute('data-n19-safe', '');
+  await expect(html).toHaveAttribute('data-net19-mode', /^(light|dark)$/);
+  await expect(page.locator('#gen')).toBeHidden();
+  await page.evaluate(() => document.dispatchEvent(new CustomEvent('net19-fit-check')));
+  await page.waitForTimeout(300);
+  await expect(html).not.toHaveAttribute('data-n19-fit', /.*/);
+  await page.setViewportSize({ width: 1280, height: 800 });
+  await expect(html).not.toHaveAttribute('data-n19-safe', /.*/);
+  expect(await fitRecords()).toEqual([]);
+});
+
 test('switching net19 off removes every script and rule', async () => {
   const site = await open('https://www.youtube.com/');
   await expect(site.locator('html')).toHaveAttribute('data-net19-mode', /.+/);

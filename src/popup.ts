@@ -32,8 +32,20 @@ siteSwitch.addEventListener('change', () => {
   void save({ disabledHosts: hosts }).catch(paint);
 });
 
+const isWeb = (tab?: chrome.tabs.Tab) => !!tab?.url && /^https?:/.test(tab.url);
+async function siteTab(): Promise<chrome.tabs.Tab | undefined> {
+  const self = await chrome.tabs.getCurrent().catch(() => undefined);
+  if (!self) return (await chrome.tabs.query({ active: true, currentWindow: true }))[0];
+  if (self.openerTabId !== undefined) {
+    const opener = await chrome.tabs.get(self.openerTabId).catch(() => undefined);
+    if (isWeb(opener)) return opener;
+  }
+  const others = (await chrome.tabs.query({ windowId: self.windowId })).filter(tab => tab.id !== self.id && isWeb(tab)) as Array<chrome.tabs.Tab & { lastAccessed?: number }>;
+  return others.sort((a, b) => (b.lastAccessed ?? 0) - (a.lastAccessed ?? 0))[0];
+}
+
 void (async () => {
-  const [state, [tab]] = await Promise.all([send<State>('STATE'), chrome.tabs.query({ active: true, currentWindow: true })]);
+  const [state, tab] = await Promise.all([send<State>('STATE'), siteTab()]);
   settings = state.settings;
   let host = '';
   try { if (tab?.url && !tab.incognito && /^https?:$/.test(new URL(tab.url).protocol)) host = new URL(tab.url).hostname; } catch { }

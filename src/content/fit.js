@@ -9,10 +9,19 @@
   const MAX_SECTIONS = 200;
   const FITS_TO_RECOVER = 2;
   const storage = globalThis.chrome?.storage?.local;
+  const PHONE_WIDTH = 760;
+  const TOUCH_WIDTH = 1000;
+  const DESIGN_WIDTH = 1100;
+  const touchOnly = matchMedia('(pointer: coarse) and (hover: none)');
+  const width = () => Math.min(innerWidth || Infinity, screen.width || Infinity);
+  const small = () => width() < PHONE_WIDTH || (touchOnly.matches && width() < TOUCH_WIDTH);
+  let forced = small();
+  if (forced) root.setAttribute(SAFE, '');
 
   const section = () => {
     const first = location.pathname.split('/')[1] || '';
-    return `${location.hostname.replace(/^www\./, '')}/${/^[a-z][a-z-]{0,23}$/i.test(first) ? first.toLowerCase() : '*'}`;
+    const place = `${location.hostname.replace(/^www\./, '')}/${/^[a-z][a-z-]{0,23}$/i.test(first) ? first.toLowerCase() : '*'}`;
+    return width() < DESIGN_WIDTH ? `${place} narrow` : place;
   };
   const records = () => storage ? storage.get(STORE).then(stored => stored[STORE] || {}, () => ({})) : Promise.resolve({});
   let writes = Promise.resolve();
@@ -31,7 +40,7 @@
     const key = section();
     return records().then(all => {
       current = { key, record: all[key] || { safe: false, fits: 0 } };
-      if (current.record.safe) root.setAttribute(SAFE, '');
+      if (forced || current.record.safe) root.setAttribute(SAFE, ''); else root.removeAttribute(SAFE);
     });
   };
 
@@ -44,14 +53,14 @@
     let shown = 0, onScreen = 0;
     for (let i = 0; i < found.length; i += stride) {
       const el = found[i];
-      if (!el.checkVisibility({ opacityProperty: true, visibilityProperty: true })) continue;
+      if (!el.checkVisibility({ opacityProperty: true, visibilityProperty: true, checkOpacity: true, checkVisibilityCSS: true })) continue;
       const box = el.getBoundingClientRect();
       const minimum = el.tagName === 'IMG' || el.tagName === 'VIDEO' ? 32 : 2;
       if (box.width < minimum || box.height < minimum) continue;
       shown += stride;
       if (box.bottom > 0 && box.top < height && box.right > 0 && box.left < width) onScreen += stride;
     }
-    return { shown, onScreen, wide: (document.scrollingElement || root).scrollWidth > width * 1.25 };
+    return { shown, onScreen, span: (document.scrollingElement || root).scrollWidth };
   };
   const DEFAULT_FLOOR = .6;
   const floorHere = () => {
@@ -59,12 +68,13 @@
     return typeof floor === 'number' ? floor : DEFAULT_FLOOR;
   };
   const MIN_SHOWN = 12;
+  const widened = (full, safe) => full.span > Math.max(safe.span, innerWidth) + (innerWidth < DESIGN_WIDTH ? 16 : innerWidth * .25);
   const verdict = (full, safe) => {
     const floor = floorHere();
     if (safe.shown < MIN_SHOWN) return 'unsure';
     if (full.shown < safe.shown * floor) return 'unfit';
     if (safe.onScreen >= 10 && full.onScreen < safe.onScreen * floor * .4) return 'unfit';
-    return full.wide && !safe.wide ? 'unfit' : 'fit';
+    return widened(full, safe) ? 'unfit' : 'fit';
   };
 
   const scrollPositions = () => {
@@ -87,10 +97,10 @@
   };
 
   const judge = () => {
-    if (!document.body || document.visibilityState === 'hidden') return;
+    if (forced || !document.body || document.visibilityState === 'hidden') return;
     const started = performance.now();
     const { full, safe, result } = compare();
-    root.setAttribute(REPORT, `${result} ${full.shown}/${safe.shown} ${full.onScreen}/${safe.onScreen}${full.wide && !safe.wide ? ' wide' : ''} ${Math.round(performance.now() - started)}ms`);
+    root.setAttribute(REPORT, `${result} ${full.shown}/${safe.shown} ${full.onScreen}/${safe.onScreen}${widened(full, safe) ? ' wide' : ''} ${Math.round(performance.now() - started)}ms`);
     const { key, record } = current;
     if (result === 'unfit') {
       root.setAttribute(SAFE, '');
@@ -117,14 +127,30 @@
       }, { timeout: 2000 });
     }, delay);
   };
+  new MutationObserver(() => {
+    if ((forced || current.record.safe) && !root.hasAttribute(SAFE)) root.setAttribute(SAFE, '');
+  }).observe(root, { attributes: true, attributeFilter: [SAFE] });
   const ready = recall();
   const start = () => ready.then(() => schedule(SETTLE_MS));
   if (document.readyState === 'complete') start(); else addEventListener('load', start, { once: true });
   addEventListener('visibilitychange', () => { if (document.visibilityState === 'visible' && !root.hasAttribute(REPORT)) start(); });
   globalThis.navigation?.addEventListener?.('navigatesuccess', () => {
     if (section() === current.key) return schedule(SETTLE_MS);
-    if (current.record.safe) root.removeAttribute(SAFE);
+    if (current.record.safe && !forced) { current.record = { safe: false, fits: 0 }; root.removeAttribute(SAFE); }
     recall().then(() => schedule(SETTLE_MS));
+  });
+  let lastWidth = width(), resizing = 0;
+  addEventListener('resize', () => {
+    clearTimeout(resizing);
+    resizing = setTimeout(() => {
+      if (width() === lastWidth) return;
+      lastWidth = width();
+      const wasForced = forced;
+      forced = small();
+      if (forced) return root.setAttribute(SAFE, '');
+      if (wasForced || section() !== current.key) recall().then(() => schedule(SETTLE_MS));
+      else schedule(SETTLE_MS);
+    }, 250);
   });
   document.addEventListener('net19-fit-check', () => { lastJudged = Date.now(); ready.then(judge); });
 })();

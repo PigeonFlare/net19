@@ -16,3 +16,8 @@ body { margin: 0; width: 260px; background: var(--bg); color: var(--text); font:
 .switch:checked { background: var(--track-on); }
 .switch:checked::before { transform: translateX(20px); background: var(--accent); }
 .switch:focus-visible { outline: 2px solid var(--accent); outline-offset: 6px; }
+html { background: var(--bg); -webkit-text-size-adjust: 100%; }
+@media (min-width: 320px) {
+  body { width: auto; max-width: 480px; margin: 0 auto; }
+  .row { height: 56px; }
+}
