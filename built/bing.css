@@ -1,0 +1,43 @@
+html{--n19-title:#001ba0;--n19-url:#006621;--n19-field:#fff;--n19-field-text:#000;--n19-scope:#fff;--n19-sprite:url("https://www.bing.com/sa/simg/hpc26_2x.png");--n19-snippet:#545454}
+html[data-net19-mode="dark"]{--n19-title:#8ab4f8;--n19-url:#81c995;--n19-field:#fff;--n19-field-text:#000;--n19-scope:#fff;--n19-snippet:#bdc1c6}
+:where(:root:not([data-n19-safe])) #hp_app header#hdr h1.logo_cont,#hp_app:where(:root:not([data-n19-safe])) header#hdr h1.logo_cont{display:none!important}
+:where(:root:not([data-n19-safe])) #hp_app header#hdr,#hp_app:where(:root:not([data-n19-safe])) header#hdr{transform:translateY(-9px)!important}
+:where(:root:not([data-n19-safe])) #hp_app header#hdr #headCont,#hp_app:where(:root:not([data-n19-safe])) header#hdr #headCont{margin-left:64px!important}
+:where(:root:not([data-n19-safe])) #hp_app header#hdr nav.scope_cont,#hp_app:where(:root:not([data-n19-safe])) header#hdr nav.scope_cont{margin-left:0!important}
+:where(:root:not([data-n19-safe])) #hp_app header#hdr .scopes>li,#hp_app:where(:root:not([data-n19-safe])) header#hdr .scopes>li{margin:0 30px 0 0!important;padding:0!important}
+#hp_app header#hdr .scopes>li>a,#hp_app header#hdr .scopes>li:not(.dots){color:var(--n19-scope)!important;font-size:13px!important;font-weight:400!important;font-family:"Segoe UI", Segoe, Tahoma, Arial, sans-serif!important;text-shadow:0 0 2px rgba(0,0,0,.5)!important}
+#hp_app header#hdr .scopes>li>a:hover{text-decoration:underline!important}
+:where(:root:not([data-n19-safe])) #hp_app header#hdr .scopes>li::after,#hp_app:where(:root:not([data-n19-safe])) header#hdr .scopes>li::after,:where(:root:not([data-n19-safe])) #hp_app header#hdr .scopes>li[class*="selected"]::after,#hp_app:where(:root:not([data-n19-safe])) header#hdr .scopes>li[class*="selected"]::after{display:none!important}
+:where(:root:not([data-n19-safe])) #hp_app header#hdr .identity_wrapper,#hp_app:where(:root:not([data-n19-safe])) header#hdr .identity_wrapper{margin-right:64px!important}
+#hp_app #id_h a,#hp_app #id_h span{color:#fff!important;font-size:13px!important;font-weight:400!important;text-shadow:0 0 2px rgba(0,0,0,.6)!important}
+:where(:root:not([data-n19-safe])) #hp_app .sbox_sl,#hp_app:where(:root:not([data-n19-safe])) .sbox_sl{left:241px!important;margin:0!important;width:548px!important}
+:where(:root:not([data-n19-safe])) #hp_app .sbox_sl::before,#hp_app:where(:root:not([data-n19-safe])) .sbox_sl::before{content:"";position:absolute;left:-153px;top:-4px;width:132px;height:52px}
+#hp_app .sbox_sl::before{background:var(--n19-sprite) 0 0 / 241px 224px no-repeat}
+:where(:root:not([data-n19-safe])) #hp_app .sbox_sl::before,#hp_app:where(:root:not([data-n19-safe])) .sbox_sl::before{pointer-events:none}
+#sb_form.sb_form,.sbox_sl #sb_form{border-radius:0!important;box-shadow:0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18)!important;background:var(--n19-field)!important}
+:where(:root:not([data-n19-safe])) #sb_form.sb_form,#sb_form.sb_form:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .sbox_sl #sb_form,.sbox_sl:where(:root:not([data-n19-safe])) #sb_form{width:548px!important;max-width:548px!important;height:46px!important;min-height:46px!important}
+#sb_form.sb_form,.sbox_sl #sb_form{border:none!important}
+#sb_form_q{font-size:18px!important;font-family:"Segoe UI", Arial, sans-serif!important;color:var(--n19-field-text)!important}
+:where(:root:not([data-n19-safe])) #sb_form_q,#sb_form_q:where(:root:not([data-n19-safe])){padding-left:12px!important}
+:where(:root:not([data-n19-safe])) #hp_app #sb_form #search_icon,#hp_app:where(:root:not([data-n19-safe])) #sb_form #search_icon{width:29px!important;height:29px!important;margin:8px 8px 0 4px!important}
+#hp_app #sb_form #search_icon{background:var(--n19-sprite) -169px -63px / 241px 224px no-repeat!important}
+:where(:root:not([data-n19-safe])) #hp_app #sb_form #search_icon>*,#hp_app:where(:root:not([data-n19-safe])) #sb_form #search_icon>*{visibility:hidden!important}
+:where(:root:not([data-n19-safe])) .sbox_sl.centralized,.sbox_sl.centralized:where(:root:not([data-n19-safe])){justify-content:flex-start!important}
+:where(:root:not([data-n19-safe])) #aitools,#aitools:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .aitools,.aitools:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #sb_form a[href*="copilot"i],#sb_form:where(:root:not([data-n19-safe])) a[href*="copilot"i],:where(:root:not([data-n19-safe])) #sb_form [aria-label*="Copilot"i],#sb_form:where(:root:not([data-n19-safe])) [aria-label*="Copilot"i],:where(:root:not([data-n19-safe])) [id*="copilot"i]:not(body):not(html),[id*="copilot"i]:not(body):not(html):where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #b_sydConvCont,#b_sydConvCont:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .b_hpcopilot,.b_hpcopilot:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .hp_copilot,.hp_copilot:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #codex,#codex:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .cib-serp-main,.cib-serp-main:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #hp_app #vs_cont>.vs,#hp_app:where(:root:not([data-n19-safe])) #vs_cont>.vs{display:none!important}
+:where(:root:not([data-n19-safe])) #hp_app .dimmer.hp_focus_overlay,#hp_app:where(:root:not([data-n19-safe])) .dimmer.hp_focus_overlay{display:none!important}
+.mc_caro,#vs_cont .mc_vtvc,#vs_cont .mc_vtvc_con{border-radius:0!important}
+#b_header .b_searchboxForm{border-radius:0!important;box-shadow:0 0 0 1px rgba(0,0,0,.05), 0 2px 4px 1px rgba(0,0,0,.09)!important}
+:where(:root:not([data-n19-safe])) #b_header .b_searchboxForm #sb_search,#b_header:where(:root:not([data-n19-safe])) .b_searchboxForm #sb_search{order:10!important}
+:where(:root:not([data-n19-safe])) #b_results>li.b_algo,#b_results:where(:root:not([data-n19-safe]))>li.b_algo{display:flex!important;flex-direction:column!important}
+:where(:root:not([data-n19-safe])) #b_results>li.b_algo>h2,#b_results:where(:root:not([data-n19-safe]))>li.b_algo>h2{order:-1!important;margin:0 0 2px!important}
+:where(:root:not([data-n19-safe])) #b_results>li.b_algo>.b_wiki_license,#b_results:where(:root:not([data-n19-safe]))>li.b_algo>.b_wiki_license{position:static!important}
+:where(:root:not([data-n19-safe])) #b-scopeListItem-copilotsearch,#b-scopeListItem-copilotsearch:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .b_scopebar li:has(>a[href*="/copilotsearch"]),.b_scopebar:where(:root:not([data-n19-safe])) li:has(>a[href*="/copilotsearch"]){display:none!important}
+#b_results>li.b_algo h2 a,#b_results>li.b_algo h2{color:var(--n19-title)!important;font-size:20px!important;line-height:24px!important;font-family:"Segoe UI", Arial, sans-serif!important}
+:where(:root:not([data-n19-safe])) #b_results>li.b_algo .b_tpcn,#b_results:where(:root:not([data-n19-safe]))>li.b_algo .b_tpcn{margin:0!important;height:auto!important}
+:where(:root:not([data-n19-safe])) #b_results>li.b_algo .b_tpcn .tpic,#b_results:where(:root:not([data-n19-safe]))>li.b_algo .b_tpcn .tpic,:where(:root:not([data-n19-safe])) #b_results>li.b_algo .b_tpcn .tptt,#b_results:where(:root:not([data-n19-safe]))>li.b_algo .b_tpcn .tptt{display:none!important}
+:where(:root:not([data-n19-safe])) #b_results>li.b_algo .b_tpcn .tptxt,#b_results:where(:root:not([data-n19-safe]))>li.b_algo .b_tpcn .tptxt{padding:0!important;margin:0!important}
+#b_results>li.b_algo cite{color:var(--n19-url)!important;font-size:14px!important}
+#b_results>li.b_algo .b_caption p{color:var(--n19-snippet)!important;font-size:13px!important;line-height:20px!important}
+#b_results>li.b_algo,#b_results>li{border-radius:0!important;box-shadow:none!important}
+:where(:root:not([data-n19-safe])) #imgcrtr_key,#imgcrtr_key:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #imginspn_key,#imginspn_key:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .b_primary_nav_item:has(>a[href*="/images/create"]),.b_primary_nav_item:has(>a[href*="/images/create"]):where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .b_primary_nav_item:has(>a[href*="shorts"i]),.b_primary_nav_item:has(>a[href*="shorts"i]):where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .vnt-root,.vnt-root:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) li:has(>a[href*="/videos/shorts"i]){display:none!important}
+#b_header #sb_form,#b_header .b_searchboxForm,.b_searchbox,#b_header .sb_form_ac{border-radius:0!important}

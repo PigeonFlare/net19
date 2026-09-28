@@ -1,0 +1,7 @@
+html{--n19-panel-border:#ddd}
+html[data-net19-mode="dark"]{--n19-panel-border:#555}
+body,input,select,button{font-family:Arial, Helvetica, sans-serif!important}
+.panel-default{border-color:var(--n19-panel-border)}
+#myfcst .myfcst-policy a{color:#0d4a12!important}
+html[data-net19-flip] #myfcst{filter:contrast(1.13636) hue-rotate(180deg) invert(1)!important}
+html[data-net19-flip] #territorylinks{filter:contrast(1.13636) hue-rotate(180deg) invert(1)!important}

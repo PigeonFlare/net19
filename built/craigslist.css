@@ -1,0 +1,25 @@
+html{--n19-link:#00e;--n19-ban:#eee;--n19-ban-edge:#ddd}
+html[data-net19-mode="dark"]{--n19-link:#8ab4f8;--n19-ban:#2a2a2a;--n19-ban-edge:#444}
+body,button,input,select,textarea{font-family:Arial, Helvetica, sans-serif!important}
+.cl-goto-home{color:var(--n19-link)!important}
+:where(:root:not([data-n19-safe])) .cl-goto-home>.icon,.cl-goto-home:where(:root:not([data-n19-safe]))>.icon{display:none!important}
+:where(:root:not([data-n19-safe])) .cl-link-table .heading .emoji,.cl-link-table:where(:root:not([data-n19-safe])) .heading .emoji{display:none!important}
+.cl-link-table .heading{background:var(--n19-ban)!important;border-top:1px solid var(--n19-ban-edge)!important;border-bottom:1px solid var(--n19-ban-edge)!important;font-weight:700!important}
+.cl-search-result.cl-search-view-mode-list{font-size:15px!important}
+:where(:root:not([data-n19-safe])) .cl-search-view-mode-list .result-node,.cl-search-view-mode-list:where(:root:not([data-n19-safe])) .result-node{align-items:baseline!important}
+:where(:root:not([data-n19-safe])) .cl-search-view-mode-list .result-data,.cl-search-view-mode-list:where(:root:not([data-n19-safe])) .result-data{display:flex!important;flex-wrap:wrap!important;align-items:baseline!important;column-gap:6px!important;row-gap:0!important}
+:where(:root:not([data-n19-safe])) .cl-search-view-mode-list .result-data>p,.cl-search-view-mode-list:where(:root:not([data-n19-safe])) .result-data>p,:where(:root:not([data-n19-safe])) .cl-search-view-mode-list .result-data>.meta,.cl-search-view-mode-list:where(:root:not([data-n19-safe])) .result-data>.meta{display:contents!important}
+:where(:root:not([data-n19-safe])) .cl-search-view-mode-list .result-data .meta>span[title],.cl-search-view-mode-list:where(:root:not([data-n19-safe])) .result-data .meta>span[title]{order:1!important}
+.cl-search-view-mode-list .result-data .meta>span[title]{color:#888!important;font-size:13px!important}
+:where(:root:not([data-n19-safe])) .cl-search-view-mode-list .result-data .meta>span[title],.cl-search-view-mode-list:where(:root:not([data-n19-safe])) .result-data .meta>span[title]{white-space:nowrap!important}
+:where(:root:not([data-n19-safe])) .cl-search-view-mode-list .result-data .posting-title,.cl-search-view-mode-list:where(:root:not([data-n19-safe])) .result-data .posting-title{order:2!important}
+.cl-search-view-mode-list .result-data .posting-title .label{color:var(--n19-link)!important}
+:where(:root:not([data-n19-safe])) .cl-search-view-mode-list .result-data .priceinfo,.cl-search-view-mode-list:where(:root:not([data-n19-safe])) .result-data .priceinfo{order:3!important}
+.cl-search-view-mode-list .result-data .priceinfo{font-size:13px!important}
+:where(:root:not([data-n19-safe])) .cl-search-view-mode-list .result-data .result-location,.cl-search-view-mode-list:where(:root:not([data-n19-safe])) .result-data .result-location{order:4!important}
+.cl-search-view-mode-list .result-data .result-location{font-size:13px!important;color:#555!important}
+:where(:root:not([data-n19-safe])) .cl-search-view-mode-list .result-data .pic-button,.cl-search-view-mode-list:where(:root:not([data-n19-safe])) .result-data .pic-button{order:5!important}
+.cl-search-view-mode-list .result-data .pic-button{font-size:11px!important;color:#999!important}
+:where(:root:not([data-n19-safe])) .cl-search-view-mode-list .result-data .cl-banish-button,.cl-search-view-mode-list:where(:root:not([data-n19-safe])) .result-data .cl-banish-button{order:6!important}
+.cl-search-view-mode-list .result-data .cl-banish-button{font-size:11px!important}
+:where(:root:not([data-n19-safe])) .cl-search-view-mode-list .result-data .separator,.cl-search-view-mode-list:where(:root:not([data-n19-safe])) .result-data .separator{display:none!important}

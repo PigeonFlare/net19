@@ -1,0 +1,3 @@
+html{--n19-accent:#fa5c5c}
+html[data-net19-mode="dark"]{--n19-accent:#fa5c5c}
+:where(:root:not([data-n19-safe])) body[data-page_name="browse"] a.youtube_banner[href*="youtube.com/itchiogames"]{display:none!important}

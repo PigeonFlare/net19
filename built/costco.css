@@ -1,0 +1,14 @@
+html{--n19-link:#0060a9;--n19-top:#eee;--n19-field-border:#bbb}
+html[data-net19-mode="dark"]{--n19-link:#5aa9e6;--n19-top:#2a2a2a;--n19-field-border:#555}
+html:root{--mui-shape-borderRadius:0px!important}
+body,body :not(svg,svg *,i,[class*="icon"i]){font-family:"Helvetica Neue", Helvetica, Arial, sans-serif!important}
+#image-container,#image-container img,#image-container>div{border-radius:0!important}
+.MuiOutlinedInput-root,.MuiButton-root,.MuiChip-root,.MuiCard-root,.MuiPaper-rounded{border-radius:0!important}
+#header-content header>.MuiStack-root>.MuiBox-root:has(input){background:var(--n19-top)!important}
+#header-content .MuiAutocomplete-root .MuiOutlinedInput-root{border-radius:0!important;border:1px solid var(--n19-field-border)!important}
+:where(:root:not([data-n19-safe])) #header-content .MuiAutocomplete-root .MuiOutlinedInput-root,#header-content:where(:root:not([data-n19-safe])) .MuiAutocomplete-root .MuiOutlinedInput-root{padding-right:0!important}
+#header-content .MuiAutocomplete-root .MuiOutlinedInput-root fieldset{border:0!important}
+#header-content button[data-testid^="Search"]{background:var(--n19-link)!important;border-radius:0!important}
+:where(:root:not([data-n19-safe])) #header-content button[data-testid^="Search"],#header-content:where(:root:not([data-n19-safe])) button[data-testid^="Search"]{min-width:44px!important;height:40px!important;align-self:stretch!important}
+#header-content button[data-testid^="Search"] svg{color:#fff!important;fill:#fff!important}
+main [class*="MuiCard"],main a:has(>img),main a img,main div:has(>#image-container){border-radius:0!important}

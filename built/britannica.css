@@ -1,0 +1,17 @@
+html{--n19-header:#084466;--n19-orange:#f8ab16;--n19-link:#1f78b4;--n19-text:#333;--n19-muted:#666}
+html[data-net19-mode="dark"]{--n19-header:#084466;--n19-orange:#f8ab16;--n19-link:#6cb4e8;--n19-text:#e6e6e6;--n19-muted:#aaa}
+html:root,body{--link-color:var(--n19-link)!important;--headings-font-weight:400!important;--qc-border-radius:2px!important;--qc-border-radius-lg:2px!important;--input-border-radius-lg:2px!important}
+body,.font-serif,.topic-paragraph,.reading-channel,.topic-header,h1,h2,h3,h4,input,button{font-family:Montserrat, "Helvetica Neue", Helvetica, Arial, sans-serif!important}
+#header.bg-navy-dark,header.bg-navy-dark,#global-nav-homepage-section.bg-navy-dark,.bg-navy-dark .global-nav-top-bar{background-color:var(--n19-header)!important}
+.global-nav-categories-bar,.global-nav-slider{background-color:var(--n19-header)!important}
+.global-nav-categories-bar a.nav-bar-category{text-transform:uppercase!important;font-size:13px!important;font-weight:400!important;color:#fff!important;background:transparent!important;border-radius:0!important}
+:where(:root:not([data-n19-safe])) .global-nav-categories-bar a.nav-bar-category,.global-nav-categories-bar:where(:root:not([data-n19-safe])) a.nav-bar-category{margin-left:9px!important;margin-right:9px!important}
+.global-nav-categories-bar a.nav-bar-category{letter-spacing:.2px!important}
+.global-nav-top-bar a.btn-blue,.global-nav-top-bar .btn-blue,#header a[href*="subscribe"i]{background:var(--n19-orange)!important;border-color:var(--n19-orange)!important;color:#fff!important;border-radius:0!important;text-transform:uppercase!important;font-weight:400!important}
+.global-nav-center-search-container input,.global-nav-search-bar-small input,#header input.font-16,input.search-query,input.search-query+*,form:has(>input.search-query){border-radius:0!important}
+.topic-header h1,h1.topic-title,.reading-channel h1{font-weight:300!important;font-size:40px!important;color:var(--n19-text)!important}
+.topic-paragraph{font-size:17px!important;line-height:1.85!important;color:var(--n19-text)!important}
+.topic-paragraph a{color:var(--n19-link)!important}
+main .rounded,main .rounded-lg,main .rounded-md,main img.rounded,main .card{border-radius:0!important}
+.btn:not(.btn-circle),.btn-blue:not(.btn-circle),.btn-outline-blue,.gtm-topic-tool,.btn-unstyled,.js-more-btn{border-radius:0!important}
+:where(:root:not([data-n19-safe])) .category-link-CHATBOT,.category-link-CHATBOT:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .header-topic-britannica-ai-module,.header-topic-britannica-ai-module:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .toc-sticky-header-ai-container,.toc-sticky-header-ai-container:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .js-inline-ai-ask-button,.js-inline-ai-ask-button:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .js-inline-ai-simplify-button,.js-inline-ai-simplify-button:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) a[href$="/chatbot"].nav-bar-category{display:none!important}

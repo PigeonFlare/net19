@@ -1,0 +1,36 @@
+html{--n19-text:#000;--n19-meta:#999;--n19-rule:#e5e5e5;--n19-card:#fff;--n19-font:"Proxima-Nova", "Proxima Nova", proxima-nova, Arial, Helvetica, sans-serif}
+html[data-net19-mode="dark"]{--n19-text:#fff;--n19-meta:#999;--n19-rule:#333;--n19-card:#141414}
+nav.navigation{box-shadow:0 1px 3px rgba(0,0,0,.12)!important}
+:where(:root:not([data-n19-safe])) nav.navigation .navigation__container{max-width:none!important;margin:0!important;padding:0 20px!important}
+:where(:root:not([data-n19-safe])) nav.navigation .navigation__menu{justify-content:flex-start!important}
+:where(:root:not([data-n19-safe])) nav.navigation .navLogo{margin:0 24px 0 0!important}
+:where(:root:not([data-n19-safe])) nav.navigation .navigation__menu>.navLogo,:where(:root:not([data-n19-safe])) nav.navigation .navigation__menu>:has(>.navLogo){order:-1!important}
+:where(:root:not([data-n19-safe])) nav.navigation .navigation__menu>:first-child:not(.navLogo):not(:has(>.navLogo)){order:1!important;margin-left:12px!important}
+:where(:root:not([data-n19-safe])) nav.navigation .navigation__group--main{order:0!important}
+:where(:root:not([data-n19-safe])) nav.navigation .navLogo__icon{height:40px!important;width:116px!important}
+nav.navigation .navLogo__icon{background-size:contain!important;background-position:left center!important}
+:where(:root:not([data-n19-safe])) nav.navigation .navigation__group--main{margin-left:0!important;justify-content:flex-start!important}
+nav.navigation .navMenu25__text{text-transform:uppercase!important;letter-spacing:.08em!important;font:700 13px/40px var(--n19-font)!important}
+:where(:root:not([data-n19-safe])) nav.navigation .navigation__stream{display:none!important}
+nav.navigation--has-subnav h2,nav.navigation--has-subnav h2 a,nav.navigation--has-subnav h2 span{font-family:var(--n19-font)!important;font-size:12px!important}
+.page-home main h2,.page-home main h3,.page-home main h1,main article h1,main article h2{font-family:var(--n19-font)!important;letter-spacing:0!important}
+.page-home main :is(h2,h3) a,.page-home main :is(h2,h3){color:var(--n19-text)!important}
+.page-home main time,.page-home main [class*="timestamp"i]{color:var(--n19-meta)!important}
+nav.navigation~* main img,main figure.Image,main .MediaPlaceholder,main [class*="IndividualVideo"],[class*="FittWebPlayerContainer"],[class*="FittWebPlayerContainer"] video,.page-home main img,.page-home main picture,.page-home main figure,.page-home main [class*="Image"]{border-radius:0!important}
+[data-testid="prism-headline"] h1,[data-testid="prism-headline"] h1 span{font-family:var(--n19-font)!important;font-size:36px!important;line-height:42px!important;font-weight:700!important;color:var(--n19-text)!important;letter-spacing:0!important}
+[data-testid="prism-headline"]>p,[data-testid="prism-headline"]>p span{font-family:var(--n19-font)!important;font-size:20px!important;line-height:26px!important;font-weight:400!important;color:#666!important}
+[data-testid="prism-byline"],[data-testid="prism-byline"] *{font-family:var(--n19-font)!important}
+[data-testid="prism-byline"] a{font-weight:700!important;color:var(--n19-text)!important;font-size:13px!important;text-transform:uppercase!important}
+[data-testid="prism-byline"]>div>div>div:last-child{color:#b2b0b1!important;font-size:13px!important}
+:where(:root:not([data-n19-safe])) [class*="Byline__withGooglePreferredSource"] [class*="GooglePreferred"]:not([class*="Byline__withGooglePreferredSource"]),[class*="Byline__withGooglePreferredSource"]:where(:root:not([data-n19-safe])) [class*="GooglePreferred"]:not([class*="Byline__withGooglePreferredSource"]),:where(:root:not([data-n19-safe])) [data-testid*="google-preferred"i],[data-testid*="google-preferred"i]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [aria-label*="preferred source"i],[aria-label*="preferred source"i]:where(:root:not([data-n19-safe])){display:none!important}
+[data-testid="prism-article-body"] p{font-family:var(--n19-font)!important;font-size:18px!important;line-height:27px!important;color:#333!important;letter-spacing:0!important}
+html[data-net19-mode="dark"] [data-testid="prism-article-body"] p{color:#ddd!important}
+[data-testid="prism-article-body"] p a{color:#275390!important;text-decoration:none!important}
+[data-testid="prism-article-body"] p a:hover{text-decoration:underline!important}
+[data-testid="prism-caption"],[data-testid="prism-caption"] span{font-family:var(--n19-font)!important;font-size:13px!important;line-height:18px!important;color:var(--n19-meta)!important}
+[data-testid="prism-image"],[data-testid="prism-image"] img,[data-testid="prism-card"],[data-testid="prism-card"] img,[data-testid="prism-ratio-frame"],.MediaPlaceholder,.MediaPlaceholder img,[data-testid="prism-Badge"],[data-testid="prism-Tag"],[data-testid="prism-Button"]{border-radius:0!important}
+[data-testid="prism-card"] h2,[data-testid="prism-card"] h3,[data-testid="prism-card"] h2 *,[data-testid="prism-card"] h3 *{font-family:var(--n19-font)!important;letter-spacing:0!important}
+main :is(h1,h2,h3)[class]{letter-spacing:0!important}
+:where(:root:not([data-n19-safe])) nav.navigation .navigation__menu{align-items:center!important}
+:where(:root:not([data-n19-safe])) nav.navigation .navLogo{align-self:center!important;height:auto!important}
+main [data-testid^="prism-"],main [data-testid^="prism-"]>:is(div,a,picture,img){border-radius:0!important}

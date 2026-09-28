@@ -1,0 +1,8 @@
+html{--n19-page:#f6f6f6;--n19-content:#fff}
+html[data-net19-mode="dark"]{--n19-page:#f6f6f6;--n19-content:#fff}
+body.skin-vector-legacy{background-color:var(--n19-page)}
+body.skin-vector-legacy .mw-body{background-color:var(--n19-content)}
+:where(:root:not([data-n19-safe])) body.skin-vector-legacy .vector-menu-tabs-legacy li a{padding-top:calc(1.25em - 5px)!important}
+:where(:root:not([data-n19-safe])) body.skin-vector-legacy #simpleSearch #mw-searchButton.mw-fallbackSearchButton{visibility:hidden!important}
+:where(:root:not([data-n19-safe])) body.skin-vector-legacy :is(#pt-darkmode,#t-urlshortener-qrcode,#t-parsermigration,#parsermigration-switch-to-legacy,#t-collapsible-toggle-all,#t-expand-all,#footer-places-donate,#footer-mirahezeico,#footer-info-renderedwith,#p-dock-bottom),:where(:root:not([data-n19-safe])) body.skin-vector-legacy :is(.ve-init-mw-diffPage-diffMode,.mw-diffPage-inlineToggle-container),:where(:root:not([data-n19-safe])) body.skin-vector-legacy :is(#vector-sticky-header,.vector-sticky-header,#vector-appearance,#vector-appearance-pinned-container,.vector-appearance-landmark,.vector-client-prefs-landmark,.vector-page-toolbar,.vector-column-end){display:none!important}
+html[data-net19-reskin]:where(:root:not([data-n19-safe])) body{visibility:hidden!important}

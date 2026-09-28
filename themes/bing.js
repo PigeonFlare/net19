@@ -1,5 +1,6 @@
 globalThis.net19Theme = {
   detect: () => location.pathname === '/' ? (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light') : undefined,
+  fitFloor: () => location.pathname === '/' ? .2 : undefined,
 };
 (() => {
   const fix = () => { const q = document.querySelector('#hp_app #sb_form_q'); if (q && q.placeholder) q.placeholder = ''; };

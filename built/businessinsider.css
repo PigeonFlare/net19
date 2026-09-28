@@ -1,0 +1,65 @@
+html{--n19-page:#fff;--n19-text:#111;--n19-body:#111;--n19-meta:#848f91;--n19-rule:#d8d8d8;--n19-brand:#185f7d;--n19-link:#1d607c;--n19-font:"Helvetica Neue", Helvetica, Arial, sans-serif}
+html[data-net19-mode="dark"]{--n19-page:#121212;--n19-text:#f2f2f2;--n19-body:#ddd;--n19-meta:#9aa3a5;--n19-rule:#3a3a3a;--n19-brand:#5aa6c7;--n19-link:#5aa6c7}
+html body :is(h1,h2,h3,h4,p,a,span,li,button,input,figcaption,time,label,div)[class]{font-family:var(--n19-font)!important}
+html body :is(.headline-medium,.headline-semibold,.headline-regular,.heading-xl,.heading-sm,.heading-xs,.display-lg,.display-sm,.display-xs,.label-lg-strong,.label-md-strong,.label-sm-strong,.body-xs-strong,[class*="font-weight-garnett"]){font-family:var(--n19-font)!important;letter-spacing:0!important}
+header.masthead{background:var(--n19-page)!important;border-bottom:1px solid #edeeef!important;box-shadow:none!important}
+:where(:root:not([data-n19-safe])) header.masthead .main-section{min-height:0!important;padding-top:8px!important;padding-bottom:8px!important}
+header.masthead .logo-link svg,header.masthead svg.logo-inline{color:var(--n19-brand)!important;fill:var(--n19-brand)!important}
+header.masthead .logo-link svg *,header.masthead svg.logo-inline *{fill:var(--n19-brand)!important}
+:where(:root:not([data-n19-safe])) header.homepage-masthead .logo-link{width:330px!important;height:30px!important}
+:where(:root:not([data-n19-safe])) header.homepage-masthead .logo-link svg{width:330px!important;height:30px!important}
+:where(:root:not([data-n19-safe])) header.masthead:not(.homepage-masthead) .logo-link svg{height:22px!important;width:auto!important}
+:where(:root:not([data-n19-safe])) header.masthead .masthead-date,:where(:root:not([data-n19-safe])) header.masthead .masthead-date span{white-space:nowrap!important}
+header.masthead .masthead-date,header.masthead .masthead-date span{font:400 11px/1.4 var(--n19-font)!important;letter-spacing:.1em!important;text-transform:uppercase!important;color:var(--n19-meta)!important}
+.masthead-subnav .subnav-item-link,.subnav .subnav-item-link{font:400 11px/44px var(--n19-font)!important;letter-spacing:.2em!important;text-transform:uppercase!important;color:#111!important}
+.masthead-subnav .subnav-item-link:hover{color:var(--n19-link)!important}
+.masthead-subnav .subnav-item::before,.masthead-subnav .subnav-item::after,.masthead-subnav .subnav-item+.subnav-item{border-color:var(--n19-rule)!important}
+:where(:root:not([data-n19-safe])) .masthead-subnav .subnav-item:has(>a[href*="/level-up"]),.masthead-subnav:where(:root:not([data-n19-safe])) .subnav-item:has(>a[href*="/level-up"]),:where(:root:not([data-n19-safe])) .masthead-subnav .subnav-item:has(>a[href*="/games"]),.masthead-subnav:where(:root:not([data-n19-safe])) .subnav-item:has(>a[href*="/games"]),:where(:root:not([data-n19-safe])) .masthead-subnav .subnav-item:has(>a[href*="/community"]),.masthead-subnav:where(:root:not([data-n19-safe])) .subnav-item:has(>a[href*="/community"]){display:none!important}
+header.masthead :is(.masthead-icon-button,.menu-button,.account-btn button) svg{color:var(--n19-meta)!important;fill:var(--n19-meta)!important}
+:where(:root:not([data-n19-safe])) header.masthead .modes-section,:where(:root:not([data-n19-safe])) .immersive-modes-container,.immersive-modes-container:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .immersive-modes-onboarding-launcher,.immersive-modes-onboarding-launcher:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .modes-section-sentinel,.modes-section-sentinel:where(:root:not([data-n19-safe])){display:none!important}
+:where(:root:not([data-n19-safe])) .app-cta-wrapper,.app-cta-wrapper:where(:root:not([data-n19-safe])){display:none!important}
+.tout-title,.tout-title-link{font:700 20px/1.25 var(--n19-font)!important;letter-spacing:0!important;color:var(--n19-text)!important}
+.tout.as-vertical .tout-title,.tout.as-vertical .tout-title-link{font-size:17px!important}
+.tout-title-link:hover{color:var(--n19-link)!important;text-decoration:none!important}
+:where(:root:not([data-n19-safe])) .tout-title>a.tout-title-link,.tout-title:where(:root:not([data-n19-safe]))>a.tout-title-link{display:block!important}
+.tout-text,.tout-text p,.tout .tout-summary{font:400 14px/1.45 var(--n19-font)!important;color:var(--n19-text)!important}
+.tout-tag,.tout-tag-link,.tout-top .label-sm,.tout .caps{font:400 11px/1.4 var(--n19-font)!important;letter-spacing:.15em!important;text-transform:uppercase!important;color:var(--n19-link)!important;background:transparent!important}
+.tout-image img,.tout img,.lazy-holder,.lazy-image{border-radius:0!important}
+:where(:root:not([data-n19-safe])) .tout-read-time,.tout-read-time:where(:root:not([data-n19-safe])){display:none!important}
+:is(.tout,.post-top) :is([class*="exclusive"i],.tout-label,[class*="label-tag"],[class*="badge"]){background:transparent!important;color:var(--n19-link)!important;border-radius:0!important}
+:where(:root:not([data-n19-safe])) :is(.tout,.post-top) :is([class*="exclusive"i],.tout-label,[class*="label-tag"],[class*="badge"]),:is(.tout,.post-top):where(:root:not([data-n19-safe])) :is([class*="exclusive"i],.tout-label,[class*="label-tag"],[class*="badge"]){padding:0!important}
+:is(.tout,.post-top) :is([class*="exclusive"i],.tout-label,[class*="label-tag"],[class*="badge"]){font:400 11px/1.4 var(--n19-font)!important;letter-spacing:.15em!important;text-transform:uppercase!important}
+.section-heading,.tout-layout-heading,.links-list-heading,.vertical-section .heading,h2.header,h3.header{font:400 13px/1.4 var(--n19-font)!important;letter-spacing:.2em!important;text-transform:uppercase!important;color:var(--n19-link)!important;border-bottom:1px solid var(--n19-rule)!important}
+:where(:root:not([data-n19-safe])) .section-heading,.section-heading:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .tout-layout-heading,.tout-layout-heading:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .links-list-heading,.links-list-heading:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .vertical-section .heading,.vertical-section:where(:root:not([data-n19-safe])) .heading,:where(:root:not([data-n19-safe])) h2.header,:where(:root:not([data-n19-safe])) h3.header{padding-bottom:10px!important}
+:where(:root:not([data-n19-safe])) .section-heading::after,.section-heading:where(:root:not([data-n19-safe]))::after,:where(:root:not([data-n19-safe])) [class*="section-title"]::after,[class*="section-title"]:where(:root:not([data-n19-safe]))::after{display:none!important}
+.filter-button,.js-filter{border-radius:0!important}
+.post-top .breadcrumb,.post-overline a{font:400 11px/1.4 var(--n19-font)!important;letter-spacing:.2em!important;text-transform:uppercase!important;color:var(--n19-link)!important}
+.post-headline h1.headline,h1.headline.heading-xl{font:700 43px/1.22 var(--n19-font)!important;letter-spacing:0!important;color:var(--n19-text)!important}
+:where(:root:not([data-n19-safe])) .post-headline h1.headline,.post-headline:where(:root:not([data-n19-safe])) h1.headline,:where(:root:not([data-n19-safe])) h1.headline.heading-xl{padding-bottom:17px!important}
+.post-headline h1.headline,h1.headline.heading-xl{border-bottom:1px solid var(--n19-rule)!important}
+:where(:root:not([data-n19-safe])) .post-headline h1.headline,.post-headline:where(:root:not([data-n19-safe])) h1.headline,:where(:root:not([data-n19-safe])) h1.headline.heading-xl{margin-bottom:6px!important}
+.post-byline,.post-byline :is(span,a){font:400 14px/1.4 var(--n19-font)!important;color:var(--n19-text)!important;letter-spacing:-.3px!important}
+.post-byline .byline-author-text,.post-byline .byline-author a{font-weight:400!important}
+.post-details .timestamp,time.timestamp{font:400 14px/1.4 var(--n19-font)!important;color:var(--n19-meta)!important}
+.image-caption,.image-caption-text,.image-source-text{font:400 14px/1.45 var(--n19-font)!important;color:var(--n19-text)!important;background:transparent!important}
+.post-body-content>p,.post-story-body-content>p{font:400 18px/1.8 var(--n19-font)!important;color:var(--n19-body)!important}
+.post-body-content a,.post-story-body-content a{color:var(--n19-link)!important;text-decoration:none!important}
+.post-body-content :is(h2,h3){font-weight:700!important;color:var(--n19-text)!important}
+.post-body-content ul li,.post-body-content ol li{font:400 18px/1.6 var(--n19-font)!important}
+.share-bar :is(button,[role="button"]){border:1px solid var(--n19-meta)!important;border-radius:50%!important}
+:where(:root:not([data-n19-safe])) .share-bar :is(button,[role="button"]),.share-bar:where(:root:not([data-n19-safe])) :is(button,[role="button"]){width:30px!important;height:30px!important;display:inline-flex!important;align-items:center!important;justify-content:center!important}
+:where(:root:not([data-n19-safe])) .share-bar .gift-article-callout-target,.share-bar:where(:root:not([data-n19-safe])) .gift-article-callout-target,:where(:root:not([data-n19-safe])) .share-bar .save-article,.share-bar:where(:root:not([data-n19-safe])) .save-article,:where(:root:not([data-n19-safe])) .audio-player-share,.audio-player-share:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .gift-article,.gift-article:where(:root:not([data-n19-safe])){display:none!important}
+.figure.as-notched,.figure.as-notched *{border-radius:0!important}
+:where(:root:not([data-n19-safe])) .figure.as-notched,.figure.as-notched:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .figure.as-notched *,.figure.as-notched:where(:root:not([data-n19-safe])) *{clip-path:none!important}
+body :is(.subscribe-link,.newsletter-link,.btn,.button)[class]{border-radius:0!important}
+:where(:root:not([data-n19-safe])) .search-sparkle-path,.search-sparkle-path:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .sparkle-filled-icon,.sparkle-filled-icon:where(:root:not([data-n19-safe])){display:none!important}
+:is(.tout,.post-top,section) span.label:has(>.label-text){background:transparent!important;color:var(--n19-link)!important;border-radius:0!important}
+:where(:root:not([data-n19-safe])) :is(.tout,.post-top,section) span.label:has(>.label-text),:is(.tout,.post-top,section):where(:root:not([data-n19-safe])) span.label:has(>.label-text){padding:0!important}
+span.label>.label-text{font:400 11px/1.4 var(--n19-font)!important;letter-spacing:.15em!important;text-transform:uppercase!important;color:var(--n19-link)!important}
+.vertical-subnav .current-vertical{font:700 30px/1.2 var(--n19-font)!important;color:var(--n19-text)!important}
+.vertical-subnav .current-vertical::after,.vertical-subnav .current-vertical::before{background:var(--n19-brand)!important;border-color:var(--n19-brand)!important}
+.vertical-subnav .subnav-item-link{font:400 11px/44px var(--n19-font)!important;letter-spacing:.15em!important;text-transform:uppercase!important;color:#111!important}
+.trending-bar a{font:400 12px/1.4 var(--n19-font)!important;color:#111!important}
+:where(:root:not([data-n19-safe])) .answers-search .js-summary-section,.answers-search:where(:root:not([data-n19-safe])) .js-summary-section,:where(:root:not([data-n19-safe])) .answers-search .results-section:has(.content-disclaimer),.answers-search:where(:root:not([data-n19-safe])) .results-section:has(.content-disclaimer){display:none!important}
+.answers-search input.js-search-input{border-radius:0!important;border-color:var(--n19-rule)!important}
+.answers-search [class*="trending"] a,.answers-search [class*="trending"] button{border-radius:0!important}

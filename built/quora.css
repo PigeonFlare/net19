@@ -1,0 +1,41 @@
+html{--n19-page:#fff;--n19-card:#fff;--n19-red:#b92b27;--n19-red-hover:#a82400;--n19-blue:#2b6dad;--n19-blue-hover:#1a5794;--n19-text:#282829;--n19-text-2:#636466;--n19-meta:#939598;--n19-line:#e6e7e8;--n19-field:#fff;--n19-field-border:#ccc;--n19-link:#2b6dad;--n19-header:#fff;--n19-font:"Helvetica Neue", Helvetica, Arial, sans-serif;--n19-serif:q_serif, Georgia, Times, "Times New Roman", serif}
+html[data-net19-mode="dark"]{--n19-page:#181818;--n19-card:#181818;--n19-red:#d0413c;--n19-red-hover:#e0524d;--n19-blue:#5a8fd0;--n19-blue-hover:#7aa7de;--n19-text:#d5d6d6;--n19-text-2:#b1b3b6;--n19-meta:#8e9092;--n19-line:#303030;--n19-field:#202020;--n19-field-border:#393839;--n19-link:#6f9fe0;--n19-header:#181818}
+body,.q-text,.q-box,.q-flex,.q-inlineFlex,.q-click-wrapper,input,textarea,button{font-family:var(--n19-font)!important}
+body{background:var(--n19-page)!important}
+body :is(.qu-bg--gray_ultralight,.qu-bg--gray_ultralight_wash){background-color:var(--n19-page)!important}
+.dom_annotate_site_header,.spacing_log_header_main{background:var(--n19-header)!important;border-bottom:1px solid var(--n19-line)!important;box-shadow:0 1px 2px rgba(0,0,0,.04)!important}
+.dom_annotate_site_header svg[class*="Logo"i],.dom_annotate_site_header a[href="/"] svg{color:var(--n19-red)!important}
+.spacing_log_header_nav{background:transparent!important;box-shadow:none!important;border:0!important}
+:where(:root:not([data-n19-safe])) .spacing_log_header_nav,.spacing_log_header_nav:where(:root:not([data-n19-safe])){justify-content:flex-start!important}
+.spacing_log_header_nav a[href]{color:var(--n19-text-2)!important;border-radius:0!important}
+.spacing_log_header_nav a[href]:hover{background:transparent!important;color:var(--n19-red)!important}
+:where(:root:not([data-n19-safe])) .spacing_log_header_nav [data-n19-label],.spacing_log_header_nav:where(:root:not([data-n19-safe])) [data-n19-label]{margin-left:6px}
+.spacing_log_header_nav [data-n19-label]{font-size:13px;font-weight:500}
+:where(:root:not([data-n19-safe])) .spacing_log_header_nav [data-n19-label],.spacing_log_header_nav:where(:root:not([data-n19-safe])) [data-n19-label]{white-space:nowrap}
+:where(:root:not([data-n19-safe])) .spacing_log_header_nav a[href="/following"],.spacing_log_header_nav:where(:root:not([data-n19-safe])) a[href="/following"],:where(:root:not([data-n19-safe])) .spacing_log_header_nav a[href$="quora.com/following"],.spacing_log_header_nav:where(:root:not([data-n19-safe])) a[href$="quora.com/following"]{display:none!important}
+.dom_annotate_site_header input{background:var(--n19-field)!important;border:1px solid var(--n19-field-border)!important;border-radius:3px!important;box-shadow:none!important}
+.puppeteer_test_add_question_button,.puppeteer_test_search_add_question{background:var(--n19-red)!important;border-color:var(--n19-red)!important;color:#fff!important;border-radius:3px!important}
+.puppeteer_test_add_question_button *,.puppeteer_test_search_add_question *{color:#fff!important}
+.puppeteer_test_question_title,.puppeteer_test_question_title span{font-family:var(--n19-serif)!important;font-weight:700!important;color:var(--n19-text)!important}
+.dom_annotate_question_header .puppeteer_test_question_title,.dom_annotate_question_header .puppeteer_test_question_title span{font-size:24px!important;line-height:1.25!important}
+.dom_annotate_question_header{background:var(--n19-page)!important;border-radius:0!important;box-shadow:none!important}
+:is([class*="dom_annotate_question_answer_item"],[class*="dom_annotate_multifeed_bundle"],[class*="dom_annotate_multifeed_home_feed"]>div){background:var(--n19-card)!important;border:0!important;border-bottom:1px solid var(--n19-line)!important;border-radius:0!important;box-shadow:none!important}
+:where(:root:not([data-n19-safe])) :is([class*="dom_annotate_question_answer_item"],[class*="dom_annotate_multifeed_bundle"],[class*="dom_annotate_multifeed_home_feed"]>div),:is([class*="dom_annotate_question_answer_item"],[class*="dom_annotate_multifeed_bundle"],[class*="dom_annotate_multifeed_home_feed"]>div):where(:root:not([data-n19-safe])){margin-bottom:0!important}
+:is([class*="dom_annotate_question_answer_item"],[class*="dom_annotate_multifeed_bundle"]) .q-text:not(.puppeteer_test_question_title) p,:is([class*="dom_annotate_question_answer_item"],[class*="dom_annotate_multifeed_bundle"]) .q-text .q-relative>span{font-family:var(--n19-serif)!important;font-size:15px!important;line-height:1.6!important}
+.spacing_log_answer_header a,.spacing_log_answer_header .q-text{font-size:13px!important}
+.spacing_log_answer_header a[href*="/profile/"]{color:var(--n19-text)!important;font-weight:700!important}
+.spacing_log_originally_answered_banner,.spacing_log_originally_answered_banner *{color:var(--n19-meta)!important;font-size:13px!important}
+.puppeteer_test_votable_upvote_button,.puppeteer_test_votable_upvote_button+*{border-radius:3px!important}
+.puppeteer_test_votable_upvote_button,.puppeteer_test_votable_upvote_button .q-text{color:var(--n19-blue)!important}
+.puppeteer_test_votable_upvote_button.puppeteer_test_pressed,.puppeteer_test_votable_upvote_button.puppeteer_test_pressed *{color:var(--n19-blue)!important;font-weight:700!important}
+.puppeteer_test_read_more_button{color:var(--n19-blue)!important;background:transparent!important;border:0!important;box-shadow:none!important}
+button[class*="puppeteer_test_button"],a[class*="puppeteer_test_button"],[role="button"][class*="qu-borderRadius--pill"],.qu-borderRadius--pill{border-radius:3px!important}
+.q-click-wrapper.qu-bg--blue,.qu-bg--blue[role="button"]{background-color:var(--n19-blue)!important}
+.q-click-wrapper.qu-bg--blue:hover{background-color:var(--n19-blue-hover)!important}
+[class*="qu-bg--blue"][class*="puppeteer_test_button"],button.qu-bg--red,.qu-bg--red[role="button"]{background-color:var(--n19-red)!important}
+.qu-color--blue_dark,.qu-color--blue{color:var(--n19-link)!important}
+.dom_annotate_question_header .qu-borderRadius--pill,.dom_annotate_question_header [class*="qu-borderRadius--pill"]{border-radius:2px!important}
+a.q-box[href*="/about/tos"],a.q-box[href*="/about/privacy"]{color:var(--n19-link)!important}
+:where(:root:not([data-n19-safe])) a[href*="poe.com"],:where(:root:not([data-n19-safe])) [data-n19-ai],[data-n19-ai]:where(:root:not([data-n19-safe])){display:none!important}
+:where(:root:not([data-n19-safe])) :is(div,span):has(>svg[class*="BrandBundleBadge"]),:is(div,span):has(>svg[class*="BrandBundleBadge"]):where(:root:not([data-n19-safe])){display:none!important}
+:where(:root:not([data-n19-safe])) [data-net19-hidden],[data-net19-hidden]:where(:root:not([data-n19-safe])){display:none!important}

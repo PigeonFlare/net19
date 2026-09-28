@@ -1,0 +1,62 @@
+html{--n19-page:#fff;--n19-text:#111;--n19-head:#2a2a2a;--n19-meta:#6b6b6b;--n19-soft:#444;--n19-hair:#d5d5d5;--n19-rule:#2a2a2a;--n19-link:#1955a5;--n19-btn:#1955a5;--n19-btn-hover:#0e3f82;--n19-box:#f7f7f7}
+html[data-net19-mode="dark"]{--n19-page:#111;--n19-text:#e6e6e6;--n19-head:#f0f0f0;--n19-meta:#a6a6a6;--n19-soft:#c4c4c4;--n19-hair:#3a3a3a;--n19-rule:#d0d0d0;--n19-link:#6fa3e6;--n19-btn:#1955a5;--n19-btn-hover:#2a6cc4;--n19-box:#1c1c1c}
+:where(:root:not([data-n19-safe])) #sf-primary-nav nav[aria-label="Primary"],#sf-primary-nav:where(:root:not([data-n19-safe])) nav[aria-label="Primary"]{height:46px!important;min-height:46px!important}
+#sf-primary-nav nav[aria-label="Primary"]{border-bottom:1px solid var(--n19-hair)!important;box-shadow:none!important}
+:where(:root:not([data-n19-safe])) #sf-primary-nav,#sf-primary-nav:where(:root:not([data-n19-safe])){height:auto!important}
+:where(:root:not([data-n19-safe])) #sf-primary-nav nav[aria-label="Primary"]>div,#sf-primary-nav:where(:root:not([data-n19-safe])) nav[aria-label="Primary"]>div{align-items:center!important}
+[data-testid="sc-header-sections-menu-button"]{border-radius:0!important;border-color:transparent!important}
+[data-testid="sc-header-sections-menu-button"]:hover{background:var(--n19-box)!important}
+a[data-testid="subs-offer-header-nav"]{border-radius:2px!important;background:var(--n19-btn)!important;border-color:var(--n19-btn)!important}
+:where(:root:not([data-n19-safe])) a[data-testid="subs-offer-header-nav"]{height:30px!important;padding:0 12px!important}
+a[data-testid="subs-offer-header-nav"]{font-size:13px!important}
+a[data-testid="subs-offer-header-nav"] span{font-size:13px!important;letter-spacing:.02em!important}
+a[data-testid="subs-offer-header-nav"]:hover{background:var(--n19-btn-hover)!important}
+a[href*="subscribe.washingtonpost.com"]:is([class*="wpds-c-kSOqLF"],[role="button"]){border-radius:2px!important;background:var(--n19-btn)!important;border-color:var(--n19-btn)!important}
+a[data-testid="sc-account-login-link"]{font-size:13px!important;border-radius:0!important}
+ul[data-qa="header-nav-links-ul"] a,ul[data-qa="product-nav-links-ul"] a{border-radius:0!important}
+ul[data-qa="header-nav-links-ul"] a :is(p,span),ul[data-qa="product-nav-links-ul"] a :is(p,span){font-size:13px!important;font-weight:700!important;letter-spacing:.01em!important}
+ul[data-qa="header-nav-links-ul"] a:hover :is(p,span){color:var(--n19-link)!important}
+:where(:root:not([data-n19-safe])) ul[data-qa="product-nav-links-ul"] li:has(a[href*="wpintelligence"]),:where(:root:not([data-n19-safe])) ul[data-qa="product-nav-links-ul"] li:has(a[href*="/ripple"]){display:none!important}
+.hpgrid .headline h2,.hpgrid .headline h3{font-family:Postoni, "PostoniWide", "Bodoni 72", "Bodoni MT", Didot, Georgia, serif!important;font-weight:700!important;letter-spacing:-.01em!important;color:var(--n19-head)!important}
+.hpgrid .headline a:hover{color:var(--n19-link)!important;text-decoration:none!important}
+.hpgrid .font-size-blurb{font-family:Franklin, "Franklin ITC", "Helvetica Neue", Helvetica, Arial, sans-serif!important;color:var(--n19-soft)!important}
+.hpgrid .byline,.hpgrid .label-kicker span{font-family:Franklin, "Helvetica Neue", Helvetica, Arial, sans-serif!important;font-size:12px!important;letter-spacing:.01em!important}
+.hpgrid .byline{color:var(--n19-meta)!important}
+.hpgrid .label-kicker span,.hpgrid .label-kicker a{font-weight:700!important;color:var(--n19-head)!important}
+.hpgrid .label-package-nested .gray-darkest,.hpgrid .label-package-nested .gray-darkest a{font-family:Franklin, "Helvetica Neue", Helvetica, Arial, sans-serif!important;font-size:13px!important;font-weight:700!important;text-transform:uppercase!important;letter-spacing:.06em!important;text-decoration:none!important}
+.hpgrid figcaption{font-size:11px!important;color:var(--n19-meta)!important}
+nav[data-testid="secondary-nav"] a{font-family:Franklin, "Helvetica Neue", Helvetica, Arial, sans-serif!important;font-size:13px!important;border:0!important}
+nav[data-testid="secondary-nav"] a[data-qa="secondary-nav-primary-link"]{color:var(--n19-meta)!important}
+header[data-qa="main-full"] nav[data-testid="secondary-nav"]{border-bottom:1px solid var(--n19-hair)!important}
+[data-testid="article-topper"] h1[data-testid="headline"],h1[data-qa="headline"]{font-family:Postoni, "PostoniWide", "Bodoni 72", "Bodoni MT", Didot, Georgia, serif!important;font-weight:700!important;font-size:46px!important;line-height:1.12!important;letter-spacing:-.02em!important;color:var(--n19-head)!important}
+[data-testid="article-topper"] p[data-testid="subheadline"]{font-size:18px!important;line-height:1.4!important;color:var(--n19-soft)!important}
+[data-testid="article-topper"] [data-testid="timestamp"],[data-testid="article-topper"] [data-testid="timestamp"] *{font-size:14px!important;color:var(--n19-meta)!important}
+:where(:root:not([data-n19-safe])) [data-testid="byline-container"] [data-testid="author-avatar"],[data-testid="byline-container"]:where(:root:not([data-n19-safe])) [data-testid="author-avatar"]{display:none!important}
+[data-testid="article-byline"]{font-size:15px!important}
+[data-testid="article-byline"] a{font-weight:700!important;color:var(--n19-link)!important;text-decoration:none!important}
+[data-testid="article-byline"] a:hover{text-decoration:underline!important}
+[data-testid="article-actions-bar"] button,[data-testid="article-actions-bar"] a[role="button"]{border-radius:0!important;border:1px solid var(--n19-hair)!important}
+:where(:root:not([data-n19-safe])) [data-testid="article-actions-bar"] button,[data-testid="article-actions-bar"]:where(:root:not([data-n19-safe])) button,:where(:root:not([data-n19-safe])) [data-testid="article-actions-bar"] a[role="button"],[data-testid="article-actions-bar"]:where(:root:not([data-n19-safe])) a[role="button"]{height:38px!important;min-width:42px!important;margin:0 -1px 0 0!important}
+[data-testid="article-actions-bar"] button,[data-testid="article-actions-bar"] a[role="button"]{background:transparent!important;box-shadow:none!important}
+[data-testid="article-actions-bar"] button:hover{background:var(--n19-box)!important}
+:where(:root:not([data-n19-safe])) [data-testid="article-actions-bar"] a[aria-label="Make us preferred on Google"],[data-testid="article-actions-bar"]:where(:root:not([data-n19-safe])) a[aria-label="Make us preferred on Google"],:where(:root:not([data-n19-safe])) a[href*="google.com/preferences/source"]{display:none!important}
+.article-body p.font-copy,[data-qa="article-body"] p{font-family:Georgia, "Times New Roman", serif!important;font-size:18px!important;line-height:1.6!important;color:var(--n19-text)!important}
+[data-qa="article-body"] p a,.article-body p a{color:var(--n19-link)!important;text-decoration:none!important;border-bottom:1px solid var(--n19-hair)!important}
+[data-qa="article-body"] p a:hover{border-bottom-color:var(--n19-link)!important}
+[data-qa="article-body"] h2,[data-qa="article-body"] h3{font-family:Franklin, "Helvetica Neue", Helvetica, Arial, sans-serif!important;font-weight:700!important}
+figcaption[data-testid="lede-art-caption"],[data-qa="article-body"] figcaption{font-size:14px!important;line-height:1.35!important;color:var(--n19-meta)!important}
+button[data-qa="comments-btn"]{border-radius:2px!important}
+[data-testid="card-item"] h3[data-testid="card-title"]{font-family:Postoni, "PostoniWide", "Bodoni 72", Didot, Georgia, serif!important;font-weight:700!important;letter-spacing:-.01em!important;color:var(--n19-head)!important}
+[data-testid="card-item"] a:hover h3{color:var(--n19-link)!important}
+[data-testid="card-item"] p{color:var(--n19-soft)!important}
+[data-testid="card-item"] [data-testid="timestamp"]{font-size:12px!important;color:var(--n19-meta)!important}
+[data-testid="card-item"] [data-testid="author-name-with-optional-link"] a{font-size:12px!important;font-weight:700!important}
+label[data-testid="main-content-label"]{text-transform:uppercase!important;letter-spacing:.06em!important;font-size:13px!important;border-bottom:2px solid var(--n19-rule)!important}
+:where(:root:not([data-n19-safe])) label[data-testid="main-content-label"]{padding-bottom:6px!important}
+.sf-grid header h1{font-family:Postoni, "PostoniWide", "Bodoni 72", Didot, Georgia, serif!important;font-weight:700!important;font-size:40px!important}
+nav[data-qa="secondary-nav"][aria-label="Section"] a{font-size:13px!important;font-weight:700!important}
+main form [data-testid="input-text-container"]{border-radius:0!important;border-color:var(--n19-hair)!important}
+main section>div>a[href] p[class]:first-child{letter-spacing:-.01em}
+footer[aria-label="Site footer"]{border-top:1px solid var(--n19-hair)!important}
+footer[aria-label="Site footer"] h2[data-qa="footer-section-title"]{text-transform:uppercase!important;font-size:12px!important;letter-spacing:.06em!important}
+:where(:root:not([data-n19-safe])) footer[aria-label="Site footer"] li:has(>a[href*="wpintelligence"]),:where(:root:not([data-n19-safe])) footer[aria-label="Site footer"] li:has(>a[href*="onelink.me"]){display:none!important}

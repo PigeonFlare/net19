@@ -1,0 +1,12 @@
+html{--n19-page:#fff;--n19-text:#000;--n19-link:#0088cc;--n19-rule:#179cde;--n19-news:#ecf3fa;--n19-line:#e8e8e8;--n19-font:"Lucida Grande", "Lucida Sans Unicode", Arial, Helvetica, Verdana, sans-serif}
+html[data-net19-mode="dark"]{--n19-page:#fff;--n19-text:#000;--n19-link:#0088cc;--n19-rule:#179cde;--n19-news:#ecf3fa;--n19-line:#e8e8e8}
+:where(:root:not([data-n19-safe])) .theme-toggle,.theme-toggle:where(:root:not([data-n19-safe])){display:none!important}
+:where(:root:not([data-n19-safe])) .navbar-tg .nav>li>a:after,.navbar-tg:where(:root:not([data-n19-safe])) .nav>li>a:after{display:none!important}
+.navbar-tg .nav>li:not(.top_lang_select):not(.navbar-twitter)>a:hover,.navbar-tg .nav>li.active>a{box-shadow:0 3px 0 0 var(--n19-rule)!important}
+:where(:root:not([data-n19-safe])) .navbar-tg .navbar-twitter .icon-twitter,.navbar-tg:where(:root:not([data-n19-safe])) .navbar-twitter .icon-twitter{background:url("https://telegram.org/img/twitter_2x.png") 0 0 / 21px 17px no-repeat!important;width:21px!important;height:17px!important}
+:where(:root:not([data-n19-safe])) .navbar-tg .navbar-twitter .icon-twitter>*,.navbar-tg:where(:root:not([data-n19-safe])) .navbar-twitter .icon-twitter>*,:where(:root:not([data-n19-safe])) .navbar-tg .navbar-twitter .icon-twitter:before,.navbar-tg:where(:root:not([data-n19-safe])) .navbar-twitter .icon-twitter:before{display:none!important}
+:where(:root:not([data-n19-safe])) .tl_main_side_blog .side_blog_wrap:before,.tl_main_side_blog:where(:root:not([data-n19-safe])) .side_blog_wrap:before,:where(:root:not([data-n19-safe])) .tl_blog_side_blog .side_blog_wrap:before,.tl_blog_side_blog:where(:root:not([data-n19-safe])) .side_blog_wrap:before{display:none!important}
+.tl_main_side_blog .side_blog_wrap,.tl_blog_side_blog .side_blog_wrap{border-left:5px solid var(--n19-rule)!important}
+:where(:root:not([data-n19-safe])) .tl_main_side_blog .side_blog_wrap,.tl_main_side_blog:where(:root:not([data-n19-safe])) .side_blog_wrap,:where(:root:not([data-n19-safe])) .tl_blog_side_blog .side_blog_wrap,.tl_blog_side_blog:where(:root:not([data-n19-safe])) .side_blog_wrap{padding-left:17px!important}
+:where(:root:not([data-n19-safe])) svg.tl_main_logo_title_image{background:url("https://telegram.org/img/Telegram_2x.png") center / 144px 36px no-repeat!important;width:144px!important;height:36px!important}
+:where(:root:not([data-n19-safe])) svg.tl_main_logo_title_image>*{visibility:hidden!important}

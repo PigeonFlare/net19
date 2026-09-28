@@ -43,6 +43,9 @@ test('a themed site is styled from its first paint; any other site is left alone
   expect(await other.url()).toBe('https://www.example.com/page');
   expect(requests.filter(url => /archive\.org|archive\.(is|ph|today)/.test(url))).toEqual([]);
   expect(await scripts()).not.toContain('net19-start');
+  await themed.evaluate(() => document.dispatchEvent(new CustomEvent('net19-fit-check')));
+  await expect(themed.locator('html')).toHaveAttribute('data-n19-fit', /^fit/);
+  expect(await fitRecords()).toEqual([]);
 });
 
 test('the device decides light or dark: a light site is flipped for a dark device, with photos and dark bars kept', async () => {
@@ -92,6 +95,39 @@ test('signed in, Reddit opens on old.reddit.com with the 2019 list; signed out i
   expect(page.url()).toBe('https://www.reddit.com/r/pics/s/AbCd');
   await context.clearCookies({ name: 'reddit_session' });
   await expect.poll(redirects).toBe(0);
+});
+
+const REDESIGN = (broken: boolean) => `<!doctype html><html><head><meta charset="utf-8"><title>Redesign</title>` +
+  (broken ? '<style>:root:not([data-n19-safe]) #feed{display:none}</style>' : '') +
+  `</head><body><header><a href="/">Home</a></header><main id="feed">${Array.from({ length: 24 }, (_, i) => `<p><a href="/v${i}">Video ${i}</a></p>`).join('')}</main></body></html>`;
+const fitRecords = () => worker.evaluate(async () => Object.keys((await chrome.storage.local.get('net19-fit'))['net19-fit'] || {}));
+
+test('a theme that stops fitting a redesigned page steps back to its safe layer, then recovers once it fits again', async () => {
+  let broken = true;
+  await context.route('https://www.youtube.com/redesign', route => route.fulfill({ contentType: 'text/html', body: REDESIGN(broken) }));
+  const page = await open('https://www.youtube.com/redesign');
+  const html = page.locator('html');
+  const check = () => page.evaluate(() => document.dispatchEvent(new CustomEvent('net19-fit-check')));
+  await check();
+  await expect(html).toHaveAttribute('data-n19-fit', /^unfit/);
+  await expect(html).toHaveAttribute('data-n19-safe', '');
+  await expect(page.locator('#feed a').first()).toBeVisible();
+  await expect(html).toHaveAttribute('data-net19-mode', /^(light|dark)$/);
+  await expect.poll(fitRecords).toEqual(['youtube.com/redesign']);
+  await page.reload();
+  await expect(html).toHaveAttribute('data-n19-safe', '');
+  broken = false;
+  for (let load = 0; load < 2; load++) {
+    await page.reload();
+    await expect(html).toHaveAttribute('data-n19-safe', '');
+    await check();
+    await expect(html).toHaveAttribute('data-n19-fit', /^fit/);
+  }
+  await expect.poll(fitRecords).toEqual([]);
+  await page.reload();
+  await check();
+  await expect(html).toHaveAttribute('data-n19-fit', /^fit/);
+  await expect(html).not.toHaveAttribute('data-n19-safe', /.*/);
 });
 
 test('switching net19 off removes every script and rule', async () => {

@@ -1,0 +1,24 @@
+html{--n19-blue:#046b99;--n19-bar-text:#fff;--n19-panel:#efefef;--n19-panel-text:#333;--n19-band:#777;--n19-button:#545454;--n19-button-hover:#3b3b3b;--n19-field:#fafafa;--n19-nav:#555}
+html[data-net19-mode="dark"]{--n19-blue:#046b99;--n19-bar-text:#fff;--n19-panel:#2a2a2a;--n19-panel-text:#eee;--n19-band:#444;--n19-button:#5e5e5e;--n19-button-hover:#777;--n19-field:#1e1e1e;--n19-nav:#ccc}
+html:root{--border-radius-large:0!important;--border-radius-small:0!important}
+.utility-header{background:var(--n19-blue)!important}
+.utility-header a,.utility-header button,.utility-header span,.utility-header [class*="icon"]{color:var(--n19-bar-text)!important}
+header#header{box-shadow:0 2px 5px rgba(0,0,0,.2)!important}
+.top-level-nav .first-level-link{color:var(--n19-nav)!important;font-size:15px!important}
+.top-level-nav .first-level-link{line-height:26px!important}
+.utility-header a{text-decoration:none!important}
+header.global-header .section-default{box-shadow:none!important;border-bottom:0!important}
+.header-banner{background:var(--n19-panel)!important}
+.header-banner h1,.header-banner h2,.header-banner p{color:var(--n19-panel-text)!important}
+.header-banner input{background:var(--n19-field)!important;border-radius:0!important;color:var(--n19-panel-text)!important}
+:where(:root:not([data-n19-safe])) .header-banner svg,.header-banner:where(:root:not([data-n19-safe])) svg,:where(:root:not([data-n19-safe])) .header-banner [class*="bg-shape"],.header-banner:where(:root:not([data-n19-safe])) [class*="bg-shape"],:where(:root:not([data-n19-safe])) .header-banner [class*="lines"],.header-banner:where(:root:not([data-n19-safe])) [class*="lines"]{opacity:.25}
+.section-primary.bg-p2-darkest{background:var(--n19-band)!important}
+.section-primary .btn,.btn.rounded-5{border-radius:0!important}
+.section-primary .btn-outline-light{background:var(--n19-button)!important;border-color:var(--n19-button)!important;color:#fff!important}
+.section-primary .btn-outline-light:hover{background:var(--n19-button-hover)!important}
+main .section-primary.lineart.bg-p2{background-color:var(--n19-panel)!important}
+:where(:root:not([data-n19-safe])) main .section-primary.lineart.bg-p2{background-image:none!important}
+main .section-primary.lineart.bg-p2 :is(h1,h2,p,li,span){color:var(--n19-panel-text)!important}
+main .section-primary.lineart.bg-p2 a{color:var(--n19-blue)!important}
+html[data-net19-mode="dark"] main .section-primary.lineart.bg-p2 a{color:#7cc4e8!important}
+main a.link-grid,main .btn,main [class*="bg-gray-50"]{border-radius:0!important}

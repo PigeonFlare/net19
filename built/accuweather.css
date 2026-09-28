@@ -1,0 +1,20 @@
+html{--n19-page:#d6d3d2;--n19-hero:#1f1f1f;--n19-card:#fff;--n19-orange:#f05514;--n19-field:#3d3d3d;--n19-field-text:#fff;--n19-tab:#fafafa;--n19-rule:#d8d8d8;--n19-text:#1f1f1f}
+html[data-net19-mode="dark"]{--n19-page:#161616;--n19-hero:#1a1a1a;--n19-card:#232323;--n19-orange:#f05514;--n19-field:#3d3d3d;--n19-field-text:#fff;--n19-tab:#2b2b2b;--n19-rule:#3a3a3a;--n19-text:#eee}
+.template-root{background:var(--n19-page)!important}
+.basic-header{border-bottom:3px solid var(--n19-orange)!important}
+.header-outer .header-search-bar{background:var(--n19-field)!important;border-radius:2px!important}
+.header-outer .header-search-bar input.search-input{color:var(--n19-field-text)!important}
+.header-outer .header-search-bar input.search-input::placeholder{color:#bbb!important}
+.header-outer .header-search-bar svg:not(.no-recolor){fill:#bbb;color:#bbb}
+.header-outer .header-search-bar :is(button,.locations-title,[class*="location"]){color:var(--n19-field-text)!important}
+.content-module,.card-header,.card,.cur-con-weather-card,.today-forecast-card,[class*="-card"]:not(img){border-radius:0!important}
+.subnav.secondary-nav .subnav-item{text-transform:uppercase!important}
+:where(:root:not([data-n19-safe])) .subnav.secondary-nav .subnav-item,.subnav.secondary-nav:where(:root:not([data-n19-safe])) .subnav-item{padding-left:18px!important;padding-right:18px!important}
+.subnav.secondary-nav .subnav-item{border:1px solid transparent!important;border-bottom:0!important}
+.subnav.secondary-nav .subnav-item.active{background:var(--n19-tab)!important;border-color:var(--n19-rule)!important;border-top:3px solid var(--n19-orange)!important;color:var(--n19-text)!important}
+:where(:root:not([data-n19-safe])) .subnav.secondary-nav .subnav-item.active::after,.subnav.secondary-nav:where(:root:not([data-n19-safe])) .subnav-item.active::after,:where(:root:not([data-n19-safe])) .subnav.secondary-nav .subnav-item.active h2::after,.subnav.secondary-nav:where(:root:not([data-n19-safe])) .subnav-item.active h2::after{display:none!important}
+.page-hero{background:var(--n19-hero)!important}
+.page-hero::before,.page-hero::after{background:none!important}
+:where(:root:not([data-n19-safe])) .page-hero .page-hero-content,.page-hero:where(:root:not([data-n19-safe])) .page-hero-content{min-height:0!important;padding-top:16px!important;padding-bottom:20px!important}
+body.home,.template-root{background:var(--n19-page)!important}
+:where(:root:not([data-n19-safe])) .basic-header .afb-nav-container,.basic-header:where(:root:not([data-n19-safe])) .afb-nav-container,:where(:root:not([data-n19-safe])) .header-upsell,.header-upsell:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) a.upsell-ad[href*="/g-account/offerings"]{display:none!important}

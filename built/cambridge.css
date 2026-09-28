@@ -1,0 +1,81 @@
+html{--n19-bar:#3d3d3d;--n19-bar-2:#292929;--n19-on-bar:#fff;--n19-gold:#d0a44c;--n19-blue:#234b9a;--n19-link:#234b9a;--n19-red:#e84427;--n19-text:#292929;--n19-text-2:#444;--n19-border:#e6e6eb;--n19-panel:#eff1f6;--n19-page:#fff;--n19-badge:#444}
+html[data-net19-mode="dark"]{--n19-bar:#3d3d3d;--n19-bar-2:#292929;--n19-on-bar:#fff;--n19-gold:#d0a44c;--n19-blue:#2f5bb5;--n19-link:#8fb1ff;--n19-red:#ff6b50;--n19-text:#e6e6e6;--n19-text-2:#bbb;--n19-border:#444;--n19-panel:#262a33;--n19-page:#1b1b1b;--n19-badge:#666}
+body,input,button{font-family:Arial, Helvetica, sans-serif!important}
+body,.cc,.cc_pgwn{color:var(--n19-text)!important}
+#header #topNavBar{background:var(--n19-bar)!important}
+:where(:root:not([data-n19-safe])) #header #topNavBar,#header:where(:root:not([data-n19-safe])) #topNavBar{height:50px!important}
+#header #topNavBar a,#header #topNavBar button,#header #topNavBar span,#header #topNavBar i,#header #topNavBar .hdib{color:var(--n19-on-bar)!important}
+#header #topNavBar .cb i,#header #topNavBar .cb i::before,#header #topNavBar .cb i::after{background:var(--n19-on-bar)!important}
+#main-nav ul{font-weight:400!important}
+#main-nav a span{font-size:16px!important;font-weight:400!important}
+#main-nav a{border-top:3px solid transparent!important}
+:where(:root:not([data-n19-safe])) #main-nav a,#main-nav:where(:root:not([data-n19-safe])) a{padding-top:11px!important;padding-bottom:11px!important;margin-right:30px!important}
+#main-nav a.vh-a{border-top-color:var(--n19-gold)!important}
+#main-nav a.vh-a span{font-weight:700!important}
+#header #topNavBar .hbtn .tb{font-weight:400!important;font-size:14px!important}
+#header #searchBar{background:var(--n19-bar-2)!important}
+:where(:root:not([data-n19-safe])) #header #searchBar,#header:where(:root:not([data-n19-safe])) #searchBar{height:64px!important}
+:where(:root:not([data-n19-safe])) #header #searchBar>div,#header:where(:root:not([data-n19-safe])) #searchBar>div{padding-top:7px!important;padding-bottom:7px!important}
+:where(:root:not([data-n19-safe])) #header #searchBar form .chsf,#header:where(:root:not([data-n19-safe])) #searchBar form .chsf,:where(:root:not([data-n19-safe])) #header #searchBar form .chsf>.hoh,#header:where(:root:not([data-n19-safe])) #searchBar form .chsf>.hoh,:where(:root:not([data-n19-safe])) #header #searchBar .chsw,#header:where(:root:not([data-n19-safe])) #searchBar .chsw{height:50px!important}
+:where(:root:not([data-n19-safe])) #header #searchword,#header:where(:root:not([data-n19-safe])) #searchword{height:50px!important}
+#header #searchword{border:1px solid #ddd!important;border-radius:3px 0 0 3px!important;font-size:16px!important}
+:where(:root:not([data-n19-safe])) #header #searchword,#header:where(:root:not([data-n19-safe])) #searchword{padding-left:15px!important}
+#header #searchword{color:#292929!important}
+:where(:root:not([data-n19-safe])) #header #searchBar .chsw button.bw,#header:where(:root:not([data-n19-safe])) #searchBar .chsw button.bw{height:30px!important;margin-top:10px!important}
+#header #searchBar .chsw button.bw{border-left:1px solid #c7c7c7!important;border-radius:0!important}
+#header #searchBar button.bo{background:var(--n19-gold)!important}
+:where(:root:not([data-n19-safe])) #header #searchBar button.bo,#header:where(:root:not([data-n19-safe])) #searchBar button.bo{width:50px!important;height:50px!important}
+#header #searchBar button.bo{border-radius:0 3px 3px 0!important}
+#header #searchBar button.bo i{color:#fff!important;font-size:22px!important}
+#header #searchBar .chsb .hbtn{font-weight:400!important;color:var(--n19-on-bar)!important}
+#header #searchBar a{color:var(--n19-on-bar)!important}
+:where(:root:not([data-n19-safe])) .cc_pgwn,.cc_pgwn:where(:root:not([data-n19-safe])){padding-top:12px!important}
+:where(:root:not([data-n19-safe])) .cc_pgwn>.x>.hdn.hdb-m.hfl-m:has(>#ad_leftslot),.cc_pgwn:where(:root:not([data-n19-safe]))>.x>.hdn.hdb-m.hfl-m:has(>#ad_leftslot){display:none!important}
+:where(:root:not([data-n19-safe])) .cc_pgwn>.x>.hfr-m.ltab,.cc_pgwn:where(:root:not([data-n19-safe]))>.x>.hfr-m.ltab{float:none!important;width:1060px!important;max-width:calc(100% - 20px)!important;margin:0 0 0 auto!important}
+:where(:root:not([data-n19-safe])) #page-content,#page-content:where(:root:not([data-n19-safe])){width:calc(100% - 315px)!important}
+#page-content>h1.ti{font-size:16px!important;font-style:normal!important;line-height:1.4!important}
+:where(:root:not([data-n19-safe])) #page-content>h1.ti,#page-content:where(:root:not([data-n19-safe]))>h1.ti{margin:6px 0 12px!important}
+#page-content>h1.ti{color:var(--n19-text)!important}
+#page-content>h1.ti b{font-size:20px!important}
+.entry-body__el{border:1px solid var(--n19-border)!important}
+:where(:root:not([data-n19-safe])) .entry-body__el,.entry-body__el:where(:root:not([data-n19-safe])){padding:15px!important;margin-bottom:20px!important}
+.entry-body__el{background:var(--n19-page)!important}
+.entry-body .dhw,.dpos-h_hw,.di-title .hw{color:var(--n19-text)!important;font-weight:700!important;font-size:40px!important;line-height:1.075!important}
+.entry-body .posgram .pos,.entry-body .dpos-h .dpos{font-style:italic!important;font-size:20px!important;color:var(--n19-text-2)!important;font-weight:400!important}
+.entry-body .epp-xref,.entry-body .dxref.A1,.entry-body .def-info .epp-xref{background:var(--n19-badge)!important;color:#fff!important;border-radius:8px!important}
+.dsense_h{background:var(--n19-blue)!important;color:#fff!important}
+:where(:root:not([data-n19-safe])) .dsense_h,.dsense_h:where(:root:not([data-n19-safe])){padding:11px 20px!important;margin:0!important}
+.dsense_h{border:0!important;font-size:18px!important;line-height:1.3!important}
+.dsense_h .dsense_hw,.dsense_h .dsense_gw,.dsense_h .dsense_gw span{color:#fff!important;font-weight:700!important}
+.dsense_h .dsense_pos{color:#fff!important;font-style:italic!important;font-weight:400!important}
+.dsense{border:0!important}
+.entry-body .dwl .dwla{background:transparent!important;color:var(--n19-text-2)!important;border-radius:0!important}
+.entry-body .region,.entry-body .dpron-i .region,.entry-body .dreg{color:var(--n19-red)!important;font-weight:700!important}
+.entry-body .daud .i-volume-up{color:var(--n19-red)!important}
+.entry-body .pron,.entry-body .dpron{color:var(--n19-text)!important}
+.entry-body .def{color:var(--n19-text)!important;font-weight:700!important;font-size:18px!important;line-height:1.3!important}
+:where(:root:not([data-n19-safe])) .entry-body .def-body .examp,.entry-body:where(:root:not([data-n19-safe])) .def-body .examp{display:block!important}
+.entry-body .def-body .examp{list-style:none!important}
+:where(:root:not([data-n19-safe])) .entry-body .def-body .examp,.entry-body:where(:root:not([data-n19-safe])) .def-body .examp{padding-left:20px!important;margin:0 0 5px!important}
+.entry-body .def-body .examp{font-size:16px!important;line-height:1.5!important}
+:where(:root:not([data-n19-safe])) .entry-body .def-body .examp::before,.entry-body:where(:root:not([data-n19-safe])) .def-body .examp::before,:where(:root:not([data-n19-safe])) .entry-body .def-body .examp::marker,.entry-body:where(:root:not([data-n19-safe])) .def-body .examp::marker{display:none!important}
+.entry-body .eg,.entry-body .deg{color:var(--n19-text)!important;font-style:italic!important;font-size:16px!important}
+.entry-body .def a.query,.entry-body .deg a.query,.entry-body .eg a.query{color:inherit!important}
+:where(:root:not([data-n19-safe])) .entry-body .def-block .hflxrev,.entry-body:where(:root:not([data-n19-safe])) .def-block .hflxrev{flex-direction:row!important}
+:where(:root:not([data-n19-safe])) .entry-body .def-block .dimg amp-img,.entry-body:where(:root:not([data-n19-safe])) .def-block .dimg amp-img{width:120px!important;height:auto!important;min-height:90px!important}
+.entry-body .xref-title,.entry-body .dxref-t{font-weight:700!important;color:var(--n19-text)!important}
+.entry-body .xref a,.entry-body a.Ref,.entry-body .see_also a,.cdo-more-results a{color:var(--n19-link)!important;font-weight:700!important}
+.bb,.di-head,.di_h{border-radius:0!important}
+:where(:root:not([data-n19-safe])) .lt2s>div[amp-access]:has(a[href*="quiz"i],a[title*="quiz"i]),.lt2s:where(:root:not([data-n19-safe]))>div[amp-access]:has(a[href*="quiz"i],a[title*="quiz"i]){display:none!important}
+:where(:root:not([data-n19-safe])) .entry-body .pos-header>div:empty,.entry-body:where(:root:not([data-n19-safe])) .pos-header>div:empty{display:none!important}
+:where(:root:not([data-n19-safe])) .entry-body .pos-header .posgram,.entry-body:where(:root:not([data-n19-safe])) .pos-header .posgram{margin-right:10px!important}
+.cdo-more-results{background:var(--n19-panel)!important}
+.cdo-more-results h2{background:var(--n19-blue)!important;color:#fff!important;font-size:18px!important;font-weight:400!important}
+:where(:root:not([data-n19-safe])) .cdo-more-results h2,.cdo-more-results:where(:root:not([data-n19-safe])) h2{padding:15px!important;margin:0!important}
+.cdo-more-results h2 em{color:#fff!important;font-style:normal!important;font-weight:400!important}
+.cdo-more-results .ca_h{background:transparent!important;color:var(--n19-red)!important}
+#ContentsMenu{background:var(--n19-bar)!important}
+:where(:root:not([data-n19-safe])) #header li:has(>a>.ai-header-button),#header:where(:root:not([data-n19-safe])) li:has(>a>.ai-header-button),:where(:root:not([data-n19-safe])) #header li:has(>a[href="/assistant"]),#header:where(:root:not([data-n19-safe])) li:has(>a[href="/assistant"]),:where(:root:not([data-n19-safe])) .ai-header-button,.ai-header-button:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) a[href="/assistant"]{display:none!important}
+.cdo-more-results a,.cdo-more-results a *{text-decoration:none!important}
+.entry-body .dwl,.entry-body .dsense .dwl,.entry-body .def-block>.dwl{border:0!important;box-shadow:none!important;background:transparent!important}
+:where(:root:not([data-n19-safe])) #header #searchBar .chsf>.hdb-l>a:has(>img),#header:where(:root:not([data-n19-safe])) #searchBar .chsf>.hdb-l>a:has(>img){display:block!important;margin-top:3px!important}

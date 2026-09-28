@@ -20,7 +20,8 @@ A Chrome extension that shows popular websites as they looked in **2019**.
 - **Smaller websites are unaffected:** Smaller and personal websites load exactly as they are, so you don't need to worry about how the extension messes with more niche styles or indie work.
 - **Minimal UI:** The extension features just two toggles, one to toggle it on and off for a particlar website, and the other to toggle it on and off in general. 
 - **Color themes:** Naturally adapts websites to your computer's light or dark theme, while keeping the 2019 style, and maintaining true color for important media such as photos and videos. 
-- **User privacy:** The extension runs completely locally. No user data is stored except for toggle choices. ([privacy policy](PRIVACY.md)).
+- **Survives redesigns:** If a site redesign stops a design from fitting, that part of the site falls back to its 2019 colors and fonts on the current layout instead of breaking, and switches back once the design fits again. A weekly check flags the design for an update.
+- **User privacy:** The extension runs completely locally. No user data is stored except for toggle choices, and the names of site sections whose design currently doesn't fit. ([privacy policy](PRIVACY.md)).
 
 ## Report a problem or request a site
 

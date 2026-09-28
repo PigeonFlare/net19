@@ -1,0 +1,31 @@
+html{--n19-page:#fff;--n19-text:#333;--n19-link:#1d3994;--n19-link-2:#000d99;--n19-visited:#941d55;--n19-url:#008000;--n19-snippet:#444;--n19-band:#f1f5ff;--n19-box:#e6ecfe;--n19-frame:#9eb4db;--n19-frame-2:#beccea;--n19-tab-off:#eef2fb;--n19-head:#f9f9f9;--n19-head-rule:#e7e7e7;--n19-blue:#4070ff;--n19-blue-hover:#3460ff;--n19-field:#999;--n19-logo:url("https://s.yimg.jp/images/top/sp2/cmn/logo-170307.png")}
+html[data-net19-mode="dark"]{--n19-page:#1f1f1f;--n19-text:#ddd;--n19-link:#9db4ff;--n19-link-2:#9db4ff;--n19-visited:#d59ac0;--n19-url:#7fbf7f;--n19-snippet:#bbb;--n19-band:#262b36;--n19-box:#232837;--n19-frame:#46526b;--n19-frame-2:#3a4459;--n19-tab-off:#2a303d;--n19-head:#262626;--n19-head-rule:#3a3a3a;--n19-field:#666}
+:where(:root:not([data-n19-safe])) #agenti,#agenti:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #eyebrow>a[href*="/aichat"],#eyebrow:where(:root:not([data-n19-safe]))>a[href*="/aichat"],:where(:root:not([data-n19-safe])) a[href*="search.yahoo.co.jp/aichat"],:where(:root:not([data-n19-safe])) a[href*="search.yahoo.co.jp/chat?"],:where(:root:not([data-n19-safe])) #tool_pickup,#tool_pickup:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #Perorin,#Perorin:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .AiAssistant,.AiAssistant:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .VerticalTab__aiAssistButton,.VerticalTab__aiAssistButton:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .sw-Card[class*="AnswerAi"],.sw-Card[class*="AnswerAi"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .sw-Perorin,.sw-Perorin:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .sw-AiButton,.sw-AiButton:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) :is(a,button)[class*="aiAgent"i],:is(a,button)[class*="aiAgent"i]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) :is(a,button)[class*="aiAssist"i],:is(a,button)[class*="aiAssist"i]:where(:root:not([data-n19-safe])){display:none!important}
+:where(:root:not([data-n19-safe])) #ContentWrapper .sw-CardBase:has(>.sw-Card[class*="AnswerAi"]:only-child),#ContentWrapper:where(:root:not([data-n19-safe])) .sw-CardBase:has(>.sw-Card[class*="AnswerAi"]:only-child),:where(:root:not([data-n19-safe])) #contents .sw-CardBase:has(>.sw-Card[class*="AnswerAi"]:only-child),#contents:where(:root:not([data-n19-safe])) .sw-CardBase:has(>.sw-Card[class*="AnswerAi"]:only-child){display:none!important}
+:where(:root:not([data-n19-safe])) #Masthead>h1:has(>a[href="https://www.yahoo.co.jp"]),#Masthead:where(:root:not([data-n19-safe]))>h1:has(>a[href="https://www.yahoo.co.jp"]){background-image:var(--n19-logo)!important}
+#Masthead>h1:has(>a[href="https://www.yahoo.co.jp"]){background-size:contain!important;background-repeat:no-repeat!important;background-position:center!important}
+#tabTopics [role="tablist"]{border-bottom:1px solid var(--n19-frame)!important}
+#tabTopics [role="tab"]{background-color:var(--n19-tab-off)!important;border-top:1px solid var(--n19-frame-2)!important}
+#tabTopics [role="tab"]+[role="tab"]{border-left:1px solid var(--n19-frame-2)!important}
+#tabTopics [role="tab"][aria-selected="true"]{background-color:var(--n19-page)!important;border-top-color:var(--n19-frame)!important}
+#tabTopics [role="tab"][aria-selected="true"] a{font-weight:700!important;color:var(--n19-text)!important}
+#tabTopics [role="tab"]:not([aria-selected="true"]) a{color:var(--n19-link)!important}
+#tabScoreboard [role="tab"]{background-color:var(--n19-tab-off)!important}
+#tabScoreboard [role="tab"][aria-selected="true"]{background-color:var(--n19-page)!important}
+#header.Header,#header.Header .Header__fixedItem,#header.Header .sw-Expand{background-color:var(--n19-head)!important}
+#header.Header{border-bottom:1px solid var(--n19-head-rule)!important;box-shadow:none!important}
+#header.Header .SearchBox__form{border-radius:0!important;box-shadow:none!important}
+#header.Header .SearchBox__searchInputWrap{border:1px solid var(--n19-field)!important;border-top-color:#7c7c7c!important;border-radius:0!important;background:var(--n19-page)!important;box-shadow:none!important}
+#header.Header .SearchBox__searchInputWrap:focus-within{border-color:var(--n19-blue)!important}
+#header.Header .SearchBox__searchButton{background-color:var(--n19-blue)!important;border:0!important;border-radius:0!important;color:#fff!important}
+#header.Header .SearchBox__searchButton:hover{background-color:var(--n19-blue-hover)!important}
+#header.Header .SearchBox__searchButton :is(span,i,svg){color:#fff!important;fill:#fff!important}
+#header.Header .User__loginLink{border-radius:0!important}
+#SaA-tg-list>li>strong{font-weight:700!important;color:var(--n19-text)!important}
+#SaA-tg-list>li>a{color:#444!important}
+#contents .Algo .sw-Card__titleInner,#contents .Algo .sw-Card__titleInner h3{color:var(--n19-link-2)!important}
+#contents .Algo .sw-Card__titleInner h3{text-decoration:underline!important}
+#contents .Algo .sw-Card__titleInner:visited,#contents .Algo .sw-Card__titleInner:visited h3{color:var(--n19-visited)!important}
+#contents .Algo .sw-Cite__textUrl{color:var(--n19-url)!important}
+#contents .Algo .sw-Card__summary{color:var(--n19-snippet)!important}
+#contents .sw-CardBase{border-radius:0!important;box-shadow:none!important}

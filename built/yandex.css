@@ -1,0 +1,41 @@
+html{--n19-yellow:#fc0;--n19-yellow-press:#f2cf46;--n19-link:#1a0dab;--n19-visited:#551a8b;--n19-hover:#d00;--n19-path:#070;--n19-text:#000;--n19-text-2:#999;--n19-page:#fff;--n19-gray-page:#eceef2;--n19-card:#fff;--n19-rule:#e6e6e6;--n19-field:#fff;--n19-tab-active:#f33;--n19-font:Arial, "Helvetica Neue", Helvetica, sans-serif;--n19-logo-ys:url("https://yastatic.net/islands/_/RQWGFypkIRAzEbaERs_Sq8zKRzY.svg");--n19-logo-pogoda:url("https://yastatic.net/s3/weather-frontend/10.15.4/i/service-name/ru.svg")}
+html[data-net19-mode="dark"]{--n19-link:#8ab4f8;--n19-visited:#c58af9;--n19-hover:#ff6b6b;--n19-path:#5bb974;--n19-text:#e8e8e8;--n19-text-2:#9a9a9a;--n19-page:#1f1f1f;--n19-gray-page:#161616;--n19-card:#262626;--n19-rule:#3a3a3a;--n19-field:#262626}
+html[data-net19-mode="dark"]:not([data-net19-flip]){--n19-logo-filter:invert(1) hue-rotate(180deg)}
+html[data-n19-ya="serp"] body :is(.serp-item,.HeaderDesktop,.HeaderForm,.HeaderNav,.Organic,.Path,.OrganicText,.SerpFooter){font-family:var(--n19-font)!important}
+html[data-n19-ya="serp"] .HeaderLogo{background:var(--n19-logo-ys) no-repeat left center / 86px 35px!important}
+html[data-n19-ya="serp"]:where(:root:not([data-n19-safe])) .HeaderLogo{min-width:86px!important}
+html[data-n19-ya="serp"] .HeaderLogo{filter:var(--n19-logo-filter, none)}
+html[data-n19-ya="serp"]:where(:root:not([data-n19-safe])) .HeaderLogo>*{opacity:0!important}
+html[data-n19-ya="serp"] .HeaderForm-InputWrapper,html[data-n19-ya="serp"] .HeaderForm-InputContainer{border-radius:0!important}
+html[data-n19-ya="serp"] .HeaderForm{border-radius:0!important;box-shadow:none!important}
+html[data-n19-ya="serp"] .HeaderForm-InputContainer{border:2px solid var(--n19-yellow)!important;background:var(--n19-field)!important;box-shadow:none!important}
+html[data-n19-ya="serp"] .HeaderForm-Submit{background:var(--n19-yellow)!important;color:#000!important;border-radius:0!important}
+html[data-n19-ya="serp"] .HeaderForm-Submit:active{background:var(--n19-yellow-press)!important}
+html[data-n19-ya="serp"] .HeaderForm-Submit *{color:#000!important}
+html[data-n19-ya="serp"] .HeaderNav-Tab{font-size:14px!important;color:#555!important;background:transparent!important;border-radius:0!important}
+html[data-n19-ya="serp"] .HeaderNav-Tab_selected{color:var(--n19-text)!important;box-shadow:inset 0 -2px 0 var(--n19-text)!important}
+html[data-n19-ya="serp"] .serp-item.serp-item_card,html[data-n19-ya="serp"] .serp-item_card{background:transparent!important;box-shadow:none!important;border-radius:0!important}
+html[data-n19-ya="serp"] .OrganicTitle-Link,html[data-n19-ya="serp"] .OrganicTitle-Link .OrganicTitle-LinkText{color:var(--n19-link)!important}
+html[data-n19-ya="serp"] .OrganicTitle-Link:visited,html[data-n19-ya="serp"] .OrganicTitle-Link:visited .OrganicTitle-LinkText{color:var(--n19-visited)!important}
+html[data-n19-ya="serp"] .OrganicTitle-Link:hover,html[data-n19-ya="serp"] .OrganicTitle-Link:hover .OrganicTitle-LinkText{color:var(--n19-hover)!important}
+html[data-n19-ya="serp"] .OrganicTitle{font-size:18px!important;font-weight:400!important}
+html[data-n19-ya="serp"] :is(.Path,.Path-Item,.Organic-Path,.Organic-Path a){color:var(--n19-path)!important}
+html[data-n19-ya="serp"] .OrganicText{color:var(--n19-text)!important;font-size:13px!important}
+html[data-n19-ya="pogoda"] body,html[data-n19-ya="pogoda"] [class*="AppLayoutTypeMain_contentWrapper__"],html[data-n19-ya="pogoda"] [class*="AppLayoutTypeMain_center__"]{background-color:var(--n19-gray-page)!important}
+html[data-n19-ya="pogoda"] header[class*="AppHeader_header__"]{background-color:var(--n19-page)!important;box-shadow:0 1px 0 rgba(0,0,0,.08)!important}
+html[data-n19-ya="pogoda"]:where(:root:not([data-n19-safe])) a[class*="AppLogo_rootLogo__"],html[data-n19-ya="pogoda"]:where(:root:not([data-n19-safe])) a[class*="AppLogo_serviceLogo__"]{display:inline-block!important;flex:none!important}
+html[data-n19-ya="pogoda"] a[class*="AppLogo_rootLogo__"],html[data-n19-ya="pogoda"] a[class*="AppLogo_serviceLogo__"]{filter:var(--n19-logo-filter, none)}
+html[data-n19-ya="pogoda"]:where(:root:not([data-n19-safe])) a[class*="AppLogo_rootLogo__"]{width:86px!important;height:35px!important}
+html[data-n19-ya="pogoda"] a[class*="AppLogo_rootLogo__"]{background:var(--n19-logo-ys) no-repeat center / 86px 35px!important}
+html[data-n19-ya="pogoda"]:where(:root:not([data-n19-safe])) a[class*="AppLogo_rootLogo__"]{margin-right:6px!important}
+html[data-n19-ya="pogoda"]:where(:root:not([data-n19-safe])) a[class*="AppLogo_serviceLogo__"]{width:68px!important;height:28px!important}
+html[data-n19-ya="pogoda"] a[class*="AppLogo_serviceLogo__"]{background:var(--n19-logo-pogoda) no-repeat center / 68px 28px!important}
+html[data-n19-ya="pogoda"]:where(:root:not([data-n19-safe])) a[class*="AppLogo_serviceLogo__"]{margin-top:3px!important}
+html[data-n19-ya="pogoda"]:where(:root:not([data-n19-safe])) a:is([class*="AppLogo_rootLogo__"],[class*="AppLogo_serviceLogo__"])>:is(img,picture,svg){opacity:0!important;width:100%!important;height:100%!important}
+html[data-n19-ya="pogoda"] a[class*="AppHeaderNavigationItem_list__link__"],html[data-n19-ya="pogoda"] button[class*="AppHeaderNavigation_more__"]{background:transparent!important;border-radius:0!important}
+html[data-n19-ya="pogoda"] nav[class*="AppHeaderNavigation_navigation__"] a[class*="AppHeaderNavigationItem_list__link_active__"]{box-shadow:inset 0 -2px 0 var(--n19-tab-active)!important}
+html[data-n19-ya="pogoda"] input[class*="Suggest_input__"]{border-radius:3px!important;border:1px solid rgba(0,0,0,.15)!important;background:var(--n19-field)!important}
+html[data-n19-ya="pogoda"] header :is(button[class*="AppFindMeButton_button__"],button[class*="FavoriteButton_favorite__button__"],button[class*="AppSettings_button__"]){background:transparent!important}
+html[data-n19-ya="pogoda"] section[class*="AppLayoutTypeMain_content_type_main__"]{background-color:var(--n19-card)!important;border-radius:12px!important}
+html[data-n19-ya="market"] form#HeaderSearchLightId>div,html[data-n19-ya="market"] form#HeaderSearchLightId>div>div,html[data-n19-ya="market"] form#HeaderSearchLightId>div>div>div{border-radius:3px!important}
+html[data-n19-ya="pogoda"]:where(:root:not([data-n19-safe])) [class*="AliceChat_scroll__"],html[data-n19-ya="pogoda"]:where(:root:not([data-n19-safe])) [class*="AppPromoInner_container__"],html[data-n19-ya="market"]:where(:root:not([data-n19-safe])) li:has(>[id$="/header/ecomAssistantModalTrigger"]),html[data-n19-ya="market"]:where(:root:not([data-n19-safe])) li:has(>[id$="/header/balanceBadge"]),html[data-n19-ya="market"]:where(:root:not([data-n19-safe])) [id="ecomAssistantModalTrigger"],html[data-n19-ya="translate"]:where(:root:not([data-n19-safe])) #gptTutorEntry,html[data-n19-ya="translate"]:where(:root:not([data-n19-safe])) button[data-tracking-data*="typeTranslationButton"]{display:none!important}

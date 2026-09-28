@@ -3,6 +3,7 @@ import { test } from 'node:test';
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { settingsFrom } from '../src/settings';
 import { navigationRules } from '../src/navigation';
+import { compileTheme } from '../scripts/styles.mjs';
 import { THEMES, THEMED_DOMAINS, themeFiles, themeFor, themeMatches, themePaused } from '../src/themes';
 
 const rule = (id: string) => THEMES.find(theme => theme.id === id)!;
@@ -77,4 +78,31 @@ test('theme stylesheets follow the styling-rule contract', () => {
     assert.ok(/globalThis\.net19Theme\s*=/.test(js), `${file}: no theme config`);
     assert.ok(!/removeAttribute\('dark'\)|classList\.remove\([^)]*dark/i.test(js), `${file}: overrides the site's mode`);
   }
+});
+
+test('theme layout rules are gated so a theme can step back to colors and fonts', () => {
+  const css = compileTheme('html { --n19-a: 1px; } .card { color: red; display: none; background: url(x.png); background-color: blue } html[data-x] .bar { margin: 0 } [data-y] { width: 1px }');
+  assert.equal(css, [
+    'html{--n19-a:1px}',
+    '.card{color:red}',
+    ':where(:root:not([data-n19-safe])) .card,.card:where(:root:not([data-n19-safe])){display:none;background:url(x.png)}',
+    '.card{background-color:blue}',
+    'html[data-x]:where(:root:not([data-n19-safe])) .bar{margin:0}',
+    ':where(:root:not([data-n19-safe])) [data-y],[data-y]:where(:root:not([data-n19-safe])){width:1px}',
+    '',
+  ].join('\n'));
+  assert.equal(compileTheme('html[data-g] { & a { color: red; order: 1 } @media (min-width: 9px) { & b { top: 0 } } } ::selection { width: 0 }'), [
+    ':is(html[data-g]) a{color:red}',
+    ':where(:root:not([data-n19-safe])) :is(html[data-g]) a,:is(html[data-g]):where(:root:not([data-n19-safe])) a{order:1}',
+    '@media (min-width:9px){:where(:root:not([data-n19-safe])) :is(html[data-g]) b,:is(html[data-g]):where(:root:not([data-n19-safe])) b{top:0}}',
+    ':where(:root:not([data-n19-safe])) ::selection,:where(:root:not([data-n19-safe]))::selection{width:0}',
+    '',
+  ].join('\n'));
+});
+
+test('built stylesheets are up to date with themes/', () => {
+  for (const file of readdirSync('themes').filter(name => name.endsWith('.css'))) {
+    assert.equal(readFileSync(`built/${file}`, 'utf8'), compileTheme(readFileSync(`themes/${file}`, 'utf8')), `built/${file} is stale: run npm run build`);
+  }
+  assert.deepEqual(readdirSync('built').sort(), readdirSync('themes').filter(name => name.endsWith('.css')).sort());
 });

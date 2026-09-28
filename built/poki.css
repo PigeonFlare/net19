@@ -1,0 +1,12 @@
+html{--n19-page:#83ffe7;--n19-text:#002b50;--n19-tile:#fff;--n19-line:#f0f5fc;--n19-blue:#009cff;--n19-glass:rgba(255, 255, 255, .2)}
+html[data-net19-mode="dark"]{--n19-page:#83ffe7;--n19-text:#002b50;--n19-tile:#fff;--n19-line:#f0f5fc;--n19-blue:#009cff;--n19-glass:rgba(255, 255, 255, .2)}
+html[data-net19-flip] img[data-net19-flat]:is([src*="img.poki-cdn.com"],[srcset*="img.poki-cdn.com"],[src*="/cdn-cgi/image/"]){filter:contrast(1.13636) hue-rotate(180deg) invert(1)!important}
+html[data-net19-flip] section[role="search"]{background-color:#d4f8f0!important}
+html[data-net19-flip] section[role="search"]+div:empty{background-color:rgb(138, 153, 182)!important}
+:where(:root:not([data-n19-safe])) #nav div:has(>#profile-btn),#nav:where(:root:not([data-n19-safe])) div:has(>#profile-btn){display:none!important}
+:where(:root:not([data-n19-safe])) #nav button[aria-label="Search"],#nav:where(:root:not([data-n19-safe])) button[aria-label="Search"]{flex:1 1 auto!important;width:100%!important}
+#nav button[aria-label="Search"]{border-left:0!important;border-radius:0 0 16px 16px!important}
+:where(:root:not([data-n19-safe])) #page-background:has(img[src*="brand-assets"]),#page-background:has(img[src*="brand-assets"]):where(:root:not([data-n19-safe])){display:none!important}
+#app-root header:has(>h1){background:var(--n19-glass)!important;box-shadow:none!important}
+:where(:root:not([data-n19-safe])) #app-root header:has(>h1)>span[role="img"],#app-root:where(:root:not([data-n19-safe])) header:has(>h1)>span[role="img"]{display:none!important}
+#app-root header>h1{font-size:28px!important;line-height:32px!important;color:var(--n19-text)!important}

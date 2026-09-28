@@ -1,0 +1,27 @@
+html{--n19-font:Arial, Tahoma, "Bitstream Vera Sans", sans-serif;--n19-green:#00a680;--n19-green-hover:#008a6a;--n19-ink:#000a12;--n19-text:#4a4a4a;--n19-rule:#e0e0e0;--n19-card:#fff;--n19-shadow:0 2px 8px rgba(0,0,0,.18)}
+html[data-net19-mode="dark"]{--n19-green:#00a680;--n19-green-hover:#00c294;--n19-ink:#f2f2f2;--n19-text:#ccc;--n19-rule:#3a3a3a;--n19-card:#1e1e1e;--n19-shadow:0 2px 8px rgba(0,0,0,.6)}
+:root:root body,:root:root body :not(svg):not(svg *){font-family:var(--n19-font)!important}
+html:root{--radius-medium:3px!important;--radius-large:4px!important;--radius-xlarge:4px!important;--radius-full:3px!important}
+a[href*="/Profile/"] :is(img,picture,picture *){border-radius:50%!important}
+[data-automation="desktop-cart-and-profile"] a[href*="RegistrationController"]{background:var(--n19-green)!important;color:#fff!important;border-radius:3px!important;text-transform:uppercase!important;letter-spacing:.5px!important;font-size:13px!important;font-weight:700!important}
+:where(:root:not([data-n19-safe])) [data-automation="desktop-cart-and-profile"] a[href*="RegistrationController"],[data-automation="desktop-cart-and-profile"]:where(:root:not([data-n19-safe])) a[href*="RegistrationController"]{min-height:32px!important;height:32px!important;padding:0 14px!important}
+[data-automation="desktop-cart-and-profile"] a[href*="RegistrationController"]:hover{background:var(--n19-green-hover)!important}
+header:not(main header){border-bottom:1px solid var(--n19-rule)!important}
+header nav [data-automation^="topNav"] :is(a,button){font-size:14px!important;font-weight:700!important;color:var(--n19-text)!important;border-radius:3px!important}
+main h1:first-of-type{color:var(--n19-ink)!important}
+main div:has(>form[role="search"]){border:none!important;box-shadow:var(--n19-shadow)!important;background:var(--n19-card)!important}
+main form[role="search"] button:not([type="submit"]):last-of-type{background:var(--n19-green)!important;border-color:var(--n19-green)!important;color:#fff!important;font-weight:700!important;font-size:15px!important}
+main form[role="search"] button:not([type="submit"]):last-of-type *{color:#fff!important}
+main form[role="search"] button:not([type="submit"]):last-of-type:hover{background:var(--n19-green-hover)!important}
+[data-automation="tab-list"]{background:var(--n19-card)!important;border:1px solid var(--n19-rule)!important}
+:where(:root:not([data-n19-safe])) [data-automation="tab-list"],[data-automation="tab-list"]:where(:root:not([data-n19-safe])){gap:0!important;padding:10px 0!important}
+[data-automation="tab-list"]>button,[data-automation="tab-list"] [role="tab"]{border-radius:0!important}
+:where(:root:not([data-n19-safe])) [data-automation="tab-list"]>button,[data-automation="tab-list"]:where(:root:not([data-n19-safe]))>button,:where(:root:not([data-n19-safe])) [data-automation="tab-list"] [role="tab"],[data-automation="tab-list"]:where(:root:not([data-n19-safe])) [role="tab"]{padding:6px 22px!important}
+[data-automation="tab-list"]>button,[data-automation="tab-list"] [role="tab"]{border-left:1px solid var(--n19-rule)!important}
+[data-automation="tab-list"] [role="tab"]:first-child{border-left:none!important}
+[data-automation="tab-list"] [role="tab"] span{font-size:15px!important;font-weight:700!important;color:var(--n19-text)!important}
+[data-automation="tab-list"] [role="tab"][aria-selected="true"] span{color:var(--n19-ink)!important}
+:where(:root:not([data-n19-safe])) [data-automation="tab-list"] [role="tab"]::after,[data-automation="tab-list"]:where(:root:not([data-n19-safe])) [role="tab"]::after,:where(:root:not([data-n19-safe])) [data-automation="tab-list"] [role="tab"]::before,[data-automation="tab-list"]:where(:root:not([data-n19-safe])) [role="tab"]::before{display:none!important}
+[data-automation="tab-list"] [role="tab"] svg{fill:var(--n19-green)!important}
+main a img,main picture img,main a>div:has(picture){border-radius:2px!important}
+:where(:root:not([data-n19-safe])) [data-net19-hidden],[data-net19-hidden]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #GAI_REVIEWS,#GAI_REVIEWS:where(:root:not([data-n19-safe])){display:none!important}

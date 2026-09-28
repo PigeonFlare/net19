@@ -1,0 +1,11 @@
+html{--n19-tr-tab:rgba(0,0,0,.54);--n19-tr-tab-on:#4285f4;--n19-tr-btn-on:rgba(66,133,244,.12);--n19-tr-btn-on-border:#d2e3fc}
+html[data-net19-mode="dark"]{--n19-tr-tab:#9aa0a6;--n19-tr-tab-on:#8ab4f8;--n19-tr-btn-on:rgba(138,180,248,.16);--n19-tr-btn-on-border:#394457}
+:where(:root:not([data-n19-safe])) button[jsname="jerT5"],:where(:root:not([data-n19-safe])) button[jsname="SHEbFd"],:where(:root:not([data-n19-safe])) div:has(>div>button[jsname="SHEbFd"]):not(:has(>:nth-child(2))),:where(:root:not([data-n19-safe])) button[jsname="hMyCvb"],:where(:root:not([data-n19-safe])) div:has(>div>button[jsname="hMyCvb"]):not(:has(>:nth-child(2))){display:none!important}
+button:is([jsname="bl4nBb"],[jsname="qDeCrf"],[jsname="n87sxd"]){border-radius:4px!important;border:1px solid var(--n19-border)!important;color:var(--n19-accent)!important;font:500 15px/34px "Google Sans", Roboto, Arial, sans-serif!important;letter-spacing:normal!important}
+:where(:root:not([data-n19-safe])) button:is([jsname="bl4nBb"],[jsname="qDeCrf"],[jsname="n87sxd"]){height:36px!important;padding:0 16px 0 12px!important;box-sizing:border-box!important}
+button:is([jsname="bl4nBb"],[jsname="qDeCrf"],[jsname="n87sxd"]) :is(span,i,svg){color:var(--n19-accent)!important;font-family:inherit}
+button:is([jsname="bl4nBb"],[jsname="qDeCrf"],[jsname="n87sxd"]):is([aria-current="page"],[aria-pressed="true"],[aria-selected="true"]){background:var(--n19-tr-btn-on)!important;border-color:var(--n19-tr-btn-on-border)!important}
+button:is([jsname="bl4nBb"],[jsname="qDeCrf"],[jsname="n87sxd"]) :is(.VfPpkd-Jh9lGc,.VfPpkd-J1Ukfc-LhBDec,.VfPpkd-RLmnJb){border-radius:4px!important}
+button[role="tab"][data-language-code] .VfPpkd-jY41G-V67aGc{text-transform:uppercase!important;color:var(--n19-tr-tab)!important;font:500 14px/1 Roboto, Arial, sans-serif!important;letter-spacing:.14px!important}
+button[role="tab"][data-language-code][aria-selected="true"] .VfPpkd-jY41G-V67aGc{color:var(--n19-tr-tab-on)!important}
+button[role="tab"][data-language-code] .VfPpkd-AznF2e-wEcVzc{border-top-width:3px!important;border-color:var(--n19-tr-tab-on)!important}

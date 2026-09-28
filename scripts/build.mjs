@@ -1,11 +1,13 @@
 import { build } from 'esbuild';
 import { readFile } from 'node:fs/promises';
 import sharp from 'sharp';
+import { buildStyles } from './styles.mjs';
 
 const root = new URL('../', import.meta.url);
 await build({ entryPoints: { background: 'src/background.ts', popup: 'src/popup.ts', content: 'src/content/index.js' },
   outdir: root.pathname, bundle: true, platform: 'browser', target: 'chrome120', format: 'iife',
   minify: true, legalComments: 'eof', logLevel: 'warning' });
+await buildStyles(root);
 const icon = await readFile(new URL('icons/icon.svg', root));
 for (const size of [16, 32, 48, 128]) {
   await sharp(icon).resize(size, size).png().toFile(new URL(`icons/${size}.png`, root).pathname);

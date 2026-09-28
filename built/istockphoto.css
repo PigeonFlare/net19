@@ -1,0 +1,9 @@
+html{--n19-bar:#0c0d0d;--n19-nav:#ccc;--n19-nav-hover:#fff;--n19-teal:#02a388}
+html[data-net19-mode="dark"]{--n19-bar:#0c0d0d;--n19-nav:#ccc;--n19-nav-hover:#fff;--n19-teal:#2cc3a5}
+html:root{--button-border-radius:2px!important}
+header[data-testid="FullHeader"]{background-color:var(--n19-bar)!important}
+ul[data-testid="MainNavLeftList"] a[data-testid="nav-link"],ul[data-testid="MainNavLeftList"] button,nav[data-testid="MainNavRight"] a[data-testid="nav-link"]{color:var(--n19-nav)!important;font-weight:400!important}
+ul[data-testid="MainNavLeftList"] a[data-testid="nav-link"]:hover,nav[data-testid="MainNavRight"] a[data-testid="nav-link"]:hover{color:var(--n19-nav-hover)!important}
+[data-testid="nav-sign_in"] a{background:transparent!important;border-color:transparent!important;color:#fff!important;font-weight:700!important}
+:where(:root:not([data-n19-safe])) li[data-testid="ai-gen-link"],:where(:root:not([data-n19-safe])) li[data-testid="mobile-nav-ai_gen"]{display:none!important}
+[data-testid="search-bar"],[data-testid*="search-box"i],form[role="search"]{border-radius:2px!important}

@@ -2,7 +2,7 @@ import { zipSync } from 'fflate';
 import { readdir, readFile, mkdir, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 const root = new URL('../', import.meta.url);
-const EXTENSION = /^(?:icons\/(?:\d+\.png|icon\.svg)|(?:background|popup|content)\.js|popup\.html|ui\.css|themes\/[a-z0-9]+\.(?:css|js)|manifest\.json)$/;
+const EXTENSION = /^(?:icons\/(?:\d+\.png|icon\.svg)|(?:background|popup|content)\.js|popup\.html|ui\.css|themes\/[a-z0-9]+\.js|built\/[a-z0-9]+\.css|manifest\.json)$/;
 const files = {};
 async function collect(directory, prefix = '') {
   for (const entry of (await readdir(directory, { withFileTypes: true })).sort((a, b) => a.name.localeCompare(b.name))) {

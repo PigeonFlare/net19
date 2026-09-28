@@ -1,0 +1,40 @@
+html{--n19-bar:#041e42;--n19-bar-hover:rgba(255,255,255,.12);--n19-bar-text:#fff;--n19-field:#fff;--n19-field-text:#000;--n19-icon:#041e42;--n19-row:#fff;--n19-row-border:#e6e7e8;--n19-row-text:#041e42;--n19-bubble:#0a2f5c;--n19-yellow:#ffc220;--n19-font:Bogle, BogleWeb, "Helvetica Neue", Helvetica, Arial, sans-serif}
+html[data-net19-mode="dark"]{--n19-bar:#041e42;--n19-bar-hover:rgba(255,255,255,.12);--n19-bar-text:#fff;--n19-field:#1f2023;--n19-field-text:#e3e4e5;--n19-icon:#e3e4e5;--n19-row:#16181b;--n19-row-border:#2e3033;--n19-row-text:#e3e4e5;--n19-bubble:#0a2f5c;--n19-yellow:#ffc220}
+body{--font-family-default:var(--n19-font);--ld-primitive-font-family-sans:var(--n19-font);--ld-semantic-font-body-large-family:var(--n19-font);--ld-semantic-font-body-medium-family:var(--n19-font);--ld-semantic-font-body-small-family:var(--n19-font);--ld-semantic-font-caption-family:var(--n19-font);--ld-semantic-font-display-large-family:var(--n19-font);--ld-semantic-font-display-small-family:var(--n19-font);--ld-semantic-font-heading-large-family:var(--n19-font);--ld-semantic-font-heading-medium-family:var(--n19-font);--ld-semantic-font-heading-small-family:var(--n19-font);--ld-semantic-color-top-nav-fill:var(--n19-bar);--ld-semantic-color-top-nav-fill-hovered:var(--n19-bar-hover);--ld-semantic-color-top-nav-fill-focused:var(--n19-bar-hover);--ld-semantic-color-top-nav-fill-pressed:rgba(0,0,0,.3);font-family:var(--n19-font)!important}
+.sans-serif,button,input,select,textarea{font-family:var(--n19-font)!important}
+span.bg-secondary.sticky:has(>header),.bg-secondary.sticky.top-0{background:var(--n19-bar)!important}
+:where(:root:not([data-n19-safe])) span.bg-secondary.sticky>header{padding-top:10px!important;padding-bottom:10px!important}
+header #gic-wrapper,header section.bg-dark-primary{background:transparent!important;border-radius:0!important}
+header section.bg-dark-primary:hover{background:var(--n19-bar-hover)!important}
+header #gic-wrapper span.b{font-size:14px!important}
+header input.search-bar,header .search-input-field-v2{border-radius:0!important;background:var(--n19-field)!important;color:var(--n19-field-text)!important}
+:where(:root:not([data-n19-safe])) header input.search-bar,:where(:root:not([data-n19-safe])) header .search-input-field-v2{height:44px!important}
+header input.search-bar,header .search-input-field-v2{box-shadow:inset 0 0 0 2px var(--n19-bar), 0 .5px 2px 0 rgba(0,0,0,.23)!important}
+:where(:root:not([data-n19-safe])) header input.search-bar,:where(:root:not([data-n19-safe])) header .search-input-field-v2{padding-left:16px!important}
+header input.search-bar::placeholder{color:var(--n19-field-text)!important;font-weight:700!important}
+:where(:root:not([data-n19-safe])) header input.search-bar::placeholder{opacity:1!important}
+:where(:root:not([data-n19-safe])) header input.search-bar:focus::placeholder{opacity:0!important}
+header form[role="search"],header .search-bar-container,header input.search-bar+*{border-radius:0!important}
+header button.search-icon-redesigned-v2,header button[aria-label="Search"i]{background:transparent!important;border-radius:0!important;color:var(--n19-icon)!important}
+header button.search-icon-redesigned-v2 i,header button.search-icon-redesigned-v2 svg,header button[aria-label="Search"i] svg{fill:var(--n19-icon)!important;color:var(--n19-icon)!important}
+:where(:root:not([data-n19-safe])) header nav a.desktop-header-trigger,:where(:root:not([data-n19-safe])) header #cart-button-header{flex-direction:column!important;justify-content:center!important}
+header nav a.desktop-header-trigger,header #cart-button-header{border-radius:0!important}
+:where(:root:not([data-n19-safe])) header nav a.desktop-header-trigger,:where(:root:not([data-n19-safe])) header #cart-button-header{padding:0 8px!important}
+:where(:root:not([data-n19-safe])) header nav a.desktop-header-trigger>i,:where(:root:not([data-n19-safe])) header #cart-button-header>i{display:flex!important;align-items:center;justify-content:center;width:28px!important;height:28px!important;padding:0!important;margin:0 0 2px!important}
+header nav a.desktop-header-trigger>i,header #cart-button-header>i{border-radius:50%!important;background:var(--n19-bubble)!important;font-size:16px!important}
+:where(:root:not([data-n19-safe])) header nav a.desktop-header-trigger>div{margin:0!important}
+header nav a.desktop-header-trigger>div{text-align:center!important}
+:where(:root:not([data-n19-safe])) header nav a.desktop-header-trigger>div>div:first-child{display:none!important}
+header nav a.desktop-header-trigger>div>div,header #cart-button-header .cart-total{font-size:12px!important;font-weight:400!important;line-height:14px!important}
+:where(:root:not([data-n19-safe])) header nav a.desktop-header-trigger>div>div,:where(:root:not([data-n19-safe])) header #cart-button-header .cart-total{height:auto!important}
+header nav a.desktop-header-trigger>div>div,header #cart-button-header .cart-total{color:var(--n19-bar-text)!important}
+:where(:root:not([data-n19-safe])) header #cart-button-header .cart-total{margin-top:0!important}
+span.bg-secondary.sticky>div.header-navigation{background:var(--n19-row)!important;border-bottom:1px solid var(--n19-row-border)!important}
+:where(:root:not([data-n19-safe])) span.bg-secondary.sticky>div.header-navigation{height:40px!important}
+span.bg-secondary.sticky>div.header-navigation section.br-pill{background:transparent!important;border-radius:0!important}
+:where(:root:not([data-n19-safe])) span.bg-secondary.sticky>div.header-navigation section.br-pill{margin:0!important}
+span.bg-secondary.sticky>div.header-navigation :is(button,a){color:var(--n19-row-text)!important;font-size:14px!important;border-radius:0!important}
+span.bg-secondary.sticky>div.header-navigation :is(button,a):hover{text-decoration:underline!important;background:transparent!important}
+main .br3,main .br2,main .br4,main [data-testid="flex-container"] img{border-radius:0!important}
+:where(:root:not([data-n19-safe])) :is(button,a)[aria-label*="Sparky"i],:is(button,a)[aria-label*="Sparky"i]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-testid="sparky-fab-bubble"],[data-testid="sparky-fab-bubble"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .sparky-fab-wrapper,.sparky-fab-wrapper:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) a[href^="/sparky"],:where(:root:not([data-n19-safe])) a[href*="walmart.com/sparky"]{display:none!important}
+:where(:root:not([data-n19-safe])) [data-testid="badgeTagComponent"][data-net19-hidden],[data-testid="badgeTagComponent"][data-net19-hidden]:where(:root:not([data-n19-safe])){display:none!important}

@@ -1,0 +1,19 @@
+html{--n19-meet:#00796b;--n19-meet-hover:#00695c;--n19-meet-soft:#e0f2f1;--n19-meet-on:#fff}
+html[data-net19-mode="dark"]{--n19-meet:#4db6ac;--n19-meet-hover:#80cbc4;--n19-meet-soft:#243d3a;--n19-meet-on:#202124}
+:where(:root:not([data-n19-safe])) header[role="banner"] :is(span[data-action-behavior*="one.google.com"],span[data-promo-type]:has(button[role="link"])){display:none!important}
+:where(:root:not([data-n19-safe])) nav[jsname="dtnVpf"]:has(button[role="menuitem"]){display:none!important}
+:where(:root:not([data-n19-safe])) body:has(nav[jsname="dtnVpf"]) main{margin-left:0!important;left:0!important}
+:where(:root:not([data-n19-safe])) div[jscontroller]:has(>[role="region"] a[href*="support.google.com/meet/answer/9852160"]){display:none!important}
+button[jsname="SkMU8"]{background:var(--n19-meet)!important;color:var(--n19-meet-on)!important;border-radius:4px!important;box-shadow:none!important;font:500 14px/36px "Google Sans", Roboto, Arial, sans-serif!important;letter-spacing:.25px!important}
+:where(:root:not([data-n19-safe])) button[jsname="SkMU8"]{height:40px!important}
+button[jsname="SkMU8"] :is(span,i,svg){color:var(--n19-meet-on)!important;fill:currentColor!important}
+button[jsname="SkMU8"]:hover{background:var(--n19-meet-hover)!important;box-shadow:0 1px 2px 0 rgba(0,121,107,.3), 0 1px 3px 1px rgba(0,121,107,.15)!important}
+button[jsname="SkMU8"] :is(div,span)[class]:empty{border-radius:4px!important}
+button[jsname="r9ERUc"]:not(:disabled){color:var(--n19-meet)!important;background:transparent!important}
+button[jsname="r9ERUc"]{border-radius:4px!important;font-weight:500!important}
+button[jsname="r9ERUc"]:disabled{background:transparent!important;color:var(--n19-text-2)!important}
+button[jsname="r9ERUc"]:disabled *{color:inherit!important}
+header[role="banner"] div[jsname="vhZMvf"]{border-radius:4px!important}
+header[role="banner"] div:has(>div>div>div[jsname="vhZMvf"]),header[role="banner"] div:has(>div>div[jsname="vhZMvf"]){border-radius:4px!important}
+button[aria-label][data-a11y-recover]{border-radius:4px!important}
+main :is(h1,h2){font-family:"Google Sans", "Product Sans", Roboto, Arial, sans-serif!important;color:var(--n19-text)!important}

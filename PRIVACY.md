@@ -17,7 +17,7 @@ Two themes send you to an older version of a site on that site's own servers:
 
 Net19 has access only to the 150 sites it themes (listed in `src/themes.ts`). It does not run on any other site and cannot read them.
 
-Chrome local extension storage holds your settings: whether net19 is on, and which sites you switched off. Updating from an earlier version deletes the archive profiles and other data those versions kept.
+Chrome local extension storage holds your settings: whether net19 is on, and which sites you switched off. When a themed site's redesign stops a theme from fitting, it also holds that site section's name (for example `youtube.com/watch`) until the theme fits again, so later visits start on the theme's safe layer. Updating from an earlier version deletes the archive profiles and other data those versions kept.
 
 ## Controls
 

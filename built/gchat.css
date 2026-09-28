@@ -1,0 +1,8 @@
+html:not([data-n19-g="gemini"]) body span.jcJzye-WX1Rmf:not(#n19-none){font-family:"Google Symbols Subset", "Google Symbols", "Google Material Icons"!important}
+html:not([data-n19-g="gemini"]) button[jsname="TrXBg"],html:not([data-n19-g="gemini"]) button[jsname="TrXBg"]>span,html:not([data-n19-g="gemini"]) button[jsname="TrXBg"]>span>span{border-radius:24px!important}
+html:not([data-n19-g="gemini"]) button[jsname="TrXBg"]{background:var(--n19-bg)!important;box-shadow:var(--n19-shadow)!important}
+html:not([data-n19-g="gemini"]) button[jsname="TrXBg"]:hover{box-shadow:var(--n19-shadow-2)!important;background:var(--n19-bg)!important}
+html:not([data-n19-g="gemini"]) :is(div[jsname="XtrG1d"],div[jsname="sBSZBf"],div[jsname="jx4ac"],div[jsname="x7L69e"],div[jsname="lQDMLd"]){border-radius:0!important}
+html:not([data-n19-g="gemini"]) div[jsname="gkC8fc"]{border-radius:0!important;box-shadow:none!important;border-right:1px solid var(--n19-divider)!important}
+html:not([data-n19-g="gemini"]):where(:root:not([data-n19-safe])) div[jsname="gkC8fc"]{box-sizing:border-box!important}
+html:not([data-n19-g="gemini"]) div[jsname="gkC8fc"]>:is(div[role="region"],div[class]){border-radius:0!important}

@@ -1,0 +1,76 @@
+html{--n19-db-bar:#14709f;--n19-db-bar-2:#2a86b0;--n19-db-bar-text:#fff;--n19-db-ink:#203d4c;--n19-db-text:#333;--n19-db-meta:#898989;--n19-db-link:#137ec8;--n19-db-page:#fff;--n19-db-soft:#f4f8fb;--n19-db-rule:#dee8ef;--n19-db-cta-a:#f3845d;--n19-db-cta-b:#e55859;--n19-db-teal:#108faf;--n19-db-button:#137ec8;--n19-db-foot:#203d4c;--n19-db-foot-text:#c9d6de;--n19-db-font:"Avenir Next", "AvenirNext", Avenir, "Nunito Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;--n19-db-form-font:"Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif}
+html[data-net19-mode="dark"]{--n19-db-bar:#123547;--n19-db-bar-2:#1d5b7a;--n19-db-bar-text:#f1f5f8;--n19-db-ink:#dbe7ee;--n19-db-text:#d6dde2;--n19-db-meta:#9aa6ae;--n19-db-link:#5cb3ef;--n19-db-page:#151c21;--n19-db-soft:#1b252c;--n19-db-rule:#2b3a44;--n19-db-cta-a:#e2764f;--n19-db-cta-b:#d24c4d;--n19-db-teal:#1492b2;--n19-db-button:#1f82c8;--n19-db-foot:#0e161b;--n19-db-foot-text:#a9b8c2}
+:where(:root:not([data-n19-safe])) #sticky_bar,#sticky_bar:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #sticky_nav_bar,#sticky_nav_bar:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #hs-web-interactives-top-push-anchor,#hs-web-interactives-top-push-anchor:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #nav_feature_blog_post,#nav_feature_blog_post:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #premium_nav_block,#premium_nav_block:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #jay_ai_feature,#jay_ai_feature:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #app_header li:has(>a:is([href*="/jay-ai"],[href*="/live-kiosk"],[href*="/tap-to-donate"])),#app_header:where(:root:not([data-n19-safe])) li:has(>a:is([href*="/jay-ai"],[href*="/live-kiosk"],[href*="/tap-to-donate"])),:where(:root:not([data-n19-safe])) #app_header :is(.nav-feature-blog-block,[class*="nav-premium"]),#app_header:where(:root:not([data-n19-safe])) :is(.nav-feature-blog-block,[class*="nav-premium"]),:where(:root:not([data-n19-safe])) footer li:has(>a:is([href*="/jay-ai"],[href*="/live-kiosk"])),:where(:root:not([data-n19-safe])) body.wp-theme-genesis .brave_popup--popup{display:none!important}
+html:has(body.wp-theme-genesis .brave_popup--popup):where(:root:not([data-n19-safe])){margin-top:0!important}
+body.application,body.wp-theme-genesis,body.org-login,body.donor-login{font-family:var(--n19-db-font)!important}
+body.application :is(h1,h2,h3,h4,h5,h6,p,a,span,li,dt,dd,label,button,input,textarea,select,td,th,strong,b,em,figcaption,summary,small):not(.material-icons,.material-symbols-outlined,[class*="icon"],[class*="fa-"],.fa),body.wp-theme-genesis :is(h1,h2,h3,h4,h5,h6,p,a,span,li,label,button,input,td,th,strong,b,em,small):not(.material-icons,.material-symbols-outlined,[class*="icon"],[class*="fa-"],.fa),body:is(.org-login,.donor-login) :is(h1,h2,h3,h4,p,a,span,li,label,button,input,strong,small):not(.material-icons,.material-symbols-outlined,[class*="icon"],[class*="fa-"],.fa),body:not([class]) :is(h1,h2,h3,h4,p,a,span,li,label,button,input,select,strong,small):not(.material-icons,.material-symbols-outlined,[class*="icon"],[class*="fa-"],.fa){font-family:var(--n19-db-font)!important;letter-spacing:0!important}
+body.donor :is(h1,h2,h3,h4,h5,h6,p,a,span,li,label,button,input,textarea,select,td,th,strong,b,small,div.item-text,.amount,.desc):not(.material-icons,.material-symbols-outlined,[class*="icon"],[class*="fa-"],.fa){font-family:var(--n19-db-form-font)!important}
+header#app_header{background:var(--n19-db-bar)!important}
+:where(:root:not([data-n19-safe])) header#app_header{background-image:none!important}
+header#app_header{box-shadow:none!important;border:0!important}
+:where(:root:not([data-n19-safe])) body.application header#app_header,:where(:root:not([data-n19-safe])) body.wp-theme-genesis header#app_header{height:76px!important}
+:where(:root:not([data-n19-safe])) header#app_header:has(#donorbox_logo_white) #donorbox_logo{display:none!important}
+header#app_header #donorbox_logo svg path[fill="#056bbf"],body.wp-theme-genesis header#app_header .navbar-brand svg path[fill="#056bbf"]{fill:#fff!important}
+body.wp-theme-genesis header#app_header a.blog svg path{fill:#cfe3ee!important}
+:where(:root:not([data-n19-safe])) header#app_header #donorbox_logo_white{display:flex!important;align-items:center!important}
+header#app_header nav :is(button,a:not(.button)){color:var(--n19-db-bar-text)!important;font-size:16px!important;font-weight:500!important}
+header#app_header nav>:is(div,a)>:is(p.menu_title) button,header#app_header nav>a:not(.button){background:transparent!important}
+header#app_header nav :is(button,a:not(.button)) svg{color:var(--n19-db-bar-text)!important;fill:currentColor!important}
+header#app_header nav .submenu a,header#app_header nav .submenu :is(p,dt,dd,span,button){color:var(--n19-db-ink)!important;font-size:15px!important}
+header#app_header nav .submenu{background:#fff!important;border-radius:3px!important;box-shadow:0 6px 18px rgba(20, 50, 70, .18)!important}
+header#app_header nav .submenu a:hover{color:var(--n19-db-link)!important;background:#f4f8fb!important}
+header#app_header #nav_dropdown_login .menu_title button{border:1px solid rgba(255, 255, 255, .85)!important;border-radius:3px!important;background:transparent!important}
+header#app_header #nav_menu_org_signup_link.button{background:var(--n19-db-bar-2)!important}
+:where(:root:not([data-n19-safe])) header#app_header #nav_menu_org_signup_link.button{background-image:none!important}
+header#app_header #nav_menu_org_signup_link.button{color:#fff!important;border:0!important;border-radius:3px!important;box-shadow:none!important;font-weight:500!important}
+header#app_header #nav_menu_org_signup_link.button:hover{background:#3593bd!important}
+body.application main a.button:not(#nav_menu_org_signup_link):not(.outline):not(.btn-outline-white),body.application main input.button,body.wp-theme-genesis :is(.btn-primary,.button:not(.outline)){background:linear-gradient(to right, var(--n19-db-cta-a), var(--n19-db-cta-b))!important;color:#fff!important;border:0!important;border-radius:3px!important;box-shadow:0 10px 22px -8px rgba(229, 88, 89, .55)!important;font-weight:500!important;text-transform:none!important}
+body.application main :is(a.button.outline,a.btn-outline-white,a.btn-blue){border-radius:3px!important;box-shadow:none!important;font-weight:500!important}
+body.application main a.btn-blue{background:var(--n19-db-teal)!important;border-color:var(--n19-db-teal)!important;color:#fff!important}
+body.application main>section#fastest_donation_checkout,body.application main>section:first-child:is([class*="hero"],[id*="hero"]),section.section_hero.dark{background:var(--n19-db-bar)!important}
+:where(:root:not([data-n19-safe])) body.application main>section#fastest_donation_checkout,:where(:root:not([data-n19-safe])) body.application main>section:first-child:is([class*="hero"],[id*="hero"]),:where(:root:not([data-n19-safe])) section.section_hero.dark{background-image:none!important}
+body.application section#fastest_donation_checkout :is(h1,p){color:#fff!important}
+body.application section#fastest_donation_checkout h1{font-weight:400!important;font-size:36px!important;line-height:1.35!important}
+body.application section#fastest_donation_checkout p{font-weight:400!important;font-size:17px!important;line-height:1.6!important}
+body.application main :is(h1,h2):not(#fastest_donation_checkout *,[class*="premium"] *,[class*="dark"] *){color:var(--n19-db-ink)!important;font-weight:500!important;letter-spacing:0!important}
+body.application main h2:not(#fastest_donation_checkout *){font-size:32px!important;line-height:1.35!important}
+body.application main h2 span{color:inherit!important;background:none!important;-webkit-text-fill-color:currentColor!important}
+body.application main p.sub_heading{color:var(--n19-db-link)!important;font-weight:500!important}
+body.application main #feature_list>article{border-radius:4px!important;box-shadow:0 2px 14px rgba(32, 61, 76, .1)!important;border:1px solid var(--n19-db-rule)!important}
+body.application main a.find-out-more{color:var(--n19-db-link)!important;text-transform:uppercase!important;font-size:13px!important;letter-spacing:.04em!important}
+body.application footer,body.wp-theme-genesis footer.site-footer{background:var(--n19-db-foot)!important}
+:where(:root:not([data-n19-safe])) body.application footer,:where(:root:not([data-n19-safe])) body.wp-theme-genesis footer.site-footer{background-image:none!important}
+body.application footer :is(p,a,span,li,dt,dd,h2,h3,h4,small){color:var(--n19-db-foot-text)!important}
+body.application footer a:hover{color:#fff!important}
+body.org-login :is(input.button,button[type="submit"]),body.donor-login button.dbox-button:not(.outline):not([class*="secondary"]){background:var(--n19-db-button)!important;border-color:var(--n19-db-button)!important;color:#fff!important;border-radius:3px!important}
+body:is(.org-login,.donor-login,:not([class])) :is(input[type="email"],input[type="password"],input[type="text"]){border-radius:3px!important}
+body:is(.org-login,.donor-login) :is(h1,h2){color:var(--n19-db-ink)!important;font-weight:500!important}
+body:is(.org-login,.donor-login) a:not(.button):not([class*="login-button"]){color:var(--n19-db-link)!important}
+body.donor .dw-btn,body.donor button.mdl-button,body.donor :is(.amount-item,.suggested-amount-item,.mdl-textfield__input){border-radius:2px!important}
+body.donor :is(.amount-item,.suggested-amount-item){box-shadow:none!important}
+body.donor .page-header.logo-name-header{box-shadow:0 1px 0 rgba(0, 0, 0, .08)!important}
+:where(:root:not([data-n19-safe])) body.wp-theme-genesis header#app_header{height:auto!important}
+body.wp-theme-genesis header#app_header nav.navbar{background:var(--n19-db-bar)!important;box-shadow:none!important;border:0!important}
+:where(:root:not([data-n19-safe])) body.wp-theme-genesis header#app_header nav.navbar{top:0!important}
+body.wp-theme-genesis header#app_header nav.navbar .navbar-nav>li>a.nav-link:not(.theme-btn){color:var(--n19-db-bar-text)!important;font-size:16px!important;font-weight:500!important}
+body.wp-theme-genesis header#app_header nav.navbar a.theme-btn{background:var(--n19-db-bar-2)!important;color:#fff!important;border-radius:3px!important;border:0!important}
+body.wp-theme-genesis header#app_header nav.navbar .dropdown-menu{border-radius:3px!important}
+html[data-net19-flip] header#app_header,html[data-net19-flip] body.application main>section#fastest_donation_checkout,html[data-net19-flip] section.section_hero.dark,html[data-net19-flip] body.wp-theme-genesis header#app_header nav.navbar{background:#123547!important}
+html[data-net19-flip] header#app_header #nav_menu_org_signup_link.button,html[data-net19-flip] body.wp-theme-genesis header#app_header nav.navbar a.theme-btn{background:#1d5b7a!important}
+:where(:root:not([data-n19-safe])) header#app_header #nav_dropdown_platform .submenu{width:auto!important;right:auto!important;justify-content:flex-start!important}
+:where(:root:not([data-n19-safe])) header#app_header :is(#nav_dropdown_company,#nav_dropdown_login) .submenu li>a{padding-top:16px!important;padding-bottom:16px!important;align-items:center!important}
+:where(:root:not([data-n19-safe])) header.header-component#app_header{height:76px!important}
+:where(:root:not([data-n19-safe])) header.header-component#app_header a.donorbox_logo{display:none!important}
+:where(:root:not([data-n19-safe])) header.header-component#app_header a.donorbox_logo_white{display:flex!important;align-items:center!important}
+header.header-component#app_header nav :is(.nav-item-button,a.nav-item:not(.nav-signup-link)){color:var(--n19-db-bar-text)!important;font-family:var(--n19-db-font)!important;font-size:16px!important;font-weight:500!important;background:transparent!important}
+header.header-component#app_header nav .nav-login-container>.nav-item-button{border:1px solid rgba(255, 255, 255, .85)!important;border-radius:3px!important}
+header.header-component#app_header nav a.nav-signup-link{background:var(--n19-db-bar-2)!important;color:#fff!important;border:0!important;border-radius:3px!important;box-shadow:none!important;font-weight:500!important}
+header.header-component#app_header .nav-item-dropdown{border-radius:3px!important}
+header.header-component#app_header .nav-item-dropdown :is(a,span,li,dt,dd){color:var(--n19-db-ink)!important;font-family:var(--n19-db-font)!important}
+html[data-net19-flip] header.header-component#app_header nav a.nav-signup-link{background:#1d5b7a!important}
+:where(:root:not([data-n19-safe])) header.header-component#app_header nav .nav-login-container>.nav-item-button{padding:8px 14px!important}
+header.header-component#app_header nav .nav-item-button::after{filter:brightness(0) invert(1)!important}
+#storyblok-body main a.button:not(.button-outline),#storyblok-body>section a.button:not(.button-outline){background:linear-gradient(to right, var(--n19-db-cta-a), var(--n19-db-cta-b))!important;color:#fff!important;border:0!important;border-radius:3px!important;box-shadow:0 10px 22px -8px rgba(229, 88, 89, .55)!important}
+#storyblok-body a.button.button-outline{background:var(--n19-db-teal)!important;border-color:var(--n19-db-teal)!important;color:#fff!important;border-radius:3px!important}
+#storyblok-body :is(h1,h2):not(.dark *){color:var(--n19-db-ink)!important}
+#storyblok-body :is(h1,h2,h3,h4,p,a,span,li,dt,dd,button,label):not(.material-icons,[class*="icon"]){font-family:var(--n19-db-font)!important;letter-spacing:0!important}

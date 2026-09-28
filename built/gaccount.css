@@ -1,0 +1,32 @@
+html{--n19-ac-line:#dadce0;--n19-ac-nav:#3c4043;--n19-ac-card:#fff}
+html[data-net19-mode="dark"]{--n19-ac-line:#5f6368;--n19-ac-nav:#e8eaed;--n19-ac-card:#202124}
+:is(html[data-n19-g="myaccount"])[data-net19-mode] :is(body,header#gb,[jsname="a8DmZd"]){background-color:var(--n19-bg)!important}
+:is(html[data-n19-g="myaccount"]) header#gb{border-bottom:1px solid var(--n19-ac-line)!important;box-shadow:none!important}
+:is(html[data-n19-g="myaccount"]) header#gb .gbpn.gb_0d{color:var(--n19-text-2)!important;font:400 22px/48px var(--n19-display)!important}
+:where(:root:not([data-n19-safe])) :is(html[data-n19-g="myaccount"]) [role="menubar"] a[role="menuitem"][href*="one.google.com"],:is(html[data-n19-g="myaccount"]):where(:root:not([data-n19-safe])) [role="menubar"] a[role="menuitem"][href*="one.google.com"]{display:none!important}
+:is(html[data-n19-g="myaccount"]) [role="menubar"] a[role="menuitem"]{border-radius:0 28px 28px 0!important}
+:where(:root:not([data-n19-safe])) :is(html[data-n19-g="myaccount"]) [role="menubar"] a[role="menuitem"],:is(html[data-n19-g="myaccount"]):where(:root:not([data-n19-safe])) [role="menubar"] a[role="menuitem"]{margin-right:16px!important}
+:is(html[data-n19-g="myaccount"]) [role="menubar"] a[role="menuitem"]:hover{background:var(--n19-hover)!important}
+:is(html[data-n19-g="myaccount"]) [role="menubar"] a[role="menuitem"][aria-current="page"]{background:var(--n19-accent-soft)!important}
+:is(html[data-n19-g="myaccount"]) [role="menubar"] a[role="menuitem"] div[jsname="uDEFge"]>span[class*="Hib83"]{background:transparent!important}
+:is(html[data-n19-g="myaccount"]) [role="menubar"] a[role="menuitem"] span[jsname="yNNHXb"]{font:500 14px/20px var(--n19-display)!important;color:var(--n19-ac-nav)!important;letter-spacing:.25px!important}
+:is(html[data-n19-g="myaccount"]) [role="menubar"] a[role="menuitem"][aria-current="page"] span[jsname="yNNHXb"]{color:var(--n19-accent-text)!important}
+:is(html[data-n19-g="myaccount"]) :is(a,button).umngff,:is(html[data-n19-g="myaccount"]) :is(a,button).umngff .UTNHae{border-radius:0!important}
+:is(html[data-n19-g="myaccount"]) :is(a,button).umngff{box-shadow:inset 0 -1px 0 var(--n19-ac-line)!important}
+:is(html[data-n19-g="myaccount"]) h1{font:400 28px/36px var(--n19-display)!important;color:var(--n19-text)!important;letter-spacing:0!important}
+:is(html[data-n19-g="myaccount"]) h1+span,:is(html[data-n19-g="myaccount"]) [role="main"] .aZb0Yd{font:400 16px/24px var(--n19-sans)!important;color:var(--n19-text-2)!important}
+:where(:root:not([data-n19-safe])) :is(html[data-n19-g="myaccount"]) [role="main"] .X1Xdnb,:is(html[data-n19-g="myaccount"]):where(:root:not([data-n19-safe])) [role="main"] .X1Xdnb{display:none!important}
+:is(html[data-n19-g="myaccount"]) [role="main"] div[jsname="haAclf"]{border-radius:8px!important;background:var(--n19-field)!important}
+:is(html[data-n19-g="myaccount"]) [role="main"] div[jsname="haAclf"]:focus-within{background:var(--n19-bg)!important;box-shadow:var(--n19-shadow)!important}
+:is(html[data-n19-g="myaccount"]) [role="main"] [role="toolbar"] :is(.Rju2Ue-XPtOyb,.Rju2Ue-XPtOyb .UTNHae){border-radius:16px!important}
+:is(html[data-n19-g="myaccount"]) [role="main"] [role="toolbar"] .Rju2Ue-TfeOUb-V67aGc{font-family:var(--n19-sans)!important}
+:is(html[data-n19-g="myaccount"]) [role="main"] :is(.O4jDed,.G6g8Wc,button.yu6mpd,button.yu6mpd .UTNHae){border-radius:8px!important}
+:is(html[data-n19-g="myaccount"]) [role="main"] .G6g8Wc{background:var(--n19-ac-card)!important;border:1px solid var(--n19-ac-line)!important;border-bottom-left-radius:0!important;border-bottom-right-radius:0!important}
+:is(html[data-n19-g="myaccount"]) [role="main"] button.yu6mpd{background:var(--n19-ac-card)!important;border:1px solid var(--n19-ac-line)!important;border-top:0!important;border-top-left-radius:0!important;border-top-right-radius:0!important}
+:is(html[data-n19-g="myaccount"]) [role="main"] .O4jDed:not(:has(button.yu6mpd)) .G6g8Wc{border-radius:8px!important;border-bottom:1px solid var(--n19-ac-line)!important}
+:is(html[data-n19-g="myaccount"]) [role="main"] :is(.tKjVGe,.mMJaed){font:400 16px/24px var(--n19-display)!important}
+:is(html[data-n19-g="myaccount"]) [role="main"] .tRzwGf{border-radius:50%!important}
+:is(html[data-n19-g="myaccount"]) :is([role="heading"],h2,h3){letter-spacing:0!important}
+:is(html[data-n19-g="myaccount"]) :is(.UywwFc-LgbsSe,.mUIrbf-LgbsSe,.AeBiU-LgbsSe,.FOBRw-LgbsSe),:is(html[data-n19-g="myaccount"]) :is(.UywwFc-LgbsSe,.mUIrbf-LgbsSe,.AeBiU-LgbsSe,.FOBRw-LgbsSe) :is(.UTNHae,.MMvswb,.OLCwg){border-radius:4px!important}
+:is(html[data-n19-g="myaccount"]) :is(.UywwFc-vQzf8d,.mUIrbf-vQzf8d,.AeBiU-vQzf8d,.FOBRw-vQzf8d){font-family:var(--n19-sans)!important;font-weight:500!important;letter-spacing:.25px!important}
+:is(html[data-n19-g="myaccount"]) :is([role="dialog"],[role="alertdialog"]){border-radius:8px!important}

@@ -1,0 +1,30 @@
+html{--n19-cardinal:#b1040e;--n19-cardinal-dark:#820000;--n19-nav-bg:#fff;--n19-nav-text:#2e2d29;--n19-nav-hover:#b1040e;--n19-rule:#d5d5d4;--n19-field-line:rgba(255,255,255,.6)}
+html[data-net19-mode="dark"]{--n19-cardinal:#b1040e;--n19-cardinal-dark:#820000;--n19-nav-bg:#1c1b19;--n19-nav-text:#eaeaea;--n19-nav-hover:#f4795b;--n19-rule:#43423e;--n19-field-line:rgba(255,255,255,.6)}
+header>.bg-bg-knockout-brand{background:var(--n19-cardinal)!important}
+:where(:root:not([data-n19-safe])) header>.bg-bg-knockout-brand{position:relative!important}
+header .bg-bg-knockout-brand-strong{background:var(--n19-cardinal)!important}
+:where(:root:not([data-n19-safe])) header .bg-bg-knockout-brand-strong{height:48px!important}
+:where(:root:not([data-n19-safe])) header .bg-bg-knockout-brand-strong>nav{height:48px!important;padding-top:0!important;padding-bottom:0!important}
+:where(:root:not([data-n19-safe])) header .bg-bg-knockout-brand-strong #impact-nav-heading,:where(:root:not([data-n19-safe])) header .bg-bg-knockout-brand-strong #impact-nav-heading+ul{display:none!important}
+header .bg-bg-knockout-brand-strong form{background:transparent!important;border:0!important;border-bottom:1px solid var(--n19-field-line)!important;border-radius:0!important}
+:where(:root:not([data-n19-safe])) header .bg-bg-knockout-brand-strong form{height:30px!important}
+header .bg-bg-knockout-brand-strong form :is(input,button){border-radius:0!important;border:0!important}
+header .bg-bg-knockout-brand-strong form input{font-size:16px!important;color:#fff!important}
+header .bg-bg-knockout-brand-strong form input::placeholder{color:rgba(255,255,255,.85)!important}
+:where(:root:not([data-n19-safe])) header nav.main-nav{justify-content:center!important;padding:0!important;max-width:none!important}
+header nav.main-nav{background:var(--n19-nav-bg)!important;border-bottom:1px solid var(--n19-rule)!important}
+:where(:root:not([data-n19-safe])) header nav.main-nav>a.logo{position:absolute!important;top:0!important;left:30px!important;height:48px!important;padding:0!important;display:flex!important;align-items:center!important}
+header nav.main-nav>a.logo{font-size:26px!important;line-height:48px!important;color:#fff!important}
+:where(:root:not([data-n19-safe])) header nav.main-nav>ul{justify-content:center!important;width:100%!important;margin:0!important;column-gap:34px!important}
+header nav.main-nav>ul>li>:is(button,a){color:var(--n19-nav-text)!important}
+:where(:root:not([data-n19-safe])) header nav.main-nav>ul>li>:is(button,a){padding-top:12px!important;padding-bottom:12px!important}
+header nav.main-nav>ul>li>:is(button,a){font-size:21px!important;line-height:30px!important}
+header nav.main-nav>ul>li>:is(button,a):hover{color:var(--n19-nav-hover)!important;text-decoration-color:currentColor!important}
+header nav.main-nav>ul>li>:is(button,a) svg{color:currentColor!important;fill:currentColor!important}
+main :is(img,picture,figure,video){border-radius:0!important}
+main a[class*="rounded"],main button[class*="rounded"]{border-radius:0!important}
+html[data-net19-flip]:where(:root:not([data-n19-safe])) header nav.main-nav[data-net19-reflip]>a.logo{top:-48px!important}
+html[data-net19-flip] header nav.main-nav[data-net19-reflip]>a.logo{filter:contrast(1.13636) hue-rotate(180deg) invert(1)!important}
+header nav.main-nav>a.logo{background-color:var(--n19-cardinal)!important}
+:where(:root:not([data-n19-safe])) main#main-content>div:not([class]):has(>section.cc){display:none!important}
+main#main-content>div.bg-bg-subtle :is(form,div,input,button){border-radius:0!important}

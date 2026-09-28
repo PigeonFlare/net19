@@ -1,0 +1,25 @@
+html{--n19-lime:#a5cc00;--n19-lime-hover:#b4dc0a;--n19-lime-text:#333;--n19-link:#0a8eba;--n19-cyan:#39b0d5;--n19-text:#333;--n19-text-2:#777;--n19-block:#f4f4f4;--n19-border:#d5d5d5;--n19-panel:#fff}
+html[data-net19-mode="dark"]{--n19-lime:#a5cc00;--n19-lime-hover:#b4dc0a;--n19-lime-text:#1d1d1d;--n19-link:#5cc8ea;--n19-cyan:#39b0d5;--n19-text:#e8e8e8;--n19-text-2:#aaa;--n19-block:#2a2a2a;--n19-border:#444;--n19-panel:#1b1b1b}
+html:root,html body{--color-primary:var(--n19-lime)!important;--color-primary-500:var(--n19-lime)!important;--color-primary-600:var(--n19-lime-hover)!important;--color-primary-700:var(--n19-lime-hover)!important;--color-primary-800:var(--n19-lime)!important;--color-primary-900:var(--n19-link)!important;--color-primary-50:#f4f9e0!important;--color-primary-25:#f8fbec!important;--color-primary-100:#e6f2b3!important;--color-primary-200:#d4ea80!important;--font-default:"Helvetica Neue", Helvetica, Arial, sans-serif!important;--font-montserrat:"Helvetica Neue", Helvetica, Arial, sans-serif!important;--radius-lg:4px!important;--radius-xl:4px!important;--radius-2xl:4px!important;--radius-3xl:4px!important}
+body,body :not(svg,svg *,i){font-family:"Helvetica Neue", Helvetica, Arial, sans-serif!important}
+main#shell-drawer a.logo svg{filter:grayscale(1) brightness(.35) contrast(1.4)}
+[data-testid="header-log-in-button"]{background:transparent!important;border:none!important;border-radius:0!important;color:var(--n19-link)!important;font-size:13px!important;font-weight:700!important}
+input#main-search-input,input.rounded-3xl{border-radius:4px!important;border:1px solid var(--n19-border)!important;box-shadow:0 1px 3px rgba(0,0,0,.15)!important;color:var(--n19-text)!important;font-size:15px!important;font-weight:400!important}
+button[data-testid="submit-search"],button.rounded-r-3xl[type="submit"]{background:transparent!important;color:var(--n19-text-2)!important;border-radius:0 4px 4px 0!important}
+button[data-testid="submit-search"] svg,button.rounded-r-3xl[type="submit"] svg{color:var(--n19-text-2)!important;fill:currentColor}
+[data-testid="directions-cta-heading"]{color:var(--n19-text)!important;font-size:16px!important;font-weight:700!important}
+main#shell-drawer div:has(>[data-testid="directions-cta-heading"]){background:var(--n19-block)!important;border-bottom:1px solid var(--n19-border)!important}
+button[data-testid="directions-cta-button"]{background:var(--n19-lime)!important;color:var(--n19-lime-text)!important;border-radius:4px!important;font-weight:700!important;text-transform:uppercase!important;letter-spacing:.05em!important;font-size:14px!important}
+button[data-testid="directions-cta-button"] svg{color:var(--n19-lime-text)!important}
+.bg-primary,.bg-primary-800,.bg-primary-700,.bg-primary-600,.bg-primary-800 .text-white,.bg-primary .text-white{color:var(--n19-lime-text)!important;font-weight:700!important}
+.bg-primary svg,.bg-primary-800 svg{color:var(--n19-lime-text)!important;fill:currentColor}
+.bg-primary-800,.bg-primary-700,.bg-primary-600{background-color:var(--n19-lime)!important}
+.hover\:bg-primary-700:hover,.hover\:bg-primary-900:hover{background-color:var(--n19-lime-hover)!important}
+.text-primary,.text-primary-800,.text-primary-700,.text-primary-600{color:var(--n19-link)!important}
+[data-testid="map-chiclets"] a,nav[aria-label="Category navigation"]:not(:has(a.group)) :is(button,a){border-radius:4px!important;border:1px solid var(--n19-border)!important;box-shadow:0 1px 2px rgba(0,0,0,.15)!important;background:var(--n19-panel)!important;color:var(--n19-text)!important;font-weight:700!important;font-size:12px!important}
+:where(:root:not([data-n19-safe])) [data-testid="map-chiclets"] a,[data-testid="map-chiclets"]:where(:root:not([data-n19-safe])) a,:where(:root:not([data-n19-safe])) nav[aria-label="Category navigation"]:not(:has(a.group)) :is(button,a){height:34px!important}
+[data-testid="map-chiclets"] a.bg-primary-800,nav[aria-label="Category navigation"]:not(:has(a.group)) :is(button,a).bg-primary{background:var(--n19-cyan)!important;border-color:var(--n19-cyan)!important;color:#fff!important}
+[data-testid="map-chiclets"] a.bg-primary-800 *,nav[aria-label="Category navigation"]:not(:has(a.group)) :is(button,a).bg-primary *{color:#fff!important}
+h1,h2,h3{font-weight:700!important;color:var(--n19-text)}
+.rounded-xl,.rounded-2xl,.rounded-\[16px\]{border-radius:4px!important}
+:where(:root:not([data-n19-safe])) a[aria-label^="MapQuest has a new app"i]{display:none!important}

@@ -1,0 +1,3 @@
+:where(:root:not([data-n19-safe])) a[data-focus-id="titlebar-home"] img[src*="/classroom/logo_square"]{content:url("https://www.gstatic.com/images/branding/product/2x/classroom_48dp.png")!important}
+html[data-net19-flip] a[data-focus-id="titlebar-home"] img[src*="/classroom/logo_square"]{filter:contrast(1.13636) hue-rotate(180deg) invert(1)!important}
+body{background-color:var(--n19-bg)!important}

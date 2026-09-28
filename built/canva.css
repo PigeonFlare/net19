@@ -1,0 +1,24 @@
+html{--n19-page:#fff;--n19-teal:#00c4cc;--n19-teal-hover:#00b1b9;--n19-text:#0e1318;--n19-nav:#4a4a4a;--n19-border:#c9ccd1;--n19-on-teal:#fff}
+html[data-net19-mode="dark"]{--n19-page:#16181c;--n19-teal:#00c4cc;--n19-teal-hover:#00b1b9;--n19-text:#f0f0f0;--n19-nav:#c8c8c8;--n19-border:#555;--n19-on-teal:#fff}
+html:not([data-net19-app]) body,html:not([data-net19-app]) body :not(svg,svg *,i,code,pre,[class*="icon"i]){font-family:"Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif!important}
+html:not([data-net19-app]) #root .eTTa1w,html:not([data-net19-app]) #root main>div:first-child>div[class]:first-child:not(:has(*)){background:var(--n19-page)!important}
+html:not([data-net19-app]) #root header{background:var(--n19-page)!important;border-bottom:0!important}
+html:not([data-net19-app]) #root header :is(a,button,span,p){color:var(--n19-nav)!important;-webkit-text-fill-color:var(--n19-nav)!important}
+html:not([data-net19-app]) #root header a[href="https://www.canva.com/"] img{background:var(--n19-teal)!important;border-radius:999px!important}
+html:not([data-net19-app]):where(:root:not([data-n19-safe])) #root header a[href="https://www.canva.com/"] img{padding:0 8px!important;box-sizing:content-box!important}
+html:not([data-net19-app]) #root header a[href="https://www.canva.com/"] img{object-fit:contain!important;filter:none!important}
+html:not([data-net19-app]) #root header button{font-size:13px!important;font-weight:400!important;border-radius:4px!important;background:transparent!important}
+html:not([data-net19-app]) #root header button:hover{color:var(--n19-text)!important;-webkit-text-fill-color:var(--n19-text)!important;background:transparent!important}
+html:not([data-net19-app]) #root header a[href*="login"i],html:not([data-net19-app]) #root header a[href*="signup"i]{font-size:13px!important;font-weight:400!important;border-radius:4px!important;background:transparent!important;box-shadow:none!important}
+html:not([data-net19-app]) #root header a[href*="signup"i]{border:1px solid var(--n19-border)!important}
+html:not([data-net19-app]) #root header :is(div,nav,ul)[class],html:not([data-net19-app]) [data-is-layer-marker] :is(div,nav,ul)[class]{border-radius:4px!important}
+html:not([data-net19-app]) #root main h1,html:not([data-net19-app]) #root main h1 *{color:var(--n19-text)!important;-webkit-text-fill-color:var(--n19-text)!important;background:none!important}
+html:not([data-net19-app]) #root main h1,html:not([data-net19-app]) #root main h1 *{font-weight:700!important;letter-spacing:0!important;font-size:52px!important;line-height:1.2!important}
+html:not([data-net19-app]) #root main h1+span+span,html:not([data-net19-app]) #root main h1~span{color:#555!important;-webkit-text-fill-color:#555!important;font-size:17px!important;font-weight:400!important}
+html[data-net19-mode="dark"] #root main h1~span{color:#bbb!important;-webkit-text-fill-color:#bbb!important}
+html:not([data-net19-app]) #root main h1~div button,html:not([data-net19-app]) #root main h1~div a[href]{background:var(--n19-teal)!important;color:var(--n19-on-teal)!important;-webkit-text-fill-color:var(--n19-on-teal)!important;border-radius:4px!important;box-shadow:none!important;font-size:14px!important}
+html:not([data-net19-app]) #root main h1~div button:hover{background:var(--n19-teal-hover)!important}
+html:not([data-net19-app]) #root main h2{font-weight:700!important;letter-spacing:0!important}
+html:not([data-net19-app]) #root main h3{font-weight:600!important;letter-spacing:0!important}
+html:not([data-net19-app]) #root main :is(button,a[href])[class]{border-radius:4px!important}
+html:not([data-net19-app]) #root header input,html:not([data-net19-app]) #root main form input[type="search"],html:not([data-net19-app]) #root main form input[type="text"]{border-radius:4px!important}

@@ -1,0 +1,31 @@
+html{--n19-rail:#fff;--n19-main:#fff;--n19-green:#1db954;--n19-green-hover:#1ed760}
+html[data-net19-mode="dark"]{--n19-rail:#000;--n19-main:#181818;--n19-green:#1db954;--n19-green-hover:#1ed760}
+html:root,html.encore-dark-theme{--encore-corner-radius-base:0px!important;--encore-corner-radius-larger:0px!important;--encore-corner-radius-larger-2:0px!important;--encore-corner-radius-larger-3:2px!important;--essential-bright-accent:var(--n19-green)!important}
+#Desktop_LeftSidebar_Id,#Desktop_LeftSidebar_Id nav>div,#Desktop_LeftSidebar_Id .YourLibraryX{background:var(--n19-rail)!important;border-radius:0!important}
+#main-view,.Root__main-view,#Desktop_PanelContainer_Id,aside[data-testid*="panel"i]{border-radius:0!important}
+#main-view{background:var(--n19-main)!important}
+[class*="legacy-button-primary"] [class*="button-primary__inner"],[class*="legacy-button-secondary"],[class*="legacy-button"] [class*="button-secondary__inner"],[data-encore-id="buttonPrimary"]>span,[data-encore-id="buttonSecondary"]{text-transform:uppercase!important;letter-spacing:.12em!important;font-size:12px!important}
+[data-encore-id="buttonPrimary"] [class*="button-primary__inner"]:not([class*="inverted-light"]){background-color:var(--n19-green)!important}
+[data-encore-id="card"],[data-encore-id="card"] img,[data-testid="card-image"],[data-testid="cover-art-image"],img[data-testid*="image"]{border-radius:0!important}
+:where(:root:not([data-n19-safe])) [data-testid="root"]>div:has(>#global-nav-bar),[data-testid="root"]:where(:root:not([data-n19-safe]))>div:has(>#global-nav-bar){gap:0!important;padding:0!important}
+#global-nav-bar{background:var(--n19-rail)!important}
+:where(:root:not([data-n19-safe])) #global-nav-bar,#global-nav-bar:where(:root:not([data-n19-safe])){margin:0!important;width:auto!important;height:64px!important;align-items:center!important}
+#Desktop_LeftSidebar_Id section{background:transparent!important;border-radius:0!important}
+:where(:root:not([data-n19-safe])) #Desktop_LeftSidebar_Id section,#Desktop_LeftSidebar_Id:where(:root:not([data-n19-safe])) section{padding-top:8px!important;padding-bottom:8px!important}
+#Desktop_LeftSidebar_Id h1{text-transform:uppercase!important;letter-spacing:.16em!important;font-size:11px!important;color:#b3b3b3!important}
+input[data-testid="search-input"]{background:#fff!important;color:#000!important}
+:where(:root:not([data-n19-safe])) input[data-testid="search-input"]{height:40px!important;min-height:0!important;block-size:40px!important}
+input[data-testid="search-input"]~div span,input[data-testid="search-input"]::placeholder{color:#7f7f7f!important}
+#global-nav-bar form svg{color:#000!important;fill:currentColor}
+:where(:root:not([data-n19-safe])) #global-nav-bar form:has(input[data-testid="search-input"]),#global-nav-bar:where(:root:not([data-n19-safe])) form:has(input[data-testid="search-input"]){margin-top:4px!important}
+#main-view main section h2{font-size:28px!important;line-height:34px!important;letter-spacing:-.02em!important}
+#main-view main section h2 a:hover{text-decoration:underline!important}
+#main-view main a[href^="/section/"]:not([data-testid])>span{text-transform:uppercase!important;letter-spacing:.16em!important;font-size:11px!important}
+[data-testid="signup-button"],[data-testid="login-button"]{text-transform:uppercase!important;letter-spacing:.12em!important;font-size:12px!important}
+[data-testid="signup-button"]{color:#fff!important}
+:where(:root:not([data-n19-safe])) [data-testid="login-button"]>span,[data-testid="login-button"]:where(:root:not([data-n19-safe]))>span{min-block-size:0!important;block-size:40px!important;padding-block:0!important;display:inline-flex!important;align-items:center!important}
+[data-testid="signup-bar"]{border-radius:0!important}
+[data-encore-id="card"][aria-labelledby*=":artist:"] :is(img,[data-testid="card-image"],[data-testid="card-image"]>div){border-radius:50%!important}
+:where(:root:not([data-n19-safe])) [class*="EntryPoint_footer"],[class*="EntryPoint_footer"]:where(:root:not([data-n19-safe])){display:none!important}
+[class*="EntryPoint_textareaWrapper"]{border-radius:4px!important;box-shadow:none!important}
+:where(:root:not([data-n19-safe])) [class*="EntryPoint_textareaWrapper"],[class*="EntryPoint_textareaWrapper"]:where(:root:not([data-n19-safe])){background-image:none!important}

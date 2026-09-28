@@ -1,0 +1,28 @@
+html{--n19-orange:#ff7e1a;--n19-orange-hover:#e8680a;--n19-title:#2d2d2d;--n19-text:#4d4d4d;--n19-bar:#f2f2f2;--n19-edge:#e6e6e6;--n19-head:#fafafa;--n19-field:#fff}
+html[data-net19-mode="dark"]{--n19-orange:#ff8a33;--n19-orange-hover:#ff9d52;--n19-title:#eee;--n19-text:#ccc;--n19-bar:#333;--n19-edge:#444;--n19-head:#1e1e1e;--n19-field:#2a2a2a}
+html:root{--border-radius-md:0!important;--border-radius-sm:0!important;--border-radius-lg:2px!important}
+body,body :is(h1,h2,h3,h4,p,a,span,button,input,li,div,label){font-family:"Source Sans Pro", SourceSansPro, "Helvetica Neue", Helvetica, sans-serif!important}
+h1.article-heading,h1{font-weight:400!important;color:var(--n19-title)!important;letter-spacing:0!important}
+h2,h3,[class*="text-headline"],[class*="text-title"]{font-weight:400!important;letter-spacing:0!important}
+.mm-recipes-structured-ingredients__heading,.mm-recipes-steps__heading,h2.mntl-sc-block-heading{font-weight:300!important}
+.mm-recipes-utility-nav .mntl-button,.mm-myrecipes-favorite__link,[class*="button--contained"],.mntl-search-form__button{border-radius:0!important}
+.mm-myrecipes-favorite__link,.mntl-search-form__button{background:var(--n19-orange)!important;border-color:var(--n19-orange)!important}
+.mm-myrecipes-favorite__link:hover,.mntl-search-form__button:hover{background:var(--n19-orange-hover)!important}
+.mm-recipes-details{border-radius:0!important}
+.mntl-search-form__input,.mntl-search-form{border-radius:0!important}
+.mntl-breadcrumbs__link{text-transform:none!important;letter-spacing:0!important;font-weight:400!important}
+.mm-recipes-utility-nav .mntl-button:not(.mm-myrecipes-favorite__link),.mm-recipes-utility-nav{background-color:var(--n19-bar)!important}
+.mntl-header,.mntl-header__menu-top,.mntl-header-nav{background-color:var(--n19-head)!important}
+.mntl-header{border-bottom:1px solid var(--n19-edge)!important;box-shadow:none!important}
+.mntl-header-nav__list-item>a,.mntl-header-nav__list-item>a span{font-weight:400!important;letter-spacing:0!important;color:var(--n19-text)!important;font-size:15px!important}
+.mntl-header .mntl-search-form__input{border:1px solid var(--n19-edge)!important;border-radius:0!important;background:var(--n19-field)!important;box-shadow:none!important;font-size:16px!important}
+.mntl-header .mntl-utility-nav__signin>a{background:var(--n19-orange)!important;color:#fff!important;border-radius:0!important}
+:where(:root:not([data-n19-safe])) .mntl-header .mntl-utility-nav__signin>a,.mntl-header:where(:root:not([data-n19-safe])) .mntl-utility-nav__signin>a{padding:8px 16px!important}
+.mntl-header .mntl-utility-nav__signin>a{text-decoration:none!important}
+.mntl-header .mntl-utility-nav__signin>a *{color:#fff!important;fill:#fff!important}
+.mntl-utility-nav__magazine a,.header .mntl-header-nav__subscribe-link{color:var(--n19-orange)!important;letter-spacing:0!important}
+:where(:root:not([data-n19-safe])) .mm-myrecipes-app-promo-banner,.mm-myrecipes-app-promo-banner:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .mntl-message-banner:has(a[href*="myrecipes"i]),.mntl-message-banner:has(a[href*="myrecipes"i]):where(:root:not([data-n19-safe])){display:none!important}
+body{color:var(--n19-text)!important}
+.card__title-text,.card__title{font-weight:400!important;letter-spacing:0!important;color:var(--n19-title)!important}
+.card,.card__content,.mntl-card,.card__media,.card__img{border-radius:0!important}
+.mntl-breadcrumbs__link,.mntl-breadcrumbs__item{color:var(--n19-text)!important}

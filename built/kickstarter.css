@@ -1,0 +1,76 @@
+@font-face{font-family:"n19 Maison Neue";font-weight:100 500;font-style:normal;src:url("https://d207bzo2lz83l1.cloudfront.net/MaisonNeueWEB-Book.woff2") format("woff2")}
+@font-face{font-family:"n19 Maison Neue";font-weight:100 500;font-style:italic;src:url("https://d207bzo2lz83l1.cloudfront.net/MaisonNeueWEB-BookItalic.woff2") format("woff2")}
+@font-face{font-family:"n19 Maison Neue";font-weight:600 900;font-style:normal;src:url("https://d207bzo2lz83l1.cloudfront.net/MaisonNeueWEB-Demi.woff2") format("woff2")}
+html{--n19-font:"n19 Maison Neue", "Helvetica Neue", Helvetica, Arial, "Liberation Sans", FreeSans, sans-serif;--n19-page:#fff;--n19-alt:#fbfbfa;--n19-paper:#f6f2eb;--n19-text:#282828;--n19-sub:#656969;--n19-rule:#dcdedd;--n19-track:#e6e6e6;--n19-green:#009e74;--n19-green-dark:#037362;--n19-green-hover:#037362;--n19-link:#2752ff;--n19-field:#fff;--n19-field-edge:#dcdedd}
+html[data-net19-mode="dark"]{--n19-page:#161616;--n19-alt:#1c1c1c;--n19-paper:#22201c;--n19-text:#e8e8e8;--n19-sub:#a8adad;--n19-rule:#3a3c3b;--n19-track:#3a3a3a;--n19-green:#009e74;--n19-green-dark:#19b58c;--n19-green-hover:#037362;--n19-link:#7f98ff;--n19-field:#222;--n19-field-edge:#444}
+html:root{--kds-color-brand:#05ce78!important;--kds-color-text-primary:var(--n19-text)!important;--kds-color-text-secondary:var(--n19-sub)!important;--kds-color-text-accent-green:var(--n19-green-dark)!important;--kds-color-background-accent-green-bold:var(--n19-green)!important;--kds-color-background-accent-green-bold-hovered:var(--n19-green-hover)!important;--kds-color-background-accent-green-bold-pressed:var(--n19-green-hover)!important;--kds-color-border-subtle:var(--n19-rule)!important;--kds-color-border-bold:var(--n19-rule)!important;--kds-dimension-corner-radius-small:0!important;--kds-dimension-corner-radius-medium:0!important;--kds-dimension-corner-radius-large:0!important;--kds-shadow-1:none!important;--kds-shadow-2:0 1px 3px 0 rgba(0, 0, 0, .12)!important;--kds-shadow-3:0 2px 8px 0 rgba(0, 0, 0, .15)!important;--kds-color-background-action:var(--n19-green)!important;--kds-color-background-action-hover:var(--n19-green-dark)!important;--kds-color-background-action-pressed:var(--n19-green-dark)!important;--kds-color-background-selected:var(--n19-green)!important;--kds-color-border-active:var(--n19-green)!important;--kds-color-background-surface-secondary:var(--n19-alt)!important}
+html body,html body :is(div,span,p,a,li,h1,h2,h3,h4,h5,h6,label,button,input,textarea,select,strong,b,em,time,td,th,small,section,article,nav,footer,header,blockquote,figcaption):not([class*="icon"],[class*="Icon"],.ss-icon){font-family:var(--n19-font)!important}
+html body :is(h1,h2,h3,h4,h5,h6,strong,b,.bold,.medium){letter-spacing:0!important}
+html body :is(.medium,.kds-font-medium){font-weight:400!important}
+:where(:root:not([data-n19-safe])) #global-header .global-nav,#global-header:where(:root:not([data-n19-safe])) .global-nav{grid-template-areas:"SEARCH LOGO USER-MENU"!important;grid-template-columns:minmax(0, 1fr) 176px minmax(0, 1fr)!important;position:relative!important;min-height:72px!important;padding-top:0!important;align-items:center!important}
+#global-header .global-nav{border-bottom:1px solid var(--n19-rule)!important}
+:where(:root:not([data-n19-safe])) #global-header .global-nav-ksr-logo,#global-header:where(:root:not([data-n19-safe])) .global-nav-ksr-logo{max-width:176px!important;width:176px!important;margin:0 auto!important}
+#global-header .global-nav-ksr-logo{line-height:0!important}
+:where(:root:not([data-n19-safe])) #global-header .global-nav-ksr-logo svg,#global-header:where(:root:not([data-n19-safe])) .global-nav-ksr-logo svg{width:176px!important;height:auto!important}
+:where(:root:not([data-n19-safe])) #global-header .global-nav>div:has(#global-nav-search-input),#global-header:where(:root:not([data-n19-safe])) .global-nav>div:has(#global-nav-search-input){max-width:none!important;padding-left:0!important}
+#global-header .global-nav>div:has(#global-nav-search-input){background:transparent!important;box-shadow:none!important;border:0!important}
+:where(:root:not([data-n19-safe])) #global-header .global-nav>div:has(#global-nav-search-input) svg,#global-header:where(:root:not([data-n19-safe])) .global-nav>div:has(#global-nav-search-input) svg{width:18px!important;height:18px!important}
+#global-header .global-nav>div:has(#global-nav-search-input) svg{fill:var(--n19-text)!important}
+:where(:root:not([data-n19-safe])) #global-header .global-nav>div:has(#global-nav-search-input)>div,#global-header:where(:root:not([data-n19-safe])) .global-nav>div:has(#global-nav-search-input)>div{max-width:300px!important}
+:where(:root:not([data-n19-safe])) #global-nav-search-input,#global-nav-search-input:where(:root:not([data-n19-safe])){height:40px!important}
+#global-nav-search-input{border-radius:0!important;box-shadow:none!important;border:0!important;background:transparent!important;color:var(--n19-text)!important;font-size:16px!important}
+#global-nav-search-input::placeholder{color:var(--n19-sub)!important}
+:where(:root:not([data-n19-safe])) #global-header .global-nav-user-menu,#global-header:where(:root:not([data-n19-safe])) .global-nav-user-menu{justify-self:end!important;justify-content:flex-end!important;margin-left:0!important}
+#global-header .global-nav-user-menu .kds-button{border:0!important;background:transparent!important;box-shadow:none!important;color:var(--n19-text)!important;font-size:16px!important}
+:where(:root:not([data-n19-safe])) #global-header .global-nav-user-menu .kds-button,#global-header:where(:root:not([data-n19-safe])) .global-nav-user-menu .kds-button{padding:0 12px!important;min-height:40px!important;height:40px!important}
+#global-header .global-nav-user-menu a{color:var(--n19-text)!important;font-size:16px!important}
+#global-header .global-nav-user-menu .kds-button:hover,#global-header .global-nav-user-menu a:hover{color:var(--n19-green-dark)!important}
+nav.category-menu{border-bottom:1px solid var(--n19-rule)!important}
+:where(:root:not([data-n19-safe])) nav.category-menu{padding-top:0!important}
+nav.category-menu .category-link__link{color:var(--n19-sub)!important;font-size:15px!important;font-weight:400!important}
+:where(:root:not([data-n19-safe])) nav.category-menu .category-link__link{padding:20px 9px!important}
+nav.category-menu .category-link__link{border-radius:0!important;background:transparent!important}
+nav.category-menu .category-link__link span{font-weight:400!important}
+nav.category-menu .category-link__link:hover,nav.category-menu .category-link__link[aria-expanded="true"]{color:var(--n19-text)!important}
+:where(:root:not([data-n19-safe])) nav.category-menu .global-nav-pipe{opacity:.5!important}
+.subcategory-menu__item,.subcategories-column-row{font-weight:400!important}
+:where(:root:not([data-n19-safe])) .short-text--ksr-culture-fund,.short-text--ksr-culture-fund:where(:root:not([data-n19-safe])){display:none!important}
+:where(:root:not([data-n19-safe])) div.border-bottom.border-grey-400:has(>.short-text--ksr-culture-fund){display:none!important}
+:where(:root:not([data-n19-safe])) .mission-module::before,.mission-module:where(:root:not([data-n19-safe]))::before,:where(:root:not([data-n19-safe])) .mission-module::after,.mission-module:where(:root:not([data-n19-safe]))::after{display:none!important}
+.mission-module h1{font-weight:400!important;color:var(--n19-text)!important}
+#index-container h2.kds-type-heading-lg,.featured-project h2,.recommended-projects h2{font-size:12px!important;line-height:16px!important;text-transform:uppercase!important;letter-spacing:.06em!important;color:var(--n19-sub)!important;font-weight:600!important}
+#index-container h3.kds-heading{letter-spacing:.06em!important;font-weight:600!important}
+.project-card-root,.project-card-root img:not(.avatar),.project-card__media,.project-card__media a,.project-card__media [role="presentation"],.griddable-card,.expandable-background,.featured-project img,[class*="kds-rounded"]:not(.kds-rounded-full),.kds-button,.kds-surface,.kds-input-group,.kds-checkbox__control,.radius4px,.radius6px,.radius8px,.radius12px,.radius16px{border-radius:0!important}
+.kds-radio__control,[class*="kds-radio"] [role="presentation"]{border-radius:50%!important}
+.project-card-root .card-title,.project-card__title{font-weight:400!important;color:var(--n19-text)!important}
+:where(:root:not([data-n19-safe])) .project-card-root .card-title>span.absolute>a,.project-card-root:where(:root:not([data-n19-safe])) .card-title>span.absolute>a{display:flex!important;align-items:center!important;justify-content:center!important;width:24px!important;height:24px!important;top:0!important}
+.project-card-root .card-title>span.absolute>a{line-height:0!important}
+:where(:root:not([data-n19-safe])) .project-card-root .card-title>span.absolute>a svg,.project-card-root:where(:root:not([data-n19-safe])) .card-title>span.absolute>a svg{margin:0!important}
+.featured-project .card-title,.featured-project .card-title a.project-card__title{font-size:24px!important;line-height:30px!important}
+.project-card-root [class*="bg-ksr-green"],.project-card__media .w100p.flex.items-center.justify-start>div{background-color:var(--n19-green-dark)!important;border-radius:0!important}
+.project-card__media .w100p.flex.items-center.justify-start{background-color:var(--n19-track)!important}
+.project-card-root .ksr-green-700,.project-card-root [class*="text-accent-green"]{color:var(--n19-green-dark)!important}
+.kds-button:not(.is-only):not(.kds-button--primary){border-color:var(--n19-rule)!important}
+.kds-type-link-standalone,a.link-blue:hover h2{color:var(--n19-link)!important}
+a.bttn-primary,button.bttn-primary,.bttn-green{background-color:var(--n19-green)!important;border-color:var(--n19-green)!important;color:#fff!important;border-radius:0!important}
+a.bttn-primary:hover,button.bttn-primary:hover,.bttn-green:hover{background-color:var(--n19-green-dark)!important;border-color:var(--n19-green-dark)!important}
+.bttn-secondary{border-radius:0!important;border-color:var(--n19-rule)!important}
+#react-project-header .bg-ksr-green-500,#react-project-header [role="progressbar"]>div{background-color:var(--n19-green)!important}
+#react-project-header .ksr-green-500{color:var(--n19-green)!important}
+:where(:root:not([data-n19-safe])) #react-project-header a[href^="https://bsky.app"],#react-project-header:where(:root:not([data-n19-safe])) a[href^="https://bsky.app"]{display:none!important}
+#react-project-header h1.project-name{font-weight:400!important;font-size:28px!important;line-height:36px!important}
+#project-nav .tabbed-nav__link{font-weight:400!important}
+#project-nav .tabbed-nav__link.tabbed-nav__link--active,#project-nav .tabbed-nav__link[aria-current]{font-weight:600!important}
+.kds-elevation-2,.kds-elevation-3{box-shadow:none!important;border:1px solid var(--n19-rule)!important}
+#passwordless-root button[type="button"].kds-w-full{background-color:#000!important;color:#fff!important}
+#passwordless-root h1,#user-account-form h1{font-weight:400!important}
+.kds-text-field__control,.kds-input-group{border-color:var(--n19-rule)!important}
+h2.kds-type-heading-lg{font-weight:400!important}
+footer[class*="kds-group/footer"]{--kds-color-background-surface-primary:var(--n19-alt)!important;--kds-color-text-primary:var(--n19-text)!important;--kds-color-text-secondary:var(--n19-sub)!important;--kds-color-border-subtle:var(--n19-rule)!important;--kds-color-border-bold:var(--n19-rule)!important;background-color:var(--n19-alt)!important;color:var(--n19-text)!important;border-top:1px solid var(--n19-rule)!important}
+footer[class*="kds-group/footer"] a:not(.kds-button){color:var(--n19-sub)!important}
+footer[class*="kds-group/footer"] a:not(.kds-button):hover{color:var(--n19-green-dark)!important}
+footer[class*="kds-group/footer"] h2{color:var(--n19-text)!important;text-transform:uppercase!important;font-size:12px!important;letter-spacing:.06em!important;font-weight:600!important}
+footer[class*="kds-group/footer"] :is(.kds-button,.kds-select__button){background-color:var(--n19-page)!important;color:var(--n19-text)!important;border:1px solid var(--n19-rule)!important}
+footer[class*="kds-group/footer"] :is(.kds-button,.kds-select__button) svg,footer[class*="kds-group/footer"]>div>div svg.kds-icon{fill:currentColor!important;color:var(--n19-text)!important}
+:where(:root:not([data-n19-safe])) footer[class*="kds-group/footer"] a:has(>svg.kds-block){display:none!important}
+:where(:root:not([data-n19-safe])) footer[class*="kds-group/footer"] li:has(>a[href*="bsky.app"]){display:none!important}

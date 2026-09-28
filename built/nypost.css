@@ -1,0 +1,45 @@
+html{--n19-red:#cc3333;--n19-red-hover:#7e3332;--n19-rule:#cc3333;--n19-text:#2a2a2a;--n19-meta:#717171}
+html[data-net19-mode="dark"]{--n19-red:#e05555;--n19-red-hover:#f07070;--n19-rule:#e05555;--n19-text:#e6e6e6;--n19-meta:#aaa}
+html:root{--wp--custom--utility--radius:0!important}
+.site-header__wrapper{background-color:var(--n19-red)!important}
+:where(:root:not([data-n19-safe])) .site-header__container,.site-header__container:where(:root:not([data-n19-safe])){height:55px!important;min-height:0!important}
+:where(:root:not([data-n19-safe])) .site-header__logo,.site-header__logo:where(:root:not([data-n19-safe])){height:45px!important;width:300px!important;top:5px!important;margin:0!important;transform:none!important;left:calc(50% - 150px)!important;position:absolute!important}
+:where(:root:not([data-n19-safe])) .site-header__logo svg,.site-header__logo:where(:root:not([data-n19-safe])) svg,:where(:root:not([data-n19-safe])) .site-header__logo a,.site-header__logo:where(:root:not([data-n19-safe])) a{height:45px!important;width:300px!important;display:block!important}
+:where(:root:not([data-n19-safe])) .site-header,.site-header:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .site-header__wrapper,.site-header__wrapper:where(:root:not([data-n19-safe])){height:auto!important;min-height:0!important}
+:where(:root:not([data-n19-safe])) .site-header__left,.site-header__left:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .site-header__right,.site-header__right:where(:root:not([data-n19-safe])){top:0!important}
+.site-header .menu-toggle{border:0!important;background:transparent!important;color:#fff!important}
+:where(:root:not([data-n19-safe])) .site-header .menu-toggle,.site-header:where(:root:not([data-n19-safe])) .menu-toggle{padding:0!important;height:30px!important}
+.site-header .menu-toggle{font:600 12px/30px futura-pt, "Futura PT", Futura, "Trebuchet MS", Arial, sans-serif!important;text-transform:uppercase!important;letter-spacing:.02em!important}
+.site-header .menu-toggle *{color:#fff!important}
+.site-header :is(.button--login,.site-header-cta a,.site-header-cta button){border:0!important;background:transparent!important;border-radius:0!important;color:#fff!important;font:600 12px/30px futura-pt, "Futura PT", Futura, "Trebuchet MS", Arial, sans-serif!important;text-transform:uppercase!important}
+:where(:root:not([data-n19-safe])) .site-header :is(.button--login,.site-header-cta a,.site-header-cta button),.site-header:where(:root:not([data-n19-safe])) :is(.button--login,.site-header-cta a,.site-header-cta button){padding:0 8px!important;min-height:0!important;height:30px!important}
+.site-header :is(.button--login,.site-header-cta a,.site-header-cta button):hover{color:var(--n19-red-hover)!important;background:transparent!important}
+:where(:root:not([data-n19-safe])) .site-header__bar,.site-header__bar:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .site-header__subnav--homepage,.site-header__subnav--homepage:where(:root:not([data-n19-safe])){display:none!important}
+:where(:root:not([data-n19-safe])) .site-header__subnav,.site-header__subnav:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .site-header .recirc--trending,.site-header:where(:root:not([data-n19-safe])) .recirc--trending{display:none!important}
+.story__headline,.story__headline a{font-family:"Helvetica Neue", Helvetica, Arial, sans-serif!important;font-weight:700!important;color:var(--n19-text)!important;letter-spacing:0!important}
+.story__headline a:hover{color:var(--n19-red)!important}
+:where(:root:not([data-n19-safe])) .story__excerpt>a:only-child,.story__excerpt:where(:root:not([data-n19-safe]))>a:only-child{display:block!important}
+.story__meta,.meta,.byline{color:var(--n19-meta)!important}
+.content-header--lines .content-header__heading,.section-heading{letter-spacing:0!important}
+.content-header--lines::before,.content-header--lines::after{border-color:var(--n19-rule)!important;background-color:var(--n19-rule)!important}
+.button,.wp-block-button__link,[class*="btn"]{border-radius:0!important}
+.single .article-header .headline,.article-header h1.headline{font-family:"neue-haas-grotesk-ny-post", "Helvetica Neue", Helvetica, Arial, sans-serif!important;font-size:42px!important;line-height:44px!important;font-weight:700!important;color:var(--n19-text)!important;letter-spacing:0!important;text-transform:none!important}
+.article-header__top .flag{background:transparent!important;border:0!important}
+:where(:root:not([data-n19-safe])) .article-header__top .flag,.article-header__top:where(:root:not([data-n19-safe])) .flag{padding:0!important}
+.article-header__top .flag{box-shadow:none!important}
+:where(:root:not([data-n19-safe])) .article-header__top .flag,.article-header__top:where(:root:not([data-n19-safe])) .flag{transform:none!important;clip-path:none!important}
+.article-header__top .flag,.article-header__top .flag a,.article-header__top .flag span{color:var(--n19-red)!important;font:700 13px/16px futura-pt, "Futura PT", Futura, "Trebuchet MS", Arial, sans-serif!important;text-transform:uppercase!important;letter-spacing:.02em!important}
+:where(:root:not([data-n19-safe])) .article-header__top .flag::before,.article-header__top:where(:root:not([data-n19-safe])) .flag::before,:where(:root:not([data-n19-safe])) .article-header__top .flag::after,.article-header__top:where(:root:not([data-n19-safe])) .flag::after{display:none!important}
+.article-header__meta .meta,.article-header__meta .meta a,.article-header__meta .byline__author,.single .byline,.single .date{font-family:"proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif!important;font-size:13px!important;line-height:16px!important;color:var(--n19-text)!important}
+.article-header__meta .byline a{color:var(--n19-red)!important}
+:where(:root:not([data-n19-safe])) .article-header__google-preferred-source,.article-header__google-preferred-source:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .google-preferred-sources,.google-preferred-sources:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [class*="listen-to-article"i],[class*="listen-to-article"i]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [class*="audio-player"i],[class*="audio-player"i]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [id*="trinity"i],[id*="trinity"i]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .trinity-tts-pb,.trinity-tts-pb:where(:root:not([data-n19-safe])){display:none!important}
+.single__content p,.entry-content p,.single__content li{font-family:"proxima-nova", "Helvetica Neue", Helvetica, Arial, sans-serif!important;font-size:16px!important;line-height:24px!important;color:var(--n19-text)!important;font-weight:400!important}
+.single__content p a,.entry-content p a{color:var(--n19-red)!important;text-decoration:none!important}
+.single__content p a:hover,.entry-content p a:hover{text-decoration:underline!important}
+.featured-image figcaption,.wp-caption figcaption,.single figcaption{font-family:"proxima-nova", Helvetica, Arial, sans-serif!important;font-size:13px!important;line-height:16px!important;color:var(--n19-meta)!important}
+.single figcaption .credit{color:#b3b3b3!important;text-transform:none!important}
+.tag-list__tag,.tag-list a{border-radius:0!important}
+.recirc__headline,.recirc__headline a,.more-stories__story a,.widget--now-on__story a{font-family:"Helvetica Neue", Helvetica, Arial, sans-serif!important;color:var(--n19-text)!important;font-weight:700!important;letter-spacing:0!important}
+.recirc__heading,.widget--now-on__heading{font-family:futura-pt, "Futura PT", Futura, "Trebuchet MS", Arial, sans-serif!important;text-transform:uppercase!important;letter-spacing:.02em!important}
+:where(:root:not([data-n19-safe])) .site-header-cta:has(.site-header-cta__image),.site-header-cta:has(.site-header-cta__image):where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .widget-wrapper.widget_custom_html:has(a[href*="podcasts.apple.com"]),.widget-wrapper.widget_custom_html:has(a[href*="podcasts.apple.com"]):where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .widget-wrapper:has(.widget--sports-plus-columnists),.widget-wrapper:has(.widget--sports-plus-columnists):where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .menu-item-sports-plus-logo,.menu-item-sports-plus-logo:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .menu-item:has(>a[href*="/sports-plus"]),.menu-item:has(>a[href*="/sports-plus"]):where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .section-subnav .menu-item:has(>a[href*="sports-betting"]),.section-subnav:where(:root:not([data-n19-safe])) .menu-item:has(>a[href*="sports-betting"]){display:none!important}
+:where(:root:not([data-n19-safe])) .module--promo:has(.story--promo),.module--promo:has(.story--promo):where(:root:not([data-n19-safe])){display:none!important}
