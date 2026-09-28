@@ -13,7 +13,7 @@ header[data-testid="SiteHeader"] [class*="site-header-module__button-group"] [cl
 [class*="nav-dropdown-module__container"]{background:#fff!important;border-top:2px solid var(--n19-orange)!important}
 [class*="nav-dropdown-module__container"] a{color:#404040!important}
 [class*="nav-dropdown-module__container"] a:hover{color:var(--n19-orange)!important}
-:where(:root:not([data-n19-safe])) [class*="refinitiv-promo-bar-module__container"],[class*="refinitiv-promo-bar-module__container"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [class*="subscribe-button"],[class*="subscribe-button"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [class*="paywall-module"],[class*="paywall-module"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [class*="register-button"],[class*="register-button"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [class*="exclusive-badge-module__container"],[class*="exclusive-badge-module__container"]:where(:root:not([data-n19-safe])){display:none!important}
+[class*="refinitiv-promo-bar-module__container"],[class*="subscribe-button"],[class*="paywall-module"],[class*="register-button"],[class*="exclusive-badge-module__container"]{display:none!important}
 [class*="markets-ticker-module"]{font-family:var(--reu19-sans)!important}
 [class*="market-bar-module__container"],[class*="markets-ticker-module__container"]{background:var(--n19-strip)!important}
 [data-testid="TitleHeading"]{font-family:var(--reu19-sans)!important;font-weight:400!important;color:var(--n19-head)!important;letter-spacing:0!important}
@@ -26,7 +26,7 @@ header[data-testid="SiteHeader"] [class*="site-header-module__button-group"] [cl
 [data-testid$="SectionNameHeading"]{border-bottom:1px solid var(--n19-orange)!important}
 :where(:root:not([data-n19-safe])) [data-testid$="SectionNameHeading"],[data-testid$="SectionNameHeading"]:where(:root:not([data-n19-safe])){padding-bottom:6px!important;margin-bottom:14px!important;width:100%!important}
 [data-testid$="SectionNameHeading"],[data-testid$="SectionNameHeading"] a,[data-testid$="SectionNameLink"]{font-family:var(--reu19-sans)!important;font-weight:400!important;font-size:20px!important;text-transform:uppercase!important;color:var(--n19-head)!important;letter-spacing:0!important}
-:where(:root:not([data-n19-safe])) [data-testid$="SectionNameArrowRight"],[data-testid$="SectionNameArrowRight"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [class*="section-name-module__chevron_wrapper"],[class*="section-name-module__chevron_wrapper"]:where(:root:not([data-n19-safe])){display:none!important}
+[data-testid$="SectionNameArrowRight"],[class*="section-name-module__chevron_wrapper"]{display:none!important}
 [class*="divider-container-module__divider"]{border-color:var(--n19-rule)!important;background:var(--n19-rule)!important}
 [class*="story-card-module__image"] img,[class*="image-module__container"] img,[data-testid="MediaImageLink"]{border-radius:0!important}
 main h1[data-testid="Heading"],#main-content h1[data-testid="Heading"]{font-family:var(--reu19-medium)!important;font-weight:400!important;color:var(--n19-text)!important;letter-spacing:0!important}
@@ -38,5 +38,5 @@ main h1[data-testid="Heading"],#main-content h1[data-testid="Heading"]{font-fami
 [data-testid^="paragraph-"] a{color:inherit!important;text-decoration:none!important;border-bottom:1px dotted var(--n19-link)!important}
 [class*="info-content-module"],[class*="author-name"],[data-testid="AuthorName"],[class*="byline"] a{font-family:var(--reu19-sans)!important}
 [class*="article-body-module__element"] figcaption,figcaption[class*="caption"]{font-family:var(--reu19-sans)!important;color:var(--n19-meta)!important;font-size:13px!important}
-:where(:root:not([data-n19-safe])) [data-testid="SignUpPromo"],[data-testid="SignUpPromo"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [class*="sign-up-promo"],[class*="sign-up-promo"]:where(:root:not([data-n19-safe])){display:none!important}
+[data-testid="SignUpPromo"],[class*="sign-up-promo"]{display:none!important}
 footer[class*="site-footer"],[class*="site-footer-module__container"]{background:#f5f5f5!important}

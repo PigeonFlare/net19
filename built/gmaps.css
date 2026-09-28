@@ -4,7 +4,7 @@ html[data-net19-mode="dark"]{--n19-map-box-shadow:0 2px 4px rgba(0,0,0,.6);--n19
 :is(html[data-n19-g="maps"]) [role="search"].NaMBUd :is(input,label){font-family:var(--n19-sans)!important;font-size:15px!important}
 :is(html[data-n19-g="maps"]) [role="search"].NaMBUd button[aria-label="Directions"]{box-shadow:inset 1px 0 0 var(--n19-map-line)!important}
 :is(html[data-n19-g="maps"]) [role="search"].NaMBUd button[aria-label="Directions"] span{color:var(--n19-accent)!important}
-:where(:root:not([data-n19-safe])) :is(html[data-n19-g="maps"]) .fp2VUc[role="region"][aria-label^="Available search options"],:is(html[data-n19-g="maps"]):where(:root:not([data-n19-safe])) .fp2VUc[role="region"][aria-label^="Available search options"]{display:none!important}
+:is(html[data-n19-g="maps"]) .fp2VUc[role="region"][aria-label^="Available search options"]{display:none!important}
 :is(html[data-n19-g="maps"]) .fp2VUc[role="region"] .tXNTee{border-radius:4px!important}
 :is(html[data-n19-g="maps"]) .fp2VUc[role="region"] .tXNTee .uEubGf{font-family:var(--n19-sans)!important;font-weight:500!important}
 :is(html[data-n19-g="maps"]) .XltNde,:is(html[data-n19-g="maps"]) .XltNde .noYW3{background:var(--n19-bg)!important;border-radius:0!important}
@@ -37,7 +37,7 @@ html[data-net19-mode="dark"]{--n19-map-box-shadow:0 2px 4px rgba(0,0,0,.6);--n19
 :is(html[data-n19-g="maps"]) .B5aTzc :is(button.rM8v5b){border-radius:2px 2px 0 0!important}
 :is(html[data-n19-g="maps"]) .B5aTzc :is(button.TlWmQ){border-radius:0 0 2px 2px!important}
 :is(html[data-n19-g="maps"]) :is(.F63Kk,.F63Kk .obhoOb,.F63Kk .s6ATEe){border-radius:2px!important}
-:where(:root:not([data-n19-safe])) :is(html[data-n19-g="maps"]) ul.lTfMvb[role="menu"] li:has(>button[jsaction*="askGemini"]),:is(html[data-n19-g="maps"]):where(:root:not([data-n19-safe])) ul.lTfMvb[role="menu"] li:has(>button[jsaction*="askGemini"]),:where(:root:not([data-n19-safe])) :is(html[data-n19-g="maps"]) ul.lTfMvb[role="menu"] li:has([jsaction*="toggleSideBar"]),:is(html[data-n19-g="maps"]):where(:root:not([data-n19-safe])) ul.lTfMvb[role="menu"] li:has([jsaction*="toggleSideBar"]),:where(:root:not([data-n19-safe])) :is(html[data-n19-g="maps"]) ul.lTfMvb[role="menu"] li:has(>button.T2ozWe.gFIUjc),:is(html[data-n19-g="maps"]):where(:root:not([data-n19-safe])) ul.lTfMvb[role="menu"] li:has(>button.T2ozWe.gFIUjc){display:none!important}
+:is(html[data-n19-g="maps"]) ul.lTfMvb[role="menu"] li:has(>button[jsaction*="askGemini"]),:is(html[data-n19-g="maps"]) ul.lTfMvb[role="menu"] li:has([jsaction*="toggleSideBar"]),:is(html[data-n19-g="maps"]) ul.lTfMvb[role="menu"] li:has(>button.T2ozWe.gFIUjc){display:none!important}
 :is(html[data-n19-g="maps"]) ul.lTfMvb[role="menu"] label{font-family:var(--n19-sans)!important;color:var(--n19-text)!important}
-:where(:root:not([data-n19-safe])) :is(html[data-n19-g="maps"]) li:has(>button[jsaction*="navigationrail.askMaps"]),:is(html[data-n19-g="maps"]):where(:root:not([data-n19-safe])) li:has(>button[jsaction*="navigationrail.askMaps"]){display:none!important}
+:is(html[data-n19-g="maps"]) li:has(>button[jsaction*="navigationrail.askMaps"]){display:none!important}
 :is(html[data-n19-g="maps"]) :is([role="dialog"],[role="alertdialog"]):not(.dBl9De){border-radius:8px!important}

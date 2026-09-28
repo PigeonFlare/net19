@@ -11,9 +11,8 @@ header input.search-bar,header .search-input-field-v2{border-radius:0!important;
 :where(:root:not([data-n19-safe])) header input.search-bar,:where(:root:not([data-n19-safe])) header .search-input-field-v2{height:44px!important}
 header input.search-bar,header .search-input-field-v2{box-shadow:inset 0 0 0 2px var(--n19-bar), 0 .5px 2px 0 rgba(0,0,0,.23)!important}
 :where(:root:not([data-n19-safe])) header input.search-bar,:where(:root:not([data-n19-safe])) header .search-input-field-v2{padding-left:16px!important}
-header input.search-bar::placeholder{color:var(--n19-field-text)!important;font-weight:700!important}
-:where(:root:not([data-n19-safe])) header input.search-bar::placeholder{opacity:1!important}
-:where(:root:not([data-n19-safe])) header input.search-bar:focus::placeholder{opacity:0!important}
+header input.search-bar::placeholder{color:var(--n19-field-text)!important;font-weight:700!important;opacity:1!important}
+header input.search-bar:focus::placeholder{opacity:0!important}
 header form[role="search"],header .search-bar-container,header input.search-bar+*{border-radius:0!important}
 header button.search-icon-redesigned-v2,header button[aria-label="Search"i]{background:transparent!important;border-radius:0!important;color:var(--n19-icon)!important}
 header button.search-icon-redesigned-v2 i,header button.search-icon-redesigned-v2 svg,header button[aria-label="Search"i] svg{fill:var(--n19-icon)!important;color:var(--n19-icon)!important}
@@ -24,7 +23,7 @@ header nav a.desktop-header-trigger,header #cart-button-header{border-radius:0!i
 header nav a.desktop-header-trigger>i,header #cart-button-header>i{border-radius:50%!important;background:var(--n19-bubble)!important;font-size:16px!important}
 :where(:root:not([data-n19-safe])) header nav a.desktop-header-trigger>div{margin:0!important}
 header nav a.desktop-header-trigger>div{text-align:center!important}
-:where(:root:not([data-n19-safe])) header nav a.desktop-header-trigger>div>div:first-child{display:none!important}
+header nav a.desktop-header-trigger>div>div:first-child{display:none!important}
 header nav a.desktop-header-trigger>div>div,header #cart-button-header .cart-total{font-size:12px!important;font-weight:400!important;line-height:14px!important}
 :where(:root:not([data-n19-safe])) header nav a.desktop-header-trigger>div>div,:where(:root:not([data-n19-safe])) header #cart-button-header .cart-total{height:auto!important}
 header nav a.desktop-header-trigger>div>div,header #cart-button-header .cart-total{color:var(--n19-bar-text)!important}
@@ -36,5 +35,5 @@ span.bg-secondary.sticky>div.header-navigation section.br-pill{background:transp
 span.bg-secondary.sticky>div.header-navigation :is(button,a){color:var(--n19-row-text)!important;font-size:14px!important;border-radius:0!important}
 span.bg-secondary.sticky>div.header-navigation :is(button,a):hover{text-decoration:underline!important;background:transparent!important}
 main .br3,main .br2,main .br4,main [data-testid="flex-container"] img{border-radius:0!important}
-:where(:root:not([data-n19-safe])) :is(button,a)[aria-label*="Sparky"i],:is(button,a)[aria-label*="Sparky"i]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-testid="sparky-fab-bubble"],[data-testid="sparky-fab-bubble"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .sparky-fab-wrapper,.sparky-fab-wrapper:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) a[href^="/sparky"],:where(:root:not([data-n19-safe])) a[href*="walmart.com/sparky"]{display:none!important}
-:where(:root:not([data-n19-safe])) [data-testid="badgeTagComponent"][data-net19-hidden],[data-testid="badgeTagComponent"][data-net19-hidden]:where(:root:not([data-n19-safe])){display:none!important}
+:is(button,a)[aria-label*="Sparky"i],[data-testid="sparky-fab-bubble"],.sparky-fab-wrapper,a[href^="/sparky"],a[href*="walmart.com/sparky"]{display:none!important}
+[data-testid="badgeTagComponent"][data-net19-hidden]{display:none!important}

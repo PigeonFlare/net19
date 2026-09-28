@@ -12,7 +12,7 @@ header.HeaderMktg nav>ul>li>div>button:hover,header.HeaderMktg nav>ul>li>a:hover
 header.HeaderMktg button[aria-label^="Search or jump"i]{background:var(--n19-header-field)!important;border:none!important;border-radius:3px!important}
 :where(:root:not([data-n19-safe])) header.HeaderMktg button[aria-label^="Search or jump"i]{height:34px!important;padding:0 10px!important;align-items:center!important}
 header.HeaderMktg button[aria-label^="Search or jump"i]{line-height:20px!important;color:var(--n19-header-dim)!important;font-size:14px!important;font-weight:400!important}
-:where(:root:not([data-n19-safe])) header.HeaderMktg button[aria-label^="Search or jump"i] svg{display:none!important}
+header.HeaderMktg button[aria-label^="Search or jump"i] svg{display:none!important}
 :where(:root:not([data-n19-safe])) header.HeaderMktg button[aria-label^="Search or jump"i]>span{justify-content:flex-start!important}
 header.HeaderMktg button[aria-label^="Search or jump"i]>span{text-align:left!important}
 :where(:root:not([data-n19-safe])) header.HeaderMktg button[aria-label^="Search or jump"i]>span{width:100%!important}
@@ -26,13 +26,13 @@ header.HeaderMktg a[href^="/signup"]{background:transparent!important;border:1px
 :where(:root:not([data-n19-safe])) header.HeaderMktg a[href^="/signup"]{padding:4px 8px!important}
 header.HeaderMktg a[href^="/signup"]{font-size:16px!important;font-weight:400!important}
 .lp-Home #hero,.lp-Home .lp-Intro{background:var(--n19-hero)!important}
-:where(:root:not([data-n19-safe])) .lp-Home .lp-Intro-gradient,.lp-Home:where(:root:not([data-n19-safe])) .lp-Intro-gradient,:where(:root:not([data-n19-safe])) .lp-Home .lp-IntroVisuals,.lp-Home:where(:root:not([data-n19-safe])) .lp-IntroVisuals{display:none!important}
+.lp-Home .lp-Intro-gradient,.lp-Home .lp-IntroVisuals{display:none!important}
 :where(:root:not([data-n19-safe])) .lp-Home .lp-Intro>.lp-Spacer:not(.lp-IntroTop-spacer):not(.lp-IntroVisuals-spacer),.lp-Home:where(:root:not([data-n19-safe])) .lp-Intro>.lp-Spacer:not(.lp-IntroTop-spacer):not(.lp-IntroVisuals-spacer){height:0!important}
 :where(:root:not([data-n19-safe])) .lp-Home .lp-IntroTop-spacer,.lp-Home:where(:root:not([data-n19-safe])) .lp-IntroTop-spacer{height:136px!important}
 :where(:root:not([data-n19-safe])) .lp-Home .lp-IntroVisuals-spacer,.lp-Home:where(:root:not([data-n19-safe])) .lp-IntroVisuals-spacer{height:96px!important}
-:where(:root:not([data-n19-safe])) .lp-Home .lp-IntroHero,.lp-Home:where(:root:not([data-n19-safe])) .lp-IntroHero{position:relative!important;top:auto!important;left:auto!important;transform:none!important;opacity:1!important}
-.lp-Home .lp-IntroHero{filter:none!important}
-:where(:root:not([data-n19-safe])) .lp-Home .lp-HeroCarousel-background,.lp-Home:where(:root:not([data-n19-safe])) .lp-HeroCarousel-background,:where(:root:not([data-n19-safe])) .lp-Home .lp-Intro::after,.lp-Home:where(:root:not([data-n19-safe])) .lp-Intro::after,:where(:root:not([data-n19-safe])) .lp-Home .lp-HeroCarousel-content::before,.lp-Home:where(:root:not([data-n19-safe])) .lp-HeroCarousel-content::before{display:none!important}
+:where(:root:not([data-n19-safe])) .lp-Home .lp-IntroHero,.lp-Home:where(:root:not([data-n19-safe])) .lp-IntroHero{position:relative!important;top:auto!important;left:auto!important;transform:none!important}
+.lp-Home .lp-IntroHero{opacity:1!important;filter:none!important}
+.lp-Home .lp-HeroCarousel-background,.lp-Home .lp-Intro::after,.lp-Home .lp-HeroCarousel-content::before{display:none!important}
 :where(:root:not([data-n19-safe])) .lp-Home .lp-IntroHero,.lp-Home:where(:root:not([data-n19-safe])) .lp-IntroHero{display:grid!important;grid-template-columns:7fr 5fr;align-items:center;column-gap:48px;max-width:1012px;margin:0 auto!important;padding:0 16px;box-sizing:border-box}
 :where(:root:not([data-n19-safe])) .lp-Home .lp-IntroHero>section,.lp-Home:where(:root:not([data-n19-safe])) .lp-IntroHero>section{max-width:none!important;width:auto!important;margin:0!important;padding:0!important}
 .lp-Home .lp-IntroHero>section{text-align:left!important}
@@ -51,7 +51,8 @@ header.HeaderMktg a[href^="/signup"]{font-size:16px!important;font-weight:400!im
 :where(:root:not([data-n19-safe])) .lp-Home .lp-IntroHero .CtaFormControl-field-wrap,.lp-Home:where(:root:not([data-n19-safe])) .lp-IntroHero .CtaFormControl-field-wrap{display:flex!important;flex-direction:column!important;width:100%!important}
 :where(:root:not([data-n19-safe])) .lp-Home .lp-IntroHero .CtaFormControl-label,.lp-Home:where(:root:not([data-n19-safe])) .lp-IntroHero .CtaFormControl-label{position:static!important;transform:none!important;display:block!important}
 .lp-Home .lp-IntroHero .CtaFormControl-label{color:var(--n19-signup-text)!important;font-size:16px!important;font-weight:400!important}
-:where(:root:not([data-n19-safe])) .lp-Home .lp-IntroHero .CtaFormControl-label,.lp-Home:where(:root:not([data-n19-safe])) .lp-IntroHero .CtaFormControl-label{margin:0 0 5px!important;opacity:1!important}
+:where(:root:not([data-n19-safe])) .lp-Home .lp-IntroHero .CtaFormControl-label,.lp-Home:where(:root:not([data-n19-safe])) .lp-IntroHero .CtaFormControl-label{margin:0 0 5px!important}
+.lp-Home .lp-IntroHero .CtaFormControl-label{opacity:1!important}
 :where(:root:not([data-n19-safe])) .lp-Home .lp-IntroHero .CtaFormControl-field-wrap>span,.lp-Home:where(:root:not([data-n19-safe])) .lp-IntroHero .CtaFormControl-field-wrap>span,:where(:root:not([data-n19-safe])) .lp-Home .lp-IntroHero .CtaFormControl-input,.lp-Home:where(:root:not([data-n19-safe])) .lp-IntroHero .CtaFormControl-input{width:100%!important;min-height:46px!important}
 .lp-Home .lp-IntroHero .CtaFormControl-field-wrap>span,.lp-Home .lp-IntroHero .CtaFormControl-input{background:#fff!important;border:1px solid var(--n19-field-border)!important;border-radius:5px!important;box-shadow:var(--n19-field-inset)!important;color:var(--n19-signup-text)!important;font-size:16px!important}
 :where(:root:not([data-n19-safe])) .lp-Home .lp-IntroHero .CtaFormControl-field-wrap>span,.lp-Home:where(:root:not([data-n19-safe])) .lp-IntroHero .CtaFormControl-field-wrap>span,:where(:root:not([data-n19-safe])) .lp-Home .lp-IntroHero .CtaFormControl-input,.lp-Home:where(:root:not([data-n19-safe])) .lp-IntroHero .CtaFormControl-input{box-sizing:border-box}
@@ -61,9 +62,9 @@ header.HeaderMktg a[href^="/signup"]{font-size:16px!important;font-weight:400!im
 .lp-Home .lp-IntroHero .CtaForm button[type="submit"],.lp-Home .lp-IntroHero .CtaFormControl-container>button{border-radius:3px!important;background:var(--n19-signup-green)!important;border:1px solid var(--n19-signup-green)!important;color:#fff!important;font-size:16px!important;font-weight:500!important}
 .lp-Home .lp-IntroHero .CtaForm button[type="submit"]:hover,.lp-Home .lp-IntroHero .CtaFormControl-container>button:hover{background:var(--n19-signup-green-hover)!important}
 .lp-Home .lp-IntroHero .CtaForm button *{color:#fff!important;font-size:16px!important}
-:where(:root:not([data-n19-safe])) .lp-Home .CtaForm-secondaryAction,.lp-Home:where(:root:not([data-n19-safe])) .CtaForm-secondaryAction{display:none!important}
-:where(:root:not([data-n19-safe])) .lp-Home .lp-HeroCarousel,.lp-Home:where(:root:not([data-n19-safe])) .lp-HeroCarousel,:where(:root:not([data-n19-safe])) .lp-Home .HeroCarouselControls,.lp-Home:where(:root:not([data-n19-safe])) .HeroCarouselControls{display:none!important}
-:where(:root:not([data-n19-safe])) header.HeaderMktg nav li:has(>[class*="NavGroup-module__group"]>ul>li:first-child>a[href*="/features/copilot"]),:where(:root:not([data-n19-safe])) header.HeaderMktg nav li:has(>a[href*="/features/copilot"]),:where(:root:not([data-n19-safe])) header.HeaderMktg nav li:has(>a[href$="github.com/mcp"]),:where(:root:not([data-n19-safe])) header.HeaderMktg nav li:has(>a[href*="topic=ai"]){display:none!important}
+.lp-Home .CtaForm-secondaryAction{display:none!important}
+.lp-Home .lp-HeroCarousel,.lp-Home .HeroCarouselControls{display:none!important}
+header.HeaderMktg nav li:has(>[class*="NavGroup-module__group"]>ul>li:first-child>a[href*="/features/copilot"]),header.HeaderMktg nav li:has(>a[href*="/features/copilot"]),header.HeaderMktg nav li:has(>a[href$="github.com/mcp"]),header.HeaderMktg nav li:has(>a[href*="topic=ai"]){display:none!important}
 .btn:not(.btn-primary):not(.btn-danger),.Button--secondary,button[data-variant="default"],a[data-variant="default"]{background:linear-gradient(-180deg, var(--n19-btn-from), var(--n19-btn-to) 90%)!important;border:1px solid var(--n19-btn-border)!important;border-radius:3px!important;color:var(--n19-btn-text)!important;box-shadow:none!important;font-weight:600!important}
 .btn:not(.btn-primary):not(.btn-danger):hover,.Button--secondary:hover,button[data-variant="default"]:hover{background:linear-gradient(-180deg, var(--n19-btn-hover-from), var(--n19-btn-hover-to) 90%)!important}
 .btn-primary,.Button--primary,button[data-variant="primary"],a[data-variant="primary"]{background:linear-gradient(-180deg, var(--n19-primary-from), var(--n19-primary-to) 90%)!important;border:1px solid rgba(27,31,35,.2)!important;border-radius:3px!important;color:#fff!important;box-shadow:none!important;font-weight:600!important}
@@ -76,12 +77,12 @@ header.HeaderMktg a[href^="/signup"]{font-size:16px!important;font-weight:400!im
 #repository-container-header{background:var(--n19-bg-2)!important;border-bottom:1px solid var(--n19-border)!important}
 #repository-container-header strong[itemprop="name"] a,#repository-container-header [itemprop="author"] a{font-size:20px!important}
 #repository-container-header [itemprop="author"] a{font-weight:400!important}
-:where(:root:not([data-n19-safe])) #repository-container-header .Label--secondary,#repository-container-header:where(:root:not([data-n19-safe])) .Label--secondary{display:none!important}
+#repository-container-header .Label--secondary{display:none!important}
 .UnderlineNav{box-shadow:none!important}
 .UnderlineNav-item{border-radius:3px 3px 0 0!important;border:1px solid transparent!important;border-top-width:3px!important}
 :where(:root:not([data-n19-safe])) .UnderlineNav-item,.UnderlineNav-item:where(:root:not([data-n19-safe])){padding:7px 15px 8px!important;margin-bottom:-1px!important}
 .UnderlineNav-item.selected,.UnderlineNav-item[aria-current]:not([aria-current="false"]){border-color:var(--n19-tab-edge) var(--n19-border) transparent!important;background:var(--n19-bg)!important;color:var(--n19-text)!important}
-:where(:root:not([data-n19-safe])) .UnderlineNav-item.selected::after,.UnderlineNav-item.selected:where(:root:not([data-n19-safe]))::after,:where(:root:not([data-n19-safe])) .UnderlineNav-item[aria-current]::after,.UnderlineNav-item[aria-current]:where(:root:not([data-n19-safe]))::after{display:none!important}
+.UnderlineNav-item.selected::after,.UnderlineNav-item[aria-current]::after{display:none!important}
 .UnderlineNav-item:hover{background:transparent;border-bottom-color:transparent!important}
 [data-testid="latest-commit"]{color:var(--n19-text-2)}
 [class*="DirectoryContent-module__Box_3"],div:has(>[class*="LatestCommit-module__Box"]){background:var(--n19-commit-bar)!important;border-color:var(--n19-commit-border)!important;border-radius:3px 3px 0 0!important}
@@ -98,10 +99,47 @@ table[aria-labelledby="folders-and-files"] .react-directory-row:hover{background
 .react-directory-commit-message a,.react-directory-commit-age{color:var(--n19-text-2)!important}
 .State,[class*="StateLabel"],[data-testid="header-state"]{border-radius:3px!important}
 .State--closed:not(.State--merged),[class*="StateLabel"][class*="issueClosed"i]{background-color:#cb2431!important}
-:where(:root:not([data-n19-safe])) .border-top:has(>h2+div .achievement-badge-sidebar),.border-top:has(>h2+div .achievement-badge-sidebar):where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .border-top:has(.achievement-badge-sidebar),.border-top:has(.achievement-badge-sidebar):where(:root:not([data-n19-safe])){display:none!important}
-:where(:root:not([data-n19-safe])) li:has(>a[href*="issues-sidebar-feedback"]),:where(:root:not([data-n19-safe])) a[href*="issues-sidebar-feedback"]{display:none!important}
-:where(:root:not([data-n19-safe])) main a[href*="/features/copilot"],:where(:root:not([data-n19-safe])) main a[href*="/features/ai/github-app"],:where(:root:not([data-n19-safe])) main li:has(>a[href*="/features/ai/github-app"]),:where(:root:not([data-n19-safe])) #repository-container-header a[href*="copilot"i],#repository-container-header:where(:root:not([data-n19-safe])) a[href*="copilot"i]{display:none!important}
-:where(:root:not([data-n19-safe])) [class*="MarketplaceHeader"],[class*="MarketplaceHeader"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .marketplace-hero,.marketplace-hero:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) main section:has(>div>h1):has(input[placeholder*="apps and actions"i]){background-image:none!important}
+.border-top:has(>h2+div .achievement-badge-sidebar),.border-top:has(.achievement-badge-sidebar){display:none!important}
+li:has(>a[href*="issues-sidebar-feedback"]),a[href*="issues-sidebar-feedback"]{display:none!important}
+main a[href*="/features/copilot"],main a[href*="/features/ai/github-app"],main li:has(>a[href*="/features/ai/github-app"]),#repository-container-header a[href*="copilot"i]{display:none!important}
+[class*="MarketplaceHeader"],.marketplace-hero,main section:has(>div>h1):has(input[placeholder*="apps and actions"i]){background-image:none!important}
 [class*="Primer_Brand__"],[class*="Primer_Brand__"] *:not(code,pre,code *,pre *),.markdown-body,main h1,main h2,main h3{font-family:var(--n19-font)!important}
-:where(:root:not([data-n19-safe])) [class*="ProductSelectionCard_cell"]:has(a[href$="/copilot"]),[class*="ProductSelectionCard_cell"]:has(a[href$="/copilot"]):where(:root:not([data-n19-safe])){display:none!important}
+[class*="ProductSelectionCard_cell"]:has(a[href$="/copilot"]){display:none!important}
 header[class*="SubdomainNavBar"] button,header[class*="SubdomainNavBar"] input{border-radius:3px!important}
+:where(:root:not([data-n19-safe])) #repository-container-header>:is(div,nav),#repository-container-header:where(:root:not([data-n19-safe]))>:is(div,nav){max-width:980px!important;margin-left:auto!important;margin-right:auto!important;padding-left:0!important;padding-right:0!important;box-sizing:border-box!important}
+:where(:root:not([data-n19-safe])) #repository-container-header .UnderlineNav-body,#repository-container-header:where(:root:not([data-n19-safe])) .UnderlineNav-body{padding-left:0!important}
+:where(:root:not([data-n19-safe])) :is(#repo-content-pjax-container,#repo-content-turbo-frame) [class*="PageLayout-PageLayoutRoot"].container-xl,:is(#repo-content-pjax-container,#repo-content-turbo-frame):where(:root:not([data-n19-safe])) [class*="PageLayout-PageLayoutRoot"].container-xl,:where(:root:not([data-n19-safe])) :is(#repo-content-pjax-container,#repo-content-turbo-frame) [class*="ContentWrapper-module__contentContainer"],:is(#repo-content-pjax-container,#repo-content-turbo-frame):where(:root:not([data-n19-safe])) [class*="ContentWrapper-module__contentContainer"]{max-width:1012px!important;margin-left:auto!important;margin-right:auto!important;padding-left:16px!important;padding-right:16px!important;box-sizing:border-box!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="PageLayout-PageLayoutContent"]:has(>[class*="PageLayout-PaneWrapper"] [class*="CodeViewSidebar-module__borderGrid"]){flex-direction:column!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="PageLayout-PaneWrapper"]:has([class*="CodeViewSidebar-module__borderGrid"]),:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="PageLayout-PaneWrapper"]>[class*="PageLayout-Pane-"]:has([class*="CodeViewSidebar-module__borderGrid"]),:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="CodeViewSidebar-module__borderGrid"]{display:contents!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="PageLayout-PageLayoutContent"]:has([class*="CodeViewSidebar-module__borderGrid"])>[class*="PageLayout-ContentWrapper"]{order:1!important;width:100%!important;max-width:none!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="CodeViewSidebar-module__borderGrid"]>[class*="SidebarSection-module__sidebarSection"]{order:2!important;width:100%!important;max-width:none!important;box-sizing:border-box!important;padding-left:0!important;padding-right:0!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="CodeViewSidebar-module__borderGrid"]>[class*="SidebarSection-module__sidebarSection"]:first-child{order:0!important;display:block!important;padding:16px 0 8px!important}
+react-app[app-name="code-view"] [class*="CodeViewSidebar-module__borderGrid"]>[class*="SidebarSection-module__sidebarSection"]:first-child{border:0!important}
+react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child>h2{display:none!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="CodeViewSidebar-module__borderGrid"]>[class*="SidebarSection-module__sidebarSection"]:first-child{display:flex!important;flex-wrap:wrap!important;align-items:center!important;column-gap:24px!important;row-gap:6px!important}
+react-app[app-name="code-view"] [class*="SidebarAbout-module__description"]{font-size:16px!important;line-height:24px!important;color:var(--n19-text)!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="SidebarAbout-module__description"]{margin:0 -16px 0 0!important;flex:none!important;max-width:100%!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="SidebarAbout-module__websiteRow"]{flex:none!important;width:auto!important;margin:0!important}
+react-app[app-name="code-view"] [class*="SidebarAbout-module__websiteRow"]{font-size:16px!important}
+react-app[app-name="code-view"] [class*="SidebarAbout-module__websiteRow"] svg{display:none!important}
+react-app[app-name="code-view"] [class*="SidebarAbout-module__websiteRow"] a{font-weight:400!important;font-size:16px!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child>[class*="TopicTag-TopicTagGroup"]{flex:0 0 100%!important;margin:4px 0 6px!important;gap:0!important}
+react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child a[class*="TopicTag-TopicTag-"]{background:var(--n19-commit-bar)!important;color:var(--n19-link)!important;border-radius:3px!important;font-size:12px!important;line-height:1.5!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child a[class*="TopicTag-TopicTag-"]{padding:.3em .9em!important;margin:0 .5em .5em 0!important}
+react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child a[class*="TopicTag-TopicTag-"]{font-weight:400!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child a[class*="TopicTag-TopicTag-"]{height:auto!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child>div.mt-2{flex:none!important;width:auto!important;margin:0!important}
+react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child>div.mt-2 :is(a,span){color:var(--n19-text-2)!important}
+react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child>div.mt-2 svg{color:var(--n19-text-2)!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child>div.mt-2 svg{margin-right:4px!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="PageLayout-PageLayoutContent"]:has([class*="CodeViewSidebar-module__borderGrid"]) :is([class*="PageLayout-ContentWrapper"],[class*="PageLayout-Content-"]){padding-left:0!important;padding-right:0!important;margin-left:0!important;margin-right:0!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="OverviewContent-module__Box__"]{padding-left:0!important;padding-right:0!important}
+[data-component="StateLabel"][data-status="issueClosed"],[data-component="StateLabel"][data-status="issueClosedNotPlanned"]{background-color:#cb2431!important;color:#fff!important}
+[data-component="StateLabel"][data-status="issueOpened"],[data-component="StateLabel"][data-status="pullOpened"]{background-color:#2cbe4e!important;color:#fff!important}
+[class*="HeaderViewer-module__issueTitle"]{font-weight:400!important}
+:where(:root:not([data-n19-safe])) :is([class*="TimelineRowBorder-module__Box"]:has(>[class*="TimelineRowBorder-module__major"] [data-testid="comment-header"]),[class*="IssueBody-module__outerContainer"]),:is([class*="TimelineRowBorder-module__Box"]:has(>[class*="TimelineRowBorder-module__major"] [data-testid="comment-header"]),[class*="IssueBody-module__outerContainer"]):where(:root:not([data-n19-safe])){position:relative!important;margin-left:56px!important}
+:where(:root:not([data-n19-safe])) :is([class*="TimelineRowBorder-module__major"] [data-testid="comment-header"] [class*="ActivityHeader-module__AvatarContainer"],[class*="IssueBody-module__outerContainer"] [class*="IssueBodyHeader-module__avatarContainer"]),:is([class*="TimelineRowBorder-module__major"] [data-testid="comment-header"] [class*="ActivityHeader-module__AvatarContainer"],[class*="IssueBody-module__outerContainer"] [class*="IssueBodyHeader-module__avatarContainer"]):where(:root:not([data-n19-safe])){position:absolute!important;left:-56px!important;top:0!important;width:40px!important;height:40px!important}
+:where(:root:not([data-n19-safe])) :is([class*="TimelineRowBorder-module__major"] [data-testid="comment-header"] [class*="ActivityHeader-module__AvatarContainer"],[class*="IssueBody-module__outerContainer"] [class*="IssueBodyHeader-module__avatarContainer"]) :is(a,img),:is([class*="TimelineRowBorder-module__major"] [data-testid="comment-header"] [class*="ActivityHeader-module__AvatarContainer"],[class*="IssueBody-module__outerContainer"] [class*="IssueBodyHeader-module__avatarContainer"]):where(:root:not([data-n19-safe])) :is(a,img){width:40px!important;height:40px!important;display:block!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child>h3.sr-only>span{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important}
+react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child>h3.sr-only>span{clip:rect(0 0 0 0)!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child>h3.sr-only>span{white-space:nowrap!important}

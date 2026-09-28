@@ -30,7 +30,7 @@ body,.cc,.cc_pgwn{color:var(--n19-text)!important}
 #header #searchBar .chsb .hbtn{font-weight:400!important;color:var(--n19-on-bar)!important}
 #header #searchBar a{color:var(--n19-on-bar)!important}
 :where(:root:not([data-n19-safe])) .cc_pgwn,.cc_pgwn:where(:root:not([data-n19-safe])){padding-top:12px!important}
-:where(:root:not([data-n19-safe])) .cc_pgwn>.x>.hdn.hdb-m.hfl-m:has(>#ad_leftslot),.cc_pgwn:where(:root:not([data-n19-safe]))>.x>.hdn.hdb-m.hfl-m:has(>#ad_leftslot){display:none!important}
+.cc_pgwn>.x>.hdn.hdb-m.hfl-m:has(>#ad_leftslot){display:none!important}
 :where(:root:not([data-n19-safe])) .cc_pgwn>.x>.hfr-m.ltab,.cc_pgwn:where(:root:not([data-n19-safe]))>.x>.hfr-m.ltab{float:none!important;width:1060px!important;max-width:calc(100% - 20px)!important;margin:0 0 0 auto!important}
 :where(:root:not([data-n19-safe])) #page-content,#page-content:where(:root:not([data-n19-safe])){width:calc(100% - 315px)!important}
 #page-content>h1.ti{font-size:16px!important;font-style:normal!important;line-height:1.4!important}
@@ -58,7 +58,7 @@ body,.cc,.cc_pgwn{color:var(--n19-text)!important}
 .entry-body .def-body .examp{list-style:none!important}
 :where(:root:not([data-n19-safe])) .entry-body .def-body .examp,.entry-body:where(:root:not([data-n19-safe])) .def-body .examp{padding-left:20px!important;margin:0 0 5px!important}
 .entry-body .def-body .examp{font-size:16px!important;line-height:1.5!important}
-:where(:root:not([data-n19-safe])) .entry-body .def-body .examp::before,.entry-body:where(:root:not([data-n19-safe])) .def-body .examp::before,:where(:root:not([data-n19-safe])) .entry-body .def-body .examp::marker,.entry-body:where(:root:not([data-n19-safe])) .def-body .examp::marker{display:none!important}
+.entry-body .def-body .examp::before,.entry-body .def-body .examp::marker{display:none!important}
 .entry-body .eg,.entry-body .deg{color:var(--n19-text)!important;font-style:italic!important;font-size:16px!important}
 .entry-body .def a.query,.entry-body .deg a.query,.entry-body .eg a.query{color:inherit!important}
 :where(:root:not([data-n19-safe])) .entry-body .def-block .hflxrev,.entry-body:where(:root:not([data-n19-safe])) .def-block .hflxrev{flex-direction:row!important}
@@ -66,8 +66,8 @@ body,.cc,.cc_pgwn{color:var(--n19-text)!important}
 .entry-body .xref-title,.entry-body .dxref-t{font-weight:700!important;color:var(--n19-text)!important}
 .entry-body .xref a,.entry-body a.Ref,.entry-body .see_also a,.cdo-more-results a{color:var(--n19-link)!important;font-weight:700!important}
 .bb,.di-head,.di_h{border-radius:0!important}
-:where(:root:not([data-n19-safe])) .lt2s>div[amp-access]:has(a[href*="quiz"i],a[title*="quiz"i]),.lt2s:where(:root:not([data-n19-safe]))>div[amp-access]:has(a[href*="quiz"i],a[title*="quiz"i]){display:none!important}
-:where(:root:not([data-n19-safe])) .entry-body .pos-header>div:empty,.entry-body:where(:root:not([data-n19-safe])) .pos-header>div:empty{display:none!important}
+.lt2s>div[amp-access]:has(a[href*="quiz"i],a[title*="quiz"i]){display:none!important}
+.entry-body .pos-header>div:empty{display:none!important}
 :where(:root:not([data-n19-safe])) .entry-body .pos-header .posgram,.entry-body:where(:root:not([data-n19-safe])) .pos-header .posgram{margin-right:10px!important}
 .cdo-more-results{background:var(--n19-panel)!important}
 .cdo-more-results h2{background:var(--n19-blue)!important;color:#fff!important;font-size:18px!important;font-weight:400!important}
@@ -75,7 +75,7 @@ body,.cc,.cc_pgwn{color:var(--n19-text)!important}
 .cdo-more-results h2 em{color:#fff!important;font-style:normal!important;font-weight:400!important}
 .cdo-more-results .ca_h{background:transparent!important;color:var(--n19-red)!important}
 #ContentsMenu{background:var(--n19-bar)!important}
-:where(:root:not([data-n19-safe])) #header li:has(>a>.ai-header-button),#header:where(:root:not([data-n19-safe])) li:has(>a>.ai-header-button),:where(:root:not([data-n19-safe])) #header li:has(>a[href="/assistant"]),#header:where(:root:not([data-n19-safe])) li:has(>a[href="/assistant"]),:where(:root:not([data-n19-safe])) .ai-header-button,.ai-header-button:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) a[href="/assistant"]{display:none!important}
+#header li:has(>a>.ai-header-button),#header li:has(>a[href="/assistant"]),.ai-header-button,a[href="/assistant"]{display:none!important}
 .cdo-more-results a,.cdo-more-results a *{text-decoration:none!important}
 .entry-body .dwl,.entry-body .dsense .dwl,.entry-body .def-block>.dwl{border:0!important;box-shadow:none!important;background:transparent!important}
 :where(:root:not([data-n19-safe])) #header #searchBar .chsf>.hdb-l>a:has(>img),#header:where(:root:not([data-n19-safe])) #searchBar .chsf>.hdb-l>a:has(>img){display:block!important;margin-top:3px!important}

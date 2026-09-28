@@ -3,7 +3,7 @@ html[data-net19-mode="dark"]{--n19-play-page:#202124;--n19-play-card:#2d2e30;--n
 :is(html[data-n19-g="play"])[data-net19-mode] body{background-color:var(--n19-play-page)!important}
 :is(html[data-n19-g="play"]) header[role="banner"]{background:var(--n19-play-card)!important;box-shadow:var(--n19-play-bar-shadow)!important;border-bottom:0!important}
 :is(html[data-n19-g="play"]) header[role="banner"] a[aria-label="Google Play logo"]>svg{background:var(--n19-play-logo) center / contain no-repeat!important}
-:where(:root:not([data-n19-safe])) :is(html[data-n19-g="play"]) header[role="banner"] a[aria-label="Google Play logo"]>svg>*,:is(html[data-n19-g="play"]):where(:root:not([data-n19-safe])) header[role="banner"] a[aria-label="Google Play logo"]>svg>*{display:none!important}
+:is(html[data-n19-g="play"]) header[role="banner"] a[aria-label="Google Play logo"]>svg>*{display:none!important}
 :is(html[data-n19-g="play"])[data-net19-flip] header[role="banner"] a[aria-label="Google Play logo"]>svg{filter:contrast(1.13636) hue-rotate(180deg) invert(1)!important}
 :is(html[data-n19-g="play"]) header[role="banner"] [role="tablist"] button[role="tab"] :is(.VfPpkd-jY41G-V67aGc,span){font:400 14px/20px var(--n19-sans)!important;color:var(--n19-play-sub)!important;letter-spacing:0!important}
 :is(html[data-n19-g="play"]) header[role="banner"] [role="tablist"] button[role="tab"][aria-selected="true"] :is(.VfPpkd-jY41G-V67aGc,span){font-weight:500!important;color:var(--n19-play-head)!important}
@@ -11,7 +11,7 @@ html[data-net19-mode="dark"]{--n19-play-page:#202124;--n19-play-card:#2d2e30;--n
 :is(html[data-n19-g="play"]) a.D3Qfie{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important}
 :where(:root:not([data-n19-safe])) :is(html[data-n19-g="play"]) a.D3Qfie,:is(html[data-n19-g="play"]):where(:root:not([data-n19-safe])) a.D3Qfie{padding:0 12px!important}
 :is(html[data-n19-g="play"]) a.D3Qfie{outline:0!important}
-:where(:root:not([data-n19-safe])) :is(html[data-n19-g="play"]) a.D3Qfie .Gggmbb,:is(html[data-n19-g="play"]):where(:root:not([data-n19-safe])) a.D3Qfie .Gggmbb{display:none!important}
+:is(html[data-n19-g="play"]) a.D3Qfie .Gggmbb{display:none!important}
 :is(html[data-n19-g="play"]) a.D3Qfie :is(.ypTNYd,i){color:var(--n19-play-sub)!important}
 :is(html[data-n19-g="play"]) a.D3Qfie .ypTNYd{font-family:var(--n19-sans)!important;font-weight:400!important}
 :is(html[data-n19-g="play"]) a.D3Qfie:is([aria-current],.KKjvXb,[aria-selected="true"]){box-shadow:inset 0 -2px 0 var(--n19-play-green)!important}

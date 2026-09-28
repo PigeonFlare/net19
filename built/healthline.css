@@ -1,6 +1,6 @@
 html{--n19-header:#fff;--n19-header-text:#231f20;--n19-rule:#e5e5e5;--n19-teal:#01adb9;--n19-teal-dark:#0098a3;--n19-text:#231f20;--n19-cond:"Proxima Nova Condensed", "Proxima Nova", system-ui, sans-serif}
 html[data-net19-mode="dark"]{--n19-header:#1b1b1b;--n19-header-text:#f2f2f2;--n19-rule:#333;--n19-teal:#1cb8c8;--n19-teal-dark:#01adb9;--n19-text:#eee}
-:where(:root:not([data-n19-safe])) [data-placement="announcementBar"],[data-placement="announcementBar"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-testid="announcement-bar"],[data-testid="announcement-bar"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-testid="product-hero-listing"],[data-testid="product-hero-listing"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-testid="page-widgets-list"]:has([data-testid="marquee-track"]),[data-testid="page-widgets-list"]:has([data-testid="marquee-track"]):where(:root:not([data-n19-safe])){display:none!important}
+[data-placement="announcementBar"],[data-testid="announcement-bar"],[data-testid="product-hero-listing"],[data-testid="page-widgets-list"]:has([data-testid="marquee-track"]){display:none!important}
 #site-header,#site-header header,#site-header header nav{background:var(--n19-header)!important;color:var(--n19-header-text)!important}
 #site-header{border-bottom:1px solid var(--n19-rule)!important;box-shadow:none!important}
 #sticky-nav{box-shadow:none!important}
@@ -18,7 +18,7 @@ html:not([data-net19-mode="dark"]) #site-header [data-testid="site-logo"] img,ht
 #trending{border-top:1px solid var(--n19-rule)!important}
 :where(:root:not([data-n19-safe])) #trending,#trending:where(:root:not([data-n19-safe])){padding-top:30px!important;margin-top:-20px!important}
 #trending h2{font-family:var(--n19-cond)!important;font-weight:700!important;font-size:24px!important;line-height:26px!important;text-transform:uppercase!important;color:var(--n19-text)!important}
-:where(:root:not([data-n19-safe])) #trending div:has(>svg):has(+h2),#trending:where(:root:not([data-n19-safe])) div:has(>svg):has(+h2){display:none!important}
+#trending div:has(>svg):has(+h2){display:none!important}
 #trending [data-name="hero-thumbnail"]+div>div>div:first-child,#trending [data-name="trending-thumbnail"]+div>div:first-child{font-family:var(--n19-cond)!important;font-weight:700!important;font-size:12px!important;line-height:14px!important;text-transform:uppercase!important;color:var(--n19-teal)!important;letter-spacing:0!important}
 :where(:root:not([data-n19-safe])) #trending [data-name="hero-thumbnail"]+div>div>div:first-child,#trending:where(:root:not([data-n19-safe])) [data-name="hero-thumbnail"]+div>div>div:first-child,:where(:root:not([data-n19-safe])) #trending [data-name="trending-thumbnail"]+div>div:first-child,#trending:where(:root:not([data-n19-safe])) [data-name="trending-thumbnail"]+div>div:first-child{margin-bottom:6px!important}
 #trending [data-name="hero-thumbnail"]+div a{font-family:var(--n19-cond)!important;font-weight:700!important;font-size:38px!important;line-height:44px!important;color:var(--n19-text)!important}
@@ -35,4 +35,4 @@ html[data-net19-home] #__next h2{text-transform:uppercase!important;font-size:24
 [data-testid="submit-button"]{background:var(--n19-teal)!important;text-transform:uppercase!important;font-family:var(--n19-cond)!important}
 article h1,main h1{font-family:var(--n19-cond)!important;font-weight:700!important;color:var(--n19-text)!important}
 article a:not([class*="button"]){color:var(--n19-teal-dark)}
-:where(:root:not([data-n19-safe])) [data-slot="sheet-trigger"]:has(>button[aria-label="Save article"]),[data-slot="sheet-trigger"]:has(>button[aria-label="Save article"]):where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) button[aria-label="Save article"]{display:none!important}
+[data-slot="sheet-trigger"]:has(>button[aria-label="Save article"]),button[aria-label="Save article"]{display:none!important}

@@ -386,12 +386,59 @@ html[data-wf-site] body, html[data-wf-site] body :is(p, a, span, div, li, h1, h2
 }
 html[data-wf-site] :is(h1, h2, [class*="heading--h1"], [class*="heading--h2"]) { text-transform: none !important; font-weight: 700 !important; }
 html[data-wf-site] :is(.nav_link, .nav_dd_trigger, .nav_dd_trigger .menu-title) { font-size: 16px !important; font-weight: 600 !important; }
-html[data-wf-site] :is(.hero-home, [class*="hero-home"], .section-hero, [class*="home--hero"]) { background: #7289da !important; background-image: none !important; }
+html[data-wf-site] :is(.hero-home, [class*="hero-home"], .section-hero, [class*="home--hero"]) { background: #26262b !important; background-image: none !important; }
+html[data-wf-site] header.nav { background: #26262b !important; }
+html[data-wf-site] .nav_padding { padding-left: 30px !important; padding-right: 30px !important; }
+html[data-wf-site] .nav_wrapper { height: 76px !important; min-height: 0 !important; max-width: none !important; }
+html[data-wf-site] a.nav_brand { width: 145px !important; height: 40px !important; background: url("https://discord.com/assets/192cb9459cbc0f9e73e2591b700f1857.svg") center / 145px 50px no-repeat !important; margin-right: 6px !important; }
+html[data-wf-site] a.nav_brand > * { visibility: hidden !important; }
+html[data-wf-site] header.nav :is(.nav_link, .nav_link_dropdown, .nav_dd_trigger, .nav_dd_trigger .menu-title) { font-size: 14px !important; font-weight: 400 !important; color: #fff !important; padding-left: 12px !important; padding-right: 12px !important; }
+html[data-wf-site] header.nav a.button-nav.login-button-js { background: transparent !important; color: #fff !important; border: 2px solid rgba(255,255,255,.8) !important; border-radius: 20px !important; font-size: 14px !important; font-weight: 400 !important; height: 32px !important; min-height: 0 !important; padding: 0 17px !important; line-height: 28px !important; box-sizing: border-box !important; display: inline-flex !important; align-items: center !important; }
+html[data-wf-site] .home--hero :is(.home_image-static, .home-image-gerl, .home_wumpus, .home_wumpus-pl, .clyde-img, .cloud-shadow, .crown, .star, [class*="star-hero-home"]) { visibility: hidden !important; }
+html[data-wf-site] .home--hero { position: relative !important; min-height: 960px !important; }
+html[data-wf-site] .home--hero::before { content: ""; position: absolute; top: 0; left: 50%; margin-left: -640px; width: 1280px; height: 960px; pointer-events: none; z-index: 0;
+  background:
+    url("https://discord.com/assets/69db64955960eb333f5ff831cc1c0294.svg") 941px 610px / 79px 150px no-repeat,
+    url("https://discord.com/assets/7edaed9d86e1b5dd9d4c98484372222b.svg") 636px 601px / 608px 350px no-repeat,
+    url("https://discord.com/assets/c4bae281354a2b4e2db85415955e0994.svg") 385px 841px / 160px 110px no-repeat,
+    url("https://discord.com/assets/82fa4f388cfc9cf47a6972ae39ae90de.svg") 239px 700px / 142px 251px no-repeat,
+    url("https://discord.com/assets/5a31f41848bf3ba1817a092ac28c623d.svg") 92px 695px / 135px 256px no-repeat,
+    url("https://discord.com/assets/0b5a0339571e72656eea93eb55d73eae.svg") 31px 749px / 118px 202px no-repeat,
+    url("https://discord.com/assets/15149ecb9d5cd8faa24e1bbf45d70e5b.svg") 1063px 847px / 218px 104px no-repeat,
+    url("https://discord.com/assets/215346366a9a7d50924fc245ddb048d2.svg") 890px 472px / 92px 95px no-repeat,
+    url("https://discord.com/assets/0d82411c439e3558f8b2f6fb12eccbc1.svg") 351px 481px / 579px 470px no-repeat,
+    url("https://discord.com/assets/81d74b2ebb053fbccee41865a47d48c3.svg") 401px 409px / 90px 90px no-repeat,
+    url("https://discord.com/assets/9e05338bd66e0985fceb83317cb94b9c.svg") 212px 579px / 80px 80px no-repeat,
+    url("https://discord.com/assets/eb301f28da3199edbd3ef19690d61674.svg") 159px 546px / 92px 82px no-repeat,
+    url("https://discord.com/assets/9e05338bd66e0985fceb83317cb94b9c.svg") 720px 349px / 80px 80px no-repeat; }
+html[data-wf-site] .home--hero::after { content: ""; position: absolute; top: 0; left: 50%; margin-left: -640px; width: 1280px; height: 960px; pointer-events: none; z-index: 0; opacity: .3;
+  background:
+    url("https://discord.com/assets/0a2fd7b3bab977b4619f466b81b426d4.svg") 61px 623px / 38px 38px no-repeat, url("https://discord.com/assets/0a2fd7b3bab977b4619f466b81b426d4.svg") 671px 373px / 38px 38px no-repeat,
+    url("https://discord.com/assets/f877364ca453abc089cf7fe8d22c9c3f.svg") 41px 723px / 38px 38px no-repeat, url("https://discord.com/assets/f877364ca453abc089cf7fe8d22c9c3f.svg") 321px 323px / 38px 38px no-repeat,
+    url("https://discord.com/assets/f877364ca453abc089cf7fe8d22c9c3f.svg") 821px 423px / 38px 38px no-repeat, url("https://discord.com/assets/f877364ca453abc089cf7fe8d22c9c3f.svg") 1171px 323px / 38px 38px no-repeat,
+    url("https://discord.com/assets/afdfaaeb6d6639e24086ced7aa07975d.svg") 281px 393px / 38px 38px no-repeat, url("https://discord.com/assets/afdfaaeb6d6639e24086ced7aa07975d.svg") 1216px 643px / 38px 38px no-repeat,
+    url("https://discord.com/assets/173ee5a6d2f1b6a19190465c41371a3b.svg") 1071px 523px / 38px 38px no-repeat, url("https://discord.com/assets/173ee5a6d2f1b6a19190465c41371a3b.svg") 971px 323px / 38px 38px no-repeat,
+    url("https://discord.com/assets/a14c5b02487874dca7fae0481ef90dbb.svg") 1181px 703px / 38px 38px no-repeat, url("https://discord.com/assets/a14c5b02487874dca7fae0481ef90dbb.svg") 61px 413px / 38px 38px no-repeat; }
+html[data-wf-site] .home--hero > * { position: relative !important; z-index: 1 !important; }
+html[data-wf-site] .home--hero .container-hero { padding-top: 0 !important; margin-top: 0 !important; max-width: 710px !important; margin-left: auto !important; margin-right: auto !important; }
+html[data-wf-site] .home--hero .padding-global { padding-top: 22px !important; padding-left: 0 !important; padding-right: 0 !important; }
+html[data-wf-site] .home--hero .home--2col_layout { display: block !important; min-height: 0 !important; height: auto !important; padding: 0 !important; margin: 0 !important; }
+html[data-wf-site] .home--hero .home--text-wr { width: 710px !important; max-width: 100% !important; margin: 0 auto !important; text-align: center !important; display: block !important; height: auto !important; }
+html[data-wf-site] .home--hero .home--text-wr :is(.text-mask, h1) { width: auto !important; max-width: none !important; margin-left: auto !important; margin-right: auto !important; text-align: center !important; display: block !important; height: auto !important; overflow: visible !important; }
+html[data-wf-site] .home--hero h1 { font-size: 36px !important; line-height: 44px !important; font-weight: 700 !important; color: #fff !important; white-space: normal !important; }
+html[data-wf-site] .home--hero h1 * { display: inline !important; font: inherit !important; }
+html[data-wf-site] .home--hero p.hero-p { font-size: 16px !important; line-height: 24px !important; color: rgba(255,255,255,.6) !important; max-width: 710px !important; margin: 12px auto 0 !important; text-align: center !important; }
+html[data-wf-site] .home--hero [class*="ctaContainer-"] { position: static !important; transform: none !important; display: flex !important; justify-content: center !important; gap: 40px !important; margin: 26px auto 0 !important; width: auto !important; height: auto !important; }
+html[data-wf-site] .home--hero [class*="ctaContainer-"] > * { margin: 0 !important; }
+html[data-wf-site] .home--hero [class*="ctaContainer-"] button { width: 250px !important; height: 45px !important; min-height: 0 !important; border-radius: 3px !important; padding: 0 16px !important; font-size: 14px !important; font-weight: 500 !important; box-shadow: 0 1px 2px rgba(0,0,0,.2) !important; }
+html[data-wf-site] .home--hero [class*="ctaContainer-"] button[class*="buttonWhite-"] { background: #fff !important; color: #23272a !important; }
+html[data-wf-site] .home--hero [class*="ctaContainer-"] button[class*="buttonWhite-"] :is(svg, img) { display: none !important; }
+html[data-wf-site] .home--hero [class*="ctaContainer-"] button[class*="buttonBrand-"] { background: #7289da !important; color: #fff !important; }
 html[data-wf-site] [class*="star-hero-home"], html[data-wf-site] .nav_blur { display: none !important; }
 html[data-wf-site] :is(.nav_dd_list, .nav_dd_list_bg, .nav_dd_content-wr) { border-radius: 5px !important; }
 html[data-wf-site] :is(a, button):is([class*="button"], .hero_button-l, .hero_button-r) { border-radius: 3px !important; }
 html[data-wf-site] :is(a, button):is([class*="buttonBrand-"], [class*="TryDiscordButton"]):hover { background-color: #2c3034 !important; }
-html[data-wf-site] :is(a, button):is(.hero_button-r, .blue-button, [class*="buttonBrand-"], [class*="TryDiscordButton"]) {
+html[data-wf-site] :is(a, button):is(.hero_button-r, .blue-button, [class*="buttonBrand-"], [class*="TryDiscordButton"]):not(.home--hero *) {
   background-color: #23272a !important; color: #fff !important; border-color: transparent !important;
 }
 html[data-wf-site] a.hero_button-l, html[data-wf-site] a.hero_button-l * { color: #7289da !important; }
@@ -413,3 +460,11 @@ html[data-wf-site] .footer_new { background: #23272a !important; background-imag
 [class*="channelTextArea_"] :is(.expression-picker-chat-input-button, [class*="buttonContainer_"]):has(> :is([aria-label="Open GIF picker"], [aria-label="Open sticker picker"], [aria-label="Apps"], [aria-label="Record Voice Message"], [aria-label="Send Voice Message"])),
 [class*="channelTextArea_"] :is([aria-label="Open GIF picker"], [aria-label="Open sticker picker"], [aria-label="Apps"], [aria-label="Record Voice Message"], [aria-label="Send Voice Message"]) { display: none !important; }
 [data-list-id="chat-messages"] [class*="cozyMessage_"][class*="groupStart_"][class*="hasReply_"] > [class*="contents_"] > img[class*="avatar_"] { top: 42px !important; }
+html[data-wf-site]:has(.home--hero) :is(.main-wrapper, .main-wrapper > :is([class*="section"], [class*="discord_banner"]):not(.home--hero), .main-wrapper > [class*="section"]:not(.home--hero):nth-child(odd)) { background: #26262b !important; background-image: none !important; }
+html[data-wf-site]:has(.home--hero) .main-wrapper > [class*="section"]:not(.home--hero) :is(h1, h2, h3, h4) { color: #fff !important; }
+html[data-wf-site]:has(.home--hero) .main-wrapper > [class*="section"]:not(.home--hero) :is(p, [class*="paragraph"], [class*="text"]:not([class*="line_text"])) { color: rgba(255,255,255,.6) !important; }
+html[data-wf-site]:has(.home--hero) .footer_new { background: #26262b !important; }
+html[data-wf-site] .home--hero .home--2col_layout > :not(.home--text-wr) { position: absolute !important; visibility: hidden !important; pointer-events: none !important; }
+html[data-wf-site] .home--hero [class*="ctaContainer-"] button, html[data-wf-site] .home--hero [class*="ctaContainer-"] button > * { display: flex !important; align-items: center !important; justify-content: center !important; text-align: center !important; }
+html[data-wf-site] .home--hero [class*="ctaContainer-"] button [class*="contents-"] { width: 100% !important; margin: 0 !important; }
+html[data-wf-site]:has(.home--hero) header.nav .nav_menu_wr { margin-left: 160px !important; margin-right: auto !important; }

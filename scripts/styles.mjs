@@ -3,15 +3,14 @@ import { mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 
 export const SAFE_ATTRIBUTE = 'data-n19-safe';
 
-const LAYOUT = /^(?:display|visibility|position|top|right|bottom|left|inset(?:-.+)?|float|clear|(?:min-|max-)?(?:width|height|inline-size|block-size)|margin(?:-.+)?|padding(?:-.+)?|flex(?:-.+)?|grid(?:-.+)?|order|gap|row-gap|column-gap|columns|column-(?:count|width|span|fill)|justify-.+|align-.+|place-.+|overflow(?:-.+)?|clip|clip-path|transform(?:-.+)?|translate|rotate|scale|z-index|content|content-visibility|contain(?:-.+)?|aspect-ratio|zoom|box-sizing|white-space|opacity|pointer-events|(?:-webkit-)?mask(?:-.+)?|-webkit-line-clamp|line-clamp|-webkit-box-orient|table-layout|resize|writing-mode|all)$/;
+const GEOMETRY = /^(?:display|position|top|right|bottom|left|inset(?:-.+)?|float|clear|(?:min-|max-)?(?:width|height|inline-size|block-size)|margin(?:-.+)?|padding(?:-.+)?|flex(?:-.+)?|grid(?:-.+)?|order|gap|row-gap|column-gap|columns|column-(?:count|width|span|fill)|justify-.+|align-.+|place-.+|overflow(?:-.+)?|transform(?:-.+)?|translate|rotate|scale|z-index|contain(?:-.+)?|aspect-ratio|zoom|box-sizing|white-space|-webkit-line-clamp|line-clamp|-webkit-box-orient|table-layout|resize|writing-mode|all)$/;
 
 const ungated = csstree.parse(`:where(:root:not([${SAFE_ATTRIBUTE}]))`, { context: 'selector' }).children.first;
 
-const PICTURE = /^(?:background-image|border-image(?:-.+)?|list-style-image)$/;
-
 export const isLayout = (property, value) => {
   const name = property.toLowerCase();
-  return !name.startsWith('--') && (LAYOUT.test(name) || PICTURE.test(name) || /url\(/i.test(value));
+  if (name.startsWith('--') || !GEOMETRY.test(name)) return false;
+  return !(name === 'display' && /^none\s*$/i.test(value));
 };
 
 function nestedIn(selector, parent) {

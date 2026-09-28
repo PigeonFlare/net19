@@ -7,7 +7,7 @@ div[role="banner"]{--nav-bar-background:var(--n19-bar);--primary-icon:var(--n19-
 div[role="banner"] :is([role="dialog"],[role="menu"],[role="listbox"],[role="grid"]){--primary-icon:var(--n19-text);--secondary-icon:var(--n19-icon);--primary-text:var(--n19-text);--secondary-text:var(--n19-text-2);--secondary-button-background:var(--n19-button);--secondary-button-text:var(--n19-text);--blue-link:var(--n19-link);--accent:var(--n19-accent);--hover-overlay:rgba(0,0,0,.04);--comment-background:var(--n19-comment);--nav-bar-background:var(--n19-card)}
 div[role="banner"]>div>div:first-child:not(:has(input,a,[role="button"])){background:var(--n19-bar)!important;border-bottom:1px solid var(--n19-bar-border)!important}
 :where(:root:not([data-n19-safe])) div[role="banner"]>div>div:first-child:not(:has(input,a,[role="button"])){box-sizing:border-box!important}
-:where(:root:not([data-n19-safe])) div[role="banner"] .xnzfen{display:none!important}
+div[role="banner"] .xnzfen{display:none!important}
 :where(:root:not([data-n19-safe])) div[role="banner"] a[aria-label="Facebook"] svg[viewBox="0 0 36 36"]{width:26px!important;height:26px!important}
 div[role="banner"] a[aria-label="Facebook"] svg[viewBox="0 0 36 36"]{color:var(--n19-bar-glyph)!important}
 div[role="banner"] a[aria-label="Facebook"] svg[viewBox="0 0 36 36"] path:first-child{fill:var(--n19-bar-glyph)!important}
@@ -42,7 +42,7 @@ div[role="banner"] form a[href*="recover"] span,div[role="banner"] form a[href*=
 div[role="banner"] [role="navigation"] :is([role="button"],a){background:transparent!important;box-shadow:none!important}
 div[role="banner"] [role="navigation"] :is([role="button"],a) svg:not(:has(image)){color:var(--n19-bar-glyph)!important;fill:var(--n19-bar-glyph)!important}
 :where(:root:not([data-n19-safe])) div[role="banner"] [role="navigation"] :is([aria-label="Your profile"],[aria-label="Account"],[aria-label="Account controls and settings"]) svg:has(image){zoom:.7}
-:where(:root:not([data-n19-safe])) div[role="banner"] :is([aria-label="Menu"],[aria-label="Meta AI"],[aria-label="Ask Meta AI"],a[href*="meta.ai"]),:where(:root:not([data-n19-safe])) [data-n19-fb="tabs"],[data-n19-fb="tabs"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-n19-fb="tab"],[data-n19-fb="tab"]:where(:root:not([data-n19-safe])){display:none!important}
+div[role="banner"] :is([aria-label="Menu"],[aria-label="Meta AI"],[aria-label="Ask Meta AI"],a[href*="meta.ai"]),[data-n19-fb="tabs"],[data-n19-fb="tab"]{display:none!important}
 [data-n19-fb="navrow"]{border-radius:2px!important}
 :where(:root:not([data-n19-safe])) [data-n19-fb="navrow"],[data-n19-fb="navrow"]:where(:root:not([data-n19-safe])){min-height:28px!important;display:flex!important;align-items:center!important}
 :where(:root:not([data-n19-safe])) [data-n19-fb="navrow"]>div,[data-n19-fb="navrow"]:where(:root:not([data-n19-safe]))>div{min-height:0!important;width:100%!important}
@@ -73,8 +73,8 @@ div[role="banner"] [role="navigation"] :is([role="button"],a) svg:not(:has(image
 :is([role="article"][aria-label^="Comment by"],[role="article"][aria-label^="Reply by"]) a[href]:not(ul a) span:not(:has(*)){font-weight:bold!important;font-size:13px!important}
 :is([role="article"][aria-label^="Comment by"],[role="article"][aria-label^="Reply by"]) ul span{font-size:12px!important}
 :is([role="article"][aria-label^="Comment by"],[role="article"][aria-label^="Reply by"]) ul [role="button"]{color:var(--n19-link)!important;font-weight:bold!important}
-:where(:root:not([data-n19-safe])) [aria-label="View information about identity badges"],[aria-label="View information about identity badges"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [aria-label*="avatar sticker"i],[aria-label*="avatar sticker"i]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [aria-label="Comment with an avatar sticker"],[aria-label="Comment with an avatar sticker"]:where(:root:not([data-n19-safe])){display:none!important}
-:where(:root:not([data-n19-safe])) [role="article"] svg[title="Verified account"],[role="article"]:where(:root:not([data-n19-safe])) svg[title="Verified account"],:where(:root:not([data-n19-safe])) [role="feed"] svg[title="Verified account"],[role="feed"]:where(:root:not([data-n19-safe])) svg[title="Verified account"],:where(:root:not([data-n19-safe])) [role="complementary"] svg[title="Verified account"],[role="complementary"]:where(:root:not([data-n19-safe])) svg[title="Verified account"]{display:none!important}
+[aria-label="View information about identity badges"],[aria-label*="avatar sticker"i],[aria-label="Comment with an avatar sticker"]{display:none!important}
+[role="article"] svg[title="Verified account"],[role="feed"] svg[title="Verified account"],[role="complementary"] svg[title="Verified account"]{display:none!important}
 [role="textbox"][contenteditable="true"][aria-label^="Write a"]{font-size:13px!important}
 :where(:root:not([data-n19-safe])) [data-n19-fb="create-head"],[data-n19-fb="create-head"]:where(:root:not([data-n19-safe])){display:block!important}
 [data-n19-fb="create-head"]{background:var(--n19-card-2)!important;border-bottom:1px solid var(--n19-divider)!important;border-radius:3px 3px 0 0!important;font:bold 14px/20px Helvetica, Arial, sans-serif!important;color:var(--n19-text)!important}
@@ -86,15 +86,15 @@ div[role="banner"] [role="navigation"] :is([role="button"],a) svg:not(:has(image
 [role="complementary"] :is(h2,h3) span{font-size:12px!important;font-weight:bold!important;color:var(--n19-muted)!important;line-height:16px!important}
 [role="complementary"] li span{font-size:13px!important}
 :where(:root:not([data-n19-safe])) [role="complementary"] li svg:has(image)[style*="36px"],[role="complementary"]:where(:root:not([data-n19-safe])) li svg:has(image)[style*="36px"]{zoom:.78}
-:where(:root:not([data-n19-safe])) [data-n19-fb="later"],[data-n19-fb="later"]:where(:root:not([data-n19-safe])){display:none!important}
+[data-n19-fb="later"]{display:none!important}
 [role="menu"],[role="dialog"]{border-radius:3px!important}
 [data-n19-fb="top"]{background:var(--n19-land)!important}
-:where(:root:not([data-n19-safe])) [data-n19-fb="top"],[data-n19-fb="top"]:where(:root:not([data-n19-safe])){min-height:658px!important;height:auto!important;flex-grow:0!important}
+:where(:root:not([data-n19-safe])) [data-n19-fb="top"],[data-n19-fb="top"]:where(:root:not([data-n19-safe])){min-height:618px!important;height:auto!important;flex-grow:0!important}
 :where(:root:not([data-n19-safe])) [data-n19-fb="top"] div,[data-n19-fb="top"]:where(:root:not([data-n19-safe])) div{min-height:0!important}
-:where(:root:not([data-n19-safe])) [data-n19-fb="row"],[data-n19-fb="row"]:where(:root:not([data-n19-safe])){justify-content:center!important;align-items:flex-start!important;gap:39px!important}
+:where(:root:not([data-n19-safe])) [data-n19-fb="row"],[data-n19-fb="row"]:where(:root:not([data-n19-safe])){justify-content:center!important;align-items:flex-start!important;gap:4px!important}
 [data-n19-fb="row"]{background:transparent!important}
 :where(:root:not([data-n19-safe])) [data-n19-fb="row"],[data-n19-fb="row"]:where(:root:not([data-n19-safe])){height:auto!important;padding-bottom:40px!important}
-:where(:root:not([data-n19-safe])) [data-n19-fb="rule"],[data-n19-fb="rule"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-n19-fb="hero"] img,[data-n19-fb="hero"]:where(:root:not([data-n19-safe])) img,:where(:root:not([data-n19-safe])) [data-n19-fb="title"],[data-n19-fb="title"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-n19-fb="card"] svg[aria-label="Meta logo"],[data-n19-fb="card"]:where(:root:not([data-n19-safe])) svg[aria-label="Meta logo"]{display:none!important}
+[data-n19-fb="rule"],[data-n19-fb="hero"] img,[data-n19-fb="title"],[data-n19-fb="card"] svg[aria-label="Meta logo"]{display:none!important}
 :where(:root:not([data-n19-safe])) [data-n19-fb="hero"],[data-n19-fb="hero"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-n19-fb="login"],[data-n19-fb="login"]:where(:root:not([data-n19-safe])){flex:none!important}
 [data-n19-fb="hero"],[data-n19-fb="login"]{background:transparent!important}
 :where(:root:not([data-n19-safe])) [data-n19-fb="hero"],[data-n19-fb="hero"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-n19-fb="login"],[data-n19-fb="login"]:where(:root:not([data-n19-safe])){height:auto!important}
@@ -102,22 +102,22 @@ div[role="banner"] [role="navigation"] :is([role="button"],a) svg:not(:has(image
 :where(:root:not([data-n19-safe])) [data-n19-fb="hero"] div,[data-n19-fb="hero"]:where(:root:not([data-n19-safe])) div{position:relative!important;align-self:stretch!important;height:auto!important;justify-content:flex-start!important}
 [data-n19-fb="hero"] div{border-radius:0!important;background:transparent!important}
 :where(:root:not([data-n19-safe])) [data-n19-fb="hero"] div,[data-n19-fb="hero"]:where(:root:not([data-n19-safe])) div{padding:0!important;margin:0!important;width:100%!important}
-:where(:root:not([data-n19-safe])) [data-n19-fb="hero"] svg,[data-n19-fb="hero"]:where(:root:not([data-n19-safe])) svg{width:60px!important;height:60px!important;margin:0 0 22px!important}
+:where(:root:not([data-n19-safe])) [data-n19-fb="hero"] svg,[data-n19-fb="hero"]:where(:root:not([data-n19-safe])) svg{width:60px!important;height:60px!important;margin:0 0 16px!important}
 [data-n19-fb="hero"] svg{color:var(--n19-login)!important;fill:var(--n19-login)!important}
 [data-n19-fb="hero"] span{font:bold 24px/32px Helvetica, Arial, sans-serif!important;--x-lineHeight:32px;--x---base-line-clamp-line-height:32px;letter-spacing:normal!important;color:var(--n19-heading)!important}
 :where(:root:not([data-n19-safe])) [data-n19-fb="hero"] span,[data-n19-fb="hero"]:where(:root:not([data-n19-safe])) span{max-width:460px!important;width:460px!important;margin:0!important;padding:0!important;display:block!important}
-:where(:root:not([data-n19-safe])) [data-n19-fb="login"],[data-n19-fb="login"]:where(:root:not([data-n19-safe])){width:422px!important;min-width:0!important;padding-top:152px!important}
+:where(:root:not([data-n19-safe])) [data-n19-fb="login"],[data-n19-fb="login"]:where(:root:not([data-n19-safe])){width:396px!important;min-width:0!important;padding-top:142px!important}
 :where(:root:not([data-n19-safe])) [data-n19-fb="login"] div:not([data-n19-fb="card"],[data-n19-fb="card"] *),[data-n19-fb="login"]:where(:root:not([data-n19-safe])) div:not([data-n19-fb="card"],[data-n19-fb="card"] *){width:100%!important;height:auto!important;padding:0!important;margin:0!important;justify-content:flex-start!important}
 [data-n19-fb="card"]{background:var(--n19-land-card)!important;border-radius:8px!important;box-shadow:var(--n19-land-shadow)!important}
-:where(:root:not([data-n19-safe])) [data-n19-fb="card"],[data-n19-fb="card"]:where(:root:not([data-n19-safe])){padding:16px 17px 24px!important;box-sizing:border-box!important}
+:where(:root:not([data-n19-safe])) [data-n19-fb="card"],[data-n19-fb="card"]:where(:root:not([data-n19-safe])){padding:16px 16px 24px!important;box-sizing:border-box!important}
 :where(:root:not([data-n19-safe])) [data-n19-fb="card"] :is(div,form),[data-n19-fb="card"]:where(:root:not([data-n19-safe])) :is(div,form){min-width:0!important;max-width:100%!important;box-sizing:border-box!important}
 :where(:root:not([data-n19-safe])) [data-n19-fb="card"] div:has([role="button"]),[data-n19-fb="card"]:where(:root:not([data-n19-safe])) div:has([role="button"]),:where(:root:not([data-n19-safe])) [data-n19-fb="card"] div:has(a[href*="/reg/"]),[data-n19-fb="card"]:where(:root:not([data-n19-safe])) div:has(a[href*="/reg/"]){padding-top:0!important}
 :where(:root:not([data-n19-safe])) [data-n19-fb="card"] div:has(>a[href*="/reg/"]),[data-n19-fb="card"]:where(:root:not([data-n19-safe])) div:has(>a[href*="/reg/"]){padding:0!important;justify-content:center!important;align-items:center!important}
-:where(:root:not([data-n19-safe])) [data-n19-fb="card"] div:has(>svg[aria-label="Meta logo"]),[data-n19-fb="card"]:where(:root:not([data-n19-safe])) div:has(>svg[aria-label="Meta logo"]){display:none!important}
+[data-n19-fb="card"] div:has(>svg[aria-label="Meta logo"]){display:none!important}
 [data-n19-fb="card"] :is(span,label,input,a){font-family:Helvetica, Arial, sans-serif!important}
-:where(:root:not([data-n19-safe])) [data-n19-fb="card"] div:has(>div>input:is([type="text"],[type="password"],[type="email"])),[data-n19-fb="card"]:where(:root:not([data-n19-safe])) div:has(>div>input:is([type="text"],[type="password"],[type="email"])){box-sizing:border-box!important;height:54px!important}
+:where(:root:not([data-n19-safe])) [data-n19-fb="card"] div:has(>div>input:is([type="text"],[type="password"],[type="email"])),[data-n19-fb="card"]:where(:root:not([data-n19-safe])) div:has(>div>input:is([type="text"],[type="password"],[type="email"])){box-sizing:border-box!important;height:52px!important}
 [data-n19-fb="card"] div:has(>div>input:is([type="text"],[type="password"],[type="email"])){border:1px solid var(--n19-land-line)!important;border-radius:6px!important;background:var(--n19-land-field)!important}
-:where(:root:not([data-n19-safe])) [data-n19-fb="card"] div:has(>div>input:is([type="text"],[type="password"],[type="email"])),[data-n19-fb="card"]:where(:root:not([data-n19-safe])) div:has(>div>input:is([type="text"],[type="password"],[type="email"])){padding:0 16px!important;margin-bottom:8px!important;justify-content:center!important}
+:where(:root:not([data-n19-safe])) [data-n19-fb="card"] div:has(>div>input:is([type="text"],[type="password"],[type="email"])),[data-n19-fb="card"]:where(:root:not([data-n19-safe])) div:has(>div>input:is([type="text"],[type="password"],[type="email"])){padding:0 16px!important;margin-bottom:12px!important;justify-content:center!important}
 [data-n19-fb="card"] input{font-size:17px!important;color:var(--n19-heading)!important;box-shadow:none!important;border:none!important;background:transparent!important}
 [data-n19-fb="card"] label{color:#90949c!important;font-size:16px!important}
 [data-n19-fb="card"] [role="button"]>div,[data-n19-fb="card"] [role="button"]{border-radius:6px!important}
@@ -134,8 +134,8 @@ div[role="banner"] [role="navigation"] :is([role="button"],a) svg:not(:has(image
 :where(:root:not([data-n19-safe])) [data-n19-fb="card"] a[href*="/reg/"]>div,[data-n19-fb="card"]:where(:root:not([data-n19-safe])) a[href*="/reg/"]>div{height:48px!important;padding:0 16px!important}
 [data-n19-fb="card"] a[href*="/reg/"] span{font-size:17px!important;font-weight:bold!important;color:#fff!important}
 [data-n19-fb="foot"],[data-n19-fb="foot"]>div{background:var(--n19-foot)!important}
-:where(:root:not([data-n19-safe])) [data-n19-fb="foot"] [role="main"]>div,[data-n19-fb="foot"]:where(:root:not([data-n19-safe])) [role="main"]>div{max-width:1040px!important;width:1040px!important;margin:0 auto!important;padding-top:12px!important}
+:where(:root:not([data-n19-safe])) [data-n19-fb="foot"] [role="main"]>div,[data-n19-fb="foot"]:where(:root:not([data-n19-safe])) [role="main"]>div{max-width:980px!important;width:980px!important;margin:0 auto!important;padding-top:12px!important}
 [data-n19-fb="foot"] :is(span,a){font-family:Helvetica, Arial, sans-serif!important;font-size:12px!important;color:var(--n19-foot-link)!important}
-:where(:root:not([data-n19-safe])) [data-n19-fb="foot"] a[href*="meta.ai"],[data-n19-fb="foot"]:where(:root:not([data-n19-safe])) a[href*="meta.ai"]{display:none!important}
+[data-n19-fb="foot"] a[href*="meta.ai"]{display:none!important}
 :where(:root:not([data-n19-safe])) [data-n19-fb="foot"] div:has(>span>a),[data-n19-fb="foot"]:where(:root:not([data-n19-safe])) div:has(>span>a),:where(:root:not([data-n19-safe])) [data-n19-fb="foot"] div:has(>span:only-child),[data-n19-fb="foot"]:where(:root:not([data-n19-safe])) div:has(>span:only-child){padding-left:0!important;padding-right:10px!important}
 [data-n19-fb-search]{border-radius:3px!important;box-shadow:none!important;border:1px solid var(--n19-button-line)!important}

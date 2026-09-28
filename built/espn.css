@@ -4,7 +4,7 @@ html[data-net19-mode="dark"]{--n19-page:#121213;--n19-card:#1d1e1f;--n19-rail:#1
 #global-nav>ul>li>a,#global-nav>ul>li>a span,#global-nav>ul>li>a .link-text{font-family:-apple-system, BlinkMacSystemFont, Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif!important;font-size:14px!important;font-weight:400!important;letter-spacing:0!important;color:var(--n19-bar-text)!important;text-transform:none!important}
 :where(:root:not([data-n19-safe])) #global-nav>ul>li>a,#global-nav:where(:root:not([data-n19-safe]))>ul>li>a{padding:0 10px!important}
 #global-nav>ul>li>a:hover{background:var(--n19-red)!important}
-:where(:root:not([data-n19-safe])) #global-nav li.where-to-watch,#global-nav:where(:root:not([data-n19-safe])) li.where-to-watch{visibility:hidden!important;pointer-events:none!important}
+#global-nav li.where-to-watch{visibility:hidden!important;pointer-events:none!important}
 :where(:root:not([data-n19-safe])) #global-nav li.where-to-watch~li.pillar,#global-nav:where(:root:not([data-n19-safe])) li.where-to-watch~li.pillar{transform:translateX(var(--n19-wtw, 0px))}
 body,#global-viewport,#pane-main,.main-content{background-color:var(--n19-page)!important}
 .contentItem,.headlineStack,.sub-module:not(.quicklinks){background-color:var(--n19-card)!important;border-radius:10px!important;box-shadow:var(--n19-card-shadow)!important}
@@ -17,8 +17,8 @@ body,#global-viewport,#pane-main,.main-content{background-color:var(--n19-page)!
 .quicklinks_list__item{border:0!important}
 :where(:root:not([data-n19-safe])) .quicklinks_list__link,.quicklinks_list__link:where(:root:not([data-n19-safe])){height:40px!important;min-height:40px!important}
 .quicklinks_list__name{color:var(--n19-text)!important;font-size:12px!important}
-:where(:root:not([data-n19-safe])) .sub-module.dtc-upsell,.sub-module.dtc-upsell:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .quicklinks_list__item--eplus-paywall,.quicklinks_list__item--eplus-paywall:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .quicklinks_list__item:has(a[href*="/betting"i]),.quicklinks_list__item:has(a[href*="/betting"i]):where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .quicklinks_list__item:has(a[href*="odds"i]),.quicklinks_list__item:has(a[href*="odds"i]):where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .quicklinks_list__item:has(a[href*="/where-to-watch"i]),.quicklinks_list__item:has(a[href*="/where-to-watch"i]):where(:root:not([data-n19-safe])){display:none!important}
-:where(:root:not([data-n19-safe])) .headlineStack__header .module__header::before,.headlineStack__header:where(:root:not([data-n19-safe])) .module__header::before{display:none!important}
+.sub-module.dtc-upsell,.quicklinks_list__item--eplus-paywall,.quicklinks_list__item:has(a[href*="/betting"i]),.quicklinks_list__item:has(a[href*="odds"i]),.quicklinks_list__item:has(a[href*="/where-to-watch"i]){display:none!important}
+.headlineStack__header .module__header::before{display:none!important}
 :where(:root:not([data-n19-safe])) .headlineStack__header .module__header,.headlineStack__header:where(:root:not([data-n19-safe])) .module__header{padding-left:0!important}
 .headlineStack__list>li{border:0!important}
 :where(:root:not([data-n19-safe])) .headlineStack__list>li,.headlineStack__list:where(:root:not([data-n19-safe]))>li{padding:0!important}
@@ -26,15 +26,14 @@ body,#global-viewport,#pane-main,.main-content{background-color:var(--n19-page)!
 .headlineStack__list>li::before,.headlineStack__list>li::after{border:0!important}
 :where(:root:not([data-n19-safe])) .headlineStack__list>li>a,.headlineStack__list:where(:root:not([data-n19-safe]))>li>a{display:block!important;position:relative!important;padding:7px 0 7px 7px!important}
 .headlineStack__list>li>a{font-size:12px!important;font-weight:400!important;line-height:16px!important;color:var(--n19-text)!important;border:0!important}
-:where(:root:not([data-n19-safe])) .headlineStack__list>li>a::before,.headlineStack__list:where(:root:not([data-n19-safe]))>li>a::before{content:""!important;position:absolute!important;left:0!important;top:14px!important;width:3px!important;height:3px!important}
+.headlineStack__list>li>a::before{content:""!important}
+:where(:root:not([data-n19-safe])) .headlineStack__list>li>a::before,.headlineStack__list:where(:root:not([data-n19-safe]))>li>a::before{position:absolute!important;left:0!important;top:14px!important;width:3px!important;height:3px!important}
 .headlineStack__list>li>a::before{border-radius:50%!important;background:var(--n19-bullet)!important}
 .headlineStack__listContainer{border:0!important}
-.sub-module .button:not(.button-alt):not([class*="outline"]){background-color:var(--n19-button)!important}
-:where(:root:not([data-n19-safe])) .sub-module .button:not(.button-alt):not([class*="outline"]),.sub-module:where(:root:not([data-n19-safe])) .button:not(.button-alt):not([class*="outline"]){background-image:linear-gradient(124deg, transparent 24%, rgba(0,0,0,.25) 76%)!important}
-.sub-module .button:not(.button-alt):not([class*="outline"]){border-color:transparent!important;color:#fff!important;font-size:12px!important;font-weight:600!important}
-:where(:root:not([data-n19-safe])) #global-nav .submenu-wrapper li:has(>a[href*="/odds"i]),#global-nav:where(:root:not([data-n19-safe])) .submenu-wrapper li:has(>a[href*="/odds"i]),:where(:root:not([data-n19-safe])) #global-nav .submenu-wrapper li:has(>a[href*="where-to-watch"i]),#global-nav:where(:root:not([data-n19-safe])) .submenu-wrapper li:has(>a[href*="where-to-watch"i]){display:none!important}
-:where(:root:not([data-n19-safe])) [class*="Odds"],[class*="Odds"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [class*="odds__"],[class*="odds__"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .betting,.betting:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-testid*="odds"],[data-testid*="odds"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) a[href*="espnbet"]{display:none!important}
+.sub-module .button:not(.button-alt):not([class*="outline"]){background-color:var(--n19-button)!important;background-image:linear-gradient(124deg, transparent 24%, rgba(0,0,0,.25) 76%)!important;border-color:transparent!important;color:#fff!important;font-size:12px!important;font-weight:600!important}
+#global-nav .submenu-wrapper li:has(>a[href*="/odds"i]),#global-nav .submenu-wrapper li:has(>a[href*="where-to-watch"i]){display:none!important}
+[class*="Odds"],[class*="odds__"],.betting,[data-testid*="odds"],a[href*="espnbet"]{display:none!important}
 html[data-net19-flip] #global-header h2.logo-header::before,html[data-net19-flip] #global-header h2.logo-header::after,html[data-net19-flip] #global-header h2.logo-header>a{filter:contrast(1.13636) hue-rotate(180deg) invert(1)!important}
 .sideLogin{background-color:var(--n19-card)!important}
 .sideLogin .sideLogin__headline{color:var(--n19-text)!important}
-:where(:root:not([data-n19-safe])) #global-nav-secondary li.sub:has(>a[href*="/odds"i]),#global-nav-secondary:where(:root:not([data-n19-safe])) li.sub:has(>a[href*="/odds"i]),:where(:root:not([data-n19-safe])) #global-nav-secondary li.sub:has(>a[href*="where-to-watch"i]),#global-nav-secondary:where(:root:not([data-n19-safe])) li.sub:has(>a[href*="where-to-watch"i]){display:none!important}
+#global-nav-secondary li.sub:has(>a[href*="/odds"i]),#global-nav-secondary li.sub:has(>a[href*="where-to-watch"i]){display:none!important}

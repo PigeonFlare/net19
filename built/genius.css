@@ -11,8 +11,7 @@ nav[class*="StickyNav-desktop__Container"] [class*="StickyNav-desktop__Logo"] sv
 nav[class*="StickyNav-desktop__Container"] form[class*="StickyNavSearch"]{background:var(--n19-search)!important}
 :where(:root:not([data-n19-safe])) nav[class*="StickyNav-desktop__Container"] form[class*="StickyNavSearch"] input{width:100%!important;height:28px!important;padding:0 30px 0 8px!important}
 nav[class*="StickyNav-desktop__Container"] form[class*="StickyNavSearch"] input{font-size:14px!important;color:var(--n19-search-text)!important;background:var(--n19-search)!important}
-nav[class*="StickyNav-desktop__Container"] form[class*="StickyNavSearch"] input::placeholder{color:var(--n19-search-text)!important}
-:where(:root:not([data-n19-safe])) nav[class*="StickyNav-desktop__Container"] form[class*="StickyNavSearch"] input::placeholder{opacity:1!important}
+nav[class*="StickyNav-desktop__Container"] form[class*="StickyNavSearch"] input::placeholder{color:var(--n19-search-text)!important;opacity:1!important}
 nav[class*="StickyNav-desktop__Container"] form[class*="StickyNavSearch"] svg{fill:var(--n19-search-text)!important}
 :where(:root:not([data-n19-safe])) nav[class*="StickyNav-desktop__Container"] [class*="StickyNav-desktop__Right"]>:not(form){grid-column:3!important;grid-row:1!important;justify-self:end!important;margin-right:16px!important}
 nav[class*="StickyNav-desktop__Container"] [class*="StickyNav-desktop__Right"] button:not([type="submit"]){color:var(--n19-bar-text)!important;text-transform:uppercase!important;font-weight:400!important;font-size:12px!important;letter-spacing:1px!important}

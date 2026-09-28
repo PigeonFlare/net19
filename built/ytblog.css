@@ -8,23 +8,22 @@ html:root,html .yt-page,html [class*="category--"]{--youtube-sans-black:var(--n1
 .yt-subscription__header-btn{border-radius:2px!important}
 :where(:root:not([data-n19-safe])) .yt-header__navigation-item-link,.yt-header__navigation-item-link:where(:root:not([data-n19-safe])){white-space:nowrap!important}
 :where(:root:not([data-n19-safe])) .yt-header__navigation-items>.yt-header__navigation-item,.yt-header__navigation-items:where(:root:not([data-n19-safe]))>.yt-header__navigation-item{margin-left:9px!important;margin-right:9px!important}
-:where(:root:not([data-n19-safe])) .yt-header__search-submit-icon .spark,.yt-header__search-submit-icon:where(:root:not([data-n19-safe])) .spark,:where(:root:not([data-n19-safe])) .yt-header__search-btn .spark,.yt-header__search-btn:where(:root:not([data-n19-safe])) .spark{display:none!important}
+.yt-header__search-submit-icon .spark,.yt-header__search-btn .spark{display:none!important}
 .yt-page [class*="category-link-content"],.yt-article-hero-section__page-content-category-cta,.yt-article-hero-section__page-content-category-cta span{background:none!important;color:var(--n19-link)!important}
 :where(:root:not([data-n19-safe])) .yt-page [class*="category-link-content"],.yt-page:where(:root:not([data-n19-safe])) [class*="category-link-content"],:where(:root:not([data-n19-safe])) .yt-article-hero-section__page-content-category-cta,.yt-article-hero-section__page-content-category-cta:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .yt-article-hero-section__page-content-category-cta span,.yt-article-hero-section__page-content-category-cta:where(:root:not([data-n19-safe])) span{padding-left:0!important;padding-right:0!important}
 .yt-page [class*="category-link-content"],.yt-article-hero-section__page-content-category-cta,.yt-article-hero-section__page-content-category-cta span{border-radius:0!important}
 .yt-page [class*="card"],.yt-page [class*="card__wrapper"],.yt-page picture,.yt-page img,.yt-article-pull-quote__wrapper,.yt-article-hero-section__media,.yt-article-hero-section__page-media,.yt-homepage-hero-refresh [class*="slide"]{border-radius:0!important}
 .yt-page [class*="card__wrapper"]{box-shadow:none!important;border:1px solid var(--n19-rule)!important}
 .yt-article-hero,.yt-article-hero [class*="hero-section"]{background:var(--n19-page)!important}
-:where(:root:not([data-n19-safe])) .yt-homepage-hero-refresh__video-bg-container,.yt-homepage-hero-refresh__video-bg-container:where(:root:not([data-n19-safe])){visibility:hidden!important}
+.yt-homepage-hero-refresh__video-bg-container{visibility:hidden!important}
 .yt-page [class*="__date"],.yt-page [class*="read-time"],.yt-author-byline__content__job{color:var(--n19-text-2)!important}
 .yt-article-rel-tags__link,.yt-link{color:var(--n19-link)!important;border-color:var(--n19-link)!important}
-:where(:root:not([data-n19-safe])) section.yt-ai-overview,:where(:root:not([data-n19-safe])) .yt-header__suggested,.yt-header__suggested:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .yt-ai-search-header__wrapper>.yt-suggested-searches,.yt-ai-search-header__wrapper:where(:root:not([data-n19-safe]))>.yt-suggested-searches{display:none!important}
-.yt-ai-search-header__wrapper{background:var(--n19-band)!important}
-:where(:root:not([data-n19-safe])) .yt-ai-search-header__wrapper,.yt-ai-search-header__wrapper:where(:root:not([data-n19-safe])){background-image:none!important}
+section.yt-ai-overview,.yt-header__suggested,.yt-ai-search-header__wrapper>.yt-suggested-searches{display:none!important}
+.yt-ai-search-header__wrapper{background:var(--n19-band)!important;background-image:none!important}
 .yt-ai-search-header__wrapper :is(input,form,[class*="input"]){border-radius:2px!important}
 section.yt-category-hero-refresh{background:var(--n19-page)!important}
 :where(:root:not([data-n19-safe])) section.yt-category-hero-refresh{min-height:0!important;height:auto!important;padding-top:32px!important;padding-bottom:16px!important}
 section.yt-category-hero-refresh{border-bottom:1px solid var(--n19-rule)!important}
-:where(:root:not([data-n19-safe])) section.yt-category-hero-refresh::before,:where(:root:not([data-n19-safe])) section.yt-category-hero-refresh::after{display:none!important}
+section.yt-category-hero-refresh::before,section.yt-category-hero-refresh::after{display:none!important}
 .yt-category-hero-refresh__title{font-size:36px!important;line-height:1.2!important;color:var(--n19-text)!important}
 .yt-category-hero-refresh__subtitle{font-size:16px!important;color:var(--n19-text-2)!important}

@@ -32,11 +32,11 @@ nav.category-menu .category-link__link{color:var(--n19-sub)!important;font-size:
 nav.category-menu .category-link__link{border-radius:0!important;background:transparent!important}
 nav.category-menu .category-link__link span{font-weight:400!important}
 nav.category-menu .category-link__link:hover,nav.category-menu .category-link__link[aria-expanded="true"]{color:var(--n19-text)!important}
-:where(:root:not([data-n19-safe])) nav.category-menu .global-nav-pipe{opacity:.5!important}
+nav.category-menu .global-nav-pipe{opacity:.5!important}
 .subcategory-menu__item,.subcategories-column-row{font-weight:400!important}
-:where(:root:not([data-n19-safe])) .short-text--ksr-culture-fund,.short-text--ksr-culture-fund:where(:root:not([data-n19-safe])){display:none!important}
-:where(:root:not([data-n19-safe])) div.border-bottom.border-grey-400:has(>.short-text--ksr-culture-fund){display:none!important}
-:where(:root:not([data-n19-safe])) .mission-module::before,.mission-module:where(:root:not([data-n19-safe]))::before,:where(:root:not([data-n19-safe])) .mission-module::after,.mission-module:where(:root:not([data-n19-safe]))::after{display:none!important}
+.short-text--ksr-culture-fund{display:none!important}
+div.border-bottom.border-grey-400:has(>.short-text--ksr-culture-fund){display:none!important}
+.mission-module::before,.mission-module::after{display:none!important}
 .mission-module h1{font-weight:400!important;color:var(--n19-text)!important}
 #index-container h2.kds-type-heading-lg,.featured-project h2,.recommended-projects h2{font-size:12px!important;line-height:16px!important;text-transform:uppercase!important;letter-spacing:.06em!important;color:var(--n19-sub)!important;font-weight:600!important}
 #index-container h3.kds-heading{letter-spacing:.06em!important;font-weight:600!important}
@@ -57,7 +57,7 @@ a.bttn-primary:hover,button.bttn-primary:hover,.bttn-green:hover{background-colo
 .bttn-secondary{border-radius:0!important;border-color:var(--n19-rule)!important}
 #react-project-header .bg-ksr-green-500,#react-project-header [role="progressbar"]>div{background-color:var(--n19-green)!important}
 #react-project-header .ksr-green-500{color:var(--n19-green)!important}
-:where(:root:not([data-n19-safe])) #react-project-header a[href^="https://bsky.app"],#react-project-header:where(:root:not([data-n19-safe])) a[href^="https://bsky.app"]{display:none!important}
+#react-project-header a[href^="https://bsky.app"]{display:none!important}
 #react-project-header h1.project-name{font-weight:400!important;font-size:28px!important;line-height:36px!important}
 #project-nav .tabbed-nav__link{font-weight:400!important}
 #project-nav .tabbed-nav__link.tabbed-nav__link--active,#project-nav .tabbed-nav__link[aria-current]{font-weight:600!important}
@@ -72,5 +72,5 @@ footer[class*="kds-group/footer"] a:not(.kds-button):hover{color:var(--n19-green
 footer[class*="kds-group/footer"] h2{color:var(--n19-text)!important;text-transform:uppercase!important;font-size:12px!important;letter-spacing:.06em!important;font-weight:600!important}
 footer[class*="kds-group/footer"] :is(.kds-button,.kds-select__button){background-color:var(--n19-page)!important;color:var(--n19-text)!important;border:1px solid var(--n19-rule)!important}
 footer[class*="kds-group/footer"] :is(.kds-button,.kds-select__button) svg,footer[class*="kds-group/footer"]>div>div svg.kds-icon{fill:currentColor!important;color:var(--n19-text)!important}
-:where(:root:not([data-n19-safe])) footer[class*="kds-group/footer"] a:has(>svg.kds-block){display:none!important}
-:where(:root:not([data-n19-safe])) footer[class*="kds-group/footer"] li:has(>a[href*="bsky.app"]){display:none!important}
+footer[class*="kds-group/footer"] a:has(>svg.kds-block){display:none!important}
+footer[class*="kds-group/footer"] li:has(>a[href*="bsky.app"]){display:none!important}

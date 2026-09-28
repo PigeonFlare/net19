@@ -2,7 +2,7 @@ globalThis.net19Theme = {
   keep: '#gwm-Deck :is([class*="card_style_text__"], [class*="card_style_wdHeader__"])',
 };
 (() => {
-  const WORDS = [['#nav-hamburger-menu .hm-icon-label', /^\s*All\s*$/, 'Departments'], ['#nav-link-accountList-nav-line-1', /^Hello, sign in$/, 'Hello, Sign in'],
+  const WORDS = [['#nav-link-accountList-nav-line-1', /^Hello, sign in$/, 'Hello, Sign in'],
     ['#glow-ingress-line1', /^(\s*)Delivering to\b/, '$1Deliver to']];
   const fix = () => {
     for (const el of document.querySelectorAll('[id$="-ac-desktop-declarative"] span, #acBadge_feature_div span')) {

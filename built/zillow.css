@@ -29,6 +29,6 @@ h1[class*="StyledHeading-c11n"],h1[class*="Text-c11n"]{font-family:"Ivar Display
 .with-product-nav__top-and-main div:has(>div>h1[class*="StyledHeading-c11n"]) button svg{color:var(--n19-blue)!important;fill:var(--n19-blue)!important}
 html[data-net19-flip]{--n19-hero-text:#000}
 .with-product-nav__top-and-main h1[class*="StyledHeading-c11n"]{color:var(--n19-hero-text)!important}
-:where(:root:not([data-n19-safe])) .with-product-nav__product-nav,.with-product-nav__product-nav:where(:root:not([data-n19-safe])){display:none!important}
+.with-product-nav__product-nav{display:none!important}
 :where(:root:not([data-n19-safe])) .with-product-nav__wrapper,.with-product-nav__wrapper:where(:root:not([data-n19-safe])){grid-template-columns:0 minmax(0, 1fr)!important}
-:where(:root:not([data-n19-safe])) .with-product-nav__top-and-main div:has(>div>h1[class*="StyledHeading-c11n"]),.with-product-nav__top-and-main:where(:root:not([data-n19-safe])) div:has(>div>h1[class*="StyledHeading-c11n"]){background-image:linear-gradient(transparent, transparent)!important}
+.with-product-nav__top-and-main div:has(>div>h1[class*="StyledHeading-c11n"]){background-image:linear-gradient(transparent, transparent)!important}

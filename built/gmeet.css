@@ -1,9 +1,9 @@
 html{--n19-meet:#00796b;--n19-meet-hover:#00695c;--n19-meet-soft:#e0f2f1;--n19-meet-on:#fff}
 html[data-net19-mode="dark"]{--n19-meet:#4db6ac;--n19-meet-hover:#80cbc4;--n19-meet-soft:#243d3a;--n19-meet-on:#202124}
-:where(:root:not([data-n19-safe])) header[role="banner"] :is(span[data-action-behavior*="one.google.com"],span[data-promo-type]:has(button[role="link"])){display:none!important}
-:where(:root:not([data-n19-safe])) nav[jsname="dtnVpf"]:has(button[role="menuitem"]){display:none!important}
+header[role="banner"] :is(span[data-action-behavior*="one.google.com"],span[data-promo-type]:has(button[role="link"])){display:none!important}
+nav[jsname="dtnVpf"]:has(button[role="menuitem"]){display:none!important}
 :where(:root:not([data-n19-safe])) body:has(nav[jsname="dtnVpf"]) main{margin-left:0!important;left:0!important}
-:where(:root:not([data-n19-safe])) div[jscontroller]:has(>[role="region"] a[href*="support.google.com/meet/answer/9852160"]){display:none!important}
+div[jscontroller]:has(>[role="region"] a[href*="support.google.com/meet/answer/9852160"]){display:none!important}
 button[jsname="SkMU8"]{background:var(--n19-meet)!important;color:var(--n19-meet-on)!important;border-radius:4px!important;box-shadow:none!important;font:500 14px/36px "Google Sans", Roboto, Arial, sans-serif!important;letter-spacing:.25px!important}
 :where(:root:not([data-n19-safe])) button[jsname="SkMU8"]{height:40px!important}
 button[jsname="SkMU8"] :is(span,i,svg){color:var(--n19-meet-on)!important;fill:currentColor!important}

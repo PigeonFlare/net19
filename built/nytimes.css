@@ -9,26 +9,27 @@ html[data-net19-mode="dark"]{--n19-text:#e8e8e8;--n19-text-2:#ccc;--n19-muted:#9
 :where(:root:not([data-n19-safe])) .Wr7_RG_mastheadSection a[href*="/auth/login"]:not([aria-label])>span,.Wr7_RG_mastheadSection:where(:root:not([data-n19-safe])) a[href*="/auth/login"]:not([aria-label])>span,:where(:root:not([data-n19-safe])) header a[href*="myaccount.nytimes.com/auth/login"]:not([aria-label])>span{padding:11px 12px 8px!important}
 .Wr7_RG_mastheadSection a[href*="/auth/login"]:not([aria-label])>span,header a[href*="myaccount.nytimes.com/auth/login"]:not([aria-label])>span{text-transform:uppercase!important}
 .Wr7_RG_mastheadSection a[href*="/auth/login"]:not([aria-label]):hover>span{background:var(--n19-login-hover)!important}
-:where(:root:not([data-n19-safe])) header [data-testid="subscribe-button"],:where(:root:not([data-n19-safe])) header [data-testid="onsite-messaging-unit-barOne"]:has([data-testid="subscribe-button"]){display:none!important}
+header [data-testid="subscribe-button"],header [data-testid="onsite-messaging-unit-barOne"]:has([data-testid="subscribe-button"]){display:none!important}
 :where(:root:not([data-n19-safe])) [data-testid="masthead-desktop-logo"] svg,[data-testid="masthead-desktop-logo"]:where(:root:not([data-n19-safe])) svg{width:430px!important;height:58px!important}
 :where(:root:not([data-n19-safe])) [data-testid="masthead-desktop-logo"] a,[data-testid="masthead-desktop-logo"]:where(:root:not([data-n19-safe])) a{height:auto!important}
 [data-testid="masthead-nested-nav"]{border-top:1px solid var(--n19-hair)!important;border-bottom:1px solid var(--n19-rule)!important}
 :where(:root:not([data-n19-safe])) [data-testid="masthead-nested-nav"],[data-testid="masthead-nested-nav"]:where(:root:not([data-n19-safe])){margin-top:6px!important}
-:where(:root:not([data-n19-safe])) [data-testid="masthead-nested-nav"]::before,[data-testid="masthead-nested-nav"]:where(:root:not([data-n19-safe]))::before,:where(:root:not([data-n19-safe])) [data-testid="masthead-nested-nav"]::after,[data-testid="masthead-nested-nav"]:where(:root:not([data-n19-safe]))::after{display:none!important}
+[data-testid="masthead-nested-nav"]::before,[data-testid="masthead-nested-nav"]::after{display:none!important}
 :where(:root:not([data-n19-safe])) [data-testid="masthead-nested-nav"] nav>ul,[data-testid="masthead-nested-nav"]:where(:root:not([data-n19-safe])) nav>ul{padding:5px 0 4px!important}
 [data-testid="masthead-nested-nav"] nav>ul>li{font-size:12px!important;line-height:16px!important}
 [data-testid="masthead-nested-nav"] nav>ul>li>a{font-family:nyt-franklin, helvetica, arial, sans-serif!important;font-size:12px!important;font-weight:500!important;color:var(--n19-text-2)!important}
 :where(:root:not([data-n19-safe])) [data-testid="masthead-nested-nav"] nav>ul>li>a,[data-testid="masthead-nested-nav"]:where(:root:not([data-n19-safe])) nav>ul>li>a{padding:4px!important}
 [data-testid="masthead-nested-nav"] nav>ul>li>a{border-radius:3px!important}
 [data-testid="masthead-nested-nav"] nav>ul>li>a:hover{background:var(--n19-hover)!important}
-:where(:root:not([data-n19-safe])) [data-testid="masthead-nested-nav"] nav>ul>li>button,[data-testid="masthead-nested-nav"]:where(:root:not([data-n19-safe])) nav>ul>li>button{opacity:0!important;width:10px!important;min-width:0!important;margin-left:-2px!important}
-:where(:root:not([data-n19-safe])) [data-testid="masthead-nested-nav"] nav>ul>li:hover>button,[data-testid="masthead-nested-nav"]:where(:root:not([data-n19-safe])) nav>ul>li:hover>button,:where(:root:not([data-n19-safe])) [data-testid="masthead-nested-nav"] nav>ul>li>button:focus-visible,[data-testid="masthead-nested-nav"]:where(:root:not([data-n19-safe])) nav>ul>li>button:focus-visible{opacity:1!important}
-:where(:root:not([data-n19-safe])) nav[aria-label="Main"] li:is([data-navid="Games"],[data-navid="Cooking"],[data-navid="Wirecutter"],[data-navid="The Athletic"]){display:none!important}
+[data-testid="masthead-nested-nav"] nav>ul>li>button{opacity:0!important}
+:where(:root:not([data-n19-safe])) [data-testid="masthead-nested-nav"] nav>ul>li>button,[data-testid="masthead-nested-nav"]:where(:root:not([data-n19-safe])) nav>ul>li>button{width:10px!important;min-width:0!important;margin-left:-2px!important}
+[data-testid="masthead-nested-nav"] nav>ul>li:hover>button,[data-testid="masthead-nested-nav"] nav>ul>li>button:focus-visible{opacity:1!important}
+nav[aria-label="Main"] li:is([data-navid="Games"],[data-navid="Cooking"],[data-navid="Wirecutter"],[data-navid="The Athletic"]){display:none!important}
 [data-is-always-free]{border:0!important}
 :where(:root:not([data-n19-safe])) [data-is-always-free],[data-is-always-free]:where(:root:not([data-n19-safe])){padding:0!important}
-:where(:root:not([data-n19-safe])) [data-is-always-free]>.U5yBoa_fdrPackageHeader,[data-is-always-free]:where(:root:not([data-n19-safe]))>.U5yBoa_fdrPackageHeader,:where(:root:not([data-n19-safe])) [data-is-always-free]>div:first-child:has(>p>strong),[data-is-always-free]:where(:root:not([data-n19-safe]))>div:first-child:has(>p>strong){display:none!important}
-:where(:root:not([data-n19-safe])) [data-net19-hidden],[data-net19-hidden]:where(:root:not([data-n19-safe])){display:none!important}
-:where(:root:not([data-n19-safe])) section[data-testid="block-Briefings"]{display:none!important}
+[data-is-always-free]>.U5yBoa_fdrPackageHeader,[data-is-always-free]>div:first-child:has(>p>strong){display:none!important}
+[data-net19-hidden]{display:none!important}
+section[data-testid="block-Briefings"]{display:none!important}
 article#story h1[data-testid="headline"]{font-family:nyt-cheltenham, georgia, "times new roman", times, serif!important;font-weight:700!important;font-style:italic!important;font-size:40px!important;line-height:48px!important;color:var(--n19-text)!important;letter-spacing:0!important}
 :where(:root:not([data-n19-safe])) article#story h1[data-testid="headline"]{max-width:600px!important;margin-left:auto!important;margin-right:auto!important}
 article#story #article-summary{font-family:nyt-imperial, georgia, serif!important;font-size:20px!important;line-height:30px!important;color:var(--n19-text-2)!important}
@@ -38,5 +39,5 @@ article#story header time,article#story [data-testid="todays-date"]{font-family:
 article#story section[name="articleBody"] p{font-family:nyt-imperial, georgia, "times new roman", times, serif!important;font-size:20px!important;line-height:30px!important;color:var(--n19-text-2)!important}
 article#story section[name="articleBody"] p a{color:#326891!important;text-decoration:underline!important}
 article#story figcaption,article#story figcaption *{font-family:nyt-imperial, georgia, serif!important;font-size:15px!important;line-height:21px!important;color:var(--n19-muted)!important}
-:where(:root:not([data-n19-safe])) [data-testid="audio-player"],[data-testid="audio-player"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-testid*="listen"i],[data-testid*="listen"i]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [class*="AudioPlayer"],[class*="AudioPlayer"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) button[aria-label^="Listen to"],:where(:root:not([data-n19-safe])) [data-testid="share-tools"] button[aria-label*="gift"i],[data-testid="share-tools"]:where(:root:not([data-n19-safe])) button[aria-label*="gift"i]{display:none!important}
-:where(:root:not([data-n19-safe])) [data-testid="masthead-cross-product-nav"],[data-testid="masthead-cross-product-nav"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-testid*="cross-product"i],[data-testid*="cross-product"i]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) section[data-testid*="games"i],:where(:root:not([data-n19-safe])) [data-testid="games-promo"],[data-testid="games-promo"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-block-tracking-id*="Games"],[data-block-tracking-id*="Games"]:where(:root:not([data-n19-safe])){display:none!important}
+[data-testid="audio-player"],[data-testid*="listen"i],[class*="AudioPlayer"],button[aria-label^="Listen to"],[data-testid="share-tools"] button[aria-label*="gift"i]{display:none!important}
+[data-testid="masthead-cross-product-nav"],[data-testid*="cross-product"i],section[data-testid*="games"i],[data-testid="games-promo"],[data-block-tracking-id*="Games"]{display:none!important}

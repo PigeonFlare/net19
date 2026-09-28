@@ -30,8 +30,8 @@ main.ipc-page-wrapper .ipc-page-content-container--center>:not(:first-child) :is
 main.ipc-page-wrapper .ipc-page-content-container--center>:not(:first-child) .ipc-chip{border-color:var(--n19-border)!important}
 main.ipc-page-wrapper .ipc-title--baseAlt .ipc-title__text,#__next>section.ipc-page-background .ipc-title__text{color:var(--n19-text)!important;font-weight:400!important}
 main.ipc-page-wrapper .ipc-title--category-title .ipc-title__text{font-size:24px!important}
-:where(:root:not([data-n19-safe])) main.ipc-page-wrapper .ipc-title--category-title::before,:where(:root:not([data-n19-safe])) main.ipc-page-wrapper .ipc-title--category-title .ipc-title__text::before{display:none!important}
-:where(:root:not([data-n19-safe])) main.ipc-page-wrapper .ipc-title::before,:where(:root:not([data-n19-safe])) main.ipc-page-wrapper .ipc-title .ipc-title__text::before{display:none!important}
+main.ipc-page-wrapper .ipc-title--category-title::before,main.ipc-page-wrapper .ipc-title--category-title .ipc-title__text::before{display:none!important}
+main.ipc-page-wrapper .ipc-title::before,main.ipc-page-wrapper .ipc-title .ipc-title__text::before{display:none!important}
 :where(:root:not([data-n19-safe])) main.ipc-page-wrapper .ipc-title--category-title{padding-left:16px!important}
 main.ipc-page-wrapper .ipc-page-content-container--center>:not(:first-child) :is(a.ipc-link,.ipc-link--baseAlt,.ipc-title-link-wrapper .ipc-title__text){color:var(--n19-link)!important}
 main a.ipc-link:not([class*="onBase"]):not([class*="inherit"]):not([class*="baseAlt"]){color:var(--n19-link)!important}

@@ -7,4 +7,4 @@ html[data-net19-mode="dark"]{--n19-blue:#4db2ff;--n19-navy:#d0dae3;--n19-rule:#5
 #booking-module-tabs .ui-tabs-nav a{color:var(--n19-blue)!important}
 #booking-module-tabs .ui-tabs-nav li.ui-tabs-active a{color:var(--n19-navy)!important}
 .btn,input.btn{border-radius:2px!important}
-:where(:root:not([data-n19-safe])) #watMobiLink,#watMobiLink:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) li:has(>#watMobiLink){display:none!important}
+#watMobiLink,li:has(>#watMobiLink){display:none!important}

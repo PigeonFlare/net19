@@ -16,8 +16,8 @@ html[data-net19-flip] nav-hat{filter:contrast(1.13636) hue-rotate(180deg) invert
 [class*="-StrapLink"]:hover [class*="-StrapLinkLabel"]{color:var(--n19-blue)!important}
 [class*="-BylineContainer"]{text-transform:none!important;letter-spacing:0!important;font-family:Retina, Arial, Helvetica, sans-serif!important;font-weight:400!important}
 [data-testid="flashline"],[class*="-FlashlineWrapper"]{letter-spacing:.03em!important}
-:where(:root:not([data-n19-safe])) [class*="-FollowButton"],[class*="-FollowButton"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-testid="follow-button"],[data-testid="follow-button"]:where(:root:not([data-n19-safe])){display:none!important}
-:where(:root:not([data-n19-safe])) [class*="-ChicletStyle"],[class*="-ChicletStyle"]:where(:root:not([data-n19-safe])){display:none!important}
+[class*="-FollowButton"],[data-testid="follow-button"]{display:none!important}
+[class*="-ChicletStyle"]{display:none!important}
 h1[class*="-StyledHeadline"]{font-family:"Escrow Condensed", Georgia, "Times New Roman", serif!important;font-weight:700!important;letter-spacing:0!important}
 h2[class*="-NormalDek"],h2[class*="Dek-"]{font-family:Exchange, Georgia, "Times New Roman", serif!important;font-size:20px!important;line-height:1.4!important;font-weight:400!important;color:var(--n19-meta)!important}
 .article-header [data-testid="breadcrumb-link"]{font-family:Retina, Arial, Helvetica, sans-serif!important;text-transform:none!important}
@@ -25,8 +25,8 @@ h2[class*="-NormalDek"],h2[class*="Dek-"]{font-family:Exchange, Georgia, "Times 
 [data-testid="byline"] [class*="-AuthorPlaintext"]{font-family:Retina, Arial, Helvetica, sans-serif!important;text-transform:none!important}
 [data-testid="author-link"],[data-testid="author-link"] span{font-family:Retina, Arial, Helvetica, sans-serif!important;text-transform:none!important;color:var(--n19-blue)!important;text-decoration:none!important;font-weight:500!important;letter-spacing:0!important}
 [data-testid="author-link"]:hover span{text-decoration:underline!important}
-:where(:root:not([data-n19-safe])) [data-testid="utility-bar"] button[aria-label^="Listen"],[data-testid="utility-bar"]:where(:root:not([data-n19-safe])) button[aria-label^="Listen"]{display:none!important}
-:where(:root:not([data-n19-safe])) [data-testid="utility-bar"] [role="separator"]:has(+button[aria-label^="Listen"]),[data-testid="utility-bar"]:where(:root:not([data-n19-safe])) [role="separator"]:has(+button[aria-label^="Listen"]){display:none!important}
+[data-testid="utility-bar"] button[aria-label^="Listen"]{display:none!important}
+[data-testid="utility-bar"] [role="separator"]:has(+button[aria-label^="Listen"]){display:none!important}
 p[data-type="paragraph"]{font-family:Exchange, Georgia, "Times New Roman", serif!important;font-size:17px!important;line-height:27px!important;color:var(--n19-ink)!important}
 p[data-type="paragraph"] a{color:var(--n19-blue)!important;text-decoration:none!important}
 p[data-type="paragraph"] a:hover{text-decoration:underline!important}

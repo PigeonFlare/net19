@@ -3,10 +3,10 @@ globalThis.net19Theme = {
     const list = document.documentElement.classList;
     if (list.contains('theme-light')) return 'light';
     if (list.contains('theme-dark') || list.contains('theme-darker') || list.contains('theme-midnight')) return 'dark';
-    return document.documentElement.hasAttribute('data-wf-site') ? 'light' : null;
+    return document.documentElement.hasAttribute('data-wf-site') ? (location.pathname === '/' ? 'dark' : 'light') : null;
   },
   watch: ['class'],
-  only: () => /^\/(?:login|register|invite\/|gift\/|reset|verify|activate|oauth2\/authorize)/.test(location.pathname) ? 'dark' : undefined,
+  only: () => document.documentElement.hasAttribute('data-wf-site') && location.pathname === '/' || /^\/(?:login|register|invite\/|gift\/|reset|verify|activate|oauth2\/authorize)/.test(location.pathname) ? 'dark' : undefined,
   later: /^(?:quests?|shop|discover|explore discoverable servers|start an activity|activities|apps|use apps|create poll|create thread|add super reaction|super reactions?|summaries|forward|server guide|browse channels|channels & roles|open gif picker|open sticker picker|record voice message|send voice message|set a server tag|server tags?|avatar decorations?|nameplates?|profile effects?)$/i,
 };
 (() => {
@@ -18,7 +18,7 @@ globalThis.net19Theme = {
       const item = title.closest('li, .nav_dd');
       if (item && !item.hasAttribute('data-net19-hidden')) item.setAttribute('data-net19-hidden', '');
     }
-    for (const band of document.querySelectorAll('.home--hero, .discord_banner')) if (!band.hasAttribute('data-net19-keep')) band.setAttribute('data-net19-keep', '');
+    for (const band of document.querySelectorAll('.home--hero, .discord_banner, header.nav')) if (!band.hasAttribute('data-net19-keep')) band.setAttribute('data-net19-keep', '');
   };
   const start = () => {
     fix();

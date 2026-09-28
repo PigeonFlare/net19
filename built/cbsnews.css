@@ -19,7 +19,7 @@ header.header--with-sub-navigation .site-nav__item-title{font-family:"Proxima No
 header.header--with-sub-navigation .site-nav__item-title:hover,header[data-component="navigation"] .site-nav__item-title:hover{color:#fff!important;text-decoration:underline!important}
 header[data-component="navigation"] .site-nav__item:is(:hover,:focus-within),header.header--with-sub-navigation .site-nav__item:is(:hover,:focus-within){background:transparent!important}
 header[data-component="navigation"] .site-nav__item:is(:hover,:focus-within)>.site-nav__item-title{background:#333!important;color:#fff!important}
-:where(:root:not([data-n19-safe])) .site-nav__flyout-item:has(a[href*="thefp.com"]),.site-nav__flyout-item:has(a[href*="thefp.com"]):where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .site-nav__flyout li:has(>a[href*="thefp.com"]),.site-nav__flyout:where(:root:not([data-n19-safe])) li:has(>a[href*="thefp.com"]),:where(:root:not([data-n19-safe])) .site-nav__item:has(>a[href*="thefp.com"]),.site-nav__item:has(>a[href*="thefp.com"]):where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) header.header--with-sub-navigation .site-nav>.site-nav__item:has(>a[href*="thefp.com"]){display:none!important}
+.site-nav__flyout-item:has(a[href*="thefp.com"]),.site-nav__flyout li:has(>a[href*="thefp.com"]),.site-nav__item:has(>a[href*="thefp.com"]),header.header--with-sub-navigation .site-nav>.site-nav__item:has(>a[href*="thefp.com"]){display:none!important}
 header[data-component="navigation"] .site-nav__flyout{background:var(--n19-bar)!important;color:var(--n19-bar-text)!important;border:0!important;border-radius:0!important}
 header[data-component="navigation"] .site-nav__flyout a,header[data-component="navigation"] .site-nav__flyout-item a{color:var(--n19-bar-text)!important}
 .item__hed{font-family:"Publico Headline", Georgia, "Times New Roman", serif!important;font-weight:700!important;letter-spacing:0!important}
@@ -40,8 +40,8 @@ header[data-component="navigation"] .site-nav__flyout a,header[data-component="n
 .content .component__title,aside.recirculation h3,.card-recirc h4{font-family:"Proxima Nova", Roboto, Helvetica, sans-serif!important;font-weight:700!important}
 .card-recirc{border-radius:0!important}
 .content figcaption,.content__body figcaption,.embed__caption{font-family:"Proxima Nova", Roboto, Helvetica, sans-serif!important;font-size:13px!important;color:var(--n19-meta)!important}
-:where(:root:not([data-n19-safe])) .content__google,.content__google:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) a.content__google-button{display:none!important}
-:where(:root:not([data-n19-safe])) .component__heading-wrapper.freepress,.component__heading-wrapper.freepress:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .component__heading-wrapper.freepress+ul,.component__heading-wrapper.freepress:where(:root:not([data-n19-safe]))+ul,:where(:root:not([data-n19-safe])) .component:has(>.component__heading-wrapper.freepress),.component:has(>.component__heading-wrapper.freepress):where(:root:not([data-n19-safe])){display:none!important}
+.content__google,a.content__google-button{display:none!important}
+.component__heading-wrapper.freepress,.component__heading-wrapper.freepress+ul,.component:has(>.component__heading-wrapper.freepress){display:none!important}
 .content--video .content__title,.video-player__title,.player-overlay__title{font-family:"Publico Headline", Georgia, serif!important;font-weight:700!important}
 .FooterLinks-title{font-family:"Proxima Nova", Roboto, Helvetica, sans-serif!important;text-transform:uppercase!important;letter-spacing:1.6px!important;font-size:12px!important}
 .FooterLinks-item a{font-family:"Proxima Nova", Roboto, Helvetica, sans-serif!important}

@@ -1,7 +1,7 @@
 html{--n19-strip:#0c1428;--n19-divider:#d6d6d6;--n19-navy:#24387e;--n19-text:#000;--n19-card-border:#24387e;--n19-card-text:#24387e;--n19-card-bg:#fff}
 html[data-net19-mode="dark"]{--n19-strip:#0c1428;--n19-divider:#444;--n19-navy:#2e4596;--n19-text:#f2f2f2;--n19-card-border:#8ea3e6;--n19-card-text:#c7d2f5;--n19-card-bg:#1c1c1c}
-:where(:root:not([data-n19-safe])) .nygov-unav .trustBar__container,.nygov-unav:where(:root:not([data-n19-safe])) .trustBar__container,:where(:root:not([data-n19-safe])) .nys-unav .nys-trustbar--mob,.nys-unav:where(:root:not([data-n19-safe])) .nys-trustbar--mob,:where(:root:not([data-n19-safe])) .nys-unav .nys-trustbar--inline,.nys-unav:where(:root:not([data-n19-safe])) .nys-trustbar--inline,:where(:root:not([data-n19-safe])) #nys-universal-navigation [class^="nys-trustbar"],#nys-universal-navigation:where(:root:not([data-n19-safe])) [class^="nys-trustbar"]{display:none!important}
-:where(:root:not([data-n19-safe])) #oda-custom-launcher,#oda-custom-launcher:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .oda-chat-wrapper,.oda-chat-wrapper:where(:root:not([data-n19-safe])){display:none!important}
+.nygov-unav .trustBar__container,.nys-unav .nys-trustbar--mob,.nys-unav .nys-trustbar--inline,#nys-universal-navigation [class^="nys-trustbar"]{display:none!important}
+#oda-custom-launcher,.oda-chat-wrapper{display:none!important}
 .nygov-unav .nygov-unav__header{border-right:1px solid var(--n19-divider)!important}
 :where(:root:not([data-n19-safe])) .nygov-unav .nygov-unav__header,.nygov-unav:where(:root:not([data-n19-safe])) .nygov-unav__header{padding-right:60px!important}
 :where(:root:not([data-n19-safe])) .nygov-unav__links .o-universalMainMenu__links,.nygov-unav__links:where(:root:not([data-n19-safe])) .o-universalMainMenu__links{gap:40px!important}
@@ -13,11 +13,11 @@ html[data-net19-mode="dark"]{--n19-strip:#0c1428;--n19-divider:#444;--n19-navy:#
 .m-landingHero__contentWrapper{border-radius:0!important;background:linear-gradient(90deg, rgba(0,0,0,.72), rgba(0,0,0,.35))!important}
 .a-hero__titleLanding,.m-landingHero__title h1{font-weight:800!important;letter-spacing:0!important}
 .m-popularService__title.bg-primary-blue{background-color:var(--n19-navy)!important}
-:where(:root:not([data-n19-safe])) #popularServicesCanvasSection,#popularServicesCanvasSection:where(:root:not([data-n19-safe])){display:none!important}
+#popularServicesCanvasSection{display:none!important}
 :where(:root:not([data-n19-safe])) .m-popularService__title.-container .m-popularService__title.bg-primary-blue,.m-popularService__title.-container:where(:root:not([data-n19-safe])) .m-popularService__title.bg-primary-blue{flex:1 1 auto!important;padding-right:50px!important}
 .m-popularService__button .a-hero__btn,.m-popularService__card a{border-radius:0!important;border:1px solid var(--n19-card-border)!important;background:var(--n19-card-bg)!important;color:var(--n19-card-text)!important}
 .o-cardGlobalTablet,.o-cardLogo,.m-card__bioData,.m-card__linkData,.a-btn__link,[class*="m-card"]{border-radius:0!important}
-:where(:root:not([data-n19-safe])) .m-popularService__title.bg-primary-blue,.m-popularService__title.bg-primary-blue:where(:root:not([data-n19-safe])){clip-path:polygon(0 0, calc(100% - 45px) 0, 100% 50%, calc(100% - 45px) 100%, 0 100%)}
+.m-popularService__title.bg-primary-blue{clip-path:polygon(0 0, calc(100% - 45px) 0, 100% 50%, calc(100% - 45px) 100%, 0 100%)}
 .m-hero__meta,.o-hero [class*="__meta"]{border-radius:0!important}
 .a-hero__btn,a[class*="a-btn"],button[class*="a-btn"]{border-radius:0!important}
 .a-hero__btn,.m-landingHero a[class*="btn"],.m-landingHero button{text-transform:uppercase!important;letter-spacing:.15em!important;font-size:13px!important;font-weight:700!important}

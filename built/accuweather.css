@@ -12,9 +12,9 @@ html[data-net19-mode="dark"]{--n19-page:#161616;--n19-hero:#1a1a1a;--n19-card:#2
 :where(:root:not([data-n19-safe])) .subnav.secondary-nav .subnav-item,.subnav.secondary-nav:where(:root:not([data-n19-safe])) .subnav-item{padding-left:18px!important;padding-right:18px!important}
 .subnav.secondary-nav .subnav-item{border:1px solid transparent!important;border-bottom:0!important}
 .subnav.secondary-nav .subnav-item.active{background:var(--n19-tab)!important;border-color:var(--n19-rule)!important;border-top:3px solid var(--n19-orange)!important;color:var(--n19-text)!important}
-:where(:root:not([data-n19-safe])) .subnav.secondary-nav .subnav-item.active::after,.subnav.secondary-nav:where(:root:not([data-n19-safe])) .subnav-item.active::after,:where(:root:not([data-n19-safe])) .subnav.secondary-nav .subnav-item.active h2::after,.subnav.secondary-nav:where(:root:not([data-n19-safe])) .subnav-item.active h2::after{display:none!important}
+.subnav.secondary-nav .subnav-item.active::after,.subnav.secondary-nav .subnav-item.active h2::after{display:none!important}
 .page-hero{background:var(--n19-hero)!important}
 .page-hero::before,.page-hero::after{background:none!important}
 :where(:root:not([data-n19-safe])) .page-hero .page-hero-content,.page-hero:where(:root:not([data-n19-safe])) .page-hero-content{min-height:0!important;padding-top:16px!important;padding-bottom:20px!important}
 body.home,.template-root{background:var(--n19-page)!important}
-:where(:root:not([data-n19-safe])) .basic-header .afb-nav-container,.basic-header:where(:root:not([data-n19-safe])) .afb-nav-container,:where(:root:not([data-n19-safe])) .header-upsell,.header-upsell:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) a.upsell-ad[href*="/g-account/offerings"]{display:none!important}
+.basic-header .afb-nav-container,.header-upsell,a.upsell-ad[href*="/g-account/offerings"]{display:none!important}

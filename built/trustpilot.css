@@ -24,6 +24,6 @@ html[data-net19-flip]{--n19-hero-text:#000}
 [class*="styles_heroSearch"] button[class*="CDS_Button_circle"] svg{fill:#fff!important;color:#fff!important}
 [class*="styles_curvedWrapper"]{border-radius:0!important}
 [class*="styles_card"],article[class*="styles_reviewCard"],section[class*="styles_reviewCard"]{border-radius:4px!important}
-:where(:root:not([data-n19-safe])) [class*="styles_businessInfoColumnBottom"]>[class*="styles_summaryContainer"],[class*="styles_businessInfoColumnBottom"]:where(:root:not([data-n19-safe]))>[class*="styles_summaryContainer"],:where(:root:not([data-n19-safe])) [data-review-incentives-banner-variant-accordion],[data-review-incentives-banner-variant-accordion]:where(:root:not([data-n19-safe])){display:none!important}
+[class*="styles_businessInfoColumnBottom"]>[class*="styles_summaryContainer"],[data-review-incentives-banner-variant-accordion]{display:none!important}
 [class*="styles_pageWrapper"],[class*="styles_ratingDistributionCard"],[class*="styles_carouselReviewCard"],[class*="styles_topicSummaryCard"],[class*="CDS_Card_card"]{border-radius:4px!important}
 button[class*="variant_button"],[class*="styles_filtersWrapper"] button{border-radius:4px!important}

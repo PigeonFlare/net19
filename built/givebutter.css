@@ -6,15 +6,16 @@ html[data-wf-site] body :is(h1,h2,h3,h4,h5,h6,p,a,span,li,label,button,input,tex
 html[data-wf-site] body :is(h1,h2,h3,h4,.heading-style-h1,.heading-style-h2,.heading-style-h3,.heading-style-h4){font-weight:700!important}
 html[data-wf-site] body :is(h1,h2,h3,h4,.heading-style-h1,.heading-style-h2,.heading-style-h3,.heading-style-h4):not(.text-color-white,.text-color-white *,[class*="is-dark"] *){color:var(--n19-gb-text)!important}
 html[data-wf-site] .heading_span,html[data-wf-site] :is(h1,h2) span{font-family:inherit!important}
-html[data-wf-site]:where(:root:not([data-n19-safe])) .banner-v2_component,html[data-wf-site]:where(:root:not([data-n19-safe])) .nav-banner-v3,html[data-wf-site]:where(:root:not([data-n19-safe])) a.navbar_platform-callout,html[data-wf-site]:where(:root:not([data-n19-safe])) :is(.navbar_v2,.footer-v2) a:is([href$="/wallet"],[href$="/the-spread"],[href$="/plus"]){display:none!important}
+html[data-wf-site] .banner-v2_component,html[data-wf-site] .nav-banner-v3,html[data-wf-site] a.navbar_platform-callout,html[data-wf-site] :is(.navbar_v2,.footer-v2) a:is([href$="/wallet"],[href$="/the-spread"],[href$="/plus"]){display:none!important}
 html[data-wf-site] .navbar_v2{background:var(--n19-gb-page)!important;box-shadow:none!important}
 html[data-wf-site] .navbar_v2 .navbar_container{background:transparent!important;box-shadow:none!important;border:0!important;border-radius:0!important}
-html[data-wf-site]:where(:root:not([data-n19-safe])) .navbar_v2 .navbar_shadow{display:none!important}
-html[data-wf-site]:where(:root:not([data-n19-safe])) img.navbar_logo_icon{content:var(--n19-gb-logo)!important;width:200px!important;height:41px!important;max-width:none!important}
+html[data-wf-site] .navbar_v2 .navbar_shadow{display:none!important}
+html[data-wf-site] img.navbar_logo_icon{content:var(--n19-gb-logo)!important}
+html[data-wf-site]:where(:root:not([data-n19-safe])) img.navbar_logo_icon{width:200px!important;height:41px!important;max-width:none!important}
 html[data-wf-site] img.navbar_logo_icon{object-fit:contain!important}
 html[data-wf-site] .navbar_v2 :is(.navbar_dropdown_text2,.navbar_dropdown_text,.navbar_link,.navbar_col_center>a){color:var(--n19-gb-nav)!important;font-size:18px!important;font-weight:400!important}
 html[data-wf-site] .navbar_v2 .navbar_dropdown_block:hover .navbar_dropdown_text2,html[data-wf-site] .navbar_v2 .navbar_col_center>a:hover{color:var(--n19-gb-text)!important}
-html[data-wf-site]:where(:root:not([data-n19-safe])) .navbar_v2 .navbar_dropdown_arrow{opacity:.55!important}
+html[data-wf-site] .navbar_v2 .navbar_dropdown_arrow{opacity:.55!important}
 html[data-wf-site] .navbar_v2 .navbar_dropdown{border-radius:3px!important;box-shadow:0 8px 24px rgba(0, 0, 0, .12)!important}
 html[data-wf-site] .navbar_v2 :is(.navbar_button2,.navbar_button){background:transparent!important;border:0!important;box-shadow:none!important;color:var(--n19-gb-nav)!important;font-size:18px!important;font-weight:400!important}
 html[data-wf-site]:where(:root:not([data-n19-safe])) .navbar_v2 :is(.navbar_button2,.navbar_button){padding:10px!important}
@@ -31,17 +32,19 @@ html[data-wf-site] .footer-v2{background:var(--n19-gb-foot)!important;border-top
 html[data-wf-site] .footer-v2 :is(.footer-v2_text-link,.footer-v2_link,.footer-v2_text-small,a:not(.footer-v2_logo_link)){color:var(--n19-gb-meta)!important}
 html[data-wf-site] .footer-v2 :is(.footer-v2_text-link,.footer-v2_link):hover{color:var(--n19-gb-text)!important}
 html[data-wf-site] .footer-v2 .footer-v2_text-medium{color:var(--n19-gb-text)!important;font-weight:600!important}
-html[data-wf-site]:where(:root:not([data-n19-safe])) img.footer-v2_logo{content:var(--n19-gb-logo)!important;width:170px!important;height:35px!important}
+html[data-wf-site] img.footer-v2_logo{content:var(--n19-gb-logo)!important}
+html[data-wf-site]:where(:root:not([data-n19-safe])) img.footer-v2_logo{width:170px!important;height:35px!important}
 html[data-wf-site] img.footer-v2_logo{object-fit:contain!important}
 html:not([data-wf-site]) body{font-family:var(--n19-gb-font)!important}
 html:not([data-wf-site]) body :is(h1,h2,h3,h4,h5,h6,p,a,span,li,label,button,input,textarea,select,td,th,strong,b,em,small,div):not([class*="icon"],[class*="fa-"],.fa,i){font-family:var(--n19-gb-font)!important;letter-spacing:0!important}
 html:not([data-wf-site]) header.bg-brand-butter-primary{background:var(--n19-gb-page)!important;border-bottom:1px solid var(--n19-gb-rule)!important}
 html:not([data-wf-site]):where(:root:not([data-n19-safe])) header.bg-brand-butter-primary{height:80px!important}
 html:not([data-wf-site]):where(:root:not([data-n19-safe])) header.bg-brand-butter-primary>a{display:flex!important;align-items:center!important;justify-content:center!important;margin:auto!important;height:80px!important}
-html:not([data-wf-site]):where(:root:not([data-n19-safe])) header.bg-brand-butter-primary>a>div{display:none!important}
-html:not([data-wf-site]):where(:root:not([data-n19-safe])) header.bg-brand-butter-primary>a>img{content:var(--n19-gb-logo)!important;width:200px!important;height:41px!important;margin:0!important}
+html:not([data-wf-site]) header.bg-brand-butter-primary>a>div{display:none!important}
+html:not([data-wf-site]) header.bg-brand-butter-primary>a>img{content:var(--n19-gb-logo)!important}
+html:not([data-wf-site]):where(:root:not([data-n19-safe])) header.bg-brand-butter-primary>a>img{width:200px!important;height:41px!important;margin:0!important}
 html:not([data-wf-site]) main#main-content form button.button:not([class*="gbtheme"]){background:var(--n19-gb-blue)!important;border-color:var(--n19-gb-blue)!important;color:#fff!important;border-radius:3px!important}
-html:not([data-wf-site]):where(:root:not([data-n19-safe])) main#main-content div.bg-blue-50.rounded-full:has(a[href*="reward"i],a[href*="wallet"i]){display:none!important}
+html:not([data-wf-site]) main#main-content div.bg-blue-50.rounded-full:has(a[href*="reward"i],a[href*="wallet"i]){display:none!important}
 html:not([data-wf-site]) main#main-content a.text-blue-500{color:var(--n19-gb-blue)!important}
 html:not([data-wf-site]) main#main-content :is(input[type="email"],input[type="password"],input[type="text"]){border-radius:3px!important}
 html:not([data-wf-site]) .campaign-page :is(h1,h2){color:var(--n19-gb-text)!important}
@@ -49,7 +52,7 @@ html:not([data-wf-site]) .campaign-page h1{font-weight:700!important}
 html:not([data-wf-site]) .campaign-sidebar button#donate-sidebar,html:not([data-wf-site]) #stickyBar button{border-radius:4px!important}
 html:not([data-wf-site]) .campaign-page .main-goal-bar .rounded-full{border-radius:3px!important}
 html:not([data-wf-site]) .bg-brand-butter-primary:not(header){background:var(--n19-gb-soft)!important}
-html[data-wf-site]:where(:root:not([data-n19-safe])) .navbar_v2 .navbar_dropdown>div>.hide-tablet{display:none!important}
+html[data-wf-site] .navbar_v2 .navbar_dropdown>div>.hide-tablet{display:none!important}
 html[data-wf-site]:where(:root:not([data-n19-safe])) .navbar_v2 .navbar_dropdown>div:has(>.hide-tablet){grid-template-columns:1fr!important;width:auto!important}
 html[data-wf-site] .navbar_v2 :is(.navbar_platform_top,.navbar_switch_top){background:var(--n19-gb-soft)!important;border-radius:3px!important}
 html[data-wf-site] .navbar_v2 .navbar_platform_top-heading{color:var(--n19-gb-text)!important;font-weight:600!important;font-size:18px!important}

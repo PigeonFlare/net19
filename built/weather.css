@@ -13,14 +13,14 @@ main#main-content-wrapper>header .rounded-4xl.bg-white{background:transparent!im
 main#main-content-wrapper>header .rounded-4xl.bg-white>button{background:transparent!important;color:var(--n19-band-text)!important;border-radius:0!important}
 main#main-content-wrapper>header .rounded-4xl.bg-white>button *{color:var(--n19-band-text)!important}
 header .overflow-hidden.rounded-3xl.bg-white a{font-size:14px!important}
-:where(:root:not([data-n19-safe])) a[href^="/subscribe?tpcc=mktg-"]{display:none!important}
-:where(:root:not([data-n19-safe])) main#main-content-wrapper>header .rounded-4xl.bg-white:not(:has(>button)){display:none!important}
+a[href^="/subscribe?tpcc=mktg-"]{display:none!important}
+main#main-content-wrapper>header .rounded-4xl.bg-white:not(:has(>button)){display:none!important}
 :where(:root:not([data-n19-safe])) main#main-content-wrapper>header{margin-left:-32px!important;width:calc(100% + 32px)!important}
 :where(:root:not([data-n19-safe])) main#main-content-wrapper>header>div{padding-left:32px!important}
 html:has(main#main-content-wrapper>header) div.z-nav>nav{background:linear-gradient(var(--n19-band) 72px, transparent 72px)!important}
 html:has(main#main-content-wrapper>header):where(:root:not([data-n19-safe])) div.z-nav>nav>div:first-child{height:72px!important;margin-bottom:0!important}
-:where(:root:not([data-n19-safe])) section:has(>.pointer-events-none.absolute.inset-0){background-image:linear-gradient(transparent, transparent)!important}
+section:has(>.pointer-events-none.absolute.inset-0){background-image:linear-gradient(transparent, transparent)!important}
 header[class*="MainMenuHeader--MainMenuHeader"]{background:var(--n19-band)!important;border-bottom:0!important}
 header[class*="MainMenuHeader--MainMenuHeader"] [class*="MainMenuHeader--wrapperRight"] :is(span,button,svg):not(.searchWrapper *){color:var(--n19-band-text)!important;fill:currentColor}
 header[class*="MainMenuHeader--MainMenuHeader"] [class*="SearchInput--SearchInput"],header[class*="MainMenuHeader--MainMenuHeader"] input[id$="LocationSearch_input"]{border-radius:2px!important;background:#fff!important}
-:where(:root:not([data-n19-safe])) a[class*="PremiumButton--link"][href^="/subscribe"]{display:none!important}
+a[class*="PremiumButton--link"][href^="/subscribe"]{display:none!important}

@@ -15,9 +15,25 @@ body, body #a-page { font-family: Arial, sans-serif !important; }
 #nav-xshop .nav-a, #nav-main .nav-a { color: var(--n19-nav-link) !important; font-size: 13px !important; }
 #nav-xshop .nav-a:hover, #nav-main .nav-a:hover { color: var(--n19-nav-text) !important; text-decoration: underline !important; }
 #nav-main .nav-a, #nav-belt .nav-a { border-color: transparent !important; }
-#nav-hamburger-menu { padding: 0 8px !important; }
-#nav-hamburger-menu .hm-icon { display: none !important; }
-#nav-hamburger-menu .hm-icon-label { font-size: 13px !important; font-weight: 700 !important; color: var(--n19-nav-text) !important; }
+#navbar-main #nav-belt, #navbar-main #nav-main { position: relative !important; }
+#navbar-main #nav-belt { height: 55px !important; }
+#navbar-main #nav-main { height: 44px !important; overflow: visible !important; }
+#nav-main #nav-hamburger-menu { z-index: 2 !important; position: absolute !important; left: 8px !important; top: -46px !important; width: 38px !important; height: 38px !important; padding: 0 !important; margin: 0 !important;
+  display: flex !important; align-items: center !important; justify-content: center !important; border: 1px solid transparent !important; border-radius: 2px !important; box-sizing: border-box !important; }
+#nav-main #nav-hamburger-menu:hover { border-color: #fff !important; }
+#nav-main #nav-hamburger-menu .hm-icon { display: block !important; margin: 0 !important; flex: none !important; }
+#nav-main #nav-hamburger-menu .hm-icon-label { display: none !important; }
+#nav-belt #nav-logo { margin-left: 44px !important; }
+#nav-belt #nav-global-location-slot { position: absolute !important; left: 8px !important; top: 55px !important; height: 44px !important; width: 190px !important; display: flex !important; align-items: center !important; }
+#nav-belt #nav-global-location-slot > * { height: auto !important; }
+#nav-belt > .nav-fill { flex: 0 1 638px !important; margin-left: 44px !important; }
+#nav-belt > .nav-right { position: absolute !important; right: 0 !important; top: 52px !important; height: 44px !important; }
+#nav-belt #nav-tools { height: 44px !important; align-items: center !important; }
+#nav-belt #nav-tools { display: flex !important; padding: 0 !important; }
+#nav-belt #nav-tools > :is(a, div) { height: 40px !important; top: 0 !important; margin-top: 0 !important; margin-bottom: 0 !important; padding-bottom: 0 !important; box-sizing: border-box !important; overflow: visible !important; }
+#nav-belt #nav-tools > :is(a, div) > :is(a, div, span):not(.nav-line-1-container, .nav-line-1, .nav-line-2, #nav-cart-count-container) { height: 40px !important; }
+#nav-main > .nav-fill { padding-left: 207px !important; padding-right: 420px !important; box-sizing: border-box !important; }
+#nav-main #nav-xshop { height: 44px !important; display: flex !important; align-items: center !important; }
 #nav-search-bar-form, .nav-search-field, #nav-search .nav-fill { border-radius: 4px !important; }
 #nav-search-dropdown-card, .nav-search-scope { background: var(--n19-scope) !important; border-radius: 4px 0 0 4px !important; border-right: 1px solid var(--n19-scope-border) !important; }
 #nav-search-label-id { color: var(--n19-text-2) !important; font-size: 12px !important; }
@@ -80,3 +96,9 @@ a.a-link-normal:hover .a-text-normal, h2 a.a-link-normal:hover, #bylineInfo:hove
 .page-wrapper.hero-banner > .fs-page-container > :is(h1, h2, p, div:not([class*="card"])) { color: var(--n19-text) !important; }
 .page-wrapper.hero-banner .fs-heading { font-size: 28px !important; font-weight: 400 !important; }
 [data-testid="grid-filter-bar"] button, [class*="FilterPill"], [class*="filter-pill"] { border-radius: 3px !important; }
+#navbar-main #navbar #nav-main { z-index: 6 !important; background: transparent !important; pointer-events: none !important; }
+#navbar-main #nav-main > *, #navbar-main #nav-main .nav-fill, #navbar-main #nav-main #nav-xshop { pointer-events: none !important; }
+#navbar-main #nav-main :is(a, button, [role="button"], input, select) { pointer-events: auto !important; }
+#navbar-main { background: var(--n19-nav) !important; }
+#navbar-main #nav-main > .nav-fill { position: relative !important; overflow: hidden !important; height: 44px !important; }
+#navbar-main #nav-main #nav-xshop { overflow: hidden !important; height: 44px !important; }

@@ -8,14 +8,14 @@ header.s-topbar{background:var(--n19-bar)!important;border-top:3px solid #f48024
 .s-btn__filled.s-btn__primary,.s-btn__primary,.s-topbar .s-topbar--content a.s-btn:not(.s-btn__outlined),#mainbar a.s-btn.s-btn__filled:not(.s-btn__muted){background:#0095ff!important;color:#fff!important;border:1px solid #07c!important;border-radius:3px!important;box-shadow:inset 0 1px 0 0 rgba(102,191,255,.75)!important;font-weight:400!important}
 .s-btn__primary:hover,.s-topbar .s-topbar--content a.s-btn:not(.s-btn__outlined):hover{background:#07c!important}
 .s-btn__outlined,.s-btn{border-radius:3px!important}
-:where(:root:not([data-n19-safe])) #left-sidebar li:has(>#nav-askstack),#left-sidebar:where(:root:not([data-n19-safe])) li:has(>#nav-askstack),:where(:root:not([data-n19-safe])) #left-sidebar li:has(>#nav-sofa),#left-sidebar:where(:root:not([data-n19-safe])) li:has(>#nav-sofa),:where(:root:not([data-n19-safe])) #left-sidebar .js-freemium-cta,#left-sidebar:where(:root:not([data-n19-safe])) .js-freemium-cta{display:none!important}
-:where(:root:not([data-n19-safe])) #left-sidebar li:has(>#nav-challenges),#left-sidebar:where(:root:not([data-n19-safe])) li:has(>#nav-challenges),:where(:root:not([data-n19-safe])) #left-sidebar li:has(>#nav-articles),#left-sidebar:where(:root:not([data-n19-safe])) li:has(>#nav-articles),:where(:root:not([data-n19-safe])) #left-sidebar li.ml8.mt32:has(+li.js-collectives-navcta-toggle),#left-sidebar:where(:root:not([data-n19-safe])) li.ml8.mt32:has(+li.js-collectives-navcta-toggle),:where(:root:not([data-n19-safe])) #left-sidebar li.js-collectives-navcta-toggle,#left-sidebar:where(:root:not([data-n19-safe])) li.js-collectives-navcta-toggle{display:none!important}
+#left-sidebar li:has(>#nav-askstack),#left-sidebar li:has(>#nav-sofa),#left-sidebar .js-freemium-cta{display:none!important}
+#left-sidebar li:has(>#nav-challenges),#left-sidebar li:has(>#nav-articles),#left-sidebar li.ml8.mt32:has(+li.js-collectives-navcta-toggle),#left-sidebar li.js-collectives-navcta-toggle{display:none!important}
 :where(:root:not([data-n19-safe])) #left-sidebar .nav-links li.pb24,#left-sidebar:where(:root:not([data-n19-safe])) .nav-links li.pb24{padding-bottom:8px!important}
 #left-sidebar .nav-links a.s-block-link{color:var(--n19-nav)!important;font-size:13px!important;line-height:1.8!important}
 :where(:root:not([data-n19-safe])) #left-sidebar .nav-links a.s-block-link,#left-sidebar:where(:root:not([data-n19-safe])) .nav-links a.s-block-link{height:auto!important;padding:4px 4px 4px 30px!important}
 #left-sidebar .nav-links a.s-block-link{border-radius:0!important}
 :where(:root:not([data-n19-safe])) #left-sidebar .nav-links a.s-block-link:is(.js-homepage-wizard-link,#nav-questions),#left-sidebar:where(:root:not([data-n19-safe])) .nav-links a.s-block-link:is(.js-homepage-wizard-link,#nav-questions){padding-left:8px!important}
-:where(:root:not([data-n19-safe])) #left-sidebar .nav-links a.s-block-link:not(#nav-questions) svg,#left-sidebar:where(:root:not([data-n19-safe])) .nav-links a.s-block-link:not(#nav-questions) svg,:where(:root:not([data-n19-safe])) #left-sidebar .nav-links a.s-block-link .mln8.mrn8,#left-sidebar:where(:root:not([data-n19-safe])) .nav-links a.s-block-link .mln8.mrn8{display:none!important}
+#left-sidebar .nav-links a.s-block-link:not(#nav-questions) svg,#left-sidebar .nav-links a.s-block-link .mln8.mrn8{display:none!important}
 :where(:root:not([data-n19-safe])) #left-sidebar .nav-links a.s-block-link .-link--channel-name,#left-sidebar:where(:root:not([data-n19-safe])) .nav-links a.s-block-link .-link--channel-name{padding-left:0!important}
 :where(:root:not([data-n19-safe])) #left-sidebar #nav-questions svg,#left-sidebar:where(:root:not([data-n19-safe])) #nav-questions svg{margin-right:4px!important}
 #left-sidebar .nav-links .youarehere>a,#left-sidebar a[aria-current="page"],#left-sidebar .s-navigation--item.is-selected{background:var(--n19-nav-selected)!important;color:var(--n19-text)!important;font-weight:700!important;border-right:3px solid #f48024!important;border-radius:0!important}
@@ -49,7 +49,7 @@ header.s-topbar{background:var(--n19-bar)!important;border-top:3px solid #f48024
 .s-post-summary--stats-item.has-answers{border:1px solid var(--n19-answered)!important;color:var(--n19-answered)!important;border-radius:3px!important}
 :where(:root:not([data-n19-safe])) .s-post-summary--stats-item.has-answers,.s-post-summary--stats-item.has-answers:where(:root:not([data-n19-safe])){padding:6px 0!important}
 .s-post-summary--stats-item.has-accepted-answer{background:var(--n19-accepted)!important;border-color:var(--n19-accepted)!important;color:#fff!important}
-:where(:root:not([data-n19-safe])) .s-post-summary--stats-item.has-accepted-answer svg,.s-post-summary--stats-item.has-accepted-answer:where(:root:not([data-n19-safe])) svg{display:none!important}
+.s-post-summary--stats-item.has-accepted-answer svg{display:none!important}
 .s-post-summary--content-title{font-size:15px!important;line-height:1.4!important}
 :where(:root:not([data-n19-safe])) .s-post-summary--content-title,.s-post-summary--content-title:where(:root:not([data-n19-safe])){margin-bottom:6px!important}
 .s-post-summary--content-title a{color:var(--n19-link)!important;font-size:15px!important;font-weight:400!important}
@@ -58,17 +58,17 @@ header.s-topbar{background:var(--n19-bar)!important;border-top:3px solid #f48024
 :where(:root:not([data-n19-safe])) .s-tag,.s-tag:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .post-tag,.post-tag:where(:root:not([data-n19-safe])){padding:4px 6px!important}
 .s-tag,.post-tag{line-height:1.2!important}
 .s-tag:hover,.post-tag:hover{background:var(--n19-tag-hover)!important}
-:where(:root:not([data-n19-safe])) .s-post-summary--meta .subcommunity-topic-avatar,.s-post-summary--meta:where(:root:not([data-n19-safe])) .subcommunity-topic-avatar{display:none!important}
+.s-post-summary--meta .subcommunity-topic-avatar{display:none!important}
 .s-post-summary .s-user-card__minimal .s-user-card--time{color:var(--n19-text-2)!important}
-:where(:root:not([data-n19-safe])) #sidebar>.s-sidebarwidget.bg-purple-100,#sidebar:where(:root:not([data-n19-safe]))>.s-sidebarwidget.bg-purple-100,:where(:root:not([data-n19-safe])) #sidebar>.js-join-leave-container,#sidebar:where(:root:not([data-n19-safe]))>.js-join-leave-container{display:none!important}
+#sidebar>.s-sidebarwidget.bg-purple-100,#sidebar>.js-join-leave-container{display:none!important}
 .s-sidebarwidget__yellow{background:var(--n19-yellow)!important;border-color:var(--n19-yellow-border)!important;border-radius:3px!important}
 .s-sidebarwidget__yellow .s-sidebarwidget--header{background:var(--n19-yellow-head)!important;font-size:12px!important;font-weight:700!important;color:var(--n19-text-2)!important;border-color:var(--n19-yellow-border)!important}
 :where(:root:not([data-n19-safe])) .s-sidebarwidget__yellow .s-sidebarwidget--header,.s-sidebarwidget__yellow:where(:root:not([data-n19-safe])) .s-sidebarwidget--header{padding:12px 15px!important}
 .s-sidebarwidget__yellow .s-sidebarwidget--item{font-size:13px!important}
 .s-sidebarwidget__yellow .s-sidebarwidget--item a{color:var(--n19-link)!important}
-:where(:root:not([data-n19-safe])) .s-sidebarwidget__yellow .s-sidebarwidget--item svg,.s-sidebarwidget__yellow:where(:root:not([data-n19-safe])) .s-sidebarwidget--item svg{display:none!important}
+.s-sidebarwidget__yellow .s-sidebarwidget--item svg{display:none!important}
 #hot-network-questions h4{font-size:18px!important}
-:where(:root:not([data-n19-safe])) #left-sidebar li:has(>#nav-chat),#left-sidebar:where(:root:not([data-n19-safe])) li:has(>#nav-chat),:where(:root:not([data-n19-safe])) #sidebar>div[id^="fragment-container"],#sidebar:where(:root:not([data-n19-safe]))>div[id^="fragment-container"],:where(:root:not([data-n19-safe])) .s-prose .js-copy-button,.s-prose:where(:root:not([data-n19-safe])) .js-copy-button,:where(:root:not([data-n19-safe])) .js-copy-button:has(+pre),.js-copy-button:has(+pre):where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) pre+.js-copy-button{display:none!important}
+#left-sidebar li:has(>#nav-chat),#sidebar>div[id^="fragment-container"],.s-prose .js-copy-button,.js-copy-button:has(+pre),pre+.js-copy-button{display:none!important}
 .js-voting-container :is(.js-vote-up-btn,.js-vote-down-btn){border:0!important;background:transparent!important;box-shadow:none!important;border-radius:0!important;color:var(--n19-group-border)!important}
 :where(:root:not([data-n19-safe])) .js-voting-container :is(.js-vote-up-btn,.js-vote-down-btn) svg,.js-voting-container:where(:root:not([data-n19-safe])) :is(.js-vote-up-btn,.js-vote-down-btn) svg{width:36px!important;height:36px!important}
 .js-voting-container .js-vote-count{font-size:20px!important;color:var(--n19-text-2)!important}

@@ -80,15 +80,15 @@ test('theme stylesheets follow the styling-rule contract', () => {
   }
 });
 
-test('theme layout rules are gated so a theme can step back to colors and fonts', () => {
-  const css = compileTheme('html { --n19-a: 1px; } .card { color: red; display: none; background: url(x.png); background-color: blue } html[data-x] .bar { margin: 0 } [data-y] { width: 1px }');
+test('theme geometry is gated so a theme can step back to its colors, fonts and hidden features', () => {
+  const css = compileTheme('html { --n19-a: 1px; } .card { color: red; display: none; background: url(x.png); width: 2px; background-color: blue } html[data-x] .bar { margin: 0 } [data-y] { display: flex }');
   assert.equal(css, [
     'html{--n19-a:1px}',
-    '.card{color:red}',
-    ':where(:root:not([data-n19-safe])) .card,.card:where(:root:not([data-n19-safe])){display:none;background:url(x.png)}',
+    '.card{color:red;display:none;background:url(x.png)}',
+    ':where(:root:not([data-n19-safe])) .card,.card:where(:root:not([data-n19-safe])){width:2px}',
     '.card{background-color:blue}',
     'html[data-x]:where(:root:not([data-n19-safe])) .bar{margin:0}',
-    ':where(:root:not([data-n19-safe])) [data-y],[data-y]:where(:root:not([data-n19-safe])){width:1px}',
+    ':where(:root:not([data-n19-safe])) [data-y],[data-y]:where(:root:not([data-n19-safe])){display:flex}',
     '',
   ].join('\n'));
   assert.equal(compileTheme('html[data-g] { & a { color: red; order: 1 } @media (min-width: 9px) { & b { top: 0 } } } ::selection { width: 0 }'), [

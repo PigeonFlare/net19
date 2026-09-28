@@ -21,7 +21,7 @@ h2,h3,[class*="text-headline"],[class*="text-title"]{font-weight:400!important;l
 .mntl-header .mntl-utility-nav__signin>a{text-decoration:none!important}
 .mntl-header .mntl-utility-nav__signin>a *{color:#fff!important;fill:#fff!important}
 .mntl-utility-nav__magazine a,.header .mntl-header-nav__subscribe-link{color:var(--n19-orange)!important;letter-spacing:0!important}
-:where(:root:not([data-n19-safe])) .mm-myrecipes-app-promo-banner,.mm-myrecipes-app-promo-banner:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .mntl-message-banner:has(a[href*="myrecipes"i]),.mntl-message-banner:has(a[href*="myrecipes"i]):where(:root:not([data-n19-safe])){display:none!important}
+.mm-myrecipes-app-promo-banner,.mntl-message-banner:has(a[href*="myrecipes"i]){display:none!important}
 body{color:var(--n19-text)!important}
 .card__title-text,.card__title{font-weight:400!important;letter-spacing:0!important;color:var(--n19-title)!important}
 .card,.card__content,.mntl-card,.card__media,.card__img{border-radius:0!important}

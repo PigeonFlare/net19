@@ -82,6 +82,8 @@ globalThis.net19Theme = {
     .expanded-composer-ask-pill, .expanded-composer-ask-pill--ai, [class*="ask-tab"], #reddit-trending-searches-partial-container, #reddit-suggested-search-queries-container,
     .search-answers-carousel, [class*="answers-carousel"] { display: none !important; }
     rpl-tooltip:has(.expanded-composer-ask-pill) { display: none !important; }
+      :is(button, a, [role="button"]):is([aria-label="Ask" i], [aria-label*="Reddit Answers" i], [aria-label*="Ask Reddit Answers" i], [data-testid*="answers" i], [data-testid*="ask-button" i], [class*="ask-button"], [class*="answers-button"]),
+    [slot*="answers" i], [class*="ask-pill"], reddit-answers-entry-point, answers-entry-point { display: none !important; }
   `;
 
   const SORT = `
@@ -120,7 +122,7 @@ globalThis.net19Theme = {
   const make = (tag, attrs = {}, ...kids) => { const el = document.createElement(tag); for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v); el.append(...kids); return el; };
   const currentFeed = () => {
     const path = location.pathname;
-    if (path === '/' || path === '') return ['home', 'Home'];
+    if (path === '/' || path === '') return ['popular', 'Popular'];
     if (/^\/r\/popular\/?/i.test(path)) return ['popular', 'Popular'];
     if (/^\/r\/all\/?/i.test(path)) return ['all', 'All'];
     const sub = path.match(/^\/r\/([^/]+)/);
@@ -188,22 +190,26 @@ globalThis.net19Theme = {
     if (!/^\/(?:r\/popular\/?)?$/i.test(location.pathname)) return;
     feed.before(make('div', { 'data-n19-heading': '' }, 'Popular posts'));
   };
-  const overlay = () => {
-    const post = document.querySelector('main#main-content > shreddit-post[view-context="CommentsPage"]');
-    const grid = document.querySelector('.grid-container > #subgrid-container');
-    const bar = grid?.querySelector(':scope > [data-n19-overlay-bar]');
-    if (!post || !grid) { bar?.remove(); return; }
-    const id = post.getAttribute('id');
-    if (bar?.dataset.n19Post === id) return;
-    bar?.remove();
-    const sub = post.getAttribute('subreddit-prefixed-name') || '';
-    const score = +post.getAttribute('score');
-    const title = post.getAttribute('post-title') || post.querySelector('h1[slot="title"]')?.textContent.trim() || '';
-    const node = make('div', { 'data-n19-overlay-bar': '', 'data-n19-post': id },
-      make('span', { 'data-n19-overlay-score': '' }, Number.isFinite(score) ? pretty(score) : ''),
-      make('span', { 'data-n19-overlay-title': '' }, title),
-      make('a', { href: sub ? `/${sub}/` : '/', 'aria-label': 'Close' }, svgIcon(ICONS.close, 16), make('span', {}, 'Close')));
-    grid.prepend(node);
+  const ASSETS = 'https://www.redditstatic.com/desktop2x/img/id-cards/';
+  const idCard = () => {
+    const side = document.querySelector('#right-sidebar-contents');
+    const front = /^\/(?:r\/popular\/?)?(?:best|hot|new|top|rising)?\/?$/i.test(location.pathname);
+    const card = side?.querySelector(':scope > [data-n19-idcard]');
+    if (!side || !front) { card?.remove(); side?.querySelector(':scope > [data-n19-premium]')?.remove(); return; }
+    if (card) return;
+    const box = make('div', { 'data-n19-idcard': '' },
+      make('div', { 'data-n19-idcard-banner': '' }),
+      make('div', { 'data-n19-idcard-head': '' }, make('img', { src: ASSETS + 'snoo-home@2x.png', alt: '' }), make('span', {}, 'r/popular')),
+      make('p', {}, 'The best posts on Reddit for you, pulled from the most active communities on Reddit. Check here to see the most shared, upvoted, and commented content on the internet.'),
+      make('a', { href: '/submit', 'data-n19-idcard-button': '' }, 'Create Post'));
+    const premium = make('a', { href: '/premium/', 'data-n19-premium': '' },
+      make('span', { 'data-n19-premium-text': '' }, make('b', {}, 'Reddit Premium'), make('span', {}, 'The best Reddit experience, with monthly Coins')),
+      make('span', { 'data-n19-premium-button': '' }, 'Try Now'));
+    side.prepend(box, premium);
+  };
+  const trendingTitle = () => {
+    const title = document.querySelector('#right-sidebar-container aside.right-rail-popular-communities h2 .i18n-translatable-text') || document.querySelector('#right-sidebar-container aside.right-rail-popular-communities h2');
+    if (title && !title.children.length && /popular communities/i.test(title.textContent)) title.textContent = 'Trending Communities';
   };
   const footer = () => {
     const last = document.querySelector('#right-sidebar-container .legal-links li:last-child');
@@ -234,6 +240,14 @@ globalThis.net19Theme = {
   };
   const styled = new WeakSet();
   const add = (root, css) => { if (!root || styled.has(root)) return; styled.add(root); const node = document.createElement('style'); node.textContent = css; root.append(node); };
+  let retry = 0, retries = 0;
+  const style = (host, css) => {
+    if (!host) return;
+    if (host.shadowRoot) { add(host.shadowRoot, css); return; }
+    if (retry || retries > 120) return;
+    retries++;
+    retry = setTimeout(() => { retry = 0; later(); }, 500);
+  };
   const deep = (root, css) => { for (const host of root.querySelectorAll('*')) if (host.shadowRoot) { add(host.shadowRoot, css); deep(host.shadowRoot, css); } };
 
   const UNITS = { s: 'second', sec: 'second', m: 'minute', min: 'minute', h: 'hour', hr: 'hour', d: 'day', day: 'day', w: 'week', wk: 'week', mo: 'month', y: 'year', yr: 'year' };
@@ -249,7 +263,7 @@ globalThis.net19Theme = {
 
   const scan = () => {
     for (const post of document.querySelectorAll('shreddit-post, shreddit-ad-post')) {
-      if (post.shadowRoot) { add(post.shadowRoot, POST + (post.getAttribute('view-context') === 'CommentsPage' ? PDP : '')); }
+      style(post, POST + (post.getAttribute('view-context') === 'CommentsPage' ? PDP : ''));
       const author = post.getAttribute('author');
       const bar = post.querySelector(':scope > [slot="credit-bar"] [id^="feed-post-credit-bar"]');
       const community = bar?.querySelector('a[data-testid="subreddit-name"]');
@@ -266,18 +280,20 @@ globalThis.net19Theme = {
           time.before(posted);
         }
       }
+      const byline = bar?.querySelector(':scope > [slot="authorName"]');
+      if (byline && !bar.querySelector('[data-n19-posted]')) mark(bar, 'data-n19-posted', 'Posted by', s => byline.before(s));
       const pdp = post.querySelector(':scope > #pdp-credit-bar [slot="authorName"]');
       if (pdp && !pdp.querySelector('[data-n19-posted]')) mark(pdp, 'data-n19-posted', 'Posted by u/', s => pdp.prepend(s));
       const comments = post.shadowRoot?.querySelector('[data-post-click-location="comments-button"] .rpl-cab--content, [data-action-bar-action="comments"] .rpl-cab--content');
       if (comments && !comments.querySelector('[data-n19-label]')) mark(comments, 'data-n19-label', ' Comments', s => comments.append(s));
     }
-    for (const row of document.querySelectorAll('shreddit-comment-action-row')) add(row.shadowRoot, COMMENT + (row.closest('shreddit-comment') ? TREE_VOTES : ''));
-    for (const award of document.querySelectorAll('award-button')) add(award.shadowRoot, AWARD);
-    for (const join of document.querySelectorAll('shreddit-join-button')) add(join.shadowRoot, JOIN);
-    for (const holder of document.querySelectorAll('shreddit-subreddit-header-buttons')) for (const join of holder.shadowRoot?.querySelectorAll('shreddit-join-button') || []) add(join.shadowRoot, JOIN);
-    for (const card of document.querySelectorAll('shreddit-subreddit-header')) add(card.shadowRoot, COMMUNITY);
-    for (const follow of document.querySelectorAll('follow-button')) add(follow.shadowRoot, FOLLOW);
-    for (const box of document.querySelectorAll('comment-body-header faceplate-textarea-input, shreddit-composer faceplate-textarea-input')) add(box.shadowRoot, FIELD);
+    for (const row of document.querySelectorAll('shreddit-comment-action-row')) style(row, COMMENT + (row.closest('shreddit-comment') ? TREE_VOTES : ''));
+    for (const award of document.querySelectorAll('award-button')) style(award, AWARD);
+    for (const join of document.querySelectorAll('shreddit-join-button')) style(join, JOIN);
+    for (const holder of document.querySelectorAll('shreddit-subreddit-header-buttons')) for (const join of holder.shadowRoot?.querySelectorAll('shreddit-join-button') || []) style(join, JOIN);
+    for (const card of document.querySelectorAll('shreddit-subreddit-header')) style(card, COMMUNITY);
+    for (const follow of document.querySelectorAll('follow-button')) style(follow, FOLLOW);
+    for (const box of document.querySelectorAll('comment-body-header faceplate-textarea-input, shreddit-composer faceplate-textarea-input')) style(box, FIELD);
     for (const comment of document.querySelectorAll('shreddit-comment[score]')) {
       const meta = comment.querySelector(':scope > details > summary [slot="commentMeta"] .author-name-meta');
       const trigger = meta?.closest('span.author-hovercard-trigger');
@@ -287,24 +303,24 @@ globalThis.net19Theme = {
       }
     }
     for (const search of document.querySelectorAll('reddit-search-large, faceplate-search-input, pdp-comment-search-input')) {
-      if (search.shadowRoot) { add(search.shadowRoot, SEARCH + FIELD); deep(search.shadowRoot, SEARCH + FIELD); }
+      style(search, SEARCH + FIELD); if (search.shadowRoot) deep(search.shadowRoot, SEARCH + FIELD);
     }
     const about = document.querySelector('#right-sidebar-contents aside.subreddit-right-rail-community-info > div > shreddit-subreddit-header');
-    if (about && !about.parentElement.querySelector(':scope > [data-n19-strip]')) { const strip = document.createElement('div'); strip.setAttribute('data-n19-strip', ''); strip.textContent = 'About Community'; about.before(strip); }
+    if (about && !about.parentElement.querySelector(':scope > [data-n19-strip]')) { const strip = document.createElement('div'); strip.setAttribute('data-n19-strip', ''); strip.textContent = 'Community Details'; about.before(strip); }
     for (const box of document.querySelectorAll('comment-body-header faceplate-textarea-input[placeholder="Join the conversation"]')) box.setAttribute('placeholder', 'What are your thoughts?');
-    for (const sort of document.querySelectorAll('shreddit-sort-dropdown')) add(sort.shadowRoot, SORT);
+    for (const sort of document.querySelectorAll('shreddit-sort-dropdown')) style(sort, SORT);
     for (const auth of document.querySelectorAll('auth-flow-modal')) {
-      add(auth.shadowRoot, AUTH);
-      for (const field of auth.querySelectorAll('faceplate-text-input')) add(field.shadowRoot, FIELD);
+      style(auth, AUTH);
+      for (const field of auth.querySelectorAll('faceplate-text-input')) style(field, FIELD);
     }
-    header(); sortBar(); heading(); overlay(); footer();
+    header(); sortBar(); heading(); idCard(); trendingTitle(); footer();
     times(document);
   };
   let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; scan(); }); };
+  function later() { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; scan(); }); }
   const start = () => {
     scan();
-    new MutationObserver(later).observe(document.body, { childList: true, subtree: true });
+    new MutationObserver(() => { retries = 0; later(); }).observe(document.body, { childList: true, subtree: true });
     setInterval(() => times(document), 30000);
   };
   loadFonts();

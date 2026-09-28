@@ -5,9 +5,9 @@ button[data-testid="find-food-button"]{background:var(--n19-green)!important;col
 button[data-testid="find-food-button"]:hover{background:var(--n19-green-hover)!important}
 [data-testid="header-v2-wrapper"] a[href*="auth.uber.com"]{box-shadow:inset 0 0 0 1px var(--n19-outline)!important}
 div:has(>input[data-testid="location-typeahead-input"]),div:has(>div>input[data-testid="location-typeahead-input"]){border-radius:0!important}
-:where(:root:not([data-n19-safe])) main>div:has(h1):has(input[id^="location-typeahead-home"]){background-image:linear-gradient(transparent, transparent)!important}
-:where(:root:not([data-n19-safe])) body:has(main input[id^="location-typeahead-home"]) [data-testid="header-v2-wrapper"]{background-image:linear-gradient(transparent, transparent)!important}
-:where(:root:not([data-n19-safe])) div:has(>a[href^="/uber-one"]:only-child),:where(:root:not([data-n19-safe])) a[href^="/uber-one"]{display:none!important}
+main>div:has(h1):has(input[id^="location-typeahead-home"]){background-image:linear-gradient(transparent, transparent)!important}
+body:has(main input[id^="location-typeahead-home"]) [data-testid="header-v2-wrapper"]{background-image:linear-gradient(transparent, transparent)!important}
+div:has(>a[href^="/uber-one"]:only-child),a[href^="/uber-one"]{display:none!important}
 [data-testid="header-v2-wrapper"] :is(a,button,[role="radiogroup"],[role="radio"],[role="tab"]):not(:has(img)){border-radius:0!important}
 [data-n19-find]{background:var(--n19-green)!important;color:#fff!important;border-radius:0!important}
 [data-n19-find]:hover{background:var(--n19-green-hover)!important}

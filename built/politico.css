@@ -11,13 +11,13 @@ header#js-top-header .actions-lineup__item>a,header#js-top-header .actions-lineu
 .homepageNav :is(.swiper-button-next,.swiper-button-prev,[class*="arrow"]){color:#fff!important;background:var(--n19-bar)!important}
 .content-heading{border-color:rgba(180, 180, 180, .35)!important}
 .content-heading .heading,.content-heading .heading b{font-family:var(--pol19-sans)!important;font-size:12px!important;letter-spacing:.1rem!important;text-transform:uppercase!important;color:var(--n19-text)!important}
-:where(:root:not([data-n19-safe])) .content-heading .bt-icon--circle,.content-heading:where(:root:not([data-n19-safe])) .bt-icon--circle{display:none!important}
+.content-heading .bt-icon--circle{display:none!important}
 .media-item__summary .headline,.media-item__summary .headline a,.summary .headline a{font-family:var(--pol19-sans)!important;font-weight:700!important;color:var(--n19-text)!important;letter-spacing:-.01rem!important}
 .media-item__summary .headline a:hover{color:#0e9af3!important}
 .media-item__summary .category,.media-item__summary .category a,.summary-header .category a{color:var(--n19-red)!important;font-family:var(--pol19-sans)!important;font-weight:700!important;font-size:10px!important;letter-spacing:.1rem!important;text-transform:uppercase!important}
 .media-item__summary .dek,.media-item__summary .dek p,.media-item__summary>p{font-family:var(--pol19-serif)!important;color:var(--n19-sub)!important}
 .media-item__summary .meta,.media-item__summary .meta *,.media-item__summary .authors{font-family:var(--pol19-sans)!important;font-size:10px!important;letter-spacing:.15rem!important;text-transform:uppercase!important;color:var(--n19-meta)!important}
-:where(:root:not([data-n19-safe])) .media-item .live-flag,.media-item:where(:root:not([data-n19-safe])) .live-flag,:where(:root:not([data-n19-safe])) .pro-promo,.pro-promo:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [class*="pro-upsell"],[class*="pro-upsell"]:where(:root:not([data-n19-safe])){display:none!important}
+.media-item .live-flag,.pro-promo,[class*="pro-upsell"]{display:none!important}
 header.sticky.top-0{border-bottom:1px solid var(--n19-rule)!important}
 header.sticky.top-0 a[aria-label="Politico home"] svg{color:var(--n19-red)!important;fill:var(--n19-red)!important}
 [data-testid="pro-switcher-label"]{font-family:var(--pol19-sans)!important;font-weight:700!important;font-size:12px!important;letter-spacing:.15rem!important}
@@ -31,5 +31,5 @@ p[data-testid="plain-text-block"]{font-family:var(--pol19-serif)!important;font-
 p[data-testid="plain-text-block"] a{color:var(--n19-link)!important;text-decoration:none!important}
 p[data-testid="plain-text-block"] a:hover{text-decoration:underline!important}
 [data-testid="site-caption"]{font-family:var(--pol19-sans)!important;color:var(--n19-sub)!important}
-:where(:root:not([data-n19-safe])) [data-testid="google-preferred-source-button"],[data-testid="google-preferred-source-button"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-testid*="audio-player"],[data-testid*="audio-player"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-testid*="ai-summary"],[data-testid*="ai-summary"]:where(:root:not([data-n19-safe])){display:none!important}
+[data-testid="google-preferred-source-button"],[data-testid*="audio-player"],[data-testid*="ai-summary"]{display:none!important}
 [data-testid*="share"] :is(a,button){border-radius:0!important}

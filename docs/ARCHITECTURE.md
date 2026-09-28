@@ -88,16 +88,11 @@ The looks follow the Web Design Museum's captures of each site (2019 where one e
 
 Sites change their markup without notice, so every theme is built to fail soft.
 
-**Two layers.** `npm run build` compiles each `themes/<id>.css` into `built/<id>.css`. Declarations that can break a page when they land on the wrong element are gated behind `html:not([data-n19-safe])`:
-
-- layout and visibility: `display`, `position`, sizes, margins, padding, flex and grid, overflow, transforms, `opacity`, `content`, masks;
-- pictures: anything with `url()`, and background or border images.
-
-Colors, fonts, borders, shadows and `--n19-*` tokens are never gated. The gate adds no specificity (`:where`), keeps every declaration in source order, and flattens nesting with `:is()`, so a page renders exactly as the source CSS would. With `data-n19-safe` set, the site keeps its current layout and logo in 2019 colors and fonts, in both light and dark.
+**Two layers.** `npm run build` compiles each `themes/<id>.css` into `built/<id>.css`. Geometry declarations, the ones that break a page when they land on the wrong element, are gated behind `html:not([data-n19-safe])`: `display` (except `none`), `position`, sizes, margins, padding, flex and grid, overflow, transforms, `z-index`. Everything else always applies: colors, fonts, borders, shadows, pictures, `--n19-*` tokens, and the rules that hide post-2019 features. The gate adds no specificity (`:where`), keeps every declaration in source order, and flattens nesting with `:is()`, so a page renders exactly as the source CSS would. With `data-n19-safe` set, the site keeps its current layout in 2019 colors and fonts, in both light and dark, with post-2019 features still removed.
 
 **Checking the fit.** `fit.js` runs once a page has settled (2.5 s after load, and after each in-app navigation). Within one task, it measures the page with and without the gated layer, then restores it, so nothing is painted in between. Scroll positions are restored too. It counts visible links, buttons, fields, headings, and images and video at least 32 px wide, overall and on screen. The theme no longer fits when any of these hold:
 
-- the full theme hides more than 40% of what the safe layer shows (a theme can lower this with `fitFloor`, a number or a function of the page, when it deliberately hides a large post-2019 section, as Bing's home page does with its news feed);
+- the full theme's geometry hides or collapses more than 40% of what the safe layer shows (a theme can change this with `fitFloor`, a number or a function of the page);
 - it leaves less than a quarter as much on the first screen;
 - it pushes the page more than a quarter wider than the window.
 

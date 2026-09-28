@@ -16,18 +16,15 @@ body h4{font-size:18px!important;line-height:1.3!important}
 body h5{font-size:16px!important;line-height:1.3!important}
 body a{color:var(--n19-link)}
 body p{font-size:16px!important;line-height:1.5!important}
-body main#main,body main#main>section{background-color:var(--n19-page)!important}
-:where(:root:not([data-n19-safe])) body main#main,:where(:root:not([data-n19-safe])) body main#main>section{background-image:none!important}
-:where(:root:not([data-n19-safe])) body main#main section :is(.bg-square,.bg-right-square,.shape,.circle)::before,:where(:root:not([data-n19-safe])) body main#main section :is(.bg-square,.bg-right-square)::after{display:none!important}
+body main#main,body main#main>section{background-color:var(--n19-page)!important;background-image:none!important}
+body main#main section :is(.bg-square,.bg-right-square,.shape,.circle)::before,body main#main section :is(.bg-square,.bg-right-square)::after{display:none!important}
 header{background:var(--n19-panel)!important;border-top:5px solid var(--n19-navy)!important;box-shadow:0 1px 4px rgba(0, 0, 0, .18)!important}
 header nav#header{border-radius:0!important;box-shadow:none!important;background:transparent!important}
 :where(:root:not([data-n19-safe])) header nav#header{margin:0 auto!important}
 header nav#header .navbar-nav .nav-link{color:var(--n19-text)!important;font-weight:400!important;font-size:16px!important}
 header nav#header .navbar-nav .nav-link.active,header nav#header .navbar-nav .nav-link:hover{color:var(--n19-navy)!important;text-decoration:none!important}
-:where(:root:not([data-n19-safe])) header nav#header .navbar-nav .nav-link.active::after,:where(:root:not([data-n19-safe])) header nav#header .navbar-nav .nav-link::after{display:none!important}
-body .btn-one,body .btn-two,body .btn-three,body .btn-four,body a.btn-one,body a.btn-two{background:var(--n19-button)!important}
-:where(:root:not([data-n19-safe])) body .btn-one,:where(:root:not([data-n19-safe])) body .btn-two,:where(:root:not([data-n19-safe])) body .btn-three,:where(:root:not([data-n19-safe])) body .btn-four,:where(:root:not([data-n19-safe])) body a.btn-one,:where(:root:not([data-n19-safe])) body a.btn-two{background-image:none!important}
-body .btn-one,body .btn-two,body .btn-three,body .btn-four,body a.btn-one,body a.btn-two{color:var(--n19-on-slate)!important;border:1px solid var(--n19-panel)!important;box-shadow:0 0 0 3px var(--n19-button)!important;border-radius:4px!important;font-family:"n19 Lato", Lato, "Helvetica Neue", Arial, sans-serif!important;font-weight:400!important;text-transform:uppercase!important;letter-spacing:1px!important;font-size:14px!important;line-height:20px!important}
+header nav#header .navbar-nav .nav-link.active::after,header nav#header .navbar-nav .nav-link::after{display:none!important}
+body .btn-one,body .btn-two,body .btn-three,body .btn-four,body a.btn-one,body a.btn-two{background:var(--n19-button)!important;background-image:none!important;color:var(--n19-on-slate)!important;border:1px solid var(--n19-panel)!important;box-shadow:0 0 0 3px var(--n19-button)!important;border-radius:4px!important;font-family:"n19 Lato", Lato, "Helvetica Neue", Arial, sans-serif!important;font-weight:400!important;text-transform:uppercase!important;letter-spacing:1px!important;font-size:14px!important;line-height:20px!important}
 :where(:root:not([data-n19-safe])) body .btn-one,:where(:root:not([data-n19-safe])) body .btn-two,:where(:root:not([data-n19-safe])) body .btn-three,:where(:root:not([data-n19-safe])) body .btn-four,:where(:root:not([data-n19-safe])) body a.btn-one,:where(:root:not([data-n19-safe])) body a.btn-two{padding:9px 20px!important;height:auto!important;min-height:0!important}
 body .btn-one:hover,body .btn-two:hover,body .btn-three:hover,body .btn-four:hover{background:var(--n19-slate-dark)!important;box-shadow:0 0 0 3px var(--n19-slate-dark)!important;color:#fff!important}
 body .btn-four{border-radius:0 4px 4px 0!important;box-shadow:none!important}
@@ -40,15 +37,11 @@ body .meter-pin{box-shadow:0 1px 3px rgba(0, 0, 0, .2)!important;font-family:"n1
 body .item-footer :is(.location,.save),body .item-footer :is(.location,.save) a{color:var(--n19-link)!important;font-size:12px!important}
 .discover.sidebar .searchbar-holder{border-radius:4px!important;border:1px solid #cccccc!important;box-shadow:none!important;background:var(--n19-panel)!important}
 .discover.sidebar .accordion-item{border-radius:0!important;box-shadow:0 1px 4px rgba(0, 0, 0, .15)!important}
-.discover.sidebar .accordion-header button{background:var(--n19-navy)!important}
-:where(:root:not([data-n19-safe])) .discover.sidebar .accordion-header button,.discover.sidebar:where(:root:not([data-n19-safe])) .accordion-header button{background-image:none!important}
-.discover.sidebar .accordion-header button{border-radius:0!important;font-family:"n19 Raleway", Raleway, sans-serif!important;font-weight:500!important}
+.discover.sidebar .accordion-header button{background:var(--n19-navy)!important;background-image:none!important;border-radius:0!important;font-family:"n19 Raleway", Raleway, sans-serif!important;font-weight:500!important}
 .discover.sidebar .accordion-body li a{color:var(--n19-link)!important;font-weight:400!important}
 .discover.sidebar .accordion-body li a:hover{color:#fff!important;background:var(--n19-navy)!important}
 section.support-events{background:var(--n19-page)!important}
-section.support-events .support-events-inner{background:var(--n19-navy)!important}
-:where(:root:not([data-n19-safe])) section.support-events .support-events-inner{background-image:none!important}
-section.support-events .support-events-inner{border-radius:0!important;box-shadow:none!important}
+section.support-events .support-events-inner{background:var(--n19-navy)!important;background-image:none!important;border-radius:0!important;box-shadow:none!important}
 body section.support-events .data-right :is(h1,h2,h3,h4,h5,h6,p,span,a,li,strong,small,div){color:#fff!important}
 body section.support-events .data-right .raised-people h5{color:#fff!important;font-family:"n19 Lato", Lato, sans-serif!important;font-weight:700!important}
 body section.support-events .data-right .btn-two{color:#fff!important}
@@ -59,40 +52,28 @@ section.support-events .camp-area span{background:var(--n19-slate)!important}
 section.support-events .recent-funderD{border-color:rgba(255, 255, 255, .25)!important}
 .donation-contributors-section .tab-list{border-radius:0!important;box-shadow:none!important;border-bottom:1px solid var(--n19-edge)!important;background:transparent!important}
 .logintab_box .tab-list{border-radius:4px!important;box-shadow:none!important;border:1px solid var(--n19-edge)!important}
-.logintab_box .tab-list .tab-item{background:transparent!important}
-:where(:root:not([data-n19-safe])) .logintab_box .tab-list .tab-item,.logintab_box:where(:root:not([data-n19-safe])) .tab-list .tab-item{background-image:none!important}
-.logintab_box .tab-list .tab-item{box-shadow:none!important;border-radius:4px!important}
-.logintab_box .tab-toggle:nth-child(1):checked~.tab-list .tab-item:nth-child(1),.logintab_box .tab-toggle:nth-child(2):checked~.tab-list .tab-item:nth-child(2){background:var(--n19-navy)!important}
-:where(:root:not([data-n19-safe])) .logintab_box .tab-toggle:nth-child(1):checked~.tab-list .tab-item:nth-child(1),.logintab_box:where(:root:not([data-n19-safe])) .tab-toggle:nth-child(1):checked~.tab-list .tab-item:nth-child(1),:where(:root:not([data-n19-safe])) .logintab_box .tab-toggle:nth-child(2):checked~.tab-list .tab-item:nth-child(2),.logintab_box:where(:root:not([data-n19-safe])) .tab-toggle:nth-child(2):checked~.tab-list .tab-item:nth-child(2){background-image:none!important}
+.logintab_box .tab-list .tab-item{background:transparent!important;background-image:none!important;box-shadow:none!important;border-radius:4px!important}
+.logintab_box .tab-toggle:nth-child(1):checked~.tab-list .tab-item:nth-child(1),.logintab_box .tab-toggle:nth-child(2):checked~.tab-list .tab-item:nth-child(2){background:var(--n19-navy)!important;background-image:none!important}
 .logintab_box .tab-toggle:nth-child(1):checked~.tab-list .tab-item:nth-child(1) .tab-trigger,.logintab_box .tab-toggle:nth-child(2):checked~.tab-list .tab-item:nth-child(2) .tab-trigger{color:#fff!important}
 .logintab_box .tab-trigger{font-family:"n19 Raleway", Raleway, sans-serif!important;font-size:20px!important;font-weight:500!important;letter-spacing:0!important;color:var(--n19-text)}
 section.login-page .inner-container-holder{background:var(--n19-panel)!important;border:1px solid var(--n19-edge)!important;border-radius:4px!important;box-shadow:0 1px 4px rgba(0, 0, 0, .15)!important}
 :where(:root:not([data-n19-safe])) section.login-page .inner-container-holder{padding:30px!important}
 section.login-page a.color-primary,.logintab_box a{color:var(--n19-link)!important;font-weight:400!important}
-.faqtab_box .tab-list .tab-item{background:transparent!important}
-:where(:root:not([data-n19-safe])) .faqtab_box .tab-list .tab-item,.faqtab_box:where(:root:not([data-n19-safe])) .tab-list .tab-item{background-image:none!important}
-.faqtab_box .tab-list .tab-item{box-shadow:none!important;border-radius:4px 4px 0 0!important;color:var(--n19-link)!important}
+.faqtab_box .tab-list .tab-item{background:transparent!important;background-image:none!important;box-shadow:none!important;border-radius:4px 4px 0 0!important;color:var(--n19-link)!important}
 .faqtab_box .tab-toggle:nth-child(1):checked~.tab-list .tab-item:nth-child(1),.faqtab_box .tab-toggle:nth-child(2):checked~.tab-list .tab-item:nth-child(2){background:var(--n19-panel)!important;border:1px solid var(--n19-edge)!important;border-bottom-color:var(--n19-panel)!important;color:#555555!important}
 .faqtab_box .tab-toggle:checked~.tab-list .tab-item .tab-trigger,.faqtab_box .tab-trigger{color:inherit!important;font-family:"n19 Lato", Lato, sans-serif!important;font-size:16px!important;font-weight:400!important;letter-spacing:0!important}
 .tab-trigger sup{background:#777777!important;color:#fff!important}
-.donation-contributors-section .tab-trigger{border-radius:4px 4px 0 0!important;background:transparent!important}
-:where(:root:not([data-n19-safe])) .donation-contributors-section .tab-trigger,.donation-contributors-section:where(:root:not([data-n19-safe])) .tab-trigger{background-image:none!important}
-.donation-contributors-section .tab-trigger{color:var(--n19-link)!important;box-shadow:none!important;font-weight:400!important}
+.donation-contributors-section .tab-trigger{border-radius:4px 4px 0 0!important;background:transparent!important;background-image:none!important;color:var(--n19-link)!important;box-shadow:none!important;font-weight:400!important}
 .donation-contributors-section .donation-contri-box{background:var(--n19-panel)!important;border-radius:0!important;box-shadow:0 1px 4px rgba(0, 0, 0, .15)!important}
 .donation-contributor-sidebar{border-radius:0!important;box-shadow:0 1px 4px rgba(0, 0, 0, .15)!important;background:#f5f5f5!important}
 .donation-contributor-sidebar>h3{background:transparent!important;color:var(--n19-text)!important;border-radius:0!important;border-bottom:2px solid var(--n19-text)!important}
 :where(:root:not([data-n19-safe])) .donation-contributor-sidebar>h3,.donation-contributor-sidebar:where(:root:not([data-n19-safe]))>h3{margin:0 20px!important;padding:24px 0 12px!important}
 .donation-contributor-sidebar>h3{text-align:center!important}
 section.create-freefunder-section{background:var(--n19-panel)!important;border-top:5px solid var(--n19-navy)!important}
-section.create-freefunder-section .inner-content,section.create-freefunder-section .inner-content-holder{background:transparent!important}
-:where(:root:not([data-n19-safe])) section.create-freefunder-section .inner-content,:where(:root:not([data-n19-safe])) section.create-freefunder-section .inner-content-holder{background-image:none!important}
-section.create-freefunder-section .inner-content,section.create-freefunder-section .inner-content-holder{box-shadow:none!important;border-radius:0!important}
+section.create-freefunder-section .inner-content,section.create-freefunder-section .inner-content-holder{background:transparent!important;background-image:none!important;box-shadow:none!important;border-radius:0!important}
 section.create-freefunder-section :is(h2,h3,h4,p){color:var(--n19-text)!important;font-family:"n19 Lato", Lato, sans-serif!important;font-size:18px!important;font-weight:400!important}
-footer#footer{background:var(--n19-slate)!important}
-:where(:root:not([data-n19-safe])) footer#footer{background-image:none!important}
-footer#footer{border-top:5px solid var(--n19-navy)!important}
-footer#footer .footer{background:transparent!important}
-:where(:root:not([data-n19-safe])) footer#footer .footer{background-image:none!important}
+footer#footer{background:var(--n19-slate)!important;background-image:none!important;border-top:5px solid var(--n19-navy)!important}
+footer#footer .footer{background:transparent!important;background-image:none!important}
 footer#footer :is(p,a,h1,h2,h3,h4,h5,h6,li,span,label){color:#fff!important}
 footer#footer .f-menu a.nav-link{font-weight:400!important;font-size:16px!important}
 footer#footer :is(h4,h5,h6){font-family:"n19 Raleway", Raleway, Georgia, serif!important;font-weight:400!important}
@@ -105,25 +86,26 @@ footer#footer #newsletter-signup-start-button{text-transform:none!important;lett
 footer#footer .copyright-section,footer#footer .copyright-section a{color:#fff!important}
 body .form-control,body input.form-control,body textarea.form-control,body select.form-select{border-radius:4px!important;border:1px solid #cccccc!important;box-shadow:inset 0 1px 1px rgba(0, 0, 0, .075)!important}
 body :is(.login-tab,.nav-pills,.tab-switch) :is(a,button,label){border-radius:4px!important}
-:where(:root:not([data-n19-safe])) body #section-hero.home-hero-section{background:url("https://www.freefunder.com/images/assets/dot.png") repeat, linear-gradient(rgba(18, 50, 65, .7), rgba(18, 50, 65, .7)), url("https://www.freefunder.com/images/assets/front_banner.jpg") center / cover no-repeat!important;min-height:500px!important}
-:where(:root:not([data-n19-safe])) body #section-hero .hero-img-holder{display:none!important}
+body #section-hero.home-hero-section{background:url("https://www.freefunder.com/images/assets/dot.png") repeat, linear-gradient(rgba(18, 50, 65, .7), rgba(18, 50, 65, .7)), url("https://www.freefunder.com/images/assets/front_banner.jpg") center / cover no-repeat!important}
+:where(:root:not([data-n19-safe])) body #section-hero.home-hero-section{min-height:500px!important}
+body #section-hero .hero-img-holder{display:none!important}
 body #section-hero .hero-content{text-align:left!important;border-left:3px solid var(--n19-slate)!important}
 :where(:root:not([data-n19-safe])) body #section-hero .hero-content{padding-left:20px!important}
 body #section-hero .hero-content h1.title{color:#fff!important;font-family:"n19 Lato", Lato, "Helvetica Neue", Arial, sans-serif!important;font-weight:400!important;font-size:50px!important;line-height:1.2!important}
 body #section-hero .hero-content p{color:#fff!important;font-size:20px!important}
-:where(:root:not([data-n19-safe])) body #section-about .about-img-holder img{content:url("https://www.freefunder.com/images/assets/family_smiles.jpg")!important;width:100%!important;max-width:420px!important;height:auto!important}
+body #section-about .about-img-holder img{content:url("https://www.freefunder.com/images/assets/family_smiles.jpg")!important}
+:where(:root:not([data-n19-safe])) body #section-about .about-img-holder img{width:100%!important;max-width:420px!important;height:auto!important}
 body #section-about .about-img-holder img{box-shadow:none!important;border-radius:0!important}
-:where(:root:not([data-n19-safe])) body #section-about .about-img-holder :is(.shape,.circle,[class*="card"]){display:none!important}
-:where(:root:not([data-n19-safe])) header::before,:where(:root:not([data-n19-safe])) footer#footer .footer::before,:where(:root:not([data-n19-safe])) section.create-freefunder-section .green-card::before,:where(:root:not([data-n19-safe])) section.why-freefunder-section::before,:where(:root:not([data-n19-safe])) section.why-freefunder-section::after,:where(:root:not([data-n19-safe])) .slide-item.bg-circle::after,.slide-item.bg-circle:where(:root:not([data-n19-safe]))::after{display:none!important}
-body .image-holder.founded-tag::after{background:var(--n19-navy)!important}
-:where(:root:not([data-n19-safe])) body .image-holder.founded-tag::after{background-image:none!important}
+body #section-about .about-img-holder :is(.shape,.circle,[class*="card"]){display:none!important}
+header::before,footer#footer .footer::before,section.create-freefunder-section .green-card::before,section.why-freefunder-section::before,section.why-freefunder-section::after,.slide-item.bg-circle::after{display:none!important}
+body .image-holder.founded-tag::after{background:var(--n19-navy)!important;background-image:none!important}
 :where(:root:not([data-n19-safe])) body #section-hero.home-hero-section{display:flex!important;align-items:center!important}
 :where(:root:not([data-n19-safe])) body #section-hero .container{width:100%!important}
 body section.support-events .data-right .meter-pin,body section.support-events .data-right .meter-pin *{color:#333333!important}
 :where(:root:not([data-n19-safe])) body #section-about .about-img-holder{padding-top:40px!important}
-:where(:root:not([data-n19-safe])) #donation-popup,#donation-popup:where(:root:not([data-n19-safe])){display:none!important}
+#donation-popup{display:none!important}
 footer#footer .f_logo img,footer#footer .f-social-media img{filter:brightness(0) invert(1)!important}
-:where(:root:not([data-n19-safe])) section.login-page::before,:where(:root:not([data-n19-safe])) section.login-page::after,:where(:root:not([data-n19-safe])) .bg-big-circle::before,.bg-big-circle:where(:root:not([data-n19-safe]))::before,:where(:root:not([data-n19-safe])) .bg-big-circle::after,.bg-big-circle:where(:root:not([data-n19-safe]))::after{display:none!important}
+section.login-page::before,section.login-page::after,.bg-big-circle::before,.bg-big-circle::after{display:none!important}
 .faqtab_box .tab-list .tab-item,.faqtab_box .tab-trigger,.faqtab_box .tab-list{box-shadow:none!important}
-:where(:root:not([data-n19-safe])) .faqtab_box .tab-list .tab-item::before,.faqtab_box:where(:root:not([data-n19-safe])) .tab-list .tab-item::before,:where(:root:not([data-n19-safe])) .faqtab_box .tab-list .tab-item::after,.faqtab_box:where(:root:not([data-n19-safe])) .tab-list .tab-item::after,:where(:root:not([data-n19-safe])) .faqtab_box .tab-trigger::before,.faqtab_box:where(:root:not([data-n19-safe])) .tab-trigger::before,:where(:root:not([data-n19-safe])) .faqtab_box .tab-trigger::after,.faqtab_box:where(:root:not([data-n19-safe])) .tab-trigger::after,:where(:root:not([data-n19-safe])) .faqtab_box .tab-list::before,.faqtab_box:where(:root:not([data-n19-safe])) .tab-list::before,:where(:root:not([data-n19-safe])) .faqtab_box .tab-list::after,.faqtab_box:where(:root:not([data-n19-safe])) .tab-list::after{display:none!important}
+.faqtab_box .tab-list .tab-item::before,.faqtab_box .tab-list .tab-item::after,.faqtab_box .tab-trigger::before,.faqtab_box .tab-trigger::after,.faqtab_box .tab-list::before,.faqtab_box .tab-list::after{display:none!important}
 body .donation-contributor-sidebar .contributor-box .contributor-flex .anony{color:#707070!important}

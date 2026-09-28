@@ -14,24 +14,22 @@ main#app>div.MuiBox-root .MuiButton-root{border-radius:2px!important}
 :where(:root:not([data-n19-safe])) main#app>div.MuiBox-root>.MuiContainer-root>.MuiStack-root>div:nth-child(2)>.MuiStack-root{flex:0 0 100%!important;justify-content:center!important;height:32px!important;overflow:hidden!important}
 main#app>div.MuiBox-root>.MuiContainer-root>.MuiStack-root>div:nth-child(2)>.MuiStack-root{border-top:1px solid #333!important}
 :where(:root:not([data-n19-safe])) main#app>div.MuiBox-root>.MuiContainer-root>.MuiStack-root>div:nth-child(2)>.MuiStack-root{align-items:center!important}
-:where(:root:not([data-n19-safe])) main#app>div.MuiBox-root>.MuiContainer-root>.MuiStack-root>div:nth-child(2)>.MuiStack-root hr{display:none!important}
+main#app>div.MuiBox-root>.MuiContainer-root>.MuiStack-root>div:nth-child(2)>.MuiStack-root hr{display:none!important}
 main#app>div.MuiBox-root>.MuiContainer-root>.MuiStack-root>div:nth-child(2)>.MuiStack-root a{font-size:11px!important;letter-spacing:.14em!important}
 :where(:root:not([data-n19-safe])) main#app>div.MuiBox-root>.MuiContainer-root>.MuiStack-root>div:nth-child(2)>.MuiStack-root a{padding:0 14px!important}
 :where(:root:not([data-n19-safe])) main#app>div.MuiBox-root>.MuiContainer-root>.MuiStack-root>div:nth-child(3){position:absolute!important;right:72px!important;top:12px!important}
 main#app>div.MuiBox-root>.MuiContainer-root>.MuiStack-root>div:nth-child(3) .MuiButton-root{background:transparent!important;border:1px solid #555!important;font-size:11px!important}
 :where(:root:not([data-n19-safe])) main#app>div.MuiBox-root>.MuiContainer-root>.MuiStack-root>div:nth-child(3) .MuiButton-root{min-height:0!important;padding:4px 10px!important}
-main#app>section.MuiBox-root{background:#f2f2f2!important}
-:where(:root:not([data-n19-safe])) main#app>section.MuiBox-root{background-image:none!important}
-main#app>section.MuiBox-root{border-bottom:1px solid var(--n19-line)!important}
-:where(:root:not([data-n19-safe])) main#app>section.MuiBox-root::before,:where(:root:not([data-n19-safe])) main#app>section.MuiBox-root::after{display:none!important}
+main#app>section.MuiBox-root{background:#f2f2f2!important;background-image:none!important;border-bottom:1px solid var(--n19-line)!important}
+main#app>section.MuiBox-root::before,main#app>section.MuiBox-root::after{display:none!important}
 :where(:root:not([data-n19-safe])) main#app>section.MuiBox-root>.MuiContainer-root{padding-top:10px!important;padding-bottom:10px!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:24px!important}
-:where(:root:not([data-n19-safe])) main#app>section.MuiBox-root>.MuiContainer-root>h2{display:none!important}
+main#app>section.MuiBox-root>.MuiContainer-root>h2{display:none!important}
 :where(:root:not([data-n19-safe])) main#app>section.MuiBox-root form{margin:0!important;width:360px!important}
 main#app>section.MuiBox-root .MuiInputBase-root{border-radius:0!important}
 :where(:root:not([data-n19-safe])) main#app>section.MuiBox-root .MuiInputBase-root{height:32px!important}
 main#app>section.MuiBox-root .MuiInputBase-root{border:1px solid #ccc!important}
 :where(:root:not([data-n19-safe])) main#app>section.MuiBox-root>.MuiContainer-root>div{margin:0!important}
-:where(:root:not([data-n19-safe])) main#app>section.MuiBox-root>.MuiContainer-root>div img{display:none!important}
+main#app>section.MuiBox-root>.MuiContainer-root>div img{display:none!important}
 main#app>section.MuiBox-root>.MuiContainer-root>div a{color:#0b6db7!important;font-size:13px!important;text-transform:none!important;letter-spacing:0!important;font-weight:400!important}
 main#app aside.MuiBox-root{border-radius:0!important;border:1px solid var(--n19-line)!important;border-top:3px solid var(--n19-red)!important;background:var(--n19-box)!important}
 main#app aside.MuiBox-root>div:first-child{background:var(--n19-box)!important;border-radius:0!important;border-bottom:1px solid var(--n19-line)!important;text-align:center!important}
@@ -40,7 +38,7 @@ main#app aside.MuiBox-root>div{border-radius:0!important}
 main#app article.MuiBox-root,main#app article img{border-radius:0!important}
 main#app h2.MuiTypography-h5,main#app header.MuiBox-root h3{text-transform:uppercase!important;letter-spacing:.06em!important}
 [class*="account-button__SignInLink"],[class*="account-button__SignInLink"] span{border-radius:0!important}
-:where(:root:not([data-n19-safe])) [class*="header__RootNavListItem"]:has(>a[href*="us-news-decision-points"]),[class*="header__RootNavListItem"]:has(>a[href*="us-news-decision-points"]):where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [class*="header__RootNavListItem"]:has(>a[href*="/news/live-events"]),[class*="header__RootNavListItem"]:has(>a[href*="/news/live-events"]):where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) li:has(>a[class*="item__ItemStyled"][href*="us-news-decision-points"]){display:none!important}
+[class*="header__RootNavListItem"]:has(>a[href*="us-news-decision-points"]),[class*="header__RootNavListItem"]:has(>a[href*="/news/live-events"]),li:has(>a[class*="item__ItemStyled"][href*="us-news-decision-points"]){display:none!important}
 main#app [class*="Card"],main#app [class*="Box-w0dun1"][class*="rounded"i],main#app img{border-radius:0!important}
 :where(:root:not([data-n19-safe])) main#app>section.MuiBox-root form .MuiInputBase-root{padding-right:0!important}
 :where(:root:not([data-n19-safe])) main#app>section.MuiBox-root form>button{top:0!important;right:0!important;bottom:auto!important}

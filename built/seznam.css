@@ -12,7 +12,7 @@ input.search-form__input:focus{border-color:var(--n19-focus)!important;box-shado
 nav a.atm-link:has(.mol-trending-topics-popover-opener__image){border-color:transparent!important;background:transparent!important;box-shadow:none!important}
 :where(:root:not([data-n19-safe])) nav a.atm-link:has(.mol-trending-topics-popover-opener__image){padding-left:0!important;padding-right:4px!important}
 nav a.atm-link:has(.mol-trending-topics-popover-opener__image):hover span{text-decoration:underline!important}
-:where(:root:not([data-n19-safe])) nav a.atm-link .w-6.h-6:has(>.mol-trending-topics-popover-opener__image){display:none!important}
+nav a.atm-link .w-6.h-6:has(>.mol-trending-topics-popover-opener__image){display:none!important}
 .gadget-container a.atm-link--styled.color-primary-1,.gadget-container a.atm-link.color-primary-1{color:var(--n19-red)!important}
 .gadget-container a.atm-link--show-visited:visited{color:var(--n19-visited)!important}
 h2.mol-gadget-header-title a,h2.mol-gadget-header-title .style-tags--gadget-title{color:var(--n19-channel)!important}

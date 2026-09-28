@@ -23,7 +23,8 @@ main a.more:not(.button),main .ribbon-link{color:var(--n19-tile-link)!important}
 .tile-ctas .button,.section-hero .button,.hero .cta-links .button{color:var(--n19-tile-link)!important;font-size:21px!important;line-height:1.38!important;font-weight:400!important;box-shadow:none!important}
 .theme-dark .tile-ctas .button,.theme-dark.tile-ctas .button{color:var(--n19-link-on-dark)!important}
 .tile-ctas .button:hover{text-decoration:underline!important}
-:where(:root:not([data-n19-safe])) .tile-ctas .button::after,.tile-ctas:where(:root:not([data-n19-safe])) .button::after{content:"";display:inline-block;width:.34em;height:.34em;margin:0 0 .1em .3em}
+.tile-ctas .button::after{content:""}
+:where(:root:not([data-n19-safe])) .tile-ctas .button::after,.tile-ctas:where(:root:not([data-n19-safe])) .button::after{display:inline-block;width:.34em;height:.34em;margin:0 0 .1em .3em}
 .tile-ctas .button::after{vertical-align:middle;border:solid currentColor;border-width:.08em .08em 0 0}
 :where(:root:not([data-n19-safe])) .tile-ctas .button::after,.tile-ctas:where(:root:not([data-n19-safe])) .button::after{transform:rotate(45deg)}
 :where(:root:not([data-n19-safe])) .tile-ctas,.tile-ctas:where(:root:not([data-n19-safe])){gap:0 32px!important}
@@ -32,4 +33,4 @@ main .button-secondary:not(.tile-ctas .button){border-radius:4px!important}
 #globalfooter,.globalfooter,footer#ac-globalfooter{background:var(--n19-foot)!important}
 :is(#globalfooter,.globalfooter) :is(p,li,span,a,h3,button,.gf-sosumi,.footnotes){color:var(--n19-muted)!important}
 :is(#globalfooter,.globalfooter) :is(.globalfooter-divider,.ac-gf-footer-legal){border-color:var(--n19-foot-rule)!important}
-html:where(:root:not([data-n19-safe])) #globalnav .globalnav-item:has(>a[href*="/apple-vision-pro/"]),html:where(:root:not([data-n19-safe])) #globalnav .globalnav-item:has(>div>a[href*="/apple-vision-pro/"]),:where(:root:not([data-n19-safe])) .chapternav-item:has(>a[href*="/apple-vision-pro/"]),.chapternav-item:has(>a[href*="/apple-vision-pro/"]):where(:root:not([data-n19-safe])){display:none!important}
+html #globalnav .globalnav-item:has(>a[href*="/apple-vision-pro/"]),html #globalnav .globalnav-item:has(>div>a[href*="/apple-vision-pro/"]),.chapternav-item:has(>a[href*="/apple-vision-pro/"]){display:none!important}

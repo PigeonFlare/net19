@@ -6,7 +6,8 @@ html[data-net19-mode="dark"]{--n19-navy:#7fb6cf;--n19-orange:#ff702b;--n19-orang
 body,body :is(p,a,span:not([class*="icon"]):not([class*="fa-"]),li,label,input,textarea,select,button,td,th,div:not([class*="icon"]),.btn){font-family:"n19 Open Sans", "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif!important}
 body :is(h1,h2,h3,h4,h5,.headline-font,.headline-font *:not(i):not([class*="fa-"]),#campaign-title,.stat){font-family:"n19 Roboto", Roboto, Arial, "Helvetica Neue", Helvetica, sans-serif!important}
 body.body-fluid{color:var(--n19-text)!important}
-:where(:root:not([data-n19-safe])) #navbar .brand img,#navbar:where(:root:not([data-n19-safe])) .brand img,:where(:root:not([data-n19-safe])) #navbar a.brand>img,#navbar:where(:root:not([data-n19-safe])) a.brand>img{content:url("https://fundrazr.com/img/wordmarks/fr-wordmark_234x52.png")!important;width:180px!important;height:auto!important;max-height:none!important}
+#navbar .brand img,#navbar a.brand>img{content:url("https://fundrazr.com/img/wordmarks/fr-wordmark_234x52.png")!important}
+:where(:root:not([data-n19-safe])) #navbar .brand img,#navbar:where(:root:not([data-n19-safe])) .brand img,:where(:root:not([data-n19-safe])) #navbar a.brand>img,#navbar:where(:root:not([data-n19-safe])) a.brand>img{width:180px!important;height:auto!important;max-height:none!important}
 #navbar .brand img,#navbar a.brand>img{object-fit:contain!important}
 #navbar #top-nav-links>li>a{color:var(--n19-navy)!important;font-weight:400!important;font-size:15px!important}
 #navbar #top-nav-links>li>a:hover{color:var(--n19-link)!important;text-decoration:none!important}
@@ -23,7 +24,7 @@ body.body-fluid .force-rounded-input input,body.body-fluid .force-rounded-input 
 #discover-header .btn-primary>div{font-size:20px!important;line-height:1.15!important}
 #discover-header .btn-primary>div>span{font-size:12px!important}
 :where(:root:not([data-n19-safe])) .row-fluid:has(>#campaign-nav-col+#campaign-grid-col),.row-fluid:has(>#campaign-nav-col+#campaign-grid-col):where(:root:not([data-n19-safe])){display:flex!important;flex-direction:row-reverse!important;justify-content:space-between!important}
-:where(:root:not([data-n19-safe])) .row-fluid:has(>#campaign-nav-col+#campaign-grid-col)::before,.row-fluid:has(>#campaign-nav-col+#campaign-grid-col):where(:root:not([data-n19-safe]))::before,:where(:root:not([data-n19-safe])) .row-fluid:has(>#campaign-nav-col+#campaign-grid-col)::after,.row-fluid:has(>#campaign-nav-col+#campaign-grid-col):where(:root:not([data-n19-safe]))::after{display:none!important}
+.row-fluid:has(>#campaign-nav-col+#campaign-grid-col)::before,.row-fluid:has(>#campaign-nav-col+#campaign-grid-col)::after{display:none!important}
 :where(:root:not([data-n19-safe])) #campaign-nav-col,#campaign-nav-col:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #campaign-nav-col+#campaign-grid-col,#campaign-nav-col:where(:root:not([data-n19-safe]))+#campaign-grid-col{float:none!important;margin-left:0!important}
 .discover-nav>li>a{color:var(--n19-link)!important;background:transparent!important;border-bottom:1px solid #eeeeee!important;font-size:14px!important}
 :where(:root:not([data-n19-safe])) .discover-nav>li>a,.discover-nav:where(:root:not([data-n19-safe]))>li>a{padding-top:6px!important;padding-bottom:6px!important}
@@ -58,16 +59,16 @@ body.wp-singular,body.page,body.home,body.single,body.blog,body.archive{--nectar
 body:is(.wp-singular,.page,.home,.single,.blog,.archive,.search) :is(h1,h2,h3,h4,h5,h6){font-family:"n19 Open Sans", "Open Sans", Arial, sans-serif!important;letter-spacing:0!important}
 body:is(.wp-singular,.page,.home,.single,.blog,.archive,.search) #ajax-content-wrap :is(h1,h2){color:var(--n19-navy);font-weight:400!important}
 body:is(.wp-singular,.page,.home,.single,.blog,.archive,.search) #ajax-content-wrap :is(p,li){font-weight:400!important}
-:where(:root:not([data-n19-safe])) #header-outer #logo img,#header-outer:where(:root:not([data-n19-safe])) #logo img{content:url("https://fundrazr.com/img/wordmarks/fr-wordmark_234x52.png")!important;width:160px!important;height:auto!important}
+#header-outer #logo img{content:url("https://fundrazr.com/img/wordmarks/fr-wordmark_234x52.png")!important}
+:where(:root:not([data-n19-safe])) #header-outer #logo img,#header-outer:where(:root:not([data-n19-safe])) #logo img{width:160px!important;height:auto!important}
 #header-outer,#header-outer header#top,#header-space{background-color:#fff!important}
 #header-outer header#top nav>ul>li>a{color:var(--n19-navy)!important;font-weight:400!important;font-size:15px!important}
 #header-outer header#top nav>ul>li>a:hover{color:var(--n19-link)!important}
 #header-outer #header-secondary-outer{background-color:var(--n19-band)!important}
 #header-outer #header-secondary-outer a{background-color:var(--n19-cta)!important;border-radius:30px!important;color:#fff!important}
-#ajax-content-wrap .wpb_row.top-level>.row-bg-wrap .row-bg,#ajax-content-wrap .row-bg-wrap.has-animated-gradient .row-bg{background:var(--n19-band)!important}
-:where(:root:not([data-n19-safe])) #ajax-content-wrap .wpb_row.top-level>.row-bg-wrap .row-bg,#ajax-content-wrap:where(:root:not([data-n19-safe])) .wpb_row.top-level>.row-bg-wrap .row-bg,:where(:root:not([data-n19-safe])) #ajax-content-wrap .row-bg-wrap.has-animated-gradient .row-bg,#ajax-content-wrap:where(:root:not([data-n19-safe])) .row-bg-wrap.has-animated-gradient .row-bg{background-image:none!important}
+#ajax-content-wrap .wpb_row.top-level>.row-bg-wrap .row-bg,#ajax-content-wrap .row-bg-wrap.has-animated-gradient .row-bg{background:var(--n19-band)!important;background-image:none!important}
 #ajax-content-wrap .wpb_row.top-level,#ajax-content-wrap .wpb_row[style*="background-color: #0891af"],#ajax-content-wrap .wpb_row[style*="rgb(8, 145, 175)"]{background-color:var(--n19-band)!important}
-:where(:root:not([data-n19-safe])) #ajax-content-wrap .nectar-shape-divider-wrap,#ajax-content-wrap:where(:root:not([data-n19-safe])) .nectar-shape-divider-wrap{display:none!important}
+#ajax-content-wrap .nectar-shape-divider-wrap{display:none!important}
 #ajax-content-wrap a.nectar-button.regular-button,#ajax-content-wrap a.nectar-button.accent-color,#ajax-content-wrap a.nectar-button[class*="extra-color"]:not(.see-through){background-color:var(--n19-cta)!important;border-color:var(--n19-cta)!important;border-radius:30px!important;color:#fff!important;box-shadow:none!important}
 #ajax-content-wrap a.nectar-button.see-through{border-radius:30px!important}
 #ajax-content-wrap .nectar-cta .link_wrap{border-radius:30px!important}
@@ -75,5 +76,5 @@ body:is(.wp-singular,.page,.home,.single,.blog,.archive,.search) #ajax-content-w
 #footer-outer #footer-widgets a{color:var(--n19-link)!important;font-weight:400!important}
 #footer-outer #footer-widgets :is(h4,h3){color:var(--n19-text)!important;font-weight:700!important}
 #footer-outer #copyright{border-top:1px solid var(--n19-edge)!important}
-:where(:root:not([data-n19-safe])) #ajax-content-wrap .nectar-animated-gradient,#ajax-content-wrap:where(:root:not([data-n19-safe])) .nectar-animated-gradient{display:none!important}
+#ajax-content-wrap .nectar-animated-gradient{display:none!important}
 :where(:root:not([data-n19-safe])) #cmp-grid .widget .details p.description,#cmp-grid:where(:root:not([data-n19-safe])) .widget .details p.description{display:-webkit-box!important;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden!important}

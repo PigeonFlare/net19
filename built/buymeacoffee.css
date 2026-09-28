@@ -18,8 +18,8 @@ html body h1,html body h2{letter-spacing:0!important}
 .rounded-xl{border-radius:6px!important}
 .before\:rounded-2xl::before{border-radius:8px!important}
 .bg-white.rounded-3xl,.bg-white.p-8.rounded-3xl{box-shadow:var(--n19-shadow)!important}
-:where(:root:not([data-n19-safe])) a[href$="/reviews"],:where(:root:not([data-n19-safe])) a[href="https://buymeacoffee.com/reviews"]{display:none!important}
-:where(:root:not([data-n19-safe])) .video-picker-toggle-container,.video-picker-toggle-container:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .video-picker-toggle,.video-picker-toggle:where(:root:not([data-n19-safe])){display:none!important}
+a[href$="/reviews"],a[href="https://buymeacoffee.com/reviews"]{display:none!important}
+.video-picker-toggle-container,.video-picker-toggle{display:none!important}
 :where(:root:not([data-n19-safe])) picture.w-50.h-50>img.min-h-50{height:100%!important;min-height:0!important}
 a.bg-primary,button.bg-primary,.tw-primary-bg-scale-on-hover::before{background-color:var(--n19-orange)!important}
 a.bg-primary,button.bg-primary{color:var(--n19-on-orange)!important;border-radius:4px!important}

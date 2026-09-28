@@ -3,8 +3,8 @@ html[data-net19-mode="dark"]{--n19-red:#f54336;--n19-red-hover:#ff5a4c;--n19-red
 html:root,html.theme-light,html.theme-dark{--font-family-body:var(--n19-font)!important;--font-family-heading:var(--n19-font)!important;--theme-btn-primary-bg-default:var(--n19-red)!important;--theme-btn-primary-bg-hover:var(--n19-red-hover)!important;--theme-btn-primary-bg-active:var(--n19-red-active)!important;--theme-btn-primary-fg-default:#fff!important;--theme-btn-temp-primary-bg-default:var(--n19-red)!important;--theme-btn-temp-primary-bg-hover:var(--n19-red-hover)!important;--theme-btn-temp-primary-bg-active:var(--n19-red-active)!important;--theme-fg-border-brand:var(--n19-red)!important;--theme-bg-brand-red:var(--n19-red)!important}
 body,h1,h2,h3,h4,button,input{font-family:var(--n19-font)!important}
 h1,h2{font-weight:700!important;letter-spacing:-.01em!important}
-:where(:root:not([data-n19-safe])) [data-automation^="cms-header-banner"],[data-automation^="cms-header-banner"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) header[data-automation="top-nav"] button[aria-label^="Get Unlimited"i]{display:none!important}
-:where(:root:not([data-n19-safe])) header[data-automation="top-nav"]>div:first-child>div:first-child{visibility:hidden!important}
+[data-automation^="cms-header-banner"],header[data-automation="top-nav"] button[aria-label^="Get Unlimited"i]{display:none!important}
+header[data-automation="top-nav"]>div:first-child>div:first-child{visibility:hidden!important}
 :where(:root:not([data-n19-safe])) header[data-automation="top-nav"]>div:first-child>div:nth-child(2){grid-column:1!important;grid-row:1!important;justify-self:start!important;margin-left:12px!important}
 :where(:root:not([data-n19-safe])) header[data-automation="top-nav"]{position:relative!important}
 :where(:root:not([data-n19-safe])) header[data-automation="top-nav"]>div:nth-child(2){position:absolute!important;top:15px!important;left:215px!important;width:auto!important;height:38px!important}
@@ -13,16 +13,15 @@ header[data-automation="top-nav"] nav[aria-label="Primary navigation"]{backgroun
 :where(:root:not([data-n19-safe])) header[data-automation="top-nav"] nav[aria-label="Primary navigation"]{width:auto!important}
 header[data-automation="top-nav"] nav[aria-label="Primary navigation"]>ul>li>a{text-transform:uppercase!important;font-weight:700!important;font-size:14px!important;letter-spacing:0!important}
 :where(:root:not([data-n19-safe])) header[data-automation="top-nav"] nav[aria-label="Primary navigation"]>ul>li>a{padding:0 14px!important}
-:where(:root:not([data-n19-safe])) header[data-automation="top-nav"] nav[aria-label="Primary navigation"]>ul>li>a svg{display:none!important}
+header[data-automation="top-nav"] nav[aria-label="Primary navigation"]>ul>li>a svg{display:none!important}
 header[data-automation="top-nav"] [data-automation="loginButton"],header[data-automation="top-nav"] button:is([aria-label="Log in"],[data-automation="loginButton"]){border-radius:20px!important;font-weight:700!important}
 section[data-automation="UniversalHomeHero"] h1{font-size:56px!important;line-height:1.15!important;color:var(--n19-hero-text)!important}
 section[data-automation="UniversalHomeHero"] h1+p{font-size:20px!important}
 :where(:root:not([data-n19-safe])) section[data-automation="UniversalHomeHero"] h1+p{max-width:none!important}
-section[data-automation="UniversalHomeHero"] h1+p{color:var(--n19-hero-text)!important}
-:where(:root:not([data-n19-safe])) section[data-automation="UniversalHomeHero"] h1+p{opacity:.9!important}
+section[data-automation="UniversalHomeHero"] h1+p{color:var(--n19-hero-text)!important;opacity:.9!important}
 [data-automation="SearchBarContainer"] :is(.MuiGrid-root,.MuiInputBase-root,fieldset){border-radius:4px!important}
 [data-automation="SearchBarContainer"] .MuiGrid-root:has(>div>[data-automation="searchbar_autocomplete"]){border-radius:4px 0 0 4px!important}
 [data-automation="SearchBarContainer"] [data-automation="searchbar_autocomplete"] .MuiInputBase-root,[data-automation="SearchBarContainer"] [data-automation="searchbar_autocomplete"] fieldset{border-radius:4px 0 0 4px!important}
 [data-automation="SearchBarContainer"] button[type="submit"],[data-automation="SearchBarContainer"] button[aria-label="Search"i]{background:var(--n19-red)!important;color:#fff!important;border-radius:0 4px 4px 0!important}
 [data-automation="SearchBarContainer"] button[type="submit"] svg,[data-automation="SearchBarContainer"] button[aria-label="Search"i] svg{fill:#fff!important;color:#fff!important}
-:where(:root:not([data-n19-safe])) [data-automation="SearchBarContainer"] [class*="aiSearchButtonWrapper"],[data-automation="SearchBarContainer"]:where(:root:not([data-n19-safe])) [class*="aiSearchButtonWrapper"],:where(:root:not([data-n19-safe])) [data-net19-later-section],[data-net19-later-section]:where(:root:not([data-n19-safe])){display:none!important}
+[data-automation="SearchBarContainer"] [class*="aiSearchButtonWrapper"],[data-net19-later-section]{display:none!important}

@@ -1,10 +1,10 @@
 #main-header-nav a{font-size:16px!important}
 @media (min-width:1000px){#main-content #main-entry h1.entry-title{font-size:40px!important;line-height:40px!important}}
-:where(:root:not([data-n19-safe])) .outer-promo-banner,.outer-promo-banner:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #footer-outer-promo-banner,#footer-outer-promo-banner:where(:root:not([data-n19-safe])){display:none!important}
+.outer-promo-banner,#footer-outer-promo-banner{display:none!important}
 @media (max-width:765px){:where(:root:not([data-n19-safe])) body.app-promo{margin-top:71px!important}:where(:root:not([data-n19-safe])) body.app-promo #main-header-bar{margin-top:0!important}}
-:where(:root:not([data-n19-safe])) .watch_rank_wrap>.thumb-vote-area,.watch_rank_wrap:where(:root:not([data-n19-safe]))>.thumb-vote-area{display:none!important}
-:where(:root:not([data-n19-safe])) .action-bar li.link-todo,.action-bar:where(:root:not([data-n19-safe])) li.link-todo{display:none!important}
-:where(:root:not([data-n19-safe])) a[href="/pmwiki/query.php?type=wl"]{display:none!important}
-:where(:root:not([data-n19-safe])) [data-n19-tvt-later],[data-n19-tvt-later]:where(:root:not([data-n19-safe])){display:none!important}
-:where(:root:not([data-n19-safe])) .section-block:has(>div>.podcast_photo),.section-block:has(>div>.podcast_photo):where(:root:not([data-n19-safe])){display:none!important}
-:where(:root:not([data-n19-safe])) .video-star-rating,.video-star-rating:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .video-comment-count,.video-comment-count:where(:root:not([data-n19-safe])){display:none!important}
+.watch_rank_wrap>.thumb-vote-area{display:none!important}
+.action-bar li.link-todo{display:none!important}
+a[href="/pmwiki/query.php?type=wl"]{display:none!important}
+[data-n19-tvt-later]{display:none!important}
+.section-block:has(>div>.podcast_photo){display:none!important}
+.video-star-rating,.video-comment-count{display:none!important}

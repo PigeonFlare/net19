@@ -1,4 +1,4 @@
 html{--n19-purple:#7360f2;--n19-text:#323232;--n19-page:#fff}
 html[data-net19-mode="dark"]{--n19-purple:#7360f2;--n19-text:#323232;--n19-page:#fff}
-:where(:root:not([data-n19-safe])) .page-template-template-home .new-social,.page-template-template-home:where(:root:not([data-n19-safe])) .new-social{display:none!important}
-:where(:root:not([data-n19-safe])) li.categories_item:has(>a.categories_link:is([href*="-ChatGPT"],[href*="-AI-on-Viber"],[href*="-Viber-Pay"],[href*="-Viber-Plus"],[href*="-Viber-Dating"])){display:none!important}
+.page-template-template-home .new-social{display:none!important}
+li.categories_item:has(>a.categories_link:is([href*="-ChatGPT"],[href*="-AI-on-Viber"],[href*="-Viber-Pay"],[href*="-Viber-Plus"],[href*="-Viber-Dating"])){display:none!important}

@@ -5,7 +5,8 @@ html header.uhf-header.uhf-header.uhf-header.uhf-header{background:var(--n19-bar
 html div.uhf-header{background-color:var(--n19-bar)!important}
 html[data-net19-flip]:where(:root:not([data-n19-safe])) div.uhf-header{position:relative;z-index:1000!important}
 html .uhf-header :is(.uhf-nav-item,.uhf-nav-button,.uhf-dropdown-link,.uhf-cart,.uhf-mecontrol-signin-label,uhf-icon,.ms-Icon){color:var(--n19-bar-text)!important}
-html:where(:root:not([data-n19-safe])) .uhf-header .uhf-site-logo img:is([alt="Xbox"i],[src*="logo_xbox"]){content:url("https://uhf.microsoft.com/images/xbox/RW4ESm.png")!important;width:75px!important;height:auto!important}
+html .uhf-header .uhf-site-logo img:is([alt="Xbox"i],[src*="logo_xbox"]){content:url("https://uhf.microsoft.com/images/xbox/RW4ESm.png")!important}
+html:where(:root:not([data-n19-safe])) .uhf-header .uhf-site-logo img:is([alt="Xbox"i],[src*="logo_xbox"]){width:75px!important;height:auto!important}
 html[data-net19-flip] .uhf-header :is(.uhf-site-logo,.uhf-microsoft-logo) img{filter:contrast(1.13636) hue-rotate(180deg) invert(1)!important}
 html[data-net19-flip] .expandable-background-slider img:is(:not([data-net19-keep] *),[data-net19-reflip] *):not(#n19-none){filter:blur(16px) brightness(.5) contrast(1.13636) hue-rotate(180deg) invert(1)!important}
 html[data-net19-flip] [class*="AgeGatingCards-module__"] img:is(:not([data-net19-keep] *),[data-net19-reflip] *):not(#n19-none){filter:blur(25px) contrast(1.13636) hue-rotate(180deg) invert(1)!important}
@@ -35,5 +36,5 @@ html .mwf-v1-xbox .btn.ghost:hover{background-color:transparent!important}
 html .mwf-v1-xbox :is(h1,h2):is(.display,.h-title){font-weight:200!important}
 html body .m-in-page-navigation:not(.trans) .CTAdiv button.c-call-to-action.c-call-to-action{background:var(--n19-green)!important;color:#fff!important;border-color:var(--n19-green)!important}
 html body span.jump-g:not(#n19-none):not(#n19-none){color:var(--n19-green)!important}
-:where(:root:not([data-n19-safe])) #storeassistantroot,#storeassistantroot:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .sa-default-entry-container,.sa-default-entry-container:where(:root:not([data-n19-safe])){display:none!important}
-:where(:root:not([data-n19-safe])) [data-net19-hidden],[data-net19-hidden]:where(:root:not([data-n19-safe])){display:none!important}
+#storeassistantroot,.sa-default-entry-container{display:none!important}
+[data-net19-hidden]{display:none!important}

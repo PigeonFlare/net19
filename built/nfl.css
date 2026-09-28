@@ -6,7 +6,7 @@ body,main{background-color:var(--n19-page)!important}
 header[data-testid="header-section"]{--header-panel-top-hat-height:0px!important}
 :where(:root:not([data-n19-safe])) header[data-testid="header-section"]{display:flex!important;flex-direction:column!important}
 header[data-testid="header-section"]{background:var(--n19-page)!important}
-:where(:root:not([data-n19-safe])) header[data-testid="header-section"]>nav[aria-label="Top Hat Header"]{display:none!important}
+header[data-testid="header-section"]>nav[aria-label="Top Hat Header"]{display:none!important}
 :where(:root:not([data-n19-safe])) header[data-testid="header-section"]>nav[aria-label="Site"]{order:-1;top:0!important}
 nav[aria-label="Site"]{background:var(--n19-navy)!important;border-bottom:0!important;box-shadow:0 1px 3px rgba(0,0,0,.3)!important}
 nav[aria-label="Site"] ul>li>:is(a,button):is([class*="display-"],[class*="misc-1-sans"]),nav[aria-label="Site"] ul>li>:is(a,button):is([class*="display-"],[class*="misc-1-sans"])>span,nav[aria-label="Site"] div>div>button[class*="misc-1-sans"],nav[aria-label="Site"] div>div>button[class*="misc-1-sans"] span{color:var(--n19-nav-text)!important;font-family:var(--n19-font)!important;font-style:normal!important;font-weight:400!important;font-size:13px!important;letter-spacing:.02em!important;text-transform:uppercase!important}
@@ -26,4 +26,4 @@ main [class*="bg-ls-level-2"],main [class*="bg-white"]{background-color:var(--n1
 .d3-o-tabbed-controls-selector li.active>a{background:var(--n19-navy)!important;color:#fff!important}
 html[data-net19-mode="dark"] .d3-o-tabbed-controls-selector li:not(.active)>a{color:#c8d1dd!important;border-color:#c8d1dd!important}
 .d3-l-wrap :is(h1,h2,h3){font-family:var(--n19-font)!important;font-style:normal!important}
-:where(:root:not([data-n19-safe])) nav[aria-label="Site"] li:has(>a[href*="the-athletic"]),:where(:root:not([data-n19-safe])) nav[aria-label="Site"] li:has(>a[href*="theathletic.com"]),:where(:root:not([data-n19-safe])) nav[aria-label="Site"] li:has(>a[href*="fantasy.espn.com"]),:where(:root:not([data-n19-safe])) nav[aria-label="Site"] li:has(>a[href*="espn.com/fantasy"]){display:none!important}
+nav[aria-label="Site"] li:has(>a[href*="the-athletic"]),nav[aria-label="Site"] li:has(>a[href*="theathletic.com"]),nav[aria-label="Site"] li:has(>a[href*="fantasy.espn.com"]),nav[aria-label="Site"] li:has(>a[href*="espn.com/fantasy"]){display:none!important}

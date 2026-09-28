@@ -14,8 +14,8 @@ html[data-net19-mode="dark"]{--n19-bar:#262626;--n19-bar-text:#e6e6e6;--n19-red:
 .Page-header-bar .icon-magnify{fill:none!important}
 .Page-header-bar :is(.MainNavigationItem-text,.MainNavigationItem-more) svg,.Page-header-bar .burger-menu{filter:brightness(.18)!important}
 .Page-header-bar .MainNavigationItem-text a:hover,.Page-header-bar .MainNavigationItem-more:hover{text-decoration:underline!important}
-:where(:root:not([data-n19-safe])) .Page-header-stickyWrap :is(.Page-trendingZephr-wrapper,.Page-trendingZephr,.Page-header-trending,.PageListTrending),.Page-header-stickyWrap:where(:root:not([data-n19-safe])) :is(.Page-trendingZephr-wrapper,.Page-trendingZephr,.Page-header-trending,.PageListTrending),:where(:root:not([data-n19-safe])) .Page-trendingZephr-trendingBar,.Page-trendingZephr-trendingBar:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .Page-header-leaderboardAd,.Page-header-leaderboardAd:where(:root:not([data-n19-safe])){display:none!important}
-:where(:root:not([data-n19-safe])) .Page-trendingZephr-entitlements,.Page-trendingZephr-entitlements:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #desktop-entitlements,#desktop-entitlements:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .Page-actions-google-trigger,.Page-actions-google-trigger:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .Page-actions-commentCounter,.Page-actions-commentCounter:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .PagePromo-commentCount,.PagePromo-commentCount:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .CommentCount-template,.CommentCount-template:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .PagePromo-readingtime,.PagePromo-readingtime:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .PagePromo-byline-live,.PagePromo-byline-live:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .PageListTrending-LiveTag,.PageListTrending-LiveTag:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) bsp-news-letter,:where(:root:not([data-n19-safe])) .PageListStandardB-NewsLetter,.PageListStandardB-NewsLetter:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .ReadingTime-template,.ReadingTime-template:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .Zephr-bar,.Zephr-bar:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .viafoura,.viafoura:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .Newsletter-Banner,.Newsletter-Banner:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [class*="Zephr-mod"],[class*="Zephr-mod"]:where(:root:not([data-n19-safe])){display:none!important}
+.Page-header-stickyWrap :is(.Page-trendingZephr-wrapper,.Page-trendingZephr,.Page-header-trending,.PageListTrending),.Page-trendingZephr-trendingBar,.Page-header-leaderboardAd{display:none!important}
+.Page-trendingZephr-entitlements,#desktop-entitlements,.Page-actions-google-trigger,.Page-actions-commentCounter,.PagePromo-commentCount,.CommentCount-template,.PagePromo-readingtime,.PagePromo-byline-live,.PageListTrending-LiveTag,bsp-news-letter,.PageListStandardB-NewsLetter,.ReadingTime-template,.Zephr-bar,.viafoura,.Newsletter-Banner,[class*="Zephr-mod"]{display:none!important}
 body.Page-body{background:var(--n19-page)!important;color:var(--n19-text)!important}
 .Page-content,.Page-twoColumn,.SectionPage,.StoryPage,.Page-main{background:transparent!important}
 :is(.PagePromo-title,.PageList-header-title,.Page-headline,.PageListStandardE-items-secondary-title,.VideoPlaylistItemCard-title,.PagePromoTrending){font-family:var(--ap19-cond)!important;font-stretch:75%!important;color:var(--n19-text)!important;letter-spacing:0!important;text-transform:none!important}
@@ -28,7 +28,8 @@ html[data-net19-mode="dark"] .PagePromo-description,html[data-net19-mode="dark"]
 .PageList-items-item{border-color:#ececec!important}
 .PageList-header-title{font-family:var(--ap19-sans)!important;font-stretch:100%!important;font-weight:700!important;font-size:18px!important;line-height:24px!important;text-transform:uppercase!important}
 :where(:root:not([data-n19-safe])) .PageList-header-title,.PageList-header-title:where(:root:not([data-n19-safe])){position:relative;padding-top:14px!important}
-:where(:root:not([data-n19-safe])) .PageList-header-title::before,.PageList-header-title:where(:root:not([data-n19-safe]))::before{content:"";position:absolute;left:0;top:0;width:60px;height:8px}
+.PageList-header-title::before{content:""}
+:where(:root:not([data-n19-safe])) .PageList-header-title::before,.PageList-header-title:where(:root:not([data-n19-safe]))::before{position:absolute;left:0;top:0;width:60px;height:8px}
 .PageList-header-title::before{background:var(--n19-red)}
 .PageList-header,.PageList-header-alternativedivider{border:none!important}
 :is(.PageListStandardE,.PageListRightRailA,.PageListStandardD,.PageListStandardB,.PageListCarouselA,.PageListEnhancementGeneric)[data-module],:is(.PageListStandardE,.PageListRightRailA,.PageListStandardD,.PageListStandardB,.PageListCarouselA){background:var(--n19-card)!important}
@@ -44,14 +45,14 @@ h1.Page-headline{font-size:50px!important;line-height:56px!important;font-weight
 :where(:root:not([data-n19-safe])) .StoryPage-actions-wrapper,.StoryPage-actions-wrapper:where(:root:not([data-n19-safe])){position:relative;padding-bottom:24px!important}
 .StoryPage-actions-wrapper{border-bottom:1px solid var(--n19-rule)!important}
 :where(:root:not([data-n19-safe])) .StoryPage-actions-wrapper,.StoryPage-actions-wrapper:where(:root:not([data-n19-safe])){margin-bottom:8px!important}
-:where(:root:not([data-n19-safe])) .StoryPage-actions-wrapper::after,.StoryPage-actions-wrapper:where(:root:not([data-n19-safe]))::after{content:"";position:absolute;left:0;bottom:-4px;width:60px;height:8px}
+.StoryPage-actions-wrapper::after{content:""}
+:where(:root:not([data-n19-safe])) .StoryPage-actions-wrapper::after,.StoryPage-actions-wrapper:where(:root:not([data-n19-safe]))::after{position:absolute;left:0;bottom:-4px;width:60px;height:8px}
 .StoryPage-actions-wrapper::after{background:var(--n19-red)}
 .Page-actions-trigger{background:transparent!important;border:1px solid var(--n19-rule)!important;border-radius:0!important;color:var(--n19-link)!important;font-family:var(--ap19-sans)!important;font-stretch:100%!important;font-weight:400!important;text-transform:none!important}
 .Page-actions-trigger svg{fill:currentColor!important}
 .RichTextStoryBody,.RichTextStoryBody>p,.RichTextBody>p{font-family:var(--ap19-serif)!important;font-stretch:100%!important;font-size:18px!important;line-height:27px!important;font-weight:400!important;color:var(--n19-text)!important}
 :where(:root:not([data-n19-safe])) .RichTextStoryBody>p,.RichTextStoryBody:where(:root:not([data-n19-safe]))>p{margin:12px 0!important}
-.RichTextBody a,.RichTextBody a:visited{color:var(--n19-link)!important;text-decoration:none!important;border-bottom:none!important}
-:where(:root:not([data-n19-safe])) .RichTextBody a,.RichTextBody:where(:root:not([data-n19-safe])) a,:where(:root:not([data-n19-safe])) .RichTextBody a:visited,.RichTextBody:where(:root:not([data-n19-safe])) a:visited{background-image:none!important}
+.RichTextBody a,.RichTextBody a:visited{color:var(--n19-link)!important;text-decoration:none!important;border-bottom:none!important;background-image:none!important}
 .RichTextBody a:hover{text-decoration:underline!important}
 .RichTextStoryBody h2,.RichTextStoryBody h3{font-family:var(--ap19-sans)!important;font-stretch:100%!important;font-weight:700!important;color:var(--n19-text)!important}
 .Figure-caption,.Figure-caption *{font-family:var(--ap19-sans)!important;font-stretch:100%!important;color:var(--n19-meta)!important;font-size:14px!important;font-weight:400!important}
@@ -59,14 +60,12 @@ h1.Page-headline{font-size:50px!important;line-height:56px!important;font-weight
 .Page-main .Page-lead,.Page-storyBody{background:transparent!important}
 .Page-storyBody{background:var(--n19-card)!important}
 :where(:root:not([data-n19-safe])) .Page-storyBody,.Page-storyBody:where(:root:not([data-n19-safe])){padding-top:24px!important}
-.Page-pageLead{background:transparent!important}
-:where(:root:not([data-n19-safe])) .Page-pageLead,.Page-pageLead:where(:root:not([data-n19-safe])){background-image:none!important}
-.Page-pageLead{color:var(--n19-text)!important;border-bottom:1px solid #b4b4b4!important}
+.Page-pageLead{background:transparent!important;background-image:none!important;color:var(--n19-text)!important;border-bottom:1px solid #b4b4b4!important}
 :where(:root:not([data-n19-safe])) .Page-pageLead,.Page-pageLead:where(:root:not([data-n19-safe])){max-width:1200px;margin:0 auto 24px!important;padding:24px 0 8px!important}
-:where(:root:not([data-n19-safe])) .Page-pageLead::before,.Page-pageLead:where(:root:not([data-n19-safe]))::before,:where(:root:not([data-n19-safe])) .Page-pageLead::after,.Page-pageLead:where(:root:not([data-n19-safe]))::after{display:none!important}
+.Page-pageLead::before,.Page-pageLead::after{display:none!important}
 :where(:root:not([data-n19-safe])) .Page-pageLead .PageList-header,.Page-pageLead:where(:root:not([data-n19-safe])) .PageList-header{padding:0!important;margin:0 0 12px!important}
 .Page-pageLead .PageList-header{border:none!important}
-:where(:root:not([data-n19-safe])) .Page-pageLead .PageList-header::before,.Page-pageLead:where(:root:not([data-n19-safe])) .PageList-header::before,:where(:root:not([data-n19-safe])) .Page-pageLead .PageList-header::after,.Page-pageLead:where(:root:not([data-n19-safe])) .PageList-header::after{display:none!important}
+.Page-pageLead .PageList-header::before,.Page-pageLead .PageList-header::after{display:none!important}
 .Page-pageLead h1.PageList-header-title{font-family:var(--ap19-sans)!important;font-stretch:100%!important;font-weight:700!important;font-size:48px!important;line-height:56px!important;color:var(--n19-text)!important;text-transform:uppercase!important}
 :where(:root:not([data-n19-safe])) .Page-pageLead h1.PageList-header-title,.Page-pageLead:where(:root:not([data-n19-safe])) h1.PageList-header-title{padding:0 0 16px!important}
 :where(:root:not([data-n19-safe])) .Page-pageLead h1.PageList-header-title::before,.Page-pageLead:where(:root:not([data-n19-safe])) h1.PageList-header-title::before{top:auto;bottom:0}
@@ -74,7 +73,7 @@ h1.Page-headline{font-size:50px!important;line-height:56px!important;font-weight
 .SectionNavigationItem-text,.SectionNavigationItem-text a{color:var(--n19-tag)!important;font-family:var(--ap19-sans)!important;font-stretch:100%!important;font-weight:400!important;text-transform:none!important;font-size:15px!important}
 .Page-footer,.Page-footer-container{background:var(--n19-foot)!important;color:#fff!important}
 .Page-footer :is(a,.FooterNavigationItem-text){color:#fff!important;font-family:var(--ap19-sans)!important;font-stretch:100%!important;font-weight:300!important}
-:where(:root:not([data-n19-safe])) .Page-footer a:is([href*="play.google.com"],[href*="apps.apple.com"]),.Page-footer:where(:root:not([data-n19-safe])) a:is([href*="play.google.com"],[href*="apps.apple.com"]){display:none!important}
+.Page-footer a:is([href*="play.google.com"],[href*="apps.apple.com"]){display:none!important}
 .SearchOverlay-search-button:hover svg{background-color:rgba(0, 0, 0, .08)!important}
 .SearchOverlay-search-input,.SearchResultsModule-formInput{border-radius:0!important;font-family:var(--ap19-sans)!important;font-stretch:100%!important}
 .SearchResultsModule-count-mobile,.SearchResultsModuleBasic-results-header{font-family:var(--ap19-sans)!important;font-stretch:100%!important;color:var(--n19-meta)!important}

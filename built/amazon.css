@@ -6,9 +6,26 @@ body,body #a-page{font-family:Arial, sans-serif!important}
 #nav-xshop .nav-a,#nav-main .nav-a{color:var(--n19-nav-link)!important;font-size:13px!important}
 #nav-xshop .nav-a:hover,#nav-main .nav-a:hover{color:var(--n19-nav-text)!important;text-decoration:underline!important}
 #nav-main .nav-a,#nav-belt .nav-a{border-color:transparent!important}
-:where(:root:not([data-n19-safe])) #nav-hamburger-menu,#nav-hamburger-menu:where(:root:not([data-n19-safe])){padding:0 8px!important}
-:where(:root:not([data-n19-safe])) #nav-hamburger-menu .hm-icon,#nav-hamburger-menu:where(:root:not([data-n19-safe])) .hm-icon{display:none!important}
-#nav-hamburger-menu .hm-icon-label{font-size:13px!important;font-weight:700!important;color:var(--n19-nav-text)!important}
+:where(:root:not([data-n19-safe])) #navbar-main #nav-belt,#navbar-main:where(:root:not([data-n19-safe])) #nav-belt,:where(:root:not([data-n19-safe])) #navbar-main #nav-main,#navbar-main:where(:root:not([data-n19-safe])) #nav-main{position:relative!important}
+:where(:root:not([data-n19-safe])) #navbar-main #nav-belt,#navbar-main:where(:root:not([data-n19-safe])) #nav-belt{height:55px!important}
+:where(:root:not([data-n19-safe])) #navbar-main #nav-main,#navbar-main:where(:root:not([data-n19-safe])) #nav-main{height:44px!important;overflow:visible!important}
+:where(:root:not([data-n19-safe])) #nav-main #nav-hamburger-menu,#nav-main:where(:root:not([data-n19-safe])) #nav-hamburger-menu{z-index:2!important;position:absolute!important;left:8px!important;top:-46px!important;width:38px!important;height:38px!important;padding:0!important;margin:0!important;display:flex!important;align-items:center!important;justify-content:center!important}
+#nav-main #nav-hamburger-menu{border:1px solid transparent!important;border-radius:2px!important}
+:where(:root:not([data-n19-safe])) #nav-main #nav-hamburger-menu,#nav-main:where(:root:not([data-n19-safe])) #nav-hamburger-menu{box-sizing:border-box!important}
+#nav-main #nav-hamburger-menu:hover{border-color:#fff!important}
+:where(:root:not([data-n19-safe])) #nav-main #nav-hamburger-menu .hm-icon,#nav-main:where(:root:not([data-n19-safe])) #nav-hamburger-menu .hm-icon{display:block!important;margin:0!important;flex:none!important}
+#nav-main #nav-hamburger-menu .hm-icon-label{display:none!important}
+:where(:root:not([data-n19-safe])) #nav-belt #nav-logo,#nav-belt:where(:root:not([data-n19-safe])) #nav-logo{margin-left:44px!important}
+:where(:root:not([data-n19-safe])) #nav-belt #nav-global-location-slot,#nav-belt:where(:root:not([data-n19-safe])) #nav-global-location-slot{position:absolute!important;left:8px!important;top:55px!important;height:44px!important;width:190px!important;display:flex!important;align-items:center!important}
+:where(:root:not([data-n19-safe])) #nav-belt #nav-global-location-slot>*,#nav-belt:where(:root:not([data-n19-safe])) #nav-global-location-slot>*{height:auto!important}
+:where(:root:not([data-n19-safe])) #nav-belt>.nav-fill,#nav-belt:where(:root:not([data-n19-safe]))>.nav-fill{flex:0 1 638px!important;margin-left:44px!important}
+:where(:root:not([data-n19-safe])) #nav-belt>.nav-right,#nav-belt:where(:root:not([data-n19-safe]))>.nav-right{position:absolute!important;right:0!important;top:52px!important;height:44px!important}
+:where(:root:not([data-n19-safe])) #nav-belt #nav-tools,#nav-belt:where(:root:not([data-n19-safe])) #nav-tools{height:44px!important;align-items:center!important}
+:where(:root:not([data-n19-safe])) #nav-belt #nav-tools,#nav-belt:where(:root:not([data-n19-safe])) #nav-tools{display:flex!important;padding:0!important}
+:where(:root:not([data-n19-safe])) #nav-belt #nav-tools>:is(a,div),#nav-belt:where(:root:not([data-n19-safe])) #nav-tools>:is(a,div){height:40px!important;top:0!important;margin-top:0!important;margin-bottom:0!important;padding-bottom:0!important;box-sizing:border-box!important;overflow:visible!important}
+:where(:root:not([data-n19-safe])) #nav-belt #nav-tools>:is(a,div)>:is(a,div,span):not(.nav-line-1-container,.nav-line-1,.nav-line-2,#nav-cart-count-container),#nav-belt:where(:root:not([data-n19-safe])) #nav-tools>:is(a,div)>:is(a,div,span):not(.nav-line-1-container,.nav-line-1,.nav-line-2,#nav-cart-count-container){height:40px!important}
+:where(:root:not([data-n19-safe])) #nav-main>.nav-fill,#nav-main:where(:root:not([data-n19-safe]))>.nav-fill{padding-left:207px!important;padding-right:420px!important;box-sizing:border-box!important}
+:where(:root:not([data-n19-safe])) #nav-main #nav-xshop,#nav-main:where(:root:not([data-n19-safe])) #nav-xshop{height:44px!important;display:flex!important;align-items:center!important}
 #nav-search-bar-form,.nav-search-field,#nav-search .nav-fill{border-radius:4px!important}
 #nav-search-dropdown-card,.nav-search-scope{background:var(--n19-scope)!important;border-radius:4px 0 0 4px!important;border-right:1px solid var(--n19-scope-border)!important}
 #nav-search-label-id{color:var(--n19-text-2)!important;font-size:12px!important}
@@ -29,7 +46,7 @@ body,body #a-page{font-family:Arial, sans-serif!important}
 #gwm-Deck .gwm-window-tile .wdTitle{font-size:24px!important;line-height:29px!important}
 #gwm-Deck-btf .a-cardui-header .sub-header-title-font{font-size:13px!important;line-height:19px!important;color:var(--n19-text-2)!important}
 #gwm-Deck .a-cardui-header a{text-decoration:none!important}
-:where(:root:not([data-n19-safe])) #gwm-Deck-btf .a-cardui-header>a>svg,#gwm-Deck-btf:where(:root:not([data-n19-safe])) .a-cardui-header>a>svg,:where(:root:not([data-n19-safe])) #gwm-Deck-btf .a-cardui-header [class*="chevron"],#gwm-Deck-btf:where(:root:not([data-n19-safe])) .a-cardui-header [class*="chevron"]{display:none!important}
+#gwm-Deck-btf .a-cardui-header>a>svg,#gwm-Deck-btf .a-cardui-header [class*="chevron"]{display:none!important}
 #gwm-Deck .gwm-widget{border:none!important}
 #gwm-Deck-btf .a-cardui [class*="label"],#gwm-Deck-btf .a-cardui [class*="caption"],#gwm-Deck-btf .a-cardui-body .a-size-small{font-size:12px!important;line-height:18px!important}
 #gwm-Deck-btf .a-cardui-footer a,#gw-layout .see-more{color:var(--n19-link)!important;font-size:13px!important;font-family:Arial, sans-serif!important}
@@ -47,8 +64,15 @@ a.a-link-normal:hover .a-text-normal,h2 a.a-link-normal:hover,#bylineInfo:hover{
 .a-price,.a-color-price,.a-price .a-offscreen+span{color:var(--n19-price)!important}
 #productTitle{font-family:Arial, sans-serif!important;font-size:21px!important;line-height:1.3!important;font-weight:400!important}
 #gwm-Deck [class*="deal-badge"] [class*="badge-label"],#gwm-Deck .a-badge-label{border-radius:0!important}
-:where(:root:not([data-n19-safe])) [data-csa-c-painter="review-highlights-experience"],[data-csa-c-painter="review-highlights-experience"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-csa-c-slot-id="cr-product-insights-detail-page"],[data-csa-c-slot-id="cr-product-insights-detail-page"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #cr-product-insights-cards,#cr-product-insights-cards:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #nav-rufus-disco,#nav-rufus-disco:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .rufus-docked-panel,.rufus-docked-panel:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) :is([id^="rufus-"],[data-csa-c-slot-id*="rufus"i],[data-csa-c-content-id*="rufus"i]):not(:has(#dp,#search,#pageContent,#centerCol,#gw-layout,#nav-main)),:is([id^="rufus-"],[data-csa-c-slot-id*="rufus"i],[data-csa-c-content-id*="rufus"i]):not(:has(#dp,#search,#pageContent,#centerCol,#gw-layout,#nav-main)):where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #socialProofingAsinFaceout_feature_div,#socialProofingAsinFaceout_feature_div:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #social-proofing-faceout-title-tk_bought,#social-proofing-faceout-title-tk_bought:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-cy="reviews-block"]>.a-row.a-size-base,[data-cy="reviews-block"]:where(:root:not([data-n19-safe]))>.a-row.a-size-base{display:none!important}
+[data-csa-c-painter="review-highlights-experience"],[data-csa-c-slot-id="cr-product-insights-detail-page"],#cr-product-insights-cards,#nav-rufus-disco,.rufus-docked-panel,:is([id^="rufus-"],[data-csa-c-slot-id*="rufus"i],[data-csa-c-content-id*="rufus"i]):not(:has(#dp,#search,#pageContent,#centerCol,#gw-layout,#nav-main)),#socialProofingAsinFaceout_feature_div,#social-proofing-faceout-title-tk_bought,[data-cy="reviews-block"]>.a-row.a-size-base{display:none!important}
 .page-wrapper.hero-banner{background:var(--n19-card)!important;border-bottom:1px solid var(--n19-divider)!important}
 .page-wrapper.hero-banner>.fs-page-container>:is(h1,h2,p,div:not([class*="card"])){color:var(--n19-text)!important}
 .page-wrapper.hero-banner .fs-heading{font-size:28px!important;font-weight:400!important}
 [data-testid="grid-filter-bar"] button,[class*="FilterPill"],[class*="filter-pill"]{border-radius:3px!important}
+:where(:root:not([data-n19-safe])) #navbar-main #navbar #nav-main,#navbar-main:where(:root:not([data-n19-safe])) #navbar #nav-main{z-index:6!important}
+#navbar-main #navbar #nav-main{background:transparent!important;pointer-events:none!important}
+#navbar-main #nav-main>*,#navbar-main #nav-main .nav-fill,#navbar-main #nav-main #nav-xshop{pointer-events:none!important}
+#navbar-main #nav-main :is(a,button,[role="button"],input,select){pointer-events:auto!important}
+#navbar-main{background:var(--n19-nav)!important}
+:where(:root:not([data-n19-safe])) #navbar-main #nav-main>.nav-fill,#navbar-main:where(:root:not([data-n19-safe])) #nav-main>.nav-fill{position:relative!important;overflow:hidden!important;height:44px!important}
+:where(:root:not([data-n19-safe])) #navbar-main #nav-main #nav-xshop,#navbar-main:where(:root:not([data-n19-safe])) #nav-main #nav-xshop{overflow:hidden!important;height:44px!important}

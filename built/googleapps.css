@@ -32,7 +32,7 @@ html:not([data-n19-g="gemini"]) [data-n19-fill="page"]{background-color:var(--n1
 html:not([data-n19-g="gemini"]) [data-n19-fill="field"]{background-color:var(--n19-field)!important}
 html:not([data-n19-g="gemini"]) [data-n19-fill="sel"]{background-color:var(--n19-accent-soft)!important}
 html:not([data-n19-g="gemini"]) [data-n19-fill="sel"],html:not([data-n19-g="gemini"]) [data-n19-fill="sel"] :not(img){color:var(--n19-accent-text)!important}
-html:not([data-n19-g="gemini"]):where(:root:not([data-n19-safe])) :is(a[href*="gemini.google.com"],a[href*="gemini.google/"],[aria-label*="Gemini"i]:is(button,a,[role="button"],[role="link"]),[data-tooltip*="Gemini"i],bard-sidenav,gemini-entry-point,[jsname][aria-label="Ask Maps"i],[aria-label^="Help me write"i],[aria-label^="Ask Gemini"i]){display:none!important}
+html:not([data-n19-g="gemini"]) :is(a[href*="gemini.google.com"],a[href*="gemini.google/"],[aria-label*="Gemini"i]:is(button,a,[role="button"],[role="link"]),[data-tooltip*="Gemini"i],bard-sidenav,gemini-entry-point,[jsname][aria-label="Ask Maps"i],[aria-label^="Help me write"i],[aria-label^="Ask Gemini"i]){display:none!important}
 html[data-n19-g="accounts"]:where(:root:not([data-n19-safe])) :is(.TcuCfd,[jscontroller]:has(>#yDmH0d>c-wiz>main)){width:450px!important;max-width:calc(100vw - 32px)!important;min-height:500px!important;box-sizing:border-box!important}
 html[data-n19-g="accounts"] :is(.TcuCfd,[jscontroller]:has(>#yDmH0d>c-wiz>main)){border:1px solid var(--n19-border)!important;border-radius:8px!important}
 html[data-n19-g="accounts"]:where(:root:not([data-n19-safe])) :is(.TcuCfd,[jscontroller]:has(>#yDmH0d>c-wiz>main)){padding:48px 40px 36px!important}
@@ -40,8 +40,10 @@ html[data-n19-g="accounts"] :is(.TcuCfd,[jscontroller]:has(>#yDmH0d>c-wiz>main))
 html[data-n19-g="accounts"]:where(:root:not([data-n19-safe])) :is(.TcuCfd,[jscontroller]:has(>#yDmH0d>c-wiz>main)){margin:0 auto!important;justify-content:flex-start!important}
 html[data-n19-g="accounts"]:where(:root:not([data-n19-safe])) .TcuCfd~.wmGw4,html[data-n19-g="accounts"]:where(:root:not([data-n19-safe])) .wmGw4{width:450px!important;max-width:calc(100vw - 32px)!important;margin:0 auto!important}
 html[data-n19-g="accounts"]:where(:root:not([data-n19-safe])) .wmGw4 footer{width:auto!important;padding:0!important}
-html[data-n19-g="accounts"]:where(:root:not([data-n19-safe])) .TcuCfd main>div:first-child>:first-child img{visibility:hidden!important;width:75px!important;height:24px!important}
-html[data-n19-g="accounts"]:where(:root:not([data-n19-safe])) .TcuCfd main>div:first-child>:first-child:has(img)>*{background:url("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_74x24dp.png") center / 75px 24px no-repeat!important;width:75px!important;height:24px!important}
+html[data-n19-g="accounts"] .TcuCfd main>div:first-child>:first-child img{visibility:hidden!important}
+html[data-n19-g="accounts"]:where(:root:not([data-n19-safe])) .TcuCfd main>div:first-child>:first-child img{width:75px!important;height:24px!important}
+html[data-n19-g="accounts"] .TcuCfd main>div:first-child>:first-child:has(img)>*{background:url("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_74x24dp.png") center / 75px 24px no-repeat!important}
+html[data-n19-g="accounts"]:where(:root:not([data-n19-safe])) .TcuCfd main>div:first-child>:first-child:has(img)>*{width:75px!important;height:24px!important}
 html[data-net19-flip][data-n19-g="accounts"] .TcuCfd main>div:first-child>:first-child:has(img)>*{filter:contrast(1.13636) hue-rotate(180deg) invert(1)!important}
 html[data-n19-g="accounts"]:where(:root:not([data-n19-safe])) .TcuCfd main{flex-direction:column!important;flex-wrap:nowrap!important;width:auto!important}
 html[data-n19-g="accounts"]:where(:root:not([data-n19-safe])) .TcuCfd main>div{width:auto!important;max-width:none!important;flex:none!important;margin-left:0!important;margin-right:0!important;padding-left:0!important;padding-right:0!important}
@@ -77,8 +79,8 @@ html[data-net19-mode="dark"][data-n19-g="translate"] .OPPzxe{box-shadow:0 1px 4p
 html[data-n19-g="translate"] .OPPzxe>*,html[data-n19-g="translate"] .OPPzxe>*>:is(div,c-wiz){border-color:transparent!important;border-radius:0!important;box-shadow:none!important}
 html[data-n19-g="translate"] .OPPzxe c-wiz[role="region"],html[data-n19-g="translate"] .OPPzxe c-wiz[role="region"]>div{background:var(--n19-pane)!important}
 html[data-n19-g="translate"] textarea[aria-label="Source text"]{font-family:var(--n19-sans)!important}
-html[data-n19-g="workspace"]:where(:root:not([data-n19-safe])) :is(button[class*="AiSearchTrigger"],[class*="AiSearch"]:is(button,a,[role="button"]),a[class*="NavGroupButton"][href*="/solutions/ai"]){display:none!important}
-html[data-n19-g="workspace"]:where(:root:not([data-n19-safe])) :is(li,div):has(>a[class*="NavGroupButton"][href*="/solutions/ai"]):not(:has(>:nth-child(2))){display:none!important}
+html[data-n19-g="workspace"] :is(button[class*="AiSearchTrigger"],[class*="AiSearch"]:is(button,a,[role="button"]),a[class*="NavGroupButton"][href*="/solutions/ai"]){display:none!important}
+html[data-n19-g="workspace"] :is(li,div):has(>a[class*="NavGroupButton"][href*="/solutions/ai"]):not(:has(>:nth-child(2))){display:none!important}
 html:is([data-n19-g="workspace"],[data-n19-g="business"],[data-n19-g="about"],[data-n19-g="photos"],[data-n19-g="myaccount"],[data-n19-g="blog"]) :is(.button,[class*="button--"],[class*="Button_button"],[class*="cta"]):is(a,button){border-radius:4px!important}
 html[data-n19-g="workspace"] header{box-shadow:0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15)!important}
 html[data-n19-g="play"]{--n19-play:#689f38;--n19-play-hover:#558b2f}
@@ -90,14 +92,14 @@ html[data-n19-g="play"] [role="search"],html[data-n19-g="play"] [role="search"]>
 html[data-n19-g="support"] h1{color:var(--n19-accent)!important}
 html[data-n19-g="support"] :is(form[role="search"],[role="search"]){border-radius:8px!important}
 html[data-n19-g="policies"] :is(nav,[role="navigation"]):not(header *,[role="tablist"],:has([role="tab"])) a:is([aria-current],[aria-selected="true"]){background:var(--n19-accent-soft)!important;color:var(--n19-accent-text)!important;border-radius:0 999px 999px 0!important}
-html[data-n19-g="books"]:where(:root:not([data-n19-safe])) :is(#gb-ogen-opt-in-banner,#gb-ogen-opt-in-header-link){display:none!important}
-html[data-n19-g="arts"]:where(:root:not([data-n19-safe])) a[data-gaaction="main-nav_clicked"]:is([data-galabel="lab"],[data-galabel="games"]),html[data-n19-g="arts"]:where(:root:not([data-n19-safe])) a.zfaLP .uUqXFd{display:none!important}
-html[data-n19-g="one"]:where(:root:not([data-n19-safe])) :is(li:has(>a[class^="link_"][href*="/google-ai"]),li:has(>a[class^="mobileMenuLink_"][href*="/google-ai"]),g1-banner:has(a[href*="/ai-"])){display:none!important}
+html[data-n19-g="books"] :is(#gb-ogen-opt-in-banner,#gb-ogen-opt-in-header-link){display:none!important}
+html[data-n19-g="arts"] a[data-gaaction="main-nav_clicked"]:is([data-galabel="lab"],[data-galabel="games"]),html[data-n19-g="arts"] a.zfaLP .uUqXFd{display:none!important}
+html[data-n19-g="one"] :is(li:has(>a[class^="link_"][href*="/google-ai"]),li:has(>a[class^="mobileMenuLink_"][href*="/google-ai"]),g1-banner:has(a[href*="/ai-"])){display:none!important}
 html:is([data-n19-g="fi"],[data-n19-g="store"]) a.IvQv9b.rkH8Ae:is(.g4h7rc,.m2RiMc){background-color:var(--n19-accent)!important;color:#fff!important;border-radius:4px!important}
 html:is([data-n19-g="fi"],[data-n19-g="store"]) a.IvQv9b.rkH8Ae:is(.g4h7rc,.m2RiMc)::after{background-color:var(--n19-accent)!important;border-radius:4px!important}
 html:is([data-n19-g="fi"],[data-n19-g="store"]) a.IvQv9b.rkH8Ae:is(.g4h7rc,.m2RiMc):hover::after{background-color:var(--n19-accent-hover)!important}
-html[data-n19-g="wallet"]:where(:root:not([data-n19-safe])) a#sdgBod>img{content:url("https://www.gstatic.com/instantbuy/svg/light_gpay.svg")!important;width:48px!important;height:20px!important}
+html[data-n19-g="wallet"] a#sdgBod>img{content:url("https://www.gstatic.com/instantbuy/svg/light_gpay.svg")!important}
+html[data-n19-g="wallet"]:where(:root:not([data-n19-safe])) a#sdgBod>img{width:48px!important;height:20px!important}
 html[data-n19-g="wallet"] a#sdgBod>img{object-fit:contain!important}
-html[data-n19-g="wallet"][data-net19-mode="dark"]:where(:root:not([data-n19-safe])) a#sdgBod>img{content:url("https://www.gstatic.com/instantbuy/svg/dark_gpay.svg")!important}
-html[data-n19-g="wallet"][data-net19-flip]:where(:root:not([data-n19-safe])) .glue-header__logo-custom img{content:url("https://www.gstatic.com/instantbuy/svg/dark_gpay.svg")!important}
-html[data-n19-g="wallet"][data-net19-flip] .glue-header__logo-custom img{object-fit:contain!important}
+html[data-n19-g="wallet"][data-net19-mode="dark"] a#sdgBod>img{content:url("https://www.gstatic.com/instantbuy/svg/dark_gpay.svg")!important}
+html[data-n19-g="wallet"][data-net19-flip] .glue-header__logo-custom img{content:url("https://www.gstatic.com/instantbuy/svg/dark_gpay.svg")!important;object-fit:contain!important}

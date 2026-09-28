@@ -7,12 +7,12 @@ html[data-net19-mode="dark"]{--n19-green:#1aad19;--n19-green-hover:#179b16;--n19
 :where(:root:not([data-n19-safe])) .main-content>.banner,.main-content:where(:root:not([data-n19-safe]))>.banner{flex:1 0 auto!important;height:auto!important;padding:0!important;min-height:640px!important}
 .main-content>.banner{background:transparent!important}
 :where(:root:not([data-n19-safe])) .main-content>.banner,.main-content:where(:root:not([data-n19-safe]))>.banner{overflow:visible!important}
-:where(:root:not([data-n19-safe])) .main-content>.banner>.banner__inner,.main-content:where(:root:not([data-n19-safe]))>.banner>.banner__inner{display:none!important}
+.main-content>.banner>.banner__inner{display:none!important}
 :where(:root:not([data-n19-safe])) .main-content>.banner>.banner__bd,.main-content:where(:root:not([data-n19-safe]))>.banner>.banner__bd{position:relative!important;box-sizing:border-box!important;max-width:1200px!important;margin:0 auto!important;top:auto!important;left:auto!important;transform:none!important;min-height:620px!important;padding:150px 0 60px calc(28% + 25px)!important;margin-top:0!important}
 .main-content>.banner>.banner__bd{text-align:center!important}
-:where(:root:not([data-n19-safe])) .main-content>.banner>.banner__bd::before,.main-content:where(:root:not([data-n19-safe]))>.banner>.banner__bd::before{content:""!important;position:absolute!important;left:0!important;top:78px!important;width:28%!important;aspect-ratio:620 / 1245!important}
-.main-content>.banner>.banner__bd::before{background:var(--n19-wc-phone) no-repeat top center / contain!important}
-:where(:root:not([data-n19-safe])) .main-content>.banner>.banner__bd::before,.main-content:where(:root:not([data-n19-safe]))>.banner>.banner__bd::before{pointer-events:none!important}
+.main-content>.banner>.banner__bd::before{content:""!important}
+:where(:root:not([data-n19-safe])) .main-content>.banner>.banner__bd::before,.main-content:where(:root:not([data-n19-safe]))>.banner>.banner__bd::before{position:absolute!important;left:0!important;top:78px!important;width:28%!important;aspect-ratio:620 / 1245!important}
+.main-content>.banner>.banner__bd::before{background:var(--n19-wc-phone) no-repeat top center / contain!important;pointer-events:none!important}
 :where(:root:not([data-n19-safe])) .banner__bd>.banner__logo,.banner__bd:where(:root:not([data-n19-safe]))>.banner__logo{width:83px!important;height:83px!important;margin:0 auto 25px!important}
 .banner__bd>.banner__logo{background:var(--n19-wc-mark) no-repeat center / 100%!important}
 :where(:root:not([data-n19-safe])) .banner__bd .banner__desc_wrap,.banner__bd:where(:root:not([data-n19-safe])) .banner__desc_wrap{margin:0 auto 36px!important;max-width:680px!important}
@@ -24,9 +24,10 @@ html[data-net19-mode="dark"]{--n19-green:#1aad19;--n19-green-hover:#179b16;--n19
 :where(:root:not([data-n19-safe])) .banner__download>.banner__download-item,.banner__download:where(:root:not([data-n19-safe]))>.banner__download-item{transform:none!important}
 :where(:root:not([data-n19-safe])) .banner__download>:is(.banner__download-item_ios,.banner__download-item_android),.banner__download:where(:root:not([data-n19-safe]))>:is(.banner__download-item_ios,.banner__download-item_android){width:173px!important;height:51px!important;margin:0 0 40px!important}
 .banner__download>:is(.banner__download-item_ios,.banner__download-item_android){background:no-repeat center / 100%!important}
-:where(:root:not([data-n19-safe])) .banner__download>.banner__download-item_ios,.banner__download:where(:root:not([data-n19-safe]))>.banner__download-item_ios{background-image:var(--n19-wc-appstore)!important}
-:where(:root:not([data-n19-safe])) .banner__download>.banner__download-item_android,.banner__download:where(:root:not([data-n19-safe]))>.banner__download-item_android{background-image:var(--n19-wc-android)!important;margin-left:5px!important}
-:where(:root:not([data-n19-safe])) .banner__download>:is(.banner__download-item_ios,.banner__download-item_android):hover,.banner__download:where(:root:not([data-n19-safe]))>:is(.banner__download-item_ios,.banner__download-item_android):hover{opacity:.75!important}
+.banner__download>.banner__download-item_ios{background-image:var(--n19-wc-appstore)!important}
+.banner__download>.banner__download-item_android{background-image:var(--n19-wc-android)!important}
+:where(:root:not([data-n19-safe])) .banner__download>.banner__download-item_android,.banner__download:where(:root:not([data-n19-safe]))>.banner__download-item_android{margin-left:5px!important}
+.banner__download>:is(.banner__download-item_ios,.banner__download-item_android):hover{opacity:.75!important}
 :where(:root:not([data-n19-safe])) .banner__download>:is(.banner__download-item_macos,.banner__download-item_windows),.banner__download:where(:root:not([data-n19-safe]))>:is(.banner__download-item_macos,.banner__download-item_windows){width:69px!important;height:61px!important}
 .banner__download>:is(.banner__download-item_macos,.banner__download-item_windows){border:1px solid var(--n19-square)!important}
 :where(:root:not([data-n19-safe])) .banner__download>:is(.banner__download-item_macos,.banner__download-item_windows),.banner__download:where(:root:not([data-n19-safe]))>:is(.banner__download-item_macos,.banner__download-item_windows){display:flex!important;align-items:center!important;justify-content:center!important}
@@ -38,8 +39,10 @@ html[data-net19-mode="dark"]{--n19-green:#1aad19;--n19-green-hover:#179b16;--n19
 .banner__download>.banner__download-item_windows i{background:var(--n19-wc-win) no-repeat center / 100%!important}
 .banner__download>.banner__download-item_macos i{background:var(--n19-wc-mac) no-repeat center / 100%!important}
 :where(:root:not([data-n19-safe])) .banner__download>:is(.banner__download-item_macos,.banner__download-item_windows) i,.banner__download:where(:root:not([data-n19-safe]))>:is(.banner__download-item_macos,.banner__download-item_windows) i{width:35px!important;height:35px!important;margin:0!important}
-:where(:root:not([data-n19-safe])) .banner__download>:is(.banner__download-item_ios,.banner__download-item_android) i,.banner__download:where(:root:not([data-n19-safe]))>:is(.banner__download-item_ios,.banner__download-item_android) i{display:none!important}
-:where(:root:not([data-n19-safe])) .banner__download>.banner__download-item>span,.banner__download:where(:root:not([data-n19-safe]))>.banner__download-item>span{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important;clip-path:inset(50%)!important;white-space:nowrap!important;margin:0!important;padding:0!important}
+.banner__download>:is(.banner__download-item_ios,.banner__download-item_android) i{display:none!important}
+:where(:root:not([data-n19-safe])) .banner__download>.banner__download-item>span,.banner__download:where(:root:not([data-n19-safe]))>.banner__download-item>span{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important}
+.banner__download>.banner__download-item>span{clip-path:inset(50%)!important}
+:where(:root:not([data-n19-safe])) .banner__download>.banner__download-item>span,.banner__download:where(:root:not([data-n19-safe]))>.banner__download-item>span{white-space:nowrap!important;margin:0!important;padding:0!important}
 .banner .lang_change :is(a,button,span){color:rgba(255, 255, 255, .8)!important;font-size:13px!important}
 .wrap:has(>.main-content>.banner) .links{background:transparent!important}
 :where(:root:not([data-n19-safe])) .wrap:has(>.main-content>.banner) .links,.wrap:has(>.main-content>.banner):where(:root:not([data-n19-safe])) .links{padding:0!important;margin:0!important;height:auto!important}
@@ -49,7 +52,7 @@ html[data-net19-mode="dark"]{--n19-green:#1aad19;--n19-green-hover:#179b16;--n19
 :where(:root:not([data-n19-safe])) .wrap:has(>.main-content>.banner) .links__list>li>a,.wrap:has(>.main-content>.banner):where(:root:not([data-n19-safe])) .links__list>li>a{display:inline-block!important;width:auto!important;height:auto!important;padding:6px 9px!important}
 .wrap:has(>.main-content>.banner) .links__list>li>a{background:transparent!important;box-shadow:none!important;border-radius:0!important;color:var(--n19-foot)!important;font-size:12px!important;line-height:18px!important;font-family:var(--n19-font)!important}
 .wrap:has(>.main-content>.banner) .links__list>li>a:hover{color:#fff!important}
-:where(:root:not([data-n19-safe])) .wrap:has(>.main-content>.banner) .links__list>li>a>i,.wrap:has(>.main-content>.banner):where(:root:not([data-n19-safe])) .links__list>li>a>i{display:none!important}
+.wrap:has(>.main-content>.banner) .links__list>li>a>i{display:none!important}
 .wrap:has(>.main-content>.banner) .footer-wrp,.wrap:has(>.main-content>.banner) .footer{background:transparent!important;box-shadow:none!important}
 :where(:root:not([data-n19-safe])) .wrap:has(>.main-content>.banner) .footer,.wrap:has(>.main-content>.banner):where(:root:not([data-n19-safe])) .footer{padding:4px 0 18px!important;height:auto!important}
 :where(:root:not([data-n19-safe])) .wrap:has(>.main-content>.banner) .footer__bd,.wrap:has(>.main-content>.banner):where(:root:not([data-n19-safe])) .footer__bd{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;align-items:center!important;gap:4px 14px!important;width:auto!important;max-width:1200px!important;margin:0 auto!important}
@@ -60,8 +63,8 @@ html[data-net19-mode="dark"]{--n19-green:#1aad19;--n19-green-hover:#179b16;--n19
 :where(:root:not([data-n19-safe])) .wrap:has(>.main-content>.banner) .footer__copyright,.wrap:has(>.main-content>.banner):where(:root:not([data-n19-safe])) .footer__copyright{order:1!important}
 :where(:root:not([data-n19-safe])) .wrap:has(>.main-content>.banner) .footer__social,.wrap:has(>.main-content>.banner):where(:root:not([data-n19-safe])) .footer__social{order:3!important;gap:10px!important}
 :where(:root:not([data-n19-safe])) .wrap:has(>.main-content>.banner) .footer__social-link,.wrap:has(>.main-content>.banner):where(:root:not([data-n19-safe])) .footer__social-link,:where(:root:not([data-n19-safe])) .wrap:has(>.main-content>.banner) .footer__social-link img,.wrap:has(>.main-content>.banner):where(:root:not([data-n19-safe])) .footer__social-link img{width:20px!important;height:20px!important}
-:where(:root:not([data-n19-safe])) .wrap:has(>.main-content>.banner) .footer__social-link,.wrap:has(>.main-content>.banner):where(:root:not([data-n19-safe])) .footer__social-link{opacity:.7!important}
-:where(:root:not([data-n19-safe])) .wrap:has(>.main-content>.banner) .footer__social-link:hover,.wrap:has(>.main-content>.banner):where(:root:not([data-n19-safe])) .footer__social-link:hover{opacity:1!important}
+.wrap:has(>.main-content>.banner) .footer__social-link{opacity:.7!important}
+.wrap:has(>.main-content>.banner) .footer__social-link:hover{opacity:1!important}
 .download__btn_primary{background-color:var(--n19-green)!important}
 .download__btn_primary:hover{background-color:var(--n19-green-hover)!important}
 html:has(#main-content) header#header.header{background-color:var(--n19-green)!important}
@@ -69,4 +72,4 @@ html:has(#main-content) header#header.header{background-color:var(--n19-green)!i
 :where(:root:not([data-n19-safe])) #main-content .banner__inner,#main-content:where(:root:not([data-n19-safe])) .banner__inner{left:0!important;width:100%!important;transform:none!important}
 #home-category-section .blocks-item{border-radius:0!important;box-shadow:none!important;border:1px solid #e5e5e5!important}
 #main-content input#query{border-radius:3px!important}
-@media (max-width:800px){:where(:root:not([data-n19-safe])) .main-content>.banner>.banner__bd,.main-content:where(:root:not([data-n19-safe]))>.banner>.banner__bd{padding:90px 16px 40px!important;min-height:0!important}:where(:root:not([data-n19-safe])) .main-content>.banner>.banner__bd::before,.main-content:where(:root:not([data-n19-safe]))>.banner>.banner__bd::before{display:none!important}.banner__bd .banner__desc{font-size:28px!important}}
+@media (max-width:800px){:where(:root:not([data-n19-safe])) .main-content>.banner>.banner__bd,.main-content:where(:root:not([data-n19-safe]))>.banner>.banner__bd{padding:90px 16px 40px!important;min-height:0!important}.main-content>.banner>.banner__bd::before{display:none!important}.banner__bd .banner__desc{font-size:28px!important}}

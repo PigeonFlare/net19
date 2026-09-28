@@ -18,10 +18,14 @@ A Chrome extension that shows popular websites as they looked in **2019**.
 - **Minimal changes:** Many website features such as icons are left untouched. Websites that adhere to old design standards might be left completely intact. For example, Wikipedia opens in its legacy skin, and Reddit simply reroutes to old.reddit.com for users that are signed-in. Backend features such as search results and entry recommendations stay intact. Features added after 2019 such as AI integration and shorts are removed from display.
 - **Individual website control:** If you like modern features on certain popular websites, like AI summaries on Google, you can disable the extension for those websites individually. You can also disable it entirely with another simple toggle.
 - **Smaller websites are unaffected:** Smaller and personal websites load exactly as they are, so you don't need to worry about how the extension messes with more niche styles or indie work.
-- **Minimal UI:** The extension features just two toggles, one to toggle it on and off for a particlar website, and the other to toggle it on and off in general. 
+- **Minimal UI:** The extension features just two toggles, one to toggle it on and off for a particlar website, and the other to toggle it on and off in general, plus a Donate link. 
 - **Color themes:** Naturally adapts websites to your computer's light or dark theme, while keeping the 2019 style, and maintaining true color for important media such as photos and videos. 
-- **Survives redesigns:** If a site redesign stops a design from fitting, that part of the site falls back to its 2019 colors and fonts on the current layout instead of breaking, and switches back once the design fits again. A weekly check flags the design for an update.
+- **Survives redesigns:** If a site redesign stops a design from fitting, that part of the site falls back to its 2019 colors and fonts on the current layout instead of breaking (post-2019 features stay hidden), and switches back once the design fits again. A weekly check flags the design for an update.
 - **User privacy:** The extension runs completely locally. No user data is stored except for toggle choices, and the names of site sections whose design currently doesn't fit. ([privacy policy](PRIVACY.md)).
+
+## Related projects
+
+net19 restyles 150+ sites at once. If you only care about one of these, their dedicated extensions go further: [Old Twitter Layout](https://github.com/dimdenGD/OldTwitter) by dimden and [YouTube Redux](https://github.com/omnidevZero/YouTubeRedux) by omnidevZero both inspired parts of net19's Twitter and YouTube themes (no code was copied).
 
 ## Report a problem or request a site
 

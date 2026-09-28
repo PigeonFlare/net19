@@ -15,7 +15,7 @@ header>div.flex.flex-row:has(>a>div>img)>div.flex-1>div,header>div.flex.flex-row
 :where(:root:not([data-n19-safe])) header>div.flex.flex-row:has(>a>div>img)>div:last-child{grid-row:1!important;grid-column:3!important}
 header ul li{font-size:17px!important}
 header ul .text-brandBlue-500,header nav .text-brandBlue-500,header ul li>button,header ul li>button *{color:var(--n19-head)!important;font-weight:400!important;font-size:17px!important}
-:where(:root:not([data-n19-safe])) header ul li>a br{display:none!important}
+header ul li>a br{display:none!important}
 :where(:root:not([data-n19-safe])) header ul li>a,:where(:root:not([data-n19-safe])) header ul li>button{white-space:nowrap!important;padding:8px 12px 10px 0!important}
 header ul li>a,header ul li>button{border-radius:0!important}
 header ul .text-brandBlue-500:hover{color:var(--n19-link)!important}
@@ -26,8 +26,8 @@ header a.bg-brandBlue-500{line-height:24px!important}
 header a.bg-brandBlue-500:hover{background:var(--n19-orange-hover)!important}
 section.bg-blue-050{background:var(--n19-page)!important}
 :where(:root:not([data-n19-safe])) section.bg-blue-050{padding-top:0!important;padding-bottom:24px!important}
-section.bg-blue-050>.container>div:first-child:has(a.underline){background:var(--n19-band)!important;box-shadow:0 0 0 100vmax var(--n19-band)!important}
-:where(:root:not([data-n19-safe])) section.bg-blue-050>.container>div:first-child:has(a.underline){clip-path:inset(0 -100vmax)!important;padding:10px 0!important;margin-bottom:30px!important;max-width:none!important}
+section.bg-blue-050>.container>div:first-child:has(a.underline){background:var(--n19-band)!important;box-shadow:0 0 0 100vmax var(--n19-band)!important;clip-path:inset(0 -100vmax)!important}
+:where(:root:not([data-n19-safe])) section.bg-blue-050>.container>div:first-child:has(a.underline){padding:10px 0!important;margin-bottom:30px!important;max-width:none!important}
 section.bg-blue-050 a.underline{color:var(--n19-text)!important;text-decoration:none!important;font-size:14px!important}
 section.bg-blue-050 .text-rem13px,section.bg-blue-050 .text-rem13px span{font-size:14px!important;letter-spacing:0!important}
 h1[data-identity="headline"]{font-weight:400!important;font-size:52px!important;line-height:60px!important;color:var(--n19-head)!important;letter-spacing:0!important}

@@ -3,7 +3,7 @@ html[data-net19-mode="dark"]{--n19-blue:#3a76c3;--n19-blue-dark:#2f62a6;--n19-te
 html body{--wrapper-site-hdr-bg:var(--n19-blue)!important;--search-border-radius:0!important;--wrapper-site-hdr-bg-dsktp:var(--n19-blue)!important;--wrapper-site-hdr-bg-mbl-tblt:var(--n19-blue)!important}
 body,button,input,select,textarea,h1,h2,h3,h4,p,a,li,span,label,em,blockquote{font-family:Arial, Helvetica, sans-serif!important}
 body.pg-dcom-entry,body[class*="pg-"]{background-color:var(--n19-page)!important;color:var(--n19-text-2)!important}
-:where(:root:not([data-n19-safe])) .wrapper-site-hdr,.wrapper-site-hdr:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) header,:where(:root:not([data-n19-safe])) [class*="site-hdr"],[class*="site-hdr"]:where(:root:not([data-n19-safe])){background-image:none!important}
+.wrapper-site-hdr,header,[class*="site-hdr"]{background-image:none!important}
 .wrapper-site-hdr{background:var(--n19-blue)!important}
 :where(:root:not([data-n19-safe])) .wrapper-site-hdr,.wrapper-site-hdr:where(:root:not([data-n19-safe])){height:88px!important}
 :where(:root:not([data-n19-safe])) header#id-site-hdr{height:88px!important;align-items:center!important}
@@ -17,7 +17,7 @@ form.search-form{border:1px solid #fff!important;box-shadow:none!important}
 form.search-form .search-input{font-size:18px!important;color:#1a1a1a!important}
 form.search-form .search-button{border-radius:0!important;background:var(--n19-blue-dark)!important}
 a.lk-site-nav{color:rgba(255,255,255,.85)!important;font-weight:700!important;font-size:12px!important;border-radius:0!important}
-:where(:root:not([data-n19-safe])) a.lk-logo-redirect{opacity:.9}
+a.lk-logo-redirect{opacity:.9}
 :where(:root:not([data-n19-safe])) .wrapper-site-main,.wrapper-site-main:where(:root:not([data-n19-safe])){padding-top:24px!important}
 .box-content-primary>section.sec-item-entry-group,.box-content-primary>section[class*="sec-"]:not(.sec-trivia-card),.box-content-primary>div.box-entry-group-nav{background:var(--n19-card)!important;border-radius:0!important;box-shadow:none!important}
 :where(:root:not([data-n19-safe])) .box-content-primary>section.sec-item-entry-group,.box-content-primary:where(:root:not([data-n19-safe]))>section.sec-item-entry-group,:where(:root:not([data-n19-safe])) .box-content-primary>section[class*="sec-"]:not(.sec-trivia-card),.box-content-primary:where(:root:not([data-n19-safe]))>section[class*="sec-"]:not(.sec-trivia-card){padding:30px!important;margin-bottom:16px!important}
@@ -28,7 +28,7 @@ a.lk-entry-group,.more-menu-btn,a.lk-to-thesaurus{line-height:24px!important}
 li.item-entry-group.is-highlighted a.lk-entry-group{color:var(--n19-text)!important;font-weight:700!important}
 li.item-entry-group+li.item-entry-group{border-left:1px solid var(--n19-rule)!important}
 a.lk-to-thesaurus{color:var(--n19-orange)!important}
-:where(:root:not([data-n19-safe])) section.sec-trivia-card,:where(:root:not([data-n19-safe])) #trivia-question-container,#trivia-question-container:where(:root:not([data-n19-safe])){display:none!important}
+section.sec-trivia-card,#trivia-question-container{display:none!important}
 h1.hdr-headword{font-weight:700!important;color:var(--n19-text)!important;font-size:48px!important;line-height:56px!important;letter-spacing:0!important}
 .box-headword-audio-pronunciation{border-radius:0!important;box-shadow:none!important;border-bottom:1px solid var(--n19-rule)!important}
 :where(:root:not([data-n19-safe])) .box-headword-audio-pronunciation,.box-headword-audio-pronunciation:where(:root:not([data-n19-safe])){padding:0 0 16px!important}
@@ -44,7 +44,7 @@ ol.list-definition p.txt-variant-label-short{font-size:17px!important;line-heigh
 blockquote.box-examples{border:0!important}
 :where(:root:not([data-n19-safe])) blockquote.box-examples{padding:2px 0 0!important;margin:0!important}
 blockquote.box-examples{background:transparent!important}
-:where(:root:not([data-n19-safe])) blockquote.box-examples::before{display:none!important}
+blockquote.box-examples::before{display:none!important}
 blockquote.box-examples p.txt-example{font-size:15px!important;color:var(--n19-text-2)!important;font-style:italic!important}
 .definition-image-container,.definition-image-container img,main img{border-radius:0!important}
 main a:not([class]){color:var(--n19-blue)!important}
@@ -60,6 +60,6 @@ main a:not([class]){color:var(--n19-blue)!important}
 :where(:root:not([data-n19-safe])) .box-headword-audio-pronunciation>.box-audio-pronunciation,.box-headword-audio-pronunciation:where(:root:not([data-n19-safe]))>.box-audio-pronunciation{margin:0!important}
 blockquote.box-examples,blockquote.box-examples>em,blockquote.box-examples p{border-left:0!important}
 :where(:root:not([data-n19-safe])) blockquote.box-examples,:where(:root:not([data-n19-safe])) blockquote.box-examples>em,:where(:root:not([data-n19-safe])) blockquote.box-examples p{padding-left:0!important}
-:where(:root:not([data-n19-safe])) .box-item-entry,.box-item-entry:where(:root:not([data-n19-safe])){background-image:none!important}
+.box-item-entry{background-image:none!important}
 :where(:root:not([data-n19-safe])) body.pg-dcom-home .wrapper-site-hdr,:where(:root:not([data-n19-safe])) body.pg-dcom-home header#id-site-hdr{height:auto!important;min-height:88px!important}
 :where(:root:not([data-n19-safe])) body.pg-dcom-home .wrapper-site-hdr{padding-bottom:28px!important}

@@ -2,14 +2,14 @@ html{--n19-orange:#f96302;--n19-orange-dark:#c24e02;--n19-text:#333;--n19-border
 html[data-net19-mode="dark"]{--n19-orange:#f96302;--n19-orange-dark:#c24e02;--n19-text:#e6e6e6;--n19-border:#555;--n19-field:#222}
 body,button,input{font-family:"Helvetica Neue", Helvetica, Arial, sans-serif!important}
 .sui-rounded-full:not([aria-label*="slide"i]):not([class*="sui-w-"]),.sui-rounded-lg,.sui-rounded-md,.sui-rounded-base,.sui-rounded-xl,[class*="sui-rounded-[12px]"],.sui-rounded-sm,[class*="sui-rounded-t-"],[class*="sui-rounded-b-"]{border-radius:0!important}
-:where(:root:not([data-n19-safe])) .bento-clip-path-rounded,.bento-clip-path-rounded:where(:root:not([data-n19-safe])){clip-path:none!important}
+.bento-clip-path-rounded{clip-path:none!important}
 #header-root{border-bottom:3px solid var(--n19-orange)!important;box-shadow:none!important}
 #header-root form.sui-rounded-base,#header-root form{background:var(--n19-field)!important;border:1px solid var(--n19-border)!important}
 #header-root form button[type="submit"],#header-root form button[aria-label*="search"i]{background:var(--n19-orange)!important;border-radius:0!important}
 .sui-bg-brand:is(button,a),button.sui-bg-brand,a.sui-bg-brand{border-radius:0!important;box-shadow:inset 0 -3px 0 var(--n19-orange-dark)!important}
 button.sui-rounded-full.sui-border-solid,a.sui-rounded-full.sui-border-solid{border-radius:0!important;border-color:var(--n19-border)!important}
-:where(:root:not([data-n19-safe])) [data-testid="header-b2c-magic-apron"],[data-testid="header-b2c-magic-apron"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) button[aria-label^="Magic Apron"i],:where(:root:not([data-n19-safe])) [data-component="ExpandableFab"],[data-component="ExpandableFab"]:where(:root:not([data-n19-safe])){display:none!important}
-:where(:root:not([data-n19-safe])) #header-tophat,#header-tophat:where(:root:not([data-n19-safe])){display:none!important}
+[data-testid="header-b2c-magic-apron"],button[aria-label^="Magic Apron"i],[data-component="ExpandableFab"]{display:none!important}
+#header-tophat{display:none!important}
 :where(:root:not([data-n19-safe])) #header-root,#header-root:where(:root:not([data-n19-safe])){top:0!important}
 :where(:root:not([data-n19-safe])) #header-content>div.sui-flex.sui-items-center,#header-content:where(:root:not([data-n19-safe]))>div.sui-flex.sui-items-center{height:80px!important}
 :where(:root:not([data-n19-safe])) #header-content>div.sui-flex.sui-items-center>div:first-child a,#header-content:where(:root:not([data-n19-safe]))>div.sui-flex.sui-items-center>div:first-child a,:where(:root:not([data-n19-safe])) #header-content>div.sui-flex.sui-items-center>div:first-child a svg,#header-content:where(:root:not([data-n19-safe]))>div.sui-flex.sui-items-center>div:first-child a svg,:where(:root:not([data-n19-safe])) #header-content>div.sui-flex.sui-items-center>div:first-child a img,#header-content:where(:root:not([data-n19-safe]))>div.sui-flex.sui-items-center>div:first-child a img{width:50px!important;height:50px!important}
@@ -27,4 +27,4 @@ button.sui-rounded-full.sui-border-solid,a.sui-rounded-full.sui-border-solid{bor
 #root a.sui-whitespace-nowrap:has(>div>span.sui-text-ellipsis)>div{border:0!important;background:transparent!important}
 #root a.sui-whitespace-nowrap span.sui-text-ellipsis{color:var(--n19-text)!important;font-size:14px!important}
 #root a.sui-whitespace-nowrap:hover span.sui-text-ellipsis{color:var(--n19-orange)!important;text-decoration:underline!important}
-:where(:root:not([data-n19-safe])) #sign-in-bubble,#sign-in-bubble:where(:root:not([data-n19-safe])){display:none!important}
+#sign-in-bubble{display:none!important}

@@ -23,11 +23,11 @@ html:root,body{--color-foreground-link-primary:var(--n19-link)!important;--color
 .s-item__title,.s-item__link,.s-card__title{color:var(--n19-link)!important}
 .s-item__price,.x-price-primary,.s-card__price{color:var(--n19-text)!important;font-weight:700!important}
 .gh-search__wrap{border-width:1px!important}
-:where(:root:not([data-n19-safe])) .gh-search-input__wrap>svg,.gh-search-input__wrap:where(:root:not([data-n19-safe]))>svg,:where(:root:not([data-n19-safe])) .gh-search-input__wrap .gh-search-input__icon,.gh-search-input__wrap:where(:root:not([data-n19-safe])) .gh-search-input__icon,:where(:root:not([data-n19-safe])) .gh-search__wrap>svg:first-child,.gh-search__wrap:where(:root:not([data-n19-safe]))>svg:first-child{display:none!important}
-:where(:root:not([data-n19-safe])) .gh-search-input__camera-btn,.gh-search-input__camera-btn:where(:root:not([data-n19-safe])){display:none!important}
+.gh-search-input__wrap>svg,.gh-search-input__wrap .gh-search-input__icon,.gh-search__wrap>svg:first-child{display:none!important}
+.gh-search-input__camera-btn{display:none!important}
 :where(:root:not([data-n19-safe])) #gh-ac,#gh-ac:where(:root:not([data-n19-safe])){padding-left:10px!important}
 :where(:root:not([data-n19-safe])) #gh-search-btn,#gh-search-btn:where(:root:not([data-n19-safe])){width:auto!important;min-width:90px!important;padding:0 22px!important;height:40px!important;align-self:center!important}
-:where(:root:not([data-n19-safe])) .vl-flyout-nav li.vl-flyout-nav--pulsating-dot-live,.vl-flyout-nav:where(:root:not([data-n19-safe])) li.vl-flyout-nav--pulsating-dot-live{display:none!important}
+.vl-flyout-nav li.vl-flyout-nav--pulsating-dot-live{display:none!important}
 .vl-flyout-nav li>a,.vl-flyout-nav li>span>a{background:transparent!important;border-radius:0!important}
 :where(:root:not([data-n19-safe])) main .page-grid-container:has(>[class*="dp-hero"]){padding-left:0!important;padding-right:0!important}
 main [class*="dp-hero"][class*="-module"]{border-radius:0!important}
@@ -35,6 +35,6 @@ main [class*="dp-hero"][class*="-module"]{border-radius:0!important}
 .su-card-container__header a:hover :is(span,div){text-decoration:underline!important}
 .fake-tabs__item>a{border-radius:0!important;background:transparent!important;border:0!important;border-bottom:2px solid transparent!important;color:var(--n19-text)!important}
 .fake-tabs__item--current>a{border-bottom-color:var(--n19-text)!important;font-weight:700!important}
-:where(:root:not([data-n19-safe])) .s-card__searchsimilar,.s-card__searchsimilar:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .s-tourtip,.s-tourtip:where(:root:not([data-n19-safe])){display:none!important}
-:where(:root:not([data-n19-safe])) .x-evo-atf-top-river:has(a[href*="/ebaylive"]),.x-evo-atf-top-river:has(a[href*="/ebaylive"]):where(:root:not([data-n19-safe])){display:none!important}
+.s-card__searchsimilar,.s-tourtip{display:none!important}
+.x-evo-atf-top-river:has(a[href*="/ebaylive"]){display:none!important}
 .ux-image-carousel,.ux-image-carousel-item,.ux-image-filmstrip-carousel-item,.ux-image-grid-item{border-radius:0!important}

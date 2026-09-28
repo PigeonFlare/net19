@@ -20,7 +20,7 @@ kbb-global-nav nav nav>div:hover{background:var(--n19-bar-hover)!important}
 #superheroSection [data-lean-auto^="green-monster"]{background:var(--n19-hero-box)!important;border-radius:0!important}
 #superheroSection h1{font-size:34px!important;line-height:40px!important;letter-spacing:-.9px!important;font-weight:700!important}
 :where(:root:not([data-n19-safe])) #superheroSection h1,#superheroSection:where(:root:not([data-n19-safe])) h1{margin-bottom:4px!important}
-:where(:root:not([data-n19-safe])) #superheroSection h1::after,#superheroSection:where(:root:not([data-n19-safe])) h1::after{display:none!important}
+#superheroSection h1::after{display:none!important}
 #superheroSection h1+h2{font-size:14px!important;line-height:22px!important;font-weight:700!important;letter-spacing:0!important}
 :where(:root:not([data-n19-safe])) #superheroSection h1+h2,#superheroSection:where(:root:not([data-n19-safe])) h1+h2{margin-bottom:14px!important}
 #superheroSection a[data-lean-auto$="entry-point"]>span{background:linear-gradient(var(--n19-green), var(--n19-green-dark))!important;border:1px solid var(--n19-green-dark)!important;border-radius:4px!important;color:#fff!important;font-size:20px!important;font-weight:600!important;letter-spacing:0!important}
@@ -33,4 +33,4 @@ kbb-global-nav nav nav>div:hover{background:var(--n19-bar-hover)!important}
 #content a[class*="e1uau9z02"]>span,#content button[class*="e1uau9z02"]>span{font-family:var(--n19-font)!important;font-weight:600!important;letter-spacing:0!important;border-radius:4px!important}
 #content a[class*="e1ez57g00"]{color:var(--n19-link)!important}
 #content div[class*="e1ngkdb71"][class*="css-zfugvv"]{background:var(--n19-band)!important}
-:where(:root:not([data-n19-safe])) a[href*="kbb.com/ai-mode"],:where(:root:not([data-n19-safe])) a[href^="/ai-mode"]{display:none!important}
+a[href*="kbb.com/ai-mode"],a[href^="/ai-mode"]{display:none!important}

@@ -26,6 +26,5 @@ input[data-testid="search-input"]~div span,input[data-testid="search-input"]::pl
 :where(:root:not([data-n19-safe])) [data-testid="login-button"]>span,[data-testid="login-button"]:where(:root:not([data-n19-safe]))>span{min-block-size:0!important;block-size:40px!important;padding-block:0!important;display:inline-flex!important;align-items:center!important}
 [data-testid="signup-bar"]{border-radius:0!important}
 [data-encore-id="card"][aria-labelledby*=":artist:"] :is(img,[data-testid="card-image"],[data-testid="card-image"]>div){border-radius:50%!important}
-:where(:root:not([data-n19-safe])) [class*="EntryPoint_footer"],[class*="EntryPoint_footer"]:where(:root:not([data-n19-safe])){display:none!important}
-[class*="EntryPoint_textareaWrapper"]{border-radius:4px!important;box-shadow:none!important}
-:where(:root:not([data-n19-safe])) [class*="EntryPoint_textareaWrapper"],[class*="EntryPoint_textareaWrapper"]:where(:root:not([data-n19-safe])){background-image:none!important}
+[class*="EntryPoint_footer"]{display:none!important}
+[class*="EntryPoint_textareaWrapper"]{border-radius:4px!important;box-shadow:none!important;background-image:none!important}

@@ -124,3 +124,35 @@ main a[href*="/features/copilot"], main a[href*="/features/ai/github-app"], main
 [class*="Primer_Brand__"], [class*="Primer_Brand__"] *:not(code, pre, code *, pre *), .markdown-body, main h1, main h2, main h3 { font-family: var(--n19-font) !important; }
 [class*="ProductSelectionCard_cell"]:has(a[href$="/copilot"]) { display: none !important; }
 header[class*="SubdomainNavBar"] button, header[class*="SubdomainNavBar"] input { border-radius: 3px !important; }
+
+#repository-container-header > :is(div, nav) { max-width: 980px !important; margin-left: auto !important; margin-right: auto !important; padding-left: 0 !important; padding-right: 0 !important; box-sizing: border-box !important; }
+#repository-container-header .UnderlineNav-body { padding-left: 0 !important; }
+:is(#repo-content-pjax-container, #repo-content-turbo-frame) [class*="PageLayout-PageLayoutRoot"].container-xl,
+:is(#repo-content-pjax-container, #repo-content-turbo-frame) [class*="ContentWrapper-module__contentContainer"] { max-width: 1012px !important; margin-left: auto !important; margin-right: auto !important; padding-left: 16px !important; padding-right: 16px !important; box-sizing: border-box !important; }
+react-app[app-name="code-view"] [class*="PageLayout-PageLayoutContent"]:has(> [class*="PageLayout-PaneWrapper"] [class*="CodeViewSidebar-module__borderGrid"]) { flex-direction: column !important; }
+react-app[app-name="code-view"] [class*="PageLayout-PaneWrapper"]:has([class*="CodeViewSidebar-module__borderGrid"]),
+react-app[app-name="code-view"] [class*="PageLayout-PaneWrapper"] > [class*="PageLayout-Pane-"]:has([class*="CodeViewSidebar-module__borderGrid"]),
+react-app[app-name="code-view"] [class*="CodeViewSidebar-module__borderGrid"] { display: contents !important; }
+react-app[app-name="code-view"] [class*="PageLayout-PageLayoutContent"]:has([class*="CodeViewSidebar-module__borderGrid"]) > [class*="PageLayout-ContentWrapper"] { order: 1 !important; width: 100% !important; max-width: none !important; }
+react-app[app-name="code-view"] [class*="CodeViewSidebar-module__borderGrid"] > [class*="SidebarSection-module__sidebarSection"] { order: 2 !important; width: 100% !important; max-width: none !important; box-sizing: border-box !important; padding-left: 0 !important; padding-right: 0 !important; }
+react-app[app-name="code-view"] [class*="CodeViewSidebar-module__borderGrid"] > [class*="SidebarSection-module__sidebarSection"]:first-child { order: 0 !important; display: block !important; padding: 16px 0 8px !important; border: 0 !important; }
+react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child > h2 { display: none !important; }
+react-app[app-name="code-view"] [class*="CodeViewSidebar-module__borderGrid"] > [class*="SidebarSection-module__sidebarSection"]:first-child { display: flex !important; flex-wrap: wrap !important; align-items: center !important; column-gap: 24px !important; row-gap: 6px !important; }
+react-app[app-name="code-view"] [class*="SidebarAbout-module__description"] { font-size: 16px !important; line-height: 24px !important; color: var(--n19-text) !important; margin: 0 -16px 0 0 !important; flex: none !important; max-width: 100% !important; }
+react-app[app-name="code-view"] [class*="SidebarAbout-module__websiteRow"] { flex: none !important; width: auto !important; margin: 0 !important; font-size: 16px !important; }
+react-app[app-name="code-view"] [class*="SidebarAbout-module__websiteRow"] svg { display: none !important; }
+react-app[app-name="code-view"] [class*="SidebarAbout-module__websiteRow"] a { font-weight: 400 !important; font-size: 16px !important; }
+react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child > [class*="TopicTag-TopicTagGroup"] { flex: 0 0 100% !important; margin: 4px 0 6px !important; gap: 0 !important; }
+react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child a[class*="TopicTag-TopicTag-"] { background: var(--n19-commit-bar) !important; color: var(--n19-link) !important; border-radius: 3px !important; font-size: 12px !important; line-height: 1.5 !important; padding: .3em .9em !important; margin: 0 .5em .5em 0 !important; font-weight: 400 !important; height: auto !important; }
+react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child > div.mt-2 { flex: none !important; width: auto !important; margin: 0 !important; }
+react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child > div.mt-2 :is(a, span) { color: var(--n19-text-2) !important; }
+react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child > div.mt-2 svg { color: var(--n19-text-2) !important; margin-right: 4px !important; }
+react-app[app-name="code-view"] [class*="PageLayout-PageLayoutContent"]:has([class*="CodeViewSidebar-module__borderGrid"]) :is([class*="PageLayout-ContentWrapper"], [class*="PageLayout-Content-"]) { padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; }
+react-app[app-name="code-view"] [class*="OverviewContent-module__Box__"] { padding-left: 0 !important; padding-right: 0 !important; }
+[data-component="StateLabel"][data-status="issueClosed"], [data-component="StateLabel"][data-status="issueClosedNotPlanned"] { background-color: #cb2431 !important; color: #fff !important; }
+[data-component="StateLabel"][data-status="issueOpened"], [data-component="StateLabel"][data-status="pullOpened"] { background-color: #2cbe4e !important; color: #fff !important; }
+[class*="HeaderViewer-module__issueTitle"] { font-weight: 400 !important; }
+:is([class*="TimelineRowBorder-module__Box"]:has(> [class*="TimelineRowBorder-module__major"] [data-testid="comment-header"]), [class*="IssueBody-module__outerContainer"]) { position: relative !important; margin-left: 56px !important; }
+:is([class*="TimelineRowBorder-module__major"] [data-testid="comment-header"] [class*="ActivityHeader-module__AvatarContainer"], [class*="IssueBody-module__outerContainer"] [class*="IssueBodyHeader-module__avatarContainer"]) { position: absolute !important; left: -56px !important; top: 0 !important; width: 40px !important; height: 40px !important; }
+:is([class*="TimelineRowBorder-module__major"] [data-testid="comment-header"] [class*="ActivityHeader-module__AvatarContainer"], [class*="IssueBody-module__outerContainer"] [class*="IssueBodyHeader-module__avatarContainer"]) :is(a, img) { width: 40px !important; height: 40px !important; display: block !important; }
+react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child > h3.sr-only > span { position: absolute !important; width: 1px !important; height: 1px !important; overflow: hidden !important; clip: rect(0 0 0 0) !important; white-space: nowrap !important; }

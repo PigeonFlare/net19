@@ -14,8 +14,8 @@ header.global-navigation>nav{background:transparent!important;border-radius:0!im
 :where(:root:not([data-n19-safe])) header.global-navigation>nav>ul{flex:1 1 auto!important}
 :where(:root:not([data-n19-safe])) header.global-navigation .feds-menu-wrapper>ul.feds-gnav-items{margin:0 auto!important;gap:12px!important}
 header.global-navigation .feds-link,header.global-navigation .feds-link *{color:var(--n19-text)!important;font-size:15px!important;font-weight:700!important}
-:where(:root:not([data-n19-safe])) header.global-navigation .feds-link::after{display:none!important}
-:where(:root:not([data-n19-safe])) header.global-navigation .feds-brand .desktop-brand img{display:none!important}
+header.global-navigation .feds-link::after{display:none!important}
+header.global-navigation .feds-brand .desktop-brand img{display:none!important}
 :where(:root:not([data-n19-safe])) header.global-navigation .feds-brand .desktop-brand img:first-child{display:block!important}
 header.global-navigation .profile-comp.secondary-button{background:transparent!important;border:none!important;box-shadow:none!important;color:var(--n19-text)!important;font-weight:700!important;font-size:15px!important}
 .router-marquee .rm-title,.router-marquee .rm-title *{font-family:"Adobe Clean", adobe-clean, "Source Sans Pro", sans-serif!important;font-size:44px!important;line-height:1.15!important;font-weight:700!important;letter-spacing:0!important}
@@ -25,7 +25,7 @@ header.global-navigation .profile-comp.secondary-button{background:transparent!i
 .router-marquee .con-button{font-size:15px!important}
 .router-marquee .con-button.fill:not(.outline){background:var(--n19-blue)!important;border-color:var(--n19-blue)!important;color:#fff!important}
 .router-marquee .rm-card{border-radius:4px!important}
-:where(:root:not([data-n19-safe])) a.feds-product-card[href*="firefly"i],:where(:root:not([data-n19-safe])) a.feds-product-card[href*="genstudio"i]{display:none!important}
+a.feds-product-card[href*="firefly"i],a.feds-product-card[href*="genstudio"i]{display:none!important}
 main .section.rounded-corners-top,main .section.rounded-corners-top>.section-background{border-radius:0!important}
-:where(:root:not([data-n19-safe])) #brand-concierge,#brand-concierge:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .brand-concierge,.brand-concierge:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .bc-floating-button,.bc-floating-button:where(:root:not([data-n19-safe])){display:none!important}
-:where(:root:not([data-n19-safe])) .router-marquee a.rm-card[href*="firefly"i],.router-marquee:where(:root:not([data-n19-safe])) a.rm-card[href*="firefly"i],:where(:root:not([data-n19-safe])) .router-marquee .rm-slide:has(a[href*="firefly"i]),.router-marquee:where(:root:not([data-n19-safe])) .rm-slide:has(a[href*="firefly"i]){display:none!important}
+#brand-concierge,.brand-concierge,.bc-floating-button{display:none!important}
+.router-marquee a.rm-card[href*="firefly"i],.router-marquee .rm-slide:has(a[href*="firefly"i]){display:none!important}

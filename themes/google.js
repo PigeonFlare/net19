@@ -1,4 +1,5 @@
 globalThis.net19Theme = {
+  keep: '.Ygr1Ue, .OeV5lf',
   detect() {
     const probe = getComputedStyle(document.documentElement).getPropertyValue('--yTtsEf').trim().toLowerCase();
     if (probe === '#c4eed0') return 'dark';
@@ -19,7 +20,10 @@ globalThis.net19Theme = {
       const others = el => [...el.querySelectorAll(result)].some(h => !block.contains(h));
       const adds = el => (el.innerText || '').length - (block.innerText || '').length > 300;
       while (block.parentElement && block.parentElement !== document.body && !['rso', 'center_col', 'search', 'rcnt', 'main'].includes(block.parentElement.id) && !others(block.parentElement) && !adds(block.parentElement)) block = block.parentElement;
-      if ((block !== anchor || anchor.matches('[data-subtree]')) && block.querySelectorAll(result).length <= own) hideBlock(block);
+      if (!((block !== anchor || anchor.matches('[data-subtree]')) && block.querySelectorAll(result).length <= own)) continue;
+      if (!block.querySelector(ANSWER_2019)) { hideBlock(block); continue; }
+      pruneAround(block);
+      for (let up = block, depth = 0; up && up.id !== 'rcnt' && depth < 16; up = up.parentElement, depth++) up.setAttribute('data-n19-unclamp', '');
     }
     for (const block of document.querySelectorAll('[data-net19-ai]')) {
       let shell = block.parentElement;
@@ -30,6 +34,15 @@ globalThis.net19Theme = {
     }
   };
   const STOP = ['rso', 'center_col', 'search', 'rcnt', 'main'];
+  const ANSWER_2019 = '#wob_wc, .pWvJNd article, article.NklNX';
+  const pruneAround = block => {
+    for (const child of block.children) {
+      if (child.matches(ANSWER_2019) || child.matches('script, style')) continue;
+      if (!child.querySelector(ANSWER_2019)) { hideBlock(child); continue; }
+      child.setAttribute('data-n19-unclamp', '');
+      pruneAround(child);
+    }
+  };
   const RESULT = 'a[href] h3, h3 a[href]';
   const hideBlock = el => { el.setAttribute('data-net19-hidden', ''); el.setAttribute('data-net19-ai', ''); el.style.setProperty('display', 'none', 'important'); };
   let queued = false;
@@ -115,4 +128,58 @@ globalThis.net19Theme = {
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; leaveAiMode(); }); };
   new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
   addEventListener('popstate', leaveAiMode);
+})();
+(() => {
+  const LATER_MODULES = /^(?:what people are saying|discussions and forums|short videos|things to know|perspectives|ask anything in ai mode|from sources across the web)$/i;
+  const LATER_BUTTONS = /^(?:customize|preferred sources)$/i;
+  const STOP = ['rso', 'center_col', 'search', 'rcnt', 'main', 'botstuff', 'bres', 'rhs'];
+  const WEB_RESULT = 'a[href] h3.LC20lb, a.zReHs h3';
+  const text = el => (el.textContent || '').replace(/\s+/g, ' ').trim();
+  const hide = el => { el.setAttribute('data-net19-hidden', ''); el.style.setProperty('display', 'none', 'important'); };
+  const modules = () => {
+    for (const heading of document.querySelectorAll('#rso [role="heading"][aria-level="2"], #rso h2, #botstuff [role="heading"][aria-level="2"]')) {
+      if (heading.closest('[data-net19-hidden]') || !LATER_MODULES.test(text(heading))) continue;
+      let block = heading;
+      while (block.parentElement && !STOP.includes(block.parentElement.id) && block.parentElement !== document.body) {
+        const parent = block.parentElement;
+        const headings = [...parent.querySelectorAll('[role="heading"][aria-level="2"], h2')].filter(h => h !== heading && !block.contains(h) && text(h));
+        const results = [...parent.querySelectorAll(WEB_RESULT + ', .related-question-pair [role="button"][aria-expanded], .related-question-pair .dnXCYb')].filter(h => !block.contains(h));
+        if (headings.length || results.length) break;
+        block = parent;
+      }
+      if (block !== heading) hide(block);
+    }
+    for (const button of document.querySelectorAll('#rso [role="button"], #rso button, #rso a')) {
+      if (button.hasAttribute('data-net19-hidden') || button.closest('.zReHs') || !LATER_BUTTONS.test(text(button))) continue;
+      if (button.closest('.MjjYud, .ULSxyf') && button.getBoundingClientRect().height <= 48) hide(button);
+    }
+  };
+  const alpha = color => { const m = String(color).match(/[\d.]+/g); if (!m || m.length < 3) return 0; return m.length > 3 ? +m[3] : 1; };
+  const seen = new WeakSet();
+  const SKIP = 'img, svg, video, canvas, g-img, picture, iframe, path, input, textarea';
+  const shapes = () => {
+    for (const el of document.querySelectorAll('#rcnt *, #botstuff *')) {
+      if (seen.has(el)) continue;
+      if (el.matches(SKIP) || el.closest('form, [data-net19-hidden]')) { seen.add(el); continue; }
+      const box = el.getBoundingClientRect();
+      if (!box.width || !box.height) continue;
+      seen.add(el);
+      const style = getComputedStyle(el);
+      const filled = alpha(style.backgroundColor) >= .9 && style.backgroundImage === 'none';
+      const outlined = parseFloat(style.borderTopWidth) > 0 && alpha(style.borderTopColor) > 0;
+      if (!filled && !outlined) continue;
+      const raw = style.borderTopLeftRadius;
+      const radius = raw.endsWith('%') ? parseFloat(raw) / 100 * Math.min(box.width, box.height) : parseFloat(raw) || 0;
+      if (radius < 8) continue;
+      const round = box.width <= 48 && box.height <= 48 && Math.abs(box.width - box.height) <= 4 && radius >= box.width / 2 - 2;
+      const pill = !round && box.height <= 48 && radius >= box.height / 2 - 2 && text(el).length > 0;
+      const shape = round ? 'round' : pill ? 'pill' : radius >= 12 ? 'card' : '';
+      if (shape) el.setAttribute('data-n19-shape', shape);
+    }
+  };
+  const run = () => { if (location.pathname !== '/search') return; modules(); shapes(); };
+  let timer = 0;
+  const later = () => { clearTimeout(timer); timer = setTimeout(run, 200); };
+  const start = () => { run(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); addEventListener('load', later, { once: true }); };
+  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();

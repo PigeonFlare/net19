@@ -12,13 +12,12 @@ html:is([data-n19-wa="www"],[data-n19-wa="blog"]) body :is(div,span,a,p,h1,h2,h3
 header[data-n19-wa-part="head"]{background-color:var(--n19-teal)!important;box-shadow:none!important;border-bottom:0!important}
 :where(:root:not([data-n19-safe])) header[data-n19-wa-part="head"] a:is([href="https://www.whatsapp.com/"],[href="/"]):not(:is(._av3b,._auta) a){display:block!important;width:124px!important;height:35px!important}
 header[data-n19-wa-part="head"] a:is([href="https://www.whatsapp.com/"],[href="/"]):not(:is(._av3b,._auta) a){background:var(--n19-wa-logo) no-repeat left center / contain!important}
-:where(:root:not([data-n19-safe])) header[data-n19-wa-part="head"] a:is([href="https://www.whatsapp.com/"],[href="/"]):not(:is(._av3b,._auta) a)>*{visibility:hidden!important}
+header[data-n19-wa-part="head"] a:is([href="https://www.whatsapp.com/"],[href="/"]):not(:is(._av3b,._auta) a)>*{visibility:hidden!important}
 header[data-n19-wa-part="head"] a:not([class*="_9u4i"]):not([class*="_9u4j"]):not(:is(._av3b,._auta) a){color:#fff!important}
 header[data-n19-wa-part="head"] a:not([class*="_9u4i"]):not([class*="_9u4j"]):not(:is(._av3b,._auta) a) :is(span,svg){color:#fff!important;fill:currentColor}
 header[data-n19-wa-part="head"] [role="button"]:not(._auta *)>svg{color:#fff!important;fill:#fff!important}
 header[data-n19-wa-part="head"] ._av3e a:not(._av3b a),header[data-n19-wa-part="head"] ._av3e a:not(._av3b a) span{font-size:13px!important;font-weight:500!important;letter-spacing:.02em!important;text-transform:uppercase!important}
-header[data-n19-wa-part="head"] ._av3e a:not(._av3b a):hover span{text-decoration:none!important}
-:where(:root:not([data-n19-safe])) header[data-n19-wa-part="head"] ._av3e a:not(._av3b a):hover span{opacity:.8!important}
+header[data-n19-wa-part="head"] ._av3e a:not(._av3b a):hover span{text-decoration:none!important;opacity:.8!important}
 header[data-n19-wa-part="head"] ._av3b{border-radius:3px!important}
 header[data-n19-wa-part="head"] ._av3b a,header[data-n19-wa-part="head"] ._av3b a span{color:#191919!important;font-weight:400!important}
 header[data-n19-wa-part="head"] ._av3b a:hover span{color:var(--n19-teal-text)!important}
@@ -36,12 +35,13 @@ footer[data-n19-wa-part="foot"]{background-color:var(--n19-navy)!important}
 footer[data-n19-wa-part="foot"]>div:last-child{background-color:var(--n19-navy-2)!important}
 footer[data-n19-wa-part="foot"] h4{color:rgba(255, 255, 255, .6)!important;font-size:12px!important;font-weight:600!important;letter-spacing:.08em!important;text-transform:uppercase!important}
 footer[data-n19-wa-part="foot"] ul a,footer[data-n19-wa-part="foot"] ul a span{color:#fff!important;font-size:14px!important}
-:where(:root:not([data-n19-safe])) footer[data-n19-wa-part="foot"] img._aeok{content:var(--n19-wa-logo)!important;width:138px!important;height:39px!important}
+footer[data-n19-wa-part="foot"] img._aeok{content:var(--n19-wa-logo)!important}
+:where(:root:not([data-n19-safe])) footer[data-n19-wa-part="foot"] img._aeok{width:138px!important;height:39px!important}
 footer[data-n19-wa-part="foot"] img._aeok{object-fit:contain!important}
 :where(:root:not([data-n19-safe])) footer[data-n19-wa-part="foot"] a[href*="x.com/"]{display:inline-flex!important}
-:where(:root:not([data-n19-safe])) #content-wrapper section article:has(>form input),#content-wrapper:where(:root:not([data-n19-safe])) section article:has(>form input){display:none!important}
-:where(:root:not([data-n19-safe])) :is(header,footer) a:is([href$="/meta-ai"],[href$="/channels"],[href$="/whatsapp-plus"],[href*="/meta-ai?"],[href*="/channels?"]),:is(header,footer):where(:root:not([data-n19-safe])) a:is([href$="/meta-ai"],[href$="/channels"],[href$="/whatsapp-plus"],[href*="/meta-ai?"],[href*="/channels?"]){display:none!important}
-:where(:root:not([data-n19-safe])) footer li:has(>a:is([href$="/meta-ai"],[href$="/channels"],[href$="/whatsapp-plus"])){display:none!important}
+#content-wrapper section article:has(>form input){display:none!important}
+:is(header,footer) a:is([href$="/meta-ai"],[href$="/channels"],[href$="/whatsapp-plus"],[href*="/meta-ai?"],[href*="/channels?"]){display:none!important}
+footer li:has(>a:is([href$="/meta-ai"],[href$="/channels"],[href$="/whatsapp-plus"])){display:none!important}
 html[data-n19-wa="blog"] #content-wrapper :is(h1,h2,h3) a,html[data-n19-wa="blog"] #content-wrapper a :is(h1,h2,h3){color:var(--n19-teal-text)!important}
 html[data-n19-wa="faq"] body :is(div,span,a,p,h1,h2,h3,h4,li,input){font-family:var(--n19-font)!important}
 html[data-n19-wa="faq"] [role="banner"],html[data-n19-wa="faq"] div.x1ve1bff.x9l4bfa{background-color:var(--n19-teal)!important}

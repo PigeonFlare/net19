@@ -2,7 +2,7 @@ html{--n19-nav:#002a32;--n19-nav-link:#00d6d6;--n19-nav-text:#fff;--n19-nav-fiel
 html[data-net19-mode="dark"]{--n19-nav:#002a32;--n19-nav-link:#00d6d6;--n19-nav-text:#fff;--n19-nav-field:rgba(255,255,255,.1);--n19-nav-rule:rgba(255,255,255,.25);--n19-title:#e6e6e6;--n19-page-border:#3a4a4f}
 #global-top-navigation{--fandom-global-nav-background-color:var(--n19-nav);--fandom-global-nav-text-color:var(--n19-nav-text);--fandom-global-nav-link-color:var(--n19-nav-link);--fandom-global-nav-icon-color:var(--n19-nav-link);--fandom-global-nav-icon-background-color--hover:rgba(255,255,255,.12);--fandom-global-nav-separator-color:var(--n19-nav-rule);--fandom-global-nav-border-color:var(--n19-nav);background-color:var(--n19-nav)!important;color:var(--n19-nav-text)!important;border-bottom-color:var(--n19-nav)!important}
 html[data-n19-fd-logo] #global-top-navigation .global-top-navigation__fandom-logo{background:var(--n19-fd-logo) no-repeat left center / contain!important}
-html[data-n19-fd-logo]:where(:root:not([data-n19-safe])) #global-top-navigation .global-top-navigation__fandom-logo>svg{visibility:hidden!important}
+html[data-n19-fd-logo] #global-top-navigation .global-top-navigation__fandom-logo>svg{visibility:hidden!important}
 html:not([data-n19-fd-logo]) #global-top-navigation .global-top-navigation__fandom-logo>svg{filter:brightness(0) invert(1)}
 #global-top-navigation .search-app__suggestions-box{background:#fff!important}
 #global-top-navigation .search-app__suggestions-box :is(a,a *){color:#3a3a3a!important}
@@ -11,19 +11,19 @@ html:not([data-n19-fd-logo]) #global-top-navigation .global-top-navigation__fand
 #global-top-navigation .search-app__input::placeholder{color:rgba(255,255,255,.7)!important}
 #global-top-navigation .search-container .search-app__wrapper{background:transparent!important;border:none!important;border-bottom:2px solid var(--n19-nav-link)!important;border-radius:0!important;box-shadow:none!important}
 #global-top-navigation .search-container :is(button,svg){color:var(--n19-nav-link)!important}
-:where(:root:not([data-n19-safe])) #global-top-navigation .search-app__icon-input,#global-top-navigation:where(:root:not([data-n19-safe])) .search-app__icon-input{pointer-events:none}
+#global-top-navigation .search-app__icon-input{pointer-events:none}
 #global-top-navigation svg{fill:currentColor}
 #global-top-navigation .wds-button{background:transparent!important;color:var(--n19-nav-link)!important;border:1px solid var(--n19-nav-link)!important;border-radius:3px!important}
 #global-top-navigation .wds-button:not(.wds-is-secondary){background:var(--n19-nav-link)!important;color:var(--n19-nav)!important}
-:where(:root:not([data-n19-safe])) #global-explore-navigation,#global-explore-navigation:where(:root:not([data-n19-safe])){display:none!important}
+#global-explore-navigation{display:none!important}
 html{--desktop-global-navigation-width:0px!important;--left-panel-spacing:0px!important}
 :where(:root:not([data-n19-safe])) .main-container,.main-container:where(:root:not([data-n19-safe])){margin-left:0!important;width:100%!important}
 :where(:root:not([data-n19-safe])) .app-wrapper,.app-wrapper:where(:root:not([data-n19-safe])){margin-left:0!important}
-:where(:root:not([data-n19-safe])) #community-navigation.fandom-sticky-header,#community-navigation.fandom-sticky-header:where(:root:not([data-n19-safe])){display:none!important}
-:where(:root:not([data-n19-safe])) .page-side-tools__wrapper,.page-side-tools__wrapper:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .page-header__actions #collections-save-button,.page-header__actions:where(:root:not([data-n19-safe])) #collections-save-button,:where(:root:not([data-n19-safe])) .wiki-tools .wiki-tools__theme-switch,.wiki-tools:where(:root:not([data-n19-safe])) .wiki-tools__theme-switch{display:none!important}
-:where(:root:not([data-n19-safe])) .page__right-rail .rail-widget-summaries,.page__right-rail:where(:root:not([data-n19-safe])) .rail-widget-summaries,:where(:root:not([data-n19-safe])) .page-footer .trfc-147,.page-footer:where(:root:not([data-n19-safe])) .trfc-147{display:none!important}
-:where(:root:not([data-n19-safe])) .notifications-placeholder .marketing-notifications,.notifications-placeholder:where(:root:not([data-n19-safe])) .marketing-notifications{display:none!important}
-:where(:root:not([data-n19-safe])) .fandom-community-header__background,.fandom-community-header__background:where(:root:not([data-n19-safe])){display:none!important}
+#community-navigation.fandom-sticky-header{display:none!important}
+.page-side-tools__wrapper,.page-header__actions #collections-save-button,.wiki-tools .wiki-tools__theme-switch{display:none!important}
+.page__right-rail .rail-widget-summaries,.page-footer .trfc-147{display:none!important}
+.notifications-placeholder .marketing-notifications{display:none!important}
+.fandom-community-header__background{display:none!important}
 :where(:root:not([data-n19-safe])) :is(.resizable-container,.wds-fandom-content-well) .community-header-wrapper,:is(.resizable-container,.wds-fandom-content-well):where(:root:not([data-n19-safe])) .community-header-wrapper{margin-top:30px!important;padding:0!important;min-height:115px;position:relative}
 :is(.resizable-container,.wds-fandom-content-well) .community-header-wrapper{background:var(--n19-fd-header-art, none) no-repeat right top / auto 115px, var(--n19-header-band)!important;border:1px solid var(--n19-page-border);border-bottom:0}
 :where(:root:not([data-n19-safe])) :is(.resizable-container,.wds-fandom-content-well) .fandom-community-header,:is(.resizable-container,.wds-fandom-content-well):where(:root:not([data-n19-safe])) .fandom-community-header{min-height:115px!important;padding:0 20px!important;align-items:center;column-gap:20px}

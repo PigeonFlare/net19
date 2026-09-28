@@ -112,3 +112,11 @@ form#login_form div:has(> input[name="email"]) > label, form#login_form div:has(
 [data-n19-ig="page"] footer[role="contentinfo"] { background: rgb(var(--n19-page)) !important; }
 [data-n19-ig="page"] hr { display: none !important; }
 footer a:is([href*="meta.ai"], [href*="threads."], [href*="/meta_ai"]) { display: none !important; }
+[data-n19-ig="row-login"] { align-items: flex-start !important; }
+[data-n19-ig="page"] { justify-content: flex-start !important; }
+[data-n19-ig="right"] { justify-content: flex-start !important; }
+[data-n19-ig="box"] > :first-child { height: 49px !important; margin: 0 auto 20px !important; -webkit-mask: url("https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png") center / 175px 49px no-repeat !important; mask: url("https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png") center / 175px 49px no-repeat !important; background: rgb(var(--n19-text)) !important; }
+[data-n19-ig="box"] > :first-child * { visibility: hidden !important; }
+[data-n19-ig="bar"] a[href="/"]:has(svg[aria-label="Instagram"]) { display: block !important; width: 103px !important; height: 29px !important; -webkit-mask: url("https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png") center / 103px 29px no-repeat !important; mask: url("https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png") center / 103px 29px no-repeat !important; background: rgb(var(--n19-text)) !important; }
+[data-n19-ig="bar"] a[href="/"] svg[aria-label="Instagram"] { visibility: hidden !important; }
+[data-n19-ig="left"] { align-self: flex-start !important; }

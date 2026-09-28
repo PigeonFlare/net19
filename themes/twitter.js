@@ -2,7 +2,11 @@ globalThis.net19Theme = {
   detect() {
     const root = document.documentElement;
     const theme = root.getAttribute('data-theme');
-    if (theme && !document.getElementById('react-root')) { root.removeAttribute('data-n19-tw-bg'); return /dark|dim/.test(theme) ? 'dark' : 'light'; }
+    if (theme && !document.getElementById('react-root')) {
+      const black = /black|lights/i.test(theme);
+      if (black !== root.hasAttribute('data-n19-tw-bg')) black ? root.setAttribute('data-n19-tw-bg', 'black') : root.removeAttribute('data-n19-tw-bg');
+      return /dark|dim|black|lights/i.test(theme) ? 'dark' : 'light';
+    }
     const bg = getComputedStyle(document.body || root).backgroundColor;
     const [r, g, b, a = 1] = (bg.match(/[\d.]+/g) || [255, 255, 255]).map(Number);
     if (a === 0) return /dark|dim/.test(theme || '') ? 'dark' : 'light';
@@ -20,7 +24,7 @@ globalThis.net19Theme = {
     ['Undo repost', 'Undo Retweet'], ['Quote', 'Retweet with comment'], ['Post your reply', 'Tweet your reply'], ['Post your reply!', 'Tweet your reply'],
     ['Trending now', 'What’s happening'], ['Chat', 'Messages'], ['Show more posts', 'Show more Tweets'], ['Show posts', 'Show Tweets'],
     ['Log in or sign up for X', 'New to Twitter?'], ['See what’s happening and join the conversation', 'Sign up now to get your own personalized timeline!'],
-    ['Continue with phone', 'Sign up'], ['Log in with username or email', 'Log in'], ['Search X', 'Search Twitter'], ['Continue to X', 'Continue to Twitter'],
+    ['Continue with phone', 'Sign up'], ['Log in with username or email', 'Log in'], ['Mention', 'Tweet to'], ['Pinned', 'Pinned Tweet'], ['Search X', 'Search Twitter'], ['Continue to X', 'Continue to Twitter'],
   ]);
   const COUNT = /^([\d.,]+\s*[KMB]?)\s+posts?$/i;
   const PLACES = 'button, a, [role="button"], [role="tab"], [role="menuitem"], [role="link"], [role="heading"], h1, h2, h3, nav, label, [data-testid="User-Name"] ~ div, .public-DraftEditorPlaceholder-inner, [aria-live], aside, header, main > .sticky';
@@ -69,6 +73,7 @@ globalThis.net19Theme = {
       while (module.parentElement && [...module.parentElement.children].filter(c => c.querySelector('h2, [role="heading"]')).length < 2) module = module.parentElement;
       if (module && module.parentElement && !module.querySelector('input, textarea, [contenteditable]') && !module.hasAttribute('data-n19-tw')) module.setAttribute('data-n19-tw', 'later');
     }
+    for (const button of document.querySelectorAll('[role="dialog"] .jetfuel-style-root button:not([data-n19-tw])')) if (/^(?:sign up|continue with phone)$/i.test(button.textContent.trim())) button.setAttribute('data-n19-tw', 'wallsignup');
     for (const button of document.querySelectorAll('body button:is(:has(img), :has(svg), :has(canvas))')) if (!button.hasAttribute('data-n19-tw') && /^scan to get the app/i.test(button.textContent.trim())) button.setAttribute('data-n19-tw', 'qr');
     for (const input of document.querySelectorAll('[data-testid="SearchBox_Search_Input"], aside input[placeholder="Search"], header input[placeholder="Search"], [role="search"] input[placeholder="Search"]')) {
       if (input.placeholder !== 'Search Twitter') input.placeholder = 'Search Twitter';
@@ -178,4 +183,105 @@ globalThis.net19Theme = {
   };
   const start = () => { swap(); new MutationObserver(swap).observe(document.head || document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['href'] }); };
   if (document.head) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+})();
+(() => {
+  const root = document.documentElement;
+  const COUNT = /^([\d.,]+\s*[KMB]?)\s+(?:posts?|Tweets?)$/i;
+  const HEADINGS = [[/^(?:what’s happening|what's happening|trending now|trends for you|trending|trends)$/i, 'trends'], [/^(?:who to follow|you might like|relevant people)$/i, 'wtf']];
+  const setAttr = (el, name, value) => { if (el && el.getAttribute(name) !== value) el.setAttribute(name, value); };
+  const mark = (el, name) => setAttr(el, 'data-n19-tl', name);
+  const pageKind = main => {
+    if (main.querySelector(':scope > div a[href$="/header_photo"], :scope > div a[href$="/photo"] ~ *, :scope > div [role="tablist"] a[href$="/with_replies"]')) return 'profile';
+    if (/\/status\/\d+/.test(location.pathname)) return 'status';
+    if (/^\/(?:search|explore|hashtag)/.test(location.pathname)) return 'search';
+    if (/^\/home/.test(location.pathname)) return 'home';
+    return 'page';
+  };
+  const profileParts = main => {
+    const header = [...main.children].find(child => child.getAttribute('data-n19-tl') === 'phead' || (/\bsticky\b/.test(child.className) && !/(?:^|\s)sm:hidden(?:\s|$)/.test(child.className) && child.querySelector('button, a')));
+    if (header) mark(header, 'phead');
+    const counter = header && [...header.querySelectorAll('div')].find(el => !el.firstElementChild && COUNT.test(el.textContent.replace(/\s+/g, ' ').trim()));
+    if (counter) {
+      mark(counter, 'tcount');
+      setAttr(counter, 'data-n19-count', counter.textContent.replace(/\s+/g, ' ').trim().replace(COUNT, '$1'));
+      setAttr(counter, 'data-n19-label', 'Tweets');
+    }
+    const search = header && header.querySelector('button[aria-label="Search"], a[aria-label="Search"]');
+    if (search) { mark(search, 'searchbtn'); setAttr(search, 'data-n19-label', 'Search Twitter'); }
+    for (const child of main.children) {
+      if (child === header) continue;
+      if (child.querySelector(':scope > a[href$="/header_photo"]') || (/\bh-\[200px\]/.test(child.className) && !child.querySelector('article'))) mark(child, 'banner');
+      else if (child.querySelector('[role="tablist"]') && child.querySelector('h1')) {
+        mark(child, 'pinfo');
+        for (const part of child.children) {
+          if (part.querySelector('h1')) {
+            mark(part, 'pcard');
+            const stats = part.querySelector('a[href$="/following"]')?.parentElement;
+            if (stats && part.contains(stats) && stats !== part) mark(stats, 'pstats');
+            const avatar = part.querySelector('a[href$="/photo"]');
+            if (avatar) mark(avatar, 'pavatar');
+          } else if (part.querySelector('[role="tablist"]')) mark(part, 'ptabs');
+          else if (part.querySelector('button, a')) mark(part, 'pbuttons');
+        }
+      } else if (child.querySelector('ul, [id^="urt:"], [role="status"]')) mark(child, 'feed');
+      else if (child.tagName === 'ASIDE') mark(child, 'gate');
+    }
+  };
+  const layout = () => {
+    if (document.getElementById('react-root')) return;
+    const main = document.querySelector('body main');
+    if (!main) { if (root.hasAttribute('data-n19-tp')) root.removeAttribute('data-n19-tp'); return; }
+    const cols = main.parentElement, shell = cols?.parentElement;
+    if (!shell || shell === document.body) return;
+    const kind = pageKind(main);
+    setAttr(root, 'data-n19-tp', kind);
+    mark(shell, 'shell'); mark(cols, 'cols');
+    const rail = shell.querySelector(':scope > div > aside, :scope > aside');
+    if (rail) {
+      mark(rail, 'rail');
+      if (rail.parentElement !== shell) mark(rail.parentElement, 'railwrap');
+      const signedIn = !!rail.querySelector('a[href="/home"], a[href="/notifications"], a[href="/compose/post"]');
+      setAttr(root, 'data-n19-ts', signedIn ? 'in' : 'out');
+      const logo = rail.querySelector('a[aria-label="X"][href="/"], a[href="/home"]:has(svg[data-icon="icon-logo-x"])');
+      if (logo) { mark(logo, 'logo'); setAttr(logo, 'data-n19-label', 'Home'); }
+      if (signedIn) for (const a of rail.querySelectorAll('a[href], button')) {
+        if (a.querySelector('img[alt^="@"], img[alt="Avatar"]') && !a.closest('nav')) mark(a, 'me');
+        else if (/^\/compose\/post/.test(a.getAttribute('href') || '')) mark(a, 'tweetbtn');
+      }
+    }
+    const right = cols.querySelector(':scope > aside');
+    if (right) {
+      mark(right, 'right');
+      const login = [...right.querySelectorAll('a[href*="mode=login"]')].find(a => a.querySelector('svg[data-icon="icon-at"]') || /^log in/i.test(a.textContent.trim()));
+      if (login) { mark(login, 'login'); setAttr(login, 'data-n19-label', 'Have an account?'); }
+      for (const el of right.querySelectorAll('div, span')) if (el.textContent.trim() === 'or' && !el.querySelector('a, button') && el.children.length) { mark(el, 'or'); break; }
+      const form = right.querySelector('form[role="search"], [role="search"]');
+      if (form) mark(form, 'searchform');
+      for (const h of right.querySelectorAll('h2, [role="heading"]')) {
+        const kindOf = HEADINGS.find(([test]) => test.test(h.textContent.trim()));
+        const section = h.closest('section, [role="region"]');
+        if (kindOf && section) mark(section, kindOf[1]);
+        if (kindOf?.[1] === 'trends') {
+          const walker = document.createTreeWalker(h, NodeFilter.SHOW_TEXT);
+          for (let node = walker.nextNode(); node; node = walker.nextNode()) if (/^(?:what’s happening|what's happening|trending now)$/i.test(node.nodeValue.trim())) node.nodeValue = 'Trends for you';
+        }
+      }
+    }
+    if (kind === 'profile') profileParts(main);
+    else {
+      for (const child of main.children) {
+        if (/\bsticky\b/.test(child.className) && !/(?:^|\s)sm:hidden(?:\s|$)/.test(child.className) && !child.querySelector('article')) mark(child, 'mhead');
+        else if (child.tagName === 'ASIDE') mark(child, 'gate');
+        else if (child.querySelector('ul, [id^="urt:"], [role="status"], article')) mark(child, 'feed');
+      }
+    }
+  };
+  let queued = false;
+  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; layout(); }); };
+  const start = () => {
+    layout();
+    new MutationObserver(later).observe(document.body, { childList: true, subtree: true });
+    globalThis.navigation?.addEventListener?.('navigatesuccess', later);
+  };
+  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();

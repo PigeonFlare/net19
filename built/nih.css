@@ -5,7 +5,7 @@ h1,h2,h3,h4,.heading-title,.title,.action-title{font-family:var(--n19-font)!impo
 html:has(meta[name="ncbi_app"][content="pubmed"]) :is(body:has(>header.ncbi-header),.site-content:has(>header.ncbi-header)){background-color:var(--n19-page)!important}
 html:has(meta[name="ncbi_app"][content="pubmed"]):where(:root:not([data-n19-safe])) :is(header.ncbi-header,header.ncbi-header~:is(main,#ncbi-footer)){max-width:1190px!important;width:100%!important;box-sizing:border-box!important;margin-left:auto!important;margin-right:auto!important}
 html:has(meta[name="ncbi_app"][content="pubmed"]) :is(header.ncbi-header,header.ncbi-header~:is(main,#ncbi-footer)){background-color:var(--n19-wrap);box-shadow:0 0 6px rgba(0,0,0,.35)}
-:where(:root:not([data-n19-safe])) section.usa-banner{display:none!important}
+section.usa-banner{display:none!important}
 header.ncbi-header,.ncbi-header,#ncbi-header{background:var(--n19-bar)!important}
 :where(:root:not([data-n19-safe])) header.ncbi-header{position:relative!important;top:auto!important;left:auto!important;padding:0!important;height:auto!important}
 :where(:root:not([data-n19-safe])) header.ncbi-header .usa-grid{max-width:none!important;width:100%!important;box-sizing:border-box!important;padding:0 12px!important;margin:0!important}
@@ -44,7 +44,7 @@ header.ncbi-header .header-button,#account_login{text-decoration:underline!impor
 :where(:root:not([data-n19-safe])) #home-page .homepage-actions,#home-page:where(:root:not([data-n19-safe])) .homepage-actions{max-width:none!important;margin:0!important;padding:16px 12px!important;gap:0!important}
 :where(:root:not([data-n19-safe])) #home-page .homepage-action,#home-page:where(:root:not([data-n19-safe])) .homepage-action{padding:0 8px!important;box-sizing:border-box!important}
 #home-page .homepage-action{text-align:left!important}
-:where(:root:not([data-n19-safe])) #home-page .homepage-action .action-item,#home-page:where(:root:not([data-n19-safe])) .homepage-action .action-item{display:none!important}
+#home-page .homepage-action .action-item{display:none!important}
 .article-details h2.title,#abstract h2.title,main h2.title,.homepage-action .action-title,.results-amount-container h3{color:var(--n19-head)!important;font-size:16px!important;font-weight:700!important}
 #home-page :is(.action-title,h2.title){background:var(--n19-head-bg)!important;border-top:3px solid var(--n19-head-rule)!important;border-bottom:3px solid var(--n19-head-rule)!important}
 :where(:root:not([data-n19-safe])) #home-page :is(.action-title,h2.title),#home-page:where(:root:not([data-n19-safe])) :is(.action-title,h2.title){padding:4px 6px!important;margin:0 0 6px!important}
@@ -70,7 +70,7 @@ header.ncbi-header .header-button,#account_login{text-decoration:underline!impor
 .article-details .heading-title,h1.heading-title{font-size:20px!important;line-height:1.3!important;font-weight:700!important;color:var(--n19-title)!important}
 .docsum-title{font-family:var(--n19-font)!important;color:var(--n19-link)!important;font-size:14px!important;font-weight:400!important}
 .usa-button,.button-primary,.usa-button-primary{border-radius:3px!important}
-:where(:root:not([data-n19-safe])) #home-page .intro #search-form .form-field .clear-btn,#home-page:where(:root:not([data-n19-safe])) .intro #search-form .form-field .clear-btn{display:none!important}
+#home-page .intro #search-form .form-field .clear-btn{display:none!important}
 header.usa-header>.ncbi-header{background:var(--n19-bar)!important}
 :where(:root:not([data-n19-safe])) header.usa-header>.ncbi-header .ncbi-header__container{height:34px!important;min-height:0!important;padding-top:0!important;padding-bottom:0!important}
 :where(:root:not([data-n19-safe])) header.usa-header>.ncbi-header .ncbi-header__logo-container{height:34px!important;display:flex!important;align-items:center!important}
@@ -95,11 +95,11 @@ section.usa-hero:has(.pmc-hero__search){background:linear-gradient(#e0e0e0, var(
 .pmc-hero__search .usa-button{font-size:13px!important;font-weight:700!important;box-shadow:1px 1px 2px rgba(0,0,0,.4)!important}
 :where(:root:not([data-n19-safe])) .pmc-hero__search .usa-search__submit-text,.pmc-hero__search:where(:root:not([data-n19-safe])) .usa-search__submit-text{display:inline!important}
 .pmc-hero__search .usa-search__submit-text{font-size:13px!important;line-height:1!important}
-:where(:root:not([data-n19-safe])) .pmc-hero__search .usa-search__submit-icon,.pmc-hero__search:where(:root:not([data-n19-safe])) .usa-search__submit-icon{display:none!important}
+.pmc-hero__search .usa-search__submit-icon{display:none!important}
 .pmc-hero__links a,.pmc-hero__links{font-size:13px!important;color:var(--n19-link-2)!important;text-decoration:none!important}
 .pmc-hero__text,.pmc-hero__text p{font-size:13px!important;line-height:1.5!important;color:var(--n19-text)!important}
 :where(:root:not([data-n19-safe])) .pmc-hero__text,.pmc-hero__text:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .pmc-hero__text p,.pmc-hero__text:where(:root:not([data-n19-safe])) p{margin-top:6px!important;max-width:none!important}
-:where(:root:not([data-n19-safe])) .usa-card--home .usa-card__media,.usa-card--home:where(:root:not([data-n19-safe])) .usa-card__media{display:none!important}
+.usa-card--home .usa-card__media{display:none!important}
 .usa-card--home .usa-card__container{border:0!important;border-radius:0!important;box-shadow:none!important}
 :where(:root:not([data-n19-safe])) .usa-card--home .usa-card__container,.usa-card--home:where(:root:not([data-n19-safe])) .usa-card__container{margin:0 8px 12px!important}
 :where(:root:not([data-n19-safe])) .usa-card--home :is(.usa-card__header,.usa-card__body),.usa-card--home:where(:root:not([data-n19-safe])) :is(.usa-card__header,.usa-card__body){padding:0!important}

@@ -42,9 +42,9 @@ figcaption[class*="media-ui-Caption"],figcaption[class*="media-ui-Caption"] :is(
 [class*="BasicContent_content"] p a,[class*="ArticleBody"] p a{color:var(--n19-text)!important;text-decoration:underline!important}
 [class*="BasicContent_content"] :is(h2,h3){font-family:var(--n19-sans)!important;font-weight:700!important;color:var(--n19-text)!important}
 [class*="media-ui-SocialShare"] button{border-radius:0!important;border-color:transparent!important}
-:where(:root:not([data-n19-safe])) button[aria-label="Gift this article"],:where(:root:not([data-n19-safe])) [class*="BasicContent_bookmarkContainer"],[class*="BasicContent_bookmarkContainer"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [class*="bookmarksButton"],[class*="bookmarksButton"]:where(:root:not([data-n19-safe])){display:none!important}
+button[aria-label="Gift this article"],[class*="BasicContent_bookmarkContainer"],[class*="bookmarksButton"]{display:none!important}
 #__next :is(button,input)[class*="outlined-button"],#__next [class*="atomics-Button-root"]{border-radius:0!important}
-:where(:root:not([data-n19-safe])) [class*="AiTakeaways"i],[class*="AiTakeaways"i]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [class*="aiSummary"i],[class*="aiSummary"i]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [class*="AISummary"],[class*="AISummary"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [class*="Takeaways_"],[class*="Takeaways_"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [class*="AiFeedback"i],[class*="AiFeedback"i]:where(:root:not([data-n19-safe])){display:none!important}
+[class*="AiTakeaways"i],[class*="aiSummary"i],[class*="AISummary"],[class*="Takeaways_"],[class*="AiFeedback"i]{display:none!important}
 [class*="SectionFrontHeaderBrand_title"],[class*="SectionFrontHeader"] h1{font:500 50px/1 var(--n19-sans)!important;letter-spacing:-.01em!important;text-align:center!important;color:var(--n19-text)!important}
 :where(:root:not([data-n19-safe])) [class*="SectionFrontHeaderBrand_title"],[class*="SectionFrontHeaderBrand_title"]:where(:root:not([data-n19-safe])){display:block!important;width:100%!important}
 [class*="SectionFrontHeaderBrand_title"]{font-weight:500!important}

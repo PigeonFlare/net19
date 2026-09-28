@@ -21,7 +21,7 @@ main form[role="search"] button:not([type="submit"]):last-of-type:hover{backgrou
 [data-automation="tab-list"] [role="tab"]:first-child{border-left:none!important}
 [data-automation="tab-list"] [role="tab"] span{font-size:15px!important;font-weight:700!important;color:var(--n19-text)!important}
 [data-automation="tab-list"] [role="tab"][aria-selected="true"] span{color:var(--n19-ink)!important}
-:where(:root:not([data-n19-safe])) [data-automation="tab-list"] [role="tab"]::after,[data-automation="tab-list"]:where(:root:not([data-n19-safe])) [role="tab"]::after,:where(:root:not([data-n19-safe])) [data-automation="tab-list"] [role="tab"]::before,[data-automation="tab-list"]:where(:root:not([data-n19-safe])) [role="tab"]::before{display:none!important}
+[data-automation="tab-list"] [role="tab"]::after,[data-automation="tab-list"] [role="tab"]::before{display:none!important}
 [data-automation="tab-list"] [role="tab"] svg{fill:var(--n19-green)!important}
 main a img,main picture img,main a>div:has(picture){border-radius:2px!important}
-:where(:root:not([data-n19-safe])) [data-net19-hidden],[data-net19-hidden]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #GAI_REVIEWS,#GAI_REVIEWS:where(:root:not([data-n19-safe])){display:none!important}
+[data-net19-hidden],#GAI_REVIEWS{display:none!important}

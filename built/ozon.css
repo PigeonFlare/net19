@@ -2,8 +2,7 @@ html{--n19-blue:#005bff;--n19-blue-hover:#004ed6;--n19-logo-blue:#0069ff;--n19-r
 html[data-net19-mode="dark"]{--n19-text:#e8edf2;--n19-text-2:#9aa7b3;--n19-page:#121212;--n19-rule:#2c3136;--n19-panel:#1c1f22}
 [data-widget="wallpaper"]{background-color:var(--n19-page)!important}
 [data-widget="header"]{border-radius:0!important;box-shadow:0 1px 0 var(--n19-rule)!important}
-:where(:root:not([data-n19-safe])) img[data-n19-oz="logo"]{content:var(--n19-logo)!important}
-img[data-n19-oz="logo"]{object-fit:contain!important;object-position:left center!important}
+img[data-n19-oz="logo"]{content:var(--n19-logo)!important;object-fit:contain!important;object-position:left center!important}
 [data-widget="catalogMenu"] button,[data-widget="catalogMenu"] button>div{border-radius:var(--n19-radius)!important}
 [data-widget="searchBarDesktop"] *:not(svg,svg *){border-radius:var(--n19-radius)!important}
 [data-widget="searchBarDesktop"] form>div:first-child{border-radius:2px 0 0 2px!important}
@@ -22,4 +21,4 @@ img[data-n19-oz="logo"]{object-fit:contain!important;object-position:left center
 [data-widget="webAddToCart"] button:hover{background-color:var(--n19-blue-hover)!important}
 [data-widget="webGallery"] img{border-radius:0!important}
 [data-widget^="total"] :is(button,button>div),[data-widget*="Cart"i] button:not(:has(svg:only-child)){border-radius:var(--n19-radius)!important}
-:where(:root:not([data-n19-safe])) [data-widget="horizontalMenu"] li:has(>a[href*="/fintech"]),[data-widget="horizontalMenu"]:where(:root:not([data-n19-safe])) li:has(>a[href*="/fintech"]){display:none!important}
+[data-widget="horizontalMenu"] li:has(>a[href*="/fintech"]){display:none!important}

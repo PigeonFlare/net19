@@ -11,13 +11,12 @@ header.global-header .section-default{box-shadow:none!important;border-bottom:0!
 .header-banner{background:var(--n19-panel)!important}
 .header-banner h1,.header-banner h2,.header-banner p{color:var(--n19-panel-text)!important}
 .header-banner input{background:var(--n19-field)!important;border-radius:0!important;color:var(--n19-panel-text)!important}
-:where(:root:not([data-n19-safe])) .header-banner svg,.header-banner:where(:root:not([data-n19-safe])) svg,:where(:root:not([data-n19-safe])) .header-banner [class*="bg-shape"],.header-banner:where(:root:not([data-n19-safe])) [class*="bg-shape"],:where(:root:not([data-n19-safe])) .header-banner [class*="lines"],.header-banner:where(:root:not([data-n19-safe])) [class*="lines"]{opacity:.25}
+.header-banner svg,.header-banner [class*="bg-shape"],.header-banner [class*="lines"]{opacity:.25}
 .section-primary.bg-p2-darkest{background:var(--n19-band)!important}
 .section-primary .btn,.btn.rounded-5{border-radius:0!important}
 .section-primary .btn-outline-light{background:var(--n19-button)!important;border-color:var(--n19-button)!important;color:#fff!important}
 .section-primary .btn-outline-light:hover{background:var(--n19-button-hover)!important}
-main .section-primary.lineart.bg-p2{background-color:var(--n19-panel)!important}
-:where(:root:not([data-n19-safe])) main .section-primary.lineart.bg-p2{background-image:none!important}
+main .section-primary.lineart.bg-p2{background-color:var(--n19-panel)!important;background-image:none!important}
 main .section-primary.lineart.bg-p2 :is(h1,h2,p,li,span){color:var(--n19-panel-text)!important}
 main .section-primary.lineart.bg-p2 a{color:var(--n19-blue)!important}
 html[data-net19-mode="dark"] main .section-primary.lineart.bg-p2 a{color:#7cc4e8!important}

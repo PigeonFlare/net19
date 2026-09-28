@@ -1,8 +1,6 @@
 html{--n19-ink:#2a2a2a;--n19-head-bg:#fff;--n19-hair:#ccc;--n19-blue:#3061ff;--n19-meta:#555;--n19-hover:#f2f2f2}
 html[data-net19-mode="dark"]{--n19-ink:#e8e8e8;--n19-head-bg:#111;--n19-hair:#3a3a3a;--n19-blue:#6f91ff;--n19-meta:#aaa;--n19-hover:#222}
-#hfs-header .hfsh .local,#hfs-header .hfsh.vertical .local,#hfs-header .hfsh.small .local{background-color:var(--n19-head-bg)!important}
-:where(:root:not([data-n19-safe])) #hfs-header .hfsh .local,#hfs-header:where(:root:not([data-n19-safe])) .hfsh .local,:where(:root:not([data-n19-safe])) #hfs-header .hfsh.vertical .local,#hfs-header:where(:root:not([data-n19-safe])) .hfsh.vertical .local,:where(:root:not([data-n19-safe])) #hfs-header .hfsh.small .local,#hfs-header:where(:root:not([data-n19-safe])) .hfsh.small .local{background-image:none!important}
-#hfs-header .hfsh .local,#hfs-header .hfsh.vertical .local,#hfs-header .hfsh.small .local{color:var(--n19-ink)!important;border-bottom:1px solid var(--n19-hair)!important}
+#hfs-header .hfsh .local,#hfs-header .hfsh.vertical .local,#hfs-header .hfsh.small .local{background-color:var(--n19-head-bg)!important;background-image:none!important;color:var(--n19-ink)!important;border-bottom:1px solid var(--n19-hair)!important}
 #hfs-header .hfsh:not(.active) .local .logo-wrap{background:transparent!important}
 :where(:root:not([data-n19-safe])) #hfs-header .hfsh .local,#hfs-header:where(:root:not([data-n19-safe])) .hfsh .local,:where(:root:not([data-n19-safe])) #hfs-header .hfsh .local .h-h,#hfs-header:where(:root:not([data-n19-safe])) .hfsh .local .h-h{height:80px!important}
 #hfs-header .hfsh .local .h-lh,#hfs-header .hfsh .shortcuts-list{line-height:80px!important}
@@ -11,32 +9,31 @@ html[data-net19-mode="dark"]{--n19-ink:#e8e8e8;--n19-head-bg:#111;--n19-hair:#3a
 #hfs-header .hfsh .logo svg :is(path,g,text):not([fill^="#"]):not([style*="fill"]){fill:currentColor}
 #hfs-header .hfsh .shortcuts-list a,#hfs-header .hfsh .shortcuts-list button,#hfs-header .hfsh .shortcuts-list li{color:var(--n19-ink)!important}
 #hfs-header .hfsh .shortcuts-list a{font-family:FoundersGroteskCond, "Arial Narrow", Arial, sans-serif!important;font-size:18px!important;text-transform:uppercase!important;letter-spacing:0!important}
-#hfs-header .hfsh .shortcuts-list a:hover{color:var(--n19-blue)!important}
-:where(:root:not([data-n19-safe])) #hfs-header .hfsh .shortcuts-list a:hover,#hfs-header:where(:root:not([data-n19-safe])) .hfsh .shortcuts-list a:hover{opacity:1!important}
+#hfs-header .hfsh .shortcuts-list a:hover{color:var(--n19-blue)!important;opacity:1!important}
 #hfs-header .hfsh .hamburger span{background-color:#000!important}
 #hfs-header .hfsh.active .hamburger span{background-color:#fff!important}
 #hfs-header .hfsh .local-insert,#hfs-header .hfsh .local-insert *{color:var(--n19-ink)!important}
 :where(:root:not([data-n19-safe])) #hfs-header .hfsh.init+.hfsh-spacer,#hfs-header:where(:root:not([data-n19-safe])) .hfsh.init+.hfsh-spacer{height:80px!important}
-:where(:root:not([data-n19-safe])) #hfs-header .shortcuts>a[href*="/subscribe"],#hfs-header:where(:root:not([data-n19-safe])) .shortcuts>a[href*="/subscribe"],:where(:root:not([data-n19-safe])) #hfs-header .local-insert a[href*="/subscribe"],#hfs-header:where(:root:not([data-n19-safe])) .local-insert a[href*="/subscribe"]{display:none!important}
-:where(:root:not([data-n19-safe])) #hfs-header .shortcuts-list li:has(a[href*="tipline"]),#hfs-header:where(:root:not([data-n19-safe])) .shortcuts-list li:has(a[href*="tipline"]),:where(:root:not([data-n19-safe])) .menu-list-item:has(a[href*="tipline"]),.menu-list-item:has(a[href*="tipline"]):where(:root:not([data-n19-safe])){display:none!important}
+#hfs-header .shortcuts>a[href*="/subscribe"],#hfs-header .local-insert a[href*="/subscribe"]{display:none!important}
+#hfs-header .shortcuts-list li:has(a[href*="tipline"]),.menu-list-item:has(a[href*="tipline"]){display:none!important}
 nav.quick-links,nav[class*="quickLinks"]{background:var(--n19-head-bg)!important;border-bottom:1px solid var(--n19-hair)!important}
 nav.quick-links a,nav.quick-links span,nav[class*="quickLinks"] a span{color:var(--n19-ink)!important}
 nav.quick-links span[class*="caption"]{font-family:FoundersGroteskMono, Courier, "Courier New", monospace!important;font-size:12px!important;font-weight:400!important;text-transform:uppercase!important;letter-spacing:-.02em!important}
 nav.quick-links a:hover span{color:var(--n19-blue)!important}
-:where(:root:not([data-n19-safe])) nav.quick-links [class*="shadow"]{display:none!important}
+nav.quick-links [class*="shadow"]{display:none!important}
 #hfs-header .menu .search-form input{border-radius:0!important}
 [data-testid="unibrow-text"],.unibrow span{font-family:FoundersGroteskMono, Courier, "Courier New", monospace!important;text-transform:uppercase!important}
 .package-title,[data-testid="package-title-top-border"]{border-radius:0!important}
 [data-testid="bacon__header"],[data-testid="vertvideo__header__top-border"]{border-radius:0!important}
 html[data-net19-flip] .bg-background__wrapper.bg-use-background :is(h1,h2,p,a,span){color:#111!important}
-:where(:root:not([data-n19-safe])) [data-testid="subscriber-badge"],[data-testid="subscriber-badge"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .subscriber-badge,.subscriber-badge:where(:root:not([data-n19-safe])){display:none!important}
-:where(:root:not([data-n19-safe])) .article-hero__bg-container::before,.article-hero__bg-container:where(:root:not([data-n19-safe]))::before{display:none!important}
+[data-testid="subscriber-badge"],.subscriber-badge{display:none!important}
+.article-hero__bg-container::before{display:none!important}
 .article-hero-headline__htag{font-family:FoundersGroteskCond, "Arial Narrow", Arial, sans-serif!important;letter-spacing:-.01em!important}
 [data-testid="article-dek"]{font-family:PublicoHeadline, Georgia, "Times New Roman", serif!important;font-weight:300!important}
 .article-body__content p.body-graf,.article-body__content>p{font-family:PublicoText, Georgia, "Times New Roman", serif!important;font-size:18px!important;line-height:1.5!important}
 .article-body__content p a{color:var(--n19-blue)!important;text-decoration:none!important;border-bottom:2px solid var(--n19-blue)!important}
 [data-testid="article-body-timestamp"] time{font-family:FoundersGroteskMono, Courier, "Courier New", monospace!important}
-:where(:root:not([data-n19-safe])) .article-decibel-wrapper,.article-decibel-wrapper:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-testid="decibel-player"],[data-testid="decibel-player"]:where(:root:not([data-n19-safe])){display:none!important}
-:where(:root:not([data-n19-safe])) a[data-testid="social-cta-link"][href*="google.com/preferences"],:where(:root:not([data-n19-safe])) a[href*="google.com/preferences/source"]{display:none!important}
+.article-decibel-wrapper,[data-testid="decibel-player"]{display:none!important}
+a[data-testid="social-cta-link"][href*="google.com/preferences"],a[href*="google.com/preferences/source"]{display:none!important}
 [data-testid="share-dropdown-button"],[data-testid="save-button"]{border-radius:0!important}
 .gsc-control-cse,.gsc-input-box{border-radius:0!important}

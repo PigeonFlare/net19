@@ -12,9 +12,9 @@ html:root{--fonts-default:var(--n19-font)!important;--border-radius-sm:3px!impor
 #gnav-main-container ul a,#gnav-main-container a#EmployersPostJob{font-size:13px!important;font-weight:400!important;color:var(--n19-tab)!important;background:transparent!important;border-radius:0!important}
 #gnav-main-container ul a:hover,#gnav-main-container a#EmployersPostJob:hover{color:var(--n19-tab-on)!important;text-decoration:underline!important}
 #gnav-main-container a[aria-current="page"],#gnav-main-container a#FindJobs[aria-current]{color:var(--n19-tab-on)!important;box-shadow:inset 0 -2px 0 var(--n19-button)!important}
-:where(:root:not([data-n19-safe])) #gnav-main-container a[aria-current="page"]::after,#gnav-main-container:where(:root:not([data-n19-safe])) a[aria-current="page"]::after,:where(:root:not([data-n19-safe])) #gnav-main-container a[aria-current="page"]::before,#gnav-main-container:where(:root:not([data-n19-safe])) a[aria-current="page"]::before{display:none!important}
+#gnav-main-container a[aria-current="page"]::after,#gnav-main-container a[aria-current="page"]::before{display:none!important}
 #gnav-main-container ul a[href*="account/login"i]{color:var(--n19-tab)!important;font-weight:400!important}
-html[data-n19-home]:where(:root:not([data-n19-safe])) #gnav-main-container a#indeed-globalnav-logo{display:none!important}
+html[data-n19-home] #gnav-main-container a#indeed-globalnav-logo{display:none!important}
 html[data-n19-home]:where(:root:not([data-n19-safe])) #gnav-main-container ul{margin-left:20px!important}
 :where(:root:not([data-n19-safe])) [data-testid="jobsearch-Content"],[data-testid="jobsearch-Content"]:where(:root:not([data-n19-safe])){position:relative!important}
 :where(:root:not([data-n19-safe])) [data-testid="jobSearch-Yosegi"],[data-testid="jobSearch-Yosegi"]:where(:root:not([data-n19-safe])){padding-top:40px!important}
@@ -30,13 +30,13 @@ html[data-n19-home]:where(:root:not([data-n19-safe])) #gnav-main-container ul{ma
 #jobsearch>div:first-child{border:none!important;border-radius:0!important;box-shadow:none!important;background:transparent!important}
 :where(:root:not([data-n19-safe])) #jobsearch>div:first-child,#jobsearch:where(:root:not([data-n19-safe]))>div:first-child{gap:16px!important}
 :where(:root:not([data-n19-safe])) #jobsearch>div:first-child>div:first-child>div,#jobsearch:where(:root:not([data-n19-safe]))>div:first-child>div:first-child>div{gap:8px!important}
-:where(:root:not([data-n19-safe])) #jobsearch>div:first-child>div:first-child>div>div[class*="e15p7aqh"],#jobsearch:where(:root:not([data-n19-safe]))>div:first-child>div:first-child>div>div[class*="e15p7aqh"]{display:none!important}
+#jobsearch>div:first-child>div:first-child>div>div[class*="e15p7aqh"]{display:none!important}
 :where(:root:not([data-n19-safe])) #jobsearch span:has(>input#text-input-what),#jobsearch:where(:root:not([data-n19-safe])) span:has(>input#text-input-what),:where(:root:not([data-n19-safe])) #jobsearch span:has(>input#text-input-where),#jobsearch:where(:root:not([data-n19-safe])) span:has(>input#text-input-where){height:44px!important;margin-top:8px!important}
 #jobsearch span:has(>input#text-input-what),#jobsearch span:has(>input#text-input-where){background:var(--n19-field)!important;border:1px solid var(--n19-field-line)!important;border-radius:3px!important;box-shadow:none!important}
 #jobsearch span:has(>input:focus){border-color:var(--n19-focus)!important;box-shadow:0 0 0 1px var(--n19-focus)!important}
 #jobsearch div[class*="e1ttgm5y0"]{border-radius:3px!important}
 :where(:root:not([data-n19-safe])) #jobsearch div[class*="e1ttgm5y0"],#jobsearch:where(:root:not([data-n19-safe])) div[class*="e1ttgm5y0"]{height:60px!important}
-:where(:root:not([data-n19-safe])) #jobsearch span:has(>input#text-input-what)>span:first-child,#jobsearch:where(:root:not([data-n19-safe])) span:has(>input#text-input-what)>span:first-child{display:none!important}
+#jobsearch span:has(>input#text-input-what)>span:first-child{display:none!important}
 :where(:root:not([data-n19-safe])) #jobsearch input#text-input-what,#jobsearch:where(:root:not([data-n19-safe])) input#text-input-what,:where(:root:not([data-n19-safe])) #jobsearch input#text-input-where,#jobsearch:where(:root:not([data-n19-safe])) input#text-input-where{height:42px!important;padding:0 10px!important}
 #jobsearch input#text-input-what,#jobsearch input#text-input-where{font-size:16px!important;border-radius:0!important;color:var(--n19-text)!important}
 #jobsearch .yosegi-InlineWhatWhere-primaryButton{background:var(--n19-button)!important;border-color:var(--n19-button)!important;border-radius:22px!important}

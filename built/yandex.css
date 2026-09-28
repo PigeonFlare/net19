@@ -5,7 +5,7 @@ html[data-n19-ya="serp"] body :is(.serp-item,.HeaderDesktop,.HeaderForm,.HeaderN
 html[data-n19-ya="serp"] .HeaderLogo{background:var(--n19-logo-ys) no-repeat left center / 86px 35px!important}
 html[data-n19-ya="serp"]:where(:root:not([data-n19-safe])) .HeaderLogo{min-width:86px!important}
 html[data-n19-ya="serp"] .HeaderLogo{filter:var(--n19-logo-filter, none)}
-html[data-n19-ya="serp"]:where(:root:not([data-n19-safe])) .HeaderLogo>*{opacity:0!important}
+html[data-n19-ya="serp"] .HeaderLogo>*{opacity:0!important}
 html[data-n19-ya="serp"] .HeaderForm-InputWrapper,html[data-n19-ya="serp"] .HeaderForm-InputContainer{border-radius:0!important}
 html[data-n19-ya="serp"] .HeaderForm{border-radius:0!important;box-shadow:none!important}
 html[data-n19-ya="serp"] .HeaderForm-InputContainer{border:2px solid var(--n19-yellow)!important;background:var(--n19-field)!important;box-shadow:none!important}
@@ -31,11 +31,12 @@ html[data-n19-ya="pogoda"]:where(:root:not([data-n19-safe])) a[class*="AppLogo_r
 html[data-n19-ya="pogoda"]:where(:root:not([data-n19-safe])) a[class*="AppLogo_serviceLogo__"]{width:68px!important;height:28px!important}
 html[data-n19-ya="pogoda"] a[class*="AppLogo_serviceLogo__"]{background:var(--n19-logo-pogoda) no-repeat center / 68px 28px!important}
 html[data-n19-ya="pogoda"]:where(:root:not([data-n19-safe])) a[class*="AppLogo_serviceLogo__"]{margin-top:3px!important}
-html[data-n19-ya="pogoda"]:where(:root:not([data-n19-safe])) a:is([class*="AppLogo_rootLogo__"],[class*="AppLogo_serviceLogo__"])>:is(img,picture,svg){opacity:0!important;width:100%!important;height:100%!important}
+html[data-n19-ya="pogoda"] a:is([class*="AppLogo_rootLogo__"],[class*="AppLogo_serviceLogo__"])>:is(img,picture,svg){opacity:0!important}
+html[data-n19-ya="pogoda"]:where(:root:not([data-n19-safe])) a:is([class*="AppLogo_rootLogo__"],[class*="AppLogo_serviceLogo__"])>:is(img,picture,svg){width:100%!important;height:100%!important}
 html[data-n19-ya="pogoda"] a[class*="AppHeaderNavigationItem_list__link__"],html[data-n19-ya="pogoda"] button[class*="AppHeaderNavigation_more__"]{background:transparent!important;border-radius:0!important}
 html[data-n19-ya="pogoda"] nav[class*="AppHeaderNavigation_navigation__"] a[class*="AppHeaderNavigationItem_list__link_active__"]{box-shadow:inset 0 -2px 0 var(--n19-tab-active)!important}
 html[data-n19-ya="pogoda"] input[class*="Suggest_input__"]{border-radius:3px!important;border:1px solid rgba(0,0,0,.15)!important;background:var(--n19-field)!important}
 html[data-n19-ya="pogoda"] header :is(button[class*="AppFindMeButton_button__"],button[class*="FavoriteButton_favorite__button__"],button[class*="AppSettings_button__"]){background:transparent!important}
 html[data-n19-ya="pogoda"] section[class*="AppLayoutTypeMain_content_type_main__"]{background-color:var(--n19-card)!important;border-radius:12px!important}
 html[data-n19-ya="market"] form#HeaderSearchLightId>div,html[data-n19-ya="market"] form#HeaderSearchLightId>div>div,html[data-n19-ya="market"] form#HeaderSearchLightId>div>div>div{border-radius:3px!important}
-html[data-n19-ya="pogoda"]:where(:root:not([data-n19-safe])) [class*="AliceChat_scroll__"],html[data-n19-ya="pogoda"]:where(:root:not([data-n19-safe])) [class*="AppPromoInner_container__"],html[data-n19-ya="market"]:where(:root:not([data-n19-safe])) li:has(>[id$="/header/ecomAssistantModalTrigger"]),html[data-n19-ya="market"]:where(:root:not([data-n19-safe])) li:has(>[id$="/header/balanceBadge"]),html[data-n19-ya="market"]:where(:root:not([data-n19-safe])) [id="ecomAssistantModalTrigger"],html[data-n19-ya="translate"]:where(:root:not([data-n19-safe])) #gptTutorEntry,html[data-n19-ya="translate"]:where(:root:not([data-n19-safe])) button[data-tracking-data*="typeTranslationButton"]{display:none!important}
+html[data-n19-ya="pogoda"] [class*="AliceChat_scroll__"],html[data-n19-ya="pogoda"] [class*="AppPromoInner_container__"],html[data-n19-ya="market"] li:has(>[id$="/header/ecomAssistantModalTrigger"]),html[data-n19-ya="market"] li:has(>[id$="/header/balanceBadge"]),html[data-n19-ya="market"] [id="ecomAssistantModalTrigger"],html[data-n19-ya="translate"] #gptTutorEntry,html[data-n19-ya="translate"] button[data-tracking-data*="typeTranslationButton"]{display:none!important}

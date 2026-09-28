@@ -33,7 +33,7 @@ a.cmp-hero-card__button:not(:first-child),.cmp-button__link.cmp-button--primary,
 a.cmp-hero-card__button:not(:first-child) *,a[class*="cmp-button__inner--type-primary"] *,a[class*="cmp-button__inner--type-secondary"] *{color:var(--n19-on-blue)!important}
 main h1,main h2{font-weight:400!important;color:var(--n19-text)}
 .cmp-hero-card:has(.cmp-hero-card__media-fullBleed) h1{color:#fff}
-:where(:root:not([data-n19-safe])) .cmp-hero-card:has(.cmp-hero-card__media-fullBleed),.cmp-hero-card:has(.cmp-hero-card__media-fullBleed):where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .cmp-teaser:has(.cmp-teaser__image--overlay),.cmp-teaser:has(.cmp-teaser__image--overlay):where(:root:not([data-n19-safe])){background-image:linear-gradient(transparent, transparent)!important}
+.cmp-hero-card:has(.cmp-hero-card__media-fullBleed),.cmp-teaser:has(.cmp-teaser__image--overlay){background-image:linear-gradient(transparent, transparent)!important}
 main h2[class*="--h2"]{font-size:24px!important;line-height:30px!important}
 main h3{font-weight:700!important}
 mc-search input.search-input{border-radius:0!important}

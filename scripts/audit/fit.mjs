@@ -33,7 +33,7 @@ const openContext = () => {
 
 async function check(id, url, retry = true) {
   let page;
-  try { page = await (await openContext()).newPage(); } catch { browser = null; return retry ? check(id, url, false) : { id, url, verdict: 'error', error: 'browser crashed' }; }
+  try { page = await (await openContext()).newPage(); } catch (error) { browser = null; return retry ? check(id, url, false) : { id, url, verdict: 'error', error: `browser did not start: ${String(error.message).slice(0, 80)}` }; }
   try {
     const response = await page.goto(url, { waitUntil: 'load', timeout: 40000 }).catch(() => null);
     await page.waitForTimeout(SETTLE_MS);

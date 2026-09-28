@@ -6,8 +6,7 @@ html:root{--color-text-link:var(--n19-link)!important;--color-text-primary:var(-
 #nav .site-nav__title{font-size:13px!important;font-family:Helvetica, Arial, sans-serif!important;color:var(--n19-bar-text)!important}
 #nav .site-nav__title::after{font-size:12px!important}
 :where(:root:not([data-n19-safe])) #nav .site-nav__title::after,#nav:where(:root:not([data-n19-safe])) .site-nav__title::after{width:12px!important}
-#nav .site-nav__title::after{color:#fff!important}
-:where(:root:not([data-n19-safe])) #nav .site-nav__title::after,#nav:where(:root:not([data-n19-safe])) .site-nav__title::after{opacity:.9}
+#nav .site-nav__title::after{color:#fff!important;opacity:.9}
 #nav .c-wc>.site-nav__title::after{color:#74c4eb!important}
 #nav .c-tz>.site-nav__title::after{color:#aed68d!important}
 #nav .c-cl>.site-nav__title::after{color:#fa4f4c!important}
@@ -29,7 +28,7 @@ html:root{--color-text-link:var(--n19-link)!important;--color-text-primary:var(-
 .tad-explore-box .tad-teaser--list-compact{list-style:square outside!important}
 :where(:root:not([data-n19-safe])) .tad-explore-box .tad-teaser--list-compact,.tad-explore-box:where(:root:not([data-n19-safe])) .tad-teaser--list-compact{margin:0 0 0 18px!important;padding-left:5px!important}
 .tad-explore-box .tad-teaser--list-compact{color:var(--n19-bullet)!important}
-:where(:root:not([data-n19-safe])) .tad-explore-box .tad-teaser--list-compact .tad-teaser__image,.tad-explore-box:where(:root:not([data-n19-safe])) .tad-teaser--list-compact .tad-teaser__image,:where(:root:not([data-n19-safe])) .tad-explore-box .tad-teaser--list-compact .tad-box__edge,.tad-explore-box:where(:root:not([data-n19-safe])) .tad-teaser--list-compact .tad-box__edge,:where(:root:not([data-n19-safe])) .tad-explore-box .tad-teaser--list-compact .tad-teaser__abstract,.tad-explore-box:where(:root:not([data-n19-safe])) .tad-teaser--list-compact .tad-teaser__abstract{display:none!important}
+.tad-explore-box .tad-teaser--list-compact .tad-teaser__image,.tad-explore-box .tad-teaser--list-compact .tad-box__edge,.tad-explore-box .tad-teaser--list-compact .tad-teaser__abstract{display:none!important}
 :where(:root:not([data-n19-safe])) .tad-explore-box .tad-teaser--list-compact .tad-teaser__box,.tad-explore-box:where(:root:not([data-n19-safe])) .tad-teaser--list-compact .tad-teaser__box{padding:4px 0!important;min-height:0!important}
 .tad-explore-box .tad-teaser--list-compact .tad-teaser__box{background:transparent!important}
 .tad-explore-box .tad-teaser--list-compact .tad-teaser__heading{font-size:13px!important;line-height:18px!important;color:var(--n19-link)!important}

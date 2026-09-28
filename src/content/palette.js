@@ -54,7 +54,7 @@
   const MEDIA = 'img,video,canvas,iframe,embed,object,image,[data-net19-keep]';
   const flipCSS = `html[data-net19-flip]{filter:${FLIP}!important}` +
     `html[data-net19-flip] :is(dialog:modal,:popover-open,:fullscreen):not(${MEDIA}){filter:${FLIP}!important}` +
-    `html[data-net19-flip] :is(${MEDIA}):not([data-net19-keep] *,:fullscreen,img[src*=".svg" i],img[src^="data:image/svg" i],[data-net19-flat]${theme.flat ? ',' + theme.flat : ''}){filter:${UNFLIP}!important}` +
+    `html[data-net19-flip] :is(${MEDIA}):not([data-net19-keep] *,:fullscreen,img[src*=".svg" i]:not([data-net19-real]),img[src^="data:image/svg" i]:not([data-net19-real]),[data-net19-flat]${theme.flat ? ',' + theme.flat : ''}){filter:${UNFLIP}!important}` +
     `html[data-net19-flip] [data-net19-keep] [data-net19-reflip]{filter:${FLIP}!important}` +
     `html[data-net19-flip] [data-net19-reflip] :is(${MEDIA}){filter:${UNFLIP}!important}`;
   let flipSheet = null, keepObserver = null, target = 'dark', interactions = false;
@@ -92,10 +92,49 @@
   let seen = new WeakSet(), small = new Set();
   const DRAWN = /\.(png|gif|svg)(\b|[?#"'])|image\/(png|gif|svg)/i;
   const PHOTO = /\.(jpe?g|webp|avif)(\b|[?#"'])|image\/(jpeg|webp|avif)|[?&](fm|format)=(jpe?g|webp|avif)/i;
-  const flatIcon = img => {
+  const ICON = /\.(png|gif|svg)(\b|[?#])|^data:image\/(png|gif|svg)/i;
+  const VECTOR = /\.svg(\b|[?#])|^data:image\/svg/i;
+  const inkBySource = new Map();
+  const inkOf = src => {
+    if (inkBySource.has(src)) return inkBySource.get(src);
+    const reading = new Promise(resolve => {
+      const probe = new Image();
+      probe.crossOrigin = 'anonymous';
+      probe.onload = () => {
+        try {
+          const side = 24;
+          const pen = new OffscreenCanvas(side, side).getContext('2d', { willReadFrequently: true });
+          pen.drawImage(probe, 0, 0, side, side);
+          const px = pen.getImageData(0, 0, side, side).data;
+          let opaque = 0, colored = 0;
+          for (let i = 0; i < px.length; i += 4) {
+            if (px[i + 3] < 48) continue;
+            opaque++;
+            if (Math.max(px[i], px[i + 1], px[i + 2]) - Math.min(px[i], px[i + 1], px[i + 2]) > 56) colored++;
+          }
+          resolve(!opaque ? 'unknown' : colored / opaque > .06 ? 'colorful' : 'mono');
+        } catch { resolve('unknown'); }
+      };
+      probe.onerror = () => resolve('unknown');
+      probe.src = src;
+    });
+    inkBySource.set(src, reading);
+    return reading;
+  };
+  const GLYPH_MAX = 32;
+  const judgeIcon = img => {
     const src = img.currentSrc || img.src || '';
-    if (!/\.(png|gif)(\b|[?#])|^data:image\/(png|gif)/i.test(src)) return;
-    const judge = () => { if (img.offsetHeight > 0 && img.offsetHeight <= 120 && img.offsetWidth <= 400) img.setAttribute('data-net19-flat', ''); };
+    if (!ICON.test(src)) return;
+    const vector = VECTOR.test(src);
+    const judge = () => {
+      const w = img.offsetWidth, h = img.offsetHeight;
+      if (!h || h > 120 || w > 400) { if (vector && h) img.setAttribute('data-net19-real', ''); return; }
+      inkOf(src).then(ink => {
+        const flips = ink === 'mono' || (ink === 'unknown' && Math.max(w, h) <= GLYPH_MAX);
+        if (flips && !vector) img.setAttribute('data-net19-flat', '');
+        if (!flips && vector) img.setAttribute('data-net19-real', '');
+      });
+    };
     if (img.complete) judge(); else img.addEventListener('load', judge, { once: true });
   };
   const SKIP = /^(IMG|VIDEO|CANVAS|IFRAME|SVG|svg|PATH|path|SCRIPT|STYLE|LINK|META|BR)$/;
@@ -195,7 +234,7 @@
         if (seen.has(el)) continue;
         seen.add(el);
         if (el.tagName === 'IMG' || el.tagName === 'VIDEO' || el.tagName === 'CANVAS') {
-          if (el.tagName === 'IMG') flatIcon(el);
+          if (el.tagName === 'IMG') judgeIcon(el);
           overlaid(el, decided, context);
           continue;
         }
@@ -234,7 +273,7 @@
     const root = document.documentElement;
     if (on === root.hasAttribute('data-net19-flip') && (!on || mode === target)) return;
     keepObserver?.disconnect(); keepObserver = null;
-    for (const el of document.querySelectorAll('[data-net19-keep],[data-net19-reflip],[data-net19-scrim],[data-net19-flat]')) for (const a of ['data-net19-keep', 'data-net19-reflip', 'data-net19-scrim', 'data-net19-flat']) el.removeAttribute(a);
+    for (const el of document.querySelectorAll('[data-net19-keep],[data-net19-reflip],[data-net19-scrim],[data-net19-flat],[data-net19-real]')) for (const a of ['data-net19-keep', 'data-net19-reflip', 'data-net19-scrim', 'data-net19-flat', 'data-net19-real']) el.removeAttribute(a);
     seen = new WeakSet(); small = new Set();
     if (!on) { root.removeAttribute('data-net19-flip'); root.removeAttribute('data-net19-canvas'); return; }
     target = mode;

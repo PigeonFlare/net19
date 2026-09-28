@@ -1,8 +1,8 @@
 html{--n19-bar:#4a4a4a;--n19-bar-text:#fff;--n19-head:#fff;--n19-text:#333;--n19-title:#333;--n19-meta:#767676;--n19-teaser:#767676;--n19-page:#f9f9f9;--n19-card:#fff;--n19-rule:#dfdfdf;--n19-link:#2c63ae;--n19-red:#d0021b;--npr19-sans:"Gotham SSm", "Gotham", Helvetica, Arial, sans-serif;--npr19-cond:"Knockout 31 4r", "HelveticaNeue-CondensedBold", "Helvetica Neue", "Arial Narrow", Arial, sans-serif;--npr19-serif:Georgia, serif;--bg-secondary:var(--n19-page)}
 html[data-net19-mode="dark"]{--n19-bar:#2b2b2b;--n19-bar-text:#f2f2f2;--n19-head:#161616;--n19-text:#ddd;--n19-title:#eee;--n19-meta:#a3a3a3;--n19-teaser:#a8a8a8;--n19-page:#0f0f0f;--n19-card:#1b1b1b;--n19-rule:#333;--n19-link:#8ab4f0;--n19-red:#ff5a5a}
 .npr-header .navigation__top-level-wrap{background:var(--n19-head)!important;border-bottom:1px solid var(--n19-rule)!important}
-:where(:root:not([data-n19-safe])) .npr-header :is(.navigation__newsletters,.navigation__plus),.npr-header:where(:root:not([data-n19-safe])) :is(.navigation__newsletters,.navigation__plus){visibility:hidden!important}
-:where(:root:not([data-n19-safe])) .npr-header .navigation__plus,.npr-header:where(:root:not([data-n19-safe])) .navigation__plus{display:none!important}
+.npr-header :is(.navigation__newsletters,.navigation__plus){visibility:hidden!important}
+.npr-header .navigation__plus{display:none!important}
 .npr-header :is(.navigation__shop,.navigation__donate,.navigation__account,.navigation__toggle--player)>a,.npr-header :is(.navigation__donate,.navigation__toggle--player){font-family:var(--npr19-cond)!important;font-stretch:condensed;font-weight:700!important;letter-spacing:.7px!important;font-size:14px!important;text-transform:uppercase!important;color:#4a4a4a!important}
 html[data-net19-mode="dark"] .npr-header :is(.navigation__shop,.navigation__donate,.navigation__account)>a{color:#ddd!important}
 .npr-header .navigation__donate>a,.npr-header a.navigation__donate,.npr-header a[data-net19-donate]{background:transparent!important;color:#d0021b!important}
@@ -14,8 +14,7 @@ html[data-net19-mode="dark"] .npr-header a[data-net19-donate]{color:#ff4d5e!impo
 #main-menu.menu--main,.npr-header .menu--main{background:var(--n19-bar)!important}
 .npr-header .menu--main .menu__item,.npr-header .menu--main .menu__item-inner>a{font-family:var(--npr19-cond)!important;font-stretch:condensed;font-weight:700!important;font-size:14px!important;letter-spacing:.7px!important;text-transform:uppercase!important;color:var(--n19-bar-text)!important}
 :where(:root:not([data-n19-safe])) .npr-header .menu--main .menu__item-inner>a,.npr-header:where(:root:not([data-n19-safe])) .menu--main .menu__item-inner>a{padding:0 18px 0 20px!important}
-:where(:root:not([data-n19-safe])) .npr-header .menu--main .menu__item-inner>a:hover,.npr-header:where(:root:not([data-n19-safe])) .menu--main .menu__item-inner>a:hover{opacity:.85}
-.npr-header .menu--main .menu__item-inner>a:hover{text-decoration:none!important}
+.npr-header .menu--main .menu__item-inner>a:hover{opacity:.85;text-decoration:none!important}
 .npr-header .menu--main .menu__item-inner>a svg{color:var(--n19-bar-text)!important;fill:currentColor}
 .npr-header .submenu{background:var(--n19-card)!important;border-radius:0!important;box-shadow:0 2px 6px rgba(0, 0, 0, .25)!important}
 .npr-header .submenu a{font-family:var(--npr19-sans)!important;text-transform:none!important;letter-spacing:0!important;color:var(--n19-text)!important}
@@ -46,8 +45,8 @@ body:is(.tmplHomePage,.agg,.tmplStory,.tmplSearch,.tmplPodcastsDirectory,.tmplPr
 .bucketwrap.image .caption p{font-size:12px!important;line-height:20px!important;color:var(--n19-meta)!important}
 .audio-module{background:#333!important;border-radius:0!important}
 .audio-module .audio-tool-label{font-family:var(--npr19-sans)!important}
-:where(:root:not([data-n19-safe])) .global-stickybar,.global-stickybar:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #global-stickybar-mount-piano-wrap,#global-stickybar-mount-piano-wrap:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .global-header-sticky-cta-wrap,.global-header-sticky-cta-wrap:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .global-header-cta-wrap,.global-header-cta-wrap:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [class*="plus-promo"],[class*="plus-promo"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [class*="npr-plus"],[class*="npr-plus"]:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .bucketwrap.internallink.insettwocolumn.inset2col.plus,.bucketwrap.internallink.insettwocolumn.inset2col.plus:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) [data-net19-later],[data-net19-later]:where(:root:not([data-n19-safe])){display:none!important}
-:where(:root:not([data-n19-safe])) .episode-type-tag--bonus,.episode-type-tag--bonus:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .submenu__item--npr-plus,.submenu__item--npr-plus:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .menu__item--plus,.menu__item--plus:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .npr-plus-interstitial-mount,.npr-plus-interstitial-mount:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .resaudio.is-plus-exclusive .audio-module-plus,.resaudio.is-plus-exclusive:where(:root:not([data-n19-safe])) .audio-module-plus{display:none!important}
+.global-stickybar,#global-stickybar-mount-piano-wrap,.global-header-sticky-cta-wrap,.global-header-cta-wrap,[class*="plus-promo"],[class*="npr-plus"],.bucketwrap.internallink.insettwocolumn.inset2col.plus,[data-net19-later]{display:none!important}
+.episode-type-tag--bonus,.submenu__item--npr-plus,.menu__item--plus,.npr-plus-interstitial-mount,.resaudio.is-plus-exclusive .audio-module-plus{display:none!important}
 .npr-footer{font-family:var(--npr19-sans)!important}
 .npr-footer__header{font-family:var(--npr19-cond)!important;font-stretch:condensed;letter-spacing:1.08px!important}
 html[data-net19-mode="dark"] .branding__image-title{filter:invert(1) hue-rotate(180deg)!important}

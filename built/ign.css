@@ -11,4 +11,4 @@ a:hover .item-title,a.item-title:hover,.item-title a:hover{color:var(--n19-hover
 .item-publish-date,.comment-count{color:var(--n19-red-text)!important}
 .five-up{--theme-elements-text-data:var(--n19-red-text)!important}
 html[data-net19-mode="dark"] :is(.filter-title,.page-header) [style*="#bf1313"i]{color:var(--n19-red-text)!important}
-html:where(:root:not([data-n19-safe])) body :is(.homepage-daily-games,.playables-daily,.object-box-shorts,section.carousel-section:has(.vertical-video-shelf-button),.plus-promo,.sidebar-playables-promo,.preferred-source-container,[data-net19-hidden]){display:none!important}
+html body :is(.homepage-daily-games,.playables-daily,.object-box-shorts,section.carousel-section:has(.vertical-video-shelf-button),.plus-promo,.sidebar-playables-promo,.preferred-source-container,[data-net19-hidden]){display:none!important}

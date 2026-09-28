@@ -22,9 +22,8 @@ a.button--primary,button.button--primary,.button--primary{background:var(--n19-n
 a.button--primary:hover,.button--primary:hover{background:var(--n19-navy-hover)!important}
 .carousel-indicators li.active{background:var(--n19-navy)!important}
 .input--field,.search--track-input{border-radius:0!important}
-:where(:root:not([data-n19-safe])) #utility-header a::before,#utility-header:where(:root:not([data-n19-safe])) a::before,:where(:root:not([data-n19-safe])) #utility-header li::before,#utility-header:where(:root:not([data-n19-safe])) li::before{display:none!important}
+#utility-header a::before,#utility-header li::before{display:none!important}
 :where(:root:not([data-n19-safe])) nav[aria-label="Main"] a.menuitem{white-space:nowrap!important}
 :where(:root:not([data-n19-safe])) nav[aria-label="Main"] ul.nav-list{display:inline-flex!important;justify-content:space-between!important;align-items:stretch!important}
 :where(:root:not([data-n19-safe])) nav[aria-label="Main"] ul.nav-list>li.menuheader:not(.qt-nav):not(.nav-search){width:auto!important;flex:0 0 auto!important}
-nav[aria-label="Main"] a.menuitem.nav-first-element{color:#fff!important}
-:where(:root:not([data-n19-safe])) nav[aria-label="Main"] a.menuitem.nav-first-element{background-image:linear-gradient(transparent, transparent)!important}
+nav[aria-label="Main"] a.menuitem.nav-first-element{color:#fff!important;background-image:linear-gradient(transparent, transparent)!important}

@@ -1,3 +1,3 @@
-:where(:root:not([data-n19-safe])) header#gb img[src*="logo_keep"]{content:url("https://www.gstatic.com/images/branding/product/2x/keep_48dp.png")!important}
+header#gb img[src*="logo_keep"]{content:url("https://www.gstatic.com/images/branding/product/2x/keep_48dp.png")!important}
 html[data-net19-flip] header#gb img[src*="logo_keep"]{filter:contrast(1.13636) hue-rotate(180deg) invert(1)!important}
-:where(:root:not([data-n19-safe])) div.IVT3Ae-WsjYwc-UMrnmb:has(.IVT3Ae-WsjYwc-UMrnmb-r4nke){display:none!important}
+div.IVT3Ae-WsjYwc-UMrnmb:has(.IVT3Ae-WsjYwc-UMrnmb-r4nke){display:none!important}

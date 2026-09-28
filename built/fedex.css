@@ -7,9 +7,9 @@ h1,h2,.fxg-title{font-weight:300!important}
 .cc-aem-c-button,.fxg-button{border-radius:0!important}
 .cc-aem-c-button--primary,.fxg-button--orange{background:var(--n19-orange)!important;color:#fff!important;text-transform:uppercase!important;letter-spacing:.03em!important}
 .fxg-field input,.fxg-tracking-module input{border-radius:0!important}
-:where(:root:not([data-n19-safe])) .fxg-global-nav .fxg-dropdown-js::after,.fxg-global-nav:where(:root:not([data-n19-safe])) .fxg-dropdown-js::after,:where(:root:not([data-n19-safe])) .fxg-global-nav .fxg-dropdown-js::before,.fxg-global-nav:where(:root:not([data-n19-safe])) .fxg-dropdown-js::before,:where(:root:not([data-n19-safe])) .fxg-global-nav .fxg-mouse::after,.fxg-global-nav:where(:root:not([data-n19-safe])) .fxg-mouse::after,:where(:root:not([data-n19-safe])) .fxg-global-nav .fxg-mouse::before,.fxg-global-nav:where(:root:not([data-n19-safe])) .fxg-mouse::before{display:none!important}
+.fxg-global-nav .fxg-dropdown-js::after,.fxg-global-nav .fxg-dropdown-js::before,.fxg-global-nav .fxg-mouse::after,.fxg-global-nav .fxg-mouse::before{display:none!important}
 .fxg-global-nav .fxg-dropdown-js,.fxg-global-nav .fxg-dropdown-js .fxg-mouse{font-size:14px!important;font-weight:400!important}
-:where(:root:not([data-n19-safe])) .fxg-user-options__sign-in img.fxg-user-options__icon,.fxg-user-options__sign-in:where(:root:not([data-n19-safe])) img.fxg-user-options__icon{display:none!important}
+.fxg-user-options__sign-in img.fxg-user-options__icon{display:none!important}
 :where(:root:not([data-n19-safe])) .fxg-nav .fdx-utilityWrap,.fxg-nav:where(:root:not([data-n19-safe])) .fdx-utilityWrap{margin-top:6px!important}
 .fxg-hero.fxg-hero_homepage:has(>.fxg-hero__image){background-color:#000!important}
-:where(:root:not([data-n19-safe])) .nuance-chat-floating-container,.nuance-chat-floating-container:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #nuanMessagingFrame,#nuanMessagingFrame:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #inqChatStage,#inqChatStage:where(:root:not([data-n19-safe])){display:none!important}
+.nuance-chat-floating-container,#nuanMessagingFrame,#inqChatStage{display:none!important}

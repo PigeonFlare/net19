@@ -9,7 +9,7 @@ body{font-family:var(--n19-font)!important}
 :where(:root:not([data-n19-safe])) [role="navigation"] [role="grid"] [role="row"] img[height="56"],[role="navigation"]:where(:root:not([data-n19-safe])) [role="grid"] [role="row"] img[height="56"]{width:50px!important;height:50px!important}
 [role="navigation"] h1{font-size:16px!important;font-weight:700!important;letter-spacing:0!important}
 [role="main"] h2{font-size:14px!important}
-:where(:root:not([data-n19-safe])) [data-n19-msgr="later"],[data-n19-msgr="later"]:where(:root:not([data-n19-safe])){display:none!important}
+[data-n19-msgr="later"]{display:none!important}
 ._6b6w h1,._6b6b{font-family:var(--n19-font)!important;font-weight:600!important;font-size:56px!important;line-height:1.1!important;letter-spacing:-.02em;color:var(--n19-blue)!important}
 ._94-l,._4n9r,._4sze{font-family:var(--n19-font)!important}
 ._94-l{color:var(--n19-text-2)!important;font-size:16px!important}

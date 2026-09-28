@@ -7,7 +7,7 @@ header.Header_root a[data-testid="header-sign-up-button"] *,header.Header_root a
 header.Header_root a[data-testid="header-custom-action-button"]{border-radius:2px!important}
 header.Header_root nav.Header_tab a{border-radius:24px!important;font-weight:400!important}
 header.Header_root nav.Header_tab a[aria-current="page"]{font-weight:500!important}
-:where(:root:not([data-n19-safe])) #HeroBannerDesktop [data-testid="herobanner-illustration"],#HeroBannerDesktop:where(:root:not([data-n19-safe])) [data-testid="herobanner-illustration"]{display:none!important}
+#HeroBannerDesktop [data-testid="herobanner-illustration"]{display:none!important}
 :where(:root:not([data-n19-safe])) #HeroBannerDesktop>div>div,#HeroBannerDesktop:where(:root:not([data-n19-safe]))>div>div,:where(:root:not([data-n19-safe])) #HeroBannerDesktop>div>div>div,#HeroBannerDesktop:where(:root:not([data-n19-safe]))>div>div>div{height:auto!important;min-height:0!important}
 :where(:root:not([data-n19-safe])) #HeroBannerDesktop>div>div>div,#HeroBannerDesktop:where(:root:not([data-n19-safe]))>div>div>div{padding-top:40px!important;padding-bottom:88px!important}
 #HeroBannerDesktop h1,#HeroBannerDesktop [data-testid="herobanner-title1"],#HeroBannerDesktop [data-testid="herobanner-subtitile"]{font-family:var(--n19-font)!important}
@@ -25,10 +25,10 @@ header.Header_root nav.Header_tab a[aria-current="page"]{font-weight:500!importa
 [data-testid="searchbox-layout-wide"] button[type="submit"]{background:var(--n19-blue)!important;border-radius:2px!important;font-weight:500!important}
 [data-testid="searchbox-layout-wide"] button[type="submit"]:hover{background:var(--n19-blue-hover)!important}
 [data-testid="searchbox-layout-wide"] button,[data-testid="searchbox-layout-wide"] input{border-radius:2px!important}
-:where(:root:not([data-n19-safe])) [data-testid="destination-container"] label[for="searchbox-horizontal-destination-input"],[data-testid="destination-container"]:where(:root:not([data-n19-safe])) label[for="searchbox-horizontal-destination-input"]{display:none!important}
-:where(:root:not([data-n19-safe])) li[role="option"]:has(>div>[data-testid="autocomplete-result"]>[data-testid="autocomplete-icon-ai-suggestion"]){display:none!important}
+[data-testid="destination-container"] label[for="searchbox-horizontal-destination-input"]{display:none!important}
+li[role="option"]:has(>div>[data-testid="autocomplete-result"]>[data-testid="autocomplete-icon-ai-suggestion"]){display:none!important}
 [data-testid="destination-container"] input{font-size:14px!important}
 :where(:root:not([data-n19-safe])) [data-testid="destination-container"] input,[data-testid="destination-container"]:where(:root:not([data-n19-safe])) input{height:33px!important}
 [data-testid="destination-container"] input{font-weight:500!important}
 main h2{font-family:var(--n19-font)!important}
-:where(:root:not([data-n19-safe])) [data-testid="filters-search-widget"],[data-testid="filters-search-widget"]:where(:root:not([data-n19-safe])){display:none!important}
+[data-testid="filters-search-widget"]{display:none!important}

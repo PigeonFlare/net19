@@ -4,7 +4,7 @@ import { resolve } from 'node:path';
 
 const PAGE = (title: string) => `<!doctype html><html><head><meta charset="utf-8"><title>${title}</title></head><body style="background:#fff;color:#111"><header><a href="/">${title}</a></header><main><h1>${title}</h1>` +
   `<div id="bar" style="background:#13233a;color:#fff;width:600px;height:40px">already dark</div>` +
-  `<img id="photo" width="200" height="100" src="/photo.jpg"><img id="logo" width="120" height="30" src="/logo.svg">` +
+  `<img id="photo" width="200" height="100" src="/photo.jpg"><img id="logo" width="120" height="40" src="/logo.svg"><img id="badge" width="120" height="40" src="/badge.svg">` +
   `<a id="hero" href="/h" style="display:block;position:relative;width:400px;height:200px"><img src="/hero.jpg" width="400" height="200" style="display:block"><span style="position:absolute;left:10px;bottom:10px;color:#fff">Headline on the photo</span></a>` +
   `<dialog id="modal">modal</dialog>` +
   `<input id="q" placeholder="Search or ask a question"><button id="gen">🍌 Create images</button><a id="ask" href="/x">Ask Question</a>` +
@@ -20,7 +20,12 @@ test.beforeEach(async ({}, info) => {
   await context.route(/^https?:\/\//, async route => {
     const url = new URL(route.request().url());
     requests.push(url.href);
-    if (/(^|\.)(youtube\.com|wikipedia\.org|reddit\.com|redditstatic\.com|example\.com)$/.test(url.hostname)) { await route.fulfill({ contentType: 'text/html', body: PAGE(url.hostname + url.pathname) }); return; }
+    if (/(^|\.)(youtube\.com|wikipedia\.org|reddit\.com|redditstatic\.com|example\.com)$/.test(url.hostname)) {
+      const svg = { '/logo.svg': '#111', '/badge.svg': '#ffcc00' }[url.pathname];
+      if (svg) await route.fulfill({ contentType: 'image/svg+xml', headers: { 'access-control-allow-origin': '*' }, body: `<svg xmlns="http://www.w3.org/2000/svg" width="120" height="40"><rect width="120" height="40" fill="${svg}"/></svg>` });
+      else await route.fulfill({ contentType: 'text/html', body: PAGE(url.hostname + url.pathname) });
+      return;
+    }
     unexpected.push(url.href); await route.abort();
   });
   worker = context.serviceWorkers()[0] ?? await context.waitForEvent('serviceworker'); extensionId = new URL(worker.url()).host;
@@ -48,13 +53,14 @@ test('a themed site is styled from its first paint; any other site is left alone
   expect(await fitRecords()).toEqual([]);
 });
 
-test('the device decides light or dark: a light site is flipped for a dark device, with photos and dark bars kept', async () => {
+test('the device decides light or dark: a light site is flipped for a dark device, with photos, colorful logos and dark bars kept', async () => {
   const page = await open('https://www.youtube.com/');
   const html = page.locator('html');
   await expect(html).toHaveAttribute('data-net19-mode', 'light');
   await expect(html).toHaveAttribute('data-net19-flip', '');
   expect(await html.evaluate(el => getComputedStyle(el).filter)).toContain('invert(1)');
   expect(await page.locator('#photo').evaluate(el => getComputedStyle(el).filter)).toMatch(/^contrast.*invert\(1\)$/);
+  await expect.poll(() => page.locator('#badge').evaluate(el => getComputedStyle(el).filter)).toMatch(/^contrast.*invert\(1\)$/);
   expect(await page.locator('#logo').evaluate(el => getComputedStyle(el).filter)).toBe('none');
   await expect(page.locator('#bar')).toHaveAttribute('data-net19-keep', '');
   await expect(page.locator('#hero')).toHaveAttribute('data-net19-keep', '');
@@ -99,10 +105,10 @@ test('signed in, Reddit opens on old.reddit.com with the 2019 list; signed out i
 
 const REDESIGN = (broken: boolean) => `<!doctype html><html><head><meta charset="utf-8"><title>Redesign</title>` +
   (broken ? '<style>:root:not([data-n19-safe]) #feed{display:none}</style>' : '') +
-  `</head><body><header><a href="/">Home</a></header><main id="feed">${Array.from({ length: 24 }, (_, i) => `<p><a href="/v${i}">Video ${i}</a></p>`).join('')}</main></body></html>`;
+  `</head><body><header><a href="/">Home</a></header><ytd-reel-shelf-renderer id="shorts"><a href="/shorts/x">Shorts</a></ytd-reel-shelf-renderer><main id="feed">${Array.from({ length: 24 }, (_, i) => `<p><a href="/v${i}">Video ${i}</a></p>`).join('')}</main></body></html>`;
 const fitRecords = () => worker.evaluate(async () => Object.keys((await chrome.storage.local.get('net19-fit'))['net19-fit'] || {}));
 
-test('a theme that stops fitting a redesigned page steps back to its safe layer, then recovers once it fits again', async () => {
+test('a theme that stops fitting a redesigned page steps back to its safe layer, with post-2019 features still hidden, then recovers once it fits again', async () => {
   let broken = true;
   await context.route('https://www.youtube.com/redesign', route => route.fulfill({ contentType: 'text/html', body: REDESIGN(broken) }));
   const page = await open('https://www.youtube.com/redesign');
@@ -112,6 +118,7 @@ test('a theme that stops fitting a redesigned page steps back to its safe layer,
   await expect(html).toHaveAttribute('data-n19-fit', /^unfit/);
   await expect(html).toHaveAttribute('data-n19-safe', '');
   await expect(page.locator('#feed a').first()).toBeVisible();
+  await expect(page.locator('#shorts')).toBeHidden();
   await expect(html).toHaveAttribute('data-net19-mode', /^(light|dark)$/);
   await expect.poll(fitRecords).toEqual(['youtube.com/redesign']);
   await page.reload();
@@ -142,15 +149,16 @@ test('switching net19 off removes every script and rule', async () => {
   expect((await open('https://en.wikipedia.org/wiki/Cat')).url()).toBe('https://en.wikipedia.org/wiki/Cat');
 });
 
-test('popup is two switches and nothing else', async ({}, info) => {
+test('popup is two switches and a Donate link, nothing else', async ({}, info) => {
   const site = await open('https://www.youtube.com/watch?v=x');
   const tabId = await worker.evaluate(async () => (await chrome.tabs.query({ url: 'https://www.youtube.com/*' }))[0].id!);
   const popup = await context.newPage();
   await popup.addInitScript(({ tabId }) => { const api = (globalThis as any).chrome; if (api?.tabs) api.tabs.query = async () => [{ id: tabId, url: 'https://www.youtube.com/watch?v=x', incognito: false }]; }, { tabId });
   await popup.setViewportSize({ width: 260, height: 200 }); await popup.goto(`chrome-extension://${extensionId}/popup.html`);
   await expect(popup.locator('#site')).toHaveText('youtube.com');
-  expect((await popup.locator('body').innerText()).split('\n').map(line => line.trim()).filter(Boolean)).toEqual(['net19', 'youtube.com']);
-  await expect(popup.locator('input[type=checkbox]')).toHaveCount(2); await expect(popup.locator('button, a, select, input[type=range]')).toHaveCount(0);
+  expect((await popup.locator('body').innerText()).split('\n').map(line => line.trim()).filter(Boolean)).toEqual(['net19', 'youtube.com', 'Donate']);
+  await expect(popup.locator('input[type=checkbox]')).toHaveCount(2); await expect(popup.locator('button, select, input[type=range]')).toHaveCount(0);
+  await expect(popup.locator('a')).toHaveCount(1); await expect(popup.locator('a')).toHaveAttribute('href', 'https://buymeacoffee.com/0wtynrfutb');
   await popup.screenshot({ path: resolve(info.outputDir, 'popup.png') });
   await popup.locator('#site-switch').uncheck();
   await expect.poll(scripts).not.toContain('net19-theme-youtube');
@@ -165,5 +173,5 @@ test('the popup shows no site switch on a site without a theme', async () => {
   await popup.addInitScript(({ tabId }) => { const api = (globalThis as any).chrome; if (api?.tabs) api.tabs.query = async () => [{ id: tabId, url: 'https://www.example.com/', incognito: false }]; }, { tabId });
   await popup.goto(`chrome-extension://${extensionId}/popup.html`);
   await expect(popup.locator('#site-row')).toBeHidden();
-  expect((await popup.locator('body').innerText()).trim()).toBe('net19');
+  expect((await popup.locator('body').innerText()).split('\n').map(line => line.trim()).filter(Boolean)).toEqual(['net19', 'Donate']);
 });

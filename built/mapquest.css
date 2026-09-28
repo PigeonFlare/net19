@@ -22,4 +22,4 @@ button[data-testid="directions-cta-button"] svg{color:var(--n19-lime-text)!impor
 [data-testid="map-chiclets"] a.bg-primary-800 *,nav[aria-label="Category navigation"]:not(:has(a.group)) :is(button,a).bg-primary *{color:#fff!important}
 h1,h2,h3{font-weight:700!important;color:var(--n19-text)}
 .rounded-xl,.rounded-2xl,.rounded-\[16px\]{border-radius:4px!important}
-:where(:root:not([data-n19-safe])) a[aria-label^="MapQuest has a new app"i]{display:none!important}
+a[aria-label^="MapQuest has a new app"i]{display:none!important}

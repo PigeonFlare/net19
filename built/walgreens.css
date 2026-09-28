@@ -16,7 +16,7 @@ section.promo-contain :is(a,span,strong){color:var(--n19-strip-text)!important;f
 :where(:root:not([data-n19-safe])) .nav__main,.nav__main:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .nav__main-container,.nav__main-container:where(:root:not([data-n19-safe])){height:46px!important}
 .nav__main-container>li>:is(a,button),.nav__main-container>li>:is(a,button) span,.default-dropdown.menu-dropdown>*>:is(a,span),.default-dropdown.menu-dropdown a.dropdown__title{color:var(--n19-band-text)!important;font-weight:400!important;font-size:17px!important}
 :where(:root:not([data-n19-safe])) .nav__main-container>li>:is(a,button),.nav__main-container:where(:root:not([data-n19-safe]))>li>:is(a,button){height:46px!important;padding:0 14px!important;align-items:center!important}
-:where(:root:not([data-n19-safe])) .nav__main-container>li>:is(a,button) :is(svg,img,.icon),.nav__main-container:where(:root:not([data-n19-safe]))>li>:is(a,button) :is(svg,img,.icon){display:none!important}
+.nav__main-container>li>:is(a,button) :is(svg,img,.icon){display:none!important}
 .default-dropdown.menu-dropdown a:hover{text-decoration:underline!important;background:transparent!important}
 .nav__main-container>li:is(:hover,:focus-within){background:var(--n19-tile)!important}
 .nav__main-container>li:is(:hover,:focus-within)>:is(a,button),.nav__main-container>li:is(:hover,:focus-within)>:is(a,button) span{color:var(--n19-link)!important}

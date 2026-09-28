@@ -2,8 +2,8 @@ html{--n19-link:#00e;--n19-ban:#eee;--n19-ban-edge:#ddd}
 html[data-net19-mode="dark"]{--n19-link:#8ab4f8;--n19-ban:#2a2a2a;--n19-ban-edge:#444}
 body,button,input,select,textarea{font-family:Arial, Helvetica, sans-serif!important}
 .cl-goto-home{color:var(--n19-link)!important}
-:where(:root:not([data-n19-safe])) .cl-goto-home>.icon,.cl-goto-home:where(:root:not([data-n19-safe]))>.icon{display:none!important}
-:where(:root:not([data-n19-safe])) .cl-link-table .heading .emoji,.cl-link-table:where(:root:not([data-n19-safe])) .heading .emoji{display:none!important}
+.cl-goto-home>.icon{display:none!important}
+.cl-link-table .heading .emoji{display:none!important}
 .cl-link-table .heading{background:var(--n19-ban)!important;border-top:1px solid var(--n19-ban-edge)!important;border-bottom:1px solid var(--n19-ban-edge)!important;font-weight:700!important}
 .cl-search-result.cl-search-view-mode-list{font-size:15px!important}
 :where(:root:not([data-n19-safe])) .cl-search-view-mode-list .result-node,.cl-search-view-mode-list:where(:root:not([data-n19-safe])) .result-node{align-items:baseline!important}
@@ -22,4 +22,4 @@ body,button,input,select,textarea{font-family:Arial, Helvetica, sans-serif!impor
 .cl-search-view-mode-list .result-data .pic-button{font-size:11px!important;color:#999!important}
 :where(:root:not([data-n19-safe])) .cl-search-view-mode-list .result-data .cl-banish-button,.cl-search-view-mode-list:where(:root:not([data-n19-safe])) .result-data .cl-banish-button{order:6!important}
 .cl-search-view-mode-list .result-data .cl-banish-button{font-size:11px!important}
-:where(:root:not([data-n19-safe])) .cl-search-view-mode-list .result-data .separator,.cl-search-view-mode-list:where(:root:not([data-n19-safe])) .result-data .separator{display:none!important}
+.cl-search-view-mode-list .result-data .separator{display:none!important}
