@@ -130,10 +130,6 @@ html:is([data-n19-g="workspace"], [data-n19-g="business"], [data-n19-g="about"],
   :is(.button, [class*="button--"], [class*="Button_button"], [class*="cta"]):is(a, button) { border-radius: 4px !important; }
 html[data-n19-g="workspace"] header { box-shadow: 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15) !important; }
 
-html[data-n19-g="finance"] :is([role="region"][aria-label="Research panel"], #dbgrod, button[role="tab"]#research, .FlxBqd) { display: none !important; }
-html[data-n19-g="finance"] :is(.FRNsr, [data-n19-veil]) { visibility: hidden !important; }
-html[data-n19-g="finance"] :is(textarea, input)[placeholder] { font-family: var(--n19-sans) !important; }
-
 html[data-n19-g="play"] { --n19-play: #689f38; --n19-play-hover: #558b2f; }
 html[data-n19-g="play"][data-net19-mode="dark"] { --n19-play: #8bc34a; --n19-play-hover: #9ccc65; }
 html[data-n19-g="play"] :is(.VfPpkd-LgbsSe-OWXEXe-k8QpJ, .VfPpkd-LgbsSe-OWXEXe-MV7yeb):not(:disabled, [data-n19-hollow], [data-n19-probe]) { background-color: var(--n19-play) !important; color: #fff !important; }
@@ -145,9 +141,6 @@ html[data-n19-g="support"] h1 { color: var(--n19-accent) !important; }
 html[data-n19-g="support"] :is(form[role="search"], [role="search"]) { border-radius: 8px !important; }
 
 html[data-n19-g="policies"] :is(nav, [role="navigation"]):not(header *, [role="tablist"], :has([role="tab"])) a:is([aria-current], [aria-selected="true"]) { background: var(--n19-accent-soft) !important; color: var(--n19-accent-text) !important; border-radius: 0 999px 999px 0 !important; }
-
-html[data-n19-g="finance"] .Y8k45b { width: auto !important; margin-right: 0 !important; }
-html[data-n19-g="finance"] :is(a[href*="tab=analysis"]:has(.CjQc3e), div[jsname="ZI94Be"]) { display: none !important; }
 
 html[data-n19-g="books"] :is(#gb-ogen-opt-in-banner, #gb-ogen-opt-in-header-link) { display: none !important; }
 

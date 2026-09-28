@@ -1,0 +1,24 @@
+html[data-n19-g="finance"] {
+  --n19-gf-up: #0f9d58; --n19-gf-down: #d23f31; --n19-gf-up-soft: #e6f4ea; --n19-gf-down-soft: #fce8e6; --n19-gf-link: #1a0dab; --n19-gf-visited: #660099;
+  --n19-display: arial, sans-serif; }
+html[data-n19-g="finance"][data-net19-mode="dark"] {
+  --n19-gf-up: #81c995; --n19-gf-down: #f28b82; --n19-gf-up-soft: #1e3a2a; --n19-gf-down-soft: #3c1f1e; --n19-gf-link: #8ab4f8; --n19-gf-visited: #c58af9; }
+html[data-n19-g="finance"] body {
+  --fh-sentiment-positive: var(--n19-gf-up) !important; --fh-sentiment-negative: var(--n19-gf-down) !important;
+  --fh-sentiment-positive-container: var(--n19-gf-up-soft) !important; --fh-sentiment-negative-container: var(--n19-gf-down-soft) !important;
+  --fh-foreground-on-surface-link-default: var(--n19-gf-link) !important; --fh-foreground-on-surface-link-visited: var(--n19-gf-visited) !important;
+  --fh-colors-and-accents-primary: var(--n19-accent) !important; --fh-foreground-icon-primary: var(--n19-accent) !important;
+  --fh-states-neutral-focused-outline: var(--n19-accent) !important; --fh-states-branded-medium-focused-outline: var(--n19-accent) !important; --fh-states-branded-emphasis-focused-outline: var(--n19-accent) !important;
+}
+
+html[data-n19-g="finance"] :is([role="region"][aria-label="Research panel"], #dbgrod, button[role="tab"]#research, .FlxBqd) { display: none !important; }
+html[data-n19-g="finance"] :is(.FRNsr, [data-n19-veil]) { visibility: hidden !important; }
+html[data-n19-g="finance"] :is(a[href*="tab=analysis"]:has(.CjQc3e), div[jsname="ZI94Be"]) { display: none !important; }
+html[data-n19-g="finance"] :is(.iXRHJe:has(> .nt6Ve), .yAwAHd) { display: none !important; }
+html[data-n19-g="finance"] .Y8k45b { width: auto !important; margin-right: 0 !important; }
+html[data-n19-g="finance"] :is(textarea, input)[placeholder] { font-family: var(--n19-sans) !important; }
+
+html[data-n19-g="finance"] main a[target="_blank"][href^="http"] > div:first-child { color: var(--n19-gf-link) !important; }
+html[data-n19-g="finance"] main a[target="_blank"][href^="http"]:visited > div:first-child { color: var(--n19-gf-visited) !important; }
+html[data-n19-g="finance"] main a[target="_blank"][href^="http"]:hover > div:first-child { text-decoration: underline !important; }
+html[data-n19-g="finance"]:not([data-net19-mode="dark"]) .t3Nuo > i { color: #fff !important; }

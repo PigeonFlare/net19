@@ -32,6 +32,7 @@ const GOOGLE_APPS: Record<string, string[]> = {
   gclassroom: ['*://classroom.google.com/*'],
   gchat: ['*://chat.google.com/*'],
   gaccount: ['*://myaccount.google.com/*'],
+  gfinance: ['*://www.google.com/finance*', '*://google.com/finance*'],
   glauncher: ['*://ogs.google.com/*widget/app*'],
 };
 

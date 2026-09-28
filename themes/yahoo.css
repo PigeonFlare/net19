@@ -1,9 +1,11 @@
 html { --n19-page: #fff; --n19-page-rgb: 255 255 255; --n19-surface: #f5f8fa; --n19-text: #26282a; --n19-text-rgb: 38 40 42; --n19-text-2: #6e7780;
   --n19-text-2-rgb: 110 119 128; --n19-head: #000f64; --n19-border: #e0e4e9; --n19-field-border: #b0b0b0; --n19-purple: #6001d2; --n19-logo: #6001d2;
-  --n19-search: #0f69ff; --n19-nav: #6001d2; --n19-panel: rgba(70,70,70,.62); --n19-panel-text: #fff; }
+  --n19-search: #0f69ff; --n19-nav: #6001d2; --n19-panel: rgba(70,70,70,.62); --n19-panel-text: #fff;
+  --n19-yf-text: #000; --n19-yf-up: #093; --n19-yf-down: #ff333a; --n19-yf-link: #0081f2; --n19-yf-tab: #188fff; --n19-yf-line: #e0e4e9; --n19-yf-hover: #eef7fe; --n19-yf-bar: #ff333a; }
 html[data-net19-mode="dark"] { --n19-page: #1d2228; --n19-page-rgb: 29 34 40; --n19-surface: #232a31; --n19-text: #f0f3f5; --n19-text-rgb: 240 243 245;
   --n19-text-2: #b0b9c1; --n19-text-2-rgb: 176 185 193; --n19-head: #c7d4ff; --n19-border: #3a434c; --n19-field-border: #5b636a; --n19-purple: #7759ff;
-  --n19-logo: #b89bff; --n19-search: #188fff; --n19-nav: #b89bff; --n19-panel: rgba(20,24,28,.7); --n19-panel-text: #fff; }
+  --n19-logo: #b89bff; --n19-search: #188fff; --n19-nav: #b89bff; --n19-panel: rgba(20,24,28,.7); --n19-panel-text: #fff;
+  --n19-yf-text: #f0f3f5; --n19-yf-up: #3fc37a; --n19-yf-down: #ff6166; --n19-yf-link: #4aa8ff; --n19-yf-tab: #188fff; --n19-yf-line: #3a434c; --n19-yf-hover: #1b2947; --n19-yf-bar: #e0353b; }
 
 html:root, html body {
   --uds-background-color-primary: var(--n19-page-rgb) !important; --uds-background-color-secondary: var(--n19-page-rgb) !important;
@@ -131,3 +133,42 @@ body#ysch .horizontal-pivots a, body#ysch .compList a { border-radius: 0 !import
 #module-uh #ybar-navigation { position: relative !important; top: auto !important; transform: none !important; }
 :is(div, section):has(> header#module-uh) { height: auto !important; max-height: none !important; }
 button[data-ymp-follows], a[data-ymp-follows], [data-ymp-follows] { display: none !important; }
+
+html[data-n19-yf] {
+  --text1: var(--n19-yf-text) !important; --color-text-icon-primary: var(--n19-yf-text) !important;
+  --color-text-icon-pos: var(--n19-yf-up) !important; --color-interactive-pos-enabled: var(--n19-yf-up) !important;
+  --color-text-icon-neg: var(--n19-yf-down) !important; --color-interactive-neg-enabled: var(--n19-yf-down) !important;
+  --color-interactive-level-1-enabled: var(--n19-yf-link) !important; --color-interactive-level-2-selected: var(--n19-yf-text) !important;
+  --color-interactive-level-1-background-hovered: var(--n19-yf-hover) !important;
+  --ui-brand: var(--n19-nav) !important; --uh-text-hover-color: var(--n19-nav) !important; --uh-l2-divider-color: var(--n19-nav) !important; --uh-search-carat-color: var(--n19-nav) !important;
+}
+html[data-n19-yf] :is(.txt-positive, [data-trend="txt-positive"]) { color: var(--n19-yf-up) !important; }
+html[data-n19-yf] :is(.txt-negative, [data-trend="txt-negative"]) { color: var(--n19-yf-down) !important; }
+html[data-n19-yf] :is([class*="alphaspace"], a[href*="/alphaspace"], [class^="ai-analyst"], [class*=" ai-analyst"], [data-testid="ai-analyst-hybrid-banner"], [data-testid="trade-now-cta"], [data-n19-yf-hide]) { display: none !important; }
+html[data-n19-yf] :is([data-testid="card-container"], [data-testid="chart-container"], [data-testid="accordion"], [data-testid="dock"], [data-testid="dock"] section, .bordered, [data-testid="tabs-container"] button, [data-testid="quote-nav-bar"] a, [data-testid="advanced-chart-link"], [data-testid="chart-settings-button"]) { border-radius: 0 !important; }
+html[data-n19-yf] :is([data-testid="card-container"], [data-testid="dock"], [data-testid="dock"] section) { box-shadow: none !important; }
+html[data-n19-yf] [data-testid="dock"] :is(div, section) { border-radius: 0 !important; }
+html[data-n19-yf] li.l1-finance a.l1-link { color: var(--n19-nav) !important; }
+
+html[data-n19-yf] [data-testid="quote-hdr"] { border-top: 7px solid var(--n19-yf-bar) !important; padding-top: 15px !important; }
+html[data-n19-yf] [data-testid="quote-title"] h1 { font-size: 16px !important; line-height: 18px !important; font-weight: 700 !important; color: var(--n19-yf-text) !important; }
+html[data-n19-yf] [data-testid="qsp-price"] { font-size: 36px !important; line-height: 46px !important; font-weight: 700 !important; color: var(--n19-yf-text) !important; }
+html[data-n19-yf] :is([data-testid="qsp-price-change"], [data-testid="qsp-price-change-percent"]) { font-size: 14px !important; font-weight: 500 !important; }
+html[data-n19-yf] [data-testid="qsp-post-price"] { font-size: 14px !important; font-weight: 700 !important; color: var(--n19-yf-text) !important; }
+html[data-n19-yf] :is([data-testid="qsp-post-price-change"], [data-testid="qsp-post-price-change-percent"]) { font-size: 14px !important; font-weight: 500 !important; }
+
+html[data-n19-yf] [data-testid="quote-nav-bar"] a.item, html[data-n19-yf] [data-testid="quote-nav-bar"] a.item span { color: var(--n19-yf-link) !important; background: transparent !important; font-size: 13px !important; font-weight: 500 !important; }
+html[data-n19-yf] [data-testid="quote-nav-bar"] a.item:hover { background: var(--n19-yf-hover) !important; }
+html[data-n19-yf] [data-testid="quote-nav-bar"] a.item.selected, html[data-n19-yf] [data-testid="quote-nav-bar"] a.item.selected span { color: var(--n19-yf-text) !important; }
+html[data-n19-yf] [data-testid="quote-nav-bar"].horizontalNav a.item { border-bottom: 3px solid var(--n19-yf-line) !important; }
+html[data-n19-yf] [data-testid="quote-nav-bar"].horizontalNav a.item.selected { border-bottom-color: var(--n19-yf-tab) !important; }
+html[data-n19-yf] [data-testid="quote-nav-bar"] nav.vertical a.item { border-left: 3px solid transparent !important; }
+html[data-n19-yf] [data-testid="quote-nav-bar"] nav.vertical a.item.selected { border-left-color: var(--n19-yf-tab) !important; }
+
+html[data-n19-yf] [data-testid="quote-statistics"] li { border-bottom: 1px solid var(--n19-yf-line) !important; min-height: 36px !important; align-items: center !important; }
+html[data-n19-yf] [data-testid="quote-statistics"] li .label { font-size: 13px !important; color: var(--n19-yf-text) !important; }
+html[data-n19-yf] [data-testid="quote-statistics"] li .value { font-size: 13px !important; font-weight: 600 !important; color: var(--n19-yf-text) !important; }
+
+html[data-n19-yf] [data-testid="tabs-container"].rangeTabs button { background: transparent !important; border-color: transparent !important; }
+html[data-n19-yf] [data-testid="tabs-container"].rangeTabs button .title { color: var(--n19-yf-link) !important; font-weight: 500 !important; }
+html[data-n19-yf] [data-testid="tabs-container"].rangeTabs button[aria-selected="true"] .title { color: var(--n19-yf-text) !important; font-weight: 700 !important; }
