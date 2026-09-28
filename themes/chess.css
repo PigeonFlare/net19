@@ -10,7 +10,7 @@ html[data-net19-mode="light"]:root {
   --color-bg-container-light: #F1F1F1 !important; --color-bg-draw: #666564 !important; --color-bg-draw-eval: #BEBDB9 !important;
   --color-bg-gold: #FAD541 !important; --color-bg-gradient-bottom: color-mix(in srgb, #F1F1F1 0%, transparent) !important;
   --color-bg-gradient-modal: linear-gradient(180deg, #F1F1F1 0%, #FFFFFF 100%) !important; --color-bg-gradient-top: #FFFFFF !important;
-  --color-bg-input: #FFFFFF !important; --color-bg-item-hovered: #F2FCFF !important; --color-bg-membership-diamond: #009FD9 !important;
+  --color-bg-input: #FFFFFF !important; --color-bg-membership-diamond: #009FD9 !important;
   --color-bg-membership-gold: #F1F1F1 !important; --color-bg-membership-moderator: color-mix(in srgb, #486688 20%, transparent) !important;
   --color-bg-membership-platinum: color-mix(in srgb, #749BBF 20%, transparent) !important; --color-bg-membership-staff: #5D9948 !important;
   --color-bg-neutral: #666564 !important; --color-bg-opaque: #FFFFFF !important; --color-bg-opaque-lighter: #FFFFFF !important;
@@ -48,12 +48,12 @@ html[data-net19-mode="light"]:root {
   --color-leagues-silver: #486688 !important; --color-leagues-stone: #8B8987 !important; --color-leagues-wood: #9D6C3E !important;
   --color-streak-learn-high: #0069AB !important; --color-streak-learn-low: #4DC3EA !important; --color-streak-learn-medium: #009FD9 !important;
   --color-streak-play-high: #5D9948 !important; --color-streak-play-low: #B2E068 !important; --color-streak-play-medium: #81B64C !important;
-  --color-text-black-eval: #E7E6E5 !important; --color-text-bolder: #4B4847 !important; --color-text-boldest: #312E2B !important;
-  --color-text-brand: #5D9948 !important; --color-text-danger: #E02828 !important; --color-text-default: #666564 !important;
+  --color-text-black-eval: #E7E6E5 !important; --color-text-bolder: #4B4847 !important;
+  --color-text-brand: #5D9948 !important; --color-text-danger: #E02828 !important;
   --color-text-default-hovered: #4B4847 !important; --color-text-draw: #666564 !important; --color-text-draw-eval: #4B4847 !important;
-  --color-text-info: #0069AB !important; --color-text-inverse: #FFFFFF !important; --color-text-link: #0069AB !important;
-  --color-text-link-hovered: #008CD1 !important; --color-text-loss: #E02828 !important; --color-text-placeholder: #BEBDB9 !important;
-  --color-text-subtle: #8B8987 !important; --color-text-success: #5D9948 !important; --color-text-white-eval: #4B4847 !important;
+  --color-text-info: #0069AB !important; --color-text-inverse: #FFFFFF !important;
+  --color-text-loss: #E02828 !important;
+  --color-text-success: #5D9948 !important; --color-text-white-eval: #4B4847 !important;
   --color-text-win: #5D9948 !important; --color-tier-bronze: #B27314 !important; --color-tier-champion: #CF8D1B !important;
   --color-tier-elite: #FA412D !important; --color-tier-emerald: #5D9948 !important; --color-tier-legend: #4B4847 !important;
   --color-tier-silver: #749BBF !important; --color-tier-stone: #8B8987 !important; --color-tier-wood: #9D6C3E !important;
@@ -119,7 +119,7 @@ html[data-net19-mode="dark"]:root {
   --color-text-danger: #FA412D !important; --color-text-default: rgba(255, 255, 255, .72) !important;
   --color-text-default-hovered: rgba(255, 255, 255, .85) !important; --color-text-draw: rgba(255, 255, 255, .72) !important;
   --color-text-draw-eval: #FFFFFF !important; --color-text-info: #009FD9 !important; --color-text-inverse: #312E2B !important;
-  --color-text-link: #009FD9 !important; --color-text-link-hovered: #4DC3EA !important; --color-text-loss: #FA412D !important;
+  --color-text-link: #009FD9 !important; --color-text-loss: #FA412D !important;
   --color-text-placeholder: rgba(255, 255, 255, .4) !important; --color-text-subtle: rgba(255, 255, 255, .5) !important;
   --color-text-success: #81B64C !important; --color-text-white-eval: #312E2B !important; --color-text-win: #81B64C !important;
   --color-tier-bronze: #CF8D1B !important; --color-tier-champion: #F7C631 !important; --color-tier-elite: #FF6352 !important;

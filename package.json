@@ -10,7 +10,7 @@
     "test": "node --import tsx --test tests/*.test.ts",
     "pretest:browser": "playwright install chromium",
     "test:browser": "playwright test",
-    "check": "npm run typecheck && npm test && npm run build && npm run test:browser",
+    "check": "npm run typecheck && npm test && npm run build && npm run package && npm run test:browser",
     "package": "node scripts/package.mjs",
     "audit": "node scripts/audit/live.mjs",
     "audit:diff": "node scripts/audit/diff.mjs",

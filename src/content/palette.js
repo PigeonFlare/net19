@@ -1,3 +1,4 @@
+import { rgba } from './color.js';
 (() => {
   const theme = globalThis.net19Theme;
   if (!theme || globalThis.net19PaletteStarted) return;
@@ -83,22 +84,6 @@
     root.style.setProperty('--net19-unlift', (1 / lift).toFixed(3));
   };
   let flipSheet = null, keepObserver = null, target = 'dark', interactions = false;
-  const colorCache = new Map();
-  let pen = null;
-  const rgba = color => {
-    color = String(color);
-    if (/^rgba?\(/.test(color)) { const m = color.match(/[\d.]+/g); return m ? [+m[0], +m[1], +m[2], m.length > 3 ? +m[3] : 1] : null; }
-    if (!/^(?:color|oklab|oklch|lab|lch|hsla?|hwb)\(/.test(color)) return null;
-    if (colorCache.has(color)) return colorCache.get(color);
-    let out = null;
-    try {
-      pen ||= new OffscreenCanvas(1, 1).getContext('2d', { willReadFrequently: true });
-      pen.clearRect(0, 0, 1, 1); pen.fillStyle = color; pen.fillRect(0, 0, 1, 1);
-      const d = pen.getImageData(0, 0, 1, 1).data;
-      out = d[3] ? [Math.round(d[0] * 255 / d[3]), Math.round(d[1] * 255 / d[3]), Math.round(d[2] * 255 / d[3]), d[3] / 255] : [0, 0, 0, 0];
-    } catch { out = null; }
-    colorCache.set(color, out); return out;
-  };
   const lum = ([r, g, b]) => (.2126 * r + .7152 * g + .0722 * b) / 255;
   const unflip = ([r, g, b, a]) => {
     const lift = +(document.documentElement.style.getPropertyValue('--net19-lift') || 1);

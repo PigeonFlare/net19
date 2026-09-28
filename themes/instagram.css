@@ -126,12 +126,12 @@ main [role="tablist"] a:not([aria-selected="true"]) svg { color: rgb(var(--n19-t
 #loginForm button[type="submit"] { background: rgb(var(--n19-blue)) !important; border-radius: 4px !important; font-size: 14px !important; font-weight: 600 !important; color: #fff !important; }
 
 [data-n19-ig="page"], [data-n19-ig="right"] { background: rgb(var(--n19-page)) !important; }
-[data-n19-ig="row-login"] { max-width: 935px !important; margin: 0 auto !important; padding: 32px 0 !important; justify-content: center !important; align-items: center !important; gap: 32px !important; min-height: 0 !important; }
+[data-n19-ig="row-login"] { max-width: 935px !important; margin: 0 auto !important; padding: 32px 0 !important; justify-content: center !important; gap: 32px !important; min-height: 0 !important; }
 [data-n19-ig="left"] { flex: 0 1 454px !important; min-width: 0 !important; }
 [data-n19-ig="left"] i[role="img"], [data-n19-ig="headline"] { display: none !important; }
 [data-n19-ig="left"] img { width: 100% !important; height: auto !important; margin: 0 !important; }
 [data-n19-ig="rule"] { display: none !important; }
-[data-n19-ig="right"] { flex: 0 0 350px !important; width: 350px !important; padding: 0 !important; justify-content: center !important; min-height: 0 !important; }
+[data-n19-ig="right"] { flex: 0 0 350px !important; width: 350px !important; padding: 0 !important; min-height: 0 !important; }
 [data-n19-ig="right"] > div, [data-n19-ig="right"] > div > div, [data-n19-ig="right"] > div > div > div { padding: 0 !important; margin: 0 !important; width: 100% !important; min-width: 0 !important; }
 [data-n19-ig="box"] { background: rgb(var(--n19-card)) !important; border: 1px solid rgb(var(--n19-border)) !important; border-radius: 1px !important;
   padding: 36px 40px 16px !important; box-sizing: border-box !important; width: 350px !important; }

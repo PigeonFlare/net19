@@ -51,7 +51,6 @@ nav.top-nav .top-nav__menu:has(.anon-user) .top-nav__prime { display: none !impo
 nav.top-nav form[role="search"] input.tw-input, nav.top-nav form[role="search"] input[data-a-target="tw-input"] { background: var(--n19-field) !important; border: 1px solid var(--n19-field-border) !important; box-shadow: none !important;
   border-radius: 4px 0 0 4px !important; color: var(--n19-field-text) !important; height: 32px !important; font-size: 13px !important; caret-color: var(--n19-field-text) !important; }
 nav.top-nav form[role="search"] input:focus { border-color: var(--n19-purple) !important; outline: 0 !important; }
-nav.top-nav form[role="search"] input::placeholder { color: var(--n19-placeholder) !important; }
 nav.top-nav form[role="search"] [data-a-target="tray-search-input"] { align-items: center !important; }
 nav.top-nav form[role="search"] button[aria-label="Search Button"] { background: var(--n19-field-button) !important; border: 1px solid var(--n19-field-border) !important; border-left: 0 !important;
   border-radius: 0 4px 4px 0 !important; height: 32px !important; width: 36px !important; color: var(--n19-field-icon) !important; box-shadow: none !important; }
@@ -59,17 +58,13 @@ nav.top-nav form[role="search"] button[aria-label="Search Button"] > div { heigh
 nav.top-nav form[role="search"] button[aria-label="Search Button"] svg { fill: currentColor !important; width: 20px !important; height: 20px !important; }
 nav.top-nav form[role="search"] .tw-combo-input__input + div { height: 32px !important; }
 nav.top-nav [data-a-target="login-button"], nav.top-nav [data-a-target="signup-button"] { border-radius: 4px !important; height: 30px !important; font-size: 13px !important; box-shadow: none !important; }
-nav.top-nav [data-a-target="login-button"] { background: var(--n19-button-2) !important; color: var(--n19-button-2-text) !important; }
-nav.top-nav [data-a-target="login-button"]:hover { background: var(--n19-button-2-hover) !important; }
+nav.top-nav [data-a-target="login-button"] { color: var(--n19-button-2-text) !important; }
 nav.top-nav [data-a-target="login-button"] * { color: var(--n19-button-2-text) !important; font-weight: 600 !important; }
-nav.top-nav [data-a-target="signup-button"] { background: var(--n19-purple) !important; color: #fff !important; }
-nav.top-nav [data-a-target="signup-button"]:hover { background: var(--n19-purple-hover) !important; }
+nav.top-nav [data-a-target="signup-button"] { color: #fff !important; }
 nav.top-nav [data-a-target="signup-button"] * { color: #fff !important; font-weight: 600 !important; }
-nav.top-nav [data-a-target="top-nav-get-bits-button"] { background: var(--n19-button-2) !important; color: var(--n19-button-2-text) !important; border-radius: 4px !important; box-shadow: none !important; height: 30px !important; font-size: 13px !important; }
-nav.top-nav [data-a-target="top-nav-get-bits-button"] * { color: var(--n19-button-2-text) !important; }
+nav.top-nav [data-a-target="top-nav-get-bits-button"] { color: var(--n19-button-2-text) !important; border-radius: 4px !important; box-shadow: none !important; height: 30px !important; font-size: 13px !important; }
 
 .side-nav, .side-nav__overlay-wrapper, .side-bar-contents, #side-nav { background: var(--n19-rail) !important; }
-.side-nav { border-right: 1px solid var(--n19-border) !important; }
 .side-nav-header h2, .side-nav-header h3, [data-a-target="side-nav-header-expanded"] h2, [data-a-target="side-nav-header-expanded"] h3, .side-nav-section > div:first-child h2 {
   text-transform: none !important; font-size: 14px !important; font-weight: 400 !important; color: var(--n19-side-head) !important; letter-spacing: 0 !important;
 }

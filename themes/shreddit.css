@@ -234,7 +234,7 @@ shreddit-async-loader[bundlename="shreddit_sort_dropdown"] > div > [data-n19-bar
 .masthead.subreddit-feed-masthead { margin: 0 0 0 !important; background: transparent !important; }
 .masthead.subreddit-feed-masthead .community-banner { height: 80px !important; margin: 0 calc(50% - 50vw) !important; border-radius: 0 !important; }
 .masthead.subreddit-feed-masthead > div.\@container { padding: 0 !important; }
-.masthead.subreddit-feed-masthead section[aria-label="Community actions"] { background: var(--n19-card) !important; position: relative !important; margin: 0 !important; padding: 0 16px 12px !important; height: auto !important; min-height: 80px !important; align-items: flex-start !important; }
+.masthead.subreddit-feed-masthead section[aria-label="Community actions"] { background: var(--n19-card) !important; position: relative !important; margin: 0 !important; padding: 0 16px 12px !important; height: auto !important; align-items: flex-start !important; }
 .masthead.subreddit-feed-masthead section[aria-label="Community actions"] > div { align-items: flex-start !important; }
 .masthead.subreddit-feed-masthead section[aria-label="Community actions"] > div > div:first-child { align-items: flex-start !important; gap: 16px !important; }
 .masthead.subreddit-feed-masthead section[aria-label="Community actions"] > div > div:first-child > div:first-child { width: 72px !important; height: 72px !important; margin-top: -14px !important;

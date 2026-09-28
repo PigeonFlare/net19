@@ -13,6 +13,3 @@ export function settingsFrom(value: unknown): Settings {
   };
 }
 
-export function isPaused(settings: Settings, hostname: string): boolean {
-  return !settings.enabled || settings.disabledHosts.includes(hostname);
-}
