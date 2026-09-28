@@ -141,7 +141,7 @@ html [data-testid="ask-meta-ai-pill"],html [data-testid="meta-ai-tile"],html [da
 html #pane-side [data-testid="chatlist-status-ring"],html #main [data-testid="chat-header-text-status-bubble"]{display:none!important}
 html #side [data-testid="chatlist_calling_activation_banner_wrapper"],html #side [data-testid="chatlist-tertiary-pills-row"]{display:none!important}
 html .app-wrapper-web>div:has(#link-device-instructions-list){background:linear-gradient(var(--n19-landing-band) 0 222px, transparent 222px), linear-gradient(180deg, var(--n19-page), var(--n19-page-2))!important}
-html .app-wrapper-web>div:has(#link-device-instructions-list) :is([data-icon="wa-logo"],[data-icon="wa-wordmark"]) svg{filter:brightness(0) invert(1)!important}
+html .app-wrapper-web>div:has(#link-device-instructions-list) :is([data-icon="wa-logo"],[data-icon="wa-wordmark"]) svg :is(path,circle,rect,polygon,g){fill:#fff!important}
 html .app-wrapper-web div:has(>div>div>div>div>ol#link-device-instructions-list),html .app-wrapper-web div:has(>div>div>div>[data-testid="wa-web-landing-promo-get-started"]){border:none!important;border-radius:3px!important;background:var(--n19-card)!important;box-shadow:var(--n19-card-shadow)!important}
 html:where(:root:not([data-n19-safe])) .app-wrapper-web div:has(>div>div>div>div>ol#link-device-instructions-list){padding:64px 60px 56px!important}
 html .app-wrapper-web div:has(>div>div>div>[data-testid="wa-web-landing-promo-get-started"]){box-shadow:0 1px 1px 0 rgba(0,0,0,.06), 0 2px 5px 0 rgba(0,0,0,.2)!important}
@@ -156,3 +156,8 @@ html .app-wrapper-web [data-testid="wa-web-landing-promo-get-started"]{border-ra
 html[data-net19-mode="dark"] [data-testid="link_device_phone_number_input_wrapper"] :is(input,span,label){color:var(--n19-text)!important}
 html[data-net19-mode="dark"] [data-testid="link_device_phone_number_input_wrapper"] label{background-color:var(--n19-card)!important}
 html[data-net19-mode="dark"] .app-wrapper-web>div:has(#link-device-instructions-list) :is(div,span,label,strong,li):not([data-testid="link_device_phone_number_input_wrapper"] *):not([data-testid="wa-web-landing-promo-get-started"] *):not([role="button"] *){color:var(--n19-text)!important}
+html:where(:root:not([data-n19-safe])) .app-wrapper-web div:has(>div>div>div>div>div>div>ol#link-device-instructions-list){justify-content:flex-start!important}
+html .app-wrapper-web [data-n19-wa="title"]{font-size:28px!important;font-weight:300!important;line-height:1.2!important;color:var(--n19-landing-title)!important}
+html .app-wrapper-web>div:has(#link-device-instructions-list) [data-icon="wa-wordmark"] svg{display:none!important}
+html .app-wrapper-web>div:has(#link-device-instructions-list) [data-icon="wa-wordmark"]::after{content:attr(data-n19-label);color:#fff;font:600 14px/20px var(--n19-font, Roboto, "Segoe UI", Helvetica, Arial, sans-serif);letter-spacing:.02em}
+html:where(:root:not([data-n19-safe])) .app-wrapper-web>div:has(#link-device-instructions-list) [data-icon="wa-wordmark"]::after{white-space:nowrap}

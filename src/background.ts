@@ -9,11 +9,23 @@ async function settings(): Promise<Settings> {
   return settingsFrom((await chrome.storage.local.get(SETTINGS_KEY))[SETTINGS_KEY]);
 }
 
+async function hasAccount(url: string): Promise<boolean> {
+  try {
+    const response = await fetch(url, { credentials: 'include', cache: 'no-store' });
+    if (!response.ok) return false;
+    const account = await response.json() as { data?: { name?: string }; name?: string };
+    return !!(account.data?.name || account.name);
+  } catch {
+    return false;
+  }
+}
+
 async function signedInThemes(): Promise<Set<string>> {
   const ids = new Set<string>();
   await Promise.all(THEMES.filter(theme => theme.legacy?.signedIn).map(async theme => {
-    const cookie = await chrome.cookies.get(theme.legacy!.signedIn!).catch(() => null);
-    if (cookie?.value) ids.add(theme.id);
+    const { url, name, account } = theme.legacy!.signedIn!;
+    const cookie = await chrome.cookies.get({ url, name }).catch(() => null);
+    if (cookie?.value && (!account || await hasAccount(account))) ids.add(theme.id);
   }));
   return ids;
 }
@@ -27,7 +39,7 @@ function syncScripts(): Promise<unknown> {
       addRules: navigationRules(config, theme => signedIn.has(theme.id)) });
     const desired: chrome.scripting.RegisteredContentScript[] = THEMES.filter(active).map(theme => ({
       id: `net19-theme-${theme.id}`, matches: themeMatches(theme), ...(theme.exclude ? { excludeMatches: theme.exclude } : {}), ...themeFiles(theme), runAt: 'document_start', allFrames: !!theme.frames, persistAcrossSessions: true }));
-    const signature = (list: chrome.scripting.RegisteredContentScript[]) => JSON.stringify(list.map(s => [s.id, s.matches, s.excludeMatches ?? [], s.css, s.js, !!s.allFrames]).sort());
+    const signature = (list: chrome.scripting.RegisteredContentScript[]) => JSON.stringify(list.map(s => [s.id, [...s.matches ?? []].sort(), [...s.excludeMatches ?? []].sort(), s.css, s.js, !!s.allFrames]).sort());
     const current = registered.filter(script => script.id.startsWith('net19-'));
     if (signature(current) !== signature(desired)) {
       if (current.length) await chrome.scripting.unregisterContentScripts({ ids: current.map(script => script.id) });

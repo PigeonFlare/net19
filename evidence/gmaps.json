@@ -1,0 +1,201 @@
+{
+  "theme": "gmaps",
+  "era": "Maps web with the March 2019 Material refresh: floating search box, side panel with hero photo and round actions, white controls",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.androidpolice.com/2019/03/21/google-maps-web-starts-getting-a-material-design-makeover/",
+      "date": "2019-03-21",
+      "shows": "Maps web March 2019: place panel with hero photo, round action buttons, info rows; hamburger drawer; explore categories",
+      "files": [
+        "sweeps/g2-evidence/gmaps/s1-1.png",
+        "sweeps/g2-evidence/gmaps/s1-2.png",
+        "sweeps/g2-evidence/gmaps/s1-3.png",
+        "sweeps/g2-evidence/gmaps/s1-4.png",
+        "sweeps/g2-evidence/gmaps/s1-5.png",
+        "sweeps/g2-evidence/gmaps/s1-6.png"
+      ]
+    },
+    {
+      "id": "s2",
+      "url": "https://www.versionmuseum.com/history-of/google-maps-website",
+      "date": "2019",
+      "shows": "Maps web 2019 (Version Museum capture): search box, explore panel, map controls",
+      "files": [
+        "sweeps/g2-evidence/gmaps/s2-2019.png"
+      ]
+    },
+    {
+      "id": "s5",
+      "url": "https://skift.com/2019/04/16/google-maps-could-be-the-do-it-all-restaurant-app-of-the-future/",
+      "date": "2019-04-16",
+      "shows": "search results panel with Price/Rating/Sort filters and Update results when map moves (Apr 2019)",
+      "files": [
+        "sweeps/g2-evidence/gmaps/s5-2.png"
+      ]
+    },
+    {
+      "id": "s6",
+      "url": "https://www.groovypost.com/howto/print-directions-in-google-maps/",
+      "date": "2019-12",
+      "shows": "directions/print (Dec 2019)",
+      "files": [
+        "sweeps/g2-evidence/gmaps/s6.png"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "match": "^(search area|Menu|Search|Close|Directions|Search Google Maps)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s5"
+      ],
+      "note": "floating search box with hamburger, search, clear and the blue directions icon"
+    },
+    {
+      "match": "^Google apps$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "launcher on the map"
+    },
+    {
+      "match": "^Google Account",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "avatar on the map"
+    },
+    {
+      "match": "^(Show Your Location|Zoom in|Zoom out|Browse Street View images|Street View|Layers|Satellite)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s5"
+      ],
+      "note": "my-location, zoom, pegman, street view thumbnail and the satellite layer tile"
+    },
+    {
+      "match": "^(United States|Terms|Privacy|Send (Product )?Feedback|\\d[\\d,.]* (ft|mi|m|km))$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "map footer: region, terms, privacy, send feedback, scale"
+    },
+    {
+      "match": "^(Results|Results for .*|Share|Update results when map moves|Collapse side panel|Expand side panel)$",
+      "in2019": true,
+      "evidence": [
+        "s5",
+        "s1"
+      ],
+      "note": "results list with the Update results when map moves checkbox and the panel collapse tab"
+    },
+    {
+      "match": "^[\\ue000-\\uf8ff\\s]*(Available filters for this search|Price|Rating|Hours|All filters|More options|Sort by|Update results when map moves)[\\ue000-\\uf8ff\\s]*$",
+      "in2019": true,
+      "evidence": [
+        "s5"
+      ],
+      "note": "result filters (Price, Rating, Sort, More options) — shown inside the panel in 2019"
+    },
+    {
+      "match": "coffee|Café|Space Needle|Seattle Center|Loupe Lounge|TipTop|Chihuly|Neototems",
+      "in2019": true,
+      "evidence": [
+        "s5",
+        "s1"
+      ],
+      "note": "search results and places (content)"
+    },
+    {
+      "match": "^(Photo of |Actions for |Information for |About (Space Needle|this data)|Popular times|Photos of |Reviews|region area|repeated div|Observation deck)",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "place panel: hero photo, actions, info rows, popular times, photos, reviews, About this data"
+    },
+    {
+      "match": "^(Save|Nearby|Send to phone|Send to your phone)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "place actions"
+    },
+    {
+      "match": "^[\\ue000-\\uf8ff\\s]*(Located in: .*|Closed · .*|Open · .*|Website: .*|Phone: .*|Plus code: .*|Add a label|Suggest an edit)",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "info rows: address, hours, website, phone, plus code, Add a label, Suggest an edit"
+    },
+    {
+      "match": "^[\\ue000-\\uf8ff\\s]*(Mondays|Tuesdays|Wednesdays|Thursdays|Fridays|Saturdays|Sundays|Go to the (previous|next) day|Information about Popular Times)[\\ue000-\\uf8ff\\s]*$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "popular times day picker"
+    },
+    {
+      "match": "^(All|Latest · .*|Videos|Street View & 360°|Add photos & videos|Add a photo)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "photo categories and Add a photo"
+    },
+    {
+      "match": "^([\\d,]+ reviews|Write a review|Search reviews|Sort reviews|All reviews|View \\d+ more Topics|See more|Like|Share .*review\\.|More reviews.*|Video|Photo \\d+ on .*)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "review summary, topics, sort, write a review, review actions"
+    },
+    {
+      "match": "^(Overview|Tickets|Reviews|About|Menu|Updates) (of|at|for) ",
+      "in2019": false,
+      "evidence": [
+        "place tabs arrived with the 2021 panel redesign; s1 place panel scrolls as one page"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Admission|Tours & Activities|About these results|\\d+ more options|More Admissions|More Experiences|Your Maps history|Order online|Show imagery)$",
+      "in2019": false,
+      "evidence": [
+        "ticket/tour offers (2022), Maps history row (2021), Order online (2020) and the imagery strip (2023) are not in s1/s5"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Ask Maps|Ask about this place|Gemini)$",
+      "in2019": false,
+      "evidence": [
+        "Gemini in Maps is 2024+"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Restaurants|Hotels|Things to do|Museums|Transit|Pharmacies|ATMs|Parking|Available search options.*)$",
+      "in2019": false,
+      "evidence": [
+        "category chip row beside the search box is 2020+; in 2019 Explore nearby categories sat in the panel (s1)"
+      ],
+      "action": "hidden"
+    }
+  ]
+}

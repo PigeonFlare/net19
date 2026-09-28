@@ -1,0 +1,385 @@
+{
+  "theme": "youtube",
+  "era": "2019 Polymer (Material) desktop design, the default for all desktop users from 2018 through 2019 (s1-s11); late-2019 home rich grid (s10) for the home feed because that is what the current markup is. Web Design Museum's 2019 capture shows the legacy layout the crawler was served (s15) and is outnumbered.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.versionmuseum.com/history-of/youtube-website",
+      "date": "2019-06",
+      "file": "/home/claude/sweeps/g3-evidence/youtube/vm-2019-homepage.jpg",
+      "shows": "signed-out home: masthead (guide button, 2017 logo, Search field + grey search button, create/apps/messages/settings icons, blue SIGN IN), expanded guide Home/Trending/Subscriptions/Library/History, BEST OF YOUTUBE, square thumbnails with duration badges, 14px titles, grey 'views • ago', red SUBSCRIBE 1.1M"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.versionmuseum.com/history-of/youtube-website",
+      "date": "2019-05",
+      "file": "/home/claude/sweeps/g3-evidence/youtube/vm-2019-watch-page.jpg",
+      "shows": "watch page: 18px title, '5,377,137 views' at left, like/dislike with counts, SHARE, SAVE, ..., sentiment bar, 48px round avatar, 'Published on', red 'SUBSCRIBE 4.7M', description indented, SHOW MORE, Up next / AUTOPLAY, 168x94 related thumbnails"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.androidpolice.com/2019/01/11/youtube-starts-showing-community-posts-on-the-web-home-page/",
+      "date": "2019-01-11",
+      "file": "/home/claude/sweeps/g3-evidence/youtube/androidpolice-2019-01-home-2.png",
+      "shows": "signed-in home: guide Home/Trending/Subscriptions/Library/History/Watch later/Purchases/Liked videos/Show more, SUBSCRIPTIONS, MORE FROM YOUTUBE; notifications bell with red badge; community posts shelf; 'Recently uploaded' shelf"
+    },
+    {
+      "id": "s4",
+      "url": "https://www.macrumors.com/2019/04/23/apple-launches-new-apple-tv-youtube-channel/",
+      "date": "2019-04-23",
+      "file": "/home/claude/sweeps/g3-evidence/youtube/macrumors-2019-04-channel.jpg",
+      "shows": "channel Videos tab: full-width banner, 80px round avatar, name + '2,003 subscribers', red SUBSCRIBE 2K, UPPERCASE tabs HOME VIDEOS PLAYLISTS CHANNELS ABOUT + search icon, 'Uploads PLAY ALL', SORT BY, six 210px thumbnails per row, 14px medium titles, 'views • ago', CC badge"
+    },
+    {
+      "id": "s5",
+      "url": "https://residententertainment.com.au/how-to-change-youtube-playlist-order/",
+      "date": "2019-05-11",
+      "file": "/home/claude/sweeps/g3-evidence/youtube/resident-2019-05-channel-2.png",
+      "shows": "signed-in channel Home tab (banner, avatar, CUSTOMIZE CHANNEL, HOME VIDEOS PLAYLISTS CHANNELS DISCUSSION ABOUT, search, Uploads PLAY ALL shelf, POPULAR CHANNELS) and Playlists tab with SORT BY; resident-2019-05-channel-1-1.png: home + account menu (Your channel, YouTube Studio, Switch account, Sign out, Dark theme, Language, Settings, Help, Send feedback, Keyboard shortcuts, Location, Restricted Mode)"
+    },
+    {
+      "id": "s6",
+      "url": "https://ahrefs.com/blog/youtube-seo/",
+      "date": "2019-03",
+      "file": "/home/claude/sweeps/g3-evidence/youtube/ahrefs-2019-03-channel.jpg",
+      "shows": "channel shelf: 'SEO Tutorial Series PLAY ALL', square thumbnails with red watched-progress bars, CC badges, 'views • ago'"
+    },
+    {
+      "id": "s7",
+      "url": "https://www.animaker.com/hub/video-seo-9-hacks-to-push-your-videos-to-the-1-spot-in-search-results-2019-updated/",
+      "date": "2019-05",
+      "file": "/home/claude/sweeps/g3-evidence/youtube/animaker-2019-05-27.png",
+      "shows": "search results (light): FILTER toolbar with divider, 246x138 thumbnails, 18px titles, 'channel • views • ago', grey snippet, 16px gaps, guide Home/Trending/History, BEST OF YOUTUBE, Browse channels, 'Sign in now to see your channels and recommendations!'"
+    },
+    {
+      "id": "s8",
+      "url": "https://www.milesbeckler.com/youtube-seo/",
+      "date": "2019-04",
+      "file": "/home/claude/sweeps/g3-evidence/youtube/milesbeckler-2019-04-search.jpg",
+      "shows": "search results (light): logo, search field, thumbnails with durations, titles, 'channel • views • ago', snippets, CC badges"
+    },
+    {
+      "id": "s9",
+      "url": "https://www.businessinsider.com/youtube-tips-tricks-shortcuts-features-2019-6",
+      "date": "2019-06",
+      "file": "/home/claude/sweeps/g3-evidence/youtube/bi-2019-06-5d0bf7e12516e91d0235f58e.jpg",
+      "shows": "dark theme search (page ~#181818, mini guide ~#212121, masthead ~#282828), mini guide Home/Trending/Subscriptions/Originals/Library, FILTER, New/CC/4K badges; other bi-2019-06 files: dark home with Recommended grid, Save to playlist dialog (Watch later, Create new playlist), player context menu, dark watch actions"
+    },
+    {
+      "id": "s10",
+      "url": "https://www.businessinsider.com/youtube-redesigns-homepage-bigger-thumbnails-recommendations-2019-11",
+      "date": "2019-11",
+      "file": "/home/claude/sweeps/g3-evidence/youtube/bi-2019-11-5dc47f317eece551dd2e86f3.jpg",
+      "shows": "late-2019 home rich grid: 'Recommended', square large thumbnails, round channel avatar left of 16px medium title, channel name, 'views • ago', menu dots"
+    },
+    {
+      "id": "s11",
+      "url": "https://web.archive.org/web/20191112041515id_/https://www.youtube.com/yts/htmlbin/desktop_polymer-vfljnUOcO.html",
+      "date": "2019-11-12",
+      "file": "/home/claude/sweeps/g3-evidence/youtube/polymer-2019-11.html",
+      "shows": "YouTube's own 2019 Polymer templates and CSS (also polymer-2019-09.html, 2019-09-06): ytd-video-renderer 246x138 thumbnails, 18px titles, 16px item margin; ytd-channel-renderer 136px round avatar; ytd-grid 210px items, margin 4px/24px; c4 header 80px avatar, 24px name, UPPERCASE paper-tabs; subscribe #CC0000; searchbox legacy #ccc/#f8f8f8; palettes #F9F9F9/#0D0D0D/#606060 and dark #282828/#AAAAAA; components present: universal watch card, merch/ticket shelves, background promo, sort filter menu, comments"
+    },
+    {
+      "id": "s12",
+      "url": "https://www.versionmuseum.com/history-of/youtube-website",
+      "date": "2017-08",
+      "file": "/home/claude/sweeps/g3-evidence/youtube/vm-2017-channel-page-after-redesign.jpg",
+      "shows": "Polymer (Material) design as rolled out in 2017 and unchanged in 2019: channel page, home, dark theme (vm-2017-homepage-dark-theme.jpg)"
+    },
+    {
+      "id": "s13",
+      "url": "https://tidbits.com/2019/07/18/downloading-youtube-videos-in-macos/",
+      "date": "2019-07-18",
+      "file": "/home/claude/sweeps/g3-evidence/youtube/tidbits-2019-07-1.png",
+      "shows": "2019 desktop watch/channel captures used by a macOS article"
+    },
+    {
+      "id": "s14",
+      "url": "https://www.ubergizmo.com/2019/01/youtube-showing-community-posts-main-page/",
+      "date": "2019-01",
+      "file": "/home/claude/sweeps/g3-evidence/youtube/ubergizmo-2019-01-community.jpg",
+      "shows": "community posts (COMMUNITY tab content) on 2019 desktop"
+    },
+    {
+      "id": "s15",
+      "url": "https://www.webdesignmuseum.org/gallery/youtube-in-2019",
+      "date": "2019",
+      "file": "/home/claude/sweeps/g3-evidence/youtube/page-wdm.html",
+      "shows": "Web Design Museum's 2019 capture shows the pre-2017 legacy layout the crawler was served; outnumbered by s1-s10, so not used"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Collaboration channels)$",
+      "in2019": false,
+      "evidence": [
+        "avatar stacks for collaborations arrived 2025; s7 and s8 show the channel name only"
+      ],
+      "action": "hidden (the avatar stack; the channel names stay)"
+    },
+    {
+      "match": "^(Downloads|Shopping|Podcasts|Courses|Playables)$",
+      "in2019": false,
+      "evidence": [
+        "desktop downloads 2022, Shopping/Podcasts/Courses/Playables guide entries 2022-2024; s3 and s1 guides show none of them"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Shorts|Shorts remixing this video|Remix)$",
+      "in2019": false,
+      "evidence": [
+        "Shorts launched 2020-09 (India) and 2021 (US); absent from all 2019 sources"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Ask|Ask YouTube|Ask about this video|Summary|AI summary|Explore the podcast|Chapters|Key moments|In this video|Transcript|Inferred places|Featured places|How this was made)$",
+      "in2019": false,
+      "evidence": [
+        "AI summaries 2024-25; chapters and key moments 2020; absent from s2, s7"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Download|Clip|Thanks|Hype|Podcasts|Releases|Store|Courses|Membership|Posts|Dubbed|Auto-dubbed|Latest|Popular|Oldest|All|Unwatched|Recently uploaded|Videos only|Watched|For you)$",
+      "in2019": false,
+      "evidence": [
+        "desktop Download 2022, Clip 2021, Thanks 2021, Hype 2024, channel Live/Podcasts/Releases/Store tabs 2022+, Posts renamed from Community 2023, auto-dubbing 2024, chip bars on search (tested 2022-03, sej-2022-03-search-chips.png) and channel videos (2022); none in s1-s11"
+      ],
+      "action": "hidden, or renamed to its 2019 name (Posts -> Community, chips -> SORT BY menu)"
+    },
+    {
+      "match": "^(Guide|YouTube Home|Search|Clear search query|Settings|Sign in|Notifications|Create a video or post|Account menu|Search with your voice)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s7",
+        "s11"
+      ],
+      "note": "masthead: guide button, logo link, search field and button, clear (x), settings dots, SIGN IN, bell, create camera"
+    },
+    {
+      "match": "^(banner area|search area|main area|complementary area|tablist area|navigation area|contentinfo area|dialog area|region area|toolbar area)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s4",
+        "s7"
+      ],
+      "note": "page regions (masthead, results column, related column, channel tab bar)"
+    },
+    {
+      "match": "^(Home|Trending|Explore|Subscriptions|Library|You|History|Watch later|Liked videos|Your videos|Purchases|Show more|Show less|Show fewer|Browse channels|Your channel|YouTube Studio|Switch account|Sign out|Appearance.*|Dark theme.*|Language.*|Location.*|Restricted Mode.*|Help|Send feedback|Keyboard shortcuts|Settings|Your data in YouTube|Your channel|Playlists|Your videos|Report history|More from YouTube|Best of YouTube|Explore|YouTube Premium|YouTube TV|YouTube Music|YouTube Kids|YouTube Movies|Music|Movies & TV|Movies|Gaming|News|Sports|Learning|Live|Fashion & Beauty|360° Video|Spotlight|Subscriptions)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s5",
+        "s9"
+      ],
+      "note": "guide and mini-guide entries and account/settings menu items (You is shown as Library)"
+    },
+    {
+      "match": "^(Videos|Playlists|Community|Channels|About|Search channel|Search)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "channel tabs; About opens the channel's about panel"
+    },
+    {
+      "match": "^(Play all|Sort by|Date added \\(newest\\)|Date added \\(oldest\\)|Most popular|Uploads|Created playlists|View full playlist|View all)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s5",
+        "s6"
+      ],
+      "note": "'Uploads PLAY ALL' and SORT BY menu"
+    },
+    {
+      "match": "^(Subscribe|Subscribed|Unsubscribe|Subscribe to .*|Unsubscribe from .*|Join|Current setting is .*notifications.*|Notification setting.*|Customize channel|Manage videos)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s4",
+        "s5",
+        "s11"
+      ],
+      "note": "red SUBSCRIBE button, grey SUBSCRIBED + bell, JOIN (channel memberships 2018), channel owner buttons"
+    },
+    {
+      "match": "^(Search filters|Filter|Filters|Upload date|Type|Duration|Features|Sort by|Relevance|View count|Rating)$",
+      "in2019": true,
+      "evidence": [
+        "s7",
+        "s9",
+        "s11"
+      ],
+      "note": "search FILTER toolbar and its menu"
+    },
+    {
+      "match": "^(New|4K|CC|HD|360°|VR180|HDR|LIVE|LIVE NOW|Premiere|Upcoming|Verified|Official Artist Channel|Music|Fundraiser|Streamed.*|Premiered.*)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s6",
+        "s8",
+        "s9",
+        "s11"
+      ],
+      "note": "metadata and thumbnail badges (New, 4K, CC, 360, LIVE)"
+    },
+    {
+      "match": "^(Like this video.*|Dislike this video|I like this|I dislike this|Share|Save|Save to playlist|More actions|Report|Show transcript|Add to queue|Watch later|Not interested|Don't recommend channel|Action menu|More)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s9",
+        "s11"
+      ],
+      "note": "watch actions (like/dislike with counts, SHARE, SAVE, ...) and video menus"
+    },
+    {
+      "match": "^(Show more|Show less|\\.\\.\\.more|Read more)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s11"
+      ],
+      "note": "description SHOW MORE / SHOW LESS"
+    },
+    {
+      "match": "^(Comments|Sort comments|Top comments|Newest first|Add a comment.*|Reply|Replies|Like this comment.*|Dislike this comment|Heart|Pinned by .*|View \\d[\\d,.]*[KM]? repl(y|ies)|\\d[\\d,.]*[KM]? repl(y|ies)|Hide replies|Show more replies|Read more|.* \\(edited\\))$",
+      "in2019": true,
+      "evidence": [
+        "s11",
+        "s13"
+      ],
+      "note": "comments: count + SORT BY, add a comment, REPLY, like/dislike, creator heart (2017), pinned comments (2018), View N replies"
+    },
+    {
+      "match": "^(Play \\(k\\)|Pause \\(k\\)|Mute \\(m\\)|Unmute \\(m\\)|Full screen \\(f\\)|Exit full screen \\(f\\)|Theater mode \\(t\\)|Default view \\(t\\)|Settings|Subtitles/closed captions.*|Miniplayer \\(i\\)|Next \\(SHIFT\\+n\\)|Autoplay is .*|Seek slider|\\d+ Minutes? \\d+ Seconds? of .*|Watch on YouTube|Skip.*|Sponsored.*)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s9"
+      ],
+      "note": "player controls"
+    },
+    {
+      "match": "^(Up next|Autoplay|Related|Recommended|Trending|Try searching to get started|Start watching videos.*|Your watch history is off.*)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s10",
+        "s11"
+      ],
+      "note": "Up next and recommendation shelves; the signed-out empty-feed message is YouTube's empty-state (ytd-background-promo-renderer in s11), restyled as a plain centered 2019 empty state"
+    },
+    {
+      "match": "^(\\d{1,3}:)?\\d{1,3}:\\d{2}(New)?( \\d{1,2}(:\\d{1,2}){1,2} Now playing)?$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4",
+        "s8"
+      ],
+      "note": "content: thumbnail links and duration badges"
+    },
+    {
+      "match": "^\\d+ (second|minute|hour|day|week|month|year)s? ago( \\(edited\\))?$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4",
+        "s7"
+      ],
+      "note": "content: upload and comment times"
+    },
+    {
+      "match": "^[\\d.,]+[KMB]?( views?| subscribers?| videos?)?$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s4"
+      ],
+      "note": "content: counts"
+    },
+    {
+      "match": "^(New|New4K|4KCC|NewCC|CC4K|New4KCC)$",
+      "in2019": true,
+      "evidence": [
+        "s8",
+        "s9"
+      ],
+      "note": "content: badge groups"
+    },
+    {
+      "match": "^(@?[^\\s]{2,40}( @[^\\s]+)?)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s7",
+        "s11"
+      ],
+      "note": "content: channel and commenter names and handles in results and comments (2019 showed the display name in the same place)"
+    },
+    {
+      "match": "^(Marques Brownlee|WVFRM Podcast|The Studio|Waveform Clips|Photosynthesis 19 seconds|The Apple Watch Has a Problem|iPhone Duo: What We Missed!|I Made a Bet with Tesla|Glass is glass|Speedy Boykins|Jon Youshaei|Auto Focus|What.s on my Phone 2026!|Reviewing MKBHD Videos!|RAW EGG PEELING LIVE|Another Tesla Roadster Event\\?|So This is Peak Smartphone|One More Thing: iPhone Duo!|My Take on The New Apple|Me at the zoo|PigeonFlare|jawed|San Diego Zoo|Rick Astley.*)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s7",
+        "s8"
+      ],
+      "note": "content of the sampled pages: video titles and channel names shown as links, headings and title badges"
+    },
+    {
+      "match": "^.+ \\d+ (days?|hours?|minutes?|seconds?)(, \\d+ (hours?|minutes?|seconds?))*$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s4"
+      ],
+      "note": "content: video title links whose accessible name ends with the duration"
+    },
+    {
+      "match": "^[A-Z][\\w'.&-]*( [\\w'.&-]+){1,3}$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s7",
+        "s11"
+      ],
+      "note": "content: two- to four-word channel names under results and recommendations"
+    },
+    {
+      "match": "^\\S+( \\S+){3,}$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4",
+        "s7"
+      ],
+      "note": "content: video titles (four or more words) in results, grids and recommendations; they differ per load"
+    },
+    {
+      "match": "^(repeated .*)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4",
+        "s7",
+        "s10"
+      ],
+      "note": "videos, results, comments and recommendations"
+    }
+  ]
+}

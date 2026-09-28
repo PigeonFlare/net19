@@ -155,7 +155,7 @@ main [role="tablist"] [role="presentation"]:has(> a[role="tab"]:is([href$="/high
 
 [data-n19-tw="row"] { flex-direction: row-reverse !important; max-width: none !important; width: 100% !important; margin: 0 !important; }
 [data-n19-tw="panel"] { flex: 1 1 50% !important; max-width: 50% !important; background: var(--n19-blue) !important; overflow: hidden !important; position: relative !important; }
-[data-n19-tw="panel"]::before { content: ""; position: absolute; left: -200px; top: -120px; width: 1050px; height: 1050px; background: var(--n19-bird-big) no-repeat center / contain; opacity: .12; pointer-events: none; }
+[data-n19-tw="panel"]::before { content: ""; position: absolute; right: -30%; top: -30%; width: 150%; height: 150%; background: #1b95e0; -webkit-mask: url("https://abs.twimg.com/icons/apple-touch-icon-192x192.png") no-repeat center / contain; mask: url("https://abs.twimg.com/icons/apple-touch-icon-192x192.png") no-repeat center / contain; pointer-events: none; }
 [data-n19-tw="panel"] svg[aria-label="X"], [data-n19-tw="panel"] svg[data-icon="icon-logo-x"] { visibility: hidden !important; }
 [data-n19-tw="main"] { flex: 1 1 50% !important; max-width: 50% !important; position: relative !important; justify-content: center !important; padding: 0 !important; background: var(--n19-page) !important; }
 [data-n19-tw="main"] > div { max-width: 350px !important; }
@@ -349,7 +349,25 @@ html[data-n19-tp] [data-timeline-entry]:not([role="link"]) > article .text-gray-
 
 [role="dialog"] .jetfuel-style-root span:has(> svg[data-icon="icon-twitter"]) { background: var(--n19-bird) no-repeat center / contain !important; }
 [role="dialog"] .jetfuel-style-root svg[data-icon="icon-twitter"] { visibility: hidden !important; }
-[data-n19-tw="wallsignup"] > div { background-color: var(--n19-blue) !important; border-color: var(--n19-blue) !important; }
-[data-n19-tw="wallsignup"] > div * { color: #fff !important; }
-[data-n19-tw="wallsignup"]:hover > div { background-color: var(--n19-blue-hover) !important; }
+[data-n19-tw="wallsignup"] > div { background-color: transparent !important; border: 1px solid var(--n19-blue) !important; }
+[data-n19-tw="wallsignup"] > div * { color: var(--n19-blue) !important; font-weight: 700 !important; }
+[data-n19-tw="wallsignup"]:hover > div { background-color: var(--n19-blue-soft) !important; }
 [data-n19-tw="main"] a:is([data-n19-tw="signup"], [data-n19-tw="alt"])[href] > span:not(#n19-none) { flex: 0 0 auto !important; width: auto !important; }
+
+@font-face { font-family: "n19-edgeicons"; src: url("https://abs.twimg.com/a/1551330820/font/edge-icons-Regular.woff") format("woff"); }
+[data-n19-tw="lines"] { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 440px; max-width: calc(100% - 40px); z-index: 1; pointer-events: none; }
+[data-n19-tw="lines"] > div { display: flex; align-items: center; margin: 32px auto; color: #fff; font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; font-size: 19px; font-weight: 700; line-height: 24px; }
+[data-n19-tw="lines"] > div > span { font-family: "n19-edgeicons" !important; font-size: 35px; line-height: 1; font-weight: 400; margin-right: 16px; }
+[data-n19-tw="title"] { margin-bottom: 16px !important; }
+[data-n19-tw="title"]::after { content: attr(data-n19-label); display: block; margin-top: 48px; font-size: 15px; line-height: 20px; font-weight: 700; color: var(--n19-text); }
+[data-n19-tl="gate"], a[aria-label="Mention"][data-n19-tw="later"] { display: none !important; }
+[data-timeline-entry]:has(:is(a, button)[aria-label^="Trade on "], :is(a, button)[aria-label^="Trade $"], svg[data-icon="icon-clock-instant"]) { display: none !important; }
+:is(nav, header, aside, [role="menu"], [role="dialog"], [data-testid="Dropdown"]) a:is([href^="/i/money"], [href^="/i/radar"], [href^="/i/business"], [href^="/i/communitynotes"], [href^="/i/jf/explore/news"], [href^="/i/premium_sign_up"], [href^="/i/bookmarks"], [href$="/articles"], [href^="/i/jf/stories"], [href="/i/chat/grok"]) { display: none !important; }
+[data-n19-tw="wallsignup"] svg { display: none !important; }
+[data-n19-tw="wallgo"] { background-color: var(--n19-blue) !important; border-color: var(--n19-blue) !important; opacity: 1 !important; }
+[data-n19-tw="wallgo"] * { color: #fff !important; font-weight: 700 !important; }
+html[data-n19-ts="out"] main :is(a:is([aria-label="Mention"], [aria-label="Tweet to"]), div:has(> a:is([aria-label="Mention"], [aria-label="Tweet to"])):not(:has(a[aria-label="Follow"], [data-testid$="-follow"]))) { display: none !important; }
+html[data-n19-tp] { background-color: var(--n19-bg) !important; }
+html:has([data-n19-tw="row"]) { --n19-font: "Helvetica Neue", Helvetica, Arial, sans-serif; }
+[data-n19-tw="row"] ~ footer nav :is(a, span) { font-size: 12px !important; }
+[data-n19-tw="row"] ~ footer nav { border-top: 1px solid var(--n19-rule) !important; }

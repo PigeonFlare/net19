@@ -1,0 +1,115 @@
+{
+  "theme": "tiktok",
+  "era": "Late-2019 TikTok web (white design, Dec 2019 to early 2020): white 80px header with soft shadow, #fe2c55 accents, bold Sofia Pro names at 48px, grey 'Verified account' pill, 15px stats, grey bio, 8px-radius cards; the mid-2019 black trending page (s2) is the older variant",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://web.archive.org/web/2019/https://www.tiktok.com/@charlidamelio",
+      "date": "2019-12",
+      "file": "/home/claude/sweeps/g3-evidence/tiktok/wb-profile-2019-light-bare.png",
+      "shows": "late-2019 profile (Wayback capture rendered offline, its own CSS in wb-profile-2019/): white 80px header with soft shadow (Home, About, Trending, Discover, menu), 48px sofiapro-bold name, 18px @handle with grey 'Verified account' pill, '860 Following 9.6m Followers 246.1m Likes' 15px, grey #8b8b91 bio, rule, Creators/Discover cards with pink See All, footer; no search, no log in, no follow or message buttons"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/20190810/https://www.tiktok.com/trending",
+      "date": "2019-08-10",
+      "file": "/home/claude/sweeps/g3-evidence/tiktok/wb-trending-20190810-light-bare.png",
+      "shows": "mid-2019 trending page, older black variant (logo, Trending, language, menu, Trending Hashtags, Get the App)"
+    },
+    {
+      "id": "s3",
+      "url": "https://izea.com/resources/tik-tok-influencers/",
+      "date": "2020-01-03",
+      "file": "/home/claude/sweeps/g3-evidence/tiktok/izea-2020-01-profile-1.png",
+      "shows": "profile screenshot dated 2020-01-03: round avatar left, 48px bold name, @handle with 'Verified account' pill, '135 Following 18.9M Followers 558.6M Likes', grey bio, rule"
+    },
+    {
+      "id": "s4",
+      "url": "https://nighteye.app/",
+      "date": "2020-01",
+      "file": "/home/claude/sweeps/g3-evidence/tiktok/dl-nighteye-2020-01-1.png",
+      "shows": "trending, hashtag, video modal and discover pages of the white web design (shown through a dark-mode extension, so layout only): header links Trending/Discover with pink underline, 3-column video cards with heart counts, Creators/Discover cards with See All, video modal with author, caption, '2.3M likes · 19.3K comments', share icons"
+    },
+    {
+      "id": "s5",
+      "url": "https://mediamodifier.com/",
+      "date": "2020-03",
+      "file": "/home/claude/sweeps/g3-evidence/tiktok/dl-tiktok-profile-mockup-desktop.jpg",
+      "shows": "mockup template of the then-current web profile and video page: header menu + logo + Trending/Discover, round avatar, bold name, stats, 3-column grid, Suggested accounts card, share icons"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Following|Message|Liked|LIVE|Explore|Friends|Shop|Upload|Activity|Messages|Get Coins|Short dramas|Effects|Photo)$",
+      "in2019": false,
+      "evidence": [
+        "none of s1-s5 show a Following feed, messaging, Liked tab, LIVE, Explore, Friends, Shop, upload, coins, dramas, effects or photo posts on the web; all arrived 2020-2024"
+      ],
+      "action": "hidden (theme CSS and later labels); Photo search tab hidden by guard label"
+    },
+    {
+      "match": "^(Search|Log in|Follow|Follow .+|Top|Users|Videos|Close|Refresh)$",
+      "in2019": false,
+      "evidence": [
+        "s1 and s3 (Dec 2019 / Jan 2020) show no search box, no log in and no follow button on the web; web search, log in and follow arrived in 2020"
+      ],
+      "note": "kept on purpose: hiding them would remove the only way to search, sign in or follow; the search page tabs (Top/Users/Videos), its Close control and the error-page Refresh belong to those flows",
+      "action": "kept - lead decision needed"
+    },
+    {
+      "match": "^(Go to TikTok For You feed|For You|Profile|More|Share|Actions)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4",
+        "s5"
+      ],
+      "note": "logo home link and the drawer (Home = For You feed), share icons and report control"
+    },
+    {
+      "match": "^(form area|main area|article area|aside area|dialog area|Watch in full screen)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4",
+        "s5"
+      ],
+      "note": "page regions: header, main column, right cards, video modal"
+    },
+    {
+      "match": "^(Like video|Share video) [\\d.,]+[KMB]? (likes|shares)$",
+      "in2019": true,
+      "evidence": [
+        "s4"
+      ],
+      "note": "content: like and share counts on videos (s4 video modal shows likes and share icons)"
+    },
+    {
+      "match": "^(repeated .*)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "content: video cards and nav rows"
+    },
+    {
+      "match": "^[^\\s]{2,40}$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "content: creator handles in the feed"
+    },
+    {
+      "match": "^(.*[^\\x00-\\x7F].*|[\\w.']+( [\\w.']+){1,3})$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "content: creator nicknames in the feed (names with emoji or non-Latin letters, or two to four plain words); the feed is random, so names differ per load"
+    }
+  ]
+}

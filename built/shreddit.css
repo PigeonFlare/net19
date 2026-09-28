@@ -389,3 +389,5 @@ aside.subreddit-right-rail-community-info faceplate-tracker[noun="menu_click"]>a
 :where(:root:not([data-n19-safe])) reddit-pdp-right-rail-post h3{overflow:hidden!important}
 reddit-pdp-right-rail-post h3{font-size:14px!important;line-height:18px!important}
 :where(:root:not([data-n19-safe])) reddit-pdp-right-rail-post h3{max-height:54px!important}
+[data-n19-later]{display:none!important}
+html body #right-sidebar-contents aside[aria-label="Related Posts Section"],html body aside[aria-label="Related Posts Section"]{display:none!important}

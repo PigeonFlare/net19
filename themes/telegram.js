@@ -1,5 +1,5 @@
 (() => {
-  const LATER = /^(?:telegram premium|premium|my stars|stars|buy stars|telegram stars|send (?:a )?gifts?|gifts?|gift premium|my stories|stories|post story|mini apps?|apps|open app|wallet|business|telegram business|my profile gifts|boosts?|stickers? maker|create sticker|translate|show translation|translate to .{2,20}|telegram features|star reactions?|paid reaction|call|video call|voice call|start video chat|video chat|live stream|start live stream)$/i;
+  const LATER = /^(?:telegram premium|premium|my stars|stars|buy stars|telegram stars|send (?:a )?gifts?|gifts?|gift premium|my stories|stories|post story|mini apps?|apps|open app|wallet|business|telegram business|my profile gifts|boosts?|stickers? maker|create sticker|translate|show translation|translate to .{2,20}|telegram features|star reactions?|paid reaction|call|video call|voice call|start video chat|video chat|live stream|start live stream|log in by passkey)$/i;
   globalThis.net19Theme = {
     detect: () => {
       const c = document.documentElement.classList;
@@ -16,6 +16,13 @@
     }
     for (const tab of document.querySelectorAll('.search-super-tabs .menu-horizontal-div-item:not([data-net19-hidden])')) {
       if (/^(?:stories|gifts|posts|saved music|similar channels|similar bots)$/i.test(text(tab))) tab.setAttribute('data-net19-hidden', '');
+    }
+    for (const card of document.querySelectorAll('#auth-pages [class*="_pageSignQR_"]')) {
+      if (!card.querySelector(':scope > button') || card.querySelector(':scope > .n19-sign-in')) continue;
+      const title = document.createElement('div');
+      title.className = 'n19-sign-in';
+      title.textContent = 'Sign in';
+      card.prepend(title);
     }
   };
   let queued = false;

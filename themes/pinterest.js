@@ -10,6 +10,7 @@
     light: { ...gray, '#211922': '#333333' }, dark: gray,
     later: /^(?:less ai|more ai|refine|refine your search|inspire me|ask pinterest|shuffles|collage|create collage|make a collage|cutout|create cutout|remix|shop|shop the look|explore|today|create|create pin|create idea pin|pinterest predicts|see ai modified|ai modified|ai-modified|gen ai|tune your home feed)$/i,
     keepLabels: /^(?:home|notifications|updates|messages|save|search|log in|sign up|more options)$/i,
+    keep: ':is([data-test-id="login-button"], [data-test-id="simple-login-button"]) button, [data-n19-pin="card"] button[type="submit"], [data-test-id="pin-save-button"] :is(button, [role="button"])',
   };
 })();
 (() => {
@@ -41,12 +42,47 @@
     }
     for (const input of document.querySelectorAll('#searchBoxContainer input')) if (input.placeholder !== 'Search') input.placeholder = 'Search';
     for (const el of document.querySelectorAll('#searchBoxContainer [data-test-id="dynamic-search-placeholder"], #searchBoxContainer [data-test-id="searchBarPlaceholder"]')) mark(el, 'later');
+    const signup = document.querySelector('[role="main"] form input[type="email"], [role="main"] form input[name="id"]')?.closest('form');
+    const module = document.querySelector('[data-test-id^="homepage-section-"]');
+    if (signup && module) {
+      let list = module.parentElement;
+      while (list && !list.contains(signup)) list = list.parentElement;
+      if (list) {
+        root.setAttribute('data-n19-pin-landing', '');
+        for (const part of list.children) {
+          if (part.contains(signup)) { mark(part, 'welcome'); continue; }
+          if (part.tagName === 'FOOTER' || part.querySelector('footer')) continue;
+          mark(part, 'later');
+        }
+        let card = signup.parentElement;
+        while (card && card !== list && !(getComputedStyle(card).backgroundColor !== 'rgba(0, 0, 0, 0)' && parseFloat(getComputedStyle(card).borderTopLeftRadius) >= 8)) card = card.parentElement;
+        if (card && card !== list) { mark(card, 'card'); mark(card.parentElement, 'card-row'); mark(card.parentElement?.parentElement, 'card-col'); }
+        for (const heading of document.querySelectorAll('[data-n19-pin="welcome"] :is(h1, h2)')) if (/^Sign up to get/i.test(heading.textContent.trim())) mark(heading.parentElement?.childElementCount === 1 ? heading.parentElement : heading, 'later');
+        if (settled && card) {
+          const walker = document.createTreeWalker(card, NodeFilter.SHOW_TEXT);
+          for (let node = walker.nextNode(); node; node = walker.nextNode()) if (/^Join Pinterest for free to discover more ideas$/.test(node.nodeValue.trim())) node.nodeValue = 'Find new ideas to try';
+        }
+      }
+    }
+    for (const link of document.querySelectorAll('[data-test-id="unauth-header"] a, header a')) if (/^(Shop|Create)$/i.test(link.textContent.trim())) mark(link.parentElement?.childElementCount === 1 ? link.parentElement : link, 'later');
+    for (const control of document.querySelectorAll('button, [role="button"]')) {
+      const label = (control.getAttribute('aria-label') || control.textContent).trim();
+      if (/^(Download image|QR code login button|Show filters)$/i.test(label)) mark(control, 'later');
+      if (/^Close Bottom Right Upsell$/i.test(label)) {
+        let box = control;
+        while (box.parentElement && box.parentElement !== document.body && getComputedStyle(box).position !== 'fixed') box = box.parentElement;
+        mark(box, 'later');
+      }
+    }
+    for (const link of document.querySelectorAll('a')) if (/^(Notice at collection|Non-user notice)$/i.test(link.textContent.trim())) mark(link.parentElement?.childElementCount === 1 ? link.parentElement : link, 'later');
     for (const pill of document.querySelectorAll('[data-test-id="one-bar-pill"]')) {
       if (/^(?:less ai|more ai|ai|refine|inspire me)$/i.test(pill.textContent.trim())) mark(pill.closest('[data-test-id^="one-bar-module"]') || pill, 'later');
     }
   };
-  let queued = false;
+  let queued = false, settled = false;
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
+  const settle = () => setTimeout(() => { settled = true; later(); }, 1500);
+  if (document.readyState === 'complete') settle(); else addEventListener('load', settle, { once: true });
   const start = () => {
     fix();
     new MutationObserver(later).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });

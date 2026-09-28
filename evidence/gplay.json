@@ -1,0 +1,183 @@
+{
+  "theme": "gplay",
+  "era": "Play Store web 2013-2022 layout as seen in 2019: green Apps sidebar, grey page, white cards, green Install buttons",
+  "sources": [
+    {
+      "id": "s5",
+      "url": "https://www.droidviews.com/google-play-store-features/",
+      "date": "2019-09",
+      "shows": "Play web store 2019: Google Play logo, search, green Apps sidebar, Home/Top charts/New releases, cards (Sep 2019)",
+      "files": [
+        "sweeps/g2-evidence/gplay/s5.png"
+      ]
+    },
+    {
+      "id": "s7",
+      "url": "https://asodesk.com/blog/5-simple-tips-aso-google-play/",
+      "date": "2019-05",
+      "shows": "app page on the web store (May 2019)",
+      "files": [
+        "sweeps/g2-evidence/gplay/s7.png"
+      ]
+    },
+    {
+      "id": "s9",
+      "url": "https://android-developers.googleblog.com/2019/08/the-google-play-stores-visual-refresh.html",
+      "date": "2019-08",
+      "shows": "Play visual refresh announcement (Aug 2019, Android app)",
+      "files": [
+        "sweeps/g2-evidence/gplay/s9.png"
+      ]
+    },
+    {
+      "id": "wb1",
+      "url": "https://web.archive.org/web/20190914090411/https://play.google.com/store/apps/details?id=com.google.android.apps.photos&hl=en",
+      "date": "2019-09-14",
+      "shows": "Wayback 2019-09-14: app page (Google Photos)",
+      "files": [
+        "sweeps/g2-evidence/gplay/wb1-app.png"
+      ]
+    },
+    {
+      "id": "wb2",
+      "url": "https://web.archive.org/web/20191015020219/https://play.google.com/store/apps/category/GAME?hl=en",
+      "date": "2019-10-15",
+      "shows": "Wayback 2019-10-15: games category page",
+      "files": [
+        "sweeps/g2-evidence/gplay/wb2-games.png"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Google Play logo|Page Header|banner area|header area|Main|tablist area)$",
+      "in2019": true,
+      "evidence": [
+        "s5",
+        "s7",
+        "wb1"
+      ],
+      "note": "white top bar with the Google Play logo and section switcher"
+    },
+    {
+      "match": "^(Games|Apps|Kids|Family|Movies & TV|Books)$",
+      "in2019": true,
+      "evidence": [
+        "s5",
+        "wb2"
+      ],
+      "note": "store sections (Kids was the 2019 Family entry)"
+    },
+    {
+      "match": "^(Search|Search Google Play)$",
+      "in2019": true,
+      "evidence": [
+        "s5",
+        "s7"
+      ],
+      "note": "search box with the blue search button"
+    },
+    {
+      "match": "^(Help Center|Open account menu|Google apps)$",
+      "in2019": true,
+      "evidence": [
+        "s5",
+        "wb1"
+      ],
+      "note": "help (?) and account in the top bar"
+    },
+    {
+      "match": "^(Top free|Top grossing|Top paid|Top charts|See more|See all reviews|Expand)$",
+      "in2019": true,
+      "evidence": [
+        "s5",
+        "wb2"
+      ],
+      "note": "Top charts and See more collections"
+    },
+    {
+      "match": "^(Install|Add to wishlist|Share|Photography|Information badges)$",
+      "in2019": true,
+      "evidence": [
+        "wb1",
+        "s7"
+      ],
+      "note": "app page: green Install, Add to wishlist, category link, rating/Everyone badges"
+    },
+    {
+      "match": "^See more information on (About this app|Ratings and reviews|Similar apps|More by .*)$",
+      "in2019": true,
+      "evidence": [
+        "wb1"
+      ],
+      "note": "description, reviews, Similar and More by developer"
+    },
+    {
+      "match": "^(More review actions|Yes|No|Learn more|repeated (div|c-wiz)|section area)$",
+      "in2019": true,
+      "evidence": [
+        "wb1",
+        "wb2"
+      ],
+      "note": "review helpfulness and repeated app cards (content)"
+    },
+    {
+      "match": "^(Play Pass|Play Points|Gift cards|Redeem|Refund policy|Parent Guide|Family sharing|footer area)$",
+      "in2019": true,
+      "evidence": [
+        "s7",
+        "wb2"
+      ],
+      "note": "sidebar/footer links: Redeem, Buy gift card, Parent Guide, Family sharing, Play Pass (Sep 2019), Play Points (Nov 2019)"
+    },
+    {
+      "match": "^(About Google Play|Developers|Google Store|Terms of Service|Privacy)$",
+      "in2019": true,
+      "evidence": [
+        "wb1"
+      ],
+      "note": "footer"
+    },
+    {
+      "match": "star$|Google LLC$|Google LLC\\d",
+      "in2019": true,
+      "evidence": [
+        "wb2",
+        "wb1"
+      ],
+      "note": "app/game cards with rating (content)"
+    },
+    {
+      "match": "^(Windows PC|Phone|Tablet|TV|Desktop|Watch|XR headset|Chromebook|Car)$",
+      "in2019": false,
+      "evidence": [
+        "device filter chips came with the 2022 web redesign (s3); wb2 has none"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^Play (?!Pass|Points)",
+      "in2019": false,
+      "evidence": [
+        "trailer play buttons on listing cards are 2022+"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^#\\d+ top ",
+      "in2019": false,
+      "evidence": [
+        "chart rank chip is 2022+"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "(Data safety|data safety|Ratings and reviews are verified)",
+      "in2019": false,
+      "evidence": [
+        "Data safety section and verified-reviews note are 2022"
+      ],
+      "action": "hidden"
+    }
+  ]
+}

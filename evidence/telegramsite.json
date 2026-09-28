@@ -1,0 +1,93 @@
+{
+  "theme": "telegramsite",
+  "era": "telegram.org in 2019: the same Bootstrap layout without the 2025 telegram-theme.css, Lucida Grande type, Home/FAQ/Apps/API/Protocol nav and the Twitter bird",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://web.archive.org/web/20190614235937/https://telegram.org/",
+      "date": "2019-06-14",
+      "file": "/home/claude/sweeps/g4-evidence/telegramsite/wb-home-201906.png",
+      "shows": "home: nav Home FAQ Apps API Protocol, Twitter, logo, a new era of messaging, Recent News, app links, A native app for every platform, Why switch to Telegram?"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/20190520000000cs_/https://telegram.org/css/telegram.css?161",
+      "date": "2019-05-20",
+      "file": "/home/claude/sweeps/g4-evidence/telegramsite/wb-telegram.css",
+      "shows": "2019 stylesheet"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20190614235937id_/https://telegram.org/",
+      "date": "2019-06-14",
+      "file": "/home/claude/sweeps/g4-evidence/telegramsite/wb-201906.dec.html",
+      "shows": "2019 markup and copy"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/20190615000000id_/https://telegram.org/apps",
+      "date": "2019-06",
+      "file": "/home/claude/sweeps/g4-evidence/telegramsite/wb-apps-2019.html",
+      "shows": "apps page: Telegram Applications, Mobile/Desktop/Web apps, TDLib, Telegram X, Unofficial apps (Unigram, Telegram CLI, MadelineProto), Source code with GitHub links and licenses, security contact"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header area|nav area|main area|footer area|section area|form area)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ]
+    },
+    {
+      "match": "^(Home|FAQ|Apps|API|Protocol|Twitter|Recent News|Why Telegram\\?|Why switch to Telegram\\?|Telegram FAQ|Advanced FAQ|Follow Us on Twitter|Facebook)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "match": "^(Telegram for .+|About|Privacy|Press|Mobile Apps|iPhone/iPad|Android|Mobile Web|Desktop Apps|PC/Mac/Linux|macOS|Web-browser|Platform|Translations|Instant View|Blog|Jobs|API)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "app links and footer columns"
+    },
+    {
+      "match": "^(EN|English)$",
+      "in2019": false,
+      "evidence": [
+        "language menu added after 2019; s1 has none"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Telegram Applications|Source code|Unofficial apps|Telegram News|Older →|\\.\\.\\.|GitHub »|Google Play Market page|Download APK File »|TDLib|Telegram Database Library|Telegram X for Android|Telegram CLI( for Linux)?|MadelineProto|Unigram|Telegram Desktop|Boost 1\\.0|G?(NU )?A?GPL v\\. ?[23](\\.0)?( or later)?|GPL v\\.3\\.0|code|same code|exact same code|reproducible builds|Telegram WebK|Telegram WebA|Telegram Web, Version [KA]|Legacy JavaScript client|Telegram React|Bug Bounty Program)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s1"
+      ],
+      "note": "the apps catalogue and its source-code list existed in 2019 (s4); entries are content that Telegram keeps current (WebK/WebA replaced the web client, reproducible builds and the bug bounty paragraph were added to the same Source code section)"
+    },
+    {
+      "match": "^.{20,}$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "Recent News titles on the home page (content)"
+    },
+    {
+      "match": "^(repeated .*)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "news items, FAQ entries"
+    }
+  ]
+}

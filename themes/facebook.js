@@ -4,9 +4,11 @@ globalThis.net19Theme = {
   later: /^(?:reels?|reels and short videos|watch reels|create reel|feeds|meta ai|ask meta ai|imagine(?: me| with meta ai)?|meta verified|get meta verified|professional dashboard|memories|avatars?|create (?:your )?avatar|edit avatar|avatar stickers?|comment with an avatar sticker|menu|meta quest|climate science center|ai info|made with ai)$/i,
 };
 (() => {
+  let settled = false;
   const WORDS = new Map([['Explore the things ', 'Connect with friends and the world around you on Facebook.'], ['you love', ''],
-    ['Log in', 'Log In'], ['Forgot password?', 'Forgot account?'], ['Create new account', 'Create New Account'],
-    ['Email or mobile number', 'Email or Phone Number']]);
+    ['Log in', 'Log In'], ['Forgot password?', 'Forgot account?'], ['Forgot account?', 'Forgot account?'], ['Create new account', 'Sign Up'], ['Create New Account', 'Sign Up'],
+    ['Email or mobile number', 'Email or Phone'], ['Email or Phone Number', 'Email or Phone'], ['Email address or phone number', 'Email or Phone']]);
+  const FEATURES = [['See photos and updates', 'from friends in News Feed.'], ['Share what\u2019s new', 'in your life on your Timeline.'], ['Find more', 'of what you\u2019re looking for with Facebook Search.']];
   const mark = (el, name) => { if (el && el.getAttribute('data-n19-fb') !== name) el.setAttribute('data-n19-fb', name); };
   const words = root => {
     const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
@@ -16,6 +18,18 @@ globalThis.net19Theme = {
         node.nodeValue = to;
         if (to.startsWith('Connect') && node.parentNode.lastChild?.nodeValue === '.') node.parentNode.lastChild.nodeValue = '';
       }
+    }
+  };
+  const FOOT_LATER = /^(?:Meta Pay|Meta Store|Ray-Ban Meta|Meta Quest|Muse|Threads|Meta AI|Consumer Health Privacy|Privacy Center|Contact Uploading & Non-Users|Meta Verified|Voting Information Center|Climate Science Center)$/;
+  const FOOT_WORDS = new Map([['Video', 'Watch'], ['Privacy Policy', 'Privacy'], ['Create ad', 'Create Ad'], ['Ad choices', 'AdChoices'], ['More languages\u2026', '+'], ['More languages...', '+']]);
+  const footer = foot => {
+    for (const link of foot.querySelectorAll('a')) {
+      const text = link.textContent.trim();
+      if (FOOT_LATER.test(text)) { let box = link; while (box.parentElement && box.parentElement !== foot && box.parentElement.childElementCount === 1) box = box.parentElement; mark(box, 'later'); continue; }
+      if (!FOOT_WORDS.has(text)) continue;
+      const walker = document.createTreeWalker(link, NodeFilter.SHOW_TEXT);
+      for (let node = walker.nextNode(); node; node = walker.nextNode()) if (node.nodeValue.trim() === text) node.nodeValue = FOOT_WORDS.get(text);
+      if (text.startsWith('More languages')) mark(link, 'more-languages');
     }
   };
   const landing = () => {
@@ -31,11 +45,46 @@ globalThis.net19Theme = {
       mark(card, 'card');
       for (const part of card.children) if (!part.contains(form)) mark(part, 'title');
     }
+    const email = form.querySelector('input[name="email"]');
+    const create = form.querySelector('a[href*="/reg/"]');
+    let list = email?.parentElement;
+    while (list && list !== form && !(create && list.contains(create))) list = list.parentElement;
+    if (list && create) {
+      for (const part of list.children) {
+        const name = part.querySelector('input[name="email"]') ? 'f-email' : part.querySelector('input[name="pass"]') ? 'f-pass' : part.querySelector('a[href*="/reg/"]') ? 'f-create'
+          : part.querySelector('a[href*="recover"]') ? 'f-forgot' : part.querySelector('[role="button"]') ? 'f-login' : '';
+        if (name) mark(part, name);
+      }
+      if (settled && !list.querySelector('[data-n19-fb="signup-head"]')) {
+        const head = document.createElement('div');
+        head.setAttribute('data-n19-fb', 'signup-head');
+        head.textContent = 'Sign Up';
+        const sub = document.createElement('div');
+        sub.setAttribute('data-n19-fb', 'signup-sub');
+        sub.textContent = 'It\u2019s quick and easy.';
+        list.prepend(head, sub);
+      }
+    }
+    const hero = row.querySelector('[data-n19-fb="hero"]');
+    const headline = hero && [...hero.querySelectorAll('span')].find(s => s.textContent.trim().length > 20);
+    if (settled && headline && !hero.querySelector('[data-n19-fb="features"]')) {
+      const list = document.createElement('div');
+      list.setAttribute('data-n19-fb', 'features');
+      for (const [bold, rest] of FEATURES) {
+        const line = document.createElement('div');
+        line.setAttribute('data-n19-fb', 'feature');
+        const b = document.createElement('b');
+        b.textContent = bold;
+        line.append(b, rest);
+        list.append(line);
+      }
+      hero.append(list);
+    }
     const main = [...document.querySelectorAll('[role="main"]')].find(m => !m.contains(form) && !row.contains(m));
     let foot = main;
     while (foot?.parentElement && !foot.parentElement.contains(row)) foot = foot.parentElement;
-    if (foot?.parentElement) { mark(foot, 'foot'); mark([...foot.parentElement.children].find(c => c.contains(row)), 'top'); }
-    words(row);
+    if (foot?.parentElement) { mark(foot, 'foot'); mark([...foot.parentElement.children].find(c => c.contains(row)), 'top'); if (settled) footer(foot); }
+    if (settled) words(row);
   };
 
   const TABS = /^(?:home|watch|video|reels|marketplace|groups|gaming|friends|news|feeds|pages)(?:,.*)?$/i;
@@ -92,7 +141,7 @@ globalThis.net19Theme = {
       if (card && card !== document.body) {
         mark(card, 'composer-card');
         const inner = card.firstElementChild;
-        if (inner && !card.querySelector('[data-n19-fb="create-head"]')) {
+        if (settled && inner && !card.querySelector('[data-n19-fb="create-head"]')) {
           const head = document.createElement('div');
           head.setAttribute('data-n19-fb', 'create-head');
           head.textContent = 'Create Post';
@@ -131,6 +180,8 @@ globalThis.net19Theme = {
   };
   let queued = 0, last = 0;
   const run = () => { queued = 0; last = performance.now(); if (location.pathname === '/' || location.pathname.startsWith('/login')) landing(); app(); };
+  const settle = () => setTimeout(() => { settled = true; later(); }, 1200);
+  if (document.readyState === 'complete') settle(); else addEventListener('load', settle, { once: true });
   const later = () => { if (queued) return; queued = setTimeout(() => requestAnimationFrame(run), Math.max(0, 300 - (performance.now() - last))); };
   const start = () => {
     run();

@@ -333,3 +333,7 @@ html .Auth .auth-form .Button { text-transform: none !important; font-size: 13px
 html .Auth .auth-form .Button.text { color: var(--n19-link) !important; }
 html .Auth .auth-form .Button.primary:not(.text) { background: var(--n19-head) !important; }
 html .Auth .auth-form .input-group input { border-radius: 0 !important; border-width: 0 0 1px !important; font-size: 13px !important; }
+html #auth-pages [class*="_pageSignQR_"]:has(> button) > div:first-child, html #auth-pages [class*="_pageSignQR_"]:has(> button) > ol, html #auth-pages [class*="_pageSignQR_"] > div[style]:has(> button) { display: none !important; }
+html #auth-pages [class*="_pageSignQR_"] > .n19-sign-in { display: block; margin: 8px 0 12px; text-align: center; font: 700 15px/20px var(--n19-font); color: var(--n19-name); }
+html #auth-pages [class*="_pageSignQR_"] > button.btn-primary-transparent { background: var(--n19-head) !important; color: #fff !important; margin-top: 16px !important; }
+html #auth-pages [class*="_pageSignQR_"] > button.btn-primary-transparent .tgico { display: none !important; }

@@ -362,3 +362,5 @@ main#main-content search-telemetry-tracker > div[data-testid^="search-post"] a.a
 main#main-content search-telemetry-tracker > div[data-testid^="search-post"] :is(a[data-testid="post-title-text"], a[id^="search-post-title"]) { position: relative !important; z-index: 1 !important; }
 :is(shreddit-comments-page-ad, shreddit-ad-post) .promoted-name-container > * { flex-shrink: 0 !important; }
 reddit-pdp-right-rail-post h3 { overflow: hidden !important; font-size: 14px !important; line-height: 18px !important; max-height: 54px !important; }
+[data-n19-later] { display: none !important; }
+html body #right-sidebar-contents aside[aria-label="Related Posts Section"], html body aside[aria-label="Related Posts Section"] { display: none !important; }

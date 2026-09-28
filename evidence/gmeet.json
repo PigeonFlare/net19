@@ -1,0 +1,175 @@
+{
+  "theme": "gmeet",
+  "era": "Hangouts Meet web, Material Theme update of Oct 2019 (teal, Meet wordmark with the green camera logo, Join or start a meeting)",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://9to5google.com/2019/10/24/hangouts-meet-web-material-theme/",
+      "date": "2019-10-24",
+      "shows": "Hangouts Meet web Material Theme: Start a new meeting / Use a meeting code, today's list (Oct 2019)",
+      "files": [
+        "sweeps/g2-evidence/gmeet/s1-1.png"
+      ]
+    },
+    {
+      "id": "s2",
+      "url": "https://www.windowscentral.com/google-hangouts-meet-basic-guide",
+      "date": "2020-03-26",
+      "shows": "Hangouts Meet join flow and pre-join (published Mar 2020, same UI)",
+      "files": [
+        "sweeps/g2-evidence/gmeet/s2-1.png",
+        "sweeps/g2-evidence/gmeet/s2-3.png",
+        "sweeps/g2-evidence/gmeet/s2-4.png",
+        "sweeps/g2-evidence/gmeet/s2-5.png"
+      ]
+    },
+    {
+      "id": "s4",
+      "url": "https://www.thegrahamwalsh.com/hangouts-meet-and-polycom-trio/",
+      "date": "2019-05-19",
+      "shows": "Ready to join? pre-join screen (May 2019)",
+      "files": [
+        "sweeps/g2-evidence/gmeet/s4-1.png",
+        "sweeps/g2-evidence/gmeet/s4-5.png"
+      ]
+    },
+    {
+      "id": "s5",
+      "url": "https://workspaceupdates.googleblog.com/2019/04/new-layouts-hangouts-meet.html",
+      "date": "",
+      "shows": "in-call layouts (Apr 2019)",
+      "files": [
+        "sweeps/g2-evidence/gmeet/s5-1.png",
+        "sweeps/g2-evidence/gmeet/s5-2.png",
+        "sweeps/g2-evidence/gmeet/s5-3.png",
+        "sweeps/g2-evidence/gmeet/s5-4.png"
+      ]
+    },
+    {
+      "id": "s6",
+      "url": "https://workspaceupdates.googleblog.com/2018/11/invite-people-to-ongoing-hangouts-meet.html",
+      "date": "",
+      "shows": "invite people in call (Nov 2018)",
+      "files": [
+        "sweeps/g2-evidence/gmeet/s6-1.png",
+        "sweeps/g2-evidence/gmeet/s6-2.png"
+      ]
+    },
+    {
+      "id": "s7",
+      "url": "https://workspaceupdates.googleblog.com/2018/11/invite-people-to-ongoing-hangouts-meet.html",
+      "date": "2018-11",
+      "shows": "join meeting (Nov 2018)",
+      "files": [
+        "sweeps/g2-evidence/gmeet/s7.png"
+      ]
+    },
+    {
+      "id": "s8",
+      "url": "https://digital-transformation.media/en/g-suite/hangouts-meet-live-captions/",
+      "date": "2019-10",
+      "shows": "Meet home: illustration, Join or start a meeting card, Nothing scheduled for today (Oct 2019)",
+      "files": [
+        "sweeps/g2-evidence/gmeet/s8.png"
+      ]
+    },
+    {
+      "id": "s11",
+      "url": "https://www.teachertube.com/videos/google-meet-tutorial-497296",
+      "date": "2020-03",
+      "shows": "Meet tutorial frame (Mar 2020)",
+      "files": [
+        "sweeps/g2-evidence/gmeet/s11.png"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Meet|Google Meet|Hangouts Meet)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s8",
+        "s2"
+      ],
+      "note": "header with the Hangouts Meet logo (2019 file meet_48dp.png) beside the page own Meet text"
+    },
+    {
+      "match": "^(Enter a code or link|Join|Use a meeting code)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "Use a meeting code / join by code (a field since 2020)"
+    },
+    {
+      "match": "^(New meeting|New|Start a new meeting|Join or start a meeting)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s8",
+        "s2"
+      ],
+      "note": "Start a new meeting / Join or start a meeting"
+    },
+    {
+      "match": "^(Support|Settings|Google apps)$",
+      "in2019": true,
+      "evidence": [
+        "s8",
+        "s1"
+      ],
+      "note": "settings, feedback/help and launcher in the top bar"
+    },
+    {
+      "match": "^Google Account",
+      "in2019": true,
+      "evidence": [
+        "s8"
+      ],
+      "note": "avatar"
+    },
+    {
+      "match": "^(\\w{3}, \\w{3} \\d{1,2}|No meetings scheduled for today|Nothing scheduled for today|repeated div)$",
+      "in2019": true,
+      "evidence": [
+        "s8",
+        "s1"
+      ],
+      "note": "today's date and the day's meeting list / Nothing scheduled for today"
+    },
+    {
+      "match": "^(Open calendar|Previous week|Next week|(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday), \\w+ \\d{1,2})$",
+      "in2019": false,
+      "evidence": [
+        "week strip is 2023+; s8/s1 show today only"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Receive desktop notifications from Meet|Not now|Allow notifications)$",
+      "in2019": false,
+      "evidence": [
+        "notification prompt card is 2021+"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Upgrade|Upgrade for premium features|Your meeting is safe|Learn more|Meetings|Calls)$",
+      "in2019": false,
+      "evidence": [
+        "Google One upgrade chip, safety banner and the Meetings/Calls rail are 2020-2024 additions; s8 has none"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Gemini|Take notes with Gemini|Ask Gemini)$",
+      "in2019": false,
+      "evidence": [
+        "Gemini is 2023+"
+      ],
+      "action": "hidden"
+    }
+  ]
+}

@@ -37,3 +37,6 @@ main a[aria-label^="See more headlines"i],main a[href*="/stories/"]:has(>svg+div
 main a[aria-label^="See more headlines"i] *,main a[href*="/stories/"]:has(>svg+div) *{color:var(--n19-accent)!important;fill:var(--n19-accent)!important;font:inherit!important}
 main a[aria-label^="See more headlines"i]:hover{background:rgba(26,115,232,.04)!important}
 :is(a[href*="gemini.google.com"],[aria-label*="Gemini"i]:is(button,a,[role="button"])){display:none!important}
+body>c-wiz[role="navigation"] a[role="tab"][aria-label="Saved stories"i],body>c-wiz[role="navigation"] [role="tab"]:has(>a[aria-label="Saved stories"i]),main [data-net19-hidden]{display:none!important}
+body>c-wiz[role="navigation"] a[aria-label="Top stories"]{--n19-i:var(--n19-i-home)}
+body>c-wiz[role="navigation"] a[aria-label="Favorites"]{--n19-i:var(--n19-i-following)}

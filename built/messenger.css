@@ -10,13 +10,15 @@ body{font-family:var(--n19-font)!important}
 [role="navigation"] h1{font-size:16px!important;font-weight:700!important;letter-spacing:0!important}
 [role="main"] h2{font-size:14px!important}
 [data-n19-msgr="later"]{display:none!important}
-._6b6w h1,._6b6b{font-family:var(--n19-font)!important;font-weight:600!important;font-size:56px!important;line-height:1.1!important;letter-spacing:-.02em;color:var(--n19-blue)!important}
+._6b6w h1,._6b6b{font-family:var(--n19-font)!important;font-weight:700!important;font-size:40px!important;line-height:1.15!important;letter-spacing:-.02em;color:var(--n19-text)!important}
 ._94-l,._4n9r,._4sze{font-family:var(--n19-font)!important}
-._94-l{color:var(--n19-text-2)!important;font-size:16px!important}
+._94-l{color:var(--n19-text-2)!important;font-size:18px!important;line-height:1.45!important}
 :where(:root:not([data-n19-safe])) #login_form input._55r1,#login_form:where(:root:not([data-n19-safe])) input._55r1{height:40px!important}
-#login_form input._55r1{border:1px solid var(--n19-input-line)!important;border-radius:4px!important;background:var(--n19-panel)!important;color:var(--n19-text)!important;font:16px var(--n19-font)!important;box-shadow:none!important}
+#login_form input._55r1{border:0!important;border-radius:10px!important;background:var(--n19-field)!important;color:var(--n19-text)!important;font:16px var(--n19-font)!important;box-shadow:none!important}
 #login_form input._55r1:focus{border-color:var(--n19-blue)!important}
-#login_form #loginbutton{border-radius:4px!important;background:var(--n19-blue)!important;border-color:var(--n19-blue)!important;font:700 15px var(--n19-font)!important}
+#login_form #loginbutton{border-radius:20px!important;background:var(--n19-blue)!important;border-color:var(--n19-blue)!important;font:700 15px var(--n19-font)!important}
 :where(:root:not([data-n19-safe])) #login_form #loginbutton,#login_form:where(:root:not([data-n19-safe])) #loginbutton{height:40px!important}
 #login_form [role="button"] span{color:var(--n19-blue)!important;font-family:var(--n19-font)!important}
 ._4n9r ._4vo5,._4n9r ._as87{font-family:var(--n19-font)!important}
+header._4n9r li :is(a,button,span){font-weight:400!important;color:var(--n19-text-2)!important;font-family:var(--n19-font)!important}
+:where(:root:not([data-n19-safe])) ._94-l,._94-l:where(:root:not([data-n19-safe])){max-width:360px!important}

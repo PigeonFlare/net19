@@ -32,6 +32,8 @@ html[data-n19-g="contacts"] {
   & [role="navigation"].ANsHhf .aHij0b-WsjYwc.R2HVJf i.zC1BXc { font-family: "Google Material Icons", "Material Icons" !important; font-size: 20px !important; margin-right: 6px !important; }
   & [role="navigation"].ANsHhf .TWqMlf { font: 500 14px/20px var(--n19-sans) !important; color: var(--n19-text-2) !important; }
   & [role="navigation"].ANsHhf button.pYTkkf-Bz112c-LgbsSe[aria-label^="More information about Other"] { display: none !important; }
+  & [role="navigation"] :has(a[href$="/trash"]):not(:has(a:not([href$="/trash"]), button, [role="button"])) { display: none !important; }
+  & [role="navigation"] div:has(+ div a[href$="/suggestions"]):not(:has(a, button, [role="button"], input)) { display: none !important; }
 
   & .qTFz2 { border-radius: 0 !important; background: var(--n19-bg) !important; box-shadow: none !important; }
   & .qTFz2 :is(.VfVJ0, .qsYKIe) { background: var(--n19-bg) !important; }

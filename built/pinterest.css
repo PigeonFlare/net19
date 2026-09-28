@@ -20,10 +20,10 @@ body{font-family:var(--n19-font)!important}
 #searchBoxContainer input{font-size:16px!important;color:var(--n19-text)!important}
 #searchBoxContainer input::placeholder{color:var(--n19-text-2)!important}
 #searchBoxContainer svg{color:var(--n19-icon)!important;fill:var(--n19-icon)!important}
-[data-test-id="login-button"] button,[data-test-id="signup-button"] button{border-radius:24px!important}
-:where(:root:not([data-n19-safe])) [data-test-id="login-button"] button,[data-test-id="login-button"]:where(:root:not([data-n19-safe])) button,:where(:root:not([data-n19-safe])) [data-test-id="signup-button"] button,[data-test-id="signup-button"]:where(:root:not([data-n19-safe])) button{min-height:40px!important}
-[data-test-id="login-button"] button{background:var(--n19-red)!important}
-[data-test-id="login-button"] button *{color:#fff!important}
+[data-test-id="login-button"] button,[data-test-id="signup-button"] button,[data-test-id="simple-login-button"] button,[data-test-id="simple-signup-button"] button{border-radius:24px!important}
+:where(:root:not([data-n19-safe])) [data-test-id="login-button"] button,[data-test-id="login-button"]:where(:root:not([data-n19-safe])) button,:where(:root:not([data-n19-safe])) [data-test-id="signup-button"] button,[data-test-id="signup-button"]:where(:root:not([data-n19-safe])) button,:where(:root:not([data-n19-safe])) [data-test-id="simple-login-button"] button,[data-test-id="simple-login-button"]:where(:root:not([data-n19-safe])) button,:where(:root:not([data-n19-safe])) [data-test-id="simple-signup-button"] button,[data-test-id="simple-signup-button"]:where(:root:not([data-n19-safe])) button{min-height:40px!important}
+[data-test-id="login-button"] button,[data-test-id="simple-login-button"] button{background:#e60023!important}
+[data-test-id="login-button"] button *,[data-test-id="simple-login-button"] button *{color:#fff!important}
 [data-test-id="signup-button"] button{background:var(--n19-gray)!important}
 [data-test-id="signup-button"] button *{color:var(--n19-text)!important}
 :is([data-test-id="login-button"],[data-test-id="signup-button"]) button div{font-size:16px!important;font-weight:700!important}
@@ -50,3 +50,28 @@ h1,h2,h3{color:var(--n19-text);letter-spacing:normal}
 html[data-n19-pin-site] body :is(h1,h2,h3,h4,h5,h6,p,a,span,div,li,button,input,label,strong,em){font-family:var(--n19-font)!important;letter-spacing:normal!important}
 .V2DefaultNav__card{border-radius:0!important;box-shadow:0 1px 0 rgba(0,0,0,.08)!important}
 html[data-n19-pin-site="business"]:where(:root:not([data-n19-safe])) .v2design-grid-wrapper:has(>.V2DefaultNav__card){max-width:none!important}
+html[data-n19-pin-landing]:where(:root:not([data-n19-safe])) [data-n19-pin="welcome"]{min-height:calc(100vh - 80px)!important}
+html[data-n19-pin-landing]:where(:root:not([data-n19-safe])) [data-n19-pin="welcome"]>div{min-height:calc(100vh - 80px)!important;justify-content:center!important}
+:where(:root:not([data-n19-safe])) [data-n19-pin="card-row"],[data-n19-pin="card-row"]:where(:root:not([data-n19-safe])){justify-content:center!important;padding:0!important}
+[data-n19-pin="card-row"]>:not([data-n19-pin="card"]){display:none!important}
+:where(:root:not([data-n19-safe])) [data-n19-pin="card"],[data-n19-pin="card"]:where(:root:not([data-n19-safe])){position:relative!important;z-index:2!important;width:484px!important;max-width:484px!important}
+[data-n19-pin="card"]{border-radius:8px!important}
+:where(:root:not([data-n19-safe])) [data-n19-pin="card"],[data-n19-pin="card"]:where(:root:not([data-n19-safe])){margin:0 auto!important;align-items:center!important}
+[data-n19-pin="card"]{text-align:center!important}
+:where(:root:not([data-n19-safe])) [data-n19-pin="card"],[data-n19-pin="card"]:where(:root:not([data-n19-safe])){padding:20px 41px 24px!important;box-sizing:border-box!important}
+[data-n19-pin="card"] :is(input){border-radius:4px!important;font-size:16px!important}
+[data-n19-pin="card"] div:has(>input){border-radius:4px!important}
+:where(:root:not([data-n19-safe])) [data-n19-pin="card"] button[type="submit"],[data-n19-pin="card"]:where(:root:not([data-n19-safe])) button[type="submit"]{height:32px!important;min-height:0!important}
+[data-n19-pin="card"] button[type="submit"]{border-radius:4px!important}
+[data-n19-pin="card"] button[type="submit"] *{font-size:14px!important;font-weight:700!important}
+[data-n19-pin="card"] :is(h1,h2,p):not(label *,form *){text-align:center!important}
+:where(:root:not([data-n19-safe])) [data-n19-pin="card"] div:has(>:is(h1,h2)),[data-n19-pin="card"]:where(:root:not([data-n19-safe])) div:has(>:is(h1,h2)){justify-content:center!important}
+[data-n19-pin="card"] div:has(>:is(h1,h2)){text-align:center!important}
+[data-n19-pin="card"] :is(h1,h2){font-size:28px!important}
+:where(:root:not([data-n19-safe])) [data-n19-pin="card"] :is(h1,h2),[data-n19-pin="card"]:where(:root:not([data-n19-safe])) :is(h1,h2){white-space:nowrap!important}
+[data-n19-pin="card"] :is(h1,h2){font-weight:700!important;letter-spacing:-.5px!important}
+:where(:root:not([data-n19-safe])) [data-n19-pin="card-col"],[data-n19-pin="card-col"]:where(:root:not([data-n19-safe])){flex:1 1 100%!important;width:100%!important;max-width:none!important;justify-content:center!important}
+html[data-n19-pin-landing] div:has(>[data-n19-pin="card-col"])>:not([data-n19-pin="card-col"]){display:none!important}
+:where(:root:not([data-n19-safe])) [data-n19-pin="card"] :is(form,div),[data-n19-pin="card"]:where(:root:not([data-n19-safe])) :is(form,div){max-width:100%!important;box-sizing:border-box!important}
+[data-n19-pin="card"] div:not(form *){text-align:center!important}
+:where(:root:not([data-n19-safe])) [data-n19-pin="card"] div:not(form *):has(>svg),[data-n19-pin="card"]:where(:root:not([data-n19-safe])) div:not(form *):has(>svg){margin-left:auto!important;margin-right:auto!important}

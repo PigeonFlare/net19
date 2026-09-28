@@ -54,3 +54,5 @@ aside .W9GZw button{color:var(--n19-side)!important}
 aside .hF8Wr{font:700 14px/1.4 var(--n19-font)!important;color:var(--n19-side)!important}
 :where(:root:not([data-n19-safe])) aside .hF8Wr{padding:0!important}
 aside footer a{color:var(--n19-side)!important;font-size:12px!important}
+:where(:root:not([data-n19-safe])) .k_NNN .CJe61,.k_NNN:where(:root:not([data-n19-safe])) .CJe61{display:block!important;white-space:nowrap!important;overflow:hidden!important}
+.k_NNN .CJe61{text-overflow:ellipsis!important}

@@ -25,9 +25,47 @@ globalThis.net19Theme = {
     ['Trending now', 'What’s happening'], ['Chat', 'Messages'], ['Show more posts', 'Show more Tweets'], ['Show posts', 'Show Tweets'],
     ['Log in or sign up for X', 'New to Twitter?'], ['See what’s happening and join the conversation', 'Sign up now to get your own personalized timeline!'],
     ['Continue with phone', 'Sign up'], ['Log in with username or email', 'Log in'], ['Mention', 'Tweet to'], ['Pinned', 'Pinned Tweet'], ['Search X', 'Search Twitter'], ['Continue to X', 'Continue to Twitter'],
+    ['Relevant people', 'Who to follow'], ['See what\'s happening', 'Log in to Twitter'], ['Email or username', 'Phone, email, or username'],
+    ['Get App', 'Apps'], ['Careers', 'Jobs'], ['Ads & Business', 'Advertise'], ['Help', 'Help Center'], ['Privacy', 'Privacy Policy'], ['Ads Info', 'Ads info'],
   ]);
+  const FOOTER_LATER = /^(?:US TIDA|Accessibility|News|More|More ···|Grok|X Corp\.?|Settings|Status|Blog|Brand Resources)$/;
+  const COPYRIGHT = /^©\s*\d{4}\s*X Corp\.?$/;
+  const SIGN_IN_WITH = /^(?:(?:continue|sign (?:in|up)|log in) with (?:google|apple|passkey)\.?\s*)+$/i;
+  const hideLater = el => { if (el && el.getAttribute('data-n19-tw') !== 'later') el.setAttribute('data-n19-tw', 'later'); };
+  const extras = () => {
+    for (const nav of document.querySelectorAll('nav[aria-label="Footer"], footer nav')) {
+      for (const el of nav.querySelectorAll('a, button, span, div')) {
+        if (el.children.length && !(el.matches('a, button'))) continue;
+        const text = el.textContent.replace(/\s+/g, ' ').trim();
+        if (FOOTER_LATER.test(text)) hideLater(el.matches('a, button') ? el : el.closest('a, button') || el);
+        else if (COPYRIGHT.test(text)) { const node = [...el.childNodes].find(n => n.nodeType === 3 && /X Corp/.test(n.nodeValue)); if (node) node.nodeValue = '© 2019 Twitter'; else if (!el.children.length) el.textContent = '© 2019 Twitter'; }
+      }
+      for (const dot of nav.querySelectorAll('span')) if (dot.textContent.trim() === '·' && dot.previousElementSibling?.getAttribute('data-n19-tw') === 'later') hideLater(dot);
+    }
+    for (const el of document.querySelectorAll('button, a, [role="button"]')) {
+      if (el.getAttribute('data-n19-tw') === 'later') continue;
+      const text = el.textContent.replace(/\s+/g, ' ').trim();
+      if (SIGN_IN_WITH.test(text) || SIGN_IN_WITH.test(el.getAttribute('aria-label') || '')) hideLater(el);
+      else if (/^Trade(?: on .+| \$\S+)?$/.test(el.getAttribute('aria-label') || '')) hideLater(el.closest('[data-timeline-entry]') || el);
+    }
+    for (const el of document.querySelectorAll('main [aria-label], [role="dialog"] [aria-label]')) { const to = EXACT.get(el.getAttribute('aria-label')); if (to) el.setAttribute('aria-label', to); }
+    for (const dialog of document.querySelectorAll('[role="dialog"][aria-label$=" X"]')) dialog.setAttribute('aria-label', dialog.getAttribute('aria-label').replace(/ X$/, ' Twitter'));
+    for (const shell of document.querySelectorAll('.jf-gsi-shell, .jf-gsi-face')) hideLater(shell.parentElement?.children.length === 1 ? shell.parentElement : shell);
+    for (const root of document.querySelectorAll('.jetfuel-style-root')) {
+      for (const p of root.querySelectorAll('p')) {
+        const text = p.textContent.trim();
+        if (text === 'Select an option below:') hideLater(p.parentElement);
+        else if (text === 'or' && !p.closest('button, a, label')) hideLater(p.parentElement?.parentElement);
+        else if (text === 'Continue' && p.closest('form') && !p.closest('[data-n19-tw="go"]')) { p.textContent = 'Log in'; p.parentElement?.parentElement?.parentElement?.setAttribute('data-n19-tw', 'wallgo'); }
+      }
+    }
+    for (const entry of document.querySelectorAll('[data-timeline-entry]:not([data-n19-tw])')) {
+      if (entry.querySelector('svg[data-icon="icon-clock-instant"]') || [...entry.querySelectorAll('span, div, p')].some(el => !el.children.length && /^(?:Pre-market|After hours) /.test(el.textContent))) hideLater(entry);
+    }
+    if (document.documentElement.getAttribute('data-n19-ts') === 'out') for (const a of document.querySelectorAll('main a[aria-label="Mention"]')) hideLater(a);
+  };
   const COUNT = /^([\d.,]+\s*[KMB]?)\s+posts?$/i;
-  const PLACES = 'button, a, [role="button"], [role="tab"], [role="menuitem"], [role="link"], [role="heading"], h1, h2, h3, nav, label, [data-testid="User-Name"] ~ div, .public-DraftEditorPlaceholder-inner, [aria-live], aside, header, main > .sticky';
+  const PLACES = '.jetfuel-style-root p, button, a, [role="button"], [role="tab"], [role="menuitem"], [role="link"], [role="heading"], h1, h2, h3, nav, label, [data-testid="User-Name"] ~ div, .public-DraftEditorPlaceholder-inner, [aria-live], aside, header, main > .sticky';
   const SKIP = '[data-testid="tweetText"], article div[dir="auto"], [contenteditable="true"], script, style, input, textarea';
   const rewrite = node => {
     const raw = node.nodeValue, text = raw.replace(/\s+/g, ' ').trim();
@@ -79,6 +117,7 @@ globalThis.net19Theme = {
       if (input.placeholder !== 'Search Twitter') input.placeholder = 'Search Twitter';
     }
     if (/ \/ X$| on X: /.test(document.title)) document.title = document.title.replace(/ \/ X$/, ' / Twitter').replace(/ on X: /, ' on Twitter: ');
+    extras();
   };
   const BLUE = { '29,155,240': '#1da1f2', '26,140,216': '#1a91da' };
   const MAPS = {
@@ -145,7 +184,22 @@ globalThis.net19Theme = {
     mark(row, 'row');
     for (const child of row.children) mark(child, child.contains(form) ? 'main' : 'panel');
     const main = row.querySelector('[data-n19-tw="main"]');
+    const panel = row.querySelector('[data-n19-tw="panel"]');
+    if (panel && !panel.querySelector('[data-n19-tw="lines"]')) {
+      const lines = document.createElement('div');
+      lines.setAttribute('data-n19-tw', 'lines');
+      lines.setAttribute('aria-hidden', 'true');
+      for (const [icon, words] of [['\uf058', 'Follow your interests.'], ['\uf178', 'Hear what people are talking about.'], ['\uf151', 'Join the conversation.']]) {
+        const line = document.createElement('div');
+        const glyph = document.createElement('span');
+        glyph.textContent = icon;
+        line.append(glyph, words);
+        lines.append(line);
+      }
+      panel.append(lines);
+    }
     mark(h1, 'title');
+    if (h1.getAttribute('data-n19-label') !== 'Join Twitter today.') h1.setAttribute('data-n19-label', 'Join Twitter today.');
     const field = input.closest('label') || input.parentElement;
     const go = [...form.querySelectorAll('button, [role="button"], div')].find(el => /^(Continue|Log in)$/.test(text(el)) && !el.querySelector('input'));
     const goBox = go && (go.closest('button, [role="button"]') || [...form.children].find(c => c.contains(go)) || go);

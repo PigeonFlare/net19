@@ -120,11 +120,28 @@ for (const [id, url] of Object.entries(URLS)) for (const scheme of SCHEMES) {
     const search = await p.$('input[type=search], input[name=q], input[name=search_query], textarea[name=q], input[role=combobox], input[placeholder*="earch" i], input[aria-label*="earch" i]');
     if (search && await search.isVisible().catch(() => false)) {
       const box = await search.boundingBox();
+      const shellBefore = await search.evaluate(f => { const r = (f.closest('form, [role=search]') || f).getBoundingClientRect(); return { left: r.left, top: r.top, right: r.right, bottom: r.bottom }; }).catch(() => null);
       if (box) await p.mouse.click(box.x + Math.min(box.width / 2, 60), box.y + box.height / 2); else await search.click({ timeout: 3000 }).catch(() => {});
       await p.waitForTimeout(300);
       await p.keyboard.type('new', { delay: 60 }); await p.waitForTimeout(1600);
       const typed = await search.evaluate(f => ({ focused: f === document.activeElement || f.contains(document.activeElement) || f.getRootNode().activeElement === f, value: f.value || f.textContent || '' })).catch(() => ({ focused: false, value: '' }));
       if (!typed.focused || !/new/.test(typed.value)) result.blocked = `search field did not take a click and typing (focused ${typed.focused}, value "${typed.value.slice(0, 20)}")`;
+      const grownOver = await search.evaluate((f, before) => {
+        const shell = f.closest('form, [role=search]') || f;
+        const now = shell.getBoundingClientRect();
+        const popup = e => e.closest('[role=listbox], [role=option], [role=dialog], [role=menu]');
+        const hits = [];
+        for (const e of document.querySelectorAll('button, a, [role=button], img, svg, input')) {
+          if (shell.contains(e) || e.contains(shell) || popup(e)) continue;
+          const r = e.getBoundingClientRect(), c = getComputedStyle(e);
+          if (r.width < 6 || r.height < 6 || c.visibility !== 'visible' || +c.opacity < .1) continue;
+          const wasClear = Math.min(r.right, before.right) <= Math.max(r.left, before.left) || Math.min(r.bottom, before.bottom) <= Math.max(r.top, before.top);
+          const ox = Math.min(r.right, now.right) - Math.max(r.left, now.left), oy = Math.min(r.bottom, now.bottom) - Math.max(r.top, now.top);
+          if (wasClear && ox > 4 && oy > 4) hits.push((e.getAttribute('aria-label') || e.textContent || e.tagName).trim().slice(0, 30));
+        }
+        return hits;
+      }, shellBefore || { left: 0, top: 0, right: 0, bottom: 0 }).catch(() => []);
+      if (grownOver.length) result.fieldgrow = `the focused search field grew over: ${grownOver.join(', ')}`;
       await record('search');
       await p.keyboard.press('Escape');
     }
@@ -132,6 +149,6 @@ for (const [id, url] of Object.entries(URLS)) for (const scheme of SCHEMES) {
     if (menu && await menu.isVisible().catch(() => false)) { await menu.click({ timeout: 3000 }).catch(() => {}); await p.waitForTimeout(1200); await record('menu'); }
   } catch (e) { result.err = e.message.slice(0, 100); }
   appendFileSync(`${OUT}/report.jsonl`, JSON.stringify(result) + '\n');
-  console.log(id, scheme, result.blocked ? 'BLOCKED: ' + result.blocked : '', Object.entries(result.states).map(([k, v]) => `${k}:${(v.faint?.length || 0)}f/${(v.modern?.length || 0)}m/${(v.misaligned?.length || 0)}a/${(v.inside?.length || 0)}i/${(v.covered?.length || 0)}c/${(v.offcenter?.length || 0) + (v.textoffcenter?.length || 0)}o/${(v.overlap?.length || 0)}x`).join(' '));
+  console.log(id, scheme, result.blocked ? 'BLOCKED: ' + result.blocked : '', result.fieldgrow ? 'FIELD GREW: ' + result.fieldgrow : '', Object.entries(result.states).map(([k, v]) => `${k}:${(v.faint?.length || 0)}f/${(v.modern?.length || 0)}m/${(v.misaligned?.length || 0)}a/${(v.inside?.length || 0)}i/${(v.covered?.length || 0)}c/${(v.offcenter?.length || 0) + (v.textoffcenter?.length || 0)}o/${(v.overlap?.length || 0)}x`).join(' '));
   await ctx.close();
 }

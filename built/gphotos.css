@@ -18,6 +18,10 @@ html[data-net19-mode="dark"]{--n19-ph-nav-text:#e8eaed;--n19-ph-line:#5f6368}
 :is(html[data-n19-g="photos"]) [role="navigation"].RSjvib a.oUj9s:is([aria-selected="true"],.uprWmb) :is(.HksvWb,svg,i){color:var(--n19-accent-text)!important;fill:var(--n19-accent-text)!important}
 :is(html[data-n19-g="photos"]) [role="navigation"].RSjvib .ylKyWb{font:500 11px/16px var(--n19-sans)!important;letter-spacing:.8px!important;text-transform:uppercase!important;color:var(--n19-text-2)!important}
 :is(html[data-n19-g="photos"]) [role="navigation"].RSjvib a.oUj9s[jsname="LUZAsb"]{display:none!important}
+:is(html[data-n19-g="photos"]) [role="navigation"] a[role="tab"]:is([href$="/documents"],[href*="/documents/"],[href$="/places"],[href$="/lockedfolder"],[aria-label="Favorites"],[aria-label="Videos"],[aria-label="Recently added"]){display:none!important}
+:is(html[data-n19-g="photos"]) [role="navigation"] div:has(+div a[href$="/albums"]):not(:has(*)){display:none!important}
+:is(html[data-n19-g="photos"]) [role="navigation"] c-wiz:has(a[href*="/quotamanagement"]){display:none!important}
+:is(html[data-n19-g="photos"]) [data-nudge-id]{display:none!important}
 :is(html[data-n19-g="photos"]) [role="navigation"].RSjvib .AeBiU-LgbsSe,:is(html[data-n19-g="photos"]) [role="navigation"].RSjvib .AeBiU-LgbsSe .UTNHae{border-radius:4px!important}
 :is(html[data-n19-g="photos"]) [role="navigation"].RSjvib .AeBiU-vQzf8d{font-family:var(--n19-sans)!important}
 :is(html[data-n19-g="photos"]) c-wiz[role="main"].yDSiEe{border-radius:0!important}

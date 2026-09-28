@@ -47,11 +47,23 @@
   const lum = c => .2126 * channel(c[0]) + .7152 * channel(c[1]) + .0722 * channel(c[2]);
   const ratio = (a, b) => { const x = lum(a), y = lum(b); return (Math.max(x, y) + .05) / (Math.min(x, y) + .05); };
   const over = (top, under) => { const a = top[3]; return [0, 1, 2].map(i => top[i] * a + under[i] * (1 - a)).concat(1); };
-  const flip = ([r, g, b, a]) => {
-    const [ir, ig, ib] = [r, g, b].map(v => 1 - v / 255);
-    const rot = [-.574 * ir + 1.43 * ig + .144 * ib, .426 * ir + .43 * ig + .144 * ib, .426 * ir + 1.43 * ig - .856 * ib];
-    return rot.map(v => Math.round(255 * Math.min(1, Math.max(0, (Math.min(1, Math.max(0, v)) - .5) * .88 + .5)))).concat(a);
+  const chains = new Map();
+  const chainOf = filter => chains.get(filter) || chains.set(filter, parseChain(filter)).get(filter);
+  const parseChain = filter => [...String(filter || '').matchAll(/(invert|hue-rotate|contrast|brightness)\(([-\d.]+)(deg|%)?\)/g)].map(([, fn, v, unit]) => [fn, unit === '%' ? v / 100 : +v]);
+  const hueMatrix = deg => { const a = deg * Math.PI / 180, c = Math.cos(a), s = Math.sin(a);
+    return [[.213 + c * .787 - s * .213, .715 - c * .715 - s * .715, .072 - c * .072 + s * .928], [.213 - c * .213 + s * .143, .715 + c * .285 + s * .14, .072 - c * .072 - s * .283], [.213 - c * .213 - s * .787, .715 - c * .715 + s * .715, .072 + c * .928 + s * .072]]; };
+  const applyChain = (rgb, chain) => {
+    let v = rgb.map(x => x / 255);
+    for (const [fn, n] of chain) {
+      if (fn === 'invert') v = v.map(x => x * (1 - n) + (1 - x) * n);
+      else if (fn === 'hue-rotate') { const m = hueMatrix(n); v = m.map(row => row[0] * v[0] + row[1] * v[1] + row[2] * v[2]); }
+      else if (fn === 'contrast') v = v.map(x => (x - .5) * n + .5);
+      else if (fn === 'brightness') v = v.map(x => x * n);
+      v = v.map(x => Math.min(1, Math.max(0, x)));
+    }
+    return v.map(x => Math.round(255 * x));
   };
+  const flip = ([r, g, b, a]) => applyChain([r, g, b], chainOf(getComputedStyle(document.documentElement).filter)).concat(a);
   const shownAs = (c, p) => (p ? flip(c) : c);
   let flips = new Map();
   const parity = el => {
@@ -181,6 +193,7 @@
   const CONTENT = 'a[href] :is(h1, h2, h3), :is(h1, h2, h3) a[href], article';
   const ROOT_MARKS = /^data-(?:net19|n19)-(?:mode|flip|canvas)$/;
   const marks = el => [...el.attributes].filter(a => /^data-(?:net19|n19)-/.test(a.name) && !ROOT_MARKS.test(a.name));
+  const intended = typeof theme.intended === 'string' ? theme.intended : '';
   const protectedBlocks = new WeakSet();
   const protect = () => {
     const hiders = new Map();
@@ -188,6 +201,7 @@
       if (item.checkVisibility ? item.checkVisibility() : item.getClientRects().length) continue;
       for (let e = item.parentElement; e && e !== document.body && e !== root; e = e.parentElement) {
         if (getComputedStyle(e).display !== 'none') continue;
+        if (intended && e.matches(intended)) break;
         if (marks(e).length || protectedBlocks.has(e)) hiders.set(e, (hiders.get(e) || 0) + 1);
         break;
       }

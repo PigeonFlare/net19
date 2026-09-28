@@ -48,5 +48,10 @@ html[data-n19-g="maps"] {
   & ul.lTfMvb[role="menu"] li:has(> button[jsaction*="askGemini"]), & ul.lTfMvb[role="menu"] li:has([jsaction*="toggleSideBar"]), & ul.lTfMvb[role="menu"] li:has(> button.T2ozWe.gFIUjc) { display: none !important; }
   & ul.lTfMvb[role="menu"] label { font-family: var(--n19-sans) !important; color: var(--n19-text) !important; }
   & li:has(> button[jsaction*="navigationrail.askMaps"]) { display: none !important; }
+  & [role="main"] [role="tablist"]:has(> button[role="tab"][aria-label^="Overview of"]) { display: none !important; }
+  & [role="main"] div:has(> div > div > div > button[aria-label="About these results"]), & [role="main"] div:has(> a > div > img[src*="client=DESTINATION_EXPLORE"]) { display: none !important; }
+  & [role="main"] :is(button[aria-label^="More Admissions"], button[aria-label^="More Experiences"], button[aria-label="Your Maps history"]) { display: none !important; }
+  & [role="main"] div:has(> button[aria-label="Your Maps history"]), & [role="main"] div:has(> button[aria-label$="more options"]):not(:has(a, h1, [role="tab"])) { display: none !important; }
+  & :is(button[aria-label="Show imagery"], a[href*="orderType="], a[href*="/searchviewer/"]) { display: none !important; }
   & :is([role="dialog"], [role="alertdialog"]):not(.dBl9De) { border-radius: 8px !important; }
 }

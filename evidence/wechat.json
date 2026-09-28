@@ -1,0 +1,13 @@
+{
+  "theme": "wechat",
+  "era": "2019 wechat.com: full-screen blurred photo, phone mock-up on the left, WeChat mark, thin white 'Connecting a billion people with calls, chats, and more', App Store / Android badges, Windows / Mac / Web squares, and a one-line footer (Help Center, About, Platform, English, © 1998-2019 Tencent, Terms of Service | Privacy Policy | Acceptable Use Policy, Facebook, Twitter).",
+  "sources": [
+    { "id": "s1", "url": "https://web.archive.org/web/20190801000000/https://www.wechat.com/en/", "date": "2019-08", "shows": "rendered 2019 home: hero, badges, squares, one-line footer", "file": "g5-evidence/wechat/wb-2019-home.png" }
+  ],
+  "features": [
+    { "match": "^(macOS|Windows|Mac|Web|App Store|Android|Download on the App Store|Download for Android)$", "in2019": true, "evidence": ["s1"] },
+    { "match": "^(English|Help Center|About|Platform|Terms of Service|Privacy Policy|Acceptable Use Policy|Facebook|Twitter|X)$", "in2019": true, "evidence": ["s1"], "note": "footer and language" },
+    { "match": "^(header|main|section|footer) area$|^repeated ", "in2019": true, "evidence": ["s1"] },
+    { "match": "^(Newsroom|Safety Center|Contact Us|Weixin|LinkedIn)$", "in2019": false, "evidence": ["absent from the 2019 footer and header (s1)"], "action": "hidden" }
+  ]
+}

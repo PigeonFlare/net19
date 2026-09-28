@@ -1,0 +1,110 @@
+{
+  "theme": "gfinance",
+  "era": "2019 Google Finance: the 2018 google.com/finance page (Google Finance wordmark, grey 'Search for stocks, ETFs & more' field, market tabs, watchlist and index tables, Top stories, currencies, stock pages with the range tabs 1D...Max and key stats) in 2018 Material type and green/red change colours",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.androidheadlines.com/2020/09/google-finance-desktop-web-redesign.html",
+      "date": "2019-2020 (the 'old Google Finance' shown for comparison, in use from 2018 to the September 2020 redesign)",
+      "shows": "Google Finance wordmark, search field, apps grid, account; tabs Market Summary / Your Stocks / Local Markets / World Markets; watchlist; Recently searched; You may be interested in (+ add buttons); Top stories; United States markets; World markets; Currencies; Disclaimer",
+      "file": "/home/claude/sweeps/g1-evidence/gfinance/s1-ah-old-google-finance.png"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/2019/https://www.google.com/search?q=weather",
+      "date": "2019",
+      "shows": "2019 Google Search chrome (logo, apps, Sign in, footer Help/Send feedback/Privacy/Terms) that the Finance pages shared",
+      "file": "/home/claude/sweeps/g1-evidence/google/s3-wayback-serp.png"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|main|search|tablist|navigation|contentinfo|nav) area$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ]
+    },
+    {
+      "match": "^repeated ",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "quote rows, index cards and stories (content)"
+    },
+    {
+      "match": "^(Finance|Google Finance|Search for stocks, ETFs,? (and|&) more|Voice Search|Google apps|Google Account|Sign in)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "match": "^(Settings|Send feedback|Help|Privacy|Terms|Disclaimer)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "settings/feedback and footer links; Disclaimer under each table"
+    },
+    {
+      "match": "^(Home|Market Summary|US|Futures|Europe|Asia|Latin America|Currencies|Crypto)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "market tabs (Local Markets / World Markets / Currencies in 2019)"
+    },
+    {
+      "match": "^[A-Z][A-Z0-9.:-]{0,11}$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "ticker labels (tab for the open stock; tickers are content in the 2019 tables)"
+    },
+    {
+      "match": "^(1D|5D|1M|6M|YTD|1Y|5Y|MAX|Area|Overview|Earnings|Financials|Holdings|Show more.*)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "stock page range tabs, chart type and data sections (the 2019 stock page carried range tabs and key stats)"
+    },
+    {
+      "match": "^(Add to list|Follow|Add to watchlist|Your watchlist|Recently searched|You may be interested in|Top stories|More news stories|Upcoming earnings)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "watchlist add and list sections; stories"
+    },
+    {
+      "match": "^(Wikipedia|abc\\.xyz|[A-Za-z0-9.&' ,-]+ (Inc|Corp|Ltd|PLC|Group)\\b.*)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "company links (content)"
+    },
+    {
+      "match": "^(Latest updates.*)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "the news list (Top stories in 2019)"
+    },
+    {
+      "match": "^(Research|Research panel|Analysis|Compare to financial entity|Select technical indicator|Create a portfolio|Lists|Ask.*|Deep search)$",
+      "in2019": false,
+      "evidence": [
+        "lists/portfolios 2020-2023, compare/indicators 2023, Research and Analysis (AI) 2025"
+      ],
+      "action": "hidden"
+    }
+  ]
+}

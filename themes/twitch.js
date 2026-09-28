@@ -1,7 +1,7 @@
 globalThis.net19Theme = {
   detect: () => document.documentElement.classList.contains('tw-root--theme-dark') ? 'dark' : 'light',
   watch: ['class'],
-  later: /^(?:stories|create a story|view stories|discovery feed|try the discovery feed|clips feed|watch clips feed|shorts|guest star|request to join|hype chat|send a hype chat)$/i,
+  later: /^(?:stories|create a story|view stories|discovery feed|try the discovery feed|clips feed|watch clips feed|shorts|guest star|request to join|hype chat|send a hype chat|top clip|last stream|replay ad|leave feedback for this ad)$/i,
 };
 (() => {
   const copyOf = (item, label, href) => {
@@ -82,6 +82,9 @@ globalThis.net19Theme = {
       if (!box || box === document.body || box.textContent.length >= 400) continue;
       while (box.parentElement && box.parentElement.children.length === 1 && box.parentElement.textContent.length < 400 && !/^(SECTION|MAIN|BODY)$/.test(box.parentElement.tagName)) box = box.parentElement;
       if (!box.hasAttribute('data-net19-hidden')) box.setAttribute('data-net19-hidden', '');
+    }
+    for (const tab of document.querySelectorAll('main [role="tablist"] a[role="tab"]')) {
+      if (/^\s*Home\s*$/.test(tab.textContent || '') && !tab.hasAttribute('data-net19-hidden')) tab.setAttribute('data-net19-hidden', '');
     }
     for (const a of document.querySelectorAll('#front-page-main-content h2 > a[href="/directory/all"]')) {
       if (!a.children.length && a.textContent.trim() === 'Live on Twitch') a.textContent = 'Recommended live channels';

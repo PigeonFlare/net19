@@ -1,0 +1,431 @@
+{
+  "theme": "gmail",
+  "era": "2019 Gmail: the April 2018 Material redesign (default for everyone from early 2019): white header with the red M lockup, grey 'Search mail' field with a dropdown arrow, white Compose pill with the four-colour plus, red-on-pink selected Inbox, coloured category tabs (Primary red), Calendar/Keep/Tasks side panel",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.computerworld.com/article/1721340/gmail-redesigned.html",
+      "date": "2019-04",
+      "shows": "inbox with Primary/Social/Promotions tabs, Primary in red with red underline",
+      "file": "/home/claude/sweeps/g1-evidence/gmail/s1-cw-inbox.jpg"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.dantilden.com/2019/03/20/google-inbox/",
+      "date": "2019-03",
+      "shows": "row hover actions archive/delete/mark read/snooze",
+      "file": "/home/claude/sweeps/g1-evidence/gmail/s2-dt-actions.png"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.uxteam.com/5-things-the-new-gmail-design-got-wrong/",
+      "date": "2018-06",
+      "shows": "new Gmail nav (Compose pill, Inbox red on pink, Starred, Snoozed, Sent, Drafts, labels, More)",
+      "file": "/home/claude/sweeps/g1-evidence/gmail/s3-uxteam-2.png"
+    },
+    {
+      "id": "s4",
+      "url": "https://appsedu.com/blog/2018/04/new-gmail-features-deep-dive.html",
+      "date": "2018-04",
+      "shows": "full new Gmail: header, Search mail with dropdown, apps grid, account; toolbar select/refresh/more, density and settings gear; side panel Calendar/Keep/Tasks/+; footer storage, Program Policies, Last account activity Details",
+      "file": "/home/claude/sweeps/g1-evidence/gmail/s4-appsedu-2.png"
+    },
+    {
+      "id": "s6",
+      "url": "https://www.tomsguide.com/us/new-gmail-features,news-27070.html",
+      "date": "2019-04",
+      "shows": "compose confidential mode dialog, Material dialog buttons",
+      "file": "/home/claude/sweeps/g1-evidence/gmail/s6-toms-2.jpg"
+    },
+    {
+      "id": "s7",
+      "url": "https://seibert.group/blog/en/switching-from-google-inbox-to-gmail-comparison-of-features-and-tips/",
+      "date": "2019-07",
+      "shows": "stock inbox: header, Search mail field with dropdown arrow, Compose, Inbox/Starred/Snoozed/Sent/Drafts/More, selection toolbar, rows, pagination 1-27 of 27",
+      "file": "/home/claude/sweeps/g1-evidence/gmail/s7-seibert-Gmail-Spam.jpg"
+    },
+    {
+      "id": "s8",
+      "url": "https://www.theverge.com/2018/4/25/17277360/gmail-redesign-live-features-google-update",
+      "date": "2018-04",
+      "shows": "Compose pill, Inbox, Snoozed, Important, Sent",
+      "file": "/home/claude/sweeps/g1-evidence/gmail/s8-verge-2018.jpg"
+    },
+    {
+      "id": "s9",
+      "url": "https://www.droidviews.com/gmail-signature-android-windows/",
+      "date": "2019-10",
+      "shows": "settings gear menu (Display density, Configure inbox, Settings, Themes, Get add-ons, Send feedback, Help)",
+      "file": "/home/claude/sweeps/g1-evidence/gmail/s9-droidviews-settings.jpg"
+    },
+    {
+      "id": "s10",
+      "url": "https://www.alphr.com/gear-icon-gmail/",
+      "date": "2019-06",
+      "shows": "full-width inbox on a picture theme: header Support (?), apps grid, account; toolbar density and gear; side panel Calendar/Keep/Tasks",
+      "file": "/home/claude/sweeps/g1-evidence/gmail/s10-alphr-1.png"
+    },
+    {
+      "id": "s11",
+      "url": "https://itsblog.manhattan.edu/2019/05/write-now-send-later-with-scheduled.html",
+      "date": "2019-04",
+      "shows": "Google's own schedule-send GIF: full 2019 inbox (header, toolbar with gear, red Primary tab) and compose window with dark header, To, Subject, blue Send with dropdown, formatting A, attach, link, emoji, Drive, photo, confidential mode, trash, more",
+      "file": "/home/claude/sweeps/g1-evidence/gmail/s11-manhattan-frame.png"
+    },
+    {
+      "id": "s12",
+      "url": "https://www.laptopmag.com/articles/schedule-emails-gmail",
+      "date": "2019-04",
+      "shows": "Compose pill, red Inbox and Primary tab",
+      "file": "/home/claude/sweeps/g1-evidence/gmail/s12-laptopmag-9hZ3iLLJgfKh5pqZSyc5t3.jpg"
+    },
+    {
+      "id": "s13",
+      "url": "https://www.fonearena.com/blog/274986/gmail-web-right-click-context-menu-reply-forward-mute.html",
+      "date": "2019-02",
+      "shows": "Google's 2019 inbox image with the message actions Reply, Reply all, Forward, Archive, Delete, Mark as unread, Snooze, Move to, Label as, Mute, Open in new window",
+      "file": "/home/claude/sweeps/g1-evidence/gmail/s13-fonearena-rightclick.jpg"
+    },
+    {
+      "id": "s1b",
+      "url": "https://www.computerworld.com/article/1721340/gmail-redesigned.html",
+      "date": "2019-04",
+      "shows": "open message: back, archive, report spam, delete, mark unread, snooze, move to, labels, more; subject with Inbox chip; print and new-window icons; sender row with date, star, reply, more",
+      "file": "/home/claude/sweeps/g1-evidence/gmail/s1-cw-email.jpg"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(banner|search|main|tablist|contentinfo) area$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s7",
+        "s10"
+      ],
+      "note": "page regions: header, search form, message list, category tabs, footer"
+    },
+    {
+      "match": "^Labels$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "labels section of the nav (2019 listed labels under the system folders)"
+    },
+    {
+      "match": "^repeated ",
+      "in2019": true,
+      "evidence": [
+        "s7"
+      ],
+      "note": "message rows and tab headings (content)"
+    },
+    {
+      "match": "^Main menu$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s7"
+      ]
+    },
+    {
+      "match": "^Gmail$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s7"
+      ],
+      "note": "red M lockup"
+    },
+    {
+      "match": "^(Search mail|Search in mail)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s7"
+      ],
+      "note": "the search field and its button; the current 'Ask Gmail' name is relabelled 'Search mail' by the theme"
+    },
+    {
+      "match": "^(Advanced search options|Show search options)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s7"
+      ],
+      "note": "the dropdown arrow at the right of the field; drawn as the 2019 arrow"
+    },
+    {
+      "match": "^Support$",
+      "in2019": true,
+      "evidence": [
+        "s10"
+      ],
+      "note": "? button in the header"
+    },
+    {
+      "match": "^Settings$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s9",
+        "s10"
+      ],
+      "note": "gear existed; in 2019 it sat at the right of the toolbar row, now in the header (structural, not moved)"
+    },
+    {
+      "match": "^Google apps$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s10"
+      ]
+    },
+    {
+      "match": "^Google Account",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s10"
+      ]
+    },
+    {
+      "match": "^Compose$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s7",
+        "s8"
+      ],
+      "note": "white pill with the four-colour plus"
+    },
+    {
+      "match": "^(Inbox|Starred|Snoozed|Sent|Drafts|Important|Scheduled|All Mail|Spam|Trash|Bin|Categories|More|Less)( \\d+ unread)?$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s7",
+        "s8",
+        "s10"
+      ]
+    },
+    {
+      "match": "^(More labels|Create new label)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s10"
+      ],
+      "note": "More toggle and the + next to Labels"
+    },
+    {
+      "match": "^(Select|Refresh|More email options|More)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s7"
+      ],
+      "note": "toolbar row"
+    },
+    {
+      "match": "^(Show more messages|Newer|Older)$",
+      "in2019": true,
+      "evidence": [
+        "s7"
+      ],
+      "note": "pagination 1-50 of N with arrows"
+    },
+    {
+      "match": "^(Primary|Social|Promotions|Updates|Forums)(, \\d+ new messages?,)?$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "category tabs with 'N new' badges"
+    },
+    {
+      "match": "^(Not starred|Starred)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s7"
+      ]
+    },
+    {
+      "match": "^[\\d.]+% of [\\d.]+ ?[GT]B used$|^Using [\\d.]+ ?GB",
+      "in2019": true,
+      "evidence": [
+        "s4"
+      ],
+      "note": "storage meter in the footer"
+    },
+    {
+      "match": "^(Terms|Privacy|Program Policies|Details)$",
+      "in2019": true,
+      "evidence": [
+        "s4"
+      ],
+      "note": "footer links and Last account activity Details"
+    },
+    {
+      "match": "^(Calendar|Keep|Tasks|Get Add-ons)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s10"
+      ],
+      "note": "side panel"
+    },
+    {
+      "match": "^(Compose: New Message|New Message|form area)$",
+      "in2019": true,
+      "evidence": [
+        "s11",
+        "s6"
+      ],
+      "note": "compose window, dark title bar"
+    },
+    {
+      "match": "^(Minimize|Full screen|Exit full screen|Save & close|Close)$",
+      "in2019": true,
+      "evidence": [
+        "s11"
+      ],
+      "note": "compose title bar buttons"
+    },
+    {
+      "match": "^(To|Cc|Bcc|To - Select contacts|Cc - Select contacts|Bcc - Select contacts|To recipients|Subject)$",
+      "in2019": true,
+      "evidence": [
+        "s11",
+        "s6"
+      ]
+    },
+    {
+      "match": "^Add (Cc|Bcc) recipients",
+      "in2019": true,
+      "evidence": [
+        "s11"
+      ],
+      "note": "Cc Bcc links"
+    },
+    {
+      "match": "^(Formatting options|Sans Serif|Serif|Fixed width|Size|Bold|Italic|Underline|Text color|Align|Numbered list|Bulleted list|Indent less|Indent more|Quote|Strikethrough|Remove formatting|More formatting options)\\b",
+      "in2019": true,
+      "evidence": [
+        "s11"
+      ],
+      "note": "compose formatting bar (opened with the A button)"
+    },
+    {
+      "match": "^(Send|More send options|Schedule send)\\b",
+      "in2019": true,
+      "evidence": [
+        "s11"
+      ],
+      "note": "blue Send with the schedule-send arrow (launched April 2019)"
+    },
+    {
+      "match": "^(Attach files|Insert link|Insert emoji|Insert files using Drive|Insert photo|Toggle confidential mode|More options|Discard draft)\\b",
+      "in2019": true,
+      "evidence": [
+        "s11",
+        "s6"
+      ],
+      "note": "compose bottom bar"
+    },
+    {
+      "match": "^Insert signature$",
+      "in2019": false,
+      "evidence": [
+        "2019 compose bar (s11) has no signature button; it arrived in 2020"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^Help me write\\b",
+      "in2019": false,
+      "evidence": [
+        "Gemini Help me write, 2023"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Back to (Inbox|Search results|.*)|Archive|Report spam|Delete|Mark as (unread|read)|Snooze|Move to|Labels|Label as|Add to Tasks|Mute)$",
+      "in2019": true,
+      "evidence": [
+        "s1b",
+        "s7",
+        "s13"
+      ],
+      "note": "message toolbar"
+    },
+    {
+      "match": "^(Print all|In new window|Open in new window)$",
+      "in2019": true,
+      "evidence": [
+        "s1b",
+        "s13"
+      ],
+      "note": "print and new-window icons at the top right of the message"
+    },
+    {
+      "match": "^(Reply|Reply all|Forward)$",
+      "in2019": true,
+      "evidence": [
+        "s13"
+      ],
+      "note": "reply/forward actions (buttons under the message)"
+    },
+    {
+      "match": "^[x\\s.,:/()'!?$&|@—–-]+$|^user@example\\.com$",
+      "in2019": true,
+      "evidence": [
+        "s7"
+      ],
+      "note": "links inside the scrubbed message body and rows (content)"
+    },
+    {
+      "match": "^(Hide side panel|Show side panel)$",
+      "in2019": true,
+      "evidence": [
+        "s4"
+      ],
+      "note": "the arrow under the side panel"
+    },
+    {
+      "match": "^(Contacts|Maps)$",
+      "in2019": false,
+      "evidence": [
+        "2018-2019 side panels (s4, s10) show only Calendar, Keep and Tasks; Contacts joined the side panel in 2020"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Studio|Google Workspace Studio|Workspace Studio|Flows|Discover|Activity)$",
+      "in2019": false,
+      "evidence": [
+        "Workspace Studio (Discover/Flows/Activity agent panel) launched 2025"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(AI Inbox|Ask Gemini|Gemini|Purchases|Summarize this email|Help me write)$",
+      "in2019": false,
+      "evidence": [
+        "Gemini features 2024+, Purchases category 2025"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Chat|Spaces|Meet|New meeting|Join a meeting)$",
+      "in2019": false,
+      "evidence": [
+        "Meet in Gmail 2020, Chat/Spaces 2020-2021"
+      ],
+      "action": "hidden"
+    }
+  ]
+}

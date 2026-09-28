@@ -1,5 +1,5 @@
-html{--n19-band:#eeeeee;--n19-page:#fff;--n19-text:#212121;--n19-text-2:#757575;--n19-link:#4285f4;--n19-rule:#e0e0e0;--n19-font:Roboto, Arial, sans-serif}
-html[data-net19-mode="dark"]{--n19-band:#2a2a2a;--n19-page:#181818;--n19-text:#e8e8e8;--n19-text-2:#a0a0a0;--n19-link:#8ab4f8;--n19-rule:#3c3c3c}
+html{--n19-logo:url("https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo.svg");--n19-band:#eeeeee;--n19-page:#fff;--n19-text:#212121;--n19-text-2:#757575;--n19-link:#4285f4;--n19-rule:#e0e0e0;--n19-font:Roboto, Arial, sans-serif}
+html[data-net19-mode="dark"]{--n19-logo:url("https://www.gstatic.com/youtube/img/branding/youtubelogo/svg/youtubelogo_dark.svg");--n19-band:#2a2a2a;--n19-page:#181818;--n19-text:#e8e8e8;--n19-text-2:#a0a0a0;--n19-link:#8ab4f8;--n19-rule:#3c3c3c}
 html:root,html .yt-page,html [class*="category--"]{--youtube-sans-black:var(--n19-font)!important;--youtube-sans-bold:var(--n19-font)!important;--youtube-sans-semibold:var(--n19-font)!important;--youtube-sans-regular:var(--n19-font)!important;--youtube-sans-light:var(--n19-font)!important;--youtube-sans-mono-semibold:var(--n19-font)!important;--youtube-sans-mono-medium:var(--n19-font)!important;--google-font-family:var(--n19-font)!important;--bg-primary-color:var(--n19-page)!important;--bg-secondary-color:var(--n19-page)!important;--bg-callout-color:var(--n19-band)!important;--bg-pull-quote-color:var(--n19-band)!important;--text-primary-color:var(--n19-text)!important;--primary-color:var(--n19-link)!important}
 .yt-page h1,.yt-page h2,.yt-page h3,.yt-page h4,.yt-page p,.yt-page a,.yt-page span,.yt-page li,.yt-page button,.yt-page time,.yt-page div{font-family:var(--n19-font)!important}
 .yt-page h1,.yt-page h2,.yt-page h3,.yt-page h4,.yt-page [class*="title"],.yt-page [class*="headline"],.yt-page [class*="category"],.yt-page [class*="eyebrow"],.yt-page [class*="tag"],.yt-page [class*="date"],.yt-page [class*="byline"],.yt-page .yt-link{text-transform:none!important;letter-spacing:0!important}
@@ -27,3 +27,28 @@ section.yt-category-hero-refresh{border-bottom:1px solid var(--n19-rule)!importa
 section.yt-category-hero-refresh::before,section.yt-category-hero-refresh::after{display:none!important}
 .yt-category-hero-refresh__title{font-size:36px!important;line-height:1.2!important;color:var(--n19-text)!important}
 .yt-category-hero-refresh__subtitle{font-size:16px!important;color:var(--n19-text-2)!important}
+html[data-net19-mode="dark"] :is(.yt-page,main,.yt-header__topic-hub-nav,.yt-header__topic-hub-nav__container,.youtube-media-carousel,.yt-carousel-short-posts,.youtube-specific-topic,.yt-full-width-video,.yt-article-progress-bar,.glue-cookie-notification-bar,.yt-loader__loader,.h-c-header__jump-to-content){background-color:var(--n19-page)!important}
+html[data-net19-mode="dark"] :is(.yt-hero-card,.yt-article-grid-card__wrapper,.yt-article-navigation-card,.youtube-media-carousel__video-info,.youtube-specific-topic-card__wrapper,.yt-article-rel-article-paragraph__wrapper,.yt-more-like-this__figure,.yt-newsletter-toast--cta-sub){background-color:var(--n19-band)!important}
+html[data-net19-mode="dark"] :is(.yt-page,.yt-header__topic-hub-nav,.glue-cookie-notification-bar,.yt-subscription-modal) :is(h1,h2,h3,h4,p,li,b,i,sub,label,span:not([class*="eyebrow"]),a:not(.yt-link):not([class*="eyebrow"]):not(main p a):not(main li a),.yt-article-progress-bar__title){color:var(--n19-text)!important}
+html[data-net19-mode="dark"] .yt-page main :is(p,li) a{color:var(--n19-link)!important}
+html[data-net19-mode="dark"] :is(.yt-page,.yt-header__topic-hub-nav) :is(.yt-hero-card__pagination,[class*="pagination"],.yt-short-post-overview__info__author,.yt-author-byline__content__job){color:var(--n19-text-2)!important}
+html[data-net19-mode="dark"] :is(.yt-article-grid,.yt-page section){background-image:none!important}
+html[data-net19-mode="dark"] .yt-page .filter-topics__button:not(.active){border-color:var(--n19-rule)!important}
+html[data-net19-mode="dark"] .yt-page :is(.yt-social,[class*="share"]) :is(a,button){background-color:var(--n19-band)!important}
+:where(:root:not([data-n19-safe])) a.yt-header__youtube-logo:has(.n19-blog-title){display:inline-flex!important;align-items:center!important;width:auto!important;gap:8px!important}
+a.yt-header__youtube-logo:has(.n19-blog-title){text-decoration:none!important}
+a.yt-header__youtube-logo:has(.n19-blog-title)>svg{display:none!important}
+a.yt-header__youtube-logo::before{content:""}
+:where(:root:not([data-n19-safe])) a.yt-header__youtube-logo::before{display:inline-block;width:90px;height:20px;flex:none}
+a.yt-header__youtube-logo::before{background:var(--n19-logo) no-repeat left center / contain}
+a.yt-header__youtube-logo:not(:has(.n19-blog-title))::before{display:none}
+.n19-blog-title{font:300 20px/28px var(--n19-font)!important;color:var(--n19-text)!important}
+:where(:root:not([data-n19-safe])) .n19-blog-title,.n19-blog-title:where(:root:not([data-n19-safe])){white-space:nowrap!important}
+.n19-blog-title{letter-spacing:0!important}
+.yt-header .yt-header__navigation-item-link,.yt-header .yt-header__navigation-item-link span{color:var(--n19-text-2)!important}
+.yt-header .yt-header__navigation-item-link:is(:hover,[aria-current="page"],.active),.yt-header .yt-header__navigation-item-link:is(:hover,[aria-current="page"],.active) span{color:var(--n19-text)!important}
+html[data-net19-mode="dark"] .yt-header .yt-subscription__header-btn{background:var(--n19-band)!important;color:var(--n19-text)!important;border:1px solid var(--n19-rule)!important}
+.yt-page :is(.yt-article-grid-card__wrapper,.youtube-specific-topic-card__wrapper,.yt-article-navigation-card){border:0!important;border-bottom:1px solid var(--n19-rule)!important;background-color:transparent!important;box-shadow:none!important}
+.yt-page :is(.yt-article-grid-card__title,.youtube-specific-topic-card__article-link,.yt-more-like-this__title){font-size:24px!important;line-height:35px!important;font-weight:400!important;color:var(--n19-text)!important}
+.yt-page :is(.yt-article-grid-card__date,[class*="card__date"],.yt-article-hero-section__page-content-date,[class*="publish"]){font-size:17px!important;color:var(--n19-text-2)!important}
+html[data-net19-mode="dark"] .yt-page :is(.yt-article-grid-card__wrapper,.youtube-specific-topic-card__wrapper,.yt-article-navigation-card){background-color:transparent!important}

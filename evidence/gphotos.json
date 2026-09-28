@@ -1,0 +1,195 @@
+{
+  "theme": "gphotos",
+  "era": "Material Theme Photos web (2018-2019): white header with search, Create and Upload; left rail Photos/Albums/Assistant/Sharing/Photo books",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.androidpolice.com/2019/11/18/google-photos-gets-new-timeline-editor-for-movies-in-its-web-interface/",
+      "date": "2019-11-18",
+      "shows": "Photos web movie editor (Nov 2019)",
+      "files": [
+        "sweeps/g2-evidence/gphotos/s1-3.png",
+        "sweeps/g2-evidence/gphotos/s1-4.png"
+      ]
+    },
+    {
+      "id": "s8",
+      "url": "https://www.theedublogger.com/google-photos-guide/3/",
+      "date": "2018-07",
+      "shows": "album page with share dialog (2018)",
+      "files": [
+        "sweeps/g2-evidence/gphotos/s8.png"
+      ]
+    },
+    {
+      "id": "s15",
+      "url": "https://www.nucleustechnologies.com/blog/recover-deleted-photos-from-google-photos/",
+      "date": "2019-05",
+      "shows": "photos.google.com/trash page (May 2019)",
+      "files": [
+        "sweeps/g2-evidence/gphotos/s15.png"
+      ]
+    },
+    {
+      "id": "yt1",
+      "url": "https://www.youtube.com/watch?v=PAE7ad6sTzY",
+      "date": "2019 (titl",
+      "shows": "Photos web 2019: header (Search your photos, + Create, Upload), left icon rail Photos/Albums/Assistant/Sharing/Photo books, photo grid",
+      "files": [
+        "sweeps/g2-evidence/gphotos/yt-PAE7ad6sTzY.png"
+      ]
+    },
+    {
+      "id": "yt2",
+      "url": "https://www.youtube.com/watch?v=pbFqCqZxZnc",
+      "date": "2019-06 (t",
+      "shows": "Photos web albums page, June 2019",
+      "files": [
+        "sweeps/g2-evidence/gphotos/yt-pbFqCqZxZnc.png"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "match": "^(menubar area|All photos|Photos)$",
+      "in2019": true,
+      "evidence": [
+        "yt1",
+        "yt2"
+      ],
+      "note": "header with the Google Photos logo; Photos is the first nav entry"
+    },
+    {
+      "match": "^(Search your photos( and albums)?|search area)$",
+      "in2019": true,
+      "evidence": [
+        "yt1"
+      ],
+      "note": "grey Search your photos field"
+    },
+    {
+      "match": "^(Create and add photos|Create|Upload)$",
+      "in2019": true,
+      "evidence": [
+        "yt1"
+      ],
+      "note": "+ Create (and Upload) in the header"
+    },
+    {
+      "match": "^(Help & Feedback|Settings)$",
+      "in2019": true,
+      "evidence": [
+        "yt1"
+      ],
+      "note": "Settings and Help & feedback lived in the 2019 hamburger drawer; the header icons are their current home"
+    },
+    {
+      "match": "^Google apps$",
+      "in2019": true,
+      "evidence": [
+        "yt1",
+        "yt2"
+      ],
+      "note": "launcher"
+    },
+    {
+      "match": "^Google Account",
+      "in2019": true,
+      "evidence": [
+        "yt1"
+      ],
+      "note": "avatar"
+    },
+    {
+      "match": "^(navigation area|main area|repeated div)$",
+      "in2019": true,
+      "evidence": [
+        "yt1",
+        "yt2"
+      ],
+      "note": "left navigation and the photo grid"
+    },
+    {
+      "match": "^(Updates|Sharing)$",
+      "in2019": true,
+      "evidence": [
+        "yt1"
+      ],
+      "note": "the 2019 Sharing tab (shared albums and activity), renamed Updates"
+    },
+    {
+      "match": "^(Print store|Photo books)$",
+      "in2019": true,
+      "evidence": [
+        "yt1"
+      ],
+      "note": "the 2019 Photo books entry, renamed Print store"
+    },
+    {
+      "match": "^Albums$",
+      "in2019": true,
+      "evidence": [
+        "yt1",
+        "yt2"
+      ],
+      "note": "Albums"
+    },
+    {
+      "match": "^(Archive|Trash)$",
+      "in2019": true,
+      "evidence": [
+        "s15"
+      ],
+      "note": "drawer entries; s15 shows photos.google.com/trash in 2019"
+    },
+    {
+      "match": "^(Privacy|Terms|Policy)( \\(opens in a new tab\\))?$",
+      "in2019": true,
+      "evidence": [
+        "yt1"
+      ],
+      "note": "footer links of the drawer"
+    },
+    {
+      "match": "^Photo - ",
+      "in2019": true,
+      "evidence": [
+        "yt1",
+        "s15"
+      ],
+      "note": "photo tiles (content)"
+    },
+    {
+      "match": "^(Collections|Documents|Screenshots & recordings|Favorites|Places|Videos|Recently added|Locked Folder)$",
+      "in2019": false,
+      "evidence": [
+        "nav shortcuts and the Collections group are 2023+; the 2019 rail in yt1 has Photos, Albums, Assistant, Sharing, Photo books only"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Storage|Get more storage|\\d.* of \\d.* used)$",
+      "in2019": false,
+      "evidence": [
+        "storage meter in the nav came with the 2021 storage policy; yt1 has none"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Back up folders from your computer automatically|Select folders)$",
+      "in2019": false,
+      "evidence": [
+        "web folder backup nudge is 2024+"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Ask Photos|Ask|Gemini)$",
+      "in2019": false,
+      "evidence": [
+        "Ask Photos (Gemini) is 2024+"
+      ],
+      "action": "hidden"
+    }
+  ]
+}

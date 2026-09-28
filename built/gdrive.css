@@ -6,7 +6,11 @@ html[data-net19-mode="dark"]:root,html[data-net19-mode="dark"] body{--dt-backgro
 html body{--dt-primary-container:var(--n19-accent-soft)!important;--dt-on-primary-container:var(--n19-accent-text)!important}
 body.docs-gm #docs-chrome,body.docs-gm #docs-chrome:not(.docs-hub-chrome){background:var(--n19-page)!important;border-bottom-color:transparent!important}
 body.docs-gm #docs-header,body.docs-gm #docs-titlebar-container,body.docs-gm #docs-menubars{background:transparent!important}
-body.docs-gm .docs-title-input,body.docs-gm .docs-title-input-label,body.docs-gm .docs-title-input-label-inner{font-family:var(--n19-title-font)!important;font-size:18px!important;color:var(--n19-text)!important}
+body.docs-gm .docs-title-input,body.docs-gm .docs-title-input-label,body.docs-gm .docs-title-input-label-inner{font-family:var(--n19-title-font)!important;font-size:18px!important}
+body.docs-gm .docs-title-input-label,body.docs-gm .docs-title-input-label-inner{color:var(--n19-text)!important}
+body.docs-gm .docs-title-input:not(:focus){color:transparent!important}
+body.docs-gm .docs-title-input:focus{color:var(--n19-text)!important;background:var(--n19-page)!important}
+body.docs-gm .docs-title-input-wrapper:has(.docs-title-input:focus) .docs-title-input-label{visibility:hidden!important}
 body.docs-gm .docs-title-input{border-radius:2px!important}
 body.docs-gm .docs-menubar{font-family:var(--n19-font)!important}
 body.docs-gm .docs-menubar .goog-control{font-size:14px!important;color:var(--n19-text)!important;border-radius:4px!important}
@@ -103,3 +107,23 @@ html[data-net19-flip] #gb img[src*="logo_drive"],html[data-net19-flip] #gb img[s
 .docs-homescreen-grid-item:hover{border-color:var(--n19-accent)!important}
 .docs-homescreen-gb-container form[role="search"],.docs-homescreen-gb-container [role="search"]{background:var(--n19-field)!important;border-radius:8px!important}
 .docs-homescreen-gb-container form[role="search"]:focus-within{background:var(--n19-field-focus)!important;box-shadow:var(--n19-shadow)!important}
+body.docs-gm #docs-omnibox-toolbar,body.docs-gm #fontSizeDecrement,body.docs-gm #fontSizeIncrement,body.docs-gm .docs-main-toolbars [aria-label^="Checklist"i],body.docs-gm #addChecklistButton+.goog-toolbar-menu-button,body.docs-gm #docs-info,body.docs-gm #docs-policy-indicator,body.docs-gm :is([role="tab"],[role="button"])[aria-label="Contacts"]:is(.companion-app-switcher-container *,[aria-label="Side panel"] *),body.docs-gm :is([role="tab"],[role="button"])[aria-label="Maps"]:is(.companion-app-switcher-container *,[aria-label="Side panel"] *){display:none!important}
+:where(:root:not([data-n19-safe])) body.docs-gm #docs-revisions-appbarbutton{width:auto!important;min-width:0!important;height:auto!important;padding:0 8px!important}
+body.docs-gm #docs-revisions-appbarbutton{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
+body.docs-gm #docs-revisions-appbarbutton>.docs-icon{display:none!important}
+body.docs-gm #docs-revisions-appbarbutton::after{content:attr(aria-label);font:14px var(--n19-font);color:var(--n19-text-2);text-decoration:underline}
+:where(:root:not([data-n19-safe])) body.docs-gm #docs-revisions-appbarbutton::after{white-space:nowrap}
+body.docs-gm .kix-outlines-widget-header-text-chaptered,body.docs-gm .kix-outlines-widget-header-add-chapter-button,body.docs-gm .topLevelChapterContainerChaptered>.chapter-container:only-child>.chapter-item>.chapter-item-label-and-buttons-container{display:none!important}
+:where(:root:not([data-n19-safe])) body.docs-gm .outlines-widget-chaptered .kix-outlines-widget-header-text-unchaptered{display:block!important}
+#drive-main-page [role="toolbar"][aria-label="Filters"i],[data-net19-drive-later],:is(#gb,#drive-main-page,body) :is(button,[role="button"])[aria-label^="Ask Gemini"i]{display:none!important}
+#gb:has(input[placeholder*="Drive"i]){border-bottom:1px solid var(--n19-border)!important}
+#drive-main-page [role="radiogroup"]:has(>*>[role="radio"]){border:0!important;background:transparent!important}
+#drive-main-page [role="radiogroup"] [role="radio"][aria-checked="true"]{display:none!important}
+#drive-main-page [role="radiogroup"] [role="radio"]{border:0!important;border-radius:50%!important;background:transparent!important}
+#gb form button[aria-label="Advanced search"i] svg{visibility:hidden!important}
+#gb form button[aria-label="Advanced search"i]{background:url("https://www.gstatic.com/images/icons/material/system/2x/arrow_drop_down_black_24dp.png") center / 24px 24px no-repeat!important;opacity:.54}
+html[data-net19-mode="dark"] #gb form button[aria-label="Advanced search"i]{background-image:url("https://www.gstatic.com/images/icons/material/system/2x/arrow_drop_down_white_24dp.png")!important}
+#askGemini,[id="askGemini"]+.ubU3wd,#drive-main-page [role="toolbar"]:has(#askGemini):not(:has([role="button"]:not(#askGemini *))),#gb :has(>[data-is-tooltip-wrapper]>button[aria-label^="Ask Gemini"i]),#gb .e5IPTd:has(button[aria-label^="Ask Gemini"i]){display:none!important}
+#drive-main-page [role="radiogroup"] [role="radio"]:not([aria-checked="true"]){border:0!important;box-shadow:none!important}
+#drive-main-page table[role="grid"]{border:0!important}
+:is([role="tab"],[role="button"])[aria-label="Contacts"]:is([aria-label="Side panel"i] *,.companion-app-switcher-container *){display:none!important}

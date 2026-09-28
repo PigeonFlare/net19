@@ -1,0 +1,161 @@
+{
+  "theme": "linkedin",
+  "era": "2019 LinkedIn: guest home redesigned in 2019 ('Welcome to your professional community', thin #2572c0 headline, grey rounded suggested-search pills, orange 'Post your job' band, 'Who is LinkedIn for?', four-column directory footer); signed-in app with the #283e4a navy bar (Home, My Network, Jobs, Messaging, Notifications, Me, Work, Try Premium), #f3f6f8 canvas and square-cornered white cards with a 1px shadow.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.webdesignmuseum.org/gallery/linkedin-in-2019",
+      "date": "2019",
+      "shows": "full guest home: header Join now / Sign in, hero, job pills, Post your job, Connect / Learn, Who is LinkedIn for?, Find your community, Join your colleagues, directory footer and legal row",
+      "file": "g5-evidence/linkedin/wdm-2019.jpg"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.adweek.com/performance-marketing/2-years-in-the-making-linkedins-brand-refresh-aims-to-make-the-platform-more-inviting/",
+      "date": "2019",
+      "shows": "old vs refreshed 2019 guest home (Welcome to your professional community + illustration)",
+      "file": "g5-evidence/linkedin/home-01.jpg"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.howtogeek.com/416136/fake-linkedin-profiles-are-impossible-to-detect/",
+      "date": "2019-05",
+      "shows": "guest home hero with Jobs/People search",
+      "file": "g5-evidence/linkedin/home-02.jpg"
+    },
+    {
+      "id": "s4",
+      "url": "https://www.vecteezy.com/photo/2677653-chiang-mai-thailand-2019-macbook-pro-with-linkedin-website-on-the-screen",
+      "date": "2019",
+      "shows": "guest home on a laptop, header Join now / Sign in",
+      "file": "g5-evidence/linkedin/home-03.jpg"
+    },
+    {
+      "id": "s5",
+      "url": "https://www.socialmediatoday.com/news/linkedin-adds-document-upload-options-to-regular-posts-providing-new-shari/551871/",
+      "date": "2019-04",
+      "shows": "signed-in feed: Start a post with photo/video/document, Write an article on LinkedIn, sort Top, posts with Like/Comment/Share, right rail news",
+      "file": "g5-evidence/linkedin/feed-01.jpg"
+    },
+    {
+      "id": "s6",
+      "url": "https://www.socialmediaexaminer.com/how-to-use-linkedin-to-build-powerful-network/",
+      "date": "2019",
+      "shows": "feed: Start a post, Sort by: Top, post card with Like/Comment/Share",
+      "file": "g5-evidence/linkedin/feed-04.jpg"
+    },
+    {
+      "id": "s7",
+      "url": "https://www.linkedin.com/pulse/share-post-linkedin-dee-reinhardt",
+      "date": "2019",
+      "shows": "Create a post dialog with blue header, hashtags, Post button",
+      "file": "g5-evidence/linkedin/feed-05.jpg"
+    },
+    {
+      "id": "s8",
+      "url": "https://www.webdesignmuseum.org/gallery/linkedin-in-2018",
+      "date": "2018",
+      "shows": "previous guest home with sign-in in the header (the 2019 refresh replaced it)",
+      "file": "g5-evidence/linkedin/wdm-2018.jpg"
+    },
+    {
+      "id": "s9",
+      "url": "https://www.weidert.com/blog/linkedin-career-and-life-company-pages",
+      "date": "2018-2019",
+      "shows": "company page: header card with See jobs / Follow, Overview / Jobs / Life tabs, About us, Recent update, Where we work",
+      "file": "g5-evidence/linkedin/company-03.jpg"
+    },
+    {
+      "id": "s10",
+      "url": "https://kinsta.com/blog/how-to-create-a-company-page-on-linkedin/",
+      "date": "2019",
+      "shows": "company People tab under the navy 2019 bar; employee cards",
+      "file": "g5-evidence/linkedin/company-04.jpg"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Primary|header area|footer area|section area|main area|search area|form area|tabpanel area|Join LinkedIn|Sign in)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "page regions"
+    },
+    {
+      "match": "^(LinkedIn|Sign in|Join now|Sign Up|Get started)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ]
+    },
+    {
+      "match": "^(Welcome to your professional community|Find the right job or internship for you|Post your job for millions of people to see|Connect with people who can help|Learn the skills you need to succeed|Who is LinkedIn for\\?|Join your colleagues, classmates, and friends on LinkedIn)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ]
+    },
+    {
+      "match": "^(Engineering|Business Development|Finance|Administrative Assistant|Retail Associate|Customer Service|Operations|Information Technology|Marketing|Human Resources|Sales|Healthcare Service|Administrative|Show more|Post a job|Find people you know|Choose a topic to learn about|Find a coworker or classmate|Find a new job|Find a course or training)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "suggested searches and section actions"
+    },
+    {
+      "match": "^repeated ",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s5"
+      ],
+      "note": "content items"
+    },
+    {
+      "match": "^(General|Browse LinkedIn|Business Solutions|Directories|Help Center|About|Press|Blog|Careers|Developers|Learning|Jobs|Salary|Mobile|ProFinder|Talent|Marketing|Sales|Members|Companies|Salaries|Universities|Featured|User Agreement|Privacy Policy|Cookie Policy|Copyright Policy|Brand Policy|Guest Controls|Community Guidelines|Language|Send Feedback)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "directory footer and legal row"
+    },
+    {
+      "match": "^(email-or-phone|password|session_key|session_password|Email or Phone|Password|Show password|Show|Forgot password\\?|Agree & Join|Sign in)$",
+      "in2019": true,
+      "evidence": [
+        "s8"
+      ],
+      "note": "sign-in and join forms"
+    },
+    {
+      "match": "^(Home|My Network|Jobs|Messaging|Notifications|Me|Work|For Business|Search|Try Premium Free for 1 Month|Unlock Premium for \\$0|Start a post|Video|Photo|Write an article|Write article|Sort by|Like|Comment|Share|Repost|LinkedIn News|Show all news|Profile viewers|View all analytics|Saved items|Groups|Events|Follow|Connect|Advertising|Ad Choices|Business Services|Get the LinkedIn app|More|Privacy & Terms)",
+      "in2019": true,
+      "evidence": [
+        "s5",
+        "s6",
+        "s7"
+      ],
+      "note": "signed-in app (checked in the Browser pane)"
+    },
+    {
+      "match": "^(Secondary|About us|Locations|Employees at .*|Updates|article area|Overview|Life|See jobs|Discover all [\\d,]+ employees|See all employees|Open menu|Get directions|Show more locations|Update \\d+|[\\d,]+ (Reactions|Comments)|…more|Show more affiliated pages|Show more similar pages|Show more jobs like this|.* jobs|Dismiss|Next Slide|Sign in to see who you already know at .*|Software Development|.*followers|https?://.*)$",
+      "in2019": true,
+      "evidence": [
+        "s9",
+        "s10"
+      ],
+      "note": "guest company page: header card, tabs, About, Where we work, employees, updates, affiliated/similar pages and job links (content)"
+    },
+    {
+      "match": "^(Explore top LinkedIn content|Discover the best software tools|Keep your mind sharp with games|Let the right people know you.re open to work|Top Content|Articles|People|Games|Services|Products|Top Companies|Top Startups|Top Colleges|Posts|Schools|News|News Letters|Newsletters|Advice|People Search|Accessibility|Your California Privacy Choices|Continue with google|Continue with Google|Sign in with Apple|Sign in with email|Where are the filters\\?|Today.s puzzles|Send|Products|Sign in with Email|View C2PA information|.*, a puzzle by LinkedIn)$",
+      "in2019": false,
+      "evidence": [
+        "absent from s1 (full 2019 page); Open To Work 2020-06, Newsletters 2021, Games 2024, Apple/Google sign-in 2021+"
+      ],
+      "action": "hidden"
+    }
+  ]
+}

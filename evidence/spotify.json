@@ -1,0 +1,116 @@
+{
+  "theme": "spotify",
+  "era": "2019 Spotify web player (dark only): black sidebar, #181818 main, #282828 player bar, 28px bold shelf headings, 12px uppercase .16em letter-spaced tabs and pill buttons (green PLAY, outlined FOLLOW), square covers without card backgrounds, round artists",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.lifewire.com/how-to-listen-to-spotify-using-a-web-browser-2438312",
+      "date": "2019-01",
+      "file": "/home/claude/sweeps/g3-evidence/spotify/lifewire-2019-01-2.png",
+      "shows": "web player search: TOP RESULTS / ARTISTS / SONGS / ALBUMS / PLAYLISTS / EPISODES / PODCASTS tabs, 12px uppercase letter-spaced with a short underline, round artist top result, song rows with note icon, title, artist - album, duration"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.lifewire.com/how-to-listen-to-spotify-using-a-web-browser-2438312",
+      "date": "2019-01",
+      "file": "/home/claude/sweeps/g3-evidence/spotify/lifewire-2019-01-3.png",
+      "shows": "web player Your Library: PLAYLISTS / MADE FOR YOU / SONGS / ALBUMS / ARTISTS / PODCASTS tabs with green underline, green NEW PLAYLIST pill, 28px bold shelf headings, square covers with centered titles and grey subtitles, no card backgrounds"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.lifewire.com/how-to-listen-to-spotify-using-a-web-browser-2438312",
+      "date": "2019-01",
+      "file": "/home/claude/sweeps/g3-evidence/spotify/lifewire-2019-01-4.png",
+      "shows": "web player album: square cover, bold title, grey artist, green PLAY/PAUSE pill (12px, .16em letter-spacing), '2014 • 12 SONGS', SAVE TO YOUR LIBRARY and ••• menu (Start Radio, Save to Your Library, Add to Queue, Add to Playlist, Copy Song Link), track rows with durations"
+    },
+    {
+      "id": "s4",
+      "url": "https://www.lifewire.com/how-to-listen-to-spotify-using-a-web-browser-2438312",
+      "date": "2019-01",
+      "file": "/home/claude/sweeps/g3-evidence/spotify/lifewire-2019-01-5.png",
+      "shows": "web player album and player bar: PLAY pill, '2007 • 16 SONGS', Connect to a device popover, #282828 now-playing bar with shuffle, previous, play/pause, next, repeat, progress, queue, devices, volume"
+    },
+    {
+      "id": "s5",
+      "url": "https://www.pcmag.com/",
+      "date": "2018-2019",
+      "file": "/home/claude/sweeps/g3-evidence/spotify/pcmag-2018-browse.jpg",
+      "shows": "web player Browse: black sidebar (logo, Search, Browse, Your Music, Install App, user), FEATURED / GENRES & MOODS / NEW RELEASES / DISCOVER tabs, centered shelf title, square covers with centered captions, player bar"
+    },
+    {
+      "id": "s6",
+      "url": "https://www.reddit.com/r/chromeos/",
+      "date": "2019-09",
+      "file": "/home/claude/sweeps/g3-evidence/spotify/reddit-2019-09.png",
+      "shows": "web player behind an error dialog at open.spotify.com/playlist (layout only)"
+    },
+    {
+      "id": "s7",
+      "url": "https://www.webdesignmuseum.org/",
+      "date": "2019-12",
+      "file": "/home/claude/sweeps/g3-evidence/spotify/wdm-spotify-2019.jpg",
+      "shows": "www.spotify.com 2019: logo, Premium/Help/Download | Sign up/Log In links, 'Try Premium free for 3 months', uppercase letter-spaced pill buttons (VIEW PLANS, GET SPOTIFY FREE), black footer with COMPANY / COMMUNITIES / USEFUL LINKS"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Import your music|Audiobooks Access|Audiobooks|Show Now Playing view|Now playing view|Music videos|Profiles|List|Shuffle)$",
+      "in2019": false,
+      "evidence": [
+        "not in s1-s5: Now Playing view 2021, audiobooks 2022, music videos 2024, list/compact view toggle 2023, import 2025; Profiles search tab and action-bar Shuffle absent from s1-s4"
+      ],
+      "action": "hidden (theme CSS and later labels)"
+    },
+    {
+      "match": "^(Home|Search|Browse|What\\ do\\ you\\ want\\ to\\ play\\?|Your\\ Library|Create|Create\\ playlist|Browse\\ podcasts|Install\\ App|Premium|Support|Download|Sign\\ up|Sign\\ up\\ free|Log\\ in|Skip\\ to\\ content|Spotify|Spotify\\ \\-\\ Home|Play|Pause|Next|Previous|Enable\\ shuffle|Disable\\ repeat|Mute|Follow|Save\\ to\\ Your\\ Library|See\\ more|Show\\ all|See\\ discography|View\\ album\\ artwork|English|USA|Estados\\ Unidos\\ \\(Español\\)|Legal|Safety\\ \\&\\ Privacy\\ Center|Privacy\\ Policy|Cookies|About\\ Ads|Accessibility|Notice\\ at\\ Collection|Your\\ Privacy\\ Choices|About|Jobs|For\\ the\\ Record|For\\ Artists|Developers|Advertising|Investors|Vendors|Web\\ Player|Free\\ Mobile\\ App|Instagram|Facebook|✕\\ Close|All|Artists|Songs|Albums|Playlists|Podcasts|Episodes|Podcasts\\ \\&\\ Shows|Genres\\ \\&\\ Moods|Discography|Popular\\ releases|Singles\\ and\\ EPs|Compilations|Appears\\ On|Artist\\ Playlists|Discovered\\ on|Fans\\ also\\ like|Featuring\\ Daft\\ Punk|More\\ by\\ Daft\\ Punk|Top\\ result|Popular\\ albums\\ and\\ singles|Popular\\ artists|Popular\\ radio|Trending\\ songs|Featured\\ Charts|Popular\\ by\\ Country|Premium\\ plans|Premium\\ Individual|Premium\\ Duo|Premium\\ Student|Premium\\ Family|Get\\ Premium\\ Duo|Get\\ Premium\\ Family|Spotify\\ Free|Try\\ 1\\ month\\ for\\ \\$0|View\\ all\\ plans|Terms\\ apply\\.|Offline\\ listening|For\\ Creators|For\\ Authors|Pause\\ video|Individual|Duo|Family|Student|More options for .+|Spotify – Search|.+ \\| Spotify|Spotify - Web Player: Music for everyone)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s7"
+      ],
+      "note": "web player chrome, search tabs, shelves, player controls, footer and www plan/links (Premium Duo and Student plans existed in 2019; the www hero video control belongs to the plan page hero)"
+    },
+    {
+      "match": "^(Desktop navigation|Top bar and user menu|Main|Footer|Now playing bar|header area|nav area|main area|footer area|banner area|search area|section area|Grid of features|Spotlight section with plans|Scrolling hero with video|Scrolling image gallery|Cultural Moments|Listen to Spotify anywhere|The world is listening here\\.|The ultimate home for.*|As the world's music hub.*)$",
+      "in2019": true,
+      "evidence": [
+        "s5",
+        "s4",
+        "s7"
+      ],
+      "note": "page regions and www marketing sections"
+    },
+    {
+      "match": "^(badge SpotifyPremium|SpotifyPremium)$",
+      "in2019": true,
+      "evidence": [
+        "s7"
+      ],
+      "note": "Premium wordmark badge"
+    },
+    {
+      "match": "^(repeated .*)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s5"
+      ],
+      "note": "shelves, cards and rows"
+    },
+    {
+      "match": "^(\\$ome\\ \\$exy\\ \\$ongs\\ 4\\ U|ADÉLA|Abel\\ Tesfaye|Aerodynamic|Alive\\ 2007|All\\ Out\\ 2010s|All\\ Out\\ 90s|Arcade\\ Fire|Around\\ the\\ World|BILLIONS\\ CLUB|Bad\\ Bunny|Bangalter|Beach\\ Boys|Best\\ of\\ the\\ Year\\ \\(So\\ Far\\)|Billie\\ Eilish|CHANEL\\ Connects|Charlotte\\ Gainsbourg|Choosin'\\ Texas|Crescendolls|DJ\\ Sneak|Daft\\ Punk|Daft\\ Punk\\ Essentials|Daft\\ Punk\\ Greatest\\ Hits|Daft\\ Punk\\ Mix|Daft\\ Punk\\ Radio|Dance\\ Hits\\ 2000s|DeBÍ\\ TiRAR\\ MáS\\ FOToS|Digital\\ Love|Digitalism|Discovery|Dolly\\ Babe|Drake|Duophonic|Edwards|Electronic\\ trap\\ classics|Ella\\ Langley|Erol\\ Alkan|Face\\ to\\ Face|Fleetwood\\ Mac|Frankie\\ Knuckles|GNX|Giorgio\\ Moroder|Got\\ Future\\ Funk\\?|HIT\\ ME\\ HARD\\ AND\\ SOFT|High\\ Life|Homework|House\\ Mixing\\ 101|ICONIC\\ MUSIC\\ VIDEOS|I’m\\ The\\ Problem|Jay\\-Z|Jean\\ Michel\\ Jarre|Joseph\\ Trapanese|Juan\\ Atkins|Julian\\ Casablancas|Kanye\\ West|Kendrick\\ Lamar|Kraftwerk|Kris\\ Needs|LCD\\ Soundsystem|LOBBYHOES|Megan\\ Thee\\ Stallion|Michael\\ Jackson|Missy\\ Elliott|Modjo|Morgan\\ Wallen|Natanael\\ Cano|Nicole\\ Kidman|Nightvision|Nile\\ Rodgers|OLIVIA\\ LA\\ FLAKA|On\\ Video|One\\ More\\ Time|Ovi|PARTYNEXTDOOR|Panda\\ Bear|Parcels|Patient\\ Zero|Paul\\ Williams|Pharrell|Pharrell\\ Williams|Phoebe\\ Bridgers|Popular\\ Disco\\ playlists|Post\\ Malone|Rain\\ Sounds|Random\\ Access\\ Memories|Rihanna|Rodgers|Romanthony|Short\\ Circuit|Soma|Something\\ About\\ Us|Soulwax|Starboy|Starboy\\ \\(Deluxe\\)|Stereolab|Superheroes|Tame\\ Impala|Taylor\\ Swift|The\\ Highlights|The\\ Highlights\\ \\(Deluxe\\)|The\\ Weeknd|This\\ Is\\ Daft\\ Punk|This\\ Is\\ The\\ Weeknd|Thomas\\ Bangalter|Tito\\ Double\\ P|Todd\\ Edwards|Too\\ Long|Top\\ Song\\ Lyrics|Veridis\\ Quo|Victor\\ Mendivil|Virgin|Voyager|West|White\\ Noise\\ Radiance|the\\ Chemical\\ Brothers|the\\ Eagles|the\\ Fall|the\\ Weeknd)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s5"
+      ],
+      "note": "content: artist, album, track and playlist names seen on the sampled pages"
+    }
+  ]
+}

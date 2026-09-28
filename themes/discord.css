@@ -1,4 +1,4 @@
-html, html .theme-light {
+html, html:not([data-net19-mode="dark"]) :is(.theme-light, .theme-dark, .theme-darker, .theme-midnight) {
   --n19-tertiary: #e3e5e8; --n19-secondary: #f2f3f5; --n19-secondary-alt: #ebedef; --n19-primary: #fff;
   --n19-floating: #fff; --n19-input: #ebedef; --n19-input-border: rgba(0, 0, 0, .2); --n19-field: rgba(79, 84, 92, .02);
   --n19-header: #060607; --n19-header-2: #4f5660; --n19-text: #2e3338; --n19-muted: #747f8d;
@@ -14,7 +14,7 @@ html, html .theme-light {
   --n19-popout-head: #7289da;
   --n19-font: Whitney, "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
-html[data-net19-mode="dark"], html :is(.theme-dark, .theme-darker, .theme-midnight) {
+html[data-net19-mode="dark"], html[data-net19-mode="dark"] :is(.theme-light, .theme-dark, .theme-darker, .theme-midnight) {
   --n19-tertiary: #202225; --n19-secondary: #2f3136; --n19-secondary-alt: #292b2f; --n19-primary: #36393f;
   --n19-floating: #18191c; --n19-input: #40444b; --n19-input-border: rgba(0, 0, 0, .3); --n19-field: rgba(0, 0, 0, .1);
   --n19-header: #fff; --n19-header-2: #b9bbbe; --n19-text: #dcddde; --n19-muted: #72767d;
@@ -420,12 +420,12 @@ html[data-wf-site] .home--hero::after { content: ""; position: absolute; top: 0;
     url("https://discord.com/assets/173ee5a6d2f1b6a19190465c41371a3b.svg") 1071px 523px / 38px 38px no-repeat, url("https://discord.com/assets/173ee5a6d2f1b6a19190465c41371a3b.svg") 971px 323px / 38px 38px no-repeat,
     url("https://discord.com/assets/a14c5b02487874dca7fae0481ef90dbb.svg") 1181px 703px / 38px 38px no-repeat, url("https://discord.com/assets/a14c5b02487874dca7fae0481ef90dbb.svg") 61px 413px / 38px 38px no-repeat; }
 html[data-wf-site] .home--hero > * { position: relative !important; z-index: 1 !important; }
-html[data-wf-site] .home--hero .container-hero { padding-top: 0 !important; margin-top: 0 !important; max-width: 710px !important; margin-left: auto !important; margin-right: auto !important; }
+html[data-wf-site] .home--hero .container-hero { padding-top: 0 !important; margin-top: 0 !important; max-width: 780px !important; margin-left: auto !important; margin-right: auto !important; }
 html[data-wf-site] .home--hero .padding-global { padding-top: 22px !important; padding-left: 0 !important; padding-right: 0 !important; }
 html[data-wf-site] .home--hero .home--2col_layout { display: block !important; min-height: 0 !important; height: auto !important; padding: 0 !important; margin: 0 !important; }
-html[data-wf-site] .home--hero .home--text-wr { width: 710px !important; max-width: 100% !important; margin: 0 auto !important; text-align: center !important; display: block !important; height: auto !important; }
+html[data-wf-site] .home--hero .home--text-wr { width: 780px !important; max-width: 100% !important; margin: 0 auto !important; text-align: center !important; display: block !important; height: auto !important; }
 html[data-wf-site] .home--hero .home--text-wr :is(.text-mask, h1) { width: auto !important; max-width: none !important; margin-left: auto !important; margin-right: auto !important; text-align: center !important; display: block !important; height: auto !important; overflow: visible !important; }
-html[data-wf-site] .home--hero h1 { font-size: 36px !important; line-height: 44px !important; font-weight: 700 !important; color: #fff !important; white-space: normal !important; }
+html[data-wf-site] .home--hero h1 { font-size: 32px !important; line-height: 38px !important; font-weight: 700 !important; color: #fff !important; white-space: normal !important; }
 html[data-wf-site] .home--hero h1 * { display: inline !important; font: inherit !important; }
 html[data-wf-site] .home--hero p.hero-p { font-size: 16px !important; line-height: 24px !important; color: rgba(255,255,255,.6) !important; max-width: 710px !important; margin: 12px auto 0 !important; text-align: center !important; }
 html[data-wf-site] .home--hero [class*="ctaContainer-"] { position: static !important; transform: none !important; display: flex !important; justify-content: center !important; gap: 40px !important; margin: 26px auto 0 !important; width: auto !important; height: auto !important; }
@@ -468,3 +468,6 @@ html[data-wf-site] .home--hero .home--2col_layout > :not(.home--text-wr) { posit
 html[data-wf-site] .home--hero [class*="ctaContainer-"] button, html[data-wf-site] .home--hero [class*="ctaContainer-"] button > * { display: flex !important; align-items: center !important; justify-content: center !important; text-align: center !important; }
 html[data-wf-site] .home--hero [class*="ctaContainer-"] button [class*="contents-"] { width: 100% !important; margin: 0 !important; }
 html[data-wf-site]:has(.home--hero) header.nav .nav_menu_wr { margin-left: 160px !important; margin-right: auto !important; }
+html[data-wf-site] .home--hero ~ :is(.home--2section, .home--3section, .home--4section, .line-wr-home, .home--5section, .home--6section, .home--section7) { display: none !important; }
+html[data-wf-site] .footer_new :is(a[href="/application-directory"], a[href="/gift-cards"], a[href="/newsroom"], a[href="/safety"], a[href="/creators"], a[href^="/ads/"], a[href="/acknowledgements"], a[href="/licenses"], a[href="/company-information"], a[href="#"], a[href*="youtube.com"], a[href*="tiktok.com"]) { display: none !important; }
+html[data-wf-site] :is(.discord_banner .relative-2025, .footer_new .container_word) { display: none !important; }

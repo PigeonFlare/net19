@@ -125,7 +125,22 @@ function net19PageChecks() {
     }
   }
   out.lowcontrast = net19Contrast();
+  out.dim = net19Dim();
   return out;
+}
+
+function net19Dim() {
+  if (matchMedia('(prefers-color-scheme: dark)').matches) return [];
+  const shown = [];
+  for (const [fx, fy] of [[.5, .5], [.3, .4], [.7, .4], [.5, .8], [.2, .7], [.8, .7], [.15, .2], [.85, .2]]) {
+    const x = innerWidth * fx, y = innerHeight * fy;
+    const pixels = window.net19ShownBackground?.(x, y);
+    if (pixels) shown.push(pixels);
+  }
+  if (!shown.length) return [];
+  const light = shown.map(([r, g, b]) => (.2126 * r + .7152 * g + .0722 * b) / 255).sort((a, b) => a - b);
+  const middle = light[light.length >> 1];
+  return middle > .3 && middle < .86 ? [{ what: 'page background', detail: `shows at lightness ${middle.toFixed(2)} in light mode: grey and dim instead of the 2019 page color`, x: 0, y: 0, w: innerWidth, h: innerHeight }] : [];
 }
 
 function net19Contrast() {
@@ -158,11 +173,23 @@ function net19Contrast() {
     if (m && +m[1] > .5) p ^= 1;
     flips.set(el, p); return p;
   };
-  const flip = ([r, g, b, a]) => {
-    const [ir, ig, ib] = [r, g, b].map(v => 1 - v / 255);
-    const rot = [-.574 * ir + 1.43 * ig + .144 * ib, .426 * ir + .43 * ig + .144 * ib, .426 * ir + 1.43 * ig - .856 * ib];
-    return rot.map(v => Math.round(255 * Math.min(1, Math.max(0, (Math.min(1, Math.max(0, v)) - .5) * .88 + .5)))).concat(a);
+  const chains = new Map();
+  const chainOf = filter => chains.get(filter) || chains.set(filter, parseChain(filter)).get(filter);
+  const parseChain = filter => [...String(filter || '').matchAll(/(invert|hue-rotate|contrast|brightness)\(([-\d.]+)(deg|%)?\)/g)].map(([, fn, v, unit]) => [fn, unit === '%' ? v / 100 : +v]);
+  const hueMatrix = deg => { const a = deg * Math.PI / 180, c = Math.cos(a), s = Math.sin(a);
+    return [[.213 + c * .787 - s * .213, .715 - c * .715 - s * .715, .072 - c * .072 + s * .928], [.213 - c * .213 + s * .143, .715 + c * .285 + s * .14, .072 - c * .072 - s * .283], [.213 - c * .213 - s * .787, .715 - c * .715 + s * .715, .072 + c * .928 + s * .072]]; };
+  const applyChain = (rgb, chain) => {
+    let v = rgb.map(x => x / 255);
+    for (const [fn, n] of chain) {
+      if (fn === 'invert') v = v.map(x => x * (1 - n) + (1 - x) * n);
+      else if (fn === 'hue-rotate') { const m = hueMatrix(n); v = m.map(row => row[0] * v[0] + row[1] * v[1] + row[2] * v[2]); }
+      else if (fn === 'contrast') v = v.map(x => (x - .5) * n + .5);
+      else if (fn === 'brightness') v = v.map(x => x * n);
+      v = v.map(x => Math.min(1, Math.max(0, x)));
+    }
+    return v.map(x => Math.round(255 * x));
   };
+  const flip = ([r, g, b, a]) => applyChain([r, g, b], chainOf(getComputedStyle(document.documentElement).filter)).concat(a);
   const shownAs = (c, p) => p ? flip(c) : c;
   const alpha = el => { let a = 1; for (let n = el; n && n.nodeType === 1; n = n.parentElement) a *= +getComputedStyle(n).opacity; return a; };
   const name = e => (e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + (typeof e.className === 'string' && e.className ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '')).slice(0, 60);
@@ -216,6 +243,7 @@ function net19Contrast() {
     const base = shownAs(dark ? [18, 18, 18, 1] : [255, 255, 255, 1], parity(document.documentElement));
     return { color: color ? over(color, base) : base, painter: painter || document.documentElement };
   };
+  window.net19ShownBackground = (x, y) => { const top = document.elementFromPoint(x, y); const b = top && behind(top, x, y); return b && !b.covered && !b.picture ? b.color : null; };
   const report = (el, detail, r) => {
     const k = name(el) + detail.split(' ')[0] + Math.round(r.left / 40) + ',' + Math.round(r.top / 20);
     if (seen.has(k) || out.length > 60) return; seen.add(k);

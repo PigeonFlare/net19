@@ -22,7 +22,7 @@ html[data-net19-mode="dark"] #header { background-color: var(--n19-header) !impo
 html[data-net19-mode="dark"] #header-bottom-right { background-color: var(--n19-header-2) !important; color: var(--n19-text-2) !important; }
 html[data-net19-mode="dark"] #header-bottom-right a, html[data-net19-mode="dark"] #header .pagename a, html[data-net19-mode="dark"] #header .redditname a { color: var(--n19-tab-text) !important; }
 html[data-net19-mode="dark"] #header-bottom-right .separator { color: var(--n19-meta) !important; }
-html[data-net19-mode="dark"] #header-img.default-header { filter: invert(1) hue-rotate(180deg) brightness(1.15); }
+html[data-net19-mode="dark"] #header-img.default-header { background-color: #cee3f8; border-radius: 3px; }
 html[data-net19-mode="dark"] .tabmenu li a { background-color: var(--n19-tab) !important; color: var(--n19-tab-text) !important; }
 html[data-net19-mode="dark"] .tabmenu li.selected a { background-color: var(--n19-page) !important; color: var(--n19-orangered) !important; border-color: var(--n19-header-border) !important; }
 

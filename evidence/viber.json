@@ -1,0 +1,85 @@
+{
+  "theme": "viber",
+  "era": "2019 Rakuten Viber site: white bar (Rakuten Viber wordmark; Download, Features, Communities, Security, Viber Out, Blog; Business pill), purple #7360f2 hero 'Free and secure calls and messages to anyone, anywhere' with green Download Viber button, More than messaging / Always secure / Don't have Viber yet? sections, footer columns Viber / Company / Download and the Rakuten family row. It is essentially today's page; only newer footer links differ.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://web.archive.org/web/20190701000000/https://www.viber.com/",
+      "date": "2019-07",
+      "shows": "archived HTML text: nav, hero, More than messaging, Always secure, Don't have Viber yet?, footer (Support, About Viber, Brand Center, Careers, Terms & Policies, Terms of Use, Privacy Policy, Ads Policy, CCPA Do Not Sell My Data, Android, iPhone & iPad, Windows PC, Mac, Linux), languages, © 2019 Viber Media, Rakuten Viki/Kobo/Global Market/Travel/Marketing/Insight/TV",
+      "file": "g5-evidence/viber/wb-2019-home.png"
+    },
+    {
+      "id": "s2",
+      "url": "https://blokt.com/guides/most-secure-messaging-apps",
+      "date": "2019",
+      "shows": "hero: purple, Viber mark, headline, Download Viber",
+      "file": "g5-evidence/viber/home-01.jpg"
+    },
+    {
+      "id": "s3",
+      "url": "https://adamconnell.me/popular-messaging-apps/",
+      "date": "2019-2020",
+      "shows": "full header with Business pill and hero",
+      "file": "g5-evidence/viber/home-02.jpg"
+    },
+    {
+      "id": "s4",
+      "url": "https://productivityland.com/best-chat-apps/",
+      "date": "2019-2020",
+      "shows": "header and hero",
+      "file": "g5-evidence/viber/home-06.jpg"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|section|dialog|main|footer) area$|^repeated ",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "match": "^(Free and secure calls and messages to anyone, anywhere|Keep your conversations going no matter where you are\\.|More than messaging|Always secure|Don't have Viber yet\\?|Viber|Company|Download|viber logo|Features|Communities|Security|Viber Out|Blog|Business|Download Viber|Learn more|Discover More Features|More About Security)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ]
+    },
+    {
+      "match": "^(Support|About Viber|Brand Center|Careers|Terms & Policies|Terms of Service|Terms of Use|Privacy Policy|Ads Policy|Android|iPhone & iPad|IPhone & IPad|Windows PC|Mac|Linux|Rakuten Viki|Rakuten Kobo|Rakuten Global Market|Rakuten Travel|Rakuten Marketing|Rakuten Insight|Rakuten TV|Rakuten|English)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "2019 footer"
+    },
+    {
+      "match": "^(Do Not Sell or Share My Personal Information|CCPA Do Not Sell My Data|Cookie Policy|Accept Cookies|Close)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "privacy notice (the 2019 footer carried the CCPA link)"
+    },
+    {
+      "match": "^(Authentic conversations, the way you like them|Deepen your relationships with Viber.s wide range of communication fea.*|Send messages|Make Voice and Video Calls|Start Group Chats and Calls|Join Communities|Share Stickers & GIFs|Create stickers & GIFs|Multiplatform\\. Always Synced\\.|Build your Community|High quality\\. Low rates\\.|Enhanced security features|Get Viber Desktop|More About Communities|Call with Viber Out|security page|Download Now)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "features page: messaging, calls, group chats, Communities (launched 2019-01), stickers/GIFs and the Sticker Creator (2019-06), desktop sync, Viber Out and security all appear in the 2019 page's feature set"
+    },
+    {
+      "match": "^(US Privacy Settings|Caller ID Opt Out|About Rakuten|Viber Pay|ChatGPT in Viber|AI on Viber|Delete & Edit seen messages|Set Disappearing Messages)$",
+      "in2019": false,
+      "evidence": [
+        "absent from the 2019 footer (s1); message editing 2022, disappearing messages for all chats 2020"
+      ],
+      "action": "hidden"
+    }
+  ]
+}

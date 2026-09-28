@@ -71,6 +71,10 @@ html[data-net19-mode="dark"]{--n19-cal-line:#5f6368;--n19-cal-head:#e8eaed;--n19
 :is(html[data-n19-g="calendar"]) table.ei1jbe[role="grid"] :is(div,.x5FT4e){font-family:var(--n19-sans)!important}
 :is(html[data-n19-g="calendar"]) .qXIcZc .J09ahd,:is(html[data-n19-g="calendar"]) .qXIcZc .J09ahd>div{border-radius:4px!important;background-color:var(--n19-field)!important}
 :is(html[data-n19-g="calendar"]) [role="complementary"][aria-label="Booking pages"]{display:none!important}
+:is(html[data-n19-g="calendar"]) [role="tab"][data-guest-app-id]:is([aria-label="Contacts"],[aria-label="Maps"]){display:none!important}
+:is(html[data-n19-g="calendar"]) [role="tablist"]:has(>[role="tab"][data-guest-app-id]){border-left:1px solid var(--n19-cal-line)!important}
+:is(html[data-n19-g="calendar"]) button[aria-label$=", today"]{background-color:var(--n19-accent)!important;color:var(--n19-on-accent)!important}
+:is(html[data-n19-g="calendar"]) [role="main"] [role="columnheader"]:has(button[aria-label$=", today"]) .sVASAd.tWjOu{color:var(--n19-accent)!important}
 :is(html[data-n19-g="calendar"]) [role="complementary"] button.nUt0vb:is(.uQ1ixe,.H7Plud),:is(html[data-n19-g="calendar"]) [role="complementary"] button.nUt0vb:is(.uQ1ixe,.H7Plud) .UTNHae{border-radius:0!important}
 :is(html[data-n19-g="calendar"]) [role="complementary"] .aIwHYe{font:500 14px/20px var(--n19-display)!important;color:var(--n19-cal-head)!important}
 :is(html[data-n19-g="calendar"]) .DB71Ge .nBzcnc,:is(html[data-n19-g="calendar"]) .DB71Ge .nBzcnc .UTNHae:not(.KGC9Kd-OYHm6b){border-radius:0!important}

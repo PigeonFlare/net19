@@ -68,6 +68,10 @@ html[data-n19-g="calendar"] {
   & table.ei1jbe[role="grid"] :is(div, .x5FT4e) { font-family: var(--n19-sans) !important; }
   & .qXIcZc .J09ahd, & .qXIcZc .J09ahd > div { border-radius: 4px !important; background-color: var(--n19-field) !important; }
   & [role="complementary"][aria-label="Booking pages"] { display: none !important; }
+  & [role="tab"][data-guest-app-id]:is([aria-label="Contacts"], [aria-label="Maps"]) { display: none !important; }
+  & [role="tablist"]:has(> [role="tab"][data-guest-app-id]) { border-left: 1px solid var(--n19-cal-line) !important; }
+  & button[aria-label$=", today"] { background-color: var(--n19-accent) !important; color: var(--n19-on-accent) !important; }
+  & [role="main"] [role="columnheader"]:has(button[aria-label$=", today"]) .sVASAd.tWjOu { color: var(--n19-accent) !important; }
   & [role="complementary"] button.nUt0vb:is(.uQ1ixe, .H7Plud), & [role="complementary"] button.nUt0vb:is(.uQ1ixe, .H7Plud) .UTNHae { border-radius: 0 !important; }
   & [role="complementary"] .aIwHYe { font: 500 14px/20px var(--n19-display) !important; color: var(--n19-cal-head) !important; }
   & .DB71Ge .nBzcnc, & .DB71Ge .nBzcnc .UTNHae:not(.KGC9Kd-OYHm6b) { border-radius: 0 !important; }

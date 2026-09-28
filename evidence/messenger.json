@@ -1,0 +1,17 @@
+{
+  "theme": "messenger",
+  "era": "messenger.com in 2019: white page, \"Be together, whenever.\" landing with grey rounded fields and a blue Sign In pill; the 2019 web app (Messenger title, Search Messenger, blue #0084ff outgoing bubbles)",
+  "sources": [
+    { "id": "s1", "url": "https://www.digitbin.com/facebook-messenger-web-login/", "date": "2019-04-01", "file": "/home/claude/sweeps/g4-evidence/messenger/login-2019-04-digitbin.jpg", "shows": "landing: logo, Features / For Developers, Be together, whenever., subtitle, Email address or phone number, Password, Sign In, Keep me signed in, Forgotten your password?, store badges" },
+    { "id": "s2", "url": "https://community.brave.app/t/app-for-messenger-is-blocked/65805", "date": "2019", "file": "/home/claude/sweeps/g4-evidence/messenger/login-2019-brave-community.jpeg", "shows": "the same landing" },
+    { "id": "s3", "url": "https://web.archive.org/web/20190615000018id_/https://messenger.com/", "date": "2019-06-15", "file": "/home/claude/sweeps/g4-evidence/messenger/wb-201906.dec.html", "shows": "landing copy: Features, For Developers, Be together, whenever., Sign In, Keep me signed in, Forgot your password?, (c) Facebook 2019., Data Policy and Terms" },
+    { "id": "s4", "url": "https://www.digitbin.com/facebook-messenger-web-login/", "date": "2019-04-01", "file": "/home/claude/sweeps/g4-evidence/messenger/app-2019-04-digitbin.jpg", "shows": "signed-in app: settings gear, Messenger title, compose, Search Messenger, conversation list, call/video/info icons, Options panel (Search in Conversation, Edit Nicknames, Change Color, Change Emoji, Notifications)" }
+  ],
+  "features": [
+    { "match": "^(Main content|Header|Footer|form area|main area|header area|footer area|nav area|section area)$", "in2019": true, "evidence": ["s1", "s3"] },
+    { "match": "^(Messenger|Features|For Developers|Be together, whenever\\.|Email or Phone Number|Email address or phone number|Password|Sign In|Keep me signed in|Forgot your password\\?|Data Policy|Terms|© Facebook 2019\\.)$", "in2019": true, "evidence": ["s1", "s2", "s3"] },
+    { "match": "^(Privacy and Safety|Help Center|Cookie Policy|English \\(US\\)|From Meta Logo|A place for meaningful conversations)$", "in2019": false, "evidence": ["absent from s1-s3 (Meta brand 2021, cookie policy link 2020)"], "action": "hidden" },
+    { "match": "^(Chats|Search Messenger|New message|Settings|Conversation information|Start a voice call|Start a video call)$", "in2019": true, "evidence": ["s4"], "note": "signed-in app controls" },
+    { "match": "^(Meta AI|Ask Meta AI|Stories|Marketplace|Communities|Vanish mode|Notes|Theme|Soundmoji)$", "in2019": false, "evidence": ["absent from s4; Meta AI 2023, communities 2022, notes 2022"], "action": "hidden" }
+  ]
+}

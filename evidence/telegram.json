@@ -1,0 +1,84 @@
+{
+  "theme": "telegram",
+  "era": "Telegram Web 2019 (webogram, web.telegram.org): #5682a3 band over #e7ebf0, white Sign in card, 1010px two-column window with 31% dialogs and 69% history",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://blog.deinhandy.de/telegram-web-im-browser-nutzen-so-funktionierts",
+      "date": "2019-09",
+      "file": "/home/claude/sweeps/g4-evidence/telegram/web-2019-09-deinhandy-1.jpg",
+      "shows": "web.telegram.org sign-in: blue band with logo, Telegram and Next, white Sign in card, phone form"
+    },
+    {
+      "id": "s2",
+      "url": "https://blog.deinhandy.de/telegram-web-im-browser-nutzen-so-funktionierts",
+      "date": "2019-09",
+      "file": "/home/claude/sweeps/g4-evidence/telegram/web-2019-09-deinhandy-2.jpg",
+      "shows": "code step of the same sign-in"
+    },
+    {
+      "id": "s3",
+      "url": "https://github.com/zhukov/webogram (app/less/app.less, desktop.less)",
+      "date": "2019",
+      "shows": "2019 source: band #5682a3 48px, dialogs, history, composer, menus"
+    },
+    {
+      "id": "s4",
+      "url": "https://linuxkamarada.com/en/2019/08/12/20-apps-you-can-use-the-same-way-on-both-linux-and-windows-part-2/",
+      "date": "2019-08-12",
+      "file": "/home/claude/sweeps/g4-evidence/telegram/telegram-desktop-2019-08-linuxkamarada.jpg",
+      "shows": "2019 Telegram chat list and conversation layout"
+    },
+    {
+      "id": "s5",
+      "url": "https://web.archive.org/web/20190614232053/http://web.telegram.org/",
+      "date": "2019-06-14",
+      "file": "/home/claude/sweeps/g4-evidence/telegram/wb-201906.html",
+      "shows": "the webogram app shell served in June 2019"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(dialog area|form area|main area|section area|header area)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "match": "^(Sign in|Log in by phone number.?|Next|Country|Phone number|Code|OK)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "the phone sign-in, reached through the phone-number button"
+    },
+    {
+      "match": "^(Log in by QR Code|Scan with Telegram app on your phone|Log in by passkey|Log in to Telegram by QR Code)$",
+      "in2019": false,
+      "evidence": [
+        "QR login reached web clients in 2021, passkeys 2025; s1 shows only the phone form"
+      ],
+      "action": "hidden (K); Telegram A still shows its QR form, see report"
+    },
+    {
+      "match": "^(Open menu|Search|NewMessageTitle|New message|Settings|Contacts|Saved Messages|Archived chats)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4"
+      ],
+      "note": "app header, search and compose"
+    },
+    {
+      "match": "^(Telegram Premium|Premium|My Stars|Stars|Gifts?|Stories|My Stories|Mini Apps?|Wallet|Business|Boosts?|Translate)$",
+      "in2019": false,
+      "evidence": [
+        "Premium 2022, stories 2023, stars 2024; absent from s3/s4"
+      ],
+      "action": "hidden"
+    }
+  ]
+}

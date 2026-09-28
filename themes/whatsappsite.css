@@ -66,3 +66,7 @@ html[data-n19-wa="faq"] div.x1ve1bff.x9l4bfa svg { color: #fff !important; fill:
 html[data-n19-wa="faq"] h1, html[data-n19-wa="faq"] h1 span { color: var(--n19-teal-light) !important; font-weight: 300 !important; }
 html[data-n19-wa="faq"] h1 span { font-size: 32px !important; line-height: 38px !important; }
 html[data-n19-wa="faq"] h2, html[data-n19-wa="faq"] h2 span { color: var(--n19-head) !important; font-weight: 300 !important; }
+[data-n19-wa-later] { display: none !important; }
+footer :is(a[href*="threads.net"], a[href*="threads.com"], a[href*="youtube.com"], a[href*="instagram.com"], a[href*="/security/advisories"], a[href$="/sitemap"]) { display: none !important; }
+h1[data-n19-wa-hero] { font-size: 44px !important; line-height: 1.2 !important; max-width: 520px !important; }
+section[data-testid="waui_section"]:has(a[href$="/meta-ai"]):has(a[href$="/channels"]), a[href*="web.whatsapp.com/reg/"] { display: none !important; }

@@ -86,10 +86,15 @@ test('Wikipedia opens in its legacy skin', async () => {
   expect(page.url()).toBe('https://en.wikipedia.org/wiki/Cat?useskin=vector');
 });
 
-test('signed in, Reddit opens on old.reddit.com with the 2019 list; signed out it stays put', async () => {
+test('signed in, Reddit opens on old.reddit.com with the 2019 list; signed out, even with a stale session cookie, it stays put', async () => {
   let page = await open('https://www.reddit.com/r/pics/');
   expect(page.url()).toBe('https://www.reddit.com/r/pics/');
   expect(await redirects()).toBe(0);
+  await worker.evaluate(() => { (globalThis as any).fetch = async () => new Response('{}'); });
+  await context.addCookies([{ name: 'reddit_session', value: 'stale', domain: '.reddit.com', path: '/', secure: true, httpOnly: true }]);
+  await page.waitForTimeout(800);
+  expect(await redirects()).toBe(0);
+  await worker.evaluate(() => { (globalThis as any).fetch = async () => new Response('{"data":{"name":"fixture"}}'); });
   await context.addCookies([{ name: 'reddit_session', value: 'fixture', domain: '.reddit.com', path: '/', secure: true, httpOnly: true }]);
   await expect.poll(redirects).toBe(1);
   page = await open('https://www.reddit.com/r/pics/?sort=top');

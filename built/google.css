@@ -8,13 +8,15 @@ form[role="search"] .SDkEP,form[role="search"] .fM33ce,form[role="search"] .dRYY
 form[role="search"] .aajZCb,.UUbT9,.erkvQe{background:var(--n19-bg)!important;box-shadow:var(--n19-shadow)!important;border-radius:0 0 24px 24px!important}
 textarea[name="q"],input[name="q"]{color:var(--n19-text)!important;background:transparent!important;font-size:16px!important}
 form[role="search"] button.UbbAWe,form[role="search"] div.etxtjc:not(:has([aria-label="Search by voice"i])),form[role="search"] button.plR5qb,form[role="search"] [aria-label="AI Mode"i],form[role="search"] [role="button"][aria-label="Search by image"i]{display:none!important}
-:where(:root:not([data-n19-safe])) form[role="search"] [aria-label="Search by voice"i]{display:flex!important}
-form[role="search"] [aria-label="Search by voice"i]{visibility:visible!important;opacity:1!important}
+:where(:root:not([data-n19-safe])) form[role="search"] :not([style*="none"])>[aria-label="Search by voice"i]{display:flex!important}
+form[role="search"] :not([style*="none"])>[aria-label="Search by voice"i]{visibility:visible!important;opacity:1!important}
 form[role="search"] .RNNXgb :is(textarea[name="q"],input[name="q"]),form[role="search"] .RNNXgb .a4bIc{text-decoration:none!important;outline:none!important;border:0!important;box-shadow:none!important}
 :where(:root:not([data-n19-safe])) form[role="search"] .RNNXgb{height:44px!important;min-height:44px!important}
 :where(:root:not([data-n19-safe])) form[role="search"] .RNNXgb .SDkEP,:where(:root:not([data-n19-safe])) form[role="search"] .RNNXgb .dRYYxd,:where(:root:not([data-n19-safe])) form[role="search"] .RNNXgb .iblpc,:where(:root:not([data-n19-safe])) form[role="search"] .RNNXgb .a4bIc{height:44px!important;min-height:0!important}
 :where(:root:not([data-n19-safe])) form[role="search"] .RNNXgb .ywK6Rd{height:44px!important}
-:where(:root:not([data-n19-safe])) form[role="search"] .RNNXgb .dRYYxd .ywK6Rd{display:flex!important;align-items:center!important}
+:where(:root:not([data-n19-safe])) form[role="search"] .RNNXgb .dRYYxd .ywK6Rd:not([style*="none"]){display:flex!important;align-items:center!important}
+:where(:root:not([data-n19-safe])) form[role="search"] .RNNXgb,:where(:root:not([data-n19-safe])) form[role="search"] .RNNXgb .SDkEP{max-width:100%!important;box-sizing:border-box!important}
+form[role="search"] .RNNXgb .ywK6Rd[style*="none"],form[role="search"] .RNNXgb .ywK6Rd[style*="none"] [aria-label="Search by voice"i]{display:none!important}
 :where(:root:not([data-n19-safe])) form[role="search"] .RNNXgb textarea[name="q"]{padding:10px 0!important}
 form[role="search"] .RNNXgb textarea[name="q"]{line-height:22px!important}
 :where(:root:not([data-n19-safe])) form[role="search"] .RNNXgb textarea[name="q"]{margin:0!important;min-height:0!important;height:22px!important;max-height:22px!important;box-sizing:content-box!important;white-space:pre!important;overflow-wrap:normal!important;overflow:hidden!important;resize:none!important}
@@ -130,12 +132,6 @@ hr:has(+[data-n19-shape="pill"]),[data-n19-shape="pill"]+hr{visibility:hidden!im
 .vtSz8d [jsname="wRSfy"]>.sHEJob .V5XKdd{font-size:16px!important;line-height:22px!important;color:var(--n19-link)!important}
 :where(:root:not([data-n19-safe])) .vtSz8d [jsname="wRSfy"]>.sHEJob .Q6qD5e,.vtSz8d:where(:root:not([data-n19-safe])) [jsname="wRSfy"]>.sHEJob .Q6qD5e{margin-top:12px!important}
 .vtSz8d [jsname="wRSfy"]>.sHEJob .Q6qD5e{font-size:13px!important;color:var(--n19-text-3)!important}
-.cUnQKe .Wt5Tfe{border:1px solid var(--n19-card-border)!important;border-radius:8px!important}
-:where(:root:not([data-n19-safe])) .cUnQKe .Wt5Tfe,.cUnQKe:where(:root:not([data-n19-safe])) .Wt5Tfe{padding:12px 16px 0!important}
-.cUnQKe .related-question-pair .p8Jhnd{background:transparent!important;border-radius:0!important;box-shadow:none!important}
-.cUnQKe .related-question-pair .p8Jhnd svg{fill:var(--n19-text-3)!important;color:var(--n19-text-3)!important}
-.cUnQKe .related-question-pair .CSkcDe{font-size:16px!important;color:var(--n19-text)!important}
-.cUnQKe .related-question-pair .ysxiae{border-color:var(--n19-rule)!important;background:var(--n19-rule)!important}
 .b3puKe{background:transparent!important;border-radius:0!important}
 :where(:root:not([data-n19-safe])) .b3puKe,.b3puKe:where(:root:not([data-n19-safe])){padding:4px 0!important;min-height:0!important}
 :where(:root:not([data-n19-safe])) .b3puKe .wDYxhc,.b3puKe:where(:root:not([data-n19-safe])) .wDYxhc{margin:0!important;padding:0!important}
@@ -167,3 +163,5 @@ hr:has(+[data-n19-shape="pill"]),[data-n19-shape="pill"]+hr{visibility:hidden!im
 :where(:root:not([data-n19-safe])) .pWvJNd article,.pWvJNd:where(:root:not([data-n19-safe])) article{padding:16px!important}
 .pWvJNd article [data-n19-shape="card"]{border-color:transparent!important}
 #appbar div[role="navigation"]:is(.IGMoeb,[aria-label="Refinement"i]){display:none!important}
+#rcnt :is(.cUnQKe,[jscontroller="Da4hkd"]):has(.related-question-pair),#botstuff :is(.cUnQKe,[jscontroller="Da4hkd"]):has(.related-question-pair){display:none!important}
+form[role="search"]~* [role="button"][aria-label="Share"i][data-dt],form[role="search"]+div>[role="button"][aria-label="Share"i]{display:none!important}

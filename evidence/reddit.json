@@ -1,0 +1,14 @@
+{
+  "theme": "reddit",
+  "era": "classic reddit as old.reddit.com still serves it (unchanged markup since 2019), used only for truly signed-in users; light mode is left exactly as Reddit draws it, dark mode applies a dark palette to the same layout",
+  "sources": [
+    { "id": "s1", "url": "https://web.archive.org/web/20190601000559/https://www.reddit.com/", "date": "2019-06-01", "file": "/home/claude/sweeps/g4-evidence/reddit/wb-front.png", "shows": "classic front page: subreddit bar, header tabs hot/new/rising/controversial/top/gilded/wiki, login box, reddit premium, listing" },
+    { "id": "s2", "url": "https://web.archive.org/web/2019/https://www.reddit.com/r/pics/comments/", "date": "2019-06", "file": "/home/claude/sweeps/g4-evidence/reddit/wb-post.png", "shows": "classic comments page" },
+    { "id": "s3", "url": "https://web.archive.org/web/2019/https://www.reddit.com/r/pics/", "date": "2019-06", "file": "/home/claude/sweeps/g4-evidence/reddit/wb-sub.png", "shows": "classic subreddit with its own stylesheet" }
+  ],
+  "features": [
+    { "match": "^(hot|new|rising|controversial|top|gilded|wiki|comments|share|save|hide|report|reply|permalink|embed|login|sign up|search|remember me|reset password|submit a new link|submit a new text post|my subreddits|popular|all|random|users|more »|preferences|logout|messages|inbox|get reddit premium|reddit premium|create your own subreddit)$", "in2019": true, "evidence": ["s1", "s2", "s3"] },
+    { "match": "^(File a ticket)$", "in2019": true, "evidence": ["s1"], "note": "Reddit's own network block page shown to the cloud audit browser, not a themed page" },
+    { "match": "^(repeated .*)$", "in2019": true, "evidence": ["s1"] }
+  ]
+}

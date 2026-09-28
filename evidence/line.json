@@ -1,0 +1,79 @@
+{
+  "theme": "line",
+  "era": "2019 LINE landing (line.me/en): white 66px bar with the green LINE wordmark and grey Download | Family Apps | Games | LINE STORE | LINE Out | LINE Pay menu, language select, a campaign hero, then 'Free Messaging Whenever, Wherever', calls, stickers, Timeline, Keep and other feature bands, and a dark footer (Help, User Agreement, Privacy Policy, Social Plugins…). LINE had no dark theme on the web.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://web.archive.org/web/20190701000023/https://line.me/en/",
+      "date": "2019-07",
+      "shows": "rendered 2019 landing: bar with Download / Family Apps / Games / LINE STORE / LINE Out / LINE Pay, hero, Free Messaging Whenever, Wherever",
+      "file": "g5-evidence/line/wb-2019-home.png"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/20190701000023/https://line.me/en/",
+      "date": "2019-07",
+      "shows": "archived HTML text: menu, languages, feature bands (Free Voice & Video Calls, Stickers, Timeline, Keep, Add Friends, Live, Face Play, LINE TODAY, OPENCHAT), footer links Help / User Agreement / Privacy Policy / Social Plugins / Creators Market / Logo Guidelines / Partners / Blog / Careers / LINE Points",
+      "file": "g5-evidence/line/wb-2019-home.png"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|main|section|footer|navigation) area$|^repeated |^<picture>",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "regions, feature bands and the LINE wordmark link"
+    },
+    {
+      "match": "^(Download|Family Apps|Messenger APP|Services|Games|LINE STORE|LINE Out|LINE Pay|EN|English)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "menu; Messenger APP and Services are relabelled Download and Family Apps"
+    },
+    {
+      "match": "^(App Store|Google Play|Desktop|Windows Store|Chrome|APK|iPhone|Android|PC|Mac|Windows)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "download links"
+    },
+    {
+      "match": "^(Help|User Agreement|Privacy Policy|LINE Social Plugins|LINE Creators Market|LINE Logo Guidelines|LINE Partners|LINE Blog|Careers|LINE Points|LINE Corporation)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "footer"
+    },
+    {
+      "match": "^(LINE NEWS|LINE TODAY|LINE OPENCHAT|Timeline|Keep|Live|Free Messaging.*|Life on LINE)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "feature bands; the 'Life on LINE' menu item is hidden and the wordmark links home"
+    },
+    {
+      "match": "^More [Dd]etails$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "hero button (s1 shows 'More Details')"
+    },
+    {
+      "match": "^(All Product|Communication|Entertainment|Lifestyle|Shopping|Fintech|Business|News|Game)$",
+      "in2019": false,
+      "evidence": [
+        "the 2019 page listed services without category filters (s2)"
+      ],
+      "action": "hidden"
+    }
+  ]
+}

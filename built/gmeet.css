@@ -17,3 +17,7 @@ header[role="banner"] div[jsname="vhZMvf"]{border-radius:4px!important}
 header[role="banner"] div:has(>div>div>div[jsname="vhZMvf"]),header[role="banner"] div:has(>div>div[jsname="vhZMvf"]){border-radius:4px!important}
 button[aria-label][data-a11y-recover]{border-radius:4px!important}
 main :is(h1,h2){font-family:"Google Sans", "Product Sans", Roboto, Arial, sans-serif!important;color:var(--n19-text)!important}
+a[aria-label="Google Meet"]>img{content:url("https://www.gstatic.com/images/branding/product/2x/meet_48dp.png")!important}
+:where(:root:not([data-n19-safe])) a[aria-label="Google Meet"]>img{width:40px!important;height:40px!important}
+a[aria-label="Google Meet"]>img{object-fit:contain!important}
+[role="dialog"][aria-label="Receive desktop notifications from Meet"],button[aria-label="Open calendar"],[style*="display: contents"]:has(button[aria-label="Previous week"]){display:none!important}

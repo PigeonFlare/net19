@@ -1,0 +1,317 @@
+{
+  "theme": "gcalendar",
+  "era": "Google Material Theme web redesign (Google Sans, white header, colored Create pill), rolled out to all users Dec 2018 and unchanged through 2019",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://9to5google.com/2018/12/20/google-calendar-material-tweaks-web/",
+      "date": "2018-12-20",
+      "shows": "month view with Create pill, event popover (Material Theme web, Dec 2018 rollout)",
+      "files": [
+        "sweeps/g2-evidence/gcalendar/s1-1.png"
+      ]
+    },
+    {
+      "id": "s2",
+      "url": "https://blogs.mtu.edu/it/2019/04/19/new-google-calendar-feature/",
+      "date": "2019-04-19",
+      "shows": "week view, header, mini month, Search for people, calendar list, side panel Keep/Tasks",
+      "files": [
+        "sweeps/g2-evidence/gcalendar/s2-1.png",
+        "sweeps/g2-evidence/gcalendar/s2-2.png",
+        "sweeps/g2-evidence/gcalendar/s2-3.png"
+      ]
+    },
+    {
+      "id": "s3",
+      "url": "https://jessicadeen.com/posts/2019/calendar-sync-flow/",
+      "date": "2019-01-08",
+      "shows": "month view header",
+      "files": [
+        "sweeps/g2-evidence/gcalendar/s3-1.png",
+        "sweeps/g2-evidence/gcalendar/s3-2.png"
+      ]
+    },
+    {
+      "id": "s4",
+      "url": "https://www.poynter.org/tech-tools/2019/calendars-might-be-the-next-great-online-publishing-tool/",
+      "date": "2019-03-11",
+      "shows": "week view with event popover",
+      "files": [
+        "sweeps/g2-evidence/gcalendar/s4-1.png",
+        "sweeps/g2-evidence/gcalendar/s4-2.png"
+      ]
+    },
+    {
+      "id": "s5",
+      "url": "https://workspaceupdates.googleblog.com/2017/10/new-calendar-user-interface17.html",
+      "date": "",
+      "shows": "2017 redesign (pre-Material-Theme variant)",
+      "files": [
+        "sweeps/g2-evidence/gcalendar/s5-1.png",
+        "sweeps/g2-evidence/gcalendar/s5-2.png",
+        "sweeps/g2-evidence/gcalendar/s5-3.png",
+        "sweeps/g2-evidence/gcalendar/s5-4.png"
+      ]
+    },
+    {
+      "id": "s6",
+      "url": "https://www.awardspace.com/wordpress-tutorials/how-to-add-google-calendar-in-wordpress/",
+      "date": "2019-10",
+      "shows": "settings page, calendar settings nav",
+      "files": [
+        "sweeps/g2-evidence/gcalendar/s6.png"
+      ]
+    },
+    {
+      "id": "s7",
+      "url": "https://www.calendar.com/blog/how-do-i-improve-my-google-calendar/",
+      "date": "2019-08",
+      "shows": "view switcher menu open",
+      "files": [
+        "sweeps/g2-evidence/gcalendar/s7.png"
+      ]
+    },
+    {
+      "id": "s8",
+      "url": "https://flippedlearning.org/syndicated/quick-paperless-lesson-planning-google-calendar-sites/",
+      "date": "2019-03",
+      "shows": "month view with event popover and calendar list",
+      "files": [
+        "sweeps/g2-evidence/gcalendar/s8.png"
+      ]
+    },
+    {
+      "id": "s10",
+      "url": "https://street-smart.co.th/news/google-update/easily-create-an-event-on-calendar-with-the-details-only-one-click/",
+      "date": "2019-06",
+      "shows": "event editor dialog",
+      "files": [
+        "sweeps/g2-evidence/gcalendar/s10.png"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "match": "^Calendar$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "header product name next to the dated calendar logo"
+    },
+    {
+      "match": "^(Skip to main content|Keyboard shortcuts|Accessibility Feedback)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "accessibility skip links, off-screen until focused; they only report visible in a script-less snapshot"
+    },
+    {
+      "match": "^(Main drawer|Go back)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s6"
+      ],
+      "note": "hamburger at the left of the header; settings shows a back arrow"
+    },
+    {
+      "match": "^Today",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s7"
+      ],
+      "note": "outlined Today button"
+    },
+    {
+      "match": "^(Previous|Next) (day|week|month|year|period)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s7"
+      ],
+      "note": "chevrons beside Today and in the mini month"
+    },
+    {
+      "match": "^(Search|Support|Settings menu)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "search, help and settings icons in the header"
+    },
+    {
+      "match": "^(Day|Week|Month|Year|Schedule|4 days|Custom view)(arrow_drop_down)?$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s7"
+      ],
+      "note": "view switcher and its menu"
+    },
+    {
+      "match": "^Google apps$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "app launcher grid"
+    },
+    {
+      "match": "^Google Account",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "account avatar"
+    },
+    {
+      "match": "^(add)?Create(arrow_drop_down)?$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s8"
+      ],
+      "note": "Create pill with the colored plus"
+    },
+    {
+      "match": "^(\\w+ )?\\d{1,2}, (Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday)(, today)?$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s8"
+      ],
+      "note": "mini month day buttons"
+    },
+    {
+      "match": "^(Sunday|Monday|Tuesday|Wednesday|Thursday|Friday|Saturday), \\w+ \\d{1,2}(, today)?$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "week column date buttons"
+    },
+    {
+      "match": "^(Sun|Mon|Tue|Wed|Thu|Fri|Sat)\\d{1,2}$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "week column headings (MON 15)"
+    },
+    {
+      "match": "^repeated div( role=(columnheader|presentation|gridcell|row))?$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s6"
+      ],
+      "note": "grid columns and settings cards"
+    },
+    {
+      "match": "^(search area|Search for people)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "Meet with... / Search for people field under the mini month"
+    },
+    {
+      "match": "^(complementary area|My calendars.*|Other calendars.*|Add other calendars)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s8"
+      ],
+      "note": "calendar list with collapsible groups and the + button"
+    },
+    {
+      "match": "^(Terms|Privacy|Terms of Service)$",
+      "in2019": true,
+      "evidence": [
+        "s6"
+      ],
+      "note": "terms and privacy links at the bottom of the drawer and settings nav"
+    },
+    {
+      "match": "^(Keep|Tasks|Get Add-ons|Hide side panel)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "side panel: Keep, Tasks, divider, + and the collapse chevron"
+    },
+    {
+      "match": "^(Contacts|Maps)$",
+      "in2019": false,
+      "evidence": [
+        "s2 shows only Keep and Tasks in the side panel; Contacts and Maps were added to the Workspace side panel after 2019"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Booking pages|Bookable appointment schedules|Create appointment schedule)$",
+      "in2019": false,
+      "evidence": [
+        "appointment schedules launched 2022 (s2 left panel has none)"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Upgrade|Upgrade for premium features)$",
+      "in2019": false,
+      "evidence": [
+        "Google One/Workspace upgrade chip is 2023+; s2 header has none"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Switch to (Calendar|Tasks)|Calendar|Tasks) (view|toggle)$",
+      "in2019": false,
+      "evidence": [
+        "calendar/tasks segmented toggle is 2023+; s2 header has none"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Ask Gemini|Gemini|Try Gemini.*|Help me schedule)$",
+      "in2019": false,
+      "evidence": [
+        "Gemini is 2023+"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^Settings$",
+      "in2019": true,
+      "evidence": [
+        "s6"
+      ],
+      "note": "settings page title"
+    },
+    {
+      "match": "^(navigation area|main area)$",
+      "in2019": true,
+      "evidence": [
+        "s6"
+      ],
+      "note": "settings nav and content columns"
+    },
+    {
+      "match": "(primary|secondary) time zone|^Swap time zones$|^time zones$|^Add time zone$|^Learn more$",
+      "in2019": true,
+      "evidence": [
+        "s6"
+      ],
+      "note": "General settings: time zone section"
+    }
+  ]
+}

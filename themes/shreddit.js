@@ -220,6 +220,30 @@ globalThis.net19Theme = {
     }
   };
 
+  const LEGAL_LATER = /^(?:Accessibility|Your Privacy Choices|Best of Reddit.*|News|Explore|简体中文|日本語|한국어|Deutsch|Español|Français|Italiano|Português.*)$/;
+  const LEGAL_WORDS = new Map([['Reddit Rules', 'Content Policy']]);
+  const STAT_LATER = /^(?:Contributions|Reddit Age)$/;
+  const hide = el => { if (el && !el.hasAttribute('data-n19-later')) el.setAttribute('data-n19-later', ''); };
+  const after2019 = () => {
+    for (const a of document.querySelectorAll('#right-sidebar-container .legal-links a, .legal-links a')) {
+      const text = a.textContent.replace(/\s+/g, ' ').trim();
+      if (LEGAL_LATER.test(text)) hide(a.closest('li') || a);
+      else if (LEGAL_WORDS.has(text)) a.textContent = LEGAL_WORDS.get(text);
+    }
+    for (const p of document.querySelectorAll('#right-sidebar-container p')) if (STAT_LATER.test(p.textContent.trim())) hide(p.parentElement?.tagName === 'ACTIVATE-FEATURE' ? p.parentElement.parentElement : p.parentElement);
+    for (const button of document.querySelectorAll('button[aria-label="Feed options"]')) hide(button.closest('shreddit-layout-event-setter, rpl-dropdown') || button);
+    for (const card of document.querySelectorAll('rpl-hovercard:has(> span.block):has(.verification-content)')) hide(card.parentElement?.children.length === 1 ? card.parentElement : card);
+    for (const h of document.querySelectorAll('#right-sidebar-container h2')) if (/^(?:View Post in|Top Posts|Related Answers|Related Posts)$/i.test(h.textContent.trim())) hide(h.closest('div.border-solid, aside, section') || h.parentElement);
+    for (const list of document.querySelectorAll('#right-sidebar-container ul:has(a[href*="developers.reddit.com/apps/"])')) {
+      hide(list);
+      const box = list.parentElement;
+      for (const label of box?.querySelectorAll(':scope > :is(h2, h3, span, div, summary)') || []) if (/^Installed Apps$/i.test(label.textContent.trim())) hide(label);
+      const previous = box?.previousElementSibling;
+      if (previous && /^Installed Apps$/i.test(previous.textContent.trim())) hide(previous);
+    }
+    for (const p of document.querySelectorAll('#right-sidebar-container li p, #right-sidebar-container li span')) if (/^Unlocked by /.test(p.textContent.trim()) && !p.children.length) hide(p);
+  };
+
   const FONT_ROOT = 'https://www.redditstatic.com/desktop2x/fonts/';
   const FONTS = [
     ['IBMPlexSans', 'IBMPlexSans/Regular-116bb6d508f5307861d3b1269bc597e7.woff2', { weight: '400' }],
@@ -313,7 +337,7 @@ globalThis.net19Theme = {
       style(auth, AUTH);
       for (const field of auth.querySelectorAll('faceplate-text-input')) style(field, FIELD);
     }
-    header(); sortBar(); heading(); idCard(); trendingTitle(); footer();
+    header(); sortBar(); idCard(); trendingTitle(); footer(); after2019();
     times(document);
   };
   let queued = false;

@@ -1,0 +1,127 @@
+{
+  "theme": "tumblr",
+  "era": "2019 Tumblr: navy #001935/#36465d site in every mode (Tumblr had no light theme until 2021 palettes), white rounded post cards, 't' logo with a translucent search field, header icons, Explore tabs (For You / Trending / Staff Picks / More), right column of recommended blogs and tags. The purple 'Join over 100 million people…' sign-up bar, Communities, Blaze, TumblrMart and Tumblr Live are later.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://chriskyfung.github.io/blog/tumblr-tricks/featured-tips-tricks-and-tools-for-tumblr-bloggers",
+      "date": "2019",
+      "shows": "desktop dashboard: navy page, t logo + Search Tumblr, header icons, post-type bar, Recommended Blogs and Radar",
+      "file": "g5-evidence/tumblr/dash-04.jpg"
+    },
+    {
+      "id": "s2",
+      "url": "https://userstyles.org/styles/168394/old-tumblr-dashboard-colour",
+      "date": "2019",
+      "shows": "dashboard with right-hand blog menu (Posts, Followers, Activity, Drafts…), tracked tags",
+      "file": "g5-evidence/tumblr/dash-01.jpg"
+    },
+    {
+      "id": "s3",
+      "url": "https://medium.com/@colemanschelsea/a-deep-dive-into-tumblrs-information-architecture-a8e05c59b7f9",
+      "date": "2019-2020",
+      "shows": "Explore: For You / Trending / Staff Picks / More tabs, grid and list toggles, masonry posts with notes and action icons, Following tags and 'Check out these blogs'",
+      "file": "g5-evidence/tumblr/explore-02.jpg"
+    },
+    {
+      "id": "s4",
+      "url": "https://create.vista.com/blog/the-beginners-guide-to-tumblr/",
+      "date": "2019-2020",
+      "shows": "Explore For You with tag tiles and Follow buttons, same header",
+      "file": "g5-evidence/tumblr/explore-05.jpg"
+    },
+    {
+      "id": "s5",
+      "url": "https://www.wikihow.com/Use-Tumblr",
+      "date": "2020",
+      "shows": "Search Tumblr field, Trending / Staff Picks tabs with numbered trending topics",
+      "file": "g5-evidence/tumblr/explore-01.jpg"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(nav|main|article|header|aside|search|footer) area$|^Post footer$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "regions and post cards"
+    },
+    {
+      "match": "^repeated ",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "posts (content)"
+    },
+    {
+      "match": "^(Home|Explore|Sign up|Log in|Search|Search Tumblr|Trending|Staff Picks|For You|Videos|Video|More|View in masonry|View in list|Text|Photos|GIFs|Quotes|Chats|Audio|Asks)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s4"
+      ]
+    },
+    {
+      "match": "^(Permalink|Avatar|More options|Comment|Reblog|Like|Share|Reply|Follow|Dismiss Recommendation|Show more blogs|Mute sound|Unmute sound|Image|ALT|Expand|… See all|Keep reading|Read more)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "post controls and recommended blogs"
+    },
+    {
+      "match": "^#",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "post tags (content)"
+    },
+    {
+      "match": "^@?[a-z0-9_-]+( .*)?$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "blog names (lower-case Tumblr URLs) and 'blog title' recommendation rows (content); @mentions"
+    },
+    {
+      "match": "^[a-z0-9.-]+\\.[a-z]{2,}(/\\S*)?$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "post source links (content)"
+    },
+    {
+      "match": "^(About|Apps|Legal|Privacy|Help|Sponsored|Recommended Blogs|Radar)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "sidebar footer and headings"
+    },
+    {
+      "match": "^Now's a pretty good time\\.$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "link text inside a @staff post (content)"
+    },
+    {
+      "match": "^(Communities|Tumblr Live|Blaze|TumblrMart|Get Premium|Go Ad-Free|Post\\+|Join over .* people using Tumblr.*)$",
+      "in2019": false,
+      "evidence": [
+        "Communities 2023, Blaze 2022, TumblrMart 2021, Live 2022"
+      ],
+      "action": "hidden"
+    }
+  ]
+}

@@ -18,6 +18,10 @@ html[data-n19-g="photos"] {
   & [role="navigation"].RSjvib a.oUj9s:is([aria-selected="true"], .uprWmb) :is(.HksvWb, svg, i) { color: var(--n19-accent-text) !important; fill: var(--n19-accent-text) !important; }
   & [role="navigation"].RSjvib .ylKyWb { font: 500 11px/16px var(--n19-sans) !important; letter-spacing: .8px !important; text-transform: uppercase !important; color: var(--n19-text-2) !important; }
   & [role="navigation"].RSjvib a.oUj9s[jsname="LUZAsb"] { display: none !important; }
+  & [role="navigation"] a[role="tab"]:is([href$="/documents"], [href*="/documents/"], [href$="/places"], [href$="/lockedfolder"], [aria-label="Favorites"], [aria-label="Videos"], [aria-label="Recently added"]) { display: none !important; }
+  & [role="navigation"] div:has(+ div a[href$="/albums"]):not(:has(*)) { display: none !important; }
+  & [role="navigation"] c-wiz:has(a[href*="/quotamanagement"]) { display: none !important; }
+  & [data-nudge-id] { display: none !important; }
   & [role="navigation"].RSjvib .AeBiU-LgbsSe, & [role="navigation"].RSjvib .AeBiU-LgbsSe .UTNHae { border-radius: 4px !important; }
   & [role="navigation"].RSjvib .AeBiU-vQzf8d { font-family: var(--n19-sans) !important; }
 

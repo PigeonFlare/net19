@@ -24,7 +24,7 @@ div[data-uia="field-email+container"]>div{border-radius:2px!important}
 [data-uia^="nmhp-card-cta"]{box-shadow:0 1px 0 rgba(0,0,0,.45)!important;text-transform:uppercase!important;font-size:26px!important;font-weight:400!important}
 [data-uia^="nmhp-card-cta"]:hover{background:var(--n19-red-hover)!important}
 [data-uia^="nmhp-card-cta"] svg{color:#fff!important;fill:currentColor}
-[data-uia="nmhp-ads-banner"]{display:none!important}
+[data-uia="nmhp-ads-banner"],[data-uia="nmhp-top-10"],[data-uia="nmhp-trending-now"]{display:none!important}
 button[data-uia^="top-10-element"],button[data-uia^="top-10-element"] img{border-radius:2px!important}
 [data-uia="nmhp-full-value-props"] div{border-radius:2px!important;background-image:none!important}
 [data-uia="nmhp-full-value-props"]>div>div,[data-uia="nmhp-full-value-props"] li{background-color:#222!important}

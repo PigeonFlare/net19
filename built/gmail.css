@@ -22,7 +22,7 @@ html[data-n19-picture="white"]{--n19-logo:url("https://ssl.gstatic.com/ui/v1/ico
 header#gb form button[aria-label="Search mail"] svg{visibility:hidden!important}
 header#gb form button[aria-label="Search mail"]{background:url("https://www.gstatic.com/images/icons/material/system/2x/search_black_24dp.png") center / 24px 24px no-repeat!important;opacity:.7}
 html[data-net19-mode="dark"] header#gb form button[aria-label="Search mail"]{background-image:url("https://www.gstatic.com/images/icons/material/system/2x/search_white_24dp.png")!important}
-html[data-n19-picture="white"] :is(.aeN,.aqn) .TO:not(.nZ) :is(.nU,.bsU,a){text-shadow:0 0 3px rgba(0,0,0,.75), 0 1px 2px rgba(0,0,0,.65)!important}
+html[data-n19-picture="white"] :is(.aeN,.aqn) :is(.TO:not(.nZ) :is(.nU,.bsU,a),:is(.CJ,.aAv,.n0,.CL)){text-shadow:0 0 3px rgba(0,0,0,.75), 0 1px 2px rgba(0,0,0,.65)!important}
 .aeN .CL:has(>a[data-net19-hidden]),.aqn .CL:has(>a[data-net19-hidden]){display:none!important}
 .aeN:has(~.aqn.aIH){display:none!important}
 .aeN .akc,.aqn .akc,[role="navigation"][aria-label="Meet"i],[role="navigation"][aria-label="Chat"i],[role="navigation"][aria-label="Spaces"i],.MiOZsd,.BT1YO{display:none!important}
@@ -64,7 +64,30 @@ html:not([data-n19-picture]) :is(.aqn .TO .nU,.aeN .TO .nU,.aqn .TO .bsU,.aeN .T
 .amn .T-I,.ams{border-radius:4px!important}
 .iY .wrsVRe,.iY .R1Zuwf{display:none!important}
 .XyWBof,.GYfbG,.KYatzc,.eJPjde,.einvLd,.N5.x4Und,div.Zmxtcf{display:none!important}
-.aoI .aDh,.nH.Hd .aDh{background:#404040!important}
-.aoI .aDh .aYF,.aoI .aDh .Ha,.aoI .aDh .Hm img{color:#fff!important}
+.nH.Hd .nH.Hy>.nH>.l.m,.nH.Hd .nH.Hy .aCk{background:#404040!important}
+.nH.Hd .nH.Hy :is(.aYF,.aYF *,h2.a3E){color:#fff!important}
+.nH.Hd .nH.Hy .Hm :is(button,[role="button"]) svg{fill:#fff!important;color:#fff!important}
+.nH.Hd .nH.Hy .Hm img{filter:brightness(0) invert(1)!important}
+.nH.Hd .aDh{background:var(--n19-page)!important}
+.nH.Hd [command="sdt"],.nH.Hd [aria-label^="Help me write"i],.nH.Hd [data-tooltip^="Help me write"i]{display:none!important}
 .aoI .T-I.aoO{border-radius:4px!important;background:var(--n19-accent)!important;color:var(--n19-on-accent)!important}
 .aoI .dC .T-I.hG{border-radius:0 4px 4px 0!important;background:var(--n19-accent)!important}
+html{--n19-cat-primary:#d93025;--n19-cat-social:#1a73e8;--n19-cat-promotions:#188038;--n19-cat-updates:#e37400;--n19-cat-forums:#9334e6;--n19-dropdown:url("https://www.gstatic.com/images/icons/material/system/2x/arrow_drop_down_black_24dp.png")}
+html[data-net19-mode="dark"]{--n19-cat-primary:#f28b82;--n19-cat-social:#8ab4f8;--n19-cat-promotions:#81c995;--n19-cat-updates:#fcad70;--n19-cat-forums:#d7aefb;--n19-dropdown:url("https://www.gstatic.com/images/icons/material/system/2x/arrow_drop_down_white_24dp.png")}
+.J-KU-KO.aIf-aLe::before{background-color:var(--n19-cat-primary)!important}
+.J-KU-KO.aIf-aLe .aKz,.J-KU-KO.aIf-aLe .aKz *{color:var(--n19-cat-primary)!important}
+.J-KU-KO.aKe-aLe::before{background-color:var(--n19-cat-social)!important}
+.J-KU-KO.aKe-aLe .aKz{color:var(--n19-cat-social)!important}
+.J-KU-KO.aJi-aLe::before{background-color:var(--n19-cat-promotions)!important}
+.J-KU-KO.aJi-aLe .aKz{color:var(--n19-cat-promotions)!important}
+.J-KU-KO.aH2-aLe::before{background-color:var(--n19-cat-updates)!important}
+.J-KU-KO.aH2-aLe .aKz{color:var(--n19-cat-updates)!important}
+.J-KU-KO.aHE-aLe::before{background-color:var(--n19-cat-forums)!important}
+.J-KU-KO.aHE-aLe .aKz{color:var(--n19-cat-forums)!important}
+.aAy.J-KU-KO::after{background-color:transparent!important;border-color:transparent!important}
+.aAy.J-KU-KO>.aIf-aLf{background-image:url("https://www.gstatic.com/images/icons/material/system/2x/inbox_gm_googlered600_20dp.png")!important}
+header#gb form button[aria-label="Advanced search options"i] svg{visibility:hidden!important}
+header#gb form button[aria-label="Advanced search options"i]{background:var(--n19-dropdown) center / 24px 24px no-repeat!important;opacity:.54}
+:is([role="tab"],[role="button"])[aria-label="Contacts"]:is([aria-label="Side panel"i] *,.bse-bvF-I){display:none!important}
+:is([role="tab"],[role="button"])[aria-label^="Studio"i]:is([aria-label="Side panel"i] *,.bse-bvF-I),:is([role="tab"],[role="button"])[aria-label*="Workspace Studio"i],[data-net19-studio]{display:none!important}
+.nH.Hd :is([aria-label="Insert signature"i],[data-tooltip="Insert signature"i]){display:none!important}

@@ -80,7 +80,7 @@ On cnn.com, flipping adds about 150–250 ms of main-thread time during load. Th
 - Text over photos or media, including those in sibling layers, is left alone, because its background is unknown.
 - Ink is removed again once the text reads correctly without it.
 
-**Content protection.** A theme's hiding marker that lands on a block with several linked headings or articles is taken back.
+**Content protection.** A theme's hiding marker that lands on a block with several linked headings or articles is taken back. A theme lists the post-2019 sections it hides on purpose, with their 2019 evidence, in `intended` (a selector), and those are left hidden.
 
 The looks follow the Web Design Museum's captures of each site (2019 where one exists, otherwise the nearest year), rebuilt by hand as rules for the live pages rather than copied.
 

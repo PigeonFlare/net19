@@ -1,0 +1,205 @@
+{
+  "theme": "gcontacts",
+  "era": "Material Theme Contacts web (Google Sans, white header, Create contact pill), sole version from early 2019",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.androidpolice.com/2018/11/03/new-google-contacts-web-app-stay-becoming-option-2019/",
+      "date": "2018-11-03",
+      "shows": "new Contacts web (Material Theme) with Create contact pill, drawer, list",
+      "files": [
+        "sweeps/g2-evidence/gcontacts/s1-1.png",
+        "sweeps/g2-evidence/gcontacts/s1-2.png"
+      ]
+    },
+    {
+      "id": "s3",
+      "url": "https://www.androidpolice.com/2020/02/26/google-contacts-for-web-adds-back-the-ability-to-create-multiple-contacts/",
+      "date": "2020-02-26",
+      "shows": "drawer: Contacts, Frequently contacted, Directory, Duplicates, Labels, Import, Export (late 2019 state, published 2020-02)",
+      "files": [
+        "sweeps/g2-evidence/gcontacts/s3-3.png",
+        "sweeps/g2-evidence/gcontacts/s3-4.png"
+      ]
+    },
+    {
+      "id": "s7",
+      "url": "https://www.how2shout.com/how-to/how-to-open-and-create-a-new-contact-on-google-contacts-using-pc.html",
+      "date": "2019-11",
+      "shows": "contact list and detail dialog, drawer with Import/Export/Print/Other contacts",
+      "files": [
+        "sweeps/g2-evidence/gcontacts/s7.png"
+      ]
+    },
+    {
+      "id": "s8",
+      "url": "https://www.digitalinformationworld.com/2018/11/old-google-contacts-retired-2019.html",
+      "date": "2018-11",
+      "shows": "new Contacts home",
+      "files": [
+        "sweeps/g2-evidence/gcontacts/s8.png"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "match": "^Contacts$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s7",
+        "s3"
+      ],
+      "note": "header product name, nav item and list heading"
+    },
+    {
+      "match": "^(navigational drawer|navigation area)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s7"
+      ],
+      "note": "left drawer"
+    },
+    {
+      "match": "^(Add new contact|Create contact|(add)?Create contact)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s7",
+        "s3"
+      ],
+      "note": "Create contact pill; empty-state link"
+    },
+    {
+      "match": "^(person)?Contacts( \\d+)?$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s7"
+      ],
+      "note": "Contacts nav item"
+    },
+    {
+      "match": "^(history)?(Frequent|Frequently contacted)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s7",
+        "s3"
+      ],
+      "note": "Frequently contacted (renamed Frequent)"
+    },
+    {
+      "match": "^(archive)?Other contacts$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s7"
+      ],
+      "note": "Other contacts"
+    },
+    {
+      "match": "^(handyman)?(Merge & fix|Duplicates)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s7",
+        "s3"
+      ],
+      "note": "Duplicates (renamed Merge & fix)"
+    },
+    {
+      "match": "^(download)?Import( contacts)?$",
+      "in2019": true,
+      "evidence": [
+        "s7",
+        "s3"
+      ],
+      "note": "Import in the drawer; empty-state import link"
+    },
+    {
+      "match": "^(Labels|Create label)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s7"
+      ],
+      "note": "Labels group with Create label"
+    },
+    {
+      "match": "^(banner area|search area)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s7"
+      ],
+      "note": "white header with the grey search field"
+    },
+    {
+      "match": "^(Search|Help menu|Settings menu|Support|Google apps|Main menu)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s7"
+      ],
+      "note": "header search, help, settings, launcher, hamburger"
+    },
+    {
+      "match": "^Google Account",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "account avatar"
+    },
+    {
+      "match": "^(Skip to main content|Press question mark to see available shortcut keys)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "accessibility skip links, off-screen until focused"
+    },
+    {
+      "match": "^(deleteTrash|Trash)$",
+      "in2019": false,
+      "evidence": [
+        "Contacts trash (30-day restore) launched 2021; s7 and s3 drawers have none"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^Fix & manage$",
+      "in2019": false,
+      "evidence": [
+        "section heading added with the 2022 redesign; s7 and s3 list Duplicates directly"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Add birthdays|Add more birthdays)$",
+      "in2019": false,
+      "evidence": [
+        "birthday suggestions card is 2023+; s7 has no right panel"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Hide sidebar|Show sidebar)$",
+      "in2019": false,
+      "evidence": [
+        "right sidebar is 2023+"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^More information about Other contacts$",
+      "in2019": false,
+      "evidence": [
+        "info tooltip is 2021+; s7 has none"
+      ],
+      "action": "hidden"
+    }
+  ]
+}

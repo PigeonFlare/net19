@@ -20,8 +20,16 @@ globalThis.net19Theme = {
       if (item && !item.hasAttribute('data-n19-ai')) item.setAttribute('data-n19-ai', '');
     }
   };
+  const LATER_CONTROLS = /^(Downvote|All related \(\d+\)|Recommended|More answers below)$/;
+  const controls = () => {
+    for (const control of document.querySelectorAll('[role="button"], button')) {
+      if (control.hasAttribute('data-net19-hidden')) continue;
+      const label = (control.getAttribute('aria-label') || control.textContent).trim();
+      if (LATER_CONTROLS.test(label)) control.setAttribute('data-net19-hidden', '');
+    }
+  };
   let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; labels(); assistant(); }); };
-  const start = () => { labels(); assistant(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
+  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; labels(); assistant(); controls(); }); };
+  const start = () => { labels(); assistant(); controls(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();

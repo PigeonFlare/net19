@@ -1,0 +1,255 @@
+{
+  "theme": "instagram",
+  "era": "2019 Instagram web: 54px white top bar (glyph/wordmark left, 215px Search box centred, Explore/Activity/Profile icons right), 614px feed with a 293px right rail holding the profile card, a Stories box ('Watch All') and 'Suggestions For You'; profile with 150px round avatar, username + Edit Profile/Follow inline, POSTS/IGTV/SAVED/TAGGED uppercase tabs; logged-out login page with phone art and white box. The left icon rail, Reels, DMs on web (2020-04), Threads and Meta AI are later.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.reddit.com/r/Instagram/comments/avsbrc/instagram_web_showing_an_accurate_description_of/",
+      "date": "2019-02",
+      "shows": "signed-in feed: top bar with search and compass/heart/person, feed column, right rail with Stories box 'Watch All' and 'Suggestions For You' 'See All'",
+      "file": "g5-evidence/instagram/home-06.jpg"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.digitaltrends.com/social-media/how-to-view-instagram-stories-on-your-computer/",
+      "date": "2019",
+      "shows": "right-rail Stories box with names and 'N HOURS AGO', 'Watch All'",
+      "file": "g5-evidence/instagram/home-07.jpg"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.howtogeek.com/668101/how-to-use-instagram-on-the-web-from-your-computer/",
+      "date": "2019-2020",
+      "shows": "top bar with home/compass/heart/profile icons, right rail profile card and Stories box",
+      "file": "g5-evidence/instagram/home-05.jpg"
+    },
+    {
+      "id": "s4",
+      "url": "https://redlillystrategies.com.au/how-to-use-instagram-on-desktop/",
+      "date": "2019",
+      "shows": "profile: glyph|wordmark bar, search, icons; username + Edit Profile + gear; POSTS/IGTV/SAVED/TAGGED; footer ABOUT US SUPPORT PRESS API JOBS PRIVACY TERMS DIRECTORY PROFILES HASHTAGS LANGUAGE",
+      "file": "g5-evidence/instagram/profile-03.jpg"
+    },
+    {
+      "id": "s5",
+      "url": "https://www.dailymotion.com/video/x8jt37w",
+      "date": "2019",
+      "shows": "profile with '© 2019 INSTAGRAM' footer, Edit Profile inline, POSTS IGTV SAVED TAGGED",
+      "file": "g5-evidence/instagram/profile-07.jpg"
+    },
+    {
+      "id": "s6",
+      "url": "https://www.webdesignmuseum.org/gallery/instagram-2019",
+      "date": "2019",
+      "shows": "logged-out landing: phone art, white box with wordmark, fields, Sign up, 'Have an account? Log in', footer",
+      "file": "g5-evidence/instagram/wdm-2019.jpg"
+    },
+    {
+      "id": "s7",
+      "url": "https://web.archive.org/web/2019/https://www.instagram.com/",
+      "date": "2019",
+      "shows": "Wayback render of the logged-out landing",
+      "file": "g5-evidence/instagram/wb-2019-home.png"
+    },
+    {
+      "id": "s8",
+      "url": "https://web.archive.org/web/2019/https://www.instagram.com/instagram/",
+      "date": "2019",
+      "shows": "logged-out profile: bar with search, Log In / Sign Up; 150px avatar; POSTS IGTV TAGGED; bottom 'Log in to Instagram' strip (no modal)",
+      "file": "g5-evidence/instagram/wb-2019-profile.png"
+    },
+    {
+      "id": "s9",
+      "url": "https://www.businessinsider.com/instagram-direct-messages-desktop-web-browser-rollout-how-to-use-2020-4",
+      "date": "2020-04",
+      "shows": "Direct messages arrive on the web in April 2020 (post-2019)",
+      "file": "g5-evidence/instagram/feed-03.jpg"
+    }
+  ],
+  "features": [
+    {
+      "match": "^repeated ",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "content items (posts, grid rows, list rows)"
+    },
+    {
+      "match": "^(Instagram|Home)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "wordmark linking home; the separate Home rail item is hidden"
+    },
+    {
+      "match": "^(Search|Search input)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4",
+        "s8"
+      ]
+    },
+    {
+      "match": "^(Explore|Notifications|Activity|Profile|Activity Feed)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "compass/heart/person icons"
+    },
+    {
+      "match": "^(Create new account|Log ?In|Log in|Sign ?Up|Sign up|Log in with Facebook|Continue with Facebook|Forgot password\\?|Phone number, username, or email|Mobile number, username or email|Password|username|password|email|pass)$",
+      "in2019": true,
+      "evidence": [
+        "s6",
+        "s7",
+        "s8"
+      ]
+    },
+    {
+      "match": "^(Stories|Story by .*|Watch All|Next|Previous|Suggestions For You|Suggested for you|See all|See All|Follow|Following|Switch)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "right-rail Stories and Suggestions; the account Switch link and the Follow button on feed posts are hidden"
+    },
+    {
+      "match": "^(Posts|IGTV|Saved|Tagged|POSTS|IGTV|SAVED|TAGGED|Edit Profile|Edit profile|Options|More options|followers|following|posts)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s5",
+        "s8"
+      ]
+    },
+    {
+      "match": "^(Like|Comment|Share Post|Share|Save|Unlike|Remove|Add a comment…|Post|Close|Go to slide \\d+|Next|Previous)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "post action row and carousel dots"
+    },
+    {
+      "match": "^(About|About Us|Help|Support|Press|API|Jobs|Privacy|Terms|Locations|Directory|Profiles|Hashtags|Language|English)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "2019 footer; About/Help/Locations renamed back"
+    },
+    {
+      "match": "^(footer area|main area|section area|navigation area|nav area|header area|Primary|dialog area|form area)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4",
+        "s6"
+      ],
+      "note": "page regions"
+    },
+    {
+      "match": "^(tablist|contentinfo|banner|navigation|main|dialog|region) area$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s8"
+      ],
+      "note": "profile tab strip and footer regions"
+    },
+    {
+      "match": "'s profile picture$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s8"
+      ],
+      "note": "avatars"
+    },
+    {
+      "match": "^[\\d.,]+[KMB]? (followers|following|posts)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s8"
+      ],
+      "note": "profile counts"
+    },
+    {
+      "match": "^(View .* highlight|.*'s highlight story picture)$",
+      "in2019": true,
+      "evidence": [
+        "s8"
+      ],
+      "note": "story highlights row on profiles"
+    },
+    {
+      "match": "^(close friends|what’s new|what's new|creatives|[\\u2600-\\u27BF\\uD83C-\\uDBFF\\uDC00-\\uDFFF\\uFE0F\\u200D ]+)$",
+      "in2019": true,
+      "evidence": [
+        "s8"
+      ],
+      "note": "highlight titles on @instagram (account content)"
+    },
+    {
+      "match": "^Link icon",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s8"
+      ],
+      "note": "bio website link (content)"
+    },
+    {
+      "match": "^(Carousel|Clip|Video|Photo)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s8"
+      ],
+      "note": "grid tiles are the account's posts (content); the type badge is the post's own"
+    },
+    {
+      "match": "^Discover what",
+      "in2019": true,
+      "evidence": [
+        "s8"
+      ],
+      "note": "bio text of @instagram (content)"
+    },
+    {
+      "match": "^Show more posts from ",
+      "in2019": false,
+      "evidence": [
+        "2019 logged-out profiles ended in a login prompt (s8); load-more button and suggested-account shelf are newer"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Reels|Messages|Direct|New post|Create|Threads|Meta AI|Ask Meta AI|Also from Meta|Settings|More|Meta|Muse|Consumer Health Privacy|Contact Uploading & Non-Users|Meta Verified|Instagram Lite|Popular|Blog|Note\\.\\.\\.|View archive|Message|New)$",
+      "in2019": false,
+      "evidence": [
+        "Reels 2020-08, web DMs 2020-04 (s9), web posting 2021-10, Threads 2023, Meta rename 2021, Notes 2022"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^See photos, videos and more from",
+      "in2019": false,
+      "evidence": [
+        "2019 logged-out profiles used a bottom strip, not a modal (s8)"
+      ],
+      "action": "hidden"
+    }
+  ]
+}

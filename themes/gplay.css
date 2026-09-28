@@ -39,5 +39,11 @@ html[data-n19-g="play"] {
   & .VfPpkd-LgbsSe .VfPpkd-vQzf8d { font: 500 14px/36px var(--n19-sans) !important; letter-spacing: .25px !important; }
 
   & :is([role="dialog"], [role="alertdialog"], .VfPpkd-P5QLlc) { border-radius: 2px !important; }
+  & [role="list"]:has(> [role="listitem"] > a[href*="?device="]) { display: none !important; }
+  & [role="list"]:has(> [role="listitem"] > [role="button"][data-single-select]:is([aria-label="Phone"], [aria-label="Tablet"], [aria-label="Desktop"], [aria-label="Chromebook"], [aria-label="Watch"], [aria-label="TV"], [aria-label="Car"])) { display: none !important; }
+  & button[data-video-url][aria-label^="Play "] { display: none !important; }
+  & [data-is-touch-wrapper]:has(> button[disabled]):has(+ [data-is-touch-wrapper]) { display: none !important; }
+  & section:has(a[href*="/store/apps/datasafety"]) { display: none !important; }
+  & [data-enable-ratings-copy-without-device-context] [data-is-touch-wrapper] { display: none !important; }
   & :is([role="menu"], .VfPpkd-xl07Ob) { border-radius: 2px !important; }
 }

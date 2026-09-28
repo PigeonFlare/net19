@@ -49,14 +49,39 @@
     return values;
   };
   const device = matchMedia('(prefers-color-scheme: dark)');
-  const FLIP = 'invert(1) hue-rotate(180deg) contrast(.88)';
-  const UNFLIP = 'contrast(1.13636) hue-rotate(180deg) invert(1)';
+  const FLIP_DARK = 'invert(1) hue-rotate(180deg) contrast(.88)';
+  const UNFLIP_DARK = 'contrast(1.13636) hue-rotate(180deg) invert(1)';
+  const FLIP_LIGHT = 'invert(1) hue-rotate(180deg) brightness(var(--net19-lift,1))';
+  const UNFLIP_LIGHT = 'brightness(var(--net19-unlift,1)) hue-rotate(180deg) invert(1)';
   const MEDIA = 'img,video,canvas,iframe,embed,object,image,[data-net19-keep]';
-  const flipCSS = `html[data-net19-flip]{filter:${FLIP}!important}` +
-    `html[data-net19-flip] :is(dialog:modal,:popover-open,:fullscreen):not(${MEDIA}){filter:${FLIP}!important}` +
-    `html[data-net19-flip] :is(${MEDIA}):not([data-net19-keep] *,:fullscreen,img[src*=".svg" i]:not([data-net19-real]),img[src^="data:image/svg" i]:not([data-net19-real]),[data-net19-flat]${theme.flat ? ',' + theme.flat : ''}){filter:${UNFLIP}!important}` +
-    `html[data-net19-flip] [data-net19-keep] [data-net19-reflip]{filter:${FLIP}!important}` +
-    `html[data-net19-flip] [data-net19-reflip] :is(${MEDIA}){filter:${UNFLIP}!important}`;
+  const flipRules = (tone, flipFilter, unflipFilter) => {
+    const on = `html[data-net19-flip]${tone === 'light' ? '[data-net19-tone="light"]' : ':not([data-net19-tone="light"])'}`;
+    return `${on}{filter:${flipFilter}!important}` +
+      `${on} :is(dialog:modal,:popover-open,:fullscreen):not(${MEDIA}){filter:${flipFilter}!important}` +
+      `${on} :is(${MEDIA}):not([data-net19-keep] *,:fullscreen,img[src*=".svg" i]:not([data-net19-real]),img[src^="data:image/svg" i]:not([data-net19-real]),[data-net19-flat]${theme.flat ? ',' + theme.flat : ''}){filter:${unflipFilter}!important}` +
+      `${on} [data-net19-keep] [data-net19-reflip]{filter:${flipFilter}!important}` +
+      `${on} [data-net19-reflip] :is(${MEDIA}){filter:${unflipFilter}!important}`;
+  };
+  const flipCSS = flipRules('dark', FLIP_DARK, UNFLIP_DARK) + flipRules('light', FLIP_LIGHT, UNFLIP_LIGHT);
+  const PAPER = .98;
+  const MAX_LIFT = 1.4;
+  const tone = () => {
+    const root = document.documentElement;
+    if (target !== 'light' || !root.hasAttribute('data-net19-flip')) return;
+    const samples = [];
+    for (const [x, y] of [[.5, .5], [.3, .4], [.7, .4], [.5, .8], [.2, .7], [.8, .7]]) {
+      for (let n = document.elementFromPoint(innerWidth * x, innerHeight * y); n; n = n.parentElement) {
+        const c = rgba(getComputedStyle(n).backgroundColor);
+        if (c && c[3] >= .9) { samples.push((.2126 * c[0] + .7152 * c[1] + .0722 * c[2]) / 255); break; }
+      }
+    }
+    if (!samples.length) return;
+    samples.sort((a, b) => a - b);
+    const shade = samples[Math.floor(samples.length / 2)];
+    const lift = Math.min(MAX_LIFT, Math.max(1, PAPER / Math.max(.01, 1 - shade)));
+    root.style.setProperty('--net19-lift', lift.toFixed(3));
+    root.style.setProperty('--net19-unlift', (1 / lift).toFixed(3));
+  };
   let flipSheet = null, keepObserver = null, target = 'dark', interactions = false;
   const colorCache = new Map();
   let pen = null;
@@ -76,7 +101,8 @@
   };
   const lum = ([r, g, b]) => (.2126 * r + .7152 * g + .0722 * b) / 255;
   const unflip = ([r, g, b, a]) => {
-    const [cr, cg, cb] = [r, g, b].map(v => Math.min(1, Math.max(0, (v / 255 - .5) / .88 + .5)));
+    const lift = +(document.documentElement.style.getPropertyValue('--net19-lift') || 1);
+    const [cr, cg, cb] = [r, g, b].map(v => Math.min(1, Math.max(0, target === 'light' ? v / 255 / lift : (v / 255 - .5) / .88 + .5)));
     const [hr, hg, hb] = [-.574 * cr + 1.43 * cg + .144 * cb, .426 * cr + .43 * cg + .144 * cb, .426 * cr + 1.43 * cg - .856 * cb];
     return `rgba(${[hr, hg, hb].map(v => Math.round(255 * (1 - Math.min(1, Math.max(0, v))))).join(',')},${a})`;
   };
@@ -275,7 +301,7 @@
     keepObserver?.disconnect(); keepObserver = null;
     for (const el of document.querySelectorAll('[data-net19-keep],[data-net19-reflip],[data-net19-scrim],[data-net19-flat],[data-net19-real]')) for (const a of ['data-net19-keep', 'data-net19-reflip', 'data-net19-scrim', 'data-net19-flat', 'data-net19-real']) el.removeAttribute(a);
     seen = new WeakSet(); small = new Set();
-    if (!on) { root.removeAttribute('data-net19-flip'); root.removeAttribute('data-net19-canvas'); return; }
+    if (!on) { for (const a of ['data-net19-flip', 'data-net19-canvas', 'data-net19-tone']) root.removeAttribute(a); root.style.removeProperty('--net19-lift'); root.style.removeProperty('--net19-unlift'); return; }
     target = mode;
     if (!flipSheet) {
       flipSheet = document.createElement('style'); flipSheet.id = 'net19-flip';
@@ -283,6 +309,9 @@
       (document.head || root).append(flipSheet);
     }
     root.setAttribute('data-net19-flip', '');
+    if (mode === 'light') root.setAttribute('data-net19-tone', 'light'); else root.removeAttribute('data-net19-tone');
+    requestAnimationFrame(tone);
+    addEventListener('load', () => setTimeout(tone, 300), { once: true });
     const canvas = () => {
       const bare = [root, document.body].every(n => !n || (rgba(getComputedStyle(n).backgroundColor) || [0, 0, 0, 0])[3] === 0);
       if (bare) root.setAttribute('data-net19-canvas', '');
@@ -317,6 +346,7 @@
     if (!document.documentElement.hasAttribute('data-net19-flip')) return;
     for (const el of document.querySelectorAll('[data-net19-keep],[data-net19-reflip],[data-net19-scrim]')) for (const a of ['data-net19-keep', 'data-net19-reflip', 'data-net19-scrim']) el.removeAttribute(a);
     seen = new WeakSet(); small = new Set();
+    tone();
     keepPhotos([document.body]);
   };
   const apply = (force = false) => {

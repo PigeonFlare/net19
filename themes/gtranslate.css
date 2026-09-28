@@ -19,3 +19,4 @@ button[role="tab"][data-language-code] .VfPpkd-jY41G-V67aGc { text-transform: up
 button[role="tab"][data-language-code][aria-selected="true"] .VfPpkd-jY41G-V67aGc { color: var(--n19-tr-tab-on) !important; }
 button[role="tab"][data-language-code] .VfPpkd-AznF2e-wEcVzc { border-top-width: 3px !important; border-color: var(--n19-tr-tab-on) !important; }
 
+button[aria-label="Website translation"], button[aria-label="Image translation"], a[href*="cloud.google.com/translat"], :has(> span > a[href*="cloud.google.com/translat"]), div:has(> img[alt="Google Cloud logo"]) { display: none !important; }

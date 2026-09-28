@@ -31,3 +31,22 @@ input[data-testid="search-input"] ~ div span, input[data-testid="search-input"]:
 [data-encore-id="card"][aria-labelledby*=":artist:"] :is(img, [data-testid="card-image"], [data-testid="card-image"] > div) { border-radius: 50% !important; }
 [class*="EntryPoint_footer"] { display: none !important; }
 [class*="EntryPoint_textareaWrapper"] { border-radius: 4px !important; box-shadow: none !important; background-image: none !important; }
+[data-encore-id="buttonPrimary"] > span, [data-encore-id="buttonPrimary"] [class*="button-primary__inner"], [data-encore-id="buttonSecondary"], [data-testid="login-button"], [data-testid="login-button"] > span { border-radius: 500px !important; }
+[data-testid="action-bar-row"] [data-testid="play-button"] { width: auto !important; min-width: 0 !important; height: 32px !important; }
+[data-testid="action-bar-row"] [data-testid="play-button"] > span { width: auto !important; min-width: 120px !important; height: 32px !important; padding: 0 36px !important; border-radius: 500px !important; box-sizing: border-box !important; display: inline-flex !important; align-items: center !important; justify-content: center !important; }
+[data-testid="action-bar-row"] [data-testid="play-button"]:has(.n19-play) > span > span:not(.n19-play) { display: none !important; }
+.n19-play { font-size: 12px !important; font-weight: 700 !important; letter-spacing: .16em !important; text-transform: uppercase !important; color: #fff !important; line-height: 32px !important; white-space: nowrap !important; }
+[data-testid="action-bar-row"] button[aria-label="Shuffle"], [data-testid="action-bar-row"] button[aria-label^="Enable Shuffle" i], [data-testid="action-bar-row"] button[aria-label^="Disable Shuffle" i],
+[data-testid="action-bar-row"] button:has(> span > [data-encore-id="icon"]):is([aria-label^="List" i], [aria-label^="Compact" i]),
+[data-testid="action-bar-row"] div:has(> button[aria-label$="view" i]),
+[data-testid="carousel-scroller"] a[href$="/audiobooks"], section:has(> div [data-testid="rich-title-row-shelf-header"] a[href$="/audiobooks"]),
+[data-testid="grid-container"]:has([data-testid="rich-title-row-shelf-header"] a[href$="/audiobooks"]) { display: none !important; }
+[data-testid="carousel-scroller"] button[data-encore-id="chip"] { background: transparent !important; color: #b3b3b3 !important; border-radius: 0 !important; padding: 0 12px !important; height: 40px !important; box-shadow: none !important; position: relative !important; }
+[data-testid="carousel-scroller"] button[data-encore-id="chip"] span { font-size: 12px !important; font-weight: 700 !important; letter-spacing: .16em !important; text-transform: uppercase !important; color: inherit !important; background: transparent !important; }
+[data-testid="carousel-scroller"] button[data-encore-id="chip"]:hover { color: #fff !important; }
+[data-testid="carousel-scroller"] button[data-encore-id="chip"][aria-checked="true"] { color: #fff !important; }
+[data-testid="carousel-scroller"] button[data-encore-id="chip"][aria-checked="true"]::after { content: ""; position: absolute; left: 50%; bottom: 4px; width: 20px; height: 2px; margin-left: -10px; background: var(--n19-green); }
+[data-testid="top-result-card"]:not(:has(a:is([href^="/album/"], [href^="/track/"], [href^="/playlist/"], [href^="/show/"], [href^="/episode/"], [href^="/audiobook/"]))) :is(img, [data-testid="card-image"]) { border-radius: 50% !important; }
+main [data-testid="adaptiveEntityTitle"] h1, main [data-testid="entityTitle"] h1, main section[data-testid="artist-page"] h1 { font-size: clamp(32px, 3.75vw, 48px) !important; line-height: 1.15 !important; letter-spacing: -.02em !important; }
+aside[aria-label="Now playing view"], button[aria-label="Show Now Playing view"], button[aria-label="Hide Now Playing view"], [data-testid="action-bar-row"] button[role="combobox"],
+section[aria-label="Music videos"], section[aria-label="Profiles"], [data-testid="carousel-scroller"] a[href$="/users"] { display: none !important; }

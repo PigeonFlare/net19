@@ -39,14 +39,16 @@ form[role="search"] .aajZCb, .UUbT9, .erkvQe { background: var(--n19-bg) !import
 textarea[name="q"], input[name="q"] { color: var(--n19-text) !important; background: transparent !important; font-size: 16px !important; }
 form[role="search"] button.UbbAWe, form[role="search"] div.etxtjc:not(:has([aria-label="Search by voice" i])), form[role="search"] button.plR5qb, form[role="search"] [aria-label="AI Mode" i],
 form[role="search"] [role="button"][aria-label="Search by image" i] { display: none !important; }
-form[role="search"] [aria-label="Search by voice" i] { display: flex !important; visibility: visible !important; opacity: 1 !important; }
+form[role="search"] :not([style*="none"]) > [aria-label="Search by voice" i] { display: flex !important; visibility: visible !important; opacity: 1 !important; }
 form[role="search"] .RNNXgb :is(textarea[name="q"], input[name="q"]), form[role="search"] .RNNXgb .a4bIc {
   text-decoration: none !important; outline: none !important; border: 0 !important; box-shadow: none !important; }
 
 form[role="search"] .RNNXgb { height: 44px !important; min-height: 44px !important; }
 form[role="search"] .RNNXgb .SDkEP, form[role="search"] .RNNXgb .dRYYxd, form[role="search"] .RNNXgb .iblpc, form[role="search"] .RNNXgb .a4bIc { height: 44px !important; min-height: 0 !important; }
 form[role="search"] .RNNXgb .ywK6Rd { height: 44px !important; }
-form[role="search"] .RNNXgb .dRYYxd .ywK6Rd { display: flex !important; align-items: center !important; }
+form[role="search"] .RNNXgb .dRYYxd .ywK6Rd:not([style*="none"]) { display: flex !important; align-items: center !important; }
+form[role="search"] .RNNXgb, form[role="search"] .RNNXgb .SDkEP { max-width: 100% !important; box-sizing: border-box !important; }
+form[role="search"] .RNNXgb .ywK6Rd[style*="none"], form[role="search"] .RNNXgb .ywK6Rd[style*="none"] [aria-label="Search by voice" i] { display: none !important; }
 form[role="search"] .RNNXgb textarea[name="q"] { padding: 10px 0 !important; line-height: 22px !important; margin: 0 !important; min-height: 0 !important;
   height: 22px !important; max-height: 22px !important; box-sizing: content-box !important; white-space: pre !important; overflow-wrap: normal !important; overflow: hidden !important; resize: none !important; }
 form[role="search"] .RNNXgb input[name="q"] { height: 42px !important; padding-top: 0 !important; padding-bottom: 0 !important; margin: 0 !important; }
@@ -158,12 +160,6 @@ hr:has(+ [data-n19-shape="pill"]), [data-n19-shape="pill"] + hr { visibility: hi
 .vtSz8d [jsname="wRSfy"] > .sHEJob .V5XKdd { font-size: 16px !important; line-height: 22px !important; color: var(--n19-link) !important; }
 .vtSz8d [jsname="wRSfy"] > .sHEJob .Q6qD5e { margin-top: 12px !important; font-size: 13px !important; color: var(--n19-text-3) !important; }
 
-.cUnQKe .Wt5Tfe { border: 1px solid var(--n19-card-border) !important; border-radius: 8px !important; padding: 12px 16px 0 !important; }
-.cUnQKe .related-question-pair .p8Jhnd { background: transparent !important; border-radius: 0 !important; box-shadow: none !important; }
-.cUnQKe .related-question-pair .p8Jhnd svg { fill: var(--n19-text-3) !important; color: var(--n19-text-3) !important; }
-.cUnQKe .related-question-pair .CSkcDe { font-size: 16px !important; color: var(--n19-text) !important; }
-.cUnQKe .related-question-pair .ysxiae { border-color: var(--n19-rule) !important; background: var(--n19-rule) !important; }
-
 .b3puKe { background: transparent !important; border-radius: 0 !important; padding: 4px 0 !important; min-height: 0 !important; }
 .b3puKe .wDYxhc { margin: 0 !important; padding: 0 !important; }
 .b3puKe .zh0Yff { display: block !important; line-height: 22px !important; }
@@ -188,3 +184,6 @@ hr:has(+ [data-n19-shape="pill"]), [data-n19-shape="pill"] + hr { visibility: hi
 .pWvJNd article { border: 1px solid var(--n19-card-border) !important; border-radius: 8px !important; padding: 16px !important; }
 .pWvJNd article [data-n19-shape="card"] { border-color: transparent !important; }
 #appbar div[role="navigation"]:is(.IGMoeb, [aria-label="Refinement" i]) { display: none !important; }
+
+#rcnt :is(.cUnQKe, [jscontroller="Da4hkd"]):has(.related-question-pair), #botstuff :is(.cUnQKe, [jscontroller="Da4hkd"]):has(.related-question-pair) { display: none !important; }
+form[role="search"] ~ * [role="button"][aria-label="Share" i][data-dt], form[role="search"] + div > [role="button"][aria-label="Share" i] { display: none !important; }

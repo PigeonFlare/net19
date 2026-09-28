@@ -3,8 +3,8 @@ globalThis.net19Theme = {
   watch: ['data-theme', 'data-tux-color-scheme'],
   light: { '#ff3b5c': '#fe2c55', '#ff5370': '#ff4368', '#ff4b69': '#ff3c61', '#ff4363': '#fe345b' },
   dark: { '#ff3b5c': '#fe2c55', '#ff5370': '#ff4368', '#ff4b69': '#ff3c61', '#ff4363': '#fe345b', '#000': '#121212' },
-  later: /^(?:shop|tiktok shop|sell on tiktok shop|live|go live|live tools|live studio|explore|friends|activity|short dramas|get coins|get app|pc app|download app|open app|tiktok studio|create tiktok effects|effects|rewards|coins|ai-generated|creator labeled as ai-generated|ai self|symphony|tiktok symphony)$/i,
-  keepLabels: /^(?:for you|following|profile|more|log in|search)$/i,
+  later: /^(?:shop|tiktok shop|sell on tiktok shop|live|go live|live tools|live studio|explore|friends|activity|short dramas|get coins|get app|pc app|download app|open app|tiktok studio|create tiktok effects|effects|rewards|coins|ai-generated|creator labeled as ai-generated|ai self|symphony|tiktok symphony|photo|photos)$/i,
+  keepLabels: /^(?:for you|profile|more|log in|search)$/i,
 };
 (() => {
   const ITEM = '[data-e2e="recommend-list-item-container"]';
@@ -39,10 +39,21 @@ globalThis.net19Theme = {
       follow.hidden = !real;
     }
   };
+  const verified = () => {
+    const box = document.querySelector('[data-e2e="user-page"] [class*="--DivUserIdentifierWrapper"] > [class*="--DivUserTextWrapper"]');
+    const badge = box?.querySelector(':scope > svg');
+    const pill = box?.querySelector(':scope > [data-n19-tt="verified"]');
+    if (!badge) { pill?.remove(); return; }
+    if (pill && pill.previousElementSibling === badge) return;
+    pill?.remove();
+    const tag = make('span', 'verified');
+    tag.append(badge.cloneNode(true), 'Verified account');
+    badge.after(tag);
+  };
   let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
+  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); verified(); }); };
   const start = () => {
-    fix();
+    fix(); verified();
     new MutationObserver(records => { for (const r of records) if (!(r.target instanceof Element && r.target.closest('[data-n19-tt]'))) { later(); return; } })
       .observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['href', 'src'] });
   };

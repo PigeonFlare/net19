@@ -1,0 +1,216 @@
+{
+  "theme": "gdrive",
+  "era": "2019 Drive and editors: the 2018 Material refresh (Google Sans titles, white header with a bottom rule, white New pill with the four-colour plus, blue-pill selected nav; Docs with the blue doc icon, title + star + folder, File...Add-ons Help menus, a flat white toolbar with dropdown font size, grey canvas)",
+  "sources": [
+    {
+      "id": "s2",
+      "url": "https://seibert.group/blog/en/microsoft-word-online-vs-google-docs-comparing-twelve-features/",
+      "date": "2019-09",
+      "shows": "Docs editor: doc icon, title, star, move-to-folder, menus File Edit View Insert Format Tools Add-ons Help Accessibility, 'Last edit was 4 days ago' link, activity dashboard, comments, blue Share, avatar; toolbar undo redo print spellcheck paint-format 100% Title Arial 18 (dropdown) B I U A highlight link comment image align line-spacing more, pencil mode, collapse ^; outline button; Explore panel",
+      "file": "/home/claude/sweeps/g1-evidence/gdrive/s2-seibert-explore.jpg"
+    },
+    {
+      "id": "s3",
+      "url": "https://workspaceupdates.googleblog.com/2019/08/drive-shortcuts-beta.html",
+      "date": "2019-08",
+      "shows": "Google's own Drive GIF: Drive logo, Search Drive field, New pill with four-colour plus, nav Priority / My Drive / Shared drives / Shared with me (blue pill) / Recent / Starred / Trash, grid toggle and details (i), file cards",
+      "file": "/home/claude/sweeps/g1-evidence/gdrive/s3-gblog-frame.png"
+    },
+    {
+      "id": "s6",
+      "url": "https://gsuiteupdates.googleblog.com/2019/04/drive-offiline-mode.html",
+      "date": "2019-04",
+      "shows": "Drive header: grey search field with dropdown arrow at the right",
+      "file": "/home/claude/sweeps/g1-evidence/gdrive/s6-gsu-offline-d4.png"
+    },
+    {
+      "id": "s7",
+      "url": "https://gsuiteupdates.googleblog.com/2019/07/more-header-footer-options-docs.html",
+      "date": "2019-07",
+      "shows": "Docs page with ruler and header options",
+      "file": "/home/claude/sweeps/g1-evidence/gdrive/s7-gsu-headerfooter-frame.png"
+    },
+    {
+      "id": "g11",
+      "url": "https://itsblog.manhattan.edu/2019/05/write-now-send-later-with-scheduled.html",
+      "date": "2019-04",
+      "shows": "2019 G Suite side panel (Calendar, Keep, Tasks, +) shared by Gmail, Docs and Drive",
+      "file": "/home/claude/sweeps/g1-evidence/gmail/s11-manhattan-frame.png"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Menu bar|menubar area|banner area|search area|navigation area|toolbar area|main area|region area|section area)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "page regions"
+    },
+    {
+      "match": "^repeated ",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "document list rows, files, menu entries (content)"
+    },
+    {
+      "match": "^(Docs home|Docs|Drive|Sheets|Slides|Sheets home|Slides home)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "product icon / logo links"
+    },
+    {
+      "match": "^(Rename|Star|Move|Document status: Saved to Drive\\.?|Last edit was .*|See document activity|Activity dashboard)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "title, star, move-to-folder, save status and the 'Last edit was ...' link (drawn as text again)"
+    },
+    {
+      "match": "^(Show all comments.*|Open comment history|Comments)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ]
+    },
+    {
+      "match": "^Share\\b",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "blue Share button"
+    },
+    {
+      "match": "^(Google Account|Google apps|Main menu|Support|Settings)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "account, apps grid, main menu; Drive's ? and gear sat left of the apps grid (cropped by the G Suite logo in s3)"
+    },
+    {
+      "match": "^(File|Edit|View|Insert|Format|Tools|Add-ons|Help|Accessibility|Data|Slide|Arrange)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "menu bar; the current 'Extensions' menu is relabelled Add-ons"
+    },
+    {
+      "match": "^(Undo|Redo|Print|Spelling and grammar check|Paint format|Zoom|Styles|Font|Font size|Bold|Italic|Underline|Text color|Highlight color|Insert link|Add comment|Insert image|More|Align|Line (&|and) paragraph spacing|Line spacing|Numbered list|Bulleted list|Decrease indent|Increase indent|Clear formatting|Editing mode|Mode|Hide the menus|Show the menus)\\b",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "toolbar; font size is a plain box as in 2019 (the - / + steppers are hidden)"
+    },
+    {
+      "match": "^(Zoom|Styles|Font size) list\\..*|^(Arial|Normal text|Title|Heading \\d|Subtitle)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "toolbar dropdown values"
+    },
+    {
+      "match": "^(Show side panel|Hide side panel|Calendar|Keep|Tasks|Get Add-ons)$",
+      "in2019": true,
+      "evidence": [
+        "g11",
+        "s3"
+      ],
+      "note": "G Suite side panel (2018)"
+    },
+    {
+      "match": "^(Hide tabs & outlines|Show tabs & outlines|Show document outline|Hide document outline|Back|Outline)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "document outline toggle (the outline button at the left of the page in s2); the tab list inside it is hidden for single-tab documents"
+    },
+    {
+      "match": "^(DocsDocsDocs|Docs|Start a new document|Template gallery|More actions\\.?|Recent documents|Owner Filter Options|List view|Grid view|Sort options|Open file picker|Search bar|Search)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "Docs home: template strip, Recent documents with owner filter, list/grid, sort and file picker (same 2018 Material chrome as the Drive GIF)"
+    },
+    {
+      "match": "^(Search Drive|Search in Drive|Advanced search|Search Google Drive)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s6"
+      ],
+      "note": "Drive search field (placeholder set back to 'Search Drive') with the dropdown arrow"
+    },
+    {
+      "match": "^(New|My Drive|My DriveCollapsed|Computers|ComputersCollapsed|Shared drives|Shared with me|Recent|Starred|Trash|Backups|Storage|Priority)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "Drive nav"
+    },
+    {
+      "match": "^(Get more storage|Upgrade storage|Buy storage|[\\d.]+ ?[GMT]B of [\\d.]+ ?[GT]B used)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "storage meter and upgrade button under the nav"
+    },
+    {
+      "match": "^(Grid|List|Grid layout|List layout|View details.*|Sort|More actions.*|xx)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "layout toggle (only the other layout's icon, as in 2019), details (i), sort, row menu"
+    },
+    {
+      "match": "^(Home|Projects|Spam|Workspaces|Activity)$",
+      "in2019": false,
+      "evidence": [
+        "Drive Home 2023, Spam folder 2022, Projects 2025"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Type|People|Modified|Source|Filters|No filters applied)$",
+      "in2019": false,
+      "evidence": [
+        "Drive search chips 2022"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Extensions|Checklist.*|Search the menus.*|Decrease font size.*|Increase font size.*|Details|Security limitations|Document tabs|Add tab|Tab \\d+|Tab options|Contacts|Maps)$",
+      "in2019": false,
+      "evidence": [
+        "Extensions menu renamed 2021, checklists 2022, toolbar menu search 2021, font size steppers 2021, document tabs 2024, Contacts/Maps side panel 2020+"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Ask Gemini|Try Gemini|Gemini|Upgrade|Upgrade for premium features|Meet|Present to a call|Join a call)$",
+      "in2019": false,
+      "evidence": [
+        "Gemini 2024, Meet in editors 2020"
+      ],
+      "action": "hidden"
+    }
+  ]
+}

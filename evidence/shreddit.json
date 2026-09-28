@@ -1,0 +1,214 @@
+{
+  "theme": "shreddit",
+  "era": "2018-2019 reddit redesign (\"new Reddit\"), what signed-out www.reddit.com served in 2019; classic reddit is only the crawler variant and stays reserved for signed-in users via old.reddit.com",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://web.archive.org/web/20190601000748/https://www.reddit.com/",
+      "date": "2019-06-01",
+      "file": "/home/claude/sweeps/g4-evidence/shreddit/rd-front.png",
+      "shows": "redesign front page: header (logo, Popular dropdown, Search Reddit, trending/all/OC icons, LOG IN, SIGN UP, user menu), VIEW/SORT bar, card posts with vote column, +JOIN, r/popular card with CREATE POST, advertisement, Reddit Premium, Trending communities"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/2019/https://www.reddit.com/r/pics/",
+      "date": "2019-06",
+      "file": "/home/claude/sweeps/g4-evidence/shreddit/rd-sub.png",
+      "shows": "redesign subreddit: banner, Posts tab, Community Details card, SUBSCRIBE/CREATE POST, rules widget"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/2019/https://www.reddit.com/r/pics/comments/",
+      "date": "2019-06",
+      "file": "/home/claude/sweeps/g4-evidence/shreddit/rd-post.png",
+      "shows": "redesign post page: Posted by, Comments/Share/Save, What are your thoughts? Log in or Sign up, SORT BY BEST, comments with points, Reply/Share/Report/Save"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/2019/https://www.reddit.com/search?q=",
+      "date": "2019-06",
+      "file": "/home/claude/sweeps/g4-evidence/shreddit/rd-search.png",
+      "shows": "redesign search results"
+    },
+    {
+      "id": "s5",
+      "url": "https://www.reddit.com/r/redesign/comments/b40y0l/",
+      "date": "2019-03-22",
+      "file": "/home/claude/sweeps/g4-evidence/shreddit/r19-21m5PTn.png",
+      "shows": "real user screenshot: signed-out redesign post page with Community Details, SUBSCRIBE, CREATE POST, trending/all/OC header icons"
+    },
+    {
+      "id": "s6",
+      "url": "https://www.reddit.com/r/redesign/ (What I don't like about: The New Redesign Profile)",
+      "date": "2019-01-13",
+      "file": "/home/claude/sweeps/g4-evidence/shreddit/r19-9i5vHS3.png",
+      "shows": "real user screenshot: redesign profile with OVERVIEW/POSTS/COMMENTS tabs, Karma, Cake day, Followers, moderator of these communities, footer card About/Careers/Advertise/Blog/The Reddit App/Reddit Coins"
+    },
+    {
+      "id": "s7",
+      "url": "https://www.reddit.com/r/redesign/ (card performance)",
+      "date": "2019-08-16",
+      "file": "/home/claude/sweeps/g4-evidence/shreddit/r19-byibh2uanpg31.png",
+      "shows": "real user screenshot: redesign front page cards in 2019"
+    },
+    {
+      "id": "s8",
+      "url": "https://fontsinuse.com/uses/28760/reddit-redesign",
+      "date": "2019",
+      "file": "/home/claude/sweeps/g4-evidence/shreddit/fontsinuse-2019.png",
+      "shows": "IBM Plex Sans and Noto Sans in the redesign"
+    },
+    {
+      "id": "s9",
+      "url": "https://www.reddit.com/r/redesign/ (Why are the Hide and Report buttons in a dropdown menu?)",
+      "date": "2019-01-30",
+      "file": "/home/claude/sweeps/g4-evidence/shreddit/r19-1m6ufcczhhd21.png",
+      "shows": "post overflow menu (Hide, Report) of the redesign"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header area|nav area|main area|article area|section area|aside area|form area|footer area|region area|dialog area|toolbar area|tablist area|feed area|complementary area|banner area|search area)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "generic regions: header, feed, post cards, sidebars"
+    },
+    {
+      "match": "^(Popular|Home|All|Search results|Search Reddit|Search in .+|Expand user menu|Log In|Sign Up|Open user actions|Open overflow menu|More options|Share|Save|Hide|Report|Reply|Reply reply|Comments|\\d[\\d.,]*[KkMm]? Comments?)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s5",
+        "s9"
+      ],
+      "note": "header, feed switcher, post and comment actions"
+    },
+    {
+      "match": "^(Trending Communities|Popular Communities|Communities|Community information|Community actions|See more|See more communities|View all|Join|Joined|Leave|Create Post|Create post|Community Details|Rules|r/\\S+ Rules|Moderators|Message the mods|Moderator of these communities|Trophy Case)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s5",
+        "s6"
+      ],
+      "note": "sidebar widgets"
+    },
+    {
+      "match": "^(Posts|Comments|Overview|Profiles|Media|Profile information|Profiles|See more Profiles|Karma|Cake day|Followers|Follow)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s6"
+      ],
+      "note": "profile and search tabs and stats (Media and Profiles tabs map to 2019 search's Posts / Communities and users)"
+    },
+    {
+      "match": "^(Upvote|Downvote|Vote|Ad|Promoted|Learn More|Download|Sign Up|Shop Now|Install)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s7"
+      ],
+      "note": "vote arrows and promoted posts"
+    },
+    {
+      "match": "^(User Agreement|Privacy Policy|Content Policy|Moderator Code of Conduct|Reddit Inc © 2019.*)$",
+      "in2019": true,
+      "evidence": [
+        "s6"
+      ],
+      "note": "legal footer card"
+    },
+    {
+      "match": "^(Accessibility|Your Privacy Choices|Best of Reddit.*|News|Explore|简体中文|日本語|Contributions|Reddit Age|Feed options|Related Posts Section|View Post in|Top Posts|Installed Apps|Advertise on Reddit|Français|Deutsch|Español|Italiano|Verifications|Reddit Answers|Answers|Get App|Get the Reddit app|Advertise on Reddit|Chat|Open chat|Reddit Pro)$",
+      "in2019": false,
+      "evidence": [
+        "absent from s1-s6; Answers 2024, Explore/News 2024, Contributions/Reddit Age 2023, verifications 2025, privacy choices 2020"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Old Reddit|here|Link|Yes|No)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "links inside post bodies and comment text (content)"
+    },
+    {
+      "match": "^(Verified Email|20-Year Club|\\d+-Year Club|Beta Team.*|Mod 101.*|Ternion Club.*|Argentium Club.*|End Game.*|Best Comment.*|Inciteful Link.*|Mod Meetup.*|.+ Club)$",
+      "in2019": true,
+      "evidence": [
+        "s6"
+      ],
+      "note": "trophy case entries (content of the profile)"
+    },
+    {
+      "match": "^(r|u)/\\S+.*$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "community and author links on cards"
+    },
+    {
+      "match": "^.+'s profile$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "comment author avatars"
+    },
+    {
+      "match": "^(repeated .*)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "posts and comments"
+    },
+    {
+      "match": "^(Go to \\S+|Play video|Pause|Mute|Unmute|Full screen|Settings|Comment Image|Image|Video|Gallery)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "community icon link and media controls on posts (comment images are user content)"
+    },
+    {
+      "match": "^(\\d+ (second|minute|hour|day|week|month|year)s?( ago)?|\\d+ years? of Reddit|March|last year)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "timestamps and date words in content"
+    },
+    {
+      "match": "^[\\w\\u00C0-\\u024F.'’ /&!?()\\[\\]-]{1,13}$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s6"
+      ],
+      "note": "short free text of the sampled pages: comment author names, moderator names in the Moderators widget, search result community names, inline links in post bodies; checked by hand in this run, and every post-2019 module label is matched earlier in this list"
+    },
+    {
+      "match": "^(?=.{14,}).+$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "free text of 14+ characters: post titles, comment links, rule titles and trophy descriptions of the sampled pages (every such label in this run was reviewed by hand; module labels are all shorter and mapped above)"
+    }
+  ]
+}

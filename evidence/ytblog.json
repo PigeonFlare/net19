@@ -1,0 +1,74 @@
+{
+  "theme": "ytblog",
+  "era": "Official YouTube Blog in 2019 (youtube.googleblog.com, Blogger Google-blog template; blog.youtube replaced it in 2020): #eee header band, YouTube logo + 'Official Blog' in light Roboto, 24px Roboto 400 post titles, 17px grey dates, #4184F3 links, flat post list with rules; no dark mode existed, the dark variant keeps the same flat layout on #181818",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://web.archive.org/web/20191101000000/https://youtube.googleblog.com/",
+      "date": "2019-11-01",
+      "file": "/home/claude/sweeps/g3-evidence/ytblog/wb-home-20191101-posts-light-bare.png",
+      "shows": "Official YouTube Blog home (Blogger Google-blog template, offline render of the capture with its own CSS): #eee 256px header band with YouTube logo and 'Official Blog' in Roboto 300 52px, list of posts with 24px Roboto 400 titles (rgba(0,0,0,.87)), 17px grey dates, Twitter/Facebook share icons, rules between posts; right sidebar with 'Search blog ...', Labels, Archive, Feed, Follow @youtube, Facebook Follow, 'Learn more in the YouTube Help Center'; links #4184F3"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/20191105000000/https://youtube.googleblog.com/2019/10/",
+      "date": "2019-11-05",
+      "file": "/home/claude/sweeps/g3-evidence/ytblog/wb-month-201910-light-bare.png",
+      "shows": "October 2019 archive page of the same blog: same header, post list with titles, dates and full post bodies (17px/32px text, inline images), labels"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20191101000000/https://youtube.googleblog.com/",
+      "date": "2019-11-01",
+      "file": "/home/claude/sweeps/g3-evidence/ytblog/wb-home-20191101/raw.html",
+      "shows": "the template's own CSS in the capture: .header-outer #eee, .header-title h2 Roboto 300 52px #282828, #main .post .title a 24px 400, .publishdate 17px #757575, .post-content 17px/32px, a #4184F3, max-width 978px"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(AI|AI, \\d+ of \\d+|Shorts|Shorts, \\d+ of \\d+|Podcast|Podcast, \\d+ of \\d+|Made On YouTube|Made On YouTube, \\d+ of \\d+|YouTube Shorts|Yoodles)$",
+      "in2019": false,
+      "evidence": [
+        "not in s1-s2: AI, Shorts (2020), Podcast (2023) and Made On YouTube (2023) topics, Yoodles"
+      ],
+      "action": "hidden (later labels)"
+    },
+    {
+      "match": "^(YouTube\\ Official\\ Blog|News\\ \\&\\ Events|News\\ and\\ Events|Creator\\ \\&\\ Artist\\ Stories|Creator\\ and\\ Artist\\ Stories|Culture\\ \\&\\ Trends|Culture\\ and\\ Trends|Inside\\ YouTube|Feed|Topics|Subscribe|Skip\\ to\\ Main\\ Content|Read\\ more|Load\\ more\\ articles|next\\ post|next\\ video|Go\\ to\\ the\\ first\\ card|Go\\ to\\ the\\ last\\ card|Click\\ to\\ expand|View\\ more\\ filter\\ options|Select\\ a\\ language|OK,\\ got\\ it|here|Share|Related\\ Topics|More\\ like\\ this|Discover\\ More|Our\\ Channels|Our\\ Commitments|About\\ YouTube|About|Press|Jobs|How\\ YouTube\\ Works|YouTube\\ Products|For\\ Business|For\\ Creators|Advertising|Developers|Help|Privacy|Terms|Policy|Copyright|Brand\\ Guidelines|Community\\ Forum|Facebook|Instagram|LinkedIn|X\\ \\(Twitter\\)|YouTube|YouTube\\ Music|YouTube\\ Premium|YouTube\\ TV|YouTube\\ Kids|YouTube\\ Gaming|YouTube\\ VR|YouTube\\ Originals|YouTube\\ Studio|YouTube\\ Creators|YouTube\\ Ads|YouTube\\ Liaison|YouTube\\ News|YouTube\\ Culture\\ \\&\\ Trends|YouTubeInsider|TeamYouTube|TeamYouTube\\ \\[Help\\]|Creator\\ Insider|Creator\\ Academy|Creators\\ Research|Creators\\ Services\\ Directory|Creators\\ for\\ Change|Creating\\ for\\ Kids|CSAI\\ Match|Social\\ Impact|Artists|Creators|YouTube\\ TV\\ Help\\ Page\\.|(Latest|Trending|Events|Products and Features|Creators|YouTube Music|Culture and Trends|Experience YouTube|Made On YouTube), \\d+ of \\d+)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "header navigation (2019 Labels and Archive in the sidebar, now header categories and Topics), Feed and Subscribe (2019 Feed and Follow), share, related posts and footer links (X (Twitter) is the 2019 Twitter link renamed)"
+    },
+    {
+      "match": "^(Main navigation|header area|nav area|footer area|article area|section area|dialog area|repeated .*)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "page regions, post lists and cards"
+    },
+    {
+      "match": "^\\S+( \\S+){3,}$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "content: post titles and headings (four or more words); the list of posts changes daily"
+    },
+    {
+      "match": "^(Coachella|Creation|ESPN\\ Fantasy|Fandom|Health|Learning\\ and\\ Education|Live|Policy\\ \\&\\ Safety|Products\\ and\\ Features|Studio|TV|The\\ next\\ 20:\\ Powering\\ the\\ future\\ of\\ entertainment\\ together\\ at\\ Made\\ on\\ |Work\\ Diaries)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "content: post titles, headings, topic labels and tag links seen on the sampled pages (2019 posts carried labels too)"
+    }
+  ]
+}

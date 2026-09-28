@@ -6,3 +6,13 @@ html:not([data-n19-g="gemini"]) :is(div[jsname="XtrG1d"],div[jsname="sBSZBf"],di
 html:not([data-n19-g="gemini"]) div[jsname="gkC8fc"]{border-radius:0!important;box-shadow:none!important;border-right:1px solid var(--n19-divider)!important}
 html:not([data-n19-g="gemini"]):where(:root:not([data-n19-safe])) div[jsname="gkC8fc"]{box-sizing:border-box!important}
 html:not([data-n19-g="gemini"]) div[jsname="gkC8fc"]>:is(div[role="region"],div[class]){border-radius:0!important}
+header#gb a[aria-label="Chat logo"]>img{content:url("https://www.gstatic.com/images/branding/product/2x/chat_48dp.png")!important}
+:where(:root:not([data-n19-safe])) header#gb a[aria-label="Chat logo"]>img{width:40px!important;height:40px!important}
+header#gb a[aria-label="Chat logo"]>img{object-fit:contain!important}
+button[jsname="TrXBg"],[data-section-type]:has([data-shortcut-container-id]){display:none!important}
+button[role="switch"][aria-label="Unread"],div:has(~div button[role="switch"][aria-label="Unread"]):not(:has(button,a,input)),button[aria-label^="Select split pane mode"],button[aria-label="Thread"][aria-pressed],button[aria-label*="Toggle split pane mode"],button[aria-label="Close zero state reply pane"]{display:none!important}
+[data-supports-arrows]:has([data-is-multi-line-mini-callout]){display:none!important}
+:has(>[role="tablist"]>[role="tab"][data-guest-app-id]){display:none!important}
+[role="button"][aria-label="Hide side panel"],[role="button"][aria-label="Show side panel"],header#gb [role="button"][aria-label="Main menu"]{display:none!important}
+div:has(>div>span>button[aria-label="Close zero state reply pane"]){display:none!important}
+div[jsname="tfhEld"][role="button"]{text-transform:uppercase!important;font:500 11px/16px Roboto, Arial, sans-serif!important;letter-spacing:.8px!important;color:var(--n19-text-2)!important}

@@ -1,0 +1,73 @@
+{
+  "theme": "whatsappsite",
+  "era": "whatsapp.com in 2019: #1ebea5 header band with white uppercase links, \"Simple. Secure. Reliable messaging.\", WhatsApp Business and end-to-end encryption sections, #273443 footer",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://web.archive.org/web/20190615004541id_/https://www.whatsapp.com/",
+      "date": "2019-06-15",
+      "file": "/home/claude/sweeps/g4-evidence/whatsappsite/wb-201906.html",
+      "shows": "home copy and structure: WhatsApp Web, Features, Download, Security, FAQ, language menu, hero, Download now, WhatsApp Business, End-to-end encryption / Security by Default, footer columns WhatsApp / Company / Download / Help, 2019 (c) WhatsApp Inc., Privacy & Terms"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/2019*/whatsapp.com (see project doc 2026-09-messenger-site-themes.md)",
+      "date": "2019",
+      "shows": "colors, logo static.whatsapp.net/rsrc.php/yv/r/-r3j-x8ZnM7.svg, DOWNLOAD NOW pill"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.securitynewspaper.com/2019/07/08/check-if-your-whatsapp-is-hacked-or-not/",
+      "date": "2019-07-08",
+      "file": "/home/claude/sweeps/g4-evidence/whatsapp/web-whatsapp-2019-07-securitynewspaper.png",
+      "shows": "2019 WhatsApp teal #1ebea5 band styling shared with the site"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header area|footer area|section area|nav area|main area|presentation area|Whatsapp Help Center home page)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ]
+    },
+    {
+      "match": "^(Simple\\. Secure\\. Reliable messaging\\.|Security by Default|WhatsApp Business|Download WhatsApp|Download now|WhatsApp Web|Features|Download|Security|FAQ|Help Center|Blog|Careers|About us|Brand Center|Contact Us|Privacy|Privacy & Terms|Terms & Privacy Policy|Mobile|Desktop|Tablet|Apps|For Business|Business|Twitter|Facebook|English|X \\(Twitter\\))$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ]
+    },
+    {
+      "match": "^(WhatsApp's homepage|Features|Privacy feature on WhatsApp|Blog on WhatsApp|Available apps on WhatsApp|WhatsApp Help Center|Business feature on WhatsApp|Log in to the WhatsApp app|Download the WhatsApp app|Login to WhatsApp Web|WhatsApp Blogs for our latest announcements|WhatsApp's security features|WhatsApp's mission statement|Visit WhatsApp's brand center|WhatsApp's privacy features|Get WhatsApp support|WhatsApp Help Center homepage|WhatsApp legal policies)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "accessible labels of the header and footer links that s1 had (Features, Security, Download, WhatsApp Web, Blog, About, Careers, Brand Center, FAQ, Privacy & Terms)"
+    },
+    {
+      "match": "^(New! Call on WhatsApp Web|With private messaging and calling.*|Never miss a moment.*|Keep in touch.*|Say what.*|Threads|Youtube|Instagram|WhatsApp's latest security advisories|Sitemap|Message privately|Stay up to date|Already\\s*downloaded\\?|Sign up)$",
+      "in2019": false,
+      "evidence": [
+        "2021+ marketing sections and links; s1 home has only the hero, Business and encryption sections"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Learn about whatsapp business|Download on the App Store|Get it on Google Play|Other download options.*|Previous slide|Next slide|WhatsApp Terms of Service|WhatsApp Privacy Policy)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "Learn more about WhatsApp Business link, store badges and the list of other platforms (Mac/PC, Android, iPhone, Windows Phone in 2019), shown here as a slider; legal links"
+    },
+    {
+      "match": "^(repeated .*)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ]
+    }
+  ]
+}

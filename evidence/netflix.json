@@ -1,0 +1,72 @@
+{
+  "theme": "netflix",
+  "era": "2019 logged-out Netflix (dark only): black page, poster-collage hero with dark overlay, ~50px bold hero title, red #e50914 uppercase call to action, 8px #222 separators, #303030 FAQ bars, white 60px email field, black sign-in card",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://web.archive.org/web/20191215000000/https://www.netflix.com/us/",
+      "date": "2019-12-15",
+      "file": "/home/claude/sweeps/g3-evidence/netflix/wb-home-20191215-light-bare.png",
+      "shows": "logged-out homepage (Wayback served the Netherlands English page; offline render): black page, red NETFLIX logo, red Sign In, poster collage hero with dark overlay, 'Unlimited films, TV programmes and more.' ~50px bold centered, 'Watch anywhere. Cancel at any time.', red 'JOIN FREE FOR A MONTH' button, 8px #222 separators between story rows (Enjoy on your TV, Download, Watch everywhere), FAQ accordion, footer 'Questions? Call', FAQ, Help Centre, Account, Media Centre, Investor Relations, Jobs, Redeem gift cards, Buy gift cards, Ways to Watch, Terms of Use, Privacy, Cookie Preferences, Corporate Information, Contact Us, Speed Test, Legal Notices, Netflix Originals, language select"
+    },
+    {
+      "id": "s2",
+      "url": "https://goodui.org/leaks/",
+      "date": "2019-03",
+      "file": "/home/claude/sweeps/g3-evidence/netflix/goodui-leak005-b.jpg",
+      "shows": "US homepage A/B variant from early 2019: 'Unlimited movies, TV shows, and more.' centered, 'Watch anywhere. Cancel anytime.', red 'WATCH FREE FOR 30 DAYS >' buttons, free-trial timeline, story rows"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.bluesnap.com/",
+      "date": "2019-06",
+      "file": "/home/claude/sweeps/g3-evidence/netflix/bluesnap-2019-06-offering.png",
+      "shows": "2019 plan tabs page: No commitments / Watch anywhere / Pick your price tabs, red 'JOIN FREE FOR A MONTH', plan table"
+    },
+    {
+      "id": "s4",
+      "url": "https://www.bluesnap.com/",
+      "date": "2019-06",
+      "file": "/home/claude/sweeps/g3-evidence/netflix/bluesnap-2019-06-register.png",
+      "shows": "2019 sign-up step: plan table, 'Sign up to start your free month', email/password fields, blue Register button, header Sign In"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Browse Games|Netflix House|Netflix Shop|Games|Trending Now|Next|Previous)$",
+      "in2019": false,
+      "evidence": [
+        "not in s1-s4: games 2021, Netflix Shop 2021, Netflix House 2025, the Top 10 'Trending Now' row on the logged-out page 2023"
+      ],
+      "action": "hidden (theme CSS for the Top 10 row, later labels for the links)"
+    },
+    {
+      "match": "^(Ad Choices|Do Not Sell or Share My Personal Information)$",
+      "in2019": false,
+      "evidence": [
+        "not in the s1 footer; US privacy links added 2020-2022"
+      ],
+      "note": "kept: legal notices",
+      "action": "kept - lead decision needed"
+    },
+    {
+      "match": "^(Netflix|Sign\\ In|Get\\ Started|Join\\ Netflix|Continue|Search|EnglishEspañol|English|Español|FAQ|Help\\ Center|Account|Media\\ Center|Investor\\ Relations|Jobs|Redeem\\ Gift\\ Cards|Buy\\ Gift\\ Cards|Ways\\ to\\ Watch|Terms\\ of\\ Use|Privacy|Cookie\\ Preferences|Corporate\\ Information|Contact\\ Us|Speed\\ Test|Legal\\ Notices|Only\\ on\\ Netflix|Get\\ Help|Get\\ help\\ signing\\ in|Can't\\ sign\\ in\\ to\\ Netflix|Reset\\ password|Update\\ email|Update\\ payment\\ method|Explore\\ Topics|Plans\\ and\\ Pricing|Parental\\ controls\\ on\\ Netflix|Request\\ TV\\ shows\\ or\\ movies|How\\ to\\ sign\\ up\\ for\\ Netflix|What\\ is\\ Netflix\\?|How\\ much\\ does\\ Netflix\\ cost\\?|Where\\ can\\ I\\ watch\\?|How\\ do\\ I\\ cancel\\?|What\\ can\\ I\\ watch\\ on\\ Netflix\\?|Is\\ Netflix\\ good\\ for\\ kids\\?|email|password|userLoginId|How\\ can\\ we\\ help\\?|Need\\ more\\ help\\?|Quick\\ Links|Sign\\ up\\ or\\ restart\\ your\\ membership\\ with\\ Netflix\\.|1-844-569-7700( \\(Toll-Free\\))?)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s4"
+      ],
+      "note": "header, hero sign-up, FAQ, sign-in form, help centre and footer links (Only on Netflix is the 2019 'Netflix Originals' link renamed)"
+    },
+    {
+      "match": "^(header area|footer area|form area|nav area|main area|repeated .*)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "page regions and lists"
+    }
+  ]
+}

@@ -130,28 +130,38 @@ globalThis.net19Theme = {
   addEventListener('popstate', leaveAiMode);
 })();
 (() => {
-  const LATER_MODULES = /^(?:what people are saying|discussions and forums|short videos|things to know|perspectives|ask anything in ai mode|from sources across the web)$/i;
-  const LATER_BUTTONS = /^(?:customize|preferred sources)$/i;
+  const LATER_MODULES = /^(?:what people are saying|discussions and forums|short videos|things to know|perspectives|ask anything in ai mode|from sources across the web|people also ask|others (?:also )?ask|related questions|common questions|questions & answers|dive deeper(?: in ai mode)?|explore more in ai mode)$/i;
+  const LATER_BUTTONS = /^(?:customize|preferred sources|dive deeper in ai mode|ai mode|show more ai answers|read more)$/i;
   const STOP = ['rso', 'center_col', 'search', 'rcnt', 'main', 'botstuff', 'bres', 'rhs'];
   const WEB_RESULT = 'a[href] h3.LC20lb, a.zReHs h3';
+  const QUESTION = '.related-question-pair, [jscontroller][data-q][data-lk], [data-initq]';
   const text = el => (el.textContent || '').replace(/\s+/g, ' ').trim();
   const hide = el => { el.setAttribute('data-net19-hidden', ''); el.style.setProperty('display', 'none', 'important'); };
+  const widen = anchor => {
+    let block = anchor;
+    while (block.parentElement && !STOP.includes(block.parentElement.id) && block.parentElement !== document.body) {
+      const parent = block.parentElement;
+      const headings = [...parent.querySelectorAll('[role="heading"][aria-level="2"], h2')].filter(h => !block.contains(h) && text(h) && !LATER_MODULES.test(text(h)));
+      const results = [...parent.querySelectorAll(WEB_RESULT)].filter(h => !block.contains(h));
+      if (headings.length || results.length) break;
+      block = parent;
+    }
+    return block;
+  };
   const modules = () => {
-    for (const heading of document.querySelectorAll('#rso [role="heading"][aria-level="2"], #rso h2, #botstuff [role="heading"][aria-level="2"]')) {
+    for (const heading of document.querySelectorAll('#rcnt [role="heading"], #rcnt h2, #botstuff [role="heading"], #botstuff h2')) {
       if (heading.closest('[data-net19-hidden]') || !LATER_MODULES.test(text(heading))) continue;
-      let block = heading;
-      while (block.parentElement && !STOP.includes(block.parentElement.id) && block.parentElement !== document.body) {
-        const parent = block.parentElement;
-        const headings = [...parent.querySelectorAll('[role="heading"][aria-level="2"], h2')].filter(h => h !== heading && !block.contains(h) && text(h));
-        const results = [...parent.querySelectorAll(WEB_RESULT + ', .related-question-pair [role="button"][aria-expanded], .related-question-pair .dnXCYb')].filter(h => !block.contains(h));
-        if (headings.length || results.length) break;
-        block = parent;
-      }
-      if (block !== heading) hide(block);
+      const block = widen(heading);
+      if (block !== heading && !block.querySelector(WEB_RESULT)) hide(block);
+    }
+    for (const question of document.querySelectorAll(QUESTION)) {
+      if (question.closest('[data-net19-hidden]') || question.closest('#rcnt, #botstuff') === null) continue;
+      const block = widen(question);
+      if (!block.querySelector(WEB_RESULT)) hide(block);
     }
     for (const button of document.querySelectorAll('#rso [role="button"], #rso button, #rso a')) {
       if (button.hasAttribute('data-net19-hidden') || button.closest('.zReHs') || !LATER_BUTTONS.test(text(button))) continue;
-      if (button.closest('.MjjYud, .ULSxyf') && button.getBoundingClientRect().height <= 48) hide(button);
+      if (button.closest('.MjjYud, .ULSxyf') && button.getBoundingClientRect().height <= 48 && !button.querySelector('h3')) hide(button);
     }
   };
   const alpha = color => { const m = String(color).match(/[\d.]+/g); if (!m || m.length < 3) return 0; return m.length > 3 ? +m[3] : 1; };

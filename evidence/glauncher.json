@@ -1,0 +1,13 @@
+{
+  "theme": "glauncher",
+  "era": "2019 app launcher: the 2017-2020 white card with a three-column grid of product icons, square hover outline, 'More' and 'Even more from Google'",
+  "sources": [
+    { "id": "s1", "url": "http://wafflebytes.blogspot.com/2017/07/google-app-launcher-is-getting-update.html", "date": "2017-07 (design used until the 2020 launcher update)", "shows": "white launcher card, three columns, icons with labels (Mail, Drive, Calendar, Docs, Sheets, Forms, Slides, Sites, My Account, Groups, Contacts, Cloud Search, Search), square hover outline, scroll", "file": "/home/claude/sweeps/g1-evidence/glauncher/s1-wafflebytes-frame.png" },
+    { "id": "s2", "url": "https://web.archive.org/web/2019/https://www.google.com/search?q=weather", "date": "2019", "shows": "2019 Google header with the apps grid and Sign in", "file": "/home/claude/sweeps/g1-evidence/google/s3-wayback-serp.png" }
+  ],
+  "features": [
+    { "match": "^(complementary area|Sign in|More from Google.*|More|Even more from Google)$", "in2019": true, "evidence": ["s1", "s2"] },
+    { "match": "^(Account|My Account|Search|Maps|YouTube|Play|News|Gmail|Mail|Contacts|Drive|Calendar|Translate|Photos|Shopping|Finance|Docs|Sheets|Slides|Forms|Sites|Groups|Books|Blogger|Hangouts|Keep|Jamboard|Earth|Collections|Arts and Culture|Google Ads|Merchant Center|Podcasts|Travel|Duo|Chrome|Chrome Web Store|Store|Google Store|Fi|Fi Wireless|Google Fi|Google Analytics|Analytics|YouTube Music|Classroom|Voice|Google One|Cloud Search|Google\\+)(, row .*)?$", "in2019": true, "evidence": ["s1"], "note": "products offered in the 2019 launcher (tiles differ per account)" },
+    { "match": "^(Meet|Chat|Gemini|NotebookLM|Google Wallet|Saved)(, row .*)?$", "in2019": false, "evidence": ["consumer Meet and Chat 2020, Saved renamed from Collections 2020, Wallet 2022, Gemini 2024, NotebookLM 2023"], "action": "hidden" }
+  ]
+}

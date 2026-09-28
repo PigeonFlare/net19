@@ -1,0 +1,161 @@
+{
+  "theme": "gclassroom",
+  "era": "Material Theme Classroom (2018 redesign: white title bar, Stream/Classwork/People tabs, class banner), unchanged through 2019",
+  "sources": [
+    {
+      "id": "s2",
+      "url": "https://alicekeeler.com/2019/03/04/happy-google-classroom-stream-back/",
+      "date": "2019-03-04",
+      "shows": "stream with posts (Mar 2019)",
+      "files": [
+        "sweeps/g2-evidence/gclassroom/s2-3.png",
+        "sweeps/g2-evidence/gclassroom/s2-4.png",
+        "sweeps/g2-evidence/gclassroom/s2-5.png"
+      ]
+    },
+    {
+      "id": "s3",
+      "url": "https://blog.google/products-and-platforms/products/education/new-year-new-classroom/",
+      "date": "2019-01-08",
+      "shows": "Classroom updates incl. classwork page, + menu (Jan 2019)",
+      "files": [
+        "sweeps/g2-evidence/gclassroom/s3-5.png"
+      ]
+    },
+    {
+      "id": "s4",
+      "url": "https://alicekeeler.com/2019/06/16/google-classroom-get-past-view-more/",
+      "date": "2019-06-16",
+      "shows": "classwork topics (Jun 2019)",
+      "files": [
+        "sweeps/g2-evidence/gclassroom/s4-2.png",
+        "sweeps/g2-evidence/gclassroom/s4-3.png",
+        "sweeps/g2-evidence/gclassroom/s4-5.png"
+      ]
+    },
+    {
+      "id": "s5",
+      "url": "https://www.hendersoncountypublicschoolsnc.org/instructional-technology/2019/10/23/keeping-your-google-classroom-organized/",
+      "date": "",
+      "shows": "classwork page with + Create and topics (Oct 2019)",
+      "files": [
+        "sweeps/g2-evidence/gclassroom/s5-2.png"
+      ]
+    },
+    {
+      "id": "s9",
+      "url": "https://tech.pccsk12.com/information-on-google-classroom/",
+      "date": "2019-08",
+      "shows": "classwork page with header tabs (Aug 2019)",
+      "files": [
+        "sweeps/g2-evidence/gclassroom/s9.png"
+      ]
+    },
+    {
+      "id": "s10",
+      "url": "https://alicekeeler.com/2019/09/30/google-classroom-your-work-bubble/",
+      "date": "2019-09",
+      "shows": "student assignment view (Sep 2019)",
+      "files": [
+        "sweeps/g2-evidence/gclassroom/s10.png"
+      ]
+    },
+    {
+      "id": "s11",
+      "url": "https://hawksites.newpaltz.edu/edtech/2018/04/03/getting-started-with-google-classroom/",
+      "date": "2019-01",
+      "shows": "class stream: banner, Upcoming, Share something with your class (Jan 2019)",
+      "files": [
+        "sweeps/g2-evidence/gclassroom/s11.png"
+      ]
+    },
+    {
+      "id": "s13",
+      "url": "https://alicekeeler.com/2019/03/04/happy-google-classroom-stream-back/",
+      "date": "2019-03",
+      "shows": "stream settings (Mar 2019)",
+      "files": [
+        "sweeps/g2-evidence/gclassroom/s13.png"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Titlebar navigation|Main Menu|Classroom)$",
+      "in2019": true,
+      "evidence": [
+        "s11",
+        "s3",
+        "s9"
+      ],
+      "note": "white title bar with hamburger and the green Classroom logo"
+    },
+    {
+      "match": "^(Create or join a class|Create class|Join class|Add class)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s9"
+      ],
+      "note": "+ menu with Join class / Create class"
+    },
+    {
+      "match": "^(Google apps|Settings)$",
+      "in2019": true,
+      "evidence": [
+        "s11"
+      ],
+      "note": "launcher; Settings (gear on the class page, drawer entry on Home)"
+    },
+    {
+      "match": "^Google Account",
+      "in2019": true,
+      "evidence": [
+        "s11"
+      ],
+      "note": "avatar"
+    },
+    {
+      "match": "^(nav area|Home|Classes|Calendar|Archived classes)$",
+      "in2019": true,
+      "evidence": [
+        "s9",
+        "s11"
+      ],
+      "note": "the 2019 drawer (Classes, Calendar, To-do, Archived classes, Settings); now pinned open, Classes renamed Home"
+    },
+    {
+      "match": "^(Help and Feedback|Send feedback|Help)$",
+      "in2019": true,
+      "evidence": [
+        "s11"
+      ],
+      "note": "? help button at the bottom corner"
+    },
+    {
+      "match": "^(Add a class to get started|repeated div)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s11"
+      ],
+      "note": "classes area (content)"
+    },
+    {
+      "match": "^(Welcome to the new Google Classroom Home|Learn more|Got it)$",
+      "in2019": false,
+      "evidence": [
+        "announces the 2023 Home redesign"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Gemini|Gemini in Classroom|NotebookLM|Tools)$",
+      "in2019": false,
+      "evidence": [
+        "Gemini/NotebookLM tools are 2024+"
+      ],
+      "action": "hidden"
+    }
+  ]
+}

@@ -40,4 +40,9 @@ html[data-net19-mode="dark"]{--n19-map-box-shadow:0 2px 4px rgba(0,0,0,.6);--n19
 :is(html[data-n19-g="maps"]) ul.lTfMvb[role="menu"] li:has(>button[jsaction*="askGemini"]),:is(html[data-n19-g="maps"]) ul.lTfMvb[role="menu"] li:has([jsaction*="toggleSideBar"]),:is(html[data-n19-g="maps"]) ul.lTfMvb[role="menu"] li:has(>button.T2ozWe.gFIUjc){display:none!important}
 :is(html[data-n19-g="maps"]) ul.lTfMvb[role="menu"] label{font-family:var(--n19-sans)!important;color:var(--n19-text)!important}
 :is(html[data-n19-g="maps"]) li:has(>button[jsaction*="navigationrail.askMaps"]){display:none!important}
+:is(html[data-n19-g="maps"]) [role="main"] [role="tablist"]:has(>button[role="tab"][aria-label^="Overview of"]){display:none!important}
+:is(html[data-n19-g="maps"]) [role="main"] div:has(>div>div>div>button[aria-label="About these results"]),:is(html[data-n19-g="maps"]) [role="main"] div:has(>a>div>img[src*="client=DESTINATION_EXPLORE"]){display:none!important}
+:is(html[data-n19-g="maps"]) [role="main"] :is(button[aria-label^="More Admissions"],button[aria-label^="More Experiences"],button[aria-label="Your Maps history"]){display:none!important}
+:is(html[data-n19-g="maps"]) [role="main"] div:has(>button[aria-label="Your Maps history"]),:is(html[data-n19-g="maps"]) [role="main"] div:has(>button[aria-label$="more options"]):not(:has(a,h1,[role="tab"])){display:none!important}
+:is(html[data-n19-g="maps"]) :is(button[aria-label="Show imagery"],a[href*="orderType="],a[href*="/searchviewer/"]){display:none!important}
 :is(html[data-n19-g="maps"]) :is([role="dialog"],[role="alertdialog"]):not(.dBl9De){border-radius:8px!important}

@@ -20,6 +20,8 @@
     : /(^|\.)store\.google(\.com)?$/.test(host) ? 'store'
     : host === 'contacts.google.com' ? 'contacts'
     : host === 'keep.google.com' ? 'keep'
+    : host === 'classroom.google.com' ? 'classroom'
+    : host === 'chat.google.com' ? 'chat'
     : host === 'earth.google.com' ? 'earth'
     : host === 'books.google.com' || /^\/books(\/|$)/.test(path) ? 'books'
     : host === 'voice.google.com' ? 'voice'
@@ -190,3 +192,18 @@
   };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();
+(() => {
+  if (document.documentElement.getAttribute('data-n19-g') !== 'myaccount' && location.hostname !== 'myaccount.google.com') return;
+  const NAMES = { 'Wallet & subscriptions': 'Payments & subscriptions', 'Security & sign-in': 'Security', 'Data & privacy': 'Data & personalization' };
+  const rename = () => {
+    for (const span of document.querySelectorAll('[role="menubar"] a[role="menuitem"] span, [role="menubar"] a[role="menuitem"] div')) {
+      if (span.children.length) continue;
+      const to = NAMES[span.textContent.trim()];
+      if (to) span.textContent = to;
+    }
+  };
+  let queued = false;
+  const start = () => { rename(); new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; rename(); }); } }).observe(document.body, { childList: true, subtree: true, characterData: true }); };
+  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+})();
+

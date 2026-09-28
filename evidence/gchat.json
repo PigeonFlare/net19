@@ -1,0 +1,190 @@
+{
+  "theme": "gchat",
+  "era": "Hangouts Chat web after the 2019 Material Theme update (white header, @ logo, PEOPLE/ROOMS/BOTS lists); the green-header variant (s7, s8) was the 2018 look",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://9to5google.com/2019/04/10/new-hangouts-chat-features/",
+      "date": "2019-04-10",
+      "shows": "Hangouts Chat on web and phone (Apr 2019)",
+      "files": [
+        "sweeps/g2-evidence/gchat/s1-1.png"
+      ]
+    },
+    {
+      "id": "s2",
+      "url": "https://9to5google.com/2019/04/10/hangouts-chat-for-gmail/",
+      "date": "2019-04-10",
+      "shows": "Gmail with Hangouts Chat (Apr 2019)",
+      "files": [
+        "sweeps/g2-evidence/gchat/s2-1.png"
+      ]
+    },
+    {
+      "id": "s3",
+      "url": "https://hawksey.info/blog/2019/03/an-introduction-to-building-google-hangouts-chat-bots-with-google-apps-script/",
+      "date": "2019-03-12",
+      "shows": "Hangouts Chat bot post (Mar 2019)",
+      "files": [
+        "sweeps/g2-evidence/gchat/s3-2.png"
+      ]
+    },
+    {
+      "id": "s4",
+      "url": "https://blog.appsignal.com/2019/02/08/google-hangouts-chat-integration.html",
+      "date": "2019-02-08",
+      "shows": "bot messages in Hangouts Chat (Feb 2019)",
+      "files": [
+        "sweeps/g2-evidence/gchat/s4-3.png"
+      ]
+    },
+    {
+      "id": "s6",
+      "url": "https://workspaceupdates.googleblog.com/2019/08/ooo-gmail-hangouts-chat.html",
+      "date": "",
+      "shows": "chat.google.com with white header, Active chip, Find people/rooms/bots, PEOPLE/ROOMS/BOTS, conversation (Aug 2019)",
+      "files": [
+        "sweeps/g2-evidence/gchat/s6-1.png",
+        "sweeps/g2-evidence/gchat/s6-2.png"
+      ]
+    },
+    {
+      "id": "s7",
+      "url": "https://www.techspot.com/news/78389-google-hangouts-officially-retired-october.html",
+      "date": "2019-01",
+      "shows": "Hangouts Chat web, green header variant (Jan 2019)",
+      "files": [
+        "sweeps/g2-evidence/gchat/s7.png"
+      ]
+    },
+    {
+      "id": "s8",
+      "url": "https://blog.bentkowski.info/2018/07/vulnerability-in-hangouts-chat-aka-how.html",
+      "date": "2018-07",
+      "shows": "Hangouts Chat web app (2018)",
+      "files": [
+        "sweeps/g2-evidence/gchat/s8.png"
+      ]
+    }
+  ],
+  "features": [
+    {
+      "match": "^(banner area|Chat logo|Chat)$",
+      "in2019": true,
+      "evidence": [
+        "s6",
+        "s1"
+      ],
+      "note": "white header with the Hangouts Chat @ logo (2019 file chat_48dp.png; the 2019 word mark is not hosted, so only the icon shows)"
+    },
+    {
+      "match": "^(Search chat|Find people, rooms, bots|search area)$",
+      "in2019": true,
+      "evidence": [
+        "s6",
+        "s7"
+      ],
+      "note": "the 2019 Find people, rooms, bots search (renamed Search chat, moved into the header)"
+    },
+    {
+      "match": "^Status: (Active|Away|Do not disturb)",
+      "in2019": true,
+      "evidence": [
+        "s6"
+      ],
+      "note": "Active/Away status chip"
+    },
+    {
+      "match": "^(Support|Settings|Google apps)$",
+      "in2019": true,
+      "evidence": [
+        "s6"
+      ],
+      "note": "help, settings and launcher icons"
+    },
+    {
+      "match": "^Google Account",
+      "in2019": true,
+      "evidence": [
+        "s6"
+      ],
+      "note": "avatar"
+    },
+    {
+      "match": "^(Direct messages|People)$",
+      "in2019": true,
+      "evidence": [
+        "s6",
+        "s7"
+      ],
+      "note": "PEOPLE list (renamed Direct messages)"
+    },
+    {
+      "match": "^(Spaces|Rooms|Browse spaces|Browse rooms)$",
+      "in2019": true,
+      "evidence": [
+        "s6",
+        "s7"
+      ],
+      "note": "ROOMS list and room browser (rooms renamed spaces in 2021)"
+    },
+    {
+      "match": "^(Apps|Bots|Explore apps|Find a chat)$",
+      "in2019": true,
+      "evidence": [
+        "s6",
+        "s3"
+      ],
+      "note": "BOTS list (renamed Apps) and the find entry points"
+    },
+    {
+      "match": "^region area$",
+      "in2019": true,
+      "evidence": [
+        "s6",
+        "s8"
+      ],
+      "note": "conversation area"
+    },
+    {
+      "match": "^(New chat|Shortcuts|Home|Mentions|Starred|Unread|Thread|Main menu)$",
+      "in2019": false,
+      "evidence": [
+        "New chat pill, Shortcuts/Home/Mentions/Starred and the Home filters came with the 2023 Chat redesign; s6 (Aug 2019) has none"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "(split pane|zero state reply pane)",
+      "in2019": false,
+      "evidence": [
+        "split-pane mode is 2023+"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(You are not receiving notifications on this device|Disable|Learn more|Close)$",
+      "in2019": false,
+      "evidence": [
+        "notification permission callout is 2023+"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Calendar|Keep|Tasks|Contacts|Hide side panel|Show side panel)$",
+      "in2019": false,
+      "evidence": [
+        "the Workspace side panel reached Chat in 2021; s6 has none"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Gemini|Ask Gemini|Summarize|Help me write)$",
+      "in2019": false,
+      "evidence": [
+        "Gemini is 2023+"
+      ],
+      "action": "hidden"
+    }
+  ]
+}

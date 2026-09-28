@@ -106,3 +106,19 @@ test('built stylesheets are up to date with themes/', () => {
   }
   assert.deepEqual(readdirSync('built').sort(), readdirSync('themes').filter(name => name.endsWith('.css')).sort());
 });
+
+test('evidence files back every 2019 feature with a source and name what they hide', () => {
+  for (const file of readdirSync('evidence').filter(name => name.endsWith('.json'))) {
+    const evidence = JSON.parse(readFileSync(`evidence/${file}`, 'utf8'));
+    const id = file.replace(/\.json$/, '');
+    assert.ok(existsSync(`themes/${id}.css`), `${file}: no theme named ${id}`);
+    assert.ok(Array.isArray(evidence.sources) && evidence.sources.length >= 1, `${file}: no sources`);
+    assert.ok(Array.isArray(evidence.features) && evidence.features.length, `${file}: no features`);
+    const sources = new Set(evidence.sources.map((source: { id: string }) => source.id));
+    for (const feature of evidence.features) {
+      assert.doesNotThrow(() => new RegExp(feature.match, 'i'), `${file}: bad match ${feature.match}`);
+      assert.equal(typeof feature.in2019, 'boolean', `${file}: ${feature.match} has no in2019`);
+      if (feature.in2019) assert.ok([].concat(feature.evidence || []).some((ref: string) => sources.has(ref) || /^https?:/.test(ref)), `${file}: ${feature.match} cites no 2019 source`);
+    }
+  }
+});

@@ -78,3 +78,4 @@ html:has(li[data-is-draggable] > a[data-pid]) li[data-is-draggable]:has(> a[href
 html:has(li[data-is-draggable] > a[data-pid]) li[data-is-draggable]:has(> a[href*="myadcenter.google.com"]),
 html:has(li[data-is-draggable] > a[data-pid]) li[data-is-draggable]:has(> a[href*="labs.google"]),
 html:has(li[data-is-draggable] > a[data-pid]) li[data-is-draggable]:has(> a[href*="aistudio.google.com"]) { display: none !important; }
+li[data-is-draggable]:has(> a[data-pid]:is([aria-label^="Meet," i], [aria-label^="Chat," i], [aria-label^="Gemini," i], [aria-label^="NotebookLM," i], [aria-label^="Google Wallet," i], [aria-label^="Saved," i])) { display: none !important; }

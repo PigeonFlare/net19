@@ -1,0 +1,216 @@
+{
+  "theme": "twitch",
+  "era": "2019 Twitch before the 2019-09-26 rebrand: purple #6441a4 top bar in both light and dark, dark #19171c sidebar, #faf9fa light / #0e0c13 dark pages, 4px buttons, Helvetica Neue; the rebrand (new logo, #9147ff, white/black bar) arrived only in the last three months of 2019",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.webwise.ie/parents/explained-what-is-twitch/",
+      "date": "2019-08",
+      "file": "/home/claude/sweeps/g3-evidence/twitch/webwise-2019-08-a.png",
+      "shows": "signed-out front page: purple #6441a4 top bar (glitch logo, Discover, Browse, Try Prime, ..., dark-purple Search field with the icon inside, Prime crown, Log In outline button, Sign Up, user icon), dark #19171c sidebar with 'Join the Twitch community!' card and Recommended Channels (avatar, name, game, red dot + viewers, Show More), featured carousel, 'Recommended categories' box art with viewers and tags"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.webwise.ie/parents/explained-what-is-twitch/",
+      "date": "2019-08",
+      "file": "/home/claude/sweeps/g3-evidence/twitch/webwise-2019-08-b.png",
+      "shows": "channel page: channel bar (avatar, name, verified, LIVE, Videos 804, Clips, Events, Followers, Following), purple Follow, grey Subscribe, player, Stream Chat with Send a message and Chat button, stream title and Category"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.webwise.ie/parents/explained-what-is-twitch/",
+      "date": "2019-08",
+      "file": "/home/claude/sweeps/g3-evidence/twitch/webwise-2019-08-e.png",
+      "shows": "game directory: box art, title, viewers/followers, Live Channels/Videos/Clips tabs, 'Filter by' tags, Sort by, live cards with LIVE badge, viewer counts, titles, channel, tags"
+    },
+    {
+      "id": "s4",
+      "url": "https://www.webwise.ie/parents/explained-what-is-twitch/",
+      "date": "2019-08",
+      "file": "/home/claude/sweeps/g3-evidence/twitch/webwise-2019-08-d.png",
+      "shows": "settings: Profile, Twitch Prime, Channel and Videos, Security and Privacy, Notifications, Connections, Recommendations tabs; toggles"
+    },
+    {
+      "id": "s5",
+      "url": "https://www.webwise.ie/parents/explained-what-is-twitch/",
+      "date": "2019-08",
+      "file": "/home/claude/sweeps/g3-evidence/twitch/webwise-2019-08-c.jpg",
+      "shows": "chat: badges, emotes, chat settings (Show timestamps, Readable colors, Hide Chat, Popout Chat, name color)"
+    },
+    {
+      "id": "s6",
+      "url": "https://www.reddit.com/r/Twitch/",
+      "date": "2019-04",
+      "file": "/home/claude/sweeps/g3-evidence/twitch/reddit-2019-04-dark-directory.png",
+      "shows": "signed-in light theme directory: purple bar with Discover/Following/Browse/Try Prime/..., Search, crown badge, bell, Get Bits, avatar; dark sidebar Followed Channels/Recommended Channels; LIVE cards, viewers, titles, channel, language tags"
+    },
+    {
+      "id": "s7",
+      "url": "https://wftda.tv/accessing-the-2019-archives-with-your-twitch-subscription/",
+      "date": "2019-08-20",
+      "file": "/home/claude/sweeps/g3-evidence/twitch/wftda-2019-08.png",
+      "shows": "channel page header with Follow and Subscribe, Videos/Clips/Events/Followers tabs, sidebar 'Join the Twitch community!'"
+    },
+    {
+      "id": "s8",
+      "url": "https://www.dummies.com/article/technology/social-media/general-social-media/how-to-follow-and-subscribe-to-twitch-channels-261120/",
+      "date": "2019-04-23",
+      "file": "/home/claude/sweeps/g3-evidence/twitch/dummies-2019-04-following.jpg",
+      "shows": "channel bar: Follow (heart), Subscribe, Get Bits, Videos 733, Clips, ..., stream title, game, team, viewers, Share"
+    },
+    {
+      "id": "s9",
+      "url": "https://wallethacks.com/how-much-do-twitch-streamers-make/",
+      "date": "2019-07",
+      "file": "/home/claude/sweeps/g3-evidence/twitch/wallethacks-2019-07.jpg",
+      "shows": "subscribe dialog: Tier 1 Subscription, benefits, emotes, Subscribe with Prime, Gift"
+    },
+    {
+      "id": "s10",
+      "url": "https://www.trishtech.com/how-to-enable-dark-mode-on-twitch/",
+      "date": "2019-01",
+      "file": "/home/claude/sweeps/g3-evidence/twitch/gthumb-trishtech-2019-01-1.jpg",
+      "shows": "dark mode (Google Images thumbnails of the article's screenshots; the originals are no longer served): purple top bar kept in dark mode, dark sidebar and page, user menu with Dark Mode toggle; gthumb-trishtech-2019-01-3.jpg shows light mode"
+    },
+    {
+      "id": "s11",
+      "url": "https://wpguru.co.uk/",
+      "date": "2019-01",
+      "file": "/home/claude/sweeps/g3-evidence/twitch/wpguru-2019-01.png",
+      "shows": "user menu: Get Bits, Online/Invisible, Share my activity, Dark Mode, Channel, Video Producer, Dashboard"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Replay Ad|Leave feedback for this Ad|Stories|Create a story|Discovery feed|Clips feed|Shorts|Guest Star|Hype Chat|Top Clip|Last Stream|Schedule|Home)$",
+      "in2019": false,
+      "evidence": [
+        "Stories 2023, Discovery feed 2024, Guest Star 2022, Hype Chat 2023, search result Top Clip/Last Stream 2021, channel Schedule 2020, channel Home tab 2021; none in s1-s8"
+      ],
+      "action": "hidden (guard labels and theme)"
+    },
+    {
+      "match": "^(Twitch Home|Discover|Browse|Following|Try Prime|More Options|Search Input|Search Button|Search|Log In|Sign Up|User Menu|Get Bits|Notifications|Whispers|Prime Gaming|Collapse Side Nav|Expand Side Nav|Left Navigation|Main Content|nav area|search area|main area|complementary area|article area|dialog area|tablist area|Player Controls|Filter & Sort Options|Recommended Channels|Followed Channels|Show more|Show More|Show less|Show all|Show \\d+ more (channels|categories|videos))$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s6",
+        "s10"
+      ],
+      "note": "top bar, sidebar and page regions"
+    },
+    {
+      "match": "^(Browse|Categories|Live Channels|Search Category Tags|Recommended For You|Sort by.*|Viewers \\(High to Low\\)|Recently Started|Recommended live channels|Recommended categories|Live channels we think you'll like|NEW)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s6"
+      ],
+      "note": "directory tabs, tag filter and sort"
+    },
+    {
+      "match": "^(Follow|Follow .*|Unfollow|Subscribe|Gift a Sub|About|Clips|Videos|Events|Followers|Chat|Popout Chat|Turn on Notifications|Twitter|Instagram|YouTube|Facebook|Discord|Settings|Share|Report|Theatre Mode.*|Fullscreen \\(f\\)|Mute \\(m\\)|Unmute \\(m\\)|Play.*|Pause.*|Next video|Previous video|Volume|Clip \\(alt\\+x\\)|Category: .*|View .*'s profile|twitchgaming|twitchgaming is offline\\.|Join /.* and be a part of the conversation!.*)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s5",
+        "s7",
+        "s8"
+      ],
+      "note": "channel bar, player controls, social links (2019 showed them in the About panels), follow/subscribe"
+    },
+    {
+      "match": "^Tag, .+$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s6"
+      ],
+      "note": "stream and category tags (tags launched 2018)"
+    },
+    {
+      "match": "^(LIVE|LIVE[\\d.,]+K? viewers|[\\d.,]+K? viewers( for .+)?|\\d+:\\d{2}(:\\d{2})?)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s6"
+      ],
+      "note": "content: LIVE badges, viewer counts, durations"
+    },
+    {
+      "match": "^.+ cover image$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "content: category box art"
+    },
+    {
+      "match": "^.+Live[\\d.,]+K?[\\d.,]+K? viewers.*$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s6"
+      ],
+      "note": "content: sidebar channel cards (name, game, live dot, viewers); the accessible name of cards for Stream Together (2023) mentions the guest, the visible card shows the host"
+    },
+    {
+      "match": "^.+ and (CDawg|\\\\d+ guests?)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "content: the channel avatar link of a live card"
+    },
+    {
+      "match": "^(Button|Just Chatting & IRL|Just Chatting|IRL|Art|Music|Games \\+ Demos|Always On|Esports|Creative)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "content: category names and the unnamed card-link wrapper"
+    },
+    {
+      "match": "^[^\\s]{2,40}$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s6"
+      ],
+      "note": "content: single-word channel names and game titles in cards"
+    },
+    {
+      "match": "^(Apex Legends|Grand Theft Auto V|League of Legends|Marvel Rivals|Rainbow Six Siege|Rocket League|World of Warcraft|Dead by Daylight|Delta Force|Escape from Tarkov|Nopixel V|Minecraft Dungeons|SILENT HILL: townfall|Marvel's Wolverine|CONTROL Resonant|Happy Wheels|Counter-Strike)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "content: game titles seen on the sampled pages"
+    },
+    {
+      "match": "^(The Last Stand|マイクラデスゲーム『スペクトピア』 4日目)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "content: stream titles seen on the sampled pages"
+    },
+    {
+      "match": "^(repeated .*)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s6"
+      ],
+      "note": "stream and category cards"
+    }
+  ]
+}

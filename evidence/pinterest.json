@@ -1,0 +1,111 @@
+{
+  "theme": "pinterest",
+  "era": "2019 Pinterest: logged-out visitors saw a grid of Pins behind a white 'Welcome to Pinterest / Find new ideas to try' sign-up card (Email, Create a password, Age, red Continue, OR, Continue with Facebook / Google); signed-in web had a white bar with the red P, a grey rounded search field, Home / Following, and circular icon buttons over a masonry grid. The marketing landing ('Create the life you love', skin-tone, group-board and visual-search modules) is 2021+.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://web.archive.org/web/2019/https://www.pinterest.com/",
+      "date": "2019",
+      "shows": "logged-out home: Pin grid behind the Welcome to Pinterest card, footer links",
+      "file": "g5-evidence/pinterest/wb-2019-home.png"
+    },
+    {
+      "id": "s2",
+      "url": "https://newsroom-archive.pinterest.com/en-gb/introducing-the-pinterest-windows-app.html",
+      "date": "2019",
+      "shows": "signed-in profile and header: red P, grey search, Home, Following, icons",
+      "file": "g5-evidence/pinterest/home-01.jpg"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.socialmediatoday.com/news/pinterest-adds-one-click-saving-from-desktop/526815/",
+      "date": "2018-09",
+      "shows": "signed-in home feed: masonry grid, Save buttons, header with search, Home, Following, Explore",
+      "file": "g5-evidence/pinterest/home-02.jpg"
+    },
+    {
+      "id": "s4",
+      "url": "https://www.alamy.com/stock-photo/pinterest-homepage.html",
+      "date": "2019",
+      "shows": "desktop grid on a laptop with the 2019 header",
+      "file": "g5-evidence/pinterest/home-05.jpg"
+    },
+    {
+      "id": "s5",
+      "url": "https://www.lifewire.com/how-to-use-pinterest-3486578",
+      "date": "2019-2020",
+      "shows": "logged-out marketing header with Log in / Sign up",
+      "file": "g5-evidence/pinterest/home-03.jpg"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|main|form|footer|Main|navigation|dialog) area$|^Main$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "page regions"
+    },
+    {
+      "match": "^repeated ",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "Pins (content)"
+    },
+    {
+      "match": "^(Pinterest home|Pinterest|Home|Search|Log in|Sign up|About|About; Opens a new tab|News; Opens a new tab|Businesses|Business|Blog|Explore)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3",
+        "s5"
+      ]
+    },
+    {
+      "match": "^(Welcome to Pinterest|Enter your email|Email|Create a password|Show password|mm/dd/yyyy|Age|Continue|Continue with Google|Continue with Facebook|Already a member\\? Log in|Log in|Get started here|Create a business account|Terms of Service|Privacy Policy|Open birthdate picker|About password requirements)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "sign-up card (birthday replaced Age later; same field)"
+    },
+    {
+      "match": "^(iOS|Android|iPhone App|Android App|Help Center|Help|About Pinterest|Users|Collections)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "footer"
+    },
+    {
+      "match": "^(modal|login form|Search filters and refinements)$|^(More options|Send|More actions|Close modal|Visit|Pin|Password|Forgot password\\?|Join for free|Remove search input|Save|Share)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4"
+      ],
+      "note": "Pin close-up actions, logged-out login modal, guided-search pills row"
+    },
+    {
+      "match": "^(Fruits|Occasion|Baking|Snacks|Bento|18th birthday|Carrot|Easy|Recipes|Ideas|Aesthetic|Decorating|Birthday|Designs|.*\\.com|.* Ideas|.* Inspiration|.* Install|.* For Toolbar|How To .*|Button Image|kentbrew|flickr)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "guided-search pills, Pin source and related-search links (content)"
+    },
+    {
+      "match": "^(Create the life you love on Pinterest|Join Pinterest for free|I already have an account|Bring your favorite ideas to life|Search by skin tone|Collaborate with group boards|Search visually with images|Join Pinterest|Scroll up|Scroll down|Sign up to get your ideas|Notice at collection|Non-user notice|Shop|Create|Download image|QR code login button|Show filters|Close Bottom Right Upsell|Continue with email)$",
+      "in2019": false,
+      "evidence": [
+        "absent from s1; skin-tone search 2018-19 US mobile only, marketing landing 2021+, CA notices 2023"
+      ],
+      "action": "hidden"
+    }
+  ]
+}

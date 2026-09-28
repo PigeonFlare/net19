@@ -17,3 +17,4 @@ html[data-net19-mode="dark"] { --n19-page: #fff; --n19-text: #000; --n19-link: #
 svg.tl_main_logo_title_image { background: url("https://telegram.org/img/Telegram_2x.png") center / 144px 36px no-repeat !important;
   width: 144px !important; height: 36px !important; }
 svg.tl_main_logo_title_image > * { visibility: hidden !important; }
+.navbar-tg .top_lang_select { display: none !important; }

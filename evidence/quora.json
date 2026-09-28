@@ -1,0 +1,110 @@
+{
+  "theme": "quora",
+  "era": "2019 Quora: white bar with the red serif Quora logo, Home / Answer / Spaces / Notifications, Search Quora and a red Add Question button; serif bold question titles, answer cards with author line, '(more)' and Upvote / Share / comments; logged-out visitors got the white login card (Continue with Google / Facebook, email login) with the About · Careers · Privacy · Terms · Contact · Languages · Your Ad Choices · Press footer.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.useronboard.com/how-quora-onboards-new-users/?slide=49",
+      "date": "2019",
+      "shows": "signed-in feed: header Home / Answer / Spaces / Notifications, Search Quora, Add Question; Questions for You; Answer / Pass / Follow",
+      "file": "g5-evidence/quora/home-07.jpg"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.ionos.com/digitalguide/online-marketing/web-analytics/what-is-quora/",
+      "date": "2019",
+      "shows": "feed with left Feeds list, answer cards with Upvote and share icons, cookie notice",
+      "file": "g5-evidence/quora/home-01.jpg"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.quora.com/Where-is-the-questioners-name-displayed-in-questions-asked-on-Quora",
+      "date": "2019-07",
+      "shows": "question page: topic chips, serif title, Question Log, Question Stats, answers with Thank / Report",
+      "file": "g5-evidence/quora/home-04.jpg"
+    },
+    {
+      "id": "s4",
+      "url": "https://en.wikipedia.org/wiki/Quora",
+      "date": "2019",
+      "shows": "desktop header and promoted answer card",
+      "file": "g5-evidence/quora/home-02.jpg"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|main|footer|section|form|dialog) area$|^repeated ",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "match": "^(Go to Quora Home|Quora|Home|Answer|Spaces|Notifications|Search Quora|Add Question|Sign In|Login|Sign up with email|Continue with Google|Continue with Facebook|Your email|Your password|Forgot password\\?|Terms of Service|Privacy Policy)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ]
+    },
+    {
+      "match": "^(About|Careers|Privacy|Terms|Contact|Languages|Your Ad Choices|Press)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "login-page footer"
+    },
+    {
+      "match": "^(Upvote|Share|Comment|\\d+ comments?|[\\d.,]+[KM]? upvotes?|Continue Reading|\\(more\\)|Hide|Follow|Pass|Learn More|Play Now|Shop Now)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "answer actions, dismiss ×, promoted answers"
+    },
+    {
+      "match": "^(Profile photo for .*|\\d+[ymwdh])$|^[A-Z][\\w.'-]+( [A-Z][\\w.'-]+)+$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "answer authors and timestamps (content)"
+    },
+    {
+      "match": "^(Software Development|Computer Science|Learning and Understandin.*|Learning Programming Onli.*|Programming Languages|Coding Skill|Technical Programming|Computer Programming)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "topic chips above the title (content)"
+    },
+    {
+      "match": "^(Upvote( · [\\d.,KM]+)?|Upvote ·|[\\d.,]+[KM]?|\\d+ shares?)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "upvote counts and shares"
+    },
+    {
+      "match": "^((Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Oct|Nov|Dec) \\d{1,2}(, \\d{4})?|[A-Z][A-Za-z0-9]+|.*\\?)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "answer dates, one-word author names and related-question links (content)"
+    },
+    {
+      "match": "^(Downvote|All related \\(\\d+\\)|Recommended|More answers below|Try Quora\\+|Poe|Dark mode)$",
+      "in2019": false,
+      "evidence": [
+        "not in 2019 captures (s1–s4); Quora+ 2021, Poe 2023"
+      ],
+      "action": "hidden"
+    }
+  ]
+}

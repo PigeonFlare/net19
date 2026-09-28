@@ -43,6 +43,15 @@ globalThis.net19Theme = {
       while (card && card.parentElement && card.parentElement.tagName !== 'ASIDE' && !card.querySelector('a, button')) card = card.parentElement;
       if (card && card.tagName !== 'ASIDE' && !/Related Tags|Recommended Blogs|Sponsored/i.test(card.textContent) && !card.querySelector('input, textarea, [contenteditable]') && !card.hasAttribute('data-net19-hidden')) card.setAttribute('data-net19-hidden', '');
     }
+    for (const button of document.querySelectorAll('button, a')) {
+      if (!/^Sign up$/i.test(button.textContent.trim()) || button.closest('[data-net19-hidden], nav, header')) continue;
+      for (let banner = button.parentElement; banner && banner !== document.body; banner = banner.parentElement) {
+        const style = getComputedStyle(banner);
+        if (style.position !== 'fixed' && style.position !== 'sticky') continue;
+        if (/Join over [\d,]+ (million )?people using Tumblr/i.test(banner.textContent) && banner.getBoundingClientRect().bottom >= innerHeight - 4) banner.setAttribute('data-net19-hidden', '');
+        break;
+      }
+    }
     for (const el of document.querySelectorAll('article header span, article header div')) {
       if (!el.firstElementChild && /^\s*Blazed\s*$/i.test(el.textContent) && !el.hasAttribute('data-net19-hidden')) el.setAttribute('data-net19-hidden', '');
     }
