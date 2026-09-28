@@ -22,6 +22,11 @@ A Chrome extension that shows popular websites as they looked in **2019**.
 - **Color themes:** Naturally adapts websites to your computer's light or dark theme, while keeping the 2019 style, and maintaining true color for important media such as photos and videos. 
 - **User privacy:** The extension runs completely locally. No user data is stored except for toggle choices. ([privacy policy](PRIVACY.md)).
 
+## Report a problem or request a site
+
+- **Something looks broken?** [Report a broken site](https://github.com/henry-xli/net19/issues/new?template=broken-site.yml)
+- **Want a site themed?** [Request a site](https://github.com/henry-xli/net19/issues/new?template=site-request.yml). Add a 👍 to [existing requests](https://github.com/henry-xli/net19/issues?q=is%3Aissue+is%3Aopen+label%3A%22site+request%22+sort%3Areactions-%2B1-desc) instead of opening duplicates; the most-voted sites come first.
+
 ## Limits
 
 Extension functionality could be negatively impacted by:
