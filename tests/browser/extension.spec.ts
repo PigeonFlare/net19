@@ -20,7 +20,7 @@ test.beforeEach(async ({}, info) => {
   await context.route(/^https?:\/\//, async route => {
     const url = new URL(route.request().url());
     requests.push(url.href);
-    if (/(^|\.)(youtube\.com|wikipedia\.org|reddit\.com|example\.com)$/.test(url.hostname)) { await route.fulfill({ contentType: 'text/html', body: PAGE(url.hostname + url.pathname) }); return; }
+    if (/(^|\.)(youtube\.com|wikipedia\.org|reddit\.com|redditstatic\.com|example\.com)$/.test(url.hostname)) { await route.fulfill({ contentType: 'text/html', body: PAGE(url.hostname + url.pathname) }); return; }
     unexpected.push(url.href); await route.abort();
   });
   worker = context.serviceWorkers()[0] ?? await context.waitForEvent('serviceworker'); extensionId = new URL(worker.url()).host;

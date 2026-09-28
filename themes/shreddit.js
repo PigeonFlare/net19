@@ -14,7 +14,6 @@ globalThis.net19Theme = {
     [data-testid="action-row"] :is(a.button, button.button, .button):not([upvote]):not([downvote]):hover { background: var(--n19-hover) !important; }
     [data-testid="action-row"] :is(.rpl-cab--content, faceplate-number) { color: inherit !important; font-weight: 700 !important; font-size: 12px !important; }
     [data-testid="action-row"] .rpl-cab--leading-icon svg { width: 20px !important; height: 20px !important; }
-    /* The vote column: arrows and score stacked on the gray strip at the card's left edge */
     [data-testid="action-row"] > span:has(shreddit-vote-animations) { position: absolute !important; left: 0 !important; top: 0 !important; width: 40px !important; height: auto !important;
       padding: 8px 0 0 !important; box-sizing: border-box !important; background: transparent !important; border: 0 !important; z-index: 1 !important; }
     .rpl-vote-button-group { flex-direction: column !important; height: auto !important; background: transparent !important; border: 0 !important; padding: 0 !important; gap: 0 !important; width: 40px !important; }
@@ -29,11 +28,22 @@ globalThis.net19Theme = {
     .rpl-vote-button-group:has(button[upvote][aria-pressed="true"]) > span { color: var(--n19-up) !important; }
     .rpl-vote-button-group:has(button[downvote][aria-pressed="true"]) > span { color: var(--n19-down) !important; }
     h2.condensed-post-title-heading, h1 { margin: 0 0 8px !important; }
+    .vote-icon-outline { display: none !important; }
+    .vote-icon-fill { display: flex !important; }
     slot[name="post-stats-entry-point"], slot[name="post-insights-panel"] { display: none !important; }
     award-button [data-n19-count], award-button .award-count { display: none !important; }
   `;
   const PDP = `[data-testid="action-row"] > span:has(shreddit-vote-animations) { top: 8px !important; }`;
+  const TREE_VOTES = `
+    shreddit-vote-animations { position: absolute !important; left: 4px !important; top: -32px !important; z-index: 1 !important; }
+    .rpl-vote-button-group { flex-direction: column !important; height: auto !important; width: 24px !important; gap: 0 !important; padding: 0 !important; }
+    .rpl-vote-button-group > span { display: none !important; }
+    .rpl-vote-button-group button { width: 24px !important; height: 24px !important; min-height: 0 !important; }
+    .rpl-vote-button-group button > span { margin: 0 !important; }
+  `;
   const COMMENT = `
+    .vote-icon-outline { display: none !important; }
+    .vote-icon-fill { display: flex !important; }
     .rpl-vote-button-group { background: transparent !important; border: 0 !important; }
     .rpl-vote-button-group > span { font-size: 12px !important; font-weight: 700 !important; color: var(--n19-text) !important; text-transform: lowercase !important; }
     .rpl-vote-button-group button { background: transparent !important; color: var(--n19-action) !important; border-radius: 2px !important; }
@@ -43,7 +53,19 @@ globalThis.net19Theme = {
     slot[name="comment-insight"], slot[name="comment-share-as-post-topline"] { display: none !important; }
   `;
   const AWARD = `.glow, .rpl-cab--content { display: none !important; } button { background: transparent !important; border: 0 !important; padding: 4px !important; }`;
-  const JOIN = `button { border-radius: 4px !important; text-transform: uppercase !important; font-size: 12px !important; font-weight: 700 !important; letter-spacing: .5px !important; min-width: 96px !important; }`;
+  const JOIN = `:host([data-testid="credit-bar-join-button"]) button { min-width: 0 !important; height: 24px !important; padding: 0 12px !important; }
+    button { border-radius: 4px !important; text-transform: uppercase !important; font-size: 12px !important; font-weight: 700 !important; letter-spacing: .5px !important; min-width: 96px !important; }`;
+  const COMMUNITY = `
+    .header { padding: 12px 12px 0 !important; }
+    #title { color: var(--n19-text) !important; font: 500 16px/20px var(--n19-font) !important; margin: 0 0 8px !important; }
+    #description { color: var(--n19-text) !important; font: 400 14px/21px var(--n19-body-font) !important; }
+    strong { color: var(--n19-text) !important; font: 500 16px/20px var(--n19-font) !important; }
+    [data-testid="activity-indicators"] { padding: 8px 0 0 !important; border-top: 1px solid var(--n19-line) !important; margin-top: 12px !important; }
+    [data-testid="activity-indicators"] .text-\\[12px\\] { color: var(--n19-text) !important; font: 500 12px/16px var(--n19-font) !important; }
+  `;
+  const FOLLOW = `button { background: var(--n19-blue) !important; color: var(--n19-on-blue) !important; border: 0 !important; border-radius: 4px !important; min-width: 120px !important;
+    font: 700 12px/16px var(--n19-font) !important; letter-spacing: .5px !important; text-transform: uppercase !important; justify-content: center !important; }
+    button * { color: inherit !important; }`;
   const FIELD = `.label-container, [part="container"] { border-radius: 4px !important; }`;
   const SEARCH = `
     .reddit-search-bar { background: var(--n19-field) !important; border: 1px solid var(--n19-field-border) !important; border-radius: 4px !important; box-shadow: none !important; }
@@ -52,7 +74,6 @@ globalThis.net19Theme = {
     .leadingIcon > slot > svg, .leadingIcon > slot::slotted(svg) { visibility: hidden !important; }
     .leadingIcon { background: no-repeat center / 18px 18px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Ccircle cx='8.5' cy='8.5' r='5.8' fill='none' stroke='%23878a8c' stroke-width='1.8'/%3E%3Cpath d='M12.8 12.8l4.4 4.4' stroke='%23878a8c' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") !important; }
     .centered-placeholder { display: none !important; }
-    /* The expanded 2024 composer: its snoo icon and its footer (the "Ask" AI pill and a send button) */
     faceplate-search-input > [slot="leadingIcon"] { visibility: hidden !important; width: 18px !important; }
     faceplate-search-input > [slot="footer"] { display: none !important; }
     form.rounded-5, .rounded-5 { border-radius: 4px !important; }
@@ -62,6 +83,155 @@ globalThis.net19Theme = {
     .search-answers-carousel, [class*="answers-carousel"] { display: none !important; }
     rpl-tooltip:has(.expanded-composer-ask-pill) { display: none !important; }
   `;
+
+  const SORT = `
+    button { color: var(--n19-link) !important; font: 700 12px/16px var(--n19-font) !important; letter-spacing: .5px !important; text-transform: uppercase !important;
+      background: transparent !important; border-radius: 4px !important; padding: 0 6px !important; height: 32px !important; }
+    button:hover { background: var(--n19-hover) !important; }
+    button svg { color: var(--n19-link) !important; }
+    [role="menu"], faceplate-menu, .menu, ul[role="menu"] { background: var(--n19-card) !important; border: 1px solid var(--n19-field-border) !important; border-radius: 4px !important;
+      box-shadow: 0 2px 4px rgba(0,0,0,.1) !important; padding: 0 !important; }
+    [role="menuitem"], li[role="presentation"] > * { font: 500 14px/18px var(--n19-font) !important; color: var(--n19-text) !important; border-radius: 0 !important; }
+    [role="menuitem"]:hover { background: var(--n19-card-2) !important; }
+    [role="menuitem"] :is(span, div) { color: inherit !important; }
+    [role="menuitem"][aria-checked="true"], [role="menuitem"][aria-selected="true"], [role="menuitemradio"][aria-checked="true"] { color: var(--n19-link) !important; }
+  `;
+  const AUTH = `
+    [role="dialog"] { border-radius: 4px !important; padding-left: 128px !important; box-sizing: border-box !important;
+      background: var(--n19-card) url("https://www.redditstatic.com/accountmanager/bbb584033aa89e39bad69436c504c9bd.png") no-repeat left top / 128px 100% !important; }
+  `;
+  const svgIcon = (paths, size = 20) => {
+    const ns = 'http://www.w3.org/2000/svg';
+    const svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('viewBox', '0 0 20 20'); svg.setAttribute('width', size); svg.setAttribute('height', size); svg.setAttribute('fill', 'currentColor'); svg.setAttribute('aria-hidden', 'true');
+    for (const d of paths) { const path = document.createElementNS(ns, 'path'); path.setAttribute('d', d); svg.append(path); }
+    return svg;
+  };
+  const ICONS = {
+    home: ['M10 2.5 2 9.2l1 1.2 1-.8V17h4.5v-5h3v5H16V9.6l1 .8 1-1.2z'],
+    popular: ['M12.5 5h5v5l-1.9-1.9-4.6 4.6-3-3L3.7 14l-1.2-1.2L8 7.3l3 3 3.4-3.4z'],
+    all: ['M3 11h3v6H3zM8.5 3h3v14h-3zM14 7h3v10h-3z'],
+    caret: ['M5.5 8h9L10 12.7z'],
+    close: ['M5.2 4 10 8.8 14.8 4 16 5.2 11.2 10l4.8 4.8-1.2 1.2-4.8-4.8L5.2 16 4 14.8 8.8 10 4 5.2z'],
+    community: ['M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm0 1.8a6.2 6.2 0 1 1 0 12.4 6.2 6.2 0 0 1 0-12.4zM10 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z'],
+    user: ['M10 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm0 1.5c-3.3 0-6 1.8-6 4v1.5h12v-1.5c0-2.2-2.7-4-6-4z'],
+  };
+  const FEEDS = [['home', 'Home', '/'], ['popular', 'Popular', '/r/popular/'], ['all', 'All', '/r/all/']];
+  const make = (tag, attrs = {}, ...kids) => { const el = document.createElement(tag); for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v); el.append(...kids); return el; };
+  const currentFeed = () => {
+    const path = location.pathname;
+    if (path === '/' || path === '') return ['home', 'Home'];
+    if (/^\/r\/popular\/?/i.test(path)) return ['popular', 'Popular'];
+    if (/^\/r\/all\/?/i.test(path)) return ['all', 'All'];
+    const sub = path.match(/^\/r\/([^/]+)/);
+    if (sub) return ['community', `r/${sub[1]}`];
+    const user = path.match(/^\/(?:u|user)\/([^/]+)/);
+    if (user) return ['user', `u/${user[1]}`];
+    if (/^\/search/.test(path)) return ['popular', 'Search results'];
+    return ['popular', 'Popular'];
+  };
+  const communityIcon = () => document.querySelector('.masthead img[src*="communityIcon"], .masthead img.shreddit-subreddit-icon__icon, #pdp-credit-bar img.shreddit-subreddit-icon__icon');
+  const header = () => {
+    const nav = document.querySelector('reddit-header-large nav.h-header-large');
+    if (!nav) return;
+    const left = nav.querySelector(':scope > div.pe-lg');
+    const [kind, label] = currentFeed();
+    let feeds = nav.querySelector('[data-n19-feeds]');
+    if (left && !feeds) {
+      const menu = make('div', { 'data-n19-menu': '', role: 'menu' }, make('div', { 'data-n19-menu-title': '' }, 'Reddit feeds'));
+      for (const [icon, name, href] of FEEDS) menu.append(make('a', { href, role: 'menuitem' }, make('span', {}, svgIcon(ICONS[icon])), make('span', {}, name)));
+      const button = make('button', { type: 'button', 'aria-haspopup': 'menu', 'aria-expanded': 'false' },
+        make('span', { 'data-n19-feed-icon': '' }), make('span', { 'data-n19-feed-label': '' }), make('span', { 'data-n19-caret': '' }, svgIcon(ICONS.caret)));
+      feeds = make('div', { 'data-n19-feeds': '' }, button, menu);
+      const close = () => { feeds.removeAttribute('data-open'); button.setAttribute('aria-expanded', 'false'); };
+      button.addEventListener('click', event => { event.stopPropagation(); const open = !feeds.hasAttribute('data-open'); if (open) { feeds.setAttribute('data-open', ''); button.setAttribute('aria-expanded', 'true'); } else close(); });
+      document.addEventListener('click', event => { if (!feeds.contains(event.target)) close(); });
+      document.addEventListener('keydown', event => { if (event.key === 'Escape') close(); });
+      left.append(feeds);
+    }
+    if (feeds) {
+      const iconBox = feeds.querySelector('[data-n19-feed-icon]');
+      const img = kind === 'community' ? communityIcon() : null;
+      const src = img ? img.currentSrc || img.src : '';
+      const want = src ? `img:${src}` : `icon:${kind}`;
+      if (iconBox.dataset.n19Icon !== want) {
+        iconBox.dataset.n19Icon = want;
+        iconBox.replaceChildren(src ? make('img', { src, alt: '' }) : svgIcon(ICONS[kind === 'user' ? 'user' : kind]));
+      }
+      const labelBox = feeds.querySelector('[data-n19-feed-label]');
+      if (labelBox.textContent !== label) labelBox.textContent = label;
+    }
+    const right = nav.querySelector(':scope > div.ps-lg');
+    if (right && !right.querySelector('[data-n19-links]')) {
+      const links = make('div', { 'data-n19-links': '' },
+        make('a', { href: '/r/popular/', 'aria-label': 'Popular', title: 'Popular' }, svgIcon(ICONS.popular)),
+        make('a', { href: '/r/all/', 'aria-label': 'All', title: 'All' }, svgIcon(ICONS.all)));
+      right.prepend(links);
+    }
+    const drawer = nav.querySelector('#expand-user-drawer-button');
+    const drawerIcon = drawer?.querySelector('svg[icon-name="overflow-horizontal"]');
+    if (drawerIcon && !drawer.querySelector('[data-n19-user]')) {
+      const holder = drawerIcon.parentElement;
+      drawerIcon.style.display = 'none';
+      holder.append(make('span', { 'data-n19-user': '', style: 'display:flex;color:var(--n19-action)' }, svgIcon(ICONS.user)), make('span', { 'data-n19-caret': '' }, svgIcon(ICONS.caret)));
+    }
+  };
+  const sortBar = () => {
+    const row = document.querySelector('shreddit-async-loader[bundlename="shreddit_sort_dropdown"] > div');
+    if (!row || row.querySelector(':scope > [data-n19-bar-label]')) return;
+    if (row.querySelector(':scope > shreddit-layout-event-setter')) row.prepend(make('span', { 'data-n19-bar-label': 'view' }, 'View'));
+    row.prepend(make('span', { 'data-n19-bar-label': 'sort' }, 'Sort'));
+  };
+  const heading = () => {
+    const feed = document.querySelector('main#main-content > shreddit-feed');
+    if (!feed || feed.previousElementSibling?.hasAttribute('data-n19-heading')) return;
+    if (!/^\/(?:r\/popular\/?)?$/i.test(location.pathname)) return;
+    feed.before(make('div', { 'data-n19-heading': '' }, 'Popular posts'));
+  };
+  const overlay = () => {
+    const post = document.querySelector('main#main-content > shreddit-post[view-context="CommentsPage"]');
+    const grid = document.querySelector('.grid-container > #subgrid-container');
+    const bar = grid?.querySelector(':scope > [data-n19-overlay-bar]');
+    if (!post || !grid) { bar?.remove(); return; }
+    const id = post.getAttribute('id');
+    if (bar?.dataset.n19Post === id) return;
+    bar?.remove();
+    const sub = post.getAttribute('subreddit-prefixed-name') || '';
+    const score = +post.getAttribute('score');
+    const title = post.getAttribute('post-title') || post.querySelector('h1[slot="title"]')?.textContent.trim() || '';
+    const node = make('div', { 'data-n19-overlay-bar': '', 'data-n19-post': id },
+      make('span', { 'data-n19-overlay-score': '' }, Number.isFinite(score) ? pretty(score) : ''),
+      make('span', { 'data-n19-overlay-title': '' }, title),
+      make('a', { href: sub ? `/${sub}/` : '/', 'aria-label': 'Close' }, svgIcon(ICONS.close, 16), make('span', {}, 'Close')));
+    grid.prepend(node);
+  };
+  const footer = () => {
+    const last = document.querySelector('#right-sidebar-container .legal-links li:last-child');
+    if (!last || last.hasAttribute('data-n19-copyright')) return;
+    for (const walker = document.createTreeWalker(last, NodeFilter.SHOW_TEXT); walker.nextNode();) {
+      const node = walker.currentNode;
+      if (/©/.test(node.nodeValue)) { node.nodeValue = node.nodeValue.replace(/Reddit,? Inc\.?\s*©\s*\d{4}\.?/i, 'Reddit Inc © 2019.'); last.setAttribute('data-n19-copyright', ''); }
+    }
+  };
+
+  const FONT_ROOT = 'https://www.redditstatic.com/desktop2x/fonts/';
+  const FONTS = [
+    ['IBMPlexSans', 'IBMPlexSans/Regular-116bb6d508f5307861d3b1269bc597e7.woff2', { weight: '400' }],
+    ['IBMPlexSans', 'IBMPlexSans/Medium-c4b185e25a4dde85a29f902cd5ce5360.woff2', { weight: '500' }],
+    ['IBMPlexSans', 'IBMPlexSans/Bold-875de5047556e7c822519d95d7ee692d.woff2', { weight: '600 900' }],
+    ['Noto Sans', 'NotoSans/Regular-d6a6aa8dc0f93416a832ea04a18c6fb8.woff2', { weight: '400' }],
+    ['Noto Sans', 'NotoSans/Italic-fca7c15cdda5570c8f739b9d71e9ed6d.woff2', { weight: '400', style: 'italic' }],
+    ['Noto Sans', 'NotoSans/Bold-d4ba4ecba17e90993f442f7bb082a3a2.woff2', { weight: '600 900' }],
+  ];
+  const loadFonts = () => {
+    for (const [family, file, descriptors] of FONTS) {
+      fetch(FONT_ROOT + file, { credentials: 'omit', cache: 'force-cache' })
+        .then(response => response.ok ? response.arrayBuffer() : Promise.reject(response.status))
+        .then(data => new FontFace(family, data, { display: 'swap', ...descriptors }).load())
+        .then(face => document.fonts.add(face))
+        .catch(() => {});
+    }
+  };
   const styled = new WeakSet();
   const add = (root, css) => { if (!root || styled.has(root)) return; styled.add(root); const node = document.createElement('style'); node.textContent = css; root.append(node); };
   const deep = (root, css) => { for (const host of root.querySelectorAll('*')) if (host.shadowRoot) { add(host.shadowRoot, css); deep(host.shadowRoot, css); } };
@@ -70,6 +240,7 @@ globalThis.net19Theme = {
   const longTime = text => text.replace(/^(\d+)\s*(s|sec|m|min|h|hr|d|day|w|wk|mo|y|yr)s?\.?\s+ago$/i, (_, n, u) => `${n} ${UNITS[u.toLowerCase()]}${n === '1' ? '' : 's'} ago`);
   const times = scope => {
     for (const el of scope.querySelectorAll('faceplate-timeago time, faceplate-timeago:not(:has(time))')) {
+      if (el.closest('#right-sidebar-container')) continue;
       for (const node of el.childNodes) if (node.nodeType === 3 && node.nodeValue.trim()) { const t = longTime(node.nodeValue.trim()); if (t !== node.nodeValue.trim()) node.nodeValue = t; }
     }
   };
@@ -97,12 +268,15 @@ globalThis.net19Theme = {
       }
       const pdp = post.querySelector(':scope > #pdp-credit-bar [slot="authorName"]');
       if (pdp && !pdp.querySelector('[data-n19-posted]')) mark(pdp, 'data-n19-posted', 'Posted by u/', s => pdp.prepend(s));
-      const comments = post.shadowRoot?.querySelector('a[data-post-click-location="comments-button"] .rpl-cab--content');
+      const comments = post.shadowRoot?.querySelector('[data-post-click-location="comments-button"] .rpl-cab--content, [data-action-bar-action="comments"] .rpl-cab--content');
       if (comments && !comments.querySelector('[data-n19-label]')) mark(comments, 'data-n19-label', ' Comments', s => comments.append(s));
     }
-    for (const row of document.querySelectorAll('shreddit-comment-action-row')) add(row.shadowRoot, COMMENT);
+    for (const row of document.querySelectorAll('shreddit-comment-action-row')) add(row.shadowRoot, COMMENT + (row.closest('shreddit-comment') ? TREE_VOTES : ''));
     for (const award of document.querySelectorAll('award-button')) add(award.shadowRoot, AWARD);
     for (const join of document.querySelectorAll('shreddit-join-button')) add(join.shadowRoot, JOIN);
+    for (const holder of document.querySelectorAll('shreddit-subreddit-header-buttons')) for (const join of holder.shadowRoot?.querySelectorAll('shreddit-join-button') || []) add(join.shadowRoot, JOIN);
+    for (const card of document.querySelectorAll('shreddit-subreddit-header')) add(card.shadowRoot, COMMUNITY);
+    for (const follow of document.querySelectorAll('follow-button')) add(follow.shadowRoot, FOLLOW);
     for (const box of document.querySelectorAll('comment-body-header faceplate-textarea-input, shreddit-composer faceplate-textarea-input')) add(box.shadowRoot, FIELD);
     for (const comment of document.querySelectorAll('shreddit-comment[score]')) {
       const meta = comment.querySelector(':scope > details > summary [slot="commentMeta"] .author-name-meta');
@@ -118,6 +292,12 @@ globalThis.net19Theme = {
     const about = document.querySelector('#right-sidebar-contents aside.subreddit-right-rail-community-info > div > shreddit-subreddit-header');
     if (about && !about.parentElement.querySelector(':scope > [data-n19-strip]')) { const strip = document.createElement('div'); strip.setAttribute('data-n19-strip', ''); strip.textContent = 'About Community'; about.before(strip); }
     for (const box of document.querySelectorAll('comment-body-header faceplate-textarea-input[placeholder="Join the conversation"]')) box.setAttribute('placeholder', 'What are your thoughts?');
+    for (const sort of document.querySelectorAll('shreddit-sort-dropdown')) add(sort.shadowRoot, SORT);
+    for (const auth of document.querySelectorAll('auth-flow-modal')) {
+      add(auth.shadowRoot, AUTH);
+      for (const field of auth.querySelectorAll('faceplate-text-input')) add(field.shadowRoot, FIELD);
+    }
+    header(); sortBar(); heading(); overlay(); footer();
     times(document);
   };
   let queued = false;
@@ -127,5 +307,6 @@ globalThis.net19Theme = {
     new MutationObserver(later).observe(document.body, { childList: true, subtree: true });
     setInterval(() => times(document), 30000);
   };
+  loadFonts();
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();

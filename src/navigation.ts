@@ -1,5 +1,5 @@
 import { THEMES, themePaused, type HandmadeTheme } from './themes';
-import type { Settings } from './shared';
+import type { Settings } from './settings';
 
 type Rule = chrome.declarativeNetRequest.Rule;
 const MAIN = ['main_frame' as chrome.declarativeNetRequest.ResourceType];
