@@ -18,6 +18,13 @@ globalThis.net19Theme = (() => {
       if (/^\s*Ask YouTube\s*$/i.test(node.textContent || '') && !node.closest('[data-net19-hidden]')) node.setAttribute('data-net19-hidden', '');
     }
   };
+  const LATER_SECTIONS = /^(?:Featured places|Places|Ask)$/;
+  const sections = () => {
+    for (const item of document.querySelectorAll('ytd-structured-description-content-renderer #items > :not([data-net19-hidden])')) {
+      const headings = item.querySelectorAll('h1, h2, h3, #title, [class*="Title" i], [class*="header" i]');
+      if ([...headings].some(heading => LATER_SECTIONS.test((heading.textContent || '').trim()))) item.setAttribute('data-net19-hidden', '');
+    }
+  };
   const comments = () => {
     for (const button of document.querySelectorAll('ytd-watch-metadata ytd-text-inline-expander #expand')) {
       for (const node of button.childNodes) if (node.nodeType === 3 && /^\s*(?:\.{3}|…)\s*more\s*$/i.test(node.data)) node.data = 'Show more';
@@ -41,9 +48,9 @@ globalThis.net19Theme = (() => {
     setTimeout(() => { if (field && document.activeElement !== field) field.focus(); }, 0);
   }, true);
   let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); comments(); }); };
+  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); comments(); sections(); }); };
   const start = () => {
-    fix(); comments();
+    fix(); comments(); sections();
     new MutationObserver(later).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
   };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
