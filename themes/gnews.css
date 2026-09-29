@@ -126,3 +126,4 @@ body > c-wiz[role="navigation"] a[role="tab"][aria-label="Saved stories" i], bod
 main [data-net19-hidden] { display: none !important; }
 body > c-wiz[role="navigation"] a[aria-label="Top stories"] { --n19-i: var(--n19-i-home); }
 body > c-wiz[role="navigation"] a[aria-label="Favorites"] { --n19-i: var(--n19-i-following); }
+:is(a[href^="./showcase"], a[href*="news.google.com/showcase"], [role="tab"]:has(> a[href^="./showcase"])) { display: none !important; }

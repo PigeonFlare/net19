@@ -31,7 +31,15 @@ if (location.hostname === 'docs.google.com') addEventListener('load', () => setT
       const label = document.getElementById((item.getAttribute('aria-labelledby') || '').split(' ')[0]);
       if (label && LATER.test(text(label))) item.setAttribute('data-net19-drive-later', '');
     }
-    for (const field of document.querySelectorAll('#gb input[name="q"][placeholder="Search in Drive"]')) { field.placeholder = 'Search Drive'; field.setAttribute('aria-label', 'Search Drive'); }
+    if (net19.lang() === 'en') for (const field of document.querySelectorAll('#gb input[name="q"]:is([placeholder="Search in Drive"], [placeholder="Get answers from Drive"])')) { field.placeholder = 'Search Drive'; field.setAttribute('aria-label', 'Search Drive'); }
+    for (const svg of document.querySelectorAll('#gb button[data-rp-placement-id="OneGoogleBarSearchButton"] svg:not([data-net19-lens])')) {
+      const [path, ...rest] = svg.querySelectorAll('path');
+      if (!path) continue;
+      svg.setAttribute('data-net19-lens', '');
+      svg.setAttribute('viewBox', '0 0 24 24');
+      for (const other of rest) other.remove();
+      path.setAttribute('d', 'M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z');
+    }
   };
   let queued = false;
   const start = () => { run(); new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; run(); }); } }).observe(document.documentElement, { childList: true, subtree: true }); };

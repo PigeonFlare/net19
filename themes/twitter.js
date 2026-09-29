@@ -15,7 +15,7 @@ globalThis.net19Theme = {
     return .2126 * r + .7152 * g + .0722 * b < 90 ? 'dark' : 'light';
   },
   watch: ['style', 'class', 'data-theme'],
-  later: /^(?:grok|ask grok|explain this post|analy[sz]e (?:this )?post|grok actions|profile summary|get verified|subscribe|subscribe to premium|upgrade to premium\+?|premium\+?|verified orgs|creator studio|monetization|communities|spaces|start a space|jobs|articles|business|everyone can reply|schedule|live on x|get the app|download the app)$/i,
+  later: /^(?:grok|ask grok|explain this post|analy[sz]e (?:this )?post|grok actions|profile summary|get verified|subscribe|subscribe to premium|upgrade to premium\+?|premium\+?|verified orgs|creator studio|monetization|communities|spaces|start a space|jobs|articles|business|everyone can reply|schedule|schedule post|content disclosure|generate image|history|manage timelines|live on x|get the app|download the app)$/i,
   keepLabels: /^(?:messages|home|explore|notifications|bookmarks|lists|profile|more|search|tweet|reply|retweet|like|share)$/i,
 };
 (() => {
@@ -91,6 +91,11 @@ globalThis.net19Theme = {
     for (const list of document.querySelectorAll('[data-testid="primaryColumn"] [role="tablist"]:not([data-n19-tw])')) {
       const labels = [...list.querySelectorAll('[role="tab"]')].map(t => t.textContent.trim());
       if (labels.includes('For you') && labels.includes('Following')) { list.setAttribute('data-n19-tw', 'hometabs'); walk(list); }
+    }
+    for (const board of document.querySelectorAll('[data-testid="sidebarColumn"] [data-testid$="_scores_sidebar"]')) {
+      let box = board;
+      while (box.parentElement && box.parentElement.childElementCount < 3 && !box.parentElement.matches('[data-testid="sidebarColumn"]')) box = box.parentElement;
+      if (box.getAttribute('data-n19-tw') !== 'later') box.setAttribute('data-n19-tw', 'later');
     }
     for (const label of document.querySelectorAll('main article a[href*="/status/"] > div:last-child')) {
       if (label.textContent.trim() !== 'Views') continue;
