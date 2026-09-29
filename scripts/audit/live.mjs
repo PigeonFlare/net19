@@ -105,7 +105,7 @@ for (const [id, url] of Object.entries(URLS)) for (const scheme of SCHEMES) {
     const faintOnes = await faint(png, info.texts);
     const checks = await p.evaluate(`(() => { ${PAGE_CHECKS}; return net19PageChecks(); })()`).catch(() => ({ covered: [], offcenter: [], textoffcenter: [], overlap: [] }));
     result.states[state] = { mode: info.mode, flip: info.flip, title: info.title, faint: faintOnes.map(f => `${f.t} (${f.ratio})`), modern: info.modern.map(m => m.t), misaligned: info.misaligned.map(m => `${m.t} ${m.dy}px`), inside: info.inside.map(m => m.t || 'button'), inked: info.texts.filter(t => t.ink).length,
-      covered: checks.covered.map(c => `${c.what} ${c.detail}`), offcenter: checks.offcenter.map(c => `${c.what} ${c.detail}`), textoffcenter: checks.textoffcenter.map(c => `${c.what} ${c.detail}`), overlap: checks.overlap.map(c => `${c.what} ${c.detail}`) };
+      covered: checks.covered.map(c => `${c.what} ${c.detail}`), offcenter: checks.offcenter.map(c => `${c.what} ${c.detail}`), textoffcenter: checks.textoffcenter.map(c => `${c.what} ${c.detail}`), overlap: checks.overlap.map(c => `${c.what} ${c.detail}`), collide: (checks.collide || []).map(c => `${c.what} ${c.detail}`), effects: (checks.effects || []).map(c => `${c.what} ${c.detail}`), cropped: (checks.cropped || []).map(c => `${c.what} ${c.detail}`), lowcontrast: (checks.lowcontrast || []).map(c => `${c.what} ${c.detail}`) };
     const boxes = [...faintOnes.map(b => ({ ...b, c: 'magenta' })), ...info.modern.map(b => ({ ...b, c: 'orange' })), ...info.misaligned.map(b => ({ ...b, c: 'cyan' })), ...info.inside.map(b => ({ ...b, c: 'lime' })), ...checks.covered.map(b => ({ ...b, c: 'red' })), ...checks.offcenter.map(b => ({ ...b, c: 'yellow' })), ...checks.textoffcenter.map(b => ({ ...b, c: 'yellow' })), ...checks.overlap.map(b => ({ ...b, c: 'blue' }))];
     await mark(png, boxes, `${OUT}/${id}/${scheme}-${state}.png`);
   };
@@ -116,6 +116,8 @@ for (const [id, url] of Object.entries(URLS)) for (const scheme of SCHEMES) {
     const triggers = await p.$$eval('header a, header button, nav a, nav button, [role=navigation] a, [aria-haspopup]:not([aria-haspopup=false]), [aria-expanded]', els => els.map((e, i) => { const r = e.getBoundingClientRect(); return { i, x: r.left + r.width / 2, y: r.top + r.height / 2, ok: r.width > 8 && r.height > 8 && r.top >= 0 && r.top < 130 && getComputedStyle(e).visibility === 'visible' }; }).filter(e => e.ok).slice(0, 6)).catch(() => []);
     let n = 0;
     for (const t of triggers) { await p.mouse.move(t.x, t.y); await p.waitForTimeout(900); await record(`hover${++n}`); }
+    const sideItems = await p.$$eval('nav a, aside a, [role=navigation] a, [role=complementary] a, [role=tree] [role=treeitem], [role=listitem] a', els => els.map(e => { const r = e.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2, ok: r.width > 20 && r.height > 12 && r.top >= 130 && r.bottom < innerHeight && getComputedStyle(e).visibility === 'visible' }; }).filter(e => e.ok).filter((e, i, all) => all.findIndex(o => Math.abs(o.x - e.x) < 40 && Math.abs(o.y - e.y) < 40) === i).slice(0, 4)).catch(() => []);
+    for (const t of sideItems) { await p.mouse.move(t.x, t.y); await p.waitForTimeout(700); await record(`sidehover${++n}`); }
     await p.mouse.move(5, 850);
     const search = await p.$('input[type=search], input[name=q], input[name=search_query], textarea[name=q], input[role=combobox], input[placeholder*="earch" i], input[aria-label*="earch" i]');
     if (search && await search.isVisible().catch(() => false)) {
@@ -142,6 +144,32 @@ for (const [id, url] of Object.entries(URLS)) for (const scheme of SCHEMES) {
         return hits;
       }, shellBefore || { left: 0, top: 0, right: 0, bottom: 0 }).catch(() => []);
       if (grownOver.length) result.fieldgrow = `the focused search field grew over: ${grownOver.join(', ')}`;
+      const focusProblems = await search.evaluate((f, before) => {
+        const problems = [];
+        const shell = f.closest('form, [role=search]') || f;
+        const now = shell.getBoundingClientRect();
+        if (before && (Math.abs(now.top - before.top) > 3 || Math.abs(now.left - before.left) > 3)) problems.push(`field moved ${Math.round(now.left - before.left)},${Math.round(now.top - before.top)}px when focused`);
+        for (const e of document.querySelectorAll('body *')) {
+          const c = getComputedStyle(e);
+          if (!/fixed|absolute/.test(c.position) || e.contains(shell)) continue;
+          const r = e.getBoundingClientRect();
+          if (r.width < innerWidth * .8 || r.height < innerHeight * .5) continue;
+          const bg = c.backgroundColor.match(/[\d.]+/g);
+          if (bg && bg.length === 4 && +bg[3] > .05 && +bg[3] < .95 && c.visibility === 'visible' && +c.opacity > .05) { problems.push(`a backdrop (${e.tagName.toLowerCase()}) dims the page when the field is focused`); break; }
+        }
+        for (const list of document.querySelectorAll('[role=listbox], [role=menu]')) {
+          const r = list.getBoundingClientRect();
+          if (r.width < 40 || r.height < 10 || getComputedStyle(list).visibility !== 'visible') continue;
+          if (list.scrollHeight > list.clientHeight + 4 && /hidden|clip/.test(getComputedStyle(list).overflowY)) problems.push('suggestions are cut off inside their box');
+          for (let a = list.parentElement; a && a !== document.body; a = a.parentElement) {
+            const c = getComputedStyle(a); if (!/hidden|clip/.test(c.overflowX + c.overflowY)) continue;
+            const q = a.getBoundingClientRect();
+            if (r.bottom > q.bottom + 4 || r.right > q.right + 4) { problems.push(`suggestions are cut off by ${a.tagName.toLowerCase()}${a.id ? '#' + a.id : ''}`); break; }
+          }
+        }
+        return problems;
+      }, shellBefore).catch(() => []);
+      if (focusProblems.length) result.focus = focusProblems.join('; ');
       await record('search');
       await p.keyboard.press('Escape');
     }
@@ -149,6 +177,6 @@ for (const [id, url] of Object.entries(URLS)) for (const scheme of SCHEMES) {
     if (menu && await menu.isVisible().catch(() => false)) { await menu.click({ timeout: 3000 }).catch(() => {}); await p.waitForTimeout(1200); await record('menu'); }
   } catch (e) { result.err = e.message.slice(0, 100); }
   appendFileSync(`${OUT}/report.jsonl`, JSON.stringify(result) + '\n');
-  console.log(id, scheme, result.blocked ? 'BLOCKED: ' + result.blocked : '', result.fieldgrow ? 'FIELD GREW: ' + result.fieldgrow : '', Object.entries(result.states).map(([k, v]) => `${k}:${(v.faint?.length || 0)}f/${(v.modern?.length || 0)}m/${(v.misaligned?.length || 0)}a/${(v.inside?.length || 0)}i/${(v.covered?.length || 0)}c/${(v.offcenter?.length || 0) + (v.textoffcenter?.length || 0)}o/${(v.overlap?.length || 0)}x`).join(' '));
+  console.log(id, scheme, result.blocked ? 'BLOCKED: ' + result.blocked : '', result.fieldgrow ? 'FIELD GREW: ' + result.fieldgrow : '', result.focus ? 'FOCUS: ' + result.focus : '', Object.entries(result.states).map(([k, v]) => `${k}:${(v.faint?.length || 0)}f/${(v.modern?.length || 0)}m/${(v.misaligned?.length || 0)}a/${(v.inside?.length || 0)}i/${(v.covered?.length || 0)}c/${(v.offcenter?.length || 0) + (v.textoffcenter?.length || 0)}o/${(v.overlap?.length || 0)}x/${(v.collide?.length || 0)}k/${(v.effects?.length || 0)}e/${(v.cropped?.length || 0)}r/${(v.lowcontrast?.length || 0)}l`).join(' '));
   await ctx.close();
 }

@@ -137,6 +137,11 @@ for (const [name, url] of Object.entries(PAGES)) {
     }
     report.push(`- [${verdict}] ${f.kind} "${f.label}" (${f.tag}${f.role ? ' role=' + f.role : ''}) at ${f.box.x},${f.box.y} ${f.box.w}x${f.box.h}${known?.evidence ? ` — ${[].concat(known.evidence).join(', ')}` : ''}${crop ? ` — ${crop}` : ''}`);
   }
+  for (const wanted of evidence.features.filter(e => e.in2019 && e.required && (!e.pages || e.pages.includes(name)))) {
+    if (features.some(f => wanted.pattern.test(f.label))) continue;
+    problems++;
+    report.push(`- [MISSING 2019 FEATURE] "${wanted.match}" was on this page in 2019 (${[].concat(wanted.evidence || []).join(', ')}) but isn't shown`);
+  }
   if (shot) writeFileSync(`${OUT}/${name}-full.png`, shot);
   report.push('');
   await page.close();

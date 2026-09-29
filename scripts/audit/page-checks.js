@@ -127,7 +127,48 @@ function net19PageChecks() {
   out.lowcontrast = net19Contrast();
   out.dim = net19Dim();
   out.cropped = net19Cropped();
+  Object.assign(out, net19Layout());
   return out;
+}
+
+function net19Layout() {
+  const W = innerWidth, H = innerHeight;
+  const collide = [], effects = [];
+  const visible = e => { const r = e.getBoundingClientRect(); const c = getComputedStyle(e);
+    return r.width > 4 && r.height > 4 && r.bottom > 0 && r.right > 0 && r.top < H && r.left < W && c.visibility === 'visible' && +c.opacity > .05; };
+  const name = e => (e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + (typeof e.className === 'string' && e.className ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '')).slice(0, 70);
+  const box = r => ({ x: Math.round(r.left), y: Math.round(r.top), w: Math.round(r.width), h: Math.round(r.height) });
+  const blocks = [...document.querySelectorAll('article, section, aside, nav, header, main, [role=article], [role=complementary], [role=navigation], [role=main], [data-testid*="post" i], shreddit-post, [class*="card" i]')].filter(e => {
+    if (!visible(e)) return false;
+    const r = e.getBoundingClientRect(); const c = getComputedStyle(e);
+    return r.width >= 120 && r.height >= 40 && !/fixed|sticky|absolute/.test(c.position) && !e.closest('[role=dialog], [role=menu], [role=listbox], dialog');
+  });
+  const seen = new Set();
+  for (let i = 0; i < blocks.length && i < 400; i++) for (let j = i + 1; j < blocks.length && j < 400; j++) {
+    const a = blocks[i], b = blocks[j];
+    if (a.contains(b) || b.contains(a)) continue;
+    const p = a.getBoundingClientRect(), q = b.getBoundingClientRect();
+    const ox = Math.min(p.right, q.right) - Math.max(p.left, q.left), oy = Math.min(p.bottom, q.bottom) - Math.max(p.top, q.top);
+    if (ox < 12 || oy < 12) continue;
+    const key = name(a) + '|' + name(b);
+    if (seen.has(key)) continue;
+    seen.add(key);
+    collide.push({ what: `${name(a)} × ${name(b)}`, detail: `blocks overlap ${Math.round(ox)}×${Math.round(oy)}px`, ...box({ left: Math.max(p.left, q.left), top: Math.max(p.top, q.top), width: ox, height: oy }) });
+  }
+  const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+  const styled = new Set();
+  for (let n = walker.nextNode(), k = 0; n && k < 3000; n = walker.nextNode(), k++) {
+    const el = n.parentElement;
+    if (!el || styled.has(el) || !n.nodeValue.trim()) continue;
+    styled.add(el);
+    const c = getComputedStyle(el);
+    const stroke = parseFloat(c.webkitTextStrokeWidth) > 0;
+    if ((c.textShadow && c.textShadow !== 'none') || stroke) {
+      if (!visible(el)) continue;
+      effects.push({ what: name(el), detail: stroke ? 'text stroke' : `text shadow ${c.textShadow.slice(0, 50)}`, ...box(el.getBoundingClientRect()) });
+    }
+  }
+  return { collide: collide.slice(0, 40), effects: effects.slice(0, 40) };
 }
 
 function net19Cropped() {

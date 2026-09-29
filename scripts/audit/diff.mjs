@@ -32,7 +32,7 @@ for (const [id, url] of TARGETS) {
   const [before, after] = [await run(url, false), await run(url, true)];
   const added = {};
   if (before && after && !before.error && !after.error) {
-    for (const k of ['covered', 'offcenter', 'textoffcenter', 'overlap', 'lowcontrast', 'dim', 'cropped']) {
+    for (const k of ['covered', 'offcenter', 'textoffcenter', 'overlap', 'lowcontrast', 'dim', 'cropped', 'cut', 'collide', 'effects']) {
       const had = new Set(before[k].map(key));
       added[k] = after[k].filter(item => !had.has(key(item)));
     }
