@@ -19,6 +19,73 @@
   ],
   "features": [
     {
+      "match": "^Life on LINE$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "first header menu item"
+    },
+    {
+      "match": "^Download$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "header menu"
+    },
+    {
+      "match": "^Family Apps$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "header menu"
+    },
+    {
+      "match": "^(App Store|Google Play)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "download buttons"
+    },
+    {
+      "match": "^Help$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "footer"
+    },
+    {
+      "match": "^Privacy Policy$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "footer"
+    },
+    {
+      "match": "^User Agreement$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "footer"
+    },
+    {
       "match": "^(header|main|section|footer|navigation) area$|^repeated |^<picture>",
       "in2019": true,
       "evidence": [
@@ -27,7 +94,7 @@
       "note": "regions, feature bands and the LINE wordmark link"
     },
     {
-      "match": "^(Download|Family Apps|Messenger APP|Services|Games|LINE STORE|LINE Out|LINE Pay|EN|English)$",
+      "match": "^(Download|Family Apps|Messenger APP|Services|Games|LINE STORE|LINE Out|LINE Pay|EN|JP|KR|TW|TH|ID|English)$",
       "in2019": true,
       "evidence": [
         "s1",

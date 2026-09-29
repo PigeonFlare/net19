@@ -27,7 +27,7 @@ html[data-n19-line="lp"] body :is(h1, h2, h3, p, a, li, span, div) { font-family
   html[data-n19-line="lp"] body > header ul.headerMenu > li > a { font-size: 14px !important; font-weight: 400 !important; color: var(--n19-text) !important; line-height: 66px !important;
     padding: 0 !important; letter-spacing: 0 !important; }
   html[data-n19-line="lp"] body > header ul.headerMenu > li.current > a { font-weight: 700 !important; }
-  html[data-n19-line="lp"] body > header ul.headerMenu > li > a:hover { color: var(--n19-green) !important; }
+  html[data-n19-line="lp"] body > header ul.headerMenu > li > a:hover { color: var(--n19-green-dark) !important; }
   html[data-n19-line="lp"] body > header ul.headerMenu > li.currentLine { display: none !important; }
   html[data-n19-line="lp"] body > header ul.langMenuTop { position: static !important; margin: 0 0 0 auto !important; transform: none !important;
     display: flex !important; align-items: center !important; box-sizing: border-box !important; min-width: 129px !important; height: 24px !important;
@@ -50,7 +50,7 @@ html[data-n19-line="lp"] main > section, html[data-n19-line="lp"] #mainTitleArea
 html[data-n19-line="lp"] main :is(h2, h3) { color: var(--n19-head) !important; font-weight: 100 !important; letter-spacing: 0 !important; }
 html[data-n19-line="lp"] main h2 { font-size: 60px !important; line-height: 1.1 !important; }
 html[data-n19-line="lp"] main .subTxt { color: var(--n19-text) !important; font-size: 14px !important; line-height: 1.6 !important; font-weight: 300 !important; }
-html[data-n19-line="lp"] main a:hover { color: var(--n19-green) !important; }
+html[data-n19-line="lp"] main a:hover { color: var(--n19-green-dark) !important; }
 html[data-n19-line="lp"] main :is(.productMenu, .productMenuWrap) :is(.current, .active, [aria-selected="true"]) { color: var(--n19-green) !important; }
 
 @media (min-width: 879px) {
