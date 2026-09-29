@@ -128,7 +128,219 @@ function net19PageChecks() {
   out.dim = net19Dim();
   out.cropped = net19Cropped();
   Object.assign(out, net19Layout());
+  Object.assign(out, net19Rows());
   return out;
+}
+
+function net19Rows() {
+  const W = innerWidth, H = innerHeight;
+  const found = { clipline: [], rowwrap: [], rowalign: [], spill: [], iconovertext: [], gap: [] };
+  const up = e => e.parentElement || (e.parentNode && e.parentNode.host) || null;
+  const name = e => (e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + (typeof e.className === 'string' && e.className ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '')).slice(0, 60);
+  const label = e => (e.getAttribute?.('aria-label') || e.getAttribute?.('placeholder') || e.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 30);
+  const box = r => ({ x: Math.round(r.left), y: Math.round(r.top), w: Math.round(r.width), h: Math.round(r.height) });
+  const seen = new Set();
+  const report = (k, e, detail, r) => { const key = k + name(e) + detail.replace(/[\d.-]+px/g, ''); if (seen.has(key) || found[k].length >= 40) return; seen.add(key); found[k].push({ what: `${name(e)} "${label(e)}"`, detail, ...box(r) }); };
+  const all = [];
+  const collect = root => { for (const e of root.querySelectorAll('*')) { all.push(e); if (e.shadowRoot) collect(e.shadowRoot); } };
+  collect(document);
+  const styleOf = new Map(), rectOf = new Map();
+  const cs = e => styleOf.get(e) || styleOf.set(e, getComputedStyle(e)).get(e);
+  const rect = e => rectOf.get(e) || rectOf.set(e, e.getBoundingClientRect()).get(e);
+  const onScreen = r => r.width > 1 && r.height > 1 && r.bottom > 0 && r.right > 0 && r.top < H && r.left < W;
+  const deep = root => { const list = []; const walk = r => { for (const e of r.querySelectorAll('*')) { list.push(e); if (e.shadowRoot) walk(e.shadowRoot); } }; walk(root.shadowRoot || root); if (root.shadowRoot) walk(root); return list; };
+  const seenEl = e => { if (!onScreen(rect(e))) return false; for (let n = e; n && n.nodeType === 1; n = up(n)) { const c = cs(n); if (c.display === 'none' || c.visibility !== 'visible' && n === e || +c.opacity < .05) return false; } return true; };
+  const inPopup = e => { for (let n = e; n && n.nodeType === 1; n = up(n)) if (n.matches('[role=dialog], [role=menu], [role=listbox], [role=tooltip], dialog')) return true; return false; };
+  const alphaOf = c => { const m = String(c).match(/[\d.]+/g); return !m ? 0 : m.length > 3 ? +m[3] : 1; };
+  const painted = c => alphaOf(c.backgroundColor) > .05 || /url\(|gradient/.test(c.backgroundImage) || c.boxShadow !== 'none' || ['Top', 'Right', 'Bottom', 'Left'].some(s => parseFloat(c[`border${s}Width`]) > 0 && c[`border${s}Style`] !== 'none' && alphaOf(c[`border${s}Color`]) > .1);
+  const ringed = c => (['Top', 'Right', 'Bottom', 'Left'].every(s => parseFloat(c[`border${s}Width`]) >= 1 && c[`border${s}Style`] !== 'none' && alphaOf(c[`border${s}Color`]) > .2)) || (c.outlineStyle !== 'none' && parseFloat(c.outlineWidth) >= 1 && alphaOf(c.outlineColor) > .2);
+  const textLines = (root, limit = 200) => {
+    const lines = [];
+    const walk = r => { const t = document.createTreeWalker(r, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
+      for (let n = t.nextNode(); n && lines.length < limit; n = t.nextNode()) {
+        if (n.nodeType === 1) { if (n.shadowRoot) walk(n.shadowRoot); continue; }
+        if (!n.nodeValue.trim() || !n.parentElement || n.parentElement.closest('script,style,noscript')) continue;
+        const c = cs(n.parentElement); if (c.visibility !== 'visible' || c.display === 'none') continue;
+        const range = document.createRange(); range.selectNodeContents(n);
+        for (const q of range.getClientRects()) if (q.width > 2 && q.height > 4) lines.push({ q, el: n.parentElement });
+      } };
+    walk(root);
+    return lines;
+  };
+
+  const hiddenInside = (el, outer, q) => { for (let n = el; n && n !== outer; n = up(n)) { if (n.nodeType !== 1) continue; const c = cs(n); if (+c.opacity < .05 || c.clipPath !== 'none' || c.clip !== 'auto') return true; if (/hidden|clip/.test(c.overflowY)) { const b = rect(n); if (q.top >= b.bottom - 3 || q.bottom <= b.top + 3) return true; } } return false; };
+  for (const e of all) {
+    const c = cs(e);
+    if (!/hidden|clip/.test(c.overflowY) || e.tagName === 'BODY' || e.tagName === 'HTML') continue;
+    const r = rect(e);
+    if (r.height < 10 || r.height > 500 || r.width < 30 || !onScreen(r) || r.bottom > H) continue;
+    if (e.scrollHeight <= e.clientHeight + 2 || !seenEl(e)) continue;
+    if (c.maskImage && c.maskImage !== 'none' || c.webkitMaskImage && c.webkitMaskImage !== 'none') continue;
+    const bottom = r.top + e.clientTop + e.clientHeight;
+    const cut = textLines(e).find(({ q, el }) => bottom - q.top > Math.max(3, q.height * .3) && q.bottom - bottom > Math.max(3, q.height * .3) && q.left < r.right && q.right > r.left && !/fixed|absolute/.test(cs(el).position) && !hiddenInside(el, e, q));
+    if (cut) report('clipline', e, `a line of "${(cut.el.textContent || '').trim().slice(0, 24)}" cut at ${Math.round(bottom - cut.q.top)}px of its ${Math.round(cut.q.height)}px`, r);
+  }
+  for (const e of all) {
+    const c = cs(e);
+    if (!c.webkitLineClamp || c.webkitLineClamp === 'none' || /hidden|clip/.test(c.overflowY)) continue;
+    const r = rect(e);
+    if (!onScreen(r) || e.scrollHeight <= e.clientHeight + 2 || !seenEl(e)) continue;
+    const bottom = r.bottom;
+    if (textLines(e).some(({ q }) => q.top >= bottom - 2 && q.top < H)) report('clipline', e, `line-clamped to ${c.webkitLineClamp} lines but its box doesn't hide the rest (${e.scrollHeight}px of text in ${e.clientHeight}px)`, r);
+  }
+
+  const control = e => e.matches('a[href], button, [role=button], [role=link], [role=tab], [role=menuitem]');
+  const realParent = e => { let n = up(e); while (n && n.nodeType === 1 && (cs(n).display === 'contents' || n.tagName === 'SLOT')) n = up(n); return n && n.nodeType === 1 ? n : null; };
+  const members = new Map();
+  for (const e of all) {
+    if (!control(e) || e.parentElement?.closest('a[href], button, [role=button]') || !seenEl(e)) continue;
+    const r = rect(e);
+    if (r.height > 48 || r.width > 260 || label(e).length > 30 || /absolute|fixed/.test(cs(e).position) || inPopup(e) || e.closest('footer, [role=contentinfo]')) continue;
+    for (let p = realParent(e), i = 0; p && i < 3; p = realParent(p), i++) { if (rect(p).height > 140) break; (members.get(p) || members.set(p, []).get(p)).push(e); }
+  }
+  const wrapped = new Set();
+  for (const [p, items0] of members) {
+    if (items0.length < 3 || !seenEl(p)) continue;
+    const pr = rect(p), pc = cs(p);
+    if (pr.width < 80) continue;
+    if (items0.some(k => k.getClientRects().length > 1)) continue;
+    const loose = (p.textContent || '').replace(/[\s·•|,–-]/g, '').length - items0.reduce((n, k) => n + (k.textContent || '').replace(/[\s·•|,–-]/g, '').length, 0);
+    if (loose > 12) continue;
+    const items = items0.map(k => ({ k, r: rect(k) }));
+    const rows = [];
+    for (const i of items.sort((a, b) => a.r.top - b.r.top)) { const row = rows.find(rw => Math.min(rw.bottom, i.r.bottom) - Math.max(rw.top, i.r.top) > Math.min(rw.bottom - rw.top, i.r.height) * .5); if (row) row.n++; else rows.push({ top: i.r.top, bottom: i.r.bottom, n: 1 }); }
+    if (rows.length !== 2 && rows.length !== 3) continue;
+    const sig = items0.map(label).sort().join('|');
+    if (wrapped.has(sig)) continue;
+    const content = pr.width - parseFloat(pc.paddingLeft) - parseFloat(pc.paddingRight);
+    const need = items.reduce((s, i) => s + i.r.width + (parseFloat(cs(i.k).marginLeft) || 0) + (parseFloat(cs(i.k).marginRight) || 0), 0) + (parseFloat(pc.columnGap) || 0) * (items.length - 1);
+    const most = Math.max(...rows.map(rw => rw.n)), least = Math.min(...rows.map(rw => rw.n));
+    const fits = need <= content + 1 && most >= 2;
+    if (fits || rows.length === 2 && most >= 3 && least === 1) { wrapped.add(sig); report('rowwrap', p, `${items.length} controls on ${rows.length} lines (${rows.map(rw => rw.n).join('+')})${fits ? `, they fit in ${Math.round(content)}px (need ${Math.round(need)}px)` : ''}`, pr); }
+  }
+
+  const barLike = e => { for (let n = e, i = 0; n && n.nodeType === 1 && i < 8; n = up(n), i++) if (n.matches('header, nav, [role=banner], [role=navigation], [role=toolbar], [role=menubar], [role=tablist], [id*="nav" i], [class*="toolbar" i], [class*="header" i], [class*="actions" i], [class*="action-bar" i], [class*="buttons" i]')) return true; return false; };
+  const ink = e => { const lines = textLines(e, 20).map(l => l.q); for (const k of e.querySelectorAll('svg, img')) { if (k.parentElement?.closest('svg')) continue; const q = rect(k); if (q.width > 3 && q.height > 3) lines.push(q); }
+    if (!lines.length) return null; const top = Math.min(...lines.map(q => q.top)), bottom = Math.max(...lines.map(q => q.bottom)); return { top, bottom, mid: (top + bottom) / 2 }; };
+  const alignParents = new Set();
+  for (const e of all) if ((control(e) || e.matches('svg, img')) && e.parentElement && !e.parentElement.closest('svg')) alignParents.add(e.parentElement);
+  for (const p of alignParents) {
+    if (!seenEl(p) || inPopup(p)) continue;
+    const pr = rect(p);
+    if (pr.height > 90 || pr.width < 40 || !barLike(p)) continue;
+    const items = [...p.children].filter(k => seenEl(k) && !/absolute|fixed/.test(cs(k).position) && k.tagName !== 'svg' || k.tagName === 'svg' && seenEl(k)).map(k => ({ k, r: rect(k) }))
+      .filter(i => i.r.height >= 8 && i.r.height <= 64 && i.r.width >= 8 && !(i.k.matches('svg, img') && (i.r.width > 40 || i.r.height > 40)) && (control(i.k) || i.k.matches('svg, img') || i.k.querySelector('a[href], button, [role=button], svg, img') || label(i.k).length <= 24 && label(i.k).length > 0));
+    if (items.length < 2) continue;
+    const sameRow = items.filter(i => items.some(o => o !== i && Math.min(o.r.bottom, i.r.bottom) - Math.max(o.r.top, i.r.top) > Math.min(o.r.height, i.r.height) * .5));
+    if (sameRow.length < 2) continue;
+    const heights = sameRow.map(i => i.r.height);
+    const boxMid = i => i.r.top + i.r.height / 2;
+    const middle = list => [...list].sort((a, b) => a - b)[list.length >> 1];
+    const mids = sameRow.map(i => { const m = ink(i.k); return m ? m.mid : boxMid(i); });
+    const med = middle(mids), boxMed = middle(sameRow.map(boxMid));
+    const flagged = new Set();
+    sameRow.forEach((i, n) => {
+      const d = mids[n] - med;
+      if (Math.abs(d) > 4 && Math.abs(boxMid(i) - boxMed) > 4 && Math.max(...heights) < 70) { flagged.add(i); report('rowalign', i.k, `${d > 0 ? 'sits' : 'rises'} ${Math.abs(Math.round(d))}px ${d > 0 ? 'below' : 'above'} the middle of its row in ${name(p)}`, i.r); }
+    });
+    const lastLines = sameRow.map(i => { const ls = textLines(i.k, 20); return ls.length ? { i, bottom: Math.max(...ls.map(l => l.q.bottom)), size: parseFloat(cs(ls[ls.length - 1].el).fontSize) } : null; }).filter(Boolean);
+    if (lastLines.length >= 3) {
+      const shared = lastLines.map(a => lastLines.filter(b => Math.abs(a.bottom - b.bottom) <= 2 && Math.abs(a.size - b.size) <= 2)).sort((a, b) => b.length - a.length)[0];
+      if (shared.length >= 2 && shared.length >= lastLines.length * .6) {
+        const base = middle(shared.map(a => a.bottom));
+        for (const a of lastLines) { const d = a.bottom - base; if (!flagged.has(a.i) && Math.abs(d) > 4 && Math.abs(d) < 16 && Math.abs(a.size - shared[0].size) <= 2) report('rowalign', a.i.k, `text sits ${Math.abs(Math.round(d))}px ${d > 0 ? 'below' : 'above'} the line the rest of its row shares in ${name(p)}`, a.i.r); }
+      }
+    }
+  }
+
+  for (const a of all) {
+    const ac = cs(a);
+    if (!ringed(ac) || !seenEl(a) || inPopup(a)) continue;
+    const ar = rect(a);
+    if (ar.width < 24 || ar.height < 16 || ar.height > 120) continue;
+    const clipsSelf = /hidden|clip/.test(ac.overflowX + ac.overflowY);
+    if (!clipsSelf) for (const d of deep(a)) {
+      const dc = cs(d);
+      if (!painted(dc) || /absolute|fixed/.test(dc.position) || d.matches('svg *') || !seenEl(d) || inPopup(d)) continue;
+      if (d.closest('svg')) continue;
+      let clipped = false; for (let n = up(d); n && n !== a; n = up(n)) if (/hidden|clip/.test(cs(n).overflowX + cs(n).overflowY)) { clipped = true; break; }
+      if (clipped) continue;
+      const dr = rect(d), over = Math.max(ar.left - dr.left, dr.right - ar.right, ar.top - dr.top, dr.bottom - ar.bottom);
+      if (over > 1) { report('spill', d, `painted box extends ${Math.round(over)}px past the ring of ${name(a)}`, dr); break; }
+    }
+    for (let p = up(a), i = 0; p && p.nodeType === 1 && i < 3; p = up(p), i++) {
+      const pc = cs(p), pr = rect(p);
+      if (pr.width > ar.width + 24 || pr.height > ar.height + 16) break;
+      if (alphaOf(pc.backgroundColor) < .05 || pc.backgroundColor === ac.backgroundColor) continue;
+      const out = Math.max(ar.left - pr.left, pr.right - ar.right, ar.top - pr.top, pr.bottom - ar.bottom);
+      const radius = Math.max(parseFloat(pc.borderTopLeftRadius) || 0, parseFloat(ac.borderTopLeftRadius) || 0);
+      if (out > 1 && out < 12 && radius < pr.height / 2 + 1) { report('spill', p, `${pc.backgroundColor} fill shows ${Math.round(out)}px outside the ring of ${name(a)}`, pr); break; }
+    }
+  }
+  for (const p of all) {
+    const pc = cs(p);
+    if (!(parseFloat(pc.borderBottomWidth) >= 1 && pc.borderBottomStyle !== 'none' && alphaOf(pc.borderBottomColor) >= .08) || /hidden|clip/.test(pc.overflowY)) continue;
+    const pr = rect(p);
+    if (pr.width < 200 || pr.height < 20 || pr.height > 400 || !seenEl(p) || inPopup(p) || /fixed|sticky/.test(pc.position)) continue;
+    const line = pr.bottom - parseFloat(pc.borderBottomWidth);
+    for (const d of deep(p)) {
+      if (d.closest('svg') && d.tagName !== 'svg' || !(control(d) || d.matches('svg, img') || painted(cs(d)))) continue;
+      if ( /absolute|fixed/.test(cs(d).position) || inPopup(d)) continue;
+      const dr = rect(d);
+      if (dr.width < 6 || dr.height < 6 || !seenEl(d)) continue;
+      let floated = false; for (let n = up(d); n && n !== p; n = up(n)) if (/absolute|fixed/.test(cs(n).position) || /hidden|clip/.test(cs(n).overflowY)) { floated = true; break; }
+      if (floated) continue;
+      if (dr.top < line - 1 && dr.bottom > line + 2) { report('spill', d, `crosses the bottom border of ${name(p)} by ${Math.round(dr.bottom - line)}px`, dr); break; }
+      if (dr.top >= line + 1) { report('spill', d, `drawn ${Math.round(dr.top - line)}px below the bottom border of ${name(p)}, its parent`, dr); break; }
+    }
+  }
+
+  const fields = all.filter(e => e.matches('input:not([type=hidden]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=submit]):not([type=button]):not([type=image]):not([type=reset]):not([type=file]), textarea, [contenteditable=true], [role=textbox], [role=searchbox], input[role=combobox]'));
+  const icons = all.filter(e => e.matches('svg, img, i, [class*="icon" i]') && !e.parentElement?.closest('svg'));
+  for (const f of fields) {
+    if (!seenEl(f)) continue;
+    const fr = rect(f), fc = cs(f);
+    if (fr.width < 40 || fr.height < 14 || fr.height > 120) continue;
+    const left = fr.left + parseFloat(fc.borderLeftWidth) + parseFloat(fc.paddingLeft), right = fr.right - parseFloat(fc.borderRightWidth) - parseFloat(fc.paddingRight);
+    const top = fr.top + parseFloat(fc.borderTopWidth) + parseFloat(fc.paddingTop), bottom = fr.bottom - parseFloat(fc.borderBottomWidth) - parseFloat(fc.paddingBottom);
+    const text = f.value || f.placeholder || f.textContent || '';
+    let textRight = right;
+    if (f.tagName === 'INPUT' && text) { const pen = document.createElement('canvas').getContext('2d'); pen.font = `${fc.fontStyle} ${fc.fontWeight} ${fc.fontSize} ${fc.fontFamily}`; textRight = Math.min(right, left + pen.measureText(text).width); }
+    for (const k of icons) {
+      if (f.contains(k) || k.contains(f)) continue;
+      const kr = rect(k);
+      if (kr.width < 6 || kr.height < 6 || kr.width > 48 || kr.height > 48) continue;
+      const ox = Math.min(kr.right, textRight) - Math.max(kr.left, left), oy = Math.min(kr.bottom, bottom) - Math.max(kr.top, top);
+      if (ox <= 2 || oy <= 4 || !seenEl(k)) continue;
+      const hit = document.elementsFromPoint(Math.max(kr.left, left) + ox / 2, Math.max(kr.top, top) + oy / 2);
+      const iconIdx = hit.findIndex(h => h === k || k.contains(h) || h.contains?.(k) && h.matches('svg, i, [class*="icon" i]')), fieldIdx = hit.indexOf(f);
+      if (fieldIdx >= 0 && iconIdx > fieldIdx && alphaOf(fc.backgroundColor) > .9) continue;
+      report('iconovertext', k, `icon covers ${Math.round(ox)}x${Math.round(oy)}px of the ${text ? 'text' : 'text area'} of field "${label(f)}" ${name(f)}`, kr);
+    }
+  }
+
+  for (const e of all) {
+    const c = cs(e);
+    if (!(alphaOf(c.backgroundColor) > .05 && c.backgroundColor !== cs(up(e) || document.documentElement).backgroundColor || ringed(c) || c.boxShadow !== 'none')) continue;
+    const r = rect(e);
+    if (/^(BODY|HTML)$/.test(e.tagName) || r.width < 150 || r.height < 80 || r.height > 700 || r.top < 0 || r.bottom > H || !seenEl(e) || inPopup(e) || /grid/.test(c.display)) continue;
+    const bands = textLines(e, 300).map(l => [l.q.top, l.q.bottom]);
+    for (const d of e.querySelectorAll('img, svg, video, canvas, iframe, input, textarea, button, select, hr, [role=img], [role=button]')) { if (d.matches('svg *')) continue; const q = rect(d); if (q.width > 2 && q.height > 2 && seenEl(d)) bands.push([q.top, q.bottom]); }
+    for (const d of e.querySelectorAll('*')) { const dc = cs(d); if (d.matches('svg *')) continue; const pic = /url\(/.test(dc.backgroundImage); if (pic || painted(dc)) { const q = rect(d); if (q.width > 8 && q.height > 2 && (pic || q.height < Math.min(200, r.height * .6))) bands.push([q.top, q.bottom]); } }
+    if (bands.length < 2) continue;
+    bands.sort((a, b) => a[0] - b[0]);
+    let reach = bands[0][1], worst = 0, at = 0;
+    for (const [t, b] of bands.slice(1)) { if (t - reach > worst) { worst = t - reach; at = reach; } reach = Math.max(reach, b); }
+    if (worst > 32) report('gap', e, `${Math.round(worst)}px empty band between its content at y=${Math.round(at)}`, { left: r.left, top: at, width: r.width, height: worst });
+  }
+  return found;
+}
+
+function net19Content() {
+  const shown = e => e.checkVisibility ? e.checkVisibility({ visibilityProperty: true, opacityProperty: true }) : e.getClientRects().length > 0;
+  const items = new Set();
+  for (const e of document.querySelectorAll('a[href] :is(h1, h2, h3, h4, [role=heading]), :is(h1, h2, h3, h4, [role=heading]) a[href], a#video-title, a[href][id*="title" i], [data-testid*="title" i] a[href]')) if (shown(e)) items.add(e.closest('a[href]') || e);
+  return { items: items.size, text: (document.body?.innerText || '').replace(/\s+/g, ' ').length };
 }
 
 function net19Layout() {

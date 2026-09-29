@@ -20,6 +20,14 @@
   - **Required 2019 features:** mark the main 2019 features in `evidence/<id>.json` with `"required": true` (optionally `"pages": [...]`), such as Reddit's CREATE POST buttons. The inventory reports any that are missing: 2019 features have to be present, not just new ones gone.
   - **States:** check the page on load, on hover (header and sidebar items), with the search field focused and typed into, with a menu open and with a dialog open. The live audit reports a focused field that grows over other controls, moves, dims the page behind a backdrop, or cuts off its suggestions.
   - **Layout checks:** the page checks report `collide` (blocks overlapping each other, such as a feed bleeding under a sidebar), `cropped` (icons or text cut off by their box) and `effects` (text shadows or strokes; add one only when the 2019 site had it). Every item is a bug unless shown to be a false positive.
+    - `clipline`: a line of text cut through by an overflow-clipping box, or line-clamped text whose box doesn't hide the lines past the clamp.
+    - `rowwrap`: a row of 3 or more sibling controls spread over more than one line when they fit on one, or with a single control dropped onto its own line.
+    - `rowalign`: an item in a header, toolbar or action row whose middle sits more than 4px off its row's, or whose text sits off the line the rest of the row shares.
+    - `spill`: a painted box (fill, border or shadow) extending more than 1px past a bordered or focus-ringed box, or a child crossing or drawn below its parent's bottom border.
+    - `iconovertext`: an icon overlapping the text area of a field (its content box, up to the end of the text or placeholder).
+    - `gap`: an empty band taller than 32px between the content of a card or row with its own background, border or shadow.
+    - `contentlost` (`audit:diff`): visible text or result and item links drop below 60% of the page without net19.
+    - **Content hover** (`audit`): hovers the first 3 result or card titles and runs every check in that state (`overlap` catches a hover card drawn over the original), then reports `TITLE CLICK` when the first title neither links off the page nor navigates when clicked.
   - **Light mode:** light is as important as dark. Dark sites shown in light mode must look like their own 2019 light design, not an inverted grey; the page checks report `dim`.
 - Remove only features that did not exist in 2019, and check each one against 2019 evidence before removing or keeping it.
 - Run `npm run audit -- <id>` for every theme you change. It hovers menus, opens a menu and types into search, in light and dark. It flags faint text (from pixels), post-2019 labels, misaligned header items and buttons inside fields. Read the flagged screenshots; a clean first screen is not enough.

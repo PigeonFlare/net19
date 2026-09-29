@@ -18,10 +18,7 @@ async function run(url, withExtension) {
   try {
     await p.goto(url, { waitUntil: 'load', timeout: 40000 }).catch(() => {});
     await p.waitForTimeout(4000);
-    result = await p.evaluate(`(() => { ${CHECKS}; const r = net19PageChecks();
-      const shown = e => e.checkVisibility ? e.checkVisibility() : e.getClientRects().length > 0;
-      r.content = [...document.querySelectorAll('a[href] :is(h1, h2, h3), :is(h1, h2, h3) a[href], article')].filter(shown).length;
-      r.text = (document.body.innerText || '').length; return r; })()`);
+    result = await p.evaluate(`(() => { ${CHECKS}; const r = net19PageChecks(); Object.assign(r, net19Content()); return r; })()`);
     if (withExtension) await p.screenshot({ path: `${OUT}/${new URL(url).hostname}.png` }).catch(() => {});
   } catch (e) { result = { error: e.message.slice(0, 80) }; }
   await ctx.close();
@@ -32,15 +29,16 @@ for (const [id, url] of TARGETS) {
   const [before, after] = [await run(url, false), await run(url, true)];
   const added = {};
   if (before && after && !before.error && !after.error) {
-    for (const k of ['covered', 'offcenter', 'textoffcenter', 'overlap', 'lowcontrast', 'dim', 'cropped', 'collide', 'effects']) {
+    for (const k of ['covered', 'offcenter', 'textoffcenter', 'overlap', 'lowcontrast', 'dim', 'cropped', 'collide', 'effects', 'clipline', 'rowwrap', 'rowalign', 'spill', 'iconovertext', 'gap']) {
       const had = new Set((before[k] || []).map(key));
       added[k] = (after[k] || []).filter(item => !had.has(key(item)));
     }
+    added.contentlost = [];
+    if (after.text < before.text * .6) added.contentlost.push({ what: 'visible text', detail: `${before.text} -> ${after.text} characters (${Math.round(100 * after.text / before.text)}%)` });
+    if (before.items >= 5 && after.items < before.items * .6) added.contentlost.push({ what: 'result and item links', detail: `${before.items} -> ${after.items} (${Math.round(100 * after.items / before.items)}%)` });
   }
-  const lost = before && after && !before.error && !after.error && ((before.content >= 4 && after.content < before.content * .75) || after.text < before.text * .6)
-    ? `content ${before.content} -> ${after.content}, text ${before.text} -> ${after.text}` : '';
-  appendFileSync(`${OUT}/report.jsonl`, JSON.stringify({ id, url, scheme, added, lost, error: before?.error || after?.error }) + '\n');
-  if (lost) console.log(`${id}: CONTENT LOST ${lost}`);
+  appendFileSync(`${OUT}/report.jsonl`, JSON.stringify({ id, url, scheme, added, error: before?.error || after?.error }) + '\n');
+  if (added.contentlost?.length) console.log(`${id}: CONTENT LOST ${added.contentlost.map(c => `${c.what} ${c.detail}`).join('; ')}`);
   console.log(`${id}: ` + (Object.keys(added).length ? Object.entries(added).map(([k, v]) => `${v.length} ${k}`).join(', ') : 'not compared (' + (before?.error || after?.error || 'no result') + ')'));
   for (const [k, list] of Object.entries(added)) for (const item of list.slice(0, 4)) console.log(`  ${k}: ${item.what.slice(0, 70)} | ${item.detail.slice(0, 70)}`);
 }
