@@ -60,8 +60,5 @@ globalThis.net19Theme = {
       if (/Yahoo Scout/.test(box.textContent || '')) box.setAttribute('data-net19-scout', '');
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
-  const start = () => { fix(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  const later = net19.watch(fix);
 })();

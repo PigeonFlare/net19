@@ -92,9 +92,6 @@ globalThis.net19Theme = {
     links();
     join();
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
-  const start = () => { fix(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.watch(fix);
 })();
 globalThis.net19Theme.words = {"Anuncio": "Ad", "Deja comentarios sobre este anuncio": "Leave feedback for this Ad", "Publicité": "Ad", "Laisser un commentaire sur cette annonce": "Leave feedback for this Ad"};

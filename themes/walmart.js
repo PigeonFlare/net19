@@ -14,7 +14,7 @@ globalThis.net19Theme = {
     fix();
     new MutationObserver(later).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
   };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();
 (() => {
   const root = document.documentElement;
@@ -33,7 +33,7 @@ globalThis.net19Theme = {
     new MutationObserver(later).observe(document.body, { childList: true, subtree: true });
     new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-flip'] });
   };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();
 (() => {
   const SOCIAL = /\bbought (?:since yesterday|in (?:the )?past)/i;

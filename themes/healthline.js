@@ -11,10 +11,7 @@ globalThis.net19Theme = {
     }
     for (const list of document.querySelectorAll('[role="tablist"]')) if (/^Top Reads/.test(list.textContent.trim()) && !list.hasAttribute('data-n19-later')) list.setAttribute('data-n19-later', '');
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
-  const start = () => { fix(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  const later = net19.watch(fix);
 })();
 (() => {
   const mark = () => document.documentElement.toggleAttribute('data-net19-home', location.pathname === '/');
@@ -23,5 +20,5 @@ globalThis.net19Theme = {
   let last = location.pathname;
   const check = () => { if (location.pathname !== last) { last = location.pathname; mark(); } };
   const start = () => new MutationObserver(() => requestAnimationFrame(check)).observe(document.body, { childList: true });
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();

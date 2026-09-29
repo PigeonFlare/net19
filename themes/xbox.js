@@ -95,7 +95,7 @@ globalThis.net19Theme = {
     if (document.readyState === 'complete') ready(); else addEventListener('load', ready, { once: true });
   };
   const scanAgain = () => { for (const el of document.body.querySelectorAll(SEL)) seen.delete(el); scan([document.body]); };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();
 (() => {
   const LATER_NAV = /^(?:Play|Store)$/;
@@ -119,5 +119,5 @@ globalThis.net19Theme = {
   let queued = false;
   const later = () => { if (queued) return; queued = true; setTimeout(() => { queued = false; mark(); }, 250); };
   const start = () => { mark(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();

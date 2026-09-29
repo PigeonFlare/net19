@@ -151,6 +151,19 @@ html[data-n19-yt="www"],html[data-n19-yt="www"] ytd-app,html[data-n19-yt="www"] 
 :is(html[data-n19-yt="www"]) ytd-feed-nudge-renderer,:is(html[data-n19-yt="www"]) ytd-feed-nudge-renderer :is(#dismissible,#contents,#content,div){background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important}
 :is(html[data-n19-yt="www"]) ytd-feed-nudge-renderer #title{font-size:24px!important;font-weight:400!important;line-height:32px!important;color:var(--n19-text)!important}
 :is(html[data-n19-yt="www"]) ytd-feed-nudge-renderer #subtitle{font-size:14px!important;line-height:21px!important;color:var(--n19-text-2)!important}
+:where(:root:not([data-n19-safe])) :is(html[data-n19-yt="www"]) .n19-best,:is(html[data-n19-yt="www"]):where(:root:not([data-n19-safe])) .n19-best{margin:40px auto 0!important}
+:is(html[data-n19-yt="www"]) .n19-best{text-align:center!important}
+:is(html[data-n19-yt="www"]) .n19-best h2{font-size:16px!important;font-weight:500!important;line-height:20px!important;letter-spacing:.5px!important;text-transform:uppercase!important;color:var(--n19-text-2)!important}
+:where(:root:not([data-n19-safe])) :is(html[data-n19-yt="www"]) .n19-best h2,:is(html[data-n19-yt="www"]):where(:root:not([data-n19-safe])) .n19-best h2{margin:0 0 20px!important}
+:where(:root:not([data-n19-safe])) :is(html[data-n19-yt="www"]) .n19-best-row,:is(html[data-n19-yt="www"]):where(:root:not([data-n19-safe])) .n19-best-row{display:flex!important;justify-content:center!important;flex-wrap:wrap!important;gap:24px!important}
+:where(:root:not([data-n19-safe])) :is(html[data-n19-yt="www"]) .n19-best-row a,:is(html[data-n19-yt="www"]):where(:root:not([data-n19-safe])) .n19-best-row a{display:flex!important;flex-direction:column!important;align-items:center!important;gap:8px!important;width:96px!important}
+:is(html[data-n19-yt="www"]) .n19-best-row a{font-size:14px!important;line-height:18px!important;color:var(--n19-text)!important;text-decoration:none!important}
+:where(:root:not([data-n19-safe])) :is(html[data-n19-yt="www"]) .n19-best-row a span,:is(html[data-n19-yt="www"]):where(:root:not([data-n19-safe])) .n19-best-row a span{display:flex!important;align-items:center!important;justify-content:center!important;width:64px!important;height:64px!important}
+:is(html[data-n19-yt="www"]) .n19-best-row a span{border-radius:50%!important;background:#ff0000!important}
+:where(:root:not([data-n19-safe])) :is(html[data-n19-yt="www"]) .n19-best-row a svg,:is(html[data-n19-yt="www"]):where(:root:not([data-n19-safe])) .n19-best-row a svg{width:32px!important;height:32px!important}
+:is(html[data-n19-yt="www"]) .n19-best-row a svg{fill:#fff!important}
+:is(html[data-n19-yt="www"]) .n19-best-row a:hover{color:var(--n19-text)!important}
+:is(html[data-n19-yt="www"]) .n19-best-row a:hover span{background:#cc0000!important}
 :is(html[data-n19-yt="www"]) ytd-background-promo-renderer :is(a,button).ytSpecButtonShapeNextHost,:is(html[data-n19-yt="www"]) ytd-message-renderer :is(a,button).ytSpecButtonShapeNextHost{border-radius:2px!important;text-transform:uppercase!important}
 :where(:root:not([data-n19-safe])) :is(html[data-n19-yt="www"]) ytd-browse[page-subtype="channels"] ytd-rich-grid-renderer,:is(html[data-n19-yt="www"]):where(:root:not([data-n19-safe])) ytd-browse[page-subtype="channels"] ytd-rich-grid-renderer{width:100%!important;max-width:1284px!important;margin:0 auto!important;display:block!important}
 :is(html[data-n19-yt="www"]) ytd-browse[page-subtype="channels"] :is(ytd-two-column-browse-results-renderer,yt-page-header-view-model,#tabs-inner-container.ytd-tabbed-page-header){--n19-column:856px}

@@ -1,5 +1,5 @@
 (() => {
-  if (globalThis.net19Lang) return;
+  if (globalThis.net19) return;
   const WORDS = {
     'Search': { es: 'Buscar', fr: 'Rechercher', pt: 'Pesquisar', it: 'Cerca', ja: '検索', zh: '搜索', ko: '검색', ru: 'Поиск', hi: 'खोजें', ar: 'بحث' },
     'Sign Up': { es: 'Registrarse', fr: 'S’inscrire', pt: 'Cadastre-se', it: 'Iscriviti', ja: '登録', zh: '注册', ko: '가입하기', ru: 'Регистрация', hi: 'साइन अप करें', ar: 'إنشاء حساب' },
@@ -14,6 +14,12 @@
     'Follow': { es: 'Seguir', fr: 'Suivre', pt: 'Seguir', it: 'Segui', ja: 'フォロー', zh: '关注', ko: '팔로우', ru: 'Подписаться', hi: 'फ़ॉलो करें', ar: 'متابعة' },
     'Stories': { es: 'Historias', fr: 'Stories', pt: 'Stories', it: 'Storie', ja: 'ストーリーズ', zh: '快拍', ko: '스토리', ru: 'Истории', hi: 'स्टोरीज़', ar: 'القصص' },
     'About': { es: 'Acerca de', fr: 'À propos', pt: 'Sobre', it: 'Informazioni', ja: '概要', zh: '简介', ko: '정보', ru: 'О канале', hi: 'परिचय', ar: 'حول' },
+    'Best of YouTube': { es: 'Lo mejor de YouTube', fr: 'Le meilleur de YouTube', pt: 'O melhor do YouTube', it: 'Il meglio di YouTube', ja: 'YouTube のベスト', zh: 'YouTube 精选', ko: 'YouTube 베스트', ru: 'Лучшее на YouTube', hi: 'YouTube की सबसे अच्छी चीज़ें', ar: 'أفضل ما في YouTube' },
+    'Music': { es: 'Música', fr: 'Musique', pt: 'Música', it: 'Musica', ja: '音楽', zh: '音乐', ko: '음악', ru: 'Музыка', hi: 'संगीत', ar: 'موسيقى' },
+    'Sports': { es: 'Deportes', fr: 'Sport', pt: 'Esportes', it: 'Sport', ja: 'スポーツ', zh: '体育', ko: '스포츠', ru: 'Спорт', hi: 'खेल', ar: 'رياضة' },
+    'Gaming': { es: 'Videojuegos', fr: 'Jeux vidéo', pt: 'Jogos', it: 'Videogiochi', ja: 'ゲーム', zh: '游戏', ko: '게임', ru: 'Видеоигры', hi: 'गेमिंग', ar: 'ألعاب فيديو' },
+    'News': { es: 'Noticias', fr: 'Actualités', pt: 'Notícias', it: 'Notizie', ja: 'ニュース', zh: '新闻', ko: '뉴스', ru: 'Новости', hi: 'समाचार', ar: 'أخبار' },
+    'Live': { es: 'En directo', fr: 'En direct', pt: 'Ao vivo', it: 'Dal vivo', ja: 'ライブ', zh: '直播', ko: '실시간', ru: 'Трансляции', hi: 'लाइव', ar: 'بث مباشر' },
     'Uploads': { es: 'Subidas', fr: 'Mises en ligne', pt: 'Envios', it: 'Caricamenti', ja: 'アップロード動画', zh: '上传的视频', ko: '업로드한 동영상', ru: 'Загрузки', hi: 'अपलोड', ar: 'التحميلات' },
     'My communities': { es: 'Mis comunidades', fr: 'Mes communautés', pt: 'Minhas comunidades', it: 'Le mie community', ja: 'マイコミュニティ', zh: '我的社区', ko: '내 커뮤니티', ru: 'Мои сообщества', hi: 'मेरे समुदाय', ar: 'مجتمعاتي' },
     'Reddit feeds': { es: 'Feeds de Reddit', fr: 'Flux Reddit', pt: 'Feeds do Reddit', it: 'Feed di Reddit', ja: 'Reddit フィード', zh: 'Reddit 动态', ko: 'Reddit 피드', ru: 'Ленты Reddit', hi: 'Reddit फ़ीड', ar: 'خلاصات Reddit' },
@@ -22,11 +28,30 @@
     'Google Search': { es: 'Buscar con Google', fr: 'Recherche Google', pt: 'Pesquisa Google', it: 'Cerca con Google', ja: 'Google 検索', zh: 'Google 搜索', ko: 'Google 검색', ru: 'Поиск в Google', hi: 'Google सर्च', ar: 'بحث Google' },
     'Trending Communities': { es: 'Comunidades en tendencia', fr: 'Communautés tendance', pt: 'Comunidades em alta', it: 'Community di tendenza', ja: 'トレンドのコミュニティ', zh: '热门社区', ko: '인기 커뮤니티', ru: 'Популярные сообщества', hi: 'ट्रेंडिंग समुदाय', ar: 'المجتمعات الرائجة' },
   };
-  const theme = globalThis.net19Theme || {};
   const lang = () => (document.documentElement?.lang || navigator.language || 'en').toLowerCase().split(/[-_]/)[0] || 'en';
   const clean = text => String(text || '').replace(/\s+/g, ' ').replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N})]+$/gu, '').trim().toLowerCase();
-  const known = new Map(Object.entries(theme.words || {}).map(([local, english]) => [clean(local), english]));
+  let source = null, known = new Map();
+  const english = text => {
+    const words = globalThis.net19Theme?.words || null;
+    if (words !== source) { source = words; known = new Map(Object.entries(words || {}).map(([local, label]) => [clean(local), label])); }
+    return known.get(clean(text)) ?? text;
+  };
+  const say = label => { const l = lang(); return l === 'en' ? label : WORDS[label]?.[l] ?? null; };
+  const onBody = run => {
+    if (document.body) { run(); return; }
+    new MutationObserver((_, observer) => { if (document.body) { observer.disconnect(); run(); } }).observe(document.documentElement, { childList: true });
+  };
+  const frame = run => {
+    let queued = false;
+    return () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; run(); }); };
+  };
+  const watch = (run, options = { childList: true, subtree: true }) => {
+    const later = frame(run);
+    onBody(() => { run(); new MutationObserver(later).observe(document.body, options); });
+    return later;
+  };
+  globalThis.net19 = { lang, say, english, onBody, frame, watch };
   globalThis.net19Lang = lang;
-  globalThis.net19Say = english => { const l = lang(); return l === 'en' ? english : WORDS[english]?.[l] ?? null; };
-  globalThis.net19English = text => known.get(clean(text)) ?? text;
+  globalThis.net19Say = say;
+  globalThis.net19English = english;
 })();

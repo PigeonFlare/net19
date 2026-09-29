@@ -190,7 +190,7 @@
     addEventListener('load', () => setTimeout(full, 2000), { once: true });
     for (const type of ['click', 'keyup']) addEventListener(type, () => setTimeout(() => queue(document.body), 400), { capture: true, passive: true });
   };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();
 (() => {
   if (document.documentElement.getAttribute('data-n19-g') !== 'myaccount' && location.hostname !== 'myaccount.google.com') return;
@@ -204,7 +204,7 @@
   };
   let queued = false;
   const start = () => { rename(); new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; rename(); }); } }).observe(document.body, { childList: true, subtree: true, characterData: true }); };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();
 
 (() => {

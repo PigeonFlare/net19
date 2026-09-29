@@ -13,7 +13,7 @@ export function themeFiles(theme: HandmadeTheme): { css: string[]; js: string[] 
   const base = theme.extends;
   return {
     css: base ? [`built/${base}.css`, `built/${theme.id}.css`] : [`built/${theme.id}.css`],
-    js: [`themes/${base ?? theme.id}.js`, 'content.js'],
+    js: ['runtime.js', `themes/${base ?? theme.id}.js`, 'content.js'],
   };
 }
 

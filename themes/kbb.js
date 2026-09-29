@@ -34,5 +34,5 @@ globalThis.net19Theme = {
     observer = new MutationObserver(later);
     observer.observe(document.body, { childList: true, subtree: true, characterData: true });
   };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();

@@ -6,8 +6,5 @@ globalThis.net19Theme = { later: /^(?:listen(?: to (?:this )?article)?(?: · [0-
       if (!p.firstElementChild && READ.test(p.textContent || '')) p.setAttribute('data-net19-hidden', '');
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
-  const start = () => { fix(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.watch(fix);
 })();

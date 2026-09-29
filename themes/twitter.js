@@ -165,7 +165,7 @@ globalThis.net19Theme = {
     setInterval(() => { if (!document.hidden) recolor(); }, 1500);
     new MutationObserver(recolor).observe(document.documentElement, { attributes: true, attributeFilter: ['data-net19-mode', 'data-n19-tw-bg'] });
   };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();
 (() => {
   const WORDS = new Map([['Happening now', 'See what’s happening in the world right now'], ['Continue with phone', 'Sign up'],
@@ -237,7 +237,7 @@ globalThis.net19Theme = {
     fix();
     new MutationObserver(() => { if (location.pathname === '/') later(); }).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
   };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();
 (() => {
   const BIRD = 'https://abs.twimg.com/favicons/twitter.2.ico';
@@ -346,5 +346,5 @@ globalThis.net19Theme = {
     new MutationObserver(later).observe(document.body, { childList: true, subtree: true });
     globalThis.navigation?.addEventListener?.('navigatesuccess', later);
   };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();

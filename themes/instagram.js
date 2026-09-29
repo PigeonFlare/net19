@@ -301,5 +301,5 @@ globalThis.net19Theme = {
   const run = () => { queued = 0; last = performance.now(); landing(); app(); };
   const later = () => { if (queued) return; queued = setTimeout(() => requestAnimationFrame(run), Math.max(0, 250 - (performance.now() - last))); };
   const start = () => { run(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();

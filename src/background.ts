@@ -1,5 +1,5 @@
 import { settingsFrom, SETTINGS_KEY, type Settings } from './settings';
-import { THEMES, themeFiles, themeMatches, themePaused, type HandmadeTheme } from './themes';
+import { THEMES, themeFiles, themeFor, themeMatches, themePaused, type HandmadeTheme } from './themes';
 import { navigationRules } from './navigation';
 
 let sync: Promise<unknown> = Promise.resolve();
@@ -21,11 +21,46 @@ function syncScripts(): Promise<unknown> {
     const watched = [...new Set(THEMES.filter(active).flatMap(themeMatches))].sort();
     if (watched.length) desired.push({ id: 'net19-watch', matches: watched, js: ['main.js'], world: 'MAIN', runAt: 'document_start', persistAcrossSessions: true });
     const signature = (list: chrome.scripting.RegisteredContentScript[]) => JSON.stringify(list.map(s => [s.id, [...s.matches ?? []].sort(), [...s.excludeMatches ?? []].sort(), s.css, s.js, !!s.allFrames, s.world ?? 'ISOLATED']).sort());
-    const current = registered.filter(script => script.id.startsWith('net19-'));
+    const current = registered.filter(script => script.id.startsWith('net19-') && !script.id.startsWith(SAFE_ID));
     if (signature(current) !== signature(desired)) {
       if (current.length) await chrome.scripting.unregisterContentScripts({ ids: current.map(script => script.id) });
       if (desired.length) await chrome.scripting.registerContentScripts(desired);
     }
+    await syncSafe(config, registered);
+  });
+  return sync;
+}
+
+const SAFE_ID = 'net19-safe';
+const FIT_KEY = 'net19-fit';
+const SECTION = /^([a-z0-9.-]+)\/([a-z][a-z-]{0,23}|\*)( narrow)?$/;
+
+function safeMatches(key: string): string[] {
+  const [, host, place] = SECTION.exec(key) ?? [];
+  return [host, `www.${host}`].flatMap(site => place === '*' ? [`*://${site}/`, `*://${site}/?*`] : [`*://${site}/${place}`, `*://${site}/${place}/*`, `*://${site}/${place}?*`]);
+}
+
+async function syncSafe(config: Settings, registered: chrome.scripting.RegisteredContentScript[]): Promise<void> {
+  const records = ((await chrome.storage.local.get(FIT_KEY))[FIT_KEY] ?? {}) as Record<string, { safe?: boolean }>;
+  const keys = Object.keys(records).filter(key => {
+    const theme = records[key]?.safe && SECTION.test(key) ? themeFor(SECTION.exec(key)![1]) : undefined;
+    return config.enabled && theme && !themePaused(theme, config.disabledHosts);
+  });
+  const group = (narrow: boolean) => [...new Set(keys.filter(key => key.endsWith(' narrow') === narrow).flatMap(safeMatches))].sort();
+  const desired: chrome.scripting.RegisteredContentScript[] = [[SAFE_ID, 'safe.js', group(false)], [`${SAFE_ID}-narrow`, 'safe-narrow.js', group(true)]]
+    .filter(([, , matches]) => matches.length)
+    .map(([id, file, matches]) => ({ id: id as string, js: [file as string], matches: matches as string[], runAt: 'document_start', persistAcrossSessions: true }));
+  const current = registered.filter(script => script.id.startsWith(SAFE_ID));
+  const signature = (list: chrome.scripting.RegisteredContentScript[]) => JSON.stringify(list.map(s => [s.id, [...s.matches ?? []].sort()]).sort());
+  if (signature(current) === signature(desired)) return;
+  if (current.length) await chrome.scripting.unregisterContentScripts({ ids: current.map(script => script.id) });
+  if (desired.length) await chrome.scripting.registerContentScripts(desired);
+}
+
+function syncFit(): Promise<unknown> {
+  sync = sync.catch(() => undefined).then(async () => {
+    const [config, registered] = await Promise.all([settings(), chrome.scripting.getRegisteredContentScripts()]);
+    await syncSafe(config, registered);
   });
   return sync;
 }
@@ -65,4 +100,5 @@ chrome.runtime.onMessage.addListener((message, sender, respond) => {
   return true;
 });
 chrome.runtime.onInstalled.addListener(() => { void cleanUp().catch(() => undefined).then(syncScripts).catch(() => undefined); });
+chrome.storage.onChanged.addListener((changes, area) => { if (area === 'local' && changes[FIT_KEY]) void syncFit().catch(() => undefined); });
 chrome.runtime.onStartup.addListener(() => { void syncScripts().catch(() => undefined); });

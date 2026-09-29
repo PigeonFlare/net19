@@ -14,7 +14,7 @@ globalThis.net19Theme = {
       if (document.body?.classList.contains('skin-vector-2022')) location.replace(url.href);
       else root.removeAttribute('data-net19-reskin');
     };
-    if (document.body) check(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); check(); } }).observe(document.documentElement, { childList: true });
+    net19.onBody(check);
     setTimeout(() => root.removeAttribute('data-net19-reskin'), 4000);
   }
   const carry = event => {
