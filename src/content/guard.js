@@ -243,6 +243,7 @@ import { rgba } from './color.js';
       let added = false;
       for (const r of records) {
         if ((r.type === 'attributes' && r.target === root) || r.target === document.head || r.target.parentNode === document.head) continue;
+        if (r.attributeName === 'aria-label' || r.attributeName === 'role') { if (later(r.target.getAttribute('aria-label'))) hideLater(r.target); continue; }
         if (r.type === 'childList') {
           textCache = null;
           for (const n of r.addedNodes) { if (n.nodeType === 1) { hideLater(n); added = true; } }
@@ -251,7 +252,7 @@ import { rgba } from './color.js';
         if (r.type === 'attributes' && r.attributeName === 'placeholder' && ASKING.test(r.target.getAttribute('placeholder') || '')) hideLater(r.target.parentElement || r.target);
       }
       if (added) { dirty = true; soon(); }
-    }).observe(root, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style', 'hidden', 'open', 'aria-expanded', 'placeholder'] });
+    }).observe(root, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style', 'hidden', 'open', 'aria-expanded', 'placeholder', 'aria-label', 'role'] });
     new MutationObserver(() => { dirty = true; soon(50); }).observe(root, { attributes: true, attributeFilter: ['data-net19-mode', 'data-net19-recolor', 'class'] });
     for (const type of ['pointerover', 'focusin', 'click', 'keyup']) addEventListener(type, () => soon(), { capture: true, passive: true });
     for (const type of ['transitionend', 'animationend']) addEventListener(type, () => { dirty = true; soon(200); }, { capture: true, passive: true });

@@ -51,6 +51,8 @@ test('a themed site is styled from its first paint; any other site is left alone
   expect(await scripts()).not.toContain('net19-start');
   await themed.evaluate(() => { const ask = document.createElement('button'); ask.id = 'late-ask'; ask.setAttribute('aria-label', 'Ask Gemini'); document.body.append(ask); });
   await expect(themed.locator('#late-ask')).toHaveAttribute('data-net19-hidden', '');
+  await themed.evaluate(() => { const tool = document.createElement('div'); tool.id = 'late-label'; tool.setAttribute('role', 'button'); tool.textContent = '0'; document.body.append(tool); setTimeout(() => tool.setAttribute('aria-label', 'Ask Gemini'), 100); });
+  await expect(themed.locator('#late-label')).toHaveAttribute('data-net19-hidden', '');
   await themed.evaluate(() => document.dispatchEvent(new CustomEvent('net19-fit-check')));
   await expect(themed.locator('html')).toHaveAttribute('data-n19-fit', /^fit/);
   expect(await fitRecords()).toEqual([]);
