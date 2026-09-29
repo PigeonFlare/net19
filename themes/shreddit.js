@@ -45,7 +45,8 @@ globalThis.net19Theme = {
     h2.condensed-post-title-heading { display: inline !important; margin: 0 4px 0 0 !important; font-size: 16px !important; line-height: 20px !important; }
     div.contents > div.overflow-hidden { line-height: 20px !important; }
     div:has(> slot[name="thumbnail"]) { margin: 0 8px 8px 0 !important; }
-    rpl-action-bar > div { margin: 2px 0 0 -4px !important; gap: 0 !important; height: auto !important; min-height: 32px !important; max-width: 100% !important; flex-wrap: wrap !important; overflow: visible !important; }
+    rpl-action-bar > div { margin: 2px 0 0 -4px !important; gap: 0 !important; height: auto !important; min-height: 32px !important; max-width: 100% !important; flex-wrap: nowrap !important; overflow: visible !important; }
+    rpl-action-bar > div > slot.grow { flex: 1 1 0 !important; min-width: 0 !important; }
     rpl-action-bar span.relative:has(> shreddit-vote-animations) { position: absolute !important; left: 0 !important; top: 0 !important; width: 40px !important; height: 100% !important;
       padding: 4px 0 0 !important; box-sizing: border-box !important; display: flex !important; justify-content: center !important; }
     :host(:dir(rtl)) rpl-action-bar span.relative:has(> shreddit-vote-animations) { left: auto !important; right: 0 !important; }
@@ -57,10 +58,11 @@ globalThis.net19Theme = {
   `;
   const ACTIONS = `
     :host { max-width: 100% !important; min-width: 0 !important; }
-    #unpacked-actions { gap: 0 !important; flex-wrap: wrap !important; max-width: 100% !important; min-width: 0 !important; height: auto !important; }
+    #unpacked-actions { gap: 0 !important; flex-wrap: nowrap !important; max-width: 100% !important; min-width: 0 !important; height: auto !important; }
     #unpacked-actions :is(a, button).button { background: transparent !important; border: 0 !important; border-radius: 2px !important; box-shadow: none !important; color: var(--n19-action) !important;
       font: 700 12px/16px var(--n19-font) !important; height: 32px !important; padding: 8px 4px !important; margin: 0 4px 0 0 !important; }
     #unpacked-actions :is(a, button).button:hover { background: var(--n19-hover) !important; }
+    #unpacked-actions > :is([data-item-id="award"], [data-item-id*="repost" i], [data-item-id*="crosspost" i], [data-n19-later]) { display: none !important; }
     #unpacked-actions .rpl-cab--content { text-transform: capitalize !important; color: inherit !important; font: inherit !important; }
     #unpacked-actions .rpl-cab--leading-icon::before { content: ""; flex: 0 0 20px; width: 20px; height: 20px; margin: 0 6px 0 0; background: currentColor; -webkit-mask: no-repeat center / 20px 20px; mask: no-repeat center / 20px 20px; }
     #unpacked-actions [data-item-id="comments"] .rpl-cab--leading-icon::before { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10%202.5c-4.4%200-8%202.9-8%206.6%200%202%201.1%203.8%202.8%205L4%2017.5l4-2.1c.6.1%201.3.2%202%20.2%204.4%200%208-2.9%208-6.5S14.4%202.5%2010%202.5zm0%2011.3c-.7%200-1.3-.1-1.9-.2l-.4-.1-1.6.8.3-1.4-.5-.3C4.5%2011.7%203.8%2010.4%203.8%209.1%203.8%206.4%206.6%204.3%2010%204.3s6.2%202.1%206.2%204.8-2.8%204.7-6.2%204.7z'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10%202.5c-4.4%200-8%202.9-8%206.6%200%202%201.1%203.8%202.8%205L4%2017.5l4-2.1c.6.1%201.3.2%202%20.2%204.4%200%208-2.9%208-6.5S14.4%202.5%2010%202.5zm0%2011.3c-.7%200-1.3-.1-1.9-.2l-.4-.1-1.6.8.3-1.4-.5-.3C4.5%2011.7%203.8%2010.4%203.8%209.1%203.8%206.4%206.6%204.3%2010%204.3s6.2%202.1%206.2%204.8-2.8%204.7-6.2%204.7z'/%3E%3C/svg%3E"); }
@@ -104,6 +106,10 @@ globalThis.net19Theme = {
   const FOLLOW = `button { background: var(--n19-blue) !important; color: var(--n19-on-blue) !important; border: 0 !important; border-radius: 4px !important; min-width: 120px !important;
     font: 700 12px/16px var(--n19-font) !important; letter-spacing: .5px !important; text-transform: uppercase !important; justify-content: center !important; }
     button * { color: inherit !important; }`;
+  const SEARCH_FIELD = `.label-container { background: transparent !important; height: 100% !important; min-height: 0 !important; box-sizing: border-box !important; }
+    :host([data-n19-snoo]) .leadingIcon::before { content: ""; display: block; width: 20px; height: 20px; background: currentColor;
+      -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M8.5 2a6.5 6.5 0 0 1 5.2 10.4l4 4-1.3 1.3-4-4A6.5 6.5 0 1 1 8.5 2zm0 1.8a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4z'/%3E%3C/svg%3E") no-repeat center / 20px 20px;
+      mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M8.5 2a6.5 6.5 0 0 1 5.2 10.4l4 4-1.3 1.3-4-4A6.5 6.5 0 1 1 8.5 2zm0 1.8a4.7 4.7 0 1 0 0 9.4 4.7 4.7 0 0 0 0-9.4z'/%3E%3C/svg%3E") no-repeat center / 20px 20px; }`;
   const FIELD = `.label-container, [part="container"] { border-radius: 4px !important; }`;
   const SEARCH = `
     .reddit-search-bar { background: var(--n19-field) !important; border: 1px solid var(--n19-field-border) !important; border-radius: 4px !important; box-shadow: none !important; }
@@ -112,6 +118,7 @@ globalThis.net19Theme = {
     [slot="trailingContent"]:has(a[href*="/answers"]), a[href*="/answers"] { display: none !important; }
     .leadingIcon { flex: 0 0 20px !important; width: 20px !important; height: 20px !important; min-width: 20px !important; overflow: visible !important; color: var(--n19-action) !important; }
     .centered-placeholder { display: none !important; }
+    svg[slot="leadingIcon"]:has(circle[fill="#FF4500" i]) { display: none !important; }
     faceplate-search-input > [slot="footer"] { display: none !important; }
     form.rounded-5, .rounded-5 { border-radius: 4px !important; }
     input, textarea { text-align: left !important; color: var(--n19-text) !important; font-family: var(--n19-font) !important; font-size: 14px !important; }
@@ -475,7 +482,7 @@ globalThis.net19Theme = {
     for (const p of document.querySelectorAll('#right-sidebar-container p')) if (STAT_LATER.test(globalThis.net19English(p.textContent.trim()))) hide(p.parentElement?.tagName === 'ACTIVATE-FEATURE' ? p.parentElement.parentElement : p.parentElement);
     for (const button of document.querySelectorAll('button[aria-label="Feed options"]:not([data-n19-sort-button])')) if (!button.closest('main#main-content div:has(> #profile-feed-tabgroup) ~ div')) hide(button.closest('shreddit-layout-event-setter, rpl-dropdown') || button);
     for (const card of document.querySelectorAll('rpl-hovercard:has(> span.block):has(.verification-content)')) hide(card.parentElement?.children.length === 1 ? card.parentElement : card);
-    for (const h of document.querySelectorAll('#right-sidebar-container h2')) if (/^(?:View Post in|Top Posts|Related Answers|Related Posts)$/i.test(h.textContent.trim())) hide(h.closest('div.border-solid, aside, section') || h.parentElement);
+    for (const h of document.querySelectorAll('#right-sidebar-container h2')) if (/^(?:View Post in|Top Posts|Related Answers)$/i.test(h.textContent.trim())) hide(h.closest('div.border-solid, aside, section') || h.parentElement);
     for (const list of document.querySelectorAll('#right-sidebar-container ul:has(a[href*="developers.reddit.com/apps/"])')) {
       hide(list);
       const box = list.parentElement;
@@ -581,11 +588,13 @@ globalThis.net19Theme = {
     for (const row of document.querySelectorAll('shreddit-comment-action-row')) style(row, COMMENT + (row.closest('shreddit-comment') ? TREE_VOTES : ''));
     for (const award of document.querySelectorAll('award-button')) style(award, AWARD);
     for (const menu of document.querySelectorAll('shreddit-feed :is(shreddit-post[view-type="compactView"], shreddit-ad-post) unpacking-overflow-menu')) style(menu, ACTIONS);
+    for (const item of document.querySelectorAll('shreddit-feed shreddit-post[view-type="compactView"] unpacking-overflow-menu')) for (const action of item.shadowRoot?.querySelectorAll('#unpacked-actions > :not([data-n19-later])') || []) if (/^(?:repost|crosspost)$/i.test(globalThis.net19English(action.textContent.trim()))) action.setAttribute('data-n19-later', '');
     for (const search of document.querySelectorAll('reddit-search-large')) {
       if (search.shadowRoot && !search.hasAttribute('data-n19-watched')) { search.setAttribute('data-n19-watched', ''); new MutationObserver(() => later()).observe(search.shadowRoot, { childList: true, subtree: true }); }
       if (search.shadowRoot) weeklyToMembers(search.shadowRoot);
       for (const name of ['show-ask-button', 'ask-button-variant', 'show-ask-text', 'expanded-composer-enabled', 'expanded-composer-ask-enabled']) if (search.hasAttribute(name)) search.removeAttribute(name);
       const input = search.shadowRoot?.querySelector('faceplate-search-input');
+      if (input) input.toggleAttribute('data-n19-snoo', !!input.querySelector(':scope > svg[slot="leadingIcon"] circle[fill="#FF4500" i]'));
       if (input && english() && input.getAttribute('placeholder') !== 'Search Reddit') input.setAttribute('placeholder', 'Search Reddit');
     }
     for (const join of document.querySelectorAll('shreddit-join-button')) style(join, JOIN);
@@ -602,7 +611,8 @@ globalThis.net19Theme = {
       }
     }
     for (const search of document.querySelectorAll('reddit-search-large, faceplate-search-input, pdp-comment-search-input')) {
-      style(search, SEARCH + FIELD); if (search.shadowRoot) deep(search.shadowRoot, SEARCH + FIELD);
+      const css = SEARCH + FIELD + (search.tagName === 'REDDIT-SEARCH-LARGE' ? SEARCH_FIELD : '');
+      style(search, css); if (search.shadowRoot) deep(search.shadowRoot, css);
     }
     for (const box of document.querySelectorAll('comment-body-header faceplate-textarea-input[placeholder="Join the conversation"]')) box.setAttribute('placeholder', 'What are your thoughts?');
     for (const sort of document.querySelectorAll('shreddit-sort-dropdown')) style(sort, SORT);
@@ -620,15 +630,15 @@ globalThis.net19Theme = {
     new MutationObserver(() => { retries = 0; later(); }).observe(document.body, { childList: true, subtree: true });
     setInterval(() => times(document), 30000);
   };
-  const VIEWS = [['/', 'true'], ['/r/', 'false'], ['/r/popular', 'true'], ['/r/all', 'true']];
+  const VIEWS = [['/', 'true'], ['/r/', 'false'], ['/svc/shreddit/community-more-posts', 'false'], ['/r/popular', 'true'], ['/r/all', 'true']];
   const viewCookie = (path, value) => { document.cookie = `compact=${value}; domain=.reddit.com; path=${path}; max-age=31536000; secure; samesite=lax`; };
   const viewsByDefault = () => {
     const feed = /^\/(?:$|(?:best|hot|new|top|rising)\/?$|r\/[^/]+\/?(?:(?:best|hot|new|top|rising)\/?)?$|(?:u|user)\/[^/]+\/?(?:submitted\/?)?$)/i.test(location.pathname);
     if (!feed || /[?&]feedViewType=/.test(location.search)) return;
     const wanted = communityName() ? 'cardView' : 'compactView';
-    if (!/(?:^|;\s*)n19view=2/.test(document.cookie)) {
+    if (!/(?:^|;\s*)n19view=3/.test(document.cookie)) {
       for (const [path, value] of VIEWS) viewCookie(path, value);
-      document.cookie = 'n19view=2; domain=.reddit.com; path=/; max-age=31536000; secure; samesite=lax';
+      document.cookie = 'n19view=3; domain=.reddit.com; path=/; max-age=31536000; secure; samesite=lax';
     }
     let picked = 0;
     document.addEventListener('click', event => { if (event.composedPath().some(n => n.tagName === 'SHREDDIT-LAYOUT-EVENT-SETTER' || (n.getAttribute?.('role') === 'menuitem' && /^(?:card|classic|compact)$/i.test(n.textContent.trim())))) picked = Date.now(); }, true);

@@ -139,6 +139,12 @@
       "url": "https://www.google.com/search?udm=2&q=new+reddit+profile+page+2019+karma+cake+day+follow",
       "date": "searched 2026-09-29",
       "shows": "redesign profile cards with Karma and Cake day (r/redesign 97fa9c, 2018-08) matching s16"
+    },
+    {
+      "id": "s24",
+      "url": "user-supplied screenshot of a 2019 signed-in Classic feed row (r/politics, 'Jon Stewart Goes Off On Congress During 9/11 Hearing', June 2019)",
+      "date": "2019-06",
+      "shows": "Classic row: vote column, thumbnail, title with domain link, 'r/sub • Posted by u/x N hours ago' with award icons, then one action line: expand button first, N Comments, Share, Save, Hide, Report; no Give Award or crosspost button in the row"
     }
   ],
   "features": [
@@ -469,7 +475,7 @@
       "note": "legal footer card"
     },
     {
-      "match": "^(Accessibility|Your Privacy Choices|Best of Reddit.*|News|Explore|简体中文|日本語|Contributions|Reddit Age|Feed options|Related Posts Section|View Post in|Top Posts|Installed Apps|Advertise on Reddit|Français|Deutsch|Español|Italiano|Verifications|Reddit Answers|Answers|Get App|Get the Reddit app|Advertise on Reddit|Chat|Open chat|Reddit Pro)$",
+      "match": "^(Accessibility|Your Privacy Choices|Best of Reddit.*|News|Explore|简体中文|日本語|Contributions|Reddit Age|Feed options|View Post in|Top Posts|Installed Apps|Advertise on Reddit|Français|Deutsch|Español|Italiano|Verifications|Reddit Answers|Answers|Get App|Get the Reddit app|Advertise on Reddit|Chat|Open chat|Reddit Pro)$",
       "in2019": false,
       "evidence": [
         "absent from s1-s6; Answers 2024, Explore/News 2024, Contributions/Reddit Age 2023, verifications 2025, privacy choices 2020"
@@ -554,14 +560,58 @@
       "note": "profile card; search 'Profiles' sidebar list is the users half of 2019 'Communities and users'"
     },
     {
-      "match": "^(?=.*\\s)(?=.{12,}).+$",
+      "match": "^(Repost|Crosspost)$",
+      "in2019": false,
+      "evidence": [
+        "absent from the 2019 feed rows in s10, s12 and s24; the Repost button is a 2024 addition"
+      ],
+      "action": "hidden",
+      "note": "hidden from the Classic feed action row"
+    },
+    {
+      "match": "^(Award|Give Award)$",
+      "in2019": true,
+      "evidence": [
+        "s12",
+        "s21"
+      ],
+      "note": "Give Award shows in 2019 card-view rows (s12 frame: N Comments, Share, Give Award) and comments (s21); the 2019 Classic row (s24) has none, so the Classic feed row leaves it out"
+    },
+    {
+      "match": "^(expand content|post content|Expand content)$",
+      "in2019": true,
+      "evidence": [
+        "s10",
+        "s24"
+      ],
+      "note": "Classic row order and line count: expand, N Comments, Share, Save, Hide, Report on one line (Save and Hide only when signed in)"
+    },
+    {
+      "match": "^(Related posts|More posts you may like)$",
+      "in2019": true,
+      "evidence": [
+        "s20"
+      ],
+      "note": "post-page recommendation list kept (never hide recommendations), drawn as a 2019 sidebar widget like the 2019 right-column 'Recent Posts' (s20), titles unclamped"
+    },
+    {
+      "match": "^[\\w-]+(\\.[\\w-]+)+(/\\S*)?$",
+      "in2019": true,
+      "evidence": [
+        "s10",
+        "s24"
+      ],
+      "note": "post domain link after a Classic title (for example youtube.com/watch..., en.wikipedia.org/wik...)"
+    },
+    {
+      "match": "^(?=.*\\s)(?=.{8,}).+$",
       "in2019": true,
       "evidence": [
         "s1",
         "s3",
         "s11"
       ],
-      "note": "CONTENT FALLBACK (last resort): multi-word text of 12+ characters in the sampled pages is post titles, flair, rule titles and descriptions; every module label is matched by a specific entry above, post-2019 ones first"
+      "note": "CONTENT FALLBACK (last resort): multi-word text of 8+ characters (short post titles such as \"Dead eyes\" and flair such as \"Friday Fun!\") in the sampled pages is post titles, flair, rule titles and descriptions; every module label is matched by a specific entry above, post-2019 ones first"
     },
     {
       "match": "^[\\w.-]{2,24}$",

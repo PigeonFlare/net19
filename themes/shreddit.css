@@ -345,9 +345,8 @@ aside.subreddit-right-rail-community-info faceplate-tracker[noun="menu_click"] >
 main#main-content search-telemetry-tracker > div[data-testid^="search-post"] a.absolute.inset-0 { z-index: 0 !important; }
 main#main-content search-telemetry-tracker > div[data-testid^="search-post"] :is(a[data-testid="post-title-text"], a[id^="search-post-title"]) { position: relative !important; z-index: 1 !important; }
 :is(shreddit-comments-page-ad, shreddit-ad-post) .promoted-name-container > * { flex-shrink: 0 !important; }
-reddit-pdp-right-rail-post h3 { overflow: hidden !important; font-size: 14px !important; line-height: 18px !important; max-height: 54px !important; }
+reddit-pdp-right-rail-post h3 { display: block !important; overflow: visible !important; font-size: 14px !important; line-height: 18px !important; max-height: none !important; -webkit-line-clamp: none !important; line-clamp: none !important; }
 [data-n19-later] { display: none !important; }
-html body #right-sidebar-contents aside[aria-label="Related Posts Section"], html body aside[aria-label="Related Posts Section"] { display: none !important; }
 
 shreddit-feed > article:has(> :is(shreddit-post[view-type="compactView"], shreddit-ad-post[data-n19-classic])), shreddit-feed > article:has(> shreddit-ad-post) { margin: 0 !important; }
 shreddit-feed :is(shreddit-post[view-type="compactView"], shreddit-ad-post[data-n19-classic]) { position: relative !important; margin: 0 0 -1px !important; border-radius: 0 !important; padding: 8px 8px 0 48px !important; }
@@ -505,3 +504,7 @@ aside.subreddit-right-rail-community-info div.px-md faceplate-tracker > a[class~
 [data-n19-menu] > a > span:first-child img { width: 20px; height: 20px; border-radius: 50%; object-fit: cover; margin: 0; }
 html:dir(rtl) shreddit-feed :is(shreddit-post, shreddit-ad-post) { padding: 8px 48px 2px 8px !important; background-image: linear-gradient(to left, var(--n19-vote) 40px, transparent 40px) !important; }
 html:dir(rtl) shreddit-feed :is(shreddit-post[view-type="compactView"], shreddit-ad-post[data-n19-classic]) { padding: 8px 48px 0 8px !important; background: var(--n19-card) linear-gradient(to left, var(--n19-vote) 40px, transparent 40px) !important; }
+main#main-content [data-testid="sdui-post-unit"] .post-credit-row search-telemetry-tracker > a, main#main-content .post-credit-row a[href^="/r/"], main#main-content .post-credit-row a[href^="/r/"] * { color: var(--n19-text) !important; font-weight: 700 !important; }
+reddit-pdp-right-rail-post div.flex.items-center:has(.ms-xs.truncate):not(:has(div.flex.items-center .ms-xs.truncate)) { flex-wrap: wrap !important; }
+reddit-pdp-right-rail-post a:has(> .ms-xs.truncate), reddit-pdp-right-rail-post a > .ms-xs.truncate { flex-shrink: 0 !important; max-width: none !important; overflow: visible !important; text-overflow: clip !important; }
+main#main-content search-telemetry-tracker > div[data-testid^="search-post"]:is(:hover, :focus-within) { z-index: 2 !important; }

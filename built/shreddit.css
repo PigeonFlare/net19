@@ -359,11 +359,10 @@ aside.subreddit-right-rail-community-info faceplate-tracker[noun="menu_click"]>a
 :where(:root:not([data-n19-safe])) main#main-content search-telemetry-tracker>div[data-testid^="search-post"] a.absolute.inset-0{z-index:0!important}
 :where(:root:not([data-n19-safe])) main#main-content search-telemetry-tracker>div[data-testid^="search-post"] :is(a[data-testid="post-title-text"],a[id^="search-post-title"]){position:relative!important;z-index:1!important}
 :where(:root:not([data-n19-safe])) :is(shreddit-comments-page-ad,shreddit-ad-post) .promoted-name-container>*,:is(shreddit-comments-page-ad,shreddit-ad-post):where(:root:not([data-n19-safe])) .promoted-name-container>*{flex-shrink:0!important}
-:where(:root:not([data-n19-safe])) reddit-pdp-right-rail-post h3{overflow:hidden!important}
+:where(:root:not([data-n19-safe])) reddit-pdp-right-rail-post h3{display:block!important;overflow:visible!important}
 reddit-pdp-right-rail-post h3{font-size:14px!important;line-height:18px!important}
-:where(:root:not([data-n19-safe])) reddit-pdp-right-rail-post h3{max-height:54px!important}
+:where(:root:not([data-n19-safe])) reddit-pdp-right-rail-post h3{max-height:none!important;-webkit-line-clamp:none!important;line-clamp:none!important}
 [data-n19-later]{display:none!important}
-html body #right-sidebar-contents aside[aria-label="Related Posts Section"],html body aside[aria-label="Related Posts Section"]{display:none!important}
 :where(:root:not([data-n19-safe])) shreddit-feed>article:has(>:is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic])),:where(:root:not([data-n19-safe])) shreddit-feed>article:has(>shreddit-ad-post){margin:0!important}
 :where(:root:not([data-n19-safe])) shreddit-feed :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]){position:relative!important;margin:0 0 -1px!important}
 shreddit-feed :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]){border-radius:0!important}
@@ -576,3 +575,8 @@ html:dir(rtl):where(:root:not([data-n19-safe])) shreddit-feed :is(shreddit-post,
 html:dir(rtl) shreddit-feed :is(shreddit-post,shreddit-ad-post){background-image:linear-gradient(to left, var(--n19-vote) 40px, transparent 40px)!important}
 html:dir(rtl):where(:root:not([data-n19-safe])) shreddit-feed :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]){padding:8px 48px 0 8px!important}
 html:dir(rtl) shreddit-feed :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]){background:var(--n19-card) linear-gradient(to left, var(--n19-vote) 40px, transparent 40px)!important}
+main#main-content [data-testid="sdui-post-unit"] .post-credit-row search-telemetry-tracker>a,main#main-content .post-credit-row a[href^="/r/"],main#main-content .post-credit-row a[href^="/r/"] *{color:var(--n19-text)!important;font-weight:700!important}
+:where(:root:not([data-n19-safe])) reddit-pdp-right-rail-post div.flex.items-center:has(.ms-xs.truncate):not(:has(div.flex.items-center .ms-xs.truncate)){flex-wrap:wrap!important}
+:where(:root:not([data-n19-safe])) reddit-pdp-right-rail-post a:has(>.ms-xs.truncate),:where(:root:not([data-n19-safe])) reddit-pdp-right-rail-post a>.ms-xs.truncate{flex-shrink:0!important;max-width:none!important;overflow:visible!important}
+reddit-pdp-right-rail-post a:has(>.ms-xs.truncate),reddit-pdp-right-rail-post a>.ms-xs.truncate{text-overflow:clip!important}
+:where(:root:not([data-n19-safe])) main#main-content search-telemetry-tracker>div[data-testid^="search-post"]:is(:hover,:focus-within){z-index:2!important}
