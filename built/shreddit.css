@@ -585,3 +585,23 @@ main#main-content [data-testid="sdui-post-unit"] .post-credit-row search-telemet
 reddit-pdp-right-rail-post a:has(>.ms-xs.truncate),reddit-pdp-right-rail-post a>.ms-xs.truncate{text-overflow:clip!important}
 :where(:root:not([data-n19-safe])) main#main-content search-telemetry-tracker>div[data-testid^="search-post"]:is(:hover,:focus-within){z-index:2!important}
 svg[data-testid="verification-icon"],svg[icon-name="verified-fill"][aria-label*="verification"i]{display:none!important}
+:where(:root:not([data-n19-safe])) [data-n19-pinned],[data-n19-pinned]:where(:root:not([data-n19-safe])){display:block;margin:0 0 10px}
+:where(:root:not([data-n19-safe])) [data-n19-pin],[data-n19-pin]:where(:root:not([data-n19-safe])){display:flex!important}
+[data-n19-pin]{background:var(--n19-card)!important;border:1px solid var(--n19-border)!important;border-radius:4px!important}
+:where(:root:not([data-n19-safe])) [data-n19-pin],[data-n19-pin]:where(:root:not([data-n19-safe])){margin:0 0 10px!important}
+[data-n19-pin]{text-decoration:none!important;color:var(--n19-text)!important}
+:where(:root:not([data-n19-safe])) [data-n19-pin],[data-n19-pin]:where(:root:not([data-n19-safe])){overflow:hidden}
+[data-n19-pin]:hover{border-color:var(--n19-border-hover)!important}
+:where(:root:not([data-n19-safe])) [data-n19-pin-score],[data-n19-pin-score]:where(:root:not([data-n19-safe])){flex:none;width:40px}
+[data-n19-pin-score]{background:var(--n19-vote)}
+:where(:root:not([data-n19-safe])) [data-n19-pin-score],[data-n19-pin-score]:where(:root:not([data-n19-safe])){padding:12px 0 8px}
+[data-n19-pin-score]{text-align:center;font:700 12px/16px var(--n19-font);color:var(--n19-text)}
+:where(:root:not([data-n19-safe])) [data-n19-pin-body],[data-n19-pin-body]:where(:root:not([data-n19-safe])){display:flex;flex-direction:column;gap:4px;padding:8px 8px 8px 8px;min-width:0}
+:where(:root:not([data-n19-safe])) [data-n19-pin-tag],[data-n19-pin-tag]:where(:root:not([data-n19-safe])){display:flex;align-items:center;gap:4px}
+[data-n19-pin-tag]{font:700 10px/16px var(--n19-font);letter-spacing:.5px;text-transform:uppercase;color:#13803a}
+html[data-net19-mode="dark"] [data-n19-pin-tag]{color:#46d160}
+:where(:root:not([data-n19-safe])) [data-n19-pin-tag] svg,[data-n19-pin-tag]:where(:root:not([data-n19-safe])) svg{width:14px;height:14px}
+[data-n19-pin-tag] svg{fill:currentColor!important;color:inherit!important}
+[data-n19-pin-tag] svg path{fill:currentColor!important}
+[data-n19-pin-title]{font:500 18px/22px var(--n19-font);color:var(--n19-title)}
+[data-n19-pin-meta]{font:700 12px/16px var(--n19-font);color:var(--n19-action)}

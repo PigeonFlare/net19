@@ -199,9 +199,72 @@ globalThis.net19Theme = {
       items.push(make('a', { href: path + '/', role: 'menuitem', 'data-n19-mine': '' },
         make('span', {}, icon?.src ? make('img', { src: icon.currentSrc || icon.src, alt: '' }) : svgIcon(ICONS.community)), make('span', {}, path.slice(1))));
     }
+    if (!items.length && subscribed === null) { subscribed = []; loadSubscribed().then(list => { subscribed = list; if (menu.isConnected && menu.closest('[data-open]')) myCommunities(menu); }); }
+    if (!items.length && subscribed?.length) for (const sub of subscribed) items.push(make('a', { href: `/${sub.name}/`, role: 'menuitem', 'data-n19-mine': '' },
+      make('span', {}, sub.icon ? make('img', { src: sub.icon, alt: '' }) : svgIcon(ICONS.community)), make('span', {}, sub.name)));
     if (!items.length) return;
-    items.sort((a, b) => a.textContent.localeCompare(b.textContent));
+    items.sort((a, b) => a.textContent.localeCompare(b.textContent, undefined, { sensitivity: 'base' }));
     menu.append(make('div', { 'data-n19-menu-title': '', 'data-n19-mine': '' }, say('My communities')), ...items);
+  };
+  let subscribed = null;
+  const loadSubscribed = async () => {
+    const list = [];
+    try {
+      let after = '';
+      for (let page = 0; page < 5; page++) {
+        const response = await fetch(`/subreddits/mine/subscriber.json?limit=100&raw_json=1${after ? `&after=${after}` : ''}`, { credentials: 'include' });
+        if (!response.ok) break;
+        const data = (await response.json())?.data;
+        for (const child of data?.children || []) {
+          const d = child.data || {};
+          if (!d.display_name_prefixed || d.subreddit_type === 'user') continue;
+          const icon = (d.community_icon || d.icon_img || '').split('?')[0];
+          list.push({ name: d.display_name_prefixed, icon: /^https:\/\/[a-z.]*redd\.it\//.test(icon) ? icon : '' });
+        }
+        after = data?.after;
+        if (!after) break;
+      }
+    } catch {}
+    return list;
+  };
+  const PIN = 'M11.6 2.2l6.2 6.2-1.2 1.2-.9-.9-3.3 3.3.4 3.6-1.2 1.2-3.4-3.4-4.3 4.3-1.1-1.1 4.3-4.3L3.7 8.8l1.2-1.2 3.6.4 3.3-3.3-.9-.9z';
+  const pinned = () => {
+    const feed = document.querySelector('main#main-content shreddit-feed');
+    const carousel = document.querySelector('community-highlight-carousel');
+    const old = document.querySelector('[data-n19-pinned]');
+    if (!feed || !carousel || !/^\/r\/[^/]+\/?(?:(?:hot|new|top|rising|best|controversial)\/?)?$/i.test(location.pathname)) { old?.remove(); return; }
+    const rows = [];
+    const seen = new Set();
+    for (const item of carousel.querySelectorAll('li, shreddit-post')) {
+      const post = item.localName === 'shreddit-post' ? item : item.querySelector('shreddit-post');
+      const href = post?.getAttribute('permalink') || item.querySelector('a[href*="/comments/"]')?.getAttribute('href');
+      if (!href || seen.has(href)) continue;
+      seen.add(href);
+      const link = { getAttribute: () => href };
+      const card = item.querySelector('community-highlight-card');
+      const title = (post?.getAttribute('post-title') || card?.querySelector('[slot="title"]')?.textContent || '').trim();
+      if (!title) continue;
+      const numbers = [...(card?.querySelectorAll('[slot="upvotes-and-comments"] faceplate-number') || [])].map(n => n.getAttribute('number'));
+      const score = post?.getAttribute('score') ?? numbers[0] ?? '';
+      const comments = post?.getAttribute('comment-count') ?? numbers[1] ?? '';
+      rows.push({ href: new URL(link.getAttribute('href'), location.origin).pathname, title, score, comments });
+    }
+    const key = rows.map(r => r.href + r.score + r.comments).join('|');
+    if (old && old.getAttribute('data-n19-pinned') === key && old.parentElement === feed) return;
+    old?.remove();
+    if (!rows.length) return;
+    const pretty = n => { const v = +n; return !n || isNaN(v) ? '' : v >= 1e4 ? `${(v / 1e3).toFixed(1).replace(/\.0$/, '')}k` : String(v); };
+    const box = make('div', { 'data-n19-pinned': key });
+    for (const row of rows) {
+      const label = say('Pinned by moderators');
+      box.append(make('a', { href: row.href, 'data-n19-pin': '' },
+        make('span', { 'data-n19-pin-score': '' }, pretty(row.score) || '•'),
+        make('span', { 'data-n19-pin-body': '' },
+          make('span', { 'data-n19-pin-tag': '' }, svgIcon([PIN]), label ? make('span', {}, label) : ''),
+          make('span', { 'data-n19-pin-title': '' }, row.title),
+          row.comments !== '' ? make('span', { 'data-n19-pin-meta': '' }, `${pretty(row.comments)} ${say('Comments')}`) : '')));
+    }
+    feed.prepend(box);
   };
   const communityIcon = () => document.querySelector('.masthead img[src*="communityIcon"], .masthead img.shreddit-subreddit-icon__icon, #pdp-credit-bar img.shreddit-subreddit-icon__icon');
   const header = () => {
@@ -633,7 +696,7 @@ globalThis.net19Theme = {
       style(auth, AUTH);
       for (const field of auth.querySelectorAll('faceplate-text-input')) style(field, FIELD);
     }
-    header(); masthead(); aboutCard(); searchPage(); profile(); sortBar(); idCard(); trendingTitle(); footer(); after2019();
+    header(); masthead(); aboutCard(); searchPage(); profile(); sortBar(); idCard(); trendingTitle(); footer(); after2019(); pinned();
     times(document);
   };
   let queued = false;

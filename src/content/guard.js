@@ -57,7 +57,7 @@ import { rgba } from './color.js';
   const parity = el => {
     if (!el || el.nodeType !== 1) return 0;
     if (flips.has(el)) return flips.get(el);
-    let p = parity(el.parentElement);
+    let p = parity(up(el));
     const f = getComputedStyle(el).filter;
     const m = f && f !== 'none' && f.match(/invert\(([\d.]+)\)/);
     if (m && +m[1] > .5) p ^= 1;
@@ -70,6 +70,8 @@ import { rgba } from './color.js';
     if (!stops.length) return null;
     return [0, 1, 2, 3].map(i => stops.reduce((sum, c) => sum + c[i], 0) / stops.length);
   };
+  const up = e => e.parentElement || (e.parentNode && e.parentNode.host) || null;
+  const holds = (a, el) => { for (let e = el; e; e = up(e)) if (e === a) return true; return false; };
   const MEDIA = 'img, picture, video, canvas, svg image, iframe';
   let layerOf = new Map(), mediaOf = new Map();
   const tiles = new Map();
@@ -124,7 +126,7 @@ import { rgba } from './color.js';
   const backdrop = el => {
     const layers = [];
     let b = null;
-    for (let e = el; e; e = e.parentElement) {
+    for (let e = el; e; e = up(e)) {
       const { blocked, shade, color } = layer(e);
       if (blocked) return null;
       if (e !== el) {
@@ -155,7 +157,7 @@ import { rgba } from './color.js';
     const x = Math.min(innerWidth - 1, Math.max(0, b.left + b.width / 2)), y = Math.min(innerHeight - 1, Math.max(0, b.top + b.height / 2));
     for (const hit of document.elementsFromPoint(x, y)) {
       if (hit === el || el.contains(hit)) continue;
-      if (hit === painter || hit.contains(el)) { if (hit === painter) return true; continue; }
+      if (hit === painter || holds(hit, el)) { if (hit === painter) return true; continue; }
       const st = getComputedStyle(hit), c = rgba(st.backgroundColor);
       if ((c && c[3] >= .5) || st.backgroundImage !== 'none' || hit.matches(MEDIA)) return false;
     }
@@ -184,15 +186,21 @@ import { rgba } from './color.js';
     ':is(input,textarea)[data-net19-ink="light"]{caret-color:#f5f5f7!important}:is(input,textarea)[data-net19-ink="light"]::placeholder{color:#bdc1c6!important;-webkit-text-fill-color:#bdc1c6!important;opacity:1!important}';
   const original = new WeakMap(), inline = new WeakMap();
   let blendDark = null, fades = new Map();
-  const fadeOf = e => { if (!e || e === root || e.nodeType !== 1) return 1; let f = fades.get(e); if (f === undefined) { f = +getComputedStyle(e).opacity * fadeOf(e.parentElement); fades.set(e, f); } return f; };
+  const fadeOf = e => { if (!e || e === root || e.nodeType !== 1) return 1; let f = fades.get(e); if (f === undefined) { f = +getComputedStyle(e).opacity * fadeOf(up(e)); fades.set(e, f); } return f; };
   let textCache = null;
   const textElements = () => {
     if (textCache) return textCache;
     const found = textCache = new Set();
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-      acceptNode: n => n.nodeValue.trim().length > 1 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP,
-    });
-    for (let n = walker.nextNode(); n && found.size < 3000; n = walker.nextNode()) if (n.parentElement) found.add(n.parentElement);
+    const scopes = [document.body];
+    for (let i = 0; i < scopes.length && found.size < 3000; i++) {
+      const walker = document.createTreeWalker(scopes[i], NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT, {
+        acceptNode: n => n.nodeType === 1 ? (n.shadowRoot ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP) : n.nodeValue.trim().length > 1 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP,
+      });
+      for (let n = walker.nextNode(); n && found.size < 3000; n = walker.nextNode()) {
+        if (n.nodeType === 1) { if (scopes.length < 400) scopes.push(n.shadowRoot); }
+        else if (n.parentElement) found.add(n.parentElement);
+      }
+    }
     return found;
   };
   const lift = (text, pt, under, goal, alpha = 1, side = null) => {
@@ -235,7 +243,7 @@ import { rgba } from './color.js';
     if (dark !== blendDark) { blendDark = dark; for (const e of document.querySelectorAll('[data-net19-blend]')) e.removeAttribute('data-net19-blend'); }
     for (const el of textElements()) {
       if (el.closest('script, style, noscript, [data-net19-hidden]')) continue;
-      for (let e = el, i = 0; e && e !== root && i < 12; e = e.parentElement, i++) {
+      for (let e = el, i = 0; e && e !== root && i < 12; e = up(e), i++) {
         const { blend } = layer(e);
         if ((dark && blend === 'multiply') || (!dark && blend === 'screen')) { if (!e.hasAttribute('data-net19-blend')) e.setAttribute('data-net19-blend', ''); }
       }
@@ -294,9 +302,10 @@ import { rgba } from './color.js';
       if (before) { el.style.setProperty('color', before[0], before[1]); el.style.setProperty('-webkit-text-fill-color', before[2], before[3]); if (!before[0]) el.style.removeProperty('color'); if (!before[2]) el.style.removeProperty('-webkit-text-fill-color'); inline.delete(el); }
       if (!ink) { el.removeAttribute('data-net19-ink'); original.delete(el); continue; }
       el.setAttribute('data-net19-ink', ink);
-      if (ink.startsWith('rgb')) {
+      const paint = ink.startsWith('rgb') ? ink : el.getRootNode() !== document ? (ink === 'dark' ? 'rgb(29, 29, 31)' : 'rgb(245, 245, 247)') : null;
+      if (paint) {
         inline.set(el, [el.style.getPropertyValue('color'), el.style.getPropertyPriority('color'), el.style.getPropertyValue('-webkit-text-fill-color'), el.style.getPropertyPriority('-webkit-text-fill-color')]);
-        el.style.setProperty('color', ink, 'important'); el.style.setProperty('-webkit-text-fill-color', ink, 'important');
+        el.style.setProperty('color', paint, 'important'); el.style.setProperty('-webkit-text-fill-color', paint, 'important');
       }
     }
     for (const svg of document.querySelectorAll('svg')) {

@@ -291,6 +291,9 @@ globalThis.net19Theme = {
         }
       };
       walk(post, 0);
+      const top = Math.min(...media.map(m => m.getBoundingClientRect().top));
+      const head = [...post.querySelectorAll('[data-n19-ig="pad"]')].find(p => p.getBoundingClientRect().bottom <= top + 2);
+      if (head) head.setAttribute('data-n19-ig', 'head');
     }
     for (const time of document.querySelectorAll('main time:not([data-n19-ig]), [role="dialog"] article time:not([data-n19-ig])')) {
       if (parseFloat(getComputedStyle(time).fontSize) <= 12.5) mark(time.closest('a') || time, 'stamp');
