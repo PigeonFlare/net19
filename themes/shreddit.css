@@ -6,7 +6,7 @@ html { --n19-page: #dae0e6; --n19-card: #fff; --n19-card-2: #f6f7f8; --n19-vote:
 html[data-net19-mode="dark"] { --n19-page: #030303; --n19-card: #1a1a1b; --n19-card-2: #272729; --n19-vote: #161617; --n19-text: #d7dadc; --n19-title: #d7dadc; --n19-meta: #818384;
   --n19-action: #818384; --n19-border: #343536; --n19-border-hover: #818384; --n19-line: #343536; --n19-hover: rgba(215,218,220,.1); --n19-blue: #d7dadc;
   --n19-blue-hover: #e8eaeb; --n19-on-blue: #1a1a1b; --n19-link: #4fbcff; --n19-field: #272729; --n19-field-border: #343536; --n19-header: #1a1a1b;
-  --n19-wordmark: #d7dadc; --n19-up: #ff4500; --n19-down: #7193ff; --n19-thread: #343536; --n19-thread-hover: #d7dadc; --n19-flair: #343536; --n19-strip: #0079d3; }
+  --n19-wordmark: #d7dadc; --n19-up: #ff4500; --n19-down: #7193ff; --n19-thread: #343536; --n19-thread-hover: #d7dadc; --n19-flair: #343536; --n19-strip: #1a1a1b; }
 
 html:root, html.theme-dark, html .theme-rpl {
   --color-neutral-background: var(--n19-card) !important; --color-neutral-background-strong: var(--n19-card) !important;
@@ -62,11 +62,16 @@ reddit-header-large a#create-post :is(span.text-14, span:not(:has(svg)):not(:emp
 reddit-header-large a#create-post:hover { background: var(--n19-hover) !important; }
 
 #left-sidebar-container, flex-left-nav-container, flex-left-nav, #flex-nav-buttons, #flex-left-nav-container { display: none !important; }
-.grid-container { grid-template-columns: 1fr !important; }
-.grid-container > #subgrid-container, #subgrid-container { grid-column: 1 / -1 !important; margin: 0 auto !important; width: 100% !important; max-width: 1000px !important; padding: 20px 24px 0 !important; box-sizing: border-box !important; }
-#subgrid-container .main-container { gap: 24px !important; justify-content: center !important; }
-#subgrid-container main#main-content { max-width: 640px !important; }
-#right-sidebar-container { width: 312px !important; max-width: 312px !important; }
+.grid-container { grid-template-columns: minmax(0, 1fr) !important; }
+.grid-container > #subgrid-container, #subgrid-container { grid-column: 1 / -1 !important; margin: 0 auto !important; width: 100% !important; max-width: 1032px !important; padding: 20px 24px 0 !important; box-sizing: border-box !important; }
+#subgrid-container .main-container { display: flex !important; gap: 24px !important; justify-content: center !important; align-items: flex-start !important; }
+#subgrid-container main#main-content { flex: 0 1 648px !important; width: 648px !important; max-width: 648px !important; min-width: 0 !important; }
+#right-sidebar-container { flex: 0 0 312px !important; width: 312px !important; min-width: 312px !important; max-width: 312px !important; }
+#right-sidebar-contents { width: 100% !important; min-width: 0 !important; max-width: 100% !important; }
+#right-sidebar-contents > :not(script) { max-width: 100% !important; box-sizing: border-box !important; overflow-wrap: anywhere; }
+main#main-content shreddit-feed, main#main-content shreddit-feed > article, main#main-content :is(shreddit-post, shreddit-ad-post) { max-width: 100% !important; min-width: 0 !important; box-sizing: border-box !important; }
+#subgrid-container:has(shreddit-post[view-context="CommentsPage"]) { max-width: 1600px !important; }
+#subgrid-container .main-container:has(> main shreddit-post[view-context="CommentsPage"]) main#main-content { flex: 1 1 0 !important; width: auto !important; min-width: 0 !important; max-width: none !important; }
 
 main#main-content > div.my-xs, main#main-content > div.flex:has(> shreddit-sort-dropdown), main#main-content > div:has(> shreddit-async-loader[bundlename="shreddit_sort_dropdown"]) {
   background: var(--n19-card) !important; border: 1px solid var(--n19-border) !important; border-radius: 4px !important; margin: 0 0 16px !important; padding: 10px 12px !important; }
@@ -76,7 +81,7 @@ shreddit-post[view-context="AggregateFeed"], shreddit-post[view-context="Subredd
   background: var(--n19-card) !important; border: 1px solid var(--n19-border) !important; border-radius: 4px !important; margin: 0 !important;
   padding: 8px 8px 2px 48px !important; overflow: visible !important; }
 shreddit-feed :is(shreddit-post, shreddit-ad-post):hover, shreddit-feed :is(shreddit-post, shreddit-ad-post):focus-within { background: var(--n19-card) !important; border-color: var(--n19-border-hover) !important; }
-shreddit-feed :is(shreddit-post, shreddit-ad-post) { background-image: linear-gradient(to right, var(--n19-vote) 40px, transparent 40px) !important; }
+shreddit-feed :is(shreddit-post, shreddit-ad-post) { background-image: none !important; box-shadow: inset 40px 0 0 var(--n19-vote) !important; }
 :is(shreddit-post, shreddit-ad-post) [slot="credit-bar"] { font-size: 12px !important; min-height: 20px !important; margin: 0 0 8px !important; line-height: 16px !important; color: var(--n19-meta) !important; }
 :is(shreddit-post, shreddit-ad-post) [slot="credit-bar"] :is(faceplate-timeago, time, .created-separator, [data-n19-posted], [data-n19-posted] a) { color: var(--n19-meta) !important; font-size: 12px !important; font-weight: 400 !important; }
 :is(shreddit-post, shreddit-ad-post) [slot="credit-bar"] [data-n19-posted] a:hover { text-decoration: underline !important; }
@@ -151,7 +156,7 @@ shreddit-comment faceplate-partial[slot="children"] button, shreddit-comment [sl
 #right-sidebar-contents > aside { padding-top: 0 !important; background: transparent !important; border: 0 !important; }
 #right-sidebar-container .legal-links { background: var(--n19-card) !important; border: 1px solid var(--n19-border) !important; border-radius: 4px !important; padding: 12px !important; margin: 16px 0 0 !important; }
 #right-sidebar-contents aside[aria-label="Related Posts Section"] { background: var(--n19-card) !important; border: 1px solid var(--n19-border) !important; border-radius: 4px !important; overflow: hidden !important; margin-top: 0 !important; padding: 0 0 4px !important; }
-[data-testid^="pdp-right-rail-related-posts"], #right-sidebar-contents [data-n19-strip] { background: var(--n19-strip) !important; color: #fff !important; font-size: 10px !important; font-weight: 700 !important; letter-spacing: .5px !important;
+[data-testid^="pdp-right-rail-related-posts"] { background: var(--n19-strip) !important; color: #fff !important; font-size: 10px !important; font-weight: 700 !important; letter-spacing: .5px !important;
   text-transform: uppercase !important; height: 34px !important; padding: 0 12px !important; display: flex !important; align-items: center !important; margin: 0 0 4px !important; }
 #right-sidebar-contents aside[aria-label="Related Posts Section"] li { padding: 0 12px !important; }
 #right-sidebar-contents aside[aria-label="Related Posts Section"] hr { border-color: var(--n19-line) !important; }
@@ -165,8 +170,6 @@ reddit-pdp-right-rail-post h3.i18n-list-item-post-title, reddit-pdp-right-rail-p
 #right-sidebar-contents aside.subreddit-right-rail-community-info div.px-md > div.mb-sm:has(> h2) { background: var(--n19-strip) !important; margin: 0 -12px 12px !important; padding: 0 12px !important; height: 34px !important; }
 #right-sidebar-contents aside.subreddit-right-rail-community-info div.px-md > div.mb-sm > h2, #right-sidebar-contents aside.subreddit-right-rail-community-info div.px-md > div.mb-sm > h2 * {
   color: #fff !important; font-size: 10px !important; font-weight: 700 !important; letter-spacing: .5px !important; }
-#right-sidebar-contents [data-n19-strip] { margin: 0 !important; border-radius: 4px 4px 0 0 !important; }
-#right-sidebar-contents [data-n19-strip] + shreddit-subreddit-header { border-top: 0 !important; border-radius: 0 0 4px 4px !important; padding-top: 12px !important; }
 create-post-entry-point-wrapper { display: none !important; }
 shreddit-subreddit-header-buttons button, shreddit-join-button button { border-radius: 4px !important; text-transform: uppercase !important; font-size: 12px !important; font-weight: 700 !important; letter-spacing: .5px !important; }
 .grid-container { --ab-award-count: none !important; --ab-repost-display: none !important; }
@@ -231,20 +234,6 @@ shreddit-async-loader[bundlename="shreddit_sort_dropdown"] > div > [data-n19-bar
 shreddit-async-loader[bundlename="shreddit_sort_dropdown"] > div > [data-n19-bar-label="sort"] { order: -1 !important; }
 [data-n19-heading] { margin: 0 0 10px 2px; color: var(--n19-text); font: 500 14px/18px var(--n19-font); }
 
-.masthead.subreddit-feed-masthead { margin: 0 0 0 !important; background: transparent !important; }
-.masthead.subreddit-feed-masthead .community-banner { height: 80px !important; margin: 0 calc(50% - 50vw) !important; border-radius: 0 !important; }
-.masthead.subreddit-feed-masthead > div.\@container { padding: 0 !important; }
-.masthead.subreddit-feed-masthead section[aria-label="Community actions"] { background: var(--n19-card) !important; position: relative !important; margin: 0 !important; padding: 0 16px 12px !important; height: auto !important; align-items: flex-start !important; }
-.masthead.subreddit-feed-masthead section[aria-label="Community actions"] > div { align-items: flex-start !important; }
-.masthead.subreddit-feed-masthead section[aria-label="Community actions"] > div > div:first-child { align-items: flex-start !important; gap: 16px !important; }
-.masthead.subreddit-feed-masthead section[aria-label="Community actions"] > div > div:first-child > div:first-child { width: 72px !important; height: 72px !important; margin-top: -14px !important;
-  border: 4px solid var(--n19-card) !important; border-radius: 50% !important; background: var(--n19-card) !important; box-sizing: content-box !important; }
-.masthead.subreddit-feed-masthead section[aria-label="Community actions"] > div > div:first-child > div:first-child :is(img, span, div) { width: 72px !important; height: 72px !important; border-radius: 50% !important; }
-.masthead.subreddit-feed-masthead section[aria-label="Community actions"] > div > div:first-child > div.flex-col { padding-top: 10px !important; }
-.masthead.subreddit-feed-masthead h1 { color: var(--n19-text) !important; font: 700 28px/32px var(--n19-font) !important; margin: 0 !important; }
-.masthead.subreddit-feed-masthead h1 + *, .masthead.subreddit-feed-masthead h2 { color: var(--n19-meta) !important; font: 500 14px/18px var(--n19-font) !important; }
-.masthead.subreddit-feed-masthead section[aria-label="Community actions"] > div > div:last-child { margin-top: 20px !important; align-self: flex-start !important; }
-.masthead.subreddit-feed-masthead section[aria-label="Community actions"] > div > div:first-child > div.flex-col h1 ~ :is(img, svg, span:has(img)) { display: none !important; }
 
 shreddit-app :is(button[data-testid="community-status-trigger"], rpl-hovercard:has(> button[data-testid="community-status-trigger"])) { display: none !important; }
 auth-flow-google-one-tap-prompt { display: none !important; }
@@ -257,12 +246,9 @@ shreddit-comment > details > .comment-main-grid > div.col-start-2.relative:has(>
 shreddit-comment > details > .comment-main-grid > .ssr-thread-line { top: 20px !important; }
 shreddit-app { padding-top: 49px !important; }
 reddit-header-large div.h-\[40px\] { padding: 0 !important; height: 48px !important; align-items: center !important; }
-reddit-header-large div.h-\[40px\] > div { position: static !important; height: 36px !important; align-items: center !important; }
+reddit-header-large div.h-\[40px\] > div { position: static !important; height: 36px !important; align-items: flex-start !important; overflow: visible !important; }
 reddit-header-large div.h-\[40px\] > div > div { width: 100% !important; max-width: 690px !important; margin: 0 auto !important; }
-.masthead.subreddit-feed-masthead section[aria-label="Community actions"] { top: 0 !important; inset-block-start: 0 !important; }
-.masthead.subreddit-feed-masthead { height: auto !important; min-height: 0 !important; padding: 0 !important; }
 #subgrid-container:has(.main-container > main > div > shreddit-async-loader[bundlename="shreddit_sort_dropdown"]) { gap: 0 !important; }
-.masthead.subreddit-feed-masthead section[aria-label="Community actions"] { min-height: 0 !important; }
 
 #subgrid-container:has(> .search-results-navigation-masthead-desktop) { padding-top: 0 !important; }
 .masthead.search-results-navigation-masthead-desktop { background: var(--n19-card) !important; position: relative !important; top: 0 !important; z-index: 3 !important; border: 0 !important; margin: 0 !important; }
@@ -297,7 +283,6 @@ main#main-content hr.list-divider-line { margin: 0 !important; border-color: var
 [data-testid="search-results-sidebar"] h3 { color: var(--n19-text) !important; font: 500 14px/18px var(--n19-font) !important; }
 [data-testid="search-results-sidebar"] hr { border-color: var(--n19-line) !important; margin: 8px 0 !important; }
 
-main#main-content div:has(> #profile-feed-tabgroup) { margin: 0 0 16px !important; background: var(--n19-card) !important; border: 1px solid var(--n19-border) !important; border-radius: 4px !important; padding: 0 8px !important; }
 main#main-content [data-testid="profile-main"] { background: transparent !important; }
 shreddit-feed article:has(> shreddit-profile-comment) { margin: 0 0 10px !important; }
 shreddit-feed shreddit-profile-comment { display: block !important; background: var(--n19-card) !important; border: 1px solid var(--n19-border) !important; border-radius: 4px !important; margin: 0 !important; overflow: hidden !important; }
@@ -306,7 +291,7 @@ shreddit-feed shreddit-profile-comment > div { border-radius: 0 !important; }
 shreddit-feed shreddit-profile-comment > div:hover { background: transparent !important; }
 main#main-content shreddit-feed > hr, main#main-content faceplate-batch > hr, main#main-content > div > div > hr { display: none !important; }
 #right-sidebar-contents aside[aria-label="Profile information"] { margin-top: 0 !important; background: var(--n19-card) !important; border: 1px solid var(--n19-border) !important; border-radius: 4px !important;
-  overflow: hidden !important; border-top: 64px solid var(--n19-strip) !important; }
+  overflow: hidden !important; }
 #right-sidebar-contents aside[aria-label="Profile information"] h2[data-testid="profile-display-name"] { color: var(--n19-text) !important; font: 500 16px/20px var(--n19-font) !important; }
 #right-sidebar-contents aside[aria-label="Profile information"] h2.uppercase { color: var(--n19-meta) !important; font: 700 10px/16px var(--n19-font) !important; letter-spacing: .5px !important; }
 #right-sidebar-contents aside[aria-label="Profile information"] .grid p.font-semibold { font: 500 14px/18px var(--n19-font) !important; }
@@ -328,9 +313,8 @@ auth-flow-modal [slot="primaryButton"] button * { color: inherit !important; }
 search-results-page-tabs div[slot="filters"] { border-top: 0 !important; }
 shreddit-comment .comment-action-row-hl { display: none !important; }
 #subgrid-container main#main-content > div:has(> shreddit-async-loader[bundlename="shreddit_sort_dropdown"])::before,
-.masthead.subreddit-feed-masthead section[aria-label="Community actions"]::before, .masthead.search-results-navigation-masthead-desktop::before, search-results-page-tabs div[slot="filters"]::before {
+.masthead.search-results-navigation-masthead-desktop::before, search-results-page-tabs div[slot="filters"]::before {
   content: ''; position: absolute; top: 0; bottom: var(--n19-band-extra, 0px); left: -100vmax; right: -100vmax; background: var(--n19-card); z-index: -1; pointer-events: none; }
-.masthead.subreddit-feed-masthead section[aria-label="Community actions"] { z-index: 1 !important; }
 .main-container:has(.search-results-filter-spacer-desktop) > #right-sidebar-container { margin-top: 20px !important; }
 .main-container:has(.search-results-filter-spacer-desktop) [data-testid="search-results-sticky-sidebar"] { top: 68px !important; max-height: calc(100vh - 68px) !important; }
 aside.subreddit-right-rail-community-info faceplate-tracker[noun="menu_click"] > a[class~="button-secondary"] { background: transparent !important; border: 1px solid var(--n19-blue) !important; border-radius: 4px !important;
@@ -377,9 +361,143 @@ shreddit-feed > article:first-of-type > :is(shreddit-post[view-type="compactView
 [data-n19-domain] { position: relative; z-index: 1; margin: 0 0 0 4px; color: var(--n19-link) !important; font: 400 12px/16px var(--n19-font); text-decoration: none; white-space: nowrap; }
 [data-n19-domain]:hover { text-decoration: underline; }
 :is(shreddit-post, shreddit-ad-post) [slot="credit-bar"] a[data-testid="subreddit-name"] :is(span[avatar], span[avatar] > span, img) { border-radius: 50% !important; overflow: hidden !important; }
-shreddit-feed :is(shreddit-post[view-type="compactView"], shreddit-ad-post[data-n19-classic]), shreddit-feed :is(shreddit-post[view-type="compactView"], shreddit-ad-post[data-n19-classic]):hover { background: var(--n19-card) linear-gradient(to right, var(--n19-vote) 40px, transparent 40px) !important; }
+shreddit-feed :is(shreddit-post[view-type="compactView"], shreddit-ad-post[data-n19-classic]), shreddit-feed :is(shreddit-post[view-type="compactView"], shreddit-ad-post[data-n19-classic]):hover { background: var(--n19-card) !important; box-shadow: inset 40px 0 0 var(--n19-vote) !important; }
 [id^="feed-post-credit-bar"] [slot="authorName"] a * { font-weight: 400 !important; color: inherit !important; }
 [id^="feed-post-credit-bar"]:not(:has(a[data-testid="subreddit-name"])) > .created-separator { display: none !important; }
 [id^="feed-post-credit-bar"] > [data-n19-posted] { color: var(--n19-meta) !important; font-size: 12px !important; }
 shreddit-ad-post[data-n19-classic] [slot="title"] .headline { font-size: 16px !important; line-height: 20px !important; font-weight: 500 !important; }
 shreddit-ad-post[data-n19-classic] [slot="thumbnail"] :is(img, video) { width: 96px !important; height: 72px !important; object-fit: cover !important; border-radius: 4px !important; }
+
+html { --n19-tab-text: var(--n19-key, #0079d3); --n19-action-key: var(--n19-key, #0079d3); }
+html[data-net19-mode="dark"] { --n19-tab-text: var(--n19-text); --n19-action-key: var(--n19-blue); }
+.masthead.subreddit-feed-masthead { display: none !important; }
+#subgrid-container:has(> [data-n19-masthead]) { padding-top: 0 !important; gap: 0 !important; }
+[data-n19-masthead] { display: block; margin: 0 calc(50% - 50vw); padding: 0 !important; height: auto !important; }
+[data-n19-banner] { display: flex; align-items: center; height: 80px; box-sizing: border-box; padding: 0 40px; background: var(--n19-banner, #33a8ff) no-repeat center / cover; }
+[data-n19-banner-name] { display: flex; align-items: center; gap: 8px; height: 38px; color: #fcfcfb !important; font: 500 22px/38px var(--n19-font); text-decoration: none !important; }
+[data-n19-banner-icon] { display: flex; flex: 0 0 36px; width: 36px; height: 36px; box-sizing: border-box; border: 2px solid #fff; border-radius: 50%; overflow: hidden; background: #fff; }
+[data-n19-banner-icon][hidden] { display: none; }
+[data-n19-banner-icon] img { width: 100%; height: 100%; object-fit: cover; margin: 0; }
+[data-n19-tabs] { display: flex; align-items: flex-end; height: 40px; box-sizing: border-box; padding: 0 40px; background: var(--n19-tabbar, #dbf0ff); }
+html[data-net19-mode="dark"] [data-n19-tabs] { background: var(--n19-card); border-bottom: 1px solid var(--n19-line); }
+[data-n19-tab] { display: block; height: 40px; box-sizing: border-box; padding: 4px 8px 1px; border-bottom: 3px solid var(--n19-tab-text); color: var(--n19-tab-text) !important; font: 700 14px/32px var(--n19-font); text-decoration: none !important; }
+#subgrid-container:has(> [data-n19-masthead]) .main-container:not(:has(> main > div > shreddit-async-loader[bundlename="shreddit_sort_dropdown"])) { padding-top: 20px !important; }
+#right-sidebar-contents shreddit-subreddit-header, #right-sidebar-contents shreddit-subreddit-header + hr, #pdp-subreddit-card-upsell-root { display: none !important; }
+#right-sidebar-contents aside[aria-label="Community information"]:has([data-n19-about]) { background: transparent !important; border: 0 !important; padding: 0 !important; margin: 0 !important; overflow: visible !important; box-shadow: none !important; }
+[data-n19-about] { display: block; overflow: hidden; margin: 0 0 16px; background: var(--n19-card); border: 1px solid var(--n19-border); border-radius: 4px; }
+[data-n19-about-strip] { display: flex; align-items: center; height: 36px; box-sizing: border-box; margin: 0; padding: 0 12px; background: var(--n19-action-key); color: #fff; font: 700 10px/12px var(--n19-font); letter-spacing: .5px; text-transform: uppercase; }
+html[data-net19-mode="dark"] [data-n19-about-strip] { background: var(--n19-card); color: var(--n19-meta); }
+[data-n19-about-body] { display: flex; flex-direction: column; padding: 12px; }
+[data-n19-about-name] { display: flex; align-items: center; gap: 8px; height: 32px; margin: 0 0 8px; color: var(--n19-text) !important; font: 500 16px/20px var(--n19-font); text-decoration: none !important; }
+[data-n19-about-icon] { display: flex; flex: 0 0 32px; width: 32px; height: 32px; border-radius: 50%; overflow: hidden; }
+[data-n19-about-icon][hidden] { display: none; }
+[data-n19-about-icon] img { width: 100%; height: 100%; object-fit: cover; margin: 0; }
+[data-n19-about-stats] { display: flex; margin: 0 0 8px; }
+[data-n19-about-stats]:empty { display: none; }
+[data-n19-about-stats] > div { display: flex; flex-direction: column; flex: 1 1 50%; color: var(--n19-text); }
+[data-n19-about-stats] b { font: 500 16px/20px var(--n19-font); }
+[data-n19-about-stats] span { font: 500 12px/16px var(--n19-font); }
+[data-n19-about-text] { margin: 0 0 12px; color: var(--n19-text); font: 400 14px/21px var(--n19-body-font); overflow-wrap: anywhere; }
+[data-n19-about-text]:empty { display: none; }
+:is([data-n19-about-subscribe], [data-n19-about-create]) { display: flex; align-items: center; justify-content: center; width: 100%; height: 34px; box-sizing: border-box; margin: 0; padding: 0 16px;
+  border: 1px solid var(--n19-action-key); border-radius: 4px; background: var(--n19-action-key); color: var(--n19-on-blue) !important; font: 700 14px/32px var(--n19-font); letter-spacing: .5px;
+  text-transform: uppercase; text-decoration: none !important; cursor: pointer; }
+html[data-net19-mode="dark"] :is([data-n19-about-subscribe], [data-n19-about-create]) { color: var(--n19-card) !important; }
+[data-n19-about-create] { margin-top: 8px; }
+:is([data-n19-about-subscribe], [data-n19-about-create]):hover { filter: none; box-shadow: inset 0 0 0 100px rgba(255,255,255,.1); }
+[data-n19-about-subscribe][data-n19-joined] { background: transparent; color: var(--n19-action-key) !important; }
+[data-n19-idcard-button] { height: 34px; font-size: 14px; line-height: 34px; }
+#right-sidebar-contents > :is(aside, section, div, faceplate-partial):not([data-n19-idcard]):not([data-n19-premium]):not(:empty) { margin-bottom: 16px; }
+[data-n19-masthead] > * { margin: 0 !important; }
+main#main-content > :is(shreddit-feed-error-banner, faceplate-loader) { display: block !important; }
+#right-sidebar-container { padding: 0 !important; box-sizing: border-box !important; }
+shreddit-feed > shreddit-ad-post:not([data-n19-classic]) { margin: 0 0 10px !important; }
+main#main-content:has(shreddit-feed) { gap: 0 !important; row-gap: 0 !important; }
+#right-sidebar-container, #right-sidebar-contents { scrollbar-gutter: auto !important; }
+main#main-content div:has(> shreddit-feed) > div.my-xs:not(:has(*)) { margin: 0 !important; }
+#right-sidebar-contents :is([data-n19-idcard], [data-n19-premium], [data-n19-about], aside.right-rail-popular-communities, aside.subreddit-right-rail-community-info > div > div.px-md), #right-sidebar-container .legal-links { border: 0 !important; }
+shreddit-post[view-type="cardView"] > [slot="credit-bar"] { justify-content: flex-start !important; align-items: center !important; gap: 4px !important; }
+shreddit-post[view-type="cardView"] > [slot="credit-bar"] > :last-child:not(:first-child) { margin-left: auto !important; }
+#pdp-right-rail-after-answers { margin: 0 !important; }
+shreddit-post[view-context="CommentsPage"][subreddit-prefixed-name^="r/"] #pdp-credit-bar :is(span.avatar, .subreddit-name, .subreddit-name + span[aria-hidden="true"]) { display: none !important; }
+[data-n19-card] { display: block !important; overflow: hidden !important; margin: 0 0 16px !important; padding: 0 12px 8px !important; background: var(--n19-card) !important; border: 0 !important; border-radius: 4px !important; box-sizing: border-box !important; max-width: 100% !important; }
+[data-n19-card] [data-n19-card-title] { margin: 0 -12px 4px !important; padding: 12px 12px 0 !important; color: var(--n19-text) !important; font: 700 10px/16px var(--n19-font) !important; letter-spacing: .5px !important; text-transform: uppercase !important; }
+[data-n19-card] :is(img, video) { max-width: 100%; }
+#subgrid-container:has(#search-results-page-tabgroup) { max-width: 1600px !important; }
+#subgrid-container:has(#search-results-page-tabgroup) .main-container main#main-content { flex: 1 1 0 !important; width: auto !important; min-width: 0 !important; max-width: none !important; }
+.masthead.search-results-navigation-masthead-desktop::before, search-results-page-tabs div[slot="filters"]::before { content: none !important; }
+.masthead.search-results-navigation-masthead-desktop { background: transparent !important; }
+.masthead.search-results-navigation-masthead-desktop > :is([data-n19-search-head], div) { position: relative; }
+.masthead > [data-n19-search-head]::before, search-results-page-tabs div[slot="tabs"]::before {
+  content: ''; position: absolute; top: 0; bottom: 0; left: -100vmax; right: -100vmax; background: var(--n19-card); z-index: -1; pointer-events: none; }
+search-results-page-tabs div[slot="tabs"] { position: relative !important; z-index: 0; border-bottom: 1px solid var(--n19-line); }
+[data-n19-search-head] { padding: 16px 0 12px; z-index: 0; }
+[data-n19-search-head] > h1 { margin: 0 0 4px !important; color: var(--n19-text); font: 500 24px/28px var(--n19-font); min-height: 0; }
+[data-n19-search-head] > h1:empty { display: none; }
+[data-n19-search-head] > p { margin: 0; color: var(--n19-meta); font: 400 12px/16px var(--n19-font); }
+search-results-page-tabs div[slot="tabs"] > div { padding-top: 0 !important; }
+search-results-page-tabs div[slot="filters"] { width: calc(100% - 336px) !important; height: 40px !important; margin: 20px 0 0 !important; padding: 0 16px !important; background: var(--n19-card) !important; border-radius: 4px !important; display: flex !important; align-items: center !important; }
+search-results-page-tabs div[slot="filters"] > div { display: flex !important; align-items: center !important; gap: 0 !important; }
+search-results-page-tabs div[slot="filters"] > div > * { margin: 0 !important; }
+search-results-page-tabs div[slot="filters"] [data-n19-bar-label="search"] { margin: 0 4px 0 0 !important; }
+search-results-page-tabs div[slot="filters"] search-sort-dropdown-menu { margin: 0 16px 0 0 !important; }
+main#main-content > div.search-results-filter-spacer-desktop { height: 16px !important; min-height: 16px !important; }
+.main-container:has(.search-results-filter-spacer-desktop) > #right-sidebar-container { margin-top: -44px !important; }
+.masthead > div[data-n19-search-head][data-n19-search-head] { position: relative !important; padding: 20px 0 16px !important; }
+search-sort-dropdown-menu [slot="trigger-content"] { color: var(--n19-text) !important; font: 700 12px/16px var(--n19-font) !important; letter-spacing: .5px !important; text-transform: uppercase !important; }
+[data-n19-members] { color: var(--n19-meta) !important; font: 400 12px/16px var(--n19-font) !important; }
+.main-container:has(> div.legal-links) { flex-wrap: wrap !important; }
+.main-container:has(> div.legal-links) > main#main-content { flex: 1 1 100% !important; }
+.main-container > div.legal-links { flex: 1 1 100% !important; margin: 20px 0 !important; justify-content: center !important; }
+[data-testid="search-results-sidebar"] { overflow: hidden !important; }
+[data-testid="search-results-sidebar"] :is([data-testid="search-community"], [data-testid="search-author"], [data-testid^="search-"]) :is(div, p, span) { min-width: 0 !important; }
+[data-testid="search-results-sidebar"] :is(p, span, div):not(:has(*)) { overflow: hidden !important; text-overflow: ellipsis !important; }
+main#main-content div:has(> [data-testid="profile-main"]) { display: none !important; }
+#subgrid-container:has(#profile-feed-tabgroup) { padding-top: 0 !important; }
+#subgrid-container .main-container:has(#profile-feed-tabgroup) { position: relative !important; padding-top: 100px !important; }
+main#main-content div:has(> #profile-feed-tabgroup) { position: absolute !important; top: 0 !important; left: 0 !important; right: 0 !important; height: 40px !important; margin: 0 !important; padding: 0 !important;
+  display: flex !important; align-items: stretch !important; background: transparent !important; border: 0 !important; border-radius: 0 !important; z-index: 2 !important; }
+main#main-content div:has(> #profile-feed-tabgroup)::before, main#main-content div:has(> #profile-feed-tabgroup) ~ div > div.my-xs:has(shreddit-layout-event-setter)::before {
+  content: ''; position: absolute; top: 0; bottom: 0; left: -100vmax; right: -100vmax; background: var(--n19-card); z-index: -1; pointer-events: none; }
+main#main-content div:has(> #profile-feed-tabgroup)::before { border-bottom: 1px solid var(--n19-line); }
+#profile-feed-tabgroup { display: flex !important; gap: 0 !important; height: 40px !important; }
+#profile-feed-tabgroup > a[class~="button"] { height: 40px !important; padding: 0 8px !important; margin: 0 8px 0 0 !important; border-radius: 0 !important; background: transparent !important; color: var(--n19-text) !important;
+  font: 500 14px/40px var(--n19-font) !important; text-transform: uppercase !important; letter-spacing: 0 !important; box-shadow: none !important; }
+#profile-feed-tabgroup > a[class~="button"]:is([faceplate-tab-selected], [aria-selected="true"]) { color: var(--n19-link) !important; box-shadow: inset 0 -2px 0 var(--n19-link) !important; }
+#profile-feed-tabgroup > button[slot$="-button"] { display: none !important; }
+main#main-content div:has(> #profile-feed-tabgroup) ~ div > div.my-xs:has(shreddit-layout-event-setter) { position: absolute !important; top: 40px !important; left: 0 !important; right: 0 !important; height: 40px !important; margin: 0 !important;
+  display: flex !important; align-items: center !important; z-index: 2 !important; }
+main#main-content div:has(> #profile-feed-tabgroup) ~ div > div.my-xs:has(shreddit-layout-event-setter) > div { margin: 0 !important; padding: 0 16px !important; overflow: visible !important; }
+main#main-content div:has(> #profile-feed-tabgroup) ~ div > hr { display: none !important; }
+#right-sidebar-contents aside[aria-label="Profile information"] :is(h2[data-testid="profile-display-name"], [data-testid="profile-about-heading"], follow-button) { display: none !important; }
+[data-n19-profile-head] { display: flex; flex-direction: column; align-items: flex-start; margin: 0 0 8px; }
+[data-n19-profile-head] > img { width: 80px; height: 80px; margin: 0 0 8px; border-radius: 4px; object-fit: cover; }
+[data-n19-profile-head] > h2 { margin: 0; color: var(--n19-text); font: 500 18px/22px var(--n19-font); }
+[data-n19-profile-head] > p { margin: 4px 0 0; color: var(--n19-meta); font: 500 12px/16px var(--n19-font); }
+#right-sidebar-contents aside[aria-label="Profile information"] .grid > div { flex-direction: column-reverse !important; justify-content: flex-end !important; }
+#right-sidebar-contents aside[aria-label="Profile information"] .grid > div p.text-12, #right-sidebar-contents aside[aria-label="Profile information"] [data-n19-cake] { color: var(--n19-text) !important; font: 500 14px/18px var(--n19-font) !important; margin: 0 0 2px !important; }
+#right-sidebar-contents aside[aria-label="Profile information"] .grid > div p:not(.text-12):not([data-n19-cake]), #right-sidebar-contents aside[aria-label="Profile information"] .grid > div p:not(.text-12) * { color: var(--n19-meta) !important; font: 400 12px/16px var(--n19-font) !important; }
+[data-n19-profile-follow] { display: flex; align-items: center; justify-content: center; width: 100%; height: 26px; margin: 8px 0 16px; padding: 0; border: 1px solid var(--n19-blue); border-radius: 4px; background: var(--n19-blue);
+  color: var(--n19-on-blue); font: 700 12px/24px var(--n19-font); letter-spacing: .5px; text-transform: uppercase; cursor: pointer; }
+button[data-n19-sort-button] { height: 32px !important; padding: 0 6px !important; border: 0 !important; border-radius: 4px !important; background: transparent !important; box-shadow: none !important;
+  color: var(--n19-link) !important; font: 700 12px/16px var(--n19-font) !important; letter-spacing: .5px !important; text-transform: uppercase !important; }
+button[data-n19-sort-button] * { color: inherit !important; font: inherit !important; }
+button[data-n19-sort-button]:hover { background: var(--n19-hover) !important; }
+main#main-content div:has(> #profile-feed-tabgroup) ~ div { margin: 0 !important; padding: 0 !important; }
+main#main-content div:has(> #profile-feed-tabgroup) ~ div shreddit-feed > :first-child, main#main-content div:has(> #profile-feed-tabgroup) ~ div shreddit-feed > :first-child > :first-child { margin-top: 0 !important; }
+#right-sidebar-contents aside[aria-label="Profile information"] faceplate-partial > button { display: flex !important; margin: 0 0 12px auto !important; height: 24px !important; padding: 0 4px !important; border: 0 !important; background: transparent !important;
+  color: var(--n19-link) !important; font: 700 12px/16px var(--n19-font) !important; letter-spacing: .5px !important; text-transform: uppercase !important; box-shadow: none !important; }
+#right-sidebar-contents aside[aria-label="Profile information"] faceplate-partial > button * { color: inherit !important; font: inherit !important; }
+#right-sidebar-contents aside[aria-label="Profile information"] { position: relative !important; }
+#right-sidebar-contents aside[aria-label="Profile information"] div.p-md > div.flex.items-center.justify-between:not([data-testid]) { position: absolute !important; top: 12px !important; right: 12px !important; margin: 0 !important; }
+button[data-n19-sort-button] svg { display: none !important; }
+pdp-comment-search-input, faceplate-tracker:has(> pdp-comment-search-input) { display: none !important; }
+search-results-page-tabs div[slot="tabs"] { border-bottom: 0 !important; }
+search-results-page-tabs div[slot="tabs"]::before { border-bottom: 1px solid var(--n19-line); }
+#search-results-page-tabgroup > button[slot$="-button"] { display: none !important; }
+reddit-header-large rpl-tooltip > :is([slot="content"], [slot="shortcut"]) { display: none !important; }
+aside.subreddit-right-rail-community-info div.px-md faceplate-tracker > a[class~="button"] { display: flex !important; align-items: center !important; justify-content: center !important; height: 32px !important; background: transparent !important;
+  border: 1px solid var(--n19-action-key) !important; border-radius: 4px !important; color: var(--n19-action-key) !important; font: 700 12px/16px var(--n19-font) !important; letter-spacing: .5px !important; text-transform: uppercase !important; }
+aside.subreddit-right-rail-community-info div.px-md faceplate-tracker > a[class~="button"] * { color: inherit !important; font: inherit !important; }
+aside.subreddit-right-rail-community-info div.px-md faceplate-tracker > a[class~="button"]:hover { background: var(--n19-hover) !important; }
+[data-testid="search-results-sidebar"] p:is(.text-ellipsis, [class*="line-clamp"]) { display: block !important; -webkit-line-clamp: none !important; line-clamp: none !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; }

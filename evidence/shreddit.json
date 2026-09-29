@@ -1,6 +1,6 @@
 {
   "theme": "shreddit",
-  "era": "2018-2019 reddit redesign (\"new Reddit\"), what signed-out www.reddit.com served in 2019; classic reddit is only the crawler variant and stays reserved for signed-in users via old.reddit.com",
+  "era": "2018-2019 Reddit redesign (\"new Reddit\") as signed-out www.reddit.com served it in 2019 (Jan 2019 layout: colored banner with the community name, Posts tab bar, VIEW/SORT strip, 648px cards 10px apart, 312px borderless sidebar widgets); classic Reddit is reserved for signed-in users via old.reddit.com",
   "sources": [
     {
       "id": "s1",
@@ -71,9 +71,378 @@
       "date": "2020-03",
       "file": "supplied in chat",
       "shows": "signed-out Classic view: vote column, thumbnail left, title with domain link, round community icon, 'r/sub • Posted by u/x N hours ago', N Comments / Share / Save / Hide / Report row, rows joined in one bordered list, no JOIN buttons in the feed"
+    },
+    {
+      "id": "s11",
+      "url": "https://web.archive.org/web/20190124040952/https://www.reddit.com/r/backpacking/",
+      "date": "2019-01-24",
+      "file": "/home/claude/sweeps/h1-evidence/shreddit/bp-20190124.png",
+      "shows": "r/backpacking in Jan 2019 (raw capture rendered without scripts, same one the user compared against): #33a8ff 80px banner with icon and r/backpacking, #dbf0ff 40px bar with the Posts tab, white VIEW/SORT strip, 648px cards 10px apart at x148, COMMUNITY DETAILS card (blue 36px strip, icon + r/backpacking, 887k Subscribers / 222 Online, description, SUBSCRIBE and CREATE POST 288x34), rules widget with strip, moderators widget, footer card"
+    },
+    {
+      "id": "s12",
+      "url": "https://www.reddit.com/r/redesign/comments/ah6r2u/",
+      "date": "2019-01-18",
+      "file": "/home/claude/sweeps/h1-evidence/shreddit/ah6r2u.png",
+      "shows": "real user screenshot, r/oculus in night mode: COMMUNITY DETAILS, 141k Subscribers / 801 Online, SUBSCRIBE, CREATE POST, USER FLAIR PREVIEW (signed in), card posts"
+    },
+    {
+      "id": "s13",
+      "url": "https://www.reddit.com/r/redesign/comments/awea9e/",
+      "date": "2019-03-02",
+      "file": "/home/claude/sweeps/h1-evidence/shreddit/awea9e.png",
+      "shows": "user screenshot of the COMMUNITY DETAILS widget: strip, icon + r/name, Subscribers / Online, SUBSCRIBED (outlined) and CREATE POST buttons"
+    },
+    {
+      "id": "s14",
+      "url": "https://www.reddit.com/r/redesign/comments/cwr33w/",
+      "date": "2019-08-28",
+      "file": "/home/claude/sweeps/h1-evidence/shreddit/cwr33w.png",
+      "shows": "real user screenshot of the front page header, VIEW/SORT strip and the signed-in Create Post box"
+    },
+    {
+      "id": "s15",
+      "url": "https://web.archive.org/web/20190101002427/https://www.reddit.com/",
+      "date": "2019-01-01",
+      "file": "/home/claude/sweeps/h1-evidence/shreddit/front-20190101.png",
+      "shows": "front page Jan 2019: VIEW/SORT strip at y48-88, 648px cards at x148, r/popular card with CREATE POST, advertisement, Reddit Premium, Trending Communities with SUBSCRIBE"
+    },
+    {
+      "id": "s16",
+      "url": "https://web.archive.org/web/20190103121506/https://www.reddit.com/user/spez",
+      "date": "2019-01-03",
+      "file": "/home/claude/sweeps/h1-evidence/shreddit/spez-20190103.png",
+      "shows": "profile Jan 2019: full-width OVERVIEW/POSTS/COMMENTS tab strip, SORT NEW strip, overview cards, profile card (avatar, name, u/name, description, Karma, Cake day, FOLLOW, MORE OPTIONS), MODERATOR OF THESE COMMUNITIES with SUBSCRIBE, TROPHY CASE"
+    },
+    {
+      "id": "s17",
+      "url": "https://www.reddit.com/r/redesign/comments/an242t/",
+      "date": "2019-02-04",
+      "file": "/home/claude/sweeps/h1-evidence/shreddit/an242t.png",
+      "shows": "real user screenshot of search: Best results / Posts / Communities and users tabs, SORT BY RELEVANCE, COMMUNITIES FROM ALL TIME, SHOW NSFW, community rows with Subscribers and SUBSCRIBE"
+    },
+    {
+      "id": "s18",
+      "url": "https://www.reddit.com/r/redesign/comments/cis3u1/",
+      "date": "2019-07-28",
+      "file": "/home/claude/sweeps/h1-evidence/shreddit/cis3u1.png",
+      "shows": "real user screenshot of search in a subreddit: query title, 'Search results in r/redesign', SORT BY / POSTS FROM bar, classic result rows, COMMUNITY DETAILS with Members / Online"
+    },
+    {
+      "id": "s19",
+      "url": "https://www.reddit.com/r/redesign/comments/d2zpmo/",
+      "date": "2019-09-12",
+      "file": "/home/claude/sweeps/h1-evidence/shreddit/d2zpmo.png",
+      "shows": "real user screenshot of search: query title, 'Search results', tabs, SORT BY / POSTS FROM bar, COMMUNITIES AND USERS card with Members and JOIN, result rows"
+    },
+    {
+      "id": "s20",
+      "url": "https://www.reddit.com/r/redesign/comments/bky034/",
+      "date": "2019-05-05",
+      "file": "text post",
+      "shows": "'Recent Posts' displayed on the right column of new.reddit.com in 2019"
+    },
+    {
+      "id": "s21",
+      "url": "https://www.reddit.com/r/redesign/comments/bsnsd5/",
+      "date": "2019-05-24",
+      "file": "/home/claude/sweeps/h1-evidence/shreddit/bsnsd5.jpg",
+      "shows": "real user screen recording frame of a 2019 comment: points, time, Reply / Give Award / Share / Report / Save"
+    },
+    {
+      "id": "s22",
+      "url": "https://www.google.com/search?udm=2&q=reddit+redesign+subreddit+2019+screenshot+community+details",
+      "date": "searched 2026-09-29",
+      "file": "Google Images results, read in the Browser pane",
+      "shows": "top results are r/redesign screenshots and the 2018-2019 redesign coverage (Wired 'The Inside Story of Reddit's Redesign', CNET, Fast Company, Inc.): same banner, Posts tab, COMMUNITY DETAILS with SUBSCRIBE / CREATE POST layout as s11-s13"
+    },
+    {
+      "id": "s23",
+      "url": "https://www.google.com/search?udm=2&q=new+reddit+profile+page+2019+karma+cake+day+follow",
+      "date": "searched 2026-09-29",
+      "file": "Google Images results, read in the Browser pane",
+      "shows": "redesign profile cards with Karma and Cake day (r/redesign 97fa9c, 2018-08) matching s16"
     }
   ],
   "features": [
+    {
+      "match": "^Create Post$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "subreddit",
+        "post"
+      ],
+      "evidence": [
+        "s1",
+        "s2",
+        "s5",
+        "s11",
+        "s12",
+        "s13",
+        "s15"
+      ],
+      "note": "CREATE POST in the r/popular card (front) and in COMMUNITY DETAILS (subreddit, post page); links to Reddit's own /submit"
+    },
+    {
+      "match": "^Subscribed?$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "subreddit",
+        "post"
+      ],
+      "evidence": [
+        "s2",
+        "s5",
+        "s11",
+        "s12",
+        "s13"
+      ],
+      "note": "SUBSCRIBE in COMMUNITY DETAILS (Jan 2019 wording)"
+    },
+    {
+      "match": "^Community Details$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "subreddit",
+        "post"
+      ],
+      "evidence": [
+        "s2",
+        "s5",
+        "s11",
+        "s12",
+        "s13"
+      ],
+      "note": "sidebar COMMUNITY DETAILS widget"
+    },
+    {
+      "match": "^Community navigation$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "subreddit",
+        "post"
+      ],
+      "evidence": [
+        "s2",
+        "s3",
+        "s5",
+        "s11"
+      ],
+      "note": "banner name bar with the Posts tab"
+    },
+    {
+      "match": "^Posts$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "subreddit",
+        "post",
+        "search"
+      ],
+      "evidence": [
+        "s2",
+        "s3",
+        "s5",
+        "s11",
+        "s16",
+        "s17"
+      ],
+      "note": "Posts tab (community bar, search tabs, profile tabs); the profile's POSTS tab is shown too (see h1-shots/b12-user-light.png) but inventory.mjs skips it as a repeated sibling of COMMENTS"
+    },
+    {
+      "match": "^Trending Communities$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s15"
+      ],
+      "note": "front page sidebar widget"
+    },
+    {
+      "match": "^Popular$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s15"
+      ],
+      "note": "feed switcher and header icon"
+    },
+    {
+      "match": "^Communities and users$",
+      "in2019": true,
+      "evidence": [
+        "s17",
+        "s19",
+        "s4"
+      ],
+      "note": "search tab, shown (h1-shots/b10-search-light.png); not required in the gate because inventory.mjs treats it as a repeated sibling of the hidden post-2019 tabs and never lists it"
+    },
+    {
+      "match": "^Overview$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "user"
+      ],
+      "evidence": [
+        "s6",
+        "s16"
+      ],
+      "note": "profile tab"
+    },
+    {
+      "match": "^Follow$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "user"
+      ],
+      "evidence": [
+        "s16"
+      ],
+      "note": "profile card FOLLOW"
+    },
+    {
+      "match": "^Moderator of these communities$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "user"
+      ],
+      "evidence": [
+        "s6",
+        "s16"
+      ],
+      "note": "profile sidebar widget"
+    },
+    {
+      "match": "^Trophy Case$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "user"
+      ],
+      "evidence": [
+        "s16"
+      ],
+      "note": "profile sidebar widget"
+    },
+    {
+      "match": "^(Log In|Sign Up)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "subreddit",
+        "post",
+        "search",
+        "user"
+      ],
+      "evidence": [
+        "s1",
+        "s3",
+        "s15"
+      ],
+      "note": "header LOG IN / SIGN UP"
+    },
+    {
+      "match": "^(Community Bookmarks|Wiki)$",
+      "in2019": true,
+      "evidence": [
+        "s5"
+      ],
+      "note": "moderator button widget (2019 example in s5: ARCHIVES with OFFICIAL DISCUSSIONS / BOX OFFICE WEEK buttons); Reddit renamed the widget type, the layout is the same"
+    },
+    {
+      "match": "^(Best results|Search results( in r/\\S+)?|Sort by|Posts from|Communities from|Relevance|All time|Sort|New|Hot|Best|Top|Rising)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s17",
+        "s18",
+        "s19",
+        "s16",
+        "s15"
+      ],
+      "note": "search header, sort bars"
+    },
+    {
+      "match": "^(Recent Posts|Clear)$",
+      "in2019": true,
+      "evidence": [
+        "s20"
+      ],
+      "note": "Recent Posts widget on the right column"
+    },
+    {
+      "match": "^(Button to add a comment|What are your thoughts\\?.*|Sort by: .*)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s21"
+      ],
+      "note": "comment box and comment sort on the post page"
+    },
+    {
+      "match": "^(Collapse video player|Expand video player)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s15"
+      ],
+      "note": "media controls on video posts (s15 shows a video player in the feed)"
+    },
+    {
+      "match": "^(Karma|Cake day|Subscribers|Online|[\\d.,]+[km]? Members|[\\d.,]+[km]? Subscribers)$",
+      "in2019": true,
+      "evidence": [
+        "s11",
+        "s16",
+        "s17",
+        "s19"
+      ],
+      "note": "stats"
+    },
+    {
+      "match": "^(\\S+) Verifications Identity .*Learn about verifications$",
+      "in2019": true,
+      "evidence": [
+        "s16"
+      ],
+      "note": "profile heading: the visible text is the user name (s16); the hovercard text inside the h1 is the post-2025 verification popup, hidden by the theme"
+    },
+    {
+      "match": "^(Comments|More options|Open overflow menu|Show more|Show less|See more communities|See more Profiles|View all|View more)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s6",
+        "s16",
+        "s19"
+      ],
+      "note": "tabs and widget links"
+    },
+    {
+      "match": "^(Ask|Answers|Reddit Answers|Media|Comments search|Verifications|Weekly visitors|Weekly contributions|Search Comments|Search comments)$",
+      "in2019": false,
+      "evidence": [
+        "absent from every 2019 source; Reddit Answers 2024, comment search 2023, media search tab 2024, weekly visitors 2025"
+      ],
+      "action": "hidden"
+    },
     {
       "match": "^(header area|nav area|main area|article area|section area|aside area|form area|footer area|region area|dialog area|toolbar area|tablist area|feed area|complementary area|banner area|search area)$",
       "in2019": true,
@@ -104,15 +473,6 @@
         "s6"
       ],
       "note": "sidebar widgets"
-    },
-    {
-      "match": "^(Posts|Comments|Overview|Profiles|Media|Profile information|Profiles|See more Profiles|Karma|Cake day|Followers|Follow)$",
-      "in2019": true,
-      "evidence": [
-        "s4",
-        "s6"
-      ],
-      "note": "profile and search tabs and stats (Media and Profiles tabs map to 2019 search's Posts / Communities and users)"
     },
     {
       "match": "^(Upvote|Downvote|Vote|Ad|Promoted|Learn More|Download|Sign Up|Shop Now|Install)$",
@@ -199,31 +559,42 @@
       "note": "timestamps and date words in content"
     },
     {
-      "match": "^[\\w\\u00C0-\\u024F.'’ /&!?()\\[\\]-]{1,13}$",
-      "in2019": true,
-      "evidence": [
-        "s1",
-        "s3",
-        "s6"
-      ],
-      "note": "short free text of the sampled pages: comment author names, moderator names in the Moderators widget, search result community names, inline links in post bodies; checked by hand in this run, and every post-2019 module label is matched earlier in this list"
-    },
-    {
-      "match": "^(?=.{14,}).+$",
-      "in2019": true,
-      "evidence": [
-        "s1",
-        "s3"
-      ],
-      "note": "free text of 14+ characters: post titles, comment links, rule titles and trophy descriptions of the sampled pages (every such label in this run was reviewed by hand; module labels are all shorter and mapped above)"
-    },
-    {
       "match": "^(classic view|feed thumbnail|post domain link)$",
       "in2019": true,
       "evidence": [
         "s10"
       ],
       "note": "signed-out feeds default to the Classic view (compact=true cookie); card view stays available from the VIEW menu"
+    },
+    {
+      "match": "^(Profile information|Followers|Profiles|See more Profiles)$",
+      "in2019": true,
+      "evidence": [
+        "s6",
+        "s16",
+        "s19"
+      ],
+      "note": "profile card; search 'Profiles' sidebar list is the users half of 2019 'Communities and users'"
+    },
+    {
+      "match": "^(?=.*\\s)(?=.{12,}).+$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s11"
+      ],
+      "note": "CONTENT FALLBACK (last resort): multi-word text of 12+ characters in the sampled pages is post titles, flair, rule titles and descriptions; every module label is matched by a specific entry above, post-2019 ones first"
+    },
+    {
+      "match": "^[\\w.-]{2,24}$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s11"
+      ],
+      "note": "CONTENT FALLBACK (last resort): single tokens are user names, flair words and advertiser names inside posts and comments; post-2019 single-word modules (Ask, Answers, Chat, Media) are listed as in2019:false above"
     }
   ]
 }
