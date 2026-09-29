@@ -6,7 +6,7 @@ Net19 restyles 150 popular websites to look as they did in 2019. It has no devel
 
 ## What leaves your device
 
-Nothing about you. Net19 has no server and sends nothing anywhere. Its themes are stylesheets and small scripts bundled inside the extension. Some themes show a site's own older logos, icons or fonts, such as Google, Bing and Wikipedia's logos, the Twitter bird from abs.twimg.com, and Reddit's 2019 fonts and snoo from redditstatic.com. Your browser loads these from that same site's own servers, like any other part of the page.
+Nothing about you. Net19 has no server and sends nothing anywhere. Its themes are stylesheets and small scripts bundled inside the extension. Some themes show a site's own older logos, icons or fonts, such as Google, Bing and Wikipedia's logos, the Twitter bird from abs.twimg.com, and Reddit's 2019 fonts and snoo from redditstatic.com. Your browser loads these from that same site's own servers, like any other part of the page. To keep text readable on a site's own flat or gradient panel images, net19 may draw such an image from the same site (normally already in your browser's cache) into a small local canvas to read its average color; the result stays on your device.
 
 Two themes use a site's own settings:
 
