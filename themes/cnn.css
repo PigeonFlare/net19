@@ -115,3 +115,20 @@ html[data-net19-mode="dark"] :is(.image__caption, .image__credit, [class*="image
 
 .search-bar__input, .search-bar__submit, .search-bar { border-radius: 0 !important; }
 .search__results-list .container__headline-text, .search-results__list .container__headline-text { font-weight: 700 !important; }
+
+.ad-slot-header { background: var(--n19-page) !important; }
+nav#pageHeader .header__nav-item:not(:has(> a:is([href$="/us"], [href$="/world"], [href$="/politics"], [href$="/business"], [href*="/opinion"], [href$="/health"], [href$="/entertainment"], [href$="/style"], [href$="/travel"], [href$="/sport"], [href$="/sports"], [href$="/video"], [href$="/videos"]))), nav#pageHeader .header__nav-more,
+nav#pageHeader .user-account-nav__icons .userAccountButton, nav#pageHeader a.header__video-link[href*="/subscription/"] { display: none !important; }
+footer#pageFooter .subnav__section:has(> a[href$="/science"], > a[href$="/climate"], > a[href*="/audio"]), footer#pageFooter .subnav__subsection:has(> a[href*="/subscription"]),
+.user-account-nav, footer#pageFooter a.footer__link:is([href*="/subscription"], [href*="help.cnn.com"]) { display: none !important; }
+.container:is(.container_vertical-shelf-carousel), .product-zone:has(a.container__title-url[href*="/games"]), .container.container_lead-package:has(a[href*="subwall"]) { display: none !important; }
+.ad-slot-header div, .ad-slot-dynamic, .ad-slot__wrapper, [class*="ad-slot"]:not(:has(iframe)) { background-color: transparent !important; }
+.byline__link, .byline__name a, a.byline__link { color: #006db4 !important; font-weight: 700 !important; }
+html[data-net19-mode="dark"] :is(.byline__link, .byline__name a) { color: #5ba7e0 !important; }
+.container_ribbon button, .container_ribbon [class*="arrow"] { border-radius: 0 !important; border: 0 !important; box-shadow: none !important; }
+.ad-slot-header::before, .ad-slot-header::after, .ad-slot-header__wrapper::before, .ad-slot-header__wrapper::after { background-color: var(--n19-title-bar) !important; }
+nav#pageHeader .header__container > .header__left > :is(.header__menu-icon, .header__close-icon) { z-index: 3 !important; }
+nav#pageHeader :is(.header__close-icon, .header__close-icon svg) { color: var(--n19-bar-text) !important; }
+nav#pageHeader .header__close-icon svg * { stroke: currentColor; }
+nav#pageHeader.header--active .header__subnav-mount > :not(.header__container), nav#pageHeader .subnav { padding-left: 16px !important; }
+nav#pageHeader .subnav__section:has(> a[href$="/science"], > a[href$="/climate"], > a[href*="/audio"], > a[href$="/games"]), nav#pageHeader .subnav__subsection:has(> a[href*="/subscription"]) { display: none !important; }

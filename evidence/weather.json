@@ -1,0 +1,136 @@
+{
+ "theme": "weather",
+ "era": "The 2017-2020 weather.com design (IBM era) seen by US visitors in 2019: black top bar with the square The Weather Channel logo, location search and 'An IBM Business', a blue location band, a black forecast tab bar (Today, Hourly, 5 Day, 10 Day, Weekend, Monthly, Maps, More Forecasts), blue gradient current-conditions card and news modules. The Arquivo captures (2019-03/07/11) are the Portuguese edition served to the Lisbon crawler; the Wayback capture (2019-06, English, US) shows the US labels, and both show the same design.",
+ "sources": [
+  {
+   "id": "home-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190314202940/https://weather.com/",
+   "date": "2019-03-14",
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/weather/weather-home-a201903.png"
+  },
+  {
+   "id": "home-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190724010136/https://weather.com/",
+   "date": "2019-07-24",
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/weather/weather-home-a201907.png"
+  },
+  {
+   "id": "home-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191122012556/https://weather.com/",
+   "date": "2019-11-22",
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/weather/weather-home-a201911.png"
+  },
+  {
+   "id": "home-wbref",
+   "url": "wayback-2019-ref:https://weather.com/",
+   "date": "2019",
+   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)",
+   "file": "g11-evidence/weather/weather-home-wbref.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(SnowCast|Weather Labs|Alexa Skill|Sitemap|Mission|Atmosphere|Community Guidelines|Hurricane Season|El Niño|Fall Outlook|Tornadoes|Health & Wellness|Wildfires|Fall Travel|Search news)(External Link)?$",
+   "in2019": false,
+   "evidence": [
+    "not in the 2019 footer or header (home-wbref: News, Trending News, Commuter Forecast, Fan Photos, Features, Feedback, Careers, Download Apps, Press Room, Advertise With Us, TV, Newsletters and Alerts, Terms of Use, Privacy Policy, Parental Controls, Ad Choices, Ad Partners, Analytics Partners, Data Rights); topic chips are a 2023 module"
+   ],
+   "action": "hidden (theme later labels)"
+  },
+  {
+   "match": "^(Accessibility Statement|Cookie Notice(External Link)?|Data Vendors|Privacy Settings|Trust Center(External Link)?|Level Access)$",
+   "in2019": false,
+   "evidence": [
+    "privacy and accessibility notices added 2020-2024 (2019: Privacy Policy, Data Rights, Ad Partners)"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(User AvatarSign in)$",
+   "in2019": false,
+   "evidence": [
+    "account sign-in replaced the 2019 MENU login"
+   ],
+   "action": "kept: function"
+  },
+  {
+   "match": "^(AdChoices)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "AdChoices"
+   ]
+  },
+  {
+   "match": "^(footer\\ area|header\\ area|main\\ area|repeated\\ div|section\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "footer area",
+    "header area",
+    "main area",
+    "repeated div",
+    "section area"
+   ]
+  },
+  {
+   "match": "^(10\\ Day|Data\\ Rights|Hourly|Monthly|Privacy\\ Policy|Terms\\ of\\ Use|Today|Trending:)$",
+   "in2019": true,
+   "evidence": [
+    "home-wbref"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "10 Day",
+    "Data Rights",
+    "Hourly",
+    "Monthly",
+    "Privacy Policy",
+    "Terms of Use",
+    "Today",
+    "Trending:"
+   ]
+  },
+  {
+   "match": "^(Advertise With Us|Careers|Feedback|News Room|TV|Weather Data APIs)(External Link)?$",
+   "in2019": true,
+   "evidence": [
+    "home-wbref",
+    "home-a201907"
+   ],
+   "note": "2019 footer: Advertise With Us, Careers, Feedback, Press Room, TV, Weather API (API de meteorologia)"
+  },
+  {
+   "match": "^(Facebook|Twitter|Instagram|YouTube|Storm Radar|Weather Underground|The Weather Channel|The Weather Company|Newsletter Sign Up|Search for a location|Advertisement|Temu Clearance Sale|Learn More|Where Did Your Name Come From\\?)$",
+   "in2019": true,
+   "evidence": [
+    "home-wbref"
+   ],
+   "note": "2019 HTML (Wayback 2019-06) has the Facebook, Twitter, Instagram and YouTube links, the Storm Radar app, the wunderground link, Newsletters and Alerts, Location Search and ad slots (sponsored links are ad content)"
+  },
+  {
+   "match": "^(Site Navigation Links|TodayForecasts|RadarRadar|Overflow Menu HorizontalMore|Today|Allergies|Air Quality|Cold & Flu|Current Conditions|Daily Forecast|New York( Daily Forecast)?|Radar -.*|Editor's Pick|Trending Now|NewsNews|Summer Is Here|We Love Critters|Home & Garden|Your News|Chevron Right|repeated .*|.* area)$",
+   "in2019": true,
+   "evidence": [
+    "home-wbref",
+    "home-a201907",
+    "home-a201903"
+   ],
+   "note": "2019 navigation (Today, Hourly, 5 Day, 10 Day, Weekend, Monthly, Maps, More Forecasts with Allergy, Cold & Flu and Air Quality, MENU), current conditions, 36-hour/daily forecast, map, Trending and news modules (their titles are content)"
+  }
+ ]
+}

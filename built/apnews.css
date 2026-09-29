@@ -79,3 +79,7 @@ h1.Page-headline{font-size:50px!important;line-height:56px!important;font-weight
 .SearchResultsModule-count-mobile,.SearchResultsModuleBasic-results-header{font-family:var(--ap19-sans)!important;font-stretch:100%!important;color:var(--n19-meta)!important}
 .SearchResultsModule-filters-apply button,.VideoPlaylistModule-playlistToggle,.VideoPlaylistModule-playlistNavigation button{border-radius:0!important}
 .VideoLead-videoTitle,.VideoPlaylistModule-title{font-family:var(--ap19-cond)!important;font-stretch:75%!important;font-weight:500!important;text-transform:none!important}
+[data-n19-later],.Page-header-sign-in,.HtmlModule:has(a[href$="apnews.com/games"]),.Page-footer .SocialBar,.Author-socialLinks,.FooterNavigationItem-items-item:has(>a:is([href*="apstylebook.com"],[href*="leads.ap.org"],[href*="contentservices.ap.org"],[href*="news-values"],[href*="elections"],[href*="code-of-conduct"],[href$="/community-guidelines"],[href*="ap.org/about/news-values"],[href*="ap.org/elections"])){display:none!important}
+.Page-header-bar .MainNavigationItem-text svg,.Page-header-bar .MainNavigationItem-more svg{display:none!important}
+:where(:root:not([data-n19-safe])) .PagePromo-description a,.PagePromo-description:where(:root:not([data-n19-safe])) a{display:block!important}
+button.comment-icon-signedin,#custom-trigger.comment-icon-signedin{display:none!important}

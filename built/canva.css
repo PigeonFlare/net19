@@ -22,3 +22,7 @@ html:not([data-net19-app]) #root main h2{font-weight:700!important;letter-spacin
 html:not([data-net19-app]) #root main h3{font-weight:600!important;letter-spacing:0!important}
 html:not([data-net19-app]) #root main :is(button,a[href])[class]{border-radius:4px!important}
 html:not([data-net19-app]) #root header input,html:not([data-net19-app]) #root main form input[type="search"],html:not([data-net19-app]) #root main form input[type="text"]{border-radius:4px!important}
+[data-n19-later]{display:none!important}
+[data-n19-hero]{background:linear-gradient(90deg, #00c4cc, #7d2ae8)!important}
+[data-n19-hero] :is(h1,h2,p,span):not(button *):not(a *){color:#fff!important}
+#root [data-n19-hero] :is(h1,h2,p){color:#fff!important}

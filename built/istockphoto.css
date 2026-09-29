@@ -7,3 +7,6 @@ ul[data-testid="MainNavLeftList"] a[data-testid="nav-link"]:hover,nav[data-testi
 [data-testid="nav-sign_in"] a{background:transparent!important;border-color:transparent!important;color:#fff!important;font-weight:700!important}
 li[data-testid="ai-gen-link"],li[data-testid="mobile-nav-ai_gen"]{display:none!important}
 [data-testid="search-bar"],[data-testid*="search-box"i],form[role="search"]{border-radius:2px!important}
+a[href*="inclusive-storytelling"i],li:has(>a[href*="inclusive-storytelling"i]),[data-testid="search-bar"] button[aria-label*="Search by image"i],form[role="search"] button[aria-label*="Search by image"i]{display:none!important}
+button[data-testid="search-by-image-button"],div:has(>button[data-testid="search-by-image-button"]:only-child),[data-n19-later]{display:none!important}
+[data-testid="workbench-basic-hero"] a[href*="ai-free"]{display:none!important}

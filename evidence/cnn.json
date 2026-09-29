@@ -1,0 +1,206 @@
+{
+  "theme": "cnn",
+  "era": "2019 CNN.com: black 40px bar with red CNN box, 3-column homepage with grey zone title bars, light 42px article headlines (same design for every visitor; signed-in accounts did not exist)",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.google.com/search?udm=2&q=cnn+homepage+2019+screenshot",
+      "date": "2019",
+      "shows": "Google Images: Web Design Museum 'CNN.com in 2019', 2018-12 'George H.W. Bush dead at 94' capture: black 40px bar, red CNN box, 3-column home",
+      "file": "g7-evidence/cnn/gimg-home.jpg"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.webdesignmuseum.org/gallery/cnn-in-2019",
+      "date": "2019",
+      "shows": "full homepage: black bar with US World Politics Business Opinion Health Entertainment Style Travel Sports Videos, Edition, search, menu; grey section title bars",
+      "file": "g7-evidence/cnn/wdm-2019.jpg"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20190916002456/https://www.cnn.com/",
+      "date": "2019-09-16",
+      "shows": "homepage and its HTML: header, TRENDING bar, lead column, story lists, 'News and buzz' / 'Must-watch videos of the week' zones, footer sitemap (US Crime + Justice …, World Africa …, Business Markets Tech Media …, Style Arts Design …, Travel Destinations Food & Drink Stay …, Videos Live TV …, More… Photos Longform Investigations CNN Profiles CNN Leadership CNN Newsletters Work for CNN), Search CNN… field, Terms of Use, Privacy Policy, AdChoices, About us, Advertise with us, Transcripts, License Footage, Sitemap, Facebook/Twitter/Instagram, cookie bar 'By using this site, you agree to our updated Privacy Policy and our Terms of Use'",
+      "file": "g7-evidence/cnn/wb-cnn-home.png"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/20190410235134/https://www.cnn.com/",
+      "date": "2019-04-10",
+      "shows": "homepage: LIVE UPDATES / TRENDING bar, Live TV and U.S. Edition in the bar, zones Crime and justice, Check these out, CNN Business, Sports, Opinion, Paid Partner Content, World, US, Style with grey title bars",
+      "file": "g7-evidence/cnn/wb-cnn-home-apr-tall.png"
+    },
+    {
+      "id": "s5",
+      "url": "https://web.archive.org/web/20191205220508/https://www.cnn.com/2019/09/08/us/washington-state-lightning-strikes/index.html",
+      "date": "2019-09",
+      "shows": "article: section bar (US, Crime + Justice …), 42px light headline, byline 'By … , CNN', Updated time, video player, 'Content by' paid links, cookie bar",
+      "file": "g7-evidence/cnn/wb-cnn-article.png"
+    },
+    {
+      "id": "s6",
+      "url": "https://www.google.com/search?udm=2&q=cnn.com+article+page+2019+screenshot",
+      "date": "2019",
+      "shows": "Google Images: Nieman Lab 2019 'From live blogs to time capsules' CNN impeachment live page, CNN 2019 article captures",
+      "file": "g7-evidence/cnn/gimg-article.jpg"
+    },
+    {
+      "id": "s7",
+      "url": "https://web.archive.org/web/20201112020051/https://edition.cnn.com/search/?q=trump",
+      "date": "2020-11 (same search design as 2019; no 2019 capture of the JS search page exists)",
+      "shows": "search page: wide field with Clear and red search button, Everything / Stories / Videos / Photos tabs, Date sort, section radio list, result rows with thumbnail, headline, date, snippet",
+      "file": "g7-evidence/cnn/wb-cnn-search-2020.png"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|nav|footer|main|section|article|form|search|aside|dialog|region) area$|^repeated ",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4"
+      ],
+      "note": "page regions and repeated story items"
+    },
+    {
+      "match": "^(CNN logo|CNN|US|World|Politics|Business|Opinions?|Health|Entertainment|Style|Travel|Sports?|Videos?|Open Menu Icon|Close Menu Icon|Menu|Search Icon|Edition|U\\.S\\. Edition|International Edition)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "2019 header: red CNN box, section links, Edition, search, menu"
+    },
+    {
+      "match": "^Watch$|^Watch .+$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4"
+      ],
+      "note": "2019 bar had Live TV; footer Videos column (Live TV, CNN Films, HLN, TV Schedule, TV Shows A-Z)"
+    },
+    {
+      "match": "^(Politics|Travel|Health|Entertainment and Style|CNN Underscored|More from CNN|Paid Content|Paid Partner Content|Across our coverage|In case you missed it|AI|Midterms|Science|Business|World|US|Sports|Style|Tech|Opinion|Markets|Weather|Crime and justice|Check these out|News and buzz|Must-watch videos of the week|Top stories|Latest)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4"
+      ],
+      "note": "zone headings with grey title bars over story lists (content sections); 'Paid Partner Content' zone in s4"
+    },
+    {
+      "match": "^(US|World|Politics|Business|Markets|Health|Entertainment|Tech|Style|Travel|Sports|Weather|Video|Videos|About CNN|More|CNN Underscored|Features)( .+)?$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "footer sitemap columns and their section sub-links"
+    },
+    {
+      "match": "^(Ukraine-Russia War|Israel-Hamas War|Elections? \\d{4}|Impeachment)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4"
+      ],
+      "note": "topic pages for current news, as the 2019 TRENDING / LIVE UPDATES links"
+    },
+    {
+      "match": "^(Terms of Use|Privacy Policy|Ad ?Choices|Advertise With Us|Accessibility & CC|About|About Us|Newsletters|Transcripts|Sitemap|License Footage|CNN Newsource|Work for us)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "footer legal and company links"
+    },
+    {
+      "match": "^Do Not Sell Or Share My Personal Information$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "legally required privacy opt-out link next to the 2019 Privacy Policy/AdChoices links; kept on purpose"
+    },
+    {
+      "match": "^Visit us on (Facebook|X|Twitter|Instagram)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "footer social icons (X is Twitter renamed)"
+    },
+    {
+      "match": "^(Search|Submit|Search CNN\\.\\.\\.|Search CNN)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "footer search field"
+    },
+    {
+      "match": "^(Legal Terms and Privacy|Agree|Close)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4",
+        "s5"
+      ],
+      "note": "privacy/terms consent notice (2019: bottom bar 'By using this site, you agree to our updated Privacy Policy and our Terms of Use')"
+    },
+    {
+      "match": "^(By .+|Updated .+|Published .+|Link Copied!?|Share|Facebook|Tweet|Email|Ad Feedback|Video Ad Feedback|Content by .+)$",
+      "in2019": true,
+      "evidence": [
+        "s5",
+        "s6"
+      ],
+      "note": "article byline, time, share and ad feedback"
+    },
+    {
+      "match": "^(CNN Games \\+ Quizzes|Games|CNN Shorts|Streaming Now|Sign in|Log in|User Account Log In Button|Subscribe|Help Center|Listen|Listen .+|Climate)$",
+      "in2019": false,
+      "evidence": [
+        "CNN Games 2023, CNN Shorts vertical video 2023, All Access streaming and subscriptions 2024-2025, CNN accounts 2023; none in s2-s5"
+      ],
+      "note": "hidden",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Asia|Africa|Americas|Europe|Middle East|Australia|China|India|UK|United Kingdom|Crime \\+ Justice|Energy \\+ Environment|Extreme Weather|Space \\+ Science)$",
+      "in2019": true,
+      "evidence": [
+        "s5"
+      ],
+      "note": "article section bar under the header"
+    },
+    {
+      "match": "^(share with (facebook|x|twitter|email)|Play|Pause|• Video)$",
+      "in2019": true,
+      "evidence": [
+        "s5",
+        "s6"
+      ],
+      "note": "article share icons and video player"
+    },
+    {
+      "match": "^(Clear|Newest|Relevancy|Date|Everything|Stories|Videos|Photos|All CNN|News)$",
+      "in2019": true,
+      "evidence": [
+        "s7"
+      ],
+      "note": "search field clear, sort and type filters"
+    },
+    {
+      "match": "^(?=.{20,}$)(?!(?:Ask AI|Ask the|AI Mode|AI summary|Summarize|Listen to (?:this|the) article|Subscribe|Sign in|Sign up|Log in|Download the app|Get the app)\\b).*\\s.*$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4",
+        "s5"
+      ],
+      "note": "story headlines and teasers (content)"
+    }
+  ]
+}

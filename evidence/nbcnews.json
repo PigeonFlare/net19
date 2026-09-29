@@ -1,0 +1,107 @@
+{
+  "theme": "nbcnews",
+  "era": "2019 nbcnews.com (2018 redesign): black NBCU network bar, white header with peacock NEWS logo, uppercase nav and navy menu box, Founders Grotesk headlines with blue kicker labels, navy hero band on articles (same for every visitor)",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.google.com/search?udm=2&q=nbcnews.com+website+2019+screenshot",
+      "date": "2018-2019",
+      "shows": "Google Images: NewscastStudio 'NBCNews.com previews new look' (2018 redesign used through 2019), Wikipedia NBCNews.com capture",
+      "file": "g7-evidence/nbcnews/gimg-home.jpg"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/20190916010422/https://www.nbcnews.com/",
+      "date": "2019-09-16",
+      "shows": "homepage and HTML: black network bar (NEWS, NBC NEWS NOW, NIGHTLY NEWS, MEET THE PRESS, DATELINE, MSNBC, TODAY, search), white bar with peacock NEWS logo and uppercase nav (IMPEACHMENT INQUIRY, POLITICS, U.S. NEWS, BUSINESS, WORLD, TECH & MEDIA, OPINION, HEALTH, SPORTS), navy menu box, blue kicker labels, Latest Stories, Local news around you, footer (About, Contact, Careers, Privacy Policy, Terms of Service, NBC News Sitemap, Advertise, AdChoices, Closed Captioning), Follow NBC News (Facebook, Twitter, Instagram)",
+      "file": "g7-evidence/nbcnews/wb-nbcnews-home.png"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20190411000215/https://www.nbcnews.com/",
+      "date": "2019-04-11",
+      "shows": "homepage (April): same bars, THINK in nav, kicker labels BREAKING / CONGRESS / BREXIT",
+      "file": "g7-evidence/nbcnews/wb-nbcnews-home-apr.png"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/20191112024213/https://www.nbcnews.com/politics/2020-election/yang-defends-1-000-giveaway-contest-perfectly-legal-n1054641",
+      "date": "2019-09",
+      "shows": "article: navy hero band with white serif headline and dek, section label, share icons, byline, body",
+      "file": "g7-evidence/nbcnews/wb-nbcnews-article.png"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|nav|footer|main|section|article|form|search|aside|dialog|region) area$|^repeated |^(Shortcuts|Pagination)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "page regions and repeated story items"
+    },
+    {
+      "match": "^(NBC News Logo|nbcnews Logo|home page|Politics|U\\.S\\. News|World|Local.*|Sports|Business|Health|Tech & Media|Opinion|Think|Culture Matters|Science|Watch|news navigation and search|Search|Submit Search|More|Menu|NBC News Now|Nightly News|Meet the Press|Dateline|MSNBC|Today|Today Logo|CNBC|NBC Latino|NBC Asian America|NBC BLK|NBC Out|Investigations|Decision 20\\d\\d|Latest Stories|Latest News|See All|Read More)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "network bar, header nav, navy menu button, section links"
+    },
+    {
+      "match": "^(LIVE.*|BREAKING|WATCH|MEET THE PRESS|FIRST ON NBC|EXCLUSIVE|ANALYSIS|OPINION|GAMES|NIGHTLY NEWS|TODAY|VIDEO)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "kicker/badge labels over stories (2019: BREAKING, CONGRESS, BREXIT …)"
+    },
+    {
+      "match": "^(Air base arrests|Iran war|SpaceX launch|Madonna|NFL Week 3|Trump admin|Wellness|Deals and Sales|U\\.S\\. news|Pro Football Talk|Amazon|KXAS|Tasos Katopodis / Getty|Frank Thorp V for NBC News|Associated Press|Trump tariffs|TRUMP TARIFFS|JUSTICE DEPARTMENT|White House|Congress|20\\d\\d Election|Garrett Haake|Rebecca Shabad|SUPREME COURT|Supreme Court|Getty Images|AP|Reuters)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "today's trending topic links, section tags, credits and bylines (content; 2019 had the same trending/tag row)"
+    },
+    {
+      "match": "^(About|Contact|Help|Careers|Ad ?Choices|Privacy Policy|Your Privacy Choices|CA Notice|Terms of Service|NBC News Sitemap|Closed Captioning|Advertise|twitter|instagram|facebook|Follow NBC News|Share|Share on .+|Email|Copy link|Print)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s4"
+      ],
+      "note": "footer and share links (legally required privacy notices kept)"
+    },
+    {
+      "match": "^(Related Searches|Sponsored|Learn more|Shop Now|Yahoo)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "third-party ad units (2019 pages carried sponsored units; ads are left alone)"
+    },
+    {
+      "match": "^(Save|Shopping|NBC Select(ed)?|subscriber options|FOR SUBSCRIBERS|Saved|Profile|Newsletters|Subscribe)$",
+      "in2019": false,
+      "evidence": [
+        "NBC Select shopping (2020), NBC News subscriptions (2025), NBCUniversal profile / saved stories (2021+); none in s2-s4"
+      ],
+      "note": "hidden",
+      "action": "hidden"
+    },
+    {
+      "match": "^(?=.{20,}$)(?!(?:Ask AI|Ask the|AI Mode|AI summary|Summarize|Listen to (?:this|the) article|Subscribe|Sign in|Sign up|Log in|Download the app|Get the app)\\b).*\\s.*$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "story headlines and teasers (content)"
+    }
+  ]
+}

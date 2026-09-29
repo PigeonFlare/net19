@@ -46,3 +46,26 @@ globalThis.net19Theme = {};
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', forms, { once: true }); else forms();
 })();
+(() => {
+  if (!/^(en\.wiktionary|en\.wikivoyage|commons\.wikimedia)\.org$/.test(location.hostname)) return;
+  const relabel = (id, text) => {
+    const a = document.getElementById(id)?.querySelector('a');
+    if (a) (a.querySelector('span') || a).textContent = text;
+  };
+  const placeAfter = (id, anchorId) => {
+    const item = document.getElementById(id), anchor = document.getElementById(anchorId);
+    if (item && anchor?.parentElement) anchor.after(item);
+  };
+  const restore = () => {
+    const body = document.body;
+    if (!body?.classList.contains('skin-vector-legacy') || body.hasAttribute('data-n19-sidebar')) return;
+    body.setAttribute('data-n19-sidebar', '');
+    placeAfter('n-specialpages', 't-recentchangeslinked');
+    placeAfter('t-wikibase', 't-info');
+    const tools = document.getElementById('p-tb'), other = document.getElementById('p-wikibase-otherprojects'), lang = document.getElementById('p-lang');
+    if (tools && lang) lang.before(tools);
+    if (other && tools) tools.before(other);
+    for (const nav of document.querySelectorAll('#mw-panel nav.vector-menu-portal')) if (!nav.querySelector('li')) nav.setAttribute('data-n19-empty', '');
+  };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', restore, { once: true }); else restore();
+})();

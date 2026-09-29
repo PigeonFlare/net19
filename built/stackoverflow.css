@@ -76,3 +76,11 @@ header.s-topbar{background:var(--n19-bar)!important;border-top:3px solid #f48024
 #question-header+div{border-bottom-color:var(--n19-divider)!important}
 .s-prose{font-size:15px!important;line-height:1.4!important}
 .s-prose pre,.s-code-block{border-radius:3px!important}
+header.s-topbar ol.s-navigation,header.s-topbar #products-popover,#uql-filter-toggle{display:none!important}
+html:not([data-net19-mode="dark"]):where(:root:not([data-n19-safe])) header.s-topbar .s-topbar--logo{width:150px!important}
+html:not([data-net19-mode="dark"]) header.s-topbar .s-topbar--logo{background:url("https://cdn.sstatic.net/Sites/stackoverflow/company/img/logos/so/so-logo.svg") 0 50% / 150px auto no-repeat!important}
+html:not([data-net19-mode="dark"]) header.s-topbar .s-topbar--logo>svg{visibility:hidden!important}
+#left-sidebar li:has(>#nav-companies),#left-sidebar li:has(>#nav-articles),#left-sidebar li:has(>#nav-challenges),#left-sidebar li:has(>#nav-askstack),#left-sidebar li:has(>#nav-sofa){display:none!important}
+.js-post-menu button[id^="btnFollowPost"],.js-post-menu .js-follow-post,button.js-follow-post,a.js-follow-post,.comment-reply,.js-comment-reply{display:none!important}
+.comments button[data-so-test^="reply-button-comment"],.comments button[aria-controls^="popover-menu-"],button[data-so-test^="reply-button-comment"],button[aria-label="Open menu"][aria-controls^="popover-menu-"]{display:none!important}
+footer a[href*="instagram.com"],footer a[href*="data-licensing"],footer a[href^="https://chat.stackoverflow.com"],footer a[href="https://api.stackexchange.com/"],footer a[href="https://data.stackexchange.com/"]{display:none!important}

@@ -74,3 +74,6 @@ input#kw.hdi{border-radius:0!important}
 button#search-btn.btn-global{border-radius:0!important;background:var(--n19-blue)!important}
 button#search-btn.btn-global:hover{background:var(--n19-blue-hover)!important}
 a#ask-btn-new.i-ask-link{border-radius:0!important}
+#s-hotsearch-wrapper,#s_side_wrapper .aging-entry{display:none!important}
+#chat-textarea::placeholder,#kw::placeholder{color:transparent!important}
+#s_side_wrapper:not(:has(.side-item:not(.aging-entry))){display:none!important}

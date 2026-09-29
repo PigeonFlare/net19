@@ -45,3 +45,4 @@ header[data-component="navigation"] .site-nav__flyout a,header[data-component="n
 .content--video .content__title,.video-player__title,.player-overlay__title{font-family:"Publico Headline", Georgia, serif!important;font-weight:700!important}
 .FooterLinks-title{font-family:"Proxima Nova", Roboto, Helvetica, sans-serif!important;text-transform:uppercase!important;letter-spacing:1.6px!important;font-size:12px!important}
 .FooterLinks-item a{font-family:"Proxima Nova", Roboto, Helvetica, sans-serif!important}
+li:has(>a[href*="ombudsman"i]),a[href*="ombudsman"i]{display:none!important}

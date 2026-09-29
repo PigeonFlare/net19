@@ -1,0 +1,186 @@
+{
+ "theme": "nycgov",
+ "era": "The 2016-2020 www1.nyc.gov design every visitor saw in 2019: 'The official website of NYC' strip, NYC logo, a bordered top nav (NYC Resources, NYC311, Office of the Mayor, Events, Connect, Jobs) with search, NYC Today date panel, news and events carousels, and a grey footer (Directory of City Agencies, Contact NYC Government, City Employees, Notify NYC, CityStore, Stay Connected, NYC Mobile Apps, Maps, Resident Toolkit, Privacy Policy, Terms of Use). 2019-03/07/11 home HTML and the 2019-03 311 page HTML agree.",
+ "sources": [
+  {
+   "id": "311-h201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190330012651/https://www1.nyc.gov/311/index.page",
+   "date": "2019-03-30",
+   "shows": "311 page as served in 2019-03 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/nycgov-311-h201903.html"
+  },
+  {
+   "id": "311-h201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191115235412/https://www1.nyc.gov/311/index.page",
+   "date": "2019-11-15",
+   "shows": "311 page as served in 2019-11 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/nycgov-311-h201911.html"
+  },
+  {
+   "id": "home-h201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190315003629/https://www1.nyc.gov/",
+   "date": "2019-03-15",
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/nycgov-home-h201903.html"
+  },
+  {
+   "id": "home-h201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190715100833/https://www1.nyc.gov/",
+   "date": "2019-07-15",
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/nycgov-home-h201907.html"
+  },
+  {
+   "id": "home-h201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191115232423/https://www1.nyc.gov/",
+   "date": "2019-11-15",
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/nycgov-home-h201911.html"
+  },
+  {
+   "id": "home-wbref",
+   "url": "wayback-2019-ref:https://www.nyc.gov/",
+   "date": "2019",
+   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)",
+   "file": "g11-evidence/nycgov/nycgov-home-wbref.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Website feedback|About nyc\\.gov content|Image credits|Find what you need on nyc\\.gov)$",
+   "in2019": false,
+   "evidence": [
+    "absent from the 2019 home and 311 HTML (home-h201911, 311-h201903)"
+   ],
+   "action": "hidden (theme later labels, data-n19-later)"
+  },
+  {
+   "match": "^(Accessibility resources)$",
+   "in2019": false,
+   "evidence": [
+    "current accessibility statement link (2019 had 'Learn more about accessibility from the Mayor's Office for People with Disabilities')"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(311)$",
+   "in2019": true,
+   "evidence": [
+    "311-h201903"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "311"
+   ]
+  },
+  {
+   "match": "^(Language)$",
+   "in2019": true,
+   "evidence": [
+    "311-h201903",
+    "home-h201903"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Language"
+   ]
+  },
+  {
+   "match": "^(Contact\\ NYC\\ government|Events|Home|Jobs|Office\\ of\\ the\\ Mayor|Privacy\\ Policy|Privacy\\ Policy\\.|Privacy\\ policy|Search|Terms\\ of\\ Use|Terms\\ of\\ Use\\.|Terms\\ of\\ use)$",
+   "in2019": true,
+   "evidence": [
+    "311-h201903",
+    "home-h201903",
+    "home-h201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Contact NYC government",
+    "Events",
+    "Home",
+    "Jobs",
+    "Office of the Mayor",
+    "Privacy Policy",
+    "Privacy Policy.",
+    "Privacy policy",
+    "Search",
+    "Terms of Use",
+    "Terms of Use.",
+    "Terms of use"
+   ]
+  },
+  {
+   "match": "^(NYC\\ Logo)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201903",
+    "home-h201907",
+    "home-h201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "NYC Logo"
+   ]
+  },
+  {
+   "match": "^(About\\ 311|Look\\ Up\\ Service\\ Requests|More\\ on\\ nyc\\.gov|Report\\ Problems|nyc\\.gov\\ home)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201907",
+    "home-h201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "About 311",
+    "Look Up Service Requests",
+    "More on nyc.gov",
+    "Report Problems",
+    "nyc.gov home"
+   ]
+  },
+  {
+   "match": "^(Toggle\\ Language\\ Translation)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201907",
+    "home-h201911",
+    "home-wbref"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Toggle Language Translation"
+   ]
+  },
+  {
+   "match": "^(banner\\ area|contentinfo\\ area|form\\ area|repeated\\ div)$",
+   "in2019": true,
+   "evidence": [
+    "home-wbref"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "banner area",
+    "contentinfo area",
+    "form area",
+    "repeated div"
+   ]
+  },
+  {
+   "match": "^(Official website|NYC Logo|Services|Events|Your government|Search|Language|Toggle Language Translation|daily status info|Select date|Tuesday,.*|Latest News, carousel|upcoming events, carousel|previous slide|next slide|More on nyc\\.gov|nyc\\.gov home|311|NYC 311|Contact NYC government|Register to vote|Emergency alerts|Careers|Jobs|Privacy policy|Privacy Policy\\.?|Terms of use|Terms of Use\\.?|Learn more about Digital Accessibility .*|Browse Topics|Report Problems|Look Up Service Requests|About 311|Home|NYC Today .*|Close broadcast alert message\\.|banner area|navigation area|nav area|form area|contentinfo area|footer area|repeated .*)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201911",
+    "home-h201907",
+    "311-h201903"
+   ],
+   "note": "2019: 'The official website of NYC', NYC Logo, NYC Resources (now Services), Events, Your Elected Officials / Office of the Mayor (now Your government), Search, language translation, NYC Today date panel with previous/next day, news and events carousels (Next, Previous, See All Events), More on NYC.gov, NYC.gov home, NYC311 (Report Problems, Look Up Service Requests, About 311), Contact NYC Government, register to vote, Notify NYC alerts, Jobs, Privacy Policy, Terms of Use, the accessibility note, and the yellow broadcast alert"
+  }
+ ]
+}

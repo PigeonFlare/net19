@@ -1,0 +1,466 @@
+{
+ "theme": "theverge",
+ "era": "2019 Verge (the 2016 Vox Media 'Chorus' design as it ran through 2019): black header with the white wordmark and condensed uppercase section nav (TECH, REVIEWS, SCIENCE, CREATORS, ENTERTAINMENT, VIDEO, FEATURES, PODCASTS, MORE) with magenta dropdown carets, a full-width glitch-art masthead on the home page, magenta and purple accents, bold Helvetica headlines on white, condensed uppercase section headings; the same page for every visitor (captures from 2019-03, 2019-07 and 2019-11 agree, and LaptopMag's 2019 Edge review shows the same page in a real browser).",
+ "sources": [
+  {
+   "id": "gi-laptopmag",
+   "url": "https://www.laptopmag.com/articles/chromium-edge-browser-first-look",
+   "date": "2019-04",
+   "shows": "The Verge home page in a real 2019 browser (Chromium Edge preview review): black header, uppercase nav, masthead",
+   "file": "g14-evidence/theverge/gi-laptopmag-edge-2019.jpg"
+  },
+  {
+   "id": "article0-201903",
+   "url": "https://web.archive.org/web/20190316000816if_/https://www.theverge.com/2019/3/15/18266637/folding-phones-bendable-screens-names-illustrated-guide",
+   "date": "2019-03-16",
+   "shows": "article0 page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/theverge/theverge-article0-201903.png"
+  },
+  {
+   "id": "article1-201907",
+   "url": "https://web.archive.org/web/20190715215624if_/https://www.theverge.com/2019/7/15/20695128/tiktok-moment-google-youtube-future-competition-creators-vidcon-2019",
+   "date": "2019-07-15",
+   "shows": "article1 page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/theverge/theverge-article1-201907.png"
+  },
+  {
+   "id": "article2-201911",
+   "url": "https://web.archive.org/web/20191116015101if_/https://www.theverge.com/2019/11/15/20961164/joker-dc-film-logo-chad-danieley-artist-art-club",
+   "date": "2019-11-16",
+   "shows": "article2 page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/theverge/theverge-article2-201911.png"
+  },
+  {
+   "id": "article3-a201901",
+   "url": "https://arquivo.pt/noFrame/replay/20190111210151/https://www.theverge.com/2019/1/11/18176780/new-super-mario-bros-u-deluxe-review-nintendo-switch",
+   "date": "2019-01-11",
+   "shows": "article3 page as served in 2019-01 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/theverge/theverge-article3-a201901.png"
+  },
+  {
+   "id": "home-201903",
+   "url": "https://web.archive.org/web/20190316002546if_/https://www.theverge.com/",
+   "date": "2019-03-16",
+   "shows": "home page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/theverge/theverge-home-201903.png"
+  },
+  {
+   "id": "home-201907",
+   "url": "https://web.archive.org/web/20190715231147if_/https://www.theverge.com/",
+   "date": "2019-07-15",
+   "shows": "home page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/theverge/theverge-home-201907.png"
+  },
+  {
+   "id": "home-201911",
+   "url": "https://web.archive.org/web/20191116004212if_/https://www.theverge.com/",
+   "date": "2019-11-16",
+   "shows": "home page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/theverge/theverge-home-201911.png"
+  },
+  {
+   "id": "home-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190314233130/https://www.theverge.com/",
+   "date": "2019-03-14",
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/theverge/theverge-home-a201903.png"
+  },
+  {
+   "id": "home-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190715042421/https://www.theverge.com/",
+   "date": "2019-07-15",
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/theverge/theverge-home-a201907.png"
+  },
+  {
+   "id": "home-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191115190303/https://www.theverge.com/",
+   "date": "2019-11-15",
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/theverge/theverge-home-a201911.png"
+  },
+  {
+   "id": "section0-201903",
+   "url": "https://web.archive.org/web/20190315200152if_/https://www.theverge.com/tech",
+   "date": "2019-03-15",
+   "shows": "section0 page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/theverge/theverge-section0-201903.png"
+  },
+  {
+   "id": "section0-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20191120211531/https://www.theverge.com/tech",
+   "date": "2019-11-20",
+   "shows": "section0 page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/theverge/theverge-section0-a201907.png"
+  },
+  {
+   "id": "section1-201907",
+   "url": "https://web.archive.org/web/20190715231154if_/https://www.theverge.com/games",
+   "date": "2019-07-15",
+   "shows": "section1 page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/theverge/theverge-section1-201907.png"
+  },
+  {
+   "id": "section1-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190902063023/https://www.theverge.com/games",
+   "date": "2019-09-02",
+   "shows": "section1 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/theverge/theverge-section1-a201907.png"
+  },
+  {
+   "id": "section2-201911",
+   "url": "https://web.archive.org/web/20191116082048if_/https://www.theverge.com/reviews",
+   "date": "2019-11-16",
+   "shows": "section2 page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/theverge/theverge-section2-201911.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^Policy$",
+   "in2019": false,
+   "evidence": [
+    "home-201903",
+    "home-201907",
+    "home-201911"
+   ],
+   "note": "Policy section nav entry (added in the 2022 redesign; the 2019 nav is Tech, Reviews, Science, Creators, Entertainment, Video, Features, Podcasts, More)",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Threads|Instagram|Youtube)$",
+   "in2019": false,
+   "evidence": [
+    "home-201911",
+    "section0-a201907"
+   ],
+   "note": "footer social icons not in the 2019 'Follow The Verge online' row (Facebook, Twitter, RSS); Threads launched 2023",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Archives|How We Rate and Review Products|Licensing FAQ|Accessibility|Platform Status)$",
+   "in2019": false,
+   "evidence": [
+    "article0-201903",
+    "article3-a201901"
+   ],
+   "note": "footer links absent from the 2019 footer (Contact, Tip Us, Community Guidelines, About, Ethics Statement, Terms of Use, Privacy Policy, Cookie Policy, Advertise, Jobs)",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Our Sites|PMC network sites)$",
+   "in2019": false,
+   "evidence": [
+    "article2-201911"
+   ],
+   "note": "Penske network menu; 2019 footer shows the Vox Media network instead",
+   "action": "hidden"
+  },
+  {
+   "match": "^Copy link$",
+   "in2019": false,
+   "evidence": [
+    "home-201907"
+   ],
+   "note": "copy-link icon on story cards (2022+)",
+   "action": "hidden"
+  },
+  {
+   "match": "^START YOUR TRIAL$",
+   "in2019": false,
+   "evidence": [
+    "home-201907"
+   ],
+   "note": "Verge subscription paywall prompt (2024)",
+   "action": "hidden"
+  },
+  {
+   "match": "^Latest$",
+   "in2019": false,
+   "evidence": [
+    "home-201911"
+   ],
+   "note": "single 'Latest' tab heading over the story stream (2022 redesign); the stream itself is content",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Cookie Settings|Your California Privacy Rights|Your Privacy Choices|Cookie Notice|AdChoices|Do Not Sell or Share My Personal Data|Penske Media Corporation)$",
+   "in2019": false,
+   "evidence": [
+    "article0-201903"
+   ],
+   "note": "US privacy opt-out, cookie and ad-choice links (2020+ state privacy laws) and the owner copyright link",
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Dismiss privacy notice|dialog area)$",
+   "in2019": false,
+   "evidence": [
+    "home-a201903"
+   ],
+   "note": "the site's own terms and privacy consent pop-up (2019 had its own 'I Accept' cookie banner); checker false positive per brief",
+   "action": "kept: legal (consent pop-up)"
+  },
+  {
+   "match": "^(About|Community\\ Guidelines|Contact|Ethics\\ Statement|Privacy\\ Policy|Terms\\ of\\ Use|Tip\\ Us)$",
+   "in2019": true,
+   "evidence": [
+    "article0-201903",
+    "article1-201907",
+    "article2-201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "About",
+    "Community Guidelines",
+    "Contact",
+    "Ethics Statement",
+    "Privacy Policy",
+    "Terms of Use",
+    "Tip Us"
+   ]
+  },
+  {
+   "match": "^(Reviews|Science|Tech|nav\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "article0-201903",
+    "article1-201907",
+    "article3-a201901"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Reviews",
+    "Science",
+    "Tech",
+    "nav area"
+   ]
+  },
+  {
+   "match": "^(Entertainment)$",
+   "in2019": true,
+   "evidence": [
+    "article0-201903",
+    "article1-201907",
+    "home-201903"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Entertainment"
+   ]
+  },
+  {
+   "match": "^(form\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "article0-201903",
+    "article1-201907",
+    "home-201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "form area"
+   ]
+  },
+  {
+   "match": "^(repeated\\ div)$",
+   "in2019": true,
+   "evidence": [
+    "article2-201911",
+    "home-201903",
+    "home-201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "repeated div"
+   ]
+  },
+  {
+   "match": "^(Search|section\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "article3-a201901",
+    "home-a201903",
+    "home-a201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Search",
+    "section area"
+   ]
+  },
+  {
+   "match": "^(Cars)$",
+   "in2019": true,
+   "evidence": [
+    "article3-a201901",
+    "section2-201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Cars"
+   ]
+  },
+  {
+   "match": "^(Andrew\\ J\\.\\ Hawkins)$",
+   "in2019": true,
+   "evidence": [
+    "home-201903",
+    "home-a201903",
+    "section0-201903"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Andrew J. Hawkins"
+   ]
+  },
+  {
+   "match": "^(View\\ all\\ stories)$",
+   "in2019": true,
+   "evidence": [
+    "section2-201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "View all stories"
+   ]
+  },
+  {
+   "match": "^(Terms of Use|Privacy Policy)$",
+   "in2019": true,
+   "evidence": [
+    "article0-201903",
+    "article3-a201901"
+   ],
+   "note": "2019 footer legal links"
+  },
+  {
+   "match": "^(Transportation|Cars|Electric Cars|Tech|Gaming|Mobile|Science|Reviews|Entertainment|Policy|AI|Apple|Google|Microsoft|Amazon|Samsung)$",
+   "in2019": true,
+   "evidence": [
+    "article0-201903",
+    "article1-201907"
+   ],
+   "note": "article topic tags above the headline (2019: 'MOBILE \\ TECH \\ FOLDABLE PHONES'); they are content tags, not nav"
+  },
+  {
+   "match": "^(Hamburger Navigation Button|Open Drawer)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "section0-a201907"
+   ],
+   "note": "the menu button ('The Verge main menu' in 2019)"
+  },
+  {
+   "match": "^(Comments\\d+|CommentsComment Icon Bubble\\d+)$",
+   "in2019": true,
+   "evidence": [
+    "home-201903",
+    "home-201907",
+    "article0-201903"
+   ],
+   "note": "comment counts ('N comments / new' in 2019)"
+  },
+  {
+   "match": "^(Facebook|RSS)$",
+   "in2019": true,
+   "evidence": [
+    "home-201911",
+    "section0-a201907"
+   ],
+   "note": "Follow The Verge on Facebook / RSS feed"
+  },
+  {
+   "match": "^(Tip Us|Contact|About|Community Guidelines|Ethics Statement)$",
+   "in2019": true,
+   "evidence": [
+    "article3-a201901",
+    "article0-201903"
+   ],
+   "note": "2019 footer links"
+  },
+  {
+   "match": "^(Enter your email|form area)$",
+   "in2019": true,
+   "evidence": [
+    "article1-201907",
+    "article3-a201901"
+   ],
+   "note": "newsletter sign-up field ('email address...' in 2019)"
+  },
+  {
+   "match": "^(Search|Search Form)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-201911"
+   ],
+   "note": "site search"
+  },
+  {
+   "match": "^(The VergeThe Verge logo\\.|Click to visit the homepage)$",
+   "in2019": true,
+   "evidence": [
+    "home-201911",
+    "section0-a201907"
+   ],
+   "note": "wordmark link to the home page ('The Verge homepage' in 2019)"
+  },
+  {
+   "match": "^(Tech|Reviews|Science|Entertainment|More|View all stories|Next)$",
+   "in2019": true,
+   "evidence": [
+    "home-201903",
+    "section2-201911",
+    "home-201911"
+   ],
+   "note": "2019 nav entries, 'More' menu, 'View All Stories' and pagination"
+  },
+  {
+   "match": "^(Top Navigation|Sticky Nav|nav area|main area|header area|section area|footer area|article area|tablist area)$",
+   "in2019": true,
+   "evidence": [
+    "article0-201903",
+    "home-201903"
+   ],
+   "note": "page regions (banner, nav, main, sections, compact sticky header on articles, contentinfo in 2019)"
+  },
+  {
+   "match": "^(carousel|Previous|Next)$",
+   "in2019": true,
+   "evidence": [
+    "home-201911",
+    "section1-a201907"
+   ],
+   "note": "photo galleries and video players inside stories (2019 home and section pages carried 'Play video for …' players and image galleries)"
+  },
+  {
+   "match": "^repeated ",
+   "in2019": true,
+   "evidence": [
+    "home-201903",
+    "home-201907"
+   ],
+   "note": "story cards (content)"
+  },
+  {
+   "match": "^(Share article|Brandon Russell|Andrew J\\. Hawkins|Emma Roth)$",
+   "in2019": true,
+   "evidence": [
+    "article0-201903",
+    "article1-201907"
+   ],
+   "note": "article share button ('SHARE' under the 2019 byline) and byline author links"
+  }
+ ]
+}

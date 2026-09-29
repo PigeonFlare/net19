@@ -25,3 +25,4 @@ store-tag{border-radius:0!important}
 .gradient-text-vivid,[class*="gradient-text"]{background:none!important;-webkit-text-fill-color:currentColor!important;color:var(--n19-text)!important}
 html.theme-light,html.theme-dark,html.theme-high-contrast{--border-radius:0!important;--border-radius-rounded:2px!important}
 html[class*="theme-"] :is(.button,.tag,.card,.box,input.input,.search-box,.autocomplete input){border-radius:2px!important}
+[data-n19-later]{display:none!important}

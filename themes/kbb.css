@@ -43,3 +43,15 @@ kbb-global-nav nav nav > div:hover { background: var(--n19-bar-hover) !important
 #content div[class*="e1ngkdb71"][class*="css-zfugvv"] { background: var(--n19-band) !important; }
 
 a[href*="kbb.com/ai-mode"], a[href^="/ai-mode"] { display: none !important; }
+[data-n19-post] { display: none !important; }
+kbb-global-nav a[aria-label="Kelley Blue Book"][data-google-tag*="logo"] { background: url("https://file.kbb.com/kbb/images/header/redesign/KBB_mobile_navbar_logo@2x.png") no-repeat left top / 215px 64px !important; width: 215px !important; height: 64px !important; align-self: flex-start !important; position: relative !important; z-index: 2 !important; }
+kbb-global-nav a[aria-label="Kelley Blue Book"][data-google-tag*="logo"] > * { visibility: hidden !important; }
+#content h1 { font-size: 28px !important; line-height: 33px !important; letter-spacing: -.5px !important; font-weight: 700 !important; }
+[data-automation="vehicle-picker-container"] { background: var(--n19-band) !important; border: 1px solid var(--n19-edge) !important; border-radius: 0 !important; }
+[data-automation="vehicle-picker-container"] :is(h2, p, span, label, a) { color: var(--n19-text) !important; }
+[data-automation="vehicle-picker-container"] input:not([type="radio"], [type="checkbox"]) { border: 1px solid var(--n19-soft-edge) !important; border-radius: 0 !important; }
+[data-automation="vehicle-picker-container"] button { background: linear-gradient(#fff, var(--n19-soft)) !important; border: 1px solid var(--n19-soft-edge) !important; border-radius: 0 !important; opacity: 1 !important; }
+[data-automation="vehicle-picker-container"] button, [data-automation="vehicle-picker-container"] button * { color: var(--n19-link) !important; font-weight: 700 !important; }
+#superheroSection [data-lean-auto^="green-monster"] :is(h1, h1 + h2) { text-align: center !important; }
+#superheroSection [data-lean-auto^="green-monster"] :has(> a[data-lean-auto$="entry-point"]) { flex-direction: column !important; gap: 12px !important; }
+#superheroSection [data-lean-auto^="green-monster"] :has(> a[data-lean-auto$="entry-point"]) > a { width: 100% !important; max-width: none !important; }

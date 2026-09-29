@@ -13,13 +13,13 @@ body.wp-theme-tc-24 :is(h1, h2, h3, h4, p, a, span, li, figcaption, input, butto
   body.wp-theme-tc-24 .wp-site-blocks > header, body.wp-theme-tc-24 header.headroom--not-top { position: fixed !important; top: 0 !important; left: 0 !important; bottom: 0 !important;
     width: var(--n19-rail) !important; margin: 0 !important; z-index: 999 !important; transform: none !important; }
   .wp-block-techcrunch-site-header { height: 100% !important; background: var(--n19-page) !important; padding: 0 !important; }
-  .wp-block-techcrunch-site-header__inner-container { height: 100% !important; background: var(--n19-page) !important; border: 0 !important; padding: 0 !important; overflow-y: auto; }
+  .wp-block-techcrunch-site-header__inner-container { height: 100% !important; background: var(--n19-page) !important; border: 0 !important; padding: 0 !important; overflow: visible !important; }
   .wp-block-techcrunch-site-header__inner { flex-direction: column !important; align-items: flex-start !important; justify-content: flex-start !important; gap: 0 !important;
     padding: 30px 20px 30px 30px !important; color: var(--n19-meta) !important; max-width: none !important; }
   .wp-block-techcrunch-site-header__logo-small, .home .wp-block-techcrunch-site-header__logo-small[aria-hidden] { display: block !important; position: relative !important; opacity: 1 !important;
     width: 60px !important; min-width: 0 !important; height: 31px !important; margin: 0 0 26px !important; order: 0; }
   .wp-block-techcrunch-site-header__logo-small a { display: block !important; width: 60px !important; height: 31px !important; }
-  .wp-block-techcrunch-site-header__logo-small img { width: 100% !important; height: 100% !important; object-fit: contain !important; }
+  .wp-block-techcrunch-site-header__logo-small img { width: 100% !important; height: 100% !important; object-fit: contain !important; content: url("https://techcrunch.com/wp-content/themes/tc-24/dist/svg/tc-logo.svg"); }
   .wp-block-techcrunch-site-header__logo-mobile { display: none !important; }
   .wp-block-techcrunch-menu-utility { order: 1; width: 100% !important; margin: 0 0 14px !important; }
   .wp-block-techcrunch-menu-utility__inner { flex-direction: row !important; gap: 6px !important; flex-wrap: wrap !important; }
@@ -55,7 +55,7 @@ body.wp-theme-tc-24 :is(h1, h2, h3, h4, p, a, span, li, figcaption, input, butto
 @media (max-width: 63.99em) {
   .wp-block-techcrunch-site-header, .wp-block-techcrunch-site-header__inner-container { background: var(--n19-page) !important; border-color: var(--n19-rule2) !important; }
   .wp-block-techcrunch-site-header__inner { color: var(--n19-text) !important; }
-  .wp-block-techcrunch-site-header__logo-mobile img { filter: brightness(0) saturate(100%) invert(38%) sepia(94%) saturate(1500%) hue-rotate(95deg) brightness(92%); }
+  .wp-block-techcrunch-site-header__logo-mobile img { content: url("https://techcrunch.com/wp-content/themes/tc-24/dist/svg/tc-logo.svg"); }
   .wp-block-techcrunch-site-search__toggle, .wp-block-techcrunch-mega-menu__toggle { --c-site-search-toggle-text-color: var(--n19-meta) !important; --c-mega-menu-toggle-text-color: var(--n19-meta) !important; }
 }
 
@@ -100,7 +100,7 @@ body .article-hero.article-hero, body .article-hero .article-hero__second-sectio
   .article-hero .article-hero__content { max-width: none !important; width: 100% !important; margin: 0 !important; }
 }
 .article-hero :is(.article-hero__extension, .article-hero__extension-2) { background: var(--n19-page) !important; display: none !important; }
-.article-hero__title, .wp-block-post-title { font: 800 36px/1.1 var(--n19-font) !important; letter-spacing: -.5px !important; color: var(--n19-text) !important; }
+.article-hero__title, .wp-block-post-title { font: 800 36px/1.1 var(--n19-font) !important; letter-spacing: -1.3px !important; color: var(--n19-text) !important; }
 .article-hero :is(p, span, a, time, div):not(.wp-block-techcrunch-social-share *) { color: var(--n19-body) !important; }
 body .article-hero .article-hero__category a, body .article-hero a.is-taxonomy-category.is-taxonomy-category { color: var(--n19-green) !important; font: 700 13px/1.4 var(--n19-font) !important; border: 0 !important; text-transform: none !important; }
 .article-hero .wp-block-tc23-author-card a, .article-hero__authors a { font-weight: 700 !important; color: var(--n19-body) !important; }
@@ -134,3 +134,68 @@ footer.wp-block-template-part :is(a, p, span, h2, h3, li) { color: #333 !importa
 @media (max-width: 1180px) {
   .wp-site-blocks > .hero-ad-container { overflow: hidden !important; }
 }
+@media (min-width: 64em) {
+  .wp-block-techcrunch-site-header__inner > * { order: 5; }
+  .wp-block-techcrunch-site-header__logo-small { order: 0 !important; margin-bottom: 70px !important; }
+  .wp-block-techcrunch-main-navigation { order: 1 !important; }
+  .wp-block-techcrunch-menu-utility { order: 2 !important; margin: 26px 0 0 !important; }
+  .wp-block-techcrunch-main-navigation .wp-block-navigation-item__content { font: 200 22px/24px var(--n19-font) !important; letter-spacing: -.32px !important; padding: 4px 0 5px !important; }
+  .wp-block-techcrunch-menu-divider { width: 22px !important; margin: 8px 0 !important; background: var(--n19-meta) !important; }
+  .wp-block-techcrunch-site-search__toggle { width: 22px !important; height: 22px !important; border: 0 !important; padding: 0 !important; background: transparent !important; color: var(--n19-text) !important; }
+  .wp-block-techcrunch-site-search__toggle:hover { color: var(--n19-green) !important; }
+  .wp-block-techcrunch-mega-menu__toggle { border: 0 !important; padding: 0 !important; width: 22px !important; height: 22px !important; }
+
+  main .hero-package-2 { display: grid !important; grid-template-columns: 447px 227px !important; grid-template-rows: auto 1fr !important; column-gap: 36px !important; row-gap: 0 !important;
+    align-items: start !important; margin-top: 12px !important; }
+  .hero-package-2 .hero-package-2__featured { grid-column: 1 !important; grid-row: 1 / span 2 !important; }
+  .hero-package-2 .hero-package-2__upnext { grid-column: 2 !important; grid-row: 1 !important; gap: 0 !important; }
+  .hero-package-2 .hero-package-2__list { grid-column: 2 !important; grid-row: 2 !important; display: block !important; }
+  main .loop-card.loop-card--featured-bg, main .loop-card.loop-card--featured-bg.loop-card--vertical { display: flex !important; flex-direction: column !important; height: auto !important;
+    min-height: 0 !important; aspect-ratio: auto !important; background: transparent !important; padding: 0 !important; }
+  main .loop-card--featured-bg::before, main .loop-card--featured-bg::after, main .loop-card--featured-bg .loop-card__content::before, main .loop-card--featured-bg .loop-card__content::after,
+  main .loop-card--featured-bg .loop-card__figure::before, main .loop-card--featured-bg .loop-card__figure::after { display: none !important; }
+  main .loop-card--featured-bg .loop-card__content { position: static !important; order: 2 !important; padding: 10px 0 0 !important; margin: 0 !important; background: transparent !important; inset: auto !important; max-width: none !important; }
+  main .loop-card--featured-bg .loop-card__figure { position: static !important; order: 1 !important; margin: 0 !important; height: auto !important; inset: auto !important; }
+  main .loop-card--featured-bg :is(.loop-card__figure, .loop-card__figure img) { -webkit-mask-image: none !important; mask-image: none !important; }
+  main .loop-card--featured-bg .loop-card__figure img { position: static !important; width: 100% !important; height: auto !important; max-height: 320px !important; aspect-ratio: 16 / 9 !important; object-fit: cover !important; }
+  main .loop-card--featured-bg :is(.loop-card__title-link, .loop-card__meta, .loop-card__meta-item, .loop-card__time, p) { color: var(--n19-text) !important; }
+  main .loop-card--featured-bg .loop-card__author { color: var(--n19-body) !important; }
+  main .loop-card--featured-bg .loop-card__cat { color: var(--n19-green) !important; }
+  .hero-package-2 .loop-card--featured-bg .loop-card__content { order: 1 !important; padding: 0 !important; }
+  .hero-package-2 .loop-card--featured-bg .loop-card__figure { order: 2 !important; margin: 12px 0 0 !important; }
+  .hero-package-2__featured .loop-card__figure img { position: static !important; width: 447px !important; height: 259px !important; max-height: none !important; aspect-ratio: auto !important; object-fit: cover !important; }
+  .hero-package-2__upnext .loop-card__figure { display: none !important; }
+  .hero-package-2 .loop-card--featured-bg :is(.loop-card__title-link, .loop-card__meta, .loop-card__meta-item, .loop-card__time) { color: var(--n19-text) !important; }
+  .hero-package-2 .loop-card--featured-bg .loop-card__author { color: var(--n19-body) !important; }
+  .hero-package-2 .loop-card--featured-bg .loop-card__cat { color: var(--n19-green) !important; }
+  .hero-package-2__featured .loop-card__title, .hero-package-2__featured .loop-card__title-link { font: 800 36px/1.1 var(--n19-font) !important; letter-spacing: -1.8px !important; margin: 4px 0 10px !important; }
+  .hero-package-2 :is(.hero-package-2__upnext, .hero-package-2__list) .loop-card { border: 0 !important; border-bottom: 1px solid #ddd !important; padding: 0 0 12px !important; margin: 0 0 14px !important; }
+  .hero-package-2 :is(.hero-package-2__upnext, .hero-package-2__list) :is(.loop-card__title, .loop-card__title-link) { font: 800 18px/1.11 var(--n19-font) !important; letter-spacing: -.7px !important; margin: 0 0 10px !important; }
+  .hero-package-2 :is(.hero-package-2__upnext, .hero-package-2__list) :is(.loop-card__content, .loop-card)::before { display: none !important; }
+  .hero-package-2 :is(.hero-package-2__upnext, .hero-package-2__list) .loop-card__content { display: block !important; padding: 0 !important; }
+  .hero-package-2 :is(.hero-package-2__upnext, .hero-package-2__list) .wp-block-techcrunch-card { height: auto !important; }
+  .hero-package-2 .loop-card--featured-bg .loop-card__figure::after, .hero-package-2 .loop-card--featured-bg .loop-card__figure::before { display: none !important; }
+  .hero-package-2 :is(.hero-package-2__upnext, .hero-package-2__list) :is(.loop-card__time, .loop-card__cat-group) { display: none !important; }
+  .hero-package-2 .loop-card__meta { font-size: 13px !important; }
+  .hero-package-2__list .hero-package-2__heading { display: none !important; }
+  .hero-package-2__list .ad-slot-container { display: none !important; }
+}
+
+.wp-block-techcrunch-most-popular-posts, .wp-block-techcrunch-post-authors, main .in-brief-section, a.wp-block-techcrunch-social-share__link[aria-label="Share on Reddit"],
+:is(.wp-social-link-bluesky, .wp-social-link-mastodon, .wp-social-link-threads), a.loop-card__cat[href*="/in-brief"], a.loop-card__cat[href*="/brief/"] { display: none !important; }
+
+@media (min-width: 64em) {
+  body .article-hero.article-hero { max-width: 710px !important; margin: 24px 0 0 !important; padding: 0 !important; }
+  .article-hero .article-hero__content { padding: 0 71px 20px !important; }
+  body.single main .wp-block-columns.article { display: flex !important; flex-wrap: nowrap !important; justify-content: flex-start !important; gap: 0 !important; max-width: none !important; margin: 0 !important; padding: 0 !important; }
+  body.single main .wp-block-columns.article > .wp-block-column:not(.article-sidebar) { flex: 0 0 710px !important; max-width: 710px !important; padding: 0 71px !important; margin: 0 !important; }
+  body.single main .wp-block-columns.article > .article-sidebar { flex: 0 0 255px !important; max-width: 255px !important; margin: 0 0 0 72px !important; padding: 0 !important; }
+  body.single main .wp-block-columns.article .entry-content { max-width: none !important; }
+}
+@media (min-width: 64em) {
+  .article-hero .wp-block-techcrunch-social-share { display: none !important; }
+  .wp-block-techcrunch-social-share.is-floating .wp-block-techcrunch-social-share__toggler { width: 50px !important; height: 50px !important; }
+  .wp-block-techcrunch-social-share.is-floating .wp-block-techcrunch-social-share__toggler::before { left: 50% !important; top: 50% !important; right: auto !important; bottom: auto !important; transform: translate(-50%, -50%) !important; margin: 0 !important; }
+}
+.wp-block-techcrunch-mega-menu__content[aria-hidden="true"] { display: none !important; }
+@media (min-width: 64em) { .wp-block-techcrunch-site-search__suggestions { z-index: 1001 !important; background: var(--n19-page) !important; box-shadow: 0 2px 8px rgba(0, 0, 0, .25) !important; } }

@@ -1,0 +1,118 @@
+{
+ "theme": "nfl",
+ "era": "",
+ "sources": [
+  {
+   "id": "article0-a201909",
+   "url": "https://arquivo.pt/noFrame/replay/20190922044351/http://www.nfl.com/news/story/0ap3000000426644/article/brock-osweiler-laughs-off-sideline-helmet-incident",
+   "date": "2019-09-22",
+   "shows": "article0 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/nfl/nfl-article0-a201909.png"
+  },
+  {
+   "id": "home-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190315220034/https://www.nfl.com/",
+   "date": "2019-03-15",
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/nfl/nfl-home-a201903.png"
+  },
+  {
+   "id": "home-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190714221218/https://www.nfl.com/",
+   "date": "2019-07-14",
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/nfl/nfl-home-a201907.png"
+  },
+  {
+   "id": "home-a201910",
+   "url": "https://arquivo.pt/noFrame/replay/20191001182634/https://www.nfl.com/",
+   "date": "2019-10-01",
+   "shows": "home page as served in 2019-10 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/nfl/nfl-home-a201910.png"
+  },
+  {
+   "id": "standings-a201901",
+   "url": "https://arquivo.pt/noFrame/replay/20190102111936/https://www.nfl.com/standings",
+   "date": "2019-01-02",
+   "shows": "standings page as served in 2019-01 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/nfl/nfl-standings-a201901.png"
+  },
+  {
+   "id": "teams-a201901",
+   "url": "https://arquivo.pt/noFrame/replay/20190113064216/https://www.nfl.com/teams",
+   "date": "2019-01-13",
+   "shows": "teams page as served in 2019-01 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/nfl/nfl-teams-a201901.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Injuries|Podcasts|Transactions)$",
+   "in2019": true,
+   "evidence": [
+    "article0-a201909"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Injuries",
+    "Podcasts",
+    "Transactions"
+   ]
+  },
+  {
+   "match": "^(Standings|main\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "article0-a201909",
+    "home-a201903",
+    "home-a201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Standings",
+    "main area"
+   ]
+  },
+  {
+   "match": "^(nav\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "article0-a201909",
+    "standings-a201901"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "nav area"
+   ]
+  },
+  {
+   "match": "^(NEWS)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "standings-a201901"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "NEWS"
+   ]
+  },
+  {
+   "match": "^(repeated\\ div)$",
+   "in2019": true,
+   "evidence": [
+    "standings-a201901"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "repeated div"
+   ]
+  }
+ ]
+}

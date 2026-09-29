@@ -37,3 +37,6 @@ body,#global-viewport,#pane-main,.main-content{background-color:var(--n19-page)!
 .sideLogin .sideLogin__headline{color:var(--n19-text)!important}
 #global-nav-secondary li.sub:has(>a[href*="/odds"i]),#global-nav-secondary li.sub:has(>a[href*="where-to-watch"i]){display:none!important}
 @media (max-width:1180px){:where(:root:not([data-n19-safe])) #global-nav li.where-to-watch~li.pillar,#global-nav:where(:root:not([data-n19-safe])) li.where-to-watch~li.pillar{transform:none!important}}
+[data-n19-later],[id^="taboola"]{display:none!important}
+#global-nav li.pillar:is(.watch,.fantasy,.listen) .nav-logo-wrap{display:none!important}
+.Card__Header__SubLink--presby:has(img[alt*="draft"i],a[href*="draftkings"i],a[href*="espnbet"i]),.Card__Header__SubLink--presby:has(.Card__Presby__Logo){display:none!important}

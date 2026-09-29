@@ -4,7 +4,11 @@ globalThis.net19Theme = {
 };
 (() => {
   const NAMES = { 'culture': 'Arts & Life', 'podcasts & shows': 'Shows & Podcasts' };
+  const FOOTER = { 'culture': 'Arts & Life', 'podcasts & shows': 'Podcasts' };
   const fix = () => {
+    for (const a of document.querySelectorAll('.npr-footer a')) { const to = FOOTER[a.textContent.trim().toLowerCase()]; if (to && a.children.length === 0) a.textContent = to; }
+    for (const b of document.querySelectorAll('ul.player-extras b')) if (b.textContent.trim() === 'My Playlist') b.textContent = 'Playlist';
+    for (const s of document.querySelectorAll('.ad-wrap .left, .ad-header .left')) if (s.textContent.trim() === 'Sponsor Message') s.textContent = 'NPR thanks our sponsors';
     for (const a of document.querySelectorAll('.npr-header a')) if (/^\s*donate\s*$/i.test(a.textContent || '') && !a.hasAttribute('data-net19-donate')) a.setAttribute('data-net19-donate', '');
     for (const a of document.querySelectorAll('.menu--main .menu__item-inner > a, .navigation .menu__item > a')) {
       for (const n of a.childNodes) {

@@ -9,14 +9,14 @@ html[data-net19-mode="dark"]{--n19-header:#1b1b1b;--n19-header-text:#f2f2f2;--n1
 #site-header [data-testid="nav-search-button"] svg path{stroke:currentColor!important}
 #site-header svg :is([fill="#fff"],[fill="#FFF"],[fill="#ffffff"],[fill="white"]){fill:currentColor!important}
 #site-header svg :is([stroke="#fff"],[stroke="#FFF"],[stroke="#ffffff"],[stroke="white"]){stroke:currentColor!important}
-html:not([data-net19-mode="dark"]) #site-header [data-testid="site-logo"] img,html:not([data-net19-mode="dark"]) #site-header:not(:has(header)) :is([data-testid="site-logo"],a[aria-label*="home"i]) svg{filter:invert(1)!important}
+#site-header :is([data-testid="site-logo"],a[aria-label*="home"i]) svg,#site-header :is([data-testid="site-logo"],a[aria-label*="home"i]) svg :is(use,path){color:var(--n19-header-text)!important;fill:var(--n19-header-text)!important}
 :where(:root:not([data-n19-safe])) #site-header [data-testid="site-logo"] :is(img,svg),#site-header:where(:root:not([data-n19-safe])) [data-testid="site-logo"] :is(img,svg){height:30px!important;width:auto!important}
 #site-header [role="menubar"] [role="menuitem"],#site-header [data-testid="desktop-nav-bar"] button{font-family:var(--n19-cond)!important;font-weight:700!important;font-size:17px!important}
 #site-header :is(#newsletter-subscription-button,button[aria-haspopup="dialog"]:not([aria-label])){background:transparent!important;border:none!important;border-radius:0!important;box-shadow:none!important}
 #site-header :is(#newsletter-subscription-button,button[aria-haspopup="dialog"]:not([aria-label])),#site-header #newsletter-subscription-button *{color:var(--n19-teal)!important;text-transform:uppercase!important;letter-spacing:.3px!important;font-family:var(--n19-cond)!important;font-weight:700!important;font-size:15px!important}
 #site-header [data-testid="hamburger"] svg{color:var(--n19-teal)!important}
 #trending{border-top:1px solid var(--n19-rule)!important}
-:where(:root:not([data-n19-safe])) #trending,#trending:where(:root:not([data-n19-safe])){padding-top:30px!important;margin-top:-20px!important}
+:where(:root:not([data-n19-safe])) #trending,#trending:where(:root:not([data-n19-safe])){padding-top:30px!important}
 #trending h2{font-family:var(--n19-cond)!important;font-weight:700!important;font-size:24px!important;line-height:26px!important;text-transform:uppercase!important;color:var(--n19-text)!important}
 #trending div:has(>svg):has(+h2){display:none!important}
 #trending [data-name="hero-thumbnail"]+div>div>div:first-child,#trending [data-name="trending-thumbnail"]+div>div:first-child{font-family:var(--n19-cond)!important;font-weight:700!important;font-size:12px!important;line-height:14px!important;text-transform:uppercase!important;color:var(--n19-teal)!important;letter-spacing:0!important}
@@ -36,3 +36,9 @@ html[data-net19-home] #__next h2{text-transform:uppercase!important;font-size:24
 article h1,main h1{font-family:var(--n19-cond)!important;font-weight:700!important;color:var(--n19-text)!important}
 article a:not([class*="button"]){color:var(--n19-teal-dark)}
 [data-slot="sheet-trigger"]:has(>button[aria-label="Save article"]),button[aria-label="Save article"]{display:none!important}
+[data-n19-later]{display:none!important}
+nav[aria-label^="Explore more in"]{display:none!important}
+nav:is([aria-label*="more in"i]),a:has(img[alt*="AACI"i]){display:none!important}
+a:is([aria-label*="AACI"i],[title*="AACI"i]){display:none!important}
+#site-header div:empty{background:transparent!important}
+#site-header [role="menubar"]>*:has(>[data-net19-hidden]),#site-header [role="menubar"]>*>*:has(>[data-net19-hidden]){display:none!important}

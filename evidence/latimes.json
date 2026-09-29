@@ -1,0 +1,419 @@
+{
+ "theme": "latimes",
+ "era": "Late-2019 Los Angeles Times (the California Times platform that article and section pages used from mid-2019 and the home page from autumn 2019, captured 2019-07 to 2019-12): white top bar with a boxed '☰ Sections' button, sentence-case bold sans section links, boxed search button, the blackletter logo centered, grey uppercase topic chips, serif headlines, uppercase grey category labels and red timestamps. The older Tribune home page (dark TOPICS/SEARCH bar, grey page, white cards) was still on the home page in 2019-05 and 2019-07 but was retired later in 2019, so the majority of 2019 captures (article, sections, search, December home) show the new design.",
+ "sources": [
+  {
+   "id": "article0-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190723225108/https://www.latimes.com/politics/story/2019-07-17/hollywood-money-democratic-fundraisers",
+   "date": "2019-07-23",
+   "shows": "article0 page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/latimes/latimes-article0-a201907.png"
+  },
+  {
+   "id": "home-a201905",
+   "url": "https://arquivo.pt/noFrame/replay/20190501200805/https://www.latimes.com/",
+   "date": "2019-05-01",
+   "shows": "home page as served in 2019-05 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/latimes/latimes-home-a201905.png"
+  },
+  {
+   "id": "home-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190715190237/https://www.latimes.com/",
+   "date": "2019-07-15",
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/latimes/latimes-home-a201907.png"
+  },
+  {
+   "id": "home-a201912",
+   "url": "https://arquivo.pt/noFrame/replay/20191215185552/https://www.latimes.com/",
+   "date": "2019-12-15",
+   "shows": "home page as served in 2019-12 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/latimes/latimes-home-a201912.png"
+  },
+  {
+   "id": "search-a201908",
+   "url": "https://arquivo.pt/noFrame/replay/20190808033015/https://www.latimes.com/search",
+   "date": "2019-08-08",
+   "shows": "search page as served in 2019-08 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/latimes/latimes-search-a201908.png"
+  },
+  {
+   "id": "section1-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190716192502/https://www.latimes.com/politics",
+   "date": "2019-07-16",
+   "shows": "section1 page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/latimes/latimes-section1-a201907.png"
+  },
+  {
+   "id": "section2-a201910",
+   "url": "https://arquivo.pt/noFrame/replay/20191015182214/https://www.latimes.com/california",
+   "date": "2019-10-15",
+   "shows": "section2 page as served in 2019-10 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/latimes/latimes-section2-a201910.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(LATMG Streaming Now|LA Times Media Group Streaming|Real-time camera feeds: Live from L\\.A\\.|Get the L\\.A\\. Times app|Wordflower|Mini Crossword|Midi Crossword|Sudoku|Word Search)$",
+   "in2019": false,
+   "evidence": [
+    "home-a201912",
+    "home-a201907"
+   ],
+   "note": "streaming, live-camera and app promos and the newer word games (2024+); 2019 had only the Crossword",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Invest Now: Own a Part of History|Recipes|Guides|Image)$",
+   "in2019": false,
+   "evidence": [
+    "home-a201912",
+    "section2-a201910"
+   ],
+   "note": "footer/nav links not in the 2019 header or footer (L.A. Times Image section launched 2020; investment offer 2025)",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Show Comments)$",
+   "in2019": false,
+   "evidence": [
+    "article0-a201907"
+   ],
+   "note": "Coral comments (added after 2019); no comments on the 2019 article",
+   "action": "hidden"
+  },
+  {
+   "match": "^(CA Notice of Collection|Do Not Sell or Share My Personal Information)$",
+   "in2019": false,
+   "evidence": [
+    "home-a201912"
+   ],
+   "note": "California privacy notices (CCPA/CPRA, 2020+)",
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Log In)$",
+   "in2019": false,
+   "evidence": [
+    "home-a201912"
+   ],
+   "note": "sign-in link; the 2019 bar had sign-in inside Sections",
+   "action": "kept: function"
+  },
+  {
+   "match": "^(article\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "article0-a201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "article area"
+   ]
+  },
+  {
+   "match": "^(About/Contact|Politics|Privacy\\ Policy|Site\\ Map|footer\\ area|header\\ area|main\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "article0-a201907",
+    "home-a201905",
+    "home-a201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "About/Contact",
+    "Politics",
+    "Privacy Policy",
+    "Site Map",
+    "footer area",
+    "header area",
+    "main area"
+   ]
+  },
+  {
+   "match": "^(Business)$",
+   "in2019": true,
+   "evidence": [
+    "article0-a201907",
+    "home-a201907",
+    "section1-a201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Business"
+   ]
+  },
+  {
+   "match": "^(Facebook|Find/Post\\ Jobs|For\\ the\\ Record|Instagram|Obituaries|Place\\ an\\ Ad|Sections|Show\\ Search|Subscribe\\ for\\ unlimited\\ access|Terms\\ of\\ Service|YouTube|home\\ page|nav\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "article0-a201907",
+    "home-a201912",
+    "search-a201908"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Facebook",
+    "Find/Post Jobs",
+    "For the Record",
+    "Instagram",
+    "Obituaries",
+    "Place an Ad",
+    "Sections",
+    "Show Search",
+    "Subscribe for unlimited access",
+    "Terms of Service",
+    "YouTube",
+    "home page",
+    "nav area"
+   ]
+  },
+  {
+   "match": "^(aside\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "article0-a201907",
+    "search-a201908"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "aside area"
+   ]
+  },
+  {
+   "match": "^(Entertainment)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201905",
+    "home-a201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Entertainment"
+   ]
+  },
+  {
+   "match": "^(Food|L\\.A\\.\\ Times\\ Careers|Opinion|Sports)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201905",
+    "home-a201907",
+    "home-a201912"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Food",
+    "L.A. Times Careers",
+    "Opinion",
+    "Sports"
+   ]
+  },
+  {
+   "match": "^(search)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201905",
+    "home-a201907",
+    "search-a201908"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "search"
+   ]
+  },
+  {
+   "match": "^(repeated\\ div)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "repeated div"
+   ]
+  },
+  {
+   "match": "^(Entertainment\\ \\&\\ Arts)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201912"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Entertainment & Arts"
+   ]
+  },
+  {
+   "match": "^(California)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201912",
+    "search-a201908",
+    "section1-a201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "California"
+   ]
+  },
+  {
+   "match": "^(Crossword)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201912",
+    "search-a201908",
+    "section2-a201910"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Crossword"
+   ]
+  },
+  {
+   "match": "^(Manage\\ Subscription|Podcasts|Reprints\\ and\\ Permissions|eNewspaper)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201912",
+    "section2-a201910"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Manage Subscription",
+    "Podcasts",
+    "Reprints and Permissions",
+    "eNewspaper"
+   ]
+  },
+  {
+   "match": "^(Next|Relevance\\ Newest\\ Oldest|Reset|Search\\ results\\ for|See\\ AllSee\\ Less|f0|f1|form\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "search-a201908"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Next",
+    "Relevance Newest Oldest",
+    "Reset",
+    "Search results for",
+    "See AllSee Less",
+    "f0",
+    "f1",
+    "form area"
+   ]
+  },
+  {
+   "match": "^(Earthquakes|Education|Fires|George\\ Skelton|Housing\\ \\&\\ Homelessness|Steve\\ Lopez)$",
+   "in2019": true,
+   "evidence": [
+    "section2-a201910"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Earthquakes",
+    "Education",
+    "Fires",
+    "George Skelton",
+    "Housing & Homelessness",
+    "Steve Lopez"
+   ]
+  },
+  {
+   "match": "^(Login or register with email|Agree & Continue|Terms of Service|Privacy Policy)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201912",
+    "section2-a201910"
+   ],
+   "note": "the site's terms and privacy consent prompt and links (2019: 'By continuing to use our site, you agree to our Terms of Service and Privacy Policy' banner)"
+  },
+  {
+   "match": "^(Daily Crossword|Read today’s eNewspaper|Video Player)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201912",
+    "section2-a201910"
+   ],
+   "note": "Crossword and eNewspaper links (2019 footer and home), and article/section video players"
+  },
+  {
+   "match": "^(California|Entertainment|Entertainment & Arts|Sports|Lifestyle|Food|Politics|Climate|Business|Opinion|Voices|Podcasts|Crossword|Obituaries|L\\.A\\. Times Store|Site Map|eNewspaper|Find/Post Jobs|Place an Ad|Media Kit: Why the L\\.A\\. Times\\?|About/Contact|For the Record|L\\.A\\. Times Careers|Manage Subscription|Reprints and Permissions|Subscribe for unlimited access|Instagram|YouTube|Facebook|Sections|home page|Show Search)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201912",
+    "section2-a201910",
+    "article0-a201907"
+   ],
+   "note": "2019 nav (California, Entertainment & Arts, Sports, Food, Climate & Environment, Opinion, Life & Style, Business, Politics), Sections, search, the logo link, footer links and social icons ('Shop' is the store; 'Why L.A. Times?' the media kit)"
+  },
+  {
+   "match": "^(California Politics|L\\.A\\. Politics|Earthquakes|Education|Fires|Housing & Homelessness|More|Goods & Retail|Commercial Real Estate|This must be Eagle Rock|Chapter 1: Win Forever)$",
+   "in2019": true,
+   "evidence": [
+    "section2-a201910",
+    "section1-a201907"
+   ],
+   "note": "section sub-navigation (2019: Law & Politics, Earthquakes, Housing & Homelessness, Fires, More) and category/series labels on stories"
+  },
+  {
+   "match": "^(Gustavo Arellano|Anita Chabria|Steve Lopez|Patt Morrison|George Skelton|Alex Wigglesworth)$",
+   "in2019": true,
+   "evidence": [
+    "section2-a201910"
+   ],
+   "note": "columnist and byline links (2019 'Columnists' rail: Robin Abcarian, Nita Lelyveld, Steve Lopez, George Skelton …)"
+  },
+  {
+   "match": "^(Sign up for Essential California|Subscribers are Reading|More From the Los Angeles Times|Most Read in California|Latest California|Search results for|search|Reset|See AllSee Less|Relevance Newest Oldest|Next|Previous|f0|f1|California)$",
+   "in2019": true,
+   "evidence": [
+    "article0-a201907",
+    "search-a201908",
+    "home-a201905"
+   ],
+   "note": "newsletter sign-up, 'Subscribers' and 'Latest' rails under articles, the search page (identical 2019 layout: Search results for, filters, See All, sort) and carousel arrows ('slide-right' in 2019)"
+  },
+  {
+   "match": "^(header area|nav area|main area|footer area|form area|aside area|article area|section area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201912",
+    "article0-a201907"
+   ],
+   "note": "page regions"
+  },
+  {
+   "match": "^repeated ",
+   "in2019": true,
+   "evidence": [
+    "home-a201907",
+    "home-a201912"
+   ],
+   "note": "story cards (content)"
+  },
+  {
+   "match": "^(?=.{24,})\\S+( \\S+){4,}.*$",
+   "in2019": true,
+   "evidence": [
+    "home-a201912",
+    "section2-a201910"
+   ],
+   "note": "story headlines shown outside repeated cards (content, not features)"
+  }
+ ]
+}

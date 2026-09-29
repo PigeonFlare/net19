@@ -32,9 +32,9 @@ body:is(.tmplHomePage,.agg,.tmplStory,.tmplSearch,.tmplPodcastsDirectory,.tmplPr
 .contentheader,.branding,.program-header,.podcast-section,.podcast-header{background:var(--n19-card)!important}
 .storytitle h1,.storytitle h2{font-family:var(--npr19-sans)!important;font-weight:400!important;font-size:35px!important;line-height:1.2!important;letter-spacing:-.00625em!important;color:var(--n19-title)!important}
 .story-meta,.story-meta__one,.dateblock,.dateblock time,.program-block,.program-block a{font-family:var(--npr19-sans)!important;font-size:12px!important;color:var(--n19-meta)!important;text-transform:none!important;letter-spacing:0!important}
-.dateblock span.date,.dateblock span.time{text-transform:uppercase!important;letter-spacing:.5px!important}
+.dateblock span.date,.dateblock span.time{text-transform:none!important;letter-spacing:0!important}
 .program-block a{color:var(--n19-link)!important}
-.byline--block{border:1px solid #e0e0e0!important;border-radius:0!important}
+.byline--block{border:1px solid var(--n19-rule)!important;border-radius:0!important}
 :where(:root:not([data-n19-safe])) .byline--block,.byline--block:where(:root:not([data-n19-safe])){height:34px!important}
 .byline__name--block,.byline__name--block a{font-family:var(--npr19-sans)!important;text-transform:uppercase!important;font-size:12px!important;color:var(--n19-link)!important}
 .storytext p,#storytext>p{font-family:var(--npr19-serif)!important;font-size:17px!important;line-height:29px!important;color:var(--n19-text)!important}
@@ -50,3 +50,11 @@ body:is(.tmplHomePage,.agg,.tmplStory,.tmplSearch,.tmplPodcastsDirectory,.tmplPr
 .npr-footer{font-family:var(--npr19-sans)!important}
 .npr-footer__header{font-family:var(--npr19-cond)!important;font-stretch:condensed;letter-spacing:1.08px!important}
 html[data-net19-mode="dark"] .branding__image-title{filter:invert(1) hue-rotate(180deg)!important}
+.npr-header span.navigation__donate,.npr-header .navigation__donate span{color:#d0021b!important}
+html[data-net19-mode="dark"] .npr-header span.navigation__donate{color:#ff4d5e!important}
+.npr-header .menu--main .menu__item,.npr-header .menu--main .menu__item-inner>a{font-size:13px!important;letter-spacing:.65px!important}
+:where(:root:not([data-n19-safe])) .npr-header .menu--main .menu__item-inner>a,.npr-header:where(:root:not([data-n19-safe])) .menu--main .menu__item-inner>a{padding:0 12px 0 14px!important}
+ul.player-extras b{font-family:var(--npr19-cond)!important;font-stretch:condensed;font-weight:700!important;font-size:12px!important;letter-spacing:.65px!important}
+.npr-footer li:has(>a:is([href="/diversity/"],[href="/ethics/"],[href="/network/"],[href*="/accessibility"],[href="/sections/npr-extra/"],[href="/transcripts/"])),.npr-footer a:is([href="/diversity/"],[href="/ethics/"],[href="/network/"],[href*="/accessibility"],[href="/sections/npr-extra/"],[href="/transcripts/"]){display:none!important}
+body.tmplStory #main-section>article.story{background:var(--n19-card)!important}
+:where(:root:not([data-n19-safe])) :is(.story-text,.item-info) h2.title>a,:is(.story-text,.item-info):where(:root:not([data-n19-safe])) h2.title>a{display:block!important}

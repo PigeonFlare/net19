@@ -1,0 +1,319 @@
+{
+ "theme": "imdb",
+ "era": "Late-2019 IMDb (the 2019-12 title and find captures): full-width #121212 header with the yellow IMDb logo, Menu, the 'All' category search field with a search icon inside it, IMDbPro, Watchlist and plain 'Sign In'; below it the 1008px centred column on the #e3e2dd page, a dark #333 title block (title, rating, poster, trailer slate), a light #eee block with plot, Director/Writers/Stars and the blue #0e63be 'Add to Watchlist' button, white content sections and the late-2019 footer. The March-November 2019 captures show the older two-row header (Movies, TV & Showtimes / Celebs, Events & Photos / News & Community) over the same content design; the late-2019 header is used because it is the one the current markup can reproduce, and it is what users saw from late 2019.",
+ "sources": [
+  {
+   "id": "home-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190301225030/https://www.imdb.com/",
+   "date": "2019-03-01",
+   "shows": "home page as served on 2019-03-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-home-a201903.png"
+  },
+  {
+   "id": "home-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190701182550/https://www.imdb.com/",
+   "date": "2019-07-01",
+   "shows": "home page as served on 2019-07-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-home-a201907.png"
+  },
+  {
+   "id": "home-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191101180629/https://www.imdb.com/",
+   "date": "2019-11-01",
+   "shows": "home page as served on 2019-11-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-home-a201911.png"
+  },
+  {
+   "id": "title-a201904",
+   "url": "https://arquivo.pt/noFrame/replay/20190425212015/https://www.imdb.com/title/tt0111161/",
+   "date": "2019-04-25",
+   "shows": "title page as served on 2019-04-25 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-title-a201904.png"
+  },
+  {
+   "id": "title-a201912",
+   "url": "https://arquivo.pt/noFrame/replay/20191217125415/https://www.imdb.com/title/tt0111161/",
+   "date": "2019-12-17",
+   "shows": "title page as served on 2019-12-17 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-title-a201912.png"
+  },
+  {
+   "id": "chart-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190301213738/https://www.imdb.com/chart/top",
+   "date": "2019-03-01",
+   "shows": "chart page as served on 2019-03-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-chart-a201903.png"
+  },
+  {
+   "id": "chart-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190701000000/https://www.imdb.com/chart/top",
+   "date": "2019-07-01",
+   "shows": "chart page as served on 2019-07-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-chart-a201907.png"
+  },
+  {
+   "id": "find-a201912",
+   "url": "https://arquivo.pt/noFrame/replay/20191218073742/https://www.imdb.com/find?s=all&q=beauty+%26+the+beast",
+   "date": "2019-12-18",
+   "shows": "find page as served on 2019-12-18 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-find-a201912.png"
+  },
+  {
+   "id": "find-a201906",
+   "url": "https://arquivo.pt/noFrame/replay/20190607200622/https://www.imdb.com/find?q=les%20miserables&s=tt&exact=true&ref_=fn_tt_ex",
+   "date": "2019-06-07",
+   "shows": "find page as served on 2019-06-07 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-find-a201906.png"
+  },
+  {
+   "id": "name-a201906",
+   "url": "https://arquivo.pt/noFrame/replay/20190607010420/https://www.imdb.com/name/nm0000001/",
+   "date": "2019-06-07",
+   "shows": "name page as served on 2019-06-07 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-name-a201906.png"
+  },
+  {
+   "id": "name-a201901",
+   "url": "https://arquivo.pt/noFrame/replay/20190125220457/https://www.imdb.com/name/nm0000002/",
+   "date": "2019-01-25",
+   "shows": "name page as served on 2019-01-25 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-name-a201901.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(TikTok|License IMDb Data|Sign in for more access|Create account|Toggle language selector|EN)$",
+   "in2019": false,
+   "evidence": [
+    "title-a201912",
+    "home-a201911"
+   ],
+   "note": "not in the 2019 footer (Get the IMDb App, View Full Site, Help, Site Index, IMDbPro, Box Office Mojo, Press Room, Advertising, Jobs, Conditions of Use, Privacy Policy, Interest-Based Ads, with Facebook/Instagram/Twitch/Twitter/YouTube icons) or header: TikTok link, License IMDb Data, the footer sign-in prompt, the sign-in coachmark and the language selector are hidden",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Interests|Set your preferred services|Add to your interests|Hindi|Telugu|Tamil|Malayalam|Kannada|Bengali|Marathi|Epic|Period Drama|Prison Drama|Psychological Drama|.* Select to view details|Who Took Home .*|Mark as watched|Watched|.*reactions?.*|(PARAMOUNT|DISNEY|AMC|APPLE TV|MGM|ESPN|BET)\\+|PRIME VIDEO|NETFLIX|HULU|PEACOCK|MAX|Explore what.s streaming)$",
+   "in2019": false,
+   "evidence": [
+    "title-a201904",
+    "title-a201912"
+   ],
+   "note": "IMDb 'interests' sub-genre chips (2024), the bar-chart poll module, Mark as watched and like/love reaction counts are not on the 2019 title page (which listed only genres such as Drama); hidden. Classic genre names are kept.; the 'Explore what's streaming' provider-tab module (2021) is hidden too; the find page Interests results section (2024) too; the home page interest cards (by language and genre, 2024) too; the streaming box's \"Set your preferred services\" setting too",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Your Ads Privacy Choices)$",
+   "in2019": false,
+   "evidence": [
+    "title-a201912"
+   ],
+   "note": "privacy opt-out link (2019 footer: Interest-Based Ads)",
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Clint\\ Eastwood|Jim\\ Carrey|Matrix)$",
+   "in2019": true,
+   "evidence": [
+    "chart-a201903",
+    "chart-a201907"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Clint Eastwood",
+    "Jim Carrey",
+    "Matrix"
+   ]
+  },
+  {
+   "match": "^(Horror)$",
+   "in2019": true,
+   "evidence": [
+    "chart-a201903",
+    "chart-a201907",
+    "find-a201906"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Horror"
+   ]
+  },
+  {
+   "match": "^(Million\\ Dollar\\ Baby|Thriller)$",
+   "in2019": true,
+   "evidence": [
+    "chart-a201903",
+    "chart-a201907",
+    "home-a201903"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Million Dollar Baby",
+    "Thriller"
+   ]
+  },
+  {
+   "match": "^(Drama)$",
+   "in2019": true,
+   "evidence": [
+    "chart-a201903",
+    "chart-a201907",
+    "home-a201911"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Drama"
+   ]
+  },
+  {
+   "match": "^(Frank\\ Darabont|Morgan\\ Freeman|Seven|Tim\\ Robbins)$",
+   "in2019": true,
+   "evidence": [
+    "chart-a201903",
+    "chart-a201907",
+    "title-a201904"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Frank Darabont",
+    "Morgan Freeman",
+    "Seven",
+    "Tim Robbins"
+   ]
+  },
+  {
+   "match": "^(Variety\\ \\-\\ Film\\ News)$",
+   "in2019": true,
+   "evidence": [
+    "chart-a201907",
+    "name-a201901"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Variety - Film News"
+   ]
+  },
+  {
+   "match": "^(The\\ Shawshank\\ Redemption|the\\ shawshank\\ redemption)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "title-a201904",
+    "title-a201912"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "The Shawshank Redemption",
+    "the shawshank redemption"
+   ]
+  },
+  {
+   "match": "^(See\\ the\\ list)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201907"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "See the list"
+   ]
+  },
+  {
+   "match": "^(Andy\\ Dufresne|Bob\\ Gunton|Stephen\\ King)$",
+   "in2019": true,
+   "evidence": [
+    "title-a201904",
+    "title-a201912"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Andy Dufresne",
+    "Bob Gunton",
+    "Stephen King"
+   ]
+  },
+  {
+   "match": "^(Close)$",
+   "in2019": true,
+   "evidence": [
+    "title-a201912"
+   ],
+   "note": "close controls on menus and dialogs (2019 header menu and trailer dialog had close buttons)"
+  },
+  {
+   "match": "^(Home|Menu|Search IMDb|Submit search|Go To IMDb Pro|IMDbPro|IMDb Pro|Watchlist|Sign in|Sign In|All|For Android and iOS|Get the IMDb App)$",
+   "in2019": true,
+   "evidence": [
+    "title-a201912",
+    "find-a201912"
+   ],
+   "note": "late-2019 header and footer controls (For Android and iOS is the footer's app link, 2019 'Get the IMDb App')"
+  },
+  {
+   "match": "^(Help|Site Index|Box Office Mojo|Press Room|Advertising|Jobs|Conditions of Use|Privacy Policy|Facebook|Instagram|Twitter|YouTube|Twitch)$",
+   "in2019": true,
+   "evidence": [
+    "title-a201912",
+    "home-a201911"
+   ],
+   "note": "2019 footer links and social icons"
+  },
+  {
+   "match": "^(Sponsored Content|Get information, provide feedback or report sponsored ad|Advertisement)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "title-a201912"
+   ],
+   "note": "display ad slots (2019 pages carried the top leaderboard and right-rail ads; Arquivo strips the ad scripts, the slots' place in the layout is visible)"
+  },
+  {
+   "match": "^(Add to Watchlist|Watch on .*|Add to list|Watch options|More about this|See Showtimes|Showtimes|Photos|See the gallery|See full cast and crew|See more|See the answer|More popular matches|Exact matches|Keywords|Top news|List|Go to IMDbPro|Go to Other works|Go to Publicity listings|Expand .*|More|Rate|IMDb RATING|YOUR RATING|POPULARITY)$",
+   "in2019": true,
+   "evidence": [
+    "title-a201904",
+    "title-a201912",
+    "name-a201906",
+    "find-a201912"
+   ],
+   "note": "2019 counterparts: Add to Watchlist ribbon and button, Watch now / Showtimes links, Photos and Videos with 'See all … photos', 'See full cast & crew', FAQ ('See more'), find page 'More title matches' and 'Exact title matches' and Keywords, name page Other Works / Publicity Listings and filmography show/hide toggles, Rate This and popularity"
+  },
+  {
+   "match": "^(repeated .*|section area|main area|article area|nav area|footer area|search area|header area|form area)$",
+   "in2019": true,
+   "evidence": [
+    "title-a201912",
+    "home-a201911",
+    "name-a201906"
+   ],
+   "note": "page structure: header, main column, content sections, footer; repeated items are titles, names, news and videos (content)"
+  },
+  {
+   "match": "^(Trailer|Clip|View title page for) ?.*$",
+   "in2019": true,
+   "evidence": [
+    "title-a201904",
+    "name-a201906"
+   ],
+   "note": "video slates and title posters (content; 2019 had trailer slates and Known For posters)"
+  },
+  {
+   "match": "^[A-Z0-9][\\w'’.,:!&\\- ]{1,60}$",
+   "in2019": true,
+   "evidence": [
+    "name-a201906",
+    "find-a201912",
+    "chart-a201907"
+   ],
+   "note": "content item links: film and series titles, people's names and characters in filmography, cast and search results (2019 pages listed the same kinds of links)"
+  }
+ ]
+}

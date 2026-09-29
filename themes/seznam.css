@@ -47,3 +47,5 @@ form.login label.magic { border-radius: 4px !important; }
 form.login .submit-and-fido button[type="submit"], form.login button[type="submit"] { border-radius: 4px !important; background-color: var(--n19-red) !important; }
 form.login button[type="submit"]:hover { background-color: var(--n19-red-hover) !important; }
 form.login .sn-buttons button, form.login .submit-and-fido iframe { border-radius: 4px !important; }
+a[href*="ucet.seznam.cz/bezreklam"], footer a[href^="https://vyvojari.seznam.cz"], li:has(> a[href^="https://podcasty.seznam.cz"]), button:is([aria-label="Ohodnoťte výsledky hledání"]), [class*="feedback" i]:has(textarea) { display: none !important; }
+[data-n19-later] { display: none !important; }

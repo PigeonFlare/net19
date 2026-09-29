@@ -1,5 +1,6 @@
 globalThis.net19Theme = {
-  later: /^(?:ask sparky|sparky|chat with sparky|try sparky|meet sparky)$/i,
+  intended: '[data-testid="sub-nav-links-container"]',
+  later: /^(?:ask sparky|sparky|chat with sparky|try sparky|meet sparky|try walmart\+.*|join walmart\+.*|walmart\+ (?:week|deals|members)?.*|learn about spark driver|walmart business|walmart in the know.*|brand shop directory)$/i,
   light: { '#0053e2': '#0071ce', '#002e99': '#004c91' },
   dark: { '#0053e2': '#0071ce', '#002e99': '#004c91' },
 };

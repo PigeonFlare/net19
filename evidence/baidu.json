@@ -1,0 +1,31 @@
+{
+  "theme": "baidu",
+  "era": "2019 Baidu homepage (s1): white page, centred logo, square search box with a blue 百度一下 button, text links top-right, QR code and small footer.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://web.archive.org/web/20190615235959/http://www.baidu.com/",
+      "date": "2019-06-15",
+      "file": "/home/claude/sweeps/g9-evidence/wb/baidu-home.png",
+      "shows": "signed-out homepage: top-right links 新闻 hao123 地图 视频 贴吧 学术 登录 设置 更多产品, centred logo (doodle that day), empty search box with voice and camera icons and blue 百度一下 button, QR code, footer 把百度设为主页 / 关于百度 / About Baidu / 百度推广, ©2019 Baidu 使用百度前必读 意见反馈 京ICP证 京公网安备; no hot-search list, no placeholder text"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(百度热榜|换一换|辅助|.*AI.*|文心.*)$",
+      "in2019": false,
+      "evidence": [
+        "the 2019 homepage (s1) had no hot-search list under the box, no elder-mode (辅助) side button and no AI entries"
+      ],
+      "action": "hidden (baidu.css #s-hotsearch-wrapper, .aging-entry; guard labels)"
+    },
+    {
+      "match": "^(新闻|hao123|地图|视频|贴吧|学术|图片|网盘|更多|更多产品|登录|设置|百度一下|意见反馈|关于百度|About Baidu|使用百度前必读|帮助中心|企业推广|百度推广|把百度设为主页|form area|header area|main area|wd|.*京ICP.*|.*京公网安备.*|.*许可证.*|.{8,})$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "top links (图片 and 网盘 sit in the slots of 2019's 学术/更多产品), search field and button, footer links; the search field's placeholder is hidden to match 2019"
+    }
+  ]
+}

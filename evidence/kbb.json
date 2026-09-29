@@ -1,0 +1,206 @@
+{
+ "theme": "kbb",
+ "era": "2019 kbb.com (one desktop design for every visitor): 49px blue #2b5195 nav bar with the KBB shield logo and Home / Car Values / Cars for Sale / Car Reviews / Awards & Top 10s / Research Tools menus and a MyKBB person icon; home hero 'Car Shopping Made Easy / KBB.com is your one-stop resource' with green 'Price New/Used' and 'My Car's Value' buttons; New Cars by make, featured budget searches, Research New & Used Vehicles, Find Cars for Sale by Model / City; Open Sans, square-ish 4px buttons.",
+ "sources": [
+  {
+   "id": "raw-home-2019-07",
+   "url": "https://arquivo.pt/noFrame/replay/20190719203309id_/https://www.kbb.com/",
+   "date": "2019-07-19",
+   "file": "/home/claude/sweeps/g12-evidence/kbb/home-2019-07-raw.html",
+   "shows": "2019 home HTML: hero 'Car Shopping Made Easy / KBB.com is your one-stop resource', Price New/Used, My Car's Value, New Cars, Popular / Featured Searches, Research New & Used Vehicles, Find Cars for Sale by Model / City, footer FAQ, Contact Us, About Us, Careers, Corporate, Advertising, Media, Site Map, KBB Brazil, Copyrights & Trademarks, Terms of Service, Privacy Policy, Linking Policy, Ad Choices"
+  },
+  {
+   "id": "forsale-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190719203346/https://www.kbb.com/cars-for-sale/",
+   "date": "2019-07-19",
+   "shows": "forsale page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/kbb-forsale-a201907.png"
+  },
+  {
+   "id": "home-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190326233351/https://www.kbb.com/",
+   "date": "2019-03-26",
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/kbb-home-a201903.png"
+  },
+  {
+   "id": "home-a201906c",
+   "url": "https://arquivo.pt/noFrame/replay/20190624063457/https://www.kbb.com/",
+   "date": "2019-06-24",
+   "shows": "home page as served in 2019-06 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/kbb-home-a201906c.png"
+  },
+  {
+   "id": "home-a201907b",
+   "url": "https://arquivo.pt/noFrame/replay/20190719203309/https://www.kbb.com/",
+   "date": "2019-07-19",
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/kbb-home-a201907b.png"
+  },
+  {
+   "id": "item-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190317235026/https://www.kbb.com/bmw/",
+   "date": "2019-03-17",
+   "shows": "item page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/kbb-item-a201903.png"
+  },
+  {
+   "id": "item-a201907c",
+   "url": "https://arquivo.pt/noFrame/replay/20190720042629/https://www.kbb.com/nissan/350z/2003/track-coupe-2d/",
+   "date": "2019-07-20",
+   "shows": "item page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/kbb-item-a201907c.png"
+  },
+  {
+   "id": "values-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190719203328/https://www.kbb.com/car-values/",
+   "date": "2019-07-19",
+   "shows": "values page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/kbb-values-a201907.png"
+  },
+  {
+   "id": "values-a201907b",
+   "url": "https://arquivo.pt/noFrame/replay/20190719203337/https://www.kbb.com/whats-my-car-worth/",
+   "date": "2019-07-19",
+   "shows": "values page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/kbb-values-a201907b.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Private Seller Listings|Deals & Incentives|Dealer Reviews & Ratings|Electric Vehicle Guide|Videos|Car Match Quiz|Car Finance Guide|Car Depreciation|Car Financing 101|Service & Repair|Auto Repair Pricing|Maintenance Pricing|Service Advisor|OBD-II Codes|Find an Auto Shop|Repair or Replace|KBB Canada|Facebook Icon|X Icon|RSS Icon|LinkedIn Icon|YouTube Icon|Kelley Knows Motorcycles, Too)$",
+   "in2019": false,
+   "evidence": [
+    "absent from the 2019 menus (home-a201903, home-a201907b, item-a201903) and footer / home headings (raw-home-2019-07)"
+   ],
+   "action": "hidden: later labels, the Service & Repair menu and the motorcycles section (data-n19-post)"
+  },
+  {
+   "match": "^(Do Not Sell or Share My Personal Information|Limit the Use of My Sensitive Personal Information|Manage Cookies|Accessibility Statement)$",
+   "in2019": false,
+   "evidence": [
+    "not in the 2019 footer (raw-home-2019-07)"
+   ],
+   "action": "kept: legal (CCPA/CPRA links, cookie choices, accessibility statement)"
+  },
+  {
+   "match": "^(Car\\ Reviews|Car\\ Values|Cars\\ for\\ Sale|Research\\ Tools|nav\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "forsale-a201907",
+    "home-a201903",
+    "home-a201906c"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Car Reviews",
+    "Car Values",
+    "Cars for Sale",
+    "Research Tools",
+    "nav area"
+   ]
+  },
+  {
+   "match": "^(My\\ Car's\\ Value|repeated\\ div)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201906c",
+    "home-a201907b"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "My Car's Value",
+    "repeated div"
+   ]
+  },
+  {
+   "match": "^(Compare\\ Cars)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "item-a201903"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Compare Cars"
+   ]
+  },
+  {
+   "match": "^(Extended\\ Warranty|Free\\ Dealer\\ Price\\ Quote|Instant\\ Cash\\ Offer|KBB\\ Awards|KBB\\ Expert\\ Reviews|Terms\\ of\\ Service|Vehicle\\ History\\ Report)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "item-a201903",
+    "item-a201907c"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Extended Warranty",
+    "Free Dealer Price Quote",
+    "Instant Cash Offer",
+    "KBB Awards",
+    "KBB Expert Reviews",
+    "Terms of Service",
+    "Vehicle History Report"
+   ]
+  },
+  {
+   "match": "^(Car\\ Finder)$",
+   "in2019": true,
+   "evidence": [
+    "item-a201907c"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Car Finder"
+   ]
+  },
+  {
+   "match": "^(aside\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "values-a201907b"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "aside area"
+   ]
+  },
+  {
+   "match": "^(Sell My Car|Car Values|Shop & Buy|Cars for Sale|Research & Advice|Car Reviews|Finance & Costs|Research Tools)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907b",
+    "values-a201907b"
+   ],
+   "note": "the four menus keep the 2019 names (Car Values, Cars for Sale, Car Reviews, Research Tools); the theme renames the current labels back"
+  },
+  {
+   "match": "^(My Car's Value|Instant Cash Offer|New/Used Fair Purchase Price|Price New/Used|Free Dealer Price Quote|Find Local Dealerships|Vehicle History Report|Best Cars|Car Finder|Compare Cars|KBB Expert Reviews|Car News|KBB Awards|Extended Warranty|Car Loan Calculator|Total Cost of Ownership|Insurance Costs|Free Credit Report|Car Recalls)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "item-a201903",
+    "values-a201907b"
+   ],
+   "note": "2019 menu entries: Price New/Used, Find Local Dealers, Top 10 Lists, Latest Car News, Payment Calculator, 5-Year Cost to Own, Insurance, Check My Credit, Recalls under their current names"
+  },
+  {
+   "match": "^(nav area|main area|aside area|footer area|header area|Kelley Blue Book|FAQ|Contact Us|Privacy Notice|About Us|Careers|Corporate|Marketing and Advertising Solutions|Media|Site Map|KBB Brazil|Copyrights & Trademarks|Terms of Service|Linking Policy|Information|Get My Car's Value|Shop This Car|Get My Offer|Get My FREE Quote|Car Shopping Made Easy.*|KBB\\.com is your one-stop resource)$",
+   "in2019": true,
+   "evidence": [
+    "raw-home-2019-07",
+    "home-a201907b"
+   ],
+   "note": "2019 logo link, hero, footer (Privacy Notice was Privacy Policy, Marketing and Advertising Solutions was Advertising); value / offer / quote entry points (My Car's Value, Instant Cash Offer, Insurance in the 2019 menus)"
+  }
+ ]
+}

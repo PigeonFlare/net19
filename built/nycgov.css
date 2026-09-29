@@ -21,3 +21,4 @@ html:not([data-net19-mode="dark"]) #primary-header .nyc-header__title img{filter
 .cmp-news-carousel a.cmp-button{background:var(--n19-blue)!important;border-color:var(--n19-blue)!important}
 .cmp-news-carousel a.cmp-button:hover{background:var(--n19-blue-dark)!important}
 h1>.main-heading--subhead{color:var(--n19-hero-text)!important}
+[data-n19-later]{display:none!important}

@@ -1,0 +1,258 @@
+{
+  "theme": "bing",
+  "era": "2019 Bing: grey b logo, square white search box with a thin shadow and the magnifier on the right, mixed-case 13px scope bar with a 3px orange-red (#de3700) underline, #001ba0 titles and #006d21 URLs, full-bleed image of the day on the homepage. Signed out and signed in shared this design; the only 2019 variant was the market language (s3).",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://web.archive.org/web/20190616005155/https://www.bing.com/",
+      "date": "2019-06-16",
+      "file": "/home/claude/sweeps/g9-evidence/wb/bing-home.png",
+      "shows": "homepage: image of the day, top menu Images/Videos/Maps/News/|/MSN/Office Online/Outlook.com, Sign in + avatar, Rewards, hamburger (Settings and quick links), b-Bing logo, square white search box with blue magnifier, image caption with location pin, previous/next image arrows"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/20190509234457/https://www.bing.com/search?q=facebook",
+      "date": "2019-05-09",
+      "file": "/home/claude/sweeps/g9-evidence/wb/bing-serp3.png",
+      "shows": "SERP: grey b logo at 58px, 684x40 square search box with thin shadow, image search camera and magnifier on the right, Sign in / Rewards / hamburger, scope bar All/Images/Videos/Maps/News/Shopping/|/My saves in 13px #444 mixed case with 3px #de3700 underline under the active tab, 'Results' count and Date/Language/Region filters, #001ba0 titles without underline, #006d21 URLs, #666 13px snippets, entity pane on the right, pagination, footer Privacy and Cookies/Legal/Advertise/About our ads/Help/Feedback"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20190701145447/https://www.bing.com/search?q=weather",
+      "date": "2019-07-01",
+      "file": "/home/claude/sweeps/g9-evidence/wb/bing-serp2.png",
+      "shows": "SERP header and footer (German market): same logo, box, Anmelden/Prämien/hamburger, scope bar with red active underline, footer links"
+    },
+    {
+      "id": "s4",
+      "url": "https://www.popsci.com/google-duckduckgo-bing-comparison/",
+      "date": "2019-02-05",
+      "file": "/home/claude/sweeps/g9-evidence/bing/popsci-2019-02-bing1.jpg",
+      "shows": "real user SERP for abraham lincoln: same header, scope bar with red underline, Wikipedia answer with Overview/sections, entity pane, deep links, dates"
+    },
+    {
+      "id": "s5",
+      "url": "https://www.popsci.com/google-duckduckgo-bing-comparison/",
+      "date": "2019-02-05",
+      "file": "/home/claude/sweeps/g9-evidence/bing/popsci-2019-02-bing2.jpg",
+      "shows": "real user Images results for coins: Images scope with SafeSearch: Moderate and Filter, related-search chips in teal, thumbnail grid"
+    },
+    {
+      "id": "s6",
+      "url": "https://www.popsci.com/google-duckduckgo-bing-comparison/",
+      "date": "2019-02-05",
+      "file": "/home/claude/sweeps/g9-evidence/bing/popsci-2019-02-bing3.jpg",
+      "shows": "search history page with Sign in, Rewards, hamburger"
+    },
+    {
+      "id": "s7",
+      "url": "https://www.bellingcat.com/resources/how-tos/2019/12/26/guide-to-using-reverse-image-search-for-investigations/",
+      "date": "2019-12-26",
+      "file": "/home/claude/sweeps/g9-evidence/bing/bellingcat-2019-12-visual.jpg",
+      "shows": "visual search: camera icon in the search box opens 'Try Visual Search' dialog (drag images, Paste image or URL, Take photo, samples)"
+    },
+    {
+      "id": "s8",
+      "url": "https://mashtips.com/enable-content-set-safe-search-bing/",
+      "date": "2019-04-10",
+      "file": "/home/claude/sweeps/g9-evidence/bing/mashtips-2019-03-settings.jpg",
+      "shows": "homepage with the hamburger menu open: Settings, Search history, My interests, My saves, My places, Fun & Games, Feedback, SafeSearch, Customize your homepage"
+    },
+    {
+      "id": "s9",
+      "url": "https://blogs.bing.com/search/2019-06/Bing-turns-10",
+      "date": "2019-06-03",
+      "file": "/home/claude/sweeps/g9-evidence/bing/bing10-2019-06-4.jpg",
+      "shows": "homepage 2019: b Bing logo, square search box with magnifier, previous/next image arrows, Info, download buttons"
+    },
+    {
+      "id": "s10",
+      "url": "https://www.bellingcat.com/resources/how-tos/2019/12/26/guide-to-using-reverse-image-search-for-investigations/",
+      "date": "2019-12-26",
+      "file": "/home/claude/sweeps/g9-evidence/bing/bellingcat-2019-12-results.jpg",
+      "shows": "visual search results: Looks like, Similar images"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Create images|Search tools|Copilot tools)$",
+      "in2019": false,
+      "evidence": [
+        "Image Creator 2023-03; the search box in s1, s2, s7 has only the camera and magnifier"
+      ],
+      "action": "hidden (#sb_tool_drawer)"
+    },
+    {
+      "match": "^Read more$",
+      "in2019": false,
+      "evidence": [
+        "2019 snippets end with an ellipsis and no link (s2, s4)"
+      ],
+      "action": "hidden (a.b_algoReadMore; the result itself stays)"
+    },
+    {
+      "match": "^Search using voice$",
+      "in2019": false,
+      "evidence": [
+        "no microphone in the 2019 homepage or SERP search box (s1, s2, s8, s9)"
+      ],
+      "action": "hidden (.mic_cont, voice buttons)"
+    },
+    {
+      "match": "^Mobile$",
+      "in2019": false,
+      "evidence": [
+        "2019 header had Sign in, Rewards and the hamburger only (s1, s2, s8); the Mobile QR-code dialog is later"
+      ],
+      "action": "hidden (#id_mobile)"
+    },
+    {
+      "match": "^(Copilot|Copilot Search|Chat|Create|Image Creator|Designer|Copilot answer|Deep search|Bing Chat)$",
+      "in2019": false,
+      "evidence": [
+        "Bing Chat launched 2023-02, Copilot 2023-11, Copilot Search scope 2025, Image Creator 2023-03; none in s1-s9"
+      ],
+      "action": "hidden (theme scope and copilot rules, guard labels)"
+    },
+    {
+      "match": "^(main area|header area|nav area|menubar area|banner area|form area|search area|footer area|complementary area|none area|navigation area|Main menu|Search Filter|Search Results|Footer|Account Rewards and Preferences|About today’s image|News)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "page regions of the 2019 homepage and SERP"
+    },
+    {
+      "match": "^(Images|Videos|Maps|News|Shopping|More|MSN|Office Online|Outlook.com|Translate|Online Games|Microsoft 365|Outlook|Word|Flights|Travel|All|My saves|Collections)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s4",
+        "s8"
+      ],
+      "note": "top menu and scope bar; the More menu lists the same Microsoft destinations the 2019 bar linked (MSN, Office Online, Outlook.com); Collections is the renamed My saves"
+    },
+    {
+      "match": "^VideosShoppingTranslateMaps.*$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "the More menu item's accessible name (its hidden list of the same destinations)"
+    },
+    {
+      "match": "^(Sign in|Profile Picture|Microsoft Rewards|Rewards|Settings and quick links|Settings)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s6",
+        "s8"
+      ],
+      "note": "Sign in with avatar, Rewards, hamburger"
+    },
+    {
+      "match": "^(Enter your search (here|term).*|go|submit|Search|Search the web|Search using an image|Clear text)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s7"
+      ],
+      "note": "search box, clear, image search camera (Visual Search, in the 2019 search box in s2, s7, s8)"
+    },
+    {
+      "match": "^(Any time|Past 24 hours|Past week|Past month|Past year|Date|Language|Region|Show or hide filters|Moderate|Strict|Off|SafeSearch.*|Filter|Most recent|Best match)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s4",
+        "s5"
+      ],
+      "note": "Date/Language/Region filters and SafeSearch: Moderate / Filter on images"
+    },
+    {
+      "match": "^(Page \\d+|Next page|Previous page)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "pagination"
+    },
+    {
+      "match": "^(Privacy and Cookies|Privacy|Legal|Terms|Advertise|About our ads|Help|Feedback|Your Privacy Choices|Consumer Health Privacy|European Data Protection|Impressum|Accessibility Feedback|Skip to content|Accessibility Help)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "footer links (Your Privacy Choices and Consumer Health Privacy are the same legal-notice slot, required by 2023 US state laws, kept as footer legal links like 2019's European Data Protection); Skip to content and Accessibility Feedback are transparent keyboard-only skip links, not drawn on screen (crop search-9.png is empty)"
+    },
+    {
+      "match": "^Search news about .+$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "news category tabs (Bing News categories; the homepage News entry in s1)"
+    },
+    {
+      "match": "^(Previous image|Next image|Info|Download this image|Image of the day.*)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s9"
+      ],
+      "note": "homepage image arrows and info"
+    },
+    {
+      "match": "^(repeated .*)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s4",
+        "s5"
+      ],
+      "note": "results, image tiles, news cards"
+    },
+    {
+      "match": "^(Image result for .+|.+\\.(com|org|net|gov|edu)|.+ \\| .+|Coins Of The World|Rarest Us Gold Coin)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "content: result sources and image titles"
+    },
+    {
+      "match": "^(Report Feedback|Feedback button)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "feedback link"
+    },
+    {
+      "match": "^(Socialisation Clipart Sun|Clipart Waking Up|Kid Waking Up Clipart|Pin on .+|Girl Waking Up Cartoon)$",
+      "in2019": true,
+      "evidence": [
+        "s5"
+      ],
+      "note": "content: image titles seen on the sampled images page"
+    },
+    {
+      "match": "^Abraham Lincoln.*$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "content: image titles on the sampled images page"
+    }
+  ]
+}

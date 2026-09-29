@@ -9,3 +9,6 @@ html[data-net19-mode="dark"] { --n19-page: #83ffe7; --n19-text: #002b50; --n19-t
 #app-root header:has(> h1) { background: var(--n19-glass) !important; box-shadow: none !important; }
 #app-root header:has(> h1) > span[role="img"] { display: none !important; }
 #app-root header > h1 { font-size: 28px !important; line-height: 32px !important; color: var(--n19-text) !important; }
+
+body { background-image: url("https://a.poki.com/images/bg-diamonds.png") !important; background-repeat: repeat !important; background-size: 800px 800px !important; }
+#footer :is(a[href*="tiktok.com"], a[href*="instagram.com"], a[href$="/c/faq"], a[href*="/blog"], a[href$="/all-games"]) { display: none !important; }

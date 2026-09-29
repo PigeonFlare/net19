@@ -32,3 +32,4 @@ h1[class*="StyledHeading-c11n"],h1[class*="Text-c11n"]{font-family:"Ivar Display
 .with-product-nav__product-nav{display:none!important}
 :where(:root:not([data-n19-safe])) .with-product-nav__wrapper,.with-product-nav__wrapper:where(:root:not([data-n19-safe])){grid-template-columns:0 minmax(0, 1fr)!important}
 .with-product-nav__top-and-main div:has(>div>h1[class*="StyledHeading-c11n"]){background-image:linear-gradient(transparent, transparent)!important}
+[data-n19-post]{display:none!important}

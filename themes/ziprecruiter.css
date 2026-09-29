@@ -7,7 +7,8 @@ body, body :is(p, span, a, button, input, select, textarea, h1, h2, h3, h4, li, 
 header .bg-black:not(.absolute, .fixed, .rounded-full, [class*="opacity-"]) { background: var(--n19-header) !important; border-bottom: 1px solid var(--n19-header-edge) !important; }
 header .bg-black:not(.absolute, .fixed, .rounded-full, [class*="opacity-"]) :is(a, button, p, span):not([class*="bg-button"], [class*="bg-button"] *) { color: var(--n19-header-text) !important; }
 header .bg-black:not(.absolute, .fixed, .rounded-full, [class*="opacity-"]) svg { color: var(--n19-header-text) !important; }
-html:not([data-net19-mode="dark"]) header img[src*="whitetext"] { filter: invert(1) hue-rotate(180deg) saturate(1.4); }
+header img[src*="logos/ziprecruiter"] { content: url("https://www.ziprecruiter.com/zrs/f810ae13/img/logos/ziprecruiter-blacktext.svg"); }
+html[data-net19-mode="dark"] header img[src*="logos/ziprecruiter"] { content: url("https://www.ziprecruiter.com/zrs/f810ae13/img/logos/ziprecruiter-whitetext.svg"); }
 
 [class*="bg-button-primary"] { background: var(--n19-green) !important; border-color: var(--n19-green) !important; border-radius: 20px !important; }
 [class*="bg-button-primary"], [class*="bg-button-primary"] :is(p, span) { color: #fff !important; }
@@ -31,3 +32,10 @@ header #action_nav a { height: 34px !important; padding: 0 18px !important; }
 section [class*="md:text-\[37px\]"] { font-size: 30px !important; }
 .xl\:bg-black .text-green { color: var(--n19-green) !important; }
 
+#main-content + div, [data-n19-post] { display: none !important; }
+section[data-sentry-component="BeSeenFirstSearchBar"] { background: var(--n19-header) !important; border-bottom: 1px solid var(--n19-header-edge) !important; padding-top: 12px !important; padding-bottom: 12px !important; justify-content: flex-start !important; padding-left: 72px !important; }
+section[data-sentry-component="BeSeenFirstSearchBar"] input:not([type="hidden"]) { height: 34px !important; font-size: 13px !important; }
+section[data-sentry-component="BeSeenFirstSearchBar"] div.rounded-8:has(> input) { height: 36px !important; border: 1px solid var(--n19-field-border) !important; border-radius: 2px !important; background: var(--n19-header) !important; }
+section[data-sentry-component="BeSeenFirstSearchBar"] form { align-items: center !important; }
+section[data-sentry-component="BeSeenFirstSearchBar"] form > button { height: 36px !important; font-size: 13px !important; padding: 0 20px !important; }
+section[data-sentry-component="BeSeenFirstSearchBar"] form > button p { font-size: 13px !important; line-height: 1 !important; }

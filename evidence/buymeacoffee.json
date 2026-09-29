@@ -1,0 +1,154 @@
+{
+  "theme": "buymeacoffee",
+  "era": "2019 Buy Me a Coffee: white page, Avenir-style sans, orange #ff813f buttons with 4px corners, the yellow cup and script \"Buy me a coffee\" logo, creator pages with a white \"Buy X a coffee\" box. The site existed from 2018; its light design only (the engine flips it for dark devices).",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://arquivo.pt/noFrame/replay/20190624144857/https://www.buymeacoffee.com/",
+      "date": "2019-06-24",
+      "shows": "buymeacoffee.com home 2019: white header with the Buy me a coffee script logo, Explore creators, Login, orange \"Start my page\" button (#ff813f, 4px corners); hero \"Get the support your work deserves.\" with \"Takes less than a minute.\"; \"Join 50,000+ creators just like you.\"; footer Company / About / Terms",
+      "file": "/home/claude/sweeps/g13-evidence/buymeacoffee/home-a20190624.png",
+      "raw": "/home/claude/sweeps/g13-raw/buymeacoffee-home-a20190624.html"
+    },
+    {
+      "id": "s2",
+      "url": "https://arquivo.pt/noFrame/replay/20190914043942/https://www.buymeacoffee.com/",
+      "date": "2019-09-14",
+      "shows": "buymeacoffee.com home 2019: white header with the Buy me a coffee script logo, Explore creators, Login, orange \"Start my page\" button (#ff813f, 4px corners); hero \"Get the support your work deserves.\" with \"Takes less than a minute.\"; \"Join 50,000+ creators just like you.\"; footer Company / About / Terms",
+      "file": "/home/claude/sweeps/g13-evidence/buymeacoffee/home-a20190914.png",
+      "raw": "/home/claude/sweeps/g13-raw/buymeacoffee-home-a20190914.html"
+    },
+    {
+      "id": "s3",
+      "url": "https://arquivo.pt/noFrame/replay/20191211060614/https://www.buymeacoffee.com/",
+      "date": "2019-12-11",
+      "shows": "buymeacoffee.com home 2019: white header with the Buy me a coffee script logo, Explore creators, Login, orange \"Start my page\" button (#ff813f, 4px corners); hero \"Get the support your work deserves.\" with \"Takes less than a minute.\"; \"Join 50,000+ creators just like you.\"; footer Company / About / Terms",
+      "file": "/home/claude/sweeps/g13-evidence/buymeacoffee/home-a20191211.png",
+      "raw": "/home/claude/sweeps/g13-raw/buymeacoffee-home-a20191211.html"
+    },
+    {
+      "id": "s4",
+      "url": "https://arquivo.pt/noFrame/replay/20190914044253/https://www.buymeacoffee.com/login",
+      "date": "2019-09-14",
+      "shows": "login page 2019: Sign in with Facebook / Google / email",
+      "file": "/home/claude/sweeps/g13-evidence/buymeacoffee/login-a20190914.png",
+      "raw": "/home/claude/sweeps/g13-raw/buymeacoffee-login-a20190914.html"
+    },
+    {
+      "id": "s5",
+      "url": "https://arquivo.pt/noFrame/replay/20190331040634/https://www.buymeacoffee.com/1hakr",
+      "date": "2019-03-31",
+      "shows": "creator page 2019 (1hakr): name, \"Buy ... a coffee\" box with coffee count, Name (optional), Message (optional), Support button, supporters feed (\"bought ... a coffee\"), Share",
+      "file": "/home/claude/sweeps/g13-evidence/buymeacoffee/creator-a20190331.png",
+      "raw": "/home/claude/sweeps/g13-raw/buymeacoffee-creator-a20190331.html"
+    },
+    {
+      "id": "s6",
+      "url": "https://arquivo.pt/noFrame/replay/20190930063921/https://www.buymeacoffee.com/AmazfitWF",
+      "date": "2019-09-30",
+      "shows": "creator page 2019 (Amazfitwatchfaces): Developer, Share, Tweet, featured image, \"22 coffees received\", goal text, \"Buy Amazfitwatchfaces a coffee\"",
+      "file": "/home/claude/sweeps/g13-evidence/buymeacoffee/creator2-a20190930.png",
+      "raw": "/home/claude/sweeps/g13-raw/buymeacoffee-creator2-a20190930.html"
+    },
+    {
+      "id": "s7",
+      "url": "https://arquivo.pt/noFrame/replay/20191211060556/https://www.buymeacoffee.com/AmazfitWF",
+      "date": "2019-12-11",
+      "shows": "same creator page Dec 2019",
+      "file": "/home/claude/sweeps/g13-evidence/buymeacoffee/creator3-a20191211.png",
+      "raw": "/home/claude/sweeps/g13-raw/buymeacoffee-creator3-a20191211.html"
+    },
+    {
+      "id": "s8",
+      "url": "https://arquivo.pt/noFrame/replay/20190914045511/https://www.buymeacoffee.com/closest",
+      "date": "2019-09-14",
+      "shows": "creator page 2019",
+      "file": "/home/claude/sweeps/g13-evidence/buymeacoffee/creator4-a20190914.png",
+      "raw": "/home/claude/sweeps/g13-raw/buymeacoffee-creator4-a20190914.html"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Start\\ my\\ page|Support|FAQ|buy\\ me\\ a\\ coffee|Help\\ center|Login|Buy\\ Me\\ a\\ Coffee|Explore\\ creators|About|Share|Sign\\ in|Sign\\ up|Log\\ in|About\\ Buy\\ Me\\ a\\ Coffee)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6",
+        "s7",
+        "s8"
+      ],
+      "note": "header, footer and creator-page labels in the 2019 captures (2019 \"Login\" / \"Start my page\")"
+    },
+    {
+      "match": "^(repeated div|repeated a|section area|main area|header area|footer area|form area)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s5",
+        "s6",
+        "s7",
+        "s8"
+      ],
+      "note": "page structure"
+    },
+    {
+      "match": "^(Fund your creative work|Loved by [\\d,]+\\+ creators|It’s free and takes less than a minute!|Give your audience an easy way to say thanks\\.|Buy Me a Coffee makes supporting fun and easy\\..*)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "home marketing copy: hero headline, social proof and \"takes less than a minute\" line (2019: \"Get the support your work deserves.\", \"Join 50,000+ creators just like you.\", \"Takes less than a minute.\")"
+    },
+    {
+      "match": "^(Support .+|About .+|Recent supporters|navigate to creator profile|more options|Social link|tooltip information:?|Enter amount|Name or @yoursocial|Say something nice\\.\\.\\.|PigeonFlare|0wtynrfutb)$",
+      "in2019": true,
+      "evidence": [
+        "s5",
+        "s6",
+        "s7",
+        "s8"
+      ],
+      "note": "creator page: support box (2019 \"Buy X a coffee\" with coffee count), Name (optional) and Message (optional) fields, supporters feed, share menu and the creator's links"
+    },
+    {
+      "match": "^(Search [\\d,]+\\+ creators|Search for creators)$",
+      "in2019": false,
+      "evidence": [
+        "2019 had an \"Explore creators\" page but no creator search in the captures"
+      ],
+      "action": "kept: function (search on the explore page)"
+    },
+    {
+      "match": "^(Apps|Resources|iOS|Android|Download Buy Me a Coffee (iOS|Android) App|.+ is (building|creating|helping) .+|[\\d,]+ supporters)$",
+      "in2019": false,
+      "evidence": [
+        "2019 header (home captures) had Explore creators / Login / Start my page, and the hero had no floating creator cards; the apps (2020+) and the Resources menu are later"
+      ],
+      "action": "hidden (buymeacoffee.js marks the Apps and Resources menus data-n19-later; a.creator-card hidden in buymeacoffee.css)"
+    },
+    {
+      "match": "^(Buy me a coffee (Twitter|YouTube|Instagram))$",
+      "in2019": false,
+      "evidence": [
+        "2019 footer (home captures) had Company / About / Terms links and no social icons"
+      ],
+      "action": "hidden (buymeacoffee.css)"
+    },
+    {
+      "match": "^(We value your privacy|Close|Your Privacy Choices|Accept all|Reject all|Customize)$",
+      "in2019": false,
+      "evidence": [
+        "cookie consent banner and US privacy choice link (2023+ privacy law)"
+      ],
+      "action": "kept: legal"
+    }
+  ]
+}

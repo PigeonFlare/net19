@@ -1,4 +1,4 @@
-globalThis.net19Theme = { later: /^AI Solutions$/i };
+globalThis.net19Theme = { later: /^(AI Solutions|Non-AI)$/i };
 (() => {
   const fix = () => {
     const home = location.pathname === '/' || /^\/[a-z]{2}(-[a-z]{2})?\/?$/i.test(location.pathname);

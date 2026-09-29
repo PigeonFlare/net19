@@ -1,0 +1,220 @@
+{
+ "theme": "weathergov",
+ "era": "The NWS weather.gov design in use since 2013 and seen by everyone in 2019 (NOAA/NWS banner header, blue horizontal menu, US hazards map home, MapClick point forecast with Current conditions / Extended Forecast / Detailed Forecast / Additional Forecasts and Information, office pages with left-hand menus). 2019-03/07/11 home HTML, 2019-02/12 OKX office HTML and a 2019-11 point forecast agree with today's site.",
+ "sources": [
+  {
+   "id": "forecast-h201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191128175149/https://forecast.weather.gov/MapClick.php?CityName=Beaufort&state=SC&site=CHS&textField1=32.4259&textField2=-80.6891",
+   "date": "2019-11-28",
+   "shows": "forecast page as served in 2019-11 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/weathergov-forecast-h201911.html"
+  },
+  {
+   "id": "home-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190315005242/https://www.weather.gov/",
+   "date": "2019-03-15",
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/weathergov/weathergov-home-a201903.png"
+  },
+  {
+   "id": "home-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190714225529/https://www.weather.gov/",
+   "date": "2019-07-14",
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/weathergov/weathergov-home-a201907.png"
+  },
+  {
+   "id": "home-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191115050449/https://www.weather.gov/",
+   "date": "2019-11-15",
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/weathergov/weathergov-home-a201911.png"
+  },
+  {
+   "id": "home-h201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190315005242/https://www.weather.gov/",
+   "date": "2019-03-15",
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/weathergov-home-h201903.html"
+  },
+  {
+   "id": "home-h201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190714225529/https://www.weather.gov/",
+   "date": "2019-07-14",
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/weathergov-home-h201907.html"
+  },
+  {
+   "id": "home-h201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191115050449/https://www.weather.gov/",
+   "date": "2019-11-15",
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/weathergov-home-h201911.html"
+  },
+  {
+   "id": "home-wbref",
+   "url": "wayback-2019-ref:https://www.weather.gov/",
+   "date": "2019",
+   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)",
+   "file": "g11-evidence/weathergov/weathergov-home-wbref.png"
+  },
+  {
+   "id": "office-h201902",
+   "url": "https://arquivo.pt/noFrame/replay/20190204222230/https://www.weather.gov/okx/",
+   "date": "2019-02-04",
+   "shows": "office page as served in 2019-02 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/weathergov-office-h201902.html"
+  },
+  {
+   "id": "office-h201912",
+   "url": "https://arquivo.pt/noFrame/replay/20191224063312/https://www.weather.gov/okx/",
+   "date": "2019-12-24",
+   "shows": "office page as served in 2019-12 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/weathergov-office-h201912.html"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(ABOUT THIS FORECAST)$",
+   "in2019": false,
+   "evidence": [
+    "not on the 2019 point forecast page (forecast-h201911 has Detailed Forecast, Additional Forecasts and Information, Hourly Weather Forecast, Forecast Discussion)"
+   ],
+   "action": "hidden (data-n19-later on its panel)"
+  },
+  {
+   "match": "^(Additional\\ Forecasts\\ and\\ Information|Additional\\ Resources|Detailed\\ Forecast|Hourly\\ Weather\\ Forecast)$",
+   "in2019": true,
+   "evidence": [
+    "forecast-h201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Additional Forecasts and Information",
+    "Additional Resources",
+    "Detailed Forecast",
+    "Hourly Weather Forecast"
+   ]
+  },
+  {
+   "match": "^(ABOUT|EDUCATION|FORECAST|Fire\\ Weather|Glossary|NEWS|National\\ Weather\\ Service|PAST\\ WEATHER|Privacy\\ Policy|Radar|Read\\ More\\ >|Satellite|usa\\.gov)$",
+   "in2019": true,
+   "evidence": [
+    "forecast-h201911",
+    "home-a201903",
+    "home-a201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "ABOUT",
+    "EDUCATION",
+    "FORECAST",
+    "Fire Weather",
+    "Glossary",
+    "NEWS",
+    "National Weather Service",
+    "PAST WEATHER",
+    "Privacy Policy",
+    "Radar",
+    "Read More >",
+    "Satellite",
+    "usa.gov"
+   ]
+  },
+  {
+   "match": "^(About\\ Us|Career\\ Opportunities|Comments\\?\\ Questions\\?\\ Please\\ Contact\\ Us\\.|Current\\ Conditions|Disclaimer|Freedom\\ of\\ Information\\ Act\\ \\(FOIA\\)|HOME|Help|INFORMATION|Information\\ Quality|National\\ Oceanic\\ and\\ Atmospheric\\ Administration|SAFETY|SEARCH|Safety|US\\ Dept\\ of\\ Commerce|United\\ States\\ Department\\ of\\ Commerce)$",
+   "in2019": true,
+   "evidence": [
+    "forecast-h201911",
+    "home-h201903",
+    "home-h201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "About Us",
+    "Career Opportunities",
+    "Comments? Questions? Please Contact Us.",
+    "Current Conditions",
+    "Disclaimer",
+    "Freedom of Information Act (FOIA)",
+    "HOME",
+    "Help",
+    "INFORMATION",
+    "Information Quality",
+    "National Oceanic and Atmospheric Administration",
+    "SAFETY",
+    "SEARCH",
+    "Safety",
+    "US Dept of Commerce",
+    "United States Department of Commerce"
+   ]
+  },
+  {
+   "match": "^(NWS\\ RSS\\ Feed|btnSearch|form\\ area|inputstring|myfcst\\-location\\-input|myfcst\\-remember)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "NWS RSS Feed",
+    "btnSearch",
+    "form area",
+    "inputstring",
+    "myfcst-location-input",
+    "myfcst-remember"
+   ]
+  },
+  {
+   "match": "^(New\\ York\\ NY|New\\ York,\\ NY)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201903",
+    "home-h201907",
+    "home-h201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "New York NY",
+    "New York, NY"
+   ]
+  },
+  {
+   "match": "^(Coastal\\ Flooding|Forecasts|Map\\ of\\ Forecast\\ Area|NWS\\ Forecast\\ Office\\ New\\ York,\\ NY|OKX\\ RSS\\ Feed|Skywarn|Tropical\\ Weather|Weather\\.gov)$",
+   "in2019": true,
+   "evidence": [
+    "office-h201902",
+    "office-h201912"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Coastal Flooding",
+    "Forecasts",
+    "Map of Forecast Area",
+    "NWS Forecast Office New York, NY",
+    "OKX RSS Feed",
+    "Skywarn",
+    "Tropical Weather",
+    "Weather.gov"
+   ]
+  },
+  {
+   "match": "^(New York City, Central Park \\(KNYC\\)|Tropical Moisture Will .*|footer area|header area|navigation area|repeated .*)$",
+   "in2019": true,
+   "evidence": [
+    "forecast-h201911",
+    "office-h201912",
+    "home-h201907"
+   ],
+   "note": "point-forecast headings and the observing-station name (content; the 2019 Beaufort forecast shows the same layout with its own station), the office headline story (content), page regions"
+  }
+ ]
+}

@@ -1,4 +1,5 @@
 globalThis.net19Theme = {
+  intended: '[data-n19-later]',
   detect() {
     const root = document.documentElement.classList;
     if (root.contains('theme-dark')) return 'dark';
@@ -17,6 +18,7 @@ globalThis.net19Theme = {
     if (h1 && h1.textContent !== H1) h1.textContent = H1;
     const p = h1?.nextElementSibling;
     if (p?.tagName === 'P' && p.textContent !== SUB) p.textContent = SUB;
+    for (const tab of document.querySelectorAll('[role="tab"]')) if (/^(Templates|Sound effects)$/i.test(tab.textContent.trim()) && !tab.hasAttribute('data-n19-later')) tab.setAttribute('data-n19-later', '');
     if (hero) for (const h2 of document.querySelectorAll('#main-content h2')) {
       if (!/\bAI\b/.test(h2.textContent)) continue;
       const box = h2.closest('#main-content .theme-light, #main-content section');
@@ -25,6 +27,6 @@ globalThis.net19Theme = {
   };
   let queued = false;
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
-  const start = () => { fix(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  const start = () => { fix(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); };
+  start();
 })();

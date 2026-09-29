@@ -1,0 +1,120 @@
+{
+  "theme": "xbox",
+  "era": "2019 xbox.com (Microsoft UHF header with Xbox logo and green accents, nav Game Pass / Games / Devices / Community / Support, hero carousel, UHF footer with Xbox / Fans / For Developers columns). Web Design Museum's 2019 image is blocked from the cloud; the header, nav and footer are proven from Arquivo raw captures.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://arquivo.pt/noFrame/replay/20190314080507/https://www.xbox.com/en-US",
+      "date": "2019-03-14",
+      "shows": "xbox.com/en-US 2019 (raw HTML, content is script-rendered): Microsoft UHF header with Xbox logo, nav Game Pass / Games / Devices / Community / Support / My Xbox / More, search, cart, sign in; hero region and icon bar; UHF footer Xbox (Feedback, Support, Photosensitive Seizure Warning, Community Standards) / Fans (Xbox Wire) / For Developers (Games, ID@Xbox, Windows 10, Creators Program, Designed for Xbox), language selector, Microsoft corporate links",
+      "file": "/home/claude/sweeps/g13-evidence/xbox/home-a20190314.png",
+      "raw": "/home/claude/sweeps/g13-raw/xbox-home-a20190314.html"
+    },
+    {
+      "id": "s2",
+      "url": "https://arquivo.pt/noFrame/replay/20190712043338/https://www.xbox.com/en-US",
+      "date": "2019-07-12",
+      "shows": "xbox.com/en-US 2019 (raw HTML, content is script-rendered): Microsoft UHF header with Xbox logo, nav Game Pass / Games / Devices / Community / Support / My Xbox / More, search, cart, sign in; hero region and icon bar; UHF footer Xbox (Feedback, Support, Photosensitive Seizure Warning, Community Standards) / Fans (Xbox Wire) / For Developers (Games, ID@Xbox, Windows 10, Creators Program, Designed for Xbox), language selector, Microsoft corporate links",
+      "file": "/home/claude/sweeps/g13-evidence/xbox/home-a20190712.png",
+      "raw": "/home/claude/sweeps/g13-raw/xbox-home-a20190712.html"
+    },
+    {
+      "id": "s3",
+      "url": "https://arquivo.pt/noFrame/replay/20191105213853/https://www.xbox.com/en-US",
+      "date": "2019-11-05",
+      "shows": "xbox.com/en-US 2019 (raw HTML, content is script-rendered): Microsoft UHF header with Xbox logo, nav Game Pass / Games / Devices / Community / Support / My Xbox / More, search, cart, sign in; hero region and icon bar; UHF footer Xbox (Feedback, Support, Photosensitive Seizure Warning, Community Standards) / Fans (Xbox Wire) / For Developers (Games, ID@Xbox, Windows 10, Creators Program, Designed for Xbox), language selector, Microsoft corporate links",
+      "file": "/home/claude/sweeps/g13-evidence/xbox/home-a20191105.png",
+      "raw": "/home/claude/sweeps/g13-raw/xbox-home-a20191105.html"
+    },
+    {
+      "id": "s4",
+      "url": "https://arquivo.pt/noFrame/replay/20190506102237/https://www.xbox.com/en-US/games",
+      "date": "2019-05-06",
+      "shows": "xbox.com/en-US/games 2019: same header and footer, Games home menu (Console games, PC games, Xbox Game Pass, Xbox Play Anywhere, Xbox Game Streaming (Preview), Redeem Code, Sales & Specials)",
+      "file": "/home/claude/sweeps/g13-evidence/xbox/games-a20190506.png",
+      "raw": "/home/claude/sweeps/g13-raw/xbox-games-a20190506.html"
+    },
+    {
+      "id": "s5",
+      "url": "https://arquivo.pt/noFrame/replay/20191117233829/https://www.xbox.com/en-US/games",
+      "date": "2019-11-17",
+      "shows": "xbox.com/en-US/games 2019: same header and footer, Games home menu (Console games, PC games, Xbox Game Pass, Xbox Play Anywhere, Xbox Game Streaming (Preview), Redeem Code, Sales & Specials)",
+      "file": "/home/claude/sweeps/g13-evidence/xbox/games-a20191117.png",
+      "raw": "/home/claude/sweeps/g13-raw/xbox-games-a20191117.html"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Contextual\\ menu|Footer\\ Resource\\ links|Xbox|Game\\ Pass|Games|Devices|Community|Support|My\\ Xbox|More|All\\ Microsoft|Cart|Xbox\\ games|Xbox\\ Game\\ Pass|Xbox\\ Support|Feedback|Community\\ Standards|Photosensitive\\ Seizure\\ Warning|Store\\ locations|Designed\\ for\\ Xbox|Content\\ Language\\ Selector\\.\\ Currently\\ set\\ to\\ English\\ \\(United\\ States\\)|Sitemap|Contact\\ Microsoft|Privacy\\ \\&\\ Cookies|Terms\\ of\\ use|Trademarks|Safety\\ \\&\\ eco|About\\ our\\ ads|Follow\\ Xbox|For\\ Developers|social\\ sharing\\ footer|Microsoft|Search|Sign\\ in|Xbox\\ Play\\ Anywhere|Xbox\\ Wire|ID@Xbox|Home|Accessories|Deals|Redeem\\ Code|Sales\\ \\&\\ Specials)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5"
+      ],
+      "note": "UHF header, nav and footer labels in the 2019 captures (XBOX spelled in caps by the current site, title-cased back by xbox.js)"
+    },
+    {
+      "match": "^(header area|banner area|main area|footer area|section area|region area|tablist area|tabpanel area|nav area|repeated div|repeated li|repeated section|repeated uhf-footer-nav-group|list of social sharing accounts|icon bar)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5"
+      ],
+      "note": "page structure (2019: banner, main, icon bar, region, footer resource links)"
+    },
+    {
+      "match": "^(Search Xbox\\.com|ME|Sign in to your account)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "UHF search and sign-in controls (2019: Search, Sign in)"
+    },
+    {
+      "match": "^(My XBOX|XBOX GAME PASS|XBOX games|XBOX Support|Designed for XBOX|XBOX consoles|XBOX accessories|XBOX News|Xbox consoles|Xbox accessories|Xbox News)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "footer links (2019: Xbox Wire under Fans; consoles and accessories in the Devices menu)"
+    },
+    {
+      "match": "^(featured items on xbox dot com|featured content|Feature Slides|Games Slider|Slides|previous campaigns carousel|Previous slide|Next slide|Explore Xbox products and connect with the Xbox community|section describing .+|Lock in your .+|Play Day One Games on XBOX Game Pass|Choose a plan and see details\\.|Join game pass, jump to the plan selector to join XBOX Game Pass|jump to a section in the page|expand or contract .+|Disclaimers: Footnotes|terms|xbox\\.com/regions|Everything you need to play|New releases|Best sellers|Recently added to Xbox Game Pass|Buy once, play anywhere|Recently added to Xbox Play Anywhere|Browse by genre|Enjoy more ways to play with Xbox|Ways to Play with Xbox|Console|PC|Explore Xbox Game Pass|Explore Xbox Play Anywhere|Explore All Devices|Redirect to XBOX Wishlist page|EA SPORTS FC™ 27|Call of Duty®: Modern Warfare 4|Grand Theft Auto VI|Gears of War: E-Day|Minecraft Dungeons II|Featured Xbox games and products|Explore Xbox|Play|xbox\\.com/play|Minecraft|Discover your next favorite game|Certified refurbished Xbox Series X\\|S consoles|CONTROL Resonant|Celebrate 25 years of play with Xbox|Inspired by play|Join now, join XBOX Game Pass|Previous|Pause|Next|Show slide \\d+ of \\d+|Shop now →|Play day one with Game Pass|Dune: Awakening|Developers)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5"
+      ],
+      "note": "content: editorial promo modules (hero carousel, feature tiles, game shelves, Game Pass plan and footnotes). 2019 had the same kinds of modules (hero region, Game Pass, Xbox Play Anywhere, games shelves) but they were script-rendered, so only the menus prove them; kept as content like other sites' stories"
+    },
+    {
+      "match": "^(Store|Handheld|Xbox Family Settings|Explore Family Settings|User Research at XBOX|User Research at Xbox|Microsoft account|Microsoft Store Support|Returns|Orders tracking|Rewards)$",
+      "in2019": false,
+      "evidence": [
+        "2019 nav had Game Pass / Games / Devices / Community / Support / My Xbox (home and games captures): cloud \"Play\" (2020; nav link and the icon-bar tile \"Play, play games with XBOX Cloud Gaming\"), the Store menu, handheld devices (2025), Family Settings app (2020) and the Browse / Microsoft Store / Rewards footer columns are later"
+      ],
+      "action": "hidden (xbox.js marks data-n19-later; footer groups hidden by heading in xbox.css)"
+    },
+    {
+      "match": "^(Your Privacy Choices.*|Consumer Health Privacy|Third Party Notices)$",
+      "in2019": false,
+      "evidence": [
+        "2019 footer had Privacy & cookies, Terms of use, Trademarks, Safety & eco, About our ads"
+      ],
+      "action": "kept: legal"
+    }
+  ]
+}

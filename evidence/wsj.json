@@ -1,0 +1,82 @@
+{
+  "theme": "wsj",
+  "era": "2019 wsj.com: Dow Jones bar and market ticker, centered Escrow masthead with U.S. Edition / date / Print Edition / Video, serif nav row, What's News and Markets rails, Exchange/Escrow headlines (same for every signed-out visitor)",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.google.com/search?udm=2&q=wsj.com+homepage+2019+screenshot",
+      "date": "2019",
+      "shows": "Google Images: WSJ 'WSJ.com Turns 25' history collage and infoHOST device mockups of the late-2010s homepage",
+      "file": "g7-evidence/wsj/gimg-home.jpg"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/20190916001042/https://www.wsj.com/",
+      "date": "2019-09-16",
+      "shows": "homepage and HTML: DOW JONES, A NEWS CORP COMPANY bar, market ticker (DJIA, Nasdaq, U.S. 10 Yr, Crude Oil, Euro), centered masthead, U.S. Edition, date, Print Edition, Video, Subscribe / Sign In, nav Home World U.S. Politics Economy Business Tech Markets Opinion Life & Arts Real Estate WSJ. Magazine, Search, What's News, Markets data box, Opinion, Weekend Reads",
+      "file": "g7-evidence/wsj/wb-wsj-home.png"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20190410234652/https://www.wsj.com/",
+      "date": "2019-04-10",
+      "shows": "homepage (April): same masthead and nav, What's News, Markets and Opinion rails",
+      "file": "g7-evidence/wsj/wb-wsj-home-apr.png"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/20191229210023/https://www.wsj.com/articles/amid-brexit-a-different-common-currency-is-raising-a-ruckus-11568567949",
+      "date": "2019-09",
+      "shows": "article: SHARE rail, flashline (A-HED), headline, dek, By …, Updated time, PRINT, TEXT, comment count, body",
+      "file": "g7-evidence/wsj/wb-wsj-article.png"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|nav|footer|main|section|article|form|search|aside|dialog|region|banner|menubar|tablist|none) area$|^repeated |^(Primary|Utility Bar|What to Read Next|Most Popular News|Most Popular Opinion|true flashline)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "page regions, repeated story items, article utility bar and popular lists"
+    },
+    {
+      "match": "^(WSJ Logo|The Wall Street Journal|Subscribe|Sign In|WSJ Edition Picker|U\\.S\\. Edition|Print Edition|Video|Latest Headlines|Open Search|Search|Home|World|Business|U\\.S\\.|Politics|Economy|Tech|Markets|Markets & Finance|Opinion|Arts|Life & Arts|Lifestyle|Real Estate|Personal Finance|Health|Style|Sports|WSJ\\. Magazine|What's News|Airlines)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "masthead utility links, section nav (sections regrouped since 2019: Life & Arts split into Arts / Lifestyle / Style / Sports / Health, Markets = Markets & Finance)"
+    },
+    {
+      "match": "^(share|Share|Text Resize|Comments Button|More Options|Print|Continue To Article|\\d+)$",
+      "in2019": true,
+      "evidence": [
+        "s4"
+      ],
+      "note": "article share rail, PRINT, TEXT resize and comments"
+    },
+    {
+      "match": "^(Audio|Puzzles|Free Expression|Other Products from WSJ|Listen.*|Key Points|Show Key Points|What'?s this\\?|Follow|Following|Get WSJ\\+|WSJ\\+)$",
+      "in2019": false,
+      "evidence": [
+        "WSJ Audio hub (2021), Puzzles (2023), Free Expression section (2024), AI key points and follow buttons: none in s2-s4"
+      ],
+      "note": "hidden",
+      "action": "hidden"
+    },
+    {
+      "match": "^(?=.{20,}$)(?!(?:Ask AI|Ask the|AI Mode|AI summary|Summarize|Listen to (?:this|the) article|Subscribe|Sign in|Sign up|Log in|Download the app|Get the app)\\b).*\\s.*$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "story headlines and teasers (content)"
+    }
+  ]
+}

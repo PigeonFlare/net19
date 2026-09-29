@@ -1,0 +1,158 @@
+{
+  "theme": "costco",
+  "era": "2019 costco.com (the 2018-2020 desktop design every member saw): grey header strip with a large red/blue Costco Wholesale logo, 'All' department selector in the search field, 'Sign In / Register' and 'Cart', a blue department bar starting with 'Shop All Departments', a 'Set Delivery ZIP Code' / 'Lists | Reorder' row, Helvetica type, square corners.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://web.archive.org/web/20190630230251/https://www.costco.com/",
+      "date": "2019-06-30",
+      "file": "/home/claude/sweeps/g6-evidence/costco/home-wb-2019-06.jpg",
+      "shows": "home: utility links View Warehouse Savings / Find a Warehouse / Get Email Offers / Customer Service / US, logo, All + Search, Sign In / Register, Cart, blue bar Shop All Departments / Grocery / Business Delivery / Optical / Pharmacy / Services / Photo / Travel / Membership / Locations, Set Delivery ZIP Code, hero carousel, Feedback tab"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/20190731225440/https://www.costco.com/televisions.html",
+      "date": "2019-07-31",
+      "file": "/home/claude/sweeps/g6-evidence/costco/search-wb-2019-07-category.jpg",
+      "shows": "Televisions category/results page with the same header, filters and product tiles"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20190801000443/https://www.costco.com/Bali-Window-Treatments--Custom-Fit,-DIY-Installation.product.100040823.html",
+      "date": "2019-08-01",
+      "file": "/home/claude/sweeps/g6-evidence/costco/item-wb-2019-08.jpg",
+      "shows": "product page: Lists | Reorder, 2-Day Delivery current order bar, Print, Item number, promotion text, Features, Share icons, image"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/20190630230251/https://www.costco.com/",
+      "date": "2019-06-30",
+      "file": "/home/claude/sweeps/g6-evidence/costco/home-wb-2019-06-footer.jpg",
+      "shows": "2019 footer: Customer Service / Find a Warehouse / Get Email Offers (field + Go) / Follow Us (Facebook, Pinterest); About Us, Membership, Customer Service, Locations & Services, Vendors & Suppliers columns; Site Map, Terms and Conditions, Your Privacy Rights, Feedback"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header area|main area|footer area|section area|Main|Locations|repeated .*)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "match": "^(Skip to Main Content|Get Email Offers|Customer Service|US|Sign In / Register|Cart.*|Search Costco|Search|Lists|Reorder|Buy Again|San Jose|\\d{5}|My Warehouse|Delivery Location)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "header, account, cart, warehouse and ZIP pickers, Lists | Reorder"
+    },
+    {
+      "match": "^(While Supplies Last|Online-Only|Treasure Hunt|What's New|Member Favorites|Recommendations for You|Orders & Returns|Same Day|Savings)$",
+      "in2019": false,
+      "evidence": [
+        "absent from the 2019 header and department bar (s1, s2, s3)"
+      ],
+      "action": "hidden by data-testid / href"
+    },
+    {
+      "match": "^(Fairlife .*|.* After \\$\\d+ OFF)$",
+      "in2019": false,
+      "evidence": [
+        "no announcement strip above the 2019 header (s1, s3)"
+      ],
+      "action": "hidden: [data-testid=AnnouncementBanner]"
+    },
+    {
+      "match": "^(Shop|Shop All Departments|Grocery|Business Delivery|Optical|Pharmacy|Services|Photo|Travel|Membership|Locations)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ]
+    },
+    {
+      "match": "^(Savings and locations|Your Information|Featured promos and announcements slideshow|region area|form area|pagination|Filter Results|Product Details|Product Image Gallery)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "header groups, hero carousel, results and product sections"
+    },
+    {
+      "match": "^(US, Country/Region .*|Costco US homepage|San Jose, current warehouse|ZIP Code \\d{5}, current delivery location)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ]
+    },
+    {
+      "match": "^(Previous promo|Next promo|Promo \\d+ of \\d+)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "hero carousel arrows (s1 shows them)"
+    },
+    {
+      "match": "^(Costco Direct|Online Only|Instant Savings|Online Price Info|See Details|Save to List|Spend & Save|Sign In for Details|Foundation Available|New|Select Options|Show more options|AppleCare\\+ Available|Add to List|Add to Cart|Black|White|Clear|Clear All Filters|page \\d+|Go to page \\d+|Go to next page|Go to previous page|\\d+ - \\d+ of \\d+ results for .*|Back to Top)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "product tile and results controls (content)"
+    },
+    {
+      "match": "^(Be the first to know.*|Email Sign Up Form|Sign Up|No Thanks|Close)$",
+      "in2019": false,
+      "evidence": [
+        "no email pop-up in 2019 captures; email sign-up lived in the footer (s4)"
+      ],
+      "action": "hidden: [role=region][aria-label='Email Sign Up Form']"
+    },
+    {
+      "match": "^(Get Help|Find a Warehouse|Go Get Email Offers|Get To Know Costco|Charitable Contributions|Company Information|Sustainability Commitment|Investor Relations|Careers|Jobs|Kirkland Signature|Logo and Media Requests|The Costco Connection|Quick & Easy Recipe Videos|Employee Site|Join Now|Member Privileges|Executive Membership Terms|Sign In or Register|Credit Card|Vendor Inquiries|Supply Chain Disclosure|Ethics Hotline for Suppliers|Supplier Inclusion|Costco Customer Service|Costco Shop Card Balance|Order By Item Number|Concierge Tech Support & Warranty|Volume Sales: Export & Domestic|Order Status|Preventing Fraud|Shipping|Rebates|Recalls & Product Notices|Returns and Exchanges|Returns Policy|Accessibility|Locations Coming Soon|Hours and Holiday Closures|Gasoline|Hearing Aid Center|Special Events|CostcoGrocery|Grocery by Instacart|Site Map|Terms and Conditions|Your Privacy Rights|Feedback|Costco Facebook|Costco Pinterest|Privacy Policy)$",
+      "in2019": true,
+      "evidence": [
+        "s4"
+      ],
+      "note": "2019 footer links (Supplier Inclusion was Supplier Diversity, Shop Card was Cash Card, Recalls & Product Notices was Recalls, Careers was Jobs)"
+    },
+    {
+      "match": "^(CA Notice|CA Social Compliance|Cookie Settings|California Consumer Privacy Act.*|Consumer Health Data)$",
+      "in2019": true,
+      "evidence": [
+        "s4"
+      ],
+      "note": "legal privacy notices beside the 2019 'Your Privacy Rights'; kept"
+    },
+    {
+      "match": "^(Refer a Friend|Explore Our Brands|Product Collections|Costco TikTok|Costco Instagram|Costco App|Digital Connection|Membership Benefits|Executive Member Benefits)$",
+      "in2019": false,
+      "evidence": [
+        "absent from the 2019 footer (s4)"
+      ],
+      "action": "hidden by the theme's later labels"
+    },
+    {
+      "match": "^(Home|Electronics|Audio/Video|Headphones & Earbuds|Open-Ear Headphones|Enlarge Product Preview \\d+|Click to view Media|Click to view Features|Sign In for Price|www\\.P65Warnings\\.ca\\.gov|View More)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "product page breadcrumb, gallery and details"
+    },
+    {
+      "match": "^(Sponsored Products|Video Player)$",
+      "in2019": false,
+      "evidence": [
+        "Costco retail-media sponsored product/video units began 2022; none in 2019 captures (s1, s2, s3)"
+      ],
+      "action": "hidden: [aria-label='Sponsored Products'] and its video-js"
+    }
+  ]
+}

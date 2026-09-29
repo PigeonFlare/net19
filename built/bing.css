@@ -1,5 +1,5 @@
-html{--n19-title:#001ba0;--n19-url:#006621;--n19-field:#fff;--n19-field-text:#000;--n19-scope:#fff;--n19-sprite:url("https://www.bing.com/sa/simg/hpc26_2x.png");--n19-snippet:#545454}
-html[data-net19-mode="dark"]{--n19-title:#8ab4f8;--n19-url:#81c995;--n19-field:#fff;--n19-field-text:#000;--n19-scope:#fff;--n19-snippet:#bdc1c6}
+html{--n19-title:#001ba0;--n19-url:#006d21;--n19-field:#fff;--n19-field-text:#000;--n19-scope:#fff;--n19-sprite:url("https://www.bing.com/sa/simg/hpc26_2x.png");--n19-snippet:#666;--n19-scopebar:#444;--n19-muted:#666}
+html[data-net19-mode="dark"]{--n19-title:#8ab4f8;--n19-url:#81c995;--n19-field:#fff;--n19-field-text:#000;--n19-scope:#fff;--n19-snippet:#bdc1c6;--n19-scopebar:#ddd;--n19-muted:#aaa}
 #hp_app header#hdr h1.logo_cont{display:none!important}
 :where(:root:not([data-n19-safe])) #hp_app header#hdr,#hp_app:where(:root:not([data-n19-safe])) header#hdr{transform:translateY(-9px)!important}
 :where(:root:not([data-n19-safe])) #hp_app header#hdr #headCont,#hp_app:where(:root:not([data-n19-safe])) header#hdr #headCont{margin-left:64px!important}
@@ -23,21 +23,68 @@ html[data-net19-mode="dark"]{--n19-title:#8ab4f8;--n19-url:#81c995;--n19-field:#
 #hp_app #sb_form #search_icon{background:var(--n19-sprite) -169px -63px / 241px 224px no-repeat!important}
 #hp_app #sb_form #search_icon>*{visibility:hidden!important}
 :where(:root:not([data-n19-safe])) .sbox_sl.centralized,.sbox_sl.centralized:where(:root:not([data-n19-safe])){justify-content:flex-start!important}
+:where(:root:not([data-n19-safe])) #hp_app #sb_form.sb_form,#hp_app:where(:root:not([data-n19-safe])) #sb_form.sb_form{display:flex!important;align-items:center!important}
+:where(:root:not([data-n19-safe])) #hp_app #sb_form>#sb_form_c,#hp_app:where(:root:not([data-n19-safe])) #sb_form>#sb_form_c{order:1!important;flex:1 1 auto!important}
+:where(:root:not([data-n19-safe])) #hp_app #sb_form>.clear,#hp_app:where(:root:not([data-n19-safe])) #sb_form>.clear{order:4!important}
+:where(:root:not([data-n19-safe])) #hp_app #sb_form>.camera,#hp_app:where(:root:not([data-n19-safe])) #sb_form>.camera{order:5!important}
+:where(:root:not([data-n19-safe])) #hp_app #sb_form>#search_icon,#hp_app:where(:root:not([data-n19-safe])) #sb_form>#search_icon{order:10!important}
+#hp_app #sb_form .mic_cont,#hp_app #sb_form [aria-label*="voice"i],#b_header .b_searchboxForm #sb_voiceSearch_par,#b_header .b_searchboxForm [aria-label*="voice"i]{display:none!important}
 #aitools,.aitools,#sb_form a[href*="copilot"i],#sb_form [aria-label*="Copilot"i],[id*="copilot"i]:not(body):not(html),#b_sydConvCont,.b_hpcopilot,.hp_copilot,#codex,.cib-serp-main,#hp_app #vs_cont>.vs{display:none!important}
 #hp_app .dimmer.hp_focus_overlay{display:none!important}
 .mc_caro,#vs_cont .mc_vtvc,#vs_cont .mc_vtvc_con{border-radius:0!important}
-#b_header .b_searchboxForm{border-radius:0!important;box-shadow:0 0 0 1px rgba(0,0,0,.05), 0 2px 4px 1px rgba(0,0,0,.09)!important}
-:where(:root:not([data-n19-safe])) #b_header .b_searchboxForm #sb_search,#b_header:where(:root:not([data-n19-safe])) .b_searchboxForm #sb_search{order:10!important}
-:where(:root:not([data-n19-safe])) #b_results>li.b_algo,#b_results:where(:root:not([data-n19-safe]))>li.b_algo{display:flex!important;flex-direction:column!important}
+:where(:root:not([data-n19-safe])) #b_header .b_logoArea,#b_header:where(:root:not([data-n19-safe])) .b_logoArea{position:absolute!important;left:58px!important;top:24px!important;width:28px!important;height:36px!important;margin:0!important}
+:where(:root:not([data-n19-safe])) #b_header .b_logoArea .b_logo,#b_header:where(:root:not([data-n19-safe])) .b_logoArea .b_logo{display:block!important;width:28px!important;height:36px!important;margin:0!important;padding:0!important}
+#b_header .b_logoArea .b_logo{background:url("https://www.bing.com/sa/simg/SharedSpriteDesktopRewards_022118.png") 0 0 / 821px 62px no-repeat!important;mask:none!important;-webkit-mask:none!important}
+#b_header .b_logoArea .b_logo>*,#b_header .b_logoArea .b_logo::before,#b_header .b_logoArea .b_logo::after{display:none!important}
+:where(:root:not([data-n19-safe])) #b_header #sb_form,#b_header:where(:root:not([data-n19-safe])) #sb_form{position:relative!important;display:inline-block!important}
+#b_header #sb_form{vertical-align:top!important}
+:where(:root:not([data-n19-safe])) #b_header #sb_form,#b_header:where(:root:not([data-n19-safe])) #sb_form{width:800px!important;height:48px!important}
+:where(:root:not([data-n19-safe])) #b_header .b_searchboxForm #sw_as,#b_header:where(:root:not([data-n19-safe])) .b_searchboxForm #sw_as{position:absolute!important;left:0!important;top:40px!important;width:100%!important;height:0!important}
+:where(:root:not([data-n19-safe])) #b_header .b_searchboxForm #sw_as .sa_as,#b_header:where(:root:not([data-n19-safe])) .b_searchboxForm #sw_as .sa_as{left:0!important;width:100%!important}
+#b_header .b_searchboxForm #sw_as .sa_as{box-shadow:0 2px 4px 0 rgba(0,0,0,.16), 0 0 0 1px rgba(0,0,0,.1)!important;border-radius:0!important}
+:where(:root:not([data-n19-safe])) #b_header #id_h,#b_header:where(:root:not([data-n19-safe])) #id_h{display:flex!important;align-items:center!important}
+:where(:root:not([data-n19-safe])) #b_header #id_h #id_l,#b_header:where(:root:not([data-n19-safe])) #id_h #id_l{order:1!important;display:inline-flex!important;align-items:center!important;width:auto!important;overflow:visible!important}
+:where(:root:not([data-n19-safe])) #b_header #id_h #id_rh_w,#b_header:where(:root:not([data-n19-safe])) #id_h #id_rh_w{order:2!important;margin-left:12px!important}
+:where(:root:not([data-n19-safe])) #b_header .b_searchboxForm,#b_header:where(:root:not([data-n19-safe])) .b_searchboxForm{position:absolute!important;left:100px!important;top:0!important;width:684px!important;max-width:684px!important;height:40px!important;min-height:40px!important;margin:4px 0 0!important}
+#b_header .b_searchboxForm{border-radius:0!important;border:0!important;background:var(--n19-field)!important;box-shadow:0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 0 rgba(0,0,0,.16)!important}
+:where(:root:not([data-n19-safe])) #b_header .b_searchboxForm,#b_header:where(:root:not([data-n19-safe])) .b_searchboxForm{display:flex!important;align-items:center!important}
+#b_header .b_searchboxForm:focus-within{box-shadow:0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 1px rgba(0,0,0,.18)!important}
+:where(:root:not([data-n19-safe])) #b_header .b_searchboxForm #sb_form_q,#b_header:where(:root:not([data-n19-safe])) .b_searchboxForm #sb_form_q{order:1!important;flex:1 1 auto!important;height:30px!important}
+#b_header .b_searchboxForm #sb_form_q{font-size:16px!important}
+:where(:root:not([data-n19-safe])) #b_header .b_searchboxForm #sb_form_q,#b_header:where(:root:not([data-n19-safe])) .b_searchboxForm #sb_form_q{padding:0 0 0 20px!important;margin:0!important}
+#b_header .b_searchboxForm #sb_form_q{font-family:"Segoe UI", Arial, Helvetica, sans-serif!important;color:var(--n19-field-text)!important;background:transparent!important}
+:where(:root:not([data-n19-safe])) #b_header .b_searchboxForm #sb_clt,#b_header:where(:root:not([data-n19-safe])) .b_searchboxForm #sb_clt{order:2!important}
+#b_header .b_searchboxForm #sb_tool_drawer,#b_header .b_searchboxForm .sb_tool,[data-iid="SBAITOOLS"]{display:none!important}
+:where(:root:not([data-n19-safe])) #b_header .b_searchboxForm .search_arrow_icon,#b_header:where(:root:not([data-n19-safe])) .b_searchboxForm .search_arrow_icon{order:11!important;position:static!important;margin:0 10px 0 0!important}
+:where(:root:not([data-n19-safe])) #b_header .b_searchboxForm #sbiarea,#b_header:where(:root:not([data-n19-safe])) .b_searchboxForm #sbiarea,:where(:root:not([data-n19-safe])) #b_header .b_searchboxForm #sb_sbip,#b_header:where(:root:not([data-n19-safe])) .b_searchboxForm #sb_sbip{order:3!important}
+:where(:root:not([data-n19-safe])) #b_header .b_searchboxForm #sb_search,#b_header:where(:root:not([data-n19-safe])) .b_searchboxForm #sb_search,:where(:root:not([data-n19-safe])) #b_header .b_searchboxForm #sb_go_par,#b_header:where(:root:not([data-n19-safe])) .b_searchboxForm #sb_go_par{order:10!important;margin:0 10px 0 4px!important}
+:where(:root:not([data-n19-safe])) #b_header .b_scopebar,#b_header:where(:root:not([data-n19-safe])) .b_scopebar{margin-left:0!important;padding-left:0!important}
+:where(:root:not([data-n19-safe])) #b_header .b_scopebar>ul,#b_header:where(:root:not([data-n19-safe])) .b_scopebar>ul{padding-left:100px!important;margin-left:0!important}
+:where(:root:not([data-n19-safe])) #b_header .b_scopebar li,#b_header:where(:root:not([data-n19-safe])) .b_scopebar li{margin:0!important;padding:0 12px!important}
+#b_header .b_scopebar li{border-bottom:3px solid transparent!important}
+:where(:root:not([data-n19-safe])) #b_header .b_scopebar li:first-child,#b_header:where(:root:not([data-n19-safe])) .b_scopebar li:first-child{margin-left:0!important}
+#b_header .b_scopebar li.b_active{border-bottom-color:#de3700!important}
+#b_header .b_scopebar li a,#b_header .b_scopebar li .b_sp_over_menu,#b_header .b_scopebar li{text-transform:none!important;font-size:13px!important;letter-spacing:0!important;font-family:Arial, Helvetica, sans-serif!important}
+#b_header .b_scopebar li a{color:var(--n19-scopebar)!important;font-weight:400!important}
+#b_header .b_scopebar li.b_active a{color:var(--n19-scopebar)!important;font-weight:600!important}
+#b_header .b_scopebar li::after,#b_header .b_scopebar li a::after{display:none!important}
+#b_header .b_scopebar li svg,#b_header .b_scopebar li .b_sp_icon{display:none!important}
+#b-scopeListItem-copilotsearch,.b_scopebar li:has(>a[href*="/copilotsearch"]),.b_scopebar li:has(>a[href*="copilot"i]){display:none!important}
+:where(:root:not([data-n19-safe])) #b_content,#b_content:where(:root:not([data-n19-safe])){padding-left:100px!important}
+:where(:root:not([data-n19-safe])) #b_tween,#b_tween:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #b_tween_searchTools,#b_tween_searchTools:where(:root:not([data-n19-safe])){margin-left:20px!important}
+#b_tween .sb_count,.sb_count{font-size:12px!important;color:var(--n19-muted)!important}
+:where(:root:not([data-n19-safe])) #b_results>li.b_algo,#b_results:where(:root:not([data-n19-safe]))>li.b_algo{display:flex!important;flex-direction:column!important;padding:10px 20px 0!important;margin-bottom:2px!important}
 :where(:root:not([data-n19-safe])) #b_results>li.b_algo>h2,#b_results:where(:root:not([data-n19-safe]))>li.b_algo>h2{order:-1!important;margin:0 0 2px!important}
 :where(:root:not([data-n19-safe])) #b_results>li.b_algo>.b_wiki_license,#b_results:where(:root:not([data-n19-safe]))>li.b_algo>.b_wiki_license{position:static!important}
-#b-scopeListItem-copilotsearch,.b_scopebar li:has(>a[href*="/copilotsearch"]){display:none!important}
-#b_results>li.b_algo h2 a,#b_results>li.b_algo h2{color:var(--n19-title)!important;font-size:20px!important;line-height:24px!important;font-family:"Segoe UI", Arial, sans-serif!important}
+#b_results>li.b_algo h2 a,#b_results>li.b_algo h2{color:var(--n19-title)!important;font-size:20px!important;line-height:24px!important;font-weight:400!important;font-family:"Segoe UI", Arial, Helvetica, sans-serif!important;text-decoration:none!important}
+#b_results>li.b_algo h2 a:hover{text-decoration:underline!important}
 :where(:root:not([data-n19-safe])) #b_results>li.b_algo .b_tpcn,#b_results:where(:root:not([data-n19-safe]))>li.b_algo .b_tpcn{margin:0!important;height:auto!important}
 #b_results>li.b_algo .b_tpcn .tpic,#b_results>li.b_algo .b_tpcn .tptt{display:none!important}
 :where(:root:not([data-n19-safe])) #b_results>li.b_algo .b_tpcn .tptxt,#b_results:where(:root:not([data-n19-safe]))>li.b_algo .b_tpcn .tptxt{padding:0!important;margin:0!important}
-#b_results>li.b_algo cite{color:var(--n19-url)!important;font-size:14px!important}
-#b_results>li.b_algo .b_caption p{color:var(--n19-snippet)!important;font-size:13px!important;line-height:20px!important}
+#b_results>li.b_algo cite{color:var(--n19-url)!important;font-size:13px!important;line-height:18px!important}
+#b_results>li.b_algo .b_caption p,#b_results>li.b_algo .b_lineclamp2,#b_results>li.b_algo .b_lineclamp3{color:var(--n19-snippet)!important;font-size:13px!important;line-height:18px!important}
 #b_results>li.b_algo,#b_results>li{border-radius:0!important;box-shadow:none!important}
-#imgcrtr_key,#imginspn_key,.b_primary_nav_item:has(>a[href*="/images/create"]),.b_primary_nav_item:has(>a[href*="shorts"i]),.vnt-root,li:has(>a[href*="/videos/shorts"i]){display:none!important}
-#b_header #sb_form,#b_header .b_searchboxForm,.b_searchbox,#b_header .sb_form_ac{border-radius:0!important}
+:where(:root:not([data-n19-safe])) #b_context,#b_context:where(:root:not([data-n19-safe])){margin-left:40px!important}
+#imgcrtr_key,#imginspn_key,.b_primary_nav_item:has(>a[href*="/images/create"]),.b_primary_nav_item:has(>a[href*="shorts"i]),.vnt-root,li:has(>a[href*="/videos/shorts"i]),#sb_feedback_floating,#id_h #id_mobile,#b_results a.b_algoReadMore{display:none!important}
+#b_header #id_l [data-n19-signin]{font:13px/50px Arial, Helvetica, sans-serif;color:var(--n19-scopebar)}
+:where(:root:not([data-n19-safe])) #b_header #id_l [data-n19-signin],#b_header:where(:root:not([data-n19-safe])) #id_l [data-n19-signin]{margin-right:8px}

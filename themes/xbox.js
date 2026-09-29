@@ -1,6 +1,7 @@
 globalThis.net19Theme = {
+  intended: '[data-n19-later], a[aria-label^="Play, play games with" i], uhf-footer-nav-group:is([heading="Browse"], [heading="Microsoft Store"], [heading="Rewards"])',
   keep: 'div:has(> [class*="ProductDetailsHeader-module__backgroundImageContainer"]), .expandableSlider, section.hero > .slides > .slide',
-  later: /^(?:need help\?\s*let['’]s chat|let['’]s chat|chat now|ask copilot|copilot|xbox copilot|gaming copilot)$/i,
+  later: /^(?:user research at xbox|need help\?\s*let['’]s chat|let['’]s chat|chat now|ask copilot|copilot|xbox copilot|gaming copilot)$/i,
 };
 (() => {
   const LIME = { test: c => { const m = /^rgba?\((\d+), (\d+), (\d+)(?:, ([\d.]+))?\)$/.exec(c); return !!m && (m[4] === undefined || +m[4] > .3) && +m[1] >= 120 && +m[1] <= 180 && +m[2] >= 225 && +m[3] <= 50; } };
@@ -95,4 +96,28 @@ globalThis.net19Theme = {
   };
   const scanAgain = () => { for (const el of document.body.querySelectorAll(SEL)) seen.delete(el); scan([document.body]); };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+})();
+(() => {
+  const LATER_NAV = /^(?:Play|Store)$/;
+  const LATER_SECTIONS = /^(?:Xbox Family Settings)$/i;
+  const LATER_TABS = /^(?:Handheld)$/;
+  const mark = () => {
+    for (const section of document.querySelectorAll('section')) {
+      const name = section.getAttribute('aria-label') || section.querySelector('h2, h3')?.textContent || '';
+      if (LATER_SECTIONS.test(name.trim())) section.setAttribute('data-n19-later', '');
+    }
+    for (const tab of document.querySelectorAll('[role="tab"]')) {
+      if (LATER_TABS.test(tab.textContent.trim())) tab.setAttribute('data-n19-later', '');
+    }
+    for (const item of document.querySelectorAll('header .uhf-nav-item.uhf-nav-link[href*="/play"], header button.uhf-nav-item.uhf-dropdown-trigger')) {
+      if (!LATER_NAV.test(item.textContent.trim()) || item.hasAttribute('data-n19-later')) continue;
+      item.setAttribute('data-n19-later', '');
+      const holder = item.parentElement;
+      if (holder && holder.tagName === 'LI' && holder.children.length <= 2) holder.setAttribute('data-n19-later', '');
+    }
+  };
+  let queued = false;
+  const later = () => { if (queued) return; queued = true; setTimeout(() => { queued = false; mark(); }, 250); };
+  const start = () => { mark(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true }); else start();
 })();

@@ -1,0 +1,255 @@
+{
+ "theme": "istockphoto",
+ "era": "2019 iStock (home 2019-01 and search/detail 2019-03 to 2019-10 captures, English-language regional sites): black #0c0d0d header with the white iStock logo, grey nav links and a plain white Sign in, a large hero search over a photo, teal #02a388 accents and buttons, square 2px search field, image grids and the footer with company, support and social links. The same page for every signed-out visitor.",
+ "sources": [
+  {
+   "id": "home-a201901",
+   "url": "https://arquivo.pt/noFrame/replay/20190112152958/https://www.istockphoto.com/au",
+   "date": "2019-01-12",
+   "shows": "home page as served on 2019-01-12 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/istockphoto/istockphoto-home-a201901.png"
+  },
+  {
+   "id": "home2-a201901",
+   "url": "https://arquivo.pt/noFrame/replay/20190112153036/https://www.istockphoto.com/in",
+   "date": "2019-01-12",
+   "shows": "home2 page as served on 2019-01-12 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/istockphoto/istockphoto-home2-a201901.png"
+  },
+  {
+   "id": "home3-a201901",
+   "url": "https://arquivo.pt/noFrame/replay/20190112153204/https://www.istockphoto.com/sg",
+   "date": "2019-01-12",
+   "shows": "home3 page as served on 2019-01-12 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/istockphoto/istockphoto-home3-a201901.png"
+  },
+  {
+   "id": "search-a201910",
+   "url": "https://arquivo.pt/noFrame/replay/20191001050344/https://www.istockphoto.com/au/photos/cloud-sky",
+   "date": "2019-10-01",
+   "shows": "search page as served on 2019-10-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/istockphoto/istockphoto-search-a201910.png"
+  },
+  {
+   "id": "search2-a201910",
+   "url": "https://arquivo.pt/noFrame/replay/20191001050146/https://www.istockphoto.com/au/photos/cycling",
+   "date": "2019-10-01",
+   "shows": "search2 page as served on 2019-10-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/istockphoto/istockphoto-search2-a201910.png"
+  },
+  {
+   "id": "search3-a201910",
+   "url": "https://arquivo.pt/noFrame/replay/20191001050312/https://www.istockphoto.com/au/photos/austria",
+   "date": "2019-10-01",
+   "shows": "search3 page as served on 2019-10-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/istockphoto/istockphoto-search3-a201910.png"
+  },
+  {
+   "id": "detail-a201909",
+   "url": "https://arquivo.pt/noFrame/replay/20190902232447/https://www.istockphoto.com/sg/photo/a-smiling-woman-with-electric-bicycle-in-the-park-wearing-a-helmet-gm942180462-257490928",
+   "date": "2019-09-02",
+   "shows": "detail page as served on 2019-09-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/istockphoto/istockphoto-detail-a201909.png"
+  },
+  {
+   "id": "detail2-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190326201826/https://www.istockphoto.com/ae/photo/abstract-bright-paint-splash-design-gm93459961-3747168",
+   "date": "2019-03-26",
+   "shows": "detail2 page as served on 2019-03-26 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/istockphoto/istockphoto-detail2-a201903.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Search by image or video|Choose with confidence from a library free from AI-generated content|Amazing imagery, always AI free|AI Generator|Generate with AI|Inclusive Storytelling|AI image generator)$",
+   "in2019": false,
+   "evidence": [
+    "home-a201901",
+    "search-a201910"
+   ],
+   "note": "search-by-image, the AI generator and the Inclusive Storytelling hub are not on the 2019 pages; hidden; the AI-free policy messaging (2023) is hidden and the hero gets its 2019 copy, \"Less searching. More finding.\" / \"Discover royalty-free images, illustrations and videos that will make you stand out.\" (home-a201901)",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Do Not Sell or Share|Do Not Sell.*|Your Privacy Choices)$",
+   "in2019": false,
+   "evidence": [
+    "home-a201901"
+   ],
+   "note": "US privacy opt-out link",
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Happiness)$",
+   "in2019": true,
+   "evidence": [
+    "detail-a201909"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Happiness"
+   ]
+  },
+  {
+   "match": "^(Description|Keywords|Save|See\\ full\\ title|standard\\ license)$",
+   "in2019": true,
+   "evidence": [
+    "detail-a201909",
+    "detail2-a201903"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Description",
+    "Keywords",
+    "Save",
+    "See full title",
+    "standard license"
+   ]
+  },
+  {
+   "match": "^(About\\ us|Boards|Careers|Contact\\ us|FAQ|Illustrations|Legal\\ /\\ Privacy|License\\ information|More\\.\\.\\.|Photos|Plans\\ and\\ pricing|Plugins\\ and\\ apps|Pricing|Sell\\ stock|Sign\\ in|Site\\ map|Video|iStock|iStock\\ promo\\ codes|illustrations|images|photos|vectors|video)$",
+   "in2019": true,
+   "evidence": [
+    "detail-a201909",
+    "detail2-a201903",
+    "home-a201901"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "About us",
+    "Boards",
+    "Careers",
+    "Contact us",
+    "FAQ",
+    "Illustrations",
+    "Legal / Privacy",
+    "License information",
+    "More...",
+    "Photos",
+    "Plans and pricing",
+    "Plugins and apps",
+    "Pricing",
+    "Sell stock",
+    "Sign in",
+    "Site map",
+    "Video",
+    "iStock",
+    "iStock promo codes",
+    "illustrations",
+    "images",
+    "photos",
+    "vectors",
+    "video"
+   ]
+  },
+  {
+   "match": "^(Tips\\ and\\ tricks)$",
+   "in2019": true,
+   "evidence": [
+    "detail-a201909",
+    "detail2-a201903",
+    "search-a201910"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Tips and tricks"
+   ]
+  },
+  {
+   "match": "^(Categories|Stock\\ photos|View\\ plans\\ and\\ pricing)$",
+   "in2019": true,
+   "evidence": [
+    "detail-a201909",
+    "home-a201901",
+    "home2-a201901"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Categories",
+    "Stock photos",
+    "View plans and pricing"
+   ]
+  },
+  {
+   "match": "^(People)$",
+   "in2019": true,
+   "evidence": [
+    "detail-a201909",
+    "search-a201910",
+    "search2-a201910"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "People"
+   ]
+  },
+  {
+   "match": "^(Browse\\ all\\ categories|Pets|food|royalty\\-free\\ images)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201901",
+    "home2-a201901",
+    "home3-a201901"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Browse all categories",
+    "Pets",
+    "food",
+    "royalty-free images"
+   ]
+  },
+  {
+   "match": "^(Go\\ to\\ top|Next|Refine|clear)$",
+   "in2019": true,
+   "evidence": [
+    "search-a201910",
+    "search2-a201910",
+    "search3-a201910"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Go to top",
+    "Next",
+    "Refine",
+    "clear"
+   ]
+  },
+  {
+   "match": "^(Breadcrumb|Contributor support|Customer Support|Investor|Newsroom|Search Guide|Stock illustrations|Stock videos|The iStock difference|Get free stock photos, illustrations and videos|Build connections through visual content|English|United States|Facebook|Instagram|Twitter|Pagination page number input|iStock Photos homepage|iStock\\.com|form|text|imagefilm|We looked really hard|But it appears the page you seek doesn't exist anymore\\.|(Photos|Illustrations|Video)Curated content.*)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201901",
+    "home2-a201901",
+    "search-a201910"
+   ],
+   "note": "2019 counterparts: the Photos / Illustrations / Video menus, free image of the week and 'Why iStock', footer company and support links (Investor relations, Press, Contributor support, Customer support, Search tips), language and country pickers, social links, pagination and the site's own 404 page"
+  },
+  {
+   "match": "^(repeated .*|header area|nav area|main area|section area|footer area|search area|form area|article area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201901",
+    "search-a201910"
+   ],
+   "note": "page structure; repeated items are images and keyword links"
+  },
+  {
+   "match": "^[\\w][\\w'’.,:!&?\\- ]{1,70}$",
+   "in2019": true,
+   "evidence": [
+    "search-a201910",
+    "detail-a201909"
+   ],
+   "note": "content: image titles and related keyword links (2019 search pages listed related searches)"
+  }
+ ]
+}

@@ -25,6 +25,8 @@ header#module-uh > div > div:first-child { flex-wrap: wrap !important; justify-c
   padding: 20px 0 0 !important; gap: 0 !important; height: auto !important; }
 #module-uh a[data-ylk*="elm:logo"] { margin: 0 !important; width: 204px !important; height: 58px !important; }
 #module-uh a[data-ylk*="elm:logo"] svg { width: 204px !important; height: 58px !important; fill: var(--n19-logo) !important; color: var(--n19-logo) !important; }
+html:not([data-net19-mode="dark"]) #module-uh a[data-ylk*="elm:logo"] { background: url("https://s.yimg.com/rz/l/yahoo_en-US_f_p_142x37.png") 0 50% / 142px 37px no-repeat !important; }
+html:not([data-net19-mode="dark"]) #module-uh a[data-ylk*="elm:logo"] > * { visibility: hidden !important; }
 #module-uh a[data-ylk*="elm:logo"] > span:has(video), #module-uh a[data-ylk*="elm:logo"] video { display: none !important; }
 #module-uh div:has(> form[role="search"]) { flex: 0 0 630px !important; width: 630px !important; max-width: 630px !important; height: 46px !important; margin-left: 36px !important; }
 #module-uh form[role="search"] { background: var(--n19-page) !important; border: 1px solid var(--n19-field-border) !important; border-radius: 2px !important; box-shadow: none !important;
@@ -125,11 +127,41 @@ body:has(#ybar) :is(section, article, button)[class*="rounded"] { border-radius:
 body#news-content-app main :is(div, section, article, a, img, ul)[class*="rounded-"]:not([class*="rounded-full"]), body#news-content-app aside :is(div, section, a, img)[class*="rounded-"]:not([class*="rounded-full"]) { border-radius: 0 !important; }
 
 body#ysch .sb-scout-wrap, body#ysch #scoutPromoTooltip, body#ysch .scoutNav, body#ysch a[href*="scout.yahoo.com"], body#ysch [data-net19-scout] { display: none !important; }
-body#ysch #search_p > div, body#ysch #sf-root [class*="rounded-[100px]"] { border-radius: 2px !important; border: 1px solid var(--n19-field-border) !important; box-shadow: none !important; background: var(--n19-page) !important; }
-body#ysch #search_p button[aria-label="Search"], body#ysch #search_p button[type="submit"] { border-radius: 0 !important; background: var(--n19-purple) !important; color: #fff !important; width: 54px !important; }
-body#ysch #search_p button[aria-label="Search"] svg, body#ysch #search_p button[type="submit"] svg { fill: #fff !important; color: #fff !important; }
-body#ysch #ysignin { border-radius: 3px !important; }
+body#ysch { --n19-ys-band: #f1f1f1; --n19-ys-line: #e2e2e6; --n19-ys-title: #330099; --n19-ys-url: #006621; --n19-ys-text: #525252; --n19-ys-tab: #b4b4b7; --n19-ys-tab-on: #3f3f3f; --n19-ys-bar: #313050; --n19-ys-button: #542dfe; }
+html[data-net19-mode="dark"] body#ysch { --n19-ys-band: #232a31; --n19-ys-line: #3a434c; --n19-ys-title: #b4a7ff; --n19-ys-url: #6fcf8b; --n19-ys-text: #c3cad1; --n19-ys-tab: #8a939c; --n19-ys-tab-on: #f0f3f5; --n19-ys-bar: #b4a7ff; --n19-ys-button: #6d4bff; }
+body#ysch #hd { background: var(--n19-ys-band) !important; height: 73px !important; min-height: 73px !important; padding: 0 !important; box-shadow: none !important; }
+body#ysch #hd #logo { position: absolute !important; left: auto !important; right: 30px !important; top: 26px !important; transform: none !important; translate: none !important; width: 88px !important; height: 21px !important; margin: 0 !important;
+  background: url("https://s.yimg.com/pv/static/img/logo-201505121856.png") 0 0 / 88px 21px no-repeat !important; font-size: 0 !important; color: transparent !important; overflow: hidden !important; }
+body#ysch #hd #logo > * { display: none !important; }
+body#ysch #hd #sf-root { position: absolute !important; left: 124px !important; margin: 0 !important; transform: none !important; right: auto !important; top: 12px !important; width: 600px !important; max-width: 600px !important; height: 48px !important; }
+body#ysch #search_p > div, body#ysch #sf-root [class*="rounded-[100px]"] { border-radius: 0 !important; border: 1px solid #cacacc !important; border-right: 0 !important; box-shadow: none !important; background: var(--n19-page) !important; height: 48px !important; padding: 0 0 0 12px !important; }
+body#ysch #search_p input { font-size: 18px !important; color: var(--n19-text) !important; }
+body#ysch #search_p button[aria-label="Search"], body#ysch #search_p button[type="submit"] { border-radius: 0 !important; background: var(--n19-ys-button) !important; color: #fff !important; width: 80px !important; min-width: 80px !important; height: 48px !important; margin: -1px -1px -1px 0 !important; }
+body#ysch #search_p button[aria-label="Search"] svg, body#ysch #search_p button[type="submit"] svg { fill: #fff !important; color: #fff !important; width: 22px !important; height: 22px !important; }
+body#ysch #search_p button[aria-label*="voice" i], body#ysch #search_p [aria-label*="voice" i] { display: none !important; }
+body#ysch #hd .hd_nav_item { position: absolute !important; right: 190px !important; top: 24px !important; }
+body#ysch #hd #ysignin { border: 0 !important; border-radius: 0 !important; background: transparent !important; color: #7d7d7f !important; font-size: 13px !important; padding: 0 !important; min-width: 0 !important; height: 25px !important; }
+body#ysch #hd #ysignin .text { color: #7d7d7f !important; font-size: 13px !important; border: 0 !important; border-radius: 0 !important; background: transparent !important; padding: 0 !important; }
+body#ysch #horizontal-bar { border-bottom: 1px solid var(--n19-ys-line) !important; }
+body#ysch #horizontal-bar li.fl-l { margin: 0 26px 0 0 !important; padding: 0 !important; border-bottom: 2px solid transparent !important; }
+body#ysch #horizontal-bar li.fl-l:first-of-type { margin-left: -8px !important; }
+body#ysch #horizontal-bar li.fl-l > a { font-size: 13px !important; font-weight: 700 !important; color: var(--n19-ys-tab) !important; padding: 12px 3px 6px !important; background: transparent !important; border-radius: 0 !important; }
+body#ysch #horizontal-bar li:not(.fl-l) > a, body#ysch #horizontal-bar li:not(.fl-l) > div > a, body#ysch #horizontal-bar .dd-menu > a, body#ysch #horizontal-bar .compJsToggle > a { padding-top: 12px !important; padding-bottom: 6px !important; }
+body#ysch #horizontal-bar li.fl-l.active { border-bottom-color: var(--n19-ys-bar) !important; }
+body#ysch #horizontal-bar li.fl-l.active > a { color: var(--n19-ys-tab-on) !important; }
+body#ysch #hd #yucs-apps { position: absolute !important; right: 140px !important; top: 10px !important; }
+body#ysch #hd #yucs-apps_button { margin-top: 0 !important; top: 0 !important; }
 body#ysch .horizontal-pivots a, body#ysch .compList a { border-radius: 0 !important; background: transparent !important; }
+body#ysch #results { padding-left: 124px !important; }
+body#ysch #web .compTitle a, body#ysch #web h3.title, body#ysch #web h3.title span { color: var(--n19-ys-title) !important; font-size: 18px !important; line-height: 20px !important; font-weight: 400 !important; }
+body#ysch #web .compTitle > a { display: flex !important; flex-direction: column !important; margin: 0 !important; padding: 0 !important; }
+body#ysch #web .compTitle > a > h3 { order: 1 !important; padding: 0 !important; margin: 0 !important; }
+body#ysch #web .compTitle > a > div.p-abs { position: static !important; order: 2 !important; height: auto !important; }
+body#ysch #web .compTitle > a > div.p-abs .algo-favicon, body#ysch #web .compTitle > a > div.p-abs span > span:first-child { display: none !important; }
+body#ysch #web .compTitle > a > div.p-abs span { color: var(--n19-ys-url) !important; font-size: 13px !important; line-height: 16px !important; }
+body#ysch #web .compText p, body#ysch #web .compText { color: var(--n19-ys-text) !important; font-size: 13px !important; line-height: 16px !important; }
+body#ysch #web li .compList a { color: var(--n19-ys-title) !important; font-size: 16px !important; }
+body#ysch #web .genaipaa, body#ysch #web li:has(> .genaipaa), [data-n19-later] { display: none !important; }
 #module-uh #ybar-navigation { position: relative !important; top: auto !important; transform: none !important; }
 :is(div, section):has(> header#module-uh) { height: auto !important; max-height: none !important; }
 button[data-ymp-follows], a[data-ymp-follows], [data-ymp-follows] { display: none !important; }

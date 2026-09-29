@@ -9,3 +9,11 @@ body.skin-vector-legacy :is(#t-urlshortener,#t-urlshortener-qrcode,#t-parsermigr
 body.skin-vector-legacy .mw-parser-output li:has(>div>span[typeof]>a[href*="wikifunctions.org"i]){display:none!important}
 body.skin-vector-legacy #mw-indicator-mediasearchlink{display:none!important}
 html[data-net19-reskin] body{visibility:hidden!important}
+body.skin-vector-legacy :is(.ext-discussiontools-init-pageframe-latestcomment,.ext-discussiontools-init-section-metadata,.ext-discussiontools-init-replylink-buttons,.ext-discussiontools-init-section-overflowMenuButton,.ext-discussiontools-init-section-subscribe,nav[data-n19-empty]){display:none!important}
+body.skin-vector-legacy :is(.mw-advancedSearch-container,#mw-interwiki-results,.mw-search-pager-top,.mw-search-result-ns-0 .searchResultImage-thumbnail){display:none!important}
+:where(:root:not([data-n19-safe])) body.skin-vector-legacy .mw-search-profile-tabs{display:block!important}
+:where(:root:not([data-n19-safe])) body.skin-vector-legacy #p-lang li.interlanguage-link{display:list-item!important}
+body.skin-vector-legacy #p-lang :is(.mw-interlanguage-selector,.uls-settings-trigger){display:none!important}
+body.skin-vector-legacy #p-wikibase-otherprojects li:has(>a[href*="wikifunctions.org"i],>a[href*="outreach.wikimedia.org"i],>a[href^="https://wikisource.org"i]){display:none!important}
+body.skin-vector-legacy :is(#p-AnonymousI18N,#langselectorcontainer,#firstHeading .fastcci-buttonset,#t-catfood,#t-subpages){display:none!important}
+:where(:root:not([data-n19-safe])) body.skin-vector-legacy #p-personal #pt-uls{display:block!important}

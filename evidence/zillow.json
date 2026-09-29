@@ -1,0 +1,117 @@
+{
+ "theme": "zillow",
+ "era": "2019 zillow.com ('Reimagine home' design, May 2019, for every visitor): white header with Buy / Rent / Sell / Home Loans / Agent finder on the left, the blue Zillow logo centered, List your rental / Advertise / Sign in or Join / Help on the right; full-width hero with an Ivar serif 'Reimagine home' and 'We'll help you find a place you'll love.', a single white search field with a blue magnifier; then Buy a home / Sell a home / Rent a home cards; footer About, Zestimates, Research, Careers, Help, Advertise, Terms of use & Privacy, Ad Choice, Mobile Apps, Blog, Facebook and Twitter.",
+ "sources": [
+  {
+   "id": "raw-home-2019-05",
+   "url": "https://arquivo.pt/noFrame/replay/20190522195143id_/https://www.zillow.com/",
+   "date": "2019-05-22",
+   "file": "/home/claude/sweeps/g12-evidence/zillow/home-2019-05-raw.html",
+   "shows": "2019 home HTML: headings Reimagine home, We'll help you find a place you'll love., Buy a home, Sell a home, Rent a home; header and footer links"
+  },
+  {
+   "id": "home-a201905",
+   "url": "https://arquivo.pt/noFrame/replay/20190522195143/https://www.zillow.com/",
+   "date": "2019-05-22",
+   "shows": "home page as served in 2019-05 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/zillow-home-a201905.png"
+  },
+  {
+   "id": "rent-a201905",
+   "url": "https://arquivo.pt/noFrame/replay/20190520104935/https://www.zillow.com/rental-manager/",
+   "date": "2019-05-20",
+   "shows": "rent page as served in 2019-05 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/zillow-rent-a201905.png"
+  },
+  {
+   "id": "rent-a201910b",
+   "url": "https://arquivo.pt/noFrame/replay/20191026010753/https://www.zillow.com/rental-manager/",
+   "date": "2019-10-26",
+   "shows": "rent page as served in 2019-10 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/zillow-rent-a201910b.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Get home recommendations|Sign in for a more personalized experience\\.?|Find homes you can afford with BuyAbility.*|Answer a few questions.*|About Zillow.s Recommendations|Within BuyAbility)$",
+   "in2019": false,
+   "evidence": [
+    "not among the 2019 home headings (raw-home-2019-05); BuyAbility launched in 2023"
+   ],
+   "action": "hidden: data-n19-post"
+  },
+  {
+   "match": "^(Advocacy|Learn|Trulia|StreetEasy|HotPads|Out East|Visit us on Instagram|Visit us on TikTok|Download on the App Store|Get it on Google play)$",
+   "in2019": false,
+   "evidence": [
+    "not in the 2019 footer (home-a201905, rent-a201905)"
+   ],
+   "action": "hidden (later)"
+  },
+  {
+   "match": "^(Applicant Privacy Notice|Fair Housing Guide|Privacy Notice|Cookie Preference|Do not sell or share my personal information|let us know|Affiliated Business Arrangement Disclosure|licenses|NMLS Consumer Access|Licensing Information|§ 442-H New York Standard Operating Procedures|§ New York Fair Housing Notice|Information about brokerage services|Consumer protection notice|Contact Zillow, Inc\\. Brokerage|Equal Housing Opportunity)$",
+   "in2019": false,
+   "evidence": [
+    "not in the 2019 footer (home-a201905)"
+   ],
+   "action": "kept: legal (privacy and fair-housing notices, broker licensing disclosures required in NY and TX)"
+  },
+  {
+   "match": "^(Agent\\ finder|Buy|Home\\ Loans|List\\ your\\ rental|Rent|Sell|Zillow\\ Real\\ Estate|Zillow\\.com\\ homepage|form\\ area|header\\ area|repeated\\ div)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201905"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Agent finder",
+    "Buy",
+    "Home Loans",
+    "List your rental",
+    "Rent",
+    "Sell",
+    "Zillow Real Estate",
+    "Zillow.com homepage",
+    "form area",
+    "header area",
+    "repeated div"
+   ]
+  },
+  {
+   "match": "^(AI|About|Advertise|Careers|Help|Mobile\\ Apps|Research|Sign\\ in|Visit\\ us\\ on\\ Facebook|Zestimates|footer\\ area|nav\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201905",
+    "rent-a201905",
+    "rent-a201910b"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "AI",
+    "About",
+    "Advertise",
+    "Careers",
+    "Help",
+    "Mobile Apps",
+    "Research",
+    "Sign in",
+    "Visit us on Facebook",
+    "Zestimates",
+    "footer area",
+    "nav area"
+   ]
+  },
+  {
+   "match": "^(header area|main|form area|article area|footer area|nav area|Rentals\\. Homes\\. Agents\\. Loans\\.|Reimagine home|Zillow Real Estate|Buy|Rent|Sell|Home Loans|Agent finder|List your rental|Advertise|Help|Sign inSign in|Sign in|Search|Submit Search|About|Zestimates|News|Research|Careers|Terms of use|Ad Choices|AI|Mobile Apps|Zillow\\.com homepage|Visit us on Facebook|Buy a home|Sell a home|Rent a home|Search homes|See your options|Find rentals)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201905",
+    "raw-home-2019-05",
+    "rent-a201905"
+   ],
+   "note": "2019 header, hero (the theme restores 'Reimagine home'), search, Buy / Sell / Rent a home cards and footer ('News' was 'Blog', 'Terms of use' was 'Terms of use & Privacy')"
+  }
+ ]
+}

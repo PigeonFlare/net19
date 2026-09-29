@@ -1,0 +1,172 @@
+{
+ "theme": "shutterstock",
+ "era": "2019 Shutterstock (home 2019-03/07/11, search 2019-04/11 and image pages): white header with the red shutterstock logo, IMAGES / FOOTAGE / MUSIC / EDITORIAL menus, Pricing, Log in and a red Sign up, a full-width photo hero with a large white headline and a white search bar with a red search button, then category tiles and the footer.",
+ "sources": [
+  {
+   "id": "home-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190305234719/https://www.shutterstock.com/",
+   "date": "2019-03-05",
+   "shows": "home page as served on 2019-03-05 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/shutterstock/shutterstock-home-a201903.png"
+  },
+  {
+   "id": "home-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190706212213/https://www.shutterstock.com/",
+   "date": "2019-07-06",
+   "shows": "home page as served on 2019-07-06 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/shutterstock/shutterstock-home-a201907.png"
+  },
+  {
+   "id": "home-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191101215959/https://www.shutterstock.com/",
+   "date": "2019-11-01",
+   "shows": "home page as served on 2019-11-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/shutterstock/shutterstock-home-a201911.png"
+  },
+  {
+   "id": "search-a201904",
+   "url": "https://arquivo.pt/noFrame/replay/20190402071308/https://www.shutterstock.com/search/australia?searchterm=australia&search_group=&search_source=search_form&version=llv1",
+   "date": "2019-04-02",
+   "shows": "search page as served on 2019-04-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/shutterstock/shutterstock-search-a201904.png"
+  },
+  {
+   "id": "search-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191120090339/https://www.shutterstock.com/search/chameleon?missing_image_id=185986961",
+   "date": "2019-11-20",
+   "shows": "search page as served on 2019-11-20 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/shutterstock/shutterstock-search-a201911.png"
+  },
+  {
+   "id": "image-a201910",
+   "url": "https://arquivo.pt/noFrame/replay/20191001100005/https://www.shutterstock.com/image-illustration/aerial-view-space-ecological-disaster-fires-1489282430",
+   "date": "2019-10-01",
+   "shows": "image page as served on 2019-10-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/shutterstock/shutterstock-image-a201910.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Templates|Sound effects|Studios|AI .*|3D|Search Assistant|Get Unlimited.*)$",
+   "in2019": false,
+   "evidence": [
+    "home-a201911",
+    "home-a201907"
+   ],
+   "note": "not in the 2019 menus: Templates (Create, 2021), Sound effects, Studios, the AI tools and 3D; hidden",
+   "action": "hidden"
+  },
+  {
+   "match": "^(About\\ us|Business\\ solutions|Careers|Collections|Coupons|Download|Editorial|Facebook|Images|Instagram|International\\ reseller|Investor\\ relations|Linkedin|Log\\ in|Music|PremiumBeat|Pricing|Privacy\\ policy|Video|Youtube)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "About us",
+    "Business solutions",
+    "Careers",
+    "Collections",
+    "Coupons",
+    "Download",
+    "Editorial",
+    "Facebook",
+    "Images",
+    "Instagram",
+    "International reseller",
+    "Investor relations",
+    "Linkedin",
+    "Log in",
+    "Music",
+    "PremiumBeat",
+    "Pricing",
+    "Privacy policy",
+    "Video",
+    "Youtube"
+   ]
+  },
+  {
+   "match": "^(Search)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "image-a201910",
+    "search-a201904"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Search"
+   ]
+  },
+  {
+   "match": "^(Search\\ by\\ image)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "image-a201910",
+    "search-a201911"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Search by image"
+   ]
+  },
+  {
+   "match": "^(Next)$",
+   "in2019": true,
+   "evidence": [
+    "search-a201904",
+    "search-a201911"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Next"
+   ]
+  },
+  {
+   "match": "^(Previous)$",
+   "in2019": true,
+   "evidence": [
+    "search-a201911"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Previous"
+   ]
+  },
+  {
+   "match": "^(Cart|Search Categories|Select language|footer area|Affiliate/reseller|Press/media)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "search-a201911"
+   ],
+   "note": "2019 header cart, the search bar's category picker, the language picker and the footer; footer Affiliate/Reseller Program and Press/Media links"
+  },
+  {
+   "match": "^(repeated .*|header area|nav area|main area|section area|search area|form area|article area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911"
+   ],
+   "note": "page structure; repeated items are images and categories"
+  },
+  {
+   "match": "^[\\w][\\w'’.,:!&?\\- ]{1,70}$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "search-a201911"
+   ],
+   "note": "content: category and collection names, image titles"
+  }
+ ]
+}

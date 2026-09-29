@@ -7,8 +7,8 @@ section.promo-contain :is(a,span,strong){color:var(--n19-strip-text)!important;f
 :where(:root:not([data-n19-safe])) .nav__top-container form,.nav__top-container:where(:root:not([data-n19-safe])) form{min-height:0!important;max-width:490px!important;height:32px!important}
 .nav__top-container form{border:1px solid var(--n19-field-line)!important;border-radius:15px!important;box-shadow:none!important}
 :where(:root:not([data-n19-safe])) .nav__top-container form input,.nav__top-container:where(:root:not([data-n19-safe])) form input{height:28px!important;padding-top:0!important;padding-bottom:0!important}
-.nav__top-container form input{font-size:13px!important;font-weight:400!important;font-family:Georgia, serif!important}
-.nav__top-container form input::placeholder{font-family:Georgia, serif!important;font-weight:400!important;color:#888!important}
+.nav__top-container form input{font-size:13px!important;font-weight:400!important;font-family:var(--n19-font)!important}
+.nav__top-container form input::placeholder{font-family:var(--n19-font)!important;font-weight:700!important;color:#888!important}
 :where(:root:not([data-n19-safe])) .nav__top-container form button,.nav__top-container:where(:root:not([data-n19-safe])) form button{height:28px!important}
 :where(:root:not([data-n19-safe])) .nav__top-container .logo-contain img,.nav__top-container:where(:root:not([data-n19-safe])) .logo-contain img{height:34px!important;width:auto!important}
 .default-dropdown.menu-dropdown{background:var(--n19-band)!important;border:0!important;box-shadow:none!important}
@@ -27,3 +27,9 @@ main .card__basic{border:1px solid var(--n19-tile-line)!important;background-col
 main h2,main h3{font-family:var(--n19-font)!important;font-weight:400!important;color:var(--n19-text)}
 main a:not([class*="btn"]):not(.card):not(.wag-card):not(.quicklinkcardv1){color:var(--n19-link)}
 main [class*="btn"],main button{border-radius:3px!important}
+#at_close_alert,div#grid-hide:has(a[id^="health-pills-tile"]),#menu-financial-services,#menu-immunizations,#menu-language-switcher,[id^="vaccinations-tile"]{display:none!important}
+.nav__top-container form input,.nav__top-container form input::placeholder{font-family:var(--n19-font)!important}
+:where(:root:not([data-n19-safe])) .nav__main-container,.nav__main-container:where(:root:not([data-n19-safe])){justify-content:center!important}
+#menu-holiday-quick-link{display:none!important}
+.nav__main .nav__main-container>li>:is(a,button) :is(span,strong),.nav__main .nav__main-container>li>:is(a,button){font-size:17px!important;font-weight:400!important}
+:where(:root:not([data-n19-safe])) .nav__main .nav__main-container>li>:is(a,button),.nav__main:where(:root:not([data-n19-safe])) .nav__main-container>li>:is(a,button){padding:0 16px!important}

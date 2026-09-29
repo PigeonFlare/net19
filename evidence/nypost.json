@@ -1,0 +1,139 @@
+{
+  "theme": "nypost",
+  "era": "2019 nypost.com: red header bar with SECTIONS / SEARCH / centered NEW YORK POST logo / TIPS / SIGN UP, photo-led modules with white overlaid headlines, TRENDING NOW rail (same for every visitor)",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://web.archive.org/web/20190916001040/https://nypost.com/",
+      "date": "2019-09-16",
+      "shows": "homepage and HTML: red bar with SECTIONS, SEARCH, centered NEW YORK POST logo, TIPS, SIGN UP; lead photo with white headline, FOLLOW US icons, section modules (Opinion, Metro, Sports, Page Six, Decider, Business, Entertainment, Real Estate, Tech, Living, Fashion, Video, Covers, Horoscopes, Columnists, Trending Now, Now on Page Six), footer (Sections & Features, Covers, Columnists, Horoscopes, Sports Odds, Email Newsletters, Home Delivery, Coupons, Contact Us, Tips, Newsroom, Letters to the Editor, Reprints, Careers, Advertise, Media Kit, Terms of Use, Privacy, Your Ad Choices, Sitemap)",
+      "file": "g7-evidence/nypost/wb-nypost-home.png"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/20190410235954/https://nypost.com/",
+      "date": "2019-04-10",
+      "shows": "homepage (April): same header, FOLLOW US Facebook Twitter Instagram LinkedIn Email, lead + grid",
+      "file": "g7-evidence/nypost/wb-nypost-home-apr.png"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20191206185820/https://nypost.com/2019/09/12/pewdiepie-rescinds-donation-pledge-to-anti-hate-group-after-fan-backlash/",
+      "date": "2019-09",
+      "shows": "article: share icons (Facebook, Twitter, Flipboard, Email, link), red section tag, bold headline, By-line, date, TRENDING NOW ON NYPOST.COM rail with view counts, Read Next, More Stories",
+      "file": "g7-evidence/nypost/wb-nypost-article.png"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/20201112015157/https://nypost.com/search/trump/",
+      "date": "2020-11 (same search design as 2019)",
+      "shows": "search: SEARCH heading, field, REFINE BY Dates / Sections, results count, Sort by Newest / Oldest / Relevance, result rows",
+      "file": "g7-evidence/nypost/wb-nypost-search-2020.png"
+    },
+    {
+      "id": "s5",
+      "url": "https://www.google.com/search?udm=2&q=nypost.com+homepage+2019+screenshot",
+      "date": "searched 2026-09-28",
+      "shows": "Google Images returned only print covers for nypost.com 2019; no independent web screenshots found, so the three Wayback captures (s1-s3, different dates and page types) are the evidence",
+      "file": ""
+    }
+  ],
+  "features": [
+    {
+      "match": "^(banner|header|nav|footer|main|section|article|form|search|aside|dialog|region) area$|^repeated |^(Footer|Legal|Primary Menu Sections)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "page regions and repeated story items"
+    },
+    {
+      "match": "^(New York Post|Sections|Search|Email|Tips|Sign Up|Menu|Close|Toggle navigation)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "2019 red header: SECTIONS, SEARCH, logo, TIPS, SIGN UP (email)"
+    },
+    {
+      "match": "^(Opinion|Metro|Sports|Page Six|Decider|DECIDER|Business|Entertainment|Real Estate|Real estate|Tech|tech|Living|Lifestyle|Fashion|Fashion & Beauty|Video|Videos|Photos|Covers|Horoscopes|Columnists|Trending Now|Now on Page Six|Now on Decider|US News|World News|News|Media|media|Health|Science|Travel|Astrology|Wellness|shopping|Shopping|Alexa.*|post wanted|Page Six Hollywood|The low down|VMAS \\d{4}|Poison Ivy|Out of the blue|History of violence|Trending in Sports|Sports Podcasts|Dear Abby|Common sense\\. No nonsense|The best of everything)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "section module headings and section links (content); 2019 had the same kind of named story modules"
+    },
+    {
+      "match": "^(See All|See More|See all .+|See All .+|See more .+|More .+|Visit decider\\.com|Browse Covers|All Horoscopes|Today's Cover|Front Cover Back Cover|Flip for back cover|Aries|Taurus|Gemini|Cancer|Leo|Virgo|Libra|Scorpio|Sagittarius|Capricorn|Aquarius|Pisces|Apple Podcasts|Spotify|The \\w+ Post)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "module more-links, covers and horoscopes widgets"
+    },
+    {
+      "match": "^(Facebook|Twitter|X|Instagram|LinkedIn|YouTube|Flipboard|Email|WhatsApp|Share|Copy link|Share on .+|Click to .+)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "FOLLOW US and share icons"
+    },
+    {
+      "match": "^(Contact Us|Tips|Newsroom|Letters to the Editor|Reprints|Careers|Advertise|Media Kit|Terms of Use|Privacy|Privacy Policy|Privacy Notice|Your Ad Choices|Sitemap|Accessibility|Home Delivery|Subscribe|Email Newsletters|Newsletters|Coupons|Store|Customer Service|App FAQ & Help|FAQ|Help|Do Not Sell.*|Your Privacy Choices|Cookie.*|Manage .+|Sports Odds|Apps|iPhone App|iPad App|Android Phone|Android Tablet|Contact|Delivery Help|Apps Help|About New York Post|Editorial Standards|Podcasts|Classifieds)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "footer links (2019: Apps iPhone App iPad App Android Phone Android Tablet, Advertise Media Kit Contact, Help/Support Customer Service App FAQ & Help); About/Editorial Standards/Podcasts/Classifieds are company links (legally required privacy-choice links kept)"
+    },
+    {
+      "match": "^(Refine By:?|Type to Search|New York|California|Contributor Content|Crosswords & Games|Personal Finance|Preview|Promotions|Sports Video|Ticket Sales|Dates|Last Week|Last 30 Days|Last Year|Sections|All|Sort by.*|Newest|Oldest|Relevance|\\d[\\d,]* Results|Search Results|Load More|Next|Previous)$",
+      "in2019": true,
+      "evidence": [
+        "s4"
+      ],
+      "note": "search page"
+    },
+    {
+      "match": "^(Recommended|Explore More|Read Next|More Stories|Comments|Post a comment\\.?|\\d+/\\d+/\\d+|Filed under)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "article: Read Next / More Stories related modules, comments, Filed-under tags and date"
+    },
+    {
+      "match": "^(cftc|gambling|Kalshi|lawsuits|Bond No\\. 9|Best saunas|Neck cream|woman sleeping|Charlotte Lawrence|Marc Vartabedian|Steve Cuozzo|Charles Gasparino|Ken Fisher|Ryan King|Geoff Earle|Victor Nava|Zach Braziller)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "today's story tags, product-story teasers and bylines/columnists (content; the inventory cannot tell these short content labels from controls)"
+    },
+    {
+      "match": "^(Subscription Terms|Log in|Post Sports Plus|Try It Free|Play our newest games!|See more games|Sports Betting|TikTok|Snapchat)$",
+      "in2019": false,
+      "evidence": [
+        "NY Post accounts and Sports+ subscription 2023, games 2023, NY sports betting 2022, TikTok/Snapchat accounts after 2019; not in s1-s3"
+      ],
+      "note": "hidden",
+      "action": "hidden"
+    },
+    {
+      "match": "^(?=.{20,}$)(?!(?:Ask AI|Ask the|AI Mode|AI summary|Summarize|Listen to (?:this|the) article|Subscribe|Sign in|Sign up|Log in|Download the app|Get the app)\\b).*\\s.*$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "story headlines, bylines and teasers (content)"
+    }
+  ]
+}

@@ -1,0 +1,312 @@
+{
+ "theme": "trustpilot",
+ "era": "2019 Trustpilot (the June 2018 Venturethree rebrand, unchanged through 2019 for every visitor): navy #000032 72px header with the white star logo, Categories / Log in / Sign up and an outlined 'For companies' button; photo hero with a white bold 'Behind every review is an experience that matters' / 'Read reviews. Write reviews. Find companies.' and a white search box with a square green Search button; white 4px-radius cards on a #f2f2f5 page; Helvetica. No blob shapes, no AI features, no business promos on the home page.",
+ "sources": [
+  {
+   "id": "art-itsnicethat-2018-06",
+   "url": "https://www.itsnicethat.com/news/venturethree-trustpilot-rebrand-graphic-design-130618",
+   "date": "2018-06-13",
+   "file": "/home/claude/sweeps/g12-evidence/trustpilot/int2018-06-5b20e30c7fa44c9d59000479.jpg",
+   "shows": "launch article for the 2018 identity used through 2019: navy header, green star, phone mockup of the consumer home 'Behind every review is an experience that matters' with search field and green search button"
+  },
+  {
+   "id": "art-logodesigner-2018-06",
+   "url": "https://www.logo-designer.co/trustpilot-reveals-new-logo-design/",
+   "date": "2018-06-14",
+   "file": "/home/claude/sweeps/g12-evidence/trustpilot/ld2018-06.png",
+   "shows": "the 2018 logo and site mockups (business site, laptop and tablet)"
+  },
+  {
+   "id": "raw-review-2019-11",
+   "url": "https://arquivo.pt/noFrame/replay/20191101002140id_/https://www.trustpilot.com/review/expressvpn.com",
+   "date": "2019-11-01",
+   "file": "/home/claude/sweeps/g12-evidence/trustpilot/review-2019-11-raw.html",
+   "shows": "the 2019 company page's own UI strings: Claimed / Unclaimed / Asking for reviews status, '[company] activities' box with 'See how [company] uses Trustpilot', 'About Trustpilot' box (We fight fake reviews, our commitment), paid-subscription note, TrustScore with rating distribution, Category and category ranking, contact info (Write to / Call us on / We live here), 'Is this your company?', Filter by Rating / Language, Useful, Share, Verified order, Reviewer contacted"
+  },
+  {
+   "id": "raw-category-2019-10",
+   "url": "https://arquivo.pt/noFrame/replay/20191006234050id_/https://www.trustpilot.com/categories/money_transfer_service",
+   "date": "2019-10-06",
+   "file": "/home/claude/sweeps/g12-evidence/trustpilot/category-2019-10-raw.html",
+   "shows": "the 2019 category page's UI strings: Categories side menu, Filters (Company status, No. of reviews, Time period, Location), results by TrustScore, Recently reviewed, Previous / Next page"
+  },
+  {
+   "id": "cap-evaluate-2019-09",
+   "url": "https://arquivo.pt/noFrame/replay/20190908072101/https://www.trustpilot.com/evaluate/ccm.net",
+   "date": "2019-09-08",
+   "shows": "2019 'evaluate' page: reviewing a company that is not yet on Trustpilot (today's 'Can't find a company? Add company')"
+  },
+  {
+   "id": "category-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190326030917/https://www.trustpilot.com/categories/companies",
+   "date": "2019-03-26",
+   "shows": "category page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/trustpilot-category-a201903.png"
+  },
+  {
+   "id": "category-a201909b",
+   "url": "https://arquivo.pt/noFrame/replay/20190908065558/https://www.trustpilot.com/categories/wellness_center",
+   "date": "2019-09-08",
+   "shows": "category page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/trustpilot-category-a201909b.png"
+  },
+  {
+   "id": "category-a201910c",
+   "url": "https://arquivo.pt/noFrame/replay/20191006234050/https://www.trustpilot.com/categories/money_transfer_service",
+   "date": "2019-10-06",
+   "shows": "category page as served in 2019-10 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/trustpilot-category-a201910c.png"
+  },
+  {
+   "id": "home-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190301064303/https://www.trustpilot.com/",
+   "date": "2019-03-01",
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/trustpilot-home-a201903.png"
+  },
+  {
+   "id": "home-a201907b",
+   "url": "https://arquivo.pt/noFrame/replay/20190702055848/https://www.trustpilot.com/",
+   "date": "2019-07-02",
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/trustpilot-home-a201907b.png"
+  },
+  {
+   "id": "home-a201911c",
+   "url": "https://arquivo.pt/noFrame/replay/20191101025902/https://www.trustpilot.com/",
+   "date": "2019-11-01",
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/trustpilot-home-a201911c.png"
+  },
+  {
+   "id": "review-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190301125156/https://www.trustpilot.com/review/hyperoptic.com",
+   "date": "2019-03-01",
+   "shows": "review page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/trustpilot-review-a201903.png"
+  },
+  {
+   "id": "review-a201907b",
+   "url": "https://arquivo.pt/noFrame/replay/20190701055828/https://www.trustpilot.com/review/hyperoptic.com",
+   "date": "2019-07-01",
+   "shows": "review page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/trustpilot-review-a201907b.png"
+  },
+  {
+   "id": "review-a201911c",
+   "url": "https://arquivo.pt/noFrame/replay/20191101002140/https://www.trustpilot.com/review/expressvpn.com",
+   "date": "2019-11-01",
+   "shows": "review page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/trustpilot-review-a201911c.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(We use cookies|Cookie preferences|Do Not Sell My Info|Modern Slavery Statement)$",
+   "in2019": false,
+   "evidence": [
+    "not in the 2019 footer (home-a201903, category-a201903)"
+   ],
+   "action": "kept: legal (consent dialog, CCPA opt-out, UK Modern Slavery Act statement)"
+  },
+  {
+   "match": "^(Notifications)$",
+   "in2019": false,
+   "evidence": [
+    "2019 header has Categories, Log in, Sign up, For companies only (home-a201903, review-a201903)"
+   ],
+   "action": "hidden (later label + notificationsCentre)"
+  },
+  {
+   "match": "^(Bought something recently\\?.*|What are you looking for\\?|Looking to grow your business\\?|Get started|Help millions make the right choice|Login or sign up|Our new Trust Report has landed!|Take a look|Trust Report|Shop smarter with the Trustpilot app|Download the Trustpilot iOS app|How Trustpilot works|how Trustpilot works|Investor [Rr]elations|Blog for [Bb]usiness|Data Solutions|Legal)$",
+   "in2019": false,
+   "evidence": [
+    "absent from the 2019 home and footer (home-a201903, home-a201907b, home-a201911c); the Trust Report dates from 2021, the IPO (investor relations) from 2021, the iOS app from 2022"
+   ],
+   "action": "hidden: data-n19-post / later"
+  },
+  {
+   "match": "^(Top mentions|This profile was merged.*|At Trustpilot, it's all about human content.*|May use AI-assist with replies|Search by keyword\\.\\.\\.)$",
+   "in2019": false,
+   "evidence": [
+    "not among the 2019 company page's UI strings (raw-review-2019-11): filters were Rating and Language only; AI reply assist and review-topic extraction are 2023+"
+   ],
+   "action": "hidden: data-n19-post / later"
+  },
+  {
+   "match": "^(About|Blog|Business\\ Login|Business\\ login|Contact|For\\ companies|Jobs|Log\\ in|Plans\\ \\&\\ Pricing|Plans\\ \\&\\ pricing|Press|Privacy\\ Policy|Products|Sign\\ up|Support\\ Center|System\\ status|Terms\\ \\&\\ Conditions|Trust\\ in\\ reviews|Trustpilot\\ Business|Trustpilot\\ reviews|User\\ Guidelines|aside\\ area|repeated\\ section|section\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "category-a201903",
+    "category-a201909b",
+    "category-a201910c"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "About",
+    "Blog",
+    "Business Login",
+    "Business login",
+    "Contact",
+    "For companies",
+    "Jobs",
+    "Log in",
+    "Plans & Pricing",
+    "Plans & pricing",
+    "Press",
+    "Privacy Policy",
+    "Products",
+    "Sign up",
+    "Support Center",
+    "System status",
+    "Terms & Conditions",
+    "Trust in reviews",
+    "Trustpilot Business",
+    "Trustpilot reviews",
+    "User Guidelines",
+    "aside area",
+    "repeated section",
+    "section area"
+   ]
+  },
+  {
+   "match": "^(Categories)$",
+   "in2019": true,
+   "evidence": [
+    "category-a201903",
+    "category-a201910c",
+    "home-a201907b"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Categories"
+   ]
+  },
+  {
+   "match": "^(United\\ States)$",
+   "in2019": true,
+   "evidence": [
+    "category-a201903",
+    "home-a201907b",
+    "review-a201907b"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "United States"
+   ]
+  },
+  {
+   "match": "^(Next\\ page|Share|Useful|Write\\ a\\ review|article\\ area|repeated\\ div)$",
+   "in2019": true,
+   "evidence": [
+    "review-a201903",
+    "review-a201907b",
+    "review-a201911c"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Next page",
+    "Share",
+    "Useful",
+    "Write a review",
+    "article area",
+    "repeated div"
+   ]
+  },
+  {
+   "match": "^(nav\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "review-a201903",
+    "review-a201911c"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "nav area"
+   ]
+  },
+  {
+   "match": "^(Find a company you can trust|Behind every review is an experience that matters|Discover, read, and write reviews|Read reviews\\. Write reviews\\. Find companies\\.)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907b",
+    "art-itsnicethat-2018-06"
+   ],
+   "note": "hero heading and subheading; the theme puts the 2019 wording back"
+  },
+  {
+   "match": "^(header area|main area|form area|contentinfo area|search input field|Search suggestion|autocomplete query|Search company or category|Search for a company or category…|Search for another company…|Clear search|Pagination|Page number \\d+|Tooltip|repeated a)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "category-a201910c",
+    "review-a201911c"
+   ],
+   "note": "header, main, footer, the header and hero search fields (2019: 'Search for a company…'), pagination (2019: Next page)"
+  },
+  {
+   "match": "^(For businesses|For companies|About us|About|Help Center|Support Center|Guidelines for Reviewers|User Guidelines|Plans & pricing|Business login|Summary|Overview|Reviews|Visit website|Facebook|Instagram|LinkedIn|Youtube|X)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201907b",
+    "review-a201907b",
+    "category-a201903"
+   ],
+   "note": "2019 labels 'For companies', 'About', 'Support Center', 'User Guidelines', the Overview / Reviews / About tabs, 'Visit this website', the 'Follow us on' social icons; the theme renames the changed words back"
+  },
+  {
+   "match": "^(What we do|We’re Trustpilot)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201911c"
+   ],
+   "note": "the mission section ('Let's upgrade the world' / 'What we stand for' in 2019)"
+  },
+  {
+   "match": "^(Money & Insurance|Banking & Money|Money Transfer Service|Loan Agency|Non-Bank Financial Service|Money Order Service|Financial Institution|Check Cashing Service|Currency Exchange Service|Financial Consultant|Bank|Electronics & Technology|Internet & Software|VPN Service|Breadcrumb|Location|See more|Scroll back|Scroll forward|SCROLL BACK|SCROLL FORWARD)$",
+   "in2019": true,
+   "evidence": [
+    "category-a201910c",
+    "raw-category-2019-10",
+    "raw-review-2019-11"
+   ],
+   "note": "category names and the parent-category link (2019 category page: '< Money & Insurance', Categories side menu, Location filter); a company's Category on its page"
+  },
+  {
+   "match": "^(Info for .*|.+(US|GB|AU|IL|NL|PR|JP|CA|DE|FR|IE|IN|ES|IT)•\\d+ reviews?|Flag this review|How Trustpilot labels reviews)$",
+   "in2019": true,
+   "evidence": [
+    "review-a201903",
+    "review-a201911c",
+    "raw-review-2019-11"
+   ],
+   "note": "reviewer name + review count on every review, Useful / Share / Notify (flag) actions, 'Verified order' label explanation"
+  },
+  {
+   "match": "^(Write a review|Blog)$",
+   "in2019": true,
+   "evidence": [
+    "review-a201903",
+    "home-a201903"
+   ],
+   "note": "Write a review on company pages and Blog in the footer; the header copies of both are hidden (not in the 2019 header)"
+  },
+  {
+   "match": "^(Companies \\(\\d+\\)|Categories \\(\\d+\\)|Can't find a company\\?|Add company|All filters|Rating|Clear|All filtersRating|Got it|Close)$",
+   "in2019": true,
+   "evidence": [
+    "raw-category-2019-10",
+    "raw-review-2019-11",
+    "cap-evaluate-2019-09"
+   ],
+   "note": "search results page ('Show all results' in the 2019 search box), its filters (2019 listing filters and 'Filter by: Rating'), adding a missing company (2019 /evaluate); Got it / Close are the consent banner's buttons"
+  }
+ ]
+}

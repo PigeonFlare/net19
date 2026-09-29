@@ -1,0 +1,240 @@
+{
+ "theme": "gocom",
+ "era": "2019 ABC News (home 2019-07/11 captures) and ABC (abc.go.com 2019-01): ABC News with a white header, the abc NEWS logo, uppercase VIDEO · LIVE · SHOWS · 2020 ELECTIONS, the grid menu and search, a headline list at left, the lead story and a right rail; abc.com dark-only with a black header (Shows, Live, Schedule, Account, More) over a dark page. The same pages for every visitor.",
+ "sources": [
+  {
+   "id": "home-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190301074800/http://abcnews.go.com/",
+   "date": "2019-03-01",
+   "shows": "home page as served on 2019-03-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/gocom/gocom-home-a201903.png"
+  },
+  {
+   "id": "home-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190701223230/https://abcnews.go.com/",
+   "date": "2019-07-01",
+   "shows": "home page as served on 2019-07-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/gocom/gocom-home-a201907.png"
+  },
+  {
+   "id": "home-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191101185117/https://abcnews.go.com/",
+   "date": "2019-11-01",
+   "shows": "home page as served on 2019-11-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/gocom/gocom-home-a201911.png"
+  },
+  {
+   "id": "abc-a201901",
+   "url": "https://arquivo.pt/noFrame/replay/20190102124337/https://abc.go.com/",
+   "date": "2019-01-02",
+   "shows": "abc page as served on 2019-01-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/gocom/gocom-abc-a201901.png"
+  },
+  {
+   "id": "abc-a201904",
+   "url": "https://arquivo.pt/noFrame/replay/20190401100407/https://abc.go.com/",
+   "date": "2019-04-01",
+   "shows": "abc page as served on 2019-04-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/gocom/gocom-abc-a201904.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(TikTok|STREAM NOW|Stream Now|Snap|Try Hulu|Try Disney\\+|Add ABC News as a preferred source.*)$",
+   "in2019": false,
+   "evidence": [
+    "home-a201911",
+    "home-a201907"
+   ],
+   "note": "TikTok and Snap icons, Hulu/Disney+ trials and the Google preferred-source prompt are not on the 2019 pages; hidden; Disney+ and Hulu stream buttons on abc.com (Disney+ launched 2019-11-12, after the 2019 abc.com captures; Hulu links added later) are hidden",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Your Privacy Choices|Your US State Privacy Rights|Do Not Sell.*)$",
+   "in2019": false,
+   "evidence": [
+    "home-a201911"
+   ],
+   "note": "US privacy opt-out links",
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(ABC|COMPANY|Closed\\ Captioning|Company|Company\\ Info|Freeform|Home|Topics|search\\ for\\ a\\ show)$",
+   "in2019": true,
+   "evidence": [
+    "abc-a201901",
+    "abc-a201904"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "ABC",
+    "COMPANY",
+    "Closed Captioning",
+    "Company",
+    "Company Info",
+    "Freeform",
+    "Home",
+    "Topics",
+    "search for a show"
+   ]
+  },
+  {
+   "match": "^(20/20|ABC\\ News|ABC\\.com|About\\ Nielsen\\ Measurement|Children's\\ Online\\ Privacy\\ Policy|Facebook|Good\\ Morning\\ America|Interest\\-Based\\ Ads|Live|NEWS|Privacy\\ Policy|Shows|Terms\\ of\\ Use|U\\.S\\.|news)$",
+   "in2019": true,
+   "evidence": [
+    "abc-a201901",
+    "abc-a201904",
+    "home-a201903"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "20/20",
+    "ABC News",
+    "ABC.com",
+    "About Nielsen Measurement",
+    "Children's Online Privacy Policy",
+    "Facebook",
+    "Good Morning America",
+    "Interest-Based Ads",
+    "Live",
+    "NEWS",
+    "Privacy Policy",
+    "Shows",
+    "Terms of Use",
+    "U.S.",
+    "news"
+   ]
+  },
+  {
+   "match": "^(LEGAL|Shop)$",
+   "in2019": true,
+   "evidence": [
+    "abc-a201904"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "LEGAL",
+    "Shop"
+   ]
+  },
+  {
+   "match": "^(Next)$",
+   "in2019": true,
+   "evidence": [
+    "abc-a201904",
+    "home-a201903",
+    "home-a201907"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Next"
+   ]
+  },
+  {
+   "match": "^(Disney\\+)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Disney+"
+   ]
+  },
+  {
+   "match": "^(ABC\\ News\\ Store|Authors\\ List|Contact\\ Us|Entertainment|Feedback|Health|Image/Video\\ Solicitation\\ Rights\\ Confirmation\\ Terms|International|Nightline|Politics|Press\\ Releases|Recipes|Site\\ Map|Sports|Technology|This\\ Week\\ with\\ George\\ Stephanopoulos|Travel|Video|What\\ Would\\ You\\ Do\\?|World\\ News\\ Now\\ \\&\\ America\\ This\\ Morning|World\\ News\\ Tonight\\ with\\ David\\ Muir|YouTube)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "ABC News Store",
+    "Authors List",
+    "Contact Us",
+    "Entertainment",
+    "Feedback",
+    "Health",
+    "Image/Video Solicitation Rights Confirmation Terms",
+    "International",
+    "Nightline",
+    "Politics",
+    "Press Releases",
+    "Recipes",
+    "Site Map",
+    "Sports",
+    "Technology",
+    "This Week with George Stephanopoulos",
+    "Travel",
+    "Video",
+    "What Would You Do?",
+    "World News Now & America This Morning",
+    "World News Tonight with David Muir",
+    "YouTube"
+   ]
+  },
+  {
+   "match": "^(Share\\ Tips\\ with\\ ABC\\ News)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Share Tips with ABC News"
+   ]
+  },
+  {
+   "match": "^(Business|Instagram|Learn\\ More)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Business",
+    "Instagram",
+    "Learn More"
+   ]
+  },
+  {
+   "match": "^(20/20 on ABC|Good Morning America on ABC|The View on ABC|Dancing with the Stars on ABC|R\\.J\\. Decker on ABC|GMA|Latest from GMA|ABC News App|ABC News on Hulu|ABC Updates|ABCN Logo|ABCNL Prime with Linsey Davis|Advertise [Ww]ith Us|BRANDS|Children's Privacy Policy|DisneyNOW|ESPN|FXNOW|Hulu|NatGeoTV|Download ABC News: .*|FOLLOW US|Global|Help Center & Contact Us|Live TV|Log In Drop-down collapsed|Open Profile|Open local Dropdown|Open shows Dropdown|Site Menu|browse|Pinterest|X \\(formerly Twitter\\)|Trending Stories|Trending Videos|Trump Administration|Read More|Play video|Next articles|Previous articles|Next videos|Previous videos|complementary area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "home-a201907",
+    "abc-a201901"
+   ],
+   "note": "2019 counterparts: the SHOWS menu (GMA, 20/20, The View, World News Tonight), LIVE, the Log In / profile menu, the grid Site Menu, the footer's ABC News Network / Disney brands and app links, Children's Privacy Policy, social links (Twitter), trending lists and carousels, 'Read More' and video play buttons"
+  },
+  {
+   "match": "^(repeated .*|header area|nav area|main area|section area|footer area|search area|form area|article area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "abc-a201901"
+   ],
+   "note": "page structure; repeated items are stories, videos and shows"
+  },
+  {
+   "match": "^(\\d{6,}|.{1,120})$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201911"
+   ],
+   "note": "content: headlines, show titles and video ids (2019 home listed the same kinds of items)"
+  }
+ ]
+}

@@ -8,7 +8,6 @@ header.masthead .logo-link svg,header.masthead svg.logo-inline{color:var(--n19-b
 header.masthead .logo-link svg *,header.masthead svg.logo-inline *{fill:var(--n19-brand)!important}
 :where(:root:not([data-n19-safe])) header.homepage-masthead .logo-link{width:330px!important;height:30px!important}
 :where(:root:not([data-n19-safe])) header.homepage-masthead .logo-link svg{width:330px!important;height:30px!important}
-:where(:root:not([data-n19-safe])) header.masthead:not(.homepage-masthead) .logo-link svg{height:22px!important;width:auto!important}
 :where(:root:not([data-n19-safe])) header.masthead .masthead-date,:where(:root:not([data-n19-safe])) header.masthead .masthead-date span{white-space:nowrap!important}
 header.masthead .masthead-date,header.masthead .masthead-date span{font:400 11px/1.4 var(--n19-font)!important;letter-spacing:.1em!important;text-transform:uppercase!important;color:var(--n19-meta)!important}
 .masthead-subnav .subnav-item-link,.subnav .subnav-item-link{font:400 11px/44px var(--n19-font)!important;letter-spacing:.2em!important;text-transform:uppercase!important;color:#111!important}
@@ -34,7 +33,7 @@ header.masthead .modes-section,.immersive-modes-container,.immersive-modes-onboa
 .section-heading::after,[class*="section-title"]::after{display:none!important}
 .filter-button,.js-filter{border-radius:0!important}
 .post-top .breadcrumb,.post-overline a{font:400 11px/1.4 var(--n19-font)!important;letter-spacing:.2em!important;text-transform:uppercase!important;color:var(--n19-link)!important}
-.post-headline h1.headline,h1.headline.heading-xl{font:700 43px/1.22 var(--n19-font)!important;letter-spacing:0!important;color:var(--n19-text)!important}
+.post-headline h1.headline,h1.headline.heading-xl{font:700 38px/1.22 var(--n19-font)!important;letter-spacing:0!important;color:var(--n19-text)!important}
 :where(:root:not([data-n19-safe])) .post-headline h1.headline,.post-headline:where(:root:not([data-n19-safe])) h1.headline,:where(:root:not([data-n19-safe])) h1.headline.heading-xl{padding-bottom:17px!important}
 .post-headline h1.headline,h1.headline.heading-xl{border-bottom:1px solid var(--n19-rule)!important}
 :where(:root:not([data-n19-safe])) .post-headline h1.headline,.post-headline:where(:root:not([data-n19-safe])) h1.headline,:where(:root:not([data-n19-safe])) h1.headline.heading-xl{margin-bottom:6px!important}
@@ -62,3 +61,19 @@ span.label>.label-text{font:400 11px/1.4 var(--n19-font)!important;letter-spacin
 .answers-search .js-summary-section,.answers-search .results-section:has(.content-disclaimer){display:none!important}
 .answers-search input.js-search-input{border-radius:0!important;border-color:var(--n19-rule)!important}
 .answers-search [class*="trending"] a,.answers-search [class*="trending"] button{border-radius:0!important}
+:where(:root:not([data-n19-safe])) header.masthead{display:grid!important;grid-template-columns:auto minmax(0, 1fr) auto!important;align-items:center!important;column-gap:20px!important;padding:0 20px!important}
+:where(:root:not([data-n19-safe])) header.masthead>.main-section,:where(:root:not([data-n19-safe])) header.masthead>.subnav-section{display:contents!important}
+:where(:root:not([data-n19-safe])) header.masthead>.top-section{grid-column:1 / -1!important;grid-row:2!important;margin:0 -20px!important}
+header.masthead>.top-section{border-top:1px solid #edeeef!important}
+:where(:root:not([data-n19-safe])) header.masthead .logo-link{grid-column:1!important;grid-row:1!important;justify-self:start!important}
+:where(:root:not([data-n19-safe])) header.masthead .masthead-subnav{grid-column:2!important;grid-row:1!important;width:auto!important;justify-self:center!important;min-width:0!important}
+:where(:root:not([data-n19-safe])) header.masthead .masthead-actions{grid-column:3!important;grid-row:1!important;justify-self:end!important}
+header.masthead .masthead-date,header.masthead>.trending-bar-section,.trending-bar-section{display:none!important}
+:where(:root:not([data-n19-safe])) header.homepage-masthead .logo-link,:where(:root:not([data-n19-safe])) header.homepage-masthead .logo-link svg,:where(:root:not([data-n19-safe])) header.masthead .logo-link,:where(:root:not([data-n19-safe])) header.masthead .logo-link svg{width:198px!important;height:18px!important;flex:none!important}
+header.masthead .logo-link svg,header.masthead .logo-link svg *{color:var(--n19-text)!important;fill:var(--n19-text)!important}
+header.masthead .masthead-subnav .subnav-item-link{color:var(--n19-text)!important;line-height:60px!important;letter-spacing:.15em!important}
+:where(:root:not([data-n19-safe])) header.masthead .masthead-subnav .subnav-item-link{padding:0 10px!important}
+section.comments,.inline-backup-paywall,a.subscription-link,button.follow-btn,.follow-button,.social-link.as-snapchat,footer a:has(>img[src*="app-store-badge"]),footer a:has(>img[src*="google-play-badge"]),footer a[href="/app"],footer a[href$="businessinsider.com/app"],footer li:has(>a:is([href="/terms-of-sale"],[href="/code-of-ethics"],[href*="parsintl.com"],[href="/advertising-policies"],[href="/conflict-of-interest-policy"],[href="/coupons-privacy-policy"],[href="/coupons-terms"],[href$="/about-us"],[href="/work-at-business-insider"],[href^="https://advertising.businessinsider"],[href="/contact"],[href="/secure-news-tips"],[href*="press-room"],[href="/awards"],[href="/masthead"],[href="/games"],[href="/category/corrections"],[href="/community-guidelines"],[href*="uses-ai"],[href*="live.businessinsider"],[href$="businessinsider.com/app"])),footer a:is([href="/terms-of-sale"],[href="/code-of-ethics"],[href*="parsintl.com"],[href="/advertising-policies"],[href="/conflict-of-interest-policy"],[href="/coupons-privacy-policy"],[href="/coupons-terms"],[href$="/about-us"],[href="/work-at-business-insider"],[href^="https://advertising.businessinsider"],[href="/contact"],[href="/secure-news-tips"],[href*="press-room"],[href="/awards"],[href="/masthead"],[href="/games"],[href="/category/corrections"],[href="/community-guidelines"],[href*="uses-ai"],[href*="live.businessinsider"]),.masthead-subnav .subnav-item:has(>a:is([href$="/military-defense"],[href*="/military"],[href$="/ai"],[href*="artificial-intelligence"])),.vertical-subnav .subnav-item:has(>a:is([href$="/ai"],[href*="artificial-intelligence"],[href$="/enterprise"],[href$="/innovation"],[href$="/startups"])),.hamburger-menu .accordion-row:has(>span>a:is([href="/games"],[href="/careers"],[href="/parenting"],[href$="/ai"],[href*="/military"])){display:none!important}
+.sub-section-app-store,section.latest-feed header.filters,.vertical-subnav .sub-verticals>a:is([href*="artificial-intelligence"],[href$="/enterprise"],[href$="/innovation"],[href$="/startups"]),.masthead-subnav .subnav-item:has(>a[href$="/defense"]),.hamburger-menu .accordion-row:has(>span>a:is([href$="/defense"],[href*="artificial-intelligence"],[href$="/enterprise"],[href$="/innovation"])){display:none!important}
+.bifrost-entry.bottom{display:none!important}
+[data-n19-later]{display:none!important}

@@ -1,0 +1,230 @@
+{
+ "theme": "clevelandclinic",
+ "era": "The 2017-2020 my.clevelandclinic.org design seen by every visitor in 2019 (no sign-in variant): grey utility row (800.223.2273, MyChart, Need help?, From out of town?, Giving, Careers, SEARCH), logo, plain nav (Find a Doctor, Locations & Directions, Patients & Visitors, Health Library, Institutes & Departments), grey breadcrumb band, large light headline, orange APPOINTMENTS & ACCESS and outlined CONTACT US buttons, white footer with Actions / About Cleveland Clinic / Site Information & Policies columns and a dark 'Call us at' band. Captures from 2019-01 to 2019-11 all agree.",
+ "sources": [
+  {
+   "id": "articleA-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190125120949/https://my.clevelandclinic.org/health/articles/11208-fat-what-you-need-to-know",
+   "date": "2019-01-25",
+   "shows": "articleA page as served in 2019-01 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/clevelandclinic/clevelandclinic-articleA-a201907.png"
+  },
+  {
+   "id": "articleB-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190907115956/https://my.clevelandclinic.org/health/articles/10980-understanding-the-ingredients-in-skin-care-products",
+   "date": "2019-09-07",
+   "shows": "articleB page as served in 2019-09 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/clevelandclinic/clevelandclinic-articleB-a201907.png"
+  },
+  {
+   "id": "articleC-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20191007122309/https://my.clevelandclinic.org/health/articles/11111-nutrition-guidelines-to-improve-wound-healing",
+   "date": "2019-10-07",
+   "shows": "articleC page as served in 2019-10 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/clevelandclinic/clevelandclinic-articleC-a201907.png"
+  },
+  {
+   "id": "disease-wbref",
+   "url": "wayback-2019-ref:https://my.clevelandclinic.org/health/diseases/4314-hypertension-high-blood-pressure",
+   "date": "2019",
+   "shows": "disease page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)",
+   "file": "g11-evidence/clevelandclinic/clevelandclinic-disease-wbref.png"
+  },
+  {
+   "id": "home-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190325120724/https://my.clevelandclinic.org/",
+   "date": "2019-03-25",
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/clevelandclinic/clevelandclinic-home-a201903.png"
+  },
+  {
+   "id": "home-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190713232953/https://my.clevelandclinic.org/",
+   "date": "2019-07-13",
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/clevelandclinic/clevelandclinic-home-a201907.png"
+  },
+  {
+   "id": "home-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191123091034/https://my.clevelandclinic.org/",
+   "date": "2019-11-23",
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/clevelandclinic/clevelandclinic-home-a201911.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Medical Professionals|Closures & Updates|Let.s Chat!?|Show services|Sign Up Today|Subscribe to Cleveland Clinic Health Essentials|Better health starts here|100 Years of Cleveland Clinic|Virtual Second Opinions|Virtual Visits|MyClevelandClinic|Appointments & Locations|Request an Appointment|Advertising Policy|Social Media Policy|Advertisement|Medically Reviewed\\..*|Locations:|Abu Dhabi|Canada|Florida|London|Nevada|Ohio)$",
+   "in2019": false,
+   "evidence": [
+    "absent from the 2019 header, pages and footer (home-a201903, home-a201911, articleA-a201907, disease-wbref); the locations switcher, closures alert, chat, ads, newsletter footer, centennial link and medically-reviewed badge are 2020-2023 additions"
+   ],
+   "action": "hidden (theme later labels and data-n19-later marks)"
+  },
+  {
+   "match": "^(Find a ProviderNeed.*|LocationsFind any.*|AppointmentsGet the.*)$",
+   "in2019": false,
+   "evidence": [
+    "the 2019 footer had no CTA cards (home-a201911 screenshot)"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^(Price Transparency|Non-Discrimination and Availability)$",
+   "in2019": false,
+   "evidence": [
+    "CMS price transparency rule (2021) and the current non-discrimination notice (2019 footer: Non-Discrimination Notice)"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(repeated\\ h3)$",
+   "in2019": true,
+   "evidence": [
+    "articleA-a201907",
+    "articleB-a201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "repeated h3"
+   ]
+  },
+  {
+   "match": "^(800\\.223\\.2273|About\\ This\\ Website|About\\ Us|Accepted\\ Insurance|Articles|Careers|Consult\\ QD|Copyright,\\ Reprint\\ \\&\\ Licensing|Events\\ Calendar|Financial\\ Assistance|Find\\ a\\ Doctor|For\\ Employees|Giving|Health\\ Essentials|Health\\ Library|Home|Institutes\\ \\&\\ Departments|Locations|Locations\\ \\&\\ Directions|Make\\ a\\ Donation|MyChart|Newsroom|Notice\\ of\\ Privacy\\ Practices|Patient\\ Experience|Patients\\ \\&\\ Visitors|Pay\\ Your\\ Bill|Phone\\ Directory|Privacy\\ Policy|Quality\\ \\&\\ Patient\\ Safety|Refer\\ a\\ Patient|References|Research\\ \\&\\ Innovations|Resources\\ for\\ Medical\\ Professionals|Search|Send\\ Us\\ Feedback|Website\\ Terms\\ of\\ Use|nav\\ area|section\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "articleA-a201907",
+    "articleB-a201907",
+    "articleC-a201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "800.223.2273",
+    "About This Website",
+    "About Us",
+    "Accepted Insurance",
+    "Articles",
+    "Careers",
+    "Consult QD",
+    "Copyright, Reprint & Licensing",
+    "Events Calendar",
+    "Financial Assistance",
+    "Find a Doctor",
+    "For Employees",
+    "Giving",
+    "Health Essentials",
+    "Health Library",
+    "Home",
+    "Institutes & Departments",
+    "Locations",
+    "Locations & Directions",
+    "Make a Donation",
+    "MyChart",
+    "Newsroom",
+    "Notice of Privacy Practices",
+    "Patient Experience",
+    "Patients & Visitors",
+    "Pay Your Bill",
+    "Phone Directory",
+    "Privacy Policy",
+    "Quality & Patient Safety",
+    "Refer a Patient",
+    "References",
+    "Research & Innovations",
+    "Resources for Medical Professionals",
+    "Search",
+    "Send Us Feedback",
+    "Website Terms of Use",
+    "nav area",
+    "section area"
+   ]
+  },
+  {
+   "match": "^(Appointments\\ \\&\\ Access)$",
+   "in2019": true,
+   "evidence": [
+    "articleA-a201907",
+    "articleC-a201907",
+    "disease-wbref"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Appointments & Access"
+   ]
+  },
+  {
+   "match": "^(Cleveland\\ Clinic\\ logo|Community\\ Commitment)$",
+   "in2019": true,
+   "evidence": [
+    "articleB-a201907",
+    "articleC-a201907",
+    "disease-wbref"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Cleveland Clinic logo",
+    "Community Commitment"
+   ]
+  },
+  {
+   "match": "^(Diagnosis\\ and\\ Tests|High\\ Blood\\ Pressure\\ \\(Hypertension\\)|Management\\ and\\ Treatment|Overview|What\\ Is\\ High\\ Blood\\ Pressure\\?)$",
+   "in2019": true,
+   "evidence": [
+    "disease-wbref"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Diagnosis and Tests",
+    "High Blood Pressure (Hypertension)",
+    "Management and Treatment",
+    "Overview",
+    "What Is High Blood Pressure?"
+   ]
+  },
+  {
+   "match": "^(research)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "research"
+   ]
+  },
+  {
+   "match": "^(Actions|About Cleveland Clinic|Site Information & Policies|Blog, News & Apps|Pay Your Bill|Pay Your Bill Online|Call: 800\\.223\\.2273|Facebook icon|X icon|Instagram icon|YouTube icon|LinkedIn icon|Follow Cleveland Clinic|Site Header)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "home-a201903"
+   ],
+   "note": "2019 footer (home-a201911 screenshot): Actions, Blog, News & Mobile Apps, About Cleveland Clinic, Site Information & Policies columns, 'Call us at 800.223.2273', social icons Facebook, Twitter, YouTube, Instagram, LinkedIn, Pinterest, Snapchat; header"
+  },
+  {
+   "match": "^(Care at Cleveland Clinic|Find a Primary Care Provider|Schedule an Appointment|Experts You Can Trust|View Sources|Diseases & Conditions|Outlook / Prognosis|Symptoms and Causes|What Is High Blood Pressure\\?|Diagnosis and Tests|Management and Treatment|Contents|Additional Common Questions|A note from Cleveland Clinic)$",
+   "in2019": true,
+   "evidence": [
+    "disease-wbref",
+    "articleA-a201907"
+   ],
+   "note": "2019 article pages had the appointment CTAs (Appointments & Access, Contact Us, styled the same way here), a References block (now View Sources), a Disease & Conditions breadcrumb and section tabs (Overview, Diagnosis and Tests, Management and Treatment, Living With); article section headings are article content"
+  },
+  {
+   "match": "^(Fats|What are fats\\?|What are the types of fats\\?|repeated .*|article area|section area)$",
+   "in2019": true,
+   "evidence": [
+    "articleA-a201907"
+   ],
+   "note": "content of the audited article (its 2019 version 'Fat: What You Need to Know' is articleA) and page regions"
+  }
+ ]
+}

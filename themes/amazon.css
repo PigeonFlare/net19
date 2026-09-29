@@ -20,6 +20,7 @@ body, body #a-page { font-family: Arial, sans-serif !important; }
 #navbar-main #nav-main { height: 44px !important; overflow: visible !important; }
 #nav-main #nav-hamburger-menu { z-index: 2 !important; position: absolute !important; left: 8px !important; top: -46px !important; width: 38px !important; height: 38px !important; padding: 0 !important; margin: 0 !important;
   display: flex !important; align-items: center !important; justify-content: center !important; border: 1px solid transparent !important; border-radius: 2px !important; box-sizing: border-box !important; }
+#nav-main #nav-hamburger-menu { border-color: rgba(255,255,255,.55) !important; }
 #nav-main #nav-hamburger-menu:hover { border-color: #fff !important; }
 #nav-main #nav-hamburger-menu .hm-icon { display: block !important; margin: 0 !important; flex: none !important; }
 #nav-main #nav-hamburger-menu .hm-icon-label { display: none !important; }
@@ -96,10 +97,40 @@ a.a-link-normal:hover .a-text-normal, h2 a.a-link-normal:hover, #bylineInfo:hove
 .page-wrapper.hero-banner > .fs-page-container > :is(h1, h2, p, div:not([class*="card"])) { color: var(--n19-text) !important; }
 .page-wrapper.hero-banner .fs-heading { font-size: 28px !important; font-weight: 400 !important; }
 [data-testid="grid-filter-bar"] button, [class*="FilterPill"], [class*="filter-pill"] { border-radius: 3px !important; }
-#navbar-main #navbar #nav-main { z-index: 6 !important; background: transparent !important; pointer-events: none !important; }
+#navbar-main #navbar #nav-main { z-index: 250 !important; background: transparent !important; pointer-events: none !important; }
 #navbar-main #nav-main > *, #navbar-main #nav-main .nav-fill, #navbar-main #nav-main #nav-xshop { pointer-events: none !important; }
 #navbar-main #nav-main :is(a, button, [role="button"], input, select) { pointer-events: auto !important; }
 #navbar-main { background: var(--n19-nav) !important; }
 #navbar-main #nav-main > .nav-fill { position: relative !important; overflow: hidden !important; height: 44px !important; }
 #navbar-main #nav-main #nav-xshop { overflow: hidden !important; height: 44px !important; }
-#nav-main > .nav-right:has(> #nav-swmslot) { position: absolute !important; right: 0 !important; top: -52px !important; height: 52px !important; display: flex !important; align-items: center !important; }
+#nav-main { position: relative !important; }
+#nav-main > .nav-right { position: absolute !important; right: 10px !important; top: -45px !important; height: 40px !important; display: flex !important; align-items: center !important; }
+#nav-swmslot, #nav-swmslot #swm-link { height: auto !important; display: flex !important; align-items: center !important; }
+#nav-swmslot #swm-link { color: var(--n19-nav-text) !important; font-size: 21px !important; font-weight: 400 !important; letter-spacing: 0 !important; text-decoration: none !important; white-space: nowrap !important; }
+#nav-belt > .nav-right, #nav-belt #nav-tools { z-index: 3 !important; }
+#nav-orders .nav-line-1 { display: none !important; }
+#nav-belt #nav-tools > #nav-orders { height: 26px !important; margin-top: 14px !important; padding-top: 0 !important; display: flex !important; align-items: center !important; }
+#nav-belt #nav-tools > #nav-orders .nav-line-2 { margin: 0 !important; height: auto !important; }
+#compatibilityContainerDesktop, #compatibilityFinder_feature_div, #buyingOptionRipersBadge_feature_div, #productOverview_feature_div,
+[id="p_36/range-slider"], [id^="topRefinements/"], #p_n_deal_type-title, #filter-p_n_deal_type,
+[data-component-type="s-messaging-widget-results-header"],
+.s-main-slot :is([data-csa-c-content-id="s-search-add-to-cart-action"], .atc-btn-container, .s-pc-faceout-container, .s-color-swatch-container, [data-csa-c-content-id="color-swatch-more-link"]) { display: none !important; }
+#s-refinements { border-right: 1px solid var(--n19-divider) !important; padding-right: 14px !important; }
+#nav-xshop { flex-wrap: nowrap !important; overflow: hidden !important; }
+#nav-xshop li:has(> a:is([href*="/pharmacy" i], [href*="haul" i], [href*="luxury" i])) { display: none !important; }
+#navFooter :is(td, li):has(> a[href*="veeqo"], > a[href*="blinkforhome"]) { visibility: hidden !important; }
+[class*="_badgeDskLink_"], .s-pc-badge, [data-n19-over] { display: none !important; }
+#dp :is(.a-carousel-heading, .a-carousel-header-row h2), #dp-container :is(.a-carousel-heading, .a-carousel-header-row h2) { color: #c45500 !important; font-family: Arial, sans-serif !important; font-size: 17px !important; font-weight: 700 !important; }
+html[data-net19-mode="dark"] #dp :is(.a-carousel-heading, .a-carousel-header-row h2) { color: #f08804 !important; }
+.s-main-slot :is(a[aria-label="product-detail"], a[title="product-detail"]):not(:has(img)) { display: none !important; }
+:is(#apex_desktop, #corePriceDisplay_desktop_feature_div, #corePrice_desktop) .a-price[data-a-size] { font-size: 17px !important; line-height: 21px !important; color: var(--n19-price) !important; }
+:is(#apex_desktop, #corePriceDisplay_desktop_feature_div, #corePrice_desktop) .a-price[data-a-size] :is(.a-price-symbol, .a-price-whole, .a-price-decimal, .a-price-fraction) {
+  font-size: 17px !important; line-height: 21px !important; top: 0 !important; vertical-align: baseline !important; position: static !important; color: var(--n19-price) !important; }
+:is(#apex_desktop, #corePriceDisplay_desktop_feature_div, #corePrice_desktop) .a-price[data-a-size] .a-price-decimal { display: inline !important; width: auto !important; height: auto !important; opacity: 1 !important; }
+#nav-subnav { height: 40px !important; border-bottom: 1px solid var(--n19-divider) !important; }
+#nav-subnav .nav-a { font-size: 14px !important; height: 40px !important; line-height: 40px !important; }
+#nav-subnav .nav-a .nav-a-content { font-size: 14px !important; }
+#nav-subnav .nav-a.nav-b .nav-a-content { font-weight: 700 !important; }
+#s-refinements .puis-bold-weight-text { font-weight: 700 !important; }
+header#navbar-main { position: relative !important; z-index: 300 !important; }
+.s-main-slot [class*="_c2Itd_"] { font-family: "Amazon Ember", Arial, sans-serif !important; }

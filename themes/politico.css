@@ -1,7 +1,7 @@
 html { --n19-red: #dc0228; --n19-kicker: #b70000; --n19-text: #000; --n19-sub: #666; --n19-meta: #696d70; --n19-rule: #e8e8e8; --n19-bar: #000; --n19-bar-text: #fff;
   --n19-page: #fff; --n19-link: #0a7cc4;
   --pol19-sans: "din-2014", "Helvetica Neue", Helvetica, Arial, sans-serif; --pol19-serif: Georgia, Times, "Times New Roman", serif; }
-html[data-net19-mode="dark"] { --n19-red: #ff3b52; --n19-kicker: #ff5a5a; --n19-text: #eee; --n19-sub: #bbb; --n19-meta: #a0a4a7; --n19-rule: #333; --n19-bar: #000; --n19-bar-text: #fff;
+html[data-net19-mode="dark"] { --n19-red: #e8142f; --n19-kicker: #ff5a5a; --n19-text: #eee; --n19-sub: #bbb; --n19-meta: #a0a4a7; --n19-rule: #333; --n19-bar: #000; --n19-bar-text: #fff;
   --n19-page: #121212; --n19-link: #5fb4ec; }
 
 header#js-top-header.header { background: var(--n19-page) !important; border-bottom: none !important; }
@@ -45,3 +45,4 @@ p[data-testid="plain-text-block"] a:hover { text-decoration: underline !importan
 [data-testid="site-caption"] { font-family: var(--pol19-sans) !important; color: var(--n19-sub) !important; }
 [data-testid="google-preferred-source-button"], [data-testid*="audio-player"], [data-testid*="ai-summary"] { display: none !important; }
 [data-testid*="share"] :is(a, button) { border-radius: 0 !important; }
+.homepageNav, .articleNav, header#js-top-header .actions-lineup__item:has(> a:is([href*="politico.eu"], [href*="eenews.net"])), header nav li:has(> a:is([href="https://www.politico.eu"], [href*="eenews.net"])) { display: none !important; }

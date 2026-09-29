@@ -1,0 +1,162 @@
+{
+  "theme": "bbc",
+  "era": "2019 BBC: black ORB bar on bbc.com (BBC blocks, BBC Account, sections, Search), red BBC NEWS masthead and nav on /news, Helvetica/Reith-free bold headlines (same for every visitor)",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.google.com/search?udm=2&q=bbc.com+news+website+2019+screenshot",
+      "date": "2019",
+      "shows": "Google Images: Press Gazette 2019 'BBC could do more to link…' BBC News homepage (Oct 2019), Version Museum BBC history: ORB bar with BBC blocks, red NEWS bar",
+      "file": "g7-evidence/bbc/gimg-home.jpg"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.webdesignmuseum.org/gallery/bbc-in-2019",
+      "date": "2019",
+      "shows": "bbc.com homepage 2019: black ORB bar (BBC blocks, BBC Account, Home News Sport Weather Shop Reel Travel Capital Culture More, Search), 'Welcome to BBC.com' and dated promo grid",
+      "file": "g7-evidence/bbc/wdm-2019.jpg"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20190916000225/https://www.bbc.com/",
+      "date": "2019-09-16",
+      "shows": "bbc.com homepage: ORB bar, Welcome to BBC.com, News / Sport / Weather / Reel / Worklife / Travel / Future / Culture sections, Most watched / Most read, footer (Terms of Use, About the BBC, Privacy Policy, Cookies, Accessibility Help, Parental Guidance, Contact the BBC, Get Personalised Newsletters, Advertise with us, AdChoices, BBC in other languages, BritBox)",
+      "file": "g7-evidence/bbc/wb-bbc-home.png"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/20190916000202/https://www.bbc.com/news",
+      "date": "2019-09-16",
+      "shows": "BBC News home: red NEWS masthead and nav (Home Video World US & Canada UK Business Tech Science Stories Entertainment & Arts Health In Pictures Reality Check World News TV More), lead + grid with time and section tags, Most read, Most watched",
+      "file": "g7-evidence/bbc/wb-bbcnews-home.png"
+    },
+    {
+      "id": "s5",
+      "url": "https://web.archive.org/web/20190411004427/https://www.bbc.com/news",
+      "date": "2019-04-11",
+      "shows": "BBC News home (April): same masthead, LIVE label, lead, grid",
+      "file": "g7-evidence/bbc/wb-bbc-news-home-apr.png"
+    },
+    {
+      "id": "s6",
+      "url": "https://web.archive.org/web/20190918/https://www.bbc.com/news/business-49708220",
+      "date": "2019-09",
+      "shows": "news article: section nav, 32px bold headline, date, share panel (Facebook, Messenger, Twitter, Email, LinkedIn), body, Related Topics, More on this story",
+      "file": "g7-evidence/bbc/wb-bbc-article.png"
+    },
+    {
+      "id": "s7",
+      "url": "https://web.archive.org/web/20191209120944/https://www.bbc.co.uk/search?q=brexit",
+      "date": "2019-12",
+      "shows": "search: wide field with search button, Filter tabs All / News / Programmes / Newsround / Sport / Newsbeat / More Filters, result rows with date, thumbnail, title, snippet",
+      "file": "g7-evidence/bbc/wb-bbc-search.png"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|nav|footer|main|section|article|form|search|aside|dialog|region) area$|^repeated ",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4"
+      ],
+      "note": "page regions and repeated story items"
+    },
+    {
+      "match": "^(BBC|BBC Homepage|Open menu|Close menu|Menu|Search|Search BBC|Search the BBC|Sign In|BBC Account|Your account|Home|News|Sport|Business|Technology|Tech|Health|Culture|Arts|Travel|Earth|Future|Worklife|Reel|Video|Audio|Sounds|Weather|More)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "ORB bar and main navigation (Earth = BBC Future/Future Planet, Audio = Sounds, Video = Reel)"
+    },
+    {
+      "match": "^(World|US & Canada|UK|Africa|Asia|Australia|Europe|Latin America|Middle East|In Pictures|Science|Entertainment & Arts|Stories|Reality Check|World News TV|Innovation|Market Data|Global Trade|Companies|Entrepreneurship|Technology of Business|Economy|England|Scotland|Wales|N\\. Ireland|Politics)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "BBC News sub-navigation"
+    },
+    {
+      "match": "^(News|Most watched|Most read|Must watch|Documentaries|Latest|Features|Watch|More news|Related|More on this story|Related Topics|Top Stories|Only from the BBC|Also in news|Sport|Business|Culture|Travel|Future|Earth|Video|Health|Technology|Science|Arts|Innovation|In History)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4"
+      ],
+      "note": "homepage section headings over story lists (content); 'Most watched' / 'Most read' in s3/s4"
+    },
+    {
+      "match": "^(Previous Page|Next Page|Previous|Next)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s4"
+      ],
+      "note": "carousel arrows (2019 video strip arrows)"
+    },
+    {
+      "match": "^(Terms of Use|About the BBC|Privacy Policy|Cookies|Accessibility Help|Parental Guidance|Contact the BBC|Advertise with us|AdChoices|Ad choices|Do not share or sell my info|BBC in other languages|BritBox|BBC Shop|BBC.com Help & FAQs|Content Index|Get Personalised Newsletters|Weather)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "footer links (legally required privacy-choice link kept)"
+    },
+    {
+      "match": "^Follow BBC on (x|twitter|facebook|instagram|linkedin|youtube)$",
+      "in2019": true,
+      "evidence": [
+        "s6"
+      ],
+      "note": "social links (2019 share panel had Facebook, Messenger, Twitter, Email, LinkedIn)"
+    },
+    {
+      "match": "^(Share|Save|Copy link|Facebook|Twitter|X|Email|LinkedIn|Messenger|WhatsApp|Close share panel|Share this with .+|\\d+ (hours?|mins?|days?) ago|\\d+ \\w+ \\d{4}|Image caption.*|Getty Images|Reuters|EPA|PA Media)$",
+      "in2019": true,
+      "evidence": [
+        "s6"
+      ],
+      "note": "article share panel, time and captions"
+    },
+    {
+      "match": "^(Subscribe to BBC to continue|Subscribe|See all subscription benefits|Your subscription includes|Best value)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "bbc.com subscription prompt: 2019 bbc.com already carried subscription upsells (BritBox 'Start your free trial' / 'We invite you to try BritBox' in s3); the 2025 US paywall dialog is access control and is kept on purpose, not restyled away"
+    },
+    {
+      "match": "^(All|Clear|News|Programmes|Newsround|Sport|Newsbeat|More Filters|Filter|Search results for .+|Show more|Load more)$",
+      "in2019": true,
+      "evidence": [
+        "s7"
+      ],
+      "note": "search filters"
+    },
+    {
+      "match": "^(Live|BBC InDepth|BBC Verify|Set Preferred Source|Subscription Terms|Follow BBC on tiktok)$",
+      "in2019": false,
+      "evidence": [
+        "BBC Live nav and Documentaries 2025, BBC Verify 2023, BBC InDepth 2023, bbc.com subscriptions 2025, preferred-source 2025, TikTok account 2020; none in s2-s6"
+      ],
+      "note": "hidden",
+      "action": "hidden"
+    },
+    {
+      "match": "^(?=.{20,}$)(?!(?:Ask AI|Ask the|AI Mode|AI summary|Summarize|Listen to (?:this|the) article|Subscribe|Sign in|Sign up|Log in|Download the app|Get the app)\\b).*\\s.*$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4",
+        "s6"
+      ],
+      "note": "story headlines and teasers (content)"
+    }
+  ]
+}

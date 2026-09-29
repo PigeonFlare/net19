@@ -10,3 +10,12 @@ body, body :not(svg, svg *, i, [class*="icon" i]) { font-family: "Helvetica Neue
 #header-content button[data-testid^="Search"] { background: var(--n19-link) !important; border-radius: 0 !important; min-width: 44px !important; height: 40px !important; align-self: stretch !important; }
 #header-content button[data-testid^="Search"] svg { color: #fff !important; fill: #fff !important; }
 main [class*="MuiCard"], main a:has(> img), main a img, main div:has(> #image-container) { border-radius: 0 !important; }
+a:has(> [data-testid="AnnouncementBanner"]), [data-testid="AnnouncementBanner"],
+:is([data-testid="Link_While Supplies Last"], [data-testid="Link_Online-Only"], [data-testid="Link_Treasure Hunt"], [data-testid="Link_What's New"], [data-testid="Link_Member Favorites"], [data-testid="Link_Recommendations for You"], [data-testid="ordersAndReturns"]),
+nav[aria-label="Main"] li:has(a:is([href*="sameday.costco.com"], [href^="/s?keyword=OFF"])) { display: none !important; }
+:is([data-testid="Link_Get Email Offers"], [data-testid="Link_Customer Service"]) { font-size: 15px !important; color: var(--n19-link) !important; }
+[data-testid="Link_homepagelink_SearchStrip"] :is(img, svg) { width: 205px !important; height: auto !important; max-height: 60px !important; }
+nav[aria-label="Main"] :is(a, button, span, p, div) { font-size: 15px !important; }
+div:has(> [role="region"][aria-label="Email Sign Up Form"]), [role="region"][aria-label="Email Sign Up Form"] { display: none !important; }
+body:has([aria-label="Email Sign Up Form"]) { overflow: auto !important; padding-right: 0 !important; }
+[data-testid^="CriteoAdSet"], [role="region"][aria-label="Sponsored Products"] { display: none !important; }

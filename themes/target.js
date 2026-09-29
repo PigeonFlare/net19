@@ -28,6 +28,7 @@ globalThis.net19Theme = {};
 })();
 (() => {
   const fix = () => {
+    for (const input of document.querySelectorAll('input[data-test*="SearchInput"]')) if (input.placeholder && input.placeholder !== 'Search') input.placeholder = 'Search';
     const link = document.querySelector('a[data-test="@web/GlobalHeader/UtilityHeader/TargetCircleCard"]');
     if (!link) return;
     if (!/^\s*Target Circle\W*Card\s*$/.test(link.textContent)) return;

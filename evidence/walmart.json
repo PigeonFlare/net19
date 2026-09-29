@@ -1,0 +1,207 @@
+{
+  "theme": "walmart",
+  "era": "2019 walmart.com (2018 redesign, used through 2019 by every desktop visitor): navy #041e42 bar with the yellow spark only, a square white search field with a bold 'Search' placeholder, white outline icons (reorder, account, store, cart) without labels, white page with Bogle type, blue #0071dc pill buttons, white footer with link columns. The crawler captures (s1, s2, s4, s5) and a user's own browser (s3) show the same header.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://web.archive.org/web/20190914233436/https://www.walmart.com/",
+      "date": "2019-09-14",
+      "file": "/home/claude/sweeps/g6-evidence/walmart/home-wb-2019-09.png",
+      "shows": "home: navy header, spark, hamburger, square Search field with department dropdown, reorder/account/store/cart icons without labels, hero carousel, NextDay delivery band, Feedback side tab"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/20190914233436/https://www.walmart.com/",
+      "date": "2019-09-14",
+      "file": "/home/claude/sweeps/g6-evidence/walmart/home-wb-2019-09-full.jpg",
+      "shows": "full home and white footer: newsletter field, social icons, Mobile apps, columns Walmart Services / Get to Know Us / Walmart.com / Customer Service / In The Spotlight (Our Company, Sell on Walmart.com, Careers, Terms of Use, Privacy & Security, Calif. Privacy Rights, Tax Exempt Program, Help Center, Product Recalls, Accessibility, Contact Us, Store Pickup)"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.parsehub.com/blog/scrape-walmart-product-data/",
+      "date": "2019-09",
+      "file": "/home/claude/sweeps/g6-evidence/walmart/search-01.png",
+      "shows": "search 'tablet' in a user's browser: navy header, 'Deliver to' row, '1 - 20 of 1,000+ results', 'Refine by | Price Top Brands Store Availability', 'Sort by | Best Match', category icon row, left Departments rail with Delivery & Pickup filters, list results with price and 'Show only Samsung Store'"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/20191226205453/https://www.walmart.com/search/?query=lego",
+      "date": "2019-12-26",
+      "file": "/home/claude/sweeps/g6-evidence/walmart/search-wb-2019-12.png",
+      "shows": "search 'lego': sponsored brand banner, results count, Refine by (Price, Top Brands, Store Availability) as plain dropdowns, Sort by Best Match, list/grid toggles, category icon carousel with dots, Departments rail, ROLLBACK badge, 2-day delivery"
+    },
+    {
+      "id": "s5",
+      "url": "https://web.archive.org/web/20190704152647/https://www.walmart.com/ip/Apple-AirPods-with-Charging-Case-Latest-Model/604342441",
+      "date": "2019-07-04",
+      "file": "/home/claude/sweeps/g6-evidence/walmart/item-wb-2019-07.png",
+      "shows": "product page: breadcrumb, share icons, image with thumbnails, 24px title, stars/reviews/brand/Walmart #, price, Free 2-day delivery, Free pickup, Add-on services (protection plan), quantity, blue pill Add to Cart, Sold & shipped by, Add to List / Add to Registry, 'Tell us if something is incorrect', other sellers"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header area|main area|section area|loading home page|footer area|Walmart Site-Wide|Account and Cart|Primary|Advertisement|Sort and Filter section|Quick refinements|pagination|repeated .*)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s4"
+      ],
+      "note": "page frame, header search form, icon group, results area"
+    },
+    {
+      "match": "^(Walmart Homepage|Search|Search everything at Walmart online and in store|Clear search field text)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "spark logo link and search field (placeholder set back to 'Search')"
+    },
+    {
+      "match": "^(Reorder ?My Items|Sign ?In ?Account|Account|My Items|Cart contains .*)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4",
+        "s5"
+      ],
+      "note": "header icons; their text labels are hidden as in 2019"
+    },
+    {
+      "match": "^(Departments|Services)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "the 2019 hamburger opened the same Departments and Services menu"
+    },
+    {
+      "match": "^(Suggested|Bluetooth|Over-Ear|In-store|Get it fast|All deals|Price|Brand|All filters|Sort by Best Match|Best Match|Sort by)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4"
+      ],
+      "note": "left refinement rail and the 'Refine by' row, drawn flat as in 2019"
+    },
+    {
+      "match": "^(Rollbacks & More|Halloween|Get it Fast|New Arrivals|Toy Shop|Game Day|Walmart\\+|More|Secondary)$",
+      "in2019": false,
+      "evidence": [
+        "no promo link row under the 2019 header (s1, s3, s4, s5)"
+      ],
+      "action": "hidden: [data-testid=sub-nav-links-container]"
+    },
+    {
+      "match": "^(Pickup or delivery\\?.*|How do you want your items\\?.*)$",
+      "in2019": false,
+      "evidence": [
+        "fulfilment intent picker added 2021; 2019 header has none (s1, s4)"
+      ],
+      "action": "hidden: header section:has(> #gic-wrapper)"
+    },
+    {
+      "match": "^(Previous slide for .*|Next slide for .*|Pause carousel|Play carousel|Shop now|Shop all|Get started|See How|Get Started)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "hero carousel and its controls (s1 shows carousel dots and pause)"
+    },
+    {
+      "match": "^(Try Walmart\\+.*|Join Walmart\\+.*)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "whole hero promotion card (its link label); the 2019 home and search pages led with the same full-width hero/brand promotion slot. Its CTA text cannot be hidden without hiding the card, which content protection keeps."
+    },
+    {
+      "match": "^(Give feedback|Feedback)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "Feedback side tab"
+    },
+    {
+      "match": "^(All Departments|Store Directory.*|Careers.*|Our Company.*|Sell on Walmart\\.com.*|Help|Help Center|Product Recalls.*|Accessibility.*|Tax Exempt Program|Get the Walmart App|Mobile apps|Terms of Use|Contact Us|Store Pickup|Walmart Services|Get to Know Us|Customer Service|AdChoices|Safety Data Sheet)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "footer links"
+    },
+    {
+      "match": "^(Privacy Notice.*|Privacy & Security|Calif\\. Privacy Rights|California Supply Chain Act.*|Your Privacy Choices.*|Customer Privacy Center.*|Notice at Collection.*|Consumer Health Data Privacy Notices|Delete Account)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "privacy and legal notices; 2019 had 'Privacy & Security' and 'Calif. Privacy Rights' in the same place, the current legally required names are kept"
+    },
+    {
+      "match": "^(Learn about Spark Driver|Walmart Business|Walmart In the Know.*|Brand Shop Directory)$",
+      "in2019": false,
+      "evidence": [
+        "Spark Driver 2021, Walmart Business 2022; absent from the 2019 footer (s2)"
+      ],
+      "action": "hidden by the theme's later labels"
+    },
+    {
+      "match": "^(Pharmacy)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "footer Walmart Services entry"
+    },
+    {
+      "match": "^(Results for .*|\\d+ stars and above.*|Only at Walmart.*|Related searches|Popular in .*|More Best Sellers from .*)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4"
+      ],
+      "note": "result lists and result shelves (content)"
+    },
+    {
+      "match": "^(Ad disclaimer and feedback|VEATOOL|Sponsored|legal information)$",
+      "in2019": true,
+      "evidence": [
+        "s4"
+      ],
+      "note": "sponsored brand banner (s4 shows the LEGO banner above results)"
+    },
+    {
+      "match": "^(Hide Video Captions|Play Video|Unmute Video|Next slide for SPVideo list|View details for .*|show more color options|Preorder now|Go to Page \\d+|Next Page|Previous Page|Add|Add to cart|Options)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "result card and shelf controls (content)"
+    },
+    {
+      "match": "^(support\\.apple\\.com/.*|Verified Purchase.*|Star rating|Verified purchases only|Electronics|Audio|Headphones|Shop Headphones by Brand|Apple AirPods|AirPods|productPage-CAREPLAN-.*|Add to list|Add to registry|Share|Key item features|View all item details)$",
+      "in2019": true,
+      "evidence": [
+        "s5"
+      ],
+      "note": "product page: breadcrumb, description links, protection plan checkboxes (s5 Add-on services), reviews"
+    },
+    {
+      "match": "(bought since yesterday|bought in (the )?past)",
+      "in2019": false,
+      "evidence": [
+        "social-proof badges 2022+"
+      ],
+      "action": "hidden: badgeTagComponent marked by the theme"
+    }
+  ]
+}

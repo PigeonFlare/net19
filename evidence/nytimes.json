@@ -1,0 +1,97 @@
+{
+  "theme": "nytimes",
+  "era": "2018-2019 nytimes.com redesign: centered blackletter masthead with editions, date, Today's Paper and LOG IN, full section nav, Cheltenham headlines, italic article headlines (same for every signed-out visitor)",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.google.com/search?udm=2&q=nytimes.com+homepage+2019",
+      "date": "2019",
+      "shows": "Google Images: Version Museum '26 Years of New York Times Website Design' (2018-2019 homepage), NYT 'Year in Visual Stories 2019'",
+      "file": "g7-evidence/nytimes/gimg-home.jpg"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.versionmuseum.com/history-of/new-york-times-website",
+      "date": "2018 redesign, in use through 2019",
+      "shows": "homepage: hamburger and search icons, ENGLISH / ESPAÑOL / 中文, date and Today's Paper, centered blackletter logo, nav World U.S. Politics N.Y. Business Opinion Tech Science Health Sports Arts Books Style Food Travel Magazine T Magazine Real Estate Video ALL, briefing row, markets and weather, Cheltenham headlines, Opinion column with columnists",
+      "file": "g7-evidence/nytimes/versionmuseum-2018-responsive.jpg"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20190616000056/https://www.nytimes.com/",
+      "date": "2019-06-16",
+      "shows": "homepage structure and HTML: Sections navigation, Search, ENGLISH / ESPAÑOL / 中文, LOG IN and SUBSCRIBE buttons, Today's Paper, section nav, 'N comments', footer (NYTCo, Contact Us, Work With Us, Advertise, T Brand Studio, Your Ad Choices, Privacy, Terms of Service, Terms of Sale, Site Map, Help, Subscriptions)",
+      "file": "g7-evidence/nytimes/wb-nytimes-home-jun.png"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/20191130043947/https://www.nytimes.com/2019/09/11/climate/why-noaa-matters.html",
+      "date": "2019-09",
+      "shows": "article: slim bar with section name and LOG IN, kicker, italic Cheltenham headline, summary, byline, Published/Updated, share icons (Facebook, Twitter, Email, More)",
+      "file": "g7-evidence/nytimes/wb-nytimes-article.png"
+    },
+    {
+      "id": "s5",
+      "url": "https://web.archive.org/web/20191121000717/https://www.nytimes.com/",
+      "date": "2019-11-21",
+      "shows": "homepage HTML (November): same masthead controls",
+      "file": "g7-evidence/nytimes/wb-nytimes-home-nov.png"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|nav|footer|main|section|article|form|search|aside|dialog|region|contentinfo) area$|^repeated |^(Main|Gallery)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "page regions and repeated story items"
+    },
+    {
+      "match": "^(Search|Sections|Sections Navigation|Section Navigation|U\\.S\\.|International|English|Español|中文|Log in|Subscribe|Today’s Paper|Today's Paper|New York Times homepage|The New York Times|World|Business|Arts|Lifestyle|Opinion|Video|Politics|N\\.Y\\.|Tech|Science|Health|Sports|Books|Style|Food|Travel|Magazine|T Magazine|Real Estate|Skip to content|Skip to site index|Go to Home Page »|previous slide|next slide|Next|Previous|Link to article page|LIVE|See more updates.*|Dow|S&P 500|Nasdaq|More News|open .+ submenu|Chantal Anderson)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3",
+        "s5"
+      ],
+      "note": "2019 masthead (search, editions, LOG IN / SUBSCRIBE, Today's Paper, markets), section nav, carousel arrows and module links"
+    },
+    {
+      "match": "^(© \\d{4} The New York Times Company|NYTCo|Contact Us|Accessibility|Work with us|Advertise|T Brand Studio|Your Ad Choices|Privacy Policy|Privacy|Cookie Policy|Terms of Service|Terms of Sale|Site Map|Help|Subscriptions|Manage Privacy Preferences|Your Privacy Choices)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "footer (legally required privacy links kept)"
+    },
+    {
+      "match": "^(C\\.I\\.A\\. Strike|Evidence of U\\.S\\. Airstrikes|Inside Trump’s Campaign|Tracking Boat Strikes|Obituary|Appraisal|The Face of France|Movies to Stream|Life in Photos|Influencing Trump|Russia’s Stance|Status of Peace Plan|Odesa’s Days of Hell|Challenges Looming|Private Swearing-In|Ocasio-Cortez to Speak at Inauguration|Broadway Block Party|Final Season Primer|The Algorithm Era|Easter Eggs for Viewers|Gaten Matarazzo’s Day Off)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "story-package topic links (content; snapshot-specific)"
+    },
+    {
+      "match": "^(Audio|Canada|Games|Cooking|Wirecutter|The Athletic|Listen.*|Share full article|Gift (this )?article|Play (Wordle|Connections|Spelling Bee|The Mini|Strands))$",
+      "in2019": false,
+      "evidence": [
+        "Audio nav (2023), Canada edition, Games/Cooking/Wirecutter/The Athletic product tabs, listen and gift buttons: none in s2-s5"
+      ],
+      "note": "hidden",
+      "action": "hidden"
+    },
+    {
+      "match": "^(?=.{20,}$)(?!(?:Ask AI|Ask the|AI Mode|AI summary|Summarize|Listen to (?:this|the) article|Subscribe|Sign in|Sign up|Log in|Download the app|Get the app)\\b).*\\s.*$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "story headlines and teasers (content)"
+    }
+  ]
+}

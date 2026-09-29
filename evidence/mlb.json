@@ -1,0 +1,265 @@
+{
+ "theme": "mlb",
+ "era": "2019 MLB.com (the 2018-2019 design seen on the 2019-03 and 2019-07 captures, which are the majority): navy #002d72 header with the white MLB logo on its own row and a second row of small bold uppercase white links (SCORES NEWS VIDEO STANDINGS STATS SCHEDULE PLAYERS MLB.TV TICKETS APPS SHOP AUCTION FANTASY PLAY BALL TEAMS EN), light grey #ececec page with white square cards, condensed 'HEX Franklin' headlines and bulleted headline stacks, dark grey footer with OFFICIAL INFORMATION / HELP/CONTACT US / MORE MLB SITES & AFFILIATES / CAREERS menus. Late 2019 (2019-10/11 captures) moved the logo into a single header row; the two-row header was used for most of the year.",
+ "sources": [
+  {
+   "id": "article0-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190320083044/https://www.mlb.com/news/10-burning-mlb-questions-before-opening-day",
+   "date": "2019-03-20",
+   "shows": "article0 page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/mlb/mlb-article0-a201903.png"
+  },
+  {
+   "id": "article2-a201910",
+   "url": "https://arquivo.pt/noFrame/replay/20191029201038/https://www.mlb.com/news/2-to-0-deficit-baseball-playoff-rallies-c297376582",
+   "date": "2019-10-29",
+   "shows": "article2 page as served in 2019-10 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/mlb/mlb-article2-a201910.png"
+  },
+  {
+   "id": "home-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190315220036/https://www.mlb.com/",
+   "date": "2019-03-15",
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/mlb/mlb-home-a201903.png"
+  },
+  {
+   "id": "home-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190714221202/https://www.mlb.com/",
+   "date": "2019-07-14",
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/mlb/mlb-home-a201907.png"
+  },
+  {
+   "id": "home-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191115192051/https://www.mlb.com/",
+   "date": "2019-11-15",
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/mlb/mlb-home-a201911.png"
+  },
+  {
+   "id": "scores-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190727040540/https://www.mlb.com/scores",
+   "date": "2019-07-27",
+   "shows": "scores page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/mlb/mlb-scores-a201907.png"
+  },
+  {
+   "id": "section1-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190622152115/https://www.mlb.com/standings",
+   "date": "2019-06-22",
+   "shows": "section1 page as served in 2019-06 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g14-evidence/mlb/mlb-section1-a201907.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(MiLB|Youth)$",
+   "in2019": false,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "header links not in the 2019 nav",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Follow|Follow on TikTok|Follow on LinkedIn|Follow on Threads)$",
+   "in2019": false,
+   "evidence": [
+    "home-a201907",
+    "article0-a201903"
+   ],
+   "note": "follow-a-player/team buttons and social networks not in the 2019 'Follow on' row (twitter, facebook, instagram, youtube, snapchat, pinterest, reddit, tumblr, email)",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Do not Sell or Share My Personal Data|Privacy|Cookie Settings)$",
+   "in2019": false,
+   "evidence": [
+    "home-a201907"
+   ],
+   "note": "US privacy opt-out link and the consent dialog",
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(CAREERS|Contact\\ Us|HELP/CONTACT\\ US|Legal\\ Notices|MLB\\.TV|MORE\\ MLB\\ SITES\\ \\&\\ AFFILIATES|News|OFFICIAL\\ INFORMATION|Schedule|Scores|Shop|Standings|Stats|Teams|Terms\\ of\\ Use|Tickets|Video|nav\\ area|section\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "article0-a201903",
+    "article2-a201910",
+    "home-a201903"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "CAREERS",
+    "Contact Us",
+    "HELP/CONTACT US",
+    "Legal Notices",
+    "MLB.TV",
+    "MORE MLB SITES & AFFILIATES",
+    "News",
+    "OFFICIAL INFORMATION",
+    "Schedule",
+    "Scores",
+    "Shop",
+    "Standings",
+    "Stats",
+    "Teams",
+    "Terms of Use",
+    "Tickets",
+    "Video",
+    "nav area",
+    "section area"
+   ]
+  },
+  {
+   "match": "^(Boys\\ and\\ Girls\\ Club\\ of\\ America|Follow\\ on\\ Facebook|Follow\\ on\\ Instagram|MLB\\.com|footer\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "article0-a201903",
+    "home-a201903",
+    "home-a201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Boys and Girls Club of America",
+    "Follow on Facebook",
+    "Follow on Instagram",
+    "MLB.com",
+    "footer area"
+   ]
+  },
+  {
+   "match": "^(Major\\ League\\ Baseball|Tertiary\\ Navigation|header\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "article2-a201910",
+    "home-a201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Major League Baseball",
+    "Tertiary Navigation",
+    "header area"
+   ]
+  },
+  {
+   "match": "^(Follow\\ on\\ Snapchat|Follow\\ on\\ YouTube|Preview)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Follow on Snapchat",
+    "Follow on YouTube",
+    "Preview"
+   ]
+  },
+  {
+   "match": "^(main\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "scores-a201907",
+    "section1-a201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "main area"
+   ]
+  },
+  {
+   "match": "^(Latest News|Postseason Guide|Next|Previous|next|previous)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201911",
+    "article2-a201910"
+   ],
+   "note": "'LATEST NEWS' and the '2019 Postseason' guide modules, and carousel arrows on the scores strip and video rails"
+  },
+  {
+   "match": "^(News|Video|Watch|Scores|Schedule|Stats|Standings|MLB\\.TV|Tickets|Shop|Teams|Lang|search|Log in|Log In|Major League Baseball|MLB\\.com|Boys and Girls Club of America)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "2019 header (Scores, News, Video, Standings, Stats, Schedule, MLB.TV, Tickets, Shop, Teams, EN language menu, search and the account icon), logo link and footer links"
+  },
+  {
+   "match": "^(OFFICIAL INFORMATION|HELP/CONTACT US|MORE MLB SITES & AFFILIATES|CAREERS|Terms of Use|Privacy Policy|Legal Notices|Contact Us|Follow on (Instagram|X|YouTube|Facebook|Snapchat))$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "section1-a201907",
+    "article2-a201910"
+   ],
+   "note": "2019 footer menus, legal links and 'Follow on' icons (Twitter is now X)"
+  },
+  {
+   "match": "^(Regular Season|Wild Card|Spring Training|Standard selected|Standard|Expanded|Standings)$",
+   "in2019": true,
+   "evidence": [
+    "section1-a201907",
+    "article2-a201910"
+   ],
+   "note": "2019 standings tabs (Regular Season, Wild Card, Spring Training) and the Standard / Advanced view toggle"
+  },
+  {
+   "match": "^(Share|Enter your email|Final bracket|Wild Card Series matchups|Postseason schedule|Latest Highlights|Tertiary Navigation|Preview|Story|Peacock|NBC|ESPN|FOX|TBS|FS1)$",
+   "in2019": true,
+   "evidence": [
+    "article0-a201903",
+    "article2-a201910",
+    "home-a201907",
+    "scores-a201907"
+   ],
+   "note": "article share, email follow, the 2019 Postseason sub-navigation, video highlights, and scoreboard game links (Preview, Tickets, Box Score, Recap) with the broadcaster name"
+  },
+  {
+   "match": "^(Cubs|White Sox|Red Sox|[A-Z]\\. [A-Z][\\w'-]+(-[A-Z][\\w'-]+)?)$",
+   "in2019": true,
+   "evidence": [
+    "article2-a201910",
+    "home-a201907"
+   ],
+   "note": "team and player tags on stories (content)"
+  },
+  {
+   "match": "^(header area|nav area|main area|region area|section area|footer area|feed area|article area|form area|aside area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "article2-a201910"
+   ],
+   "note": "page regions"
+  },
+  {
+   "match": "^repeated ",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907"
+   ],
+   "note": "story and game cards (content)"
+  },
+  {
+   "match": "^(?=.{24,})\\S+( \\S+){4,}.*$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201911"
+   ],
+   "note": "story headlines outside repeated cards (content)"
+  }
+ ]
+}

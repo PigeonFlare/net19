@@ -1,4 +1,23 @@
-globalThis.net19Theme = {};
+globalThis.net19Theme = {
+  later: /^(My Best Buy Memberships|Lease to Own|Buy Now, Pay Later|Best Buy Business Financing|Shop with an Expert|Manage an Appointment|Sell on Best Buy Marketplace|Affiliates: Creators & Publishers|Best Buy Health|Partner\+?|Sustainability|Share on (TikTok|YouTube|X)|Discover)$/,
+  intended: '[data-testid="sponsored-marquee-lv"], [id^="atwb-marquee-preflight"], [data-testid="story-block-sign_in_create_account"], button[data-testid="chip-discover"]',
+};
+(() => {
+  const WORDS = [['button[data-testid="chip-shop"]', /^Shop$/, 'Products'], ['button[data-testid="chip-support-services"], button[aria-label="Support & Services"]', /^Support & Services$/, 'Services']];
+  const fix = () => {
+    for (const badge of document.querySelectorAll('[data-testid="badge-container"]:not([data-net19-hidden]), [class*="badge" i]:not([data-net19-hidden])')) if (/^Trending Deal$/.test(badge.textContent.trim())) badge.setAttribute('data-net19-hidden', '');
+    for (const [selector, from, to] of WORDS) {
+      const el = document.querySelector(selector);
+      if (!el) continue;
+      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      for (let node = walker.nextNode(); node; node = walker.nextNode()) if (from.test(node.data.trim())) { node.data = to; break; }
+    }
+  };
+  let queued = false;
+  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
+  const start = () => { fix(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true, characterData: true }); };
+  if (document.readyState !== 'loading') start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+})();
 (() => {
   const root = document.documentElement;
   const SEL = '[data-testid="hero-banner"]';

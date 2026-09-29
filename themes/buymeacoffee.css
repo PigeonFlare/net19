@@ -34,3 +34,6 @@ a[href$="/reviews"], a[href="https://buymeacoffee.com/reviews"] { display: none 
 picture.w-50.h-50 > img.min-h-50 { height: 100% !important; min-height: 0 !important; }
 a.bg-primary, button.bg-primary, .tw-primary-bg-scale-on-hover::before { background-color: var(--n19-orange) !important; }
 a.bg-primary, button.bg-primary { color: var(--n19-on-orange) !important; border-radius: 4px !important; }
+a:is([aria-label="Buy me a coffee Twitter"], [aria-label="Buy me a coffee YouTube"], [aria-label="Buy me a coffee Instagram"]) { display: none !important; }
+a.creator-card, [data-n19-later] { display: none !important; }
+h1.header-anim.title { font-size: 44px !important; line-height: 1.3 !important; font-weight: 500 !important; letter-spacing: 0 !important; }

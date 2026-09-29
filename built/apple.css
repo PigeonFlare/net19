@@ -34,3 +34,12 @@ main .button-secondary:not(.tile-ctas .button){border-radius:4px!important}
 :is(#globalfooter,.globalfooter) :is(p,li,span,a,h3,button,.gf-sosumi,.footnotes){color:var(--n19-muted)!important}
 :is(#globalfooter,.globalfooter) :is(.globalfooter-divider,.ac-gf-footer-legal){border-color:var(--n19-foot-rule)!important}
 html #globalnav .globalnav-item:has(>a[href*="/apple-vision-pro/"]),html #globalnav .globalnav-item:has(>div>a[href*="/apple-vision-pro/"]),.chapternav-item:has(>a[href*="/apple-vision-pro/"]){display:none!important}
+[data-n19-later],html #globalnav .globalnav-submenu,html #globalnav .globalnav-submenu-trigger-item>button,html #globalnav button.globalnav-submenu-trigger-button{display:none!important}
+a[href*="/apple-intelligence"]:not(#globalnav *){display:none!important}
+html #globalnav .globalnav-menu-list .globalnav-link-image{display:none!important}
+html:where(:root:not([data-n19-safe])) #globalnav .globalnav-menu-list .globalnav-link-text{position:static!important}
+html #globalnav .globalnav-menu-list .globalnav-link-text{clip:auto!important;clip-path:none!important}
+html:where(:root:not([data-n19-safe])) #globalnav .globalnav-menu-list .globalnav-link-text{width:auto!important;height:auto!important;overflow:visible!important;margin:0!important}
+html #globalnav .globalnav-menu-list .globalnav-link-text{font:400 14px/44px "SF Pro Text", "Myriad Set Pro", "Helvetica Neue", Helvetica, Arial, sans-serif!important;letter-spacing:-.01em!important;color:inherit!important}
+html:where(:root:not([data-n19-safe])) #globalnav .globalnav-menu-list .globalnav-link-text{white-space:nowrap!important}
+html #globalnav-curtain,html #globalnav .globalnav-curtain{display:none!important}

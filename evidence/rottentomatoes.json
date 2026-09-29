@@ -1,0 +1,291 @@
+{
+ "theme": "rottentomatoes",
+ "era": "2019 Rotten Tomatoes (captures 2019-03 to 2019-11): #fa320a red header with the white logo, the white search field and white uppercase MOVIES & DVDS / TV / NEWS / TICKETS & SHOWTIMES, 'What's the Tomatometer®? · Critics · SIGN UP | LOG IN' top right, grey 'TRENDING ON RT' bar with yellow label and Facebook/Twitter/Instagram/YouTube icons, a 1010px white column on #eee, uppercase Neusa section titles, Tomatometer and Audience Score, and the dark footer with 'Join The Newsletter'. Same site for every visitor.",
+ "sources": [
+  {
+   "id": "home-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190302012002/https://www.rottentomatoes.com/",
+   "date": "2019-03-02",
+   "shows": "home page as served on 2019-03-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/rottentomatoes/rottentomatoes-home-a201903-html"
+  },
+  {
+   "id": "home-a201906",
+   "url": "https://arquivo.pt/noFrame/replay/20190601001134/https://www.rottentomatoes.com/",
+   "date": "2019-06-01",
+   "shows": "home page as served on 2019-06-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/rottentomatoes/rottentomatoes-home-a201906.png"
+  },
+  {
+   "id": "home-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191102055554/https://rottentomatoes.com/",
+   "date": "2019-11-02",
+   "shows": "home page as served on 2019-11-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/rottentomatoes/rottentomatoes-home-a201911.png"
+  },
+  {
+   "id": "movie-a201905",
+   "url": "https://arquivo.pt/noFrame/replay/20190501214343/https://www.rottentomatoes.com/m/avengers_endgame",
+   "date": "2019-05-01",
+   "shows": "movie page as served on 2019-05-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/rottentomatoes/rottentomatoes-movie-a201905.png"
+  },
+  {
+   "id": "movie-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191120034217/https://www.rottentomatoes.com/m/avengers_endgame",
+   "date": "2019-11-20",
+   "shows": "movie page as served on 2019-11-20 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/rottentomatoes/rottentomatoes-movie-a201911.png"
+  },
+  {
+   "id": "movie2-a201909",
+   "url": "https://arquivo.pt/noFrame/replay/20190902223201/https://www.rottentomatoes.com/m/1000085_2001_a_space_odyssey",
+   "date": "2019-09-02",
+   "shows": "movie2 page as served on 2019-09-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/rottentomatoes/rottentomatoes-movie2-a201909.png"
+  },
+  {
+   "id": "search-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191120033708/https://www.rottentomatoes.com/search/?search=halloween",
+   "date": "2019-11-20",
+   "shows": "search page as served on 2019-11-20 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/rottentomatoes/rottentomatoes-search-a201911.png"
+  },
+  {
+   "id": "celeb-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190328000510/https://www.rottentomatoes.com/celebrity/tom_hanks",
+   "date": "2019-03-28",
+   "shows": "celeb page as served on 2019-03-28 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/rottentomatoes/rottentomatoes-celeb-a201903.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(RT App( New)?|Rotten Tomatoes App|Bring Rotten Tomatoes with You.*|TikTok|Bluesky|aRTi|Ask aRTi)$",
+   "in2019": false,
+   "evidence": [
+    "home-a201906",
+    "home-a201911"
+   ],
+   "note": "RT App nav item and trending link, app promo dialog, TikTok and Bluesky icons and the aRTi assistant are not on the 2019 pages; hidden",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Your Privacy Choices|Do Not Sell or Share My Personal Information|Continue|Your Rights|Versant|dialog area)$",
+   "in2019": false,
+   "evidence": [
+    "home-a201911"
+   ],
+   "note": "privacy opt-out, the owner's consent notice (checker false positive per brief) and terms links",
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Highest\\-Rated\\ Movies|News\\ \\&\\ Interviews\\ for\\ Tom\\ Hanks|Tom\\ Hanks)$",
+   "in2019": true,
+   "evidence": [
+    "celeb-a201903"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Highest-Rated Movies",
+    "News & Interviews for Tom Hanks",
+    "Tom Hanks"
+   ]
+  },
+  {
+   "match": "^(Filmography)$",
+   "in2019": true,
+   "evidence": [
+    "celeb-a201903",
+    "home-a201903"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Filmography"
+   ]
+  },
+  {
+   "match": "^(100%|86%|90%|93%|94%|Movies|News|Popular\\ TV|Privacy|Reviews|Rotten\\ Tomatoes|Search|TV)$",
+   "in2019": true,
+   "evidence": [
+    "celeb-a201903",
+    "home-a201903",
+    "home-a201906"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "100%",
+    "86%",
+    "90%",
+    "93%",
+    "94%",
+    "Movies",
+    "News",
+    "Popular TV",
+    "Privacy",
+    "Reviews",
+    "Rotten Tomatoes",
+    "Search",
+    "TV"
+   ]
+  },
+  {
+   "match": "^(96%|Avengers:\\ Endgame)$",
+   "in2019": true,
+   "evidence": [
+    "celeb-a201903",
+    "home-a201906",
+    "movie-a201905"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "96%",
+    "Avengers: Endgame"
+   ]
+  },
+  {
+   "match": "^(Photos)$",
+   "in2019": true,
+   "evidence": [
+    "celeb-a201903",
+    "movie-a201905",
+    "movie-a201911"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Photos"
+   ]
+  },
+  {
+   "match": "^(Trailers\\ \\&\\ Videos|Videos)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201906",
+    "home-a201911"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Trailers & Videos",
+    "Videos"
+   ]
+  },
+  {
+   "match": "^(Matrix)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201906"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Matrix"
+   ]
+  },
+  {
+   "match": "^(My\\ Rating)$",
+   "in2019": true,
+   "evidence": [
+    "movie-a201905",
+    "movie-a201911"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "My Rating"
+   ]
+  },
+  {
+   "match": "^(Audience\\ Reviews|tablist\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "movie-a201905",
+    "movie-a201911",
+    "movie2-a201909"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Audience Reviews",
+    "tablist area"
+   ]
+  },
+  {
+   "match": "^(Where\\ to\\ Watch)$",
+   "in2019": true,
+   "evidence": [
+    "movie-a201911"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Where to Watch"
+   ]
+  },
+  {
+   "match": "^(Main)$",
+   "in2019": true,
+   "evidence": [
+    "search-a201911"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Main"
+   ]
+  },
+  {
+   "match": "^(mps\\._execAd.*|Advertisement|AD)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "movie-a201911"
+   ],
+   "note": "NBCU 'mps' ad slots (the 2019 HTML loads the same NBCU mps ad system, mps.getAd, for its ad slots)"
+  },
+  {
+   "match": "^(What to Know|Critics Consensus|Popcornmeter|Audience Score|Tomatometer|Media Info|Movie Info|Cast & Crew|Cast|More Like This|You might also like|Discover More|News & Features|At Home|In Theaters|TV Shows|DVD & Streaming|What to Watch|Top 10 Box Office|Top Box Office|Popular Streaming Movies|Top DVD & Streaming|New TV This Week|New TV Tonight|Movies in Theaters|Movies Opening This Week|Watchlist|WATCHLIST|View all|View All|Get Tickets|Buy Tickets|Sign up \\| Log in|Login/signup|Sign up|Log in|Tickets & Showtimes|Showtimes|Critics|What’s the Tomatometer®\\?|Search movies, TV, actors, more\\.\\.\\.)$",
+   "in2019": true,
+   "evidence": [
+    "movie-a201905",
+    "movie-a201911",
+    "home-a201911"
+   ],
+   "note": "2019 counterparts: Critics Consensus, Tomatometer and Audience Score (renamed Popcornmeter, shown with its 2019 name), Movie Info, Cast, You might also like, News & Features, the In Theaters / DVD & Streaming / TV Shows sidebar tabs, Top Box Office, Top DVD & Streaming, New TV Tonight, Opening This Week, Want to See / watchlist, View All, Get Tickets, header links"
+  },
+  {
+   "match": "^(repeated .*|header area|nav area|main area|section area|footer area|search area|form area|article area|aside area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "movie-a201911"
+   ],
+   "note": "page structure; repeated items are movies, shows, news stories and search results (content)"
+  },
+  {
+   "match": "^(Search Results for .*|\\d+% .*|.*Movies: .*)$",
+   "in2019": true,
+   "evidence": [
+    "search-a201911",
+    "home-a201911"
+   ],
+   "note": "search heading and scored title rows (content)"
+  },
+  {
+   "match": "^[A-Z0-9“\"'][\\w'’.,:!&?\\- ]{1,80}$",
+   "in2019": true,
+   "evidence": [
+    "home-a201906",
+    "home-a201911",
+    "celeb-a201903"
+   ],
+   "note": "content item links and trending topics: film and show titles, people and editorial stories (2019 pages listed the same kinds of links and the trending topics)"
+  }
+ ]
+}

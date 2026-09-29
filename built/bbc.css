@@ -66,3 +66,11 @@ html[data-net19-section="news"] main :is(h1,h2,h3){font-family:var(--n19-font)!i
 main#bbc-main :is(p,h1,h2,h3,h4,span,a,li,time,figcaption){font-family:var(--n19-font)!important}
 html[data-net19-section="news"] main :is(p,span,li,a,strong,h2,h3,button){font-family:var(--n19-font)!important}
 nav#main-navigation-container nav[class*="SubNavigation"]{background:var(--n19-bar)!important;border-top:1px solid var(--n19-bar-rule)!important}
+li:has(>div>a[data-testid="mainNavigationLink"]:is([href="/live"],[href="/video/docs"])),div:has(>div>button:is([data-testid="level0NavButton-/live"],[data-testid="level0NavButton-/video/docs"])),li:has(>div>a[data-testid="subNavigationLink"]:is([href="/news/bbcindepth"],[href="/news/bbcverify"])),li:has(>div>a:is([href*="/pages/subscription-terms"],[href*="trusted-sources-up-top"])),[data-testid="social-follow-us-icon-buttons"]>button[aria-label*="tiktok"i]{display:none!important}
+li[data-testid="contentlink-li"]:has(>div>a:is([href$="/live"],[href$="/video/docs"])){display:none!important}
+html[data-net19-section="news"]:not([data-net19-mode="dark"]){--n19-bar:#fff;--n19-bar-text:#000;--n19-bar-rule:#dcdcdc}
+html[data-net19-section="news"]:not([data-net19-mode="dark"]) header#bbc-header{border-bottom:1px solid #dcdcdc!important}
+html[data-net19-section="news"]:where(:root:not([data-n19-safe])) nav#main-navigation-container ul[class*="MainNavigationWrapper"],html[data-net19-section="news"]:where(:root:not([data-n19-safe])) nav#main-navigation-container ul[class*="SubNavigation"]{justify-content:flex-start!important;width:100%!important;max-width:1248px!important;margin-left:auto!important;margin-right:auto!important}
+html[data-net19-section="news"] nav#main-navigation-container a{color:#fff!important}
+html[data-net19-section="news"] nav#main-navigation-container a:is(:hover,:focus-visible),html[data-net19-section="news"] nav#main-navigation-container a:is(:hover,:focus-visible) *{color:#fff!important;background-color:var(--n19-news-dark)!important}
+[class*="NavigationPanel"] a:is([href*="/watch-live"],[href*="/live/"][class*="WatchLive"]),[class*="NavigationPanel"] [class*="WatchLive"]{display:none!important}

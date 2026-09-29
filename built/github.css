@@ -143,3 +143,19 @@ react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]
 :where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child>h3.sr-only>span{position:absolute!important;width:1px!important;height:1px!important;overflow:hidden!important}
 react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child>h3.sr-only>span{clip:rect(0 0 0 0)!important}
 :where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child>h3.sr-only>span{white-space:nowrap!important}
+.lp-Home #automation,.lp-Home #security,.lp-Home #customer-stories,.lp-Home #cta~[data-testid^="Grid-"],.lp-Home button[aria-label="Pause animation"],.lp-Home button[aria-label="Play animation"],.lp-Home a[aria-label="Back to top"],.lp-Home a[href="#hero"][class*="BackToTop"i]{display:none!important}
+header.HeaderMktg nav li[data-n19-later],[data-n19-later]{display:none!important}
+footer :is(li,div):has(>a[href="/features/copilot"],>a[href="/features/ai"],>a[href="/team"],>a[href="/github/roadmap"],>a[href*="devops-tools-comparison"],>a[href="/education"],>a[href="https://cli.github.com"],>a[href="/mobile"],>a[href="/mcp"],>a[href="https://github.com/services"],>a[href="/enterprise/premium-support"],>a[href="https://skills.github.com"],>a[href="/git-guides"],>a[href="/sitemap"],>a[href="/readme"],>a[href="/about/diversity"],>a[href="https://socialimpact.github.com"],>a[href="https://www.instagram.com/github"],>a[href="https://www.tiktok.com/@github"],>a[href="https://www.twitch.tv/github"]){display:none!important}
+footer :is(section,div):has(>:is(h2,h3,p)+form[action*="newsletter"i]),footer :is(section,div):has(>a[href="/newsletter"]){display:none!important}
+li:has(>#actions-tab),li:has(>a#actions-tab){display:none!important}
+aside[aria-label="Issues sidebar navigation"],button[data-testid="issue-types-anchor-button"]{display:none!important}
+nav[aria-label="Repository files"] li:not(:first-child),nav[aria-label="Repository files"] button,button[aria-label="Outline"]{display:none!important}
+[class*="SidebarSection-module__sidebarSection"] div:has(>a:is([href$="#coc-ov-file"],[href$="#contributing-ov-file"],[href$="#security-ov-file"],[href$="/activity"],[href$="/custom-properties"],[href^="/contact/report-content"])){display:none!important}
+react-app[app-name="code-view"] [class*="PageLayout-PaneWrapper"]:has(#repos-file-tree){display:none!important}
+[data-testid="list-row-linked-pull-requests"],.markdown-body .zeroclipboard-container,.markdown-body clipboard-copy{display:none!important}
+footer :is(li,div):has(>button[aria-label^="English"i]),footer details:has(summary[aria-label*="language"i]){display:none!important}
+:where(:root:not([data-n19-safe])) #repository-container-header ul.pagehead-actions,#repository-container-header:where(:root:not([data-n19-safe])) ul.pagehead-actions{display:flex!important}
+:where(:root:not([data-n19-safe])) #repository-container-header ul.pagehead-actions>li:has(#fork-button),#repository-container-header:where(:root:not([data-n19-safe])) ul.pagehead-actions>li:has(#fork-button){order:3!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="issues-react"] [class*="SidebarPageLayout-module__PageLayoutRoot"]{max-width:1012px!important;margin-left:auto!important;margin-right:auto!important}
+[data-testid="sidebar-types-section"],[data-testid="sidebar-relationships-section"],[data-testid="sidebar-development-section"]{display:none!important}
+header.HeaderMktg nav [class*="NavGroup-module__group"]:has(a[href$="/security/advanced-security"]),header.HeaderMktg nav li:has(>a[href$="/features/codespaces"]),header.HeaderMktg nav li:has(>a[href$="/features/code-quality"]),header.HeaderMktg nav li:has(>a[href^="https://maintainers.github.com"]),header.HeaderMktg nav li:has(>a[href^="https://stars.github.com"]){display:none!important}

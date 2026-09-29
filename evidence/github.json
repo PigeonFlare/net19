@@ -1,0 +1,149 @@
+{
+  "theme": "github",
+  "era": "2019 GitHub (Primer, pre-2020 redesign): dark #24292e header, 980px centred repo layout with orange-edged tabs, grey gradient buttons, square avatars; signed-out homepage 'Built for developers' with the sign-up form. Signed-in pages used the same header and repo layout.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://arun.is/blog/10-year-challenge/",
+      "date": "2019-01-22",
+      "file": "/home/claude/sweeps/g9-evidence/github/arun-2019-01-github.jpg",
+      "shows": "signed-out homepage: dark #24292e header with octocat, Why GitHub?/Enterprise/Explore/Marketplace/Pricing, Search GitHub field, Sign in, outlined Sign up; hero 'Built for developers' with the sign-up form"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.webdesignmuseum.org/gallery/github-in-2019",
+      "date": "2019",
+      "file": "/home/claude/sweeps/ax-evidence/github-2019.jpg",
+      "shows": "full signed-out homepage 2019: hero, Get started with GitHub Enterprise, customer logos, collaboration sections, 'Get started for free' CTA, footer columns Product/Platform/Support/Company"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20190616000054/https://github.com/",
+      "date": "2019-06-16",
+      "file": "/home/claude/sweeps/g9-evidence/wb/gh-home.png",
+      "shows": "homepage capture; labels: Why GitHub?, Enterprise, Explore, Marketplace, Pricing, Search GitHub, Sign in, Sign up, footer Features/Security/Enterprise/Customer stories/Pricing/Resources/Developer API/Partners/Atom/Electron/GitHub Desktop/Help/Community Forum/Training/Status/Contact GitHub/About/Blog/Careers/Press/Shop, GitHub on Twitter/Facebook/YouTube/Linkedin, Terms, Privacy"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/20190616083659/https://github.com/facebook/react",
+      "date": "2019-06-16",
+      "file": "/home/claude/sweeps/g9-evidence/wb/gh-repo.png",
+      "shows": "repo page 980px centred: facebook/react, Watch/Star/Fork with counts, tabs Code/Issues/Pull requests/Projects/Wiki/Security/Insights with orange top edge on the selected tab, description, website, topics, commits/branches/releases/contributors/license bar, Branch: master, New pull request, Find File, Clone or download, latest commit bar, file table, README.md"
+    },
+    {
+      "id": "s5",
+      "url": "https://web.archive.org/web/20191215152339/https://github.com/facebook/react",
+      "date": "2019-12-15",
+      "file": "/home/claude/sweeps/g9-evidence/wb/gh-repo-dec.png",
+      "shows": "same repo at the end of 2019: same tabs (no Actions tab for signed-out visitors), Switch branches or tags, Find file, View all commits"
+    },
+    {
+      "id": "s6",
+      "url": "https://web.archive.org/web/20190501062029/https://github.com/facebook/react/issues",
+      "date": "2019-05-01",
+      "file": "/home/claude/sweeps/g9-evidence/wb/gh-issues.png",
+      "shows": "issues list: search field 'is:issue is:open', Labels, Milestones, New issue, Open/Closed counts, Author/Labels/Projects/Milestones/Assignee/Sort filters, rows with labels, comment counts, pagination"
+    },
+    {
+      "id": "s7",
+      "url": "https://web.archive.org/web/20190609122803/https://github.com/facebook/react/issues/10191",
+      "date": "2019-06-09",
+      "file": "/home/claude/sweeps/g9-evidence/wb/gh-issue19.png",
+      "shows": "issue page: title with number, Open state, New issue, comment boxes with avatar and author badges, reactions, timeline events, hidden items / Load more, sidebar Assignees/Labels/Projects/Milestone, Sign up for free to join this conversation"
+    },
+    {
+      "id": "s8",
+      "url": "https://web.archive.org/web/20190501060230/https://github.com/facebook/react/blob/master/README.md",
+      "date": "2019-05-01",
+      "file": "/home/claude/sweeps/g9-evidence/wb/gh-file19.png",
+      "shows": "file page: breadcrumb, Find file, Copy path, latest commit, contributors, Raw/Blame/History, rendered README, no file tree"
+    },
+    {
+      "id": "s9",
+      "url": "https://github.blog/2019-11-13-universe-day-one/",
+      "date": "2019-11-13",
+      "file": "/home/claude/sweeps/g9-evidence/github/ghblog-2019-11-search.png",
+      "shows": "2019 UI screenshots: code search results, navigation popovers, team review settings, blue selected menu items"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Platform|Solutions|Copilot|AI|GitHub Copilot|MCP Registry|Team|Roadmap|Compare GitHub|Education|GitHub CLI|GitHub Mobile|Professional Services|Premium Support|Skills|What is Git\\?|Sitemap|The ReadME Project|Inclusion|Social Impact|GitHub on Instagram|GitHub on TikTok|GitHub on Twitch|The developer newsletter|Subscribe|English - Select language|More items, including current item|Security and quality.*|Code of conduct|Contributing|Security policy|Activity|Custom properties|Report repository|Outline|Issues sidebar navigation|Assigned to me|Created by me|Mentioned|Recent activity|Views|Collapse sidebar|Filter by issue type|File Tree Navigation|Collapse file tree|Expand file tree|Files|Copy code to clipboard|\\d+ linked PRs?|Pause animation|Type|Relationships|Development|Back to top|Accelerate your entire workflow|Built-in application security.*|From startups to enterprises.*|Footnotes)$",
+      "in2019": false,
+      "evidence": [
+        "not in the 2019 header, footer, repo, issues or file pages (s1-s8): Copilot/AI marketing sections (2021+), GitHub CLI and Mobile (2020), Skills (2022), MCP Registry (2025), the new issues sidebar and issue types (2024-25), the code-view file tree and Outline (2023), README tabs and sidebar policy links (2022+), signed-out Actions tab (s5 has none), linked-PR row indicator and code copy buttons (2020+), homepage animation controls; issue sidebar Type (2024), Relationships (2025) and Development (2021) sections; the 2019 sidebar (s7) had Assignees, Labels, Projects, Milestone"
+      ],
+      "action": "hidden (github.css, data-n19-later from github.js)"
+    },
+    {
+      "match": "^(banner area|header area|Header|Global|Site|nav area|main area|section area|article area|contentinfo area|Repository|Repository files|Pagination|Events|Sign up for GitHub|Built for developers|Millions of developers and businesses call GitHub home|GitHub customers|All issues|Actions)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s6",
+        "s7"
+      ],
+      "note": "page regions; the hero heading is set back to the 2019 wording by github.js; the sign-up CTA matches 2019's 'Get started for free — join the millions of developers already using GitHub'; Actions here is the issue list filter toolbar region (the repo Actions tab itself is hidden)"
+    },
+    {
+      "match": "^(Homepage|GitHub Homepage|Go to GitHub homepage|Why GitHub\\??|Enterprise|Explore|Marketplace|GitHub Marketplace|Pricing|Search GitHub|Search or jump to.*|Search|Sign in|Sign up|Sign up for GitHub|Sign up for free|you@domain.com|Email|Skip to content)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s4"
+      ],
+      "note": "header (Platform renamed Why GitHub?, Open Source renamed Explore, Marketplace link restored by github.js) and the sign-up form"
+    },
+    {
+      "match": "^(Features|Security|Customer Stories|Resources|Developer API|Partners|GitHub Desktop|Docs|Help|Community Forum|Community|Status|Contact GitHub|Contact|About|Blog|Careers|Shop|Terms|Privacy|GitHub on LinkedIn|GitHub on X|GitHub on YouTube|GitHub on Twitter|GitHub’s organization on GitHub|GitHub's organization|Manage cookies|Do not share my personal information|API|Training|Pricing)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4",
+        "s6"
+      ],
+      "note": "footer links present in 2019 (Docs is the 2019 Help link; Manage cookies / Do not share my personal information are the later names of the legal footer slot beside Terms and Privacy; GitHub on X is GitHub on Twitter)"
+    },
+    {
+      "match": "^(Code|Issues( [\\d,.k]+)?|Pull requests( [\\d,.k]+)?|Projects( \\d+)?|Wiki|Security( \\d+)?|Insights|Watch.*|Star.*|Fork.*|Notifications|react|facebook|react\\.dev|https?://.+|Readme|MIT license|[\\d,.k]+ (Branches|Tags|Commits|stars|watching|forks)|main branch|Switch branches or tags|Go to file|Find file|Clone or download|Commit [0-9a-f]{7}|commits by .+|View all commits by .+|History|Raw|Blame|Copy path|README(\\.md)?|Branches|Tags)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s5",
+        "s8"
+      ],
+      "note": "repo header, tabs, about, numbers, branch/Find file/Clone or download row, latest commit bar, file actions (Go to file is 2019's Find file)"
+    },
+    {
+      "match": "^(Search Issues|Search all issues|New issue|Labels( \\d+)?|Milestones( \\d+)?|Filter by (assignees|author|labels|milestones|projects)|Sort by .+|Next Page|Previous Page|Next|Page \\d+.*|Open|Closed|[\\d,]+ Open|[\\d,]+ Closed)$",
+      "in2019": true,
+      "evidence": [
+        "s6"
+      ],
+      "note": "issues list search, filters (Author/Labels/Projects/Milestones/Assignee/Sort), pagination"
+    },
+    {
+      "match": "^(Author|Collaborator|Contributor|Member|Owner|(Author|Collaborator|Contributor|Member|Owner)?More actions|Issue body actions|.+ reactions?|Subscribe|Unsubscribe|completed|.+ is assigned|Last edited by .+|on [A-Z][a-z]{2} \\d{1,2}, \\d{4}|edited|Type: .+|Component: .+|Resolution: .+|Status: .+|Bug:|React|Good First Issues|Quick Start|Contributing Guide|on the website)$",
+      "in2019": true,
+      "evidence": [
+        "s6",
+        "s7"
+      ],
+      "note": "comment header badges and the ... menu, reactions, subscribe, timeline events, labels and README links (content)"
+    },
+    {
+      "match": "^(repeated .*|#\\d+|@?[A-Za-z0-9-]{2,39}('s profile)?)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s6",
+        "s7"
+      ],
+      "note": "content: rows, issue numbers, user names and avatar links"
+    }
+  ]
+}

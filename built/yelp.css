@@ -2,7 +2,9 @@ html{--n19-red:#d32323;--n19-red-dark:#bd1f1f;--n19-on-red:#fff;--n19-field:#fff
 html[data-net19-mode="dark"]{--n19-red:#b01e1e;--n19-red-dark:#9a1a1a;--n19-on-red:#fff;--n19-field:#2d2e2f;--n19-field-text:#f0f0f0}
 :root:root yelp-react-root,:root:root yelp-react-root :not(svg):not(svg *){font-family:var(--n19-font)!important}
 html:not([data-n19-home]) header[class*="consumer-header-container"]{background:var(--n19-red)!important;border-bottom:0!important}
-header[class*="consumer-header-container"] [class*="logo-link"],header[class*="consumer-header-container"] [data-analytics-label="logo"]{filter:brightness(0) invert(1)}
+html:not([data-n19-home]) header[class*="consumer-header-container"] :is([class*="logo-link"],[data-analytics-label="logo"]):not(:is([class*="logo-link"],[data-analytics-label="logo"]) *){background:url("https://s3-media0.fl.yelpcdn.com/assets/public/default@2x.yelp_design_web.yji-b085a608c15f110ce750ccef3e1e1db0.png") no-repeat left center / 80px 40px!important}
+html:not([data-n19-home]):where(:root:not([data-n19-safe])) header[class*="consumer-header-container"] :is([class*="logo-link"],[data-analytics-label="logo"]):not(:is([class*="logo-link"],[data-analytics-label="logo"]) *){min-width:80px!important;min-height:40px!important}
+html:not([data-n19-home]) header[class*="consumer-header-container"] :is([class*="logo-link"],[data-analytics-label="logo"]):not(:is([class*="logo-link"],[data-analytics-label="logo"]) *)>*{visibility:hidden!important}
 header[class*="consumer-header-container"] [class*="header-link"],header[class*="consumer-header-container"] [class*="header-link"] *,header[class*="consumer-header-container"] nav a,header[class*="consumer-header-container"] nav a *,header[class*="consumer-header-container"] [role="menubar"] button,header[class*="consumer-header-container"] [role="menubar"] button *{color:var(--n19-on-red)!important}
 header[class*="consumer-header-container"] [class*="header-link"] svg,header[class*="consumer-header-container"] nav svg{fill:var(--n19-on-red)!important}
 form#header_find_form{border-radius:3px!important;box-shadow:none!important}

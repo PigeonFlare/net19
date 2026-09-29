@@ -1,0 +1,72 @@
+{
+  "theme": "yahoojp",
+  "era": "2019 Yahoo! JAPAN PC top page (s1, s2), the icon header with the red YAHOO! JAPAN logo, blue search band, left 主なサービス list, news tabs and right rail; the June 2019 compact-header design was only a test (s2).",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.glad-cube.com/blog/?p=16580",
+      "date": "2019-01-23",
+      "file": "/home/claude/sweeps/g9-evidence/yahoojp/gladcube-2019-01-top.png",
+      "shows": "PC top page Jan 2019 (laptop capture): icon header with the red YAHOO! JAPAN logo, search band, left service list, centre news tabs and recommendations, right ad and login"
+    },
+    {
+      "id": "s2",
+      "url": "https://laterabbit.net/yahoo-top-renewal-comparison/",
+      "date": "2019-06-02",
+      "file": "/home/claude/sweeps/g9-evidence/yahoojp/laterabbit-2019-06-compare.png",
+      "shows": "full page June 2019, old (mainstream) design beside the test design: header icons トラベル/ヤフオク!/ショッピング, logo, プレミアム/カード/メール; ホームページに設定する, きっず版, アプリ版, ヘルプ; search tabs ウェブ 画像 動画 知恵袋 地図 リアルタイム 求人 一覧 and blue 検索; 主なサービス list (ショッピング, ヤフオク!, LOHACO, トラベル, 一休.com, 一休.comレストラン, ニュース, 天気・災害, スポーツナビ, ファイナンス, テレビ, GYAO!, ゲーム, Yahoo!モバゲー, 地図, 路線情報, Retty, クラシル, 不動産, 自動車, ブログ, TRILL, パートナー), お気に入り (ebookjapan, 映画, 占い, ロコ), news tabs, あなたへのおすすめ, login box, weather, 運行情報, 会員特典, footer 会社概要/投資家情報/社会的責任/企業行動憲章/広告掲載について/採用情報/利用規約/免責事項/メディアステートメント/プライバシー"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20190616000258/https://www.yahoo.co.jp/",
+      "date": "2019-06-16",
+      "file": "/home/claude/sweeps/g9-evidence/wb/yahoojp-home.png",
+      "shows": "crawler variant (unsupported-browser page): same logo/icon header, ウェブ検索, ログイン box, service links and footer; used only for the footer and header labels"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(ZOZOTOWN|ふるさと納税|出前館|LINE MUSIC|LINE 占い|LINE STORE|LINEスキマニ|マイベスト|toto|ズバトク|おこづかい稼ぎ|PayPay残高確認|X（旧Twitter）データについて|写真を使ってAIでオリジナル画像を作ろう|AIに聞いてみよう)$",
+      "in2019": false,
+      "evidence": [
+        "not in the 2019 service list, login box or notices (s1, s2): ZOZOTOWN (acquired 2019-11), LINE services (2023 merger), ふるさと納税, 出前館, マイベスト, toto, ズバトク, おこづかい稼ぎ, PayPay balance, X data notice, AI image promotion; the search page AIに聞いてみよう block"
+      ],
+      "action": "hidden (yahoojp.js data-n19-later, guard labels)"
+    },
+    {
+      "match": "^(Yahoo! JAPAN.*|ホームページに設定する|きっず版|アプリ版|ヘルプ|ヘルプ・お問い合わせ|プレミアム|LYPプレミアム|オークション|ショッピング|トラベル|カード|PayPayカード|メール|ログイン|ウェブ|画像|動画|知恵袋|地図|マップ|リアルタイム|求人|スタンバイ|一覧|検索|検索ボタン|検索したいキーワードを入力してください|キーワードを消す|キーワード入力補助を開く|ウェブで検索|画像で検索|動画で検索|知恵袋で検索|地図で検索|リアルタイムで検索|フリマ|LOHACO|一休\\.com|一休\\.comレストラン|ニュース|天気・災害|スポーツナビ|ファイナンス|番組表|ゲーム|Yahoo!モバゲー|ebookjapan|路線情報|クラシル|不動産|自動車|TRILL|カレンダー|その他|サービス一覧を見る|Yahoo! JAPANのサービス一覧|もっと見る|トピックス一覧|話題のキーワードをもっと見る|LINEヤフーのお知らせ|アクティビティ)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "header icons, search tabs, 主なサービス list (番組表 = テレビ, マップ = 地図, スタンバイ = 求人, LYPプレミアム = Yahoo!プレミアム, PayPayカード = Yahoo!カード, フリマ = PayPayフリマ from 2019-10, LINEヤフーのお知らせ = Yahoo! JAPANからのお知らせ)"
+    },
+    {
+      "match": "^(主要|経済|エンタメ|スポーツ|国内|国際|IT|科学|地域|プロ野球|Jリーグ|プロ野球トップ|あなたが設定している地域は.+|今日の日付は.+|天気の画像|広告|この広告についての詳細|会社概要|投資家情報|社会的な取り組み|サステナビリティ|メディアステートメント|採用情報|利用規約|免責事項|プライバシーポリシー|プライバシーセンター|広告掲載について|広告について|検索結果への広告掲載|ビジネスで活用するなら|検索設定|条件指定|絞り込み|次のページ|Wikipedia|あなたのステータス|地域情報|運行情報|お知らせ|スコアボード|スコアボードのカテゴリ|熱中症指数|試合終了|プレイバック動画|banner area|関連検索ワード|他の人はこちらも検索|天気|天気予報.*|天気図|tenki\\.jp)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "news tabs, weather/date in the right rail, ads, footer, search result controls"
+    },
+    {
+      "match": "^(repeated .*|header area|nav area|main area|footer area|section area|search area|.*(記事|ニュース|トピックス|主なサービス).*|(\\S+\\s+){2,}\\S+.*|.{12,})$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "content: headlines and notices (twelve characters or more), regions"
+    },
+    {
+      "match": "^(舞子と交流)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "content: the topics photo caption on the sampled day (s2 shows the same photo-with-caption slot, '夜のレインボー'); it changes daily"
+    }
+  ]
+}

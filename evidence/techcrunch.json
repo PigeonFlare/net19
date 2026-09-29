@@ -1,0 +1,321 @@
+{
+ "theme": "techcrunch",
+ "era": "2019 TechCrunch (the 2018 redesign, unchanged through 2019 for every visitor; no sign-in variant): white page, fixed left rail with the green TC mark, a green-outlined Login button, 22px light grey section links (Startups, Apps, Gadgets, Videos, Audio, Extra Crunch, Newsletters, Events, Advertise, Crunchbase, More), a 'Search' label and small green topic links; homepage hero = 36px extra-bold headline with author and image below, a 227px column of 18px extra-bold headlines with authors and #ddd rules, an events widget in the right rail, then 'The Latest' river (22px titles, grey excerpt, image right). Articles: 36px extra-bold title, author / time byline, 18px Helvetica body, share bar (Facebook, Twitter, LinkedIn, Email, Copy link).",
+ "sources": [
+  {
+   "id": "g1",
+   "url": "https://www.versionmuseum.com/history-of/techcrunch-website",
+   "date": "2019",
+   "shows": "homepage (found through Google Images 'techcrunch website homepage screenshot', 2019 date filter): left rail with TC mark, Login, Startups…More, Search, green topic links; 36px hero headline, mini headlines with authors, Extra Crunch promo",
+   "file": "g8-evidence/techcrunch/vm-home-2019.jpg"
+  },
+  {
+   "id": "article0-201903",
+   "url": "https://web.archive.org/web/20190316005713if_/https://techcrunch.com/2019/03/14/chris-cox-leaves-facebook/",
+   "date": "2019-03-16",
+   "shows": "article0 page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
+   "file": "g8-evidence/techcrunch/techcrunch-article0-201903.png"
+  },
+  {
+   "id": "article1-201907",
+   "url": "https://web.archive.org/web/20190715220250if_/https://techcrunch.com/2019/07/15/waze-now-shows-road-toll-prices-along-your-driving-route/",
+   "date": "2019-07-15",
+   "shows": "article1 page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
+   "file": "g8-evidence/techcrunch/techcrunch-article1-201907.png"
+  },
+  {
+   "id": "article2-201911",
+   "url": "https://web.archive.org/web/20191116044136if_/https://techcrunch.com/2019/11/15/giphy-illegal-content/",
+   "date": "2019-11-16",
+   "shows": "article2 page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
+   "file": "g8-evidence/techcrunch/techcrunch-article2-201911.png"
+  },
+  {
+   "id": "home-201903",
+   "url": "https://web.archive.org/web/20190315234420if_/https://techcrunch.com/",
+   "date": "2019-03-15",
+   "shows": "home page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
+   "file": "g8-evidence/techcrunch/techcrunch-home-201903.png"
+  },
+  {
+   "id": "home-201907",
+   "url": "https://web.archive.org/web/20190715234658if_/https://techcrunch.com/",
+   "date": "2019-07-15",
+   "shows": "home page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
+   "file": "g8-evidence/techcrunch/techcrunch-home-201907.png"
+  },
+  {
+   "id": "home-201911",
+   "url": "https://web.archive.org/web/20191116022325if_/https://techcrunch.com/",
+   "date": "2019-11-16",
+   "shows": "home page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
+   "file": "g8-evidence/techcrunch/techcrunch-home-201911.png"
+  },
+  {
+   "id": "home-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190714220104/https://techcrunch.com/",
+   "date": "2019-07-14",
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g8-evidence/techcrunch/techcrunch-home-a201907.png"
+  },
+  {
+   "id": "home-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191115042445/http://techcrunch.com/",
+   "date": "2019-11-15",
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g8-evidence/techcrunch/techcrunch-home-a201911.png"
+  },
+  {
+   "id": "section0-201903",
+   "url": "https://web.archive.org/web/20190316005926if_/https://techcrunch.com/startups/",
+   "date": "2019-03-16",
+   "shows": "section0 page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
+   "file": "g8-evidence/techcrunch/techcrunch-section0-201903.png"
+  },
+  {
+   "id": "section1-201907",
+   "url": "https://web.archive.org/web/20190715220350if_/https://techcrunch.com/apps/",
+   "date": "2019-07-15",
+   "shows": "section1 page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
+   "file": "g8-evidence/techcrunch/techcrunch-section1-201907.png"
+  },
+  {
+   "id": "section1-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190715120000/https://techcrunch.com/apps/",
+   "date": "2019-07-15",
+   "shows": "section1 page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g8-evidence/techcrunch/techcrunch-section1-a201907.png"
+  },
+  {
+   "id": "section2-201911",
+   "url": "https://web.archive.org/web/20191116050252if_/https://techcrunch.com/gadgets/",
+   "date": "2019-11-16",
+   "shows": "section2 page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
+   "file": "g8-evidence/techcrunch/techcrunch-section2-201911.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Share on Reddit|Most Popular|View Bio|Bluesky|Threads|Mastodon|In Brief|[\\w.-]+@techcrunch\\.com|(?!Share ).+ on (Twitter|Facebook|Linkedin))$",
+   "in2019": false,
+   "evidence": [
+    "home-201907",
+    "article1-201907",
+    "article2-201911"
+   ],
+   "note": "not on any 2019 capture: Reddit share, the Most Popular rail, the In Brief section (2023 format), the author bio card (View Bio, e-mail, socials) and Bluesky/Threads/Mastodon links; hidden (Most Popular and In Brief are listed in intended)",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Advertise|Apps|Events|Privacy\\ Policy|Startups|TechCrunch|Terms\\ of\\ Service|footer\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "article0-201903",
+    "article1-201907",
+    "article2-201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Advertise",
+    "Apps",
+    "Events",
+    "Privacy Policy",
+    "Startups",
+    "TechCrunch",
+    "Terms of Service",
+    "footer area"
+   ]
+  },
+  {
+   "match": "^(header\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "article0-201903",
+    "article1-201907",
+    "home-201903"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "header area"
+   ]
+  },
+  {
+   "match": "^(Facebook|Podcasts)$",
+   "in2019": true,
+   "evidence": [
+    "article0-201903",
+    "home-201903",
+    "section0-201903"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Facebook",
+    "Podcasts"
+   ]
+  },
+  {
+   "match": "^(Newsletters|form\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "article1-201907",
+    "article2-201911",
+    "home-201903"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Newsletters",
+    "form area"
+   ]
+  },
+  {
+   "match": "^(Apple|Transportation)$",
+   "in2019": true,
+   "evidence": [
+    "article1-201907",
+    "article2-201911",
+    "home-201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Apple",
+    "Transportation"
+   ]
+  },
+  {
+   "match": "^(Subscribe|The\\ Latest|repeated\\ div)$",
+   "in2019": true,
+   "evidence": [
+    "article1-201907",
+    "home-201903",
+    "home-201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Subscribe",
+    "The Latest",
+    "repeated div"
+   ]
+  },
+  {
+   "match": "^(Copy\\ Share\\ Link|Share\\ on\\ Facebook|Share\\ on\\ LinkedIn|Share\\ over\\ Email)$",
+   "in2019": true,
+   "evidence": [
+    "article2-201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Copy Share Link",
+    "Share on Facebook",
+    "Share on LinkedIn",
+    "Share over Email"
+   ]
+  },
+  {
+   "match": "^(Anthony\\ Ha|Kirsten\\ Korosec|Sarah\\ Perez)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Anthony Ha",
+    "Kirsten Korosec",
+    "Sarah Perez"
+   ]
+  },
+  {
+   "match": "^(Latest|The Latest|Latest News|Next|Pagination|See More)$",
+   "in2019": true,
+   "evidence": [
+    "home-201903",
+    "home-201907",
+    "home-201911"
+   ],
+   "note": "'The Latest' river and its Load More paging (current 'Latest News' is renamed back to 'The Latest')"
+  },
+  {
+   "match": "^(Venture|Security|AI|Space|Video|Startups|Apps|Hardware|Fundraising|Enterprise|Transportation|Media & Entertainment|Social|Crypto|Fintech|Climate|Robotics|Government & Policy|Privacy|Gaming|Commerce|Biotech & Health|Cloud Computing|Layoffs|Tech Layoffs|EVs|Amazon|Apple|Google|Meta|Microsoft|Instagram|TikTok|OpenAI|Hugging Face|Flock|Venture Capital|Featured)$",
+   "in2019": true,
+   "evidence": [
+    "home-201907",
+    "home-201911",
+    "g1"
+   ],
+   "note": "section and topic links: 2019 had the same section links and green trending-topic links in the rail (Google, Transportation, Apple, Enterprise); topic names change daily"
+  },
+  {
+   "match": "^(Disrupt 2026|TechCrunch Disrupt 2026|TechCrunch Founder Summit 2026|Upcoming Events|TechCrunch Events|Events|Startup Battlefield|StrictlyVC|Register Now|Exhibit Now|BOOK NOW|Buy Tickets|Get Tickets)$",
+   "in2019": true,
+   "evidence": [
+    "home-201911",
+    "home-a201907",
+    "article1-201907"
+   ],
+   "note": "the event of the year in the rail (2019: 'Disrupt Berlin 2019'), the 'Where we'll be next' events carousel with Buy Tickets / Be a Sponsor buttons, event widgets"
+  },
+  {
+   "match": "^(Podcasts|Newsletters|Email address|Submit|Subscribe|Sign up for Newsletters|TechCrunch Daily News|Startups Weekly|TechCrunch Week in Review|TechCrunch Mobility|Week in Review)$",
+   "in2019": true,
+   "evidence": [
+    "home-201907",
+    "article1-201907"
+   ],
+   "note": "Audio/Podcasts link and the 'Sign up for Newsletters' form"
+  },
+  {
+   "match": "^(TechCrunch Logo|TechCrunch Desktop Logo|TechCrunch|Redesign: Primary Navigation|Site Search Toggle|Search|Search\\.\\.\\.|search area|Mega Menu Toggle|More|Topics|More from TechCrunch)$",
+   "in2019": true,
+   "evidence": [
+    "home-201907",
+    "g1"
+   ],
+   "note": "rail logo, section navigation, the 'Search' label that opened the search field, and 'More' which opened the full menu"
+  },
+  {
+   "match": "^(Share Article|Share on X|Share on Facebook|Share on LinkedIn|Copy Share Link|Share over Email)$",
+   "in2019": true,
+   "evidence": [
+    "article1-201907",
+    "article2-201911"
+   ],
+   "note": "article share bar (2019: Facebook, Twitter, LinkedIn, Email, Copy link); 'X' is the renamed Twitter"
+  },
+  {
+   "match": "^(Staff|Contact Us|Advertise|Site Map|Terms|Terms of Service|Privacy|Privacy Notice|Privacy Policy|RSS Terms of Use|Code of Conduct|About|Crunchboard Jobs|Footer – .*|Facebook|Instagram|LinkedIn|youTube|YouTube|X|Twitter|Your Privacy Choices|Do Not Sell My Personal Information|Advertisement|AdChoices|Play|we may earn a small commission)$",
+   "in2019": true,
+   "evidence": [
+    "home-201907",
+    "article1-201907"
+   ],
+   "note": "site footer and legal links, ads (2019 labels include Privacy Policy, Terms of Service, Code of Conduct, About Our Ads, Advertise, Do Not Sell My Personal Information)"
+  },
+  {
+   "match": "^(Posts by .+|[A-Z][\\w'’.-]+(?: [A-Z][\\w'’.-]+){1,3})$",
+   "in2019": true,
+   "evidence": [
+    "home-201907",
+    "article1-201907"
+   ],
+   "note": "author bylines (content)"
+  },
+  {
+   "match": "^(?=.{24,}).*[a-z].*$",
+   "in2019": true,
+   "evidence": [
+    "home-201903",
+    "home-201907",
+    "home-201911",
+    "g1"
+   ],
+   "note": "story headlines and event promotions (content)"
+  }
+ ]
+}

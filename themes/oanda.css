@@ -27,3 +27,8 @@ main p, main a, main td, main th, main label, main li, .card-content span, .card
 
 .content-cards__card__inner.drop-shadow { box-shadow: none !important; border: 1px solid var(--n19-field-border) !important; }
 .card-currency_converter_row .content-cards__card__inner.drop-shadow { border: 0 !important; }
+.card-currency_converter_row .h1_subtitle { display: none !important; }
+.card-currency_converter_row .col.cta :is(a, button) { background: var(--n19-green) !important; border-color: var(--n19-green) !important; color: #111 !important; border-radius: 0 !important; text-transform: uppercase !important; font-weight: 400 !important; font-size: 13px !important; box-shadow: none !important; }
+.card-currency_converter_row .col.cta :is(a, button) * { color: #111 !important; }
+[data-n19-quick], a[href*="instagram.com"], a[href*="linkedin.com"], a[href*="tradingview"], :is(li, div):has(> a[href*="tradingview"]), a[href*="/crypto"], :is(li, div):has(> a[href*="/crypto"]) { display: none !important; }
+main :is(.material-icons, .material-icons-outlined, [class*="material-icons"]) { font-family: "Material Icons", "Material Icons Outlined" !important; }

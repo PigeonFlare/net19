@@ -1,1 +1,1 @@
-globalThis.net19Theme = { later: /^(?:outkick(?: sports| culture| betting| analysis)?|games|deals|listen to this article|you can now listen to fox news articles!?|add fox news on google)$/i, keepLabels: /^(?:video|watch tv)$/i };
+globalThis.net19Theme = { later: /^(?:outkick(?: sports| culture| betting| analysis)?|games|deals|listen to this article|you can now listen to fox news articles!?|add fox news on google)$/i, keepLabels: /^(?:video|watch tv)$/i, intended: '.game-hub, .games-promo, li.more-section-item, li.schedule-item, .ab-iam-root' };

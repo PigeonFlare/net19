@@ -57,8 +57,8 @@ nav#nav.subnav { height: 36px !important; min-height: 0 !important; border-top: 
 .zone--layout-topic-splash :is(.card__headline, .card__headline__text, .card__description, .card__byline, .card__byline *) { color: var(--n19-text) !important; }
 
 .entry-head-container { background: var(--n19-page) !important; }
-.entry__header h1.headline, .top-header h1.headline { font-family: var(--hp19-cond) !important; font-weight: 800 !important; font-size: 52px !important; line-height: 52px !important;
-  letter-spacing: .5px !important; color: var(--n19-text) !important; text-transform: none !important; font-style: normal !important; }
+.entry__header h1.headline, .top-header h1.headline { font-family: var(--hp19-sans) !important; font-weight: 400 !important; font-size: 44px !important; line-height: 48px !important;
+  letter-spacing: 0 !important; color: var(--n19-text) !important; text-transform: none !important; font-style: normal !important; }
 .entry__header .dek, .entry__header .dek p { font-family: var(--hp19-sans) !important; font-size: 20px !important; line-height: 24px !important; color: var(--n19-sub) !important; }
 .entry__byline__author, .entry__byline__author a, .entry__byline__author span { font-family: var(--hp19-sans) !important; font-weight: 700 !important; color: var(--n19-text) !important;
   font-size: 14px !important; letter-spacing: .5px !important; }
@@ -76,3 +76,18 @@ nav#nav.subnav { height: 36px !important; min-height: 0 !important; border-top: 
 .site-footer :is(a, .site-footer__link, .site-footer__corp-link, .site-footer__branding, .site-footer__branding *) { color: #fff !important; }
 .site-footer__logo__svg, .site-footer__logo__svg * { fill: var(--n19-green) !important; }
 [data-net19-live] { display: none !important; }
+
+.live-updates-banner { display: none !important; }
+nav#nav.subnav .subnav__items { justify-content: center !important; gap: 20px !important; }
+nav#nav.subnav .subnav__item { padding: 0 !important; margin: 0 !important; letter-spacing: .8px !important; font-size: 13px !important; }
+a.subnav__main-logo { background: url("https://s.m.huffpost.com/assets/HuffPostHero-d783f680fb974e80346bdfa145131d058e596e1d32f791981875aa481702c770.svg") center / contain no-repeat !important; }
+.subnav__main-logo .front-title { width: 300px !important; height: 28px !important; }
+svg.subnav__main-logo__svg { visibility: hidden !important; width: 300px !important; height: 28px !important; }
+.splash__headline--primary-headline .splash__headline__link, .splash__headline--primary-headline a { text-decoration: underline !important; text-decoration-thickness: 5px !important; text-underline-offset: 6px !important; }
+a[href*="huffpost.com/games"], a[aria-label^="Follow us on"], a[href="/games"], .left-nav__menu__group:has(a[href*="huffpost.com/games"]), .left-nav__social, .card__new, .daily-checklist-js,
+.front-support-huffpost-container, .cli-support-huffpost__container, a.site-footer__corp-link:is([href*="dmca"], [href*="accessibility-statement"]) { display: none !important; }
+.bottom-right-sticky-container { pointer-events: none !important; }
+.bottom-right-sticky-container iframe { pointer-events: auto !important; }
+.bottom-right-sticky__logo__link { display: none !important; }
+.zone--daily-checklist :is(.zone__title__container, .zone__title, h2) { display: none !important; }
+.search__ai-query-disclaimer, [class*="search__ai-"], [class*="ai-summary" i] { display: none !important; }

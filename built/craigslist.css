@@ -23,3 +23,10 @@ body,button,input,select,textarea{font-family:Arial, Helvetica, sans-serif!impor
 :where(:root:not([data-n19-safe])) .cl-search-view-mode-list .result-data .cl-banish-button,.cl-search-view-mode-list:where(:root:not([data-n19-safe])) .result-data .cl-banish-button{order:6!important}
 .cl-search-view-mode-list .result-data .cl-banish-button{font-size:11px!important}
 .cl-search-view-mode-list .result-data .separator{display:none!important}
+.cl-search-result :is(.posting-title,.posting-title .label,.title,a.titlestring,.label){font-family:"Times New Roman", Times, serif!important}
+.cl-search-result.cl-search-view-mode-gallery .posting-title .label,.cl-search-result.cl-search-view-mode-gallery a.posting-title{color:var(--n19-link)!important}
+.cl-search-result.cl-search-view-mode-gallery .gallery-card{border-radius:4px!important}
+.cl-search-result .priceinfo,.cl-search-result .price{color:#000!important}
+html[data-net19-mode="dark"] .cl-search-result .priceinfo,html[data-net19-mode="dark"] .cl-search-result .price{color:#eee!important}
+.cl-share-button{display:none!important}
+a[href*="craignewmarkphilanthropies"]{display:none!important}

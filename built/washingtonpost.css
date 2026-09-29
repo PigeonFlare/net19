@@ -60,3 +60,9 @@ main section>div>a[href] p[class]:first-child{letter-spacing:-.01em}
 footer[aria-label="Site footer"]{border-top:1px solid var(--n19-hair)!important}
 footer[aria-label="Site footer"] h2[data-qa="footer-section-title"]{text-transform:uppercase!important;font-size:12px!important;letter-spacing:.06em!important}
 footer[aria-label="Site footer"] li:has(>a[href*="wpintelligence"]),footer[aria-label="Site footer"] li:has(>a[href*="onelink.me"]){display:none!important}
+button[aria-label="News alerts"],button[aria-label="Save this article"],li:has(>a:is([href*="/recipes/"],[href*="vulnerability-disclosure"],[href*="workforce-demographics"],[href*="/enterprise/"])),form[role="search"]:has(input:is([placeholder*="recipe"i],[aria-label*="recipe"i],[name*="recipe"i])),:is(section,div)[data-qa*="recipe"i]{display:none!important}
+#sf-primary-nav nav[aria-label="Primary"]{background:#111!important;border-bottom:0!important}
+#sf-primary-nav nav[aria-label="Primary"] :is(button,a):not([href*="subscribe"i]){color:#fff!important}
+#sf-primary-nav nav[aria-label="Primary"] :is(button,a):not([href*="subscribe"i]) svg{fill:#fff!important;color:#fff!important}
+#sf-primary-nav nav[aria-label="Primary"] button[aria-label="Search and browse sections"]{border:1px solid #444!important;border-radius:2px!important;background:#222!important}
+li:has(>a[href$="washingtonpost.com/games/"]){display:none!important}

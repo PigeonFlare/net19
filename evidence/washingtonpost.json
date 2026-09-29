@@ -1,0 +1,132 @@
+{
+  "theme": "washingtonpost",
+  "era": "2019 washingtonpost.com: black top bar with search / Sections buttons, centered blackletter logo with 'Democracy Dies in Darkness', 'In the News' row, Postoni serif headlines and Franklin sans labels (same for every signed-out visitor)",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.google.com/search?udm=2&q=washingtonpost.com+homepage+2019+screenshot",
+      "date": "2019",
+      "shows": "Google Images: The Washington Post 'My Post: a new way to keep up' (2019, My List / My Archive dated April 2019), KPBS 2019 capture of the homepage masthead",
+      "file": "g7-evidence/washingtonpost/gimg-home.jpg"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/20190715235328/https://www.washingtonpost.com/",
+      "date": "2019-07-15",
+      "shows": "homepage: black top bar with search and Sections buttons, centered blackletter logo with 'Democracy Dies in Darkness', 'In the News' topic row, Listen to Post Reports, serif headlines, Video rail",
+      "file": "g7-evidence/washingtonpost/wb-washingtonpost-home-jul.png"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20190915234551/https://www.washingtonpost.com/",
+      "date": "2019-09-15",
+      "shows": "homepage HTML: Search, Sections (Politics, Opinions, Sports, D.C., Md. & Va., National, World, Business, Tech, Lifestyle, Arts & Entertainment, Video, Jobs, Classifieds, WP BrandStudio), Sign In, My Post, My Reading List, Account Settings, Newsletters & alerts, Gift subscriptions, Contact us, Help desk; footer (About Us, Careers, Policies and Standards, Digital/Print Products Terms of Sale, Terms of Service, Privacy Policy, Submissions and Discussion Policy, RSS Terms of Service, Ad Choices, Reprints & Permissions, Post Store, Photo Store, Today's Paper, Mobile & Apps, Live Events, Crosswords, Obituaries, Weather, Climate & Environment)",
+      "file": "g7-evidence/washingtonpost/wb-washingtonpost-home.png"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/20191227222158/https://www.washingtonpost.com/politics/im-going-to-kill-myself-a-veteran-tells-sanders-hes-drowning-in-medical-debt/2019/09/14/e9d7fe1e-d6fa-11e9-9343-40db57cf6abd_story.html",
+      "date": "2019-09",
+      "shows": "article: black bar with search, Sections, Get one year for …, Gift The Post, Sign in; section row (Politics, Democratic Debate, Impeachment, White House …), kicker, serif headline, left rail Home / Share / comments count",
+      "file": "g7-evidence/washingtonpost/wb-washingtonpost-article.png"
+    },
+    {
+      "id": "s5",
+      "url": "https://web.archive.org/web/20190410231220/https://www.washingtonpost.com/",
+      "date": "2019-04-10",
+      "shows": "homepage HTML (April): same header and sections list",
+      "file": "g7-evidence/washingtonpost/wb-washingtonpost-home-apr.png"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|nav|footer|main|section|article|form|search|aside|dialog|region) area$|^repeated |^(Primary|Site footer|Trending|Slideshow)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "page regions and repeated story items"
+    },
+    {
+      "match": "^(Accessibility statement|Skip to main content|Search and browse sections|Sections|Search|Washington Post site search|Clear|Democracy Dies in Darkness|The Washington Post|washingtonpost\\.com|Subscribe|Sign in|Sign In|Gift The Post|Get one year for .*)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "2019 header: search, Sections, logo with slogan, subscribe offer, Gift The Post, Sign in"
+    },
+    {
+      "match": "^(Politics|Opinions|Opinion|Sports|D\\.C\\., Md\\.,? & Va\\.|National|U\\.S\\. News|World|Business|Tech|Lifestyle|Style|Arts & Entertainment|Video|Climate|Well\\+Being|Elections|Obituaries|Weather|Trending|In the News|Higher Education|Education|Column|Guest Column|Editorial Board|Exclusive|Analysis|Perspective|Review|Live|Learn more|next slide|previous slide|Loading\\.\\.\\.|Load more results|More top stories)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "section links, kickers and module controls (2019: Sections list, 'In the News', Analysis/Perspective kickers, 'More top stories'); Well+Being = 2019 Wellness"
+    },
+    {
+      "match": "^(About The Post|Newsroom Policies & Standards|WP Creative Group|Careers|Media & Community Relations|Diversity & Inclusion|Become a Subscriber|Gift Subscriptions|Mobile & Apps|Newsletters & Alerts|Washington Post Live|Reprints & Permissions|Post Store|Books & E-Books|Today’s Paper|Today's Paper|Public Notices|Crosswords & Games|Contact the Newsroom|Contact Customer Care|Contact the Opinions Team|Advertise|Licensing & Syndication|Request a Correction|Send a News Tip|Digital Products Terms of Sale|Print Products Terms of Sale|Terms of Service|Privacy Policy|Cookie Settings|Submissions & Discussion Policy|RSS Terms of Service|Sitemap|Ad Choices|Your Privacy Choices)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "footer: 2019 had About Us, Careers, Policies and Standards, WP BrandStudio (now WP Creative Group), terms of sale, Terms of Service, Privacy Policy, Submissions and Discussion Policy, RSS Terms, Ad Choices, Reprints & Permissions, Post Store, Today's Paper, Mobile & Apps, Newsletters & alerts, Live Events, Crosswords, Gift subscriptions, Contact us; legally required privacy choices kept"
+    },
+    {
+      "match": "^(Close notification|Subscribe for .+|PayPal|View more offers|email|Continue|Already a subscriber\\? Sign in)$",
+      "in2019": true,
+      "evidence": [
+        "s4"
+      ],
+      "note": "subscription offer bar / paywall offers (2019 WaPo had a metered paywall and 'Get one year for …' offers, s4 header)"
+    },
+    {
+      "match": "^(registration-email|Enter your email address|Sign up|Amy B Wang|Susan Svrluga)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4"
+      ],
+      "note": "newsletter sign-up field (2019: 'Enter your email address') and today's bylines (content)"
+    },
+    {
+      "match": "^(Share this article|Comments on this story|Share|Comment \\d+|\\d+ comments?)$",
+      "in2019": true,
+      "evidence": [
+        "s4"
+      ],
+      "note": "article share and comments rail"
+    },
+    {
+      "match": "^(Cornell rape allegations|Ringo Starr|Peptides advice|D\\.C\\. bribery case|Midlife sabbaticals|SNL on Mamdani-Trump)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "today's 'Trending' topic links, as the 2019 'In the News' row (content)"
+    },
+    {
+      "match": "^(News alerts|Save this article|Recipes|Find a recipe|Report a Vulnerability|Workforce Demographics|Enterprise Subscriptions)$",
+      "in2019": false,
+      "evidence": [
+        "alerts bell, save-to-subscribe drawer, Recipes section (2023), vulnerability disclosure (2021), workforce report (2020), enterprise subscriptions: none in s2-s5"
+      ],
+      "note": "hidden",
+      "action": "hidden"
+    },
+    {
+      "match": "^(?=.{20,}$)(?!(?:Ask AI|Ask the|AI Mode|AI summary|Summarize|Listen to (?:this|the) article|Subscribe|Sign in|Sign up|Log in|Download the app|Get the app)\\b).*\\s.*$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "story headlines and teasers (content)"
+    }
+  ]
+}

@@ -1,0 +1,171 @@
+{
+ "theme": "ubereats",
+ "era": "2019 Uber Eats web (home 2019-05/07 and store 2019-04 captures): white header with the black-and-green 'Uber Eats' wordmark, the landing hero 'Discover restaurants that deliver near you' with a square address field and a green #3e9920 'Find Food' button, the two cards 'Your restaurant – delivered' and 'Deliver the Eats', and a footer with the language list, About Uber Eats, Become a Delivery Partner, Become a Restaurant Partner, See all cities, Pricing, Help, FAQs, Blog, Privacy and Terms. The same landing page for every signed-out visitor.",
+ "sources": [
+  {
+   "id": "home-a201905",
+   "url": "https://arquivo.pt/noFrame/replay/20190513215214/https://www.ubereats.com/en-GB/",
+   "date": "2019-05-13",
+   "shows": "home page as served on 2019-05-13 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/ubereats/ubereats-home-a201905.png"
+  },
+  {
+   "id": "home-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190702065415/https://www.ubereats.com/en-CA/",
+   "date": "2019-07-02",
+   "shows": "home page as served on 2019-07-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/ubereats/ubereats-home-a201907.png"
+  },
+  {
+   "id": "home2-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190702065542/https://www.ubereats.com/en-AU/",
+   "date": "2019-07-02",
+   "shows": "home2 page as served on 2019-07-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/ubereats/ubereats-home2-a201907.png"
+  },
+  {
+   "id": "store-a201904",
+   "url": "https://arquivo.pt/noFrame/replay/20190404144832/https://www.ubereats.com/en-US/los-angeles/food-delivery/jinya-ramen-express-hollywood-and-highland/mKhvZux8QyS7y-narLfUAQ/",
+   "date": "2019-04-04",
+   "shows": "store page as served on 2019-04-04 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/ubereats/ubereats-store-a201904.png"
+  },
+  {
+   "id": "store-a201910",
+   "url": "https://arquivo.pt/noFrame/replay/20191013155232/https://www.ubereats.com/en-US/new-york/food-delivery/mother-of-pearl-east-village/31q9vXIGTw22K1LKPmljfQ/",
+   "date": "2019-10-13",
+   "shows": "store page as served on 2019-10-13 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/ubereats/ubereats-store-a201910.png"
+  },
+  {
+   "id": "store-a201908",
+   "url": "https://arquivo.pt/noFrame/replay/20190822054857/https://www.ubereats.com/en-US/new-york/food-delivery/yaso-tangbao-downtown-brooklyn/eDj1cxWoSimPFFDvP6GNZQ/",
+   "date": "2019-08-22",
+   "shows": "store page as served on 2019-08-22 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/ubereats/ubereats-store-a201908.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Get a ride.*|Shop groceries|Promotions|Pickup near me|Feed your employees|Create a business account|Uber One.*)$",
+   "in2019": false,
+   "evidence": [
+    "home-a201905",
+    "store-a201904"
+   ],
+   "note": "not on the 2019 pages: the Get a ride link, groceries, promotions, pickup, the Uber Eats for Business card and Uber One; hidden",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Do not sell or share my personal information|Got it|Opt out|here|dialog area)$",
+   "in2019": false,
+   "evidence": [
+    "home-a201905"
+   ],
+   "note": "US privacy opt-out and the site's own cookie notice (2019 had its own cookie banner; checker false positive per brief)",
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(About\\ Uber\\ Eats|English|Pricing|Terms)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201905",
+    "home-a201907",
+    "home2-a201907"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "About Uber Eats",
+    "English",
+    "Pricing",
+    "Terms"
+   ]
+  },
+  {
+   "match": "^(Download\\ on\\ the\\ App\\ Store|Get\\ it\\ on\\ Google\\ Play)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201905",
+    "store-a201904"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Download on the App Store",
+    "Get it on Google Play"
+   ]
+  },
+  {
+   "match": "^(View\\ all\\ 500\\+\\ cities)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201907",
+    "home2-a201907"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "View all 500+ cities"
+   ]
+  },
+  {
+   "match": "^(Buy\\ gift\\ cards|Get\\ Help|Privacy\\ Policy|View\\ all|View\\ all\\ cities)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201907",
+    "home2-a201907",
+    "store-a201908"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Buy gift cards",
+    "Get Help",
+    "Privacy Policy",
+    "View all",
+    "View all cities"
+   ]
+  },
+  {
+   "match": "^(Restaurants\\ near\\ me)$",
+   "in2019": true,
+   "evidence": [
+    "store-a201910"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Restaurants near me"
+   ]
+  },
+  {
+   "match": "^(Log in|Sign up|Sign In|Main navigation menu|Uber Eats Home|Search here|Find Food|Order delivery near you|Discover restaurants that deliver near you|Enter delivery address|Select delivery time|Deliver now|Cities near me|Countries with Uber Eats|View all countries|Food Delivery in .*|Facebook|Twitter|Instagram|Terms of Service|Next|Previous|Your restaurant, delivered|Add your restaurant|Deliver with Uber Eats|Sign up to deliver)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201905",
+    "home-a201907",
+    "store-a201904"
+   ],
+   "note": "2019 counterparts: the header sign-in and menu, the address field with ASAP/delivery time and Find Food (the hero and button get their 2019 labels), 'See all cities' and the city lists, the restaurant and delivery partner cards, social links, Terms, carousels"
+  },
+  {
+   "match": "^(repeated .*|header area|nav area|main area|section area|footer area|search area|form area|article area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201905",
+    "store-a201904"
+   ],
+   "note": "page structure; repeated items are restaurants, dishes and city links"
+  },
+  {
+   "match": "^[\\w][^\\n]{1,79}$",
+   "in2019": true,
+   "evidence": [
+    "store-a201904",
+    "home-a201905"
+   ],
+   "note": "content: restaurant and dish names and city names (2019 store pages listed the same) (names may include non-Latin script and ®)"
+  }
+ ]
+}

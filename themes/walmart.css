@@ -1,8 +1,8 @@
 html { --n19-bar: #041e42; --n19-bar-hover: rgba(255,255,255,.12); --n19-bar-text: #fff; --n19-field: #fff; --n19-field-text: #000; --n19-icon: #041e42;
-  --n19-row: #fff; --n19-row-border: #e6e7e8; --n19-row-text: #041e42; --n19-bubble: #0a2f5c; --n19-yellow: #ffc220;
+  --n19-row: #fff; --n19-row-border: #e6e7e8; --n19-row-text: #041e42; --n19-bubble: #0a2f5c; --n19-yellow: #ffc220; --n19-foot: #fff; --n19-foot-text: #2e2f32;
   --n19-font: Bogle, BogleWeb, "Helvetica Neue", Helvetica, Arial, sans-serif; }
 html[data-net19-mode="dark"] { --n19-bar: #041e42; --n19-bar-hover: rgba(255,255,255,.12); --n19-bar-text: #fff; --n19-field: #1f2023; --n19-field-text: #e3e4e5; --n19-icon: #e3e4e5;
-  --n19-row: #16181b; --n19-row-border: #2e3033; --n19-row-text: #e3e4e5; --n19-bubble: #0a2f5c; --n19-yellow: #ffc220; }
+  --n19-row: #16181b; --n19-row-border: #2e3033; --n19-row-text: #e3e4e5; --n19-bubble: #0a2f5c; --n19-yellow: #ffc220; --n19-foot: #fff; --n19-foot-text: #2e2f32; }
 body {
   --font-family-default: var(--n19-font); --ld-primitive-font-family-sans: var(--n19-font);
   --ld-semantic-font-body-large-family: var(--n19-font); --ld-semantic-font-body-medium-family: var(--n19-font); --ld-semantic-font-body-small-family: var(--n19-font);
@@ -15,7 +15,7 @@ body {
 .sans-serif, button, input, select, textarea { font-family: var(--n19-font) !important; }
 
 span.bg-secondary.sticky:has(> header), .bg-secondary.sticky.top-0 { background: var(--n19-bar) !important; }
-span.bg-secondary.sticky > header { padding-top: 10px !important; padding-bottom: 10px !important; }
+span.bg-secondary.sticky > header { padding-top: 4px !important; padding-bottom: 4px !important; }
 header #gic-wrapper, header section.bg-dark-primary { background: transparent !important; border-radius: 0 !important; }
 header section.bg-dark-primary:hover { background: var(--n19-bar-hover) !important; }
 header #gic-wrapper span.b { font-size: 14px !important; }
@@ -28,15 +28,12 @@ header input.search-bar:focus::placeholder { opacity: 0 !important; }
 header form[role="search"], header .search-bar-container, header input.search-bar + * { border-radius: 0 !important; }
 header button.search-icon-redesigned-v2, header button[aria-label="Search" i] { background: transparent !important; border-radius: 0 !important; color: var(--n19-icon) !important; }
 header button.search-icon-redesigned-v2 i, header button.search-icon-redesigned-v2 svg, header button[aria-label="Search" i] svg { fill: var(--n19-icon) !important; color: var(--n19-icon) !important; }
-header nav a.desktop-header-trigger, header #cart-button-header { flex-direction: column !important; justify-content: center !important; border-radius: 0 !important; padding: 0 8px !important; }
+header nav a.desktop-header-trigger, header #cart-button-header { flex-direction: column !important; justify-content: center !important; border-radius: 0 !important; padding: 0 10px !important; min-width: 44px !important; }
 header nav a.desktop-header-trigger > i, header #cart-button-header > i {
-  display: flex !important; align-items: center; justify-content: center; width: 28px !important; height: 28px !important; padding: 0 !important; margin: 0 0 2px !important;
-  border-radius: 50% !important; background: var(--n19-bubble) !important; font-size: 16px !important;
-}
-header nav a.desktop-header-trigger > div { margin: 0 !important; text-align: center !important; }
-header nav a.desktop-header-trigger > div > div:first-child { display: none !important; }
-header nav a.desktop-header-trigger > div > div, header #cart-button-header .cart-total { font-size: 12px !important; font-weight: 400 !important; line-height: 14px !important; height: auto !important; color: var(--n19-bar-text) !important; }
-header #cart-button-header .cart-total { margin-top: 0 !important; }
+  display: flex !important; align-items: center; justify-content: center; width: 28px !important; height: 28px !important; padding: 0 !important; margin: 0 !important;
+  border-radius: 0 !important; background: transparent !important; font-size: 24px !important; color: var(--n19-bar-text) !important; }
+header nav a.desktop-header-trigger > div, header #cart-button-header .cart-total { display: none !important; }
+header section:has(> #gic-wrapper), header #gic-wrapper { display: none !important; }
 span.bg-secondary.sticky > div.header-navigation { background: var(--n19-row) !important; border-bottom: 1px solid var(--n19-row-border) !important; height: 40px !important; }
 span.bg-secondary.sticky > div.header-navigation section.br-pill { background: transparent !important; border-radius: 0 !important; margin: 0 !important; }
 span.bg-secondary.sticky > div.header-navigation :is(button, a) { color: var(--n19-row-text) !important; font-size: 14px !important; border-radius: 0 !important; }
@@ -46,3 +43,12 @@ main .br3, main .br2, main .br4, main [data-testid="flex-container"] img { borde
 
 :is(button, a)[aria-label*="Sparky" i], [data-testid="sparky-fab-bubble"], .sparky-fab-wrapper, a[href^="/sparky"], a[href*="walmart.com/sparky"] { display: none !important; }
 [data-testid="badgeTagComponent"][data-net19-hidden] { display: none !important; }
+footer, footer > div, footer section { background: var(--n19-foot) !important; }
+footer :is(a, button, span, p, h2, h3) { color: var(--n19-foot-text) !important; }
+footer { border-top: 1px solid var(--n19-row-border) !important; }
+header form[role="search"] { flex: 0 1 540px !important; max-width: 540px !important; margin-left: 150px !important; margin-right: auto !important; }
+header input.search-bar { height: 40px !important; }
+[data-testid="sub-nav-links-container"] { display: none !important; }
+section[aria-label="Sort and Filter section"] :is(button, a) { border-radius: 0 !important; border-color: transparent !important; background: transparent !important; box-shadow: none !important; }
+section[aria-label="Sort and Filter section"] :is(button, a) i:first-child:not(:only-child) { display: none !important; }
+footer :is(a, li):is([aria-label^="Walmart In the Know" i], :has(> a[aria-label^="Walmart In the Know" i])) { display: none !important; }

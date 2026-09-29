@@ -1,0 +1,187 @@
+{
+  "theme": "yandex",
+  "era": "2019 Yandex (same for every visitor): minimal search home (yandex.com and ya.ru) with the red-Y wordmark left of a square search field with a 2px #fc0 border and a yellow arrow-shaped Search/Найти button, service icons above and region/weather/rates informers on the Russian page; results page with the Яндекс wordmark, the same yellow field and Найти button, a filter icon, grey 13px service tabs with the current one in bold black, #1a0dab titles, green #070 URLs and #333 snippets. Wayback is unreachable from the cloud and the user's Mac was disconnected, so the sources are Arquivo.pt 2019 captures and a dated 2019 article screenshot.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://searchfacts.com/wp-content/uploads/2019/08/yandex-search-home-page.png",
+      "date": "2019-08",
+      "file": "/home/claude/sweeps/g15-evidence/yandex/sf-home-2019-08.png",
+      "shows": "a user's screenshot of yandex.com in 2019 (SearchFacts article): EN / Log in top right, service icons (Images, Video, Mail, Maps, AppMetrica, Translate, Browser), red-Y Yandex wordmark left of a yellow-bordered field with keyboard icon and a yellow arrow Search button, 'Yandex in' country links"
+    },
+    {
+      "id": "s2",
+      "url": "https://arquivo.pt/wayback/20190101014304/https://yandex.com/",
+      "date": "2019-01-01",
+      "file": "/home/claude/sweeps/g15-evidence/yandex/yandex-com-2019-01.png",
+      "shows": "yandex.com home, same layout as s1: Select language, Log in, services row, Request field, Search button, country links, footer (Technologies, About Yandex, Terms of Service, Privacy Policy, Contact us, Copyright Notice)"
+    },
+    {
+      "id": "s3",
+      "url": "https://arquivo.pt/wayback/20190302181025/https://yandex.ru/",
+      "date": "2019-03-02",
+      "file": "/home/claude/sweeps/g15-evidence/yandex/yandex-ru-2019-03-full.png",
+      "shows": "yandex.ru portal (captured without its stylesheet): city (Лиссабон), Настройка, Почта / Завести почту / Войти в почту, news, USD/EUR MOEX and Нефть rates, service tabs Видео Картинки Новости Карты Маркет Переводчик ещё, Запрос field and Найти button, Погода block, footer"
+    },
+    {
+      "id": "s4",
+      "url": "https://arquivo.pt/wayback/20190725234141/https://yandex.ru/",
+      "date": "2019-07-25",
+      "file": "/home/claude/sweeps/g15-evidence/yandex/yandex-ru-2019-07-full.png",
+      "shows": "yandex.ru portal, same controls as s3 (city, weather +18°, rates, Почта, Войти, service tabs, Найти)"
+    },
+    {
+      "id": "s5",
+      "url": "https://arquivo.pt/wayback/20191105031015/https://yandex.ru/search/?text=бухгалтера и путина",
+      "date": "2019-11-05",
+      "file": "/home/claude/sweeps/g15-evidence/yandex/yandex-serp-2019-11.png",
+      "shows": "results page: yellow-bordered field, yellow arrow Найти button, filter icon, tabs Поиск (bold) Картинки Видео Карты Маркет Новости Эфир Коллекции Знатоки Услуги Ещё in grey 13px, #1a0dab titles, green URLs, #333 snippets, Читать ещё, images wizard on the right, related searches, pager (Страницы, дальше), footer (region Лиссабон, Настройки, Клавиатура, Помощь, Обратная связь, О компании, Вакансии, Лицензия на поиск, other search engines, Войти)"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(main area|header area|footer area|nav area|section area|repeated .*|Web Search|Поиск в интернете|Люди ищут|People also search|Related searches|Результаты поиска|Search results)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s5"
+      ],
+      "note": "page frame, search form, related searches ('Найти также' in s5), result lists"
+    },
+    {
+      "match": "^weather( [a-z]+|s|ford)?$",
+      "in2019": true,
+      "evidence": [
+        "s5"
+      ],
+      "note": "related-search queries for the audit query 'weather' (the 2019 'Найти также' block of s5); content, not a module"
+    },
+    {
+      "match": "^(Request|Запрос|Search|Найти|Yandex|Яндекс|Keyboard|Клавиатура)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s5"
+      ]
+    },
+    {
+      "match": "^(Log in|Войти|Profile, not logged in|Профиль, вход не выполнен|Почта|Mail)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "Log in / Войти and Почта in the 2019 header; the profile button now shows the Log in label"
+    },
+    {
+      "match": "^(Сервисы|Services|All|Все|Ещё|More)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s5"
+      ],
+      "note": "the 2019 'ещё' / 'Ещё' all-services entry"
+    },
+    {
+      "match": "^(Images|Video|Maps|Translate|Weather|Картинки|Видео|Карты|Переводчик|Новости|News|Маркет|Market|Поиск|Web|Поиск ?Поиск|Web ?Web)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s5"
+      ],
+      "note": "services row and result tabs; Weather: the Погода block of s3/s4"
+    },
+    {
+      "match": "^(Информеры|Ваш город определён как .*|Погода в .*|USD .*|EUR .*|Курсы .*)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4"
+      ],
+      "note": "city, weather and exchange-rate informers of the 2019 Russian home"
+    },
+    {
+      "match": "^(Расширенный поиск|Advanced search)$",
+      "in2019": true,
+      "evidence": [
+        "s5"
+      ],
+      "note": "filter icon right of Найти"
+    },
+    {
+      "match": "^(Очистить|Clear)$",
+      "in2019": false,
+      "evidence": [
+        "not visible in s5 (appears only with text)"
+      ],
+      "action": "kept: function (clears the query; shown only while the field has text)"
+    },
+    {
+      "match": "^(Текущая страница \\d+|Страница \\d+|Следующая страница|Current page \\d+|Page \\d+|Next page)$",
+      "in2019": true,
+      "evidence": [
+        "s5"
+      ],
+      "note": "pager (Страницы, дальше)"
+    },
+    {
+      "match": "^(Actions|Действия)$",
+      "in2019": true,
+      "evidence": [
+        "s5"
+      ],
+      "note": "per-result menu, the small triangle after the URL in 2019"
+    },
+    {
+      "match": "^(Ваш регион .*|Your region .*|Google|Bing|Обратная связь|Report an error|Настройки|Settings|О компании|About Yandex|Вакансии|Jobs|Лицензия на использование|License)$",
+      "in2019": true,
+      "evidence": [
+        "s5"
+      ],
+      "note": "2019 results footer: region, other search engines, feedback, settings, company links, licence"
+    },
+    {
+      "match": "^(Политика конфиденциальности|Privacy Policy|Правила рекомендаций|Cookie Policy|Yandex uses cookies|Allow all|Allow essential cookies)$",
+      "in2019": false,
+      "evidence": [
+        "privacy and recommendation-rules links required by law; the site's own cookie notice"
+      ],
+      "action": "kept: legal"
+    },
+    {
+      "match": "^(Голосовой поиск|Voice search|Поиск по картинке|Image search)$",
+      "in2019": false,
+      "evidence": [
+        "no microphone or camera in the 2019 fields (s1, s2, s5)"
+      ],
+      "action": "hidden (.search3__voice-wrapper, .search3__camera_wrapper, .image-search, .HeaderDesktopActions-Cbir)"
+    },
+    {
+      "match": "^(Алиса|Алиса AI|Yandex AI|Search with Yandex AI|Нейро)$",
+      "in2019": false,
+      "evidence": [
+        "no Alice or AI entries in s1-s5"
+      ],
+      "action": "hidden (.alice-ai-button__wrapper, .alice-link__wrapper, header/nav labels)"
+    },
+    {
+      "match": "^(Финансы|Квартиры|Избранное|Заказы|Погода|Меню|Menu|Коммерческие предложения|Commercial offers|ya\\.ru)$",
+      "in2019": false,
+      "evidence": [
+        "not in the 2019 results header, tabs or footer (s5)"
+      ],
+      "action": "hidden in the header, tabs and footer by the theme's data-n19-ya-later marker"
+    },
+    {
+      "match": "^(Please confirm that you are not a robot|Show links|Are you not a robot\\?)$",
+      "in2019": false,
+      "evidence": [
+        "Yandex's rate-limit check page shown to the cloud test browser, not a page net19 themes"
+      ],
+      "action": "not themed (captcha page)"
+    }
+  ]
+}

@@ -27,7 +27,7 @@ header [data-testid="subscribe-button"], header [data-testid="onsite-messaging-u
 [data-testid="masthead-nested-nav"] nav > ul > li > a:hover { background: var(--n19-hover) !important; }
 [data-testid="masthead-nested-nav"] nav > ul > li > button { opacity: 0 !important; width: 10px !important; min-width: 0 !important; margin-left: -2px !important; }
 [data-testid="masthead-nested-nav"] nav > ul > li:hover > button, [data-testid="masthead-nested-nav"] nav > ul > li > button:focus-visible { opacity: 1 !important; }
-nav[aria-label="Main"] li:is([data-navid="Games"], [data-navid="Cooking"], [data-navid="Wirecutter"], [data-navid="The Athletic"]) { display: none !important; }
+nav[aria-label="Main"] li:is([data-navid="Games"], [data-navid="Cooking"], [data-navid="Wirecutter"], [data-navid="The Athletic"], [data-navid="Audio"]), [data-testid="masthead-edition-menu"] li[data-testid="edition-menu-canada"] { display: none !important; }
 
 [data-is-always-free] { border: 0 !important; padding: 0 !important; }
 [data-is-always-free] > .U5yBoa_fdrPackageHeader, [data-is-always-free] > div:first-child:has(> p > strong) { display: none !important; }

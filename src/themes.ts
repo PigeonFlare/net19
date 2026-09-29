@@ -162,7 +162,7 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'wechat', name: 'WeChat', domains: ['wechat.com'], exclude: ['*://web.wechat.com/*'] },
   { id: 'viber', name: 'Viber', domains: ['viber.com'] },
   { id: 'line', name: 'LINE', domains: ['line.me'] },
-  { id: 'yandex', name: 'Yandex', domains: ['yandex.ru'] },
+  { id: 'yandex', name: 'Yandex', domains: ['yandex.ru', 'yandex.com', 'ya.ru'] },
   { id: 'yahoojp', name: 'Yahoo! JAPAN', domains: ['yahoo.co.jp'] },
   { id: 'seznam', name: 'Seznam.cz', domains: ['seznam.cz'] },
   { id: 'trendyol', name: 'Trendyol', domains: ['trendyol.com'] },

@@ -1,0 +1,213 @@
+{
+ "theme": "healthline",
+ "era": "The 2018-2020 Healthline redesign every visitor saw in 2019: white header with teal hamburger, teal SUBSCRIBE and the black healthline wordmark centered, condensed bold Proxima Nova headlines, small teal uppercase category labels, LATEST STORIES / MORE TOP READS lists, Spotlight programs and a footer with About Us, Contact Us, Privacy Policy, Terms of Use, Advertising Policy, Careers, Health Topics, Find an Online Doctor, Newsletters and the Facebook, Twitter, Instagram, Pinterest and Flipboard icons. Captures 2019-03 to 2019-12 agree.",
+ "sources": [
+  {
+   "id": "article-html-201910",
+   "url": "https://arquivo.pt/noFrame/replay/20191015041915/https://www.healthline.com/health/4-best-vitamins-for-skin",
+   "date": "2019-10-15",
+   "shows": "archived 2019 article HTML: menu (Wellness, Tools, Featured, Connect, Discover) and footer links (About Us, Contact Us, Privacy Policy, Terms of Use, Advertising Policy, Careers, Health Topics, Find an Online Doctor, Newsletters, Healthline Media, Facebook, Twitter, Instagram, Pinterest, Flipboard)",
+   "file": "g11-evidence/healthline/healthline-article-201910.html"
+  },
+  {
+   "id": "home-html-201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190724084341/https://www.healthline.com/",
+   "date": "2019-07-24",
+   "shows": "archived 2019 home HTML: top stories row, LATEST STORIES, MORE TOP READS, Spotlight, newsletter field, privacy link",
+   "file": "g11-evidence/healthline/healthline-home-201907.html"
+  },
+  {
+   "id": "articleA-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190907040818/https://www.healthline.com/health/5-benefits-healthy-habits",
+   "date": "2019-09-07",
+   "shows": "articleA page as served in 2019-09 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/healthline/healthline-articleA-a201907.png"
+  },
+  {
+   "id": "articleB-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20191015041915/https://www.healthline.com/health/4-best-vitamins-for-skin",
+   "date": "2019-10-15",
+   "shows": "articleB page as served in 2019-10 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/healthline/healthline-articleB-a201907.png"
+  },
+  {
+   "id": "articleC-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20191220235034/https://www.healthline.com/health/5-recovery-tips-prevent-muscle-soreness",
+   "date": "2019-12-20",
+   "shows": "articleC page as served in 2019-12 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/healthline/healthline-articleC-a201907.png"
+  },
+  {
+   "id": "home-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190314235803/https://www.healthline.com/",
+   "date": "2019-03-14",
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/healthline/healthline-home-a201903.png"
+  },
+  {
+   "id": "home-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190724084341/https://www.healthline.com/",
+   "date": "2019-07-24",
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/healthline/healthline-home-a201907.png"
+  },
+  {
+   "id": "home-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191115024135/https://www.healthline.com/",
+   "date": "2019-11-15",
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/healthline/healthline-home-a201911.png"
+  },
+  {
+   "id": "home-wbref",
+   "url": "wayback-2019-ref:https://www.healthline.com/",
+   "date": "2019",
+   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)",
+   "file": "g11-evidence/healthline/healthline-home-wbref.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(More in Hypertension|Related Conditions|Scroll Right|Explore more in .*)$",
+   "in2019": false,
+   "evidence": [
+    "the topic sub-navigation bar is not in the 2019 article HTML (article-html-201910)"
+   ],
+   "action": "hidden (nav[aria-label^=\"Explore more in\"])"
+  },
+  {
+   "match": "^(Medical News Today|Greatist|Psych Central|Bezzy|Medical Affairs|Content Integrity|Sitemap|Advertise with us|@TRUST, AACI Certified logo|Fitness|Mental Well-Being|Product Reviews|Recipes|Skin Care|tablist area|Product Reviews|Medications|Resources)$",
+   "in2019": false,
+   "evidence": [
+    "not in the 2019 HTML (article-html-201910, home-html-201907): the sister-site links came with the 2020 Red Ventures acquisitions, the Top Reads category tabs and the certification badge are later"
+   ],
+   "action": "hidden (theme later labels, data-n19-later)"
+  },
+  {
+   "match": "^(Your Privacy Choices|Privacy Settings|See additional information)$",
+   "in2019": false,
+   "evidence": [
+    "state privacy choices (the 2019-12 HTML has the first Do Not Sell link)"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Sign in)$",
+   "in2019": false,
+   "evidence": [
+    "Healthline had no reader accounts in 2019 (no sign-in in article-html-201910)"
+   ],
+   "action": "kept: function (account sign-in shown on one header variant)"
+  },
+  {
+   "match": "^(Visit our YouTube page)$",
+   "in2019": false,
+   "evidence": [
+    "the 2019 footer icons were Facebook, Twitter, Instagram, Pinterest, Flipboard (article-html-201910)"
+   ],
+   "action": "hidden (theme later labels)"
+  },
+  {
+   "match": "^(Takeaway)$",
+   "in2019": true,
+   "evidence": [
+    "articleA-a201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Takeaway"
+   ]
+  },
+  {
+   "match": "^(Healthline|article\\ area|aside\\ area|header\\ area|repeated\\ div|section\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "articleA-a201907",
+    "articleB-a201907",
+    "articleC-a201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Healthline",
+    "article area",
+    "aside area",
+    "header area",
+    "repeated div",
+    "section area"
+   ]
+  },
+  {
+   "match": "^(About\\ Us|Advertising\\ Policy|Careers|Contact\\ Us|Health\\ Topics|Newsletters|Terms\\ of\\ Use)$",
+   "in2019": true,
+   "evidence": [
+    "articleB-a201907",
+    "articleC-a201907",
+    "home-a201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "About Us",
+    "Advertising Policy",
+    "Careers",
+    "Contact Us",
+    "Health Topics",
+    "Newsletters",
+    "Terms of Use"
+   ]
+  },
+  {
+   "match": "^(Enter\\ your\\ email|form\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "home-wbref"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Enter your email",
+    "form area"
+   ]
+  },
+  {
+   "match": "^(Health Conditions|Health Topics|Wellness|Tools|Featured|Connect|Discover|About|About Us|Contact Us|Terms of Use|Privacy Notice|Privacy Policy|Advertising Policy|Careers|Newsletters|Healthline|Healthline Media Logo|Visit our Facebook page|Visit our TwitterX page|Visit our Instagram page|Visit our Pinterest page|Visit our Flipboard page|Find an Online Doctor)$",
+   "in2019": true,
+   "evidence": [
+    "article-html-201910",
+    "articleC-a201907"
+   ],
+   "note": "2019 menu and footer links in the archived HTML; the menu's Health Conditions is relabelled Health Topics as in 2019"
+  },
+  {
+   "match": "^(Get our wellness newsletter|Enter your email|SIGN UP|Subscribe|privacy|form area|Carousel|Top Reads|Featured program|repeated .*|main area|search|enhanced by Google|Go to our homepage)$",
+   "in2019": true,
+   "evidence": [
+    "home-html-201907",
+    "home-a201907"
+   ],
+   "note": "2019 home: newsletter email field with privacy link, the top-stories row, MORE TOP READS, Spotlight programs, search"
+  },
+  {
+   "match": "^(Article sections|Definition|Readings|Causes|Causes & Risk Factors|Symptoms|Effects on the body|Diagnosis|Treatment|Home remedies|Prevention|Takeaway|Types|Complications|Management|Diet|Prognosis|Key Takeaways|JOIN NOW|.*Trusted Source)$",
+   "in2019": true,
+   "evidence": [
+    "articleA-a201907",
+    "articleC-a201907"
+   ],
+   "note": "article content: 2019 articles had the same in-article section links (articleA nav: Controls weight, Improves mood, Combats diseases, Boosts energy, Improves longevity, Takeaway), inline citation links (articleA: Mayo Clinic) and newsletter sign-ups (Subscribe)"
+  },
+  {
+   "match": "^(Find a Doctor|Healthline home|Primary)$",
+   "in2019": true,
+   "evidence": [
+    "article-html-201910",
+    "home-a201907"
+   ],
+   "note": "second header variant: logo home link, primary nav, Find a Doctor (2019: Find an Online Doctor)"
+  }
+ ]
+}

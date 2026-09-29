@@ -1,0 +1,117 @@
+{
+  "theme": "usnews",
+  "era": "2019 usnews.com: black header with centered U.S. News logo and small uppercase nav, three-column home with red-ruled TOP STORIES and RANKINGS & ADVICE boxes, Montserrat-style headlines (same for every visitor)",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://web.archive.org/web/20190915231827/https://www.usnews.com/",
+      "date": "2019-09-15",
+      "shows": "homepage and HTML: black header with centered U.S. News logo and uppercase nav (Civic, Education, Health, Money, Travel, Cars, Law Firms, Real Estate), TOP STORIES / lead / RANKINGS & ADVICE columns with red top rules, Load More, footer (About U.S. News, Contact, Press, Advertise, Newsletters, Jobs, Site Map, Store, Terms & Conditions/Privacy Policy), rankings links (Best Colleges, Best Hospitals, Best Countries, Best States, Overall Rankings, Methodology, Countries FAQ …)",
+      "file": "g7-evidence/usnews/wb-usnews-home.png"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/20190411020622/https://www.usnews.com/",
+      "date": "2019-04-11",
+      "shows": "homepage (April): same header, three columns, Brexit lead",
+      "file": "g7-evidence/usnews/wb-usnews-home-apr.png"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20191226210347/https://www.usnews.com/news/best-states/articles/2019-09-12/hawaii-farmers-work-vanilla-chocolate-into-states-economy",
+      "date": "2019-09",
+      "shows": "article: black bar with CIVIC » Best Countries Best States Healthiest Communities Cities The Civic Report Photos News Events, breadcrumb HOME / CIVIC / BEST STATES, headline, dek, By …, Contributor, date, share menu",
+      "file": "g7-evidence/usnews/wb-usnews-article.png"
+    },
+    {
+      "id": "s4",
+      "url": "https://www.google.com/search?udm=2&q=usnews.com+best+colleges+rankings+page+2019+screenshot",
+      "date": "2018-09 / 2019",
+      "shows": "Google Images: Higher Ed Dive 'US News 2019 college rankings' screenshot of the ranking list",
+      "file": "g7-evidence/usnews/gimg-rankings.jpg"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|nav|footer|main|section|article|form|search|aside|dialog|region) area$|^repeated ",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "page regions and repeated story items"
+    },
+    {
+      "match": "^(U\\.S\\. News and World Report Logo|U\\.S\\. News & World Report|News|Civic|Education|Health|Money|Travel|Cars|Law Firms|Real Estate|Best Countries|Best States|Healthiest Communities|Cities|Photos|Events|Newsletters|Ideas & Opinions|Open extra navigation menu|Search|National News|Politics|World|Business|Science|Health News|Cartoons|New York Local)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "header, section nav and News subsections"
+    },
+    {
+      "match": "^(Best Colleges|Best Graduate Schools|Best Onlines? Colleges|Global Universities|Best Hospitals|Best Children's Hospitals|Doctors|Best Senior Living|Senior Living|Best Nursing Homes|Medicare|Paying for College|Mind|Best Car Insurance Companies|Overall Rankings|Rankings Index|Countries Index|Countries News|Methodology|Countries FAQ|States Index|States News|States FAQ|Rankings & Advice|Top Stories|See All.*|View All .+|Learn More.*|Load More|You May Also Like|Most Popular|Related Articles|Recommended)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s4"
+      ],
+      "note": "rankings and advice links, module links (2019: Rankings & Advice column, 'See all … Rankings »', Load More, Recommended)"
+    },
+    {
+      "match": "^(About U\\.S\\. News|Editorial Guidelines|Contact|Press|Advertise|Jobs|Site Map|Store|Terms & Conditions|Terms and Conditions|Privacy Policy|U\\.S\\. State Privacy Notice|Do Not Sell.*|Your Privacy Choices|Accessibility)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "footer (legally required privacy notices kept)"
+    },
+    {
+      "match": "^(Share on (Facebook|Twitter|LinkedIn)|More social sharing options|Email Address|Your Email|Email|Sign Up|Pick Newsletters|username|Close)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "share menu and newsletter sign-up (2019 had share menu and Newsletters)"
+    },
+    {
+      "match": "^(Dawn Papandrea|Emily Hayes|Ray Frager|Jessica Merritt|Mark Evitt|Claire Wolters|Rachael Hood|Ashley Samonte|Elaine K\\. Howley|Annika Urban|Patricia Weiser|Tim Smart|Olivier Knox|Holliday Woodard|Cherise Threewitt|Cheyenne Buckingham|Shanley Chien|Ryan Maxin|Alex Kwanten|Money Apps and FDIC Insurance|How to Cope With Grief|Vaccination in Nursing Homes)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "today's bylines and teaser links (content)"
+    },
+    {
+      "match": "^(Modal Overlay Box|close dialog)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "advertiser overlay unit with its close button (ads are left alone; 2019 pages carried ads)"
+    },
+    {
+      "match": "^(Sign In|Save|Add us on|Comment|Create an Account or Login|Continue)$",
+      "in2019": false,
+      "evidence": [
+        "U.S. News accounts, saved articles, comments and Google preferred-source button came after 2019; none in s1-s3"
+      ],
+      "note": "hidden",
+      "action": "hidden"
+    },
+    {
+      "match": "^(?=.{20,}$)(?!(?:Ask AI|Ask the|AI Mode|AI summary|Summarize|Listen to (?:this|the) article|Subscribe|Sign in|Sign up|Log in|Download the app|Get the app)\\b).*\\s.*$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "story headlines and teasers (content)"
+    }
+  ]
+}

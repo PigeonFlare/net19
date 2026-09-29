@@ -28,3 +28,4 @@ html[data-net19-mode="dark"]{--n19-page:#1f1f1f;--n19-text:#ddd;--n19-link:#9db4
 #contents .Algo .sw-Cite__textUrl{color:var(--n19-url)!important}
 #contents .Algo .sw-Card__summary{color:var(--n19-snippet)!important}
 #contents .sw-CardBase{border-radius:0!important;box-shadow:none!important}
+[data-n19-later]{display:none!important}

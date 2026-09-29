@@ -35,7 +35,7 @@ aside.gnt_nb:has(>iframe.gnt_nb_if){display:none!important}
 .gnt_sbt__ms::before{text-transform:uppercase!important;letter-spacing:.1em!important;font-size:10px!important;font-weight:700!important}
 .gnt_m_he,.gnt_m_tl_c,.gnt_m_sb_hl{letter-spacing:-.01em!important}
 .gnt_m_th,.gnt_m_tt::after{border-color:var(--n19-rule)!important}
-.gnt_m_he__br::after,.gnt_m_tl_c__br::after,.gnt_m_sb_hl__br::after{font-family:Georgia, "Times New Roman", serif!important}
+.gnt_m_he__br::after,.gnt_m_tl_c__br::after,.gnt_m_sb_hl__br::after{font-family:"Unify Sans", "Helvetica Neue", Helvetica, Arial, sans-serif!important;font-weight:400!important}
 div.gnt_bc{background:none!important}
 .gnt_ar_lbl_a{font-size:12px!important;letter-spacing:.1em!important;color:var(--n19-news)!important}
 .gnt_ar_fyt{display:none!important}
@@ -57,3 +57,7 @@ img.gnt_ar_by_i{display:none!important}
 a[href*="google.com/preferences/source"],.gnt_n_fl_l__li,a[href*="app.adjust.com"]:not(footer a){display:none!important}
 .gnt_ft{border-top:1px solid var(--n19-rule)!important}
 .gnt_ft_a{font-family:"Unify Sans", "Helvetica Neue", Helvetica, Arial, sans-serif!important}
+#dd-widget,.dd-widget-wrapper,a.gnt_ft_a:is([href*="threads.net"],[href*="supportlocal.usatoday.com"],[href*="responsible-disclosure"]){display:none!important}
+footer.gnt_ft a.gnt_ft_a:is([href*="betting"],[href*="blueprint"],[href*="cashback"],[href*="coupons"]){display:none!important}
+:is(.gnt_m_he,.gnt_m_tl_c,.gnt_m_sb_hl,.gnt_m_flm_a,.gnt_m_th_a,.gnt_ar_hl,h1.gnt_ar_hl,.gnt_m_lb_a,.gnt_sr_a){font-family:"Unify Sans", "Helvetica Neue", Helvetica, Arial, sans-serif!important;font-weight:700!important}
+header.gnt_n nav.gnt_n_mn a.gnt_n_us_sb{background:transparent!important;color:var(--n19-blue)!important}

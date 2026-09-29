@@ -1,0 +1,175 @@
+{
+ "theme": "gettyimages",
+ "era": "Late-2019 Getty Images (home 2019-11/12, detail 2019-11 and creative-video 2019-11 captures): white header with the hamburger BROWSE and PRICING at left, the centred gettyimages logo, BOARDS, CART and an outlined SIGN IN at right; a #e6e6e6 hero with 'Moving the world with images' in light Lato and a square search field with the 'Creative Images' picker; the CREATIVE / EDITORIAL / VIDEO / MUSIC tabs with a purple underline; purple outlined keyword chips and the purple footer with Solutions / Products / Company / Support columns. The same page for every visitor.",
+ "sources": [
+  {
+   "id": "home-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191104221539/https://www.gettyimages.com/",
+   "date": "2019-11-04",
+   "shows": "home page as served on 2019-11-04 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/gettyimages/gettyimages-home-a201911.png"
+  },
+  {
+   "id": "home-a201912",
+   "url": "https://arquivo.pt/noFrame/replay/20191201214713/https://www.gettyimages.com/",
+   "date": "2019-12-01",
+   "shows": "home page as served on 2019-12-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/gettyimages/gettyimages-home-a201912.png"
+  },
+  {
+   "id": "detail2-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191105034103/https://www.gettyimages.com/detail/photo/a-exhaust-pipe-of-a-car-emitting-fumes-royalty-free-image/57648377",
+   "date": "2019-11-05",
+   "shows": "detail2 page as served on 2019-11-05 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/gettyimages/gettyimages-detail2-a201911.png"
+  },
+  {
+   "id": "video-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191106041055/https://www.gettyimages.com/creative-video",
+   "date": "2019-11-06",
+   "shows": "video page as served on 2019-11-06 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/gettyimages/gettyimages-video-a201911.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Unsplash|Search by image or video|AI Generator|Generate|AI Solutions|Generative AI.*)$",
+   "in2019": false,
+   "evidence": [
+    "home-a201912",
+    "detail2-a201911"
+   ],
+   "note": "Unsplash (acquired 2021), the search-by-image button and the AI generator are not on the 2019 pages; hidden; the hero tab row keeps the 2019 CREATIVE / EDITORIAL / VIDEO / MUSIC tabs (the later COLLECTIONS tab is hidden)",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Do Not Sell or Share|Do Not Sell.*|Cookie Settings|Your Privacy Choices)$",
+   "in2019": false,
+   "evidence": [
+    "home-a201912"
+   ],
+   "note": "US privacy opt-out link (2020+)",
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Boards|CREATIVE|Creative|EDITORIAL|Editorial|Getty\\ Images|Images|Media\\ Manager|Photos\\.com|Premium\\ Access|iStock)$",
+   "in2019": true,
+   "evidence": [
+    "detail2-a201911",
+    "home-a201911",
+    "home-a201912"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Boards",
+    "CREATIVE",
+    "Creative",
+    "EDITORIAL",
+    "Editorial",
+    "Getty Images",
+    "Images",
+    "Media Manager",
+    "Photos.com",
+    "Premium Access",
+    "iStock"
+   ]
+  },
+  {
+   "match": "^(Custom\\ Content)$",
+   "in2019": true,
+   "evidence": [
+    "detail2-a201911",
+    "video-a201911"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Custom Content"
+   ]
+  },
+  {
+   "match": "^(search)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "search"
+   ]
+  },
+  {
+   "match": "^(Careers|Collections|Editorial\\ policy|Grants\\ and\\ giving|License\\ information|Moving\\ the\\ world\\ with\\ images|Overview|Plugins\\ and\\ extensions|Privacy\\ policy|Rights\\ and\\ clearance|Royalty\\-free\\ Creative|Sign\\ in|Site\\ map|Stock\\ photos|Website\\ terms)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "home-a201912"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Careers",
+    "Collections",
+    "Editorial policy",
+    "Grants and giving",
+    "License information",
+    "Moving the world with images",
+    "Overview",
+    "Plugins and extensions",
+    "Privacy policy",
+    "Rights and clearance",
+    "Royalty-free Creative",
+    "Sign in",
+    "Site map",
+    "Stock photos",
+    "Website terms"
+   ]
+  },
+  {
+   "match": "^(VIDEO|Video)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "home-a201912",
+    "video-a201911"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "VIDEO",
+    "Video"
+   ]
+  },
+  {
+   "match": "^(Enterprise|Plans and pricing|Explore plans|Pricing|PRICING|Trends & Insights|Creative Collections|Stock videos|Search guide|Premium Access Resource Center|API Integration|Events and webinars|Archive|Assignments|About us|Newsroom|Investor|Corporate responsibility|Customer support|Contributor support|Apply to be a contributor|Region Picker|Accordion .* Links|Creative Images & Video|Creative Images|FILTERS|Filters|Mosaic Grid|Fixed Grid|NEXT|Next|next slide|previous slide|Pagination page number input|Breadcrumb|Getty Images homepage|Take me to the home page|Oops! We can't find the page you're looking for\\.|clear|form|text|\\.st0\\{fill:#fff\\})$",
+   "in2019": true,
+   "evidence": [
+    "home-a201912",
+    "home-a201911",
+    "detail2-a201911",
+    "video-a201911"
+   ],
+   "note": "2019 counterparts: BROWSE menu (Creative, Editorial, Video, Music, Creative Insights), PRICING and Premium Access, the footer's Solutions / Products / Company / Support columns (About, Press room, Careers, Investor relations, Customer support, Contributor support, API, Archive, Assignments) and country picker, the search bar's image-type picker, filters, mosaic/grid view, pagination, carousels and the site's own 404 page"
+  },
+  {
+   "match": "^(repeated .*|header area|nav area|main area|section area|footer area|search area|form area|article area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201912",
+    "detail2-a201911"
+   ],
+   "note": "page structure; repeated items are images, videos and keyword links"
+  },
+  {
+   "match": "^[\\w][\\w'’.,:!&?\\- ]{1,70}$",
+   "in2019": true,
+   "evidence": [
+    "detail2-a201911",
+    "home-a201912"
+   ],
+   "note": "content: image titles, captions and keyword/related-search links (2019 detail pages listed keyword chips such as 'Aire libre Fotos', 'Humo Fotos')"
+  }
+ ]
+}

@@ -1,0 +1,137 @@
+{
+  "theme": "yahoo",
+  "era": "2019 Yahoo: YAHOO! wordmark, purple category nav, hero story with thumbnails and a news stream, Trending Now and weather in the right rail (s1-s4); search.yahoo.com with a grey #f1f1f1 band, square field and purple button, logo on the right (s5, s6). Signed-out and signed-in homepages shared the layout.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://arun.is/blog/10-year-challenge/",
+      "date": "2019-01-22",
+      "file": "/home/claude/sweeps/g9-evidence/yahoo/arun-2019-01-yahoo.jpg",
+      "shows": "homepage: YAHOO! logo, square search box with blue search button, Sign in, bell (Notifications), Mail; purple nav Mail/News/Finance/Sports/Politics/Entertainment/Lifestyle/More...; hero story with 5 thumbnails, stream with category label, publisher, reactions count; right rail Make Yahoo your homepage, Trending Now 1-10, ad, weather with 4 days"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.versionmuseum.com/history-of/yahoo-website",
+      "date": "2019",
+      "file": "/home/claude/sweeps/g9-evidence/yahoo/versionmuseum-2019-yahoo.jpg",
+      "shows": "homepage 2019: same header and nav, hero with reactions, stream with related links, Trending Now with Father's Day tab, weather Chicago with 4 days"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.webdesignmuseum.org/gallery/yahoo-2019",
+      "date": "2019-12",
+      "file": "/home/claude/sweeps/g9-evidence/wb/wdm/t-yahoo-2019.jpg",
+      "shows": "full homepage late 2019: header, nav incl. Shopping/Subscriptions/My Channel, hero, stream, Trending Now + Holiday Searches, weather, scoreboard, horoscope, footer Terms/Privacy/Advertise/About Our Ads/Careers/Help/Feedback"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/20190615235626/https://www.yahoo.com/",
+      "date": "2019-06-15",
+      "file": "/home/claude/sweeps/g9-evidence/wb/yahoo-home.png",
+      "shows": "homepage labels (CSS missing in the capture): Sign in, Notifications, Mail, nav, Search, stream with Reactions, Trending Now, weather United States Today..., Scoreboard, The best TV for free video module with previous/next, Horoscopes, footer"
+    },
+    {
+      "id": "s5",
+      "url": "https://www.bleepingcomputer.com/news/security/tech-support-scammers-target-search-ads-on-isp-start-pages/",
+      "date": "2019-06-25",
+      "file": "/home/claude/sweeps/g9-evidence/yahoo/bleeping-2019-06-serp.jpg",
+      "shows": "real user search.yahoo.com SERP: grey header band with search box, tabs Web/Images/Video/News/More/Anytime, Also try, ads and results with blue titles and green URLs"
+    },
+    {
+      "id": "s6",
+      "url": "https://web.archive.org/web/20180325051704/http://search.yahoo.com/search?p=weather",
+      "date": "2018-03-25",
+      "file": "/home/claude/sweeps/g9-evidence/wb/yahoo-serp.png",
+      "shows": "nearest capture of the same SERP design (no 2019 capture exists): #f1f1f1 73px band, 520x48 square field + 80px #542dfe button at x=124, Sign in, mail, apps, YAHOO! logo on the right; tabs 13px bold with 2px underline; Also try; weather answer; titles 18px #330099; snippets 13px #525252; footer Settings/Help/Suggestions/Privacy/Terms/Advertise/About ads/About this page"
+    },
+    {
+      "id": "s7",
+      "url": "https://web.archive.org/web/20190615235723/https://news.yahoo.com/",
+      "date": "2019-06-15",
+      "file": "(labels via inventory of the capture)",
+      "shows": "Yahoo News nav: News, US, World, Politics, Originals, Health, Science, stories"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(From Our Shopping Experts|Spotlight Videos|Yahoo Games|Popular Games|Game categories|Card|Word|Puzzle|Popular|Play now.*|Newsletter sign up form|The Yodel|Enter your email|Sign up|Large Cards|Small Cards|Feed view|For You|Pause|Up next|Explore AI results with Yahoo Scout|People also ask|Yahoo Scout|Ask AI)$",
+      "in2019": false,
+      "evidence": [
+        "none of these modules appear on the 2019 homepage or SERP (s1-s6): Yahoo Games rail and stream cards, newsletter sign-up, shopping-experts and vertical-video modules, feed-view toggle, carousel pause, gen-AI People also ask and Yahoo Scout are later"
+      ],
+      "action": "hidden (data-n19-later via yahoo.js; .genaipaa)"
+    },
+    {
+      "match": "^(header area|search area|section area|contentinfo area|carousel|Top stories|Top stories and Stories for you|Trending Now|Trending content|Weather, games, newsletter sign up, and more|Slide \\d+ of \\d+|Next slide|Previous slide|previous|next)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "page regions: header, hero stories (the 2019 hero rotated through stories with previous/next), stream, right rail"
+    },
+    {
+      "match": "^(Home|Mail|News|Finance|Sports|Politics|Entertainment|Lifestyle|More|More menu|More\\.\\.\\.|US|World|Originals|Science|Health|Weather News|Sign in|Check your mail|Mail Sign in to view your mail|Notifications)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s4",
+        "s7"
+      ],
+      "note": "header and nav; Weather News is the News nav's weather section (2019 News nav had its own topic links, s7)"
+    },
+    {
+      "match": "^(Search|Search the web|Search Query for Search the web|Suggestions|Settings|Help|Privacy|Terms|Advertise|About ads|About Our Ads|About our Ads|About this page|Careers|Feedback|CA Privacy Notice|Your Privacy Choices|Privacy Policy|Products and Services|Terms and Privacy Policy)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4",
+        "s6"
+      ],
+      "note": "search field and footer links (CA Privacy Notice / Your Privacy Choices are the 2020+ names of the same legal footer slot as 2019's Privacy (Updated))"
+    },
+    {
+      "match": "^(San Jose|See forecast|Update forecast graphs|AccuWeather|National Weather Service|The Weather Channel|Anytime|Web|All|Images|Videos|Video|Also try.*)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s5",
+        "s6"
+      ],
+      "note": "weather widget and SERP tabs/answers"
+    },
+    {
+      "match": "^(View all comments|Dismiss|Reactions|publisher preference|\\d+ comments?)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s4"
+      ],
+      "note": "stream story reactions/comments and the story menu"
+    },
+    {
+      "match": "^(repeated .*)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s5"
+      ],
+      "note": "stories, trending items, results"
+    },
+    {
+      "match": "^(\\S+\\s+){5,}\\S+.*$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "content: story headlines (six words or more)"
+    }
+  ]
+}

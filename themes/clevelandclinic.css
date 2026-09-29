@@ -48,3 +48,31 @@ main a.bg-brandBlue-500, main button.bg-brandBlue-500, .container a.bg-brandBlue
   background: var(--n19-orange) !important; border-color: var(--n19-orange) !important; text-transform: uppercase !important; letter-spacing: 1px !important;
 }
 a.rounded-rem5px, button.rounded-rem5px, .container [class*="rounded-"]:not([class*="rounded-full"]) { border-radius: 0 !important; }
+[data-n19-later] { display: none !important; }
+header a.bg-brandBlue-500 { display: none !important; }
+header ul li > button svg, header ul li > button [class*="chevron" i] { display: none !important; }
+header ul li > a, header ul li > button { color: var(--n19-head) !important; }
+header section.bg-gray-300 a { color: var(--n19-head) !important; }
+header section.bg-gray-300 a[href^="tel:"] { color: var(--n19-link) !important; }
+section.flex.flex-col.justify-start:has(> div.border-forestGreen-500) > div:not(:last-child) { display: none !important; }
+section.flex.flex-col.justify-start:has(> div.border-forestGreen-500) a { display: block !important; text-align: center !important; text-decoration: none !important; text-transform: uppercase !important; letter-spacing: 1.5px !important; font-size: 13px !important; font-weight: 700 !important; padding: 10px 16px !important; border: 1px solid var(--n19-rule) !important; color: var(--n19-link) !important; background: var(--n19-page) !important; }
+section.flex.flex-col.justify-start:has(> div.border-forestGreen-500) div:first-child > a { background: var(--n19-orange) !important; border-color: var(--n19-orange) !important; color: #fff !important; }
+footer.bg-brandBlue-500, footer.bg-brandBlue-500 :is(.bg-brandBlue-500, .bg-blue-800) { background: var(--n19-page) !important; color: var(--n19-text) !important; }
+footer.bg-brandBlue-500 > .container { border-top: 1px solid var(--n19-rule) !important; }
+footer.bg-brandBlue-500 > .bg-blue-800 > .container { border-top: 1px solid var(--n19-rule) !important; text-align: center !important; }
+footer.bg-brandBlue-500 :is(h3, h4, p.font-bold) { color: var(--n19-head) !important; font-size: 17px !important; font-weight: 700 !important; }
+footer.bg-brandBlue-500 :is(a, p, span, li, div) { color: var(--n19-text) !important; text-decoration: none !important; }
+footer.bg-brandBlue-500 a:hover, footer.bg-brandBlue-500 a[href^="tel:"] { color: var(--n19-link) !important; }
+footer.bg-brandBlue-500 :is(svg, svg *) { color: #a6a6a6 !important; fill: currentColor; }
+footer.bg-brandBlue-500 .container :is(a, a.text-brandBlue-500, a.text-white) { color: var(--n19-text) !important; }
+footer.bg-brandBlue-500 .container a:hover, footer.bg-brandBlue-500 .container a[href^="tel:"] { color: var(--n19-link) !important; }
+footer.bg-brandBlue-500 svg :is(path, circle, rect) { fill: #a6a6a6 !important; }
+header[aria-label="Site Header"] { position: relative !important; }
+header[aria-label="Site Header"] > div.print\:hidden:first-child { position: absolute !important; top: 0 !important; right: 0 !important; left: auto !important; z-index: 3 !important; width: auto !important; }
+header[aria-label="Site Header"] > div.print\:hidden:first-child .bg-gray-300 { background: transparent !important; }
+header[aria-label="Site Header"] > div.flex.flex-row:has(> a > div > img) { padding-top: 10px !important; }
+header[aria-label="Site Header"] > div.flex.flex-row:has(> a > div > img) > div:last-child { padding-top: 34px !important; }
+header[aria-label="Site Header"] > div.flex.flex-row:has(> a > div > img) > a:first-child img { height: 40px !important; }
+header[aria-label="Site Header"] > div.flex.flex-row:has(> a > div > img) > a:first-child > div { margin: 14px 0 0 16px !important; }
+header[aria-label="Site Header"] > div.flex.flex-row:has(> a > div > img) > div.flex-1 ul li > :is(a, button) { padding-top: 2px !important; padding-bottom: 8px !important; }
+header[aria-label="Site Header"] > div.flex.flex-row:has(> a > div > img) > div.flex-1 ul li > :is(a, button) { padding-top: 5px !important; padding-bottom: 5px !important; }

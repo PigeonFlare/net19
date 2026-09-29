@@ -19,7 +19,7 @@ rt-header search-results-controls rt-button[slot="search-clear"]{--textColor:#77
 rt-header-nav-item>a[slot="link"]{font-size:20px!important;font-weight:700!important;text-transform:uppercase!important;letter-spacing:0!important}
 rt-header-nav-item temporary-display,rt-header-nav-item rt-badge{display:none!important}
 .trending-bar{background-color:var(--n19-trending)!important}
-:where(:root:not([data-n19-safe])) editorial-spotlight-tile>div[slot="caption"]{margin:-10px!important;padding:10px 12px!important;min-height:100px;box-sizing:border-box}
+:where(:root:not([data-n19-safe])) editorial-spotlight-tile>div[slot="caption"]{margin:0!important;padding:10px 12px!important;min-height:100px;box-sizing:border-box}
 editorial-spotlight-tile>div[slot="caption"]{background:var(--n19-caption)!important;color:var(--n19-text)!important}
 editorial-spotlight-tile>div[slot="caption"] h2{color:var(--n19-heading)!important;font-weight:700!important;text-transform:uppercase!important;font-size:21px!important;line-height:21px!important}
 editorial-spotlight-tile>div[slot="caption"] p{color:var(--n19-text)!important;font-size:15px!important;line-height:18px!important}
@@ -30,3 +30,7 @@ h2 rt-text[context="heading"],.dynamic-poster-list__sponsored-header rt-text,[sl
 media-info-tile .poster-tile-meta rt-text:not([slot]){--textColor:var(--n19-text)!important}
 rt-header search-results-controls input,watchlist-button,rt-button{--borderRadius:3px}
 button.arti-desktop,button[aria-label="Open aRTi"],[slot="arti-desktop"],[slot="arti-mobile"]{display:none!important}
+rt-header-nav-item[slot="shop"],[data-n19-app-promo],rt-app-modal-content,a[href*="tiktok.com"],a[href*="bsky.app"],.trending-bar a[href*="/article/app/"]{display:none!important}
+rt-header>a[href="/about"],rt-header>a[href="/critics"],rt-header>ul[slot="nav-links"] a,rt-header>ul[slot="nav-links"] button,rt-header #masthead-show-login-btn,rt-header-nav-item>a[slot="link"]{color:#fff!important}
+:where(:root:not([data-n19-safe])) rt-header ul[slot="nav-links"]>li:has(>a[href="/about"]){display:flex!important;align-items:center!important}
+:where(:root:not([data-n19-safe])) editorial-spotlight-tile>div[slot="caption"] :is(h2,p){white-space:normal!important;overflow-wrap:anywhere!important;max-width:100%!important}

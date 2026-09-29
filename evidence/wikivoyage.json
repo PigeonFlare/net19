@@ -1,0 +1,575 @@
+{
+ "theme": "wikivoyage",
+ "era": "2019 English Wikivoyage in the Vector skin (?useskin=vector): page banner with breadcrumbs, sidebar Main page / Travel destinations / Star articles / What's Nearby? / Tourist office / Random page, 'Get involved', Tools, In other projects, Print/export and In other languages. Vector was the default for everyone in 2019.",
+ "sources": [
+  {
+   "id": "wp-history1-201909",
+   "url": "https://arquivo.pt/noFrame/replay/20190928075947/https://en.wikipedia.org/w/index.php?title=Blohm_%26_Voss_BV_138&action=history",
+   "date": "2019-09-28",
+   "shows": "a MediaWiki history page in the same 2019 Vector skin (English Wikipedia): Filter revisions box, compare button, (newest | oldest) and 20/50/100/250/500 links",
+   "file": "g10-wbr/wikipedia-history1-201909.png"
+  },
+  {
+   "id": "wp-search1-201910",
+   "url": "https://arquivo.pt/noFrame/replay/20191016080058/https://en.wikipedia.org/w/index.php?title=Special:Search&profile=all&search=Hunn-Black%20%26%20Merritt%20Funeral%20Home&ns0=1",
+   "date": "2019-10-16",
+   "shows": "the 2019 MediaWiki Special:Search page (same software and skin): Search results heading, profile tabs, results count",
+   "file": "g10-wbr/wikipedia-search1-201910.png"
+  },
+  {
+   "id": "article2-201906",
+   "url": "https://arquivo.pt/noFrame/replay/20190607011047/https://en.wikivoyage.org/wiki/Paris",
+   "date": "2019-06-07",
+   "shows": "article2 page as served in 2019-06 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikivoyage/wikivoyage-article2-201906.png"
+  },
+  {
+   "id": "article5-201909",
+   "url": "https://arquivo.pt/noFrame/replay/20190921124429/https://en.wikivoyage.org/wiki/Madeira",
+   "date": "2019-09-21",
+   "shows": "article5 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikivoyage/wikivoyage-article5-201909.png"
+  },
+  {
+   "id": "article8-201909",
+   "url": "https://arquivo.pt/noFrame/replay/20190921124358/https://en.wikivoyage.org/wiki/Algarve",
+   "date": "2019-09-21",
+   "shows": "article8 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikivoyage/wikivoyage-article8-201909.png"
+  },
+  {
+   "id": "home1-201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190323081342/https://en.wikivoyage.org/wiki/Main_Page",
+   "date": "2019-03-23",
+   "shows": "home1 page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikivoyage/wikivoyage-home1-201903.png"
+  },
+  {
+   "id": "home2-201906",
+   "url": "https://arquivo.pt/noFrame/replay/20190607010913/https://en.wikivoyage.org/wiki/Main_Page",
+   "date": "2019-06-07",
+   "shows": "home2 page as served in 2019-06 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikivoyage/wikivoyage-home2-201906.png"
+  },
+  {
+   "id": "home3-201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191106054127/https://en.wikivoyage.org/wiki/Main_Page",
+   "date": "2019-11-06",
+   "shows": "home3 page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikivoyage/wikivoyage-home3-201911.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Multilingual Wikisource|Wikimedia Outreach|Wikifunctions)$",
+   "in2019": false,
+   "evidence": [
+    "article5-201909",
+    "article8-201909",
+    "home1-201903"
+   ],
+   "note": "In other projects entries the 2019 captures do not list",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Trip planner|Arrivals lounge)$",
+   "in2019": false,
+   "note": "sidebar entries the 2019 captures do not have",
+   "action": "hidden",
+   "evidence": [
+    "article5-201909",
+    "article8-201909",
+    "home1-201903"
+   ]
+  },
+  {
+   "match": "^Expand all( collapsible elements.*)?$",
+   "in2019": false,
+   "note": "Tools > Expand all (2023+)",
+   "action": "hidden",
+   "evidence": [
+    "article5-201909",
+    "article8-201909",
+    "home1-201903"
+   ]
+  },
+  {
+   "match": "^(Reply|Latest comment:?.*|\\d+ comments?|\\d+ people in discussion|Subscribe|Unsubscribe)$",
+   "in2019": false,
+   "note": "DiscussionTools reply buttons and topic metadata (2021+)",
+   "action": "hidden",
+   "evidence": [
+    "article5-201909",
+    "article8-201909",
+    "home1-201903"
+   ]
+  },
+  {
+   "match": "^(Advanced search:?|Search in:.*|Search in page text)$",
+   "in2019": false,
+   "note": "AdvancedSearch panes; the profile tabs are shown instead",
+   "action": "hidden",
+   "evidence": [
+    "article5-201909",
+    "article8-201909",
+    "home1-201903"
+   ]
+  },
+  {
+   "match": "^(Code of Conduct|Universal Code of Conduct)$",
+   "in2019": false,
+   "note": "footer link (2022+)",
+   "action": "hidden",
+   "evidence": [
+    "article5-201909",
+    "article8-201909",
+    "home1-201903"
+   ]
+  },
+  {
+   "match": "^(Get shortened URL|Download QR code|Switch to legacy parser)$",
+   "in2019": false,
+   "note": "Tools entries added after 2019",
+   "action": "hidden",
+   "evidence": [
+    "article5-201909",
+    "article8-201909",
+    "home1-201903"
+   ]
+  },
+  {
+   "match": "^(Language settings|All languages.*|\\d+ more)$",
+   "in2019": false,
+   "note": "ULS compact-language button and cog; the 2019 captures list every language in full",
+   "action": "hidden",
+   "evidence": [
+    "article5-201909",
+    "article8-201909",
+    "home1-201903"
+   ]
+  },
+  {
+   "match": "^Legal & safety contacts$",
+   "in2019": false,
+   "evidence": [
+    "EU Digital Services Act point of contact, footer link added 2024"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Next page|Previous page|First page|Last page)$",
+   "in2019": false,
+   "note": "Codex search pager; the bottom copy is the only way to page results",
+   "action": "kept: function",
+   "evidence": [
+    "article5-201909",
+    "article8-201909",
+    "home1-201903"
+   ]
+  },
+  {
+   "match": "^(10|11|12|13|14|15|Belgium|Bordeaux|Dijon|Fontainebleau|France|Frankfurt|Geneva|Germany|Gothic\\ architecture|Lausanne|Lille|London|Lyon|Milan|Netherlands|Orléans|Parigi\\ –\\ Italian|Pariisi\\ –\\ Finnish|Parijs\\ –\\ Dutch|Paris\\ Orly\\ Airport|Paris\\ –\\ French|Paris\\ –\\ German|Paris\\ –\\ Portuguese|Paris\\ –\\ Romanian|Paris\\ –\\ Swedish|Paris\\ –\\ Vietnamese|Paris/10th\\ arrondissement|Paris/11th\\ arrondissement|Paris/12th\\ arrondissement|Paris/13th\\ arrondissement|Paris/14th\\ arrondissement|Paris/15th\\ arrondissement|Paris/16th\\ arrondissement|Paris/17th\\ arrondissement|Paris/18th\\ arrondissement|Paris/19th\\ arrondissement|Paris/1st\\ arrondissement|Paris/20th\\ arrondissement|Paris/3rd\\ arrondissement|Paris/4th\\ arrondissement|Paris/5th\\ arrondissement|Paris/6th\\ arrondissement|Paris/7th\\ arrondissement|Paris/8th\\ arrondissement|Paris/9th\\ arrondissement|Paris/La\\ Défense|Paryż\\ –\\ Polish|París\\ –\\ Spanish|Rennes|Saint\\-Denis\\ \\(Île\\-de\\-France\\)|San\\ Francisco|Toulouse|Tours|United\\ Kingdom|Versailles|Île\\-de\\-France)$",
+   "in2019": true,
+   "evidence": [
+    "article2-201906"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "10",
+    "11",
+    "12",
+    "13",
+    "14",
+    "15",
+    "Belgium",
+    "Bordeaux",
+    "Dijon",
+    "Fontainebleau",
+    "France",
+    "Frankfurt",
+    "Geneva",
+    "Germany",
+    "Gothic architecture",
+    "Lausanne",
+    "Lille",
+    "London",
+    "Lyon",
+    "Milan",
+    "Netherlands",
+    "Orléans",
+    "Parigi – Italian",
+    "Pariisi – Finnish",
+    "Parijs – Dutch",
+    "Paris Orly Airport",
+    "Paris – French",
+    "Paris – German",
+    "Paris – Portuguese",
+    "Paris – Romanian",
+    "Paris – Swedish",
+    "Paris – Vietnamese",
+    "Paris/10th arrondissement",
+    "Paris/11th arrondissement",
+    "Paris/12th arrondissement",
+    "Paris/13th arrondissement",
+    "Paris/14th arrondissement",
+    "Paris/15th arrondissement",
+    "Paris/16th arrondissement",
+    "Paris/17th arrondissement",
+    "Paris/18th arrondissement",
+    "Paris/19th arrondissement",
+    "Paris/1st arrondissement",
+    "Paris/20th arrondissement",
+    "Paris/3rd arrondissement",
+    "Paris/4th arrondissement",
+    "Paris/5th arrondissement",
+    "Paris/6th arrondissement",
+    "Paris/7th arrondissement",
+    "Paris/8th arrondissement",
+    "Paris/9th arrondissement",
+    "Paris/La Défense",
+    "Paryż – Polish",
+    "París – Spanish",
+    "Rennes",
+    "Saint-Denis (Île-de-France)",
+    "San Francisco",
+    "Toulouse",
+    "Tours",
+    "United Kingdom",
+    "Versailles",
+    "Île-de-France"
+   ]
+  },
+  {
+   "match": "^(IATA)$",
+   "in2019": true,
+   "evidence": [
+    "article2-201906",
+    "article5-201909"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "IATA"
+   ]
+  },
+  {
+   "match": "^(A\\ list\\ of\\ all\\ wiki\\ pages\\ that\\ link\\ here\\ \\[alt\\-j\\]|A\\ list\\ of\\ recent\\ changes\\ in\\ the\\ wiki\\ \\[alt\\-r\\]|About\\ the\\ project,\\ what\\ you\\ can\\ do,\\ where\\ to\\ find\\ things|Cookie\\ statement|Create\\ a\\ book|Creative\\ Commons\\ Attribution\\-ShareAlike\\ License|Developers|Discussion\\ about\\ the\\ content\\ page\\ \\[alt\\-t\\]|Download\\ as\\ PDF|Edit\\ interlanguage\\ links|Go\\ to\\ a\\ page\\ with\\ this\\ exact\\ name\\ if\\ it\\ exists|Information\\ on\\ how\\ to\\ cite\\ this\\ page|Interlingual\\ lounge|Link\\ to\\ connected\\ data\\ repository\\ item\\ \\[alt\\-g\\]|Load\\ a\\ random\\ page\\ \\[alt\\-x\\]|Main\\ page|Maintenance\\ panel|Mobile\\ view|More\\ information\\ about\\ this\\ page|Past\\ revisions\\ of\\ this\\ page\\ \\[alt\\-h\\]|Policies|Powered\\ by\\ MediaWiki|Printable\\ version\\ of\\ this\\ page\\ \\[alt\\-p\\]|Privacy\\ Policy\\.|Privacy\\ policy|Read|Recent\\ changes\\ in\\ pages\\ linked\\ from\\ this\\ page\\ \\[alt\\-k\\]|Search\\ Wikivoyage|Star\\ articles|Support\\ us|Terms\\ of\\ Use|The\\ place\\ to\\ find\\ out|Tourist\\ office|Travel\\ destinations|Travellers'\\ pub|Upload\\ files\\ \\[alt\\-u\\]|View\\ the\\ content\\ page\\ \\[alt\\-c\\]|Visit\\ the\\ main\\ page|What's\\ Nearby\\?|Wikimedia\\ Commons|Wikimedia\\ Foundation|Wikipedia|Wikivoyage:About|You\\ are\\ encouraged\\ to\\ create\\ an\\ account\\ and\\ log\\ in;\\ however,\\ it\\ is\\ not|You\\ are\\ encouraged\\ to\\ log\\ in;\\ however,\\ it\\ is\\ not\\ mandatory\\ \\[alt\\-o\\]|banner\\ area|search\\ area|Κύρια\\ Σελίδα\\ –\\ Greek|Μαδέρα\\ –\\ Greek|Παρίσι\\ –\\ Greek|מדיירה\\ –\\ Hebrew|עמוד\\ ראשי\\ –\\ Hebrew|פריז\\ –\\ Hebrew)$",
+   "in2019": true,
+   "evidence": [
+    "article2-201906",
+    "article5-201909",
+    "article8-201909"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "A list of all wiki pages that link here [alt-j]",
+    "A list of recent changes in the wiki [alt-r]",
+    "About the project, what you can do, where to find things",
+    "Cookie statement",
+    "Create a book",
+    "Creative Commons Attribution-ShareAlike License",
+    "Developers",
+    "Discussion about the content page [alt-t]",
+    "Download as PDF",
+    "Edit interlanguage links",
+    "Go to a page with this exact name if it exists",
+    "Information on how to cite this page",
+    "Interlingual lounge",
+    "Link to connected data repository item [alt-g]",
+    "Load a random page [alt-x]",
+    "Main page",
+    "Maintenance panel",
+    "Mobile view",
+    "More information about this page",
+    "Past revisions of this page [alt-h]",
+    "Policies",
+    "Powered by MediaWiki",
+    "Printable version of this page [alt-p]",
+    "Privacy Policy.",
+    "Privacy policy",
+    "Read",
+    "Recent changes in pages linked from this page [alt-k]",
+    "Search Wikivoyage",
+    "Star articles",
+    "Support us",
+    "Terms of Use",
+    "The place to find out",
+    "Tourist office",
+    "Travel destinations",
+    "Travellers' pub",
+    "Upload files [alt-u]",
+    "View the content page [alt-c]",
+    "Visit the main page",
+    "What's Nearby?",
+    "Wikimedia Commons",
+    "Wikimedia Foundation",
+    "Wikipedia",
+    "Wikivoyage:About",
+    "You are encouraged to create an account and log in; however, it is not",
+    "You are encouraged to log in; however, it is not mandatory [alt-o]",
+    "banner area",
+    "search area",
+    "Κύρια Σελίδα – Greek",
+    "Μαδέρα – Greek",
+    "Παρίσι – Greek",
+    "מדיירה – Hebrew",
+    "עמוד ראשי – Hebrew",
+    "פריז – Hebrew"
+   ]
+  },
+  {
+   "match": "^(Головна\\ сторінка\\ –\\ Ukrainian|Заглавная\\ страница\\ –\\ Russian|Мадейра\\ –\\ Russian|Мадейра\\ –\\ Ukrainian|Париж\\ –\\ Russian|Париж\\ –\\ Ukrainian)$",
+   "in2019": true,
+   "evidence": [
+    "article2-201906",
+    "article5-201909",
+    "home1-201903"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Головна сторінка – Ukrainian",
+    "Заглавная страница – Russian",
+    "Мадейра – Russian",
+    "Мадейра – Ukrainian",
+    "Париж – Russian",
+    "Париж – Ukrainian"
+   ]
+  },
+  {
+   "match": "^(Wikinews|Wikiquote|Wikivoyage:Plunge\\ forward|صفحهٔ\\ اصلی\\ –\\ Persian|پاریس\\ –\\ Persian|पेरिस\\ –\\ Hindi|मुखपृष्ठ\\ –\\ Hindi|প্যারিস\\ –\\ Bangla|প্রধান\\ পাতা\\ –\\ Bangla|巴黎\\ –\\ Chinese|首页\\ –\\ Chinese)$",
+   "in2019": true,
+   "evidence": [
+    "article2-201906",
+    "home1-201903",
+    "home2-201906"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Wikinews",
+    "Wikiquote",
+    "Wikivoyage:Plunge forward",
+    "صفحهٔ اصلی – Persian",
+    "پاریس – Persian",
+    "पेरिस – Hindi",
+    "मुखपृष्ठ – Hindi",
+    "প্যারিস – Bangla",
+    "প্রধান পাতা – Bangla",
+    "巴黎 – Chinese",
+    "首页 – Chinese"
+   ]
+  },
+  {
+   "match": "^(Funchal|Madeira\\ –\\ Dutch|Madeira\\ –\\ Finnish|Madeira\\ –\\ German|Madeira\\ –\\ Portuguese|Madeira\\ –\\ Spanish|Madera\\ –\\ Italian|Madera\\ –\\ Polish|Madère\\ –\\ French|Porto\\ Santo)$",
+   "in2019": true,
+   "evidence": [
+    "article5-201909"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Funchal",
+    "Madeira – Dutch",
+    "Madeira – Finnish",
+    "Madeira – German",
+    "Madeira – Portuguese",
+    "Madeira – Spanish",
+    "Madera – Italian",
+    "Madera – Polish",
+    "Madère – French",
+    "Porto Santo"
+   ]
+  },
+  {
+   "match": "^(Portugal)$",
+   "in2019": true,
+   "evidence": [
+    "article5-201909",
+    "article8-201909"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Portugal"
+   ]
+  },
+  {
+   "match": "^(Accueil\\ –\\ French|Etusivu\\ –\\ Finnish|Hauptseite\\ –\\ German|Hoofdpagina\\ –\\ Dutch|Huvudsida\\ –\\ Swedish|MediaWiki|Meta\\-Wiki|Pagina\\ principale\\ –\\ Italian|Pagina\\ principală\\ –\\ Romanian|Página\\ principal\\ –\\ Portuguese|Página\\ principal\\ –\\ Spanish|Strona\\ główna\\ –\\ Polish|This\\ page\\ is\\ protected\\.\\ You\\ can\\ view\\ its\\ source\\ \\[alt\\-e\\]|Trang\\ Chính\\ –\\ Vietnamese|Where\\ would\\ you\\ like\\ to\\ travel\\?|Wikibooks|Wikidata|Wikimania|Wikisource|Wikispecies|Wikiversity|Wiktionary|form\\ area|go|repeated\\ div|wikimania:|لومړی\\ مخ\\ –\\ Pashto)$",
+   "in2019": true,
+   "evidence": [
+    "home1-201903",
+    "home2-201906",
+    "home3-201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Accueil – French",
+    "Etusivu – Finnish",
+    "Hauptseite – German",
+    "Hoofdpagina – Dutch",
+    "Huvudsida – Swedish",
+    "MediaWiki",
+    "Meta-Wiki",
+    "Pagina principale – Italian",
+    "Pagina principală – Romanian",
+    "Página principal – Portuguese",
+    "Página principal – Spanish",
+    "Strona główna – Polish",
+    "This page is protected. You can view its source [alt-e]",
+    "Trang Chính – Vietnamese",
+    "Where would you like to travel?",
+    "Wikibooks",
+    "Wikidata",
+    "Wikimania",
+    "Wikisource",
+    "Wikispecies",
+    "Wikiversity",
+    "Wiktionary",
+    "form area",
+    "go",
+    "repeated div",
+    "wikimania:",
+    "لومړی مخ – Pashto"
+   ]
+  },
+  {
+   "match": "^(main\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "home2-201906",
+    "home3-201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "main area"
+   ]
+  },
+  {
+   "match": "^(footer area|form area|nav area|section area|navigation area|search area|contentinfo area|banner area|main area|repeated .*|Navigation|Tools|Print/export|In other projects|Languages|Personal tools|Namespaces|Views|More|Variants|Search|search|Navigation menu|Contents|fulltext|hide|show|Close)$",
+   "in2019": true,
+   "note": "page regions, sidebar headings and toggles",
+   "evidence": [
+    "article5-201909",
+    "article8-201909",
+    "home1-201903"
+   ]
+  },
+  {
+   "match": "^(\\[\\d+\\]|\\d+(\\.\\d+)* .+|.+ \\(identifier\\)|(User|User talk|Special|Wiktionary|Wikivoyage|Commons|Help|Portal|Category|Template|Talk|File|Module|Appendix|Thesaurus|Reconstruction|Citations|meta|m|w|wikt|c|d|voy|foundation|commons|wikipedia):.*|.+ – \\S.*|Play (audio|video))$",
+   "in2019": true,
+   "note": "content: citation markers, numbered contents entries, namespaced links, interlanguage links, media players",
+   "evidence": [
+    "article5-201909",
+    "article8-201909",
+    "home1-201903"
+   ]
+  },
+  {
+   "match": "^(Search results|This is a special page, and it cannot be edited|This is a special page which you cannot edit|Permanent link to this revision of th(is|e) page|Atom feed for this page|Filter revisions.*|diff|oldid|newest|oldest|20|50|100|250|500|Compare selected revisions|See the differences between the two selected revisions.*|Content pages|Multimedia|Everything|Advanced|.*: Revision history|Disclaimers?|Privacy [Pp]olicy|Terms of Use|Statistics|Developers|Cookie statement|Mobile view|Creative Commons .*|Edit the source code of this page.*|Edit this page.*|Help)$",
+   "in2019": true,
+   "evidence": [
+    "wp-history1-201909",
+    "wp-search1-201910"
+   ],
+   "note": "MediaWiki page parts on 2019 captures of the same software and skin (history and search pages), and footer links",
+   "_g": true
+  },
+  {
+   "match": "^(About Wikivoyage|In other languages|Get involved|dismiss|Full screen dynamic map|OSM directions|map|district|edit|sister site|Discover|Welcome to Wikivoyage|Previously Off the beaten path|article history|[a-z]+:|\\d+)$",
+   "in2019": true,
+   "evidence": [
+    "home1-201903",
+    "article5-201909",
+    "https://www.mediawiki.org/wiki/Extension:DismissableSiteNotice"
+   ],
+   "note": "sidebar headings, dismissable site notice, Kartographer map controls on the article maps, main-page sections and interwiki prefixes, listing numbers (content)",
+   "_g": true
+  },
+  {
+   "match": "^((January|February|March|April|May|June|July|August|September|October|November|December) \\d{1,2}(, \\d{4})?|\\d{1,2} (January|February|March|April|May|June|July|August|September|October|November|December)( \\d{4})?|Deaths in \\d{4})$",
+   "in2019": true,
+   "evidence": [
+    "article5-201909",
+    "article8-201909",
+    "home1-201903"
+   ],
+   "note": "dates in main-page and history content"
+  },
+  {
+   "match": "^(Belgium|Bordeaux|Boulogne\\-Billancourt|Broadway|Câmara\\ de\\ Lobos|Deutsch|Dijon|Fontainebleau|France|Frankfurt|Geneva|Germany|Gjakova|Gothic\\ architecture|Lausanne|Lille|London|Lyon|Milan|Netherlands|Orléans|Paris\\ Orly\\ Airport|Paris/10th\\ arrondissement|Paris/11th\\ arrondissement|Paris/12th\\ arrondissement|Paris/13th\\ arrondissement|Paris/14th\\ arrondissement|Paris/15th\\ arrondissement|Paris/16th\\ arrondissement|Paris/17th\\ arrondissement|Paris/18th\\ arrondissement|Paris/19th\\ arrondissement|Paris/1st\\ arrondissement|Paris/20th\\ arrondissement|Paris/3rd\\ arrondissement|Paris/4th\\ arrondissement|Paris/5th\\ arrondissement|Paris/6th\\ arrondissement|Paris/7th\\ arrondissement|Paris/8th\\ arrondissement|Paris/9th\\ arrondissement|Paris/La\\ Défense|Portuguese\\ phrasebook|Português|RATP|Rennes|SNCF|Saint\\-Cloud\\ \\(France\\)|Saint\\-Denis\\ \\(Île\\-de\\-France\\)|San\\ Francisco|St\\.\\ John's|Toulouse|Tours|UNESCO\\ World\\ Heritage\\ List|United\\ Kingdom|Versailles|crime|Île\\-de\\-France)$",
+   "in2019": true,
+   "evidence": [
+    "article5-201909",
+    "article8-201909",
+    "home1-201903"
+   ],
+   "note": "reviewed one by one: entry, article, category and main-page content (headwords and wikilinks, taxon names, language names, destinations, file metadata)",
+   "content": true,
+   "labels": [
+    "Belgium",
+    "Bordeaux",
+    "Boulogne-Billancourt",
+    "Broadway",
+    "Câmara de Lobos",
+    "Deutsch",
+    "Dijon",
+    "Fontainebleau",
+    "France",
+    "Frankfurt",
+    "Geneva",
+    "Germany",
+    "Gjakova",
+    "Gothic architecture",
+    "Lausanne",
+    "Lille",
+    "London",
+    "Lyon",
+    "Milan",
+    "Netherlands",
+    "Orléans",
+    "Paris Orly Airport",
+    "Paris/10th arrondissement",
+    "Paris/11th arrondissement",
+    "Paris/12th arrondissement",
+    "Paris/13th arrondissement",
+    "Paris/14th arrondissement",
+    "Paris/15th arrondissement",
+    "Paris/16th arrondissement",
+    "Paris/17th arrondissement",
+    "Paris/18th arrondissement",
+    "Paris/19th arrondissement",
+    "Paris/1st arrondissement",
+    "Paris/20th arrondissement",
+    "Paris/3rd arrondissement",
+    "Paris/4th arrondissement",
+    "Paris/5th arrondissement",
+    "Paris/6th arrondissement",
+    "Paris/7th arrondissement",
+    "Paris/8th arrondissement",
+    "Paris/9th arrondissement",
+    "Paris/La Défense",
+    "Portuguese phrasebook",
+    "Português",
+    "RATP",
+    "Rennes",
+    "SNCF",
+    "Saint-Cloud (France)",
+    "Saint-Denis (Île-de-France)",
+    "San Francisco",
+    "St. John's",
+    "Toulouse",
+    "Tours",
+    "UNESCO World Heritage List",
+    "United Kingdom",
+    "Versailles",
+    "crime",
+    "Île-de-France"
+   ]
+  }
+ ]
+}

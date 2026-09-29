@@ -1,4 +1,4 @@
-html { --n19-header: #000032; --n19-green: #00b67a; --n19-green-hover: #009567; --n19-page: #f2f2f5; --n19-card: #fff; --n19-text: #191919; --n19-link: #1c7ae8; --n19-border: #dcdce6; --n19-hero: #e3a9b4; --n19-hero-text: #fff; }
+html { --n19-header: #000032; --n19-green: #00b67a; --n19-green-hover: #009567; --n19-page: #f2f2f5; --n19-card: #fff; --n19-text: #191919; --n19-link: #1c7ae8; --n19-border: #dcdce6; --n19-hero: #c47687; --n19-hero-text: #fff; }
 html[data-net19-mode="dark"] { --n19-header: #000032; --n19-green: #00b67a; --n19-green-hover: #009567; --n19-page: #16161d; --n19-card: #22222b; --n19-text: #e6e6ea; --n19-link: #6aaaf2; --n19-border: #3a3a46; --n19-hero: #6e4450; --n19-hero-text: #fff; }
 [class*="CDS_themes_theme"], html:root {
   --CDS-border-radius-m: 4px !important; --CDS-border-radius-l: 4px !important;
@@ -19,8 +19,8 @@ header[class*="styles_header__"] a[class*="CDS_Button_button"] { background: tra
 [class*="styles_searchForm"] button[class*="CDS_Button_button"]:hover { background: var(--n19-green-hover) !important; }
 
 [class*="styles_heroContainer"] { background: var(--n19-hero) !important; }
-[class*="styles_searchContainer"] [class*="styles_heading"] { color: var(--n19-hero-text) !important; font-size: 46px !important; line-height: 60px !important; font-weight: 700 !important; }
-[class*="styles_searchContainer"] [class*="styles_subheading"] { color: var(--n19-hero-text) !important; font-size: 18px !important; line-height: 24px !important; font-weight: 500 !important; }
+[class*="styles_searchContainer"] > h2 { color: var(--n19-hero-text) !important; font-size: 46px !important; line-height: 60px !important; font-weight: 700 !important; }
+[class*="styles_searchContainer"] > h1 { color: var(--n19-hero-text) !important; font-size: 18px !important; line-height: 24px !important; font-weight: 500 !important; }
 [class*="styles_searchContainer"] [class*="styles_transparencyLink"] :is(p, a, span, svg) { color: var(--n19-hero-text) !important; fill: var(--n19-hero-text) !important; }
 [class*="styles_heroSearch"] :is(input[class*="styles_searchInputField"], input[class*="styles_textSuggestion"]) { border-radius: 3px !important; border: none !important; box-shadow: 1px 2px 5px -2px rgba(1,1,1,.1), 0 2px 7px 0 rgba(22,65,89,.03) !important; }
 [class*="styles_heroSearch"] button[class*="CDS_Button_circle"] { border-radius: 3px !important; width: 64px !important; background: var(--n19-green) !important; color: #fff !important; }
@@ -31,3 +31,16 @@ header[class*="styles_header__"] a[class*="CDS_Button_button"] { background: tra
 [class*="styles_pageWrapper"], [class*="styles_ratingDistributionCard"], [class*="styles_carouselReviewCard"], [class*="styles_topicSummaryCard"],
 [class*="CDS_Card_card"] { border-radius: 4px !important; }
 button[class*="variant_button"], [class*="styles_filtersWrapper"] button { border-radius: 4px !important; }
+[data-n19-post] { display: none !important; }
+[class*="styles_heroAnimation"] { display: none !important; }
+header a:is([href$="writeareview"], [href="/blog"], [href$="trustpilot.com/blog"]), header [class*="notificationsCentre"],
+footer li:has(> a:is([href*="apps.apple.com"], [href*="play.google.com"], [href$="/investors"], [href*="/datasolutions"], [href="https://business.trustpilot.com/blog"], [href$="corporate.trustpilot.com/legal"], [href*="trust-report"])),
+main [class*="appBannerWrapper"], main [class*="transparencyLink"] { display: none !important; }
+main section:has(a[href$="writeareview"]):not(:has(a[href*="review/"])), main section:has(> [class*="headerBar"] a[href="/categories"]),
+main [data-constellation-section-theme]:has(> #b2b-promo-banner), main [data-constellation-section-theme="deprecated-orange"]:has(a[href*="/users/connect"]),
+#value-proposition [data-constellation-section-theme="deprecated-dark-green"] { display: none !important; }
+[class*="styles_heroSearch"] button[class*="CDS_Button_circle"][data-n19-label] { width: auto !important; padding: 0 24px !important; font-size: 16px !important; font-weight: 400 !important; }
+[class*="styles_heroSearch"] button[class*="CDS_Button_circle"][data-n19-label] svg { display: none !important; }
+[class*="styles_heroSearch"] button[class*="CDS_Button_circle"][data-n19-label]::after { content: attr(data-n19-label); color: #fff; }
+main a[href*="/evaluate/"][class*="CDS_Button"] { background: var(--n19-green) !important; border-color: var(--n19-green) !important; color: #fff !important; }
+main a[href*="/evaluate/"][class*="CDS_Button"]:hover { background: var(--n19-green-hover) !important; }

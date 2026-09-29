@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "net19",
-  "version": "0.17.0",
+  "version": "0.18.0",
   "description": "Websites as they looked in 2019.",
   "minimum_chrome_version": "120",
   "permissions": [
@@ -131,6 +131,8 @@
     "*://*.viber.com/*",
     "*://*.line.me/*",
     "*://*.yandex.ru/*",
+    "*://*.yandex.com/*",
+    "*://*.ya.ru/*",
     "*://*.yahoo.co.jp/*",
     "*://*.seznam.cz/*",
     "*://*.trendyol.com/*",

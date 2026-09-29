@@ -35,3 +35,7 @@ p[data-type="paragraph"] { font-family: Exchange, Georgia, "Times New Roman", se
 p[data-type="paragraph"] a { color: var(--n19-blue) !important; text-decoration: none !important; }
 p[data-type="paragraph"] a:hover { text-decoration: underline !important; }
 figcaption[class*="-FigcaptionItem"] { font-family: Retina, Arial, Helvetica, sans-serif !important; font-size: 12px !important; color: var(--n19-meta) !important; }
+
+header li:has(> a:is([href*="wsj.com/audio"], [href*="wsj.com/games"], [href*="/opinion/free-expression"])), li:has(> div > button[aria-label="Other Products from WSJ"]) { display: none !important; }
+a:is(#cx-customer-nav-subscribe-btn, [href*="wsj.com/client/login"]):is([class*="SubscribeButton"], [class*="LoginButton"]) { background: transparent !important; border: 0 !important; box-shadow: none !important; color: var(--n19-meta, #666) !important; font-family: Retina, "Helvetica Neue", Helvetica, Arial, sans-serif !important; font-size: 11px !important; font-weight: 400 !important; padding: 0 6px !important; min-width: 0 !important; border-radius: 0 !important; }
+a#cx-customer-nav-subscribe-btn[class*="SubscribeButton"] { border-right: 1px solid #ccc !important; }

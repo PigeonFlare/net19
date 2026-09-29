@@ -45,3 +45,9 @@ html:root { --wp--custom--utility--radius: 0 !important; }
 .site-header-cta:has(.site-header-cta__image), .widget-wrapper.widget_custom_html:has(a[href*="podcasts.apple.com"]), .widget-wrapper:has(.widget--sports-plus-columnists),
 .menu-item-sports-plus-logo, .menu-item:has(> a[href*="/sports-plus"]), .section-subnav .menu-item:has(> a[href*="sports-betting"]) { display: none !important; }
 .module--promo:has(.story--promo) { display: none !important; }
+
+.button--login, #membership-login-container, #nypost-membership-header, .module--gated, .module__button--mobile--logged-out, .module:has(> header a.section-heading__link[href$="/games/"]),
+li.menu-item:has(> a[href*="/betting/"]), li.menu-item:has(> a[href$="/games/"]), .social-icons li:has(> a:is(.social-icons__icon--tiktok, .social-icons__icon--snapchat)) { display: none !important; }
+li:has(> a[href*="subscription-terms" i]), a[href*="subscription-terms" i] { display: none !important; }
+.social-icons__icon--comments, .social-icons__icon--comments * { color: var(--n19-text) !important; }
+.social-icons__icon--comments svg, .social-icons__icon--comments svg * { fill: currentColor !important; }

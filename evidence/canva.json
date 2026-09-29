@@ -1,0 +1,61 @@
+{
+  "theme": "canva",
+  "era": "2019 Canva (s1-s4): teal-to-purple gradient heroes and editor bar, white Canva script logo, header Templates/Features/Learn/Pro, teal #00c4cc buttons.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://web.archive.org/web/20190614132625/https://www.canva.com/templates/",
+      "date": "2019-06-14",
+      "file": "/home/claude/sweeps/g9-evidence/wb/canva-templates.png",
+      "shows": "signed-out templates page: white Canva logo on a teal-to-purple gradient header, Templates, Browse/Features/Learn/Pro, Sign up; 'What do you want to design?' search; Browse Templates list; template grid; footer Design types/Icons/Photos/Ideas/Graphs/Photo editing/Print, Support, Canva for Work, Pricing, About, Careers, Terms and Privacy, social icons"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.theedublogger.com/canva/",
+      "date": "2019-02",
+      "file": "/home/claude/sweeps/g9-evidence/canva/edublogger-2019-02-custom.png",
+      "shows": "signed-in home 2019: 'Design anything. Publish anywhere.' on the blue-purple gradient, search field, Custom dimensions"
+    },
+    {
+      "id": "s3",
+      "url": "https://news.indezine.com/2019/06/21/canva-photo-collages/",
+      "date": "2019-06-21",
+      "file": "/home/claude/sweeps/g9-evidence/canva/indezine-2019-06-collage.jpg",
+      "shows": "editor 2019: teal-purple gradient top bar (Home, File, undo, share, download), dark side panel with Templates/Photos/Elements/Text/Background/Uploads/Folders/More, canvas, Help button"
+    },
+    {
+      "id": "s4",
+      "url": "https://www.bandt.com.au/canva-moves-video/",
+      "date": "2019-12-09",
+      "file": "/home/claude/sweeps/g9-evidence/canva/bandt-2019-12-video.jpg",
+      "shows": "video editor 2019: same gradient bar with Home/File/Resize/undo/All changes saved/Preview/Download, side panel Templates/Video/Images/Text/Sound/Uploads/Background/Folders/Apps"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Business|Help|AI|.*Canva AI.*|Magic .+|AI .+|.+ AI|Canva Code|Dream Lab|Canva Sheets|Canva Docs|Visual Suite)$",
+      "in2019": false,
+      "evidence": [
+        "not in the 2019 header (s1: Templates, Features, Learn, Pro, Sign up) or editor (s3, s4): Business and Help header menus, Canva AI / Magic Studio (2023), Code, Dream Lab, Sheets, Docs, Visual Suite"
+      ],
+      "action": "hidden (canva.js data-n19-later, guard labels)"
+    },
+    {
+      "match": "^(Canva home|Canva|Templates|Features|Learn|Pro|Sign up|Log in|Start designing|What will you design today\\?|header area|nav area|main area|section area|footer area|contentinfo area|repeated .*|dialog area|tablist area|Presentations|Social|Video|Print Shop|Next tab|Previous tab|Play|Pause|English \\(US\\)|Privacy)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "header (Design relabelled Templates, Product Features, Plans Pro, Education Learn by canva.js), gradient hero with the call to action"
+    },
+    {
+      "match": "^(Design types|Icons|Photos|Ideas|Graphs|Photo editing|Print|Support|Canva for Work|Pricing|About|Careers|Terms and Privacy|Privacy policy|Terms|Facebook|Twitter|Pinterest|Instagram|YouTube|LinkedIn|TikTok|Company|Download|Community|Resources|Features|Explore|Create|Education|Nonprofits|Students|Teachers|Photography|Tutorials|Font combinations|Photo editor|Palette generator|Colors|Design school|Sitemap|Help Centre|Help Center|.+ templates?|(\\S+\\s+){2,}\\S+.*)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "footer and content (template categories, product copy)"
+    }
+  ]
+}

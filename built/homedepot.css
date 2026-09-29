@@ -28,3 +28,11 @@ button.sui-rounded-full.sui-border-solid,a.sui-rounded-full.sui-border-solid{bor
 #root a.sui-whitespace-nowrap span.sui-text-ellipsis{color:var(--n19-text)!important;font-size:14px!important}
 #root a.sui-whitespace-nowrap:hover span.sui-text-ellipsis{color:var(--n19-orange)!important;text-decoration:underline!important}
 #sign-in-bubble{display:none!important}
+:where(:root:not([data-n19-safe])) #header-nav-container :is([data-testid="header-button-Account"],[data-testid*="Cart"i]),#header-nav-container:where(:root:not([data-n19-safe])) :is([data-testid="header-button-Account"],[data-testid*="Cart"i]){flex-direction:row-reverse!important;align-items:center!important;gap:6px!important;width:auto!important;padding:0 8px!important}
+:where(:root:not([data-n19-safe])) #header-nav-container :is([data-testid="header-button-Account"],[data-testid*="Cart"i])>div,#header-nav-container:where(:root:not([data-n19-safe])) :is([data-testid="header-button-Account"],[data-testid*="Cart"i])>div{width:auto!important;margin:0!important}
+#header-nav-container :is([data-testid="header-button-Account"],[data-testid*="Cart"i]) p{font-size:14px!important;font-weight:700!important;color:var(--n19-text)!important}
+:where(:root:not([data-n19-safe])) #header-nav-container :is([data-testid="header-button-Account"],[data-testid*="Cart"i]) p,#header-nav-container:where(:root:not([data-n19-safe])) :is([data-testid="header-button-Account"],[data-testid*="Cart"i]) p{overflow:visible!important}
+[data-testid="similar-items-button"]{display:none!important}
+:where(:root:not([data-n19-safe])) button:is([aria-label="Previous slide"],[aria-label="Next slide"]){z-index:40!important}
+:where(:root:not([data-n19-safe])) .hero-video-button,.hero-video-button:where(:root:not([data-n19-safe])){z-index:30!important}
+.hero-video-button{pointer-events:auto!important}

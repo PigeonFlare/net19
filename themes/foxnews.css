@@ -51,3 +51,11 @@ html[data-net19-mode="dark"] .article-body p a:hover { background: transparent !
 .nav-item.watch-live, .nav-item.watch-live a, .nav-item a { border-radius: 0 !important; }
 .site-header .primary-nav .dropdown-content { border-radius: 0 !important; box-shadow: none !important; }
 
+
+.game-hub, .games-promo, li.more-section-item:has(> h4 > a:is([href$="/games"], [href$="/deals"], [href$="/outkick"])), li.more-subsection-item:has(> a:is([href*="foxweather.com"], [href*="/games/"], [href*="/deals/"])),
+li.schedule-item:is(.fox-one, .weather, .outkick), .user-profile.user-login, #account.network-access { display: none !important; }
+nav:is([aria-label*="outkick" i], [aria-label$=" deals" i], [aria-label$=" games" i]), .site-footer li:has(> a:is([href*="foxweather.com"], [href*="fox.com/stream"], [href*="foxone"], [href*="/games"], [href*="/deals"], [href*="outkick"])),
+.more-section li:has(> a:is([href*="foxweather.com"], [href*="fox.com/stream"], [href*="foxone"], [href*="/games"], [href*="/deals"])) { display: none !important; }
+li.more-section-item:has(a[aria-label^="Outkick" i]), li.menu-item:has(> ul[aria-label^="OutKick" i]), :is(h2, h3, header) a[href*="foxweather.com"] { display: none !important; }
+:is(nav, div, section, li):has(> ul > li > a[aria-label^="OutKick" i]), li:has(> a[aria-label^="OutKick" i]) { display: none !important; }
+.ab-iam-root, .ab-iam-root ~ .ab-page-blocker, .meta .read-time { display: none !important; }

@@ -1,0 +1,240 @@
+{
+ "theme": "wunderground",
+ "era": "The 2018-2020 Angular Weather Underground (wu-header, dark home page with current conditions and a hourly strip, light city pages with Today / Hourly / 10-Day / Calendar / History / WunderMap tabs, blue station links) seen by everyone in 2019; 2019-03, 2019-07, 2019-11 home captures and 2019-04 / 2019-09 city-page HTML agree.",
+ "sources": [
+  {
+   "id": "forecast-h201904",
+   "url": "https://arquivo.pt/noFrame/replay/20190402022723/https://www.wunderground.com/weather/ae/dubai",
+   "date": "2019-04-02",
+   "shows": "forecast page as served in 2019-04 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/wunderground-forecast-h201904.html"
+  },
+  {
+   "id": "forecast-h201909",
+   "url": "https://arquivo.pt/noFrame/replay/20190902041918/https://www.wunderground.com/weather/am/dprabak",
+   "date": "2019-09-02",
+   "shows": "forecast page as served in 2019-09 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/wunderground-forecast-h201909.html"
+  },
+  {
+   "id": "home-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190315181455/https://www.wunderground.com/",
+   "date": "2019-03-15",
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/wunderground/wunderground-home-a201903.png"
+  },
+  {
+   "id": "home-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190715170724/https://www.wunderground.com/",
+   "date": "2019-07-15",
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/wunderground/wunderground-home-a201907.png"
+  },
+  {
+   "id": "home-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191115180727/https://www.wunderground.com/",
+   "date": "2019-11-15",
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/wunderground/wunderground-home-a201911.png"
+  },
+  {
+   "id": "home-h201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190315181455/https://www.wunderground.com/",
+   "date": "2019-03-15",
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/wunderground-home-h201903.html"
+  },
+  {
+   "id": "home-h201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190715170724/https://www.wunderground.com/",
+   "date": "2019-07-15",
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/wunderground-home-h201907.html"
+  },
+  {
+   "id": "home-h201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191115180727/https://www.wunderground.com/",
+   "date": "2019-11-15",
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/wunderground-home-h201911.html"
+  },
+  {
+   "id": "home-wbref",
+   "url": "wayback-2019-ref:https://www.wunderground.com/",
+   "date": "2019",
+   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)",
+   "file": "g11-evidence/wunderground/wunderground-home-wbref.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Visit weather\\.com|The Weather Channel|The Weather Company|The Weather Channel Logo|The Weather Company Logo|Weather Data APIs|Go Ad Free)$",
+   "in2019": false,
+   "evidence": [
+    "not in the 2019 header or footer HTML (forecast-h201904, forecast-h201909, home-a201907: About, Contact, Careers, Site Map, PWS Network, Full Screen Weather, Feedback, Data Rights, Privacy Settings, Terms of Use, Privacy Policy, AdChoices, Ad Partners, Analytics Partners, Powered by the IBM Cloud)"
+   ],
+   "action": "hidden (theme later labels, logo links)"
+  },
+  {
+   "match": "^(Accessibility|Accessibility Statement|Access Logo|Cookie Notice|Data Vendors|Trust Center|Improve this map|© Mapbox|© OpenStreetMap)$",
+   "in2019": false,
+   "evidence": [
+    "accessibility and privacy notices added 2020-2024; map data attributions are licence requirements"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(10\\-Day|Calendar|History|Hourly|Today)$",
+   "in2019": true,
+   "evidence": [
+    "forecast-h201904"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "10-Day",
+    "Calendar",
+    "History",
+    "Hourly",
+    "Today"
+   ]
+  },
+  {
+   "match": "^(About\\ Weather\\ Underground|Careers|Contact\\ Weather\\ Underground|Customer\\ Feedback\\ for\\ Weather\\ Underground|Data\\ Rights|Personal\\ Weather\\ Station\\ Network|Privacy\\ Policy|Search\\ Locations\\.\\.\\.|Terms\\ of\\ Use|Weather\\ Underground|Weather\\ Underground\\ Mobile\\ Apps)$",
+   "in2019": true,
+   "evidence": [
+    "forecast-h201904",
+    "forecast-h201909",
+    "home-a201903"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "About Weather Underground",
+    "Careers",
+    "Contact Weather Underground",
+    "Customer Feedback for Weather Underground",
+    "Data Rights",
+    "Personal Weather Station Network",
+    "Privacy Policy",
+    "Search Locations...",
+    "Terms of Use",
+    "Weather Underground",
+    "Weather Underground Mobile Apps"
+   ]
+  },
+  {
+   "match": "^(Manage\\ Favorites|Maps\\ \\&\\ Radar|Mobile\\ Apps|News\\ \\&\\ Blogs|Sensor\\ Network|Severe\\ Weather|settings)$",
+   "in2019": true,
+   "evidence": [
+    "forecast-h201904",
+    "forecast-h201909",
+    "home-a201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Manage Favorites",
+    "Maps & Radar",
+    "Mobile Apps",
+    "News & Blogs",
+    "Sensor Network",
+    "Severe Weather",
+    "settings"
+   ]
+  },
+  {
+   "match": "^(Privacy\\ Settings)$",
+   "in2019": true,
+   "evidence": [
+    "forecast-h201904",
+    "home-a201903",
+    "home-a201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Privacy Settings"
+   ]
+  },
+  {
+   "match": "^(Log\\ In|More)$",
+   "in2019": true,
+   "evidence": [
+    "forecast-h201909",
+    "home-a201911",
+    "home-h201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Log In",
+    "More"
+   ]
+  },
+  {
+   "match": "^(Search|See\\ More)$",
+   "in2019": true,
+   "evidence": [
+    "forecast-h201909",
+    "home-h201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Search",
+    "See More"
+   ]
+  },
+  {
+   "match": "^(footer\\ area|nav\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "footer area",
+    "nav area"
+   ]
+  },
+  {
+   "match": "^(section\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "section area"
+   ]
+  },
+  {
+   "match": "^(Experience\\ WunderMap)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "home-h201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Experience WunderMap"
+   ]
+  },
+  {
+   "match": "^(10-Day|Calendar|History|Hourly|Today|Daily|Weekly|Monthly|Daily Observations|Charts|Day High & Low|Favorites|Favorite Location Links|Get Current Location|Search|Home|New York City, NY Weather Conditions.*|Queens, NY|Downtown Dallas, TX|Current Weather for Popular Cities|Storm Radar|Storm Radar Logo|Weather Underground Logo|Send us feedback|Ad Choices|Ad|Sponsored Content by Taboola|You May Like|20% Off\\* Large Prints|Learn more|Watch Now|Article|View|click here|Collapse All|header area|Coastal Flood Advisory|.* Advisory|.* Warning|.* Watch|Related Searches|See More|New York City, NY|Oak Lawn, TX|Map|repeated .*)$",
+   "in2019": true,
+   "evidence": [
+    "forecast-h201904",
+    "forecast-h201909",
+    "home-a201907"
+   ],
+   "note": "2019 city pages: Today, Hourly, 10-Day, Calendar, History (Historical Weather with daily/weekly/monthly observations and summaries), WunderMap, Manage Favorites, Search Locations, the 'City Weather Conditions star_rate home' title, favourites bar, Customer Feedback, AdChoices and ad slots (sponsored links are ad content), news cards"
+  }
+ ]
+}

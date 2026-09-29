@@ -26,7 +26,7 @@ nav[aria-label="Top Navigation"] li>a::after{content:""!important}
 nav[aria-label="Top Navigation"] li>a::after{background:none!important;border:4px solid transparent!important;border-top-color:var(--n19-magenta)!important;border-bottom:0!important}
 :where(:root:not([data-n19-safe])) nav[aria-label="Top Navigation"] li>a::after{transform:none!important}
 nav[aria-label="Top Navigation"]>ul>div:first-child::before,nav[aria-label="Top Navigation"]>ul>div:first-child::after,nav[aria-label="Top Navigation"]>ul>div:first-child a::after{display:none!important}
-nav[aria-label="Top Navigation"] li>a:hover>span{color:var(--n19-magenta)!important}
+nav[aria-label="Top Navigation"] li>a:hover>span{color:var(--n19-bar-text)!important;box-shadow:inset 0 -3px 0 var(--n19-magenta)!important}
 :where(:root:not([data-n19-safe])) nav[aria-label="Top Navigation"] li:last-child{margin-left:auto!important}
 nav[aria-label="Top Navigation"] button,nav[aria-label="Top Navigation"] button svg{color:var(--n19-bar-text)!important}
 nav[aria-label="Top Navigation"] li>a>span::before,nav[aria-label="Top Navigation"] li>a>span::after{display:none!important}
@@ -61,7 +61,7 @@ a.duet--cta--button[href*="subscribe"i],a[href^="/subscribe"],a[href^="https://w
 .duet--cta--button:not(.duet--cta--skip-to-content){border-radius:0!important;font-family:Helvetica, Arial, sans-serif!important;letter-spacing:.06em!important}
 .duet--article--lede,.duet--ledes--feature-lede,.duet--article--lede>*{background:var(--n19-page)!important}
 .duet--ledes--feature-lede div:empty{background:transparent!important}
-.duet--article--lede h1{font:700 46px/1.1 Helvetica, "Helvetica Neue", Arial, sans-serif!important;letter-spacing:-.005em!important;color:var(--n19-head)!important;text-transform:none!important}
+.duet--article--lede h1{font:700 40px/1.15 Helvetica, "Helvetica Neue", Arial, sans-serif!important;letter-spacing:-.005em!important;color:var(--n19-head)!important;text-transform:none!important}
 .duet--article--lede h1+p{font:italic 300 22px/1.35 Helvetica, Arial, sans-serif!important;color:var(--n19-meta)!important;letter-spacing:0!important}
 .duet--article--lede ul li button span{font:400 14px/1 "Arial Narrow", Helvetica, sans-serif!important;letter-spacing:.1em!important;text-transform:uppercase!important;color:var(--n19-magenta)!important}
 .duet--article--lede ul li button svg{display:none!important}
@@ -95,10 +95,22 @@ form[aria-label="Search Form"] input:focus,main form input:focus{border-color:va
 .duet--navigation--footer a:has(>svg){border-color:#fff!important}
 aside[id^="popover-"] button:has(>span>svg){display:none!important}
 nav[aria-label="Top Navigation"] li:has(>a[href*="ai-artificial-intelligence"]){display:none!important}
-.duet--page-layout--category main h1.duet--article--dangerously-set-cms-markup{font:700 64px/1 "Arial Narrow", "Helvetica Neue Condensed", Helvetica, sans-serif!important;text-transform:uppercase!important;letter-spacing:.01em!important;color:#fff!important;background:var(--n19-bar)!important}
-:where(:root:not([data-n19-safe])) .duet--page-layout--category main h1.duet--article--dangerously-set-cms-markup,.duet--page-layout--category:where(:root:not([data-n19-safe])) main h1.duet--article--dangerously-set-cms-markup{padding:28px 30px!important;margin:0 0 16px!important}
-:where(:root:not([data-n19-safe])) .duet--page-layout--category main div:has(>div>div>h1.duet--article--dangerously-set-cms-markup),.duet--page-layout--category:where(:root:not([data-n19-safe])) main div:has(>div>div>h1.duet--article--dangerously-set-cms-markup){min-height:0!important;padding-top:16px!important}
+.duet--page-layout--category main h1.duet--article--dangerously-set-cms-markup{font:400 36px/1.1 "Arial Narrow", "Helvetica Neue Condensed", "Roboto Condensed", Helvetica, sans-serif!important;text-transform:uppercase!important;letter-spacing:.06em!important;color:var(--n19-text)!important;background:transparent!important}
+:where(:root:not([data-n19-safe])) .duet--page-layout--category main h1.duet--article--dangerously-set-cms-markup,.duet--page-layout--category:where(:root:not([data-n19-safe])) main h1.duet--article--dangerously-set-cms-markup{padding:0!important;margin:0 auto 14px!important}
+.duet--page-layout--category main h1.duet--article--dangerously-set-cms-markup{text-align:center!important}
+:where(:root:not([data-n19-safe])) .duet--page-layout--category main div:has(>div>div>h1.duet--article--dangerously-set-cms-markup),.duet--page-layout--category:where(:root:not([data-n19-safe])) main div:has(>div>div>h1.duet--article--dangerously-set-cms-markup){min-height:0!important;padding-top:28px!important}
+.duet--page-layout--category main div:has(>div>div>h1.duet--article--dangerously-set-cms-markup){background:var(--n19-page)!important;text-align:center!important}
+.duet--page-layout--category main div:has(>h1.duet--article--dangerously-set-cms-markup),.duet--page-layout--category main div:has(>div>h1.duet--article--dangerously-set-cms-markup){background:transparent!important}
+:where(:root:not([data-n19-safe])) .duet--page-layout--category main div:has(>h1.duet--article--dangerously-set-cms-markup),.duet--page-layout--category:where(:root:not([data-n19-safe])) main div:has(>h1.duet--article--dangerously-set-cms-markup),:where(:root:not([data-n19-safe])) .duet--page-layout--category main div:has(>div>h1.duet--article--dangerously-set-cms-markup),.duet--page-layout--category:where(:root:not([data-n19-safe])) main div:has(>div>h1.duet--article--dangerously-set-cms-markup){justify-content:center!important}
 .duet--page-layout--category main h1~* p,.duet--group--description,.duet--group--description p{font:400 16px/1.5 Helvetica, Arial, sans-serif!important;color:var(--n19-meta)!important}
 .duet--article--lede ul li button span:has(>svg),.duet--article--article-byline span[role="button"] span:has(>svg){display:none!important}
 .duet--article--share-buttons button{border:1px solid var(--n19-rule)!important}
 .duet--article--share-buttons button svg{color:var(--n19-meta)!important}
+nav[aria-label="Top Navigation"] li:has(>a[href$="/policy"]),footer a[href*="threads.net"],footer a[href*="instagram.com"],footer a[href*="youtube.com"],footer a[href*="/archives"],footer a[href*="/pages/how-we-rate"],footer a[href*="/pages/licensing"],footer a[href*="/accessibility"],footer a[href*="status.voxmedia.com"],footer nav[aria-label="PMC network sites"],button[aria-label="Copy link"],#zephr-zone-footer,[id^="zephr-footer"],[role="tablist"]:has(>#storyStream-tab){display:none!important}
+:where(:root:not([data-n19-safe])) div:has(>a[href^="/auth/login"]>svg){margin-right:56px!important}
+:where(:root:not([data-n19-safe])) .duet--page-layout--category main div:has(>h1.duet--article--dangerously-set-cms-markup),.duet--page-layout--category:where(:root:not([data-n19-safe])) main div:has(>h1.duet--article--dangerously-set-cms-markup){flex-direction:column!important;align-items:center!important}
+.duet--page-layout--category main div:has(>div>div>h1.duet--article--dangerously-set-cms-markup)::before,.duet--page-layout--category main div:has(>div>div>h1.duet--article--dangerously-set-cms-markup)::after,.duet--page-layout--category main div:has(>div>div>h1.duet--article--dangerously-set-cms-markup)>div{background:transparent!important;background-image:none!important}
+:where(:root:not([data-n19-safe])) .duet--page-layout--category main p.duet--group--description,.duet--page-layout--category:where(:root:not([data-n19-safe])) main p.duet--group--description{max-width:620px!important;margin:0 auto!important}
+.duet--page-layout--category main p.duet--group--description{text-align:center!important}
+a[href^="/auth/login"]>svg,a[href^="/auth/login"]>svg *{color:#fff!important;fill:#fff!important}
+#zephr-overlay,.duet--layout--rail div:has(>div:first-child+ol)>div:first-child{display:none!important}

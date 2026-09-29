@@ -110,3 +110,4 @@ a.game_area_details_specs_ctn[href*="category2=62&"], a.game_area_details_specs_
 @media (max-width: 1040px) {
   .home_page_body_ctn { overflow-x: clip !important; }
 }
+#sale_under10_area, #tab_trendingfree_content_trigger, [data-n19-later] { display: none !important; }

@@ -1,0 +1,55 @@
+{
+ "theme": "nygov",
+ "era": "",
+ "sources": [
+  {
+   "id": "agencies-h201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190314163304/https://www.ny.gov/agencies",
+   "date": "2019-03-14",
+   "shows": "agencies page as served in 2019-03 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/nygov-agencies-h201903.html"
+  },
+  {
+   "id": "home-h201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190314162432/https://www.ny.gov/",
+   "date": "2019-03-14",
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/nygov-home-h201903.html"
+  },
+  {
+   "id": "home-h201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190715080814/https://www.ny.gov/",
+   "date": "2019-07-15",
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/nygov-home-h201907.html"
+  },
+  {
+   "id": "home-h201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191115224113/https://www.ny.gov/",
+   "date": "2019-11-15",
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/nygov-home-h201911.html"
+  },
+  {
+   "id": "home-wbref",
+   "url": "wayback-2019-ref:https://www.ny.gov/",
+   "date": "2019",
+   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)",
+   "file": "g11-evidence/nygov/nygov-home-wbref.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(contentinfo\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "home-wbref"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "contentinfo area"
+   ]
+  }
+ ]
+}

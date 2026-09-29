@@ -1,0 +1,233 @@
+{
+  "theme": "steam",
+  "era": "2019 Steam store v6 (dark blue #1b2838, STEAM header with STORE/COMMUNITY/ABOUT/SUPPORT, 940px store column, blue store nav bar with \"search the store\", uppercase letter-spaced 14px section titles from 2019 store.css). Steam had no light design, so the theme is dark-only.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://arquivo.pt/noFrame/replay/20190320195858/https://store.steampowered.com/",
+      "date": "2019-03-20",
+      "shows": "store front page 2019: global header STORE/COMMUNITY/ABOUT/SUPPORT, Install Steam, login, language; store nav Your Store/Games/Software/Hardware/News/Steam Labs with the search box; Featured & Recommended, Special Offers, Browse Steam, tabs New and Trending/Top Selling/Popular Upcoming/Specials; footer Privacy Policy | Legal | Steam Subscriber Agreement | Refunds, About Valve, Jobs, Steamworks, Steam Distribution, Gift Cards",
+      "file": "/home/claude/sweeps/g13-evidence/steam/home-a20190320.png",
+      "raw": "/home/claude/sweeps/g13-raw/steam-home-a20190320.html"
+    },
+    {
+      "id": "s2",
+      "url": "https://arquivo.pt/noFrame/replay/20190724013314/https://store.steampowered.com/",
+      "date": "2019-07-24",
+      "shows": "store front page 2019: global header STORE/COMMUNITY/ABOUT/SUPPORT, Install Steam, login, language; store nav Your Store/Games/Software/Hardware/News/Steam Labs with the search box; Featured & Recommended, Special Offers, Browse Steam, tabs New and Trending/Top Selling/Popular Upcoming/Specials; footer Privacy Policy | Legal | Steam Subscriber Agreement | Refunds, About Valve, Jobs, Steamworks, Steam Distribution, Gift Cards",
+      "file": "/home/claude/sweeps/g13-evidence/steam/home-a20190724.png",
+      "raw": "/home/claude/sweeps/g13-raw/steam-home-a20190724.html"
+    },
+    {
+      "id": "s3",
+      "url": "https://arquivo.pt/noFrame/replay/20191115234008/https://store.steampowered.com/",
+      "date": "2019-11-15",
+      "shows": "store front page 2019: global header STORE/COMMUNITY/ABOUT/SUPPORT, Install Steam, login, language; store nav Your Store/Games/Software/Hardware/News/Steam Labs with the search box; Featured & Recommended, Special Offers, Browse Steam, tabs New and Trending/Top Selling/Popular Upcoming/Specials; footer Privacy Policy | Legal | Steam Subscriber Agreement | Refunds, About Valve, Jobs, Steamworks, Steam Distribution, Gift Cards",
+      "file": "/home/claude/sweeps/g13-evidence/steam/home-a20191115.png",
+      "raw": "/home/claude/sweeps/g13-raw/steam-home-a20191115.html"
+    },
+    {
+      "id": "s4",
+      "url": "https://arquivo.pt/noFrame/replay/20191007132951/https://store.steampowered.com/app/1029890/Layers_of_Fear_2/",
+      "date": "2019-10-07",
+      "shows": "app page (Layers of Fear 2): breadcrumb, title, media, Community Hub, reviews summary, Add to Cart, Customer reviews",
+      "file": "/home/claude/sweeps/g13-evidence/steam/app-a20191007.png",
+      "raw": "/home/claude/sweeps/g13-raw/steam-app-a20191007.html"
+    },
+    {
+      "id": "s5",
+      "url": "https://arquivo.pt/noFrame/replay/20190923101456/https://store.steampowered.com/app/570/",
+      "date": "2019-09-23",
+      "shows": "app page (Dota 2): Play Game, Community Hub, Show graph, Your Languages, Customer reviews, Read more",
+      "file": "/home/claude/sweeps/g13-evidence/steam/app2-a20190923.png",
+      "raw": "/home/claude/sweeps/g13-raw/steam-app2-a20190923.html"
+    },
+    {
+      "id": "s6",
+      "url": "https://arquivo.pt/noFrame/replay/20190902053630/https://store.steampowered.com/about/",
+      "date": "2019-09-02",
+      "shows": "About Steam page",
+      "file": "/home/claude/sweeps/g13-evidence/steam/about-a20190902.png",
+      "raw": "/home/claude/sweeps/g13-raw/steam-about-a20190902.html"
+    },
+    {
+      "id": "s7",
+      "url": "https://arquivo.pt/noFrame/replay/20190322204112/https://steamcommunity.com/",
+      "date": "2019-03-22",
+      "shows": "Steam Community home: tabs All/Screenshots/Artwork/Broadcasts/Videos/Workshop/News/Guides/Reviews, searchAppName and Search for friends fields",
+      "file": "/home/claude/sweeps/g13-evidence/steam/community-a20190322.png",
+      "raw": "/home/claude/sweeps/g13-raw/steam-community-a20190322.html"
+    },
+    {
+      "id": "s8",
+      "url": "https://arquivo.pt/noFrame/replay/20190904232736/https://steamcommunity.com/",
+      "date": "2019-09-04",
+      "shows": "Steam Community home: tabs All/Screenshots/Artwork/Broadcasts/Videos/Workshop/News/Guides/Reviews, searchAppName and Search for friends fields",
+      "file": "/home/claude/sweeps/g13-evidence/steam/community-a20190904.png",
+      "raw": "/home/claude/sweeps/g13-raw/steam-community-a20190904.html"
+    },
+    {
+      "id": "s9",
+      "url": "https://arquivo.pt/noFrame/replay/20190923085147/https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/",
+      "date": "2019-09-23",
+      "shows": "app page (The Witcher 3): Content For This Game with Add all DLC to Cart",
+      "raw": "/home/claude/sweeps/g13-raw/steam-witcher-a20190923.html"
+    },
+    {
+      "id": "s10",
+      "url": "https://arquivo.pt/noFrame/replay/20191115233907/https://store.steampowered.com/search/",
+      "date": "2019-11-15",
+      "shows": "search results page: displayterm field, Sort by Relevance, filters",
+      "raw": "/home/claude/sweeps/g13-raw/steam-search-a20191115.html"
+    },
+    {
+      "id": "s11",
+      "url": "https://arquivo.pt/noFrame/replay/20190902054441/https://store.steampowered.com/app/8930/",
+      "date": "2019-09-02",
+      "shows": "app page (Civilization V): Content For This Game, Add all DLC to Cart",
+      "raw": "/home/claude/sweeps/g13-raw/steam-civ5-a20190902.html"
+    },
+    {
+      "id": "s12",
+      "url": "https://www.webdesignmuseum.org/gallery/steam-in-2019",
+      "date": "2019-11",
+      "file": "/home/claude/sweeps/g13-evidence/steam/wdm-steam-2019.jpg",
+      "shows": "real-browser capture of the Nov 2019 store: header, store nav with Your Store/Games/Software/Hardware dropdowns, News, Steam Labs, \"search the store\" field, takeover banner"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(STORE|COMMUNITY|About|SUPPORT|Install\\ Steam|sign\\ in|login|language|Recommendations|Hardware|Search\\ the\\ store|See\\ More|Top\\ Sellers|Popular\\ Upcoming|Specials|Simulation|About\\ Steam|Steamworks|Steam\\ Distribution|Gift\\ Cards|About\\ Valve|Jobs|Refunds|Dota\\ 2|Play\\ Dota\\ 2|Reviews|Community\\ Hub|Valve|Free\\ to\\ Play|Strategy|Visit\\ the\\ website|See\\ All|View\\ all|here|Show\\ graph|Funny|Join\\ Steam|Learn\\ more|All|Most\\ Popular|Most\\ Recent|See\\ More\\ Content|Steam\\ Subscriber\\ Agreement|View\\ mobile\\ website|Legal|Relevance|Search|Your\\ Languages|Read\\ More|Follow|Previous|Next|Content\\ For\\ This\\ Game|Add\\ all\\ DLC\\ to\\ Cart|New\\ and\\ Trending|Top\\ Selling|Browse\\ Steam|Featured\\ \\&\\ Recommended|Special\\ Offers)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s12",
+        "s4",
+        "s5",
+        "s7",
+        "s8",
+        "s10",
+        "s9",
+        "s11"
+      ],
+      "note": "labels present in the 2019 store, app, search and community captures"
+    },
+    {
+      "match": "^(banner area|Global Menu|Store menu|tablist area|footer area|repeated div|form area|main area|section area|nav area|header area|contentinfo area)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s12",
+        "s4",
+        "s5"
+      ],
+      "note": "page structure: global header, store nav, home tabs, footer, repeated capsules"
+    },
+    {
+      "match": "^Link to the Steam Homepage$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s12"
+      ],
+      "note": "the STEAM logo link in the global header (2019: #logo_holder link)"
+    },
+    {
+      "match": "^(displayterm|searchAppName|text|term)$",
+      "in2019": true,
+      "evidence": [
+        "s10",
+        "s7",
+        "s8"
+      ],
+      "note": "search fields: store search (displayterm), community app search and \"Search for friends\" (name=text)"
+    },
+    {
+      "match": "^Customer reviews( for .+)?$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "reviews section heading (2019: \"Customer reviews\")"
+    },
+    {
+      "match": "^Content For This Game.*$",
+      "in2019": true,
+      "evidence": [
+        "s9",
+        "s11"
+      ],
+      "note": "DLC block with Browse all and Add all DLC to Cart"
+    },
+    {
+      "match": "^(\\d[\\d,]* (user )?reviews?|Yes|No|Read More|Helpful\\?|View all guides|More from .+)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s5",
+        "s7",
+        "s8"
+      ],
+      "note": "review boxes: Was this review helpful? Yes / No / Funny, Read More; community guide cards; developer/franchise link"
+    },
+    {
+      "match": "^(MIDWEEK DEAL|WEEKEND DEAL|DAILY DEAL|TODAY'S DEAL|-\\d+%.*|\\$[\\d.,]+|Free|Counter-Strike 2|MudRunner|Total War: WARHAMMER III|Graveyard Keeper 2|'Lapin|Project Zomboid)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s12"
+      ],
+      "note": "content: game capsules with deal banners and prices (2019: \"Weekend Deal\", \"-67%59,99€19,79€\")"
+    },
+    {
+      "match": "^((Overwhelmingly|Very|Mostly) )?(Positive|Negative|Mixed)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "review summary labels (2019: Mostly Positive, Very Positive)"
+    },
+    {
+      "match": "^(Browse|Categories|More|Advanced Search)$",
+      "in2019": false,
+      "evidence": [
+        "2019 store nav read Your Store / Games / Software / Hardware / News / Steam Labs (s-WDM, home captures); Browse, Categories and More are the 2023 store menu, and Advanced Search is its search-suggestion link"
+      ],
+      "action": "kept: function (they are the only store navigation menus and search; they carry the 2019 bar styling, see steam.css)"
+    },
+    {
+      "match": "^(Browse by Category|Under \\$10|Under \\$5|Trending Free|Popular New Releases|What Curators Say)$",
+      "in2019": false,
+      "evidence": [
+        "2019 home had no category carousel or price-band section, and its tabs were New and Trending / Top Selling / Popular Upcoming / Specials (home captures)"
+      ],
+      "action": "hidden (steam.css/steam.js: #sale_under10_area, #tab_trendingfree_content_trigger, data-n19-later); Popular New Releases and Top Sellers tabs renamed to the 2019 names"
+    },
+    {
+      "match": "^(Get Steam|Get Mobile Apps|Get Support|My Account|Steam on YouTube|Steam on Bluesky)$",
+      "in2019": false,
+      "evidence": [
+        "2019 footer had only Privacy Policy | Legal | Steam Subscriber Agreement | Refunds and About Valve | Jobs | Steamworks | Steam Distribution | Gift Cards (home captures)"
+      ],
+      "action": "hidden (steam.js marks them data-n19-later)"
+    },
+    {
+      "match": "^(Privacy|Cookies|Accessibility|Notices & Policies|Recycling|Steam SSA)$",
+      "in2019": false,
+      "evidence": [
+        "2019 footer: Privacy Policy, Legal, Steam Subscriber Agreement, Refunds"
+      ],
+      "action": "kept: legal (privacy, cookie choices, accessibility statement, legal notices, EU hardware recycling notice, subscriber agreement)"
+    }
+  ]
+}

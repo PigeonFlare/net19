@@ -48,3 +48,6 @@ body, #global-viewport, #pane-main, .main-content { background-color: var(--n19-
 @media (max-width: 1180px) {
   #global-nav li.where-to-watch ~ li.pillar { transform: none !important; }
 }
+[data-n19-later], [id^="taboola"] { display: none !important; }
+#global-nav li.pillar:is(.watch, .fantasy, .listen) .nav-logo-wrap { display: none !important; }
+.Card__Header__SubLink--presby:has(img[alt*="draft" i], a[href*="draftkings" i], a[href*="espnbet" i]), .Card__Header__SubLink--presby:has(.Card__Presby__Logo) { display: none !important; }

@@ -1,3 +1,6 @@
 html{--n19-accent:#fa5c5c}
 html[data-net19-mode="dark"]{--n19-accent:#fa5c5c}
 body[data-page_name="browse"] a.youtube_banner[href*="youtube.com/itchiogames"]{display:none!important}
+.youtube_game_promo_banner_widget .youtube_link{display:none!important}
+section#devlog.game_devlog p:has(>a.forward_link[href$="/devlog"]){display:none!important}
+#user_tools li:has(>a.related_games_btn){display:none!important}

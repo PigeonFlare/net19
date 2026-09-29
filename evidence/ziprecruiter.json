@@ -1,0 +1,223 @@
+{
+ "theme": "ziprecruiter",
+ "era": "2019 ZipRecruiter (same desktop site for every signed-out visitor all year): white 60px header with the black-text ZipRecruiter logo (hosted 2019 file zrs/f810ae13/img/logos/ziprecruiter-blacktext.svg), For Job Seekers / For Employers menus, green-outlined 'Post a Job' pill, Help and Sign In; a grey search row with 'Job title or keyword', 'City, state or zip' and a green 'Search Jobs' pill; 'Get Recruited' sign-up block, '#1 Rated Job Search App', 'What They're Saying' testimonials, and a multi-column footer; Helvetica-like sans, green #57b228 accents.",
+ "sources": [
+  {
+   "id": "raw-home-2019-11",
+   "url": "https://arquivo.pt/noFrame/replay/20191101012410id_/https://www.ziprecruiter.com/",
+   "date": "2019-11-01",
+   "file": "/home/claude/sweeps/g12-evidence/ziprecruiter/home-2019-11-raw.html",
+   "shows": "the 2019 home HTML, including the logo file zrs/f810ae13/img/logos/ziprecruiter-blacktext.svg"
+  },
+  {
+   "id": "be-seen-first-2026",
+   "url": "https://www.nasdaq.com/press-release/ziprecruiter-now-lets-job-seekers-jump-top-resume-pile-2026-01-22",
+   "date": "2026-01-22",
+   "shows": "press release launching 'Be Seen First' in January 2026"
+  },
+  {
+   "id": "home-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190301050616/https://www.ziprecruiter.com/",
+   "date": "2019-03-01",
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/ziprecruiter-home-a201903.png"
+  },
+  {
+   "id": "home-a201907b",
+   "url": "https://arquivo.pt/noFrame/replay/20190701144214/https://www.ziprecruiter.com/",
+   "date": "2019-07-01",
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/ziprecruiter-home-a201907b.png"
+  },
+  {
+   "id": "home-a201911c",
+   "url": "https://arquivo.pt/noFrame/replay/20191101012410/https://www.ziprecruiter.com/",
+   "date": "2019-11-01",
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/ziprecruiter-home-a201911c.png"
+  },
+  {
+   "id": "item-a201912",
+   "url": "https://arquivo.pt/noFrame/replay/20191214074250/https://www.ziprecruiter.com/jobs/seiler-instrument-mfg-co-b63983d2/land-surveyor-support-technician-6c08bd75",
+   "date": "2019-12-14",
+   "shows": "item page as served in 2019-12 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/ziprecruiter-item-a201912.png"
+  },
+  {
+   "id": "login-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190327034147/https://www.ziprecruiter.com/login",
+   "date": "2019-03-27",
+   "shows": "login page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/ziprecruiter-login-a201903.png"
+  },
+  {
+   "id": "login-a201909b",
+   "url": "https://arquivo.pt/noFrame/replay/20190902223053/https://www.ziprecruiter.com/login/forgot-password",
+   "date": "2019-09-02",
+   "shows": "login page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/ziprecruiter-login-a201909b.png"
+  },
+  {
+   "id": "search-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190328015501/https://www.ziprecruiter.com/Jobs/Account-Manager",
+   "date": "2019-03-28",
+   "shows": "search page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/ziprecruiter-search-a201903.png"
+  },
+  {
+   "id": "search-a201903d",
+   "url": "https://arquivo.pt/noFrame/replay/20190328015532/https://www.ziprecruiter.com/Jobs/Software-Engineer",
+   "date": "2019-03-28",
+   "shows": "search page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/ziprecruiter-search-a201903d.png"
+  },
+  {
+   "id": "search-a201909b",
+   "url": "https://arquivo.pt/noFrame/replay/20190902223303/https://www.ziprecruiter.com/jobs/search",
+   "date": "2019-09-02",
+   "shows": "search page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/ziprecruiter-search-a201909b.png"
+  },
+  {
+   "id": "search-a201912c",
+   "url": "https://arquivo.pt/noFrame/replay/20191214075400/https://www.ziprecruiter.com/jobs/search",
+   "date": "2019-12-14",
+   "shows": "search page as served in 2019-12 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "/home/claude/sweeps/g12-wbr/ziprecruiter-search-a201912c.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Be Seen First.*|Nearly 2x more likely.*|Make your application impossible to miss|Ready to be seen first\\?|Get Started|Continue with Email|Continue with Google)$",
+   "in2019": false,
+   "evidence": [
+    "be-seen-first-2026",
+    "absent from the 2019 home (home-a201903, home-a201907b, home-a201911c)"
+   ],
+   "action": "hidden: #main-content + div and the Be Seen First sections"
+  },
+  {
+   "match": "^(Who is Phil\\?|Trust and Safety|New Account Help|Resume Database|Customer Stories|FAQs|Request a Consultation|Investors|Engineering|Follow ZipRecruiter on Instagram|Read more about Ziprecruiter Security and Compliance)$",
+   "in2019": false,
+   "evidence": [
+    "not in the 2019 footer (home-a201903, home-a201907b, home-a201911c, search-a201909b); the company listed in 2021"
+   ],
+   "action": "hidden (later)"
+  },
+  {
+   "match": "^(Your Privacy Choices|Read about California Privacy Notice|Read more about Ziprecruiter's Cookie Policy|Accessibility Feedback|Logos provided by Clearbit|Privacy Policy Updates|We’re updating our Privacy Policy.*|Learn more|dialog area)$",
+   "in2019": false,
+   "evidence": [
+    "not in the 2019 footer (home-a201911c)"
+   ],
+   "action": "kept: legal (privacy choices, CCPA notice, cookie policy, accessibility feedback, logo attribution, privacy-policy update notice)"
+  },
+  {
+   "match": "^(ATS\\ Integrations|About\\ Us|Blog|Browse\\ Jobs|Careers|Create\\ Free\\ Account|Follow\\ ZipRecruiter\\ on\\ Facebook|Follow\\ ZipRecruiter\\ on\\ LinkedIn|Follow\\ ZipRecruiter\\ on\\ Twitter|How\\ it\\ Works|Job\\ Board\\ Software|Job\\ Seeker\\ Reviews|Mobile\\ Apps|Plans|Press|Search\\ Jobs|Search\\ Resumes|footer\\ area|form\\ area|nav\\ area|section\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907b",
+    "home-a201911c"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "ATS Integrations",
+    "About Us",
+    "Blog",
+    "Browse Jobs",
+    "Careers",
+    "Create Free Account",
+    "Follow ZipRecruiter on Facebook",
+    "Follow ZipRecruiter on LinkedIn",
+    "Follow ZipRecruiter on Twitter",
+    "How it Works",
+    "Job Board Software",
+    "Job Seeker Reviews",
+    "Mobile Apps",
+    "Plans",
+    "Press",
+    "Search Jobs",
+    "Search Resumes",
+    "footer area",
+    "form area",
+    "nav area",
+    "section area"
+   ]
+  },
+  {
+   "match": "^(ZipRecruiter\\ UK)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201907b",
+    "home-a201911c",
+    "search-a201909b"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "ZipRecruiter UK"
+   ]
+  },
+  {
+   "match": "^(Employer\\ Reviews|Search\\ Salaries)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911c",
+    "login-a201909b"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Employer Reviews",
+    "Search Salaries"
+   ]
+  },
+  {
+   "match": "^(ZipRecruiter\\.org)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911c",
+    "search-a201912c"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "ZipRecruiter.org"
+   ]
+  },
+  {
+   "match": "^(Employer\\ Support|Job\\ Seeker\\ Support)$",
+   "in2019": true,
+   "evidence": [
+    "search-a201912c"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Employer Support",
+    "Job Seeker Support"
+   ]
+  },
+  {
+   "match": "^(header area|footer area|desktop-sections|nav area|section area|form area|Skip to Main Content|ZipRecruiter Homepage|Dropdown Menu|Job title or keyword|Search location|Search Jobs|Browse Jobs|Search Salaries|Job Seeker Reviews|Mobile Apps|Create Free Account|Job Seeker Support|Post a Job|Search Resumes|How it Works|Plans|Job Sites|Employer Reviews|Employer Support|Enterprise Overview|Job Board Software|ATS Integrations|About Us|Careers|Blog|Press|ZipRecruiter\\.org|ZipRecruiter UK|Follow ZipRecruiter on (Facebook|Twitter|LinkedIn)|Read more about Ziprecruiter's (Privacy Policy|Terms of Use|Job Posting Rules|Attribution Notices|Corporate Responsibility))$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201911c",
+    "search-a201909b"
+   ],
+   "note": "2019 header (logo, Menu, Post a Job), search fields, footer columns; 'Job Seeker Support' / 'Employer Support' were 'Job Seeker Help' / 'Employer Help', 'Job Sites' was 'Job Boards', 'Enterprise Overview' was 'Overview'"
+  },
+  {
+   "match": "^(Rated #1 job site in the U\\.S\\.\\*|ZipRecruiter is rated 5 stars out of 5|Testimonials|Five Star Rating.*)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201911c"
+   ],
+   "note": "2019 '#1 Rated Job Search App' and 'What They're Saying' testimonials"
+  }
+ ]
+}

@@ -1,0 +1,72 @@
+{
+  "theme": "stackoverflow",
+  "era": "2019 Stack Overflow (s1-s3): white header with the orange top border and the grey/orange 'stackoverflow' logo, left nav Home/Stack Overflow/Tags/Users/Jobs, tabbed question lists, yellow Blog/Featured on Meta widget; signed-in pages shared the layout.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://arun.is/blog/10-year-challenge/",
+      "date": "2019-01-22",
+      "file": "/home/claude/sweeps/g9-evidence/stackoverflow/arun-2019-01-stackoverflow.jpg",
+      "shows": "2019 Stack Overflow: stackoverflow logo (grey tray, orange sheets), orange top border, search, left nav Home / PUBLIC Stack Overflow, Tags, Users, Jobs / TEAMS, question list with votes/answers/views, yellow Blog / Featured on Meta widget"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/20190616002249/https://stackoverflow.com/questions",
+      "date": "2019-06-16",
+      "file": "/home/claude/sweeps/g9-evidence/wb/so-questions.png",
+      "shows": "All Questions: Ask Question, tabs Newest/Featured/Frequent/Votes/Active/Unanswered, question summaries with tags and user cards, pagination and per-page 15/30/50, Related Tags, Hot Network Questions, footer Stack Overflow/Products (Teams, Talent, Advertising, Enterprise)/Company (About, Press, Work Here, Legal, Privacy Policy, Contact Us)/Stack Exchange Network (Technology, Life / Arts, Culture / Recreation, Science, Other), Blog/Facebook/Twitter/LinkedIn, cc by-sa"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20190616095252/https://stackoverflow.com/questions/927358/how-do-i-undo-the-most-recent-local-commits-in-git",
+      "date": "2019-06-16",
+      "file": "/home/claude/sweeps/g9-evidence/wb/so-question.png",
+      "shows": "question page: title, Ask Question, up/down vote, favorite star, tags, share / improve this question, edited, community wiki, comments with scores and 'show N more comments', N Answers with active/oldest/votes, pagination, sidebar Blog/Featured on Meta, Linked, Related, Hot Network Questions, 'Not the answer you're looking for?'"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(About|Products|Stack Internal|Stack Data Licensing|AI Assist|Stack Overflow for Agents|Challenges|Articles|Collectives.*|Explore all Collectives|Companies|Filter|Reply|Open menu|Chat|Instagram|API|Data|Follow)$",
+      "in2019": false,
+      "evidence": [
+        "not in the 2019 header, left nav, question tabs, comments or footer (s1-s3): header About/Products/Stack Internal links, AI Assist, Agents, Challenges, Articles, Collectives (2021), Companies (2022, replaced Jobs), question Filter (2021), comment Reply/menu, Follow (2020), footer Chat/Data licensing/API/Data/Instagram"
+      ],
+      "action": "hidden (stackoverflow.css)"
+    },
+    {
+      "match": "^(header area|search area|Topbar|Primary|Footer|sidebar|contentinfo area|status area|Privacy|All Questions|question and answers|Hot Network Questions|Linked|Related|Further Reading|Related Tags|repeated .*)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "page regions (Privacy / status area are the cookie notice, a bar in 2019); Further Reading is the question's related list"
+    },
+    {
+      "match": "^(Stack Overflow( Home)?|Home|Questions|Tags|Users|Jobs|Developer Story|Developer Story is now available|Search|Log in|Sign up|Site switcher|Help Center and other resources|Ask Question|Newest|Active|Featured( \\d+)?|Unanswered|More|Frequent|Votes|Show (15|30|50) items per page|Go to (next )?page \\d*|Go to next page|Help|Business|Company|Stack Ads|Press|Work Here|Legal|Privacy Policy|Terms of Service|Cookie Policy|Contact Us|Your Privacy Choices|Stack Overflow’s open communities|Technology|Culture & recreation|Life & arts|Science|Professional|Blog|Facebook|Twitter|LinkedIn|CC BY-SA|The Overflow Blog|Featured on Meta)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "header, left nav, list tabs (Featured = today's Bountied, relabelled), per-page, footer (Business/Stack Internal/Stack Ads are the 2019 Products/Teams/Advertising links; Professional/Business replaced Other in the network list; Your Privacy Choices is the legal slot)"
+    },
+    {
+      "match": "^(Up vote|Down vote|Save|Share|Improve this (question|answer)|show all edits to this post|Timeline|Add a comment|Show all comments|\\d+ Answers? \\d+|\\d+ Comments|Question score.*|Vote score.*|Score of -?\\d+ -?\\d+ votes?|Protected question|See more linked questions|Feed of this question and its answers|Git|association bonus|Bot|User profile|Over a year ago|\\d{4}-\\d\\d-\\d\\d \\d\\d:\\d\\d:\\d\\dZ|votes?|answers?|views|\\d+( views| answers?)? ?.*)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "post controls: votes, favorite (now Save), share, improve/edit, edits, timeline, comments; scores, counts, dates, user cards (content)"
+    },
+    {
+      "match": "^(show questions tagged .+|[a-z0-9.+#-]+( ?[a-z0-9.+#-]+)*|(\\S+\\s+){2,}\\S+.*)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "content: tags (lowercase) and question titles (three words or more)"
+    }
+  ]
+}

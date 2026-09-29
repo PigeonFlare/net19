@@ -24,3 +24,7 @@ header[class*="MainMenuHeader--MainMenuHeader"]{background:var(--n19-band)!impor
 header[class*="MainMenuHeader--MainMenuHeader"] [class*="MainMenuHeader--wrapperRight"] :is(span,button,svg):not(.searchWrapper *){color:var(--n19-band-text)!important;fill:currentColor}
 header[class*="MainMenuHeader--MainMenuHeader"] [class*="SearchInput--SearchInput"],header[class*="MainMenuHeader--MainMenuHeader"] input[id$="LocationSearch_input"]{border-radius:2px!important;background:#fff!important}
 a[class*="PremiumButton--link"][href^="/subscribe"]{display:none!important}
+a:is([aria-label="SnowCast"i],[title="SnowCast"i]),a:has(img[alt="SnowCast"i]){display:none!important}
+main :is(.text-white[data-net19-ink="dark"],.text-white [data-net19-ink="dark"],.text-white[data-net19-ink="dark"] *){color:#fff!important;-webkit-text-fill-color:#fff!important}
+nav[data-testid="sidebar-navigation"] a,nav[data-testid="sidebar-navigation"] a :is(p,span){color:#252422!important}
+html.dark nav[data-testid="sidebar-navigation"] a,html.dark nav[data-testid="sidebar-navigation"] a :is(p,span){color:#eee!important}

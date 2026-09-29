@@ -1,0 +1,82 @@
+{
+  "theme": "usatoday",
+  "era": "2019 usatoday.com: blue-dot logo, small uppercase nav with weather, SUBSCRIBE NOW, hero with TOP STORIES rail, articles in a card over a grey backdrop with a left share rail (same for every visitor)",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.google.com/search?udm=2&q=usatoday.com+website+2019+screenshot",
+      "date": "2019",
+      "shows": "Google Images: USA TODAY 2019 captures (America's Newspapers 'Pilots Assoc: After Boeing 737 Max crashes' article page, Alamy homepage photo): blue-dot logo, uppercase nav, white cards",
+      "file": "g7-evidence/usatoday/gimg-home.jpg"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/20190916001135/https://www.usatoday.com/",
+      "date": "2019-09-16",
+      "shows": "homepage and HTML: blue dot USA TODAY logo, SUBSCRIBE NOW to get home delivery, nav NEWS SPORTS ENTERTAINMENT LIFE MONEY TECH TRAVEL OPINION, weather, CROSSWORDS, INVESTIGATIONS, MORE, search; hero with Read Story, TOP STORIES rail, Share your feedback, AD CONTENT by Taboola, RIGHT NOW; footer (About us, Newsroom staff, Ethical principles, Corrections, Press room, Accessibility support, Sitemap, Terms of Service, Privacy Policy, Ad Choices, Contact us, Help Center, Manage account, Get home delivery, e-Edition, USA TODAY Shop, Reprints & Permissions, Advertise, Careers, Internships, News tips, Podcasts, Newsletters, Mobile apps, Facebook, Twitter, Instagram, LinkedIn, Pinterest, Reviewed, Sign in)",
+      "file": "g7-evidence/usatoday/wb-usatoday-home.png"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20190410234202/https://www.usatoday.com/",
+      "date": "2019-04-10",
+      "shows": "homepage (April): same header and nav, INVESTIGATIONS, hero carousel arrows, TOP STORIES",
+      "file": "g7-evidence/usatoday/wb-usatoday-home-apr.png"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/20200102133229/https://www.usatoday.com/story/news/nation/2019/09/14/jarrid-wilsons-suicide-forces-churches-confront-mental-health/2313458001/",
+      "date": "2019-09 story (captured 2020-01)",
+      "shows": "article: card on grey backdrop with close X, left share rail (Facebook, Twitter, LinkedIn, email, comments), headline, byline and Published/Updated, video, Share your feedback",
+      "file": "g7-evidence/usatoday/wb-usatoday-article.png"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|nav|footer|main|section|article|form|search|aside|dialog|region) area$|^repeated |^(Global navigation|advertisement|AD CONTENT)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "page regions, ads (AD CONTENT by Taboola) and repeated story items"
+    },
+    {
+      "match": "^(USA TODAY|U\\.S\\.|News|Politics|Sports|Entertainment|Life|Money|Tech|Travel|Opinion|Crossword|Crosswords|Investigations|More|Global Navigation|Search|Search query|Submit|Subscribe|Subscribe Now|Sign In|Close|Close docked video player|Play|Read Story|More Stories|Top Stories|Right Now|Get top stories in your inbox|Email address|Learn More|Read More|Comparisons\\.org|For You|View For You|California Privacy|Close Special Offer|Share to (Facebook|Twitter|X)|Share by email|Share)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "2019 header/nav, subscribe and sign in, hero Read Story, article card close X and share rail, docked video, newsletter box, Taboola units, exit-intent offer (2019 used Bounce Exchange overlays); 'For You' is a story recommendation module (content)"
+    },
+    {
+      "match": "^(About Us|Newsroom Staff|Ethical Principles|USA TODAY Network Style Guide|Request a Correction|Media Room|Accessibility|Sitemap|Advertiser Acceptance Policy|Terms of Service|Privacy Policy|Your Privacy Choices|Contact Us|Help Center|Manage Account|Give Feedback|Get Home Delivery|eNewspaper|USA TODAY Shop|USA TODAY Print Editions|Licensing & Reprints|Advertise Your Business|Careers|Internships|News Tips|Podcasts|Newsletters|Mobile Apps|Facebook|Twitter|X|Instagram|LinkedIn|YouTube|Reddit|Flipboard|Pinterest|Real Estate|Reviewed|Cars|Jobs|Classifieds|10BEST|USA TODAY Store|Shopping|Deals|Deal of the Day|Southern Kitchen|Sports Weekly|Studio Gannett|Money Essentials|Branded Stories Hub|Sign up for newsletter:.*|Ad Choices|Cookie Settings|Do Not Sell.*)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "footer (legally required privacy choices kept)"
+    },
+    {
+      "match": "^(Full Summary|Sports Betting|Blueprint|Cashback|Threads|Support Local Business|Responsible Disclosure)$",
+      "in2019": false,
+      "evidence": [
+        "article summary widget (2024), Threads (2023), Support Local (2020), Gannett disclosure program; not in s2-s4"
+      ],
+      "note": "hidden",
+      "action": "hidden"
+    },
+    {
+      "match": "^(?=.{20,}$)(?!(?:Ask AI|Ask the|AI Mode|AI summary|Summarize|Listen to (?:this|the) article|Subscribe|Sign in|Sign up|Log in|Download the app|Get the app)\\b).*\\s.*$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "story headlines and teasers (content)"
+    }
+  ]
+}

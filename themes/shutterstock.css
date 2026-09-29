@@ -33,3 +33,5 @@ section[data-automation="UniversalHomeHero"] h1 + p { font-size: 20px !important
 [data-automation="SearchBarContainer"] button[type="submit"], [data-automation="SearchBarContainer"] button[aria-label="Search" i] { background: var(--n19-red) !important; color: #fff !important; border-radius: 0 4px 4px 0 !important; }
 [data-automation="SearchBarContainer"] button[type="submit"] svg, [data-automation="SearchBarContainer"] button[aria-label="Search" i] svg { fill: #fff !important; color: #fff !important; }
 [data-automation="SearchBarContainer"] [class*="aiSearchButtonWrapper"], [data-net19-later-section] { display: none !important; }
+header[data-automation="top-nav"] nav[aria-label="Primary navigation"] > ul > li:has(> a[href*="/templates"]), header[data-automation="top-nav"] nav[aria-label="Primary navigation"] > ul > li:has(> a[href*="/sfx"]), header[data-automation="top-nav"] nav[aria-label="Primary navigation"] > ul > li:has(> a[href*="/studios"]), a[href*="/studios"], li:has(> a[href*="/studios"]), a[href*="/templates"][data-automation] { display: none !important; }
+[data-n19-later] { display: none !important; }

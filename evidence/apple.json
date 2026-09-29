@@ -1,0 +1,71 @@
+{
+  "theme": "apple",
+  "era": "2019 apple.com (s1-s4): translucent black global nav Apple/Mac/iPad/iPhone/Watch/TV/Music/Support, full-width product tiles with blue chevron links, grey Apple Directory footer.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://arun.is/blog/10-year-challenge/",
+      "date": "2019-01-22",
+      "file": "/home/claude/sweeps/g9-evidence/apple/arun-2019-01-apple.jpg",
+      "shows": "homepage: translucent black global nav (Apple, Mac, iPad, iPhone, Watch, TV, Music, Support, search, bag), full-width product tiles with headline, subhead and blue 'Learn more >' / 'Buy >' links"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.versionmuseum.com/history-of/apple-website",
+      "date": "2019",
+      "file": "/home/claude/sweeps/g9-evidence/apple/versionmuseum-2019-apple.png",
+      "shows": "homepage 2019 (iPhone XR promotion): same nav, hero tile with headline and chevron links"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20190615230327/https://www.apple.com/",
+      "date": "2019-06-15",
+      "file": "/home/claude/sweeps/g9-evidence/wb/apple-home.png",
+      "shows": "homepage labels: Apple/Mac/iPad/iPhone/Watch/TV/Music/Support/Search/Shopping Bag; tiles iPhone XR, iPhone XS, Apple Watch Series 4, iOS 13, iPadOS, macOS Catalina, Mac Pro, Pro Display XDR; footnotes; Apple Directory footer: Shop and Learn (Mac, iPad, iPhone, Watch, TV, Music, iTunes, HomePod, iPod touch, Apple Card, Accessories, Gift Cards), Apple Store (Find a Store, Genius Bar, Today at Apple, Apple Camp, Field Trip, Apple Store App, Refurbished and Clearance, Financing, Apple Trade In, Order Status, Shopping Help), For Education, For Business, Account, Apple Values, About Apple, Find an Apple Store / other retailer / 1-800-MY-APPLE, legal links, country"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/20190616011246/https://www.apple.com/iphone/",
+      "date": "2019-06-16",
+      "file": "/home/claude/sweeps/g9-evidence/wb/apple-iphone.png",
+      "shows": "iPhone page: product sub-nav (iPhone XS New, iPhone XR New, iPhone 8, iPhone 7, Compare, AirPods, iOS 12), hero, 'Which one's right for you?' compare, essentials, 'What makes an iPhone an iPhone?', breadcrumbs"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Store|Vision|Apple Vision Pro|AirTag|Apple One|Apple Fitness\\+|Racial Equity and Justice|Ethics & Compliance|Feature Availability|Carrier Deals at Apple|Group Reservations|Personal Setup|Shop for K-12|Shop for State and Local Employees|Apple Intelligence|apple\\.com/apple-intelligence|.* menu)$",
+      "in2019": false,
+      "evidence": [
+        "not in the 2019 global nav or Apple Directory (s1, s3, s4): Store tab (2020), Vision Pro (2024), AirTag (2021), Apple One and Fitness+ (2020), Apple Upgrade, Racial Equity and Justice (2020), Ethics & Compliance, Feature Availability, carrier deals, group reservations, the nav flyout menus (2022)"
+      ],
+      "action": "hidden (apple.js data-n19-later; flyouts in apple.css)"
+    },
+    {
+      "match": "^(.?\\s?Apple|apple\\.com|Mac|iPad|iPhone|Watch|TV|Music|Support|Search apple\\.com|Shopping Bag|Global|header area|nav area|section area|main area|contentinfo area|Footnotes|Apple Directory|Breadcrumbs|tablist area|repeated .*|\\d+ Quick Links.*)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "global nav (TV & Home renamed TV, Entertainment renamed Music by apple.js) and regions"
+    },
+    {
+      "match": "^(App Store|Apple Arcade|Apple Books|Apple Camp|Apple Card( Customer Agreement)?|Apple Cash|Apple Leadership|Apple Music|Apple News\\+|Apple Pay|Apple Podcasts|Apple Store Account|Apple Store App|Apple TV|Apple Trade In|Apple and (Business|Education|Government|Healthcare)|Career Opportunities|Certified Refurbished|Contact Apple|Education|Environment|Events|Financing|Find a Store|Find an Apple Store|Genius Bar|Gift Cards|Inclusion and Diversity|Investors|Legal|Manage Your Apple Account|Newsroom|Order Status|Privacy( Policy)?|Sales and Refunds|Shop for (Business|College|Federal Employees|Veterans and Military)|Shopping Help|Site Map|Supply Chain Innovation|Terms( of Use)?|Today at Apple|United States\\. Choose your country or region|other retailer|Accessibility|Accessories|Wallet|iCloud\\.com|here|View Apple Pay countries and regions|[\\d⁠‑-]+|1.*A.*P.*P.*L.*E|Displays|TV and Home|TV & Home)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "Apple Directory footer: every 2019 column entry or its current name (Apple Card, Arcade (2019-09), News+ (2019-03), Apple TV app, Certified Refurbished = Refurbished and Clearance, Manage Your Apple Account = Manage Your Apple ID, Career Opportunities = Job Opportunities, Supply Chain Innovation = Supplier Responsibility, Shop for Federal Employees = Shop for Government), phone numbers, legal links"
+    },
+    {
+      "match": "^(New|Compare.*|.* compare gallery|Item \\d+|Next .*|Previous .*|next item|previous item|Learn more.*|Buy.*|Shop .*|Help Me Choose.*|Accessories for .*|(iPhone|iPad|Mac|MacBook|iMac|Apple Watch|AirPods|HomePod|iOS|iPadOS|macOS|watchOS|Mac mini|Mac Studio|Mac Pro|Pro Display).*|Design|Footnote .*|support\\.apple\\.com.*|apple\\.com/.*|(\\S+\\s+){3,}\\S+.*|.+\\.|Apple Upgrade)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s4"
+      ],
+      "note": "content: product names, tiles, headlines, 'Learn more'/'Buy' links, compare galleries, footnotes (2019 product pages had the same kinds of tiles, compare and footnotes)"
+    }
+  ]
+}

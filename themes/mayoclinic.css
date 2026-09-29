@@ -67,3 +67,23 @@ form#mayoform > .main > header a[id^="et_genericNavigation_"] { border-radius: 0
   border: 1px solid var(--n19-box) !important; font-size: 14px !important; }
 form#mayoform > .main > header a[id^="et_genericNavigation_"][aria-current="true"] { background: var(--n19-page) !important; border-color: var(--n19-rule) !important; border-bottom-color: var(--n19-page) !important; font-weight: 700 !important; }
 form#mayoform > .main > header > .row, form#mayoform > .main > header > div { border-color: var(--n19-rule) !important; }
+[data-n19-later] { display: none !important; }
+.cmp-hero-card:has(.cmp-hero-card__media-fullBleed) :is(h1, h2, p, a, span) { color: #fff !important; }
+.cmp-hero-card:has(.cmp-hero-card__media-fullBleed) a[class*="button"] { border-color: #fff !important; }
+.cmp-container--background-color-donations, .cmp-container--background-color-footer { background: #27251f !important; }
+.cmp-container--background-color-footer :is(a, h2, h3, p, span) { color: #fff !important; }
+.cmp-container--background-color-footer a:not(:has(h2, h3)) { color: #c9c6bd !important; }
+.cmp-container--background-color-copyright { background: #fff !important; }
+.cmp-hero-card:has(video) .cmp-hero-card__container :is(h1, h2, p, a, span, div) { color: #fff !important; }
+.cmp-hero-card:has(video) .cmp-hero-card__container a[class*="button"] { border-color: #fff !important; }
+.cmp-container--background-color-footer :is(li, div.cmp-link, div.cmp-image):has(> a[href*="instagram.com"], > a[href*="linkedin.com"]), .cmp-container--background-color-footer a:is([href*="instagram.com"], [href*="linkedin.com"]) { display: none !important; }
+.cmp-anchor-nav { display: none !important; }
+.cmp-container--ccg-header { background: linear-gradient(#f3f3f1, #e9e9e6) !important; border-bottom: 1px solid var(--n19-rule) !important; }
+.cmp-container--ccg-header :is(h1, h1 *) { color: var(--n19-blue) !important; font-weight: 400 !important; font-size: 36px !important; line-height: 42px !important; }
+.cmp-container--ccg-header :is(a, span, p):not([class*="button"] *):not([class*="tab"] *) { color: var(--n19-blue) !important; }
+.cmp-container--ccg-header :is([role="tab"], [class*="tab"] a, nav a) { background: #e4e4e0 !important; color: var(--n19-blue) !important; border-radius: 0 !important; }
+.cmp-container--ccg-header :is([role="tab"][aria-selected="true"], [aria-current="page"]) { background: #d2d2cc !important; }
+main h2 { color: var(--n19-text) !important; }
+.cmp-hero-card:has(video) .cmp-hero-card__container { background: linear-gradient(to right, rgba(0,0,0,.6), rgba(0,0,0,.25) 60%, transparent) !important; }
+.cmp-hero-card:has(video) .cmp-hero-card__container :is(h1, h2, p, a, span) { text-shadow: 0 1px 3px rgba(0,0,0,.6) !important; }
+.cmp-hero-card:has(video) .cmp-hero-card__container :is(h1, h2, p, a, span)[data-net19-ink], .cmp-hero-card:has(video) .cmp-hero-card__container [data-net19-ink] * { color: #fff !important; -webkit-text-fill-color: #fff !important; }

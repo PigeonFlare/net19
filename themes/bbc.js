@@ -1,4 +1,4 @@
-globalThis.net19Theme = {};
+globalThis.net19Theme = { later: /^(?:set preferred source|bbc verify|bbc indepth)$/i };
 (() => {
   const mark = () => {
     const news = /^\/news(\/|$)/.test(location.pathname);

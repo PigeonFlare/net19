@@ -1,0 +1,1377 @@
+{
+ "theme": "wikipedia",
+ "era": "2019 Wikipedia in the Vector skin (now 'Vector legacy', served with ?useskin=vector): grey #f6f6f6 frame, white content with the Linux Libertine title, 'Wikipedia The Free Encyclopedia' puzzle globe, Article/Talk and Read/Edit/View history tabs, 'Search Wikipedia' box with a magnifier, sidebar Navigation / Interaction / Tools / Print/export / In other projects / Languages. Every visitor got this design in 2019 (Vector was the default for everyone, signed in or out), so the Arquivo.pt captures and the users' own 2019 screenshots on Commons agree.",
+ "sources": [
+  {
+   "id": "c-home-201904",
+   "url": "https://commons.wikimedia.org/wiki/File:2019_Screenshot_of_English_Wikipedia_homepage.png",
+   "date": "2019-04-30",
+   "shows": "a signed-in user's screenshot of the Main Page (In the news: Cyclone Kenneth, April 30 On this day): header, tabs, search, full 2019 sidebar",
+   "file": "g10-evidence/wikipedia/c-en-home-2019.png"
+  },
+  {
+   "id": "c-navbox-201901",
+   "url": "https://commons.wikimedia.org/wiki/File:Navbox_bulleted_hlist_bug_2019-01-24_at_5.45.12_PM.png",
+   "date": "2019-01-24",
+   "shows": "a user's screenshot of a template page: title, 'From Wikipedia, the free encyclopedia', navbox with [hide] toggle and v·t·e links",
+   "file": "g10-evidence/wikipedia/c-navbox-2019-01-24.png"
+  },
+  {
+   "id": "c-wikimania-201905",
+   "url": "https://commons.wikimedia.org/wiki/File:Wikimania_2019_banner_ad_on_the_English_Wikipedia_(30_D._05_M._2019_A.)_01.png",
+   "date": "2019-05-30",
+   "shows": "a user's screenshot of an English Wikipedia page with a CentralNotice banner at the top",
+   "file": "g10-evidence/wikipedia/c-en-wikimania-2019-05-30.png"
+  },
+  {
+   "id": "article2-201909",
+   "url": "https://arquivo.pt/noFrame/replay/20190924204323/https://en.wikipedia.org/wiki/Cat",
+   "date": "2019-09-24",
+   "shows": "article2 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikipedia/wikipedia-article2-201909.png"
+  },
+  {
+   "id": "article5-201909",
+   "url": "https://arquivo.pt/noFrame/replay/20190902010412/https://en.wikipedia.org/wiki/Portugal",
+   "date": "2019-09-02",
+   "shows": "article5 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikipedia/wikipedia-article5-201909.png"
+  },
+  {
+   "id": "article8-201909",
+   "url": "https://arquivo.pt/noFrame/replay/20190930200909/https://en.wikipedia.org/wiki/Lisbon",
+   "date": "2019-09-30",
+   "shows": "article8 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikipedia/wikipedia-article8-201909.png"
+  },
+  {
+   "id": "history1-201909",
+   "url": "https://arquivo.pt/noFrame/replay/20190928075947/https://en.wikipedia.org/w/index.php?title=Blohm_%26_Voss_BV_138&action=history",
+   "date": "2019-09-28",
+   "shows": "history1 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikipedia/wikipedia-history1-201909.png"
+  },
+  {
+   "id": "home1-201901",
+   "url": "https://arquivo.pt/noFrame/replay/20190101212527/https://en.wikipedia.org/wiki/Main_Page",
+   "date": "2019-01-01",
+   "shows": "home1 page as served in 2019-01 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikipedia/wikipedia-home1-201901.png"
+  },
+  {
+   "id": "home2-201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190704202244/https://en.wikipedia.org/wiki/Main_Page",
+   "date": "2019-07-04",
+   "shows": "home2 page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikipedia/wikipedia-home2-201907.png"
+  },
+  {
+   "id": "home3-201912",
+   "url": "https://arquivo.pt/noFrame/replay/20191231180700/https://en.wikipedia.org/wiki/Main_Page",
+   "date": "2019-12-31",
+   "shows": "home3 page as served in 2019-12 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikipedia/wikipedia-home3-201912.png"
+  },
+  {
+   "id": "home4-201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190704202244/https://en.wikipedia.org/wiki/Main_Page",
+   "date": "2019-07-04",
+   "shows": "home4 page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikipedia/wikipedia-home4-201907.png"
+  },
+  {
+   "id": "search1-201910",
+   "url": "https://arquivo.pt/noFrame/replay/20191016080058/https://en.wikipedia.org/w/index.php?title=Special:Search&profile=all&search=Hunn-Black%20%26%20Merritt%20Funeral%20Home&ns0=1",
+   "date": "2019-10-16",
+   "shows": "search1 page as served in 2019-10 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikipedia/wikipedia-search1-201910.png"
+  },
+  {
+   "id": "search2-201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190325075008/https://en.wikipedia.org/w/index.php?title=Special:Search&profile=all&search=H%20Cook%20%26%20Son",
+   "date": "2019-03-25",
+   "shows": "search2 page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikipedia/wikipedia-search2-201903.png"
+  },
+  {
+   "id": "search3-201906",
+   "url": "https://arquivo.pt/noFrame/replay/20190607161647/https://en.wikipedia.org/wiki/Special:Search?search=astrology%20love%20marriage%20line&sourceid=Mozilla-search&ns0=1",
+   "date": "2019-06-07",
+   "shows": "search3 page as served in 2019-06 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikipedia/wikipedia-search3-201906.png"
+  },
+  {
+   "id": "special1-201905",
+   "url": "https://arquivo.pt/noFrame/replay/20190522143301/https://en.wikipedia.org/wiki/Special:RecentChanges",
+   "date": "2019-05-22",
+   "shows": "special1 page as served in 2019-05 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikipedia/wikipedia-special1-201905.png"
+  },
+  {
+   "id": "talk1-201904",
+   "url": "https://arquivo.pt/noFrame/replay/20190426020054/https://en.wikipedia.org/wiki/Talk:Acupuncture",
+   "date": "2019-04-26",
+   "shows": "talk1 page as served in 2019-04 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikipedia/wikipedia-talk1-201904.png"
+  },
+  {
+   "id": "talk2-201912",
+   "url": "https://arquivo.pt/noFrame/replay/20191220152520/https://en.wikipedia.org/wiki/Talk:Acupuncture",
+   "date": "2019-12-20",
+   "shows": "talk2 page as served in 2019-12 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikipedia/wikipedia-talk2-201912.png"
+  },
+  {
+   "id": "talk3-201905",
+   "url": "https://arquivo.pt/noFrame/replay/20190522155618/https://en.wikipedia.org/wiki/Talk:Abdolhamid_Rigi?oldformat=true",
+   "date": "2019-05-22",
+   "shows": "talk3 page as served in 2019-05 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/wikipedia/wikipedia-talk3-201905.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Learn to edit|Learn how to edit Wikipedia)$",
+   "in2019": false,
+   "evidence": [
+    "c-home-201904",
+    "home1-201901",
+    "home2-201907"
+   ],
+   "note": "sidebar 'Learn to edit' (added 2023); the 2019 Interaction menu was Help, About Wikipedia, Community portal, Recent changes, Contact page",
+   "action": "hidden"
+  },
+  {
+   "match": "^Expand all( collapsible elements.*)?$",
+   "in2019": false,
+   "evidence": [
+    "c-home-201904",
+    "article2-201909",
+    "talk2-201912"
+   ],
+   "note": "Tools > Expand all (2023+)",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Reply|Latest comment:?.*|\\d+ comments?|\\d+ people in discussion|Subscribe|Unsubscribe)$",
+   "in2019": false,
+   "evidence": [
+    "talk1-201904",
+    "talk2-201912",
+    "talk3-201905"
+   ],
+   "note": "DiscussionTools reply buttons, 'Latest comment' bars and topic metadata (2021+); 2019 talk pages were plain wikitext threads",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Advanced search:?|Search in:.*|Search in page text)$",
+   "in2019": false,
+   "evidence": [
+    "search1-201910",
+    "search2-201903",
+    "search3-201906"
+   ],
+   "note": "AdvancedSearch expandable panes; the 2019 search page shows the Content pages / Multimedia / Everything / Advanced profile tabs, which are shown again",
+   "action": "hidden"
+  },
+  {
+   "match": "^See all results$",
+   "in2019": false,
+   "evidence": [
+    "search1-201910",
+    "search2-201903",
+    "search3-201906"
+   ],
+   "note": "sister-project results column: not on any 2019 search capture, so it is hidden under the additive rule",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Wikifunctions|Wikimedia Outreach|Multilingual Wikisource)$",
+   "in2019": false,
+   "evidence": [
+    "home1-201901",
+    "home2-201907",
+    "c-home-201904"
+   ],
+   "note": "In other projects entries the 2019 Main Page did not list (Wikifunctions launched 2023)",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Code of Conduct|Universal Code of Conduct)$",
+   "in2019": false,
+   "evidence": [
+    "home1-201901",
+    "talk2-201912"
+   ],
+   "note": "footer link (2022+)",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Get shortened URL|Download QR code|Switch to legacy parser)$",
+   "in2019": false,
+   "evidence": [
+    "article2-201909",
+    "article5-201909"
+   ],
+   "note": "Tools entries added after 2019",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Language settings|All languages.*|\\d+ more)$",
+   "in2019": false,
+   "evidence": [
+    "article2-201909",
+    "article5-201909",
+    "article8-201909"
+   ],
+   "note": "ULS compact-language button and cog: the 2019 captures list every language in full with no cog, so the full list is shown again",
+   "action": "hidden"
+  },
+  {
+   "match": "^Legal & safety contacts$",
+   "in2019": false,
+   "evidence": [
+    "EU Digital Services Act point of contact, footer link added 2024"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Next page|Previous page|First page|Last page)$",
+   "in2019": false,
+   "evidence": [
+    "search1-201910"
+   ],
+   "note": "the Codex pager replaced the 2019 'previous 20 / next 20' links; the top copy is hidden and the bottom one kept because it is the only way to page results",
+   "action": "kept: function"
+  },
+  {
+   "match": "^(\"Cats\"|10196305|104159|118552|14000031|183798|24|2435035|62265494|7d7d7c68\\-baa8\\-4908\\-bdc4\\-b747950f6318|82598|9685|Abyssinian\\ cat|Aegean\\ cat|African\\ wildcat|Aging\\ in\\ cats|Ailurophobia|Amcic\\ –\\ Kabyle|American\\ Cat\\ Fanciers\\ Association|American\\ Curl|American\\ Shorthair|Associazione\\ Nazionale\\ Felina\\ Italiana|Balinese\\ cat|Bengal\\ cat|Bicolor\\ cat|Birman|Black\\ cat|Bombay\\ cat|Brazilian\\ Shorthair|British\\ Shorthair|Burmese\\ cat|Burmilla|Bussá\\ –\\ Northern\\ Sami|Calico\\ cat|California\\ Spangled|Canadian\\ Cat\\ Association|Carl\\ Linnaeus|Carnivora|Cat|Cat\\ Aficionado\\ Association|Cat\\ Fanciers'\\ Association|Cat\\ anatomy|Cat\\ behavior|Cat\\ body\\ language|Cat\\ café|Cat\\ coat\\ genetics|Cat\\ communication|Cat\\ fancy|Cat\\ flea|Cat\\ food|Cat\\ genetics|Cat\\ health|Cat\\ intelligence|Cat\\ massage|Cat\\ meat|Cat\\ play\\ and\\ toys|Cat\\ registry|Cat\\ righting\\ reflex|Cat\\ senses|Cat\\ show|Cat\\ skin\\ disorders|Cat\\ –\\ Irish|Cat\\ –\\ Norman|Cat\\ –\\ Scots|Cat\\ –\\ Scottish\\ Gaelic|Cat\\ –\\ Simple\\ English|Cat\\-scratch\\ disease|Category:Cats|Cath\\ –\\ Welsh|Catnip|Cats\\ in\\ ancient\\ Egypt|Catte\\ –\\ Old\\ English|Catto\\ domestic\\ –\\ Interlingua|Chartreux|Chat\\ –\\ Arpitan|Chat\\ –\\ French|Chat\\ –\\ Haitian\\ Creole|Chausie|Colorpoint\\ Shorthair|Congenital\\ sensorineural\\ deafness\\ in\\ cats|Cornish\\ Rex|Cot\\ –\\ Picard|Cultural\\ depictions\\ of\\ cats|Cymric\\ cat|Cyprus\\ cat|Câtuși\\ –\\ Aromanian|Dental\\ health\\ diets\\ for\\ cats|Dermatophytosis|Devon\\ Rex|Dirofilaria\\ immitis|Domacna\\ kócka\\ –\\ Lower\\ Sorbian|Domaća\\ mačka\\ –\\ Croatian|Domača\\ mačka\\ –\\ Slovenian|Domjaca\\ kóčka\\ –\\ Upper\\ Sorbian|Don\\ E\\.\\ Wilson|Donskoy\\ cat|Dragon\\ Li|Dwarf\\ cat|EPPO\\ Code|Egyptian\\ Mau|European\\ Shorthair|Ev\\ pişiyi\\ –\\ Azerbaijani|Exotic\\ Shorthair|FELIDO|Farm\\ cat|Feles\\ –\\ Latin|Felidae|Feline\\ acne|Feline\\ asthma|Feline\\ calicivirus|Feline\\ hepatic\\ lipidosis|Feline\\ immunodeficiency\\ virus|Feline\\ infectious\\ peritonitis|Feline\\ leukemia\\ virus|Feline\\ lower\\ urinary\\ tract\\ disease|Feline\\ vaccination|Feline\\ viral\\ rhinotracheitis|Feline\\ zoonosis|Felinology|Felis|Felis\\ silvestris\\ catus\\ –\\ Italian|Felis\\ –\\ Sardinian|Feral\\ cat|Fédération\\ Internationale\\ Féline|Gat\\ –\\ Catalan|Gat\\ –\\ Piedmontese|Gato\\ –\\ Galician|Gato\\ –\\ Ladino|Gato\\ –\\ Lingua\\ Franca\\ Nova|Gato\\ –\\ Mirandese|Gato\\ –\\ Portuguese|Gato\\ –\\ Venetian|German\\ Rex|Ghjattu\\ –\\ Corsican|Giat\\ –\\ Romansh|Gjat\\ –\\ Friulian|Global\\ Biodiversity\\ Information\\ Facility|Governing\\ Council\\ of\\ the\\ Cat\\ Fancy|Growling|Gàt\\ –\\ Emiliano\\-Romagnolo|Hauskatze\\ –\\ German|Hauskaz\\ –\\ Luxembourgish|Hauskotz\\ –\\ Bavarian|Hejma\\ kato\\ –\\ Esperanto|Help:Taxon\\ identifiers|Highlander\\ cat|Himalayan\\ cat|Hoeskat\\ –\\ Limburgish|Human\\ interaction\\ with\\ cats|Hypertrophic\\ cardiomyopathy|INaturalist|Ikati\\ –\\ Zulu|Ikos\\ –\\ Central\\ Bikol|Injangwe\\ –\\ Kinyarwanda|Integrated\\ Taxonomic\\ Information\\ System|Interim\\ Register\\ of\\ Marine\\ and\\ Nonmarine\\ Genera|Invasive\\ Species\\ Compendium|Iring\\ –\\ Cebuano|Islam\\ and\\ cats|Jakuma\\ –\\ Bambara|Japanese\\ Bobtail|Jattu\\ –\\ Sicilian|Javanese\\ cat|Kaat\\ –\\ Northern\\ Frisian|Kass\\ –\\ Estonian|Kass\\ –\\ Võro|Kat\\ \\(dier\\)\\ –\\ Dutch|Kat\\ –\\ Afrikaans|Kat\\ –\\ Danish|Kat\\ –\\ Low\\ Saxon|Kat\\ –\\ Saterland\\ Frisian|Kat\\ –\\ Volapük|Kat\\ –\\ Western\\ Frisian|Kath\\ –\\ Cornish|Katie\\ –\\ Samogitian|Kato\\ –\\ Ido|Katse\\ –\\ Northern\\ Sotho|Katse\\ –\\ Southern\\ Sotho|Katt\\ –\\ Low\\ German|Katt\\ –\\ Norwegian\\ Nynorsk|Katt\\ –\\ Swedish|Katte\\ –\\ West\\ Flemish|Katu\\ –\\ Basque|Katė\\ –\\ Lithuanian|Kayt\\ –\\ Manx|Kazh\\ –\\ Breton|Kačs\\ –\\ Latgalian|Kaķis\\ –\\ Latvian|Kaži\\ –\\ Livvi\\-Karelian|Kaži\\ –\\ Veps|Kedi\\ –\\ Turkish|Kellas\\ cat|Kettur\\ –\\ Faroese|Khao\\ Manee|Kissa\\ –\\ Finnish|Kitiuraq\\ –\\ Inupiaq|Kitten|Kneading\\ \\(cats\\)|Korat|Kot\\ domowy\\ –\\ Polish|Kot\\ –\\ Silesian|Kočka\\ domácí\\ –\\ Czech|Kuciang\\ –\\ Minangkabau|Kucing\\ –\\ Indonesian|Kucing\\ –\\ Javanese|Kucing\\ –\\ Malay|Kurilian\\ Bobtail|Kyanwa\\ –\\ Hausa|Kòt\\ –\\ Kashubian|Köttur\\ –\\ Icelandic|Landrace|Likati\\ –\\ Swati|List\\ of\\ cat\\ breeds|List\\ of\\ experimental\\ cat\\ breeds|List\\ of\\ feline\\ diseases|Lykoi|Macja\\ –\\ Albanian|Macska\\ –\\ Hungarian|Magna\\ Graecia|Magodja\\ –\\ Vlax\\ Romani|Maine\\ Coon|Mammal|Mammal\\ Species\\ of\\ the\\ World|Manx\\ cat|Mačka\\ domáca\\ –\\ Slovak|Mačka\\ –\\ Bosnian|Mačka\\ –\\ Serbo\\-Croatian|Mbarakaja\\ –\\ Guarani|Meow|Meuz\\ –\\ Zhuang|Minoc\\ –\\ Atikamekw|Misay\\ –\\ Waray|Munchkin\\ cat|Mushuk\\ –\\ Uzbek|Muus\\ –\\ Wolof|Mèo\\ –\\ Vietnamese|Mósí\\ –\\ Navajo|NHMSYS0000080189|National\\ Biodiversity\\ Network|National\\ Center\\ for\\ Biotechnology\\ Information|Neutering|Nkɔ́ndɔkɔ́\\ –\\ Lingala|Norwegian\\ Forest\\ Cat|Nyawu\\ –\\ Kongo|Ocicat|Odd\\-eyed\\ cat|Ojos\\ Azules|Ológbò\\ –\\ Yoruba|Onychectomy|Oriental\\ Shorthair|Paka\\-kaya\\ –\\ Swahili|Persian\\ cat|Pet|Peterbald|Phisi\\ –\\ Aymara|Phylogenetic|Pisică\\ de\\ casă\\ –\\ Romanian|Pisîk\\ –\\ Kurdish|Pixie\\-bob|Polydactyl\\ cat|Portal:Cats|Portal:Mammals|Purr|Pus\\ –\\ Jamaican\\ Creole\\ English|Pusa\\ –\\ Iloko|Pusa\\ –\\ Pampanga|Pusa\\ –\\ Tagalog|Pusi\\ –\\ Fiji\\ Hindi|Pusi\\ –\\ Tongan|Puspusi\\ –\\ Sranan\\ Tongo|Pōpoki\\ –\\ Hawaiian|Pɩyaʊ\\ –\\ Kabiye|Qattus\\ –\\ Maltese|Raas\\ cat|Rabies\\ in\\ animals|Ragamuffin\\ cat|Ragdoll|Russian\\ Blue|Saka\\ –\\ Malagasy|Sand\\ cat|Savannah\\ cat|Science\\ \\(journal\\)|Scottish\\ Fold|Selkirk\\ Rex|Senior\\ cat\\ diet|Serengeti\\ cat|Ship's\\ cat|Siamese\\ cat|Siberian\\ cat|Singapura\\ cat|Snowshoe\\ cat|Sokoke|Somali\\ cat|Southern\\ Africa\\ Cat\\ Council|Spaying|Sphynx\\ cat|Squitten|Tabby\\ cat|Tchet\\ –\\ Walloon|Tete\\ –\\ Gorontalo|Thai\\ cat|The\\ International\\ Cat\\ Association|Tick|Tonkinese\\ cat|Tortoiseshell\\ cat|Toxocara\\ cati|Toxoplasmosis|Toyger|Traditional\\ Persian|Turkish\\ Angora|Turkish\\ Van|Ucing\\ –\\ Sundanese|Urine\\ spraying|Valerian\\ \\(herb\\)|World\\ Cat\\ Congress|World\\ Cat\\ Federation|Yaanyuur\\ –\\ Somali|mlatu\\ –\\ Lojban|wikidata:Q20980826|Диис\\ –\\ Tuvinian|Кол\\ арын\\ –\\ Tuvinian|اَہَم\\ صَفہٕ\\ –\\ Kashmiri|برٛور\\ –\\ Kashmiri|پیچا\\ –\\ Gilaki|گتˇ\\ ولگ\\ –\\ Gilaki|বেটুপাত\\ –\\ Assamese|মেকুৰী\\ –\\ Assamese|ಪುಚ್ಚೆ\\ –\\ Tulu|ಮುಖ್ಯ\\ ಪುಟ\\ –\\ Tulu|မႅဝ်း\\ –\\ Shan|ၼႃႈႁူဝ်ႁႅၵ်ႈ\\ –\\ Shan)$",
+   "in2019": true,
+   "evidence": [
+    "article2-201909"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "\"Cats\"",
+    "10196305",
+    "104159",
+    "118552",
+    "14000031",
+    "183798",
+    "24",
+    "2435035",
+    "62265494",
+    "7d7d7c68-baa8-4908-bdc4-b747950f6318",
+    "82598",
+    "9685",
+    "Abyssinian cat",
+    "Aegean cat",
+    "African wildcat",
+    "Aging in cats",
+    "Ailurophobia",
+    "Amcic – Kabyle",
+    "American Cat Fanciers Association",
+    "American Curl",
+    "American Shorthair",
+    "Associazione Nazionale Felina Italiana",
+    "Balinese cat",
+    "Bengal cat",
+    "Bicolor cat",
+    "Birman",
+    "Black cat",
+    "Bombay cat",
+    "Brazilian Shorthair",
+    "British Shorthair",
+    "Burmese cat",
+    "Burmilla",
+    "Bussá – Northern Sami",
+    "Calico cat",
+    "California Spangled",
+    "Canadian Cat Association",
+    "Carl Linnaeus",
+    "Carnivora",
+    "Cat",
+    "Cat Aficionado Association",
+    "Cat Fanciers' Association",
+    "Cat anatomy",
+    "Cat behavior",
+    "Cat body language",
+    "Cat café",
+    "Cat coat genetics",
+    "Cat communication",
+    "Cat fancy",
+    "Cat flea",
+    "Cat food",
+    "Cat genetics",
+    "Cat health",
+    "Cat intelligence",
+    "Cat massage",
+    "Cat meat",
+    "Cat play and toys",
+    "Cat registry",
+    "Cat righting reflex",
+    "Cat senses",
+    "Cat show",
+    "Cat skin disorders",
+    "Cat – Irish",
+    "Cat – Norman",
+    "Cat – Scots",
+    "Cat – Scottish Gaelic",
+    "Cat – Simple English",
+    "Cat-scratch disease",
+    "Category:Cats",
+    "Cath – Welsh",
+    "Catnip",
+    "Cats in ancient Egypt",
+    "Catte – Old English",
+    "Catto domestic – Interlingua",
+    "Chartreux",
+    "Chat – Arpitan",
+    "Chat – French",
+    "Chat – Haitian Creole",
+    "Chausie",
+    "Colorpoint Shorthair",
+    "Congenital sensorineural deafness in cats",
+    "Cornish Rex",
+    "Cot – Picard",
+    "Cultural depictions of cats",
+    "Cymric cat",
+    "Cyprus cat",
+    "Câtuși – Aromanian",
+    "Dental health diets for cats",
+    "Dermatophytosis",
+    "Devon Rex",
+    "Dirofilaria immitis",
+    "Domacna kócka – Lower Sorbian",
+    "Domaća mačka – Croatian",
+    "Domača mačka – Slovenian",
+    "Domjaca kóčka – Upper Sorbian",
+    "Don E. Wilson",
+    "Donskoy cat",
+    "Dragon Li",
+    "Dwarf cat",
+    "EPPO Code",
+    "Egyptian Mau",
+    "European Shorthair",
+    "Ev pişiyi – Azerbaijani",
+    "Exotic Shorthair",
+    "FELIDO",
+    "Farm cat",
+    "Feles – Latin",
+    "Felidae",
+    "Feline acne",
+    "Feline asthma",
+    "Feline calicivirus",
+    "Feline hepatic lipidosis",
+    "Feline immunodeficiency virus",
+    "Feline infectious peritonitis",
+    "Feline leukemia virus",
+    "Feline lower urinary tract disease",
+    "Feline vaccination",
+    "Feline viral rhinotracheitis",
+    "Feline zoonosis",
+    "Felinology",
+    "Felis",
+    "Felis silvestris catus – Italian",
+    "Felis – Sardinian",
+    "Feral cat",
+    "Fédération Internationale Féline",
+    "Gat – Catalan",
+    "Gat – Piedmontese",
+    "Gato – Galician",
+    "Gato – Ladino",
+    "Gato – Lingua Franca Nova",
+    "Gato – Mirandese",
+    "Gato – Portuguese",
+    "Gato – Venetian",
+    "German Rex",
+    "Ghjattu – Corsican",
+    "Giat – Romansh",
+    "Gjat – Friulian",
+    "Global Biodiversity Information Facility",
+    "Governing Council of the Cat Fancy",
+    "Growling",
+    "Gàt – Emiliano-Romagnolo",
+    "Hauskatze – German",
+    "Hauskaz – Luxembourgish",
+    "Hauskotz – Bavarian",
+    "Hejma kato – Esperanto",
+    "Help:Taxon identifiers",
+    "Highlander cat",
+    "Himalayan cat",
+    "Hoeskat – Limburgish",
+    "Human interaction with cats",
+    "Hypertrophic cardiomyopathy",
+    "INaturalist",
+    "Ikati – Zulu",
+    "Ikos – Central Bikol",
+    "Injangwe – Kinyarwanda",
+    "Integrated Taxonomic Information System",
+    "Interim Register of Marine and Nonmarine Genera",
+    "Invasive Species Compendium",
+    "Iring – Cebuano",
+    "Islam and cats",
+    "Jakuma – Bambara",
+    "Japanese Bobtail",
+    "Jattu – Sicilian",
+    "Javanese cat",
+    "Kaat – Northern Frisian",
+    "Kass – Estonian",
+    "Kass – Võro",
+    "Kat (dier) – Dutch",
+    "Kat – Afrikaans",
+    "Kat – Danish",
+    "Kat – Low Saxon",
+    "Kat – Saterland Frisian",
+    "Kat – Volapük",
+    "Kat – Western Frisian",
+    "Kath – Cornish",
+    "Katie – Samogitian",
+    "Kato – Ido",
+    "Katse – Northern Sotho",
+    "Katse – Southern Sotho",
+    "Katt – Low German",
+    "Katt – Norwegian Nynorsk",
+    "Katt – Swedish",
+    "Katte – West Flemish",
+    "Katu – Basque",
+    "Katė – Lithuanian",
+    "Kayt – Manx",
+    "Kazh – Breton",
+    "Kačs – Latgalian",
+    "Kaķis – Latvian",
+    "Kaži – Livvi-Karelian",
+    "Kaži – Veps",
+    "Kedi – Turkish",
+    "Kellas cat",
+    "Kettur – Faroese",
+    "Khao Manee",
+    "Kissa – Finnish",
+    "Kitiuraq – Inupiaq",
+    "Kitten",
+    "Kneading (cats)",
+    "Korat",
+    "Kot domowy – Polish",
+    "Kot – Silesian",
+    "Kočka domácí – Czech",
+    "Kuciang – Minangkabau",
+    "Kucing – Indonesian",
+    "Kucing – Javanese",
+    "Kucing – Malay",
+    "Kurilian Bobtail",
+    "Kyanwa – Hausa",
+    "Kòt – Kashubian",
+    "Köttur – Icelandic",
+    "Landrace",
+    "Likati – Swati",
+    "List of cat breeds",
+    "List of experimental cat breeds",
+    "List of feline diseases",
+    "Lykoi",
+    "Macja – Albanian",
+    "Macska – Hungarian",
+    "Magna Graecia",
+    "Magodja – Vlax Romani",
+    "Maine Coon",
+    "Mammal",
+    "Mammal Species of the World",
+    "Manx cat",
+    "Mačka domáca – Slovak",
+    "Mačka – Bosnian",
+    "Mačka – Serbo-Croatian",
+    "Mbarakaja – Guarani",
+    "Meow",
+    "Meuz – Zhuang",
+    "Minoc – Atikamekw",
+    "Misay – Waray",
+    "Munchkin cat",
+    "Mushuk – Uzbek",
+    "Muus – Wolof",
+    "Mèo – Vietnamese",
+    "Mósí – Navajo",
+    "NHMSYS0000080189",
+    "National Biodiversity Network",
+    "National Center for Biotechnology Information",
+    "Neutering",
+    "Nkɔ́ndɔkɔ́ – Lingala",
+    "Norwegian Forest Cat",
+    "Nyawu – Kongo",
+    "Ocicat",
+    "Odd-eyed cat",
+    "Ojos Azules",
+    "Ológbò – Yoruba",
+    "Onychectomy",
+    "Oriental Shorthair",
+    "Paka-kaya – Swahili",
+    "Persian cat",
+    "Pet",
+    "Peterbald",
+    "Phisi – Aymara",
+    "Phylogenetic",
+    "Pisică de casă – Romanian",
+    "Pisîk – Kurdish",
+    "Pixie-bob",
+    "Polydactyl cat",
+    "Portal:Cats",
+    "Portal:Mammals",
+    "Purr",
+    "Pus – Jamaican Creole English",
+    "Pusa – Iloko",
+    "Pusa – Pampanga",
+    "Pusa – Tagalog",
+    "Pusi – Fiji Hindi",
+    "Pusi – Tongan",
+    "Puspusi – Sranan Tongo",
+    "Pōpoki – Hawaiian",
+    "Pɩyaʊ – Kabiye",
+    "Qattus – Maltese",
+    "Raas cat",
+    "Rabies in animals",
+    "Ragamuffin cat",
+    "Ragdoll",
+    "Russian Blue",
+    "Saka – Malagasy",
+    "Sand cat",
+    "Savannah cat",
+    "Science (journal)",
+    "Scottish Fold",
+    "Selkirk Rex",
+    "Senior cat diet",
+    "Serengeti cat",
+    "Ship's cat",
+    "Siamese cat",
+    "Siberian cat",
+    "Singapura cat",
+    "Snowshoe cat",
+    "Sokoke",
+    "Somali cat",
+    "Southern Africa Cat Council",
+    "Spaying",
+    "Sphynx cat",
+    "Squitten",
+    "Tabby cat",
+    "Tchet – Walloon",
+    "Tete – Gorontalo",
+    "Thai cat",
+    "The International Cat Association",
+    "Tick",
+    "Tonkinese cat",
+    "Tortoiseshell cat",
+    "Toxocara cati",
+    "Toxoplasmosis",
+    "Toyger",
+    "Traditional Persian",
+    "Turkish Angora",
+    "Turkish Van",
+    "Ucing – Sundanese",
+    "Urine spraying",
+    "Valerian (herb)",
+    "World Cat Congress",
+    "World Cat Federation",
+    "Yaanyuur – Somali",
+    "mlatu – Lojban",
+    "wikidata:Q20980826",
+    "Диис – Tuvinian",
+    "Кол арын – Tuvinian",
+    "اَہَم صَفہٕ – Kashmiri",
+    "برٛور – Kashmiri",
+    "پیچا – Gilaki",
+    "گتˇ ولگ – Gilaki",
+    "বেটুপাত – Assamese",
+    "মেকুৰী – Assamese",
+    "ಪುಚ್ಚೆ – Tulu",
+    "ಮುಖ್ಯ ಪುಟ – Tulu",
+    "မႅဝ်း – Shan",
+    "ၼႃႈႁူဝ်ႁႅၵ်ႈ – Shan"
+   ]
+  },
+  {
+   "match": "^(Archived|Агьаммур\\ лажин\\ –\\ Lak|Ацгәы\\ –\\ Abkhazian|Главьна\\ страница\\ –\\ Church\\ Slavic|Головна\\ сторінка\\ –\\ Rusyn|Ихадоу\\ адаҟьа\\ –\\ Abkhazian|Кань\\ –\\ Komi\\-Permyak|Ката\\ –\\ Moksha|Кац\\ –\\ Lezghian|Керттера\\ оагӀув\\ –\\ Ingush|Котъ\\ –\\ Church\\ Slavic|Кьилин\\ ччин\\ –\\ Lezghian|Мачка\\ –\\ Rusyn|Миисгэй\\ –\\ Russia\\ Buriat|Мис\\ –\\ Kalmyk|Нюур\\ хуудаһан\\ –\\ Russia\\ Buriat|Нүр\\ халх\\ –\\ Kalmyk|Пондӧтчан\\ листбок\\ –\\ Komi\\-Permyak|Пря\\ лопа\\ –\\ Moksha|Циск\\ –\\ Ingush|Ччиту\\ –\\ Lak|لومړی\\ مخ\\ –\\ Pashto|مُک\\ صفحو\\ –\\ Sindhi|ٻلي\\ –\\ Sindhi|پيشو\\ –\\ Pashto|बिरालो\\ –\\ Nepali|बिलार\\ –\\ Bhojpuri|मुख्य\\ पन्ना\\ –\\ Bhojpuri|मुख्य\\ पृष्ठ\\ –\\ Nepali|බළලා\\ –\\ Sinhala|මුල්\\ පිටුව\\ –\\ Sinhala|ᎤᎵᎮᎵᏍᏗ\\ –\\ Cherokee|ᏪᏌ\\ –\\ Cherokee|ឆ្មា\\ –\\ Khmer|ទំព័រដើម\\ –\\ Khmer|ᱢᱩᱬᱩᱛ\\ ᱥᱟᱦᱴᱟ\\ –\\ Santali|ᱯᱩᱥᱤ\\ –\\ Santali|𐌰𐌽𐌰𐍃𐍄𐍉𐌳𐌴𐌹𐌽𐌹𐌻𐌰𐌿𐍆𐍃\\ –\\ Gothic|𐌺𐌰𐍄𐍄𐌿𐍃\\ –\\ Gothic)$",
+   "in2019": true,
+   "evidence": [
+    "article2-201909",
+    "article5-201909"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Archived",
+    "Агьаммур лажин – Lak",
+    "Ацгәы – Abkhazian",
+    "Главьна страница – Church Slavic",
+    "Головна сторінка – Rusyn",
+    "Ихадоу адаҟьа – Abkhazian",
+    "Кань – Komi-Permyak",
+    "Ката – Moksha",
+    "Кац – Lezghian",
+    "Керттера оагӀув – Ingush",
+    "Котъ – Church Slavic",
+    "Кьилин ччин – Lezghian",
+    "Мачка – Rusyn",
+    "Миисгэй – Russia Buriat",
+    "Мис – Kalmyk",
+    "Нюур хуудаһан – Russia Buriat",
+    "Нүр халх – Kalmyk",
+    "Пондӧтчан листбок – Komi-Permyak",
+    "Пря лопа – Moksha",
+    "Циск – Ingush",
+    "Ччиту – Lak",
+    "لومړی مخ – Pashto",
+    "مُک صفحو – Sindhi",
+    "ٻلي – Sindhi",
+    "پيشو – Pashto",
+    "बिरालो – Nepali",
+    "बिलार – Bhojpuri",
+    "मुख्य पन्ना – Bhojpuri",
+    "मुख्य पृष्ठ – Nepali",
+    "බළලා – Sinhala",
+    "මුල් පිටුව – Sinhala",
+    "ᎤᎵᎮᎵᏍᏗ – Cherokee",
+    "ᏪᏌ – Cherokee",
+    "ឆ្មា – Khmer",
+    "ទំព័រដើម – Khmer",
+    "ᱢᱩᱬᱩᱛ ᱥᱟᱦᱴᱟ – Santali",
+    "ᱯᱩᱥᱤ – Santali",
+    "𐌰𐌽𐌰𐍃𐍄𐍉𐌳𐌴𐌹𐌽𐌹𐌻𐌰𐌿𐍆𐍃 – Gothic",
+    "𐌺𐌰𐍄𐍄𐌿𐍃 – Gothic"
+   ]
+  },
+  {
+   "match": "^(A\\ list\\ of\\ all\\ special\\ pages\\ \\[alt\\-q\\]|About\\ the\\ project,\\ what\\ you\\ can\\ do,\\ where\\ to\\ find\\ things|Contact\\ Wikipedia|Cookie\\ statement|Developers|Edit\\ interlanguage\\ links|Edit\\ this\\ at\\ Wikidata|Featured\\ content\\ –\\ the\\ best\\ of\\ Wikipedia|Find\\ out\\ about\\ Wikipedia|Go\\ to\\ a\\ page\\ with\\ this\\ exact\\ name\\ if\\ it\\ exists|Guidance\\ on\\ how\\ to\\ use\\ and\\ edit\\ Wikipedia|Guides\\ to\\ browsing\\ Wikipedia|Help:Authority\\ control|How\\ to\\ contact\\ Wikipedia|Information\\ on\\ how\\ to\\ cite\\ this\\ page|Mobile\\ view|More\\ information\\ about\\ this\\ page|Past\\ revisions\\ of\\ this\\ page\\ \\[alt\\-h\\]|Portals|Powered\\ by\\ MediaWiki|Printable\\ version\\ of\\ this\\ page\\ \\[alt\\-p\\]|Privacy\\ policy|Read|Recent\\ changes\\ in\\ pages\\ linked\\ from\\ this\\ page\\ \\[alt\\-k\\]|Search\\ Wikipedia|Support\\ us|View\\ the\\ content\\ page\\ \\[alt\\-c\\]|Visit\\ the\\ main\\ page|Visit\\ the\\ main\\ page\\ \\[alt\\-z\\]|Wikimedia\\ Commons|Wikimedia\\ Foundation|Wikimedia\\ Foundation,\\ Inc\\.|You\\ are\\ encouraged\\ to\\ create\\ an\\ account\\ and\\ log\\ in;\\ however,\\ it\\ is\\ not|You're\\ encouraged\\ to\\ log\\ in;\\ however,\\ it's\\ not\\ mandatory\\.\\ \\[alt\\-o\\]|banner\\ area|navigation\\ area|repeated\\ h2|search\\ area|the\\ original|Γάτα\\ –\\ Greek|Πύλη:Κύρια\\ –\\ Greek|Басты\\ бет\\ –\\ Kazakh|Баш\\ бит\\ –\\ Bashkir|Баш\\ бит\\ –\\ Tatar|Башкы\\ барак\\ –\\ Kyrgyz|Бесәй\\ –\\ Bashkir|БетӀераб\\ гьумер\\ –\\ Avaric|Гæды\\ –\\ Ossetic|Галоўная\\ старонка\\ –\\ Belarusian|Галоўная\\ старонка\\ –\\ Belarusian\\ \\(Taraškievica\\ orthography\\)|Главна\\ страна\\ –\\ Serbian|Главна\\ страница\\ –\\ Macedonian|Головна\\ сторінка\\ –\\ Ukrainian|Гурба\\ –\\ Tajik|Заглавная\\ страница\\ –\\ Russian|Кань\\ –\\ Komi|Катка\\ –\\ Erzya|Кету\\ –\\ Avaric|Кот\\ свойскі\\ –\\ Belarusian|Кот\\ –\\ Belarusian\\ \\(Taraškievica\\ orthography\\)|Котка\\ –\\ Bulgarian|Кошка\\ –\\ Russian|Коьрта\\ агӀо\\ –\\ Chechen|Коӵыш\\ –\\ Udmurt|Кутскон\\ бам\\ –\\ Udmurt|Кушак\\ –\\ Chuvash|Кіт\\ свійський\\ –\\ Ukrainian|Мачка\\ –\\ Macedonian|Мачка\\ –\\ Serbian|Медшӧр\\ лист\\ бок\\ –\\ Komi|Муур\\ –\\ Mongolian|Мысық\\ –\\ Kazakh|Мышык\\ –\\ Kyrgyz|Мәче\\ –\\ Tatar|Начална\\ страница\\ –\\ Bulgarian|Нүүр\\ хуудас\\ –\\ Mongolian|Прявтлопа\\ –\\ Erzya|Пырыс\\ –\\ Eastern\\ Mari|Сæйраг\\ фарс\\ –\\ Ossetic|Саҳифаи\\ аслӣ\\ –\\ Tajik|Тĕп\\ страница\\ –\\ Chuvash|Тӱҥ\\ лаштык\\ –\\ Eastern\\ Mari|Цициг\\ –\\ Chechen|Գլխավոր\\ էջ\\ –\\ Armenian|Գլխաւոր\\ Էջ\\ –\\ Western\\ Armenian|Կատուներ\\ –\\ Armenian|Կատուներ\\ –\\ Western\\ Armenian|הויפט\\ זייט\\ –\\ Yiddish|חתול\\ הבית\\ –\\ Hebrew|עמוד\\ ראשי\\ –\\ Hebrew|קאץ\\ –\\ Yiddish|آنا\\ صفحه\\ –\\ South\\ Azerbaijani|الصفحة\\ الرئيسة\\ –\\ Arabic|الصفحه\\ الرئيسيه\\ –\\ Egyptian\\ Arabic|باش\\ بەت\\ –\\ Uyghur|بامشی\\ –\\ Mazanderani|بلی\\ –\\ Urdu|بلی\\ –\\ Western\\ Punjabi|دەستپێک\\ –\\ Central\\ Kurdish|صفحهٔ\\ اصلی\\ –\\ Persian|صفحۂ\\ اول\\ –\\ Urdu|قط\\ –\\ Arabic|قطه\\ –\\ Egyptian\\ Arabic|مۈشۈك\\ –\\ Uyghur|پشیلە\\ –\\ Central\\ Kurdish|پہلا\\ صفہ\\ –\\ Western\\ Punjabi|پیشیک\\ –\\ South\\ Azerbaijani|گت\\ صفحه\\ –\\ Mazanderani|گربه\\ –\\ Persian|ܦܐܬܐ\\ ܪܝܫܝܬܐ\\ –\\ Aramaic|ܩܛܐ\\ –\\ Aramaic|बिल्ली\\ –\\ Hindi|भौ\\ –\\ Newari|मांजर\\ –\\ Marathi|मार्जालः\\ –\\ Sanskrit|मुखपृष्ठ\\ –\\ Hindi|मुखपृष्ठ\\ –\\ Marathi|मुख्यपृष्ठम्\\ –\\ Sanskrit|मू\\ पौ\\ –\\ Newari|প্রধান\\ পাতা\\ –\\ Bangla|বিড়াল\\ –\\ Bangla|ਬਿੱਲੀ\\ –\\ Punjabi|ਮੁੱਖ\\ ਸਫ਼ਾ\\ –\\ Punjabi|பூனை\\ –\\ Tamil|முதற்பக்கம்\\ –\\ Tamil|పిల్లి\\ –\\ Telugu|మొదటి\\ పేజీ\\ –\\ Telugu|ಬೆಕ್ಕು\\ –\\ Kannada|ಮುಖ್ಯ\\ ಪುಟ\\ –\\ Kannada|പൂച്ച\\ –\\ Malayalam|പ്രധാന\\ താൾ\\ –\\ Malayalam|หน้าหลัก\\ –\\ Thai|แมว\\ –\\ Thai|ແມວ\\ –\\ Lao|ໜ້າຫຼັກ\\ –\\ Lao|གཙོ་ངོས།\\ –\\ Tibetan|ཞི་མི།\\ –\\ Tibetan|ကြောင်\\ \\(တိရစ္ဆာန်\\)\\ –\\ Burmese|ဗဟိုစာမျက်နှာ\\ –\\ Burmese|მთავარი\\ გვერდი\\ –\\ Georgian|შინაური\\ კატა\\ –\\ Georgian|ዋናው\\ ገጽ\\ –\\ Amharic|ድመት\\ –\\ Amharic|ネコ\\ –\\ Japanese|メインページ\\ –\\ Japanese|猫\\ –\\ Chinese|貓\\ –\\ Cantonese|頭版\\ –\\ Cantonese|고양이\\ –\\ Korean|위키백과:대문\\ –\\ Korean)$",
+   "in2019": true,
+   "evidence": [
+    "article2-201909",
+    "article5-201909",
+    "article8-201909"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "A list of all special pages [alt-q]",
+    "About the project, what you can do, where to find things",
+    "Contact Wikipedia",
+    "Cookie statement",
+    "Developers",
+    "Edit interlanguage links",
+    "Edit this at Wikidata",
+    "Featured content – the best of Wikipedia",
+    "Find out about Wikipedia",
+    "Go to a page with this exact name if it exists",
+    "Guidance on how to use and edit Wikipedia",
+    "Guides to browsing Wikipedia",
+    "Help:Authority control",
+    "How to contact Wikipedia",
+    "Information on how to cite this page",
+    "Mobile view",
+    "More information about this page",
+    "Past revisions of this page [alt-h]",
+    "Portals",
+    "Powered by MediaWiki",
+    "Printable version of this page [alt-p]",
+    "Privacy policy",
+    "Read",
+    "Recent changes in pages linked from this page [alt-k]",
+    "Search Wikipedia",
+    "Support us",
+    "View the content page [alt-c]",
+    "Visit the main page",
+    "Visit the main page [alt-z]",
+    "Wikimedia Commons",
+    "Wikimedia Foundation",
+    "Wikimedia Foundation, Inc.",
+    "You are encouraged to create an account and log in; however, it is not",
+    "You're encouraged to log in; however, it's not mandatory. [alt-o]",
+    "banner area",
+    "navigation area",
+    "repeated h2",
+    "search area",
+    "the original",
+    "Γάτα – Greek",
+    "Πύλη:Κύρια – Greek",
+    "Басты бет – Kazakh",
+    "Баш бит – Bashkir",
+    "Баш бит – Tatar",
+    "Башкы барак – Kyrgyz",
+    "Бесәй – Bashkir",
+    "БетӀераб гьумер – Avaric",
+    "Гæды – Ossetic",
+    "Галоўная старонка – Belarusian",
+    "Галоўная старонка – Belarusian (Taraškievica orthography)",
+    "Главна страна – Serbian",
+    "Главна страница – Macedonian",
+    "Головна сторінка – Ukrainian",
+    "Гурба – Tajik",
+    "Заглавная страница – Russian",
+    "Кань – Komi",
+    "Катка – Erzya",
+    "Кету – Avaric",
+    "Кот свойскі – Belarusian",
+    "Кот – Belarusian (Taraškievica orthography)",
+    "Котка – Bulgarian",
+    "Кошка – Russian",
+    "Коьрта агӀо – Chechen",
+    "Коӵыш – Udmurt",
+    "Кутскон бам – Udmurt",
+    "Кушак – Chuvash",
+    "Кіт свійський – Ukrainian",
+    "Мачка – Macedonian",
+    "Мачка – Serbian",
+    "Медшӧр лист бок – Komi",
+    "Муур – Mongolian",
+    "Мысық – Kazakh",
+    "Мышык – Kyrgyz",
+    "Мәче – Tatar",
+    "Начална страница – Bulgarian",
+    "Нүүр хуудас – Mongolian",
+    "Прявтлопа – Erzya",
+    "Пырыс – Eastern Mari",
+    "Сæйраг фарс – Ossetic",
+    "Саҳифаи аслӣ – Tajik",
+    "Тĕп страница – Chuvash",
+    "Тӱҥ лаштык – Eastern Mari",
+    "Цициг – Chechen",
+    "Գլխավոր էջ – Armenian",
+    "Գլխաւոր Էջ – Western Armenian",
+    "Կատուներ – Armenian",
+    "Կատուներ – Western Armenian",
+    "הויפט זייט – Yiddish",
+    "חתול הבית – Hebrew",
+    "עמוד ראשי – Hebrew",
+    "קאץ – Yiddish",
+    "آنا صفحه – South Azerbaijani",
+    "الصفحة الرئيسة – Arabic",
+    "الصفحه الرئيسيه – Egyptian Arabic",
+    "باش بەت – Uyghur",
+    "بامشی – Mazanderani",
+    "بلی – Urdu",
+    "بلی – Western Punjabi",
+    "دەستپێک – Central Kurdish",
+    "صفحهٔ اصلی – Persian",
+    "صفحۂ اول – Urdu",
+    "قط – Arabic",
+    "قطه – Egyptian Arabic",
+    "مۈشۈك – Uyghur",
+    "پشیلە – Central Kurdish",
+    "پہلا صفہ – Western Punjabi",
+    "پیشیک – South Azerbaijani",
+    "گت صفحه – Mazanderani",
+    "گربه – Persian",
+    "ܦܐܬܐ ܪܝܫܝܬܐ – Aramaic",
+    "ܩܛܐ – Aramaic",
+    "बिल्ली – Hindi",
+    "भौ – Newari",
+    "मांजर – Marathi",
+    "मार्जालः – Sanskrit",
+    "मुखपृष्ठ – Hindi",
+    "मुखपृष्ठ – Marathi",
+    "मुख्यपृष्ठम् – Sanskrit",
+    "मू पौ – Newari",
+    "প্রধান পাতা – Bangla",
+    "বিড়াল – Bangla",
+    "ਬਿੱਲੀ – Punjabi",
+    "ਮੁੱਖ ਸਫ਼ਾ – Punjabi",
+    "பூனை – Tamil",
+    "முதற்பக்கம் – Tamil",
+    "పిల్లి – Telugu",
+    "మొదటి పేజీ – Telugu",
+    "ಬೆಕ್ಕು – Kannada",
+    "ಮುಖ್ಯ ಪುಟ – Kannada",
+    "പൂച്ച – Malayalam",
+    "പ്രധാന താൾ – Malayalam",
+    "หน้าหลัก – Thai",
+    "แมว – Thai",
+    "ແມວ – Lao",
+    "ໜ້າຫຼັກ – Lao",
+    "གཙོ་ངོས། – Tibetan",
+    "ཞི་མི། – Tibetan",
+    "ကြောင် (တိရစ္ဆာန်) – Burmese",
+    "ဗဟိုစာမျက်နှာ – Burmese",
+    "მთავარი გვერდი – Georgian",
+    "შინაური კატა – Georgian",
+    "ዋናው ገጽ – Amharic",
+    "ድመት – Amharic",
+    "ネコ – Japanese",
+    "メインページ – Japanese",
+    "猫 – Chinese",
+    "貓 – Cantonese",
+    "頭版 – Cantonese",
+    "고양이 – Korean",
+    "위키백과:대문 – Korean"
+   ]
+  },
+  {
+   "match": "^(Wikiquote)$",
+   "in2019": true,
+   "evidence": [
+    "article2-201909",
+    "article5-201909",
+    "home1-201901"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Wikiquote"
+   ]
+  },
+  {
+   "match": "^(This\\ page\\ is\\ protected\\.\\ You\\ can\\ view\\ its\\ source\\ \\[alt\\-e\\]|Wikidata)$",
+   "in2019": true,
+   "evidence": [
+    "article2-201909",
+    "home1-201901",
+    "home2-201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "This page is protected. You can view its source [alt-e]",
+    "Wikidata"
+   ]
+  },
+  {
+   "match": "^(icon)$",
+   "in2019": true,
+   "evidence": [
+    "article2-201909",
+    "talk1-201904"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "icon"
+   ]
+  },
+  {
+   "match": "^(Αρχικόν\\ σελίδα\\ –\\ Pontic|Баш\\ бет\\ –\\ Karachay\\-Balkar|НапэкӀуэцӀ\\ нэхъыщхьэ\\ –\\ Kabardian|މައި\\ ޞަފްޙާ\\ –\\ Divehi|मुखेल\\ पान\\ –\\ Goan\\ Konkani|मुख्य\\ पन्ना\\ –\\ Doteli|सम्मुख\\ पन्ना\\ –\\ Maithili|পয়লা\\ পাতা\\ –\\ Bishnupriya|મુખપૃષ્ઠ\\ –\\ Gujarati|བྱི་ལི།\\ –\\ Dzongkha|མ་ཤོག།\\ –\\ Dzongkha)$",
+   "in2019": true,
+   "evidence": [
+    "article5-201909"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Αρχικόν σελίδα – Pontic",
+    "Баш бет – Karachay-Balkar",
+    "НапэкӀуэцӀ нэхъыщхьэ – Kabardian",
+    "މައި ޞަފްޙާ – Divehi",
+    "मुखेल पान – Goan Konkani",
+    "मुख्य पन्ना – Doteli",
+    "सम्मुख पन्ना – Maithili",
+    "পয়লা পাতা – Bishnupriya",
+    "મુખપૃષ્ઠ – Gujarati",
+    "བྱི་ལི། – Dzongkha",
+    "མ་ཤོག། – Dzongkha"
+   ]
+  },
+  {
+   "match": "^(НэкӀубгъо\\ шъхьаӀ\\ –\\ Adyghe|ପ୍ରଧାନ\\ ପୃଷ୍ଠା\\ –\\ Odia|ବିଲେଇ\\ –\\ Odia|დუდხასჷლა\\ –\\ Mingrelian)$",
+   "in2019": true,
+   "evidence": [
+    "article5-201909",
+    "article8-201909"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "НэкӀубгъо шъхьаӀ – Adyghe",
+    "ପ୍ରଧାନ ପୃଷ୍ଠା – Odia",
+    "ବିଲେଇ – Odia",
+    "დუდხასჷლა – Mingrelian"
+   ]
+  },
+  {
+   "match": "^(Edit\\ this\\ page\\ \\[alt\\-e\\])$",
+   "in2019": true,
+   "evidence": [
+    "article5-201909",
+    "article8-201909",
+    "history1-201909"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Edit this page [alt-e]"
+   ]
+  },
+  {
+   "match": "^(Wikivoyage)$",
+   "in2019": true,
+   "evidence": [
+    "article5-201909",
+    "article8-201909",
+    "home1-201901"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Wikivoyage"
+   ]
+  },
+  {
+   "match": "^(Wikinews)$",
+   "in2019": true,
+   "evidence": [
+    "article5-201909",
+    "home1-201901",
+    "home2-201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Wikinews"
+   ]
+  },
+  {
+   "match": "^(Help:Category)$",
+   "in2019": true,
+   "evidence": [
+    "article5-201909",
+    "talk1-201904",
+    "talk2-201912"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Help:Category"
+   ]
+  },
+  {
+   "match": "^(Тӹнг\\ ӹлӹштӓш\\ –\\ Western\\ Mari)$",
+   "in2019": true,
+   "evidence": [
+    "article8-201909"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Тӹнг ӹлӹштӓш – Western Mari"
+   ]
+  },
+  {
+   "match": "^(diff|oldid)$",
+   "in2019": true,
+   "evidence": [
+    "history1-201909"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "diff",
+    "oldid"
+   ]
+  },
+  {
+   "match": "^(form\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "history1-201909",
+    "search1-201910",
+    "search2-201903"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "form area"
+   ]
+  },
+  {
+   "match": "^(Atom\\ feed\\ for\\ this\\ page|Special:Tags)$",
+   "in2019": true,
+   "evidence": [
+    "history1-201909",
+    "special1-201905"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Atom feed for this page",
+    "Special:Tags"
+   ]
+  },
+  {
+   "match": "^(Did\\ you\\ know\\ \\.\\.\\.|English\\ language|Esperanto|From\\ today's\\ featured\\ article|In\\ the\\ news|MediaWiki|Meta\\-Wiki|On\\ this\\ day|Special:Statistics|Today's\\ featured\\ picture|Wikibooks|Wikisource|Wikispecies|Wikiversity|Wiktionary|mail:daily\\-article\\-l)$",
+   "in2019": true,
+   "evidence": [
+    "home1-201901",
+    "home2-201907",
+    "home3-201912"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Did you know ...",
+    "English language",
+    "Esperanto",
+    "From today's featured article",
+    "In the news",
+    "MediaWiki",
+    "Meta-Wiki",
+    "On this day",
+    "Special:Statistics",
+    "Today's featured picture",
+    "Wikibooks",
+    "Wikisource",
+    "Wikispecies",
+    "Wikiversity",
+    "Wiktionary",
+    "mail:daily-article-l"
+   ]
+  },
+  {
+   "match": "^(repeated\\ div)$",
+   "in2019": true,
+   "evidence": [
+    "home1-201901",
+    "home3-201912",
+    "search1-201910"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "repeated div"
+   ]
+  },
+  {
+   "match": "^(Wikimania)$",
+   "in2019": true,
+   "evidence": [
+    "home2-201907",
+    "home3-201912",
+    "home4-201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Wikimania"
+   ]
+  },
+  {
+   "match": "^(Statistics)$",
+   "in2019": true,
+   "evidence": [
+    "home3-201912",
+    "talk2-201912"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Statistics"
+   ]
+  },
+  {
+   "match": "^(Help|Search|Search\\ results|This\\ is\\ a\\ special\\ page\\ which\\ you\\ cannot\\ edit|search)$",
+   "in2019": true,
+   "evidence": [
+    "search1-201910",
+    "search2-201903",
+    "search3-201906"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Help",
+    "Search",
+    "Search results",
+    "This is a special page which you cannot edit",
+    "search"
+   ]
+  },
+  {
+   "match": "^(fulltext)$",
+   "in2019": true,
+   "evidence": [
+    "talk1-201904",
+    "talk2-201912"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "fulltext"
+   ]
+  },
+  {
+   "match": "^(Start\\ a\\ new\\ section\\ \\[alt\\-\\+\\])$",
+   "in2019": true,
+   "evidence": [
+    "talk1-201904",
+    "talk2-201912",
+    "talk3-201905"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Start a new section [alt-+]"
+   ]
+  },
+  {
+   "match": "^(Wikipedia:Edit\\ requests)$",
+   "in2019": true,
+   "evidence": [
+    "talk2-201912"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Wikipedia:Edit requests"
+   ]
+  },
+  {
+   "match": "^(Navigation|Interaction|Tools|Print/export|In other projects|Languages|Personal tools|Namespaces|Views|More|Variants|Search|Search Wikipedia|search|Navigation menu|Contents|Help|About Wikipedia|Main page|Donate to Wikipedia|Contact page|Featured content)$",
+   "in2019": true,
+   "evidence": [
+    "c-home-201904",
+    "home2-201907",
+    "article5-201909"
+   ],
+   "note": "sidebar and header headings and entries as on the 2019 screenshot (renamed entries are restored to their 2019 wording by the theme)"
+  },
+  {
+   "match": "^(Visit a randomly selected article|Articles related to current events|Download this page as a PDF file|Permanent link to this revision of this page|Structured data on this page hosted by Wikidata|Discuss improvements to the content page|List of all English Wikipedia pages containing links to this page|A list of recent changes to Wikipedia|Guides to browsing Wikipedia|Learn about Wikipedia and how it works|Information on how to cite this page|Search Wikipedia for this text|Go to a page with this exact name if it exists)( \\[(alt-)?(shift-)?.{1,3}\\])?$",
+   "in2019": true,
+   "evidence": [
+    "home1-201901",
+    "home2-201907",
+    "article5-201909"
+   ],
+   "note": "tooltips of the same 2019 links (Random article, Current events, Download as PDF, Permanent link, Wikidata item, Talk, What links here, Recent changes, Contents, About, Cite this page, search buttons), reworded since"
+  },
+  {
+   "match": "^(Filter revisions.*|Alternate|External tools:.*|Compare selected revisions|diff|oldid|newest|oldest|Help:Page history|Help:Edit summary|Special:Tags|View logs for this page|view filter log|Atom|Atom feed for this page|First page|Cat: Revision history|.*: Revision history)$",
+   "in2019": true,
+   "evidence": [
+    "history1-201909"
+   ],
+   "note": "history page parts on the 2019 capture"
+  },
+  {
+   "match": "^(Search results|Content pages|Multimedia|Everything|Advanced|Results .*|There is a page named .*|fulltext|Help)$",
+   "in2019": true,
+   "evidence": [
+    "search1-201910",
+    "search2-201903",
+    "search3-201906"
+   ],
+   "note": "search page parts on the 2019 captures"
+  },
+  {
+   "match": "^(hide|show|\\[hide\\]|\\[show\\]|v|t|e|View this template|Discuss this template|Edit this template)$",
+   "in2019": true,
+   "evidence": [
+    "c-navbox-201901"
+   ],
+   "note": "navbox and collapsible toggles"
+  },
+  {
+   "match": "^(This is a special page which you cannot edit|This page is protected\\. You can view its source.*|Start a new section.*|Edit this page.*|View the content page.*|Past revisions of this page.*|Visit the main page.*|You're encouraged to log in.*|You are encouraged to create an account.*|Special page)$",
+   "in2019": true,
+   "evidence": [
+    "home1-201901",
+    "talk2-201912",
+    "search1-201910"
+   ],
+   "note": "tab and personal-tool tooltips"
+  },
+  {
+   "match": "^(footer area|form area|nav area|section area|navigation area|search area|contentinfo area|banner area|main area|Portals|repeated .*)$",
+   "in2019": true,
+   "evidence": [
+    "home1-201901",
+    "article5-201909",
+    "talk2-201912"
+   ],
+   "note": "page regions and repeated content rows"
+  },
+  {
+   "match": "^(\\[\\d+\\]|\\[[a-z]\\]|\\[note \\d+\\]|Jump up.*|\\^|\\d+(\\.\\d+)* .+|.+ \\(identifier\\)|(User|User talk|Special|Wikipedia|Help|Portal|Category|Template|Talk|File|Module|meta|m|wikispecies|wikt|w|foundation|commons|zh|de|fr|es):.*|.+ – \\S.*|Play (audio|video)|Visual edit|Undo|Reverted|Mobile edit|Mobile web edit|Tags?:?.*)$",
+   "in2019": true,
+   "evidence": [
+    "article2-201909",
+    "article5-201909",
+    "history1-201909"
+   ],
+   "note": "article and talk content: citation markers, numbered contents entries, namespaced links, identifier links, interlanguage links, media players and edit tags (content)"
+  },
+  {
+   "match": "^(Close|I already donated|Maybe later|Other ways to give|Where your donation goes|easy cancellation instructions|fundraising banner|Donate now|.* donat.*)$",
+   "in2019": true,
+   "evidence": [
+    "c-wikimania-201905"
+   ],
+   "note": "CentralNotice banner (the site's own campaign banner at the top of the page; 2019 had the same banner slot, see the Wikimania 2019 banner screenshot); its wording is campaign content"
+  },
+  {
+   "match": "^(Disclaimers|Privacy policy|About Wikipedia|Contact Wikipedia|Developers|Statistics|Cookie statement|Mobile view|Terms of Use|Wikimedia Foundation)$",
+   "in2019": true,
+   "evidence": [
+    "home1-201901",
+    "talk2-201912"
+   ],
+   "note": "footer links (2019 captures show them as Wikipedia:General disclaimer, wmf:Privacy policy etc.; Statistics is on the December 2019 capture)"
+  },
+  {
+   "match": "^(List of all English Wikipedia pages containing links to this page|See the differences between the two selected revisions of this page).*$",
+   "in2019": true,
+   "evidence": [
+    "article5-201909",
+    "history1-201909"
+   ],
+   "note": "What links here and Compare selected revisions tooltips (cut at 70 characters by the inventory)"
+  },
+  {
+   "match": "^(20|50|100|250|500|newer 50|older 50)$",
+   "in2019": true,
+   "evidence": [
+    "history1-201909"
+   ],
+   "note": "history page size links"
+  },
+  {
+   "match": "^((January|February|March|April|May|June|July|August|September|October|November|December) \\d{1,2}(, \\d{4})?|\\d{1,2} (January|February|March|April|May|June|July|August|September|October|November|December)( \\d{4})?|Deaths in \\d{4})$",
+   "in2019": true,
+   "evidence": [
+    "c-home-201904",
+    "home2-201907",
+    "article5-201909"
+   ],
+   "note": "dates in main-page and history content"
+  },
+  {
+   "match": "^(0036\\-8075|1005985|10396|1461480|2\\.103979|20332|3DXV3|563166|6F717CA1\\-D3D6\\-4FCD\\-BC27\\-ED52F4FF6706|Afrikaans|American\\ Bobtail|American\\ Society\\ of\\ Mammalogists|American\\ Wirehair|Ancient\\ Egypt|Arabian\\ Mau|Aragonés|Asian\\ cat|Australian\\ Cat\\ Federation|Australian\\ Faunal\\ Directory|Australian\\ Mist|Bahasa\\ Melayu|Barcode\\ of\\ Life\\ Data\\ System|Bodega\\ cat|Carnivore\\ protoparvovirus\\ 1|Cat\\ breeds|Cat\\ flu|Cat\\ predation\\ on\\ wildlife|Catalogue\\ of\\ Life|Català|Cats\\ and\\ the\\ Internet|Cats\\ in\\ Australia|Cats\\ in\\ New\\ Zealand|Cats\\ in\\ the\\ United\\ States|Cat–dog\\ relationship|Chantilly\\-Tiffany|Chinese\\ mountain\\ cat|Chlamydia\\ felis|Chronic\\ kidney\\ disease\\ in\\ cats|Coccidia|Deaths\\ in\\ 2026|Diabetes\\ in\\ cats|Dog\\-like\\ cat|Domestic\\ cats|Domestication\\ of\\ animals|Domestication\\ of\\ the\\ cat|Enrico\\ Fermi|Español|Estremeñu|European\\ wildcat|Feline\\ corneal\\ sequestrum|Feline\\ hyperthyroidism|Felis_catus|Fitoaty|Foldex\\ cat|Français|Galego|Genetic\\ disorder|Giardiasis|Global\\ Invasive\\ Species\\ Database|Glutamic\\ acid|Havana\\ Brown|Hunting\\ by\\ cheetah|Infections|International\\ Cat\\ Day|John\\ Heywood|Kanaani\\ cat|LaPerm|Latina|Let\\ It\\ Be\\ \\(album\\)|Library\\ cat|Lietuvių|Ligure|List\\ of\\ fictional\\ felines|List\\ of\\ individual\\ cats|List\\ of\\ longest\\-living\\ cats|Lolcat|Lombard|Magyar|Maltese\\ cat|Mekong\\ Bobtail|Mice|Michaelmas|Moggy|National\\ Cat\\ Day|NatureServe|Nebelung|Nekonomics|Neva\\ Masquerade|New\\ Zealand\\ Cat\\ Fancy|Nictitating\\ membrane|Observation\\.org|Occitan|Open\\ Tree\\ of\\ Life|Oriental\\ Longhair|Paleobiology\\ Database|Paul\\ McCartney|Pheromone|Puberty|Scent\\ rubbing|Scientific\\ American|September\\ 29|Sicilianu|Suphalak|The\\ Long\\ and\\ Winding\\ Road|Tiffanie|Toybob|Tritrichomonas\\ foetus|Ukrainian\\ Levkoy|Vermin|Viburnum\\ awabuki\\ hedge|Vèneto|W\\.\\ Chris\\ Wozencraft|Weasel|Wildcat|Working\\ cat|World\\ Register\\ of\\ Marine\\ Species|York\\ Chocolate|ZooBank|t0063825|Ελληνικά|Беларуская|ߓߏ߬ߟߏ߲߬ߘߊ\\ –\\ N’Ko|മലയാളം|အဓိကလိတ်မဲ့ငါ\\ –\\ Pa'O)$",
+   "in2019": true,
+   "evidence": [
+    "article2-201909",
+    "article5-201909",
+    "home2-201907"
+   ],
+   "note": "reviewed one by one: article, talk and Main Page content (article wikilinks, taxonomy databases, language names, dates and numbers in content); the 2019 captures of the same page types carry the same kinds of content links",
+   "content": true,
+   "labels": [
+    "0036-8075",
+    "1005985",
+    "10396",
+    "1461480",
+    "2.103979",
+    "20332",
+    "3DXV3",
+    "563166",
+    "6F717CA1-D3D6-4FCD-BC27-ED52F4FF6706",
+    "Afrikaans",
+    "American Bobtail",
+    "American Society of Mammalogists",
+    "American Wirehair",
+    "Ancient Egypt",
+    "Arabian Mau",
+    "Aragonés",
+    "Asian cat",
+    "Australian Cat Federation",
+    "Australian Faunal Directory",
+    "Australian Mist",
+    "Bahasa Melayu",
+    "Barcode of Life Data System",
+    "Bodega cat",
+    "Carnivore protoparvovirus 1",
+    "Cat breeds",
+    "Cat flu",
+    "Cat predation on wildlife",
+    "Catalogue of Life",
+    "Català",
+    "Cats and the Internet",
+    "Cats in Australia",
+    "Cats in New Zealand",
+    "Cats in the United States",
+    "Cat–dog relationship",
+    "Chantilly-Tiffany",
+    "Chinese mountain cat",
+    "Chlamydia felis",
+    "Chronic kidney disease in cats",
+    "Coccidia",
+    "Deaths in 2026",
+    "Diabetes in cats",
+    "Dog-like cat",
+    "Domestic cats",
+    "Domestication of animals",
+    "Domestication of the cat",
+    "Enrico Fermi",
+    "Español",
+    "Estremeñu",
+    "European wildcat",
+    "Feline corneal sequestrum",
+    "Feline hyperthyroidism",
+    "Felis_catus",
+    "Fitoaty",
+    "Foldex cat",
+    "Français",
+    "Galego",
+    "Genetic disorder",
+    "Giardiasis",
+    "Global Invasive Species Database",
+    "Glutamic acid",
+    "Havana Brown",
+    "Hunting by cheetah",
+    "Infections",
+    "International Cat Day",
+    "John Heywood",
+    "Kanaani cat",
+    "LaPerm",
+    "Latina",
+    "Let It Be (album)",
+    "Library cat",
+    "Lietuvių",
+    "Ligure",
+    "List of fictional felines",
+    "List of individual cats",
+    "List of longest-living cats",
+    "Lolcat",
+    "Lombard",
+    "Magyar",
+    "Maltese cat",
+    "Mekong Bobtail",
+    "Mice",
+    "Michaelmas",
+    "Moggy",
+    "National Cat Day",
+    "NatureServe",
+    "Nebelung",
+    "Nekonomics",
+    "Neva Masquerade",
+    "New Zealand Cat Fancy",
+    "Nictitating membrane",
+    "Observation.org",
+    "Occitan",
+    "Open Tree of Life",
+    "Oriental Longhair",
+    "Paleobiology Database",
+    "Paul McCartney",
+    "Pheromone",
+    "Puberty",
+    "Scent rubbing",
+    "Scientific American",
+    "September 29",
+    "Sicilianu",
+    "Suphalak",
+    "The Long and Winding Road",
+    "Tiffanie",
+    "Toybob",
+    "Tritrichomonas foetus",
+    "Ukrainian Levkoy",
+    "Vermin",
+    "Viburnum awabuki hedge",
+    "Vèneto",
+    "W. Chris Wozencraft",
+    "Weasel",
+    "Wildcat",
+    "Working cat",
+    "World Register of Marine Species",
+    "York Chocolate",
+    "ZooBank",
+    "t0063825",
+    "Ελληνικά",
+    "Беларуская",
+    "ߓߏ߬ߟߏ߲߬ߘߊ – N’Ko",
+    "മലയാളം",
+    "အဓိကလိတ်မဲ့ငါ – Pa'O"
+   ]
+  }
+ ]
+}

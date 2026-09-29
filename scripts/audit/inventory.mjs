@@ -36,14 +36,30 @@ function collectFeatures() {
     seen.add(key);
     features.push({ kind, label, tag: el.tagName.toLowerCase(), role: el.getAttribute('role') || '', box: box(el) });
   };
+  const repeats = new WeakMap();
+  const isRepeated = n => {
+    if (repeats.has(n)) return repeats.get(n);
+    const parent = n.parentElement;
+    let twins = 0;
+    if (parent) for (const c of parent.children) { if (c.tagName === n.tagName && c.className === n.className && ++twins >= 3) break; }
+    const result = twins >= 3;
+    if (parent) for (const c of parent.children) if (c.tagName === n.tagName && c.className === n.className) repeats.set(c, result);
+    repeats.set(n, result);
+    return result;
+  };
   const repeatedItem = el => {
-    for (let n = el; n && n !== document.body; n = n.parentElement) {
-      const parent = n.parentElement;
-      if (!parent) break;
-      const twins = [...parent.children].filter(c => c.tagName === n.tagName && c.className === n.className);
-      if (twins.length >= 3) return n;
-    }
+    for (let n = el; n && n !== document.body; n = n.parentElement) if (n.parentElement && isRepeated(n)) return n;
     return null;
+  };
+  const storyLink = el => {
+    const a = el.closest('a[href]');
+    if (!a) return false;
+    try {
+      const url = new URL(a.href, location.href);
+      const parts = url.pathname.split('/').filter(Boolean);
+      const slug = parts[parts.length - 1] || '';
+      return parts.length >= 3 || (slug.match(/-/g) || []).length >= 3 || /\d{5,}/.test(url.pathname + url.search);
+    } catch { return false; }
   };
   const itemName = item => `repeated ${item.tagName.toLowerCase()}${item.getAttribute('role') ? ' role=' + item.getAttribute('role') : ''}`;
   const region = el => el.closest('header, nav, aside, footer, [role=banner], [role=navigation], [role=complementary], [role=contentinfo], [role=toolbar], [role=tablist], [role=menubar]');
@@ -71,10 +87,11 @@ function collectFeatures() {
     const label = labelOf(el) || el.querySelector('img')?.alt || '';
     if (region(el)) { add('control', el, label); continue; }
     if (inContent(el)) { if ((contentLabels.get(label.toLowerCase()) || 0) >= 2 && label.length <= 30) add('item control', el, label); continue; }
+    if (storyLink(el) && !region(el)) continue;
     if (label.length <= 30) add('control', el, label);
   }
   for (const el of document.querySelectorAll('[class*="badge" i], [class*="chip" i], [class*="pill" i], [class*="summary" i]')) {
-    if (!shown(el) || el.closest(CONTROL)) continue;
+    if (!shown(el) || el.closest(CONTROL) || repeatedItem(el) || el.closest('article, [role=article]')) continue;
     const label = clean(el.textContent);
     if (label.length <= 30) add('badge', el, label);
   }
@@ -110,10 +127,10 @@ for (const [name, url] of Object.entries(PAGES)) {
   report.push(`## ${name}: ${url}\n`);
   for (const [i, f] of features.entries()) {
     const known = evidence.features.find(e => e.pattern.test(f.label));
-    const verdict = !known ? 'UNVERIFIED' : known.in2019 ? '2019' : 'POST-2019 STILL SHOWN';
-    if (verdict !== '2019') problems++;
+    const verdict = !known ? 'UNVERIFIED' : known.in2019 ? '2019' : /^kept/i.test(known.action || '') ? 'KEPT' : 'POST-2019 STILL SHOWN';
+    if (verdict !== '2019' && verdict !== 'KEPT') problems++;
     let crop = '';
-    if (shot && verdict !== '2019' && f.box.w > 2 && f.box.h > 2) {
+    if (shot && verdict !== '2019' && verdict !== 'KEPT' && f.box.w > 2 && f.box.h > 2) {
       const left = Math.max(0, f.box.x), top = Math.max(0, f.box.y);
       const width = Math.min(meta.width - left, f.box.w), height = Math.min(meta.height - top, Math.min(f.box.h, 1200));
       if (width > 2 && height > 2) { crop = `${OUT}/${name}-${i}.png`; await sharp(shot).extract({ left, top, width, height }).toFile(crop).catch(() => { crop = ''; }); }

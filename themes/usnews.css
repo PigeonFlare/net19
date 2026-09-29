@@ -48,3 +48,7 @@ main#app > section.MuiBox-root form > button { top: 0 !important; right: 0 !impo
 main#app > section.MuiBox-root form button { height: 32px !important; width: 36px !important; min-width: 0 !important; border-radius: 0 !important; box-shadow: none !important; margin: 0 !important; background: #0b6db7 !important; color: #fff !important; transform: none !important; }
 main#app > section.MuiBox-root form button svg { fill: #fff !important; color: #fff !important; }
 main#app .MuiPaper-root, main#app .MuiCard-root { border-radius: 0 !important; }
+
+a[class*="account-button__SignInLink"], a[href^="/emailprefs/login"], button[class*="SaveNugget__"], button[class*="GooglePreferredNugget__"], button[class*="nugget__CommentButton"],
+[role=dialog]:has(input[type=email]):has(h4), div:has(> h4):has(> form input[name="email"]) { display: none !important; }
+[data-net19-hidden] { display: none !important; }

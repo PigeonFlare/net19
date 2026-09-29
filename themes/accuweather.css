@@ -17,3 +17,5 @@ html[data-net19-mode="dark"] { --n19-page: #161616; --n19-hero: #1a1a1a; --n19-c
 .page-hero .page-hero-content { min-height: 0 !important; padding-top: 16px !important; padding-bottom: 20px !important; }
 body.home, .template-root { background: var(--n19-page) !important; }
 .basic-header .afb-nav-container, .header-upsell, a.upsell-ad[href*="/g-account/offerings"] { display: none !important; }
+[data-n19-later] { display: none !important; }
+.temp-container > .temp { line-height: 1.05 !important; }

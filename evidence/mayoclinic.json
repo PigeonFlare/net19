@@ -1,0 +1,151 @@
+{
+ "theme": "mayoclinic",
+ "era": "The 2017-2020 mayoclinic.org design seen by all visitors in 2019: serif MAYO CLINIC shield logo, grey-bevelled search box, utility links, a seven-item nav bar with grey triangles, blue APPOINTMENTS / FIND A DOCTOR / CONTACT US / PATIENT & VISITOR GUIDE tiles, Helvetica body type and a charcoal (#27251f) footer with For Medical Professionals / For Students / For Researchers / For Job Seekers / For International Patients / Charitable Care / Follow Mayo Clinic / Free E-Newsletter / Make a Donation. Captures 2019-03, 2019-07, 2019-09 and 2019-11 agree.",
+ "sources": [
+  {
+   "id": "disease-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190923193115/https://www.mayoclinic.org/diseases-conditions/high-blood-pressure/symptoms-causes/syc-20373410",
+   "date": "2019-09-23",
+   "shows": "disease page as served in 2019-09 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/mayoclinic/mayoclinic-disease-a201907.png"
+  },
+  {
+   "id": "home-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190312100157/https://www.mayoclinic.org/",
+   "date": "2019-03-12",
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/mayoclinic/mayoclinic-home-a201903.png"
+  },
+  {
+   "id": "home-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190715090319/https://www.mayoclinic.org/",
+   "date": "2019-07-15",
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/mayoclinic/mayoclinic-home-a201907.png"
+  },
+  {
+   "id": "home-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191115195153/https://www.mayoclinic.org/",
+   "date": "2019-11-15",
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/mayoclinic/mayoclinic-home-a201911.png"
+  },
+  {
+   "id": "home-wbref",
+   "url": "wayback-2019-ref:https://www.mayoclinic.org/",
+   "date": "2019",
+   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)",
+   "file": "g11-evidence/mayoclinic/mayoclinic-home-wbref.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Feedback|Businesses|Executive Health Program|International Business Collaborations|Facilities & Real Estate|Supplier Information|Health Education Policy|Locations|Mayo Clinic Press|Instagram|LinkedIn|Get the Mayo Clinic app|Android App on Google Play|Apple Download on the App Store)$",
+   "in2019": false,
+   "evidence": [
+    "absent from the 2019 footer and header (home-a201911 screenshot, disease-a201907 labels); Mayo Clinic Press launched 2021; the 2019 social row was Facebook, YouTube, Pinterest, Twitter"
+   ],
+   "action": "hidden (theme later labels, data-n19-later)"
+  },
+  {
+   "match": "^(Price Transparency|Medicare Accountable Care Organization \\(ACO\\)|Community Health Needs Assessment|Digital Accessibility Statement|Ad Choices)$",
+   "in2019": false,
+   "evidence": [
+    "regulatory notices added 2020-2024"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(About\\ Mayo\\ Clinic|About\\ this\\ Site|Advertisement|Appointments|AskMayoExpert|Contact\\ Us|Diagnosis\\ \\&treatment|Diseases\\ \\&\\ Conditions|Doctors\\ \\&departments|Request\\ appointment|Research\\ Faculty|Site\\ Map|Symptoms\\ \\&causes|navigation\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "disease-a201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "About Mayo Clinic",
+    "About this Site",
+    "Advertisement",
+    "Appointments",
+    "AskMayoExpert",
+    "Contact Us",
+    "Diagnosis &treatment",
+    "Diseases & Conditions",
+    "Doctors &departments",
+    "Request appointment",
+    "Research Faculty",
+    "Site Map",
+    "Symptoms &causes",
+    "navigation area"
+   ]
+  },
+  {
+   "match": "^(Facebook|Mayo\\ Clinic|YouTube|footer\\ area|header\\ area|repeated\\ div)$",
+   "in2019": true,
+   "evidence": [
+    "disease-a201907",
+    "home-a201903",
+    "home-a201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Facebook",
+    "Mayo Clinic",
+    "YouTube",
+    "footer area",
+    "header area",
+    "repeated div"
+   ]
+  },
+  {
+   "match": "^(English|Find\\ a\\ doctor|For\\ Medical\\ Professionals|Giving\\ to\\ Mayo\\ Clinic|Manage\\ Cookies|Notice\\ of\\ Nondiscrimination|Notice\\ of\\ Privacy\\ Practices|Privacy\\ Policy|Request\\ an\\ appointment)$",
+   "in2019": true,
+   "evidence": [
+    "disease-a201907",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "English",
+    "Find a doctor",
+    "For Medical Professionals",
+    "Giving to Mayo Clinic",
+    "Manage Cookies",
+    "Notice of Nondiscrimination",
+    "Notice of Privacy Practices",
+    "Privacy Policy",
+    "Request an appointment"
+   ]
+  },
+  {
+   "match": "^(Medical Professionals|Refer a Patient|Clinical Trials|AskMayoExpert|Mayo Clinic Alumni Association|Students|Admissions Requirements|Degree Programs|Student & Faculty Portal|Media Requests|Researchers|Research Faculty|Laboratories|Explore careers|Opportunities|International Patients|Appointments|Financial Services|Representative Offices|Charitable Care & Financial Assistance|Financial Assistance Documents – (Arizona|Florida|Minnesota)|Follow Mayo Clinic|Sign up for free e-newsletters|Terms & Conditions|Find a doctor|Give Today|Fuel groundbreaking medical research!|News Network|Contact Us|About this Site|Site Map|Advertising & Sponsorship Policy|Policy|Register/Log in|Request appointment)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "disease-a201907"
+   ],
+   "note": "2019 footer (home-a201911 screenshot): For Medical Professionals (Find a doctor, Refer a patient, View clinical trials), For Students (degree programs, admissions requirements, student portal), For the Media (Media requests), For Researchers (lab services), For Job Seekers (open positions), For International Patients (Request an appointment, Financial services, International offices), Charitable Care & Financial Assistance (Arizona/Florida/Minnesota documents), Follow Mayo Clinic, Free E-Newsletter, Your Gift Holds Great Power / Make a Donation; disease-a201907: AskMayoExpert, Alumni Center, Research Faculty, Contact Us, About This Site, Site Map, Advertisement, Log in to Patient Account, Request an Appointment"
+  },
+  {
+   "match": "^(Care at Mayo Clinic|Health Library|Research & Education at Mayo Clinic|Primary|Secondary|secondary|Search|search_.*|form area|main area|aside area|section area|legal|page-title|repeated .*|Go to page \\d+.*|NextNext Page|Headache - Mayo Clinic)$",
+   "in2019": true,
+   "evidence": [
+    "disease-a201907",
+    "home-a201907"
+   ],
+   "note": "2019 nav: Patient Care & Health Info (Diseases & Conditions, Symptoms A-Z and the rest of the health library), Research, Education; search box and results paging; page regions; the search result title is content"
+  },
+  {
+   "match": "^(FREE Mayo Clinic Diet Assessment|Mayo Clinic Health Letter - FREE book|The Essential Diabetes Book|Mayo Clinic on Hearing and Balance|Mayo Clinic on Incontinence)$",
+   "in2019": true,
+   "evidence": [
+    "disease-a201907"
+   ],
+   "note": "the 2019 disease page had the same Products & Services / Mayo Clinic Marketplace promo block (book and newsletter offers are its content)"
+  }
+ ]
+}

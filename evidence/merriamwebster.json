@@ -1,0 +1,217 @@
+{
+ "theme": "merriamwebster",
+ "era": "",
+ "sources": [
+  {
+   "id": "entry1-201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191119072549/https://www.merriam-webster.com/dictionary/house",
+   "date": "2019-11-19",
+   "shows": "entry1 page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/merriamwebster/merriamwebster-entry1-201911.png"
+  },
+  {
+   "id": "entry3-201909",
+   "url": "https://arquivo.pt/noFrame/replay/20190913094918/https://www.merriam-webster.com/dictionary/love",
+   "date": "2019-09-13",
+   "shows": "entry3 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/merriamwebster/merriamwebster-entry3-201909.png"
+  },
+  {
+   "id": "entry6-201909",
+   "url": "https://arquivo.pt/noFrame/replay/20190920121854/https://www.merriam-webster.com/dictionary/%C3%89vora",
+   "date": "2019-09-20",
+   "shows": "entry6 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/merriamwebster/merriamwebster-entry6-201909.png"
+  },
+  {
+   "id": "home1-201901",
+   "url": "https://arquivo.pt/noFrame/replay/20190101021436/https://www.merriam-webster.com/",
+   "date": "2019-01-01",
+   "shows": "home1 page as served in 2019-01 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/merriamwebster/merriamwebster-home1-201901.png"
+  },
+  {
+   "id": "home2-201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190717021825/https://www.merriam-webster.com/",
+   "date": "2019-07-17",
+   "shows": "home2 page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/merriamwebster/merriamwebster-home2-201907.png"
+  },
+  {
+   "id": "home3-201912",
+   "url": "https://arquivo.pt/noFrame/replay/20191231225608/https://www.merriam-webster.com/",
+   "date": "2019-12-31",
+   "shows": "home3 page as served in 2019-12 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/merriamwebster/merriamwebster-home3-201912.png"
+  },
+  {
+   "id": "wotd1-201904",
+   "url": "https://arquivo.pt/noFrame/replay/20190401222435/https://www.merriam-webster.com/word-of-the-day",
+   "date": "2019-04-01",
+   "shows": "wotd1 page as served in 2019-04 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/merriamwebster/merriamwebster-wotd1-201904.png"
+  },
+  {
+   "id": "wotd2-201909",
+   "url": "https://arquivo.pt/noFrame/replay/20190920123443/https://www.merriam-webster.com/word-of-the-day",
+   "date": "2019-09-20",
+   "shows": "wotd2 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/merriamwebster/merriamwebster-wotd2-201909.png"
+  },
+  {
+   "id": "wotd3-201912",
+   "url": "https://arquivo.pt/noFrame/replay/20191211105629/https://www.merriam-webster.com/word-of-the-day",
+   "date": "2019-12-11",
+   "shows": "wotd3 page as served in 2019-12 (Arquivo.pt capture rendered with its 2019 CSS)",
+   "file": "g10-evidence/merriamwebster/merriamwebster-wotd3-201912.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(noun|repeated\\ a)$",
+   "in2019": true,
+   "evidence": [
+    "entry1-201911",
+    "entry3-201909"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "noun",
+    "repeated a"
+   ]
+  },
+  {
+   "match": "^(0\\-9|About\\ Us|Advertising\\ Info|Apps|Browse\\ the\\ Dictionary|Browse\\ the\\ Legal\\ Dictionary|Browse\\ the\\ Medical\\ Dictionary|Browse\\ the\\ Thesaurus|Contact\\ Us|Dictionary\\ API|Games|Help|Home|Law\\ Dictionary|MERRIAM\\-WEBSTER'S\\ UNABRIDGED\\ DICTIONARY|Medical\\ Dictionary|Merriam\\ Webster|NGLISH\\ \\-\\ SPANISH\\-ENGLISH\\ TRANSLATION|Privacy\\ Policy|SCRABBLE®\\ WORD\\ FINDER|Search|Shop|Sign\\ up\\ for\\ Merriam\\-Webster's\\ Word\\ of\\ the\\ Day\\ newsletter|Subscribe\\ to\\ Word\\ of\\ the\\ Day|Terms\\ of\\ Use|Word\\ of\\ the\\ Day|Word\\ of\\ the\\ Day:|Word\\ of\\ the\\ Year|footer\\ area|form\\ area|header\\ area|nav\\ area|wod\\-submit)$",
+   "in2019": true,
+   "evidence": [
+    "entry1-201911",
+    "entry3-201909",
+    "entry6-201909"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "0-9",
+    "About Us",
+    "Advertising Info",
+    "Apps",
+    "Browse the Dictionary",
+    "Browse the Legal Dictionary",
+    "Browse the Medical Dictionary",
+    "Browse the Thesaurus",
+    "Contact Us",
+    "Dictionary API",
+    "Games",
+    "Help",
+    "Home",
+    "Law Dictionary",
+    "MERRIAM-WEBSTER'S UNABRIDGED DICTIONARY",
+    "Medical Dictionary",
+    "Merriam Webster",
+    "NGLISH - SPANISH-ENGLISH TRANSLATION",
+    "Privacy Policy",
+    "SCRABBLE® WORD FINDER",
+    "Search",
+    "Shop",
+    "Sign up for Merriam-Webster's Word of the Day newsletter",
+    "Subscribe to Word of the Day",
+    "Terms of Use",
+    "Word of the Day",
+    "Word of the Day:",
+    "Word of the Year",
+    "footer area",
+    "form area",
+    "header area",
+    "nav area",
+    "wod-submit"
+   ]
+  },
+  {
+   "match": "^(repeated\\ div)$",
+   "in2019": true,
+   "evidence": [
+    "entry1-201911",
+    "entry3-201909",
+    "home1-201901"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "repeated div"
+   ]
+  },
+  {
+   "match": "^(Join\\ MWU|Subscribe)$",
+   "in2019": true,
+   "evidence": [
+    "entry1-201911",
+    "home3-201912",
+    "wotd3-201912"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Join MWU",
+    "Subscribe"
+   ]
+  },
+  {
+   "match": "^(See\\ All)$",
+   "in2019": true,
+   "evidence": [
+    "entry3-201909"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "See All"
+   ]
+  },
+  {
+   "match": "^(Time\\ Traveler)$",
+   "in2019": true,
+   "evidence": [
+    "entry3-201909",
+    "entry6-201909",
+    "home2-201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Time Traveler"
+   ]
+  },
+  {
+   "match": "^(Play|Videos|Your\\ email\\ address)$",
+   "in2019": true,
+   "evidence": [
+    "home1-201901",
+    "home2-201907",
+    "home3-201912"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Play",
+    "Videos",
+    "Your email address"
+   ]
+  },
+  {
+   "match": "^(Podcast|repeated\\ li)$",
+   "in2019": true,
+   "evidence": [
+    "wotd1-201904",
+    "wotd2-201909",
+    "wotd3-201912"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Podcast",
+    "repeated li"
+   ]
+  }
+ ]
+}

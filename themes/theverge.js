@@ -16,4 +16,5 @@ globalThis.net19Theme = {
   },
   later: /^(?:follow(?:follow)?(?: [\w&' -]{1,30})?|following|unfollow|gift this article|gift|open notifications|notifications|verge subscription|subscribe to the verge)$/i,
   keepLabels: /^(?:latest)$/i,
+  intended: 'nav[aria-label="Top Navigation"] li:has(> a[href$="/policy"]), footer nav[aria-label="PMC network sites"], #zephr-zone-footer, #zephr-overlay, [role="tablist"]:has(> #storyStream-tab)',
 };

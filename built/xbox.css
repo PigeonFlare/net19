@@ -31,3 +31,6 @@ html body .m-in-page-navigation:not(.trans) .CTAdiv button.c-call-to-action.c-ca
 html body span.jump-g:not(#n19-none):not(#n19-none){color:var(--n19-green)!important}
 #storeassistantroot,.sa-default-entry-container{display:none!important}
 [data-net19-hidden]{display:none!important}
+[data-n19-later]{display:none!important}
+uhf-footer-nav-group:is([heading="Browse"],[heading="Microsoft Store"],[heading="Rewards"]){display:none!important}
+a[aria-label^="Play, play games with"i]{display:none!important}

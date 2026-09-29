@@ -1,7 +1,7 @@
 html { --n19-page: #e3e2dd; --n19-content: #fff; --n19-panel: #f6f6f5; --n19-panel-2: #efefef; --n19-text: #333; --n19-text-2: #666; --n19-link: #136cb2;
-  --n19-border: #ddd; --n19-hover: rgba(0,0,0,.05); --n19-header: #121212; --n19-yellow: #f5c518; --n19-shadow: 0 0 8px rgba(0,0,0,.7); --n19-hero: #222; --n19-content-rgb: 255,255,255; --n19-field: #fff; --n19-field-text: #111; --n19-field-border: transparent; }
+  --n19-border: #ddd; --n19-hover: rgba(0,0,0,.05); --n19-header: #121212; --n19-yellow: #f5c518; --n19-shadow: 0 0 8px rgba(0,0,0,.7); --n19-hero: #333; --n19-plot: #eee; --n19-plot-text: #333; --n19-plot-label: #666; --n19-watch: #0e63be; --n19-content-rgb: 255,255,255; --n19-field: #fff; --n19-field-text: #111; --n19-field-border: transparent; }
 html[data-net19-mode="dark"] { --n19-page: #1c1c1b; --n19-content: #121212; --n19-panel: #1a1a1a; --n19-panel-2: #1f1f1f; --n19-text: #ddd; --n19-text-2: #aaa; --n19-link: #5799ef;
-  --n19-border: #333; --n19-hover: rgba(255,255,255,.08); --n19-header: #121212; --n19-yellow: #f5c518; --n19-shadow: 0 0 8px rgba(0,0,0,.9); --n19-hero: #222; --n19-content-rgb: 18,18,18; --n19-field: #1f1f1f; --n19-field-text: #ddd; --n19-field-border: #444;
+  --n19-border: #333; --n19-hover: rgba(255,255,255,.08); --n19-header: #121212; --n19-yellow: #f5c518; --n19-shadow: 0 0 8px rgba(0,0,0,.9); --n19-hero: #2b2b2b; --n19-plot: #1c1c1c; --n19-plot-text: #ddd; --n19-plot-label: #aaa; --n19-watch: #1f6fc5; --n19-content-rgb: 18,18,18; --n19-field: #1f1f1f; --n19-field-text: #ddd; --n19-field-border: #444;
   --n19-text-hint: rgba(255,255,255,.5); --n19-text-icon: rgba(255,255,255,.6); }
 html[data-net19-mode="dark"] {
   --ipt-base-bg: var(--n19-content); --ipt-base-color: var(--n19-content); --ipt-base-rgb: 18,18,18; --ipt-base-shade3-color: var(--n19-content);
@@ -27,9 +27,9 @@ body { background-color: var(--n19-page) !important; }
 .ipc-list-card, .ipc-poster__poster-image, .ipc-media--poster-27x40 { border-radius: 0 !important; }
 .ipc-chip { border-radius: 3px !important; }
 
-#__next > nav#imdbHeader, #__next > main.ipc-page-wrapper, #__next > section.ipc-page-background, #__next > footer.imdb-footer {
+#__next > main.ipc-page-wrapper, #__next > section.ipc-page-background, #__next > footer.imdb-footer {
   max-width: 1008px !important; margin-left: auto !important; margin-right: auto !important; box-shadow: var(--n19-shadow) !important; }
-#__next > nav#imdbHeader { background: var(--n19-header) !important; }
+#__next > nav#imdbHeader { background: var(--n19-header) !important; box-shadow: none !important; }
 
 #imdbHeader #suggestion-search-container form, #imdbHeader .searchform { border-radius: 0 !important; }
 #imdbHeader .searchform > div, #imdbHeader .searchCatSelector-button, #imdbHeader #suggestion-search { border-radius: 0 !important; }
@@ -37,11 +37,11 @@ body { background-color: var(--n19-page) !important; }
 #imdbHeader form.imdb-header__search-form :is(input, .searchCatSelector__button, [class*="searchCatSelector"] label, [class*="searchCatSelector"] button) { color: var(--n19-field-text) !important; }
 #imdbHeader #suggestion-search { caret-color: var(--n19-field-text) !important; }
 #imdbHeader #suggestion-search::placeholder { color: var(--n19-text-2) !important; }
-#imdbHeader #suggestion-search-button { background: var(--n19-yellow) !important; color: #000 !important; border-radius: 0 !important; }
-#imdbHeader #suggestion-search-button svg { fill: #000 !important; }
-#imdbHeader .imdb-header__signin-text { background: var(--n19-yellow) !important; color: #000 !important; border-radius: 3px !important; min-height: 26px !important; height: 26px !important;
-  padding: 0 14px !important; font-size: 13px !important; font-weight: 700 !important; align-self: center !important; }
-#imdbHeader .imdb-header__signin-text .ipc-btn__text { color: #000 !important; }
+#imdbHeader #suggestion-search-button { background: transparent !important; color: var(--n19-field-text) !important; border-radius: 0 !important; }
+#imdbHeader #suggestion-search-button svg { fill: var(--n19-field-text) !important; }
+#imdbHeader .imdb-header__signin-text { background: transparent !important; color: #fff !important; border-radius: 0 !important; font-size: 14px !important; font-weight: 400 !important; }
+#imdbHeader .imdb-header__signin-text .ipc-btn__text { color: #fff !important; font-weight: 400 !important; }
+#imdbHeader :is(label[for="nav-language-selector"], div:has(> label[for="nav-language-selector"])) { display: none !important; }
 
 main.ipc-page-wrapper .ipc-page-content-container--center > :not(:first-child), #__next > section.ipc-page-background, #__next > footer.imdb-footer {
   --ipt-baseAlt-bg: var(--n19-content); --ipc-pageSection-baseAlt-bg: var(--n19-content); --ipt-baseAlt-rgb: var(--n19-content-rgb);
@@ -75,3 +75,47 @@ main a.ipc-link:not([class*="onBase"]):not([class*="inherit"]):not([class*="base
 html[data-net19-mode="dark"] .ipc-coachmark.ipc-list-card--base { background-color: var(--n19-panel) !important; color: var(--n19-text) !important; }
 html[data-net19-mode="dark"] .ipc-coachmark--arrow-top::before, html[data-net19-mode="dark"] .ipc-coachmark--arrow-top::after { border-bottom-color: var(--n19-panel) !important; }
 html[data-net19-mode="dark"] .ipc-coachmark :is(button, .ipc-icon-button) { color: var(--n19-text-2) !important; }
+
+[data-testid="hero-parent"] div:has(> div [data-testid="plot"]):has(> div [data-testid="tm-box-wl-button"]):not(:has([data-testid="hero-media__slate"])) {
+  --ipt-on-baseAlt-color: var(--n19-plot-text); --ipt-on-baseAlt-textPrimary-color: var(--n19-plot-text); --ipt-on-baseAlt-textSecondary-color: var(--n19-plot-label);
+  --ipt-on-baseAlt-textHint-color: var(--n19-plot-label); --ipt-on-baseAlt-textIcon-color: var(--n19-plot-label); --ipt-on-baseAlt-accent2-color: var(--n19-link);
+  --ipt-baseAlt-border-color: var(--n19-border); --ipt-baseAlt-hover-bg: var(--n19-hover); --ipt-baseAlt-shade1-bg: var(--n19-plot);
+  background: var(--n19-plot) !important; color: var(--n19-plot-text) !important; margin: 12px -24px 0 !important; padding: 16px 24px 12px !important; }
+[data-testid="hero-parent"] :is([data-testid="plot"], [data-testid="plot"] span) { color: var(--n19-plot-text) !important; font-size: 14px !important; line-height: 1.5 !important; }
+[data-testid="hero-parent"] [data-testid="title-pc-principal-credit"] > :is(span, a):first-child { color: var(--n19-plot-label) !important; font-weight: 700 !important; }
+[data-testid="hero-parent"] [data-testid="title-pc-principal-credit"] a.ipc-metadata-list-item__list-content-item { color: var(--n19-link) !important; }
+[data-testid="hero-parent"] [data-testid="title-pc-principal-credit"] { border-color: var(--n19-border) !important; }
+[data-testid="hero-parent"] [data-testid="interests"] a.ipc-chip { background: transparent !important; border: 0 !important; padding: 0 !important; min-height: 0 !important; height: auto !important; margin-right: 12px !important; }
+[data-testid="hero-parent"] [data-testid="interests"] a.ipc-chip .ipc-chip__text { color: var(--n19-link) !important; font-size: 14px !important; }
+[data-testid="hero-parent"] [data-testid="interests"] [data-n19-interest], [data-testid="hero-parent"] [data-testid="interests"] button.ipc-chip { display: none !important; }
+[data-testid="tm-box-wl-button"] { background: var(--n19-watch) !important; color: #fff !important; border-radius: 2px !important; }
+[data-testid="tm-box-wl-button"] :is(div, span, svg) { color: #fff !important; fill: #fff !important; }
+[data-testid="tm-box-addtolist-button"] { background: var(--n19-watch) !important; color: #fff !important; border-radius: 2px !important; }
+[data-testid="tm-box-addtolist-button"] svg { fill: #fff !important; }
+[data-testid="hero-parent"] :is([data-testid="reviewContent-all-reviews"], [data-testid="hero-proupsell"]) :is(a, span, .score, .label) { color: var(--n19-link) !important; }
+[data-testid*="reaction"], [data-testid^="watched-button"], [data-testid="videoPreview_preference_button"], .video-preference,
+section.ipc-page-section:has([data-testid="bar-chart"]), section[data-testid="RelatedInterests"], .ipc-page-grid:has(> [data-testid="exploreStreaming_title"]), section.ipc-page-section:has(.ipc-slate a[href*="/interest/"]), button[aria-label="Add to your interests"],
+footer.imdb-footer a[href*="tiktok.com"], footer.imdb-footer li:has(> a[href*="tiktok.com"]),
+footer.imdb-footer a[href*="developer.imdb.com"], footer.imdb-footer li:has(> a[href*="developer.imdb.com"]),
+footer.imdb-footer div:has(> a[href*="/registration/signin"]), footer.imdb-footer a[href*="/registration/signin"],
+.ipc-coachmark:has(a[href*="/registration/"]) { display: none !important; }
+main.ipc-page-wrapper .ipc-page-content-container--center > :first-child:has([data-testid^="birth-and-death"]),
+main.ipc-page-wrapper .ipc-page-content-container--center > :first-child:has([data-testid^="birth-and-death"]) :is(section, div)[class*="ipc-page-background"] {
+  --ipt-on-baseAlt-color: var(--n19-plot-text); --ipt-on-baseAlt-textPrimary-color: var(--n19-plot-text); --ipt-on-baseAlt-textSecondary-color: var(--n19-plot-label);
+  --ipt-on-baseAlt-textHint-color: var(--n19-plot-label); --ipt-on-baseAlt-textIcon-color: var(--n19-plot-label); --ipt-on-baseAlt-accent2-color: var(--n19-link);
+  --ipt-baseAlt-border-color: var(--n19-border); --ipt-baseAlt-hover-bg: var(--n19-hover); --ipt-baseAlt-shade1-bg: var(--n19-panel);
+  background: var(--n19-content) !important; background-image: none !important; color: var(--n19-plot-text) !important; }
+main.ipc-page-wrapper .ipc-page-content-container--center > :first-child:has([data-testid^="birth-and-death"]) [data-testid="hero__pageTitle"] :is(span, h1) { color: var(--n19-text) !important; }
+[data-testid="hero-parent"] div:has(> div [data-testid="plot"]):has(> div [data-testid="tm-box-wl-button"]):not(:has([data-testid="hero-media__slate"])) [class*="accent1" i],
+[data-testid="hero-parent"] div:has(> div [data-testid="plot"]):has(> div [data-testid="tm-box-wl-button"]):not(:has([data-testid="hero-media__slate"])) { --ipt-accent1-color: var(--n19-plot-text); --ipt-on-baseAlt-accent1-color: var(--n19-plot-text); }
+main.ipc-page-wrapper .ipc-page-content-container--center > :first-child:has([data-testid^="birth-and-death"]) [data-testid="hero-parent"], main.ipc-page-wrapper .ipc-page-content-container--center > :first-child:has([data-testid^="birth-and-death"]) [data-testid="hero-parent"]::before { background-image: none !important; }
+section[data-testid="atf-wrapper-bg"]:has([data-testid^="birth-and-death"]) { background-color: var(--n19-page) !important; background-image: none !important; }
+main.ipc-page-wrapper .ipc-page-content-container--center > :first-child:has([data-testid^="birth-and-death"]) :is([data-testid="bio"], [data-testid="bio"] *, .ipc-html-content-inner-div) { color: var(--n19-plot-text) !important; }
+main.ipc-page-wrapper .ipc-page-content-container--center > :first-child:has([data-testid^="birth-and-death"]) [data-testid="hero-media__slate"] { --ipt-on-baseAlt-textPrimary-color: #fff; --ipt-on-baseAlt-textSecondary-color: rgba(255,255,255,.7); --ipt-on-baseAlt-textHint-color: rgba(255,255,255,.7); --ipt-on-baseAlt-color: #fff; }
+main.ipc-page-wrapper:has([data-testid^="find-results-section"]) h1 { font-size: 18px !important; line-height: 1.3 !important; font-weight: 400 !important; color: var(--n19-text) !important; margin: 12px 0 6px !important; }
+[data-testid^="find-results-section"] .ipc-title .ipc-title__text { color: #a58500 !important; font-size: 18px !important; font-weight: 700 !important; }
+html[data-net19-mode="dark"] [data-testid^="find-results-section"] .ipc-title .ipc-title__text { color: var(--n19-yellow) !important; }
+[data-testid="find-results-section-interest"] { display: none !important; }
+[data-n19-later] { display: none !important; }
+[data-testid="hero-parent"] [data-testid="title-pc-principal-credit"] ul.ipc-inline-list { flex-wrap: wrap !important; min-width: 0 !important; }
+main.ipc-page-wrapper .ipc-page-content-container--center > :first-child:has([data-testid^="birth-and-death"]) [data-testid="hero-media__slate"] :is(span, div) { color: #fff !important; }

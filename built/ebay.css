@@ -38,3 +38,5 @@ main [class*="dp-hero"][class*="-module"]{border-radius:0!important}
 .s-card__searchsimilar,.s-tourtip{display:none!important}
 .x-evo-atf-top-river:has(a[href*="/ebaylive"]){display:none!important}
 .ux-image-carousel,.ux-image-carousel-item,.ux-image-filmstrip-carousel-item,.ux-image-grid-item{border-radius:0!important}
+#dp-live-events-carousel,.gf-big-links__list-item:has(>a[href^="https://storefronts.ebay.com"]),.gf-big-links__element:has(>a[href*="tcgplayer.com"]){display:none!important}
+.x-ebay-signal,#infcontainer{display:none!important}

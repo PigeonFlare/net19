@@ -1,0 +1,187 @@
+{
+ "theme": "genius",
+ "era": "2019 Genius (home 2019-03/07/11, song, album, artist and search captures): #ffff64 yellow top bar with 'Search lyrics & more' at left, the black GENIUS wordmark centred and SIGN UP · SIGN IN at right, a black sub-bar with FEATURED STORIES · TOP SONGS · VIDEOS · COMMUNITY · SHOP and social icons, then the featured stories grid, the Latest list and the Top Songs chart.",
+ "sources": [
+  {
+   "id": "home-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190302110937/https://genius.com/",
+   "date": "2019-03-02",
+   "shows": "home page as served on 2019-03-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/genius/genius-home-a201903.png"
+  },
+  {
+   "id": "home-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190701022109/https://genius.com/",
+   "date": "2019-07-01",
+   "shows": "home page as served on 2019-07-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/genius/genius-home-a201907.png"
+  },
+  {
+   "id": "home-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191102202654/https://genius.com/",
+   "date": "2019-11-02",
+   "shows": "home page as served on 2019-11-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/genius/genius-home-a201911.png"
+  },
+  {
+   "id": "song-a201910",
+   "url": "https://arquivo.pt/noFrame/replay/20191008011900/https://genius.com/Drake-hotline-bling-lyrics",
+   "date": "2019-10-08",
+   "shows": "song page as served on 2019-10-08 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/genius/genius-song-a201910.png"
+  },
+  {
+   "id": "song-a201908",
+   "url": "https://arquivo.pt/noFrame/replay/20190806091921/https://genius.com/Queen-bohemian-rhapsody-lyrics",
+   "date": "2019-08-06",
+   "shows": "song page as served on 2019-08-06 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/genius/genius-song-a201908.png"
+  },
+  {
+   "id": "song-a201906",
+   "url": "https://arquivo.pt/noFrame/replay/20190619210642/https://genius.com/Drake-money-in-the-grave-lyrics",
+   "date": "2019-06-19",
+   "shows": "song page as served on 2019-06-19 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/genius/genius-song-a201906.png"
+  },
+  {
+   "id": "album-a201909",
+   "url": "https://arquivo.pt/noFrame/replay/20190908102146/https://genius.com/albums/2pac/Greatest-hits",
+   "date": "2019-09-08",
+   "shows": "album page as served on 2019-09-08 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/genius/genius-album-a201909.png"
+  },
+  {
+   "id": "artist-a201906",
+   "url": "https://arquivo.pt/noFrame/replay/20190619210625/https://genius.com/artists/Drake",
+   "date": "2019-06-19",
+   "shows": "artist page as served on 2019-06-19 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/genius/genius-artist-a201906.png"
+  },
+  {
+   "id": "search-a201910",
+   "url": "https://arquivo.pt/noFrame/replay/20191008004719/https://genius.com/search?q=stan+smiths",
+   "date": "2019-10-08",
+   "shows": "search page as served on 2019-10-08 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/genius/genius-search-a201910.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Do Not Sell My Personal Information|I Accept|List of Partners \\(vendors\\)|Show Purposes|dialog area)$",
+   "in2019": false,
+   "evidence": [
+    "home-a201911"
+   ],
+   "note": "privacy opt-out and the site's own consent dialog (checker false positive per brief)",
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(About\\ Genius|Advertise|Contact\\ Us|Contributor\\ Guidelines|Copyright\\ Policy|Developers|Jobs|Licensing|Press|Privacy|Privacy\\ Policy|Sign\\ In|Terms\\ of\\ Use|Verified|Verified\\ Artists)$",
+   "in2019": true,
+   "evidence": [
+    "album-a201909",
+    "artist-a201906",
+    "home-a201903"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "About Genius",
+    "Advertise",
+    "Contact Us",
+    "Contributor Guidelines",
+    "Copyright Policy",
+    "Developers",
+    "Jobs",
+    "Licensing",
+    "Press",
+    "Privacy",
+    "Privacy Policy",
+    "Sign In",
+    "Terms of Use",
+    "Verified",
+    "Verified Artists"
+   ]
+  },
+  {
+   "match": "^(Baby)$",
+   "in2019": true,
+   "evidence": [
+    "album-a201909",
+    "home-a201911",
+    "song-a201906"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Baby"
+   ]
+  },
+  {
+   "match": "^(Charts|Community|Genius\\ is\\ the\\ world’s\\ biggest\\ collection\\ of\\ song\\ lyrics\\ and\\ musical\\ kn|Join\\ Our\\ Community|Latest|Learn\\ How\\ Genius\\ Works|Sign\\ Up)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Charts",
+    "Community",
+    "Genius is the world’s biggest collection of song lyrics and musical kn",
+    "Join Our Community",
+    "Latest",
+    "Learn How Genius Works",
+    "Sign Up"
+   ]
+  },
+  {
+   "match": "^(Genius\\ Original\\ Series|Genius’s\\ community\\ of\\ contributors\\ powers\\ the\\ world’s\\ biggest\\ collecti|Load\\ More|Most\\ Recent\\ News|Shop|Videos)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Genius Original Series",
+    "Genius’s community of contributors powers the world’s biggest collecti",
+    "Load More",
+    "Most Recent News",
+    "Shop",
+    "Videos"
+   ]
+  },
+  {
+   "match": "^(Security|View All|nav area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "home-a201907"
+   ],
+   "note": "footer links and 'Show more'/view-all lists (2019 home had 'Show More' under Latest and the footer)"
+  },
+  {
+   "match": "^(repeated .*|header area|main area|section area|footer area|search area|form area|article area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "song-a201908"
+   ],
+   "note": "page structure; repeated items are stories, songs and videos"
+  },
+  {
+   "match": "^.{1,90}$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201911"
+   ],
+   "note": "content: story headlines, song and artist names in the charts (2019 home listed the same)"
+  }
+ ]
+}

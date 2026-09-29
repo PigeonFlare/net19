@@ -1,0 +1,109 @@
+{
+ "theme": "cagov",
+ "era": "",
+ "sources": [
+  {
+   "id": "home-h201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190319140133/https://www.ca.gov/",
+   "date": "2019-03-19",
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/cagov-home-h201903.html"
+  },
+  {
+   "id": "home-h201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190715142723/https://www.ca.gov/",
+   "date": "2019-07-15",
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/cagov-home-h201907.html"
+  },
+  {
+   "id": "home-h201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191114064812/https://www.ca.gov/",
+   "date": "2019-11-14",
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture HTML, labels read from the archived markup)",
+   "file": "g11-evidence/html/cagov-home-h201911.html"
+  },
+  {
+   "id": "home-wbref",
+   "url": "wayback-2019-ref:https://www.ca.gov/",
+   "date": "2019",
+   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)",
+   "file": "g11-evidence/cagov/cagov-home-wbref.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Accessibility|Back\\ to\\ top|Conditions\\ of\\ use|Home|Privacy\\ policy|Sitemap|Translate|feedback)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201903",
+    "home-h201907",
+    "home-h201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Accessibility",
+    "Back to top",
+    "Conditions of use",
+    "Home",
+    "Privacy policy",
+    "Sitemap",
+    "Translate",
+    "feedback"
+   ]
+  },
+  {
+   "match": "^(Website\\ Accessibility\\ Certification)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201907",
+    "home-h201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Website Accessibility Certification"
+   ]
+  },
+  {
+   "match": "^(Submit)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201907",
+    "home-h201911",
+    "home-wbref"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Submit"
+   ]
+  },
+  {
+   "match": "^(Search\\ this\\ website)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Search this website"
+   ]
+  },
+  {
+   "match": "^(footer\\ area|form\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "home-wbref"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "footer area",
+    "form area"
+   ]
+  }
+ ]
+}

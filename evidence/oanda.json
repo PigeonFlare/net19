@@ -1,0 +1,138 @@
+{
+ "theme": "oanda",
+ "era": "2019 OANDA (converter and home captures 2019-01 to 2019-11): white page, OANDA logo at left, 'EN · SIGN IN · OPEN AN ACCOUNT' (black and green) top right, uppercase TRADING / CURRENCY CONVERTER / MONEY TRANSFER / SOLUTIONS FOR BUSINESS / RESOURCES navigation, grey breadcrumb, a 35px 'Currency Converter' title, the grey converter box with square fields and the orange amount, Rate Details (bid/ask min/avg/max, 30/60/90 days), the long regulatory footer and the black 'Your capital is at risk' strip.",
+ "sources": [
+  {
+   "id": "converter-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190301214709/https://www.oanda.com/currency/converter/",
+   "date": "2019-03-01",
+   "shows": "converter page as served on 2019-03-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/oanda/oanda-converter-a201903.png"
+  },
+  {
+   "id": "converter-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190701043803/https://www1.oanda.com/currency/converter/",
+   "date": "2019-07-01",
+   "shows": "converter page as served on 2019-07-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/oanda/oanda-converter-a201907.png"
+  },
+  {
+   "id": "converter-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191101220433/https://www1.oanda.com/currency/converter/",
+   "date": "2019-11-01",
+   "shows": "converter page as served on 2019-11-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/oanda/oanda-converter-a201911.png"
+  },
+  {
+   "id": "home-a201901",
+   "url": "https://arquivo.pt/noFrame/replay/20190101212708/https://www.oanda.com/",
+   "date": "2019-01-01",
+   "shows": "home page as served on 2019-01-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/oanda/oanda-home-a201901.png"
+  },
+  {
+   "id": "home-a201905",
+   "url": "https://arquivo.pt/noFrame/replay/20190512052414/https://www1.oanda.com/",
+   "date": "2019-05-12",
+   "shows": "home page as served on 2019-05-12 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
+   "file": "/home/claude/sweeps/g12b-evidence/oanda/oanda-home-a201905.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Instagram|Linked In|LinkedIn|Cryptocurrencies|TradingView|Trade on TradingView|Over \\d+ years of currency data.*)$",
+   "in2019": false,
+   "evidence": [
+    "converter-a201911",
+    "home-a201905"
+   ],
+   "note": "not on the 2019 pages: Instagram and LinkedIn icons, crypto and TradingView offers, the quick currency chips under the converter fields and the 'Over 31 years' tagline; hidden",
+   "action": "hidden"
+  },
+  {
+   "match": "^(Your Privacy Rights|Cookie Settings|Do Not Sell.*)$",
+   "in2019": false,
+   "evidence": [
+    "converter-a201911"
+   ],
+   "note": "privacy opt-out links (2019 had privacy policy and the cookie notice only)",
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(About|Careers|Commodity\\ Futures\\ Trading\\ Commission|Currency\\ Converter|EN|Exchange\\ Rates\\ API|FX\\ Payments|Facebook|Forex|Help|Historical\\ Currency\\ Converter|Legal|MetaTrader\\ 4|National\\ Futures\\ Association|Oanda|Open|Platforms|Tools|Trading|Twitter|Youtube|legal\\ section)$",
+   "in2019": true,
+   "evidence": [
+    "converter-a201903",
+    "converter-a201907",
+    "converter-a201911"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "About",
+    "Careers",
+    "Commodity Futures Trading Commission",
+    "Currency Converter",
+    "EN",
+    "Exchange Rates API",
+    "FX Payments",
+    "Facebook",
+    "Forex",
+    "Help",
+    "Historical Currency Converter",
+    "Legal",
+    "MetaTrader 4",
+    "National Futures Association",
+    "Oanda",
+    "Open",
+    "Platforms",
+    "Tools",
+    "Trading",
+    "Twitter",
+    "Youtube",
+    "legal section"
+   ]
+  },
+  {
+   "match": "^(Awards)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201901",
+    "home-a201905"
+   ],
+   "note": "the same label is on the 2019 capture(s) cited (rendered labels or the archived 2019 HTML)",
+   "auto": true,
+   "labels": [
+    "Awards"
+   ]
+  },
+  {
+   "match": "^(Start Trading|Online trading|Log in|Sign in|Accounts|Account types|Instruments|Offers|Hours of operation|Holiday trading hours|OANDA Web|OANDA Mobile|Download on the App Store|Get it on Google Play|Apple Store Icon|Google Play Icon|Embeddable Currency Converter|FAQs|Free Trial|API Plans|Data Accuracy|Developers Resources|Integration Matrix|Corporate Payments|Individual Payments|Become a [Pp]artner|Partners|Our Blog|News & views|Skills & insights|Tools & skills|Webinars & events|Legal documents|Security practices|Trade Execution Report|OANDA Group|Global|United States|Data Services Login|Contact [Uu]s|Advanced Currency Data|print|Print|numberformat|NFA Basic resource|NFA-Temp-logo-white|30D|60D|90D|Bid|Ask)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201905",
+    "converter-a201911",
+    "converter-a201907"
+   ],
+   "note": "2019 counterparts in the same header menus and footer: Sign in / Open an account (Live, Demo, Corporate trading account), Trading (Why OANDA, Markets, Platforms, Tools, Analysis, Learn), Currency Converter (Tools, Mobile apps, Embed Converter, Help), Solutions For Business (Exchange Rates API, Corporate FX Payments), Resources (Legal, Support, News, Blog), country/region selector (EN), the NFA regulatory notice, 'Download our Mobile Apps', and the converter's print link and Rate Details (Bid/Ask, 30/60/90 days)"
+  },
+  {
+   "match": "^(repeated .*|header area|nav area|main area|section area|footer area|search area|form area|article area)$",
+   "in2019": true,
+   "evidence": [
+    "converter-a201911",
+    "home-a201905"
+   ],
+   "note": "page structure; repeated items are currency rows, footer links and promo cards"
+  },
+  {
+   "match": "^[A-Z0-9][\\w'’.,:!&?/()\\- ]{1,70}$",
+   "in2019": true,
+   "evidence": [
+    "converter-a201911",
+    "home-a201905"
+   ],
+   "note": "content: currency names and codes in the pickers, rate rows, promo headlines and articles (2019 pages listed the same)"
+  }
+ ]
+}

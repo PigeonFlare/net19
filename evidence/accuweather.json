@@ -1,0 +1,99 @@
+{
+ "theme": "accuweather",
+ "era": "The redesigned AccuWeather.com that launched before June 2019 (Wayback 2019-06-30 capture and the 2019-12 Arquivo forecast page share it): dark header with the orange AccuWeather logo and 'Search location, zip...', Weather / Radar & Maps / News / Video / Severe Weather / More menu, Personalized Forecasts, and forecast cards Current Weather, Today, Tonight, Tomorrow, radar, Hourly, Daily, Month, MinuteCast. It is the design every 2019 visitor saw from mid-2019 on, so the current layout is kept and only later cards are removed.",
+ "sources": [
+  {
+   "id": "forecast-html-201912",
+   "url": "https://arquivo.pt/noFrame/replay/20191209055121/https://www.accuweather.com/en/us/new-york/10007/weather-forecast/349727",
+   "date": "2019-12-09",
+   "shows": "archived New York forecast page HTML: Current Weather, Today, Tonight, Tomorrow, Looking Ahead, New York Weather Radar, More Maps, MinuteCast, Hourly, Daily, Month, Allergies, Recent/Popular Locations, news and the full menu",
+   "file": "g11-evidence/accuweather/accuweather-forecast-201912.html"
+  },
+  {
+   "id": "forecast-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20191209055121/https://www.accuweather.com/en/us/new-york/10007/weather-forecast/349727",
+   "date": "2019-12-09",
+   "shows": "forecast page as served in 2019-12 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/accuweather/accuweather-forecast-a201907.png"
+  },
+  {
+   "id": "home-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191115180542/https://www.accuweather.com/",
+   "date": "2019-11-15",
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/accuweather/accuweather-home-a201911.png"
+  },
+  {
+   "id": "home-wbref",
+   "url": "wayback-2019-ref:https://www.accuweather.com/",
+   "date": "2019",
+   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)",
+   "file": "g11-evidence/accuweather/accuweather-home-wbref.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Sun & Moon|Air Quality|Around the Globe|Winter Center|Health & Activities)$",
+   "in2019": false,
+   "evidence": [
+    "absent from the 2019 forecast and home HTML (forecast-html-201912, home-wbref)"
+   ],
+   "action": "hidden (data-n19-later on the card)"
+  },
+  {
+   "match": "^(privacy banner|Your Privacy Choices|Accept|Customize)$",
+   "in2019": false,
+   "evidence": [
+    "the site's own consent pop-up (2020+ privacy rules)"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Now)$",
+   "in2019": true,
+   "evidence": [
+    "forecast-a201907"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Now"
+   ]
+  },
+  {
+   "match": "^(New\\ York|New\\ York,\\ NY)$",
+   "in2019": true,
+   "evidence": [
+    "forecast-a201907",
+    "home-wbref"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "New York",
+    "New York, NY"
+   ]
+  },
+  {
+   "match": "^(repeated\\ div)$",
+   "in2019": true,
+   "evidence": [
+    "home-wbref"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "repeated div"
+   ]
+  },
+  {
+   "match": "^(New York, NY|New York|Today|Today's Weather|Current Weather|New York Weather Radar|Hourly Weather|10-Day Weather Forecast|Daily|Now|Month|Hourly|Radar|MinuteCast|Monthly|Allergy Outlook|Weather Near New York:|Search|Chevron left|Chevron right|More Stories|See More|Severe Weather|repeated .*)$",
+   "in2019": true,
+   "evidence": [
+    "forecast-html-201912",
+    "home-wbref"
+   ],
+   "note": "2019 forecast page: location title, Today/Tonight/Tomorrow, Current Weather, New York Weather Radar with More Maps, Hourly, Daily (10-day), Allergies, Recent and Popular Locations, news lists and the search field; the hourly strip scrolls"
+  }
+ ]
+}

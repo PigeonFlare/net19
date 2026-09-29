@@ -38,3 +38,6 @@ main :is(h1, h2, h3)[class] { letter-spacing: 0 !important; }
 nav.navigation .navigation__menu { align-items: center !important; }
 nav.navigation .navLogo { align-self: center !important; height: auto !important; }
 main [data-testid^="prism-"], main [data-testid^="prism-"] > :is(div, a, picture, img) { border-radius: 0 !important; }
+a[href*="tiktok.com"], a[href*="snapchat.com"], li:has(> a[href*="tiktok.com"]), li:has(> a[href*="snapchat.com"]) { display: none !important; }
+a.ext--hulu, a[aria-label="try hulu" i] { display: none !important; }
+a[href*="disneyplus.com"], a[href*="hulu.com"]:not([href*="abcnews"]) { display: none !important; }

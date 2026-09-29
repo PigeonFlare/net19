@@ -2,5 +2,32 @@ globalThis.net19Theme = {
   only: 'dark',
   detect: () => 'dark',
   searchLabel: 'search the store',
-  later: /^(?:award|points shop|steam points|my family|steam families|family management|steam deck|steam deck verified|great on deck|steam deck compatibility|steam frame|steam machine|steam controller \(2026\)|steam replay|game recording|open in desktop app|send a gift card|digital gift cards?)$/i,
+  later: /^(?:award|points shop|steam points|my family|steam families|family management|steam deck|steam deck verified|great on deck|steam deck compatibility|steam frame|steam machine|steam controller \(2026\)|steam replay|game recording|open in desktop app|send a gift card|digital gift cards?|trending free|what curators say)$/i,
+  intended: '#sale_under10_area, #tab_trendingfree_content_trigger, [data-n19-later]',
 };
+(() => {
+  const TAB_NAMES = { tab_newreleases_content_trigger: 'New and Trending', tab_topsellers_content_trigger: 'Top Selling' };
+  const LATER_SECTIONS = /^(?:Browse by Category|What Curators Say)$/;
+  const LATER_FOOTER = /^(?:Get Steam|Get Mobile Apps|Get Support|My Account|Hardware)$/;
+  const fix = () => {
+    for (const [id, name] of Object.entries(TAB_NAMES)) {
+      const tab = document.getElementById(id);
+      const text = tab && [...tab.querySelectorAll('*')].find(n => n.children.length === 0 && n.textContent.trim() && n.textContent.trim() !== name && /[A-Za-z]/.test(n.textContent));
+      if (text) text.textContent = name;
+    }
+    for (const heading of document.querySelectorAll('.home_section_title, [role="heading"], h2')) {
+      if (!LATER_SECTIONS.test(heading.textContent.trim())) continue;
+      const block = heading.closest('.content_hub_carousel_ctn, .home_pagecontent_ctn, .block, section') || heading.parentElement;
+      if (block && !block.hasAttribute('data-n19-later')) block.setAttribute('data-n19-later', '');
+    }
+    for (const a of document.querySelectorAll('[data-featuretarget="footer"] a')) {
+      const href = a.getAttribute('href') || '';
+      if (LATER_FOOTER.test(a.textContent.trim()) || /youtube\.com|bsky\.app/.test(href)) a.setAttribute('data-n19-later', '');
+    }
+    for (const input of document.querySelectorAll('input[name="term"]')) if (input.placeholder && input.placeholder !== 'search the store') input.placeholder = 'search the store';
+  };
+  let queued = false;
+  const later = () => { if (queued) return; queued = true; setTimeout(() => { queued = false; fix(); }, 300); };
+  const start = () => { fix(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true }); else start();
+})();

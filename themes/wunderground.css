@@ -3,3 +3,4 @@ html[data-net19-mode="dark"] { --n19-station: #4cc3ec; --n19-link: #4cb5dc; --n1
 lib-city-header a.station-name { color: var(--n19-station) !important; }
 lib-city-header .city-header a, a[href*="/wundermap"], a[href*="nexrad"], .content-block a:not(.button) { color: var(--n19-link); }
 lib-city-header h1 { font-weight: 400 !important; }
+a:has(> img:is([alt="The Weather Channel Logo" i], [alt="The Weather Company Logo" i])) { display: none !important; }

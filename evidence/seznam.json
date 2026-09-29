@@ -1,0 +1,46 @@
+{
+  "theme": "seznam",
+  "era": "2019 Seznam.cz homepage (s1): red logo, service tabs over a large search field, draggable news boxes, grey footer; the result page (search.seznam.cz) has no 2019 capture.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://web.archive.org/web/20190615182540/https://www.seznam.cz/",
+      "date": "2019-06-15",
+      "file": "/home/claude/sweeps/g9-evidence/wb/seznam-home.png",
+      "shows": "homepage: header Nastavení / Přihlásit, red Seznam logo, service tabs Internet/Firmy/Mapy/Zboží/Obrázky/Slovník/Jízdní řády/Video above the search field '…najdu tam, co neznám' and Vyhledat, trending searches, news boxes (Seznam Zprávy, Novinky, Sport, Extra LIFE, Dotyk, Euro, Náš region) with 'Líbí se' likes and 'Skrýt článek', Upravte si boxík, login box (jméno/heslo), footer Kariéra / Nápověda / O Seznamu / Ochrana údajů / Reklama / Smluvní podmínky"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/2019/https://search.seznam.cz/",
+      "date": "2019",
+      "file": "(no 2019 capture of search.seznam.cz exists; the result page was not verified against 2019)",
+      "shows": "—"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Seznam bez reklam|Vývojáři|Podcasty|Ohodnoťte výsledky hledání|Popište, co se vám zdálo|Zkusit znovu|.*shrnutí výsledků.*)$",
+      "in2019": false,
+      "evidence": [
+        "not on the 2019 homepage (s1): the ad-free subscription promo, the developers footer link, the Podcasty service link and the search-results feedback form; the AI results summary block on search (and its Zkusit znovu retry)"
+      ],
+      "action": "hidden (seznam.css)"
+    },
+    {
+      "match": "^(Nastavení|Nastavení personalizace|Odvolat souhlas|Přihlásit|Přihlásit se|Seznam\\.cz.*|Internet|Firmy|Mapy|Zboží|Obrázky|Slovník|Jízdní řády|Video|Videa|Zprávy|Vyhledat|Vymazat hledaný výraz|Kariéra|Nápověda|O Seznamu|Ochrana údajů|Reklama|Koupit reklamu|Smluvní podmínky|Seznam Zprávy|Novinky|Sport|Extra|Aktuálně|Médium|Forum 24|TV program|Kupi Magazín|Dřevostavitel|EnergoZrouti|Komentáře|Další články|Načíst další výsledky|Vtip|Deník magazín|Ruik|Zdopravy|Svět Ženy|Kinobox|CHIP|hlavička|patička|header area|nav area|navigation area|form area|search area|main area|region area|ReklamaKoupit reklamu|Seznam bez reklamReklamaKoupit reklamu|pocasi|repeated .*|(\\S+\\s+){2,}\\S+.*)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "header, service tabs, search, news boxes and their partner titles, likes/comments, footer (Nastavení personalizace / Odvolat souhlas are the consent links of the Ochrana údajů slot), headlines (content)"
+    },
+    {
+      "match": "^(article area|Sponzorováno|Odkaz\\d\\d:\\d\\d|Komentáře\\d*|Přehrát|Líbí se.*|Skrýt článek|onegar-paw|[A-ZÁČĎÉĚÍŇÓŘŠŤÚŮÝŽ][A-Za-zÁČĎÉĚÍŇÓŘŠŤÚŮÝŽáčďéěíňóřšťúůýž0-9 .]{1,24})$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "content: news-box entries (publisher names such as Vlasta or Pestrá zahrada, comment counts, video play links, sponsored label, article cards); s1 shows the same boxes with publisher names, likes and hide-article controls"
+    }
+  ]
+}

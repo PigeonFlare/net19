@@ -38,3 +38,4 @@ a.feds-product-card[href*="firefly" i], a.feds-product-card[href*="genstudio" i]
 main .section.rounded-corners-top, main .section.rounded-corners-top > .section-background { border-radius: 0 !important; }
 #brand-concierge, .brand-concierge, .bc-floating-button { display: none !important; }
 .router-marquee a.rm-card[href*="firefly" i], .router-marquee .rm-slide:has(a[href*="firefly" i]) { display: none !important; }
+[data-n19-later] { display: none !important; }

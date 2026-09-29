@@ -1,0 +1,90 @@
+{
+  "theme": "cbsnews",
+  "era": "2019 cbsnews.com: black header area with white CBS eye logo, trending row and NEWS / SHOWS / LIVE nav, CBSN live tiles, white story lists with serif bold headlines (same for every visitor)",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.google.com/search?udm=2&q=cbsnews.com+website+2019+screenshot",
+      "date": "2019",
+      "shows": "Google Images: Alamy stock captures of cbsnews.com (black header with white CBS NEWS eye logo), CBS News 2019 pages",
+      "file": "g7-evidence/cbsnews/gimg-home.jpg"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/20190915220604/https://www.cbsnews.com/",
+      "date": "2019-09-15",
+      "shows": "homepage and HTML: black header area with trending row (New Kavanaugh Accusation | United Auto Workers Strike | …), NEWS / SHOWS / LIVE nav, CBSN live tiles, Latest News with serif bold headlines, footer (About, About CBS, Advertise, Closed Captioning, CBS News Store, Careers, Internships, Development Programs, Help, Privacy Policy, Terms of Use, CA Do Not Sell My Info, Mobile User Agreement, Site Map, Newsletters, Podcasts, CBS News App, Follow us on Facebook / Twitter / Instagram / YouTube), Log In, Search",
+      "file": "g7-evidence/cbsnews/wb-cbsnews-home.png"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20190410230017/https://www.cbsnews.com/",
+      "date": "2019-04-10",
+      "shows": "homepage (April): black top with CBSN tiles, white Latest News list, black quote band, More Top Stories",
+      "file": "g7-evidence/cbsnews/wb-cbsnews-home-apr-tall.png"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/20191224154909/https://www.cbsnews.com/news/afghanistan-us-troops-kill-at-least-38-taliban-fighters-today-2019-09-15/",
+      "date": "2019-09",
+      "shows": "article: byline row, serif bold headline, Share / Tweet / Reddit / Flipboard / Email row, video, Watch CBSN Live rail",
+      "file": "g7-evidence/cbsnews/wb-cbsnews-article.png"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(banner|header|nav|footer|main|section|article|form|search|aside|dialog|region) area$|^repeated ",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "page regions and repeated story items"
+    },
+    {
+      "match": "^(Latest|Local News|Local|Live|Shows|News|Open search form|Search|Close search form|Log In|U\\.S\\.|World|Politics|HealthWatch|Health|MoneyWatch|Entertainment|Crime|Sports|Science|Technology|Space|Watch CBS News|Watch CBSN|More|Popular|Top Stories|Latest News|More Top Stories)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "header nav (NEWS / SHOWS / LIVE), section row, CBSN watch link, module links"
+    },
+    {
+      "match": "^(Iran War|MTV VMAs|Midterms|Political News|Iran War Latest|NFL Scores|College Football Rankings|MTV Video Music Awards|Taylor Swift|Kiki Intarasuwan|Extended interview: Raye)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "today's trending topics, tags and bylines (content; 2019 had the same trending row)"
+    },
+    {
+      "match": "^(YouTube|Facebook|Instagram|Twitter|X|Flipboard|Reddit|Email|Share|Tweet|Privacy Policy|California Notice|Your Privacy Choices|Terms of Use|Minors' Privacy Policy|Newsletters|Podcasts|Download Our App|Brand Studio|Sitemap|Site Map|About Paramount|About CBS|Advertise With Paramount|Advertise|Join Our Talent Community|Careers|Help|Feedback|Closed Captioning|CBS News Store)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s4"
+      ],
+      "note": "footer and share links (Paramount = ViacomCBS/CBS Interactive corporate links renamed; legally required privacy notices kept)"
+    },
+    {
+      "match": "^(Contact the Ombudsman)$",
+      "in2019": false,
+      "evidence": [
+        "CBS News ombudsman created 2025; not in s2"
+      ],
+      "note": "hidden",
+      "action": "hidden"
+    },
+    {
+      "match": "^(?=.{20,}$)(?!(?:Ask AI|Ask the|AI Mode|AI summary|Summarize|Listen to (?:this|the) article|Subscribe|Sign in|Sign up|Log in|Download the app|Get the app)\\b).*\\s.*$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "story headlines and teasers (content)"
+    }
+  ]
+}

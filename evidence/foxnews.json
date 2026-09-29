@@ -1,0 +1,150 @@
+{
+  "theme": "foxnews",
+  "era": "2019 foxnews.com: navy bar with red top rule and square FOX NEWS logo, Hot Topics row, white boxes on a light grey page, 44px heavy article headlines (same for every visitor)",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.google.com/search?udm=2&q=foxnews.com+homepage+2019+screenshot",
+      "date": "2019",
+      "shows": "Google Images: Storybench 2019 'Fox News' obsession with AOC' homepage captures and Fox 2019 help pages: navy bar with red top rule, square FOX NEWS logo, Watch TV button, Hot Topics row, white boxes on grey",
+      "file": "g7-evidence/foxnews/gimg-home.jpg"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/20190916000003/https://www.foxnews.com/",
+      "date": "2019-09-16",
+      "shows": "homepage and HTML: nav U.S. World Opinion Politics Entertainment Business Lifestyle TV Fox Nation Listen More, search, Watch TV, Hot Topics, Markets, ON NOW box, Exclusive Clips, Fox Nation box, footer sitemap (U.S., World, Opinion, Politics, Entertainment, Business, Lifestyle, Science, Health, TV, About: Contact Us, Careers, Media Relations, Compliance, Closed Captioning Policy, Apps & Products, Newsletters, RSS), Terms of Use, Updated Privacy Policy, social (Facebook, Twitter, Instagram, Flipboard, RSS, Email)",
+      "file": "g7-evidence/foxnews/wb-foxnews-home.png"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20190411000113/https://www.foxnews.com/",
+      "date": "2019-04-11",
+      "shows": "homepage: Hot Topics, lead story with kicker, Exclusive Clips, Fox Nation Join Now box, 'Features & Faces'",
+      "file": "g7-evidence/foxnews/wb-foxnews-home-apr-tall.png"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/20191205164902/https://www.foxnews.com/politics/biden-recounts-bizarre-razor-and-chain-showdown-with-bad-dude-gang-leader-cornpop",
+      "date": "2019-09",
+      "shows": "article: eyebrow, Published/Last Update, 44px black headline, byline 'By … | Fox News', round share icons (Facebook, Twitter, Flipboard, comments, print, email), right rail",
+      "file": "g7-evidence/foxnews/wb-foxnews-article.png"
+    },
+    {
+      "id": "s5",
+      "url": "https://www.webdesignmuseum.org/",
+      "date": "2019",
+      "shows": "Web Design Museum 2019 Fox News capture (top)",
+      "file": "g7-evidence/foxnews/wdm-2019-top.png"
+    },
+    {
+      "id": "s6",
+      "url": "https://web.archive.org/web/20201111231131/https://www.foxnews.com/search-results/search?q=trump",
+      "date": "2020-11 (same search design as 2019)",
+      "shows": "search: 'Showing 10 out of N results found for:', field with red Search button, By Content select, Date Range MM/DD/YYYY selects, result rows with category, time, blue title, snippet",
+      "file": "g7-evidence/foxnews/wb-foxnews-search-2020.png"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|nav|footer|main|section|article|form|search|aside|dialog|region) area$|^repeated |^main navigation$|^Fox News$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "page regions and repeated story items"
+    },
+    {
+      "match": "^(Fox News - Go to homepage|U\\.S\\.|World|Opinion|Politics|Media|Entertainment|Business|Lifestyle|Health|Video|Videos|TV|Fox Nation|Listen|More|Toggle search|search|Search|Watch TV|Hot Topics|Markets|DJIA.*|S&P.*|NASDAQ.*|-?\\d.*[˚°].*)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s5"
+      ],
+      "note": "2019 header, Hot Topics and markets/weather strip"
+    },
+    {
+      "match": "^(WAR WITH IRAN|FOILED TERROR PLOT|CLANCY HOLDOUT)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "today's Hot Topics links (news topics, content; the 2019 Hot Topics row held the same kind of links)"
+    },
+    {
+      "match": "^(ON AIR NOW|ON NOW|Watch Fox News Live|Watch Live.*|WATCH NOW|WATCH|LIVE UPDATES|FIRST ON FOX|opinion|Video|Fox Nation Subscription Required|.* Pay TV Login Required|.* Free to Listen)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "2019 'ON NOW' live box, Watch TV, kicker badges; Fox Nation box with Join Now"
+    },
+    {
+      "match": "^(Must-Watch Videos|Features & Faces|Fox Nation|Sponsored Stories|Exclusive Clips|OutKick|Sports|Digital Originals|Full Episodes|Shows|Latest Wires|Fox News Flash)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "homepage section headings over story/video lists (content); Sponsored Stories = 2019 'Sponsored by' Taboola block"
+    },
+    {
+      "match": "^(U\\.S\\.|World|Politics|Entertainment|Business|Lifestyle|Health|Media|Video|Watch Live|About|Opinion|Sports|Science & Tech|Science|TV|Fox Nation|Listen|Other|FOX Business)( - .+)?$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "footer sitemap columns and sub-links"
+    },
+    {
+      "match": "^(Crime|Immigration|Military|Economy|Elections|Senate|Donald Trump|Personal Finance|Technology|Autos|Food \\+ Drink|Travel \\+ Outdoors|Faith & Values|Family|Movies|Music|Royals|Washington DC|Kennedy Center|America Together|Antisemitism Exposed|Personal Freedoms|All|Articles|Comments|Print|Email|Landon Mion|.* \\| Fox News)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s4",
+        "s6"
+      ],
+      "note": "section/topic links and article share bar, bylines"
+    },
+    {
+      "match": "^(About - .+|Contact Us|Careers|Media Relations|Compliance|Closed Caption(ing)? Policy|Apps & Products|Newsletters|RSS|Terms of Use|New Privacy Policy|Privacy Policy|Updated Privacy Policy|Your Privacy Choices|Accessibility Statement|Legal Statement|Help|News Sitemap|Video Sitemap|THE \\[PRINTING\\] STORE|Factset|LSEG|Refinitiv|iHeartRadio|Facebook|Twitter|Instagram|Flipboard|LinkedIn|Youtube|Subscribe)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "footer company, legal, data-credit and social links (2019: Contact Us, Careers, Media Relations, Compliance, Closed Captioning Policy, Apps & Products, Newsletters, RSS, Terms of Use, Updated Privacy Policy, Facebook, Twitter, Instagram, Flipboard); legally required privacy-choice links kept"
+    },
+    {
+      "match": "^(Showing .+|Search|By Content|Date Range|Select Content Type|MM|DD|YYYY|to|Load More|Show More)$",
+      "in2019": true,
+      "evidence": [
+        "s6"
+      ],
+      "note": "search page controls"
+    },
+    {
+      "match": "^(Games|Games Hub|.* - Games & Quizzes|Apps & Products - FOX Weather|Watch Live Sports on FOX One.*|Games - .+|See All Games|Pickle|Stacked|Scattergories Daily|5 Across|DownWords|Sudoku|Deals|Deals - .+|OutKick - .+|FOX Weather|FOX Weather Free to Watch|OutKick Free to Watch|Stream FOX News 24/7.*|Log In)$",
+      "in2019": false,
+      "evidence": [
+        "Fox News Games 2023, Deals 2023, OutKick acquired 2021, FOX Weather launched 2021, Fox One streaming 2025, Fox accounts login later; none in s2-s5"
+      ],
+      "note": "hidden",
+      "action": "hidden"
+    },
+    {
+      "match": "^(?=.{20,}$)(?!(?:Ask AI|Ask the|AI Mode|AI summary|Summarize|Listen to (?:this|the) article|Subscribe|Sign in|Sign up|Log in|Download the app|Get the app)\\b).*\\s.*$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "story headlines and teasers (content)"
+    }
+  ]
+}

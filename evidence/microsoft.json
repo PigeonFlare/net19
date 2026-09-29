@@ -1,0 +1,69 @@
+{
+  "theme": "microsoft",
+  "era": "2019 microsoft.com (s1-s4): white UHF header with the four-colour logo and Office/Windows/Surface/Xbox/Deals/Support, product carousel and tiles with SHOP NOW links, stories slideshow, grey footer columns.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://arun.is/blog/10-year-challenge/",
+      "date": "2019-01-22",
+      "file": "/home/claude/sweeps/g9-evidence/microsoft/arun-2019-01-microsoft.jpg",
+      "shows": "homepage: four-colour Microsoft logo, nav Office/Windows/Surface/Xbox/Deals/Support, All Microsoft, search, cart, Sign in; hero with SHOP NOW; product tiles with titles, text and SHOP NOW >"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.versionmuseum.com/history-of/microsoft-website",
+      "date": "2019",
+      "file": "/home/claude/sweeps/g9-evidence/microsoft/versionmuseum-2019-microsoft.jpg",
+      "shows": "homepage 2019: same header, hero carousel, tiles, human-interest stories, follow us, footer columns"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20190616000314/https://www.microsoft.com/en-us/",
+      "date": "2019-06-16",
+      "file": "/home/claude/sweeps/g9-evidence/wb/microsoft-home.png",
+      "shows": "homepage labels: Office, Windows, Surface, Xbox, Deals, Support, All Microsoft, Search, shopping cart, featured products slideshow with slide buttons and play, product tiles, human-interest stories slideshow, follow us on social media, footer What's new / Microsoft Store / Education / Enterprise / Developer / Company columns (Account profile, Download Center, Microsoft Store support, Returns, Order tracking, Microsoft in education, Deals for students & parents, Azure, Visual Studio, Careers, About Microsoft, Company news, Privacy at Microsoft, Investors, Diversity and inclusion, Accessibility, Security), language selector, Sitemap, Contact Microsoft, Privacy & cookies, Terms of use, Trademarks, Safety & eco, About our ads"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/20190616000029/https://www.microsoft.com/en-us/windows",
+      "date": "2019-06-16",
+      "file": "/home/claude/sweeps/g9-evidence/wb/microsoft-win.png",
+      "shows": "Windows page: product bar Windows 10 / Devices / Apps / PC Gaming / For Business, hero, sections, previous/next, support links, footnotes, social links"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Azure|Copilot|Microsoft Copilot|Small Business|Explore Copilot|Microsoft AI|AI for education|Support for AI marketplace apps|Hi there, welcome to Microsoft|personal-tab|business-tab|Personal|Business|Get to know AI and Copilot|Find what you need faster.*)$",
+      "in2019": false,
+      "evidence": [
+        "not in the 2019 header or homepage (s1-s3): Copilot (2023), the personalised welcome hero with Personal/Business tabs and AI-powered suggestions (2025), Small Business and Azure header links, AI marketing links and sections"
+      ],
+      "action": "hidden (microsoft.js data-n19-later)"
+    },
+    {
+      "match": "^(Microsoft|Office|Windows|Surface|Xbox|XBOX|Deals|Support|All Microsoft|Search Microsoft\\.com|Search|Cart|shopping cart|ME|Sign in|Account profile|header area|footer area|main area|section area|tablist area|Contextual menu|product categories|follow us on social media|Follow Microsoft|Footer Resource links|featured products and announcements slideshow.*|Discover more of Windows|Find your perfect PC|repeated .*)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "header (Microsoft 365 relabelled Office, XBOX relabelled Xbox), the ME avatar is the signed-out account button (2019 Sign in), slideshows, product categories, social, footer"
+    },
+    {
+      "match": "^(Download Center|Microsoft Store support|Returns|Order tracking|Certified Refurbished|Microsoft Store Promise|Flexible Payments|Microsoft in education|Devices for education|Microsoft Teams for Education|Microsoft 365 Education|How to buy for your school|Educator training and development|Deals for students and parents|Microsoft Security|Dynamics 365|Microsoft 365|Microsoft Power Platform|Microsoft Teams|Microsoft Developer|Microsoft Learn|Microsoft Tech Community|Microsoft Marketplace|Software companies|Visual Studio|Careers|About Microsoft|Company news|Privacy at Microsoft|Investors|Diversity and inclusion|Accessibility|Sustainability|Content Language Selector.*|Your Privacy Choices.*|Consumer Health Privacy|Sitemap|Contact Microsoft|Privacy|Terms of use|Trademarks|Safety & eco|Recycling|About our ads|Explore Microsoft products|Windows 11 apps|Surface.*|Shop .*|Find your perfect PC|XBOX Series X|Xbox Series X|Powering every play|.*Shop now.*|Shop XBOX Series X now\\.)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "footer columns and product names (Windows 11 apps = 2019 Windows 10 apps; Microsoft Learn/Tech Community = 2019 Developer Network/TechNet; Microsoft Marketplace = AppSource; Sustainability/Recycling sit beside 2019's Security/Safety & eco)"
+    },
+    {
+      "match": "^(A (man|woman) .+|Previous.*|Next.*|View slide .*|Play.*|Pause.*|(\\S+\\s+){3,}\\S+.*)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "content: slideshow tabs (image descriptions), slide controls, story and product headlines"
+    }
+  ]
+}

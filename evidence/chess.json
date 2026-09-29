@@ -1,0 +1,196 @@
+{
+  "theme": "chess",
+  "era": "2019 chess.com: dark #312e2b page with the dark #272522 left sidebar, orange Play Now button, white content boxes; the logged-out home \"Play Chess Online on the #1 Site\". Captures are raw HTML from Arquivo (styles and the Vue sidebar did not render).",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://arquivo.pt/noFrame/replay/20190715090639/https://www.chess.com/",
+      "date": "2019-07-15",
+      "shows": "chess.com logged-out home 2019: \"Play Chess Online on the #1 Site\", Play with over 25 million members, Play Now, Learn to Play / Play Online / Play Computer / Play on Mobile / Solve Puzzles, Log In, Sign Up, news list (post previews), App for Android / iOS badges",
+      "file": "/home/claude/sweeps/g13-evidence/chess/home-a20190715.png",
+      "raw": "/home/claude/sweeps/g13-raw/chess-home-a20190715.html"
+    },
+    {
+      "id": "s2",
+      "url": "https://arquivo.pt/noFrame/replay/20191021080424/https://www.chess.com/",
+      "date": "2019-10-21",
+      "shows": "chess.com logged-out home 2019: \"Play Chess Online on the #1 Site\", Play with over 25 million members, Play Now, Learn to Play / Play Online / Play Computer / Play on Mobile / Solve Puzzles, Log In, Sign Up, news list (post previews), App for Android / iOS badges",
+      "file": "/home/claude/sweeps/g13-evidence/chess/home-a20191021.png",
+      "raw": "/home/claude/sweeps/g13-raw/chess-home-a20191021.html"
+    },
+    {
+      "id": "s3",
+      "url": "https://arquivo.pt/noFrame/replay/20191209170317/https://www.chess.com/",
+      "date": "2019-12-09",
+      "shows": "chess.com logged-out home 2019: \"Play Chess Online on the #1 Site\", Play with over 25 million members, Play Now, Learn to Play / Play Online / Play Computer / Play on Mobile / Solve Puzzles, Log In, Sign Up, news list (post previews), App for Android / iOS badges",
+      "file": "/home/claude/sweeps/g13-evidence/chess/home-a20191209.png",
+      "raw": "/home/claude/sweeps/g13-raw/chess-home-a20191209.html"
+    },
+    {
+      "id": "s4",
+      "url": "https://arquivo.pt/noFrame/replay/20190829123236/https://www.chess.com/login",
+      "date": "2019-08-29",
+      "shows": "log-in page 2019: Username or Email, Password, Remember, Log In, Sign Up",
+      "file": "/home/claude/sweeps/g13-evidence/chess/login-a20190829.png",
+      "raw": "/home/claude/sweeps/g13-raw/chess-login-a20190829.html"
+    },
+    {
+      "id": "s5",
+      "url": "https://arquivo.pt/noFrame/replay/20190715094527/https://www.chess.com/games",
+      "date": "2019-07-15",
+      "shows": "Chess Games Database page 2019 (master games database with search: Player 1, Player 2, Opening)",
+      "file": "/home/claude/sweeps/g13-evidence/chess/games-a20190715.png",
+      "raw": "/home/claude/sweeps/g13-raw/chess-games-a20190715.html"
+    },
+    {
+      "id": "s6",
+      "url": "https://arquivo.pt/noFrame/replay/20191009022204/https://www.chess.com/games",
+      "date": "2019-10-09",
+      "shows": "Chess Games Database page 2019 (master games database with search: Player 1, Player 2, Opening)",
+      "file": "/home/claude/sweeps/g13-evidence/chess/games-a20191009.png",
+      "raw": "/home/claude/sweeps/g13-raw/chess-games-a20191009.html"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Search|Chess\\.com\\ \\-\\ Play\\ Chess\\ Online|Play|Puzzles|Learn|Watch|Sign\\ Up|Log\\ In|Chess\\.com|Password|Opening|Player\\ 1|Player\\ 2|News|Help|More|Articles|Blogs)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s6"
+      ],
+      "note": "labels in the 2019 home, log-in and games captures"
+    },
+    {
+      "match": "^(Main|header area|main area|form area|section area|article area|repeated div|repeated article|nav area|footer area)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s5",
+        "s6"
+      ],
+      "note": "page structure: sidebar nav, main column, news articles"
+    },
+    {
+      "match": "^Play Chess Online on the #1 Site!?$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "hero heading (2019: \"Play Chess Online on the #1 Site\")"
+    },
+    {
+      "match": "^Latest Chess News$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "news list on the home page (2019: post previews)"
+    },
+    {
+      "match": "^(Play Anywhere with the Chess\\.com App|App Store|Google Play)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s5",
+        "s6"
+      ],
+      "note": "mobile app promotion (2019: \"Play on Mobile\" and the App for Android / App for iOS badges)"
+    },
+    {
+      "match": "^(Learn, Play, and Have Fun!|Get Started)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "sign-up call to action (2019: \"Play Now\" button to /register)"
+    },
+    {
+      "match": "^(Username, Phone, or Email|Username or Email|_remember_me|Remember me)$",
+      "in2019": true,
+      "evidence": [
+        "s4"
+      ],
+      "note": "log-in fields (2019: Username or Email, Remember)"
+    },
+    {
+      "match": "^(Chess Games Database|Page \\d+|Next Page|Previous Page|Back to Top)$",
+      "in2019": true,
+      "evidence": [
+        "s5",
+        "s6"
+      ],
+      "note": "games database page with its paged results"
+    },
+    {
+      "match": "^(contentinfo area|About|Jobs|Developers|User Agreement|Privacy Policy|Chess\\.com, LLC © \\d{4}|Chess\\.com © \\d{4}|App for iOS / iPhone / iPad|App for Android|X \\(formerly Twitter\\)|Twitter|Youtube|Twitch|Instagram|Facebook|Support)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s5",
+        "s6"
+      ],
+      "note": "footer (2019: About, Jobs, Developers, User Agreement, Privacy Policy, Chess.com © 2019, app badges, Facebook/Twitter/Twitch/YouTube/Instagram)"
+    },
+    {
+      "match": "^(Help & Support)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "help link (2019: Help)"
+    },
+    {
+      "match": "^(Nakamura Completes Bullet Brawl Hat Trick|CoachJKane|TarjeiJS|Colin_McGourty|AnthonyLevin|CHESScom)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "content: news stories and their authors"
+    },
+    {
+      "match": "^(Train|Remove Ads|Game Review|\\d+ Day Streak|Chess Terms|Students|Cheating & Fair Play|Partners|TikTok|Discord)$",
+      "in2019": false,
+      "evidence": [
+        "not in the 2019 captures: Train (2025), Game Review (2021), streaks (2022), Remove Ads upsell link"
+      ],
+      "action": "hidden (chess.js later labels)"
+    },
+    {
+      "match": "^(Privacy Settings|Compliance)$",
+      "in2019": false,
+      "evidence": [
+        "2019 footer had Privacy Policy and User Agreement only"
+      ],
+      "action": "kept: legal"
+    },
+    {
+      "match": "^(Community|Other|Change Language)$",
+      "in2019": false,
+      "evidence": [
+        "the 2019 sidebar was script-rendered and is not in the captures; these are the current names of the sidebar sections (2019 used Social and More) and the language picker"
+      ],
+      "action": "kept: function (sidebar navigation and language choice)"
+    }
+  ]
+}

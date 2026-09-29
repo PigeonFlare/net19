@@ -1,0 +1,103 @@
+{
+  "theme": "homedepot",
+  "era": "2019 homedepot.com (2017-2020 desktop design, the same for every visitor): white header with the square orange logo, 'To See Inventory / Choose A Store', a grey-bordered search field with a square orange button, 'My Account' and 'Cart | 0 items', a text row of departments and an orange rule; Helvetica type, light 24-26px page and product titles, square buttons.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://web.archive.org/web/20190630235335/https://www.homedepot.com/",
+      "date": "2019-06-30",
+      "file": "/home/claude/sweeps/g6-evidence/homedepot/home-wb-2019-06.png",
+      "shows": "home: utility row (Store Finder, Truck & Tool Rental, For the Pro, Gift Cards, Credit Services, Favorites, Track Order, Help), logo, store picker, 'What can we help you find today?' search with orange button, My Account, Cart | 0 items, All Departments / Home Decor & Furniture / DIY Projects & Ideas / Home Services / Specials & Offers / Local Ad, orange rule, hero promotions"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/20190719074843/https://www.homedepot.com/b/Tools-Power-Tools-Drills/N-5yc1vZc27f",
+      "date": "2019-07-19",
+      "file": "/home/claude/sweeps/g6-evidence/homedepot/search-wb-2019-07-browse.png",
+      "shows": "Drills browse page: breadcrumb, light 'Drills' title, left category rail, hero, blue dropdown links"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/20190625131523/http://www.homedepot.com/b/Appliances-Refrigerators/N-5yc1vZc3pi",
+      "date": "2019-06-25",
+      "file": "/home/claude/sweeps/g6-evidence/homedepot/search-wb-2019-06-plp.jpg",
+      "shows": "Refrigerators browse page: category tiles, 'Top Refrigerator Brands' rail, promotions (special financing, protection plans), sections"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/20190720180326/https://www.homedepot.com/p/DEWALT-18-Volt-XRP-NiCd-Cordless-1-2-in-Hammer-Drill-Driver-Tool-Only-DCD950B/202380946",
+      "date": "2019-07-20",
+      "file": "/home/claude/sweeps/g6-evidence/homedepot/item-wb-2019-07.png",
+      "shows": "product page: Internet # / Model # / Store SKU, image, brand link 'DEWALT >', light title, $129.00 superscript price, Overview, Share / Save to Favorites / Print, buying options"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(form area|navigation area|section area|article area|repeated .*|Top Categories|Pagination Navigation|digital-endcap-tabs)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "page frame, category tiles, recommendation shelves"
+    },
+    {
+      "match": "^(Open drawer to view my store|Open drawer to update zip code|Search Field Icon|Clear Field Icon|What can we help you find today\\?.*|My Account|Log In|Account|Cart.*|Shop All|Services|DIY|Home Depot Credit Cards)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "store picker, search, account and cart; Shop All/Services/DIY are the 2019 All Departments / Home Services / DIY Projects & Ideas menus; the credit link was 'Credit Services'"
+    },
+    {
+      "match": "^(Outdoors|Tools|Building Materials|Paint|Flooring|Hardware|Plumbing|Electrical|Appliances|Bath|Lumber & Composites|Shop Our Brands|Halloween Decorations|All|Garden Center|Power Tools|Outdoor Power Equipment|Rugs|Bathroom Vanities|Hand Tools|Tile)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "department and category links"
+    },
+    {
+      "match": "^(This is the (first|last) slide|Next slide|Previous slide|Go to slide \\d+|Skip Listing|\\d+%|Learn More|Shop Now|Sponsored)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "promotion carousels and their controls"
+    },
+    {
+      "match": "^(Customer Service Center|My Preference Center|Enter Email Address|yourname@email\\.com)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "footer service links and newsletter field"
+    },
+    {
+      "match": "^(sort by|Link|Add To List|Add to Cart|product show more options link|Skip to Previous Page|Skip to Next Page|Page \\d+|Go to Page \\d+|Exclusive|Top Rated|Best Seller)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4"
+      ],
+      "note": "result cards and paging (content); Add To List is the 2019 'Save to Favorites'"
+    },
+    {
+      "match": "^View Similar$",
+      "in2019": false,
+      "evidence": [
+        "not on 2019 product tiles or pages (s3, s4)"
+      ],
+      "action": "hidden: [data-testid=similar-items-button] and the theme's later labels"
+    },
+    {
+      "match": "^(Shop .*|M18 .*|Out of Stock|Free & Easy Returns In Store or Online|\\.\\.\\.|Hover Image to Zoom|View image|View brightcove video|\\(\\d+\\)|Questions & Answers \\(\\d+\\)|Read Return Policy|Type a question)$",
+      "in2019": true,
+      "evidence": [
+        "s4"
+      ],
+      "note": "product page: brand link, title, stock, returns, image viewer, ratings, Q&A"
+    }
+  ]
+}

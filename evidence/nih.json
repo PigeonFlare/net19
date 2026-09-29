@@ -1,0 +1,427 @@
+{
+ "theme": "nih",
+ "era": "www.nih.gov: the 2015-2020 Drupal design (HHS strip, NIH logo, dark-blue gradient nav bar of six items, blue hero panel, brown section headings on a beige page) seen on all 2019 captures. PubMed: legacy NCBI PubMed (www.ncbi.nlm.nih.gov/pubmed) was the default for everyone in 2019; the new PubMed was only a preview (NLM Technical Bulletin 2019 Nov-Dec: 'will become the default in spring 2020'), so PubMed pages are styled as legacy NCBI PubMed, while the controls the current app shares with the 2019 new-PubMed preview are cited from the 2019 bulletin figures.",
+ "sources": [
+  {
+   "id": "nd19-new-home",
+   "url": "https://www.nlm.nih.gov/pubs/techbull/nd19/graphics/pubmed_new_figure_1.png",
+   "date": "2019-11",
+   "shows": "new PubMed preview home, 2019: Log in, Learn/Find/Download/Explore links",
+   "file": "g11-evidence/nih/nlm-techbull-nd19-fig1.png"
+  },
+  {
+   "id": "nd19-new-results",
+   "url": "https://www.nlm.nih.gov/pubs/techbull/nd19/graphics/pubmed_new_figure_3.png",
+   "date": "2019-11",
+   "shows": "new PubMed preview search results, 2019: Save, Email, sort, results by year, text availability, article attribute, article type filters, Cite, Share, Advanced, Create alert, clear-search X",
+   "file": "g11-evidence/nih/nlm-techbull-nd19-fig3.png"
+  },
+  {
+   "id": "nd19-legacy-home",
+   "url": "https://www.nlm.nih.gov/pubs/techbull/nd19/graphics/pubmed_new_figure_4.png",
+   "date": "2019-11",
+   "shows": "legacy PubMed home as users saw it in Nov 2019: NCBI bar, Resources, How To, Sign in to NCBI, PubMed.gov logo, Advanced, Help, Using PubMed / PubMed Tools / More Resources, Latest Literature, Trending Articles",
+   "file": "g11-evidence/nih/nlm-techbull-nd19-fig4.png"
+  },
+  {
+   "id": "nd19-new-mobile",
+   "url": "https://www.nlm.nih.gov/pubs/techbull/nd19/graphics/pubmed_new_figure_2.png",
+   "date": "2019-11",
+   "shows": "new PubMed preview home on mobile, 2019",
+   "file": "g11-evidence/nih/nlm-techbull-nd19-new-fig2.png"
+  },
+  {
+   "id": "so19-new-home",
+   "url": "https://www.nlm.nih.gov/pubs/techbull/so19/graphics/pubmed_updated_fig1.png",
+   "date": "2019-09",
+   "shows": "new PubMed preview home, Sept 2019",
+   "file": "g11-evidence/nih/nlm-techbull-so19-fig1.png"
+  },
+  {
+   "id": "about-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190717212616/https://www.nih.gov/about-nih",
+   "date": "2019-07-17",
+   "shows": "about page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/nih/nih-about-a201907.png"
+  },
+  {
+   "id": "about-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191119113748/https://www.nih.gov/about-nih",
+   "date": "2019-11-19",
+   "shows": "about page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/nih/nih-about-a201911.png"
+  },
+  {
+   "id": "article-a201906",
+   "url": "https://arquivo.pt/noFrame/replay/20190617041701/https://www.ncbi.nlm.nih.gov/pubmed/30004125",
+   "date": "2019-06-17",
+   "shows": "article page as served in 2019-06 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/nih/nih-article-a201906.png"
+  },
+  {
+   "id": "article-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191106114648/https://www.ncbi.nlm.nih.gov/pubmed/30002308",
+   "date": "2019-11-06",
+   "shows": "article page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/nih/nih-article-a201911.png"
+  },
+  {
+   "id": "home-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190315085321/https://www.nih.gov/",
+   "date": "2019-03-15",
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/nih/nih-home-a201903.png"
+  },
+  {
+   "id": "home-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190715212909/https://www.nih.gov/",
+   "date": "2019-07-15",
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/nih/nih-home-a201907.png"
+  },
+  {
+   "id": "home-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191116011201/https://www.nih.gov/",
+   "date": "2019-11-16",
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/nih/nih-home-a201911.png"
+  },
+  {
+   "id": "pubmed-a201903",
+   "url": "https://arquivo.pt/noFrame/replay/20190315064623/https://www.ncbi.nlm.nih.gov/pubmed/",
+   "date": "2019-03-15",
+   "shows": "pubmed page as served in 2019-03 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/nih/nih-pubmed-a201903.png"
+  },
+  {
+   "id": "pubmed-a201907",
+   "url": "https://arquivo.pt/noFrame/replay/20190715034845/https://www.ncbi.nlm.nih.gov/pubmed/",
+   "date": "2019-07-15",
+   "shows": "pubmed page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/nih/nih-pubmed-a201907.png"
+  },
+  {
+   "id": "pubmed-a201911",
+   "url": "https://arquivo.pt/noFrame/replay/20191115232054/https://www.ncbi.nlm.nih.gov/pubmed/",
+   "date": "2019-11-15",
+   "shows": "pubmed page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)",
+   "file": "g11-evidence/nih/nih-pubmed-a201911.png"
+  },
+  {
+   "id": "pubmed-wbref",
+   "url": "wayback-2019-ref:https://www.ncbi.nlm.nih.gov/pubmed/",
+   "date": "2019",
+   "shows": "pubmed page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)",
+   "file": "g11-evidence/nih/nih-pubmed-wbref.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Virtual Tour|Take the Virtual Tour)$",
+   "in2019": false,
+   "evidence": [
+    "absent from the 2019 header and footer (home-a201903, home-a201907, home-a201911: NIH Employee Intranet | Staff Directory | En Español)"
+   ],
+   "action": "hidden (theme later labels)"
+  },
+  {
+   "match": "^(Press Room|NIH Website Archives|RSS)$",
+   "in2019": false,
+   "evidence": [
+    "absent from the 2019 footer (home-a201911: NIH Home, Site Map, Visitor Information, FAQ, Web Policies, FOIA, No Fear Act, OIG, USA.gov; Connect with Us: Contact Us, Twitter, Facebook, Instagram, YouTube, Flickr, More Social Media)"
+   ],
+   "action": "hidden (theme later labels)"
+  },
+  {
+   "match": "^(RECOVER)$",
+   "in2019": false,
+   "evidence": [
+    "the RECOVER long-COVID initiative started in 2021"
+   ],
+   "action": "hidden (theme later labels)"
+  },
+  {
+   "match": "^(Explore related research with NLM Linked Discoveries|Experimental Resource)$",
+   "in2019": false,
+   "evidence": [
+    "NLM Linked Discoveries launched in 2026; not on the 2019 article capture (article-a201911)"
+   ],
+   "action": "hidden (theme later labels / Experimental Resource block)"
+  },
+  {
+   "match": "^(NIH Websites Are Changing|Ocultar alerta|Hide alert|Get the Latest Updates and FAQs)$",
+   "in2019": false,
+   "evidence": [
+    "2025 site-wide alert"
+   ],
+   "action": "hidden (.region-site-alert)"
+  },
+  {
+   "match": "^(PubMed Updates)$",
+   "in2019": false,
+   "evidence": [
+    "not on the 2019 legacy home (nd19-legacy-home, pubmed-a201907: Using PubMed, PubMed Tools, More Resources, Latest Literature, Trending Articles)"
+   ],
+   "action": "hidden (.pubmed-updates-section)"
+  },
+  {
+   "match": "^(Follow NCBI|Connect with NLM|Blog|GitHub|LinkedIn|Careers)$",
+   "in2019": false,
+   "evidence": [
+    "not in the 2019 NCBI footer shown on the 2019 captures"
+   ],
+   "action": "hidden (footer icon section, NLM social list, later labels)"
+  },
+  {
+   "match": "^(HHS Vulnerability Disclosure|Accessibility|Privacy Policy|Disclaimers?|Important links|Agency Identifier|U\\.S\\. government information and services|www\\.nih\\.gov|\\(opens in a new window\\)|Department of Health and Human Services|Visit USA\\.gov)$",
+   "in2019": false,
+   "evidence": [
+    "federal required links added with the USWDS identifier (2020+) and the HHS Vulnerability Disclosure policy (2020); the 2019 footers linked policies through 'Web Policies and Notices' (home-a201911) and 'Policies and Guidelines' (pubmed-wbref)"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(About\\ NIH|Contact\\ Us|Freedom\\ of\\ Information\\ Act|Grants\\ \\&\\ Funding|Health\\ Information|Home|Institutes\\ at\\ NIH|NIH\\ Home|NIH\\ at\\ a\\ Glance|News\\ \\&\\ Events|Research\\ \\&\\ Training|Search\\ NIH|Visitor\\ Information|banner\\ area|nav\\ area|repeated\\ div)$",
+   "in2019": true,
+   "evidence": [
+    "about-a201907",
+    "about-a201911",
+    "home-a201903"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "About NIH",
+    "Contact Us",
+    "Freedom of Information Act",
+    "Grants & Funding",
+    "Health Information",
+    "Home",
+    "Institutes at NIH",
+    "NIH Home",
+    "NIH at a Glance",
+    "News & Events",
+    "Research & Training",
+    "Search NIH",
+    "Visitor Information",
+    "banner area",
+    "nav area",
+    "repeated div"
+   ]
+  },
+  {
+   "match": "^(En\\ Español)$",
+   "in2019": true,
+   "evidence": [
+    "about-a201911",
+    "home-a201903",
+    "home-a201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "En Español"
+   ]
+  },
+  {
+   "match": "^(Abstract|Full\\ text\\ links|LinkOut\\ \\-\\ more\\ resources)$",
+   "in2019": true,
+   "evidence": [
+    "article-a201906",
+    "article-a201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Abstract",
+    "Full text links",
+    "LinkOut - more resources"
+   ]
+  },
+  {
+   "match": "^(PubMed|repeated\\ li)$",
+   "in2019": true,
+   "evidence": [
+    "article-a201906",
+    "article-a201911",
+    "home-a201903"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "PubMed",
+    "repeated li"
+   ]
+  },
+  {
+   "match": "^(Search)$",
+   "in2019": true,
+   "evidence": [
+    "article-a201906",
+    "article-a201911",
+    "pubmed-a201903"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Search"
+   ]
+  },
+  {
+   "match": "^(Systematic\\ Review\\ of\\ Intravenous\\ Ascorbate\\ in\\ Cancer\\ Clinical\\ Trials)$",
+   "in2019": true,
+   "evidence": [
+    "article-a201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Systematic Review of Intravenous Ascorbate in Cancer Clinical Trials"
+   ]
+  },
+  {
+   "match": "^(NLM|contentinfo\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "NLM",
+    "contentinfo area"
+   ]
+  },
+  {
+   "match": "^(Featured\\ Resources\\ \\&\\ Initiatives)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Featured Resources & Initiatives"
+   ]
+  },
+  {
+   "match": "^(Trending\\ Articles)$",
+   "in2019": true,
+   "evidence": [
+    "pubmed-a201903",
+    "pubmed-a201907",
+    "pubmed-a201911"
+   ],
+   "note": "the same label appears on the 2019 capture(s) cited",
+   "auto": true,
+   "labels": [
+    "Trending Articles"
+   ]
+  },
+  {
+   "match": "^(Web Policies|FOIA|Freedom of Information Act|No Fear Act|Office of Inspector General|Nondiscrimination Notice)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "about-a201911",
+    "home-a201903",
+    "pubmed-wbref"
+   ],
+   "note": "2019 footer: Web Policies and Notices, Freedom of Information Act, No Fear Act, Office of Inspector General; NCBI Policies and Guidelines; home section 'Nondiscrimination Notice and Language Assistance Services'"
+  },
+  {
+   "match": "^(Log in)$",
+   "in2019": true,
+   "evidence": [
+    "nd19-new-home",
+    "so19-new-home"
+   ],
+   "note": "sign-in link; legacy said Sign in to NCBI (nd19-legacy-home)"
+  },
+  {
+   "match": "^(NCBI Logo|Pubmed Logo|Home|National Institutes of Health \\(NIH\\).*)$",
+   "in2019": true,
+   "evidence": [
+    "nd19-legacy-home",
+    "home-a201907"
+   ],
+   "note": "logos"
+  },
+  {
+   "match": "^(term|Search|Search NIH|Advanced|Help|User Guide|Clear search input|search area)$",
+   "in2019": true,
+   "evidence": [
+    "nd19-legacy-home",
+    "nd19-new-results",
+    "home-a201907"
+   ],
+   "note": "search field, button and links; User Guide = legacy Help/FAQs link"
+  },
+  {
+   "match": "^(Create alert|Create RSS|Save|Email|Send to|save, email, send to|Sort by|region area|Cite|Share|Expand|Expand/collapse timeline|Download CSV|Results by year|Text availability|Article attribute|Article type|My Custom Filters|Publication date|See all article type filters|Additional filters|Clear applied filters|Reset filters menu|page number input|Show more results|\\d[\\d,]* results)$",
+   "in2019": true,
+   "evidence": [
+    "nd19-new-results"
+   ],
+   "note": "results page controls: the 2019 new-PubMed figure shows Advanced, Create alert, Save, Email, sort, MyNCBI filters, results by year with expand, text availability, article attribute, article type with more types, Cite, Share, results count; legacy 2019 had Send to, Create RSS, Download CSV, Publication dates, Show additional filters, Clear all and paging"
+  },
+  {
+   "match": "^(Abstract|Full text links|LinkOut - more resources|Similar articles|Cited by|Publication types|Grants and funding|Conflict of interest statement|References|Figures|Show all \\d+ references|Actions|Page navigation|Open dialog with citation text in different styles|Save article in MyNCBI collections\\.|Show article permalink|navigate to .*section|PubMed Disclaimer|See full text options at .*|Free full text at PubMed Central|Toggle dropdown menu for journal .*|PubMed|PMC\\d+)$",
+   "in2019": true,
+   "evidence": [
+    "article-a201911",
+    "article-a201906",
+    "nd19-new-results"
+   ],
+   "note": "abstract page sections and actions: 2019 legacy abstract had Send to, Full text links, Author information, Abstract, KEYWORDS, Publication type, Grant support, LinkOut, Similar articles and Cited by"
+  },
+  {
+   "match": "^(MeSH|PMC|Bookshelf|Disclaimer|NLM|NIH|HHS|USA\\.gov|8600 Rockville Pike Bethesda, MD 20894|Help|Twitter|Facebook|Instagram|YouTube|Flickr|NIH on Social Media|Contact Us|FAQs|Subir|Back to Top)$",
+   "in2019": true,
+   "evidence": [
+    "pubmed-a201907",
+    "pubmed-wbref",
+    "home-a201911",
+    "about-a201911"
+   ],
+   "note": "footer links: 2019 NCBI Resources menu (MeSH, PMC, Bookshelf), NLM/NIH/HHS/USA.gov and the NCBI address; NIH Connect with Us (Twitter, Facebook, Instagram, YouTube, Flickr, More Social Media from NIH, Contact Us), Frequently Asked Questions, Back to Top; the 2019 NCBI footer (pubmed-wbref HTML) has Support Center, Policies and Guidelines, Contact, NLM, NIH, DHHS, USA.gov, Help and 8600 Rockville Pike"
+  },
+  {
+   "match": "^(banner area|Primary navigation|navigation area|nav area|contentinfo area|footer area|complementary area|section area|article area|main area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "about-a201907"
+   ],
+   "note": "page regions"
+  },
+  {
+   "match": "^(NIH at a Glance|Featured Resources & Initiatives|Trending Articles|In the News)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "nd19-legacy-home"
+   ],
+   "note": "home sections"
+  },
+  {
+   "match": "^(Gina Nauman|Javaughn Corey Gray|Rose Parkinson|Mark Levine|Channing J Paller|National Institutes of Health, National Institute of Diabetes.*|Sidney Kimmel Comprehensive Cancer Center.*|external, opens in new tab\\. 10\\..*|repeated .*)$",
+   "in2019": true,
+   "evidence": [
+    "article-a201911"
+   ],
+   "note": "content of the audited article 30002308 (its author names, affiliations and DOI link), the same content shown on its 2019 capture"
+  },
+  {
+   "match": "^(NIH launches Linked Discoveries)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "the current hero promo title; the rotating hero promo slot is on every 2019 capture with other promos (content)"
+  }
+ ]
+}
