@@ -78,15 +78,6 @@
       "note": "share menu and newsletter sign-up (2019 had share menu and Newsletters)"
     },
     {
-      "match": "^(Dawn Papandrea|Emily Hayes|Ray Frager|Jessica Merritt|Mark Evitt|Claire Wolters|Rachael Hood|Ashley Samonte|Elaine K\\. Howley|Annika Urban|Patricia Weiser|Tim Smart|Olivier Knox|Holliday Woodard|Cherise Threewitt|Cheyenne Buckingham|Shanley Chien|Ryan Maxin|Alex Kwanten|Money Apps and FDIC Insurance|How to Cope With Grief|Vaccination in Nursing Homes)$",
-      "in2019": true,
-      "evidence": [
-        "s1",
-        "s3"
-      ],
-      "note": "today's bylines and teaser links (content)"
-    },
-    {
       "match": "^(Modal Overlay Box|close dialog)$",
       "in2019": true,
       "evidence": [
@@ -112,6 +103,68 @@
         "s3"
       ],
       "note": "story headlines and teasers (content)"
+    },
+    {
+      "match": "^(Open extra navigation menu|Menu)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: menu"
+    },
+    {
+      "match": "^Search$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: search"
+    },
+    {
+      "match": "^(Best Countries)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "article"
+      ],
+      "evidence": [
+        "s3"
+      ],
+      "note": "required: article bar Best Countries / Best States"
+    },
+    {
+      "match": "^(Best States)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "article"
+      ],
+      "evidence": [
+        "s3"
+      ],
+      "note": "required: article bar"
+    },
+    {
+      "match": "^[A-Z][a-z]+(?: [A-Z]\\.)?(?: [A-Z][A-Za-z’'-]+){1,2}(?:, (?:Jr|Sr)\\.)?$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "bylines on story items (content): author names"
+    },
+    {
+      "match": "^(Investing|Wellness|Retirement|Health|Money|Cars|Travel|Education|Real Estate|Careers|Insurance|Autos|Politics|Opinion|Economy|Banking|Loans|Credit Cards|Personal Finance|Senior Care|Medicare|Hospitals|Colleges|Grad Schools|National News|World News|Cities)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "one-word section kickers on story items (Investing, Wellness …; 2019 story lists had section labels); listed after every post-2019 entry"
     }
   ]
 }

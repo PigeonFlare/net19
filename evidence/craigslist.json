@@ -180,12 +180,179 @@
       "note": "(google map) link under the map"
     },
     {
-      "match": "^(Old school gt bmx bike|Tall motobecane road bike)$",
+      "match": "^(?=.*[a-z])(?!.*\\b(AI|share)\\b)(\\S+\\s+){1,}\\S+$",
       "in2019": true,
       "evidence": [
         "s2"
       ],
-      "note": "listing titles that repeat because a seller posted twice (content, not a feature); other runs will show other duplicate titles"
+      "note": "content: listing titles that repeat because a seller posted twice (search results)"
+    },
+    {
+      "match": "^(post an ad|create a posting)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: create a posting link under the title"
+    },
+    {
+      "match": "^search craigslist$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: home search field"
+    },
+    {
+      "match": "^(nearby cl|us cities|us states)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: right rail nearby cl / us cities"
+    },
+    {
+      "match": "^(help|about)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "search",
+        "item"
+      ],
+      "evidence": [
+        "s1",
+        "s2",
+        "s5"
+      ],
+      "note": "required: footer help/about links"
+    },
+    {
+      "match": "^search (bikes|for sale|.+)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "search"
+      ],
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: search field in the breadcrumb bar"
+    },
+    {
+      "match": "^(list|thumb|gallery|map)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "search"
+      ],
+      "evidence": [
+        "s2",
+        "s4"
+      ],
+      "note": "required: view mode buttons"
+    },
+    {
+      "match": "^(newest|relevance)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "search"
+      ],
+      "evidence": [
+        "s2",
+        "s4"
+      ],
+      "note": "required: sort control"
+    },
+    {
+      "match": "^(min|max)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "search"
+      ],
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: price filter"
+    },
+    {
+      "match": "^(save this search|save search)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "search"
+      ],
+      "evidence": [
+        "s4"
+      ],
+      "note": "required: save search"
+    },
+    {
+      "match": "^reply$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "item"
+      ],
+      "evidence": [
+        "s5",
+        "s6"
+      ],
+      "note": "required: reply button"
+    },
+    {
+      "match": "^(add to favorites|favorite)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "item"
+      ],
+      "evidence": [
+        "s5",
+        "s6"
+      ],
+      "note": "required: favorite star"
+    },
+    {
+      "match": "^(flag as prohibited / spam / miscategorized|flag)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "item"
+      ],
+      "evidence": [
+        "s5",
+        "s6"
+      ],
+      "note": "required: prohibited flag"
+    },
+    {
+      "match": "^print$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "item"
+      ],
+      "evidence": [
+        "s6"
+      ],
+      "note": "required: print link"
     }
   ]
 }

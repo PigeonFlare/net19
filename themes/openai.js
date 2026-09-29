@@ -50,6 +50,12 @@ globalThis.net19Theme = {
     footer2019();
     for (const heading of document.querySelectorAll('main :is(h2, h3)')) if (LATER_SECTIONS.test(heading.textContent.trim())) mark(heading.closest('main#main > article > div') || heading.closest('section') || heading.parentElement?.parentElement);
     for (const link of document.querySelectorAll('main a[href*="chatgpt.com"], header a[href*="chatgpt.com"]')) mark(link);
+    for (const topics of document.querySelectorAll('main nav:has(a[href="/news/engineering/"])')) {
+      mark(topics.parentElement);
+      const heading = topics.parentElement.parentElement?.querySelector('h2');
+      if (heading && heading.textContent.trim() === 'All') heading.textContent = 'Blog';
+      for (const button of document.querySelectorAll('main button')) if (/^(Filter|Sort)$/.test(button.textContent.trim())) mark(button);
+    }
     if (!home) return;
     const article = document.querySelector('main#main > article');
     if (!article) return;

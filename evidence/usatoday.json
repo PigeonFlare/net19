@@ -77,6 +77,104 @@
         "s4"
       ],
       "note": "story headlines and teasers (content)"
+    },
+    {
+      "match": "^USA TODAY$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: blue dot logo"
+    },
+    {
+      "match": "^(News|U\\.S\\.)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^Sports$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^Entertainment$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^Life$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^Money$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^Travel$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^Opinion$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^Search$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "required: search"
+    },
+    {
+      "match": "^Weather in .+$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "required: weather in the nav"
     }
   ]
 }

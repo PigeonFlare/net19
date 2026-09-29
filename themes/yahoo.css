@@ -60,6 +60,7 @@ header#module-uh > div > div:first-child > div:last-child > a[href^="https://log
   #nca-homepage > div > div:has(> div > #stacked-list) { max-width: 1260px !important; padding: 0 20px !important; margin: 0 !important; }
   #nca-homepage #stacked-list { grid-column: 2 !important; grid-row: 1 !important; height: auto !important; }
   #nca-homepage #stacked-list > div { min-height: 0 !important; }
+  #nca-homepage #stacked-list, #nca-homepage #stacked-list > div, #nca-homepage #trending-search { width: 300px !important; max-width: 300px !important; min-width: 0 !important; }
   #nca-homepage #stacked-list > div > :not(#trending-search) { display: none !important; }
   #nca-homepage main { grid-column: 1 !important; grid-row: 1 / span 2 !important; }
   #nca-homepage main ~ aside { grid-column: 2 !important; grid-row: 2 !important; }
@@ -139,6 +140,7 @@ body#ysch #search_p input { font-size: 18px !important; color: var(--n19-text) !
 body#ysch #search_p button[aria-label="Search"], body#ysch #search_p button[type="submit"] { border-radius: 0 !important; background: var(--n19-ys-button) !important; color: #fff !important; width: 80px !important; min-width: 80px !important; height: 48px !important; margin: -1px -1px -1px 0 !important; }
 body#ysch #search_p button[aria-label="Search"] svg, body#ysch #search_p button[type="submit"] svg { fill: #fff !important; color: #fff !important; width: 22px !important; height: 22px !important; }
 body#ysch #search_p button[aria-label*="voice" i], body#ysch #search_p [aria-label*="voice" i] { display: none !important; }
+body#ysch #search_p form div:has(> button[type="submit"]) ~ div, body#ysch #search_p [class*="pr-[11.5px]"] { display: none !important; }
 body#ysch #hd .hd_nav_item { position: absolute !important; right: 190px !important; top: 24px !important; }
 body#ysch #hd #ysignin { border: 0 !important; border-radius: 0 !important; background: transparent !important; color: #7d7d7f !important; font-size: 13px !important; padding: 0 !important; min-width: 0 !important; height: 25px !important; }
 body#ysch #hd #ysignin .text { color: #7d7d7f !important; font-size: 13px !important; border: 0 !important; border-radius: 0 !important; background: transparent !important; padding: 0 !important; }
@@ -204,3 +206,5 @@ html[data-n19-yf] [data-testid="quote-statistics"] li .value { font-size: 13px !
 html[data-n19-yf] [data-testid="tabs-container"].rangeTabs button { background: transparent !important; border-color: transparent !important; }
 html[data-n19-yf] [data-testid="tabs-container"].rangeTabs button .title { color: var(--n19-yf-link) !important; font-weight: 500 !important; }
 html[data-n19-yf] [data-testid="tabs-container"].rangeTabs button[aria-selected="true"] .title { color: var(--n19-yf-text) !important; font-weight: 700 !important; }
+
+aside :is(a[aria-label="Twitter"], a[aria-label="Facebook"], a[aria-label="Instagram"], a[aria-label="YouTube"], a[aria-label="TikTok"]) { display: none !important; }

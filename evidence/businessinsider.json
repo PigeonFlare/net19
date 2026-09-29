@@ -1,353 +1,408 @@
 {
- "theme": "businessinsider",
- "era": "2019 Business Insider (the 2018 redesign used through 2019): white slim header with the two-line black BUSINESS INSIDER logo left, letter-spaced 11px uppercase nav with thin separators (TECH, FINANCE, POLITICS, STRATEGY, LIFE, ALL; BI PRIME and INTELLIGENCE at right), account, search and edition icons, the leaderboard ad under the header, 'TOP STORY' with a big bold Helvetica headline and blue square bullets, blue-teal letter-spaced section labels. Same page for every visitor (captures from 2019-06, 2019-07 and 2019-11 agree).",
- "sources": [
-  {
-   "id": "article0-a201906",
-   "url": "https://arquivo.pt/noFrame/replay/20190624041001/https://www.businessinsider.com/10-things-in-tech-you-need-to-know-today-june-10-2019-6",
-   "date": "2019-06-24",
-   "shows": "article0 page as served in 2019-06 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g14-evidence/businessinsider/businessinsider-article0-a201906.png"
-  },
-  {
-   "id": "home-a201907",
-   "url": "https://arquivo.pt/noFrame/replay/20190715042514/https://www.businessinsider.com/",
-   "date": "2019-07-15",
-   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g14-evidence/businessinsider/businessinsider-home-a201907.png"
-  },
-  {
-   "id": "home-a201911",
-   "url": "https://arquivo.pt/noFrame/replay/20191115191802/https://www.businessinsider.com/",
-   "date": "2019-11-15",
-   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g14-evidence/businessinsider/businessinsider-home-a201911.png"
-  },
-  {
-   "id": "section0-a201907",
-   "url": "https://arquivo.pt/noFrame/replay/20190618154259/https://www.businessinsider.com/sai",
-   "date": "2019-06-18",
-   "shows": "section0 page as served in 2019-06 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g14-evidence/businessinsider/businessinsider-section0-a201907.png"
-  },
-  {
-   "id": "section2-a201907",
-   "url": "https://arquivo.pt/noFrame/replay/20190618154405/https://www.businessinsider.com/politics",
-   "date": "2019-06-18",
-   "shows": "section2 page as served in 2019-06 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g14-evidence/businessinsider/businessinsider-section2-a201907.png"
-  }
- ],
- "features": [
-  {
-   "match": "^(Go Ad-free|Learn more|Expand)$",
-   "in2019": false,
-   "evidence": [
-    "article0-a201906"
-   ],
-   "note": "subscription drawer at the bottom of articles ('For people building what's next', free trial, ad-free plan; 2021+ Insider subscription); the 2019 article has none",
-   "action": "hidden"
-  },
-  {
-   "match": "^(Parenting|Economy|Discourse)$",
-   "in2019": false,
-   "evidence": [
-    "home-a201907",
-    "home-a201911"
-   ],
-   "note": "topic filter chips over the latest river and newer verticals (2023+); the 2019 river ('What's Happening') had no filters",
-   "action": "hidden"
-  },
-  {
-   "match": "^(What readers are saying|Trending conversations|Explore)$",
-   "in2019": false,
-   "evidence": [
-    "home-a201907",
-    "home-a201911",
-    "article0-a201906"
-   ],
-   "note": "reader-comments module (BI community launched 2023); no comments module in the 2019 captures",
-   "action": "hidden"
-  },
-  {
-   "match": "^(Become an Insider)$",
-   "in2019": false,
-   "evidence": [
-    "home-a201911"
-   ],
-   "note": "paywall drawer ('Insider' subscription branding, 2021+)",
-   "action": "hidden"
-  },
-  {
-   "match": "^(Follow author)$",
-   "in2019": false,
-   "evidence": [
-    "article0-a201906"
-   ],
-   "note": "follow-author button (2023); 2019 byline is name and date only",
-   "action": "hidden"
-  },
-  {
-   "match": "^(Argamani is venturing out|'Soar' Wars|AI Agent Horror Stories|Small Business Insider Sign up|The Long Play NEW|Watch BI NEW)$",
-   "in2019": false,
-   "evidence": [
-    "home-a201907",
-    "home-a201911"
-   ],
-   "note": "trending bar under the masthead (not in 2019)",
-   "action": "hidden"
-  },
-  {
-   "match": "^(Click to visit us on Snapchat|Business Insider App|<img class=\"no-script\" src=\"/public/assets/badges/.*|Get the app)$",
-   "in2019": false,
-   "evidence": [
-    "home-a201907",
-    "article0-a201906"
-   ],
-   "note": "Snapchat icon and app-store badges; the 2019 footer shows Facebook, Twitter, LinkedIn, YouTube, Instagram only",
-   "action": "hidden"
-  },
-  {
-   "match": "^(Terms of Sale|Code of Ethics Policy|Reprints & Permissions|Advertising Policies|Conflict of Interest Policy|Coupons Privacy Policy|Coupons Terms|About Us|Advertise With Us|Contact Us|News Tips|Company News|Awards|Masthead|Games|Corrections|Community Guidelines|AI Use|BI Live)$",
-   "in2019": false,
-   "evidence": [
-    "home-a201907",
-    "home-a201911",
-    "article0-a201906"
-   ],
-   "note": "footer links absent from the 2019 footer (Terms of Service, Privacy Policy, Cookies Policy, Commerce Policy, Coupons, Disclaimer, Sitemap, Made in NYC, finanzen.net)",
-   "action": "hidden"
-  },
-  {
-   "match": "^(Military & Defense|AI|Enterprise|Innovation|Startups|Parenting)$",
-   "in2019": false,
-   "evidence": [
-    "home-a201907",
-    "home-a201911",
-    "section0-a201907"
-   ],
-   "note": "nav and sub-nav sections not in the 2019 nav (Tech, Finance, Politics, Strategy, Life, BI Prime, Intelligence, All; tech sub-sections Science and Transportation existed)",
-   "action": "hidden"
-  },
-  {
-   "match": "^(Your Privacy Choices|Accessibility|Copyright © \\d{4}|U\\.S\\. Privacy|Learn More)$",
-   "in2019": false,
-   "evidence": [
-    "home-a201907"
-   ],
-   "note": "US privacy opt-out link and privacy banner, accessibility statement and copyright notice",
-   "action": "kept: legal"
-  },
-  {
-   "match": "^(Open menu)$",
-   "in2019": false,
-   "evidence": [
-    "home-a201911"
-   ],
-   "note": "menu button: the 2019 header showed sections inline; the menu is the only route to the other sections on current pages",
-   "action": "kept: function"
-  },
-  {
-   "match": "^(Click\\ to\\ visit\\ us\\ on\\ Facebook|Click\\ to\\ visit\\ us\\ on\\ Instagram|Commerce\\ Policy|Disclaimer|Go\\ to\\ the\\ search\\ page\\.|Privacy\\ Policy|Sitemap|Tech|Terms\\ of\\ Service|header\\ area|nav\\ area|repeated\\ section|section\\ area)$",
-   "in2019": true,
-   "evidence": [
-    "article0-a201906",
-    "home-a201907",
-    "home-a201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Click to visit us on Facebook",
-    "Click to visit us on Instagram",
-    "Commerce Policy",
-    "Disclaimer",
-    "Go to the search page.",
-    "Privacy Policy",
-    "Sitemap",
-    "Tech",
-    "Terms of Service",
-    "header area",
-    "nav area",
-    "repeated section",
-    "section area"
-   ]
-  },
-  {
-   "match": "^(Transportation)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201907"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Transportation"
-   ]
-  },
-  {
-   "match": "^(Featured)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201907",
-    "home-a201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Featured"
-   ]
-  },
-  {
-   "match": "^(Sign\\ up)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201907",
-    "home-a201911",
-    "section0-a201907"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Sign up"
-   ]
-  },
-  {
-   "match": "^(Click\\ to\\ visit\\ Business\\ Insider|Log\\ in|Markets)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Click to visit Business Insider",
-    "Log in",
-    "Markets"
-   ]
-  },
-  {
-   "match": "^(Business\\ Insider)$",
-   "in2019": true,
-   "evidence": [
-    "section0-a201907",
-    "section2-a201907"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Business Insider"
-   ]
-  },
-  {
-   "match": "^(Business|Tech|Markets|Lifestyle|Reviews|Video|Videos|Newsletters|Science|Transportation|All)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201907",
-    "home-a201911",
-    "article0-a201906"
-   ],
-   "note": "2019 sections: Tech, Markets, Transportation, Life, Insider Picks (reviews), NOW WATCH video, Emails & Alerts (newsletters), All; 'Business Insider' and Science under Tech Insider"
-  },
-  {
-   "match": "^(Log in|Go to the search page\\.|Business Insider|Click to visit Business Insider|Show sharing options)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201911",
-    "article0-a201906"
-   ],
-   "note": "Log In, search, logo link and 'Share This Post'"
-  },
-  {
-   "match": "^Click to visit us on (Facebook|X|LinkedIn|YouTube|Instagram)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201907",
-    "article0-a201906"
-   ],
-   "note": "2019 footer social icons (Twitter is now X)"
-  },
-  {
-   "match": "^(Terms of Service|Privacy Policy|Disclaimer|Commerce Policy|Sitemap|Stock quotes by finanzen\\.net|AT|DE|ES|JP|PL|TW)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201907",
-    "home-a201911"
-   ],
-   "note": "2019 footer legal links, finanzen.net credit and the international editions list (Deutschland, Spain, Japan, Poland …)"
-  },
-  {
-   "match": "^(Latest|The Latest see all|see all|See all|More .+|Featured|Great reads|Read next|Recommended video|Tech)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201907",
-    "section0-a201907",
-    "article0-a201906"
-   ],
-   "note": "story modules: the latest river ('What's Happening' in 2019), 'Featured', 'View more' links, the section title and the 'NOW WATCH' video under articles"
-  },
-  {
-   "match": "^(banner area|header area|section area|navigation area|nav area|article area|aside area|contentinfo area)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201907",
-    "article0-a201906"
-   ],
-   "note": "page regions (header, nav, sections, footer in 2019)"
-  },
-  {
-   "match": "^repeated ",
-   "in2019": true,
-   "evidence": [
-    "home-a201907",
-    "home-a201911"
-   ],
-   "note": "story cards (content)"
-  },
-  {
-   "match": "^(?=.{24,})\\S+( \\S+){4,}.*$",
-   "in2019": true,
-   "evidence": [
-    "home-a201907",
-    "home-a201911",
-    "section2-a201907"
-   ],
-   "note": "story headlines and bylines inside story modules (content, not features); last-resort pattern for headlines that are not in repeated cards"
-  },
-  {
-   "match": "^Katherine Li$",
-   "in2019": true,
-   "evidence": [
-    "article0-a201906"
-   ],
-   "note": "author byline link (2019: 'Shona Ghosh')"
-  },
-  {
-   "match": "^(Careers|Politics|Tech|Finance|Strategy|Economy|Markets|Retail|Science|Transportation)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201911",
-    "home-a201907"
-   ],
-   "note": "category label above a headline (2019: 'POLITICS 2 hours ago' over the top story)"
-  },
-  {
-   "match": "^Business Insider tells the innovative stories you want to know$",
-   "in2019": true,
-   "evidence": [
-    "home-a201907"
-   ],
-   "note": "filler text of story cards that have not loaded yet (the loader replaces them with real stories; hiding them stops the feed from loading)"
-  },
-  {
-   "match": "^(Enter your email|Sign up|form area|<img class=\"no-script\" src=\"https://i\\.insider\\.com/.*|Peter Kafka|Dan DeFrancesco|Joe Ciolli|Katie Notopoulos)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201907",
-    "home-a201911",
-    "section0-a201907"
-   ],
-   "note": "newsletter sign-up ('BUSINESS INSIDER EMAILS & ALERTS' / 'Sign-Up' in 2019) and the 'Featured' rail's author names and photos (content)"
-  }
- ]
+  "theme": "businessinsider",
+  "era": "2019 Business Insider (the 2018 redesign used through 2019): white slim header with the two-line black BUSINESS INSIDER logo left, letter-spaced 11px uppercase nav with thin separators (TECH, FINANCE, POLITICS, STRATEGY, LIFE, ALL; BI PRIME and INTELLIGENCE at right), account, search and edition icons, the leaderboard ad under the header, 'TOP STORY' with a big bold Helvetica headline and blue square bullets, blue-teal letter-spaced section labels. Same page for every visitor (captures from 2019-06, 2019-07 and 2019-11 agree).",
+  "sources": [
+    {
+      "id": "article0-a201906",
+      "url": "https://arquivo.pt/noFrame/replay/20190624041001/https://www.businessinsider.com/10-things-in-tech-you-need-to-know-today-june-10-2019-6",
+      "date": "2019-06-24",
+      "shows": "article0 page as served in 2019-06 (Arquivo.pt capture rendered with its 2019 CSS)",
+      "file": "g14-evidence/businessinsider/businessinsider-article0-a201906.png"
+    },
+    {
+      "id": "home-a201907",
+      "url": "https://arquivo.pt/noFrame/replay/20190715042514/https://www.businessinsider.com/",
+      "date": "2019-07-15",
+      "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+      "file": "g14-evidence/businessinsider/businessinsider-home-a201907.png"
+    },
+    {
+      "id": "home-a201911",
+      "url": "https://arquivo.pt/noFrame/replay/20191115191802/https://www.businessinsider.com/",
+      "date": "2019-11-15",
+      "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)",
+      "file": "g14-evidence/businessinsider/businessinsider-home-a201911.png"
+    },
+    {
+      "id": "section0-a201907",
+      "url": "https://arquivo.pt/noFrame/replay/20190618154259/https://www.businessinsider.com/sai",
+      "date": "2019-06-18",
+      "shows": "section0 page as served in 2019-06 (Arquivo.pt capture rendered with its 2019 CSS)",
+      "file": "g14-evidence/businessinsider/businessinsider-section0-a201907.png"
+    },
+    {
+      "id": "section2-a201907",
+      "url": "https://arquivo.pt/noFrame/replay/20190618154405/https://www.businessinsider.com/politics",
+      "date": "2019-06-18",
+      "shows": "section2 page as served in 2019-06 (Arquivo.pt capture rendered with its 2019 CSS)",
+      "file": "g14-evidence/businessinsider/businessinsider-section2-a201907.png"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Go Ad-free|Learn more|Expand)$",
+      "in2019": false,
+      "evidence": [
+        "article0-a201906"
+      ],
+      "note": "subscription drawer at the bottom of articles ('For people building what's next', free trial, ad-free plan; 2021+ Insider subscription); the 2019 article has none",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Parenting|Economy|Discourse)$",
+      "in2019": false,
+      "evidence": [
+        "home-a201907",
+        "home-a201911"
+      ],
+      "note": "topic filter chips over the latest river and newer verticals (2023+); the 2019 river ('What's Happening') had no filters",
+      "action": "hidden"
+    },
+    {
+      "match": "^(What readers are saying|Trending conversations|Explore)$",
+      "in2019": false,
+      "evidence": [
+        "home-a201907",
+        "home-a201911",
+        "article0-a201906"
+      ],
+      "note": "reader-comments module (BI community launched 2023); no comments module in the 2019 captures",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Become an Insider)$",
+      "in2019": false,
+      "evidence": [
+        "home-a201911"
+      ],
+      "note": "paywall drawer ('Insider' subscription branding, 2021+)",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Follow author)$",
+      "in2019": false,
+      "evidence": [
+        "article0-a201906"
+      ],
+      "note": "follow-author button (2023); 2019 byline is name and date only",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Argamani is venturing out|'Soar' Wars|AI Agent Horror Stories|Small Business Insider Sign up|The Long Play NEW|Watch BI NEW)$",
+      "in2019": false,
+      "evidence": [
+        "home-a201907",
+        "home-a201911"
+      ],
+      "note": "trending bar under the masthead (not in 2019)",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Click to visit us on Snapchat|Business Insider App|<img class=\"no-script\" src=\"/public/assets/badges/.*|Get the app)$",
+      "in2019": false,
+      "evidence": [
+        "home-a201907",
+        "article0-a201906"
+      ],
+      "note": "Snapchat icon and app-store badges; the 2019 footer shows Facebook, Twitter, LinkedIn, YouTube, Instagram only",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Terms of Sale|Code of Ethics Policy|Reprints & Permissions|Advertising Policies|Conflict of Interest Policy|Coupons Privacy Policy|Coupons Terms|About Us|Advertise With Us|Contact Us|News Tips|Company News|Awards|Masthead|Games|Corrections|Community Guidelines|AI Use|BI Live)$",
+      "in2019": false,
+      "evidence": [
+        "home-a201907",
+        "home-a201911",
+        "article0-a201906"
+      ],
+      "note": "footer links absent from the 2019 footer (Terms of Service, Privacy Policy, Cookies Policy, Commerce Policy, Coupons, Disclaimer, Sitemap, Made in NYC, finanzen.net)",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Military & Defense|AI|Enterprise|Innovation|Startups|Parenting)$",
+      "in2019": false,
+      "evidence": [
+        "home-a201907",
+        "home-a201911",
+        "section0-a201907"
+      ],
+      "note": "nav and sub-nav sections not in the 2019 nav (Tech, Finance, Politics, Strategy, Life, BI Prime, Intelligence, All; tech sub-sections Science and Transportation existed)",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Your Privacy Choices|Accessibility|Copyright © \\d{4}|U\\.S\\. Privacy|Learn More)$",
+      "in2019": false,
+      "evidence": [
+        "home-a201907"
+      ],
+      "note": "US privacy opt-out link and privacy banner, accessibility statement and copyright notice",
+      "action": "kept: legal"
+    },
+    {
+      "match": "^(Open menu)$",
+      "in2019": false,
+      "evidence": [
+        "home-a201911"
+      ],
+      "note": "menu button: the 2019 header showed sections inline; the menu is the only route to the other sections on current pages",
+      "action": "kept: function"
+    },
+    {
+      "match": "^(Click\\ to\\ visit\\ us\\ on\\ Facebook|Click\\ to\\ visit\\ us\\ on\\ Instagram|Commerce\\ Policy|Disclaimer|Go\\ to\\ the\\ search\\ page\\.|Privacy\\ Policy|Sitemap|Tech|Terms\\ of\\ Service|header\\ area|nav\\ area|repeated\\ section|section\\ area)$",
+      "in2019": true,
+      "evidence": [
+        "article0-a201906",
+        "home-a201907",
+        "home-a201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Click to visit us on Facebook",
+        "Click to visit us on Instagram",
+        "Commerce Policy",
+        "Disclaimer",
+        "Go to the search page.",
+        "Privacy Policy",
+        "Sitemap",
+        "Tech",
+        "Terms of Service",
+        "header area",
+        "nav area",
+        "repeated section",
+        "section area"
+      ]
+    },
+    {
+      "match": "^(Transportation)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201907"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Transportation"
+      ]
+    },
+    {
+      "match": "^(Featured)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201907",
+        "home-a201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Featured"
+      ]
+    },
+    {
+      "match": "^(Sign\\ up)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201907",
+        "home-a201911",
+        "section0-a201907"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Sign up"
+      ]
+    },
+    {
+      "match": "^(Click\\ to\\ visit\\ Business\\ Insider|Log\\ in|Markets)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Click to visit Business Insider",
+        "Log in",
+        "Markets"
+      ]
+    },
+    {
+      "match": "^(Business\\ Insider)$",
+      "in2019": true,
+      "evidence": [
+        "section0-a201907",
+        "section2-a201907"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Business Insider"
+      ]
+    },
+    {
+      "match": "^(Business|Tech|Markets|Lifestyle|Reviews|Video|Videos|Newsletters|Science|Transportation|All)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201907",
+        "home-a201911",
+        "article0-a201906"
+      ],
+      "note": "2019 sections: Tech, Markets, Transportation, Life, Insider Picks (reviews), NOW WATCH video, Emails & Alerts (newsletters), All; 'Business Insider' and Science under Tech Insider"
+    },
+    {
+      "match": "^(Log in|Go to the search page\\.|Business Insider|Click to visit Business Insider|Show sharing options)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201911",
+        "article0-a201906"
+      ],
+      "note": "Log In, search, logo link and 'Share This Post'"
+    },
+    {
+      "match": "^Click to visit us on (Facebook|X|LinkedIn|YouTube|Instagram)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201907",
+        "article0-a201906"
+      ],
+      "note": "2019 footer social icons (Twitter is now X)"
+    },
+    {
+      "match": "^(Terms of Service|Privacy Policy|Disclaimer|Commerce Policy|Sitemap|Stock quotes by finanzen\\.net|AT|DE|ES|JP|PL|TW)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201907",
+        "home-a201911"
+      ],
+      "note": "2019 footer legal links, finanzen.net credit and the international editions list (Deutschland, Spain, Japan, Poland …)"
+    },
+    {
+      "match": "^(Latest|The Latest see all|see all|See all|More .+|Featured|Great reads|Read next|Recommended video|Tech)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201907",
+        "section0-a201907",
+        "article0-a201906"
+      ],
+      "note": "story modules: the latest river ('What's Happening' in 2019), 'Featured', 'View more' links, the section title and the 'NOW WATCH' video under articles"
+    },
+    {
+      "match": "^(banner area|header area|section area|navigation area|nav area|article area|aside area|contentinfo area)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201907",
+        "article0-a201906"
+      ],
+      "note": "page regions (header, nav, sections, footer in 2019)"
+    },
+    {
+      "match": "^repeated ",
+      "in2019": true,
+      "evidence": [
+        "home-a201907",
+        "home-a201911"
+      ],
+      "note": "story cards (content)"
+    },
+    {
+      "match": "^(?=.{24,})\\S+( \\S+){4,}.*$",
+      "in2019": true,
+      "evidence": [
+        "home-a201907",
+        "home-a201911",
+        "section2-a201907"
+      ],
+      "note": "story headlines and bylines inside story modules (content, not features); last-resort pattern for headlines that are not in repeated cards"
+    },
+    {
+      "match": "^Katherine Li$",
+      "in2019": true,
+      "evidence": [
+        "article0-a201906"
+      ],
+      "note": "author byline link (2019: 'Shona Ghosh')"
+    },
+    {
+      "match": "^(Careers|Politics|Tech|Finance|Strategy|Economy|Markets|Retail|Science|Transportation)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201911",
+        "home-a201907"
+      ],
+      "note": "category label above a headline (2019: 'POLITICS 2 hours ago' over the top story)"
+    },
+    {
+      "match": "^Business Insider tells the innovative stories you want to know$",
+      "in2019": true,
+      "evidence": [
+        "home-a201907"
+      ],
+      "note": "filler text of story cards that have not loaded yet (the loader replaces them with real stories; hiding them stops the feed from loading)"
+    },
+    {
+      "match": "^(Enter your email|Sign up|form area|<img class=\"no-script\" src=\"https://i\\.insider\\.com/.*|Peter Kafka|Dan DeFrancesco|Joe Ciolli|Katie Notopoulos)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201907",
+        "home-a201911",
+        "section0-a201907"
+      ],
+      "note": "newsletter sign-up ('BUSINESS INSIDER EMAILS & ALERTS' / 'Sign-Up' in 2019) and the 'Featured' rail's author names and photos (content)"
+    },
+    {
+      "match": "^(Business Insider)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "home-a201907",
+        "home-a201911"
+      ],
+      "note": "required: logo"
+    },
+    {
+      "match": "^(Go to the search page\\.|Search)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "home-a201907",
+        "home-a201911"
+      ],
+      "note": "required: search"
+    },
+    {
+      "match": "^(Tech)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "home-a201907",
+        "home-a201911"
+      ],
+      "note": "required: section nav"
+    },
+    {
+      "match": "^(Markets|Finance)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "home-a201907",
+        "home-a201911"
+      ],
+      "note": "required: section nav"
+    },
+    {
+      "match": "^[A-Z][a-z]+(?: [A-Z]\\.)?(?: [A-Z][A-Za-z’'-]+){1,2}$",
+      "in2019": true,
+      "evidence": [
+        "home-a201907",
+        "home-a201911"
+      ],
+      "note": "bylines on story items (content: author names); listed after every post-2019 entry"
+    }
+  ]
 }

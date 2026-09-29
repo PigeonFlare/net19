@@ -202,6 +202,58 @@
         "social-proof badges 2022+"
       ],
       "action": "hidden: badgeTagComponent marked by the theme"
+    },
+    {
+      "match": "^(Walmart Homepage|Walmart)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: spark logo"
+    },
+    {
+      "match": "^(Search|Search Walmart\\.com|Search everything at Walmart online and in store)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: square search field"
+    },
+    {
+      "match": "^(Departments)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: departments menu"
+    },
+    {
+      "match": "^(Sign In.*|Account.*)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: Sign In / Account"
+    },
+    {
+      "match": "^(Cart.*)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: cart"
     }
   ]
 }

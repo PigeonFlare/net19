@@ -199,3 +199,5 @@ footer.wp-block-template-part :is(a, p, span, h2, h3, li) { color: #333 !importa
 }
 .wp-block-techcrunch-mega-menu__content[aria-hidden="true"] { display: none !important; }
 @media (min-width: 64em) { .wp-block-techcrunch-site-search__suggestions { z-index: 1001 !important; background: var(--n19-page) !important; box-shadow: 0 2px 8px rgba(0, 0, 0, .25) !important; } }
+.wp-block-search__input::placeholder { color: #707070 !important; opacity: 1 !important; }
+html[data-net19-mode="dark"] .wp-block-search__input::placeholder { color: #a0a0a0 !important; }

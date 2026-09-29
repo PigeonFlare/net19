@@ -50,7 +50,7 @@ body, body #a-page { font-family: Arial, sans-serif !important; }
 #gwm-Deck-btf .a-cardui, #gw-layout .a-cardui { background: var(--n19-card) !important; padding: 20px !important; }
 #gwm-Deck [class*="card-container"], #gwm-Deck [class*="cardContainer"], #gwm-Deck [class*="_style_card"], #gwm-Deck li, #gwm-Deck .gwm-window-tile,
 #gwm-Deck img, #gw-layout img, #gwm-Deck [class*="tile"], #gwm-Deck [class*="image"], #gwm-Deck [class*="asin-container"], .dcl-container-inner, .dcl-container-inner * { border-radius: 0 !important; }
-#gwm-Deck [class*="asin-container"], #gwm-Deck [class*="image-container"], #gwm-Deck .aok-dm-img-container-bg, #gw-layout [class*="asin-container"] { background: transparent !important; }
+#gwm-Deck [class*="asin-container"], #gwm-Deck [class*="image-container"], #gwm-Deck .aok-dm-img-container-bg, #gw-layout [class*="asin-container"] { background-color: transparent !important; }
 #gwm-Deck-btf .a-cardui-header :is(h2, h3, h2 *, h3 *), #gw-layout .a-cardui-header :is(h2, h3), #gwm-Deck-btf .a-cardui h2 {
   font-family: Arial, sans-serif !important; font-size: 21px !important; line-height: 27.3px !important; font-weight: 700 !important; color: var(--n19-text) !important; letter-spacing: 0 !important;
 }

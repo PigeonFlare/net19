@@ -5,7 +5,7 @@ globalThis.net19Theme = {
     ? (document.documentElement.classList.contains('dark') ? 'dark' : 'light') : undefined,
   light: { '#8b3dff': '#00c4cc', '#7d2ae8': '#00b1b9', '#7731d8': '#00a3aa', '#6420ff': '#00c4cc' },
   dark: { '#8b3dff': '#00c4cc', '#7d2ae8': '#00b1b9', '#7731d8': '#00a3aa', '#6420ff': '#00c4cc' },
-  intended: '[data-n19-later]',
+  intended: '[data-n19-later], footer a[href*="tiktok.com"]',
   later: /^(?:AI [\w ]+|[\w ]+ AI|All Canva AI|Canva AI[\w ]*|Canva Code|Magic (?:Write|Animate|Layers|Insights|Formulas|Media|Design|Studio)|Text to speech voiceover|Image enhancer|Marketing and AI|Visual Suite|Dream Lab|Canva Sheets|Canva Docs)$/i,
 };
 (() => {

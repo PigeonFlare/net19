@@ -201,6 +201,113 @@
         "s5"
       ],
       "note": "story headlines and teasers (content)"
+    },
+    {
+      "match": "^(CNN logo|CNN)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: red CNN box"
+    },
+    {
+      "match": "^US$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "search"
+      ],
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: section links in the black bar"
+    },
+    {
+      "match": "^World$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3",
+        "s5"
+      ],
+      "note": "required: section links in the black bar"
+    },
+    {
+      "match": "^Politics$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "search"
+      ],
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: section links"
+    },
+    {
+      "match": "^Business$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "search"
+      ],
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: section links"
+    },
+    {
+      "match": "^(Search Icon|Search)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: search in the bar"
+    },
+    {
+      "match": "^(Open Menu Icon|Menu)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: menu"
+    },
+    {
+      "match": "^(Newest|Relevancy|Date)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "search"
+      ],
+      "evidence": [
+        "s7"
+      ],
+      "note": "required: sort"
+    },
+    {
+      "match": "^Clear$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "search"
+      ],
+      "evidence": [
+        "s7"
+      ],
+      "note": "required: wide field with Clear"
     }
   ]
 }

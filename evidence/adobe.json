@@ -59,6 +59,48 @@
         "s2"
       ],
       "note": "content: product cards/tabs and headlines"
+    },
+    {
+      "match": "^(Creativity & Design)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: header nav"
+    },
+    {
+      "match": "^(Support)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: header nav"
+    },
+    {
+      "match": "^(Sign in)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: Sign in"
+    },
+    {
+      "match": "^(Adobe)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: red Adobe logo"
     }
   ]
 }

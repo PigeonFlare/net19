@@ -15,6 +15,7 @@ html:root:not([data-net19-mode="dark"]) { --mlb-2-1-0-surface-surface0: var(--n1
 main.club-bg-skin, main.club-bg-skin .container--max-width { background: var(--n19-page) !important; }
 
 #react-header, #react-header header.mlb-header, #react-header .mlb-header--inner { height: auto !important; min-height: 0 !important; }
+body.has-react-header > #react-header:has(> header) { height: auto !important; min-height: 0 !important; flex: 0 0 auto !important; }
 #react-header .header__nav-top { background: var(--n19-navy) !important; flex-wrap: wrap !important; height: auto !important; padding: 0 !important; }
 #react-header .header__nav-top__logo { order: 0; margin-right: auto !important; height: 50px !important; display: flex !important; align-items: center !important; padding-left: 20px !important; }
 #react-header .header__nav-top__logo img { height: 34px !important; width: auto !important; }
@@ -50,3 +51,4 @@ main p { font-family: var(--n19-font-body) !important; }
 #react-header li:has(> [class*="NavItemInner"] > a:is([href="/milb"], [href^="/youth-baseball"])),
 footer a:is([href*="tiktok.com"], [href*="linkedin.com"], [href*="threads.net"], [href*="threads.com"]) { display: none !important; }
 #react-header li[class*="StyledNavItem"]::after, #react-header li[class*="StyledNavItem"]::before { pointer-events: none !important; }
+[class*="StoryPartContainer"]:has(> [class*="NewsletterOptinContainer"]), [class*="NewsletterOptinContainer"] { display: none !important; }

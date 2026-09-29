@@ -61,12 +61,116 @@
       "note": "content: headlines and notices (twelve characters or more), regions"
     },
     {
-      "match": "^(舞子と交流)$",
+      "match": "^(舞子と交流|(?=.*[^\\x00-\\x7F])[^A-Za-z]{2,10})$",
       "in2019": true,
       "evidence": [
         "s2"
       ],
-      "note": "content: the topics photo caption on the sampled day (s2 shows the same photo-with-caption slot, '夜のレインボー'); it changes daily"
+      "note": "content: the topics photo caption (changes daily; s2 shows the same photo-with-caption box) and short live score or status labels in the right rail (2回裏速報中); listed after every post-2019 entry"
+    },
+    {
+      "match": "^検索$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: blue search button"
+    },
+    {
+      "match": "^(ウェブ|ウェブで検索)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: search tabs"
+    },
+    {
+      "match": "^(画像|画像で検索)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: search tabs"
+    },
+    {
+      "match": "^(ショッピング)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: header icons"
+    },
+    {
+      "match": "^(メール)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: header icons"
+    },
+    {
+      "match": "^(ニュース)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: 主なサービス list"
+    },
+    {
+      "match": "^(主要)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: news tabs"
+    },
+    {
+      "match": "^(ヘルプ)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: top links"
     }
   ]
 }

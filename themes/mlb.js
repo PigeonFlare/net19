@@ -1,7 +1,7 @@
 globalThis.net19Theme = {
   detect: () => 'light',
   later: /^(?:follow|following)$/i,
-  intended: '[data-n19-later], #react-header li:has(> [class*="NavItemInner"] > a:is([href="/milb"], [href^="/youth-baseball"]))',
+  intended: '[data-n19-later], [class*="NewsletterOptinContainer"], #react-header li:has(> [class*="NavItemInner"] > a:is([href="/milb"], [href^="/youth-baseball"]))',
 };
 (() => {
   const relabel = () => {

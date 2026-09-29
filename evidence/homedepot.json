@@ -98,6 +98,71 @@
         "s4"
       ],
       "note": "product page: brand link, title, stock, returns, image viewer, ratings, Q&A"
+    },
+    {
+      "match": "^(What can we help you find today\\?)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "required: search field"
+    },
+    {
+      "match": "^(Search Field Icon)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "required: search button"
+    },
+    {
+      "match": "^(Open drawer to view my store|.*My Store.*)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: store selector"
+    },
+    {
+      "match": "^(Tools)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: department nav"
+    },
+    {
+      "match": "^(Appliances)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: department nav"
+    },
+    {
+      "match": "^(Add To List|Add to Cart)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "item"
+      ],
+      "evidence": [
+        "s4"
+      ],
+      "note": "required: item actions"
     }
   ]
 }

@@ -26,7 +26,7 @@
   ],
   "features": [
     {
-      "match": "^(About|Products|Stack Internal|Stack Data Licensing|AI Assist|Stack Overflow for Agents|Challenges|Articles|Collectives.*|Explore all Collectives|Companies|Filter|Reply|Open menu|Chat|Instagram|API|Data|Follow)$",
+      "match": "^(Products|Stack Internal|Stack Data Licensing|AI Assist|Stack Overflow for Agents|Challenges|Articles|Collectives.*|Explore all Collectives|Companies|Filter|Reply|Open menu|Chat|Instagram|API|Data|Follow)$",
       "in2019": false,
       "evidence": [
         "not in the 2019 header, left nav, question tabs, comments or footer (s1-s3): header About/Products/Stack Internal links, AI Assist, Agents, Challenges, Articles, Collectives (2021), Companies (2022, replaced Jobs), question Filter (2021), comment Reply/menu, Follow (2020), footer Chat/Data licensing/API/Data/Instagram"
@@ -67,6 +67,139 @@
         "s3"
       ],
       "note": "content: tags (lowercase) and question titles (three words or more)"
+    },
+    {
+      "match": "^(Stack Overflow( Home)?)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: logo"
+    },
+    {
+      "match": "^(Search)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: search"
+    },
+    {
+      "match": "^(Questions)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: left nav"
+    },
+    {
+      "match": "^(Tags)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: left nav"
+    },
+    {
+      "match": "^(Users)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: left nav"
+    },
+    {
+      "match": "^(Ask Question)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: Ask Question button",
+      "pages": [
+        "questions",
+        "question"
+      ]
+    },
+    {
+      "match": "^(Newest)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "questions"
+      ],
+      "evidence": [
+        "s2"
+      ],
+      "note": "required: question list tabs"
+    },
+    {
+      "match": "^(Active)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "questions"
+      ],
+      "evidence": [
+        "s2"
+      ],
+      "note": "required: question list tabs"
+    },
+    {
+      "match": "^(Unanswered)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "questions"
+      ],
+      "evidence": [
+        "s2"
+      ],
+      "note": "required: question list tabs"
+    },
+    {
+      "match": "^(Up vote)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "question"
+      ],
+      "evidence": [
+        "s3"
+      ],
+      "note": "required: vote arrows"
+    },
+    {
+      "match": "^(Down vote)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "question"
+      ],
+      "evidence": [
+        "s3"
+      ],
+      "note": "required: vote arrows"
+    },
+    {
+      "match": "^(About|Teams|Advertising|Press|Work Here|Legal|Privacy Policy|Terms of Service|Contact Us|Cookie Policy|Help|Business|Company|Blog|Facebook|Twitter|LinkedIn|CC BY-SA|Technology|Culture & recreation|Life & arts|Science|Professional|Stack Overflow’s open communities|Stack Exchange Network)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "2019 footer columns: STACK OVERFLOW, PRODUCTS (Teams, Advertising; Stack Internal and Stack Ads are relabelled), COMPANY (About, Press, Work Here, Legal, Privacy Policy, Contact Us), STACK EXCHANGE NETWORK (Technology, Life / Arts, Culture / Recreation, Science, Other), Blog/Facebook/Twitter/LinkedIn, cc by-sa"
     }
   ]
 }

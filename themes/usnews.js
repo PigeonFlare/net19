@@ -1,4 +1,4 @@
-globalThis.net19Theme = { later: /^(?:u\.s\. news decision points|decision points|u\.s\. news live)$/i, intended: '[data-net19-hidden]' };
+globalThis.net19Theme = { later: /^(?:u\.s\. news decision points|decision points|u\.s\. news live)$/i, intended: '[data-net19-hidden], .bx-client, [id^="bx-campaign-"], iframe.bx-gbi-frame' };
 (() => {
   const LOGIN = /^\s*Create an Account or Login\s*$/i;
   const fix = () => {

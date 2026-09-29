@@ -26,3 +26,8 @@ html:not([data-net19-app]) #root header input,html:not([data-net19-app]) #root m
 [data-n19-hero]{background:linear-gradient(90deg, #00c4cc, #7d2ae8)!important}
 [data-n19-hero] :is(h1,h2,p,span):not(button *):not(a *){color:#fff!important}
 #root [data-n19-hero] :is(h1,h2,p){color:#fff!important}
+footer a[href*="tiktok.com"]{display:none!important}
+html:not([data-net19-app]) #root main [data-n19-hero] :is(h1,h1 *,h1~span){color:#fff!important;-webkit-text-fill-color:#fff!important}
+html:not([data-net19-app]):where(:root:not([data-n19-safe])) #root main [data-n19-hero]{padding-top:40px!important;padding-bottom:40px!important}
+html:not([data-net19-app]):where(:root:not([data-n19-safe])) #root header a[href="https://www.canva.com/"],html:not([data-net19-app]):where(:root:not([data-n19-safe])) #root header a[href="https://www.canva.com/"]>*{overflow:visible!important;width:auto!important;max-width:none!important}
+html:not([data-net19-app]) #root main [data-n19-hero] :is(button,a[href]),html:not([data-net19-app]) #root main [data-n19-hero] :is(button,a[href]) *{color:#fff!important;-webkit-text-fill-color:#fff!important}

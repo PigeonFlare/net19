@@ -40,6 +40,15 @@
   ],
   "features": [
     {
+      "match": "^(Engineering|Security|Intelligence Age|Global Affairs|AI Adoption|Applied AI|Filter|Sort|All)$",
+      "in2019": false,
+      "evidence": [
+        "s2: the 2019 blog index was one list under a Blog heading, with no topic filters, Filter or Sort"
+      ],
+      "action": "hidden",
+      "note": "news index topic filter row"
+    },
+    {
       "match": "^(Products|Products menu|Business|Business menu|Developers|Developers menu|Foundation.*|Log in|API Log In.*|Try ChatGPT.*|ChatGPT.*|Get started with ChatGPT|Open Search|Close Search|Codex|Sora.*|Apps SDK.*|Academy|Plugins|Release Notes|Help Center.*|Developer Forum.*|Docs.*|Contact Sales|Customer Stories|Stories|OpenAI for business|Partner Network|Solutions|Supply Co\\.|Podcast|Livestreams|Economic Research|Open Models|GPT-\\d.*|Security & Privacy|Trust & Transparency|Deployment Safety.*|Safety Approach|Research menu|Company menu|Change language|Discord|Instagram|TikTok|YouTube|LinkedIn|GitHub|RSS|Other Policies|Resources.*)$",
       "in2019": false,
       "evidence": [
@@ -75,6 +84,47 @@
         "s4"
       ],
       "note": "content: post titles, categories, dates and read times (2019 cards show date + minute read)"
+    },
+    {
+      "match": "^(About|About Us)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s4"
+      ],
+      "note": "required: ABOUT"
+    },
+    {
+      "match": "^(Progress|Research|Research Index|Research Overview)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s4"
+      ],
+      "note": "required: PROGRESS (Research is its current name)"
+    },
+    {
+      "match": "^(Blog|News)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s4"
+      ],
+      "note": "required: BLOG (News is its current name)"
+    },
+    {
+      "match": "^(Blog|Load more)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "news index: Blog heading (renamed from All) and the button that loads older posts (2019 had older-post paging)"
     }
   ]
 }

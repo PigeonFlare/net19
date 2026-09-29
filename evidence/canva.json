@@ -33,7 +33,7 @@
   ],
   "features": [
     {
-      "match": "^(Business|Help|AI|.*Canva AI.*|Magic .+|AI .+|.+ AI|Canva Code|Dream Lab|Canva Sheets|Canva Docs|Visual Suite)$",
+      "match": "^(TikTok|Business|Help|AI|.*Canva AI.*|Magic .+|AI .+|.+ AI|Canva Code|Dream Lab|Canva Sheets|Canva Docs|Visual Suite)$",
       "in2019": false,
       "evidence": [
         "not in the 2019 header (s1: Templates, Features, Learn, Pro, Sign up) or editor (s3, s4): Business and Help header menus, Canva AI / Magic Studio (2023), Code, Dream Lab, Sheets, Docs, Visual Suite"
@@ -50,12 +50,72 @@
       "note": "header (Design relabelled Templates, Product Features, Plans Pro, Education Learn by canva.js), gradient hero with the call to action"
     },
     {
-      "match": "^(Design types|Icons|Photos|Ideas|Graphs|Photo editing|Print|Support|Canva for Work|Pricing|About|Careers|Terms and Privacy|Privacy policy|Terms|Facebook|Twitter|Pinterest|Instagram|YouTube|LinkedIn|TikTok|Company|Download|Community|Resources|Features|Explore|Create|Education|Nonprofits|Students|Teachers|Photography|Tutorials|Font combinations|Photo editor|Palette generator|Colors|Design school|Sitemap|Help Centre|Help Center|.+ templates?|(\\S+\\s+){2,}\\S+.*)$",
+      "match": "^(Design types|Icons|Photos|Ideas|Graphs|Photo editing|Print|Support|Canva for Work|Pricing|About|Careers|Terms and Privacy|Privacy policy|Terms|Facebook|Twitter|Pinterest|Instagram|YouTube|LinkedIn|Company|Download|Community|Resources|Features|Explore|Create|Education|Nonprofits|Students|Teachers|Photography|Tutorials|Font combinations|Photo editor|Palette generator|Colors|Design school|Sitemap|Help Centre|Help Center|.+ templates?|(\\S+\\s+){2,}\\S+.*)$",
       "in2019": true,
       "evidence": [
         "s1"
       ],
       "note": "footer and content (template categories, product copy)"
+    },
+    {
+      "match": "^(Templates)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: header Templates",
+      "pages": [
+        "home"
+      ]
+    },
+    {
+      "match": "^(Features)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: header Features",
+      "pages": [
+        "home"
+      ]
+    },
+    {
+      "match": "^(Learn)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: header Learn",
+      "pages": [
+        "home"
+      ]
+    },
+    {
+      "match": "^(Sign up)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: Sign up",
+      "pages": [
+        "home"
+      ]
+    },
+    {
+      "match": "^(Log in)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: Log in",
+      "pages": [
+        "home"
+      ]
     }
   ]
 }

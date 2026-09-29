@@ -144,6 +144,152 @@
         "s7"
       ],
       "note": "content: rows, issue numbers, user names and avatar links"
+    },
+    {
+      "match": "^(Homepage|GitHub Homepage|Go to GitHub homepage)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "required: octocat"
+    },
+    {
+      "match": "^(Search GitHub|Search or jump to.*|Search)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "required: search"
+    },
+    {
+      "match": "^(Sign in)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "required: Sign in"
+    },
+    {
+      "match": "^(Sign up)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "required: Sign up"
+    },
+    {
+      "match": "^(Pricing)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: header nav"
+    },
+    {
+      "match": "^(Code)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "repo",
+        "issue"
+      ],
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "required: repo tabs"
+    },
+    {
+      "match": "^(Issues( [\\d,.k]+)?)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "repo",
+        "issue"
+      ],
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "required: repo tabs"
+    },
+    {
+      "match": "^(Pull requests( [\\d,.k]+)?)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "repo",
+        "issue"
+      ],
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "required: repo tabs"
+    },
+    {
+      "match": "^(Watch.*|Notifications)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "repo"
+      ],
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "required: Watch"
+    },
+    {
+      "match": "^(Star.*)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "repo"
+      ],
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "required: Star"
+    },
+    {
+      "match": "^(Fork.*)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "repo"
+      ],
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "required: Fork"
+    },
+    {
+      "match": "^(New issue)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "issue"
+      ],
+      "evidence": [
+        "s7"
+      ],
+      "note": "required: New issue"
     }
   ]
 }

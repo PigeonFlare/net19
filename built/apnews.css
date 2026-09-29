@@ -83,3 +83,4 @@ h1.Page-headline{font-size:50px!important;line-height:56px!important;font-weight
 .Page-header-bar .MainNavigationItem-text svg,.Page-header-bar .MainNavigationItem-more svg{display:none!important}
 :where(:root:not([data-n19-safe])) .PagePromo-description a,.PagePromo-description:where(:root:not([data-n19-safe])) a{display:block!important}
 button.comment-icon-signedin,#custom-trigger.comment-icon-signedin{display:none!important}
+.bcpNotificationBar,.Page-header-bar a[href*="donate"i],.bx-client,[id^="bx-campaign-"],iframe.bx-gbi-frame,.Page-header-stickyWrap bsp-banner.Banner{display:none!important}

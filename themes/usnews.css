@@ -52,3 +52,4 @@ main#app .MuiPaper-root, main#app .MuiCard-root { border-radius: 0 !important; }
 a[class*="account-button__SignInLink"], a[href^="/emailprefs/login"], button[class*="SaveNugget__"], button[class*="GooglePreferredNugget__"], button[class*="nugget__CommentButton"],
 [role=dialog]:has(input[type=email]):has(h4), div:has(> h4):has(> form input[name="email"]) { display: none !important; }
 [data-net19-hidden] { display: none !important; }
+.bx-client, [id^="bx-campaign-"], iframe.bx-gbi-frame { display: none !important; }

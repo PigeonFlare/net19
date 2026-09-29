@@ -1,4 +1,5 @@
 globalThis.net19Theme = {
+  keep: '.fantasySignup__cta a.button',
   later: /^(?:nfl network|espn & nfl\+ premium bundle|where to watch|odds|nba\.com)$/i,
   intended: '[id^="taboola"], [data-n19-later]',
 };

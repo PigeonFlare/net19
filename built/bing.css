@@ -5,11 +5,11 @@ html[data-net19-mode="dark"]{--n19-title:#8ab4f8;--n19-url:#81c995;--n19-field:#
 :where(:root:not([data-n19-safe])) #hp_app header#hdr #headCont,#hp_app:where(:root:not([data-n19-safe])) header#hdr #headCont{margin-left:64px!important}
 :where(:root:not([data-n19-safe])) #hp_app header#hdr nav.scope_cont,#hp_app:where(:root:not([data-n19-safe])) header#hdr nav.scope_cont{margin-left:0!important}
 :where(:root:not([data-n19-safe])) #hp_app header#hdr .scopes>li,#hp_app:where(:root:not([data-n19-safe])) header#hdr .scopes>li{margin:0 30px 0 0!important;padding:0!important}
-#hp_app header#hdr .scopes>li>a,#hp_app header#hdr .scopes>li:not(.dots){color:var(--n19-scope)!important;font-size:13px!important;font-weight:400!important;font-family:"Segoe UI", Segoe, Tahoma, Arial, sans-serif!important;text-shadow:0 0 2px rgba(0,0,0,.5)!important}
+#hp_app header#hdr .scopes>li>a,#hp_app header#hdr .scopes>li:not(.dots){color:var(--n19-scope)!important;font-size:13px!important;font-weight:400!important;font-family:"Segoe UI", Segoe, Tahoma, Arial, sans-serif!important}
 #hp_app header#hdr .scopes>li>a:hover{text-decoration:underline!important}
 #hp_app header#hdr .scopes>li::after,#hp_app header#hdr .scopes>li[class*="selected"]::after{display:none!important}
 :where(:root:not([data-n19-safe])) #hp_app header#hdr .identity_wrapper,#hp_app:where(:root:not([data-n19-safe])) header#hdr .identity_wrapper{margin-right:64px!important}
-#hp_app #id_h a,#hp_app #id_h span{color:#fff!important;font-size:13px!important;font-weight:400!important;text-shadow:0 0 2px rgba(0,0,0,.6)!important}
+#hp_app #id_h a,#hp_app #id_h span{color:#fff!important;font-size:13px!important;font-weight:400!important}
 :where(:root:not([data-n19-safe])) #hp_app .sbox_sl,#hp_app:where(:root:not([data-n19-safe])) .sbox_sl{left:241px!important;margin:0!important;width:548px!important}
 #hp_app .sbox_sl::before{content:""}
 :where(:root:not([data-n19-safe])) #hp_app .sbox_sl::before,#hp_app:where(:root:not([data-n19-safe])) .sbox_sl::before{position:absolute;left:-153px;top:-4px;width:132px;height:52px}
@@ -45,6 +45,7 @@ html[data-net19-mode="dark"]{--n19-title:#8ab4f8;--n19-url:#81c995;--n19-field:#
 :where(:root:not([data-n19-safe])) #b_header #id_h,#b_header:where(:root:not([data-n19-safe])) #id_h{display:flex!important;align-items:center!important}
 :where(:root:not([data-n19-safe])) #b_header #id_h #id_l,#b_header:where(:root:not([data-n19-safe])) #id_h #id_l{order:1!important;display:inline-flex!important;align-items:center!important;width:auto!important;overflow:visible!important}
 :where(:root:not([data-n19-safe])) #b_header #id_h #id_rh_w,#b_header:where(:root:not([data-n19-safe])) #id_h #id_rh_w{order:2!important;margin-left:12px!important}
+:where(:root:not([data-n19-safe])) #b_header #id_h #id_sc,#b_header:where(:root:not([data-n19-safe])) #id_h #id_sc{order:3!important;position:static!important;margin:0 0 0 16px!important;align-self:center!important}
 :where(:root:not([data-n19-safe])) #b_header .b_searchboxForm,#b_header:where(:root:not([data-n19-safe])) .b_searchboxForm{position:absolute!important;left:100px!important;top:0!important;width:684px!important;max-width:684px!important;height:40px!important;min-height:40px!important;margin:4px 0 0!important}
 #b_header .b_searchboxForm{border-radius:0!important;border:0!important;background:var(--n19-field)!important;box-shadow:0 0 0 1px rgba(0,0,0,.1), 0 2px 4px 0 rgba(0,0,0,.16)!important}
 :where(:root:not([data-n19-safe])) #b_header .b_searchboxForm,#b_header:where(:root:not([data-n19-safe])) .b_searchboxForm{display:flex!important;align-items:center!important}
@@ -71,6 +72,8 @@ html[data-net19-mode="dark"]{--n19-title:#8ab4f8;--n19-url:#81c995;--n19-field:#
 #b_header .b_scopebar li svg,#b_header .b_scopebar li .b_sp_icon{display:none!important}
 #b-scopeListItem-copilotsearch,.b_scopebar li:has(>a[href*="/copilotsearch"]),.b_scopebar li:has(>a[href*="copilot"i]){display:none!important}
 :where(:root:not([data-n19-safe])) #b_content,#b_content:where(:root:not([data-n19-safe])){padding-left:100px!important}
+:where(:root:not([data-n19-safe])) #b_content:has(>#vm_c),#b_content:has(>#vm_c):where(:root:not([data-n19-safe])){padding-left:0!important}
+#vm_c .img_cont,#vm_c .iuscp,#vm_c .imgpt,#vm_c .iusc,#vm_c .mimg{border-radius:0!important}
 :where(:root:not([data-n19-safe])) #b_tween,#b_tween:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) #b_tween_searchTools,#b_tween_searchTools:where(:root:not([data-n19-safe])){margin-left:20px!important}
 #b_tween .sb_count,.sb_count{font-size:12px!important;color:var(--n19-muted)!important}
 :where(:root:not([data-n19-safe])) #b_results>li.b_algo,#b_results:where(:root:not([data-n19-safe]))>li.b_algo{display:flex!important;flex-direction:column!important;padding:10px 20px 0!important;margin-bottom:2px!important}

@@ -1,404 +1,474 @@
 {
- "theme": "npr",
- "era": "Late-2019 NPR (the header and player refresh that shipped in autumn 2019 and is on the 2019-11 captures; the grey NEWSCAST / LIVE RADIO / SHOWS player of early 2019 was replaced then): white header with the npr logo, SIGN IN · NPR SHOP · red DONATE, dark grey #4a4a4a nav bar with condensed uppercase NEWS / ARTS & LIFE / MUSIC / SHOWS & PODCASTS / SEARCH, blue player (HOURLY NEWS · LISTEN LIVE · PLAYLIST), white cards with slugs in small uppercase grey and bold titles on a #f9f9f9 page; same design for every visitor.",
- "sources": [
-  {
-   "id": "article0-201903",
-   "url": "https://web.archive.org/web/20190316224730if_/https://www.npr.org/2019/03/15/703911997/the-role-social-media-plays-in-mass-shootings",
-   "date": "2019-03-16",
-   "shows": "article0 page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/npr/npr-article0-201903.png"
-  },
-  {
-   "id": "article1-201907",
-   "url": "https://web.archive.org/web/20190716000436if_/https://www.npr.org/2019/07/15/741938966/more-than-1-million-people-agree-to-storm-area-51-but-the-air-force-says-stay-ho",
-   "date": "2019-07-16",
-   "shows": "article1 page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/npr/npr-article1-201907.png"
-  },
-  {
-   "id": "article2-201911",
-   "url": "https://web.archive.org/web/20191115233100if_/https://www.npr.org/2019/11/15/779900407/trump-asks-supreme-court-to-block-house-subpoena-for-his-tax-records",
-   "date": "2019-11-15",
-   "shows": "article2 page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/npr/npr-article2-201911.png"
-  },
-  {
-   "id": "home-201903",
-   "url": "https://web.archive.org/web/20190315234321if_/https://www.npr.org/",
-   "date": "2019-03-15",
-   "shows": "home page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/npr/npr-home-201903.png"
-  },
-  {
-   "id": "home-201907",
-   "url": "https://web.archive.org/web/20190716012202if_/https://www.npr.org/",
-   "date": "2019-07-16",
-   "shows": "home page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/npr/npr-home-201907.png"
-  },
-  {
-   "id": "home-201911",
-   "url": "https://web.archive.org/web/20191116001253if_/https://www.npr.org/",
-   "date": "2019-11-16",
-   "shows": "home page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/npr/npr-home-201911.png"
-  },
-  {
-   "id": "section0-201903",
-   "url": "https://web.archive.org/web/20190315205944if_/https://www.npr.org/sections/politics/",
-   "date": "2019-03-15",
-   "shows": "section0 page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/npr/npr-section0-201903.png"
-  },
-  {
-   "id": "section1-201907",
-   "url": "https://web.archive.org/web/20190715210927if_/https://www.npr.org/sections/news/",
-   "date": "2019-07-15",
-   "shows": "section1 page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/npr/npr-section1-201907.png"
-  },
-  {
-   "id": "section2-201911",
-   "url": "https://web.archive.org/web/20191116002150if_/https://www.npr.org/music/",
-   "date": "2019-11-16",
-   "shows": "section2 page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/npr/npr-section2-201911.png"
-  }
- ],
- "features": [
-  {
-   "match": "^(Accessibility|Diversity|Ethics|NPR Network|NPR Extra|Transcripts)$",
-   "in2019": false,
-   "evidence": [
-    "section0-201903",
-    "section1-201907",
-    "section2-201911"
-   ],
-   "note": "footer links that are not in the 2019 footer (Home, Podcasts, Programs, Newsletters, Facebook, Twitter, Instagram, Contact, Help, Overview, Finances, People, Press, Public Editor, Corrections, Support Public Radio, Sponsor NPR, NPR Careers, NPR Shop, NPR Events, Visit NPR); hidden",
-   "action": "hidden"
-  },
-  {
-   "match": "^(Arts\\ \\&\\ Life|Become\\ an\\ NPR\\ sponsor|Corrections|Donate|Facebook|Finances|Home|Instagram|Music|NPR\\ Careers|NPR\\ Shop|NPR\\ footer|NPR\\ header|NPR\\ logo|News|Overview|Podcasts|Press|Privacy|Public\\ Editor|Search|Shows\\ \\&\\ Podcasts|Sign\\ In|Sponsor\\ NPR|Support\\ Public\\ Radio|Terms\\ of\\ Use|Text\\ Only|Your\\ Privacy\\ Choices|advertisement|article\\ area|main\\ content|section\\ area)$",
-   "in2019": true,
-   "evidence": [
-    "article0-201903",
-    "article1-201907",
-    "article2-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Arts & Life",
-    "Become an NPR sponsor",
-    "Corrections",
-    "Donate",
-    "Facebook",
-    "Finances",
-    "Home",
-    "Instagram",
-    "Music",
-    "NPR Careers",
-    "NPR Shop",
-    "NPR footer",
-    "NPR header",
-    "NPR logo",
-    "News",
-    "Overview",
-    "Podcasts",
-    "Press",
-    "Privacy",
-    "Public Editor",
-    "Search",
-    "Shows & Podcasts",
-    "Sign In",
-    "Sponsor NPR",
-    "Support Public Radio",
-    "Terms of Use",
-    "Text Only",
-    "Your Privacy Choices",
-    "advertisement",
-    "article area",
-    "main content",
-    "section area"
-   ]
-  },
-  {
-   "match": "^(repeated\\ div)$",
-   "in2019": true,
-   "evidence": [
-    "article0-201903",
-    "article1-201907",
-    "home-201903"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "repeated div"
-   ]
-  },
-  {
-   "match": "^(National)$",
-   "in2019": true,
-   "evidence": [
-    "article1-201907",
-    "home-201907",
-    "home-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "National"
-   ]
-  },
-  {
-   "match": "^(Law)$",
-   "in2019": true,
-   "evidence": [
-    "article2-201911",
-    "home-201903",
-    "home-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Law"
-   ]
-  },
-  {
-   "match": "^(Playlist)$",
-   "in2019": true,
-   "evidence": [
-    "article2-201911",
-    "home-201907",
-    "home-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Playlist"
-   ]
-  },
-  {
-   "match": "^(Hourly\\ News|Listen\\ Live|NPR\\ audio\\ player|audio\\ player\\ navigation)$",
-   "in2019": true,
-   "evidence": [
-    "article2-201911",
-    "home-201911",
-    "section2-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Hourly News",
-    "Listen Live",
-    "NPR audio player",
-    "audio player navigation"
-   ]
-  },
-  {
-   "match": "^(Embed|audio\\-module|repeated\\ article)$",
-   "in2019": true,
-   "evidence": [
-    "home-201903",
-    "home-201907",
-    "home-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Embed",
-    "audio-module",
-    "repeated article"
-   ]
-  },
-  {
-   "match": "^(repeated\\ section)$",
-   "in2019": true,
-   "evidence": [
-    "home-201907",
-    "home-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "repeated section"
-   ]
-  },
-  {
-   "match": "^(Transcript)$",
-   "in2019": true,
-   "evidence": [
-    "home-201907",
-    "home-201911",
-    "section0-201903"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Transcript"
-   ]
-  },
-  {
-   "match": "^(Business|Politics)$",
-   "in2019": true,
-   "evidence": [
-    "home-201907",
-    "home-201911",
-    "section1-201907"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Business",
-    "Politics"
-   ]
-  },
-  {
-   "match": "^(WATCH)$",
-   "in2019": true,
-   "evidence": [
-    "home-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "WATCH"
-   ]
-  },
-  {
-   "match": "^(Tiny\\ Desk)$",
-   "in2019": true,
-   "evidence": [
-    "home-201911",
-    "section2-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Tiny Desk"
-   ]
-  },
-  {
-   "match": "^(Elections|Newsletter|Podcast)$",
-   "in2019": true,
-   "evidence": [
-    "section0-201903"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Elections",
-    "Newsletter",
-    "Podcast"
-   ]
-  },
-  {
-   "match": "^(Download|sub\\-navigation)$",
-   "in2019": true,
-   "evidence": [
-    "section0-201903",
-    "section1-201907"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Download",
-    "sub-navigation"
-   ]
-  },
-  {
-   "match": "^(Health)$",
-   "in2019": true,
-   "evidence": [
-    "section1-201907"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Health"
-   ]
-  },
-  {
-   "match": "^(All\\ Songs\\ Considered|Live\\ Sessions|More\\ stations|Rock)$",
-   "in2019": true,
-   "evidence": [
-    "section2-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "All Songs Considered",
-    "Live Sessions",
-    "More stations",
-    "Rock"
-   ]
-  },
-  {
-   "match": "^(Culture|Arts & Life|Podcasts & Shows|Contact & Help|Sign in or create an account|nav area|dialog area)$",
-   "in2019": true,
-   "evidence": [
-    "home-201911",
-    "section0-201903"
-   ],
-   "note": "renamed 2019 links (Arts & Life, Podcasts, Contact / Help, Sign In; the theme renames Culture and Podcasts & Shows back) and the header nav / sign-in dialog"
-  },
-  {
-   "match": "^(Pick Your NPR Station|Select a local station|Set Station|Station Finder|More stations|Visit station site)$",
-   "in2019": true,
-   "evidence": [
-    "home-201907",
-    "home-201911"
-   ],
-   "note": "local station picker"
-  },
-  {
-   "match": "^(Listen· .*|Listen · .*|Play video|Navigate next|Load more stories|Browse archive|search npr\\.org|Start Playback)$",
-   "in2019": true,
-   "evidence": [
-    "home-201911",
-    "section0-201903",
-    "section2-201911"
-   ],
-   "note": "audio Start Playback buttons with durations, the video carousel (Popular Videos / More Videos), and the section archive / load-more links (2019 section pages link sections/<name>/archive?start=…)"
-  },
-  {
-   "match": "^(Europe|Animals|Space|Weather|Living Better|Classical|Jazz|Author Interviews|Book Reviews|Music Features|New Music Friday|Live|Only on NPR|Here & Now Anytime|Consider This from NPR|NPR's Newsmakers|Life Kit: .*|.* Almanac - .*|.*: Tiny Desk Concert)$",
-   "in2019": true,
-   "evidence": [
-    "section2-201911",
-    "home-201911"
-   ],
-   "note": "story slugs, series and genre names attached to stories (content); the 2019 music page has Music By Genre (Rock, Classical, Jazz…), Music Features and Tiny Desk"
-  },
-  {
-   "match": "^(Up First Newsletter|recommended stories|More Stories From NPR)$",
-   "in2019": true,
-   "evidence": [
-    "article1-201907",
-    "home-201911"
-   ],
-   "note": "newsletter sign-up (2019: Subscribe To Our Newsletter, Up First) and the related-stories list under articles"
-  },
-  {
-   "match": "^[A-Z][\\w'’&.-]*(?: [A-Z&][\\w'’.-]*){0,2}$",
-   "in2019": true,
-   "evidence": [
-    "home-201903",
-    "home-201911",
-    "section1-201907"
-   ],
-   "note": "story slugs and series names above headlines (content; they change with the news, e.g. Obituaries, Trump's Terms)"
-  },
-  {
-   "match": "^(?=.{24,}).*[a-z].*$",
-   "in2019": true,
-   "evidence": [
-    "home-201903",
-    "home-201907",
-    "home-201911"
-   ],
-   "note": "story headlines and teasers (content)"
-  }
- ]
+  "theme": "npr",
+  "era": "Late-2019 NPR (the header and player refresh that shipped in autumn 2019 and is on the 2019-11 captures; the grey NEWSCAST / LIVE RADIO / SHOWS player of early 2019 was replaced then): white header with the npr logo, SIGN IN · NPR SHOP · red DONATE, dark grey #4a4a4a nav bar with condensed uppercase NEWS / ARTS & LIFE / MUSIC / SHOWS & PODCASTS / SEARCH, blue player (HOURLY NEWS · LISTEN LIVE · PLAYLIST), white cards with slugs in small uppercase grey and bold titles on a #f9f9f9 page; same design for every visitor.",
+  "sources": [
+    {
+      "id": "article0-201903",
+      "url": "https://web.archive.org/web/20190316224730if_/https://www.npr.org/2019/03/15/703911997/the-role-social-media-plays-in-mass-shootings",
+      "date": "2019-03-16",
+      "shows": "article0 page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/npr/npr-article0-201903.png"
+    },
+    {
+      "id": "article1-201907",
+      "url": "https://web.archive.org/web/20190716000436if_/https://www.npr.org/2019/07/15/741938966/more-than-1-million-people-agree-to-storm-area-51-but-the-air-force-says-stay-ho",
+      "date": "2019-07-16",
+      "shows": "article1 page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/npr/npr-article1-201907.png"
+    },
+    {
+      "id": "article2-201911",
+      "url": "https://web.archive.org/web/20191115233100if_/https://www.npr.org/2019/11/15/779900407/trump-asks-supreme-court-to-block-house-subpoena-for-his-tax-records",
+      "date": "2019-11-15",
+      "shows": "article2 page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/npr/npr-article2-201911.png"
+    },
+    {
+      "id": "home-201903",
+      "url": "https://web.archive.org/web/20190315234321if_/https://www.npr.org/",
+      "date": "2019-03-15",
+      "shows": "home page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/npr/npr-home-201903.png"
+    },
+    {
+      "id": "home-201907",
+      "url": "https://web.archive.org/web/20190716012202if_/https://www.npr.org/",
+      "date": "2019-07-16",
+      "shows": "home page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/npr/npr-home-201907.png"
+    },
+    {
+      "id": "home-201911",
+      "url": "https://web.archive.org/web/20191116001253if_/https://www.npr.org/",
+      "date": "2019-11-16",
+      "shows": "home page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/npr/npr-home-201911.png"
+    },
+    {
+      "id": "section0-201903",
+      "url": "https://web.archive.org/web/20190315205944if_/https://www.npr.org/sections/politics/",
+      "date": "2019-03-15",
+      "shows": "section0 page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/npr/npr-section0-201903.png"
+    },
+    {
+      "id": "section1-201907",
+      "url": "https://web.archive.org/web/20190715210927if_/https://www.npr.org/sections/news/",
+      "date": "2019-07-15",
+      "shows": "section1 page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/npr/npr-section1-201907.png"
+    },
+    {
+      "id": "section2-201911",
+      "url": "https://web.archive.org/web/20191116002150if_/https://www.npr.org/music/",
+      "date": "2019-11-16",
+      "shows": "section2 page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/npr/npr-section2-201911.png"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Accessibility|Diversity|Ethics|NPR Network|NPR Extra|Transcripts)$",
+      "in2019": false,
+      "evidence": [
+        "section0-201903",
+        "section1-201907",
+        "section2-201911"
+      ],
+      "note": "footer links that are not in the 2019 footer (Home, Podcasts, Programs, Newsletters, Facebook, Twitter, Instagram, Contact, Help, Overview, Finances, People, Press, Public Editor, Corrections, Support Public Radio, Sponsor NPR, NPR Careers, NPR Shop, NPR Events, Visit NPR); hidden",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Arts\\ \\&\\ Life|Become\\ an\\ NPR\\ sponsor|Corrections|Donate|Facebook|Finances|Home|Instagram|Music|NPR\\ Careers|NPR\\ Shop|NPR\\ footer|NPR\\ header|NPR\\ logo|News|Overview|Podcasts|Press|Privacy|Public\\ Editor|Search|Shows\\ \\&\\ Podcasts|Sign\\ In|Sponsor\\ NPR|Support\\ Public\\ Radio|Terms\\ of\\ Use|Text\\ Only|Your\\ Privacy\\ Choices|advertisement|article\\ area|main\\ content|section\\ area)$",
+      "in2019": true,
+      "evidence": [
+        "article0-201903",
+        "article1-201907",
+        "article2-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Arts & Life",
+        "Become an NPR sponsor",
+        "Corrections",
+        "Donate",
+        "Facebook",
+        "Finances",
+        "Home",
+        "Instagram",
+        "Music",
+        "NPR Careers",
+        "NPR Shop",
+        "NPR footer",
+        "NPR header",
+        "NPR logo",
+        "News",
+        "Overview",
+        "Podcasts",
+        "Press",
+        "Privacy",
+        "Public Editor",
+        "Search",
+        "Shows & Podcasts",
+        "Sign In",
+        "Sponsor NPR",
+        "Support Public Radio",
+        "Terms of Use",
+        "Text Only",
+        "Your Privacy Choices",
+        "advertisement",
+        "article area",
+        "main content",
+        "section area"
+      ]
+    },
+    {
+      "match": "^(repeated\\ div)$",
+      "in2019": true,
+      "evidence": [
+        "article0-201903",
+        "article1-201907",
+        "home-201903"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "repeated div"
+      ]
+    },
+    {
+      "match": "^(National)$",
+      "in2019": true,
+      "evidence": [
+        "article1-201907",
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "National"
+      ]
+    },
+    {
+      "match": "^(Law)$",
+      "in2019": true,
+      "evidence": [
+        "article2-201911",
+        "home-201903",
+        "home-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Law"
+      ]
+    },
+    {
+      "match": "^(Playlist)$",
+      "in2019": true,
+      "evidence": [
+        "article2-201911",
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Playlist"
+      ]
+    },
+    {
+      "match": "^(Hourly\\ News|Listen\\ Live|NPR\\ audio\\ player|audio\\ player\\ navigation)$",
+      "in2019": true,
+      "evidence": [
+        "article2-201911",
+        "home-201911",
+        "section2-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Hourly News",
+        "Listen Live",
+        "NPR audio player",
+        "audio player navigation"
+      ]
+    },
+    {
+      "match": "^(Embed|audio\\-module|repeated\\ article)$",
+      "in2019": true,
+      "evidence": [
+        "home-201903",
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Embed",
+        "audio-module",
+        "repeated article"
+      ]
+    },
+    {
+      "match": "^(repeated\\ section)$",
+      "in2019": true,
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "repeated section"
+      ]
+    },
+    {
+      "match": "^(Transcript)$",
+      "in2019": true,
+      "evidence": [
+        "home-201907",
+        "home-201911",
+        "section0-201903"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Transcript"
+      ]
+    },
+    {
+      "match": "^(Business|Politics)$",
+      "in2019": true,
+      "evidence": [
+        "home-201907",
+        "home-201911",
+        "section1-201907"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Business",
+        "Politics"
+      ]
+    },
+    {
+      "match": "^(WATCH)$",
+      "in2019": true,
+      "evidence": [
+        "home-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "WATCH"
+      ]
+    },
+    {
+      "match": "^(Tiny\\ Desk)$",
+      "in2019": true,
+      "evidence": [
+        "home-201911",
+        "section2-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Tiny Desk"
+      ]
+    },
+    {
+      "match": "^(Elections|Newsletter|Podcast)$",
+      "in2019": true,
+      "evidence": [
+        "section0-201903"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Elections",
+        "Newsletter",
+        "Podcast"
+      ]
+    },
+    {
+      "match": "^(Download|sub\\-navigation)$",
+      "in2019": true,
+      "evidence": [
+        "section0-201903",
+        "section1-201907"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Download",
+        "sub-navigation"
+      ]
+    },
+    {
+      "match": "^(Health)$",
+      "in2019": true,
+      "evidence": [
+        "section1-201907"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Health"
+      ]
+    },
+    {
+      "match": "^(All\\ Songs\\ Considered|Live\\ Sessions|More\\ stations|Rock)$",
+      "in2019": true,
+      "evidence": [
+        "section2-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "All Songs Considered",
+        "Live Sessions",
+        "More stations",
+        "Rock"
+      ]
+    },
+    {
+      "match": "^(Culture|Arts & Life|Podcasts & Shows|Contact & Help|Sign in or create an account|nav area|dialog area)$",
+      "in2019": true,
+      "evidence": [
+        "home-201911",
+        "section0-201903"
+      ],
+      "note": "renamed 2019 links (Arts & Life, Podcasts, Contact / Help, Sign In; the theme renames Culture and Podcasts & Shows back) and the header nav / sign-in dialog"
+    },
+    {
+      "match": "^(Pick Your NPR Station|Select a local station|Set Station|Station Finder|More stations|Visit station site)$",
+      "in2019": true,
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "local station picker"
+    },
+    {
+      "match": "^(Listen· .*|Listen · .*|Play video|Navigate next|Load more stories|Browse archive|search npr\\.org|Start Playback)$",
+      "in2019": true,
+      "evidence": [
+        "home-201911",
+        "section0-201903",
+        "section2-201911"
+      ],
+      "note": "audio Start Playback buttons with durations, the video carousel (Popular Videos / More Videos), and the section archive / load-more links (2019 section pages link sections/<name>/archive?start=…)"
+    },
+    {
+      "match": "^(Europe|Animals|Space|Weather|Living Better|Classical|Jazz|Author Interviews|Book Reviews|Music Features|New Music Friday|Live|Only on NPR|Here & Now Anytime|Consider This from NPR|NPR's Newsmakers|Life Kit: .*|.* Almanac - .*|.*: Tiny Desk Concert)$",
+      "in2019": true,
+      "evidence": [
+        "section2-201911",
+        "home-201911"
+      ],
+      "note": "story slugs, series and genre names attached to stories (content); the 2019 music page has Music By Genre (Rock, Classical, Jazz…), Music Features and Tiny Desk"
+    },
+    {
+      "match": "^(Up First Newsletter|recommended stories|More Stories From NPR)$",
+      "in2019": true,
+      "evidence": [
+        "article1-201907",
+        "home-201911"
+      ],
+      "note": "newsletter sign-up (2019: Subscribe To Our Newsletter, Up First) and the related-stories list under articles"
+    },
+    {
+      "match": "^[A-Z][\\w'’&.-]*(?: [A-Z&][\\w'’.-]*){0,2}$",
+      "in2019": true,
+      "evidence": [
+        "home-201903",
+        "home-201911",
+        "section1-201907"
+      ],
+      "note": "story slugs and series names above headlines (content; they change with the news, e.g. Obituaries, Trump's Terms)"
+    },
+    {
+      "match": "^(?=.{24,}).*[a-z].*$",
+      "in2019": true,
+      "evidence": [
+        "home-201903",
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "story headlines and teasers (content)"
+    },
+    {
+      "match": "^(NPR logo|NPR)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "required: logo"
+    },
+    {
+      "match": "^(News)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^(Arts & Life)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^(Music)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^(Shows & Podcasts|Podcasts & Shows)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^(Search)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "required: search"
+    },
+    {
+      "match": "^(Hourly News|Listen Live|Playlist)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "required: player bar"
+    }
+  ]
 }

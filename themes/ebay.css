@@ -18,7 +18,7 @@ html:root, body {
   border-radius: 3px 0 0 3px !important; border: 1px solid var(--n19-field-edge) !important; background: var(--n19-field) !important; box-shadow: none !important;
 }
 .gh-search__wrap .gh-search-input__wrap { border: none !important; border-radius: 0 !important; }
-#gh-ac, .gh-search-input { border-radius: 0 !important; font-size: 16px !important; box-shadow: none !important; }
+#gh-ac, .gh-search-input { border-radius: 0 !important; font-size: 16px !important; box-shadow: none !important; caret-color: var(--n19-text) !important; }
 #gh-cat-box, .gh-search-categories { border-radius: 0 !important; border-left: 1px solid var(--n19-field-edge) !important; font-size: 12px !important; }
 #gh-search-btn, #gh-btn, .gh-search-button__button, button.gh-search-button {
   background: var(--n19-button) !important; border: 1px solid var(--n19-button) !important; border-radius: 3px !important; color: #fff !important;

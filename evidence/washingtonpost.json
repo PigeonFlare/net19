@@ -102,14 +102,6 @@
       "note": "article share and comments rail"
     },
     {
-      "match": "^(Cornell rape allegations|Ringo Starr|Peptides advice|D\\.C\\. bribery case|Midlife sabbaticals|SNL on Mamdani-Trump)$",
-      "in2019": true,
-      "evidence": [
-        "s2"
-      ],
-      "note": "today's 'Trending' topic links, as the 2019 'In the News' row (content)"
-    },
-    {
       "match": "^(News alerts|Save this article|Recipes|Find a recipe|Report a Vulnerability|Workforce Demographics|Enterprise Subscriptions)$",
       "in2019": false,
       "evidence": [
@@ -127,6 +119,56 @@
         "s4"
       ],
       "note": "story headlines and teasers (content)"
+    },
+    {
+      "match": "^(Search and browse sections|Sections|Search)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "required: search and Sections buttons in the black top bar"
+    },
+    {
+      "match": "^Sign in$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s4"
+      ],
+      "note": "required: Sign in"
+    },
+    {
+      "match": "^Democracy Dies in Darkness$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "article"
+      ],
+      "evidence": [
+        "s2"
+      ],
+      "note": "required: tagline under the masthead"
+    },
+    {
+      "match": "^(?=.{3,30}$)(?!(Recipes|News alerts|Save this article)$)[A-Z0-9][\\w.,’'&+-]*( [\\w.,’'&+-]+){0,4}$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "today’s Trending topic links (as the 2019 In the News row) and bylines on story items (content); listed after every post-2019 entry"
+    },
+    {
+      "match": "^I understand$",
+      "in2019": false,
+      "evidence": [
+        "cookie/tracking consent button (legally required notice)"
+      ],
+      "action": "kept: legal",
+      "note": "consent notice"
     }
   ]
 }

@@ -67,15 +67,6 @@
       "note": "2019 header, Hot Topics and markets/weather strip"
     },
     {
-      "match": "^(WAR WITH IRAN|FOILED TERROR PLOT|CLANCY HOLDOUT)$",
-      "in2019": true,
-      "evidence": [
-        "s2",
-        "s3"
-      ],
-      "note": "today's Hot Topics links (news topics, content; the 2019 Hot Topics row held the same kind of links)"
-    },
-    {
       "match": "^(ON AIR NOW|ON NOW|Watch Fox News Live|Watch Live.*|WATCH NOW|WATCH|LIVE UPDATES|FIRST ON FOX|opinion|Video|Fox Nation Subscription Required|.* Pay TV Login Required|.* Free to Listen)$",
       "in2019": true,
       "evidence": [
@@ -145,6 +136,84 @@
         "s4"
       ],
       "note": "story headlines and teasers (content)"
+    },
+    {
+      "match": "^U\\.S\\.$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s5"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^Politics$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s5"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^World$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s5"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^Opinion$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s5"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^Entertainment$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s5"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^(Toggle search|Expand / Collapse search|search)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s6"
+      ],
+      "note": "required: search"
+    },
+    {
+      "match": "^(Watch TV)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "required: Watch TV"
+    },
+    {
+      "match": "^(?=.{3,40}$)[A-Z0-9][A-Z0-9 ’'&.,:!?-]+$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "the day’s Hot Topics links in the lower header row (2019 had the same Hot Topics row, s3), all-caps story kickers (content)"
     }
   ]
 }

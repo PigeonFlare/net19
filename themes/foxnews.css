@@ -59,3 +59,7 @@ nav:is([aria-label*="outkick" i], [aria-label$=" deals" i], [aria-label$=" games
 li.more-section-item:has(a[aria-label^="Outkick" i]), li.menu-item:has(> ul[aria-label^="OutKick" i]), :is(h2, h3, header) a[href*="foxweather.com"] { display: none !important; }
 :is(nav, div, section, li):has(> ul > li > a[aria-label^="OutKick" i]), li:has(> a[aria-label^="OutKick" i]) { display: none !important; }
 .ab-iam-root, .ab-iam-root ~ .ab-page-blocker, .meta .read-time { display: none !important; }
+html[data-net19-mode="dark"] .market-data a.ticker-link { color: #a9c1e6 !important; }
+html[data-net19-mode="dark"] .market-data .percent-value.pos { color: #6fcf6f !important; }
+html[data-net19-mode="dark"] .market-data .percent-value.neg { color: #ff7b7b !important; }
+html[data-net19-mode="dark"] span.pill { color: #fff !important; }

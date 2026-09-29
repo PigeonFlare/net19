@@ -1,7 +1,7 @@
 globalThis.net19Theme = {
   detect: () => 'light',
   later: /^(?:add ap news on google|ap news on google|get the ap news app|download the app|live|live updates|listen to this article|gift this article|donate now|collapse donation banner)$/i,
-  intended: '[data-n19-later], .Page-header-sign-in, .HtmlModule:has(a[href$="apnews.com/games"]), .FooterNavigationItem-items-item:has(> a:is([href*="apstylebook.com"], [href*="leads.ap.org"], [href*="contentservices.ap.org"])), .Page-footer .SocialBar, .Author-socialLinks',
+  intended: '[data-n19-later], .bcpNotificationBar, .bx-client, [id^="bx-campaign-"], iframe.bx-gbi-frame, .Page-header-stickyWrap bsp-banner.Banner, .Page-header-bar a[href*="donate" i], .Page-header-sign-in, .HtmlModule:has(a[href$="apnews.com/games"]), .FooterNavigationItem-items-item:has(> a:is([href*="apstylebook.com"], [href*="leads.ap.org"], [href*="contentservices.ap.org"])), .Page-footer .SocialBar, .Author-socialLinks',
 };
 (() => {
   const fix = () => {

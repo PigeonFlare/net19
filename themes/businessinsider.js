@@ -1,7 +1,7 @@
 globalThis.net19Theme = {
   later: /^(?:gift article|save this article|listen to this article|tour|get the app|get the business insider app)$/i,
   keepLabels: /^(?:read)$/i,
-  intended: 'section.comments, .inline-backup-paywall, .trending-bar-section, .sub-section-app-store, section.latest-feed header.filters, .bifrost-entry.bottom, [data-n19-later]',
+  intended: 'a.tout-tag-link[href="/artificial-intelligence"], section.comments, .inline-backup-paywall, .trending-bar-section, .sub-section-app-store, section.latest-feed header.filters, .bifrost-entry.bottom, [data-n19-later]',
 };
 (() => {
   const fix = () => {

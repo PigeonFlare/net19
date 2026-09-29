@@ -1,242 +1,314 @@
 {
- "theme": "huffpost",
- "era": "Late-2019 HuffPost (the 2019-11 captures; the early-2019 captures show the same black header without the section row): black 78px header with menu and search at left, the bracketed green HUFFPOST logo (its own 2019 file on s.m.huffpost.com) centred, Log In at right; black section row NEWS · POLITICS · ENTERTAINMENT · COMMUNITY · LIFE · PERSONAL · VIDEO · SHOPPING; a huge condensed, underlined uppercase splash headline; zones titled in italic condensed caps (TOP STORIES, LATEST NEWS); same page for every visitor.",
- "sources": [
-  {
-   "id": "article0-201903",
-   "url": "https://web.archive.org/web/20190327133912if_/https://www.huffpost.com/entry/new-zealand-mosque-shootings-muslims-grieve_n_5c8ba131e4b0d7f6b0f27d3f",
-   "date": "2019-03-27",
-   "shows": "article0 page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/huffpost/huffpost-article0-201903.png"
-  },
-  {
-   "id": "article1-201907",
-   "url": "https://web.archive.org/web/20190716105543if_/https://www.huffpost.com/entry/trump-asylum-racism_n_5d2cd753e4b0bca60363dd3b",
-   "date": "2019-07-16",
-   "shows": "article1 page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/huffpost/huffpost-article1-201907.png"
-  },
-  {
-   "id": "article2-201911",
-   "url": "https://web.archive.org/web/20191116123705if_/https://www.huffpost.com/entry/marie-yovanovitch-corruption-trump-testimony_n_5dcee38fe4b01f982f0176c7",
-   "date": "2019-11-16",
-   "shows": "article2 page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/huffpost/huffpost-article2-201911.png"
-  },
-  {
-   "id": "home-201903",
-   "url": "https://web.archive.org/web/20190315231235if_/https://www.huffpost.com/",
-   "date": "2019-03-15",
-   "shows": "home page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/huffpost/huffpost-home-201903.png"
-  },
-  {
-   "id": "home-201907",
-   "url": "https://web.archive.org/web/20190716002847if_/https://www.huffpost.com/",
-   "date": "2019-07-16",
-   "shows": "home page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/huffpost/huffpost-home-201907.png"
-  },
-  {
-   "id": "home-201911",
-   "url": "https://web.archive.org/web/20191115235055if_/https://www.huffpost.com/",
-   "date": "2019-11-15",
-   "shows": "home page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/huffpost/huffpost-home-201911.png"
-  },
-  {
-   "id": "home-a201903",
-   "url": "https://arquivo.pt/noFrame/replay/20190315215853/https://www.huffpost.com/",
-   "date": "2019-03-15",
-   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/huffpost/huffpost-home-a201903.png"
-  },
-  {
-   "id": "section1-201907",
-   "url": "https://web.archive.org/web/20190715182809if_/https://www.huffpost.com/entertainment/",
-   "date": "2019-07-15",
-   "shows": "section1 page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/huffpost/huffpost-section1-201907.png"
-  }
- ],
- "features": [
-  {
-   "match": "^(GAMES|Games|VOICES|Voices|NEW|Pause marquee animation|Log in to hide these messages\\.|Follow us on (x|facebook|instagram)|Accessibility Statement|DMCA Policy|HUFFPOST DAILY|Search summaries are powered by OpenAI.*)$",
-   "in2019": false,
-   "evidence": [
-    "home-201903",
-    "home-201907",
-    "home-201911"
-   ],
-   "note": "not on the 2019 captures: HuffPost Games (2023), the NEW badges, the HuffPost Daily checklist marquee, the support-HuffPost appeal, the menu's social row and the Accessibility / DMCA footer links are hidden; the Voices link is renamed back to its 2019 label Community (same /voices/ page); the OpenAI search-summary notice and any AI summary block on the search page are hidden",
-   "action": "hidden"
-  },
-  {
-   "match": "^(About\\ Us|Advertise|Careers|Comment\\ Policy|Contact\\ Us|FAQ|HUFFPOST|Log\\ In|POLITICS|Politics|Privacy\\ Policy|RSS|User\\ Agreement|footer\\ area|form\\ area|header\\ area|repeated\\ div)$",
-   "in2019": true,
-   "evidence": [
-    "article0-201903",
-    "article1-201907",
-    "article2-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "About Us",
-    "Advertise",
-    "Careers",
-    "Comment Policy",
-    "Contact Us",
-    "FAQ",
-    "HUFFPOST",
-    "Log In",
-    "POLITICS",
-    "Politics",
-    "Privacy Policy",
-    "RSS",
-    "User Agreement",
-    "footer area",
-    "form area",
-    "header area",
-    "repeated div"
-   ]
-  },
-  {
-   "match": "^(SIGN\\ UP)$",
-   "in2019": true,
-   "evidence": [
-    "article0-201903",
-    "home-201903",
-    "home-a201903"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "SIGN UP"
-   ]
-  },
-  {
-   "match": "^(section\\ area)$",
-   "in2019": true,
-   "evidence": [
-    "article1-201907",
-    "article2-201911",
-    "home-201903"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "section area"
-   ]
-  },
-  {
-   "match": "^(Email\\ this\\ article|Share\\ on\\ facebook)$",
-   "in2019": true,
-   "evidence": [
-    "article2-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Email this article",
-    "Share on facebook"
-   ]
-  },
-  {
-   "match": "^(ENTERTAINMENT|HUFFPOST\\ PERSONAL)$",
-   "in2019": true,
-   "evidence": [
-    "article2-201911",
-    "home-201903",
-    "home-201907"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "ENTERTAINMENT",
-    "HUFFPOST PERSONAL"
-   ]
-  },
-  {
-   "match": "^(LIFE|NEWS|NEWSLETTERS|nav\\ area)$",
-   "in2019": true,
-   "evidence": [
-    "article2-201911",
-    "home-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "LIFE",
-    "NEWS",
-    "NEWSLETTERS",
-    "nav area"
-   ]
-  },
-  {
-   "match": "^(Here’s\\ how\\.)$",
-   "in2019": true,
-   "evidence": [
-    "home-201903"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Here’s how."
-   ]
-  },
-  {
-   "match": "^(COMMUNITY|Enter\\ your\\ email\\ address|HuffPost\\ homepage|PERSONAL|SHOPPING)$",
-   "in2019": true,
-   "evidence": [
-    "home-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "COMMUNITY",
-    "Enter your email address",
-    "HuffPost homepage",
-    "PERSONAL",
-    "SHOPPING"
-   ]
-  },
-  {
-   "match": "^((NEW)?\\d+ (min|mins|hour|hours|day|days) ago|in \\d+ \\w+|Dismiss|___|COMMUNITY|Community|NEWS|POLITICS|ENTERTAINMENT|LIFE|PERSONAL|VIDEO|SHOPPING|HUFFPOST VIDEO|Latest|Related|Newsletter subscription|Open main menu|Search|Go to Homepage|Close|I UNDERSTAND|aside area|repeated h3|Next|Next page|Page \\d+|Jump forward)$",
-   "in2019": true,
-   "evidence": [
-    "home-201911",
-    "article1-201907"
-   ],
-   "note": "header, section row, menu, search, newsletter sign-up, video zone, pagination and the consent notice"
-  },
-  {
-   "match": "^(Terms of Service|Privacy|Consent Preferences|Do Not Sell or Share My Personal Information|What is Outbrain\\?|From Our Partner)$",
-   "in2019": true,
-   "evidence": [
-    "article1-201907",
-    "article2-201911"
-   ],
-   "note": "legal footer (2019: User Agreement, Privacy Policy, About Our Ads) and partner/sponsored units (2019: 'PAID FOR BY …', 'HUFFPOST FINDS PARTNER')"
-  },
-  {
-   "match": "^(By .+|[A-Z][a-z]+(?: [A-Z][\\w'’.-]+){1,2}|Crime and Justice|Rape|sexual assault|cornell university|New York)$",
-   "in2019": true,
-   "evidence": [
-    "article0-201903",
-    "article2-201911"
-   ],
-   "note": "bylines and article tags (content; 2019 articles had 'By …' and tags such as Islamophobia)"
-  },
-  {
-   "match": "^(?=.{20,}).*[a-z].*$|^[A-Z0-9 '’:!?.,&-]{8,}$",
-   "in2019": true,
-   "evidence": [
-    "home-201903",
-    "home-201907",
-    "home-201911"
-   ],
-   "note": "story headlines and splash lines (content)"
-  }
- ]
+  "theme": "huffpost",
+  "era": "Late-2019 HuffPost (the 2019-11 captures; the early-2019 captures show the same black header without the section row): black 78px header with menu and search at left, the bracketed green HUFFPOST logo (its own 2019 file on s.m.huffpost.com) centred, Log In at right; black section row NEWS · POLITICS · ENTERTAINMENT · COMMUNITY · LIFE · PERSONAL · VIDEO · SHOPPING; a huge condensed, underlined uppercase splash headline; zones titled in italic condensed caps (TOP STORIES, LATEST NEWS); same page for every visitor.",
+  "sources": [
+    {
+      "id": "article0-201903",
+      "url": "https://web.archive.org/web/20190327133912if_/https://www.huffpost.com/entry/new-zealand-mosque-shootings-muslims-grieve_n_5c8ba131e4b0d7f6b0f27d3f",
+      "date": "2019-03-27",
+      "shows": "article0 page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/huffpost/huffpost-article0-201903.png"
+    },
+    {
+      "id": "article1-201907",
+      "url": "https://web.archive.org/web/20190716105543if_/https://www.huffpost.com/entry/trump-asylum-racism_n_5d2cd753e4b0bca60363dd3b",
+      "date": "2019-07-16",
+      "shows": "article1 page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/huffpost/huffpost-article1-201907.png"
+    },
+    {
+      "id": "article2-201911",
+      "url": "https://web.archive.org/web/20191116123705if_/https://www.huffpost.com/entry/marie-yovanovitch-corruption-trump-testimony_n_5dcee38fe4b01f982f0176c7",
+      "date": "2019-11-16",
+      "shows": "article2 page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/huffpost/huffpost-article2-201911.png"
+    },
+    {
+      "id": "home-201903",
+      "url": "https://web.archive.org/web/20190315231235if_/https://www.huffpost.com/",
+      "date": "2019-03-15",
+      "shows": "home page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/huffpost/huffpost-home-201903.png"
+    },
+    {
+      "id": "home-201907",
+      "url": "https://web.archive.org/web/20190716002847if_/https://www.huffpost.com/",
+      "date": "2019-07-16",
+      "shows": "home page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/huffpost/huffpost-home-201907.png"
+    },
+    {
+      "id": "home-201911",
+      "url": "https://web.archive.org/web/20191115235055if_/https://www.huffpost.com/",
+      "date": "2019-11-15",
+      "shows": "home page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/huffpost/huffpost-home-201911.png"
+    },
+    {
+      "id": "home-a201903",
+      "url": "https://arquivo.pt/noFrame/replay/20190315215853/https://www.huffpost.com/",
+      "date": "2019-03-15",
+      "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/huffpost/huffpost-home-a201903.png"
+    },
+    {
+      "id": "section1-201907",
+      "url": "https://web.archive.org/web/20190715182809if_/https://www.huffpost.com/entertainment/",
+      "date": "2019-07-15",
+      "shows": "section1 page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/huffpost/huffpost-section1-201907.png"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(GAMES|Games|VOICES|Voices|NEW|Pause marquee animation|Log in to hide these messages\\.|Follow us on (x|facebook|instagram)|Accessibility Statement|DMCA Policy|HUFFPOST DAILY|Search summaries are powered by OpenAI.*)$",
+      "in2019": false,
+      "evidence": [
+        "home-201903",
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "not on the 2019 captures: HuffPost Games (2023), the NEW badges, the HuffPost Daily checklist marquee, the support-HuffPost appeal, the menu's social row and the Accessibility / DMCA footer links are hidden; the Voices link is renamed back to its 2019 label Community (same /voices/ page); the OpenAI search-summary notice and any AI summary block on the search page are hidden",
+      "action": "hidden"
+    },
+    {
+      "match": "^(About\\ Us|Advertise|Careers|Comment\\ Policy|Contact\\ Us|FAQ|HUFFPOST|Log\\ In|POLITICS|Politics|Privacy\\ Policy|RSS|User\\ Agreement|footer\\ area|form\\ area|header\\ area|repeated\\ div)$",
+      "in2019": true,
+      "evidence": [
+        "article0-201903",
+        "article1-201907",
+        "article2-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "About Us",
+        "Advertise",
+        "Careers",
+        "Comment Policy",
+        "Contact Us",
+        "FAQ",
+        "HUFFPOST",
+        "Log In",
+        "POLITICS",
+        "Politics",
+        "Privacy Policy",
+        "RSS",
+        "User Agreement",
+        "footer area",
+        "form area",
+        "header area",
+        "repeated div"
+      ]
+    },
+    {
+      "match": "^(SIGN\\ UP)$",
+      "in2019": true,
+      "evidence": [
+        "article0-201903",
+        "home-201903",
+        "home-a201903"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "SIGN UP"
+      ]
+    },
+    {
+      "match": "^(section\\ area)$",
+      "in2019": true,
+      "evidence": [
+        "article1-201907",
+        "article2-201911",
+        "home-201903"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "section area"
+      ]
+    },
+    {
+      "match": "^(Email\\ this\\ article|Share\\ on\\ facebook)$",
+      "in2019": true,
+      "evidence": [
+        "article2-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Email this article",
+        "Share on facebook"
+      ]
+    },
+    {
+      "match": "^(ENTERTAINMENT|HUFFPOST\\ PERSONAL)$",
+      "in2019": true,
+      "evidence": [
+        "article2-201911",
+        "home-201903",
+        "home-201907"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "ENTERTAINMENT",
+        "HUFFPOST PERSONAL"
+      ]
+    },
+    {
+      "match": "^(LIFE|NEWS|NEWSLETTERS|nav\\ area)$",
+      "in2019": true,
+      "evidence": [
+        "article2-201911",
+        "home-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "LIFE",
+        "NEWS",
+        "NEWSLETTERS",
+        "nav area"
+      ]
+    },
+    {
+      "match": "^(Here’s\\ how\\.)$",
+      "in2019": true,
+      "evidence": [
+        "home-201903"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Here’s how."
+      ]
+    },
+    {
+      "match": "^(COMMUNITY|Enter\\ your\\ email\\ address|HuffPost\\ homepage|PERSONAL|SHOPPING)$",
+      "in2019": true,
+      "evidence": [
+        "home-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "COMMUNITY",
+        "Enter your email address",
+        "HuffPost homepage",
+        "PERSONAL",
+        "SHOPPING"
+      ]
+    },
+    {
+      "match": "^((NEW)?\\d+ (min|mins|hour|hours|day|days) ago|in \\d+ \\w+|Dismiss|___|COMMUNITY|Community|NEWS|POLITICS|ENTERTAINMENT|LIFE|PERSONAL|VIDEO|SHOPPING|HUFFPOST VIDEO|Latest|Related|Newsletter subscription|Open main menu|Search|Go to Homepage|Close|I UNDERSTAND|aside area|repeated h3|Next|Next page|Page \\d+|Jump forward)$",
+      "in2019": true,
+      "evidence": [
+        "home-201911",
+        "article1-201907"
+      ],
+      "note": "header, section row, menu, search, newsletter sign-up, video zone, pagination and the consent notice"
+    },
+    {
+      "match": "^(Terms of Service|Privacy|Consent Preferences|Do Not Sell or Share My Personal Information|What is Outbrain\\?|From Our Partner)$",
+      "in2019": true,
+      "evidence": [
+        "article1-201907",
+        "article2-201911"
+      ],
+      "note": "legal footer (2019: User Agreement, Privacy Policy, About Our Ads) and partner/sponsored units (2019: 'PAID FOR BY …', 'HUFFPOST FINDS PARTNER')"
+    },
+    {
+      "match": "^(By .+|[A-Z][a-z]+(?: [A-Z][\\w'’.-]+){1,2}|Crime and Justice|Rape|sexual assault|cornell university|New York)$",
+      "in2019": true,
+      "evidence": [
+        "article0-201903",
+        "article2-201911"
+      ],
+      "note": "bylines and article tags (content; 2019 articles had 'By …' and tags such as Islamophobia)"
+    },
+    {
+      "match": "^(?=.{20,}).*[a-z].*$|^[A-Z0-9 '’:!?.,&-]{8,}$",
+      "in2019": true,
+      "evidence": [
+        "home-201903",
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "story headlines and splash lines (content)"
+    },
+    {
+      "match": "^(HuffPost homepage|HUFFPOST)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "required: logo"
+    },
+    {
+      "match": "^(NEWS)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "required: section nav"
+    },
+    {
+      "match": "^(POLITICS|Politics)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "required: section nav"
+    },
+    {
+      "match": "^(ENTERTAINMENT)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "required: section nav"
+    },
+    {
+      "match": "^(LIFE)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "required: section nav"
+    },
+    {
+      "match": "^(Open main menu)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "required: hamburger"
+    }
+  ]
 }

@@ -171,20 +171,22 @@
     {
       "match": "^Amazon$",
       "in2019": true,
+      "required": true,
       "evidence": [
         "s1",
         "s6"
       ],
-      "note": "logo link"
+      "note": "required: logo"
     },
     {
       "match": "^(Deliver(ing)? to .*|Update location|Hello Select your address)$",
       "in2019": true,
+      "required": true,
       "evidence": [
         "s1",
-        "s9"
+        "s6"
       ],
-      "note": "Deliver to link, left of row two"
+      "note": "required: Deliver to"
     },
     {
       "match": "^(Search Amazon|Search|All|Go|Search in)$",
@@ -207,36 +209,42 @@
     {
       "match": "^Hello, sign in Account & Lists$",
       "in2019": true,
+      "required": true,
       "evidence": [
         "s1",
-        "s8"
-      ]
+        "s6"
+      ],
+      "note": "required: Account & Lists"
     },
     {
       "match": "^(Returns )?(& )?Orders$",
       "in2019": true,
+      "required": true,
       "evidence": [
         "s1",
-        "s8"
+        "s6"
       ],
-      "note": "shown as 'Orders' as in 2019"
+      "note": "required: Orders"
     },
     {
       "match": "^\\d+ items? in cart$",
       "in2019": true,
+      "required": true,
       "evidence": [
         "s1",
-        "s8"
-      ]
+        "s6"
+      ],
+      "note": "required: cart"
     },
     {
       "match": "^Open All Categories Menu$",
       "in2019": true,
+      "required": true,
       "evidence": [
         "s1",
-        "s8"
+        "s6"
       ],
-      "note": "hamburger"
+      "note": "required: departments menu"
     },
     {
       "match": "^(Today's Deals|Early Prime Deals|Your Amazon\\.com|Gift Cards|Help|Whole Foods|Registry|Sell|Coupons|Groceries|Prime|Best Sellers|Gift Ideas|New Releases|AmazonBasics|Amazon Basics|Customer Service|Buy Again|Browsing History|Music|Amazon Home|Automotive)$",
@@ -555,6 +563,68 @@
         "s22"
       ],
       "note": "product image links and product names in recommendation/brand carousels (content)"
+    },
+    {
+      "match": "^(Search Amazon|Search)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "required: search field with orange button"
+    },
+    {
+      "match": "^(Today.s Deals)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s6"
+      ],
+      "note": "required: nav links"
+    },
+    {
+      "match": "^(Sort by:?.*|Featured)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "search"
+      ],
+      "evidence": [
+        "s8",
+        "s9"
+      ],
+      "note": "required: Sort by"
+    },
+    {
+      "match": "^(Add to Cart|Add to Shopping Cart)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "item"
+      ],
+      "evidence": [
+        "s16",
+        "s17"
+      ],
+      "note": "required: Add to Cart"
+    },
+    {
+      "match": "^Buy Now$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "item"
+      ],
+      "evidence": [
+        "s16",
+        "s17"
+      ],
+      "note": "required: Buy Now"
     }
   ]
 }

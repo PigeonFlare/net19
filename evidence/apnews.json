@@ -1,198 +1,286 @@
 {
- "theme": "apnews",
- "era": "2019 AP News (apnews.com as relaunched in 2018 and unchanged through 2019; captures from 2019-03, 2019-07, 2019-08 and 2019-11 agree): light grey header with the AP NEWS wordmark and a small 'Top Stories · Topics · Video · Listen' row, a red bar over 'TOP STORIES', condensed headlines, serif body, grey bylines and a blue 'All Top News' button, white cards on a light grey page; the same for every visitor.",
- "sources": [
-  {
-   "id": "article0-a201908",
-   "url": "https://arquivo.pt/noFrame/replay/20190815202509/https://www.apnews.com/00061b19834849f8b6e1aa73ecdf54e4",
-   "date": "2019-08-15",
-   "shows": "article0 page as served in 2019-08 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g14-evidence/apnews/apnews-article0-a201908.png"
-  },
-  {
-   "id": "home-a201903",
-   "url": "https://arquivo.pt/noFrame/replay/20190315180623/https://www.apnews.com/",
-   "date": "2019-03-15",
-   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g14-evidence/apnews/apnews-home-a201903.png"
-  },
-  {
-   "id": "home-a201907",
-   "url": "https://arquivo.pt/noFrame/replay/20190714221012/https://apnews.com/",
-   "date": "2019-07-14",
-   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g14-evidence/apnews/apnews-home-a201907.png"
-  },
-  {
-   "id": "home-a201911",
-   "url": "https://arquivo.pt/noFrame/replay/20191101211526/https://apnews.com/",
-   "date": "2019-11-01",
-   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g14-evidence/apnews/apnews-home-a201911.png"
-  },
-  {
-   "id": "section0-a201911",
-   "url": "https://arquivo.pt/noFrame/replay/20191105054345/https://apnews.com/apf-asiapac",
-   "date": "2019-11-05",
-   "shows": "section0 page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g14-evidence/apnews/apnews-section0-a201911.png"
-  }
- ],
- "features": [
-  {
-   "match": "^(Short Stories|This is not a paywall|Donate Now|Collapse donation banner|Visit AP Games landing page)$",
-   "in2019": false,
-   "evidence": [
-    "home-a201903",
-    "home-a201907",
-    "home-a201911"
-   ],
-   "note": "vertical-video 'Short Stories', the donation banner (AP began asking for donations in 2023) and AP Games (2024); none are on the 2019 pages",
-   "action": "hidden"
-  },
-  {
-   "match": "^(Sign in)$",
-   "in2019": false,
-   "evidence": [
-    "home-a201911",
-    "article0-a201908"
-   ],
-   "note": "AP News accounts (2023+); reading needs no sign-in and the 2019 header had none",
-   "action": "hidden"
-  },
-  {
-   "match": "^(AP Stylebook|AP Leads|Advertise with us|AP News Values and Principles|AP’s Role in Elections|AP News Code of Conduct|twitter|instagram|facebook|mailto)$",
-   "in2019": false,
-   "evidence": [
-    "article0-a201908",
-    "home-a201903"
-   ],
-   "note": "footer links, footer social icons and author-bio social links absent from the 2019 footer (AP Top News, sections, About, Contact, Customer Support, Careers, Terms & Conditions, Privacy, AP Books, AP Definitive Source, AP Explore, AP Images Spotlight, AP Insights, ap.org)",
-   "action": "hidden"
-  },
-  {
-   "match": "^(Accessibility Statement|CA Notice of Collection|Do Not Sell or Share My Personal Information|Limit Use and Disclosure of Sensitive Personal Information)$",
-   "in2019": false,
-   "evidence": [
-    "home-a201903"
-   ],
-   "note": "accessibility and US privacy notices",
-   "action": "kept: legal"
-  },
-  {
-   "match": "^(About|Careers|Contact\\ Us|ap\\.org|nav\\ area|search)$",
-   "in2019": true,
-   "evidence": [
-    "article0-a201908",
-    "home-a201903",
-    "home-a201907"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "About",
-    "Careers",
-    "Contact Us",
-    "ap.org",
-    "nav area",
-    "search"
-   ]
-  },
-  {
-   "match": "^(Business|Entertainment|Politics|Science|Sports)$",
-   "in2019": true,
-   "evidence": [
-    "article0-a201908",
-    "home-a201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Business",
-    "Entertainment",
-    "Politics",
-    "Science",
-    "Sports"
-   ]
-  },
-  {
-   "match": "^(repeated\\ div)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201903",
-    "home-a201907",
-    "home-a201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "repeated div"
-   ]
-  },
-  {
-   "match": "^(Terms of Use|Privacy Policy|About|Contact Us|Careers|ap\\.org|AP Definitive Source Blog|AP Images Spotlight Blog|home page|Menu|Show Search|search|Submit|Relevance Newest Oldest|Next|Previous|Read More|Share|Full screen button|AP Photography)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201903",
-    "article0-a201908",
-    "home-a201911"
-   ],
-   "note": "2019 footer (Terms & Conditions, Privacy, About, Contact, Careers, ap.org, AP Definitive Source, AP Images Spotlight), the logo link, the 'Topics' menu, Search, 'All Top News' / read-more links, 'Click to copy' share, and Photo Galleries"
-  },
-  {
-   "match": "^(World News|Regions|China|Europe|Latin America|Asia Pacific|Russia-Ukraine war|GLOBAL BUSINESS NEWS|Play)$",
-   "in2019": true,
-   "evidence": [
-    "section0-a201911",
-    "home-a201911",
-    "home-a201903"
-   ],
-   "note": "section title and regional sub-sections (2019 'International News', 'Asia Pacific'), topic hubs ('Complete Coverage', 'Trump impeachment inquiry', 'Brexit Deadlock' in 2019) and video play buttons"
-  },
-  {
-   "match": "^(Politics|Sports|Entertainment|Business|Science|World|U\\.S\\.|Health|Technology|Lifestyle|Religion|Oddities|Travel|Photo Galleries|Video|Podcasts)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201911",
-    "article0-a201908"
-   ],
-   "note": "2019 sections (Politics, Sports, Entertainment, Business, Science, Health, Technology, Lifestyle …)"
-  },
-  {
-   "match": "^(EMILIO MORENATTI|ELENA BECATOROS|Matthew Kacsmaryk)$",
-   "in2019": true,
-   "evidence": [
-    "article0-a201908",
-    "home-a201911"
-   ],
-   "note": "bylines and topic tags (content)"
-  },
-  {
-   "match": "^(header area|nav area|main area|footer area|form area|section area|article area|aside area)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201903",
-    "article0-a201908"
-   ],
-   "note": "page regions"
-  },
-  {
-   "match": "^repeated ",
-   "in2019": true,
-   "evidence": [
-    "home-a201903",
-    "home-a201907"
-   ],
-   "note": "story cards (content)"
-  },
-  {
-   "match": "^(?=.{24,})\\S+( \\S+){4,}.*$",
-   "in2019": true,
-   "evidence": [
-    "home-a201903",
-    "home-a201911"
-   ],
-   "note": "story headlines outside repeated cards (content)"
-  }
- ]
+  "theme": "apnews",
+  "era": "2019 AP News (apnews.com as relaunched in 2018 and unchanged through 2019; captures from 2019-03, 2019-07, 2019-08 and 2019-11 agree): light grey header with the AP NEWS wordmark and a small 'Top Stories · Topics · Video · Listen' row, a red bar over 'TOP STORIES', condensed headlines, serif body, grey bylines and a blue 'All Top News' button, white cards on a light grey page; the same for every visitor.",
+  "sources": [
+    {
+      "id": "article0-a201908",
+      "url": "https://arquivo.pt/noFrame/replay/20190815202509/https://www.apnews.com/00061b19834849f8b6e1aa73ecdf54e4",
+      "date": "2019-08-15",
+      "shows": "article0 page as served in 2019-08 (Arquivo.pt capture rendered with its 2019 CSS)",
+      "file": "g14-evidence/apnews/apnews-article0-a201908.png"
+    },
+    {
+      "id": "home-a201903",
+      "url": "https://arquivo.pt/noFrame/replay/20190315180623/https://www.apnews.com/",
+      "date": "2019-03-15",
+      "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
+      "file": "g14-evidence/apnews/apnews-home-a201903.png"
+    },
+    {
+      "id": "home-a201907",
+      "url": "https://arquivo.pt/noFrame/replay/20190714221012/https://apnews.com/",
+      "date": "2019-07-14",
+      "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+      "file": "g14-evidence/apnews/apnews-home-a201907.png"
+    },
+    {
+      "id": "home-a201911",
+      "url": "https://arquivo.pt/noFrame/replay/20191101211526/https://apnews.com/",
+      "date": "2019-11-01",
+      "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)",
+      "file": "g14-evidence/apnews/apnews-home-a201911.png"
+    },
+    {
+      "id": "section0-a201911",
+      "url": "https://arquivo.pt/noFrame/replay/20191105054345/https://apnews.com/apf-asiapac",
+      "date": "2019-11-05",
+      "shows": "section0 page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)",
+      "file": "g14-evidence/apnews/apnews-section0-a201911.png"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Close|AP.s Morning News Brief.*)$",
+      "in2019": false,
+      "evidence": [
+        "the 2019 captures (home-a201907, home-a201911, section0-a201911) show no digest banner under the header"
+      ],
+      "action": "hidden",
+      "note": "digest banner under the header"
+    },
+    {
+      "match": "^(Short Stories|This is not a paywall|Donate Now|Donate|Collapse donation banner|Visit AP Games landing page)$",
+      "in2019": false,
+      "evidence": [
+        "home-a201903",
+        "home-a201907",
+        "home-a201911"
+      ],
+      "note": "vertical-video 'Short Stories', the donation banner (AP began asking for donations in 2023) and AP Games (2024); none are on the 2019 pages",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Sign in)$",
+      "in2019": false,
+      "evidence": [
+        "home-a201911",
+        "article0-a201908"
+      ],
+      "note": "AP News accounts (2023+); reading needs no sign-in and the 2019 header had none",
+      "action": "hidden"
+    },
+    {
+      "match": "^(AP Stylebook|AP Leads|Advertise with us|AP News Values and Principles|AP’s Role in Elections|AP News Code of Conduct|twitter|instagram|facebook|mailto)$",
+      "in2019": false,
+      "evidence": [
+        "article0-a201908",
+        "home-a201903"
+      ],
+      "note": "footer links, footer social icons and author-bio social links absent from the 2019 footer (AP Top News, sections, About, Contact, Customer Support, Careers, Terms & Conditions, Privacy, AP Books, AP Definitive Source, AP Explore, AP Images Spotlight, AP Insights, ap.org)",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Accessibility Statement|CA Notice of Collection|Do Not Sell or Share My Personal Information|Limit Use and Disclosure of Sensitive Personal Information)$",
+      "in2019": false,
+      "evidence": [
+        "home-a201903"
+      ],
+      "note": "accessibility and US privacy notices",
+      "action": "kept: legal"
+    },
+    {
+      "match": "^(About|Careers|Contact\\ Us|ap\\.org|nav\\ area|search)$",
+      "in2019": true,
+      "evidence": [
+        "article0-a201908",
+        "home-a201903",
+        "home-a201907"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "About",
+        "Careers",
+        "Contact Us",
+        "ap.org",
+        "nav area",
+        "search"
+      ]
+    },
+    {
+      "match": "^(Business|Entertainment|Politics|Science|Sports)$",
+      "in2019": true,
+      "evidence": [
+        "article0-a201908",
+        "home-a201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Business",
+        "Entertainment",
+        "Politics",
+        "Science",
+        "Sports"
+      ]
+    },
+    {
+      "match": "^(repeated\\ div)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201903",
+        "home-a201907",
+        "home-a201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "repeated div"
+      ]
+    },
+    {
+      "match": "^(Terms of Use|Privacy Policy|About|Contact Us|Careers|ap\\.org|AP Definitive Source Blog|AP Images Spotlight Blog|home page|Menu|Show Search|search|Submit|Relevance Newest Oldest|Next|Previous|Read More|Share|Full screen button|AP Photography)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201903",
+        "article0-a201908",
+        "home-a201911"
+      ],
+      "note": "2019 footer (Terms & Conditions, Privacy, About, Contact, Careers, ap.org, AP Definitive Source, AP Images Spotlight), the logo link, the 'Topics' menu, Search, 'All Top News' / read-more links, 'Click to copy' share, and Photo Galleries"
+    },
+    {
+      "match": "^(World News|Regions|Middle East|Africa|Australia|Canada|Asia|China|Europe|Latin America|Asia Pacific|Russia-Ukraine war|GLOBAL BUSINESS NEWS|Play)$",
+      "in2019": true,
+      "evidence": [
+        "section0-a201911",
+        "home-a201911",
+        "home-a201903"
+      ],
+      "note": "section title and regional sub-sections (2019 'International News', 'Asia Pacific'), topic hubs ('Complete Coverage', 'Trump impeachment inquiry', 'Brexit Deadlock' in 2019) and video play buttons"
+    },
+    {
+      "match": "^(Politics|Sports|Entertainment|Business|Science|World|U\\.S\\.|Health|Technology|Lifestyle|Religion|Oddities|Travel|Photo Galleries|Video|Podcasts)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201911",
+        "article0-a201908"
+      ],
+      "note": "2019 sections (Politics, Sports, Entertainment, Business, Science, Health, Technology, Lifestyle …)"
+    },
+    {
+      "match": "^(EMILIO MORENATTI|ELENA BECATOROS|Matthew Kacsmaryk)$",
+      "in2019": true,
+      "evidence": [
+        "article0-a201908",
+        "home-a201911"
+      ],
+      "note": "bylines and topic tags (content)"
+    },
+    {
+      "match": "^(header area|nav area|main area|footer area|form area|section area|article area|aside area)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201903",
+        "article0-a201908"
+      ],
+      "note": "page regions"
+    },
+    {
+      "match": "^repeated ",
+      "in2019": true,
+      "evidence": [
+        "home-a201903",
+        "home-a201907"
+      ],
+      "note": "story cards (content)"
+    },
+    {
+      "match": "^(?=.{24,})\\S+( \\S+){4,}.*$",
+      "in2019": true,
+      "evidence": [
+        "home-a201903",
+        "home-a201911"
+      ],
+      "note": "story headlines outside repeated cards (content)"
+    },
+    {
+      "match": "^(Politics)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "home-a201907",
+        "home-a201911"
+      ],
+      "note": "required: header section links (on section pages the header links are list items the inventory counts as repeated content and skips; they are visible in the screenshot)"
+    },
+    {
+      "match": "^(Sports)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "home-a201907",
+        "home-a201911"
+      ],
+      "note": "required: header section links (on section pages the header links are list items the inventory counts as repeated content and skips; they are visible in the screenshot)"
+    },
+    {
+      "match": "^(Entertainment)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "home-a201907",
+        "home-a201911"
+      ],
+      "note": "required: header section links (on section pages the header links are list items the inventory counts as repeated content and skips; they are visible in the screenshot)"
+    },
+    {
+      "match": "^(Business)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "home-a201907",
+        "home-a201911"
+      ],
+      "note": "required: header section links (on section pages the header links are list items the inventory counts as repeated content and skips; they are visible in the screenshot)"
+    },
+    {
+      "match": "^(search|Show Search)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "home-a201907"
+      ],
+      "note": "required: search"
+    },
+    {
+      "match": "^Privacy$",
+      "in2019": false,
+      "evidence": [
+        "cookie consent dialog (legally required)"
+      ],
+      "action": "kept: legal",
+      "note": "OneTrust privacy consent dialog"
+    },
+    {
+      "match": "^close dialog$",
+      "in2019": false,
+      "evidence": [
+        "close button of a third-party ad interstitial (an ad, not a site feature)"
+      ],
+      "action": "kept: function",
+      "note": "lets the reader dismiss an ad overlay"
+    }
+  ]
 }

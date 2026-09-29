@@ -60,14 +60,6 @@
       "note": "kicker/badge labels over stories (2019: BREAKING, CONGRESS, BREXIT …)"
     },
     {
-      "match": "^(Air base arrests|Iran war|SpaceX launch|Madonna|NFL Week 3|Trump admin|Wellness|Deals and Sales|U\\.S\\. news|Pro Football Talk|Amazon|KXAS|Tasos Katopodis / Getty|Frank Thorp V for NBC News|Associated Press|Trump tariffs|TRUMP TARIFFS|JUSTICE DEPARTMENT|White House|Congress|20\\d\\d Election|Garrett Haake|Rebecca Shabad|SUPREME COURT|Supreme Court|Getty Images|AP|Reuters)$",
-      "in2019": true,
-      "evidence": [
-        "s2"
-      ],
-      "note": "today's trending topic links, section tags, credits and bylines (content; 2019 had the same trending/tag row)"
-    },
-    {
       "match": "^(About|Contact|Help|Careers|Ad ?Choices|Privacy Policy|Your Privacy Choices|CA Notice|Terms of Service|NBC News Sitemap|Closed Captioning|Advertise|twitter|instagram|facebook|Follow NBC News|Share|Share on .+|Email|Copy link|Print)$",
       "in2019": true,
       "evidence": [
@@ -102,6 +94,84 @@
         "s4"
       ],
       "note": "story headlines and teasers (content)"
+    },
+    {
+      "match": "^(NBC News Logo)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: logo"
+    },
+    {
+      "match": "^Politics$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^U\\.S\\. News$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^World$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^Business$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^Health$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^(news navigation and search|Search|Menu)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: hamburger menu and search"
+    },
+    {
+      "match": "^(?=.{3,32}$)(?!(Save|Shopping|Saved|Profile|Newsletters|Subscribe)$)[\\w’'.&/-]+( [\\w’'.&/-]+){0,3}$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "the day’s trending shortcuts under the nav (2019 nav carried topical items such as IMPEACHMENT INQUIRY, s2), photo credits and sponsored headline links (content); listed after every post-2019 entry"
     }
   ]
 }

@@ -66,6 +66,146 @@
         "s4"
       ],
       "note": "content: product names, tiles, headlines, 'Learn more'/'Buy' links, compare galleries, footnotes (2019 product pages had the same kinds of tiles, compare and footnotes)"
+    },
+    {
+      "match": "^Mac$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "iphone",
+        "mac"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: global nav"
+    },
+    {
+      "match": "^iPad$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "iphone",
+        "mac"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: global nav"
+    },
+    {
+      "match": "^iPhone$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "iphone",
+        "mac"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: global nav"
+    },
+    {
+      "match": "^Watch$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: global nav"
+    },
+    {
+      "match": "^TV$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: global nav (TV & Home renamed TV)"
+    },
+    {
+      "match": "^Music$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: global nav"
+    },
+    {
+      "match": "^Support$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: global nav"
+    },
+    {
+      "match": "^Search apple\\.com$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "iphone",
+        "mac"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: search"
+    },
+    {
+      "match": "^Shopping Bag$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "iphone",
+        "mac"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: bag"
+    },
+    {
+      "match": "^Learn more.*$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: blue chevron Learn more links"
     }
   ]
 }

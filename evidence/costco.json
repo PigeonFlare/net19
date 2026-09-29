@@ -153,6 +153,84 @@
         "Costco retail-media sponsored product/video units began 2022; none in 2019 captures (s1, s2, s3)"
       ],
       "action": "hidden: [aria-label='Sponsored Products'] and its video-js"
+    },
+    {
+      "match": "^(Costco US homepage)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: logo"
+    },
+    {
+      "match": "^(Search Costco|Search)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: search"
+    },
+    {
+      "match": "^(Sign In / Register)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: Sign In / Register"
+    },
+    {
+      "match": "^(Cart.*)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: cart"
+    },
+    {
+      "match": "^(Shop|Shop All Departments)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: Shop All Departments"
+    },
+    {
+      "match": "^(Get Email Offers)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "required: utility links"
+    },
+    {
+      "match": "^(Customer Service)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "required: utility links"
     }
   ]
 }

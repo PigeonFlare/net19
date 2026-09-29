@@ -85,3 +85,4 @@ footer a:is([href="/terms-of-sale"], [href="/code-of-ethics"], [href*="parsintl.
 .masthead-subnav .subnav-item:has(> a[href$="/defense"]), .hamburger-menu .accordion-row:has(> span > a:is([href$="/defense"], [href*="artificial-intelligence"], [href$="/enterprise"], [href$="/innovation"])) { display: none !important; }
 .bifrost-entry.bottom { display: none !important; }
 [data-n19-later] { display: none !important; }
+a.tout-tag-link[href="/artificial-intelligence"] { display: none !important; }

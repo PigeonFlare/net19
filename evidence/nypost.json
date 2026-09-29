@@ -134,6 +134,35 @@
         "s3"
       ],
       "note": "story headlines, bylines and teasers (content)"
+    },
+    {
+      "match": "^(Primary Menu Sections|Sections)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: SECTIONS menu in the red bar"
+    },
+    {
+      "match": "^Search$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "required: search"
+    },
+    {
+      "match": "^(New York Post)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: centred masthead"
     }
   ]
 }

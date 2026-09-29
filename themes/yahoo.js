@@ -39,9 +39,23 @@ globalThis.net19Theme = {
     if (location.hostname === 'finance.yahoo.com') hideAskAI();
     const field = document.getElementById('uh-sbq');
     if (field && field.placeholder) field.placeholder = '';
+    const serpField = document.querySelector('body#ysch #search_p input:not([aria-label])');
+    if (serpField) serpField.setAttribute('aria-label', 'Search the web');
     const title = document.querySelector('#trending-search header h2');
     if (title && title.textContent === 'Trending') title.textContent = 'Trending Now';
     markLater();
+    const nav = document.getElementById('ybar-l1-nav');
+    const sports = nav && !nav.querySelector('[data-n19-nav]') && [...nav.querySelectorAll('a')].find(a => (a.textContent || '').trim() === 'Sports');
+    if (sports) {
+      let after = sports.parentElement;
+      for (const [label, href] of [['Politics', 'https://www.yahoo.com/news/politics/'], ['Entertainment', 'https://www.yahoo.com/entertainment/'], ['Lifestyle', 'https://www.yahoo.com/lifestyle/']]) {
+        const cell = sports.parentElement.cloneNode(true);
+        cell.setAttribute('data-n19-nav', '');
+        const link = cell.querySelector('a');
+        link.textContent = label; link.href = href; link.removeAttribute('data-ylk'); link.removeAttribute('data-yga');
+        after.after(cell); after = cell;
+      }
+    }
     for (const box of document.querySelectorAll('body#ysch #right ol:not([data-net19-scout])')) {
       if (/Yahoo Scout/.test(box.textContent || '')) box.setAttribute('data-net19-scout', '');
     }

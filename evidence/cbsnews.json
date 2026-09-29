@@ -85,6 +85,66 @@
         "s4"
       ],
       "note": "story headlines and teasers (content)"
+    },
+    {
+      "match": "^(Go to CBS News National home page|CBS News)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: logo"
+    },
+    {
+      "match": "^U\\.S\\.$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^World$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^Politics$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^MoneyWatch$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: nav"
+    },
+    {
+      "match": "^(Open search form|Search)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: search"
     }
   ]
 }

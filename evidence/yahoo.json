@@ -54,6 +54,15 @@
   ],
   "features": [
     {
+      "match": "^(Twitter|Facebook|Instagram|YouTube|TikTok)$",
+      "in2019": false,
+      "evidence": [
+        "s1, s2 and s3 show no social icons in the right rail footer (Terms, Privacy, Advertise, About Our Ads, Careers, Help, Feedback only)"
+      ],
+      "action": "hidden",
+      "note": "right rail social icons"
+    },
+    {
       "match": "^(From Our Shopping Experts|Spotlight Videos|Yahoo Games|Popular Games|Game categories|Card|Word|Puzzle|Popular|Play now.*|Newsletter sign up form|The Yodel|Enter your email|Sign up|Large Cards|Small Cards|Feed view|For You|Pause|Up next|Explore AI results with Yahoo Scout|People also ask|Yahoo Scout|Ask AI)$",
       "in2019": false,
       "evidence": [
@@ -132,6 +141,153 @@
         "s2"
       ],
       "note": "content: story headlines (six words or more)"
+    },
+    {
+      "match": "^(Search|Search the web|Search Query for Search the web)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "search"
+      ],
+      "evidence": [
+        "s1",
+        "s5"
+      ],
+      "note": "required: square search box with the purple button"
+    },
+    {
+      "match": "^(Mail|Check your mail)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "required: Mail"
+    },
+    {
+      "match": "^News$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "news"
+      ],
+      "evidence": [
+        "s1",
+        "s7"
+      ],
+      "note": "required: category nav"
+    },
+    {
+      "match": "^(Finance|Sports)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: category nav"
+    },
+    {
+      "match": "^Trending Now$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: Trending Now in the right rail"
+    },
+    {
+      "match": "^(Web|All)$",
+      "in2019": true,
+      "evidence": [
+        "s5"
+      ],
+      "note": "checked by screenshot, not required: SERP tabs (the SERP tabs are list items the inventory counts as repeated content and skips; they are visible in the search screenshot)"
+    },
+    {
+      "match": "^(Images)$",
+      "in2019": true,
+      "evidence": [
+        "s5"
+      ],
+      "note": "checked by screenshot, not required: SERP Images tab (the SERP tabs are list items the inventory counts as repeated content and skips; they are visible in the search screenshot)"
+    },
+    {
+      "match": "^(US|World|Politics)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "news"
+      ],
+      "evidence": [
+        "s7"
+      ],
+      "note": "required: Yahoo News nav"
+    },
+    {
+      "match": "^(Sign in|Your Profile Menu)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "required: Sign in (the signed-out profile button opens the same sign-in)"
+    },
+    {
+      "match": "^Politics$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: purple nav (added from the site links by yahoo.js)"
+    },
+    {
+      "match": "^Entertainment$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: purple nav"
+    },
+    {
+      "match": "^Lifestyle$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: purple nav"
     }
   ]
 }

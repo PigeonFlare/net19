@@ -146,6 +146,75 @@
         "s6"
       ],
       "note": "colour options and offer notes on product cards (s6 shows colour buttons, s4 'Special Offers')"
+    },
+    {
+      "match": "^(best buy home)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: yellow-tag logo"
+    },
+    {
+      "match": "^(What can we help you find\\?.*|Search Best Buy)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: white search field"
+    },
+    {
+      "match": "^(Submit search)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: search button"
+    },
+    {
+      "match": "^(Cart.*)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: cart"
+    },
+    {
+      "match": "^(Account.*)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: Account"
+    },
+    {
+      "match": "^(Products|Shop)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: Products row"
+    },
+    {
+      "match": "^(Deals|Top Deals|Deal of the Day)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "required: Deals"
     }
   ]
 }

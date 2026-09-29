@@ -253,6 +253,161 @@
         "s5"
       ],
       "note": "content: image titles on the sampled images page"
+    },
+    {
+      "match": "^Images$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "search"
+      ],
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "required: Images in the top menu and scope bar"
+    },
+    {
+      "match": "^Videos$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "search"
+      ],
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "required: Videos in the top menu and scope bar"
+    },
+    {
+      "match": "^Maps$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "search"
+      ],
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "required: Maps"
+    },
+    {
+      "match": "^News$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "search"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: News"
+    },
+    {
+      "match": "^(Sign in|Profile Picture)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "search",
+        "images"
+      ],
+      "evidence": [
+        "s1",
+        "s3",
+        "s6"
+      ],
+      "note": "required: Sign in with avatar"
+    },
+    {
+      "match": "^(Microsoft Rewards|Rewards)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "search"
+      ],
+      "evidence": [
+        "s1",
+        "s6"
+      ],
+      "note": "required: Rewards"
+    },
+    {
+      "match": "^Enter your search (here|term).*$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "search",
+        "images"
+      ],
+      "evidence": [
+        "s2",
+        "s9"
+      ],
+      "note": "required: square search box"
+    },
+    {
+      "match": "^(All)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "search"
+      ],
+      "evidence": [
+        "s4"
+      ],
+      "note": "required: All scope"
+    },
+    {
+      "match": "^(Privacy and Cookies|Privacy)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "search"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: footer privacy link"
+    },
+    {
+      "match": "^(SafeSearch.*|Filter|Moderate|Strict|Off|Show or hide filters)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "images"
+      ],
+      "evidence": [
+        "s5"
+      ],
+      "note": "required: SafeSearch / Filter on the images page"
+    },
+    {
+      "match": "^(Search for: .+|Carousel|Carousel of .+|Refine your search for .+|Scroll right|Scroll left|Scroll more suggestions (right|left)|See more results)$",
+      "in2019": true,
+      "evidence": [
+        "s5"
+      ],
+      "note": "images page: related-search chips row (teal chips in 2019) and its scroll arrows, the related-searches strip"
+    },
+    {
+      "match": "^(?!.*\\b(AI|Copilot|Create|Designer|Chat)\\b)[A-Z0-9][\\w .,&-]{0,60}$",
+      "in2019": true,
+      "evidence": [
+        "s5"
+      ],
+      "note": "content: related-search suggestion words on the images page (Pennies, Real Gold …) and image titles; listed last so every post-2019 entry above wins"
     }
   ]
 }

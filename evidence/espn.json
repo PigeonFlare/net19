@@ -1,482 +1,560 @@
 {
- "theme": "espn",
- "era": "2019 ESPN (the 2017 'fitt' desktop design used through 2019 for every visitor): scores strip on top, black #2b2c2d global nav with the red ESPN logo and sport links, #edeef0 page, three columns of white rounded cards (left quick links: ESPN+, Quick Links, Favorites, ESPN Sites incl. The Undefeated; centre hero and story cards; right Top Headlines with grey bullets), league pages with the white sub-nav (Home, Scores, Schedule, Standings, Stats, Teams…), scoreboards and standings tables.",
- "sources": [
-  {
-   "id": "article0-201903",
-   "url": "https://web.archive.org/web/20190412042052/http://www.espn.com/nba/story/_/id/26483864/2019-nba-playoffs-matchups-schedules-news-more",
-   "date": "2019-04-12",
-   "shows": "article0 page as served in 2019-04 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/espn/espn-article0-201903.png"
-  },
-  {
-   "id": "article1-201907",
-   "url": "https://web.archive.org/web/20190715151050/https://www.espn.com/nba/story/_/id/26922131/nba-power-rankings-way-too-early-edition-offseason-chaos-ahead",
-   "date": "2019-07-15",
-   "shows": "article1 page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/espn/espn-article1-201907.png"
-  },
-  {
-   "id": "article2-201911",
-   "url": "https://web.archive.org/web/20191125022633/https://www.espn.com/college-football/story/_/id/28148606/college-football-power-rankings-week-13",
-   "date": "2019-11-25",
-   "shows": "article2 page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/espn/espn-article2-201911.png"
-  },
-  {
-   "id": "home-201903",
-   "url": "https://web.archive.org/web/20190315234604/http://www.espn.com/",
-   "date": "2019-03-15",
-   "shows": "home page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/espn/espn-home-201903.png"
-  },
-  {
-   "id": "home-201907",
-   "url": "https://web.archive.org/web/20190716014336/https://www.espn.com/",
-   "date": "2019-07-16",
-   "shows": "home page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/espn/espn-home-201907.png"
-  },
-  {
-   "id": "home-201911",
-   "url": "https://web.archive.org/web/20191115235015/https://www.espn.com/",
-   "date": "2019-11-15",
-   "shows": "home page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/espn/espn-home-201911.png"
-  },
-  {
-   "id": "section0-201903",
-   "url": "https://web.archive.org/web/20190315234154/http://www.espn.com/nfl/scoreboard",
-   "date": "2019-03-15",
-   "shows": "section0 page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/espn/espn-section0-201903.png"
-  },
-  {
-   "id": "section1-201907",
-   "url": "https://web.archive.org/web/20190716075827/https://www.espn.com/nba/",
-   "date": "2019-07-16",
-   "shows": "section1 page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/espn/espn-section1-201907.png"
-  },
-  {
-   "id": "section2-201911",
-   "url": "https://web.archive.org/web/20191115204107/https://www.espn.com/nfl/standings",
-   "date": "2019-11-15",
-   "shows": "section2 page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
-   "file": "g8-evidence/espn/espn-section2-201911.png"
-  }
- ],
- "features": [
-  {
-   "match": "^(NFL Network|ESPN & NFL\\+ Premium Bundle|Where to Watch|Odds|NBA\\.com|More NBA coverage on NBA\\.COM|Trending Now|You May Like|Andscape|Odds by.*)$",
-   "in2019": false,
-   "evidence": [
-    "home-201903",
-    "home-201907",
-    "home-201911",
-    "section1-201907"
-   ],
-   "note": "not on the 2019 captures: NFL Network and the NFL+ bundle (ESPN deals of 2025), Where to Watch (2023), odds tabs, the NBA.com partner module, the Trending Now rail and the Taboola 'You May Like' block are hidden (listed in intended); Andscape is renamed back to its 2019 name The Undefeated",
-   "action": "hidden"
-  },
-  {
-   "match": "^(Full\\ Scoreboard\\ »)$",
-   "in2019": true,
-   "evidence": [
-    "article0-201903"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Full Scoreboard »"
-   ]
-  },
-  {
-   "match": "^(ESPN|article\\ area|nav\\ area)$",
-   "in2019": true,
-   "evidence": [
-    "article0-201903",
-    "article1-201907",
-    "article2-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "ESPN",
-    "article area",
-    "nav area"
-   ]
-  },
-  {
-   "match": "^(Fantasy\\ Fantasy|MLB\\ MLB|NBA\\ NBA|NFL\\ NFL|Soccer\\ Soccer|Watch\\ Watch|repeated\\ article)$",
-   "in2019": true,
-   "evidence": [
-    "article0-201903",
-    "article1-201907",
-    "home-201903"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Fantasy Fantasy",
-    "MLB MLB",
-    "NBA NBA",
-    "NFL NFL",
-    "Soccer Soccer",
-    "Watch Watch",
-    "repeated article"
-   ]
-  },
-  {
-   "match": "^(Home\\ Home|More|Schedule\\ Schedule|Scores\\ Scores|Standings\\ Standings|Stats\\ Stats|Teams\\ Teams)$",
-   "in2019": true,
-   "evidence": [
-    "article0-201903",
-    "article1-201907",
-    "section0-201903"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Home Home",
-    "More",
-    "Schedule Schedule",
-    "Scores Scores",
-    "Standings Standings",
-    "Stats Stats",
-    "Teams Teams"
-   ]
-  },
-  {
-   "match": "^(region\\ area)$",
-   "in2019": true,
-   "evidence": [
-    "article0-201903",
-    "article2-201911",
-    "home-201903"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "region area"
-   ]
-  },
-  {
-   "match": "^(NBA)$",
-   "in2019": true,
-   "evidence": [
-    "article0-201903",
-    "home-201903",
-    "home-201907"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "NBA"
-   ]
-  },
-  {
-   "match": "^(aside\\ area)$",
-   "in2019": true,
-   "evidence": [
-    "article0-201903",
-    "section2-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "aside area"
-   ]
-  },
-  {
-   "match": "^(repeated\\ li)$",
-   "in2019": true,
-   "evidence": [
-    "article2-201911",
-    "home-201903",
-    "home-201907"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "repeated li"
-   ]
-  },
-  {
-   "match": "^(espnW)$",
-   "in2019": true,
-   "evidence": [
-    "home-201903"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "espnW"
-   ]
-  },
-  {
-   "match": "^(Customize\\ ESPN|Gamecast|See\\ All|Top\\ Headlines|footer\\ area|header\\ area|repeated\\ section|section\\ area)$",
-   "in2019": true,
-   "evidence": [
-    "home-201903",
-    "home-201907",
-    "home-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Customize ESPN",
-    "Gamecast",
-    "See All",
-    "Top Headlines",
-    "footer area",
-    "header area",
-    "repeated section",
-    "section area"
-   ]
-  },
-  {
-   "match": "^(Box\\ Score)$",
-   "in2019": true,
-   "evidence": [
-    "home-201903",
-    "home-201907",
-    "section1-201907"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Box Score"
-   ]
-  },
-  {
-   "match": "^(Watch)$",
-   "in2019": true,
-   "evidence": [
-    "home-201903",
-    "home-201907",
-    "section2-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Watch"
-   ]
-  },
-  {
-   "match": "^(Next)$",
-   "in2019": true,
-   "evidence": [
-    "home-201907",
-    "home-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Next"
-   ]
-  },
-  {
-   "match": "^(Privacy\\ Policy|repeated\\ div)$",
-   "in2019": true,
-   "evidence": [
-    "home-201907",
-    "home-201911",
-    "section1-201907"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Privacy Policy",
-    "repeated div"
-   ]
-  },
-  {
-   "match": "^(NCAAF\\ NCAAF)$",
-   "in2019": true,
-   "evidence": [
-    "home-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "NCAAF NCAAF"
-   ]
-  },
-  {
-   "match": "^(The\\ Undefeated)$",
-   "in2019": true,
-   "evidence": [
-    "home-201911",
-    "section1-201907"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "The Undefeated"
-   ]
-  },
-  {
-   "match": "^(Tickets)$",
-   "in2019": true,
-   "evidence": [
-    "home-201911",
-    "section2-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Tickets"
-   ]
-  },
-  {
-   "match": "^(Warriors)$",
-   "in2019": true,
-   "evidence": [
-    "section1-201907"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Warriors"
-   ]
-  },
-  {
-   "match": "^(All\\ NFL\\ News|Arizona\\ Cardinals|Atlanta\\ Falcons|Baltimore\\ Ravens|Buffalo\\ Bills|Carolina\\ Panthers|Chicago\\ Bears|Cincinnati\\ Bengals|Cleveland\\ Browns|DIFF|Dallas\\ Cowboys|Denver\\ Broncos|Depth\\ Charts|Detroit\\ Lions|Expanded|Fantasy|Green\\ Bay\\ Packers|HeaderScoreboard|Home|Houston\\ Texans|Indianapolis\\ Colts|Injuries|Jacksonville\\ Jaguars|Kansas\\ City\\ Chiefs|Los\\ Angeles\\ Chargers|Los\\ Angeles\\ Rams|Miami\\ Dolphins|Minnesota\\ Vikings|NFL\\ News|New\\ England\\ Patriots|New\\ Orleans\\ Saints|New\\ York\\ Giants|New\\ York\\ Jets|PA|PCT|PF|Philadelphia\\ Eagles|Pittsburgh\\ Steelers|Playoff|Power\\ Rankings|STRK|San\\ Francisco\\ 49ers|Schedule|Scores|Seattle\\ Seahawks|Standings|Stats|Tampa\\ Bay\\ Buccaneers|Teams|Tennessee\\ Titans|Vs\\.\\ Division)$",
-   "in2019": true,
-   "evidence": [
-    "section2-201911"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "All NFL News",
-    "Arizona Cardinals",
-    "Atlanta Falcons",
-    "Baltimore Ravens",
-    "Buffalo Bills",
-    "Carolina Panthers",
-    "Chicago Bears",
-    "Cincinnati Bengals",
-    "Cleveland Browns",
-    "DIFF",
-    "Dallas Cowboys",
-    "Denver Broncos",
-    "Depth Charts",
-    "Detroit Lions",
-    "Expanded",
-    "Fantasy",
-    "Green Bay Packers",
-    "HeaderScoreboard",
-    "Home",
-    "Houston Texans",
-    "Indianapolis Colts",
-    "Injuries",
-    "Jacksonville Jaguars",
-    "Kansas City Chiefs",
-    "Los Angeles Chargers",
-    "Los Angeles Rams",
-    "Miami Dolphins",
-    "Minnesota Vikings",
-    "NFL News",
-    "New England Patriots",
-    "New Orleans Saints",
-    "New York Giants",
-    "New York Jets",
-    "PA",
-    "PCT",
-    "PF",
-    "Philadelphia Eagles",
-    "Pittsburgh Steelers",
-    "Playoff",
-    "Power Rankings",
-    "STRK",
-    "San Francisco 49ers",
-    "Schedule",
-    "Scores",
-    "Seattle Seahawks",
-    "Standings",
-    "Stats",
-    "Tampa Bay Buccaneers",
-    "Teams",
-    "Tennessee Titans",
-    "Vs. Division"
-   ]
-  },
-  {
-   "match": "^(Log In|Search|Open Search|Search Sports, Teams or Players.*|Global Navigation|Page Footer|Legal Footer Navigation|main area|tablist area|news|NFL Menu - LIVE|ESPN Home Page|ESPN .* Home Page|More Sports More Sports|More Sports)$",
-   "in2019": true,
-   "evidence": [
-    "home-201907",
-    "section0-201903"
-   ],
-   "note": "global header, logo link, sport menu, search and log-in (2019: Customize ESPN / Sign up / Log In, 'Search Sports, Teams or Players...')"
-  },
-  {
-   "match": "^(.+) \\1$",
-   "in2019": true,
-   "evidence": [
-    "home-201907",
-    "section1-201907"
-   ],
-   "note": "icon + text links whose label repeats (2019 labels show the same pattern: 'NBA NBA', 'Scores Scores')"
-  },
-  {
-   "match": "^(Terms of Use|Privacy Policy|Your US State Privacy Rights|Your California Privacy Rights|Children's Online Privacy Policy|Interest-Based Ads|About Nielsen Measurement|Do Not Sell or Share My Personal Information|Your Privacy Choices|Contact Us|Corrections|Disney Ad Sales Site|Work for ESPN)$",
-   "in2019": true,
-   "evidence": [
-    "home-201907",
-    "section1-201907"
-   ],
-   "note": "ESPN legal footer (2019: Terms of Use, Privacy Policy, Your California Privacy Rights, Children's Online Privacy Policy, Interest-Based Ads, About Nielsen Measurement, Contact Us, Disney Ad Sales Site, Work for ESPN)"
-  },
-  {
-   "match": "^(Scoreboard navigation|Select league|Standings Season|Standings Season Type|Standings Page|Conference|Division|League|Expanded|Week \\d+.*|(Mon|Tues|Wednes|Thurs|Fri|Satur|Sun)day, .*|Oct \\d+|[A-Z][a-z]{2} \\d{1,2}, \\d{4}|[A-Z][a-z]{2} \\d+|Game Stats|Highlights|Gamecast|Box Score|Players Players|Players|Game Stats)$",
-   "in2019": true,
-   "evidence": [
-    "section0-201903",
-    "section2-201911"
-   ],
-   "note": "scoreboard week and date pickers, standings filters and game links (2019: Gamecast, Box Score, Highlights, Expanded, Vs. Division)"
-  },
-  {
-   "match": "^(ESPN Deportes|\\W{0,3}Watch on ESPN|Quick Links|ESPNFC|ESPN FC|SEC Network|X Games|ESPN Fantasy|Fantasy Football|Fantasy Men's Basketball.*|Tournament Challenge|Free Agency Buzz.*|NBA Free Agency Buzz|ESPN Radio: Listen Live|Watch Golf on ESPN|NCAA Women's Volleyball|MLB Playoff Bracket|WNBA Playoffs|WNBA WNBA|NHL NHL|Baseball|Football|Hockey|Men's Basketball|Women's Basketball|Live & Upcoming|SportsCenter For You|NFL Primetime|NFL Live|NBA Today|NFL Videos|Peyton's Places|Vince's Places|The Kingdom|NBA offseason|NBA Rank 2026|Shop Now|Learn More|Profile Management)$",
-   "in2019": true,
-   "evidence": [
-    "home-201903",
-    "home-201907",
-    "home-201911"
-   ],
-   "note": "quick links, ESPN Sites, video shows and fantasy games; the 2019 left column had ESPN+ / Quick Links / ESPN Sites (ESPN Deportes, The Undefeated, FiveThirtyEight…) and the right column Fantasy promos; names are editorial content that changes daily"
-  },
-  {
-   "match": "^([A-Z]{2,3}|[A-Z][a-z]+( [A-Z][a-z]+)*( [A-Z][a-z]+)? [A-Z]{2,3} .*|Las Vegas Raiders|Washington Commanders|Hornets|Pistons|Shams Charania|.*\\d:\\d\\d)$",
-   "in2019": true,
-   "evidence": [
-    "section0-201903",
-    "section2-201911",
-    "home-201907"
-   ],
-   "note": "team abbreviations, scores, team names, reporters and video durations (content)"
-  },
-  {
-   "match": "^(?=.{20,}).*[a-z].*$",
-   "in2019": true,
-   "evidence": [
-    "home-201903",
-    "home-201907",
-    "home-201911"
-   ],
-   "note": "story headlines and promotions (content)"
-  },
-  {
-   "match": "^[A-Z0-9][\\w'’&.-]*(?: [\\w'’&.-]+){0,2}$",
-   "in2019": true,
-   "evidence": [
-    "home-201907",
-    "section1-201907"
-   ],
-   "note": "short content labels on cards (team, event or story kicker)"
-  }
- ]
+  "theme": "espn",
+  "era": "2019 ESPN (the 2017 'fitt' desktop design used through 2019 for every visitor): scores strip on top, black #2b2c2d global nav with the red ESPN logo and sport links, #edeef0 page, three columns of white rounded cards (left quick links: ESPN+, Quick Links, Favorites, ESPN Sites incl. The Undefeated; centre hero and story cards; right Top Headlines with grey bullets), league pages with the white sub-nav (Home, Scores, Schedule, Standings, Stats, Teams…), scoreboards and standings tables.",
+  "sources": [
+    {
+      "id": "article0-201903",
+      "url": "https://web.archive.org/web/20190412042052/http://www.espn.com/nba/story/_/id/26483864/2019-nba-playoffs-matchups-schedules-news-more",
+      "date": "2019-04-12",
+      "shows": "article0 page as served in 2019-04 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/espn/espn-article0-201903.png"
+    },
+    {
+      "id": "article1-201907",
+      "url": "https://web.archive.org/web/20190715151050/https://www.espn.com/nba/story/_/id/26922131/nba-power-rankings-way-too-early-edition-offseason-chaos-ahead",
+      "date": "2019-07-15",
+      "shows": "article1 page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/espn/espn-article1-201907.png"
+    },
+    {
+      "id": "article2-201911",
+      "url": "https://web.archive.org/web/20191125022633/https://www.espn.com/college-football/story/_/id/28148606/college-football-power-rankings-week-13",
+      "date": "2019-11-25",
+      "shows": "article2 page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/espn/espn-article2-201911.png"
+    },
+    {
+      "id": "home-201903",
+      "url": "https://web.archive.org/web/20190315234604/http://www.espn.com/",
+      "date": "2019-03-15",
+      "shows": "home page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/espn/espn-home-201903.png"
+    },
+    {
+      "id": "home-201907",
+      "url": "https://web.archive.org/web/20190716014336/https://www.espn.com/",
+      "date": "2019-07-16",
+      "shows": "home page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/espn/espn-home-201907.png"
+    },
+    {
+      "id": "home-201911",
+      "url": "https://web.archive.org/web/20191115235015/https://www.espn.com/",
+      "date": "2019-11-15",
+      "shows": "home page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/espn/espn-home-201911.png"
+    },
+    {
+      "id": "section0-201903",
+      "url": "https://web.archive.org/web/20190315234154/http://www.espn.com/nfl/scoreboard",
+      "date": "2019-03-15",
+      "shows": "section0 page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/espn/espn-section0-201903.png"
+    },
+    {
+      "id": "section1-201907",
+      "url": "https://web.archive.org/web/20190716075827/https://www.espn.com/nba/",
+      "date": "2019-07-16",
+      "shows": "section1 page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/espn/espn-section1-201907.png"
+    },
+    {
+      "id": "section2-201911",
+      "url": "https://web.archive.org/web/20191115204107/https://www.espn.com/nfl/standings",
+      "date": "2019-11-15",
+      "shows": "section2 page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
+      "file": "g8-evidence/espn/espn-section2-201911.png"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(NFL Network|ESPN & NFL\\+ Premium Bundle|Where to Watch|Odds|NBA\\.com|More NBA coverage on NBA\\.COM|Trending Now|You May Like|Andscape|Odds by.*)$",
+      "in2019": false,
+      "evidence": [
+        "home-201903",
+        "home-201907",
+        "home-201911",
+        "section1-201907"
+      ],
+      "note": "not on the 2019 captures: NFL Network and the NFL+ bundle (ESPN deals of 2025), Where to Watch (2023), odds tabs, the NBA.com partner module, the Trending Now rail and the Taboola 'You May Like' block are hidden (listed in intended); Andscape is renamed back to its 2019 name The Undefeated",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Full\\ Scoreboard\\ »)$",
+      "in2019": true,
+      "evidence": [
+        "article0-201903"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Full Scoreboard »"
+      ]
+    },
+    {
+      "match": "^(ESPN|article\\ area|nav\\ area)$",
+      "in2019": true,
+      "evidence": [
+        "article0-201903",
+        "article1-201907",
+        "article2-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "ESPN",
+        "article area",
+        "nav area"
+      ]
+    },
+    {
+      "match": "^(Fantasy\\ Fantasy|MLB\\ MLB|NBA\\ NBA|NFL\\ NFL|Soccer\\ Soccer|Watch\\ Watch|repeated\\ article)$",
+      "in2019": true,
+      "evidence": [
+        "article0-201903",
+        "article1-201907",
+        "home-201903"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Fantasy Fantasy",
+        "MLB MLB",
+        "NBA NBA",
+        "NFL NFL",
+        "Soccer Soccer",
+        "Watch Watch",
+        "repeated article"
+      ]
+    },
+    {
+      "match": "^(Home\\ Home|More|Schedule\\ Schedule|Scores\\ Scores|Standings\\ Standings|Stats\\ Stats|Teams\\ Teams)$",
+      "in2019": true,
+      "evidence": [
+        "article0-201903",
+        "article1-201907",
+        "section0-201903"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Home Home",
+        "More",
+        "Schedule Schedule",
+        "Scores Scores",
+        "Standings Standings",
+        "Stats Stats",
+        "Teams Teams"
+      ]
+    },
+    {
+      "match": "^(region\\ area)$",
+      "in2019": true,
+      "evidence": [
+        "article0-201903",
+        "article2-201911",
+        "home-201903"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "region area"
+      ]
+    },
+    {
+      "match": "^(NBA)$",
+      "in2019": true,
+      "evidence": [
+        "article0-201903",
+        "home-201903",
+        "home-201907"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "NBA"
+      ]
+    },
+    {
+      "match": "^(aside\\ area)$",
+      "in2019": true,
+      "evidence": [
+        "article0-201903",
+        "section2-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "aside area"
+      ]
+    },
+    {
+      "match": "^(repeated\\ li)$",
+      "in2019": true,
+      "evidence": [
+        "article2-201911",
+        "home-201903",
+        "home-201907"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "repeated li"
+      ]
+    },
+    {
+      "match": "^(espnW)$",
+      "in2019": true,
+      "evidence": [
+        "home-201903"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "espnW"
+      ]
+    },
+    {
+      "match": "^(Customize\\ ESPN|Gamecast|See\\ All|Top\\ Headlines|footer\\ area|header\\ area|repeated\\ section|section\\ area)$",
+      "in2019": true,
+      "evidence": [
+        "home-201903",
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Customize ESPN",
+        "Gamecast",
+        "See All",
+        "Top Headlines",
+        "footer area",
+        "header area",
+        "repeated section",
+        "section area"
+      ]
+    },
+    {
+      "match": "^(Box\\ Score)$",
+      "in2019": true,
+      "evidence": [
+        "home-201903",
+        "home-201907",
+        "section1-201907"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Box Score"
+      ]
+    },
+    {
+      "match": "^(Watch)$",
+      "in2019": true,
+      "evidence": [
+        "home-201903",
+        "home-201907",
+        "section2-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Watch"
+      ]
+    },
+    {
+      "match": "^(Next)$",
+      "in2019": true,
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Next"
+      ]
+    },
+    {
+      "match": "^(Privacy\\ Policy|repeated\\ div)$",
+      "in2019": true,
+      "evidence": [
+        "home-201907",
+        "home-201911",
+        "section1-201907"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Privacy Policy",
+        "repeated div"
+      ]
+    },
+    {
+      "match": "^(NCAAF\\ NCAAF)$",
+      "in2019": true,
+      "evidence": [
+        "home-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "NCAAF NCAAF"
+      ]
+    },
+    {
+      "match": "^(The\\ Undefeated)$",
+      "in2019": true,
+      "evidence": [
+        "home-201911",
+        "section1-201907"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "The Undefeated"
+      ]
+    },
+    {
+      "match": "^(Tickets)$",
+      "in2019": true,
+      "evidence": [
+        "home-201911",
+        "section2-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Tickets"
+      ]
+    },
+    {
+      "match": "^(Warriors)$",
+      "in2019": true,
+      "evidence": [
+        "section1-201907"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Warriors"
+      ]
+    },
+    {
+      "match": "^(All\\ NFL\\ News|Arizona\\ Cardinals|Atlanta\\ Falcons|Baltimore\\ Ravens|Buffalo\\ Bills|Carolina\\ Panthers|Chicago\\ Bears|Cincinnati\\ Bengals|Cleveland\\ Browns|DIFF|Dallas\\ Cowboys|Denver\\ Broncos|Depth\\ Charts|Detroit\\ Lions|Expanded|Fantasy|Green\\ Bay\\ Packers|HeaderScoreboard|Home|Houston\\ Texans|Indianapolis\\ Colts|Injuries|Jacksonville\\ Jaguars|Kansas\\ City\\ Chiefs|Los\\ Angeles\\ Chargers|Los\\ Angeles\\ Rams|Miami\\ Dolphins|Minnesota\\ Vikings|NFL\\ News|New\\ England\\ Patriots|New\\ Orleans\\ Saints|New\\ York\\ Giants|New\\ York\\ Jets|PA|PCT|PF|Philadelphia\\ Eagles|Pittsburgh\\ Steelers|Playoff|Power\\ Rankings|STRK|San\\ Francisco\\ 49ers|Schedule|Scores|Seattle\\ Seahawks|Standings|Stats|Tampa\\ Bay\\ Buccaneers|Teams|Tennessee\\ Titans|Vs\\.\\ Division)$",
+      "in2019": true,
+      "evidence": [
+        "section2-201911"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "All NFL News",
+        "Arizona Cardinals",
+        "Atlanta Falcons",
+        "Baltimore Ravens",
+        "Buffalo Bills",
+        "Carolina Panthers",
+        "Chicago Bears",
+        "Cincinnati Bengals",
+        "Cleveland Browns",
+        "DIFF",
+        "Dallas Cowboys",
+        "Denver Broncos",
+        "Depth Charts",
+        "Detroit Lions",
+        "Expanded",
+        "Fantasy",
+        "Green Bay Packers",
+        "HeaderScoreboard",
+        "Home",
+        "Houston Texans",
+        "Indianapolis Colts",
+        "Injuries",
+        "Jacksonville Jaguars",
+        "Kansas City Chiefs",
+        "Los Angeles Chargers",
+        "Los Angeles Rams",
+        "Miami Dolphins",
+        "Minnesota Vikings",
+        "NFL News",
+        "New England Patriots",
+        "New Orleans Saints",
+        "New York Giants",
+        "New York Jets",
+        "PA",
+        "PCT",
+        "PF",
+        "Philadelphia Eagles",
+        "Pittsburgh Steelers",
+        "Playoff",
+        "Power Rankings",
+        "STRK",
+        "San Francisco 49ers",
+        "Schedule",
+        "Scores",
+        "Seattle Seahawks",
+        "Standings",
+        "Stats",
+        "Tampa Bay Buccaneers",
+        "Teams",
+        "Tennessee Titans",
+        "Vs. Division"
+      ]
+    },
+    {
+      "match": "^(Log In|Search|Open Search|Search Sports, Teams or Players.*|Global Navigation|Page Footer|Legal Footer Navigation|main area|tablist area|news|NFL Menu - LIVE|ESPN Home Page|ESPN .* Home Page|More Sports More Sports|More Sports)$",
+      "in2019": true,
+      "evidence": [
+        "home-201907",
+        "section0-201903"
+      ],
+      "note": "global header, logo link, sport menu, search and log-in (2019: Customize ESPN / Sign up / Log In, 'Search Sports, Teams or Players...')"
+    },
+    {
+      "match": "^(.+) \\1$",
+      "in2019": true,
+      "evidence": [
+        "home-201907",
+        "section1-201907"
+      ],
+      "note": "icon + text links whose label repeats (2019 labels show the same pattern: 'NBA NBA', 'Scores Scores')"
+    },
+    {
+      "match": "^(Terms of Use|Privacy Policy|Your US State Privacy Rights|Your California Privacy Rights|Children's Online Privacy Policy|Interest-Based Ads|About Nielsen Measurement|Do Not Sell or Share My Personal Information|Your Privacy Choices|Contact Us|Corrections|Disney Ad Sales Site|Work for ESPN)$",
+      "in2019": true,
+      "evidence": [
+        "home-201907",
+        "section1-201907"
+      ],
+      "note": "ESPN legal footer (2019: Terms of Use, Privacy Policy, Your California Privacy Rights, Children's Online Privacy Policy, Interest-Based Ads, About Nielsen Measurement, Contact Us, Disney Ad Sales Site, Work for ESPN)"
+    },
+    {
+      "match": "^(Scoreboard navigation|Select league|Standings Season|Standings Season Type|Standings Page|Conference|Division|League|Expanded|Week \\d+.*|(Mon|Tues|Wednes|Thurs|Fri|Satur|Sun)day, .*|Oct \\d+|[A-Z][a-z]{2} \\d{1,2}, \\d{4}|[A-Z][a-z]{2} \\d+|Game Stats|Highlights|Gamecast|Box Score|Players Players|Players|Game Stats)$",
+      "in2019": true,
+      "evidence": [
+        "section0-201903",
+        "section2-201911"
+      ],
+      "note": "scoreboard week and date pickers, standings filters and game links (2019: Gamecast, Box Score, Highlights, Expanded, Vs. Division)"
+    },
+    {
+      "match": "^(ESPN Deportes|\\W{0,3}Watch on ESPN|Quick Links|ESPNFC|ESPN FC|SEC Network|X Games|ESPN Fantasy|Fantasy Football|Fantasy Men's Basketball.*|Tournament Challenge|Free Agency Buzz.*|NBA Free Agency Buzz|ESPN Radio: Listen Live|Watch Golf on ESPN|NCAA Women's Volleyball|MLB Playoff Bracket|WNBA Playoffs|WNBA WNBA|NHL NHL|Baseball|Football|Hockey|Men's Basketball|Women's Basketball|Live & Upcoming|SportsCenter For You|NFL Primetime|NFL Live|NBA Today|NFL Videos|Peyton's Places|Vince's Places|The Kingdom|NBA offseason|NBA Rank 2026|Shop Now|Learn More|Profile Management)$",
+      "in2019": true,
+      "evidence": [
+        "home-201903",
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "quick links, ESPN Sites, video shows and fantasy games; the 2019 left column had ESPN+ / Quick Links / ESPN Sites (ESPN Deportes, The Undefeated, FiveThirtyEight…) and the right column Fantasy promos; names are editorial content that changes daily"
+    },
+    {
+      "match": "^([A-Z]{2,3}|[A-Z][a-z]+( [A-Z][a-z]+)*( [A-Z][a-z]+)? [A-Z]{2,3} .*|Las Vegas Raiders|Washington Commanders|Hornets|Pistons|Shams Charania|.*\\d:\\d\\d)$",
+      "in2019": true,
+      "evidence": [
+        "section0-201903",
+        "section2-201911",
+        "home-201907"
+      ],
+      "note": "team abbreviations, scores, team names, reporters and video durations (content)"
+    },
+    {
+      "match": "^(?=.{20,}).*[a-z].*$",
+      "in2019": true,
+      "evidence": [
+        "home-201903",
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "story headlines and promotions (content)"
+    },
+    {
+      "match": "^[A-Z0-9][\\w'’&.-]*(?: [\\w'’&.-]+){0,2}$",
+      "in2019": true,
+      "evidence": [
+        "home-201907",
+        "section1-201907"
+      ],
+      "note": "short content labels on cards (team, event or story kicker)"
+    },
+    {
+      "match": "^(ESPN|ESPN Home Page)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "required: logo"
+    },
+    {
+      "match": "^(NFL|NFL NFL|ESPN NFL Home Page)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "required: sport nav"
+    },
+    {
+      "match": "^(NBA|NBA NBA|ESPN NBA Home Page)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "required: sport nav"
+    },
+    {
+      "match": "^(MLB|MLB MLB|ESPN MLB Home Page)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "required: sport nav"
+    },
+    {
+      "match": "^(Open Search|Search)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "home-201907",
+        "home-201911"
+      ],
+      "note": "required: search"
+    },
+    {
+      "match": "^(Scores|Scores Scores)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "scores",
+        "league"
+      ],
+      "evidence": [
+        "section0-201903",
+        "section1-201907"
+      ],
+      "note": "required: league sub-nav"
+    },
+    {
+      "match": "^(Standings|Standings Standings)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "scores",
+        "league"
+      ],
+      "evidence": [
+        "section0-201903",
+        "section1-201907"
+      ],
+      "note": "required: league sub-nav"
+    }
+  ]
 }

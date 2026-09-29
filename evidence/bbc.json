@@ -157,6 +157,78 @@
         "s6"
       ],
       "note": "story headlines and teasers (content)"
+    },
+    {
+      "match": "^(British Broadcasting Corporation|BBC|BBC Homepage)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: BBC blocks in the ORB bar"
+    },
+    {
+      "match": "^(Sign In|BBC Account|Your account)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "required: account in the ORB bar"
+    },
+    {
+      "match": "^News$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s4"
+      ],
+      "note": "required: ORB bar links"
+    },
+    {
+      "match": "^Sport$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "required: ORB bar links"
+    },
+    {
+      "match": "^Travel$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "required: ORB bar links"
+    },
+    {
+      "match": "^(US & Canada|World)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "news"
+      ],
+      "evidence": [
+        "s4"
+      ],
+      "note": "required: BBC News nav"
+    },
+    {
+      "match": "^(Europe|Asia)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "news"
+      ],
+      "evidence": [
+        "s4"
+      ],
+      "note": "required: BBC News nav"
     }
   ]
 }

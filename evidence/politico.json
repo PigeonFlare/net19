@@ -1,306 +1,366 @@
 {
- "theme": "politico",
- "era": "2019 POLITICO (captures from 2019-01, 2019-07 and 2019-09 agree): white header with the ☰ master menu at left, the big red POLITICO wordmark centered and MAGAZINE · THE AGENDA · PRO plus search at right, a thin rule and no section bar; 'QUICK POPS' and 'TOP NEWS' columns with DIN condensed bold headlines, red uppercase kickers, Georgia deks, spaced uppercase bylines; articles with the same header, red kicker, bold DIN headline and a 'MOST READ' rail.",
- "sources": [
-  {
-   "id": "article0-a201901",
-   "url": "https://arquivo.pt/noFrame/replay/20190101232844/https://www.politico.com/story/2019/01/01/government-shutdown-update-trump-congress-1077368",
-   "date": "2019-01-01",
-   "shows": "article0 page as served in 2019-01 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g14-evidence/politico/politico-article0-a201901.png"
-  },
-  {
-   "id": "article1-a201909",
-   "url": "https://arquivo.pt/noFrame/replay/20190926180237/https://www.politico.com/news/2019/09/25/mcconnell-ukraine-trump-001034",
-   "date": "2019-09-26",
-   "shows": "article1 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g14-evidence/politico/politico-article1-a201909.png"
-  },
-  {
-   "id": "home-a201901",
-   "url": "https://arquivo.pt/noFrame/replay/20190101232858/https://www.politico.com/",
-   "date": "2019-01-01",
-   "shows": "home page as served in 2019-01 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g14-evidence/politico/politico-home-a201901.png"
-  },
-  {
-   "id": "home-a201907",
-   "url": "https://arquivo.pt/noFrame/replay/20190714204944/https://www.politico.com/",
-   "date": "2019-07-14",
-   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g14-evidence/politico/politico-home-a201907.png"
-  }
- ],
- "features": [
-  {
-   "match": "^(Europe|E&E News)$",
-   "in2019": false,
-   "evidence": [
-    "home-a201901",
-    "article0-a201901",
-    "article1-a201909"
-   ],
-   "note": "header links not in the 2019 header (Magazine, The Agenda, Pro); E&E News was acquired in 2022",
-   "action": "hidden"
-  },
-  {
-   "match": "^homepageNav$",
-   "in2019": false,
-   "evidence": [
-    "home-a201901",
-    "home-a201907"
-   ],
-   "note": "the black section bar under the header (Congress, White House, Canada, Defense … Magazine) is on no 2019 page; sections lived in the master menu. Hidden with .homepageNav/.articleNav; the same section links inside the master menu remain",
-   "action": "hidden"
-  },
-  {
-   "match": "^(Employer|Job Title)$",
-   "in2019": false,
-   "evidence": [
-    "home-a201901"
-   ],
-   "note": "extra fields of the newsletter sign-up form (2019 asked only for email); hiding them would break the form",
-   "action": "kept: function"
-  },
-  {
-   "match": "^(Email)$",
-   "in2019": true,
-   "evidence": [
-    "article0-a201901"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Email"
-   ]
-  },
-  {
-   "match": "^(aside\\ area)$",
-   "in2019": true,
-   "evidence": [
-    "article0-a201901",
-    "article1-a201909"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "aside area"
-   ]
-  },
-  {
-   "match": "^(About\\ Us|Advertising|Breaking\\ News\\ Alerts|Careers|Credit\\ Card\\ Payments|Digital\\ Edition|Donald\\ Trump|FAQ|Feedback|Headlines|Magazine|Master\\ menu|Open\\ search\\ form|Photos|Press|Print\\ Subscriptions|Privacy\\ Policy|Pro|RSS|Site\\ Map|Terms\\ of\\ Service|contentinfo\\ area|footer\\ area|section\\ area)$",
-   "in2019": true,
-   "evidence": [
-    "article0-a201901",
-    "article1-a201909",
-    "home-a201901"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "About Us",
-    "Advertising",
-    "Breaking News Alerts",
-    "Careers",
-    "Credit Card Payments",
-    "Digital Edition",
-    "Donald Trump",
-    "FAQ",
-    "Feedback",
-    "Headlines",
-    "Magazine",
-    "Master menu",
-    "Open search form",
-    "Photos",
-    "Press",
-    "Print Subscriptions",
-    "Privacy Policy",
-    "Pro",
-    "RSS",
-    "Site Map",
-    "Terms of Service",
-    "contentinfo area",
-    "footer area",
-    "section area"
-   ]
-  },
-  {
-   "match": "^(Rachael\\ Bade)$",
-   "in2019": true,
-   "evidence": [
-    "article0-a201901",
-    "home-a201901"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Rachael Bade"
-   ]
-  },
-  {
-   "match": "^(article\\ area|header\\ area|repeated\\ li)$",
-   "in2019": true,
-   "evidence": [
-    "article0-a201901",
-    "home-a201901",
-    "home-a201907"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "article area",
-    "header area",
-    "repeated li"
-   ]
-  },
-  {
-   "match": "^(Video\\ Player)$",
-   "in2019": true,
-   "evidence": [
-    "article1-a201909"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Video Player"
-   ]
-  },
-  {
-   "match": "^(Congress)$",
-   "in2019": true,
-   "evidence": [
-    "article1-a201909",
-    "home-a201901",
-    "home-a201907"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Congress"
-   ]
-  },
-  {
-   "match": "^(Cartoon\\ Carousel)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201901"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Cartoon Carousel"
-   ]
-  },
-  {
-   "match": "^(Learn\\ more\\ »|White\\ House|form\\ area|repeated\\ div|repeated\\ section)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201901",
-    "home-a201907"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Learn more »",
-    "White House",
-    "form area",
-    "repeated div",
-    "repeated section"
-   ]
-  },
-  {
-   "match": "^(Cybersecurity|Kyle\\ Cheney)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201907"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Cybersecurity",
-    "Kyle Cheney"
-   ]
-  },
-  {
-   "match": "^(Master menu|Open main menu|POLITICO Politico Logo|Politico Logo|Pro|Open search form|Magazine|Video|Podcasts|Breaking News Alerts|Playbook PM|Women Rule|Cartoon Carousel|Matt Wuerker Cartoons)$",
-   "in2019": true,
-   "evidence": [
-    "article0-a201901",
-    "article1-a201909",
-    "home-a201901"
-   ],
-   "note": "2019 master menu button, logo, Pro, search, Magazine, Nerdcast/podcasts, Playbook, Women Rule Podcast, Cartoon Carousel"
-  },
-  {
-   "match": "^(Supreme Court and Legal Issues|Latest on POLITICO|Tracking Trump’s Cabinet picks|Trump Tariffs|Florida|New Jersey|NATO|Brussels|United Kingdom|Food and Agriculture|Cannabis|Cybersecurity|Education|Energy and Climate|Tax, Finance and the Economy|Labor|Sustainability|Trade|Transportation|West Wing Playbook|Inside Congress|POLITICO Nightly|POLITICO Weekend|The Recast|All Newsletters|Rachael Bade|Alex Burns|Victoria Guida|John Harris|Debra Kahn|Ankush Khardori|Jonathan Martin|Michael Schaffer|Nahal Toosi|All Columnists|Inside Congress Live|The Fifty|Biden's Billions|Upcoming Events|Previous Events)$",
-   "in2019": true,
-   "evidence": [
-    "article0-a201901"
-   ],
-   "note": "entries of the collapsed master-menu accordion (max-height 0, overflow hidden): the inventory counts them because checkVisibility ignores clipping; they are not visible until the 2019-style ☰ menu is opened (checker false positive)"
-  },
-  {
-   "match": "^(About Us|Advertising|Careers|Credit Card Payments|Digital Edition|FAQ|Feedback|Headlines|Photos|Press|Print Subscriptions|Request A Correction|Write For Us|RSS|Site Map|Terms of Service|Privacy Policy|Site Footer|Learn more »|Read today's edition)$",
-   "in2019": true,
-   "evidence": [
-    "article0-a201901",
-    "article1-a201909"
-   ],
-   "note": "2019 footer links (About Us, Advertising, Breaking News Alerts, Careers, Credit Card Payments, Digital Edition, FAQ, Feedback, Headlines, Photos, POWERJobs, Press, Print Subscriptions, RSS, Site Map, Terms, Privacy), 'Learn more »' and Playbook edition links"
-  },
-  {
-   "match": "^(Inside Congress|More Congress news|Congress|external|Opens in a new window|\\(Opens in a new window\\)|PBS|NPR|Donald Trump|Corporation For Public Broadcasting|The Friday Read \\| Primary Source|Email|Video Player)$",
-   "in2019": true,
-   "evidence": [
-    "article1-a201909",
-    "home-a201907"
-   ],
-   "note": "section title and modules, topic tags under articles (2019: 'Donald Trump', 'Mitch McConnell'), outbound link markers, newsletter email field and video player"
-  },
-  {
-   "match": "^[A-Z][a-z]+(-[A-Z][a-z]+)? ([A-Z][a-z]*\\.? )?[A-Z][A-Za-z'’-]+(-[A-Z][a-z]+)?$",
-   "in2019": true,
-   "evidence": [
-    "home-a201907",
-    "article1-a201909"
-   ],
-   "note": "author bylines (2019: 'Burgess Everett', 'Kyle Cheney' …)"
-  },
-  {
-   "match": "^(header area|banner area|nav area|main area|section area|form area|article area|aside area|footer area|contentinfo area)$",
-   "in2019": true,
-   "evidence": [
-    "article0-a201901",
-    "home-a201901"
-   ],
-   "note": "page regions"
-  },
-  {
-   "match": "^repeated ",
-   "in2019": true,
-   "evidence": [
-    "home-a201901",
-    "home-a201907"
-   ],
-   "note": "story cards (content)"
-  },
-  {
-   "match": "^(?=.{24,})\\S+( \\S+){4,}.*$",
-   "in2019": true,
-   "evidence": [
-    "home-a201901",
-    "home-a201907"
-   ],
-   "note": "story headlines and image captions outside repeated cards (content)"
-  },
-  {
-   "match": "^(Congress|White House|Canada|Defense|Energy|Health Care|Legal|Tech|California|New York|Playbook|Newsletters|Columns)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201901",
-    "home-a201907"
-   ],
-   "note": "section links in the master menu and section titles (2019: Congress, White House, Politics, Elections, Foreign policy, Playbook, newsletters)"
-  }
- ]
+  "theme": "politico",
+  "era": "2019 POLITICO (captures from 2019-01, 2019-07 and 2019-09 agree): white header with the ☰ master menu at left, the big red POLITICO wordmark centered and MAGAZINE · THE AGENDA · PRO plus search at right, a thin rule and no section bar; 'QUICK POPS' and 'TOP NEWS' columns with DIN condensed bold headlines, red uppercase kickers, Georgia deks, spaced uppercase bylines; articles with the same header, red kicker, bold DIN headline and a 'MOST READ' rail.",
+  "sources": [
+    {
+      "id": "article0-a201901",
+      "url": "https://arquivo.pt/noFrame/replay/20190101232844/https://www.politico.com/story/2019/01/01/government-shutdown-update-trump-congress-1077368",
+      "date": "2019-01-01",
+      "shows": "article0 page as served in 2019-01 (Arquivo.pt capture rendered with its 2019 CSS)",
+      "file": "g14-evidence/politico/politico-article0-a201901.png"
+    },
+    {
+      "id": "article1-a201909",
+      "url": "https://arquivo.pt/noFrame/replay/20190926180237/https://www.politico.com/news/2019/09/25/mcconnell-ukraine-trump-001034",
+      "date": "2019-09-26",
+      "shows": "article1 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
+      "file": "g14-evidence/politico/politico-article1-a201909.png"
+    },
+    {
+      "id": "home-a201901",
+      "url": "https://arquivo.pt/noFrame/replay/20190101232858/https://www.politico.com/",
+      "date": "2019-01-01",
+      "shows": "home page as served in 2019-01 (Arquivo.pt capture rendered with its 2019 CSS)",
+      "file": "g14-evidence/politico/politico-home-a201901.png"
+    },
+    {
+      "id": "home-a201907",
+      "url": "https://arquivo.pt/noFrame/replay/20190714204944/https://www.politico.com/",
+      "date": "2019-07-14",
+      "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
+      "file": "g14-evidence/politico/politico-home-a201907.png"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Europe|E&E News)$",
+      "in2019": false,
+      "evidence": [
+        "home-a201901",
+        "article0-a201901",
+        "article1-a201909"
+      ],
+      "note": "header links not in the 2019 header (Magazine, The Agenda, Pro); E&E News was acquired in 2022",
+      "action": "hidden"
+    },
+    {
+      "match": "^homepageNav$",
+      "in2019": false,
+      "evidence": [
+        "home-a201901",
+        "home-a201907"
+      ],
+      "note": "the black section bar under the header (Congress, White House, Canada, Defense … Magazine) is on no 2019 page; sections lived in the master menu. Hidden with .homepageNav/.articleNav; the same section links inside the master menu remain",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Employer|Job Title)$",
+      "in2019": false,
+      "evidence": [
+        "home-a201901"
+      ],
+      "note": "extra fields of the newsletter sign-up form (2019 asked only for email); hiding them would break the form",
+      "action": "kept: function"
+    },
+    {
+      "match": "^(Email)$",
+      "in2019": true,
+      "evidence": [
+        "article0-a201901"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Email"
+      ]
+    },
+    {
+      "match": "^(aside\\ area)$",
+      "in2019": true,
+      "evidence": [
+        "article0-a201901",
+        "article1-a201909"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "aside area"
+      ]
+    },
+    {
+      "match": "^(About\\ Us|Advertising|Breaking\\ News\\ Alerts|Careers|Credit\\ Card\\ Payments|Digital\\ Edition|Donald\\ Trump|FAQ|Feedback|Headlines|Magazine|Master\\ menu|Open\\ search\\ form|Photos|Press|Print\\ Subscriptions|Privacy\\ Policy|Pro|RSS|Site\\ Map|Terms\\ of\\ Service|contentinfo\\ area|footer\\ area|section\\ area)$",
+      "in2019": true,
+      "evidence": [
+        "article0-a201901",
+        "article1-a201909",
+        "home-a201901"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "About Us",
+        "Advertising",
+        "Breaking News Alerts",
+        "Careers",
+        "Credit Card Payments",
+        "Digital Edition",
+        "Donald Trump",
+        "FAQ",
+        "Feedback",
+        "Headlines",
+        "Magazine",
+        "Master menu",
+        "Open search form",
+        "Photos",
+        "Press",
+        "Print Subscriptions",
+        "Privacy Policy",
+        "Pro",
+        "RSS",
+        "Site Map",
+        "Terms of Service",
+        "contentinfo area",
+        "footer area",
+        "section area"
+      ]
+    },
+    {
+      "match": "^(Rachael\\ Bade)$",
+      "in2019": true,
+      "evidence": [
+        "article0-a201901",
+        "home-a201901"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Rachael Bade"
+      ]
+    },
+    {
+      "match": "^(article\\ area|header\\ area|repeated\\ li)$",
+      "in2019": true,
+      "evidence": [
+        "article0-a201901",
+        "home-a201901",
+        "home-a201907"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "article area",
+        "header area",
+        "repeated li"
+      ]
+    },
+    {
+      "match": "^(Video\\ Player)$",
+      "in2019": true,
+      "evidence": [
+        "article1-a201909"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Video Player"
+      ]
+    },
+    {
+      "match": "^(Congress)$",
+      "in2019": true,
+      "evidence": [
+        "article1-a201909",
+        "home-a201901",
+        "home-a201907"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Congress"
+      ]
+    },
+    {
+      "match": "^(Cartoon\\ Carousel)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201901"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Cartoon Carousel"
+      ]
+    },
+    {
+      "match": "^(Learn\\ more\\ »|White\\ House|form\\ area|repeated\\ div|repeated\\ section)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201901",
+        "home-a201907"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Learn more »",
+        "White House",
+        "form area",
+        "repeated div",
+        "repeated section"
+      ]
+    },
+    {
+      "match": "^(Cybersecurity|Kyle\\ Cheney)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201907"
+      ],
+      "note": "the same label appears on the 2019 capture(s) cited",
+      "auto": true,
+      "labels": [
+        "Cybersecurity",
+        "Kyle Cheney"
+      ]
+    },
+    {
+      "match": "^(Master menu|Open main menu|POLITICO Politico Logo|Politico Logo|Pro|Open search form|Magazine|Video|Podcasts|Breaking News Alerts|Playbook PM|Women Rule|Cartoon Carousel|Matt Wuerker Cartoons)$",
+      "in2019": true,
+      "evidence": [
+        "article0-a201901",
+        "article1-a201909",
+        "home-a201901"
+      ],
+      "note": "2019 master menu button, logo, Pro, search, Magazine, Nerdcast/podcasts, Playbook, Women Rule Podcast, Cartoon Carousel"
+    },
+    {
+      "match": "^(Supreme Court and Legal Issues|Latest on POLITICO|Tracking Trump’s Cabinet picks|Trump Tariffs|Florida|New Jersey|NATO|Brussels|United Kingdom|Food and Agriculture|Cannabis|Cybersecurity|Education|Energy and Climate|Tax, Finance and the Economy|Labor|Sustainability|Trade|Transportation|West Wing Playbook|Inside Congress|POLITICO Nightly|POLITICO Weekend|The Recast|All Newsletters|Rachael Bade|Alex Burns|Victoria Guida|John Harris|Debra Kahn|Ankush Khardori|Jonathan Martin|Michael Schaffer|Nahal Toosi|All Columnists|Inside Congress Live|The Fifty|Biden's Billions|Upcoming Events|Previous Events)$",
+      "in2019": true,
+      "evidence": [
+        "article0-a201901"
+      ],
+      "note": "entries of the collapsed master-menu accordion (max-height 0, overflow hidden): the inventory counts them because checkVisibility ignores clipping; they are not visible until the 2019-style ☰ menu is opened (checker false positive)"
+    },
+    {
+      "match": "^(About Us|Advertising|Careers|Credit Card Payments|Digital Edition|FAQ|Feedback|Headlines|Photos|Press|Print Subscriptions|Request A Correction|Write For Us|RSS|Site Map|Terms of Service|Privacy Policy|Site Footer|Learn more »|Read today's edition)$",
+      "in2019": true,
+      "evidence": [
+        "article0-a201901",
+        "article1-a201909"
+      ],
+      "note": "2019 footer links (About Us, Advertising, Breaking News Alerts, Careers, Credit Card Payments, Digital Edition, FAQ, Feedback, Headlines, Photos, POWERJobs, Press, Print Subscriptions, RSS, Site Map, Terms, Privacy), 'Learn more »' and Playbook edition links"
+    },
+    {
+      "match": "^(Inside Congress|More Congress news|Congress|external|Opens in a new window|\\(Opens in a new window\\)|PBS|NPR|Donald Trump|Corporation For Public Broadcasting|The Friday Read \\| Primary Source|Email|Video Player)$",
+      "in2019": true,
+      "evidence": [
+        "article1-a201909",
+        "home-a201907"
+      ],
+      "note": "section title and modules, topic tags under articles (2019: 'Donald Trump', 'Mitch McConnell'), outbound link markers, newsletter email field and video player"
+    },
+    {
+      "match": "^[A-Z][a-z]+(-[A-Z][a-z]+)? ([A-Z][a-z]*\\.? )?[A-Z][A-Za-z'’-]+(-[A-Z][a-z]+)?$",
+      "in2019": true,
+      "evidence": [
+        "home-a201907",
+        "article1-a201909"
+      ],
+      "note": "author bylines (2019: 'Burgess Everett', 'Kyle Cheney' …)"
+    },
+    {
+      "match": "^(header area|banner area|nav area|main area|section area|form area|article area|aside area|footer area|contentinfo area)$",
+      "in2019": true,
+      "evidence": [
+        "article0-a201901",
+        "home-a201901"
+      ],
+      "note": "page regions"
+    },
+    {
+      "match": "^repeated ",
+      "in2019": true,
+      "evidence": [
+        "home-a201901",
+        "home-a201907"
+      ],
+      "note": "story cards (content)"
+    },
+    {
+      "match": "^(?=.{24,})\\S+( \\S+){4,}.*$",
+      "in2019": true,
+      "evidence": [
+        "home-a201901",
+        "home-a201907"
+      ],
+      "note": "story headlines and image captions outside repeated cards (content)"
+    },
+    {
+      "match": "^(Congress|White House|Canada|Defense|Energy|Health Care|Legal|Tech|California|New York|Playbook|Newsletters|Columns)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201901",
+        "home-a201907"
+      ],
+      "note": "section links in the master menu and section titles (2019: Congress, White House, Politics, Elections, Foreign policy, Playbook, newsletters)"
+    },
+    {
+      "match": "^(Master menu|Open main menu|Toggle menu)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "home-a201901",
+        "home-a201907"
+      ],
+      "note": "required: master menu at left"
+    },
+    {
+      "match": "^(POLITICO Politico Logo|Politico Logo|Politico home)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "home-a201901",
+        "home-a201907"
+      ],
+      "note": "required: red wordmark"
+    },
+    {
+      "match": "^(Open search form)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "home-a201901",
+        "home-a201907"
+      ],
+      "note": "required: search (the current article header has no search button to restyle)",
+      "pages": [
+        "home",
+        "section"
+      ]
+    },
+    {
+      "match": "^(Magazine)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "home-a201901",
+        "home-a201907"
+      ],
+      "note": "required: MAGAZINE at right"
+    },
+    {
+      "match": "^(Pro)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "home-a201901",
+        "home-a201907"
+      ],
+      "note": "required: PRO at right"
+    }
+  ]
 }

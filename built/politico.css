@@ -16,7 +16,7 @@ header#js-top-header .actions-lineup__item>a,header#js-top-header .actions-lineu
 .media-item__summary .headline a:hover{color:#0e9af3!important}
 .media-item__summary .category,.media-item__summary .category a,.summary-header .category a{color:var(--n19-red)!important;font-family:var(--pol19-sans)!important;font-weight:700!important;font-size:10px!important;letter-spacing:.1rem!important;text-transform:uppercase!important}
 .media-item__summary .dek,.media-item__summary .dek p,.media-item__summary>p{font-family:var(--pol19-serif)!important;color:var(--n19-sub)!important}
-.media-item__summary .meta,.media-item__summary .meta *,.media-item__summary .authors{font-family:var(--pol19-sans)!important;font-size:10px!important;letter-spacing:.15rem!important;text-transform:uppercase!important;color:var(--n19-meta)!important}
+.media-item__summary .meta,.media-item__summary .meta *,.media-item__summary .authors{font-family:var(--pol19-sans)!important;font-size:10px!important;letter-spacing:.15rem!important;text-transform:uppercase!important;color:var(--n19-meta)!important;line-height:16px!important}
 .media-item .live-flag,.pro-promo,[class*="pro-upsell"]{display:none!important}
 header.sticky.top-0{border-bottom:1px solid var(--n19-rule)!important}
 header.sticky.top-0 a[aria-label="Politico home"] svg{color:var(--n19-red)!important;fill:var(--n19-red)!important}
