@@ -106,6 +106,13 @@
       "date": "2019",
       "file": "/home/claude/sweeps/g3-evidence/youtube/page-wdm.html",
       "shows": "Web Design Museum's 2019 capture shows the pre-2017 legacy layout the crawler was served; outnumbered by s1-s10, so not used"
+    },
+    {
+      "id": "s16",
+      "url": "https://ahrefs.com/blog/youtube-seo/",
+      "date": "2019-03",
+      "file": "/home/claude/sweeps/h2-evidence/youtube/2019-youtube-suggest-results.jpg",
+      "shows": "search suggestions on 2019 desktop (also 2019-youtube_suggest_with_asterisk.jpg): a plain white dropdown hanging from the masthead's bottom edge 12px under the field, as wide as the field (not the button), no page dimming, no backdrop, the field stays in place; 16px padding, 30px rows, plain text with the typed part regular and the completion medium weight, no icons, thumbnails or subtitles"
     }
   ],
   "features": [
@@ -380,6 +387,235 @@
         "s10"
       ],
       "note": "videos, results, comments and recommendations"
+    },
+    {
+      "match": "^(Guide)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required 2019 feature: masthead guide button"
+    },
+    {
+      "match": "^(YouTube Home)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required 2019 feature: masthead logo link"
+    },
+    {
+      "match": "^(Search)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s16"
+      ],
+      "note": "required 2019 feature: masthead search field and button"
+    },
+    {
+      "match": "^(Settings)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "required 2019 feature: masthead settings (signed out)",
+      "pages": [
+        "home",
+        "search",
+        "channel",
+        "watch"
+      ]
+    },
+    {
+      "match": "^(Home)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required 2019 feature: guide: Home",
+      "pages": [
+        "home",
+        "search",
+        "channel"
+      ]
+    },
+    {
+      "match": "^(Subscriptions)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required 2019 feature: guide: Subscriptions",
+      "pages": [
+        "home",
+        "search",
+        "channel"
+      ]
+    },
+    {
+      "match": "^(You|Library)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required 2019 feature: guide: Library (the current 'You' entry is labelled Library)",
+      "pages": [
+        "home",
+        "search",
+        "channel"
+      ]
+    },
+    {
+      "match": "^(Search filters|Filter|Filters)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s7",
+        "s8"
+      ],
+      "note": "required 2019 feature: search FILTER toolbar",
+      "pages": [
+        "search"
+      ]
+    },
+    {
+      "match": "^(Videos)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "required 2019 feature: channel VIDEOS tab",
+      "pages": [
+        "channel"
+      ]
+    },
+    {
+      "match": "^(Playlists)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "required 2019 feature: channel PLAYLISTS tab",
+      "pages": [
+        "channel"
+      ]
+    },
+    {
+      "match": "^(About)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "required 2019 feature: channel ABOUT tab",
+      "pages": [
+        "channel"
+      ]
+    },
+    {
+      "match": "^(Subscribe|Subscribe to .*)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4",
+        "s2"
+      ],
+      "note": "required 2019 feature: red SUBSCRIBE button",
+      "pages": [
+        "channel",
+        "watch"
+      ]
+    },
+    {
+      "match": "^(Sort by)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "required 2019 feature: channel SORT BY",
+      "pages": [
+        "channel"
+      ]
+    },
+    {
+      "match": "^(Share)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "required 2019 feature: watch SHARE",
+      "pages": [
+        "watch"
+      ]
+    },
+    {
+      "match": "^(Save|Save to playlist)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "required 2019 feature: watch SAVE",
+      "pages": [
+        "watch"
+      ]
+    },
+    {
+      "match": "^(Dislike this video)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "required 2019 feature: watch dislike",
+      "pages": [
+        "watch"
+      ]
+    },
+    {
+      "match": "^(Show more|\\.\\.\\.more)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "required 2019 feature: description SHOW MORE",
+      "pages": [
+        "watch"
+      ]
+    },
+    {
+      "match": "^(Sort comments)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "required 2019 feature: comments SORT BY",
+      "pages": [
+        "watch"
+      ]
     }
   ]
 }

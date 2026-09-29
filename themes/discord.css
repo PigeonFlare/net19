@@ -103,6 +103,7 @@ html, html :is(.theme-light, .theme-dark, .theme-darker, .theme-midnight) {
   --background-gradient-chat: initial !important; --background-gradient-highest: initial !important;
   --background-gradient-high: initial !important; --background-gradient-low: initial !important;
   --background-gradient-lowest: initial !important; --background-gradient-lower: initial !important;
+  --background-gradient-app-frame: initial !important; --background-gradient-higher: initial !important;
   --radius-xs: 3px !important; --radius-sm: 3px !important; --radius-md: 5px !important; --radius-lg: 5px !important;
   --radius-xl: 8px !important; --radius-xxl: 8px !important; --button-border-radius: 3px !important;
   --button-border-radius-lg: 3px !important;
@@ -131,10 +132,13 @@ nav[class*="guilds_"], nav[class*="guilds_"] [class*="scroller_"], [class*="side
 [data-list-id="guildsnav"] { padding-top: 12px !important; }
 [data-list-id="guildsnav"] :is([class^="listItem_"], [class*=" listItem_"]) { margin: 0 0 8px !important; }
 [data-list-id="guildsnav"] foreignObject { mask: none !important; }
-[data-list-id="guildsnav"] :is([class^="blobContainer_"], [class*=" blobContainer_"]) > :is([class^="wrapper_"], [class*=" wrapper_"]),
-[data-list-id="guildsnav"] :is([class^="blobContainer_"], [class*=" blobContainer_"]) > :is([class^="wrapper_"], [class*=" wrapper_"]) > svg {
-  width: 48px !important; height: 48px !important;
-}
+[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"]):has(> svg > foreignObject)[style*="width: 32px"] { zoom: 1.5; }
+[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"]):has(> svg > foreignObject)[style*="width: 40px"] { zoom: 1.2; }
+[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"]):has(> svg > foreignObject)[style*="width: 44px"] { zoom: 1.090909; }
+[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"]):has(> svg > foreignObject)[style*="width: 52px"] { zoom: .923077; }
+[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"])[style*="width: 32px"] > :is([class^="lowerBadge_"], [class*=" lowerBadge_"], [class^="upperBadge_"], [class*=" upperBadge_"]) { zoom: .666667; }
+[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"])[style*="width: 40px"] > :is([class^="lowerBadge_"], [class*=" lowerBadge_"], [class^="upperBadge_"], [class*=" upperBadge_"]) { zoom: .833333; }
+[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"])[style*="width: 44px"] > :is([class^="lowerBadge_"], [class*=" lowerBadge_"], [class^="upperBadge_"], [class*=" upperBadge_"]) { zoom: .916667; }
 [data-list-id="guildsnav"] foreignObject > *, [data-list-id="guildsnav"] foreignObject > * > :is(img, [class*="childWrapper_"], [class*="icon_"]) { width: 100% !important; height: 100% !important; }
 [data-list-id="guildsnav"] foreignObject > *, [data-list-id="guildsnav"] foreignObject > * > :is(img, [class*="childWrapper_"], [class*="icon_"]) {
   border-radius: 50% !important; transition: border-radius .15s ease-out, background-color .15s ease-out !important; overflow: hidden;
@@ -142,7 +146,7 @@ nav[class*="guilds_"], nav[class*="guilds_"] [class*="scroller_"], [class*="side
 [data-list-id="guildsnav"] :is([class^="blobContainer_"], [class*=" blobContainer_"]):is(:hover, [class*="selected_"]) foreignObject > *,
 [data-list-id="guildsnav"] :is([class^="blobContainer_"], [class*=" blobContainer_"]):is(:hover, [class*="selected_"]) foreignObject > * > :is(img, [class*="childWrapper_"], [class*="icon_"]),
 [data-list-id="guildsnav"] foreignObject > :is(:hover, [class*="selected_"]), [data-list-id="guildsnav"] foreignObject > :is(:hover, [class*="selected_"]) > * {
-  border-radius: 16px !important;
+  border-radius: 33.333% !important;
 }
 [data-list-id="guildsnav"] foreignObject [class*="childWrapper_"] { background-color: var(--n19-primary); color: var(--n19-text); scale: 1 !important; }
 [data-list-id="guildsnav"] :is([class^="blobContainer_"], [class*=" blobContainer_"]):is(:hover, [class*="selected_"]) foreignObject [class*="childWrapper_"],
@@ -165,13 +169,16 @@ nav[class*="guilds_"], nav[class*="guilds_"] [class*="scroller_"], [class*="side
   box-shadow: 0 0 0 3px var(--n19-tertiary);
 }
 
-[data-list-id="guildsnav"] svg[class*="shiftSVG_"] { top: 0 !important; left: 0 !important; }
-[data-list-id="guildsnav"] svg[class*="shiftSVG_"] > foreignObject { x: -4px; y: -4px; width: 48px !important; height: 48px !important; }
 [data-list-id="guildsnav"] :is([class^="listItem_"], [class*=" listItem_"]) { display: flex !important; justify-content: center !important; }
-[data-list-id="guildsnav"] :is([class^="listItem_"], [class*=" listItem_"]) > span:not([class]),
-[data-list-id="guildsnav"] [class*="listItemWrapper_"],
-[data-list-id="guildsnav"] [class*="listItemWrapper_"] > :is([class^="wrapper_"], [class*=" wrapper_"]) { width: 48px !important; height: 48px !important; }
 [class*="sidebar_"] :is([class^="sidebarList_"], [class*=" sidebarList_"]) > nav { padding-bottom: 56px !important; }
+html [class*="sidebarList_"] {
+  --background-base-lowest: var(--n19-secondary) !important; --background-gradient-high: initial !important;
+  --background-gradient-lowest: initial !important; --background-gradient-app-frame: initial !important;
+}
+[class*="privateChannels_"] [class*="searchBarComponent_"] {
+  background: var(--n19-tertiary) !important; border: 0 !important; border-radius: 4px !important; box-shadow: none !important;
+  height: 28px !important; color: var(--n19-muted) !important; font-size: 14px !important;
+}
 [class*="sidebarList_"], [class*="sidebarList_"] > nav, [class*="privateChannels_"] {
   background: var(--n19-secondary) !important; border: 0 !important; border-radius: 0 !important;
 }
@@ -436,6 +443,7 @@ html[data-wf-site] .home--hero [class*="ctaContainer-"] button[class*="buttonWhi
 html[data-wf-site] .home--hero [class*="ctaContainer-"] button[class*="buttonBrand-"] { background: #7289da !important; color: #fff !important; }
 html[data-wf-site] [class*="star-hero-home"], html[data-wf-site] .nav_blur { display: none !important; }
 html[data-wf-site] :is(.nav_dd_list, .nav_dd_list_bg, .nav_dd_content-wr) { border-radius: 5px !important; }
+html[data-wf-site] .nav_dd_link_title { color: #fff !important; opacity: 1 !important; }
 html[data-wf-site] :is(a, button):is([class*="button"], .hero_button-l, .hero_button-r) { border-radius: 3px !important; }
 html[data-wf-site] :is(a, button):is([class*="buttonBrand-"], [class*="TryDiscordButton"]):hover { background-color: #2c3034 !important; }
 html[data-wf-site] :is(a, button):is(.hero_button-r, .blue-button, [class*="buttonBrand-"], [class*="TryDiscordButton"]):not(.home--hero *) {

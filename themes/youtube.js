@@ -262,7 +262,7 @@ globalThis.net19Theme = (() => {
   const metadata = () => {
     if (!english()) return;
     for (const row of document.querySelectorAll('ytd-video-meta-block #metadata-line, yt-content-metadata-view-model .ytContentMetadataViewModelMetadataRow')) {
-      const parts = [...row.querySelectorAll(':scope > span:not(.n19-sep)')].filter(part => !/delimiter/i.test(part.className) && (!part.firstElementChild || part.firstElementChild.tagName === 'SPAN' && part.children.length === 1));
+      const parts = [...row.querySelectorAll(':scope > span:not(.n19-sep):not(.n19-break)')].filter(part => !/delimiter|icon/i.test(part.className) && (!part.firstElementChild || part.firstElementChild.tagName === 'SPAN' && part.children.length === 1));
       const texts = parts.map(part => part.textContent.trim());
       if (!texts.some(text => AGO.test(text) || /\bago$/.test(text))) continue;
       parts.forEach((part, i) => {
@@ -272,9 +272,20 @@ globalThis.net19Theme = (() => {
         const next = spelled(text) || (VIEWS.test(text) ? `${text} views` : null);
         if (next && leaf.textContent !== next) leaf.textContent = next;
       });
+      const more = parts.find((part, i) => i > 0 && /^and \S/i.test(part.textContent.trim()));
+      if (more) {
+        if (!more.hasAttribute('data-net19-hidden')) more.setAttribute('data-net19-hidden', '');
+        const views = parts.find(part => /\bviews?$/i.test(part.textContent.trim()));
+        if (views && !views.previousElementSibling?.classList.contains('n19-break')) { const cut = document.createElement('span'); cut.className = 'n19-break'; views.before(cut); }
+        const cut = row.querySelector(':scope > .n19-break');
+        if (cut && more.compareDocumentPosition(cut) & Node.DOCUMENT_POSITION_FOLLOWING) for (let e = more.nextElementSibling; e && e !== cut; e = e.nextElementSibling) if (!e.hasAttribute('data-net19-hidden')) e.setAttribute('data-net19-hidden', '');
+        for (let e = more.previousElementSibling; e && (e.classList.contains('n19-sep') || /delimiter/i.test(e.className)); e = e.previousElementSibling) if (!e.hasAttribute('data-net19-hidden')) e.setAttribute('data-net19-hidden', '');
+        if (!row.hasAttribute('data-n19-collab')) row.setAttribute('data-n19-collab', '');
+      }
       const shown = parts.filter(part => part.getClientRects().length);
       for (let i = 1; i < shown.length; i++) {
         const before = shown[i].previousElementSibling;
+        if (before?.classList.contains('n19-break')) continue;
         if (before && before !== shown[i - 1] && (before.classList.contains('n19-sep') || before.textContent.trim() === '•')) continue;
         if (getComputedStyle(shown[i - 1], '::after').content.includes('•') || getComputedStyle(shown[i], '::before').content.includes('•')) continue;
         if (before && before !== shown[i - 1] && /delimiter/i.test(before.className)) { if (before.textContent !== '•') before.textContent = '•'; before.classList.add('n19-sep'); continue; }

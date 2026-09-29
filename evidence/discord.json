@@ -8,7 +8,8 @@
     { "id": "s4", "url": "https://www.reddit.com/r/discordapp/comments/czp5wx/", "date": "2019-09-04", "file": "/home/claude/sweeps/g4-evidence/discord/light-2019-09-canary.png", "shows": "the new light theme: white chat, light grey channel list and member list, light server rail, dark text, blurple accents" },
     { "id": "s5", "url": "https://www.reddit.com/r/discordapp/comments/a8m1w2/", "date": "2018-12-22", "file": "/home/claude/sweeps/g4-evidence/discord/light-2018-12-meme.jpg", "shows": "light vs dark theme app layout of early 2019 (server rail, channels, chat, member list, Quick Switcher)" },
     { "id": "s6", "url": "https://www.reddit.com/r/discordapp/comments/84812i/", "date": "2018-03-13", "file": "/home/claude/sweeps/g4-evidence/discord/light-2018-03.png", "shows": "light theme app" },
-    { "id": "s7", "url": "https://www.reddit.com/r/discordapp/comments/ptnzp9/", "date": "2021-09-23 (shows early 2018 site)", "file": "/home/claude/sweeps/g4-evidence/discord/nostalgia-2018site.png", "shows": "the blurple 2017-2018 hero that the dark 2019 page replaced (not used)" }
+    { "id": "s7", "url": "https://www.reddit.com/r/discordapp/comments/ptnzp9/", "date": "2021-09-23 (shows early 2018 site)", "file": "/home/claude/sweeps/g4-evidence/discord/nostalgia-2018site.png", "shows": "the blurple 2017-2018 hero that the dark 2019 page replaced (not used)" },
+    { "id": "s8", "url": "https://discord.com/assets/web.d4c7976eccf337f1.js", "date": "2026-09-29", "file": "/home/claude/sweeps/h2-dc/js/web.d4c7976eccf337f1.js", "shows": "not a 2019 source: Discord's current BlobMask and guild-bar code (avatar 40px or 44px, svg n+8 wide with viewBox -4 -4, pill as an absolute overlay), used only to reproduce the current markup in /home/claude/sweeps/h2-dc/fx/ so the 2019 geometry of s4 (48px icons 12px from each edge of a 72px rail, 56px pitch) can be applied without cropping" }
   ],
   "features": [
     { "match": "^(header area|nav area|aside area|main area|section area|footer area|form area|region area)$", "in2019": true, "evidence": ["s1"], "note": "generic regions" },
@@ -18,6 +19,14 @@
     { "match": "^(English|Twitter|Instagram|Facebook|Status|About|Branding|Blog|Feedback|Terms|Privacy|Guidelines|Merch Store)$", "in2019": true, "evidence": ["s1"], "note": "footer: language picker, social links, link columns" },
     { "match": "^(Youtube|Tiktok|App Directory|Gift Cards|Newsroom|Safety|Creators|Quests|Cookie Settings|Acknowledgements|Licenses|Company Information|Discover|Shop|Activities|Apps|Server Guide|Summaries|Forward|Set a Server Tag|Avatar Decorations|Nameplates|Profile Effects|Super Reactions?)$", "in2019": false, "evidence": ["absent from the 2019 landing and app (s1, s4, s5); all launched 2020-2025"], "action": "hidden" },
     { "match": "^(MAKE YOUR GROUP CHATS MORE FUN|stream like you’re in the same room|Hop in when you're free, no need to call|See who's around to chill|always have something to do together|wherever YOU GAME, HANG OUT HERE)$", "in2019": false, "evidence": ["2021+ landing sections; s1 has only the hero and the footer"], "action": "hidden" },
-    { "match": "^(repeated .*)$", "in2019": true, "evidence": ["s1"], "note": "footer columns" }
+    { "match": "^(repeated .*)$", "in2019": true, "evidence": ["s1"], "note": "footer columns" },
+    { "match": "^(Servers sidebar|Servers|Direct Messages|Home)$", "in2019": true, "evidence": ["s4", "s5"], "note": "server rail: the Home (Direct Messages) button and the server list", "required": true, "pages": ["dm"] },
+    { "match": "^(Add a Server)$", "in2019": true, "evidence": ["s4", "s5"], "note": "green + Add a Server at the end of the rail", "required": true, "pages": ["dm"] },
+    { "match": "^(Friends)$", "in2019": true, "evidence": ["s5", "s6"], "note": "DM list: Friends", "required": true, "pages": ["dm"] },
+    { "match": "^(Find or start a conversation)$", "in2019": true, "evidence": ["s5", "s6"], "note": "DM list search button", "required": true, "pages": ["dm"] },
+    { "match": "^(Private channels|Direct Messages \\(.*\\)|.* \\(direct message\\))$", "in2019": true, "evidence": ["s5", "s6"], "note": "DM list rows" },
+    { "match": "^(User area|User Settings|Mute|Unmute|Deafen|Undeafen)$", "in2019": true, "evidence": ["s4", "s5"], "note": "user panel with mute, deafen and settings", "required": true, "pages": ["dm"] },
+    { "match": "^(Inbox|Help|Channel header)$", "in2019": true, "evidence": ["s4"], "note": "channel header toolbar: inbox (mentions) and help" },
+    { "match": "^[x\\s.,:#@()—–-]+\\d?$", "in2019": true, "evidence": ["s4"], "note": "scrubbed personal names and messages in snapshots" }
   ]
 }

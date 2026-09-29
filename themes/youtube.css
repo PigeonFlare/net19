@@ -37,7 +37,15 @@ html[data-n19-yt="www"] {
   & ytd-topbar-logo-renderer #logo { padding: 0 !important; }
   & ytd-topbar-logo-renderer #country-code { color: var(--n19-text-2) !important; margin-left: 2px !important; }
 
-  & yt-searchbox, & yt-searchbox.ytSearchboxComponentHostUnified { height: 32px !important; max-height: none !important; margin: 0 !important; max-width: 656px !important; }
+  & yt-searchbox, & yt-searchbox.ytSearchboxComponentHostUnified, & yt-searchbox.ytSearchboxComponentHostIsFocused {
+    position: relative !important; flex-direction: row !important; align-items: stretch !important; height: 32px !important; max-height: none !important; min-width: 0 !important;
+    margin: 0 !important; padding: 0 !important; max-width: 656px !important; border-radius: 0 !important; box-shadow: none !important; background: transparent !important; transition: none !important; }
+  & #search-scrim, & .ytSearchboxComponentScrimContainer { display: none !important; }
+  & yt-searchbox .ytSearchboxComponentInputWrapper { display: flex !important; flex: 1 1 auto !important; min-width: 0 !important; width: auto !important; height: 32px !important;
+    margin: 0 !important; padding: 0 !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important; }
+  & yt-searchbox .ytSearchboxComponentInputWrapper > .ytSearchboxComponentInputContainer { flex: 1 1 auto !important; width: auto !important; min-width: 0 !important; }
+  & yt-searchbox .ytSearchboxComponentSearchForm { flex: 1 1 auto !important; min-width: 0 !important; }
+  & yt-searchbox .ytSearchboxComponentActionsButton:has([aria-label^="Ask" i]) { display: none !important; }
   & yt-searchbox .ytSearchboxComponentInputContainer, & yt-searchbox .ytSearchboxComponentInputContainerUnified, & yt-searchbox .ytSearchboxComponentInputContainerIsFocused {
     height: 32px !important; min-height: 0 !important; max-height: 32px !important; margin: 0 !important; padding: 0 !important; gap: 0 !important;
     align-items: stretch !important; flex-direction: row !important; border-radius: 0 !important; background: transparent !important; box-shadow: none !important; }
@@ -65,15 +73,22 @@ html[data-n19-yt="www"] {
   & yt-searchbox .ytSearchboxComponentActions { width: auto !important; margin: 0 !important; padding: 0 !important; gap: 0 !important; align-self: stretch !important; }
   & yt-searchbox .ytSearchboxComponentActions :is(div, yt-button-shape, button-view-model) { border-radius: 0 !important; padding: 0 !important; margin: 0 !important; }
   & #voice-search-button { display: none !important; }
-  & yt-searchbox :is(.ytSearchboxComponentSuggestionsContainer, .ytSearchboxComponentSuggestionsContainerUnified) {
-    background: var(--n19-card) !important; border: 1px solid var(--n19-field-border) !important; border-top: 0 !important; border-radius: 0 !important;
-    box-shadow: 0 2px 4px rgba(0,0,0,.2) !important; padding: 16px 0 !important; margin: 0 !important; top: 100% !important; }
-  & yt-searchbox .ytSearchboxComponentSuggestionsContainer :is(img, yt-image), & yt-searchbox .ytSuggestionComponentIcon { display: none !important; }
-  & yt-searchbox [role="option"] { min-height: 24px !important; padding: 0 0 0 10px !important; font-size: 16px !important; font-weight: 400 !important; color: var(--n19-text) !important; background: transparent !important; }
+  & yt-searchbox :is(.ytSearchboxComponentSuggestionsContainer, .ytSearchboxComponentSuggestionsContainerUnified, .ytSearchboxComponentSuggestionsContainerScrollable) {
+    position: absolute !important; top: 44px !important; left: 0 !important; right: 65px !important; width: auto !important; min-width: 0 !important; max-width: none !important;
+    max-height: none !important; overflow: visible !important; z-index: 2030 !important; box-sizing: border-box !important;
+    background: var(--n19-card) !important; border: 0 !important; border-radius: 0 !important;
+    box-shadow: 0 4px 4px rgba(0,0,0,.24), 0 0 4px rgba(0,0,0,.24) !important; padding: 16px 0 !important; margin: 0 !important; }
+  & yt-searchbox .ytSearchboxComponentSuggestionsContainer :is(img, yt-image, .ytSuggestionComponentRightContainer, .ytSuggestionComponentMetadataContainer, .ytSuggestionComponentEntitySubtitle),
+  & yt-searchbox .ytSuggestionComponentIcon { display: none !important; }
+  & yt-searchbox .ytSuggestionComponentSuggestion { display: block !important; min-height: 0 !important; height: auto !important; margin: 0 !important; padding: 0 !important; border-radius: 0 !important; background: transparent !important; }
+  & yt-searchbox [role="option"] { display: flex !important; align-items: center !important; box-sizing: border-box !important; min-height: 30px !important; height: 30px !important; margin: 0 !important;
+    padding: 0 16px 0 11px !important; border-radius: 0 !important; font-size: 16px !important; line-height: 24px !important; font-weight: 400 !important; color: var(--n19-text) !important; background: transparent !important; }
+  & yt-searchbox [role="option"] :is(.ytSuggestionComponentLeftContainer, span) { font-size: 16px !important; line-height: 24px !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; }
+  & yt-searchbox .ytSuggestionComponentSuggestion:is(:hover, .ytSuggestionComponentHighlighted, :has([aria-selected="true"])) [role="option"],
   & yt-searchbox [role="option"]:is(:hover, [aria-selected="true"], .ytSuggestionComponentHighlighted) { background: var(--n19-active) !important; }
-  & yt-searchbox [role="option"] :is(b, strong, .ytSuggestionComponentBold) { font-weight: 700 !important; }
+  & yt-searchbox [role="option"] :is(b, strong, .ytSuggestionComponentBold) { font-weight: 500 !important; }
   & yt-searchbox [aria-label^="Ask" i] { display: none !important; }
-  & ytd-masthead #center { flex: 1 1 auto !important; justify-content: center !important; margin: 0 40px !important; }
+  & ytd-masthead #center { flex: 1 1 auto !important; justify-content: center !important; margin: 0 40px !important; height: 56px !important; align-self: stretch !important; align-items: center !important; }
 
   & ytd-masthead #buttons { gap: 8px !important; }
   & ytd-masthead #buttons :is(yt-touch-feedback-shape, yt-light-shape) { display: none !important; }
@@ -306,6 +321,9 @@ html[data-n19-yt="www"] {
   & ytd-search ytd-video-renderer #channel-info ytd-channel-name { margin: 0 !important; }
   & ytd-search ytd-video-renderer #channel-info :is(ytd-channel-name, #text, a, yt-formatted-string) { font-size: 13px !important; line-height: 18px !important; color: var(--n19-text-2) !important; }
   & .n19-sep { margin: 0 4px !important; }
+  & .ytContentMetadataViewModelMetadataRow[data-n19-collab] { flex-wrap: wrap !important; }
+  & .n19-break { flex: 0 0 100% !important; height: 0 !important; }
+  & .ytBadgeShapeIcon .yt-icon-shape > div { height: 100% !important; }
   & ytd-search ytd-video-renderer .n19-dot { margin: 0 4px !important; color: var(--n19-text-2) !important; font-size: 13px !important; line-height: 18px !important; }
   & ytd-search ytd-video-renderer ytd-video-meta-block #metadata-line { font-size: 13px !important; line-height: 18px !important; max-height: 18px !important; color: var(--n19-text-2) !important; flex-wrap: nowrap !important; white-space: nowrap !important; }
   & ytd-search ytd-video-renderer ytd-video-meta-block #metadata-line span { font-size: 13px !important; line-height: 18px !important; }
@@ -388,6 +406,7 @@ html[data-n19-yt="www"] {
   & ytd-watch-metadata #owner { grid-area: owner !important; display: flex !important; flex-direction: row !important; align-items: center !important; justify-content: space-between !important; margin: 0 !important; padding: 16px 0 0 !important; min-width: 0 !important; width: auto !important; }
   & ytd-watch-metadata ytd-video-owner-renderer { flex: 1 1 auto !important; margin: 0 !important; min-width: 0 !important; align-items: center !important; }
   & ytd-watch-metadata ytd-video-owner-renderer #avatar, & ytd-watch-metadata ytd-video-owner-renderer #avatar img { width: 48px !important; height: 48px !important; border-radius: 50% !important; }
+  & ytd-watch-metadata ytd-video-owner-renderer #avatar { display: block !important; margin: 0 !important; }
   & ytd-watch-metadata ytd-video-owner-renderer > a { margin-right: 16px !important; }
   & ytd-watch-metadata ytd-video-owner-renderer #upload-info { margin: 0 !important; }
   & ytd-watch-metadata ytd-video-owner-renderer #channel-name :is(#text, a, yt-formatted-string) { font-size: 14px !important; font-weight: 500 !important; line-height: 18px !important; color: var(--n19-text) !important; }
@@ -469,6 +488,7 @@ html[data-n19-yt="www"] {
   & .html5-video-player :is(.ytp-left-controls, .ytp-right-controls, .ytp-time-wrapper, .ytp-chrome-controls .ytp-button, .ytp-time-display) { border-radius: 0 !important; background: transparent !important; box-shadow: none !important; backdrop-filter: none !important; }
   & .html5-video-player .ytp-chrome-bottom .ytp-chrome-controls { background: transparent !important; }
   & .html5-video-player .ytp-gradient-bottom { display: block !important; }
+  & .html5-video-player .ytp-time-display :is(.ytp-time-current, .ytp-time-separator, .ytp-time-duration, .ytp-time-contents) { color: #ddd !important; -webkit-text-fill-color: #ddd !important; }
 
   & ytd-active-account-header-renderer #channel-handle { display: none !important; }
   & [data-net19-hidden] { display: none !important; }

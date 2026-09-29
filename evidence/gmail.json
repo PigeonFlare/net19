@@ -62,7 +62,7 @@
       "id": "s10",
       "url": "https://www.alphr.com/gear-icon-gmail/",
       "date": "2019-06",
-      "shows": "full-width inbox on a picture theme: header Support (?), apps grid, account; toolbar density and gear; side panel Calendar/Keep/Tasks",
+      "shows": "full-width inbox on a picture theme: header Support (?), apps grid, account; toolbar density and gear; side panel Calendar/Keep/Tasks; on the picture theme the nav labels are white with a soft dark text shadow (Gmail's own 0 1px 2px rgba(0,0,0,.65)) and the selected Inbox is a translucent white pill with white bold text, not the red-on-pink of the default theme (zoom: /home/claude/sweeps/h2-evidence/gmail/alphr-nav-zoom.png)",
       "file": "/home/claude/sweeps/g1-evidence/gmail/s10-alphr-1.png"
     },
     {
@@ -426,6 +426,218 @@
         "Meet in Gmail 2020, Chat/Spaces 2020-2021"
       ],
       "action": "hidden"
+    },
+    {
+      "match": "^Compose$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s3",
+        "s7"
+      ],
+      "note": "required 2019 feature: white Compose pill"
+    },
+    {
+      "match": "^Inbox( \\d+ unread)?$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s3",
+        "s7"
+      ],
+      "note": "required 2019 feature: nav: Inbox"
+    },
+    {
+      "match": "^Starred( \\d+ unread)?$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s3",
+        "s7"
+      ],
+      "note": "required 2019 feature: nav: Starred"
+    },
+    {
+      "match": "^Snoozed( \\d+ unread)?$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s3",
+        "s8"
+      ],
+      "note": "required 2019 feature: nav: Snoozed"
+    },
+    {
+      "match": "^Sent( \\d+ unread)?$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s3",
+        "s8"
+      ],
+      "note": "required 2019 feature: nav: Sent"
+    },
+    {
+      "match": "^Drafts( \\d+ unread)?$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s3",
+        "s7"
+      ],
+      "note": "required 2019 feature: nav: Drafts"
+    },
+    {
+      "match": "^(More|Less|More labels)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s3",
+        "s7"
+      ],
+      "note": "required 2019 feature: nav: More (today's aria-label is 'More labels')"
+    },
+    {
+      "match": "^(Search mail|Search in mail)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4",
+        "s7"
+      ],
+      "note": "required 2019 feature: Search mail field"
+    },
+    {
+      "match": "^Settings$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4",
+        "s9"
+      ],
+      "note": "required 2019 feature: settings gear"
+    },
+    {
+      "match": "^Google apps$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4",
+        "s10"
+      ],
+      "note": "required 2019 feature: apps grid"
+    },
+    {
+      "match": "^Main menu$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4"
+      ],
+      "note": "required 2019 feature: hamburger menu"
+    },
+    {
+      "match": "^(Primary)(, \\d+ new messages?,)?$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s11"
+      ],
+      "note": "required 2019 feature: Primary category tab",
+      "pages": [
+        "inbox"
+      ]
+    },
+    {
+      "match": "^(Select)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4",
+        "s7"
+      ],
+      "note": "required 2019 feature: toolbar select",
+      "pages": [
+        "inbox"
+      ]
+    },
+    {
+      "match": "^(Refresh)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4",
+        "s7"
+      ],
+      "note": "required 2019 feature: toolbar refresh",
+      "pages": [
+        "inbox"
+      ]
+    },
+    {
+      "match": "^(Reply)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1b",
+        "s13"
+      ],
+      "note": "required 2019 feature: message Reply",
+      "pages": [
+        "message"
+      ]
+    },
+    {
+      "match": "^(Forward)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1b",
+        "s13"
+      ],
+      "note": "required 2019 feature: message Forward",
+      "pages": [
+        "message"
+      ]
+    },
+    {
+      "match": "^(Archive)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1b"
+      ],
+      "note": "required 2019 feature: message toolbar Archive",
+      "pages": [
+        "message"
+      ]
+    },
+    {
+      "match": "^(Send)\\b",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s6",
+        "s11"
+      ],
+      "note": "required 2019 feature: compose Send",
+      "pages": [
+        "compose"
+      ]
+    },
+    {
+      "match": "^(Subject)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s6",
+        "s11"
+      ],
+      "note": "required 2019 feature: compose Subject",
+      "pages": [
+        "compose"
+      ]
     }
   ]
 }
