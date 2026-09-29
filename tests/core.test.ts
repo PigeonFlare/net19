@@ -23,7 +23,7 @@ test('net19 only touches the sites it has a theme for', () => {
   const manifest = JSON.parse(readFileSync('manifest.json', 'utf8'));
   assert.deepEqual(manifest.host_permissions, THEMED_DOMAINS.map(domain => `*://*.${domain}/*`));
   assert.ok(!manifest.web_accessible_resources && !manifest.permissions.includes('offscreen') && !manifest.permissions.includes('webNavigation'));
-  assert.match(manifest.content_security_policy.extension_pages, /connect-src 'none'/);
+  assert.match(manifest.content_security_policy.extension_pages, /connect-src https:\/\/www\.reddit\.com\/api\/me\.json;/);
   for (const theme of THEMES) {
     for (const file of [...themeFiles(theme).css, ...themeFiles(theme).js]) assert.ok(existsSync(file), `${theme.id}: ${file}`);
     for (const pattern of themeMatches(theme)) assert.ok(theme.domains.some(domain => pattern.includes(domain)), pattern);

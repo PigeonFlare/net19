@@ -6,6 +6,7 @@ globalThis.net19Theme = (() => {
     detect: () => document.documentElement.hasAttribute('dark') ? 'dark' : 'light',
     watch: ['dark', 'class'],
     only: () => yt === 'music' ? 'dark' : undefined,
+    intended: 'ytd-structured-description-content-renderer #items > [data-net19-hidden]',
   };
 })();
 (() => {

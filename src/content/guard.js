@@ -198,7 +198,6 @@ import { rgba } from './color.js';
       for (const a of marks(el)) el.removeAttribute(a.name);
       if (el.style.display === 'none') el.style.removeProperty('display');
       if (getComputedStyle(el).display === 'none') el.style.setProperty('display', 'block', 'important');
-      console.warn('net19: kept a block of page content that a theme rule tried to hide', el);
     }
   };
 

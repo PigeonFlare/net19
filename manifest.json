@@ -185,6 +185,6 @@
   },
   "incognito": "not_allowed",
   "content_security_policy": {
-    "extension_pages": "default-src 'self'; script-src 'self'; object-src 'none'; connect-src 'none'; style-src 'self'; img-src 'self'; base-uri 'none'; frame-src 'none'"
+    "extension_pages": "default-src 'self'; script-src 'self'; object-src 'none'; connect-src https://www.reddit.com/api/me.json; style-src 'self'; img-src 'self'; base-uri 'none'; frame-src 'none'"
   }
 }
