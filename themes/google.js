@@ -175,6 +175,8 @@ globalThis.net19Theme = {
       if (!box.width || !box.height) continue;
       seen.add(el);
       const style = getComputedStyle(el);
+      const floating = (style.position === 'absolute' || style.position === 'fixed') && (style.zIndex !== 'auto' || style.boxShadow !== 'none');
+      if (floating) continue;
       const filled = alpha(style.backgroundColor) >= .9 && style.backgroundImage === 'none';
       const outlined = parseFloat(style.borderTopWidth) > 0 && alpha(style.borderTopColor) > 0;
       if (!filled && !outlined) continue;
