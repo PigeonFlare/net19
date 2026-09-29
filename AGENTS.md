@@ -1,0 +1,48 @@
+# Working on net19
+
+- This directory is the repository root. Verify `git rev-parse --show-toplevel` before status/staging; never operate on the unrelated parent repository.
+- The repository root is the extension: `manifest.json`, `themes/`, `icons/`, `popup.html`, `ui.css`, plus `background.js`, `popup.js` and `content.js`. Those three are generated from `src/` by `npm run build`; never hand-edit them. Keep only the current version, with no version folders or ZIPs in the repository.
+- Layout:
+  - `themes/` holds one CSS and JS pair per site, and nothing else.
+  - `built/` is generated from `themes/*.css` by `npm run build` (geometry gated for the redesign fallback); never hand-edit it, and commit it with the theme change.
+  - `src/content/` is the engine that runs after every theme: `palette.js` and `recolor.js` for light and dark, `guard.js` for post-2019 features, readability and content protection, and `fit.js` for the redesign fallback.
+  - `src/` also has the service worker, the popup, the settings and the theme registry.
+  - `scripts/` builds and packages; `scripts/audit/` checks live sites.
+- Don't add explanatory comments; name things so the code reads on its own.
+- Never draw or recreate a logo. Use the site's own file for its 2019 logo, as its CDN still serves it (for example abs.twimg.com for the Twitter bird, redditstatic.com for the round snoo). Look it up online first. If the 2019 file is no longer hosted, keep the site's current logo.
+- net19 only themes the sites listed in `src/themes.ts`. Do not add archive lookups, caches, or behavior on other sites.
+- Themes are styling rules on `--n19-*` tokens with light and dark values. The device's light/dark setting decides the mode: when a site shows the other one, `src/content/recolor.js` recolors it, leaving pictures and video untouched; themes never switch a site's own setting. `npm test` enforces the stylesheet contract.
+- Build every theme from real 2019 evidence, never from memory. The process is additive: every feature on the page must be proven from 2019, not just the ones we know are new.
+  - **Evidence:** for each page type, find at least 3 independent screenshots of what real users saw in 2019. Start with Google Images, then use dated articles and forum posts. Web Design Museum and Wayback captures come last: they often show what a crawler or signed-out visitor was served (classic Reddit, pre-2017 YouTube), not what most people saw. Save the images, and confirm the year.
+  - **`evidence/<id>.json`:** lists the sources and every feature, each marked `in2019` with the source that shows it. Anything `in2019: false` is hidden by the theme.
+  - **`npm run audit:inventory -- <id>`** (`scripts/audit/inventory.mjs`, with `URLS` for more pages and `SCHEME=dark`) lists every visible section, heading, control, tab, field and badge. It must report 0 unverified features in light and dark. Check signed-in pages read-only in a real browser and map them the same way.
+  - **Side by side:** put the 2019 screenshot and ours next to each other in light and dark, and list the measurable differences: grid, sizes, gaps (items must not touch where 2019 had space), avatar shapes, title colors and weights, casing, buttons, header, logo. You're done when only content differs.
+  - **Required 2019 features:** mark the main 2019 features in `evidence/<id>.json` with `"required": true` (optionally `"pages": [...]`), such as Reddit's CREATE POST buttons. The inventory reports any that are missing: 2019 features have to be present, not just new ones gone.
+  - **States:** check the page on load, on hover (header and sidebar items), with the search field focused and typed into, with a menu open and with a dialog open. The live audit reports a focused field that grows over other controls, moves, dims the page behind a backdrop, or cuts off its suggestions.
+  - **Layout checks:** the page checks report `collide` (blocks overlapping each other, such as a feed bleeding under a sidebar), `cropped` (icons or text cut off by their box) and `effects` (text shadows or strokes; add one only when the 2019 site had it). Every item is a bug unless shown to be a false positive.
+  - **Light mode:** light is as important as dark. Dark sites shown in light mode must look like their own 2019 light design, not an inverted grey; the page checks report `dim`.
+- Remove only features that did not exist in 2019, and check each one against 2019 evidence before removing or keeping it.
+- Run `npm run audit -- <id>` for every theme you change. It hovers menus, opens a menu and types into search, in light and dark. It flags faint text (from pixels), post-2019 labels, misaligned header items and buttons inside fields. Read the flagged screenshots; a clean first screen is not enough.
+- A theme is not done until it has been checked on the real, signed-in page in a real browser. Local fixtures and reconstructed markup are not enough.
+  - Load the theme there, including the page checks in `scripts/audit/page-checks.js`. Fix every result from them:
+    - `covered`: a control another element sits on, so a real click never reaches it;
+    - `offcenter`: icons off the center of their button or rail;
+    - `textoffcenter`: text off the vertical middle of its row;
+    - `overlap`: text drawn over other text.
+  - Then click the page's main controls with the real mouse, type into its fields, and read screenshots in light and dark.
+  - Verify every selector on the live markup. For example, a site's buttons may be `div[role=button]` rather than `<button>`.
+- Run `npm run audit:diff -- <id>` for every theme you change, in both schemes (`SCHEME=light` and `SCHEME=dark`). It runs the page checks with and without net19 and lists only the problems net19 introduced. Fix every stable item. A light-only run is how Gmail, Docs and Google's search field shipped broken in dark mode.
+- `lowcontrast` in the page checks measures text as it is actually shown after recoloring, including:
+  - placeholders, typed text and carets (a canvas editor's own caret too);
+  - text over a picture or its shading.
+
+  Any item is a bug. When the generic recoloring gets a part wrong, fix the theme's tokens for that mode. Name parts drawn for a photo behind them with `keep` (and panels inside those with `reflip`), and drawn surfaces that must invert, such as an editor's canvas, with `flat`.
+- Start theme scripts as soon as `<body>` exists (a `MutationObserver` on `<html>`), never at `DOMContentLoaded`, and batch work with `requestAnimationFrame`, not timers, so nothing of the current design is painted first.
+- Pages come in many languages. Match labels through `globalThis.net19English(text)` (and add a site's translations to `theme.words`), add text through `globalThis.net19Say(label)`, only overwrite a site's own wording when `globalThis.net19Lang()` is `en`, and mirror positioned rules for `:dir(rtl)`.
+- Write selectors that survive redesigns: ids, `role`/`aria-*`, `data-testid`, custom element names, `name`/`href` patterns and visible labels before generated class names, above all in rules that hide things.
+- Run `npm run audit:fit -- <id>` for every theme you change. It must report `fit`. The fallback only gates geometry (sizes, positions, spacing, flex and grid); hidden post-2019 features, colors, fonts and pictures always apply.
+- Run `npm run audit:nav -- <id>` for every theme you change. It follows the header, menu, launcher and footer links and reports every destination net19 leaves unstyled.
+- Run focused tests for changes, then `npm run check` once at release readiness.
+- Keep logs, test browser profiles, environment files, and working notes out of version control and shipping packages.
+- Build and package the exact verified source. Stage an explicit file list; inspect the staged file names and diff before publication.
+- Do not delegate routine work. Keep tool output and progress reports focused.
