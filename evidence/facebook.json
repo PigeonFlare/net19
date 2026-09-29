@@ -11,6 +11,9 @@
     { "id": "s7", "url": "https://louisem.com/60629/control-your-facebook-newsfeed", "date": "2018-2019", "shows": "desktop News Feed: Make Post / Photo/Video Album / Live Video composer, Stories, Trending", "file": "g5-evidence/facebook/feed-08.jpg" }
   ],
   "features": [
+    { "match": "^email$", "in2019": true, "required": true, "evidence": ["s1", "s2", "s4"], "note": "Email or Phone field in the blue bar" },
+    { "match": "^pass$", "in2019": true, "required": true, "evidence": ["s1", "s2", "s4"], "note": "Password field in the blue bar" },
+    { "match": "^Log In$", "in2019": true, "required": true, "evidence": ["s1", "s2", "s4"], "note": "Log In button in the blue bar" },
     { "match": "^(form|main) area$", "in2019": true, "evidence": ["s1", "s2"], "note": "login form in the bar and the page body" },
     { "match": "^(Log In|Log in)$", "in2019": true, "evidence": ["s1", "s2", "s4"] },
     { "match": "^Forgot (account|password)\\?$", "in2019": true, "evidence": ["s1", "s2", "s4"] },

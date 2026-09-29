@@ -1,9 +1,9 @@
 html { --n19-font: "Helvetica Neue", Helvetica, Arial, sans-serif; --n19-page: #fff; --n19-panel: #fff; --n19-text: #1d2129; --n19-text-2: #90949c; --n19-icon: #0084ff;
   --n19-blue: #0084ff; --n19-in: #f1f0f0; --n19-in-text: #1d2129; --n19-field: #f5f6f7; --n19-line: rgba(0,0,0,.1); --n19-hover: rgba(0,0,0,.04); --n19-selected: rgba(0,0,0,.05);
-  --n19-menu: #fff; --n19-input-line: #ccd0d5; }
+  --n19-menu: #fff; --n19-input-line: #ccd0d5; --n19-placeholder: #85888d; }
 html[data-net19-mode="dark"] { --n19-font: "Helvetica Neue", Helvetica, Arial, sans-serif; --n19-page: #000; --n19-panel: #000; --n19-text: #fff; --n19-text-2: #8a8d91; --n19-icon: #0084ff;
   --n19-blue: #0084ff; --n19-in: #3e4042; --n19-in-text: #fff; --n19-field: #242526; --n19-line: rgba(255,255,255,.12); --n19-hover: rgba(255,255,255,.06); --n19-selected: rgba(255,255,255,.1);
-  --n19-menu: #242526; --n19-input-line: #3e4042; }
+  --n19-menu: #242526; --n19-input-line: #3e4042; --n19-placeholder: #8a8d91; }
 
 html:root, html.__fb-light-mode, html.__fb-dark-mode, html .__fb-light-mode, html .__fb-dark-mode {
   --font-family-default: var(--n19-font) !important; --font-family-segoe: var(--n19-font) !important; --font-family-apple: var(--n19-font) !important;
@@ -44,6 +44,7 @@ body { font-family: var(--n19-font) !important; }
 #login_form input._55r1 { height: 40px !important; border: 0 !important; border-radius: 10px !important; background: var(--n19-field) !important;
   color: var(--n19-text) !important; font: 16px var(--n19-font) !important; box-shadow: none !important; }
 #login_form input._55r1:focus { border-color: var(--n19-blue) !important; }
+#login_form input._55r1::placeholder { color: var(--n19-placeholder) !important; opacity: 1 !important; }
 #login_form #loginbutton { border-radius: 20px !important; background: var(--n19-blue) !important; border-color: var(--n19-blue) !important; font: 700 15px var(--n19-font) !important; height: 40px !important; }
 #login_form [role="button"] span { color: var(--n19-blue) !important; font-family: var(--n19-font) !important; }
 ._4n9r ._4vo5, ._4n9r ._as87 { font-family: var(--n19-font) !important; }
