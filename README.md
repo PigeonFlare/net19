@@ -23,9 +23,10 @@ A Chrome extension that shows popular websites as they looked in **2019**.
 - **Survives redesigns:** If a site redesign stops a design from fitting, that part of the site falls back to its 2019 colors and fonts on the current layout instead of breaking (post-2019 features stay hidden), and switches back once the design fits again. A weekly check flags the design for an update.
 - **User privacy:** The extension runs completely locally. No user data is stored except for toggle choices, and the names of site sections whose design currently doesn't fit. ([privacy policy](PRIVACY.md)).
 
-## Related projects
+## Complementary projects I found which you should try out
 
-net19 restyles 150+ sites at once. If you only care about one of these, their dedicated extensions go further: [Old Twitter Layout](https://github.com/dimdenGD/OldTwitter) by dimden and [YouTube Redux](https://github.com/omnidevZero/YouTubeRedux) by omnidevZero both inspired parts of net19's Twitter and YouTube themes (no code was copied).
+[Old Twitter Layout](https://github.com/dimdenGD/OldTwitter) by dimden 
+[YouTube Redux](https://github.com/omnidevZero/YouTubeRedux) by omnidevZero 
 
 ## Report a problem or request a site
 
