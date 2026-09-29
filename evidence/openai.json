@@ -6,35 +6,30 @@
       "id": "s1",
       "url": "https://web.archive.org/web/20190616002704/https://openai.com/",
       "date": "2019-06-16",
-      "file": "/home/claude/sweeps/g9-evidence/wb/openai-home.png",
       "shows": "research-lab homepage: swirl logo, OpenAI wordmark, ABOUT/PROGRESS/RESOURCES/BLOG uppercase tracked nav on the right, full-bleed pink-orange-cyan-purple gradient, 'Our Work' mission line with LEARN MORE, 'Recent Releases' white-framed cards, VIEW PROGRESS; below: Charter, Join OpenAI / View open positions, footer About/Progress/Resources/Blog/Charter/Jobs/Press, Twitter and Facebook icons, newsletter sign-up"
     },
     {
       "id": "s2",
       "url": "https://web.archive.org/web/20190609213123/https://openai.com/blog/",
       "date": "2019-06-09",
-      "file": "/home/claude/sweeps/g9-evidence/wb/openai-blog.png",
       "shows": "blog index: same header on white, 'Blog' heading, list rows with title, date, excerpt, thumbnail"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20190615022557/https://openai.com/about/",
       "date": "2019-06-15",
-      "file": "/home/claude/sweeps/g9-evidence/wb/openai-about.png",
       "shows": "about page: mission statement in a serif, gradient artwork"
     },
     {
       "id": "s4",
       "url": "https://gigazine.net/gsc_news/en/20191106-gpt-2-final-model-release/",
       "date": "2019-11-06",
-      "file": "/home/claude/sweeps/g9-evidence/openai/gigazine-2019-11-gpt2-snap.png",
       "shows": "press screenshot of the 'GPT-2: 1.5B Release' post: logo, ABOUT/PROGRESS/RESOURCES/BLOG nav, hero art, date + minute read, title, body"
     },
     {
       "id": "s5",
       "url": "https://gigazine.net/gsc_news/en/20191122-openai-safety-gym/",
       "date": "2019-11-22",
-      "file": "/home/claude/sweeps/g9-evidence/openai/gigazine-2019-11-safetygym-snap.png",
       "shows": "press screenshot of the 'Safety Gym' post: same nav, image + title + summary, uppercase PAPER / SAFETY GYM buttons"
     }
   ],

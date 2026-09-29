@@ -6,127 +6,109 @@
    "id": "c-home-201904",
    "url": "https://commons.wikimedia.org/wiki/File:2019_Screenshot_of_English_Wikipedia_homepage.png",
    "date": "2019-04-30",
-   "shows": "a signed-in user's screenshot of the Main Page (In the news: Cyclone Kenneth, April 30 On this day): header, tabs, search, full 2019 sidebar",
-   "file": "g10-evidence/wikipedia/c-en-home-2019.png"
+   "shows": "a signed-in user's screenshot of the Main Page (In the news: Cyclone Kenneth, April 30 On this day): header, tabs, search, full 2019 sidebar"
   },
   {
    "id": "c-navbox-201901",
    "url": "https://commons.wikimedia.org/wiki/File:Navbox_bulleted_hlist_bug_2019-01-24_at_5.45.12_PM.png",
    "date": "2019-01-24",
-   "shows": "a user's screenshot of a template page: title, 'From Wikipedia, the free encyclopedia', navbox with [hide] toggle and v·t·e links",
-   "file": "g10-evidence/wikipedia/c-navbox-2019-01-24.png"
+   "shows": "a user's screenshot of a template page: title, 'From Wikipedia, the free encyclopedia', navbox with [hide] toggle and v·t·e links"
   },
   {
    "id": "c-wikimania-201905",
    "url": "https://commons.wikimedia.org/wiki/File:Wikimania_2019_banner_ad_on_the_English_Wikipedia_(30_D._05_M._2019_A.)_01.png",
    "date": "2019-05-30",
-   "shows": "a user's screenshot of an English Wikipedia page with a CentralNotice banner at the top",
-   "file": "g10-evidence/wikipedia/c-en-wikimania-2019-05-30.png"
+   "shows": "a user's screenshot of an English Wikipedia page with a CentralNotice banner at the top"
   },
   {
    "id": "article2-201909",
    "url": "https://arquivo.pt/noFrame/replay/20190924204323/https://en.wikipedia.org/wiki/Cat",
    "date": "2019-09-24",
-   "shows": "article2 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikipedia/wikipedia-article2-201909.png"
+   "shows": "article2 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "article5-201909",
    "url": "https://arquivo.pt/noFrame/replay/20190902010412/https://en.wikipedia.org/wiki/Portugal",
    "date": "2019-09-02",
-   "shows": "article5 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikipedia/wikipedia-article5-201909.png"
+   "shows": "article5 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "article8-201909",
    "url": "https://arquivo.pt/noFrame/replay/20190930200909/https://en.wikipedia.org/wiki/Lisbon",
    "date": "2019-09-30",
-   "shows": "article8 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikipedia/wikipedia-article8-201909.png"
+   "shows": "article8 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "history1-201909",
    "url": "https://arquivo.pt/noFrame/replay/20190928075947/https://en.wikipedia.org/w/index.php?title=Blohm_%26_Voss_BV_138&action=history",
    "date": "2019-09-28",
-   "shows": "history1 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikipedia/wikipedia-history1-201909.png"
+   "shows": "history1 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "home1-201901",
    "url": "https://arquivo.pt/noFrame/replay/20190101212527/https://en.wikipedia.org/wiki/Main_Page",
    "date": "2019-01-01",
-   "shows": "home1 page as served in 2019-01 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikipedia/wikipedia-home1-201901.png"
+   "shows": "home1 page as served in 2019-01 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "home2-201907",
    "url": "https://arquivo.pt/noFrame/replay/20190704202244/https://en.wikipedia.org/wiki/Main_Page",
    "date": "2019-07-04",
-   "shows": "home2 page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikipedia/wikipedia-home2-201907.png"
+   "shows": "home2 page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "home3-201912",
    "url": "https://arquivo.pt/noFrame/replay/20191231180700/https://en.wikipedia.org/wiki/Main_Page",
    "date": "2019-12-31",
-   "shows": "home3 page as served in 2019-12 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikipedia/wikipedia-home3-201912.png"
+   "shows": "home3 page as served in 2019-12 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "home4-201907",
    "url": "https://arquivo.pt/noFrame/replay/20190704202244/https://en.wikipedia.org/wiki/Main_Page",
    "date": "2019-07-04",
-   "shows": "home4 page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikipedia/wikipedia-home4-201907.png"
+   "shows": "home4 page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "search1-201910",
    "url": "https://arquivo.pt/noFrame/replay/20191016080058/https://en.wikipedia.org/w/index.php?title=Special:Search&profile=all&search=Hunn-Black%20%26%20Merritt%20Funeral%20Home&ns0=1",
    "date": "2019-10-16",
-   "shows": "search1 page as served in 2019-10 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikipedia/wikipedia-search1-201910.png"
+   "shows": "search1 page as served in 2019-10 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "search2-201903",
    "url": "https://arquivo.pt/noFrame/replay/20190325075008/https://en.wikipedia.org/w/index.php?title=Special:Search&profile=all&search=H%20Cook%20%26%20Son",
    "date": "2019-03-25",
-   "shows": "search2 page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikipedia/wikipedia-search2-201903.png"
+   "shows": "search2 page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "search3-201906",
    "url": "https://arquivo.pt/noFrame/replay/20190607161647/https://en.wikipedia.org/wiki/Special:Search?search=astrology%20love%20marriage%20line&sourceid=Mozilla-search&ns0=1",
    "date": "2019-06-07",
-   "shows": "search3 page as served in 2019-06 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikipedia/wikipedia-search3-201906.png"
+   "shows": "search3 page as served in 2019-06 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "special1-201905",
    "url": "https://arquivo.pt/noFrame/replay/20190522143301/https://en.wikipedia.org/wiki/Special:RecentChanges",
    "date": "2019-05-22",
-   "shows": "special1 page as served in 2019-05 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikipedia/wikipedia-special1-201905.png"
+   "shows": "special1 page as served in 2019-05 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "talk1-201904",
    "url": "https://arquivo.pt/noFrame/replay/20190426020054/https://en.wikipedia.org/wiki/Talk:Acupuncture",
    "date": "2019-04-26",
-   "shows": "talk1 page as served in 2019-04 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikipedia/wikipedia-talk1-201904.png"
+   "shows": "talk1 page as served in 2019-04 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "talk2-201912",
    "url": "https://arquivo.pt/noFrame/replay/20191220152520/https://en.wikipedia.org/wiki/Talk:Acupuncture",
    "date": "2019-12-20",
-   "shows": "talk2 page as served in 2019-12 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikipedia/wikipedia-talk2-201912.png"
+   "shows": "talk2 page as served in 2019-12 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "talk3-201905",
    "url": "https://arquivo.pt/noFrame/replay/20190522155618/https://en.wikipedia.org/wiki/Talk:Abdolhamid_Rigi?oldformat=true",
    "date": "2019-05-22",
-   "shows": "talk3 page as served in 2019-05 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikipedia/wikipedia-talk3-201905.png"
+   "shows": "talk3 page as served in 2019-05 (Arquivo.pt capture rendered with its 2019 CSS)"
   }
  ],
  "features": [

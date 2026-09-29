@@ -6,63 +6,54 @@
       "id": "s1",
       "url": "https://arun.is/blog/10-year-challenge/",
       "date": "2019-01-22",
-      "file": "/home/claude/sweeps/g9-evidence/github/arun-2019-01-github.jpg",
       "shows": "signed-out homepage: dark #24292e header with octocat, Why GitHub?/Enterprise/Explore/Marketplace/Pricing, Search GitHub field, Sign in, outlined Sign up; hero 'Built for developers' with the sign-up form"
     },
     {
       "id": "s2",
       "url": "https://www.webdesignmuseum.org/gallery/github-in-2019",
       "date": "2019",
-      "file": "/home/claude/sweeps/ax-evidence/github-2019.jpg",
       "shows": "full signed-out homepage 2019: hero, Get started with GitHub Enterprise, customer logos, collaboration sections, 'Get started for free' CTA, footer columns Product/Platform/Support/Company"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20190616000054/https://github.com/",
       "date": "2019-06-16",
-      "file": "/home/claude/sweeps/g9-evidence/wb/gh-home.png",
       "shows": "homepage capture; labels: Why GitHub?, Enterprise, Explore, Marketplace, Pricing, Search GitHub, Sign in, Sign up, footer Features/Security/Enterprise/Customer stories/Pricing/Resources/Developer API/Partners/Atom/Electron/GitHub Desktop/Help/Community Forum/Training/Status/Contact GitHub/About/Blog/Careers/Press/Shop, GitHub on Twitter/Facebook/YouTube/Linkedin, Terms, Privacy"
     },
     {
       "id": "s4",
       "url": "https://web.archive.org/web/20190616083659/https://github.com/facebook/react",
       "date": "2019-06-16",
-      "file": "/home/claude/sweeps/g9-evidence/wb/gh-repo.png",
       "shows": "repo page 980px centred: facebook/react, Watch/Star/Fork with counts, tabs Code/Issues/Pull requests/Projects/Wiki/Security/Insights with orange top edge on the selected tab, description, website, topics, commits/branches/releases/contributors/license bar, Branch: master, New pull request, Find File, Clone or download, latest commit bar, file table, README.md"
     },
     {
       "id": "s5",
       "url": "https://web.archive.org/web/20191215152339/https://github.com/facebook/react",
       "date": "2019-12-15",
-      "file": "/home/claude/sweeps/g9-evidence/wb/gh-repo-dec.png",
       "shows": "same repo at the end of 2019: same tabs (no Actions tab for signed-out visitors), Switch branches or tags, Find file, View all commits"
     },
     {
       "id": "s6",
       "url": "https://web.archive.org/web/20190501062029/https://github.com/facebook/react/issues",
       "date": "2019-05-01",
-      "file": "/home/claude/sweeps/g9-evidence/wb/gh-issues.png",
       "shows": "issues list: search field 'is:issue is:open', Labels, Milestones, New issue, Open/Closed counts, Author/Labels/Projects/Milestones/Assignee/Sort filters, rows with labels, comment counts, pagination"
     },
     {
       "id": "s7",
       "url": "https://web.archive.org/web/20190609122803/https://github.com/facebook/react/issues/10191",
       "date": "2019-06-09",
-      "file": "/home/claude/sweeps/g9-evidence/wb/gh-issue19.png",
       "shows": "issue page: title with number, Open state, New issue, comment boxes with avatar and author badges, reactions, timeline events, hidden items / Load more, sidebar Assignees/Labels/Projects/Milestone, Sign up for free to join this conversation"
     },
     {
       "id": "s8",
       "url": "https://web.archive.org/web/20190501060230/https://github.com/facebook/react/blob/master/README.md",
       "date": "2019-05-01",
-      "file": "/home/claude/sweeps/g9-evidence/wb/gh-file19.png",
       "shows": "file page: breadcrumb, Find file, Copy path, latest commit, contributors, Raw/Blame/History, rendered README, no file tree"
     },
     {
       "id": "s9",
       "url": "https://github.blog/2019-11-13-universe-day-one/",
       "date": "2019-11-13",
-      "file": "/home/claude/sweeps/g9-evidence/github/ghblog-2019-11-search.png",
       "shows": "2019 UI screenshots: code search results, navigation popovers, team review settings, blue selected menu items"
     }
   ],

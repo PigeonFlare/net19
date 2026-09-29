@@ -6,36 +6,31 @@
       "id": "s1",
       "url": "https://web.archive.org/web/20190916001040/https://nypost.com/",
       "date": "2019-09-16",
-      "shows": "homepage and HTML: red bar with SECTIONS, SEARCH, centered NEW YORK POST logo, TIPS, SIGN UP; lead photo with white headline, FOLLOW US icons, section modules (Opinion, Metro, Sports, Page Six, Decider, Business, Entertainment, Real Estate, Tech, Living, Fashion, Video, Covers, Horoscopes, Columnists, Trending Now, Now on Page Six), footer (Sections & Features, Covers, Columnists, Horoscopes, Sports Odds, Email Newsletters, Home Delivery, Coupons, Contact Us, Tips, Newsroom, Letters to the Editor, Reprints, Careers, Advertise, Media Kit, Terms of Use, Privacy, Your Ad Choices, Sitemap)",
-      "file": "g7-evidence/nypost/wb-nypost-home.png"
+      "shows": "homepage and HTML: red bar with SECTIONS, SEARCH, centered NEW YORK POST logo, TIPS, SIGN UP; lead photo with white headline, FOLLOW US icons, section modules (Opinion, Metro, Sports, Page Six, Decider, Business, Entertainment, Real Estate, Tech, Living, Fashion, Video, Covers, Horoscopes, Columnists, Trending Now, Now on Page Six), footer (Sections & Features, Covers, Columnists, Horoscopes, Sports Odds, Email Newsletters, Home Delivery, Coupons, Contact Us, Tips, Newsroom, Letters to the Editor, Reprints, Careers, Advertise, Media Kit, Terms of Use, Privacy, Your Ad Choices, Sitemap)"
     },
     {
       "id": "s2",
       "url": "https://web.archive.org/web/20190410235954/https://nypost.com/",
       "date": "2019-04-10",
-      "shows": "homepage (April): same header, FOLLOW US Facebook Twitter Instagram LinkedIn Email, lead + grid",
-      "file": "g7-evidence/nypost/wb-nypost-home-apr.png"
+      "shows": "homepage (April): same header, FOLLOW US Facebook Twitter Instagram LinkedIn Email, lead + grid"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20191206185820/https://nypost.com/2019/09/12/pewdiepie-rescinds-donation-pledge-to-anti-hate-group-after-fan-backlash/",
       "date": "2019-09",
-      "shows": "article: share icons (Facebook, Twitter, Flipboard, Email, link), red section tag, bold headline, By-line, date, TRENDING NOW ON NYPOST.COM rail with view counts, Read Next, More Stories",
-      "file": "g7-evidence/nypost/wb-nypost-article.png"
+      "shows": "article: share icons (Facebook, Twitter, Flipboard, Email, link), red section tag, bold headline, By-line, date, TRENDING NOW ON NYPOST.COM rail with view counts, Read Next, More Stories"
     },
     {
       "id": "s4",
       "url": "https://web.archive.org/web/20201112015157/https://nypost.com/search/trump/",
       "date": "2020-11 (same search design as 2019)",
-      "shows": "search: SEARCH heading, field, REFINE BY Dates / Sections, results count, Sort by Newest / Oldest / Relevance, result rows",
-      "file": "g7-evidence/nypost/wb-nypost-search-2020.png"
+      "shows": "search: SEARCH heading, field, REFINE BY Dates / Sections, results count, Sort by Newest / Oldest / Relevance, result rows"
     },
     {
       "id": "s5",
       "url": "https://www.google.com/search?udm=2&q=nypost.com+homepage+2019+screenshot",
       "date": "searched 2026-09-28",
-      "shows": "Google Images returned only print covers for nypost.com 2019; no independent web screenshots found, so the three Wayback captures (s1-s3, different dates and page types) are the evidence",
-      "file": ""
+      "shows": "Google Images returned only print covers for nypost.com 2019; no independent web screenshots found, so the three Wayback captures (s1-s3, different dates and page types) are the evidence"
     }
   ],
   "features": [

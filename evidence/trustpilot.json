@@ -6,28 +6,24 @@
    "id": "art-itsnicethat-2018-06",
    "url": "https://www.itsnicethat.com/news/venturethree-trustpilot-rebrand-graphic-design-130618",
    "date": "2018-06-13",
-   "file": "/home/claude/sweeps/g12-evidence/trustpilot/int2018-06-5b20e30c7fa44c9d59000479.jpg",
    "shows": "launch article for the 2018 identity used through 2019: navy header, green star, phone mockup of the consumer home 'Behind every review is an experience that matters' with search field and green search button"
   },
   {
    "id": "art-logodesigner-2018-06",
    "url": "https://www.logo-designer.co/trustpilot-reveals-new-logo-design/",
    "date": "2018-06-14",
-   "file": "/home/claude/sweeps/g12-evidence/trustpilot/ld2018-06.png",
    "shows": "the 2018 logo and site mockups (business site, laptop and tablet)"
   },
   {
    "id": "raw-review-2019-11",
    "url": "https://arquivo.pt/noFrame/replay/20191101002140id_/https://www.trustpilot.com/review/expressvpn.com",
    "date": "2019-11-01",
-   "file": "/home/claude/sweeps/g12-evidence/trustpilot/review-2019-11-raw.html",
    "shows": "the 2019 company page's own UI strings: Claimed / Unclaimed / Asking for reviews status, '[company] activities' box with 'See how [company] uses Trustpilot', 'About Trustpilot' box (We fight fake reviews, our commitment), paid-subscription note, TrustScore with rating distribution, Category and category ranking, contact info (Write to / Call us on / We live here), 'Is this your company?', Filter by Rating / Language, Useful, Share, Verified order, Reviewer contacted"
   },
   {
    "id": "raw-category-2019-10",
    "url": "https://arquivo.pt/noFrame/replay/20191006234050id_/https://www.trustpilot.com/categories/money_transfer_service",
    "date": "2019-10-06",
-   "file": "/home/claude/sweeps/g12-evidence/trustpilot/category-2019-10-raw.html",
    "shows": "the 2019 category page's UI strings: Categories side menu, Filters (Company status, No. of reviews, Time period, Location), results by TrustScore, Recently reviewed, Previous / Next page"
   },
   {
@@ -40,64 +36,55 @@
    "id": "category-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190326030917/https://www.trustpilot.com/categories/companies",
    "date": "2019-03-26",
-   "shows": "category page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/trustpilot-category-a201903.png"
+   "shows": "category page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "category-a201909b",
    "url": "https://arquivo.pt/noFrame/replay/20190908065558/https://www.trustpilot.com/categories/wellness_center",
    "date": "2019-09-08",
-   "shows": "category page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/trustpilot-category-a201909b.png"
+   "shows": "category page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "category-a201910c",
    "url": "https://arquivo.pt/noFrame/replay/20191006234050/https://www.trustpilot.com/categories/money_transfer_service",
    "date": "2019-10-06",
-   "shows": "category page as served in 2019-10 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/trustpilot-category-a201910c.png"
+   "shows": "category page as served in 2019-10 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "home-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190301064303/https://www.trustpilot.com/",
    "date": "2019-03-01",
-   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/trustpilot-home-a201903.png"
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "home-a201907b",
    "url": "https://arquivo.pt/noFrame/replay/20190702055848/https://www.trustpilot.com/",
    "date": "2019-07-02",
-   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/trustpilot-home-a201907b.png"
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "home-a201911c",
    "url": "https://arquivo.pt/noFrame/replay/20191101025902/https://www.trustpilot.com/",
    "date": "2019-11-01",
-   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/trustpilot-home-a201911c.png"
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "review-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190301125156/https://www.trustpilot.com/review/hyperoptic.com",
    "date": "2019-03-01",
-   "shows": "review page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/trustpilot-review-a201903.png"
+   "shows": "review page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "review-a201907b",
    "url": "https://arquivo.pt/noFrame/replay/20190701055828/https://www.trustpilot.com/review/hyperoptic.com",
    "date": "2019-07-01",
-   "shows": "review page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/trustpilot-review-a201907b.png"
+   "shows": "review page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "review-a201911c",
    "url": "https://arquivo.pt/noFrame/replay/20191101002140/https://www.trustpilot.com/review/expressvpn.com",
    "date": "2019-11-01",
-   "shows": "review page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/trustpilot-review-a201911c.png"
+   "shows": "review page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)"
   }
  ],
  "features": [

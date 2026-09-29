@@ -6,64 +6,55 @@
    "id": "forecast-h201904",
    "url": "https://arquivo.pt/noFrame/replay/20190402022723/https://www.wunderground.com/weather/ae/dubai",
    "date": "2019-04-02",
-   "shows": "forecast page as served in 2019-04 (Arquivo.pt capture HTML, labels read from the archived markup)",
-   "file": "g11-evidence/html/wunderground-forecast-h201904.html"
+   "shows": "forecast page as served in 2019-04 (Arquivo.pt capture HTML, labels read from the archived markup)"
   },
   {
    "id": "forecast-h201909",
    "url": "https://arquivo.pt/noFrame/replay/20190902041918/https://www.wunderground.com/weather/am/dprabak",
    "date": "2019-09-02",
-   "shows": "forecast page as served in 2019-09 (Arquivo.pt capture HTML, labels read from the archived markup)",
-   "file": "g11-evidence/html/wunderground-forecast-h201909.html"
+   "shows": "forecast page as served in 2019-09 (Arquivo.pt capture HTML, labels read from the archived markup)"
   },
   {
    "id": "home-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190315181455/https://www.wunderground.com/",
    "date": "2019-03-15",
-   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/wunderground/wunderground-home-a201903.png"
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "home-a201907",
    "url": "https://arquivo.pt/noFrame/replay/20190715170724/https://www.wunderground.com/",
    "date": "2019-07-15",
-   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/wunderground/wunderground-home-a201907.png"
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "home-a201911",
    "url": "https://arquivo.pt/noFrame/replay/20191115180727/https://www.wunderground.com/",
    "date": "2019-11-15",
-   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/wunderground/wunderground-home-a201911.png"
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "home-h201903",
    "url": "https://arquivo.pt/noFrame/replay/20190315181455/https://www.wunderground.com/",
    "date": "2019-03-15",
-   "shows": "home page as served in 2019-03 (Arquivo.pt capture HTML, labels read from the archived markup)",
-   "file": "g11-evidence/html/wunderground-home-h201903.html"
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture HTML, labels read from the archived markup)"
   },
   {
    "id": "home-h201907",
    "url": "https://arquivo.pt/noFrame/replay/20190715170724/https://www.wunderground.com/",
    "date": "2019-07-15",
-   "shows": "home page as served in 2019-07 (Arquivo.pt capture HTML, labels read from the archived markup)",
-   "file": "g11-evidence/html/wunderground-home-h201907.html"
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture HTML, labels read from the archived markup)"
   },
   {
    "id": "home-h201911",
    "url": "https://arquivo.pt/noFrame/replay/20191115180727/https://www.wunderground.com/",
    "date": "2019-11-15",
-   "shows": "home page as served in 2019-11 (Arquivo.pt capture HTML, labels read from the archived markup)",
-   "file": "g11-evidence/html/wunderground-home-h201911.html"
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture HTML, labels read from the archived markup)"
   },
   {
    "id": "home-wbref",
    "url": "wayback-2019-ref:https://www.wunderground.com/",
    "date": "2019",
-   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)",
-   "file": "g11-evidence/wunderground/wunderground-home-wbref.png"
+   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)"
   }
  ],
  "features": [

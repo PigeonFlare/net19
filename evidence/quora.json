@@ -6,29 +6,25 @@
       "id": "s1",
       "url": "https://www.useronboard.com/how-quora-onboards-new-users/?slide=49",
       "date": "2019",
-      "shows": "signed-in feed: header Home / Answer / Spaces / Notifications, Search Quora, Add Question; Questions for You; Answer / Pass / Follow",
-      "file": "g5-evidence/quora/home-07.jpg"
+      "shows": "signed-in feed: header Home / Answer / Spaces / Notifications, Search Quora, Add Question; Questions for You; Answer / Pass / Follow"
     },
     {
       "id": "s2",
       "url": "https://www.ionos.com/digitalguide/online-marketing/web-analytics/what-is-quora/",
       "date": "2019",
-      "shows": "feed with left Feeds list, answer cards with Upvote and share icons, cookie notice",
-      "file": "g5-evidence/quora/home-01.jpg"
+      "shows": "feed with left Feeds list, answer cards with Upvote and share icons, cookie notice"
     },
     {
       "id": "s3",
       "url": "https://www.quora.com/Where-is-the-questioners-name-displayed-in-questions-asked-on-Quora",
       "date": "2019-07",
-      "shows": "question page: topic chips, serif title, Question Log, Question Stats, answers with Thank / Report",
-      "file": "g5-evidence/quora/home-04.jpg"
+      "shows": "question page: topic chips, serif title, Question Log, Question Stats, answers with Thank / Report"
     },
     {
       "id": "s4",
       "url": "https://en.wikipedia.org/wiki/Quora",
       "date": "2019",
-      "shows": "desktop header and promoted answer card",
-      "file": "g5-evidence/quora/home-02.jpg"
+      "shows": "desktop header and promoted answer card"
     }
   ],
   "features": [

@@ -6,67 +6,43 @@
       "id": "s1",
       "url": "https://blog.google/products-and-platforms/products/translate/new-look-google-translate-web/",
       "date": "2018-11-28",
-      "shows": "blog post: new look for Translate web (Nov 2018) — the 2019 design",
-      "files": [
-        "sweeps/g2-evidence/gtranslate/s1-2.png"
-      ]
+      "shows": "blog post: new look for Translate web (Nov 2018) — the 2019 design"
     },
     {
       "id": "s4",
       "url": "https://www.androidpolice.com/2018/11/29/google-translate-web-getting-material-design-makeover/",
       "date": "2018-11-29",
-      "shows": "Translate web Material Design (Nov 2018)",
-      "files": [
-        "sweeps/g2-evidence/gtranslate/s4-1.png",
-        "sweeps/g2-evidence/gtranslate/s4-2.png",
-        "sweeps/g2-evidence/gtranslate/s4-3.png",
-        "sweeps/g2-evidence/gtranslate/s4-4.png"
-      ]
+      "shows": "Translate web Material Design (Nov 2018)"
     },
     {
       "id": "s5",
       "url": "https://www.androidheadlines.com/2018/11/google-translate-material-design-online.html",
       "date": "2018-11",
-      "shows": "Translate web new UI (Nov 2018)",
-      "files": [
-        "sweeps/g2-evidence/gtranslate/s5.png"
-      ]
+      "shows": "Translate web new UI (Nov 2018)"
     },
     {
       "id": "s6",
       "url": "https://9to5google.com/2018/10/04/google-translate-redesign-web-material-history/",
       "date": "2018-10",
-      "shows": "Translate web Material Theme with Documents (Oct 2018)",
-      "files": [
-        "sweeps/g2-evidence/gtranslate/s6.png"
-      ]
+      "shows": "Translate web Material Theme with Documents (Oct 2018)"
     },
     {
       "id": "s8",
       "url": "https://www.ghacks.net/2019/02/22/learn-languages-with-google-translate-for-chrome/",
       "date": "2019-02",
-      "shows": "Translate web (Feb 2019)",
-      "files": [
-        "sweeps/g2-evidence/gtranslate/s8.png"
-      ]
+      "shows": "Translate web (Feb 2019)"
     },
     {
       "id": "s9",
       "url": "https://wonderproxy.com/blog/amazon-vs-google-translate/",
       "date": "2019-09",
-      "shows": "Translate web comparison (Sep 2019)",
-      "files": [
-        "sweeps/g2-evidence/gtranslate/s9.png"
-      ]
+      "shows": "Translate web comparison (Sep 2019)"
     },
     {
       "id": "s10",
       "url": "https://www.timetotalktech.com/2019/05/use-google-translate-to-translate.html",
       "date": "2019-05",
-      "shows": "Translate web tutorial (May 2019)",
-      "files": [
-        "sweeps/g2-evidence/gtranslate/s10.png"
-      ]
+      "shows": "Translate web tutorial (May 2019)"
     }
   ],
   "features": [

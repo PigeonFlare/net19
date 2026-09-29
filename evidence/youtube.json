@@ -6,112 +6,96 @@
       "id": "s1",
       "url": "https://www.versionmuseum.com/history-of/youtube-website",
       "date": "2019-06",
-      "file": "/home/claude/sweeps/g3-evidence/youtube/vm-2019-homepage.jpg",
       "shows": "signed-out home: masthead (guide button, 2017 logo, Search field + grey search button, create/apps/messages/settings icons, blue SIGN IN), expanded guide Home/Trending/Subscriptions/Library/History, BEST OF YOUTUBE, square thumbnails with duration badges, 14px titles, grey 'views • ago', red SUBSCRIBE 1.1M"
     },
     {
       "id": "s2",
       "url": "https://www.versionmuseum.com/history-of/youtube-website",
       "date": "2019-05",
-      "file": "/home/claude/sweeps/g3-evidence/youtube/vm-2019-watch-page.jpg",
       "shows": "watch page: 18px title, '5,377,137 views' at left, like/dislike with counts, SHARE, SAVE, ..., sentiment bar, 48px round avatar, 'Published on', red 'SUBSCRIBE 4.7M', description indented, SHOW MORE, Up next / AUTOPLAY, 168x94 related thumbnails"
     },
     {
       "id": "s3",
       "url": "https://www.androidpolice.com/2019/01/11/youtube-starts-showing-community-posts-on-the-web-home-page/",
       "date": "2019-01-11",
-      "file": "/home/claude/sweeps/g3-evidence/youtube/androidpolice-2019-01-home-2.png",
       "shows": "signed-in home: guide Home/Trending/Subscriptions/Library/History/Watch later/Purchases/Liked videos/Show more, SUBSCRIPTIONS, MORE FROM YOUTUBE; notifications bell with red badge; community posts shelf; 'Recently uploaded' shelf"
     },
     {
       "id": "s4",
       "url": "https://www.macrumors.com/2019/04/23/apple-launches-new-apple-tv-youtube-channel/",
       "date": "2019-04-23",
-      "file": "/home/claude/sweeps/g3-evidence/youtube/macrumors-2019-04-channel.jpg",
       "shows": "channel Videos tab: full-width banner, 80px round avatar, name + '2,003 subscribers', red SUBSCRIBE 2K, UPPERCASE tabs HOME VIDEOS PLAYLISTS CHANNELS ABOUT + search icon, 'Uploads PLAY ALL', SORT BY, six 210px thumbnails per row, 14px medium titles, 'views • ago', CC badge"
     },
     {
       "id": "s5",
       "url": "https://residententertainment.com.au/how-to-change-youtube-playlist-order/",
       "date": "2019-05-11",
-      "file": "/home/claude/sweeps/g3-evidence/youtube/resident-2019-05-channel-2.png",
       "shows": "signed-in channel Home tab (banner, avatar, CUSTOMIZE CHANNEL, HOME VIDEOS PLAYLISTS CHANNELS DISCUSSION ABOUT, search, Uploads PLAY ALL shelf, POPULAR CHANNELS) and Playlists tab with SORT BY; resident-2019-05-channel-1-1.png: home + account menu (Your channel, YouTube Studio, Switch account, Sign out, Dark theme, Language, Settings, Help, Send feedback, Keyboard shortcuts, Location, Restricted Mode)"
     },
     {
       "id": "s6",
       "url": "https://ahrefs.com/blog/youtube-seo/",
       "date": "2019-03",
-      "file": "/home/claude/sweeps/g3-evidence/youtube/ahrefs-2019-03-channel.jpg",
       "shows": "channel shelf: 'SEO Tutorial Series PLAY ALL', square thumbnails with red watched-progress bars, CC badges, 'views • ago'"
     },
     {
       "id": "s7",
       "url": "https://www.animaker.com/hub/video-seo-9-hacks-to-push-your-videos-to-the-1-spot-in-search-results-2019-updated/",
       "date": "2019-05",
-      "file": "/home/claude/sweeps/g3-evidence/youtube/animaker-2019-05-27.png",
       "shows": "search results (light): FILTER toolbar with divider, 246x138 thumbnails, 18px titles, 'channel • views • ago', grey snippet, 16px gaps, guide Home/Trending/History, BEST OF YOUTUBE, Browse channels, 'Sign in now to see your channels and recommendations!'"
     },
     {
       "id": "s8",
       "url": "https://www.milesbeckler.com/youtube-seo/",
       "date": "2019-04",
-      "file": "/home/claude/sweeps/g3-evidence/youtube/milesbeckler-2019-04-search.jpg",
       "shows": "search results (light): logo, search field, thumbnails with durations, titles, 'channel • views • ago', snippets, CC badges"
     },
     {
       "id": "s9",
       "url": "https://www.businessinsider.com/youtube-tips-tricks-shortcuts-features-2019-6",
       "date": "2019-06",
-      "file": "/home/claude/sweeps/g3-evidence/youtube/bi-2019-06-5d0bf7e12516e91d0235f58e.jpg",
       "shows": "dark theme search (page ~#181818, mini guide ~#212121, masthead ~#282828), mini guide Home/Trending/Subscriptions/Originals/Library, FILTER, New/CC/4K badges; other bi-2019-06 files: dark home with Recommended grid, Save to playlist dialog (Watch later, Create new playlist), player context menu, dark watch actions"
     },
     {
       "id": "s10",
       "url": "https://www.businessinsider.com/youtube-redesigns-homepage-bigger-thumbnails-recommendations-2019-11",
       "date": "2019-11",
-      "file": "/home/claude/sweeps/g3-evidence/youtube/bi-2019-11-5dc47f317eece551dd2e86f3.jpg",
       "shows": "late-2019 home rich grid: 'Recommended', square large thumbnails, round channel avatar left of 16px medium title, channel name, 'views • ago', menu dots"
     },
     {
       "id": "s11",
       "url": "https://web.archive.org/web/20191112041515id_/https://www.youtube.com/yts/htmlbin/desktop_polymer-vfljnUOcO.html",
       "date": "2019-11-12",
-      "file": "/home/claude/sweeps/g3-evidence/youtube/polymer-2019-11.html",
       "shows": "YouTube's own 2019 Polymer templates and CSS (also polymer-2019-09.html, 2019-09-06): ytd-video-renderer 246x138 thumbnails, 18px titles, 16px item margin; ytd-channel-renderer 136px round avatar; ytd-grid 210px items, margin 4px/24px; c4 header 80px avatar, 24px name, UPPERCASE paper-tabs; subscribe #CC0000; searchbox legacy #ccc/#f8f8f8; palettes #F9F9F9/#0D0D0D/#606060 and dark #282828/#AAAAAA; components present: universal watch card, merch/ticket shelves, background promo, sort filter menu, comments"
     },
     {
       "id": "s12",
       "url": "https://www.versionmuseum.com/history-of/youtube-website",
       "date": "2017-08",
-      "file": "/home/claude/sweeps/g3-evidence/youtube/vm-2017-channel-page-after-redesign.jpg",
       "shows": "Polymer (Material) design as rolled out in 2017 and unchanged in 2019: channel page, home, dark theme (vm-2017-homepage-dark-theme.jpg)"
     },
     {
       "id": "s13",
       "url": "https://tidbits.com/2019/07/18/downloading-youtube-videos-in-macos/",
       "date": "2019-07-18",
-      "file": "/home/claude/sweeps/g3-evidence/youtube/tidbits-2019-07-1.png",
       "shows": "2019 desktop watch/channel captures used by a macOS article"
     },
     {
       "id": "s14",
       "url": "https://www.ubergizmo.com/2019/01/youtube-showing-community-posts-main-page/",
       "date": "2019-01",
-      "file": "/home/claude/sweeps/g3-evidence/youtube/ubergizmo-2019-01-community.jpg",
       "shows": "community posts (COMMUNITY tab content) on 2019 desktop"
     },
     {
       "id": "s15",
       "url": "https://www.webdesignmuseum.org/gallery/youtube-in-2019",
       "date": "2019",
-      "file": "/home/claude/sweeps/g3-evidence/youtube/page-wdm.html",
       "shows": "Web Design Museum's 2019 capture shows the pre-2017 legacy layout the crawler was served; outnumbered by s1-s10, so not used"
     },
     {
       "id": "s16",
       "url": "https://ahrefs.com/blog/youtube-seo/",
       "date": "2019-03",
-      "file": "/home/claude/sweeps/h2-evidence/youtube/2019-youtube-suggest-results.jpg",
       "shows": "search suggestions on 2019 desktop (also 2019-youtube_suggest_with_asterisk.jpg): a plain white dropdown hanging from the masthead's bottom edge 12px under the field, as wide as the field (not the button), no page dimming, no backdrop, the field stays in place; 16px padding, 30px rows, plain text with the typed part regular and the completion medium weight, no icons, thumbnails or subtitles"
     }
   ],

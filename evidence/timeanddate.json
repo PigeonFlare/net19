@@ -6,57 +6,49 @@
    "id": "home-a20190102",
    "url": "https://arquivo.pt/noFrame/replay/20190102073727/https://www.timeanddate.com/",
    "date": "2019-01-02",
-   "shows": "home page as served on 2019-01-02 (Arquivo.pt capture rendered with its archived 2019 CSS)",
-   "file": "h6-evidence/timeanddate/timeanddate-home-a20190102.png"
+   "shows": "home page as served on 2019-01-02 (Arquivo.pt capture rendered with its archived 2019 CSS)"
   },
   {
    "id": "home-a20190718",
    "url": "https://arquivo.pt/noFrame/replay/20190718020004/https://www.timeanddate.com/",
    "date": "2019-07-18",
-   "shows": "home page as served on 2019-07-18 (Arquivo.pt capture rendered with its archived 2019 CSS)",
-   "file": "h6-evidence/timeanddate/timeanddate-home-a20190718.png"
+   "shows": "home page as served on 2019-07-18 (Arquivo.pt capture rendered with its archived 2019 CSS)"
   },
   {
    "id": "home-a20191231",
    "url": "https://arquivo.pt/noFrame/replay/20191231191905/https://www.timeanddate.com/",
    "date": "2019-12-31",
-   "shows": "home page as served on 2019-12-31 (Arquivo.pt capture rendered with its archived 2019 CSS)",
-   "file": "h6-evidence/timeanddate/timeanddate-home-a20191231.png"
+   "shows": "home page as served on 2019-12-31 (Arquivo.pt capture rendered with its archived 2019 CSS)"
   },
   {
    "id": "worldclock-a20190102",
    "url": "https://arquivo.pt/noFrame/replay/20190102073838/https://www.timeanddate.com/worldclock/",
    "date": "2019-01-02",
-   "shows": "worldclock page as served on 2019-01-02 (Arquivo.pt capture rendered with its archived 2019 CSS)",
-   "file": "h6-evidence/timeanddate/timeanddate-worldclock-a20190102.png"
+   "shows": "worldclock page as served on 2019-01-02 (Arquivo.pt capture rendered with its archived 2019 CSS)"
   },
   {
    "id": "worldclock-a20191231",
    "url": "https://arquivo.pt/noFrame/replay/20191231192316/https://www.timeanddate.com/worldclock/",
    "date": "2019-12-31",
-   "shows": "worldclock page as served on 2019-12-31 (Arquivo.pt capture rendered with its archived 2019 CSS)",
-   "file": "h6-evidence/timeanddate/timeanddate-worldclock-a20191231.png"
+   "shows": "worldclock page as served on 2019-12-31 (Arquivo.pt capture rendered with its archived 2019 CSS)"
   },
   {
    "id": "home-w20190101",
    "url": "https://web.archive.org/web/20190101101137/https://www.timeanddate.com/",
    "date": "2019-01-01",
-   "shows": "home-w20190101 page as served on 2019-01-01 (Wayback capture rendered with its archived 2019 CSS)",
-   "file": "h6-evidence/timeanddate/timeanddate-home-w20190101.png"
+   "shows": "home-w20190101 page as served on 2019-01-01 (Wayback capture rendered with its archived 2019 CSS)"
   },
   {
    "id": "home-w20190701",
    "url": "https://web.archive.org/web/20190701015316/https://www.timeanddate.com/",
    "date": "2019-07-01",
-   "shows": "home-w20190701 page as served on 2019-07-01 (Wayback capture rendered with its archived 2019 CSS)",
-   "file": "h6-evidence/timeanddate/timeanddate-home-w20190701.png"
+   "shows": "home-w20190701 page as served on 2019-07-01 (Wayback capture rendered with its archived 2019 CSS)"
   },
   {
    "id": "home-w20191201",
    "url": "https://web.archive.org/web/20191201103817/https://www.timeanddate.com/",
    "date": "2019-12-01",
-   "shows": "home-w20191201 page as served on 2019-12-01 (Wayback capture rendered with its archived 2019 CSS)",
-   "file": "h6-evidence/timeanddate/timeanddate-home-w20191201.png"
+   "shows": "home-w20191201 page as served on 2019-12-01 (Wayback capture rendered with its archived 2019 CSS)"
   }
  ],
  "features": [

@@ -6,21 +6,18 @@
       "id": "s1",
       "url": "https://web.archive.org/web/20191101000000/https://youtube.googleblog.com/",
       "date": "2019-11-01",
-      "file": "/home/claude/sweeps/g3-evidence/ytblog/wb-home-20191101-posts-light-bare.png",
       "shows": "Official YouTube Blog home (Blogger Google-blog template, offline render of the capture with its own CSS): #eee 256px header band with YouTube logo and 'Official Blog' in Roboto 300 52px, list of posts with 24px Roboto 400 titles (rgba(0,0,0,.87)), 17px grey dates, Twitter/Facebook share icons, rules between posts; right sidebar with 'Search blog ...', Labels, Archive, Feed, Follow @youtube, Facebook Follow, 'Learn more in the YouTube Help Center'; links #4184F3"
     },
     {
       "id": "s2",
       "url": "https://web.archive.org/web/20191105000000/https://youtube.googleblog.com/2019/10/",
       "date": "2019-11-05",
-      "file": "/home/claude/sweeps/g3-evidence/ytblog/wb-month-201910-light-bare.png",
       "shows": "October 2019 archive page of the same blog: same header, post list with titles, dates and full post bodies (17px/32px text, inline images), labels"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20191101000000/https://youtube.googleblog.com/",
       "date": "2019-11-01",
-      "file": "/home/claude/sweeps/g3-evidence/ytblog/wb-home-20191101/raw.html",
       "shows": "the template's own CSS in the capture: .header-outer #eee, .header-title h2 Roboto 300 52px #282828, #main .post .title a 24px 400, .publishdate 17px #757575, .post-content 17px/32px, a #4184F3, max-width 978px"
     }
   ],

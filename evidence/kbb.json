@@ -6,64 +6,55 @@
    "id": "raw-home-2019-07",
    "url": "https://arquivo.pt/noFrame/replay/20190719203309id_/https://www.kbb.com/",
    "date": "2019-07-19",
-   "file": "/home/claude/sweeps/g12-evidence/kbb/home-2019-07-raw.html",
    "shows": "2019 home HTML: hero 'Car Shopping Made Easy / KBB.com is your one-stop resource', Price New/Used, My Car's Value, New Cars, Popular / Featured Searches, Research New & Used Vehicles, Find Cars for Sale by Model / City, footer FAQ, Contact Us, About Us, Careers, Corporate, Advertising, Media, Site Map, KBB Brazil, Copyrights & Trademarks, Terms of Service, Privacy Policy, Linking Policy, Ad Choices"
   },
   {
    "id": "forsale-a201907",
    "url": "https://arquivo.pt/noFrame/replay/20190719203346/https://www.kbb.com/cars-for-sale/",
    "date": "2019-07-19",
-   "shows": "forsale page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/kbb-forsale-a201907.png"
+   "shows": "forsale page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "home-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190326233351/https://www.kbb.com/",
    "date": "2019-03-26",
-   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/kbb-home-a201903.png"
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "home-a201906c",
    "url": "https://arquivo.pt/noFrame/replay/20190624063457/https://www.kbb.com/",
    "date": "2019-06-24",
-   "shows": "home page as served in 2019-06 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/kbb-home-a201906c.png"
+   "shows": "home page as served in 2019-06 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "home-a201907b",
    "url": "https://arquivo.pt/noFrame/replay/20190719203309/https://www.kbb.com/",
    "date": "2019-07-19",
-   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/kbb-home-a201907b.png"
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "item-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190317235026/https://www.kbb.com/bmw/",
    "date": "2019-03-17",
-   "shows": "item page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/kbb-item-a201903.png"
+   "shows": "item page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "item-a201907c",
    "url": "https://arquivo.pt/noFrame/replay/20190720042629/https://www.kbb.com/nissan/350z/2003/track-coupe-2d/",
    "date": "2019-07-20",
-   "shows": "item page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/kbb-item-a201907c.png"
+   "shows": "item page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "values-a201907",
    "url": "https://arquivo.pt/noFrame/replay/20190719203328/https://www.kbb.com/car-values/",
    "date": "2019-07-19",
-   "shows": "values page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/kbb-values-a201907.png"
+   "shows": "values page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "values-a201907b",
    "url": "https://arquivo.pt/noFrame/replay/20190719203337/https://www.kbb.com/whats-my-car-worth/",
    "date": "2019-07-19",
-   "shows": "values page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/kbb-values-a201907b.png"
+   "shows": "values page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)"
   }
  ],
  "features": [

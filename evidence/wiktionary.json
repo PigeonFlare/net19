@@ -6,57 +6,49 @@
    "id": "wp-history1-201909",
    "url": "https://arquivo.pt/noFrame/replay/20190928075947/https://en.wikipedia.org/w/index.php?title=Blohm_%26_Voss_BV_138&action=history",
    "date": "2019-09-28",
-   "shows": "a MediaWiki history page in the same 2019 Vector skin (English Wikipedia): Filter revisions box, compare button, (newest | oldest) and 20/50/100/250/500 links",
-   "file": "g10-wbr/wikipedia-history1-201909.png"
+   "shows": "a MediaWiki history page in the same 2019 Vector skin (English Wikipedia): Filter revisions box, compare button, (newest | oldest) and 20/50/100/250/500 links"
   },
   {
    "id": "wp-search1-201910",
    "url": "https://arquivo.pt/noFrame/replay/20191016080058/https://en.wikipedia.org/w/index.php?title=Special:Search&profile=all&search=Hunn-Black%20%26%20Merritt%20Funeral%20Home&ns0=1",
    "date": "2019-10-16",
-   "shows": "the 2019 MediaWiki Special:Search page (same software and skin): Search results heading, profile tabs, results count",
-   "file": "g10-wbr/wikipedia-search1-201910.png"
+   "shows": "the 2019 MediaWiki Special:Search page (same software and skin): Search results heading, profile tabs, results count"
   },
   {
    "id": "entry2-201909",
    "url": "https://arquivo.pt/noFrame/replay/20190920074407/https://en.wiktionary.org/wiki/dog",
    "date": "2019-09-20",
-   "shows": "entry2 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wiktionary/wiktionary-entry2-201909.png"
+   "shows": "entry2 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "entry4-201910",
    "url": "https://arquivo.pt/noFrame/replay/20191020161921/https://en.wiktionary.org/wiki/Water",
    "date": "2019-10-20",
-   "shows": "entry4 page as served in 2019-10 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wiktionary/wiktionary-entry4-201910.png"
+   "shows": "entry4 page as served in 2019-10 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "entry5-201907",
    "url": "https://arquivo.pt/noFrame/replay/20190710163406/https://en.wiktionary.org/wiki/cat",
    "date": "2019-07-10",
-   "shows": "entry5 page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wiktionary/wiktionary-entry5-201907.png"
+   "shows": "entry5 page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "home1-201901",
    "url": "https://arquivo.pt/noFrame/replay/20190112085756/https://en.wiktionary.org/wiki/Wiktionary:Main_Page",
    "date": "2019-01-12",
-   "shows": "home1 page as served in 2019-01 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wiktionary/wiktionary-home1-201901.png"
+   "shows": "home1 page as served in 2019-01 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "home2-201908",
    "url": "https://arquivo.pt/noFrame/replay/20190813220445/https://en.wiktionary.org/wiki/Wiktionary:Main_Page",
    "date": "2019-08-13",
-   "shows": "home2 page as served in 2019-08 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wiktionary/wiktionary-home2-201908.png"
+   "shows": "home2 page as served in 2019-08 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "home3-201912",
    "url": "https://arquivo.pt/noFrame/replay/20191210120729/https://en.wiktionary.org/wiki/Wiktionary:Main_Page",
    "date": "2019-12-10",
-   "shows": "home3 page as served in 2019-12 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wiktionary/wiktionary-home3-201912.png"
+   "shows": "home3 page as served in 2019-12 (Arquivo.pt capture rendered with its 2019 CSS)"
   }
  ],
  "features": [

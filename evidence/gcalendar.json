@@ -6,89 +6,55 @@
       "id": "s1",
       "url": "https://9to5google.com/2018/12/20/google-calendar-material-tweaks-web/",
       "date": "2018-12-20",
-      "shows": "month view with Create pill, event popover (Material Theme web, Dec 2018 rollout)",
-      "files": [
-        "sweeps/g2-evidence/gcalendar/s1-1.png"
-      ]
+      "shows": "month view with Create pill, event popover (Material Theme web, Dec 2018 rollout)"
     },
     {
       "id": "s2",
       "url": "https://blogs.mtu.edu/it/2019/04/19/new-google-calendar-feature/",
       "date": "2019-04-19",
-      "shows": "week view, header, mini month, Search for people, calendar list, side panel Keep/Tasks",
-      "files": [
-        "sweeps/g2-evidence/gcalendar/s2-1.png",
-        "sweeps/g2-evidence/gcalendar/s2-2.png",
-        "sweeps/g2-evidence/gcalendar/s2-3.png"
-      ]
+      "shows": "week view, header, mini month, Search for people, calendar list, side panel Keep/Tasks"
     },
     {
       "id": "s3",
       "url": "https://jessicadeen.com/posts/2019/calendar-sync-flow/",
       "date": "2019-01-08",
-      "shows": "month view header",
-      "files": [
-        "sweeps/g2-evidence/gcalendar/s3-1.png",
-        "sweeps/g2-evidence/gcalendar/s3-2.png"
-      ]
+      "shows": "month view header"
     },
     {
       "id": "s4",
       "url": "https://www.poynter.org/tech-tools/2019/calendars-might-be-the-next-great-online-publishing-tool/",
       "date": "2019-03-11",
-      "shows": "week view with event popover",
-      "files": [
-        "sweeps/g2-evidence/gcalendar/s4-1.png",
-        "sweeps/g2-evidence/gcalendar/s4-2.png"
-      ]
+      "shows": "week view with event popover"
     },
     {
       "id": "s5",
       "url": "https://workspaceupdates.googleblog.com/2017/10/new-calendar-user-interface17.html",
       "date": "",
-      "shows": "2017 redesign (pre-Material-Theme variant)",
-      "files": [
-        "sweeps/g2-evidence/gcalendar/s5-1.png",
-        "sweeps/g2-evidence/gcalendar/s5-2.png",
-        "sweeps/g2-evidence/gcalendar/s5-3.png",
-        "sweeps/g2-evidence/gcalendar/s5-4.png"
-      ]
+      "shows": "2017 redesign (pre-Material-Theme variant)"
     },
     {
       "id": "s6",
       "url": "https://www.awardspace.com/wordpress-tutorials/how-to-add-google-calendar-in-wordpress/",
       "date": "2019-10",
-      "shows": "settings page, calendar settings nav",
-      "files": [
-        "sweeps/g2-evidence/gcalendar/s6.png"
-      ]
+      "shows": "settings page, calendar settings nav"
     },
     {
       "id": "s7",
       "url": "https://www.calendar.com/blog/how-do-i-improve-my-google-calendar/",
       "date": "2019-08",
-      "shows": "view switcher menu open",
-      "files": [
-        "sweeps/g2-evidence/gcalendar/s7.png"
-      ]
+      "shows": "view switcher menu open"
     },
     {
       "id": "s8",
       "url": "https://flippedlearning.org/syndicated/quick-paperless-lesson-planning-google-calendar-sites/",
       "date": "2019-03",
-      "shows": "month view with event popover and calendar list",
-      "files": [
-        "sweeps/g2-evidence/gcalendar/s8.png"
-      ]
+      "shows": "month view with event popover and calendar list"
     },
     {
       "id": "s10",
       "url": "https://street-smart.co.th/news/google-update/easily-create-an-event-on-calendar-with-the-details-only-one-click/",
       "date": "2019-06",
-      "shows": "event editor dialog",
-      "files": [
-        "sweeps/g2-evidence/gcalendar/s10.png"
-      ]
+      "shows": "event editor dialog"
     }
   ],
   "features": [

@@ -6,29 +6,25 @@
    "id": "raw-home-2019-05",
    "url": "https://arquivo.pt/noFrame/replay/20190522195143id_/https://www.zillow.com/",
    "date": "2019-05-22",
-   "file": "/home/claude/sweeps/g12-evidence/zillow/home-2019-05-raw.html",
    "shows": "2019 home HTML: headings Reimagine home, We'll help you find a place you'll love., Buy a home, Sell a home, Rent a home; header and footer links"
   },
   {
    "id": "home-a201905",
    "url": "https://arquivo.pt/noFrame/replay/20190522195143/https://www.zillow.com/",
    "date": "2019-05-22",
-   "shows": "home page as served in 2019-05 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/zillow-home-a201905.png"
+   "shows": "home page as served in 2019-05 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "rent-a201905",
    "url": "https://arquivo.pt/noFrame/replay/20190520104935/https://www.zillow.com/rental-manager/",
    "date": "2019-05-20",
-   "shows": "rent page as served in 2019-05 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/zillow-rent-a201905.png"
+   "shows": "rent page as served in 2019-05 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "rent-a201910b",
    "url": "https://arquivo.pt/noFrame/replay/20191026010753/https://www.zillow.com/rental-manager/",
    "date": "2019-10-26",
-   "shows": "rent page as served in 2019-10 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/zillow-rent-a201910b.png"
+   "shows": "rent page as served in 2019-10 (Arquivo.pt capture rendered with its 2019 CSS)"
   }
  ],
  "features": [

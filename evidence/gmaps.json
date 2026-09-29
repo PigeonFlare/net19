@@ -6,42 +6,25 @@
       "id": "s1",
       "url": "https://www.androidpolice.com/2019/03/21/google-maps-web-starts-getting-a-material-design-makeover/",
       "date": "2019-03-21",
-      "shows": "Maps web March 2019: place panel with hero photo, round action buttons, info rows; hamburger drawer; explore categories",
-      "files": [
-        "sweeps/g2-evidence/gmaps/s1-1.png",
-        "sweeps/g2-evidence/gmaps/s1-2.png",
-        "sweeps/g2-evidence/gmaps/s1-3.png",
-        "sweeps/g2-evidence/gmaps/s1-4.png",
-        "sweeps/g2-evidence/gmaps/s1-5.png",
-        "sweeps/g2-evidence/gmaps/s1-6.png"
-      ]
+      "shows": "Maps web March 2019: place panel with hero photo, round action buttons, info rows; hamburger drawer; explore categories"
     },
     {
       "id": "s2",
       "url": "https://www.versionmuseum.com/history-of/google-maps-website",
       "date": "2019",
-      "shows": "Maps web 2019 (Version Museum capture): search box, explore panel, map controls",
-      "files": [
-        "sweeps/g2-evidence/gmaps/s2-2019.png"
-      ]
+      "shows": "Maps web 2019 (Version Museum capture): search box, explore panel, map controls"
     },
     {
       "id": "s5",
       "url": "https://skift.com/2019/04/16/google-maps-could-be-the-do-it-all-restaurant-app-of-the-future/",
       "date": "2019-04-16",
-      "shows": "search results panel with Price/Rating/Sort filters and Update results when map moves (Apr 2019)",
-      "files": [
-        "sweeps/g2-evidence/gmaps/s5-2.png"
-      ]
+      "shows": "search results panel with Price/Rating/Sort filters and Update results when map moves (Apr 2019)"
     },
     {
       "id": "s6",
       "url": "https://www.groovypost.com/howto/print-directions-in-google-maps/",
       "date": "2019-12",
-      "shows": "directions/print (Dec 2019)",
-      "files": [
-        "sweeps/g2-evidence/gmaps/s6.png"
-      ]
+      "shows": "directions/print (Dec 2019)"
     }
   ],
   "features": [

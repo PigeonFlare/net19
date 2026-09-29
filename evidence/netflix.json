@@ -6,28 +6,24 @@
       "id": "s1",
       "url": "https://web.archive.org/web/20191215000000/https://www.netflix.com/us/",
       "date": "2019-12-15",
-      "file": "/home/claude/sweeps/g3-evidence/netflix/wb-home-20191215-light-bare.png",
       "shows": "logged-out homepage (Wayback served the Netherlands English page; offline render): black page, red NETFLIX logo, red Sign In, poster collage hero with dark overlay, 'Unlimited films, TV programmes and more.' ~50px bold centered, 'Watch anywhere. Cancel at any time.', red 'JOIN FREE FOR A MONTH' button, 8px #222 separators between story rows (Enjoy on your TV, Download, Watch everywhere), FAQ accordion, footer 'Questions? Call', FAQ, Help Centre, Account, Media Centre, Investor Relations, Jobs, Redeem gift cards, Buy gift cards, Ways to Watch, Terms of Use, Privacy, Cookie Preferences, Corporate Information, Contact Us, Speed Test, Legal Notices, Netflix Originals, language select"
     },
     {
       "id": "s2",
       "url": "https://goodui.org/leaks/",
       "date": "2019-03",
-      "file": "/home/claude/sweeps/g3-evidence/netflix/goodui-leak005-b.jpg",
       "shows": "US homepage A/B variant from early 2019: 'Unlimited movies, TV shows, and more.' centered, 'Watch anywhere. Cancel anytime.', red 'WATCH FREE FOR 30 DAYS >' buttons, free-trial timeline, story rows"
     },
     {
       "id": "s3",
       "url": "https://www.bluesnap.com/",
       "date": "2019-06",
-      "file": "/home/claude/sweeps/g3-evidence/netflix/bluesnap-2019-06-offering.png",
       "shows": "2019 plan tabs page: No commitments / Watch anywhere / Pick your price tabs, red 'JOIN FREE FOR A MONTH', plan table"
     },
     {
       "id": "s4",
       "url": "https://www.bluesnap.com/",
       "date": "2019-06",
-      "file": "/home/claude/sweeps/g3-evidence/netflix/bluesnap-2019-06-register.png",
       "shows": "2019 sign-up step: plan table, 'Sign up to start your free month', email/password fields, blue Register button, header Sign In"
     }
   ],

@@ -6,49 +6,37 @@
       "id": "s1",
       "url": "https://arquivo.pt/noFrame/replay/20190715090639/https://www.chess.com/",
       "date": "2019-07-15",
-      "shows": "chess.com logged-out home 2019: \"Play Chess Online on the #1 Site\", Play with over 25 million members, Play Now, Learn to Play / Play Online / Play Computer / Play on Mobile / Solve Puzzles, Log In, Sign Up, news list (post previews), App for Android / iOS badges",
-      "file": "/home/claude/sweeps/g13-evidence/chess/home-a20190715.png",
-      "raw": "/home/claude/sweeps/g13-raw/chess-home-a20190715.html"
+      "shows": "chess.com logged-out home 2019: \"Play Chess Online on the #1 Site\", Play with over 25 million members, Play Now, Learn to Play / Play Online / Play Computer / Play on Mobile / Solve Puzzles, Log In, Sign Up, news list (post previews), App for Android / iOS badges"
     },
     {
       "id": "s2",
       "url": "https://arquivo.pt/noFrame/replay/20191021080424/https://www.chess.com/",
       "date": "2019-10-21",
-      "shows": "chess.com logged-out home 2019: \"Play Chess Online on the #1 Site\", Play with over 25 million members, Play Now, Learn to Play / Play Online / Play Computer / Play on Mobile / Solve Puzzles, Log In, Sign Up, news list (post previews), App for Android / iOS badges",
-      "file": "/home/claude/sweeps/g13-evidence/chess/home-a20191021.png",
-      "raw": "/home/claude/sweeps/g13-raw/chess-home-a20191021.html"
+      "shows": "chess.com logged-out home 2019: \"Play Chess Online on the #1 Site\", Play with over 25 million members, Play Now, Learn to Play / Play Online / Play Computer / Play on Mobile / Solve Puzzles, Log In, Sign Up, news list (post previews), App for Android / iOS badges"
     },
     {
       "id": "s3",
       "url": "https://arquivo.pt/noFrame/replay/20191209170317/https://www.chess.com/",
       "date": "2019-12-09",
-      "shows": "chess.com logged-out home 2019: \"Play Chess Online on the #1 Site\", Play with over 25 million members, Play Now, Learn to Play / Play Online / Play Computer / Play on Mobile / Solve Puzzles, Log In, Sign Up, news list (post previews), App for Android / iOS badges",
-      "file": "/home/claude/sweeps/g13-evidence/chess/home-a20191209.png",
-      "raw": "/home/claude/sweeps/g13-raw/chess-home-a20191209.html"
+      "shows": "chess.com logged-out home 2019: \"Play Chess Online on the #1 Site\", Play with over 25 million members, Play Now, Learn to Play / Play Online / Play Computer / Play on Mobile / Solve Puzzles, Log In, Sign Up, news list (post previews), App for Android / iOS badges"
     },
     {
       "id": "s4",
       "url": "https://arquivo.pt/noFrame/replay/20190829123236/https://www.chess.com/login",
       "date": "2019-08-29",
-      "shows": "log-in page 2019: Username or Email, Password, Remember, Log In, Sign Up",
-      "file": "/home/claude/sweeps/g13-evidence/chess/login-a20190829.png",
-      "raw": "/home/claude/sweeps/g13-raw/chess-login-a20190829.html"
+      "shows": "log-in page 2019: Username or Email, Password, Remember, Log In, Sign Up"
     },
     {
       "id": "s5",
       "url": "https://arquivo.pt/noFrame/replay/20190715094527/https://www.chess.com/games",
       "date": "2019-07-15",
-      "shows": "Chess Games Database page 2019 (master games database with search: Player 1, Player 2, Opening)",
-      "file": "/home/claude/sweeps/g13-evidence/chess/games-a20190715.png",
-      "raw": "/home/claude/sweeps/g13-raw/chess-games-a20190715.html"
+      "shows": "Chess Games Database page 2019 (master games database with search: Player 1, Player 2, Opening)"
     },
     {
       "id": "s6",
       "url": "https://arquivo.pt/noFrame/replay/20191009022204/https://www.chess.com/games",
       "date": "2019-10-09",
-      "shows": "Chess Games Database page 2019 (master games database with search: Player 1, Player 2, Opening)",
-      "file": "/home/claude/sweeps/g13-evidence/chess/games-a20191009.png",
-      "raw": "/home/claude/sweeps/g13-raw/chess-games-a20191009.html"
+      "shows": "Chess Games Database page 2019 (master games database with search: Player 1, Player 2, Opening)"
     }
   ],
   "features": [

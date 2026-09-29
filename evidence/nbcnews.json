@@ -6,29 +6,25 @@
       "id": "s1",
       "url": "https://www.google.com/search?udm=2&q=nbcnews.com+website+2019+screenshot",
       "date": "2018-2019",
-      "shows": "Google Images: NewscastStudio 'NBCNews.com previews new look' (2018 redesign used through 2019), Wikipedia NBCNews.com capture",
-      "file": "g7-evidence/nbcnews/gimg-home.jpg"
+      "shows": "Google Images: NewscastStudio 'NBCNews.com previews new look' (2018 redesign used through 2019), Wikipedia NBCNews.com capture"
     },
     {
       "id": "s2",
       "url": "https://web.archive.org/web/20190916010422/https://www.nbcnews.com/",
       "date": "2019-09-16",
-      "shows": "homepage and HTML: black network bar (NEWS, NBC NEWS NOW, NIGHTLY NEWS, MEET THE PRESS, DATELINE, MSNBC, TODAY, search), white bar with peacock NEWS logo and uppercase nav (IMPEACHMENT INQUIRY, POLITICS, U.S. NEWS, BUSINESS, WORLD, TECH & MEDIA, OPINION, HEALTH, SPORTS), navy menu box, blue kicker labels, Latest Stories, Local news around you, footer (About, Contact, Careers, Privacy Policy, Terms of Service, NBC News Sitemap, Advertise, AdChoices, Closed Captioning), Follow NBC News (Facebook, Twitter, Instagram)",
-      "file": "g7-evidence/nbcnews/wb-nbcnews-home.png"
+      "shows": "homepage and HTML: black network bar (NEWS, NBC NEWS NOW, NIGHTLY NEWS, MEET THE PRESS, DATELINE, MSNBC, TODAY, search), white bar with peacock NEWS logo and uppercase nav (IMPEACHMENT INQUIRY, POLITICS, U.S. NEWS, BUSINESS, WORLD, TECH & MEDIA, OPINION, HEALTH, SPORTS), navy menu box, blue kicker labels, Latest Stories, Local news around you, footer (About, Contact, Careers, Privacy Policy, Terms of Service, NBC News Sitemap, Advertise, AdChoices, Closed Captioning), Follow NBC News (Facebook, Twitter, Instagram)"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20190411000215/https://www.nbcnews.com/",
       "date": "2019-04-11",
-      "shows": "homepage (April): same bars, THINK in nav, kicker labels BREAKING / CONGRESS / BREXIT",
-      "file": "g7-evidence/nbcnews/wb-nbcnews-home-apr.png"
+      "shows": "homepage (April): same bars, THINK in nav, kicker labels BREAKING / CONGRESS / BREXIT"
     },
     {
       "id": "s4",
       "url": "https://web.archive.org/web/20191112024213/https://www.nbcnews.com/politics/2020-election/yang-defends-1-000-giveaway-contest-perfectly-legal-n1054641",
       "date": "2019-09",
-      "shows": "article: navy hero band with white serif headline and dek, section label, share icons, byline, body",
-      "file": "g7-evidence/nbcnews/wb-nbcnews-article.png"
+      "shows": "article: navy hero band with white serif headline and dek, section label, share icons, byline, body"
     }
   ],
   "features": [

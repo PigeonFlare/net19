@@ -6,81 +6,49 @@
       "id": "s1",
       "url": "https://9to5google.com/2019/10/24/hangouts-meet-web-material-theme/",
       "date": "2019-10-24",
-      "shows": "Hangouts Meet web Material Theme: Start a new meeting / Use a meeting code, today's list (Oct 2019)",
-      "files": [
-        "sweeps/g2-evidence/gmeet/s1-1.png"
-      ]
+      "shows": "Hangouts Meet web Material Theme: Start a new meeting / Use a meeting code, today's list (Oct 2019)"
     },
     {
       "id": "s2",
       "url": "https://www.windowscentral.com/google-hangouts-meet-basic-guide",
       "date": "2020-03-26",
-      "shows": "Hangouts Meet join flow and pre-join (published Mar 2020, same UI)",
-      "files": [
-        "sweeps/g2-evidence/gmeet/s2-1.png",
-        "sweeps/g2-evidence/gmeet/s2-3.png",
-        "sweeps/g2-evidence/gmeet/s2-4.png",
-        "sweeps/g2-evidence/gmeet/s2-5.png"
-      ]
+      "shows": "Hangouts Meet join flow and pre-join (published Mar 2020, same UI)"
     },
     {
       "id": "s4",
       "url": "https://www.thegrahamwalsh.com/hangouts-meet-and-polycom-trio/",
       "date": "2019-05-19",
-      "shows": "Ready to join? pre-join screen (May 2019)",
-      "files": [
-        "sweeps/g2-evidence/gmeet/s4-1.png",
-        "sweeps/g2-evidence/gmeet/s4-5.png"
-      ]
+      "shows": "Ready to join? pre-join screen (May 2019)"
     },
     {
       "id": "s5",
       "url": "https://workspaceupdates.googleblog.com/2019/04/new-layouts-hangouts-meet.html",
       "date": "",
-      "shows": "in-call layouts (Apr 2019)",
-      "files": [
-        "sweeps/g2-evidence/gmeet/s5-1.png",
-        "sweeps/g2-evidence/gmeet/s5-2.png",
-        "sweeps/g2-evidence/gmeet/s5-3.png",
-        "sweeps/g2-evidence/gmeet/s5-4.png"
-      ]
+      "shows": "in-call layouts (Apr 2019)"
     },
     {
       "id": "s6",
       "url": "https://workspaceupdates.googleblog.com/2018/11/invite-people-to-ongoing-hangouts-meet.html",
       "date": "",
-      "shows": "invite people in call (Nov 2018)",
-      "files": [
-        "sweeps/g2-evidence/gmeet/s6-1.png",
-        "sweeps/g2-evidence/gmeet/s6-2.png"
-      ]
+      "shows": "invite people in call (Nov 2018)"
     },
     {
       "id": "s7",
       "url": "https://workspaceupdates.googleblog.com/2018/11/invite-people-to-ongoing-hangouts-meet.html",
       "date": "2018-11",
-      "shows": "join meeting (Nov 2018)",
-      "files": [
-        "sweeps/g2-evidence/gmeet/s7.png"
-      ]
+      "shows": "join meeting (Nov 2018)"
     },
     {
       "id": "s8",
       "url": "https://digital-transformation.media/en/g-suite/hangouts-meet-live-captions/",
       "date": "2019-10",
-      "shows": "Meet home: illustration, Join or start a meeting card, Nothing scheduled for today (Oct 2019)",
-      "files": [
-        "sweeps/g2-evidence/gmeet/s8.png"
-      ]
+      "shows": "Meet home: illustration, Join or start a meeting card, Nothing scheduled for today (Oct 2019)"
     },
     {
       "id": "s11",
       "url": "https://www.teachertube.com/videos/google-meet-tutorial-497296",
       "date": "2020-03",
-      "shows": "Meet tutorial frame (Mar 2020)",
-      "files": [
-        "sweeps/g2-evidence/gmeet/s11.png"
-      ]
+      "shows": "Meet tutorial frame (Mar 2020)"
     }
   ],
   "features": [

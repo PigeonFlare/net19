@@ -6,161 +6,138 @@
       "id": "s1",
       "url": "https://web.archive.org/web/20190601000748/https://www.reddit.com/",
       "date": "2019-06-01",
-      "file": "/home/claude/sweeps/g4-evidence/shreddit/rd-front.png",
       "shows": "redesign front page: header (logo, Popular dropdown, Search Reddit, trending/all/OC icons, LOG IN, SIGN UP, user menu), VIEW/SORT bar, card posts with vote column, +JOIN, r/popular card with CREATE POST, advertisement, Reddit Premium, Trending communities"
     },
     {
       "id": "s2",
       "url": "https://web.archive.org/web/2019/https://www.reddit.com/r/pics/",
       "date": "2019-06",
-      "file": "/home/claude/sweeps/g4-evidence/shreddit/rd-sub.png",
       "shows": "redesign subreddit: banner, Posts tab, Community Details card, SUBSCRIBE/CREATE POST, rules widget"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/2019/https://www.reddit.com/r/pics/comments/",
       "date": "2019-06",
-      "file": "/home/claude/sweeps/g4-evidence/shreddit/rd-post.png",
       "shows": "redesign post page: Posted by, Comments/Share/Save, What are your thoughts? Log in or Sign up, SORT BY BEST, comments with points, Reply/Share/Report/Save"
     },
     {
       "id": "s4",
       "url": "https://web.archive.org/web/2019/https://www.reddit.com/search?q=",
       "date": "2019-06",
-      "file": "/home/claude/sweeps/g4-evidence/shreddit/rd-search.png",
       "shows": "redesign search results"
     },
     {
       "id": "s5",
       "url": "https://www.reddit.com/r/redesign/comments/b40y0l/",
       "date": "2019-03-22",
-      "file": "/home/claude/sweeps/g4-evidence/shreddit/r19-21m5PTn.png",
       "shows": "real user screenshot: signed-out redesign post page with Community Details, SUBSCRIBE, CREATE POST, trending/all/OC header icons"
     },
     {
       "id": "s6",
       "url": "https://www.reddit.com/r/redesign/ (What I don't like about: The New Redesign Profile)",
       "date": "2019-01-13",
-      "file": "/home/claude/sweeps/g4-evidence/shreddit/r19-9i5vHS3.png",
       "shows": "real user screenshot: redesign profile with OVERVIEW/POSTS/COMMENTS tabs, Karma, Cake day, Followers, moderator of these communities, footer card About/Careers/Advertise/Blog/The Reddit App/Reddit Coins"
     },
     {
       "id": "s7",
       "url": "https://www.reddit.com/r/redesign/ (card performance)",
       "date": "2019-08-16",
-      "file": "/home/claude/sweeps/g4-evidence/shreddit/r19-byibh2uanpg31.png",
       "shows": "real user screenshot: redesign front page cards in 2019"
     },
     {
       "id": "s8",
       "url": "https://fontsinuse.com/uses/28760/reddit-redesign",
       "date": "2019",
-      "file": "/home/claude/sweeps/g4-evidence/shreddit/fontsinuse-2019.png",
       "shows": "IBM Plex Sans and Noto Sans in the redesign"
     },
     {
       "id": "s9",
       "url": "https://www.reddit.com/r/redesign/ (Why are the Hide and Report buttons in a dropdown menu?)",
       "date": "2019-01-30",
-      "file": "/home/claude/sweeps/g4-evidence/shreddit/r19-1m6ufcczhhd21.png",
       "shows": "post overflow menu (Hide, Report) of the redesign"
     },
     {
       "id": "s10",
       "url": "user-supplied screenshot of the signed-out redesign front page (Google Images)",
       "date": "2020-03",
-      "file": "supplied in chat",
       "shows": "signed-out Classic view: vote column, thumbnail left, title with domain link, round community icon, 'r/sub • Posted by u/x N hours ago', N Comments / Share / Save / Hide / Report row, rows joined in one bordered list, no JOIN buttons in the feed"
     },
     {
       "id": "s11",
       "url": "https://web.archive.org/web/20190124040952/https://www.reddit.com/r/backpacking/",
       "date": "2019-01-24",
-      "file": "/home/claude/sweeps/h1-evidence/shreddit/bp-20190124.png",
       "shows": "r/backpacking in Jan 2019 (raw capture rendered without scripts, same one the user compared against): #33a8ff 80px banner with icon and r/backpacking, #dbf0ff 40px bar with the Posts tab, white VIEW/SORT strip, 648px cards 10px apart at x148, COMMUNITY DETAILS card (blue 36px strip, icon + r/backpacking, 887k Subscribers / 222 Online, description, SUBSCRIBE and CREATE POST 288x34), rules widget with strip, moderators widget, footer card"
     },
     {
       "id": "s12",
       "url": "https://www.reddit.com/r/redesign/comments/ah6r2u/",
       "date": "2019-01-18",
-      "file": "/home/claude/sweeps/h1-evidence/shreddit/ah6r2u.png",
       "shows": "real user screenshot, r/oculus in night mode: COMMUNITY DETAILS, 141k Subscribers / 801 Online, SUBSCRIBE, CREATE POST, USER FLAIR PREVIEW (signed in), card posts"
     },
     {
       "id": "s13",
       "url": "https://www.reddit.com/r/redesign/comments/awea9e/",
       "date": "2019-03-02",
-      "file": "/home/claude/sweeps/h1-evidence/shreddit/awea9e.png",
       "shows": "user screenshot of the COMMUNITY DETAILS widget: strip, icon + r/name, Subscribers / Online, SUBSCRIBED (outlined) and CREATE POST buttons"
     },
     {
       "id": "s14",
       "url": "https://www.reddit.com/r/redesign/comments/cwr33w/",
       "date": "2019-08-28",
-      "file": "/home/claude/sweeps/h1-evidence/shreddit/cwr33w.png",
       "shows": "real user screenshot of the front page header, VIEW/SORT strip and the signed-in Create Post box"
     },
     {
       "id": "s15",
       "url": "https://web.archive.org/web/20190101002427/https://www.reddit.com/",
       "date": "2019-01-01",
-      "file": "/home/claude/sweeps/h1-evidence/shreddit/front-20190101.png",
       "shows": "front page Jan 2019: VIEW/SORT strip at y48-88, 648px cards at x148, r/popular card with CREATE POST, advertisement, Reddit Premium, Trending Communities with SUBSCRIBE"
     },
     {
       "id": "s16",
       "url": "https://web.archive.org/web/20190103121506/https://www.reddit.com/user/spez",
       "date": "2019-01-03",
-      "file": "/home/claude/sweeps/h1-evidence/shreddit/spez-20190103.png",
       "shows": "profile Jan 2019: full-width OVERVIEW/POSTS/COMMENTS tab strip, SORT NEW strip, overview cards, profile card (avatar, name, u/name, description, Karma, Cake day, FOLLOW, MORE OPTIONS), MODERATOR OF THESE COMMUNITIES with SUBSCRIBE, TROPHY CASE"
     },
     {
       "id": "s17",
       "url": "https://www.reddit.com/r/redesign/comments/an242t/",
       "date": "2019-02-04",
-      "file": "/home/claude/sweeps/h1-evidence/shreddit/an242t.png",
       "shows": "real user screenshot of search: Best results / Posts / Communities and users tabs, SORT BY RELEVANCE, COMMUNITIES FROM ALL TIME, SHOW NSFW, community rows with Subscribers and SUBSCRIBE"
     },
     {
       "id": "s18",
       "url": "https://www.reddit.com/r/redesign/comments/cis3u1/",
       "date": "2019-07-28",
-      "file": "/home/claude/sweeps/h1-evidence/shreddit/cis3u1.png",
       "shows": "real user screenshot of search in a subreddit: query title, 'Search results in r/redesign', SORT BY / POSTS FROM bar, classic result rows, COMMUNITY DETAILS with Members / Online"
     },
     {
       "id": "s19",
       "url": "https://www.reddit.com/r/redesign/comments/d2zpmo/",
       "date": "2019-09-12",
-      "file": "/home/claude/sweeps/h1-evidence/shreddit/d2zpmo.png",
       "shows": "real user screenshot of search: query title, 'Search results', tabs, SORT BY / POSTS FROM bar, COMMUNITIES AND USERS card with Members and JOIN, result rows"
     },
     {
       "id": "s20",
       "url": "https://www.reddit.com/r/redesign/comments/bky034/",
       "date": "2019-05-05",
-      "file": "text post",
       "shows": "'Recent Posts' displayed on the right column of new.reddit.com in 2019"
     },
     {
       "id": "s21",
       "url": "https://www.reddit.com/r/redesign/comments/bsnsd5/",
       "date": "2019-05-24",
-      "file": "/home/claude/sweeps/h1-evidence/shreddit/bsnsd5.jpg",
       "shows": "real user screen recording frame of a 2019 comment: points, time, Reply / Give Award / Share / Report / Save"
     },
     {
       "id": "s22",
       "url": "https://www.google.com/search?udm=2&q=reddit+redesign+subreddit+2019+screenshot+community+details",
       "date": "searched 2026-09-29",
-      "file": "Google Images results, read in the Browser pane",
       "shows": "top results are r/redesign screenshots and the 2018-2019 redesign coverage (Wired 'The Inside Story of Reddit's Redesign', CNET, Fast Company, Inc.): same banner, Posts tab, COMMUNITY DETAILS with SUBSCRIBE / CREATE POST layout as s11-s13"
     },
     {
       "id": "s23",
       "url": "https://www.google.com/search?udm=2&q=new+reddit+profile+page+2019+karma+cake+day+follow",
       "date": "searched 2026-09-29",
-      "file": "Google Images results, read in the Browser pane",
       "shows": "redesign profile cards with Karma and Cake day (r/redesign 97fa9c, 2018-08) matching s16"
     }
   ],

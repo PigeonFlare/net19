@@ -6,78 +6,67 @@
    "id": "home-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190301225030/https://www.imdb.com/",
    "date": "2019-03-01",
-   "shows": "home page as served on 2019-03-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-home-a201903.png"
+   "shows": "home page as served on 2019-03-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "home-a201907",
    "url": "https://arquivo.pt/noFrame/replay/20190701182550/https://www.imdb.com/",
    "date": "2019-07-01",
-   "shows": "home page as served on 2019-07-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-home-a201907.png"
+   "shows": "home page as served on 2019-07-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "home-a201911",
    "url": "https://arquivo.pt/noFrame/replay/20191101180629/https://www.imdb.com/",
    "date": "2019-11-01",
-   "shows": "home page as served on 2019-11-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-home-a201911.png"
+   "shows": "home page as served on 2019-11-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "title-a201904",
    "url": "https://arquivo.pt/noFrame/replay/20190425212015/https://www.imdb.com/title/tt0111161/",
    "date": "2019-04-25",
-   "shows": "title page as served on 2019-04-25 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-title-a201904.png"
+   "shows": "title page as served on 2019-04-25 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "title-a201912",
    "url": "https://arquivo.pt/noFrame/replay/20191217125415/https://www.imdb.com/title/tt0111161/",
    "date": "2019-12-17",
-   "shows": "title page as served on 2019-12-17 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-title-a201912.png"
+   "shows": "title page as served on 2019-12-17 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "chart-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190301213738/https://www.imdb.com/chart/top",
    "date": "2019-03-01",
-   "shows": "chart page as served on 2019-03-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-chart-a201903.png"
+   "shows": "chart page as served on 2019-03-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "chart-a201907",
    "url": "https://arquivo.pt/noFrame/replay/20190701000000/https://www.imdb.com/chart/top",
    "date": "2019-07-01",
-   "shows": "chart page as served on 2019-07-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-chart-a201907.png"
+   "shows": "chart page as served on 2019-07-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "find-a201912",
    "url": "https://arquivo.pt/noFrame/replay/20191218073742/https://www.imdb.com/find?s=all&q=beauty+%26+the+beast",
    "date": "2019-12-18",
-   "shows": "find page as served on 2019-12-18 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-find-a201912.png"
+   "shows": "find page as served on 2019-12-18 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "find-a201906",
    "url": "https://arquivo.pt/noFrame/replay/20190607200622/https://www.imdb.com/find?q=les%20miserables&s=tt&exact=true&ref_=fn_tt_ex",
    "date": "2019-06-07",
-   "shows": "find page as served on 2019-06-07 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-find-a201906.png"
+   "shows": "find page as served on 2019-06-07 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "name-a201906",
    "url": "https://arquivo.pt/noFrame/replay/20190607010420/https://www.imdb.com/name/nm0000001/",
    "date": "2019-06-07",
-   "shows": "name page as served on 2019-06-07 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-name-a201906.png"
+   "shows": "name page as served on 2019-06-07 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "name-a201901",
    "url": "https://arquivo.pt/noFrame/replay/20190125220457/https://www.imdb.com/name/nm0000002/",
    "date": "2019-01-25",
-   "shows": "name page as served on 2019-01-25 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/imdb/imdb-name-a201901.png"
+   "shows": "name page as served on 2019-01-25 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   }
  ],
  "features": [

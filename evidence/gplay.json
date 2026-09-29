@@ -6,46 +6,31 @@
       "id": "s5",
       "url": "https://www.droidviews.com/google-play-store-features/",
       "date": "2019-09",
-      "shows": "Play web store 2019: Google Play logo, search, green Apps sidebar, Home/Top charts/New releases, cards (Sep 2019)",
-      "files": [
-        "sweeps/g2-evidence/gplay/s5.png"
-      ]
+      "shows": "Play web store 2019: Google Play logo, search, green Apps sidebar, Home/Top charts/New releases, cards (Sep 2019)"
     },
     {
       "id": "s7",
       "url": "https://asodesk.com/blog/5-simple-tips-aso-google-play/",
       "date": "2019-05",
-      "shows": "app page on the web store (May 2019)",
-      "files": [
-        "sweeps/g2-evidence/gplay/s7.png"
-      ]
+      "shows": "app page on the web store (May 2019)"
     },
     {
       "id": "s9",
       "url": "https://android-developers.googleblog.com/2019/08/the-google-play-stores-visual-refresh.html",
       "date": "2019-08",
-      "shows": "Play visual refresh announcement (Aug 2019, Android app)",
-      "files": [
-        "sweeps/g2-evidence/gplay/s9.png"
-      ]
+      "shows": "Play visual refresh announcement (Aug 2019, Android app)"
     },
     {
       "id": "wb1",
       "url": "https://web.archive.org/web/20190914090411/https://play.google.com/store/apps/details?id=com.google.android.apps.photos&hl=en",
       "date": "2019-09-14",
-      "shows": "Wayback 2019-09-14: app page (Google Photos)",
-      "files": [
-        "sweeps/g2-evidence/gplay/wb1-app.png"
-      ]
+      "shows": "Wayback 2019-09-14: app page (Google Photos)"
     },
     {
       "id": "wb2",
       "url": "https://web.archive.org/web/20191015020219/https://play.google.com/store/apps/category/GAME?hl=en",
       "date": "2019-10-15",
-      "shows": "Wayback 2019-10-15: games category page",
-      "files": [
-        "sweeps/g2-evidence/gplay/wb2-games.png"
-      ]
+      "shows": "Wayback 2019-10-15: games category page"
     }
   ],
   "features": [

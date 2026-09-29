@@ -6,70 +6,60 @@
       "id": "s1",
       "url": "https://web.archive.org/web/20190616005155/https://www.bing.com/",
       "date": "2019-06-16",
-      "file": "/home/claude/sweeps/g9-evidence/wb/bing-home.png",
       "shows": "homepage: image of the day, top menu Images/Videos/Maps/News/|/MSN/Office Online/Outlook.com, Sign in + avatar, Rewards, hamburger (Settings and quick links), b-Bing logo, square white search box with blue magnifier, image caption with location pin, previous/next image arrows"
     },
     {
       "id": "s2",
       "url": "https://web.archive.org/web/20190509234457/https://www.bing.com/search?q=facebook",
       "date": "2019-05-09",
-      "file": "/home/claude/sweeps/g9-evidence/wb/bing-serp3.png",
       "shows": "SERP: grey b logo at 58px, 684x40 square search box with thin shadow, image search camera and magnifier on the right, Sign in / Rewards / hamburger, scope bar All/Images/Videos/Maps/News/Shopping/|/My saves in 13px #444 mixed case with 3px #de3700 underline under the active tab, 'Results' count and Date/Language/Region filters, #001ba0 titles without underline, #006d21 URLs, #666 13px snippets, entity pane on the right, pagination, footer Privacy and Cookies/Legal/Advertise/About our ads/Help/Feedback"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20190701145447/https://www.bing.com/search?q=weather",
       "date": "2019-07-01",
-      "file": "/home/claude/sweeps/g9-evidence/wb/bing-serp2.png",
       "shows": "SERP header and footer (German market): same logo, box, Anmelden/Prämien/hamburger, scope bar with red active underline, footer links"
     },
     {
       "id": "s4",
       "url": "https://www.popsci.com/google-duckduckgo-bing-comparison/",
       "date": "2019-02-05",
-      "file": "/home/claude/sweeps/g9-evidence/bing/popsci-2019-02-bing1.jpg",
       "shows": "real user SERP for abraham lincoln: same header, scope bar with red underline, Wikipedia answer with Overview/sections, entity pane, deep links, dates"
     },
     {
       "id": "s5",
       "url": "https://www.popsci.com/google-duckduckgo-bing-comparison/",
       "date": "2019-02-05",
-      "file": "/home/claude/sweeps/g9-evidence/bing/popsci-2019-02-bing2.jpg",
       "shows": "real user Images results for coins: Images scope with SafeSearch: Moderate and Filter, related-search chips in teal, thumbnail grid"
     },
     {
       "id": "s6",
       "url": "https://www.popsci.com/google-duckduckgo-bing-comparison/",
       "date": "2019-02-05",
-      "file": "/home/claude/sweeps/g9-evidence/bing/popsci-2019-02-bing3.jpg",
       "shows": "search history page with Sign in, Rewards, hamburger"
     },
     {
       "id": "s7",
       "url": "https://www.bellingcat.com/resources/how-tos/2019/12/26/guide-to-using-reverse-image-search-for-investigations/",
       "date": "2019-12-26",
-      "file": "/home/claude/sweeps/g9-evidence/bing/bellingcat-2019-12-visual.jpg",
       "shows": "visual search: camera icon in the search box opens 'Try Visual Search' dialog (drag images, Paste image or URL, Take photo, samples)"
     },
     {
       "id": "s8",
       "url": "https://mashtips.com/enable-content-set-safe-search-bing/",
       "date": "2019-04-10",
-      "file": "/home/claude/sweeps/g9-evidence/bing/mashtips-2019-03-settings.jpg",
       "shows": "homepage with the hamburger menu open: Settings, Search history, My interests, My saves, My places, Fun & Games, Feedback, SafeSearch, Customize your homepage"
     },
     {
       "id": "s9",
       "url": "https://blogs.bing.com/search/2019-06/Bing-turns-10",
       "date": "2019-06-03",
-      "file": "/home/claude/sweeps/g9-evidence/bing/bing10-2019-06-4.jpg",
       "shows": "homepage 2019: b Bing logo, square search box with magnifier, previous/next image arrows, Info, download buttons"
     },
     {
       "id": "s10",
       "url": "https://www.bellingcat.com/resources/how-tos/2019/12/26/guide-to-using-reverse-image-search-for-investigations/",
       "date": "2019-12-26",
-      "file": "/home/claude/sweeps/g9-evidence/bing/bellingcat-2019-12-results.jpg",
       "shows": "visual search results: Looks like, Similar images"
     }
   ],

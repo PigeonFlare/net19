@@ -6,77 +6,66 @@
       "id": "s1",
       "url": "https://www.webwise.ie/parents/explained-what-is-twitch/",
       "date": "2019-08",
-      "file": "/home/claude/sweeps/g3-evidence/twitch/webwise-2019-08-a.png",
       "shows": "signed-out front page: purple #6441a4 top bar (glitch logo, Discover, Browse, Try Prime, ..., dark-purple Search field with the icon inside, Prime crown, Log In outline button, Sign Up, user icon), dark #19171c sidebar with 'Join the Twitch community!' card and Recommended Channels (avatar, name, game, red dot + viewers, Show More), featured carousel, 'Recommended categories' box art with viewers and tags"
     },
     {
       "id": "s2",
       "url": "https://www.webwise.ie/parents/explained-what-is-twitch/",
       "date": "2019-08",
-      "file": "/home/claude/sweeps/g3-evidence/twitch/webwise-2019-08-b.png",
       "shows": "channel page: channel bar (avatar, name, verified, LIVE, Videos 804, Clips, Events, Followers, Following), purple Follow, grey Subscribe, player, Stream Chat with Send a message and Chat button, stream title and Category"
     },
     {
       "id": "s3",
       "url": "https://www.webwise.ie/parents/explained-what-is-twitch/",
       "date": "2019-08",
-      "file": "/home/claude/sweeps/g3-evidence/twitch/webwise-2019-08-e.png",
       "shows": "game directory: box art, title, viewers/followers, Live Channels/Videos/Clips tabs, 'Filter by' tags, Sort by, live cards with LIVE badge, viewer counts, titles, channel, tags"
     },
     {
       "id": "s4",
       "url": "https://www.webwise.ie/parents/explained-what-is-twitch/",
       "date": "2019-08",
-      "file": "/home/claude/sweeps/g3-evidence/twitch/webwise-2019-08-d.png",
       "shows": "settings: Profile, Twitch Prime, Channel and Videos, Security and Privacy, Notifications, Connections, Recommendations tabs; toggles"
     },
     {
       "id": "s5",
       "url": "https://www.webwise.ie/parents/explained-what-is-twitch/",
       "date": "2019-08",
-      "file": "/home/claude/sweeps/g3-evidence/twitch/webwise-2019-08-c.jpg",
       "shows": "chat: badges, emotes, chat settings (Show timestamps, Readable colors, Hide Chat, Popout Chat, name color)"
     },
     {
       "id": "s6",
       "url": "https://www.reddit.com/r/Twitch/",
       "date": "2019-04",
-      "file": "/home/claude/sweeps/g3-evidence/twitch/reddit-2019-04-dark-directory.png",
       "shows": "signed-in light theme directory: purple bar with Discover/Following/Browse/Try Prime/..., Search, crown badge, bell, Get Bits, avatar; dark sidebar Followed Channels/Recommended Channels; LIVE cards, viewers, titles, channel, language tags"
     },
     {
       "id": "s7",
       "url": "https://wftda.tv/accessing-the-2019-archives-with-your-twitch-subscription/",
       "date": "2019-08-20",
-      "file": "/home/claude/sweeps/g3-evidence/twitch/wftda-2019-08.png",
       "shows": "channel page header with Follow and Subscribe, Videos/Clips/Events/Followers tabs, sidebar 'Join the Twitch community!'"
     },
     {
       "id": "s8",
       "url": "https://www.dummies.com/article/technology/social-media/general-social-media/how-to-follow-and-subscribe-to-twitch-channels-261120/",
       "date": "2019-04-23",
-      "file": "/home/claude/sweeps/g3-evidence/twitch/dummies-2019-04-following.jpg",
       "shows": "channel bar: Follow (heart), Subscribe, Get Bits, Videos 733, Clips, ..., stream title, game, team, viewers, Share"
     },
     {
       "id": "s9",
       "url": "https://wallethacks.com/how-much-do-twitch-streamers-make/",
       "date": "2019-07",
-      "file": "/home/claude/sweeps/g3-evidence/twitch/wallethacks-2019-07.jpg",
       "shows": "subscribe dialog: Tier 1 Subscription, benefits, emotes, Subscribe with Prime, Gift"
     },
     {
       "id": "s10",
       "url": "https://www.trishtech.com/how-to-enable-dark-mode-on-twitch/",
       "date": "2019-01",
-      "file": "/home/claude/sweeps/g3-evidence/twitch/gthumb-trishtech-2019-01-1.jpg",
       "shows": "dark mode (Google Images thumbnails of the article's screenshots; the originals are no longer served): purple top bar kept in dark mode, dark sidebar and page, user menu with Dark Mode toggle; gthumb-trishtech-2019-01-3.jpg shows light mode"
     },
     {
       "id": "s11",
       "url": "https://wpguru.co.uk/",
       "date": "2019-01",
-      "file": "/home/claude/sweeps/g3-evidence/twitch/wpguru-2019-01.png",
       "shows": "user menu: Get Bits, Online/Invisible, Share my activity, Dark Mode, Channel, Video Producer, Dashboard"
     }
   ],

@@ -6,41 +6,31 @@
       "id": "s1",
       "url": "https://arquivo.pt/noFrame/replay/20190314080507/https://www.xbox.com/en-US",
       "date": "2019-03-14",
-      "shows": "xbox.com/en-US 2019 (raw HTML, content is script-rendered): Microsoft UHF header with Xbox logo, nav Game Pass / Games / Devices / Community / Support / My Xbox / More, search, cart, sign in; hero region and icon bar; UHF footer Xbox (Feedback, Support, Photosensitive Seizure Warning, Community Standards) / Fans (Xbox Wire) / For Developers (Games, ID@Xbox, Windows 10, Creators Program, Designed for Xbox), language selector, Microsoft corporate links",
-      "file": "/home/claude/sweeps/g13-evidence/xbox/home-a20190314.png",
-      "raw": "/home/claude/sweeps/g13-raw/xbox-home-a20190314.html"
+      "shows": "xbox.com/en-US 2019 (raw HTML, content is script-rendered): Microsoft UHF header with Xbox logo, nav Game Pass / Games / Devices / Community / Support / My Xbox / More, search, cart, sign in; hero region and icon bar; UHF footer Xbox (Feedback, Support, Photosensitive Seizure Warning, Community Standards) / Fans (Xbox Wire) / For Developers (Games, ID@Xbox, Windows 10, Creators Program, Designed for Xbox), language selector, Microsoft corporate links"
     },
     {
       "id": "s2",
       "url": "https://arquivo.pt/noFrame/replay/20190712043338/https://www.xbox.com/en-US",
       "date": "2019-07-12",
-      "shows": "xbox.com/en-US 2019 (raw HTML, content is script-rendered): Microsoft UHF header with Xbox logo, nav Game Pass / Games / Devices / Community / Support / My Xbox / More, search, cart, sign in; hero region and icon bar; UHF footer Xbox (Feedback, Support, Photosensitive Seizure Warning, Community Standards) / Fans (Xbox Wire) / For Developers (Games, ID@Xbox, Windows 10, Creators Program, Designed for Xbox), language selector, Microsoft corporate links",
-      "file": "/home/claude/sweeps/g13-evidence/xbox/home-a20190712.png",
-      "raw": "/home/claude/sweeps/g13-raw/xbox-home-a20190712.html"
+      "shows": "xbox.com/en-US 2019 (raw HTML, content is script-rendered): Microsoft UHF header with Xbox logo, nav Game Pass / Games / Devices / Community / Support / My Xbox / More, search, cart, sign in; hero region and icon bar; UHF footer Xbox (Feedback, Support, Photosensitive Seizure Warning, Community Standards) / Fans (Xbox Wire) / For Developers (Games, ID@Xbox, Windows 10, Creators Program, Designed for Xbox), language selector, Microsoft corporate links"
     },
     {
       "id": "s3",
       "url": "https://arquivo.pt/noFrame/replay/20191105213853/https://www.xbox.com/en-US",
       "date": "2019-11-05",
-      "shows": "xbox.com/en-US 2019 (raw HTML, content is script-rendered): Microsoft UHF header with Xbox logo, nav Game Pass / Games / Devices / Community / Support / My Xbox / More, search, cart, sign in; hero region and icon bar; UHF footer Xbox (Feedback, Support, Photosensitive Seizure Warning, Community Standards) / Fans (Xbox Wire) / For Developers (Games, ID@Xbox, Windows 10, Creators Program, Designed for Xbox), language selector, Microsoft corporate links",
-      "file": "/home/claude/sweeps/g13-evidence/xbox/home-a20191105.png",
-      "raw": "/home/claude/sweeps/g13-raw/xbox-home-a20191105.html"
+      "shows": "xbox.com/en-US 2019 (raw HTML, content is script-rendered): Microsoft UHF header with Xbox logo, nav Game Pass / Games / Devices / Community / Support / My Xbox / More, search, cart, sign in; hero region and icon bar; UHF footer Xbox (Feedback, Support, Photosensitive Seizure Warning, Community Standards) / Fans (Xbox Wire) / For Developers (Games, ID@Xbox, Windows 10, Creators Program, Designed for Xbox), language selector, Microsoft corporate links"
     },
     {
       "id": "s4",
       "url": "https://arquivo.pt/noFrame/replay/20190506102237/https://www.xbox.com/en-US/games",
       "date": "2019-05-06",
-      "shows": "xbox.com/en-US/games 2019: same header and footer, Games home menu (Console games, PC games, Xbox Game Pass, Xbox Play Anywhere, Xbox Game Streaming (Preview), Redeem Code, Sales & Specials)",
-      "file": "/home/claude/sweeps/g13-evidence/xbox/games-a20190506.png",
-      "raw": "/home/claude/sweeps/g13-raw/xbox-games-a20190506.html"
+      "shows": "xbox.com/en-US/games 2019: same header and footer, Games home menu (Console games, PC games, Xbox Game Pass, Xbox Play Anywhere, Xbox Game Streaming (Preview), Redeem Code, Sales & Specials)"
     },
     {
       "id": "s5",
       "url": "https://arquivo.pt/noFrame/replay/20191117233829/https://www.xbox.com/en-US/games",
       "date": "2019-11-17",
-      "shows": "xbox.com/en-US/games 2019: same header and footer, Games home menu (Console games, PC games, Xbox Game Pass, Xbox Play Anywhere, Xbox Game Streaming (Preview), Redeem Code, Sales & Specials)",
-      "file": "/home/claude/sweeps/g13-evidence/xbox/games-a20191117.png",
-      "raw": "/home/claude/sweeps/g13-raw/xbox-games-a20191117.html"
+      "shows": "xbox.com/en-US/games 2019: same header and footer, Games home menu (Console games, PC games, Xbox Game Pass, Xbox Play Anywhere, Xbox Game Streaming (Preview), Redeem Code, Sales & Specials)"
     }
   ],
   "features": [

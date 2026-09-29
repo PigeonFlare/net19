@@ -6,49 +6,42 @@
       "id": "s1",
       "url": "https://www.lifewire.com/how-to-listen-to-spotify-using-a-web-browser-2438312",
       "date": "2019-01",
-      "file": "/home/claude/sweeps/g3-evidence/spotify/lifewire-2019-01-2.png",
       "shows": "web player search: TOP RESULTS / ARTISTS / SONGS / ALBUMS / PLAYLISTS / EPISODES / PODCASTS tabs, 12px uppercase letter-spaced with a short underline, round artist top result, song rows with note icon, title, artist - album, duration"
     },
     {
       "id": "s2",
       "url": "https://www.lifewire.com/how-to-listen-to-spotify-using-a-web-browser-2438312",
       "date": "2019-01",
-      "file": "/home/claude/sweeps/g3-evidence/spotify/lifewire-2019-01-3.png",
       "shows": "web player Your Library: PLAYLISTS / MADE FOR YOU / SONGS / ALBUMS / ARTISTS / PODCASTS tabs with green underline, green NEW PLAYLIST pill, 28px bold shelf headings, square covers with centered titles and grey subtitles, no card backgrounds"
     },
     {
       "id": "s3",
       "url": "https://www.lifewire.com/how-to-listen-to-spotify-using-a-web-browser-2438312",
       "date": "2019-01",
-      "file": "/home/claude/sweeps/g3-evidence/spotify/lifewire-2019-01-4.png",
       "shows": "web player album: square cover, bold title, grey artist, green PLAY/PAUSE pill (12px, .16em letter-spacing), '2014 • 12 SONGS', SAVE TO YOUR LIBRARY and ••• menu (Start Radio, Save to Your Library, Add to Queue, Add to Playlist, Copy Song Link), track rows with durations"
     },
     {
       "id": "s4",
       "url": "https://www.lifewire.com/how-to-listen-to-spotify-using-a-web-browser-2438312",
       "date": "2019-01",
-      "file": "/home/claude/sweeps/g3-evidence/spotify/lifewire-2019-01-5.png",
       "shows": "web player album and player bar: PLAY pill, '2007 • 16 SONGS', Connect to a device popover, #282828 now-playing bar with shuffle, previous, play/pause, next, repeat, progress, queue, devices, volume"
     },
     {
       "id": "s5",
       "url": "https://www.pcmag.com/",
       "date": "2018-2019",
-      "file": "/home/claude/sweeps/g3-evidence/spotify/pcmag-2018-browse.jpg",
       "shows": "web player Browse: black sidebar (logo, Search, Browse, Your Music, Install App, user), FEATURED / GENRES & MOODS / NEW RELEASES / DISCOVER tabs, centered shelf title, square covers with centered captions, player bar"
     },
     {
       "id": "s6",
       "url": "https://www.reddit.com/r/chromeos/",
       "date": "2019-09",
-      "file": "/home/claude/sweeps/g3-evidence/spotify/reddit-2019-09.png",
       "shows": "web player behind an error dialog at open.spotify.com/playlist (layout only)"
     },
     {
       "id": "s7",
       "url": "https://www.webdesignmuseum.org/",
       "date": "2019-12",
-      "file": "/home/claude/sweeps/g3-evidence/spotify/wdm-spotify-2019.jpg",
       "shows": "www.spotify.com 2019: logo, Premium/Help/Download | Sign up/Log In links, 'Try Premium free for 3 months', uppercase letter-spaced pill buttons (VIEW PLANS, GET SPOTIFY FREE), black footer with COMPANY / COMMUNITIES / USEFUL LINKS"
     }
   ],

@@ -6,92 +6,79 @@
       "id": "g1",
       "url": "https://www.versionmuseum.com/history-of/techcrunch-website",
       "date": "2019",
-      "shows": "homepage (found through Google Images 'techcrunch website homepage screenshot', 2019 date filter): left rail with TC mark, Login, Startups…More, Search, green topic links; 36px hero headline, mini headlines with authors, Extra Crunch promo",
-      "file": "g8-evidence/techcrunch/vm-home-2019.jpg"
+      "shows": "homepage (found through Google Images 'techcrunch website homepage screenshot', 2019 date filter): left rail with TC mark, Login, Startups…More, Search, green topic links; 36px hero headline, mini headlines with authors, Extra Crunch promo"
     },
     {
       "id": "article0-201903",
       "url": "https://web.archive.org/web/20190316005713if_/https://techcrunch.com/2019/03/14/chris-cox-leaves-facebook/",
       "date": "2019-03-16",
-      "shows": "article0 page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
-      "file": "g8-evidence/techcrunch/techcrunch-article0-201903.png"
+      "shows": "article0 page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)"
     },
     {
       "id": "article1-201907",
       "url": "https://web.archive.org/web/20190715220250if_/https://techcrunch.com/2019/07/15/waze-now-shows-road-toll-prices-along-your-driving-route/",
       "date": "2019-07-15",
-      "shows": "article1 page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
-      "file": "g8-evidence/techcrunch/techcrunch-article1-201907.png"
+      "shows": "article1 page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)"
     },
     {
       "id": "article2-201911",
       "url": "https://web.archive.org/web/20191116044136if_/https://techcrunch.com/2019/11/15/giphy-illegal-content/",
       "date": "2019-11-16",
-      "shows": "article2 page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
-      "file": "g8-evidence/techcrunch/techcrunch-article2-201911.png"
+      "shows": "article2 page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)"
     },
     {
       "id": "home-201903",
       "url": "https://web.archive.org/web/20190315234420if_/https://techcrunch.com/",
       "date": "2019-03-15",
-      "shows": "home page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
-      "file": "g8-evidence/techcrunch/techcrunch-home-201903.png"
+      "shows": "home page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)"
     },
     {
       "id": "home-201907",
       "url": "https://web.archive.org/web/20190715234658if_/https://techcrunch.com/",
       "date": "2019-07-15",
-      "shows": "home page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
-      "file": "g8-evidence/techcrunch/techcrunch-home-201907.png"
+      "shows": "home page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)"
     },
     {
       "id": "home-201911",
       "url": "https://web.archive.org/web/20191116022325if_/https://techcrunch.com/",
       "date": "2019-11-16",
-      "shows": "home page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
-      "file": "g8-evidence/techcrunch/techcrunch-home-201911.png"
+      "shows": "home page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)"
     },
     {
       "id": "home-a201907",
       "url": "https://arquivo.pt/noFrame/replay/20190714220104/https://techcrunch.com/",
       "date": "2019-07-14",
-      "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
-      "file": "g8-evidence/techcrunch/techcrunch-home-a201907.png"
+      "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)"
     },
     {
       "id": "home-a201911",
       "url": "https://arquivo.pt/noFrame/replay/20191115042445/http://techcrunch.com/",
       "date": "2019-11-15",
-      "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)",
-      "file": "g8-evidence/techcrunch/techcrunch-home-a201911.png"
+      "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)"
     },
     {
       "id": "section0-201903",
       "url": "https://web.archive.org/web/20190316005926if_/https://techcrunch.com/startups/",
       "date": "2019-03-16",
-      "shows": "section0 page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)",
-      "file": "g8-evidence/techcrunch/techcrunch-section0-201903.png"
+      "shows": "section0 page as served in 2019-03 (Wayback capture rendered with its 2019 CSS)"
     },
     {
       "id": "section1-201907",
       "url": "https://web.archive.org/web/20190715220350if_/https://techcrunch.com/apps/",
       "date": "2019-07-15",
-      "shows": "section1 page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)",
-      "file": "g8-evidence/techcrunch/techcrunch-section1-201907.png"
+      "shows": "section1 page as served in 2019-07 (Wayback capture rendered with its 2019 CSS)"
     },
     {
       "id": "section1-a201907",
       "url": "https://arquivo.pt/noFrame/replay/20190715120000/https://techcrunch.com/apps/",
       "date": "2019-07-15",
-      "shows": "section1 page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
-      "file": "g8-evidence/techcrunch/techcrunch-section1-a201907.png"
+      "shows": "section1 page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)"
     },
     {
       "id": "section2-201911",
       "url": "https://web.archive.org/web/20191116050252if_/https://techcrunch.com/gadgets/",
       "date": "2019-11-16",
-      "shows": "section2 page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)",
-      "file": "g8-evidence/techcrunch/techcrunch-section2-201911.png"
+      "shows": "section2 page as served in 2019-11 (Wayback capture rendered with its 2019 CSS)"
     }
   ],
   "features": [

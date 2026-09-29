@@ -6,36 +6,31 @@
    "id": "disease-a201907",
    "url": "https://arquivo.pt/noFrame/replay/20190923193115/https://www.mayoclinic.org/diseases-conditions/high-blood-pressure/symptoms-causes/syc-20373410",
    "date": "2019-09-23",
-   "shows": "disease page as served in 2019-09 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/mayoclinic/mayoclinic-disease-a201907.png"
+   "shows": "disease page as served in 2019-09 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "home-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190312100157/https://www.mayoclinic.org/",
    "date": "2019-03-12",
-   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/mayoclinic/mayoclinic-home-a201903.png"
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "home-a201907",
    "url": "https://arquivo.pt/noFrame/replay/20190715090319/https://www.mayoclinic.org/",
    "date": "2019-07-15",
-   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/mayoclinic/mayoclinic-home-a201907.png"
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "home-a201911",
    "url": "https://arquivo.pt/noFrame/replay/20191115195153/https://www.mayoclinic.org/",
    "date": "2019-11-15",
-   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/mayoclinic/mayoclinic-home-a201911.png"
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "home-wbref",
    "url": "wayback-2019-ref:https://www.mayoclinic.org/",
    "date": "2019",
-   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)",
-   "file": "g11-evidence/mayoclinic/mayoclinic-home-wbref.png"
+   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)"
   }
  ],
  "features": [

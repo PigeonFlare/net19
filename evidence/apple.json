@@ -6,28 +6,24 @@
       "id": "s1",
       "url": "https://arun.is/blog/10-year-challenge/",
       "date": "2019-01-22",
-      "file": "/home/claude/sweeps/g9-evidence/apple/arun-2019-01-apple.jpg",
       "shows": "homepage: translucent black global nav (Apple, Mac, iPad, iPhone, Watch, TV, Music, Support, search, bag), full-width product tiles with headline, subhead and blue 'Learn more >' / 'Buy >' links"
     },
     {
       "id": "s2",
       "url": "https://www.versionmuseum.com/history-of/apple-website",
       "date": "2019",
-      "file": "/home/claude/sweeps/g9-evidence/apple/versionmuseum-2019-apple.png",
       "shows": "homepage 2019 (iPhone XR promotion): same nav, hero tile with headline and chevron links"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20190615230327/https://www.apple.com/",
       "date": "2019-06-15",
-      "file": "/home/claude/sweeps/g9-evidence/wb/apple-home.png",
       "shows": "homepage labels: Apple/Mac/iPad/iPhone/Watch/TV/Music/Support/Search/Shopping Bag; tiles iPhone XR, iPhone XS, Apple Watch Series 4, iOS 13, iPadOS, macOS Catalina, Mac Pro, Pro Display XDR; footnotes; Apple Directory footer: Shop and Learn (Mac, iPad, iPhone, Watch, TV, Music, iTunes, HomePod, iPod touch, Apple Card, Accessories, Gift Cards), Apple Store (Find a Store, Genius Bar, Today at Apple, Apple Camp, Field Trip, Apple Store App, Refurbished and Clearance, Financing, Apple Trade In, Order Status, Shopping Help), For Education, For Business, Account, Apple Values, About Apple, Find an Apple Store / other retailer / 1-800-MY-APPLE, legal links, country"
     },
     {
       "id": "s4",
       "url": "https://web.archive.org/web/20190616011246/https://www.apple.com/iphone/",
       "date": "2019-06-16",
-      "file": "/home/claude/sweeps/g9-evidence/wb/apple-iphone.png",
       "shows": "iPhone page: product sub-nav (iPhone XS New, iPhone XR New, iPhone 8, iPhone 7, Compare, AirPods, iOS 12), hero, 'Which one's right for you?' compare, essentials, 'What makes an iPhone an iPhone?', breadcrumbs"
     }
   ],

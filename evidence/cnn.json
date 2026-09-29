@@ -6,50 +6,43 @@
       "id": "s1",
       "url": "https://www.google.com/search?udm=2&q=cnn+homepage+2019+screenshot",
       "date": "2019",
-      "shows": "Google Images: Web Design Museum 'CNN.com in 2019', 2018-12 'George H.W. Bush dead at 94' capture: black 40px bar, red CNN box, 3-column home",
-      "file": "g7-evidence/cnn/gimg-home.jpg"
+      "shows": "Google Images: Web Design Museum 'CNN.com in 2019', 2018-12 'George H.W. Bush dead at 94' capture: black 40px bar, red CNN box, 3-column home"
     },
     {
       "id": "s2",
       "url": "https://www.webdesignmuseum.org/gallery/cnn-in-2019",
       "date": "2019",
-      "shows": "full homepage: black bar with US World Politics Business Opinion Health Entertainment Style Travel Sports Videos, Edition, search, menu; grey section title bars",
-      "file": "g7-evidence/cnn/wdm-2019.jpg"
+      "shows": "full homepage: black bar with US World Politics Business Opinion Health Entertainment Style Travel Sports Videos, Edition, search, menu; grey section title bars"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20190916002456/https://www.cnn.com/",
       "date": "2019-09-16",
-      "shows": "homepage and its HTML: header, TRENDING bar, lead column, story lists, 'News and buzz' / 'Must-watch videos of the week' zones, footer sitemap (US Crime + Justice …, World Africa …, Business Markets Tech Media …, Style Arts Design …, Travel Destinations Food & Drink Stay …, Videos Live TV …, More… Photos Longform Investigations CNN Profiles CNN Leadership CNN Newsletters Work for CNN), Search CNN… field, Terms of Use, Privacy Policy, AdChoices, About us, Advertise with us, Transcripts, License Footage, Sitemap, Facebook/Twitter/Instagram, cookie bar 'By using this site, you agree to our updated Privacy Policy and our Terms of Use'",
-      "file": "g7-evidence/cnn/wb-cnn-home.png"
+      "shows": "homepage and its HTML: header, TRENDING bar, lead column, story lists, 'News and buzz' / 'Must-watch videos of the week' zones, footer sitemap (US Crime + Justice …, World Africa …, Business Markets Tech Media …, Style Arts Design …, Travel Destinations Food & Drink Stay …, Videos Live TV …, More… Photos Longform Investigations CNN Profiles CNN Leadership CNN Newsletters Work for CNN), Search CNN… field, Terms of Use, Privacy Policy, AdChoices, About us, Advertise with us, Transcripts, License Footage, Sitemap, Facebook/Twitter/Instagram, cookie bar 'By using this site, you agree to our updated Privacy Policy and our Terms of Use'"
     },
     {
       "id": "s4",
       "url": "https://web.archive.org/web/20190410235134/https://www.cnn.com/",
       "date": "2019-04-10",
-      "shows": "homepage: LIVE UPDATES / TRENDING bar, Live TV and U.S. Edition in the bar, zones Crime and justice, Check these out, CNN Business, Sports, Opinion, Paid Partner Content, World, US, Style with grey title bars",
-      "file": "g7-evidence/cnn/wb-cnn-home-apr-tall.png"
+      "shows": "homepage: LIVE UPDATES / TRENDING bar, Live TV and U.S. Edition in the bar, zones Crime and justice, Check these out, CNN Business, Sports, Opinion, Paid Partner Content, World, US, Style with grey title bars"
     },
     {
       "id": "s5",
       "url": "https://web.archive.org/web/20191205220508/https://www.cnn.com/2019/09/08/us/washington-state-lightning-strikes/index.html",
       "date": "2019-09",
-      "shows": "article: section bar (US, Crime + Justice …), 42px light headline, byline 'By … , CNN', Updated time, video player, 'Content by' paid links, cookie bar",
-      "file": "g7-evidence/cnn/wb-cnn-article.png"
+      "shows": "article: section bar (US, Crime + Justice …), 42px light headline, byline 'By … , CNN', Updated time, video player, 'Content by' paid links, cookie bar"
     },
     {
       "id": "s6",
       "url": "https://www.google.com/search?udm=2&q=cnn.com+article+page+2019+screenshot",
       "date": "2019",
-      "shows": "Google Images: Nieman Lab 2019 'From live blogs to time capsules' CNN impeachment live page, CNN 2019 article captures",
-      "file": "g7-evidence/cnn/gimg-article.jpg"
+      "shows": "Google Images: Nieman Lab 2019 'From live blogs to time capsules' CNN impeachment live page, CNN 2019 article captures"
     },
     {
       "id": "s7",
       "url": "https://web.archive.org/web/20201112020051/https://edition.cnn.com/search/?q=trump",
       "date": "2020-11 (same search design as 2019; no 2019 capture of the JS search page exists)",
-      "shows": "search page: wide field with Clear and red search button, Everything / Stories / Videos / Photos tabs, Date sort, section radio list, result rows with thumbnail, headline, date, snippet",
-      "file": "g7-evidence/cnn/wb-cnn-search-2020.png"
+      "shows": "search page: wide field with Clear and red search button, Everything / Stories / Videos / Photos tabs, Date sort, section radio list, result rows with thumbnail, headline, date, snippet"
     }
   ],
   "features": [

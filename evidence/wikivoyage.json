@@ -6,57 +6,49 @@
    "id": "wp-history1-201909",
    "url": "https://arquivo.pt/noFrame/replay/20190928075947/https://en.wikipedia.org/w/index.php?title=Blohm_%26_Voss_BV_138&action=history",
    "date": "2019-09-28",
-   "shows": "a MediaWiki history page in the same 2019 Vector skin (English Wikipedia): Filter revisions box, compare button, (newest | oldest) and 20/50/100/250/500 links",
-   "file": "g10-wbr/wikipedia-history1-201909.png"
+   "shows": "a MediaWiki history page in the same 2019 Vector skin (English Wikipedia): Filter revisions box, compare button, (newest | oldest) and 20/50/100/250/500 links"
   },
   {
    "id": "wp-search1-201910",
    "url": "https://arquivo.pt/noFrame/replay/20191016080058/https://en.wikipedia.org/w/index.php?title=Special:Search&profile=all&search=Hunn-Black%20%26%20Merritt%20Funeral%20Home&ns0=1",
    "date": "2019-10-16",
-   "shows": "the 2019 MediaWiki Special:Search page (same software and skin): Search results heading, profile tabs, results count",
-   "file": "g10-wbr/wikipedia-search1-201910.png"
+   "shows": "the 2019 MediaWiki Special:Search page (same software and skin): Search results heading, profile tabs, results count"
   },
   {
    "id": "article2-201906",
    "url": "https://arquivo.pt/noFrame/replay/20190607011047/https://en.wikivoyage.org/wiki/Paris",
    "date": "2019-06-07",
-   "shows": "article2 page as served in 2019-06 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikivoyage/wikivoyage-article2-201906.png"
+   "shows": "article2 page as served in 2019-06 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "article5-201909",
    "url": "https://arquivo.pt/noFrame/replay/20190921124429/https://en.wikivoyage.org/wiki/Madeira",
    "date": "2019-09-21",
-   "shows": "article5 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikivoyage/wikivoyage-article5-201909.png"
+   "shows": "article5 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "article8-201909",
    "url": "https://arquivo.pt/noFrame/replay/20190921124358/https://en.wikivoyage.org/wiki/Algarve",
    "date": "2019-09-21",
-   "shows": "article8 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikivoyage/wikivoyage-article8-201909.png"
+   "shows": "article8 page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "home1-201903",
    "url": "https://arquivo.pt/noFrame/replay/20190323081342/https://en.wikivoyage.org/wiki/Main_Page",
    "date": "2019-03-23",
-   "shows": "home1 page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikivoyage/wikivoyage-home1-201903.png"
+   "shows": "home1 page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "home2-201906",
    "url": "https://arquivo.pt/noFrame/replay/20190607010913/https://en.wikivoyage.org/wiki/Main_Page",
    "date": "2019-06-07",
-   "shows": "home2 page as served in 2019-06 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikivoyage/wikivoyage-home2-201906.png"
+   "shows": "home2 page as served in 2019-06 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "home3-201911",
    "url": "https://arquivo.pt/noFrame/replay/20191106054127/https://en.wikivoyage.org/wiki/Main_Page",
    "date": "2019-11-06",
-   "shows": "home3 page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "g10-evidence/wikivoyage/wikivoyage-home3-201911.png"
+   "shows": "home3 page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)"
   }
  ],
  "features": [

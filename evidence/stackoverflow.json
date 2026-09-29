@@ -6,21 +6,18 @@
       "id": "s1",
       "url": "https://arun.is/blog/10-year-challenge/",
       "date": "2019-01-22",
-      "file": "/home/claude/sweeps/g9-evidence/stackoverflow/arun-2019-01-stackoverflow.jpg",
       "shows": "2019 Stack Overflow: stackoverflow logo (grey tray, orange sheets), orange top border, search, left nav Home / PUBLIC Stack Overflow, Tags, Users, Jobs / TEAMS, question list with votes/answers/views, yellow Blog / Featured on Meta widget"
     },
     {
       "id": "s2",
       "url": "https://web.archive.org/web/20190616002249/https://stackoverflow.com/questions",
       "date": "2019-06-16",
-      "file": "/home/claude/sweeps/g9-evidence/wb/so-questions.png",
       "shows": "All Questions: Ask Question, tabs Newest/Featured/Frequent/Votes/Active/Unanswered, question summaries with tags and user cards, pagination and per-page 15/30/50, Related Tags, Hot Network Questions, footer Stack Overflow/Products (Teams, Talent, Advertising, Enterprise)/Company (About, Press, Work Here, Legal, Privacy Policy, Contact Us)/Stack Exchange Network (Technology, Life / Arts, Culture / Recreation, Science, Other), Blog/Facebook/Twitter/LinkedIn, cc by-sa"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20190616095252/https://stackoverflow.com/questions/927358/how-do-i-undo-the-most-recent-local-commits-in-git",
       "date": "2019-06-16",
-      "file": "/home/claude/sweeps/g9-evidence/wb/so-question.png",
       "shows": "question page: title, Ask Question, up/down vote, favorite star, tags, share / improve this question, edited, community wiki, comments with scores and 'show N more comments', N Answers with active/oldest/votes, pagination, sidebar Blog/Featured on Meta, Linked, Related, Hot Network Questions, 'Not the answer you're looking for?'"
     }
   ],

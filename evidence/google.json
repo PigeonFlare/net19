@@ -2,44 +2,369 @@
   "theme": "google",
   "era": "2019 Google Search: white page, 2015 multicolour logo, rounded search box with the colour mic and blue magnifier, tabs All/News/Images/Shopping/More with Settings and Tools, blue 20px titles over green URLs with a dropdown arrow, knowledge cards in 8px-rounded bordered boxes; homepage with Google Search / I'm Feeling Lucky grey buttons and the grey footer. People also ask and AI answers are removed by the user's decision.",
   "sources": [
-    { "id": "s1", "url": "https://www.topspot.com/blog/2019/11/identifying-the-new-search-landscape/", "date": "2019-10", "shows": "results page header: logo, rounded field with colour mic and blue magnifier, tabs All Books News Shopping Images More, Settings, Tools, result count, answer card", "file": "/home/claude/sweeps/g1-evidence/google/s2-topspot-thanksgiving.png" },
-    { "id": "s2", "url": "https://www.topspot.com/blog/2019/11/identifying-the-new-search-landscape/", "date": "2019-06", "shows": "a web result: blue title, green URL with dropdown arrow, grey snippet with bold terms", "file": "/home/claude/sweeps/g1-evidence/google/s2-topspot-basic.png" },
-    { "id": "s3", "url": "https://web.archive.org/web/2019/https://www.google.com/search?q=weather", "date": "2019", "shows": "Wayback render of a 2019 results page: header, tabs, weather card, results, Top stories, apps grid, Sign in", "file": "/home/claude/sweeps/g1-evidence/google/s3-wayback-serp.png" },
-    { "id": "s4", "url": "https://web.archive.org/web/2019/https://www.google.com/search?q=news", "date": "2019", "shows": "Wayback render: news results, video carousel with View all, related searches, pagination Gooooogle, footer with location and Help / Send feedback / Privacy / Terms", "file": "/home/claude/sweeps/g1-evidence/google/s3-wayback-news.png" },
-    { "id": "s5", "url": "https://web.archive.org/web/2019/https://www.google.com/", "date": "2019", "shows": "homepage (earlier sweep gs-evidence): Gmail, Images, apps grid, Sign in; logo; field with mic; Google Search and I'm Feeling Lucky; footer Advertising Business About How Search works, Privacy Terms Settings", "file": "/home/claude/sweeps/gs-evidence/wb-google-serp2.png" }
+    {
+      "id": "s1",
+      "url": "https://www.topspot.com/blog/2019/11/identifying-the-new-search-landscape/",
+      "date": "2019-10",
+      "shows": "results page header: logo, rounded field with colour mic and blue magnifier, tabs All Books News Shopping Images More, Settings, Tools, result count, answer card"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.topspot.com/blog/2019/11/identifying-the-new-search-landscape/",
+      "date": "2019-06",
+      "shows": "a web result: blue title, green URL with dropdown arrow, grey snippet with bold terms"
+    },
+    {
+      "id": "s3",
+      "url": "https://web.archive.org/web/2019/https://www.google.com/search?q=weather",
+      "date": "2019",
+      "shows": "Wayback render of a 2019 results page: header, tabs, weather card, results, Top stories, apps grid, Sign in"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/2019/https://www.google.com/search?q=news",
+      "date": "2019",
+      "shows": "Wayback render: news results, video carousel with View all, related searches, pagination Gooooogle, footer with location and Help / Send feedback / Privacy / Terms"
+    },
+    {
+      "id": "s5",
+      "url": "https://web.archive.org/web/2019/https://www.google.com/",
+      "date": "2019",
+      "shows": "homepage (earlier sweep gs-evidence): Gmail, Images, apps grid, Sign in; logo; field with mic; Google Search and I'm Feeling Lucky; footer Advertising Business About How Search works, Privacy Terms Settings"
+    }
   ],
   "features": [
-    { "match": "^Google Search$", "in2019": true, "required": true, "pages": ["home", "start"], "evidence": ["s5"], "note": "homepage grey button" },
-    { "match": "^I.m Feeling Lucky$", "in2019": true, "required": true, "pages": ["home", "start"], "evidence": ["s5"], "note": "homepage grey button" },
-    { "match": "^Gmail$", "in2019": true, "required": true, "pages": ["home", "start"], "evidence": ["s5"], "note": "top bar link" },
-    { "match": "^(Images|Search for Images)$", "in2019": true, "required": true, "evidence": ["s5", "s1"], "note": "top bar link on the homepage, tab on results" },
-    { "match": "^Google apps$", "in2019": true, "required": true, "evidence": ["s3", "s5"], "note": "apps grid" },
-    { "match": "^(Sign in|Google Account)$", "in2019": true, "required": true, "evidence": ["s3", "s5"], "note": "account corner" },
-    { "match": "^Search by voice$", "in2019": true, "required": true, "evidence": ["s1", "s5"], "note": "colour mic in the field" },
-    { "match": "^(Advertising|Business|How Search works)$", "in2019": true, "required": true, "pages": ["home", "start"], "evidence": ["s5"], "note": "homepage footer" },
-    { "match": "^Privacy$", "in2019": true, "required": true, "evidence": ["s4", "s5"], "note": "footer" },
-    { "match": "^Terms$", "in2019": true, "required": true, "evidence": ["s4", "s5"], "note": "footer" },
-    { "match": "^All$", "in2019": true, "required": true, "pages": ["search", "news"], "evidence": ["s1", "s3"], "note": "results tab row" },
-    { "match": "^News$", "in2019": true, "required": true, "pages": ["search", "news"], "evidence": ["s1", "s3"], "note": "results tab row" },
-    { "match": "^More$", "in2019": true, "required": true, "pages": ["search", "news"], "evidence": ["s1", "s3"], "note": "results tab row" },
-    { "match": "^Tools$", "in2019": true, "required": true, "pages": ["search", "news"], "evidence": ["s1", "s3"], "note": "results tab row" },
-    { "match": "^Next$", "in2019": true, "required": true, "pages": ["search", "news"], "evidence": ["s4"], "note": "pagination" },
-    { "match": "^(Help|Send feedback)$", "in2019": true, "required": true, "pages": ["search", "news"], "evidence": ["s4"], "note": "results footer" },
-    { "match": "^Go to Google Home$", "in2019": true, "required": true, "pages": ["search", "news"], "evidence": ["s1"], "note": "results logo" },
-    { "match": "^(search|navigation|contentinfo|none|main) area$", "in2019": true, "evidence": ["s1", "s3"], "note": "header, tabs, results, footer" },
-    { "match": "^repeated ", "in2019": true, "evidence": ["s3", "s4"], "note": "results, carousel items, pagination (content)" },
-    { "match": "^(Videos|Top stories|Images|Images for .*|Related searches|People also search for|Searches related to .*)$", "in2019": true, "evidence": ["s3", "s4"], "note": "2019 result blocks" },
-    { "match": "^(Skip to main content|Accessibility help|Accessibility feedback)$", "in2019": true, "evidence": ["s3"], "note": "off-screen accessibility links (present in the 2019 markup)" },
-    { "match": "^(Go to Google Home|Google|Search|Clear|Search by voice|Google Search|I'm Feeling Lucky)$", "in2019": true, "evidence": ["s1", "s5"] },
-    { "match": "^(Google apps|Google Account|Sign in|Gmail|Images|Search for Images)$", "in2019": true, "evidence": ["s3", "s5"] },
-    { "match": "^(All|Videos|Images|News|Shopping|Books|Maps|Flights|Finance|More|Tools|Settings)$", "in2019": true, "evidence": ["s1", "s3"], "note": "tabs, Settings and Tools" },
-    { "match": "^(View all.*|Overview|Key Points|Types of .*|.*\\.\\.\\.)$", "in2019": true, "evidence": ["s4"], "note": "carousel View all and result sitelinks (content)" },
-    { "match": "^(Page \\d+|Next|Previous)$", "in2019": true, "evidence": ["s4"], "note": "Gooooogle pagination" },
-    { "match": "(From your (IP|Internet) address|Update location|Use precise location)", "in2019": true, "evidence": ["s4"], "note": "footer location line" },
-    { "match": "^(Help|Send feedback|Privacy|Terms|About|Advertising|Business|How Search works)$", "in2019": true, "evidence": ["s4", "s5"] },
-    { "match": "^(How|What|Why|When|Where|Who|Do|Does|Is|Are|Can|Explaining|The) .*", "in2019": true, "evidence": ["s2", "s4"], "note": "result titles and related searches (content)" },
-    { "match": "^(People also ask|Others also ask|Related questions)$", "in2019": false, "evidence": ["the user asked for People also ask to be removed; it now expands into AI answers"], "action": "hidden" },
-    { "match": "^(AI Overview|AI Mode|Dive deeper in AI Mode|Ask anything in AI Mode|Things to know|What people are saying|Discussions and forums|Short videos|Perspectives|From sources across the web)$", "in2019": false, "evidence": ["AI Overview 2024, AI Mode 2025, forums/short videos/perspectives 2023"], "action": "hidden" },
-    { "match": "^(Share|Read more|About this result|Search by image|Customize|Preferred sources)$", "in2019": false, "evidence": ["SERP Share 2023, snippet Read more 2024, About this result 2021, Lens button 2022"], "action": "hidden" }
+    {
+      "match": "^Google Search$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s5"
+      ],
+      "note": "homepage grey button"
+    },
+    {
+      "match": "^I.m Feeling Lucky$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s5"
+      ],
+      "note": "homepage grey button"
+    },
+    {
+      "match": "^Gmail$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s5"
+      ],
+      "note": "top bar link"
+    },
+    {
+      "match": "^(Images|Search for Images)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s5",
+        "s1"
+      ],
+      "note": "top bar link on the homepage, tab on results"
+    },
+    {
+      "match": "^Google apps$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s3",
+        "s5"
+      ],
+      "note": "apps grid"
+    },
+    {
+      "match": "^(Sign in|Google Account)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s3",
+        "s5"
+      ],
+      "note": "account corner"
+    },
+    {
+      "match": "^Search by voice$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s5"
+      ],
+      "note": "colour mic in the field"
+    },
+    {
+      "match": "^(Advertising|Business|How Search works)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s5"
+      ],
+      "note": "homepage footer"
+    },
+    {
+      "match": "^Privacy$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "footer"
+    },
+    {
+      "match": "^Terms$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "footer"
+    },
+    {
+      "match": "^All$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "search",
+        "news"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "results tab row"
+    },
+    {
+      "match": "^News$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "search",
+        "news"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "results tab row"
+    },
+    {
+      "match": "^More$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "search",
+        "news"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "results tab row"
+    },
+    {
+      "match": "^Tools$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "search",
+        "news"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "results tab row"
+    },
+    {
+      "match": "^Next$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "search",
+        "news"
+      ],
+      "evidence": [
+        "s4"
+      ],
+      "note": "pagination"
+    },
+    {
+      "match": "^(Help|Send feedback)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "search",
+        "news"
+      ],
+      "evidence": [
+        "s4"
+      ],
+      "note": "results footer"
+    },
+    {
+      "match": "^Go to Google Home$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "search",
+        "news"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "results logo"
+    },
+    {
+      "match": "^(search|navigation|contentinfo|none|main) area$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "header, tabs, results, footer"
+    },
+    {
+      "match": "^repeated ",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4"
+      ],
+      "note": "results, carousel items, pagination (content)"
+    },
+    {
+      "match": "^(Videos|Top stories|Images|Images for .*|Related searches|People also search for|Searches related to .*)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4"
+      ],
+      "note": "2019 result blocks"
+    },
+    {
+      "match": "^(Skip to main content|Accessibility help|Accessibility feedback)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "off-screen accessibility links (present in the 2019 markup)"
+    },
+    {
+      "match": "^(Go to Google Home|Google|Search|Clear|Search by voice|Google Search|I'm Feeling Lucky)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s5"
+      ]
+    },
+    {
+      "match": "^(Google apps|Google Account|Sign in|Gmail|Images|Search for Images)$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s5"
+      ]
+    },
+    {
+      "match": "^(All|Videos|Images|News|Shopping|Books|Maps|Flights|Finance|More|Tools|Settings)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "tabs, Settings and Tools"
+    },
+    {
+      "match": "^(View all.*|Overview|Key Points|Types of .*|.*\\.\\.\\.)$",
+      "in2019": true,
+      "evidence": [
+        "s4"
+      ],
+      "note": "carousel View all and result sitelinks (content)"
+    },
+    {
+      "match": "^(Page \\d+|Next|Previous)$",
+      "in2019": true,
+      "evidence": [
+        "s4"
+      ],
+      "note": "Gooooogle pagination"
+    },
+    {
+      "match": "(From your (IP|Internet) address|Update location|Use precise location)",
+      "in2019": true,
+      "evidence": [
+        "s4"
+      ],
+      "note": "footer location line"
+    },
+    {
+      "match": "^(Help|Send feedback|Privacy|Terms|About|Advertising|Business|How Search works)$",
+      "in2019": true,
+      "evidence": [
+        "s4",
+        "s5"
+      ]
+    },
+    {
+      "match": "^(How|What|Why|When|Where|Who|Do|Does|Is|Are|Can|Explaining|The) .*",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s4"
+      ],
+      "note": "result titles and related searches (content)"
+    },
+    {
+      "match": "^(People also ask|Others also ask|Related questions)$",
+      "in2019": false,
+      "evidence": [
+        "the user asked for People also ask to be removed; it now expands into AI answers"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(AI Overview|AI Mode|Dive deeper in AI Mode|Ask anything in AI Mode|Things to know|What people are saying|Discussions and forums|Short videos|Perspectives|From sources across the web)$",
+      "in2019": false,
+      "evidence": [
+        "AI Overview 2024, AI Mode 2025, forums/short videos/perspectives 2023"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Share|Read more|About this result|Search by image|Customize|Preferred sources)$",
+      "in2019": false,
+      "evidence": [
+        "SERP Share 2023, snippet Read more 2024, About this result 2021, Lens button 2022"
+      ],
+      "action": "hidden"
+    }
   ]
 }

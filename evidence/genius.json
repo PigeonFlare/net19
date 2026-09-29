@@ -6,64 +6,55 @@
    "id": "home-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190302110937/https://genius.com/",
    "date": "2019-03-02",
-   "shows": "home page as served on 2019-03-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/genius/genius-home-a201903.png"
+   "shows": "home page as served on 2019-03-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "home-a201907",
    "url": "https://arquivo.pt/noFrame/replay/20190701022109/https://genius.com/",
    "date": "2019-07-01",
-   "shows": "home page as served on 2019-07-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/genius/genius-home-a201907.png"
+   "shows": "home page as served on 2019-07-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "home-a201911",
    "url": "https://arquivo.pt/noFrame/replay/20191102202654/https://genius.com/",
    "date": "2019-11-02",
-   "shows": "home page as served on 2019-11-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/genius/genius-home-a201911.png"
+   "shows": "home page as served on 2019-11-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "song-a201910",
    "url": "https://arquivo.pt/noFrame/replay/20191008011900/https://genius.com/Drake-hotline-bling-lyrics",
    "date": "2019-10-08",
-   "shows": "song page as served on 2019-10-08 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/genius/genius-song-a201910.png"
+   "shows": "song page as served on 2019-10-08 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "song-a201908",
    "url": "https://arquivo.pt/noFrame/replay/20190806091921/https://genius.com/Queen-bohemian-rhapsody-lyrics",
    "date": "2019-08-06",
-   "shows": "song page as served on 2019-08-06 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/genius/genius-song-a201908.png"
+   "shows": "song page as served on 2019-08-06 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "song-a201906",
    "url": "https://arquivo.pt/noFrame/replay/20190619210642/https://genius.com/Drake-money-in-the-grave-lyrics",
    "date": "2019-06-19",
-   "shows": "song page as served on 2019-06-19 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/genius/genius-song-a201906.png"
+   "shows": "song page as served on 2019-06-19 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "album-a201909",
    "url": "https://arquivo.pt/noFrame/replay/20190908102146/https://genius.com/albums/2pac/Greatest-hits",
    "date": "2019-09-08",
-   "shows": "album page as served on 2019-09-08 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/genius/genius-album-a201909.png"
+   "shows": "album page as served on 2019-09-08 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "artist-a201906",
    "url": "https://arquivo.pt/noFrame/replay/20190619210625/https://genius.com/artists/Drake",
    "date": "2019-06-19",
-   "shows": "artist page as served on 2019-06-19 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/genius/genius-artist-a201906.png"
+   "shows": "artist page as served on 2019-06-19 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "search-a201910",
    "url": "https://arquivo.pt/noFrame/replay/20191008004719/https://genius.com/search?q=stan+smiths",
    "date": "2019-10-08",
-   "shows": "search page as served on 2019-10-08 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/genius/genius-search-a201910.png"
+   "shows": "search page as served on 2019-10-08 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   }
  ],
  "features": [

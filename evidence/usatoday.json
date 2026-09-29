@@ -6,29 +6,25 @@
       "id": "s1",
       "url": "https://www.google.com/search?udm=2&q=usatoday.com+website+2019+screenshot",
       "date": "2019",
-      "shows": "Google Images: USA TODAY 2019 captures (America's Newspapers 'Pilots Assoc: After Boeing 737 Max crashes' article page, Alamy homepage photo): blue-dot logo, uppercase nav, white cards",
-      "file": "g7-evidence/usatoday/gimg-home.jpg"
+      "shows": "Google Images: USA TODAY 2019 captures (America's Newspapers 'Pilots Assoc: After Boeing 737 Max crashes' article page, Alamy homepage photo): blue-dot logo, uppercase nav, white cards"
     },
     {
       "id": "s2",
       "url": "https://web.archive.org/web/20190916001135/https://www.usatoday.com/",
       "date": "2019-09-16",
-      "shows": "homepage and HTML: blue dot USA TODAY logo, SUBSCRIBE NOW to get home delivery, nav NEWS SPORTS ENTERTAINMENT LIFE MONEY TECH TRAVEL OPINION, weather, CROSSWORDS, INVESTIGATIONS, MORE, search; hero with Read Story, TOP STORIES rail, Share your feedback, AD CONTENT by Taboola, RIGHT NOW; footer (About us, Newsroom staff, Ethical principles, Corrections, Press room, Accessibility support, Sitemap, Terms of Service, Privacy Policy, Ad Choices, Contact us, Help Center, Manage account, Get home delivery, e-Edition, USA TODAY Shop, Reprints & Permissions, Advertise, Careers, Internships, News tips, Podcasts, Newsletters, Mobile apps, Facebook, Twitter, Instagram, LinkedIn, Pinterest, Reviewed, Sign in)",
-      "file": "g7-evidence/usatoday/wb-usatoday-home.png"
+      "shows": "homepage and HTML: blue dot USA TODAY logo, SUBSCRIBE NOW to get home delivery, nav NEWS SPORTS ENTERTAINMENT LIFE MONEY TECH TRAVEL OPINION, weather, CROSSWORDS, INVESTIGATIONS, MORE, search; hero with Read Story, TOP STORIES rail, Share your feedback, AD CONTENT by Taboola, RIGHT NOW; footer (About us, Newsroom staff, Ethical principles, Corrections, Press room, Accessibility support, Sitemap, Terms of Service, Privacy Policy, Ad Choices, Contact us, Help Center, Manage account, Get home delivery, e-Edition, USA TODAY Shop, Reprints & Permissions, Advertise, Careers, Internships, News tips, Podcasts, Newsletters, Mobile apps, Facebook, Twitter, Instagram, LinkedIn, Pinterest, Reviewed, Sign in)"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20190410234202/https://www.usatoday.com/",
       "date": "2019-04-10",
-      "shows": "homepage (April): same header and nav, INVESTIGATIONS, hero carousel arrows, TOP STORIES",
-      "file": "g7-evidence/usatoday/wb-usatoday-home-apr.png"
+      "shows": "homepage (April): same header and nav, INVESTIGATIONS, hero carousel arrows, TOP STORIES"
     },
     {
       "id": "s4",
       "url": "https://web.archive.org/web/20200102133229/https://www.usatoday.com/story/news/nation/2019/09/14/jarrid-wilsons-suicide-forces-churches-confront-mental-health/2313458001/",
       "date": "2019-09 story (captured 2020-01)",
-      "shows": "article: card on grey backdrop with close X, left share rail (Facebook, Twitter, LinkedIn, email, comments), headline, byline and Published/Updated, video, Share your feedback",
-      "file": "g7-evidence/usatoday/wb-usatoday-article.png"
+      "shows": "article: card on grey backdrop with close X, left share rail (Facebook, Twitter, LinkedIn, email, comments), headline, byline and Published/Updated, video, Share your feedback"
     }
   ],
   "features": [

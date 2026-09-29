@@ -6,14 +6,12 @@
       "id": "s1",
       "url": "https://web.archive.org/web/20190615182540/https://www.seznam.cz/",
       "date": "2019-06-15",
-      "file": "/home/claude/sweeps/g9-evidence/wb/seznam-home.png",
       "shows": "homepage: header Nastavení / Přihlásit, red Seznam logo, service tabs Internet/Firmy/Mapy/Zboží/Obrázky/Slovník/Jízdní řády/Video above the search field '…najdu tam, co neznám' and Vyhledat, trending searches, news boxes (Seznam Zprávy, Novinky, Sport, Extra LIFE, Dotyk, Euro, Náš region) with 'Líbí se' likes and 'Skrýt článek', Upravte si boxík, login box (jméno/heslo), footer Kariéra / Nápověda / O Seznamu / Ochrana údajů / Reklama / Smluvní podmínky"
     },
     {
       "id": "s2",
       "url": "https://web.archive.org/web/2019/https://search.seznam.cz/",
       "date": "2019",
-      "file": "(no 2019 capture of search.seznam.cz exists; the result page was not verified against 2019)",
       "shows": "—"
     }
   ],

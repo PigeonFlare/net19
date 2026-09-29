@@ -2,17 +2,84 @@
   "theme": "gaccount",
   "era": "2019 Google Account: the 2018 Material redesign (Google Account wordmark, grey 'Search Google Account' field, left nav Home / Personal info / Data & personalization / Security / People & sharing / Payments & subscriptions with grey Material icons and a blue pill for the current page, round photo, 'Welcome, name' and bordered cards)",
   "sources": [
-    { "id": "s1", "url": "https://techviral.net/remove-third-party-app-access-to-your-google-account/", "date": "2019-09 (image uploaded 2019/09)", "shows": "Home: header wordmark, search, apps, account; nav Home, Personal info, Data & personalization, Security, People & sharing, Payments & subscriptions, Help, Send feedback; photo; Welcome; Privacy & personalization and security cards", "file": "/home/claude/sweeps/g1-evidence/gaccount/s1-techviral-2019-09.jpg" },
-    { "id": "s2", "url": "https://gadgetstouse.com/blog/2019/07/31/how-to-check-and-delete-your-google-search-history/", "date": "2019-07", "shows": "Home with 'Security issues found' card; Data & personalization page with Activity and timeline (My Activity), Things you create and do", "file": "/home/claude/sweeps/g1-evidence/gaccount/s2-gadgetstouse-02.png" }
+    {
+      "id": "s1",
+      "url": "https://techviral.net/remove-third-party-app-access-to-your-google-account/",
+      "date": "2019-09 (image uploaded 2019/09)",
+      "shows": "Home: header wordmark, search, apps, account; nav Home, Personal info, Data & personalization, Security, People & sharing, Payments & subscriptions, Help, Send feedback; photo; Welcome; Privacy & personalization and security cards"
+    },
+    {
+      "id": "s2",
+      "url": "https://gadgetstouse.com/blog/2019/07/31/how-to-check-and-delete-your-google-search-history/",
+      "date": "2019-07",
+      "shows": "Home with 'Security issues found' card; Data & personalization page with Activity and timeline (My Activity), Things you create and do"
+    }
   ],
   "features": [
-    { "match": "^(banner|contentinfo|menubar|toolbar|main) area$|^Navigation menu$", "in2019": true, "evidence": ["s1"] },
-    { "match": "^repeated ", "in2019": true, "evidence": ["s1"] },
-    { "match": "^(Google Account|Google apps|Search Google Account|Main menu|Help|Send feedback|Privacy|Terms|About|View Google's (Privacy Policy|Terms of Service)|Learn more)$", "in2019": true, "evidence": ["s1", "s2"], "note": "header, search and footer; Help sits in the header now" },
-    { "match": "^(Home|Personal info|Data & personalization|Security|People & sharing|Payments & subscriptions)\\1?$|^(HomeHome|Personal infoPersonal info|Data & personalizationData & personalization|SecuritySecurity|People & sharingPeople & sharing|Payments & subscriptionsPayments & subscriptions)$", "in2019": true, "evidence": ["s1", "s2"], "note": "nav (Wallet & subscriptions, Security & sign-in and Data & privacy are relabelled to their 2019 names)" },
-    { "match": "^(Go to Personal info|My Activity)$", "in2019": true, "evidence": ["s1", "s2"], "note": "photo link to Personal info; My Activity" },
-    { "match": "^(Account User|Welcome, .*)$", "in2019": true, "evidence": ["s1"], "note": "the account name heading (content)" },
-    { "match": "^(Set a home address for your Google Account|Set home address|Dismiss|Show more recommendations.*|Show more)$", "in2019": true, "evidence": ["s2"], "note": "recommendation card ('Security issues found' / 'Privacy suggestions' cards in 2019)" },
-    { "match": "^(Google password|Linked apps|Family|Google AI .* plan|Wallet & subscriptions|Security & sign-in|Data & privacy|My password|Devices|Password Manager|Email)(\\1)?", "in2019": false, "evidence": ["Google password and Linked apps nav 2025, Family nav 2024, quick-access chips 2023, AI plans 2024"], "action": "hidden" }
+    {
+      "match": "^(banner|contentinfo|menubar|toolbar|main) area$|^Navigation menu$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ]
+    },
+    {
+      "match": "^repeated ",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ]
+    },
+    {
+      "match": "^(Google Account|Google apps|Search Google Account|Main menu|Help|Send feedback|Privacy|Terms|About|View Google's (Privacy Policy|Terms of Service)|Learn more)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "header, search and footer; Help sits in the header now"
+    },
+    {
+      "match": "^(Home|Personal info|Data & personalization|Security|People & sharing|Payments & subscriptions)\\1?$|^(HomeHome|Personal infoPersonal info|Data & personalizationData & personalization|SecuritySecurity|People & sharingPeople & sharing|Payments & subscriptionsPayments & subscriptions)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "nav (Wallet & subscriptions, Security & sign-in and Data & privacy are relabelled to their 2019 names)"
+    },
+    {
+      "match": "^(Go to Personal info|My Activity)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "photo link to Personal info; My Activity"
+    },
+    {
+      "match": "^(Account User|Welcome, .*)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "the account name heading (content)"
+    },
+    {
+      "match": "^(Set a home address for your Google Account|Set home address|Dismiss|Show more recommendations.*|Show more)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "recommendation card ('Security issues found' / 'Privacy suggestions' cards in 2019)"
+    },
+    {
+      "match": "^(Google password|Linked apps|Family|Google AI .* plan|Wallet & subscriptions|Security & sign-in|Data & privacy|My password|Devices|Password Manager|Email)(\\1)?",
+      "in2019": false,
+      "evidence": [
+        "Google password and Linked apps nav 2025, Family nav 2024, quick-access chips 2023, AI plans 2024"
+      ],
+      "action": "hidden"
+    }
   ]
 }

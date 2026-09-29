@@ -6,29 +6,25 @@
    "id": "home-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190314202940/https://weather.com/",
    "date": "2019-03-14",
-   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/weather/weather-home-a201903.png"
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "home-a201907",
    "url": "https://arquivo.pt/noFrame/replay/20190724010136/https://weather.com/",
    "date": "2019-07-24",
-   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/weather/weather-home-a201907.png"
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "home-a201911",
    "url": "https://arquivo.pt/noFrame/replay/20191122012556/https://weather.com/",
    "date": "2019-11-22",
-   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/weather/weather-home-a201911.png"
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "home-wbref",
    "url": "wayback-2019-ref:https://weather.com/",
    "date": "2019",
-   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)",
-   "file": "g11-evidence/weather/weather-home-wbref.png"
+   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)"
   }
  ],
  "features": [

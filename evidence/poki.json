@@ -6,41 +6,31 @@
       "id": "s1",
       "url": "https://arquivo.pt/noFrame/replay/20190619005436/https://poki.com/",
       "date": "2019-06-19",
-      "shows": "poki.com front page 2019: mint #83ffe7 page tiled with bg-diamonds.png, logo tile with home and search buttons, rounded game tile grid with NEW/flame badges, category tiles (image tiles and white text tiles), \"About Poki / Free online games\" text box, footer: logo \"Let the world play\", About us / Developers / Jobs / Poki Kids / Privacy Policy / Terms of Use / Contact, Facebook / Twitter / Youtube, country selector",
-      "file": "/home/claude/sweeps/g13-evidence/poki/home-a20190619.png",
-      "raw": "/home/claude/sweeps/g13-raw/poki-home-a20190619.html"
+      "shows": "poki.com front page 2019: mint #83ffe7 page tiled with bg-diamonds.png, logo tile with home and search buttons, rounded game tile grid with NEW/flame badges, category tiles (image tiles and white text tiles), \"About Poki / Free online games\" text box, footer: logo \"Let the world play\", About us / Developers / Jobs / Poki Kids / Privacy Policy / Terms of Use / Contact, Facebook / Twitter / Youtube, country selector"
     },
     {
       "id": "s2",
       "url": "https://arquivo.pt/noFrame/replay/20191002050203/https://poki.com/",
       "date": "2019-10-02",
-      "shows": "poki.com front page 2019: mint #83ffe7 page tiled with bg-diamonds.png, logo tile with home and search buttons, rounded game tile grid with NEW/flame badges, category tiles (image tiles and white text tiles), \"About Poki / Free online games\" text box, footer: logo \"Let the world play\", About us / Developers / Jobs / Poki Kids / Privacy Policy / Terms of Use / Contact, Facebook / Twitter / Youtube, country selector",
-      "file": "/home/claude/sweeps/g13-evidence/poki/home-a20191002.png",
-      "raw": "/home/claude/sweeps/g13-raw/poki-home-a20191002.html"
+      "shows": "poki.com front page 2019: mint #83ffe7 page tiled with bg-diamonds.png, logo tile with home and search buttons, rounded game tile grid with NEW/flame badges, category tiles (image tiles and white text tiles), \"About Poki / Free online games\" text box, footer: logo \"Let the world play\", About us / Developers / Jobs / Poki Kids / Privacy Policy / Terms of Use / Contact, Facebook / Twitter / Youtube, country selector"
     },
     {
       "id": "s5",
       "url": "https://arquivo.pt/noFrame/replay/20190921081407/https://poki.com/en/g/crossy-road",
       "date": "2019-09-21",
-      "shows": "game page (Crossy Road): game frame with title bar \"by Hipster Whale\", \"More from Crossy Road\", thumbsUp rating counts (rating up_count/down_count), description with Read more, related game tiles",
-      "file": "/home/claude/sweeps/g13-evidence/poki/game-a20190921.png",
-      "raw": "/home/claude/sweeps/g13-raw/poki-game-a20190921.html"
+      "shows": "game page (Crossy Road): game frame with title bar \"by Hipster Whale\", \"More from Crossy Road\", thumbsUp rating counts (rating up_count/down_count), description with Read more, related game tiles"
     },
     {
       "id": "s6",
       "url": "https://arquivo.pt/noFrame/replay/20191213064519/https://poki.com/en/g/crossy-road",
       "date": "2019-12-13",
-      "shows": "game page (Crossy Road): game frame with title bar \"by Hipster Whale\", \"More from Crossy Road\", thumbsUp rating counts (rating up_count/down_count), description with Read more, related game tiles",
-      "file": "/home/claude/sweeps/g13-evidence/poki/game-a20191213.png",
-      "raw": "/home/claude/sweeps/g13-raw/poki-game-a20191213.html"
+      "shows": "game page (Crossy Road): game frame with title bar \"by Hipster Whale\", \"More from Crossy Road\", thumbsUp rating counts (rating up_count/down_count), description with Read more, related game tiles"
     },
     {
       "id": "s7",
       "url": "https://arquivo.pt/noFrame/replay/20191010153631/https://poki.com/en/g/tunnel-rush",
       "date": "2019-10-10",
-      "shows": "game page (Tunnel Rush)",
-      "file": "/home/claude/sweeps/g13-evidence/poki/game2-a20191010.png",
-      "raw": "/home/claude/sweeps/g13-raw/poki-game2-a20191010.html"
+      "shows": "game page (Tunnel Rush)"
     }
   ],
   "features": [

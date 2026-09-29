@@ -6,36 +6,31 @@
    "id": "converter-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190301214709/https://www.oanda.com/currency/converter/",
    "date": "2019-03-01",
-   "shows": "converter page as served on 2019-03-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/oanda/oanda-converter-a201903.png"
+   "shows": "converter page as served on 2019-03-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "converter-a201907",
    "url": "https://arquivo.pt/noFrame/replay/20190701043803/https://www1.oanda.com/currency/converter/",
    "date": "2019-07-01",
-   "shows": "converter page as served on 2019-07-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/oanda/oanda-converter-a201907.png"
+   "shows": "converter page as served on 2019-07-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "converter-a201911",
    "url": "https://arquivo.pt/noFrame/replay/20191101220433/https://www1.oanda.com/currency/converter/",
    "date": "2019-11-01",
-   "shows": "converter page as served on 2019-11-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/oanda/oanda-converter-a201911.png"
+   "shows": "converter page as served on 2019-11-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "home-a201901",
    "url": "https://arquivo.pt/noFrame/replay/20190101212708/https://www.oanda.com/",
    "date": "2019-01-01",
-   "shows": "home page as served on 2019-01-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/oanda/oanda-home-a201901.png"
+   "shows": "home page as served on 2019-01-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "home-a201905",
    "url": "https://arquivo.pt/noFrame/replay/20190512052414/https://www1.oanda.com/",
    "date": "2019-05-12",
-   "shows": "home page as served on 2019-05-12 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/oanda/oanda-home-a201905.png"
+   "shows": "home page as served on 2019-05-12 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   }
  ],
  "features": [

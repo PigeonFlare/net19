@@ -6,14 +6,12 @@
       "id": "s1",
       "url": "https://blog.deinhandy.de/telegram-web-im-browser-nutzen-so-funktionierts",
       "date": "2019-09",
-      "file": "/home/claude/sweeps/g4-evidence/telegram/web-2019-09-deinhandy-1.jpg",
       "shows": "web.telegram.org sign-in: blue band with logo, Telegram and Next, white Sign in card, phone form"
     },
     {
       "id": "s2",
       "url": "https://blog.deinhandy.de/telegram-web-im-browser-nutzen-so-funktionierts",
       "date": "2019-09",
-      "file": "/home/claude/sweeps/g4-evidence/telegram/web-2019-09-deinhandy-2.jpg",
       "shows": "code step of the same sign-in"
     },
     {
@@ -26,14 +24,12 @@
       "id": "s4",
       "url": "https://linuxkamarada.com/en/2019/08/12/20-apps-you-can-use-the-same-way-on-both-linux-and-windows-part-2/",
       "date": "2019-08-12",
-      "file": "/home/claude/sweeps/g4-evidence/telegram/telegram-desktop-2019-08-linuxkamarada.jpg",
       "shows": "2019 Telegram chat list and conversation layout"
     },
     {
       "id": "s5",
       "url": "https://web.archive.org/web/20190614232053/http://web.telegram.org/",
       "date": "2019-06-14",
-      "file": "/home/claude/sweeps/g4-evidence/telegram/wb-201906.html",
       "shows": "the webogram app shell served in June 2019"
     }
   ],

@@ -6,29 +6,25 @@
    "id": "home-h201903",
    "url": "https://arquivo.pt/noFrame/replay/20190319140133/https://www.ca.gov/",
    "date": "2019-03-19",
-   "shows": "home page as served in 2019-03 (Arquivo.pt capture HTML, labels read from the archived markup)",
-   "file": "g11-evidence/html/cagov-home-h201903.html"
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture HTML, labels read from the archived markup)"
   },
   {
    "id": "home-h201907",
    "url": "https://arquivo.pt/noFrame/replay/20190715142723/https://www.ca.gov/",
    "date": "2019-07-15",
-   "shows": "home page as served in 2019-07 (Arquivo.pt capture HTML, labels read from the archived markup)",
-   "file": "g11-evidence/html/cagov-home-h201907.html"
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture HTML, labels read from the archived markup)"
   },
   {
    "id": "home-h201911",
    "url": "https://arquivo.pt/noFrame/replay/20191114064812/https://www.ca.gov/",
    "date": "2019-11-14",
-   "shows": "home page as served in 2019-11 (Arquivo.pt capture HTML, labels read from the archived markup)",
-   "file": "g11-evidence/html/cagov-home-h201911.html"
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture HTML, labels read from the archived markup)"
   },
   {
    "id": "home-wbref",
    "url": "wayback-2019-ref:https://www.ca.gov/",
    "date": "2019",
-   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)",
-   "file": "g11-evidence/cagov/cagov-home-wbref.png"
+   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)"
   }
  ],
  "features": [

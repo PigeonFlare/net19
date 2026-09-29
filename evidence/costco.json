@@ -6,28 +6,24 @@
       "id": "s1",
       "url": "https://web.archive.org/web/20190630230251/https://www.costco.com/",
       "date": "2019-06-30",
-      "file": "/home/claude/sweeps/g6-evidence/costco/home-wb-2019-06.jpg",
       "shows": "home: utility links View Warehouse Savings / Find a Warehouse / Get Email Offers / Customer Service / US, logo, All + Search, Sign In / Register, Cart, blue bar Shop All Departments / Grocery / Business Delivery / Optical / Pharmacy / Services / Photo / Travel / Membership / Locations, Set Delivery ZIP Code, hero carousel, Feedback tab"
     },
     {
       "id": "s2",
       "url": "https://web.archive.org/web/20190731225440/https://www.costco.com/televisions.html",
       "date": "2019-07-31",
-      "file": "/home/claude/sweeps/g6-evidence/costco/search-wb-2019-07-category.jpg",
       "shows": "Televisions category/results page with the same header, filters and product tiles"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20190801000443/https://www.costco.com/Bali-Window-Treatments--Custom-Fit,-DIY-Installation.product.100040823.html",
       "date": "2019-08-01",
-      "file": "/home/claude/sweeps/g6-evidence/costco/item-wb-2019-08.jpg",
       "shows": "product page: Lists | Reorder, 2-Day Delivery current order bar, Print, Item number, promotion text, Features, Share icons, image"
     },
     {
       "id": "s4",
       "url": "https://web.archive.org/web/20190630230251/https://www.costco.com/",
       "date": "2019-06-30",
-      "file": "/home/claude/sweeps/g6-evidence/costco/home-wb-2019-06-footer.jpg",
       "shows": "2019 footer: Customer Service / Find a Warehouse / Get Email Offers (field + Go) / Follow Us (Facebook, Pinterest); About Us, Membership, Customer Service, Locations & Services, Vendors & Suppliers columns; Site Map, Terms and Conditions, Your Privacy Rights, Feedback"
     }
   ],

@@ -6,64 +6,55 @@
       "id": "s1",
       "url": "https://www.reddit.com/r/Instagram/comments/avsbrc/instagram_web_showing_an_accurate_description_of/",
       "date": "2019-02",
-      "shows": "signed-in feed: top bar with search and compass/heart/person, feed column, right rail with Stories box 'Watch All' and 'Suggestions For You' 'See All'",
-      "file": "g5-evidence/instagram/home-06.jpg"
+      "shows": "signed-in feed: top bar with search and compass/heart/person, feed column, right rail with Stories box 'Watch All' and 'Suggestions For You' 'See All'"
     },
     {
       "id": "s2",
       "url": "https://www.digitaltrends.com/social-media/how-to-view-instagram-stories-on-your-computer/",
       "date": "2019",
-      "shows": "right-rail Stories box with names and 'N HOURS AGO', 'Watch All'",
-      "file": "g5-evidence/instagram/home-07.jpg"
+      "shows": "right-rail Stories box with names and 'N HOURS AGO', 'Watch All'"
     },
     {
       "id": "s3",
       "url": "https://www.howtogeek.com/668101/how-to-use-instagram-on-the-web-from-your-computer/",
       "date": "2019-2020",
-      "shows": "top bar with home/compass/heart/profile icons, right rail profile card and Stories box",
-      "file": "g5-evidence/instagram/home-05.jpg"
+      "shows": "top bar with home/compass/heart/profile icons, right rail profile card and Stories box"
     },
     {
       "id": "s4",
       "url": "https://redlillystrategies.com.au/how-to-use-instagram-on-desktop/",
       "date": "2019",
-      "shows": "profile: glyph|wordmark bar, search, icons; username + Edit Profile + gear; POSTS/IGTV/SAVED/TAGGED; footer ABOUT US SUPPORT PRESS API JOBS PRIVACY TERMS DIRECTORY PROFILES HASHTAGS LANGUAGE",
-      "file": "g5-evidence/instagram/profile-03.jpg"
+      "shows": "profile: glyph|wordmark bar, search, icons; username + Edit Profile + gear; POSTS/IGTV/SAVED/TAGGED; footer ABOUT US SUPPORT PRESS API JOBS PRIVACY TERMS DIRECTORY PROFILES HASHTAGS LANGUAGE"
     },
     {
       "id": "s5",
       "url": "https://www.dailymotion.com/video/x8jt37w",
       "date": "2019",
-      "shows": "profile with '© 2019 INSTAGRAM' footer, Edit Profile inline, POSTS IGTV SAVED TAGGED",
-      "file": "g5-evidence/instagram/profile-07.jpg"
+      "shows": "profile with '© 2019 INSTAGRAM' footer, Edit Profile inline, POSTS IGTV SAVED TAGGED"
     },
     {
       "id": "s6",
       "url": "https://www.webdesignmuseum.org/gallery/instagram-2019",
       "date": "2019",
-      "shows": "logged-out landing: phone art, white box with wordmark, fields, Sign up, 'Have an account? Log in', footer",
-      "file": "g5-evidence/instagram/wdm-2019.jpg"
+      "shows": "logged-out landing: phone art, white box with wordmark, fields, Sign up, 'Have an account? Log in', footer"
     },
     {
       "id": "s7",
       "url": "https://web.archive.org/web/2019/https://www.instagram.com/",
       "date": "2019",
-      "shows": "Wayback render of the logged-out landing",
-      "file": "g5-evidence/instagram/wb-2019-home.png"
+      "shows": "Wayback render of the logged-out landing"
     },
     {
       "id": "s8",
       "url": "https://web.archive.org/web/2019/https://www.instagram.com/instagram/",
       "date": "2019",
-      "shows": "logged-out profile: bar with search, Log In / Sign Up; 150px avatar; POSTS IGTV TAGGED; bottom 'Log in to Instagram' strip (no modal)",
-      "file": "g5-evidence/instagram/wb-2019-profile.png"
+      "shows": "logged-out profile: bar with search, Log In / Sign Up; 150px avatar; POSTS IGTV TAGGED; bottom 'Log in to Instagram' strip (no modal)"
     },
     {
       "id": "s9",
       "url": "https://www.businessinsider.com/instagram-direct-messages-desktop-web-browser-rollout-how-to-use-2020-4",
       "date": "2020-04",
-      "shows": "Direct messages arrive on the web in April 2020 (post-2019)",
-      "file": "g5-evidence/instagram/feed-03.jpg"
+      "shows": "Direct messages arrive on the web in April 2020 (post-2019)"
     }
   ],
   "features": [

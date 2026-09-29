@@ -6,116 +6,90 @@
       "id": "s1",
       "url": "https://arquivo.pt/noFrame/replay/20190411023926/https://itch.io/",
       "date": "2019-04-11",
-      "shows": "itch.io front page: header Browse Games / Game Jams / Upload Game / Devlogs / Community, search field, Log in / Register; left column Popular tags, Browse, Games by price, Download app, From the itch.io blog; featured banner; Latest Featured Games grid with #tags",
-      "file": "/home/claude/sweeps/g13-evidence/itchio/home-a201904.png",
-      "raw": "/home/claude/sweeps/g13-raw/itchio-home-a201904.html"
+      "shows": "itch.io front page: header Browse Games / Game Jams / Upload Game / Devlogs / Community, search field, Log in / Register; left column Popular tags, Browse, Games by price, Download app, From the itch.io blog; featured banner; Latest Featured Games grid with #tags"
     },
     {
       "id": "s2",
       "url": "https://arquivo.pt/noFrame/replay/20190709055153/https://itch.io/",
       "date": "2019-07-09",
-      "shows": "itch.io front page: header Browse Games / Game Jams / Upload Game / Devlogs / Community, search field, Log in / Register; left column Popular tags, Browse, Games by price, Download app, From the itch.io blog; featured banner; Latest Featured Games grid with #tags",
-      "file": "/home/claude/sweeps/g13-evidence/itchio/home-a201907.png",
-      "raw": "/home/claude/sweeps/g13-raw/itchio-home-a201907.html"
+      "shows": "itch.io front page: header Browse Games / Game Jams / Upload Game / Devlogs / Community, search field, Log in / Register; left column Popular tags, Browse, Games by price, Download app, From the itch.io blog; featured banner; Latest Featured Games grid with #tags"
     },
     {
       "id": "s3",
       "url": "https://arquivo.pt/noFrame/replay/20190902140501/https://itch.io/",
       "date": "2019-09-02",
-      "shows": "itch.io front page: header Browse Games / Game Jams / Upload Game / Devlogs / Community, search field, Log in / Register; left column Popular tags, Browse, Games by price, Download app, From the itch.io blog; featured banner; Latest Featured Games grid with #tags",
-      "file": "/home/claude/sweeps/g13-evidence/itchio/home-a201909.png",
-      "raw": "/home/claude/sweeps/g13-raw/itchio-home-a201909.html"
+      "shows": "itch.io front page: header Browse Games / Game Jams / Upload Game / Devlogs / Community, search field, Log in / Register; left column Popular tags, Browse, Games by price, Download app, From the itch.io blog; featured banner; Latest Featured Games grid with #tags"
     },
     {
       "id": "s4",
       "url": "https://arquivo.pt/noFrame/replay/20190624063920/https://itch.io/games",
       "date": "2019-06-24",
-      "shows": "browse page: Filter Results sidebar (Platform, Price, When, Genre), Top Games heading with the classification picker, Sort by tabs, tag row, game grid",
-      "file": "/home/claude/sweeps/g13-evidence/itchio/games-a201906.png",
-      "raw": "/home/claude/sweeps/g13-raw/itchio-games-a201906.html"
+      "shows": "browse page: Filter Results sidebar (Platform, Price, When, Genre), Top Games heading with the classification picker, Sort by tabs, tag row, game grid"
     },
     {
       "id": "s5",
       "url": "https://arquivo.pt/noFrame/replay/20191028051532/https://itch.io/games",
       "date": "2019-10-28",
-      "shows": "browse page: Filter Results sidebar (Platform, Price, When, Genre), Top Games heading with the classification picker, Sort by tabs, tag row, game grid",
-      "file": "/home/claude/sweeps/g13-evidence/itchio/games-a201910.png",
-      "raw": "/home/claude/sweeps/g13-raw/itchio-games-a201910.html"
+      "shows": "browse page: Filter Results sidebar (Platform, Price, When, Genre), Top Games heading with the classification picker, Sort by tabs, tag row, game grid"
     },
     {
       "id": "s6",
       "url": "https://arquivo.pt/noFrame/replay/20190827140905/https://itch.io/login",
       "date": "2019-08-27",
-      "shows": "log-in form",
-      "file": "/home/claude/sweeps/g13-evidence/itchio/login-a201908.png",
-      "raw": "/home/claude/sweeps/g13-raw/itchio-login-a201908.html"
+      "shows": "log-in form"
     },
     {
       "id": "s7",
       "url": "https://arquivo.pt/noFrame/replay/20190915160021/https://itch.io/jams",
       "date": "2019-09-15",
-      "shows": "Game Jams on itch.io, Browse Jams, Jam Calendar",
-      "file": "/home/claude/sweeps/g13-evidence/itchio/jams-a201909.png",
-      "raw": "/home/claude/sweeps/g13-raw/itchio-jams-a201909.html"
+      "shows": "Game Jams on itch.io, Browse Jams, Jam Calendar"
     },
     {
       "id": "s8",
       "url": "https://arquivo.pt/noFrame/replay/20190524011450/https://chrismaltby.itch.io/untitled-gb-game",
       "date": "2019-05-24",
-      "shows": "game page (Untitled GB Game / GB Studio by Chris Maltby): buy row, description, More information, Download, Comments with Vote up/down/Reply",
-      "file": "/home/claude/sweeps/g13-evidence/itchio/game-a201905.png",
-      "raw": "/home/claude/sweeps/g13-raw/itchio-game-a201905.html"
+      "shows": "game page (Untitled GB Game / GB Studio by Chris Maltby): buy row, description, More information, Download, Comments with Vote up/down/Reply"
     },
     {
       "id": "s9",
       "url": "https://arquivo.pt/noFrame/replay/20190603015921/https://chrismaltby.itch.io/untitled-gb-game",
       "date": "2019-06-03",
-      "shows": "game page (Untitled GB Game / GB Studio by Chris Maltby): buy row, description, More information, Download, Comments with Vote up/down/Reply",
-      "file": "/home/claude/sweeps/g13-evidence/itchio/game-a201906.png",
-      "raw": "/home/claude/sweeps/g13-raw/itchio-game-a201906.html"
+      "shows": "game page (Untitled GB Game / GB Studio by Chris Maltby): buy row, description, More information, Download, Comments with Vote up/down/Reply"
     },
     {
       "id": "s10",
       "url": "https://arquivo.pt/noFrame/replay/20190205110316/https://cosmium.itch.io/",
       "date": "2019-02-05",
-      "shows": "creator profile page (Cosmium): name heading and game grid",
-      "file": "/home/claude/sweeps/g13-evidence/itchio/creator-a201902.png",
-      "raw": "/home/claude/sweeps/g13-raw/itchio-creator-a201902.html"
+      "shows": "creator profile page (Cosmium): name heading and game grid"
     },
     {
       "id": "s11",
       "url": "https://arquivo.pt/noFrame/replay/20190205110255/https://cosmium.itch.io/quadron",
       "date": "2019-02-05",
-      "shows": "game page",
-      "file": "/home/claude/sweeps/g13-evidence/itchio/game2-a201902.png",
-      "raw": "/home/claude/sweeps/g13-raw/itchio-game2-a201902.html"
+      "shows": "game page"
     },
     {
       "id": "s12",
       "url": "https://arquivo.pt/noFrame/replay/20190910074124/https://itch.io/games/genre-platformer",
       "date": "2019-09-10",
-      "raw": "/home/claude/sweeps/g13-raw/extra/itchio-plat.html",
       "shows": "genre page Top Platformer: Filter Results (Clear), Tags box with the tag description and \"Suggest updated description\", tag_selector (Select a tag...) and + buttons in the tag row, Toggle More Options"
     },
     {
       "id": "s13",
       "url": "https://arquivo.pt/noFrame/replay/20191015052234/https://adamstrange.itch.io/viva-mortis",
       "date": "2019-10-15",
-      "raw": "/home/claude/sweeps/g13-raw/extra/itchio-g-viva-mortis-20191015052234.html",
       "shows": "game page with \"Development log\" section listing 3 posts, no \"View all posts\" link"
     },
     {
       "id": "s14",
       "url": "https://arquivo.pt/noFrame/replay/20190916122623/https://etherane.itch.io/hello-charlotte-ep2",
       "date": "2019-09-16",
-      "raw": "/home/claude/sweeps/g13-raw/extra/itchio-g-hello-charlotte-ep2-20190916122623.html",
       "shows": "game page: buy row (Buy Now / Download Now button with price message), Development log, More information"
     },
     {
       "id": "s15",
       "url": "https://arquivo.pt/noFrame/replay/20191208041121/https://dr-d-king.itch.io/tiny-islands",
       "date": "2019-12-08",
-      "raw": "/home/claude/sweeps/g13-raw/extra/itchio-g-tiny-islands-20191208041121.html",
       "shows": "game page with paged comments (Last page)"
     }
   ],

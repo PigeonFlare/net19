@@ -6,50 +6,43 @@
    "id": "articleA-a201907",
    "url": "https://arquivo.pt/noFrame/replay/20190125120949/https://my.clevelandclinic.org/health/articles/11208-fat-what-you-need-to-know",
    "date": "2019-01-25",
-   "shows": "articleA page as served in 2019-01 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/clevelandclinic/clevelandclinic-articleA-a201907.png"
+   "shows": "articleA page as served in 2019-01 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "articleB-a201907",
    "url": "https://arquivo.pt/noFrame/replay/20190907115956/https://my.clevelandclinic.org/health/articles/10980-understanding-the-ingredients-in-skin-care-products",
    "date": "2019-09-07",
-   "shows": "articleB page as served in 2019-09 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/clevelandclinic/clevelandclinic-articleB-a201907.png"
+   "shows": "articleB page as served in 2019-09 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "articleC-a201907",
    "url": "https://arquivo.pt/noFrame/replay/20191007122309/https://my.clevelandclinic.org/health/articles/11111-nutrition-guidelines-to-improve-wound-healing",
    "date": "2019-10-07",
-   "shows": "articleC page as served in 2019-10 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/clevelandclinic/clevelandclinic-articleC-a201907.png"
+   "shows": "articleC page as served in 2019-10 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "disease-wbref",
    "url": "wayback-2019-ref:https://my.clevelandclinic.org/health/diseases/4314-hypertension-high-blood-pressure",
    "date": "2019",
-   "shows": "disease page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)",
-   "file": "g11-evidence/clevelandclinic/clevelandclinic-disease-wbref.png"
+   "shows": "disease page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)"
   },
   {
    "id": "home-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190325120724/https://my.clevelandclinic.org/",
    "date": "2019-03-25",
-   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/clevelandclinic/clevelandclinic-home-a201903.png"
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "home-a201907",
    "url": "https://arquivo.pt/noFrame/replay/20190713232953/https://my.clevelandclinic.org/",
    "date": "2019-07-13",
-   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/clevelandclinic/clevelandclinic-home-a201907.png"
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "home-a201911",
    "url": "https://arquivo.pt/noFrame/replay/20191123091034/https://my.clevelandclinic.org/",
    "date": "2019-11-23",
-   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/clevelandclinic/clevelandclinic-home-a201911.png"
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)"
   }
  ],
  "features": [

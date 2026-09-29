@@ -6,43 +6,37 @@
    "id": "311-h201903",
    "url": "https://arquivo.pt/noFrame/replay/20190330012651/https://www1.nyc.gov/311/index.page",
    "date": "2019-03-30",
-   "shows": "311 page as served in 2019-03 (Arquivo.pt capture HTML, labels read from the archived markup)",
-   "file": "g11-evidence/html/nycgov-311-h201903.html"
+   "shows": "311 page as served in 2019-03 (Arquivo.pt capture HTML, labels read from the archived markup)"
   },
   {
    "id": "311-h201911",
    "url": "https://arquivo.pt/noFrame/replay/20191115235412/https://www1.nyc.gov/311/index.page",
    "date": "2019-11-15",
-   "shows": "311 page as served in 2019-11 (Arquivo.pt capture HTML, labels read from the archived markup)",
-   "file": "g11-evidence/html/nycgov-311-h201911.html"
+   "shows": "311 page as served in 2019-11 (Arquivo.pt capture HTML, labels read from the archived markup)"
   },
   {
    "id": "home-h201903",
    "url": "https://arquivo.pt/noFrame/replay/20190315003629/https://www1.nyc.gov/",
    "date": "2019-03-15",
-   "shows": "home page as served in 2019-03 (Arquivo.pt capture HTML, labels read from the archived markup)",
-   "file": "g11-evidence/html/nycgov-home-h201903.html"
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture HTML, labels read from the archived markup)"
   },
   {
    "id": "home-h201907",
    "url": "https://arquivo.pt/noFrame/replay/20190715100833/https://www1.nyc.gov/",
    "date": "2019-07-15",
-   "shows": "home page as served in 2019-07 (Arquivo.pt capture HTML, labels read from the archived markup)",
-   "file": "g11-evidence/html/nycgov-home-h201907.html"
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture HTML, labels read from the archived markup)"
   },
   {
    "id": "home-h201911",
    "url": "https://arquivo.pt/noFrame/replay/20191115232423/https://www1.nyc.gov/",
    "date": "2019-11-15",
-   "shows": "home page as served in 2019-11 (Arquivo.pt capture HTML, labels read from the archived markup)",
-   "file": "g11-evidence/html/nycgov-home-h201911.html"
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture HTML, labels read from the archived markup)"
   },
   {
    "id": "home-wbref",
    "url": "wayback-2019-ref:https://www.nyc.gov/",
    "date": "2019",
-   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)",
-   "file": "g11-evidence/nycgov/nycgov-home-wbref.png"
+   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)"
   }
  ],
  "features": [

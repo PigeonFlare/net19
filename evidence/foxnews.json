@@ -6,43 +6,37 @@
       "id": "s1",
       "url": "https://www.google.com/search?udm=2&q=foxnews.com+homepage+2019+screenshot",
       "date": "2019",
-      "shows": "Google Images: Storybench 2019 'Fox News' obsession with AOC' homepage captures and Fox 2019 help pages: navy bar with red top rule, square FOX NEWS logo, Watch TV button, Hot Topics row, white boxes on grey",
-      "file": "g7-evidence/foxnews/gimg-home.jpg"
+      "shows": "Google Images: Storybench 2019 'Fox News' obsession with AOC' homepage captures and Fox 2019 help pages: navy bar with red top rule, square FOX NEWS logo, Watch TV button, Hot Topics row, white boxes on grey"
     },
     {
       "id": "s2",
       "url": "https://web.archive.org/web/20190916000003/https://www.foxnews.com/",
       "date": "2019-09-16",
-      "shows": "homepage and HTML: nav U.S. World Opinion Politics Entertainment Business Lifestyle TV Fox Nation Listen More, search, Watch TV, Hot Topics, Markets, ON NOW box, Exclusive Clips, Fox Nation box, footer sitemap (U.S., World, Opinion, Politics, Entertainment, Business, Lifestyle, Science, Health, TV, About: Contact Us, Careers, Media Relations, Compliance, Closed Captioning Policy, Apps & Products, Newsletters, RSS), Terms of Use, Updated Privacy Policy, social (Facebook, Twitter, Instagram, Flipboard, RSS, Email)",
-      "file": "g7-evidence/foxnews/wb-foxnews-home.png"
+      "shows": "homepage and HTML: nav U.S. World Opinion Politics Entertainment Business Lifestyle TV Fox Nation Listen More, search, Watch TV, Hot Topics, Markets, ON NOW box, Exclusive Clips, Fox Nation box, footer sitemap (U.S., World, Opinion, Politics, Entertainment, Business, Lifestyle, Science, Health, TV, About: Contact Us, Careers, Media Relations, Compliance, Closed Captioning Policy, Apps & Products, Newsletters, RSS), Terms of Use, Updated Privacy Policy, social (Facebook, Twitter, Instagram, Flipboard, RSS, Email)"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20190411000113/https://www.foxnews.com/",
       "date": "2019-04-11",
-      "shows": "homepage: Hot Topics, lead story with kicker, Exclusive Clips, Fox Nation Join Now box, 'Features & Faces'",
-      "file": "g7-evidence/foxnews/wb-foxnews-home-apr-tall.png"
+      "shows": "homepage: Hot Topics, lead story with kicker, Exclusive Clips, Fox Nation Join Now box, 'Features & Faces'"
     },
     {
       "id": "s4",
       "url": "https://web.archive.org/web/20191205164902/https://www.foxnews.com/politics/biden-recounts-bizarre-razor-and-chain-showdown-with-bad-dude-gang-leader-cornpop",
       "date": "2019-09",
-      "shows": "article: eyebrow, Published/Last Update, 44px black headline, byline 'By … | Fox News', round share icons (Facebook, Twitter, Flipboard, comments, print, email), right rail",
-      "file": "g7-evidence/foxnews/wb-foxnews-article.png"
+      "shows": "article: eyebrow, Published/Last Update, 44px black headline, byline 'By … | Fox News', round share icons (Facebook, Twitter, Flipboard, comments, print, email), right rail"
     },
     {
       "id": "s5",
       "url": "https://www.webdesignmuseum.org/",
       "date": "2019",
-      "shows": "Web Design Museum 2019 Fox News capture (top)",
-      "file": "g7-evidence/foxnews/wdm-2019-top.png"
+      "shows": "Web Design Museum 2019 Fox News capture (top)"
     },
     {
       "id": "s6",
       "url": "https://web.archive.org/web/20201111231131/https://www.foxnews.com/search-results/search?q=trump",
       "date": "2020-11 (same search design as 2019)",
-      "shows": "search: 'Showing 10 out of N results found for:', field with red Search button, By Content select, Date Range MM/DD/YYYY selects, result rows with category, time, blue title, snippet",
-      "file": "g7-evidence/foxnews/wb-foxnews-search-2020.png"
+      "shows": "search: 'Showing 10 out of N results found for:', field with red Search button, By Content select, Date Range MM/DD/YYYY selects, result rows with category, time, blue title, snippet"
     }
   ],
   "features": [

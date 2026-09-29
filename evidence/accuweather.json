@@ -6,29 +6,25 @@
    "id": "forecast-html-201912",
    "url": "https://arquivo.pt/noFrame/replay/20191209055121/https://www.accuweather.com/en/us/new-york/10007/weather-forecast/349727",
    "date": "2019-12-09",
-   "shows": "archived New York forecast page HTML: Current Weather, Today, Tonight, Tomorrow, Looking Ahead, New York Weather Radar, More Maps, MinuteCast, Hourly, Daily, Month, Allergies, Recent/Popular Locations, news and the full menu",
-   "file": "g11-evidence/accuweather/accuweather-forecast-201912.html"
+   "shows": "archived New York forecast page HTML: Current Weather, Today, Tonight, Tomorrow, Looking Ahead, New York Weather Radar, More Maps, MinuteCast, Hourly, Daily, Month, Allergies, Recent/Popular Locations, news and the full menu"
   },
   {
    "id": "forecast-a201907",
    "url": "https://arquivo.pt/noFrame/replay/20191209055121/https://www.accuweather.com/en/us/new-york/10007/weather-forecast/349727",
    "date": "2019-12-09",
-   "shows": "forecast page as served in 2019-12 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/accuweather/accuweather-forecast-a201907.png"
+   "shows": "forecast page as served in 2019-12 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "home-a201911",
    "url": "https://arquivo.pt/noFrame/replay/20191115180542/https://www.accuweather.com/",
    "date": "2019-11-15",
-   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/accuweather/accuweather-home-a201911.png"
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "home-wbref",
    "url": "wayback-2019-ref:https://www.accuweather.com/",
    "date": "2019",
-   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)",
-   "file": "g11-evidence/accuweather/accuweather-home-wbref.png"
+   "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)"
   }
  ],
  "features": [

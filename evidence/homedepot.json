@@ -6,28 +6,24 @@
       "id": "s1",
       "url": "https://web.archive.org/web/20190630235335/https://www.homedepot.com/",
       "date": "2019-06-30",
-      "file": "/home/claude/sweeps/g6-evidence/homedepot/home-wb-2019-06.png",
       "shows": "home: utility row (Store Finder, Truck & Tool Rental, For the Pro, Gift Cards, Credit Services, Favorites, Track Order, Help), logo, store picker, 'What can we help you find today?' search with orange button, My Account, Cart | 0 items, All Departments / Home Decor & Furniture / DIY Projects & Ideas / Home Services / Specials & Offers / Local Ad, orange rule, hero promotions"
     },
     {
       "id": "s2",
       "url": "https://web.archive.org/web/20190719074843/https://www.homedepot.com/b/Tools-Power-Tools-Drills/N-5yc1vZc27f",
       "date": "2019-07-19",
-      "file": "/home/claude/sweeps/g6-evidence/homedepot/search-wb-2019-07-browse.png",
       "shows": "Drills browse page: breadcrumb, light 'Drills' title, left category rail, hero, blue dropdown links"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20190625131523/http://www.homedepot.com/b/Appliances-Refrigerators/N-5yc1vZc3pi",
       "date": "2019-06-25",
-      "file": "/home/claude/sweeps/g6-evidence/homedepot/search-wb-2019-06-plp.jpg",
       "shows": "Refrigerators browse page: category tiles, 'Top Refrigerator Brands' rail, promotions (special financing, protection plans), sections"
     },
     {
       "id": "s4",
       "url": "https://web.archive.org/web/20190720180326/https://www.homedepot.com/p/DEWALT-18-Volt-XRP-NiCd-Cordless-1-2-in-Hammer-Drill-Driver-Tool-Only-DCD950B/202380946",
       "date": "2019-07-20",
-      "file": "/home/claude/sweeps/g6-evidence/homedepot/item-wb-2019-07.png",
       "shows": "product page: Internet # / Model # / Store SKU, image, brand link 'DEWALT >', light title, $129.00 superscript price, Overview, Share / Save to Favorites / Print, buying options"
     }
   ],

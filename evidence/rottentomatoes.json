@@ -6,57 +6,49 @@
    "id": "home-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190302012002/https://www.rottentomatoes.com/",
    "date": "2019-03-02",
-   "shows": "home page as served on 2019-03-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/rottentomatoes/rottentomatoes-home-a201903-html"
+   "shows": "home page as served on 2019-03-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "home-a201906",
    "url": "https://arquivo.pt/noFrame/replay/20190601001134/https://www.rottentomatoes.com/",
    "date": "2019-06-01",
-   "shows": "home page as served on 2019-06-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/rottentomatoes/rottentomatoes-home-a201906.png"
+   "shows": "home page as served on 2019-06-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "home-a201911",
    "url": "https://arquivo.pt/noFrame/replay/20191102055554/https://rottentomatoes.com/",
    "date": "2019-11-02",
-   "shows": "home page as served on 2019-11-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/rottentomatoes/rottentomatoes-home-a201911.png"
+   "shows": "home page as served on 2019-11-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "movie-a201905",
    "url": "https://arquivo.pt/noFrame/replay/20190501214343/https://www.rottentomatoes.com/m/avengers_endgame",
    "date": "2019-05-01",
-   "shows": "movie page as served on 2019-05-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/rottentomatoes/rottentomatoes-movie-a201905.png"
+   "shows": "movie page as served on 2019-05-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "movie-a201911",
    "url": "https://arquivo.pt/noFrame/replay/20191120034217/https://www.rottentomatoes.com/m/avengers_endgame",
    "date": "2019-11-20",
-   "shows": "movie page as served on 2019-11-20 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/rottentomatoes/rottentomatoes-movie-a201911.png"
+   "shows": "movie page as served on 2019-11-20 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "movie2-a201909",
    "url": "https://arquivo.pt/noFrame/replay/20190902223201/https://www.rottentomatoes.com/m/1000085_2001_a_space_odyssey",
    "date": "2019-09-02",
-   "shows": "movie2 page as served on 2019-09-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/rottentomatoes/rottentomatoes-movie2-a201909.png"
+   "shows": "movie2 page as served on 2019-09-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "search-a201911",
    "url": "https://arquivo.pt/noFrame/replay/20191120033708/https://www.rottentomatoes.com/search/?search=halloween",
    "date": "2019-11-20",
-   "shows": "search page as served on 2019-11-20 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/rottentomatoes/rottentomatoes-search-a201911.png"
+   "shows": "search page as served on 2019-11-20 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "celeb-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190328000510/https://www.rottentomatoes.com/celebrity/tom_hanks",
    "date": "2019-03-28",
-   "shows": "celeb page as served on 2019-03-28 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/rottentomatoes/rottentomatoes-celeb-a201903.png"
+   "shows": "celeb page as served on 2019-03-28 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   }
  ],
  "features": [

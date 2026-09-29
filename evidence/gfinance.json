@@ -6,15 +6,13 @@
       "id": "s1",
       "url": "https://www.androidheadlines.com/2020/09/google-finance-desktop-web-redesign.html",
       "date": "2019-2020 (the 'old Google Finance' shown for comparison, in use from 2018 to the September 2020 redesign)",
-      "shows": "Google Finance wordmark, search field, apps grid, account; tabs Market Summary / Your Stocks / Local Markets / World Markets; watchlist; Recently searched; You may be interested in (+ add buttons); Top stories; United States markets; World markets; Currencies; Disclaimer",
-      "file": "/home/claude/sweeps/g1-evidence/gfinance/s1-ah-old-google-finance.png"
+      "shows": "Google Finance wordmark, search field, apps grid, account; tabs Market Summary / Your Stocks / Local Markets / World Markets; watchlist; Recently searched; You may be interested in (+ add buttons); Top stories; United States markets; World markets; Currencies; Disclaimer"
     },
     {
       "id": "s2",
       "url": "https://web.archive.org/web/2019/https://www.google.com/search?q=weather",
       "date": "2019",
-      "shows": "2019 Google Search chrome (logo, apps, Sign in, footer Help/Send feedback/Privacy/Terms) that the Finance pages shared",
-      "file": "/home/claude/sweeps/g1-evidence/google/s3-wayback-serp.png"
+      "shows": "2019 Google Search chrome (logo, apps, Sign in, footer Help/Send feedback/Privacy/Terms) that the Finance pages shared"
     }
   ],
   "features": [

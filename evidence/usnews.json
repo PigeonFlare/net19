@@ -6,29 +6,25 @@
       "id": "s1",
       "url": "https://web.archive.org/web/20190915231827/https://www.usnews.com/",
       "date": "2019-09-15",
-      "shows": "homepage and HTML: black header with centered U.S. News logo and uppercase nav (Civic, Education, Health, Money, Travel, Cars, Law Firms, Real Estate), TOP STORIES / lead / RANKINGS & ADVICE columns with red top rules, Load More, footer (About U.S. News, Contact, Press, Advertise, Newsletters, Jobs, Site Map, Store, Terms & Conditions/Privacy Policy), rankings links (Best Colleges, Best Hospitals, Best Countries, Best States, Overall Rankings, Methodology, Countries FAQ …)",
-      "file": "g7-evidence/usnews/wb-usnews-home.png"
+      "shows": "homepage and HTML: black header with centered U.S. News logo and uppercase nav (Civic, Education, Health, Money, Travel, Cars, Law Firms, Real Estate), TOP STORIES / lead / RANKINGS & ADVICE columns with red top rules, Load More, footer (About U.S. News, Contact, Press, Advertise, Newsletters, Jobs, Site Map, Store, Terms & Conditions/Privacy Policy), rankings links (Best Colleges, Best Hospitals, Best Countries, Best States, Overall Rankings, Methodology, Countries FAQ …)"
     },
     {
       "id": "s2",
       "url": "https://web.archive.org/web/20190411020622/https://www.usnews.com/",
       "date": "2019-04-11",
-      "shows": "homepage (April): same header, three columns, Brexit lead",
-      "file": "g7-evidence/usnews/wb-usnews-home-apr.png"
+      "shows": "homepage (April): same header, three columns, Brexit lead"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20191226210347/https://www.usnews.com/news/best-states/articles/2019-09-12/hawaii-farmers-work-vanilla-chocolate-into-states-economy",
       "date": "2019-09",
-      "shows": "article: black bar with CIVIC » Best Countries Best States Healthiest Communities Cities The Civic Report Photos News Events, breadcrumb HOME / CIVIC / BEST STATES, headline, dek, By …, Contributor, date, share menu",
-      "file": "g7-evidence/usnews/wb-usnews-article.png"
+      "shows": "article: black bar with CIVIC » Best Countries Best States Healthiest Communities Cities The Civic Report Photos News Events, breadcrumb HOME / CIVIC / BEST STATES, headline, dek, By …, Contributor, date, share menu"
     },
     {
       "id": "s4",
       "url": "https://www.google.com/search?udm=2&q=usnews.com+best+colleges+rankings+page+2019+screenshot",
       "date": "2018-09 / 2019",
-      "shows": "Google Images: Higher Ed Dive 'US News 2019 college rankings' screenshot of the ranking list",
-      "file": "g7-evidence/usnews/gimg-rankings.jpg"
+      "shows": "Google Images: Higher Ed Dive 'US News 2019 college rankings' screenshot of the ranking list"
     }
   ],
   "features": [

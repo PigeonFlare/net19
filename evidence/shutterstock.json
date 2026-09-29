@@ -6,43 +6,37 @@
    "id": "home-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190305234719/https://www.shutterstock.com/",
    "date": "2019-03-05",
-   "shows": "home page as served on 2019-03-05 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/shutterstock/shutterstock-home-a201903.png"
+   "shows": "home page as served on 2019-03-05 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "home-a201907",
    "url": "https://arquivo.pt/noFrame/replay/20190706212213/https://www.shutterstock.com/",
    "date": "2019-07-06",
-   "shows": "home page as served on 2019-07-06 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/shutterstock/shutterstock-home-a201907.png"
+   "shows": "home page as served on 2019-07-06 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "home-a201911",
    "url": "https://arquivo.pt/noFrame/replay/20191101215959/https://www.shutterstock.com/",
    "date": "2019-11-01",
-   "shows": "home page as served on 2019-11-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/shutterstock/shutterstock-home-a201911.png"
+   "shows": "home page as served on 2019-11-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "search-a201904",
    "url": "https://arquivo.pt/noFrame/replay/20190402071308/https://www.shutterstock.com/search/australia?searchterm=australia&search_group=&search_source=search_form&version=llv1",
    "date": "2019-04-02",
-   "shows": "search page as served on 2019-04-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/shutterstock/shutterstock-search-a201904.png"
+   "shows": "search page as served on 2019-04-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "search-a201911",
    "url": "https://arquivo.pt/noFrame/replay/20191120090339/https://www.shutterstock.com/search/chameleon?missing_image_id=185986961",
    "date": "2019-11-20",
-   "shows": "search page as served on 2019-11-20 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/shutterstock/shutterstock-search-a201911.png"
+   "shows": "search page as served on 2019-11-20 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "image-a201910",
    "url": "https://arquivo.pt/noFrame/replay/20191001100005/https://www.shutterstock.com/image-illustration/aerial-view-space-ecological-disaster-fires-1489282430",
    "date": "2019-10-01",
-   "shows": "image page as served on 2019-10-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/shutterstock/shutterstock-image-a201910.png"
+   "shows": "image page as served on 2019-10-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   }
  ],
  "features": [

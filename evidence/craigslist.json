@@ -6,49 +6,42 @@
       "id": "s1",
       "url": "https://web.archive.org/web/20190629225820/https://sfbay.craigslist.org/",
       "date": "2019-06-29",
-      "file": "/home/claude/sweeps/g6-evidence/craigslist/home-wb-2019-06.png",
       "shows": "home: 'craigslist' serif title, create a posting (yellow), my account, search craigslist field, event calendar, help/faq/abuse/legal, avoid scams & fraud, personal safety tips, terms of use, privacy policy, system status, about craigslist, best-of-craigslist, craigslist is hiring; SF bay area with sfc/sby/eby/pen/nby/scz; community/services/discussion forums/housing/for sale/jobs/gigs columns; english select, nearby cl, us cities, us states, canada, cl worldwide"
     },
     {
       "id": "s2",
       "url": "https://web.archive.org/web/20190721130930/https://sfbay.craigslist.org/search/bia",
       "date": "2019-07-21",
-      "file": "/home/claude/sweeps/g6-evidence/craigslist/search-wb-2019-07-sfbay.png",
       "shows": "bikes search, gallery view: breadcrumb selects, favorites / post / account, all/owner/dealer, search titles only, has image, posted today, bundle duplicates, include nearby areas, miles from zip, price min/max, make and model, cryptocurrency ok, delivery available, collapsible bicycle type/wheel size/frame material/suspension/brake type/handlebar type/electric assist/condition, language of posting, reset / update search, safety tips, prohibited items, product recalls, avoiding scams; gallery cards with price badge, star, date, serif blue title, price, location, hide button; paging '1 - 120 / 3000 next >', 'newest' sort"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20190630191427/http://newyork.craigslist.org/search/sss",
       "date": "2019-06-30",
-      "file": "/home/claude/sweeps/g6-evidence/craigslist/search-wb-2019-06-ny.png",
       "shows": "for-sale search in a second city with the same bar, rail and results"
     },
     {
       "id": "s4",
       "url": "https://www.parsehub.com/blog/scrape-craigslist-data/",
       "date": "2019-08",
-      "file": "/home/claude/sweeps/g6-evidence/craigslist/user-01.png",
       "shows": "a user's browser: apts/housing search in gallery view with the map pane, 'save search', 'newest'"
     },
     {
       "id": "s5",
       "url": "https://www.parsehub.com/blog/scrape-craigslist-data/",
       "date": "2019-08",
-      "file": "/home/claude/sweeps/g6-evidence/craigslist/user-02.png",
       "shows": "a user's browser: posting page with reply, favorite/hide/prohibited, prev/next, image 1 of 6, map, attributes"
     },
     {
       "id": "s6",
       "url": "https://www.caranddriver.com/news/a27127263/craigslist-fee-car-listings-hemmings/",
       "date": "2019-04-12",
-      "file": "/home/claude/sweeps/g6-evidence/craigslist/user-04.png",
       "shows": "posting page: purple 'reply' button, prohibited checkbox, Posted 2 days ago, print, star + serif bold title with price + hide icon, 'image 6 of 14', thumbnails, OpenStreetMap map with zoom and full-screen controls, (google map), attribute boxes, serif body, show contact info, 'do NOT contact me', post id / posted / email to friend / best of"
     },
     {
       "id": "s7",
       "url": "https://www.androidpolice.com/2019/12/05/craigslist-now-has-an-android-app-and-its-already-down-to-two-stars-on-google-play/",
       "date": "2019-12-05",
-      "file": "/home/claude/sweeps/g6-evidence/craigslist/app-01.png",
       "shows": "craigslist's official app launched December 2019"
     }
   ],

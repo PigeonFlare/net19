@@ -6,36 +6,31 @@
       "id": "s1",
       "url": "https://web.archive.org/web/2019/https://www.pinterest.com/",
       "date": "2019",
-      "shows": "logged-out home: Pin grid behind the Welcome to Pinterest card, footer links",
-      "file": "g5-evidence/pinterest/wb-2019-home.png"
+      "shows": "logged-out home: Pin grid behind the Welcome to Pinterest card, footer links"
     },
     {
       "id": "s2",
       "url": "https://newsroom-archive.pinterest.com/en-gb/introducing-the-pinterest-windows-app.html",
       "date": "2019",
-      "shows": "signed-in profile and header: red P, grey search, Home, Following, icons",
-      "file": "g5-evidence/pinterest/home-01.jpg"
+      "shows": "signed-in profile and header: red P, grey search, Home, Following, icons"
     },
     {
       "id": "s3",
       "url": "https://www.socialmediatoday.com/news/pinterest-adds-one-click-saving-from-desktop/526815/",
       "date": "2018-09",
-      "shows": "signed-in home feed: masonry grid, Save buttons, header with search, Home, Following, Explore",
-      "file": "g5-evidence/pinterest/home-02.jpg"
+      "shows": "signed-in home feed: masonry grid, Save buttons, header with search, Home, Following, Explore"
     },
     {
       "id": "s4",
       "url": "https://www.alamy.com/stock-photo/pinterest-homepage.html",
       "date": "2019",
-      "shows": "desktop grid on a laptop with the 2019 header",
-      "file": "g5-evidence/pinterest/home-05.jpg"
+      "shows": "desktop grid on a laptop with the 2019 header"
     },
     {
       "id": "s5",
       "url": "https://www.lifewire.com/how-to-use-pinterest-3486578",
       "date": "2019-2020",
-      "shows": "logged-out marketing header with Log in / Sign up",
-      "file": "g5-evidence/pinterest/home-03.jpg"
+      "shows": "logged-out marketing header with Log in / Sign up"
     }
   ],
   "features": [

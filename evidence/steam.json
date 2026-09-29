@@ -6,92 +6,72 @@
       "id": "s1",
       "url": "https://arquivo.pt/noFrame/replay/20190320195858/https://store.steampowered.com/",
       "date": "2019-03-20",
-      "shows": "store front page 2019: global header STORE/COMMUNITY/ABOUT/SUPPORT, Install Steam, login, language; store nav Your Store/Games/Software/Hardware/News/Steam Labs with the search box; Featured & Recommended, Special Offers, Browse Steam, tabs New and Trending/Top Selling/Popular Upcoming/Specials; footer Privacy Policy | Legal | Steam Subscriber Agreement | Refunds, About Valve, Jobs, Steamworks, Steam Distribution, Gift Cards",
-      "file": "/home/claude/sweeps/g13-evidence/steam/home-a20190320.png",
-      "raw": "/home/claude/sweeps/g13-raw/steam-home-a20190320.html"
+      "shows": "store front page 2019: global header STORE/COMMUNITY/ABOUT/SUPPORT, Install Steam, login, language; store nav Your Store/Games/Software/Hardware/News/Steam Labs with the search box; Featured & Recommended, Special Offers, Browse Steam, tabs New and Trending/Top Selling/Popular Upcoming/Specials; footer Privacy Policy | Legal | Steam Subscriber Agreement | Refunds, About Valve, Jobs, Steamworks, Steam Distribution, Gift Cards"
     },
     {
       "id": "s2",
       "url": "https://arquivo.pt/noFrame/replay/20190724013314/https://store.steampowered.com/",
       "date": "2019-07-24",
-      "shows": "store front page 2019: global header STORE/COMMUNITY/ABOUT/SUPPORT, Install Steam, login, language; store nav Your Store/Games/Software/Hardware/News/Steam Labs with the search box; Featured & Recommended, Special Offers, Browse Steam, tabs New and Trending/Top Selling/Popular Upcoming/Specials; footer Privacy Policy | Legal | Steam Subscriber Agreement | Refunds, About Valve, Jobs, Steamworks, Steam Distribution, Gift Cards",
-      "file": "/home/claude/sweeps/g13-evidence/steam/home-a20190724.png",
-      "raw": "/home/claude/sweeps/g13-raw/steam-home-a20190724.html"
+      "shows": "store front page 2019: global header STORE/COMMUNITY/ABOUT/SUPPORT, Install Steam, login, language; store nav Your Store/Games/Software/Hardware/News/Steam Labs with the search box; Featured & Recommended, Special Offers, Browse Steam, tabs New and Trending/Top Selling/Popular Upcoming/Specials; footer Privacy Policy | Legal | Steam Subscriber Agreement | Refunds, About Valve, Jobs, Steamworks, Steam Distribution, Gift Cards"
     },
     {
       "id": "s3",
       "url": "https://arquivo.pt/noFrame/replay/20191115234008/https://store.steampowered.com/",
       "date": "2019-11-15",
-      "shows": "store front page 2019: global header STORE/COMMUNITY/ABOUT/SUPPORT, Install Steam, login, language; store nav Your Store/Games/Software/Hardware/News/Steam Labs with the search box; Featured & Recommended, Special Offers, Browse Steam, tabs New and Trending/Top Selling/Popular Upcoming/Specials; footer Privacy Policy | Legal | Steam Subscriber Agreement | Refunds, About Valve, Jobs, Steamworks, Steam Distribution, Gift Cards",
-      "file": "/home/claude/sweeps/g13-evidence/steam/home-a20191115.png",
-      "raw": "/home/claude/sweeps/g13-raw/steam-home-a20191115.html"
+      "shows": "store front page 2019: global header STORE/COMMUNITY/ABOUT/SUPPORT, Install Steam, login, language; store nav Your Store/Games/Software/Hardware/News/Steam Labs with the search box; Featured & Recommended, Special Offers, Browse Steam, tabs New and Trending/Top Selling/Popular Upcoming/Specials; footer Privacy Policy | Legal | Steam Subscriber Agreement | Refunds, About Valve, Jobs, Steamworks, Steam Distribution, Gift Cards"
     },
     {
       "id": "s4",
       "url": "https://arquivo.pt/noFrame/replay/20191007132951/https://store.steampowered.com/app/1029890/Layers_of_Fear_2/",
       "date": "2019-10-07",
-      "shows": "app page (Layers of Fear 2): breadcrumb, title, media, Community Hub, reviews summary, Add to Cart, Customer reviews",
-      "file": "/home/claude/sweeps/g13-evidence/steam/app-a20191007.png",
-      "raw": "/home/claude/sweeps/g13-raw/steam-app-a20191007.html"
+      "shows": "app page (Layers of Fear 2): breadcrumb, title, media, Community Hub, reviews summary, Add to Cart, Customer reviews"
     },
     {
       "id": "s5",
       "url": "https://arquivo.pt/noFrame/replay/20190923101456/https://store.steampowered.com/app/570/",
       "date": "2019-09-23",
-      "shows": "app page (Dota 2): Play Game, Community Hub, Show graph, Your Languages, Customer reviews, Read more",
-      "file": "/home/claude/sweeps/g13-evidence/steam/app2-a20190923.png",
-      "raw": "/home/claude/sweeps/g13-raw/steam-app2-a20190923.html"
+      "shows": "app page (Dota 2): Play Game, Community Hub, Show graph, Your Languages, Customer reviews, Read more"
     },
     {
       "id": "s6",
       "url": "https://arquivo.pt/noFrame/replay/20190902053630/https://store.steampowered.com/about/",
       "date": "2019-09-02",
-      "shows": "About Steam page",
-      "file": "/home/claude/sweeps/g13-evidence/steam/about-a20190902.png",
-      "raw": "/home/claude/sweeps/g13-raw/steam-about-a20190902.html"
+      "shows": "About Steam page"
     },
     {
       "id": "s7",
       "url": "https://arquivo.pt/noFrame/replay/20190322204112/https://steamcommunity.com/",
       "date": "2019-03-22",
-      "shows": "Steam Community home: tabs All/Screenshots/Artwork/Broadcasts/Videos/Workshop/News/Guides/Reviews, searchAppName and Search for friends fields",
-      "file": "/home/claude/sweeps/g13-evidence/steam/community-a20190322.png",
-      "raw": "/home/claude/sweeps/g13-raw/steam-community-a20190322.html"
+      "shows": "Steam Community home: tabs All/Screenshots/Artwork/Broadcasts/Videos/Workshop/News/Guides/Reviews, searchAppName and Search for friends fields"
     },
     {
       "id": "s8",
       "url": "https://arquivo.pt/noFrame/replay/20190904232736/https://steamcommunity.com/",
       "date": "2019-09-04",
-      "shows": "Steam Community home: tabs All/Screenshots/Artwork/Broadcasts/Videos/Workshop/News/Guides/Reviews, searchAppName and Search for friends fields",
-      "file": "/home/claude/sweeps/g13-evidence/steam/community-a20190904.png",
-      "raw": "/home/claude/sweeps/g13-raw/steam-community-a20190904.html"
+      "shows": "Steam Community home: tabs All/Screenshots/Artwork/Broadcasts/Videos/Workshop/News/Guides/Reviews, searchAppName and Search for friends fields"
     },
     {
       "id": "s9",
       "url": "https://arquivo.pt/noFrame/replay/20190923085147/https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/",
       "date": "2019-09-23",
-      "shows": "app page (The Witcher 3): Content For This Game with Add all DLC to Cart",
-      "raw": "/home/claude/sweeps/g13-raw/steam-witcher-a20190923.html"
+      "shows": "app page (The Witcher 3): Content For This Game with Add all DLC to Cart"
     },
     {
       "id": "s10",
       "url": "https://arquivo.pt/noFrame/replay/20191115233907/https://store.steampowered.com/search/",
       "date": "2019-11-15",
-      "shows": "search results page: displayterm field, Sort by Relevance, filters",
-      "raw": "/home/claude/sweeps/g13-raw/steam-search-a20191115.html"
+      "shows": "search results page: displayterm field, Sort by Relevance, filters"
     },
     {
       "id": "s11",
       "url": "https://arquivo.pt/noFrame/replay/20190902054441/https://store.steampowered.com/app/8930/",
       "date": "2019-09-02",
-      "shows": "app page (Civilization V): Content For This Game, Add all DLC to Cart",
-      "raw": "/home/claude/sweeps/g13-raw/steam-civ5-a20190902.html"
+      "shows": "app page (Civilization V): Content For This Game, Add all DLC to Cart"
     },
     {
       "id": "s12",
       "url": "https://www.webdesignmuseum.org/gallery/steam-in-2019",
       "date": "2019-11",
-      "file": "/home/claude/sweeps/g13-evidence/steam/wdm-steam-2019.jpg",
       "shows": "real-browser capture of the Nov 2019 store: header, store nav with Your Store/Games/Software/Hardware dropdowns, News, Steam Labs, \"search the store\" field, takeover banner"
     }
   ],

@@ -6,29 +6,25 @@
       "id": "s1",
       "url": "https://www.google.com/search?udm=2&q=cbsnews.com+website+2019+screenshot",
       "date": "2019",
-      "shows": "Google Images: Alamy stock captures of cbsnews.com (black header with white CBS NEWS eye logo), CBS News 2019 pages",
-      "file": "g7-evidence/cbsnews/gimg-home.jpg"
+      "shows": "Google Images: Alamy stock captures of cbsnews.com (black header with white CBS NEWS eye logo), CBS News 2019 pages"
     },
     {
       "id": "s2",
       "url": "https://web.archive.org/web/20190915220604/https://www.cbsnews.com/",
       "date": "2019-09-15",
-      "shows": "homepage and HTML: black header area with trending row (New Kavanaugh Accusation | United Auto Workers Strike | …), NEWS / SHOWS / LIVE nav, CBSN live tiles, Latest News with serif bold headlines, footer (About, About CBS, Advertise, Closed Captioning, CBS News Store, Careers, Internships, Development Programs, Help, Privacy Policy, Terms of Use, CA Do Not Sell My Info, Mobile User Agreement, Site Map, Newsletters, Podcasts, CBS News App, Follow us on Facebook / Twitter / Instagram / YouTube), Log In, Search",
-      "file": "g7-evidence/cbsnews/wb-cbsnews-home.png"
+      "shows": "homepage and HTML: black header area with trending row (New Kavanaugh Accusation | United Auto Workers Strike | …), NEWS / SHOWS / LIVE nav, CBSN live tiles, Latest News with serif bold headlines, footer (About, About CBS, Advertise, Closed Captioning, CBS News Store, Careers, Internships, Development Programs, Help, Privacy Policy, Terms of Use, CA Do Not Sell My Info, Mobile User Agreement, Site Map, Newsletters, Podcasts, CBS News App, Follow us on Facebook / Twitter / Instagram / YouTube), Log In, Search"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20190410230017/https://www.cbsnews.com/",
       "date": "2019-04-10",
-      "shows": "homepage (April): black top with CBSN tiles, white Latest News list, black quote band, More Top Stories",
-      "file": "g7-evidence/cbsnews/wb-cbsnews-home-apr-tall.png"
+      "shows": "homepage (April): black top with CBSN tiles, white Latest News list, black quote band, More Top Stories"
     },
     {
       "id": "s4",
       "url": "https://web.archive.org/web/20191224154909/https://www.cbsnews.com/news/afghanistan-us-troops-kill-at-least-38-taliban-fighters-today-2019-09-15/",
       "date": "2019-09",
-      "shows": "article: byline row, serif bold headline, Share / Tweet / Reddit / Flipboard / Email row, video, Watch CBSN Live rail",
-      "file": "g7-evidence/cbsnews/wb-cbsnews-article.png"
+      "shows": "article: byline row, serif bold headline, Share / Tweet / Reddit / Flipboard / Email row, video, Watch CBSN Live rail"
     }
   ],
   "features": [

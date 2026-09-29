@@ -6,28 +6,24 @@
       "id": "s1",
       "url": "https://arun.is/blog/10-year-challenge/",
       "date": "2019-01-22",
-      "file": "/home/claude/sweeps/g9-evidence/microsoft/arun-2019-01-microsoft.jpg",
       "shows": "homepage: four-colour Microsoft logo, nav Office/Windows/Surface/Xbox/Deals/Support, All Microsoft, search, cart, Sign in; hero with SHOP NOW; product tiles with titles, text and SHOP NOW >"
     },
     {
       "id": "s2",
       "url": "https://www.versionmuseum.com/history-of/microsoft-website",
       "date": "2019",
-      "file": "/home/claude/sweeps/g9-evidence/microsoft/versionmuseum-2019-microsoft.jpg",
       "shows": "homepage 2019: same header, hero carousel, tiles, human-interest stories, follow us, footer columns"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20190616000314/https://www.microsoft.com/en-us/",
       "date": "2019-06-16",
-      "file": "/home/claude/sweeps/g9-evidence/wb/microsoft-home.png",
       "shows": "homepage labels: Office, Windows, Surface, Xbox, Deals, Support, All Microsoft, Search, shopping cart, featured products slideshow with slide buttons and play, product tiles, human-interest stories slideshow, follow us on social media, footer What's new / Microsoft Store / Education / Enterprise / Developer / Company columns (Account profile, Download Center, Microsoft Store support, Returns, Order tracking, Microsoft in education, Deals for students & parents, Azure, Visual Studio, Careers, About Microsoft, Company news, Privacy at Microsoft, Investors, Diversity and inclusion, Accessibility, Security), language selector, Sitemap, Contact Microsoft, Privacy & cookies, Terms of use, Trademarks, Safety & eco, About our ads"
     },
     {
       "id": "s4",
       "url": "https://web.archive.org/web/20190616000029/https://www.microsoft.com/en-us/windows",
       "date": "2019-06-16",
-      "file": "/home/claude/sweeps/g9-evidence/wb/microsoft-win.png",
       "shows": "Windows page: product bar Windows 10 / Devices / Apps / PC Gaming / For Business, hero, sections, previous/next, support links, footnotes, social links"
     }
   ],
@@ -142,7 +138,7 @@
         "s3",
         "s4"
       ],
-      "note": "required: All Microsoft menu (the Windows page draws its header inside a shadow root, which the inventory cannot read; checked on its screenshot /home/claude/sweeps/h4-live-a/microsoft/microsoft-windows/dark-load.png)"
+      "note": "required: All Microsoft menu (the Windows page draws its header inside a shadow root, which the inventory cannot read; checked on its screenshot)"
     },
     {
       "match": "^(Search Microsoft\\.com|Search)$",
@@ -155,7 +151,7 @@
         "s1",
         "s3"
       ],
-      "note": "required: search (the Windows page draws its header inside a shadow root, which the inventory cannot read; checked on its screenshot /home/claude/sweeps/h4-live-a/microsoft/microsoft-windows/dark-load.png)"
+      "note": "required: search (the Windows page draws its header inside a shadow root, which the inventory cannot read; checked on its screenshot)"
     },
     {
       "match": "^(Cart|shopping cart)$",

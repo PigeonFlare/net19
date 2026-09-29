@@ -6,113 +6,97 @@
    "id": "nd19-new-home",
    "url": "https://www.nlm.nih.gov/pubs/techbull/nd19/graphics/pubmed_new_figure_1.png",
    "date": "2019-11",
-   "shows": "new PubMed preview home, 2019: Log in, Learn/Find/Download/Explore links",
-   "file": "g11-evidence/nih/nlm-techbull-nd19-fig1.png"
+   "shows": "new PubMed preview home, 2019: Log in, Learn/Find/Download/Explore links"
   },
   {
    "id": "nd19-new-results",
    "url": "https://www.nlm.nih.gov/pubs/techbull/nd19/graphics/pubmed_new_figure_3.png",
    "date": "2019-11",
-   "shows": "new PubMed preview search results, 2019: Save, Email, sort, results by year, text availability, article attribute, article type filters, Cite, Share, Advanced, Create alert, clear-search X",
-   "file": "g11-evidence/nih/nlm-techbull-nd19-fig3.png"
+   "shows": "new PubMed preview search results, 2019: Save, Email, sort, results by year, text availability, article attribute, article type filters, Cite, Share, Advanced, Create alert, clear-search X"
   },
   {
    "id": "nd19-legacy-home",
    "url": "https://www.nlm.nih.gov/pubs/techbull/nd19/graphics/pubmed_new_figure_4.png",
    "date": "2019-11",
-   "shows": "legacy PubMed home as users saw it in Nov 2019: NCBI bar, Resources, How To, Sign in to NCBI, PubMed.gov logo, Advanced, Help, Using PubMed / PubMed Tools / More Resources, Latest Literature, Trending Articles",
-   "file": "g11-evidence/nih/nlm-techbull-nd19-fig4.png"
+   "shows": "legacy PubMed home as users saw it in Nov 2019: NCBI bar, Resources, How To, Sign in to NCBI, PubMed.gov logo, Advanced, Help, Using PubMed / PubMed Tools / More Resources, Latest Literature, Trending Articles"
   },
   {
    "id": "nd19-new-mobile",
    "url": "https://www.nlm.nih.gov/pubs/techbull/nd19/graphics/pubmed_new_figure_2.png",
    "date": "2019-11",
-   "shows": "new PubMed preview home on mobile, 2019",
-   "file": "g11-evidence/nih/nlm-techbull-nd19-new-fig2.png"
+   "shows": "new PubMed preview home on mobile, 2019"
   },
   {
    "id": "so19-new-home",
    "url": "https://www.nlm.nih.gov/pubs/techbull/so19/graphics/pubmed_updated_fig1.png",
    "date": "2019-09",
-   "shows": "new PubMed preview home, Sept 2019",
-   "file": "g11-evidence/nih/nlm-techbull-so19-fig1.png"
+   "shows": "new PubMed preview home, Sept 2019"
   },
   {
    "id": "about-a201907",
    "url": "https://arquivo.pt/noFrame/replay/20190717212616/https://www.nih.gov/about-nih",
    "date": "2019-07-17",
-   "shows": "about page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/nih/nih-about-a201907.png"
+   "shows": "about page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "about-a201911",
    "url": "https://arquivo.pt/noFrame/replay/20191119113748/https://www.nih.gov/about-nih",
    "date": "2019-11-19",
-   "shows": "about page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/nih/nih-about-a201911.png"
+   "shows": "about page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "article-a201906",
    "url": "https://arquivo.pt/noFrame/replay/20190617041701/https://www.ncbi.nlm.nih.gov/pubmed/30004125",
    "date": "2019-06-17",
-   "shows": "article page as served in 2019-06 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/nih/nih-article-a201906.png"
+   "shows": "article page as served in 2019-06 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "article-a201911",
    "url": "https://arquivo.pt/noFrame/replay/20191106114648/https://www.ncbi.nlm.nih.gov/pubmed/30002308",
    "date": "2019-11-06",
-   "shows": "article page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/nih/nih-article-a201911.png"
+   "shows": "article page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "home-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190315085321/https://www.nih.gov/",
    "date": "2019-03-15",
-   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/nih/nih-home-a201903.png"
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "home-a201907",
    "url": "https://arquivo.pt/noFrame/replay/20190715212909/https://www.nih.gov/",
    "date": "2019-07-15",
-   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/nih/nih-home-a201907.png"
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "home-a201911",
    "url": "https://arquivo.pt/noFrame/replay/20191116011201/https://www.nih.gov/",
    "date": "2019-11-16",
-   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/nih/nih-home-a201911.png"
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "pubmed-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190315064623/https://www.ncbi.nlm.nih.gov/pubmed/",
    "date": "2019-03-15",
-   "shows": "pubmed page as served in 2019-03 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/nih/nih-pubmed-a201903.png"
+   "shows": "pubmed page as served in 2019-03 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "pubmed-a201907",
    "url": "https://arquivo.pt/noFrame/replay/20190715034845/https://www.ncbi.nlm.nih.gov/pubmed/",
    "date": "2019-07-15",
-   "shows": "pubmed page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/nih/nih-pubmed-a201907.png"
+   "shows": "pubmed page as served in 2019-07 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "pubmed-a201911",
    "url": "https://arquivo.pt/noFrame/replay/20191115232054/https://www.ncbi.nlm.nih.gov/pubmed/",
    "date": "2019-11-15",
-   "shows": "pubmed page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)",
-   "file": "g11-evidence/nih/nih-pubmed-a201911.png"
+   "shows": "pubmed page as served in 2019-11 (Arquivo.pt capture rendered with its archived CSS)"
   },
   {
    "id": "pubmed-wbref",
    "url": "wayback-2019-ref:https://www.ncbi.nlm.nih.gov/pubmed/",
    "date": "2019",
-   "shows": "pubmed page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)",
-   "file": "g11-evidence/nih/nih-pubmed-wbref.png"
+   "shows": "pubmed page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)"
   }
  ],
  "features": [

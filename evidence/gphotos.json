@@ -6,47 +6,31 @@
       "id": "s1",
       "url": "https://www.androidpolice.com/2019/11/18/google-photos-gets-new-timeline-editor-for-movies-in-its-web-interface/",
       "date": "2019-11-18",
-      "shows": "Photos web movie editor (Nov 2019)",
-      "files": [
-        "sweeps/g2-evidence/gphotos/s1-3.png",
-        "sweeps/g2-evidence/gphotos/s1-4.png"
-      ]
+      "shows": "Photos web movie editor (Nov 2019)"
     },
     {
       "id": "s8",
       "url": "https://www.theedublogger.com/google-photos-guide/3/",
       "date": "2018-07",
-      "shows": "album page with share dialog (2018)",
-      "files": [
-        "sweeps/g2-evidence/gphotos/s8.png"
-      ]
+      "shows": "album page with share dialog (2018)"
     },
     {
       "id": "s15",
       "url": "https://www.nucleustechnologies.com/blog/recover-deleted-photos-from-google-photos/",
       "date": "2019-05",
-      "shows": "photos.google.com/trash page (May 2019)",
-      "files": [
-        "sweeps/g2-evidence/gphotos/s15.png"
-      ]
+      "shows": "photos.google.com/trash page (May 2019)"
     },
     {
       "id": "yt1",
       "url": "https://www.youtube.com/watch?v=PAE7ad6sTzY",
       "date": "2019 (titl",
-      "shows": "Photos web 2019: header (Search your photos, + Create, Upload), left icon rail Photos/Albums/Assistant/Sharing/Photo books, photo grid",
-      "files": [
-        "sweeps/g2-evidence/gphotos/yt-PAE7ad6sTzY.png"
-      ]
+      "shows": "Photos web 2019: header (Search your photos, + Create, Upload), left icon rail Photos/Albums/Assistant/Sharing/Photo books, photo grid"
     },
     {
       "id": "yt2",
       "url": "https://www.youtube.com/watch?v=pbFqCqZxZnc",
       "date": "2019-06 (t",
-      "shows": "Photos web albums page, June 2019",
-      "files": [
-        "sweeps/g2-evidence/gphotos/yt-pbFqCqZxZnc.png"
-      ]
+      "shows": "Photos web albums page, June 2019"
     }
   ],
   "features": [

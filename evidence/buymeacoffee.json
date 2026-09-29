@@ -6,65 +6,49 @@
       "id": "s1",
       "url": "https://arquivo.pt/noFrame/replay/20190624144857/https://www.buymeacoffee.com/",
       "date": "2019-06-24",
-      "shows": "buymeacoffee.com home 2019: white header with the Buy me a coffee script logo, Explore creators, Login, orange \"Start my page\" button (#ff813f, 4px corners); hero \"Get the support your work deserves.\" with \"Takes less than a minute.\"; \"Join 50,000+ creators just like you.\"; footer Company / About / Terms",
-      "file": "/home/claude/sweeps/g13-evidence/buymeacoffee/home-a20190624.png",
-      "raw": "/home/claude/sweeps/g13-raw/buymeacoffee-home-a20190624.html"
+      "shows": "buymeacoffee.com home 2019: white header with the Buy me a coffee script logo, Explore creators, Login, orange \"Start my page\" button (#ff813f, 4px corners); hero \"Get the support your work deserves.\" with \"Takes less than a minute.\"; \"Join 50,000+ creators just like you.\"; footer Company / About / Terms"
     },
     {
       "id": "s2",
       "url": "https://arquivo.pt/noFrame/replay/20190914043942/https://www.buymeacoffee.com/",
       "date": "2019-09-14",
-      "shows": "buymeacoffee.com home 2019: white header with the Buy me a coffee script logo, Explore creators, Login, orange \"Start my page\" button (#ff813f, 4px corners); hero \"Get the support your work deserves.\" with \"Takes less than a minute.\"; \"Join 50,000+ creators just like you.\"; footer Company / About / Terms",
-      "file": "/home/claude/sweeps/g13-evidence/buymeacoffee/home-a20190914.png",
-      "raw": "/home/claude/sweeps/g13-raw/buymeacoffee-home-a20190914.html"
+      "shows": "buymeacoffee.com home 2019: white header with the Buy me a coffee script logo, Explore creators, Login, orange \"Start my page\" button (#ff813f, 4px corners); hero \"Get the support your work deserves.\" with \"Takes less than a minute.\"; \"Join 50,000+ creators just like you.\"; footer Company / About / Terms"
     },
     {
       "id": "s3",
       "url": "https://arquivo.pt/noFrame/replay/20191211060614/https://www.buymeacoffee.com/",
       "date": "2019-12-11",
-      "shows": "buymeacoffee.com home 2019: white header with the Buy me a coffee script logo, Explore creators, Login, orange \"Start my page\" button (#ff813f, 4px corners); hero \"Get the support your work deserves.\" with \"Takes less than a minute.\"; \"Join 50,000+ creators just like you.\"; footer Company / About / Terms",
-      "file": "/home/claude/sweeps/g13-evidence/buymeacoffee/home-a20191211.png",
-      "raw": "/home/claude/sweeps/g13-raw/buymeacoffee-home-a20191211.html"
+      "shows": "buymeacoffee.com home 2019: white header with the Buy me a coffee script logo, Explore creators, Login, orange \"Start my page\" button (#ff813f, 4px corners); hero \"Get the support your work deserves.\" with \"Takes less than a minute.\"; \"Join 50,000+ creators just like you.\"; footer Company / About / Terms"
     },
     {
       "id": "s4",
       "url": "https://arquivo.pt/noFrame/replay/20190914044253/https://www.buymeacoffee.com/login",
       "date": "2019-09-14",
-      "shows": "login page 2019: Sign in with Facebook / Google / email",
-      "file": "/home/claude/sweeps/g13-evidence/buymeacoffee/login-a20190914.png",
-      "raw": "/home/claude/sweeps/g13-raw/buymeacoffee-login-a20190914.html"
+      "shows": "login page 2019: Sign in with Facebook / Google / email"
     },
     {
       "id": "s5",
       "url": "https://arquivo.pt/noFrame/replay/20190331040634/https://www.buymeacoffee.com/1hakr",
       "date": "2019-03-31",
-      "shows": "creator page 2019 (1hakr): name, \"Buy ... a coffee\" box with coffee count, Name (optional), Message (optional), Support button, supporters feed (\"bought ... a coffee\"), Share",
-      "file": "/home/claude/sweeps/g13-evidence/buymeacoffee/creator-a20190331.png",
-      "raw": "/home/claude/sweeps/g13-raw/buymeacoffee-creator-a20190331.html"
+      "shows": "creator page 2019 (1hakr): name, \"Buy ... a coffee\" box with coffee count, Name (optional), Message (optional), Support button, supporters feed (\"bought ... a coffee\"), Share"
     },
     {
       "id": "s6",
       "url": "https://arquivo.pt/noFrame/replay/20190930063921/https://www.buymeacoffee.com/AmazfitWF",
       "date": "2019-09-30",
-      "shows": "creator page 2019 (Amazfitwatchfaces): Developer, Share, Tweet, featured image, \"22 coffees received\", goal text, \"Buy Amazfitwatchfaces a coffee\"",
-      "file": "/home/claude/sweeps/g13-evidence/buymeacoffee/creator2-a20190930.png",
-      "raw": "/home/claude/sweeps/g13-raw/buymeacoffee-creator2-a20190930.html"
+      "shows": "creator page 2019 (Amazfitwatchfaces): Developer, Share, Tweet, featured image, \"22 coffees received\", goal text, \"Buy Amazfitwatchfaces a coffee\""
     },
     {
       "id": "s7",
       "url": "https://arquivo.pt/noFrame/replay/20191211060556/https://www.buymeacoffee.com/AmazfitWF",
       "date": "2019-12-11",
-      "shows": "same creator page Dec 2019",
-      "file": "/home/claude/sweeps/g13-evidence/buymeacoffee/creator3-a20191211.png",
-      "raw": "/home/claude/sweeps/g13-raw/buymeacoffee-creator3-a20191211.html"
+      "shows": "same creator page Dec 2019"
     },
     {
       "id": "s8",
       "url": "https://arquivo.pt/noFrame/replay/20190914045511/https://www.buymeacoffee.com/closest",
       "date": "2019-09-14",
-      "shows": "creator page 2019",
-      "file": "/home/claude/sweeps/g13-evidence/buymeacoffee/creator4-a20190914.png",
-      "raw": "/home/claude/sweeps/g13-raw/buymeacoffee-creator4-a20190914.html"
+      "shows": "creator page 2019"
     }
   ],
   "features": [

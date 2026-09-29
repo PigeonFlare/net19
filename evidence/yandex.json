@@ -6,35 +6,30 @@
       "id": "s1",
       "url": "https://searchfacts.com/wp-content/uploads/2019/08/yandex-search-home-page.png",
       "date": "2019-08",
-      "file": "/home/claude/sweeps/g15-evidence/yandex/sf-home-2019-08.png",
       "shows": "a user's screenshot of yandex.com in 2019 (SearchFacts article): EN / Log in top right, service icons (Images, Video, Mail, Maps, AppMetrica, Translate, Browser), red-Y Yandex wordmark left of a yellow-bordered field with keyboard icon and a yellow arrow Search button, 'Yandex in' country links"
     },
     {
       "id": "s2",
       "url": "https://arquivo.pt/wayback/20190101014304/https://yandex.com/",
       "date": "2019-01-01",
-      "file": "/home/claude/sweeps/g15-evidence/yandex/yandex-com-2019-01.png",
       "shows": "yandex.com home, same layout as s1: Select language, Log in, services row, Request field, Search button, country links, footer (Technologies, About Yandex, Terms of Service, Privacy Policy, Contact us, Copyright Notice)"
     },
     {
       "id": "s3",
       "url": "https://arquivo.pt/wayback/20190302181025/https://yandex.ru/",
       "date": "2019-03-02",
-      "file": "/home/claude/sweeps/g15-evidence/yandex/yandex-ru-2019-03-full.png",
       "shows": "yandex.ru portal (captured without its stylesheet): city (Лиссабон), Настройка, Почта / Завести почту / Войти в почту, news, USD/EUR MOEX and Нефть rates, service tabs Видео Картинки Новости Карты Маркет Переводчик ещё, Запрос field and Найти button, Погода block, footer"
     },
     {
       "id": "s4",
       "url": "https://arquivo.pt/wayback/20190725234141/https://yandex.ru/",
       "date": "2019-07-25",
-      "file": "/home/claude/sweeps/g15-evidence/yandex/yandex-ru-2019-07-full.png",
       "shows": "yandex.ru portal, same controls as s3 (city, weather +18°, rates, Почта, Войти, service tabs, Найти)"
     },
     {
       "id": "s5",
       "url": "https://arquivo.pt/wayback/20191105031015/https://yandex.ru/search/?text=бухгалтера и путина",
       "date": "2019-11-05",
-      "file": "/home/claude/sweeps/g15-evidence/yandex/yandex-serp-2019-11.png",
       "shows": "results page: yellow-bordered field, yellow arrow Найти button, filter icon, tabs Поиск (bold) Картинки Видео Карты Маркет Новости Эфир Коллекции Знатоки Услуги Ещё in grey 13px, #1a0dab titles, green URLs, #333 snippets, Читать ещё, images wizard on the right, related searches, pager (Страницы, дальше), footer (region Лиссабон, Настройки, Клавиатура, Помощь, Обратная связь, О компании, Вакансии, Лицензия на поиск, other search engines, Войти)"
     }
   ],

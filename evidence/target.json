@@ -6,43 +6,37 @@
    "id": "wb-home-201903",
    "url": "https://web.archive.org/web/2019/https://www.target.com/",
    "date": "2019-03",
-   "shows": "home page, header and sub-bar (Wayback, rendered with its CSS)",
-   "file": "h6-evidence/target/home-wb-2019-03.png"
+   "shows": "home page, header and sub-bar (Wayback, rendered with its CSS)"
   },
   {
    "id": "wb-home-201909",
    "url": "https://web.archive.org/web/20190914/https://www.target.com/",
    "date": "2019-09-14",
-   "shows": "home page with Categories / Deals / Trending / Same Day Delivery, search, Sign in, cart and the store sub-bar",
-   "file": "h6-evidence/target/home-wb-2019-09.png"
+   "shows": "home page with Categories / Deals / Trending / Same Day Delivery, search, Sign in, cart and the store sub-bar"
   },
   {
    "id": "wb-category-201907",
    "url": "https://web.archive.org/web/2019/https://www.target.com/c/",
    "date": "2019-07",
-   "shows": "category page",
-   "file": "h6-evidence/target/category-wb-2019-07.png"
+   "shows": "category page"
   },
   {
    "id": "wb-item-201907",
    "url": "https://web.archive.org/web/2019/https://www.target.com/p/",
    "date": "2019-07",
-   "shows": "product page",
-   "file": "h6-evidence/target/item-wb-2019-07.png"
+   "shows": "product page"
   },
   {
    "id": "wb-search-201912",
    "url": "https://web.archive.org/web/20191229/https://www.target.com/s?searchTerm=LEGO",
    "date": "2019-12-29",
-   "shows": "search page with Gifting menu, footer Help / Stores / Apps / Social / More and the legal row",
-   "file": "h6-evidence/target/search-wb-2019-12.png"
+   "shows": "search page with Gifting menu, footer Help / Stores / Apps / Social / More and the legal row"
   },
   {
    "id": "home-2019-11",
    "url": "https://arquivo.pt/noFrame/replay/20191103051321/https://www.target.com/",
    "date": "2019-11-03",
-   "shows": "home-2019-11 page as served on 2019-11-03 (Arquivo.pt capture rendered with its archived 2019 CSS)",
-   "file": "h6-evidence/target/target-home-2019-11.png"
+   "shows": "home-2019-11 page as served on 2019-11-03 (Arquivo.pt capture rendered with its archived 2019 CSS)"
   }
  ],
  "features": [

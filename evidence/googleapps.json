@@ -2,23 +2,162 @@
   "theme": "googleapps",
   "era": "2019 Google product and company pages: 2018 Material chrome (Google wordmark or product logo, white header with a bottom rule, Google Sans headings, blue text buttons, grey footer link rows); each app theme extends this base",
   "sources": [
-    { "id": "s1", "url": "https://web.archive.org/web/2019/https://www.google.com/search?q=weather", "date": "2019", "shows": "2019 Google chrome: logo, apps grid, Sign in, footer link row", "file": "/home/claude/sweeps/g1-evidence/google/s3-wayback-serp.png" },
-    { "id": "s2", "url": "https://www.androidheadlines.com/2020/09/google-finance-desktop-web-redesign.html", "date": "2019-2020", "shows": "2018-2020 Google product page chrome (product wordmark, grey search, apps, account)", "file": "/home/claude/sweeps/g1-evidence/gfinance/s1-ah-old-google-finance.png" },
-    { "id": "s3", "url": "https://techviral.net/remove-third-party-app-access-to-your-google-account/", "date": "2019-09", "shows": "2018 Material chrome on a Google product page (Google Account)", "file": "/home/claude/sweeps/g1-evidence/gaccount/s1-techviral-2019-09.jpg" },
-    { "id": "s4", "url": "https://arquivo.pt/wayback/20190610204947/https://about.google/", "date": "2019-06-10", "shows": "about.google in 2019: Google wordmark, header tabs About / Our products / Our commitments / Our stories, mission headline, Company news, footer link columns and Google | Help | Privacy | Terms", "file": "/home/claude/sweeps/h3-evidence/googleapps/about-2019.png" }
+    {
+      "id": "s1",
+      "url": "https://web.archive.org/web/2019/https://www.google.com/search?q=weather",
+      "date": "2019",
+      "shows": "2019 Google chrome: logo, apps grid, Sign in, footer link row"
+    },
+    {
+      "id": "s2",
+      "url": "https://www.androidheadlines.com/2020/09/google-finance-desktop-web-redesign.html",
+      "date": "2019-2020",
+      "shows": "2018-2020 Google product page chrome (product wordmark, grey search, apps, account)"
+    },
+    {
+      "id": "s3",
+      "url": "https://techviral.net/remove-third-party-app-access-to-your-google-account/",
+      "date": "2019-09",
+      "shows": "2018 Material chrome on a Google product page (Google Account)"
+    },
+    {
+      "id": "s4",
+      "url": "https://arquivo.pt/wayback/20190610204947/https://about.google/",
+      "date": "2019-06-10",
+      "shows": "about.google in 2019: Google wordmark, header tabs About / Our products / Our commitments / Our stories, mission headline, Company news, footer link columns and Google | Help | Privacy | Terms"
+    }
   ],
   "features": [
-    { "match": "^Google$", "in2019": true, "required": true, "evidence": ["s1", "s4"], "note": "Google wordmark at the left of the header" },
-    { "match": "^About$", "in2019": true, "required": true, "pages": ["home", "start"], "evidence": ["s4"], "note": "first header tab" },
-    { "match": "^(Products|Our products)$", "in2019": true, "required": true, "pages": ["home", "start"], "evidence": ["s4"], "note": "header tab" },
-    { "match": "^(News|Company news)$", "in2019": true, "required": true, "pages": ["home", "start"], "evidence": ["s4"], "note": "company news" },
-    { "match": "^Help$", "in2019": true, "required": true, "pages": ["home", "start"], "evidence": ["s1", "s4"], "note": "footer" },
-    { "match": "^Privacy", "in2019": true, "required": true, "pages": ["home", "start"], "evidence": ["s1", "s4"], "note": "footer" },
-    { "match": "^Terms", "in2019": true, "required": true, "pages": ["home", "start"], "evidence": ["s1", "s4"], "note": "footer" },
-    { "match": "^(header|footer|nav|region|section|main|banner|contentinfo|navigation|search) area$", "in2019": true, "evidence": ["s1", "s3"] },
-    { "match": "^repeated ", "in2019": true, "evidence": ["s1"] },
-    { "match": "^(Google|About|Products|News|Company Info|Explore|Help|Learn more|Check it out|Let's go|Subscribe|OK, got it|Change language or region|Google apps|Google Account|Sign in|Privacy|Terms)$", "in2019": true, "evidence": ["s1", "s3"], "note": "about.google header menu (About, Products, News, Company info), buttons, cookie notice, language picker, footer" },
-    { "match": " link opens in (new|same) tab or window$", "in2019": true, "evidence": ["s1"], "note": "footer link lists to other Google sites (content links; the list existed in 2019 with period names)" },
-    { "match": "^(Get the latest news from Google in your inbox|Google around the globe|Inside .*|What we announced .*|.* says hello!)$", "in2019": true, "evidence": ["s1"], "note": "article and newsletter headings (content)" }
+    {
+      "match": "^Google$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "Google wordmark at the left of the header"
+    },
+    {
+      "match": "^About$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s4"
+      ],
+      "note": "first header tab"
+    },
+    {
+      "match": "^(Products|Our products)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s4"
+      ],
+      "note": "header tab"
+    },
+    {
+      "match": "^(News|Company news)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s4"
+      ],
+      "note": "company news"
+    },
+    {
+      "match": "^Help$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "footer"
+    },
+    {
+      "match": "^Privacy",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "footer"
+    },
+    {
+      "match": "^Terms",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "footer"
+    },
+    {
+      "match": "^(header|footer|nav|region|section|main|banner|contentinfo|navigation|search) area$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "match": "^repeated ",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ]
+    },
+    {
+      "match": "^(Google|About|Products|News|Company Info|Explore|Help|Learn more|Check it out|Let's go|Subscribe|OK, got it|Change language or region|Google apps|Google Account|Sign in|Privacy|Terms)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "about.google header menu (About, Products, News, Company info), buttons, cookie notice, language picker, footer"
+    },
+    {
+      "match": " link opens in (new|same) tab or window$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "footer link lists to other Google sites (content links; the list existed in 2019 with period names)"
+    },
+    {
+      "match": "^(Get the latest news from Google in your inbox|Google around the globe|Inside .*|What we announced .*|.* says hello!)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "article and newsletter headings (content)"
+    }
   ]
 }

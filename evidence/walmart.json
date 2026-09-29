@@ -6,35 +6,30 @@
       "id": "s1",
       "url": "https://web.archive.org/web/20190914233436/https://www.walmart.com/",
       "date": "2019-09-14",
-      "file": "/home/claude/sweeps/g6-evidence/walmart/home-wb-2019-09.png",
       "shows": "home: navy header, spark, hamburger, square Search field with department dropdown, reorder/account/store/cart icons without labels, hero carousel, NextDay delivery band, Feedback side tab"
     },
     {
       "id": "s2",
       "url": "https://web.archive.org/web/20190914233436/https://www.walmart.com/",
       "date": "2019-09-14",
-      "file": "/home/claude/sweeps/g6-evidence/walmart/home-wb-2019-09-full.jpg",
       "shows": "full home and white footer: newsletter field, social icons, Mobile apps, columns Walmart Services / Get to Know Us / Walmart.com / Customer Service / In The Spotlight (Our Company, Sell on Walmart.com, Careers, Terms of Use, Privacy & Security, Calif. Privacy Rights, Tax Exempt Program, Help Center, Product Recalls, Accessibility, Contact Us, Store Pickup)"
     },
     {
       "id": "s3",
       "url": "https://www.parsehub.com/blog/scrape-walmart-product-data/",
       "date": "2019-09",
-      "file": "/home/claude/sweeps/g6-evidence/walmart/search-01.png",
       "shows": "search 'tablet' in a user's browser: navy header, 'Deliver to' row, '1 - 20 of 1,000+ results', 'Refine by | Price Top Brands Store Availability', 'Sort by | Best Match', category icon row, left Departments rail with Delivery & Pickup filters, list results with price and 'Show only Samsung Store'"
     },
     {
       "id": "s4",
       "url": "https://web.archive.org/web/20191226205453/https://www.walmart.com/search/?query=lego",
       "date": "2019-12-26",
-      "file": "/home/claude/sweeps/g6-evidence/walmart/search-wb-2019-12.png",
       "shows": "search 'lego': sponsored brand banner, results count, Refine by (Price, Top Brands, Store Availability) as plain dropdowns, Sort by Best Match, list/grid toggles, category icon carousel with dots, Departments rail, ROLLBACK badge, 2-day delivery"
     },
     {
       "id": "s5",
       "url": "https://web.archive.org/web/20190704152647/https://www.walmart.com/ip/Apple-AirPods-with-Charging-Case-Latest-Model/604342441",
       "date": "2019-07-04",
-      "file": "/home/claude/sweeps/g6-evidence/walmart/item-wb-2019-07.png",
       "shows": "product page: breadcrumb, share icons, image with thumbnails, 24px title, stars/reviews/brand/Walmart #, price, Free 2-day delivery, Free pickup, Add-on services (protection plan), quantity, blue pill Add to Cart, Sold & shipped by, Add to List / Add to Registry, 'Tell us if something is incorrect', other sellers"
     }
   ],

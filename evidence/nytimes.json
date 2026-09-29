@@ -6,36 +6,31 @@
       "id": "s1",
       "url": "https://www.google.com/search?udm=2&q=nytimes.com+homepage+2019",
       "date": "2019",
-      "shows": "Google Images: Version Museum '26 Years of New York Times Website Design' (2018-2019 homepage), NYT 'Year in Visual Stories 2019'",
-      "file": "g7-evidence/nytimes/gimg-home.jpg"
+      "shows": "Google Images: Version Museum '26 Years of New York Times Website Design' (2018-2019 homepage), NYT 'Year in Visual Stories 2019'"
     },
     {
       "id": "s2",
       "url": "https://www.versionmuseum.com/history-of/new-york-times-website",
       "date": "2018 redesign, in use through 2019",
-      "shows": "homepage: hamburger and search icons, ENGLISH / ESPAÑOL / 中文, date and Today's Paper, centered blackletter logo, nav World U.S. Politics N.Y. Business Opinion Tech Science Health Sports Arts Books Style Food Travel Magazine T Magazine Real Estate Video ALL, briefing row, markets and weather, Cheltenham headlines, Opinion column with columnists",
-      "file": "g7-evidence/nytimes/versionmuseum-2018-responsive.jpg"
+      "shows": "homepage: hamburger and search icons, ENGLISH / ESPAÑOL / 中文, date and Today's Paper, centered blackletter logo, nav World U.S. Politics N.Y. Business Opinion Tech Science Health Sports Arts Books Style Food Travel Magazine T Magazine Real Estate Video ALL, briefing row, markets and weather, Cheltenham headlines, Opinion column with columnists"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20190616000056/https://www.nytimes.com/",
       "date": "2019-06-16",
-      "shows": "homepage structure and HTML: Sections navigation, Search, ENGLISH / ESPAÑOL / 中文, LOG IN and SUBSCRIBE buttons, Today's Paper, section nav, 'N comments', footer (NYTCo, Contact Us, Work With Us, Advertise, T Brand Studio, Your Ad Choices, Privacy, Terms of Service, Terms of Sale, Site Map, Help, Subscriptions)",
-      "file": "g7-evidence/nytimes/wb-nytimes-home-jun.png"
+      "shows": "homepage structure and HTML: Sections navigation, Search, ENGLISH / ESPAÑOL / 中文, LOG IN and SUBSCRIBE buttons, Today's Paper, section nav, 'N comments', footer (NYTCo, Contact Us, Work With Us, Advertise, T Brand Studio, Your Ad Choices, Privacy, Terms of Service, Terms of Sale, Site Map, Help, Subscriptions)"
     },
     {
       "id": "s4",
       "url": "https://web.archive.org/web/20191130043947/https://www.nytimes.com/2019/09/11/climate/why-noaa-matters.html",
       "date": "2019-09",
-      "shows": "article: slim bar with section name and LOG IN, kicker, italic Cheltenham headline, summary, byline, Published/Updated, share icons (Facebook, Twitter, Email, More)",
-      "file": "g7-evidence/nytimes/wb-nytimes-article.png"
+      "shows": "article: slim bar with section name and LOG IN, kicker, italic Cheltenham headline, summary, byline, Published/Updated, share icons (Facebook, Twitter, Email, More)"
     },
     {
       "id": "s5",
       "url": "https://web.archive.org/web/20191121000717/https://www.nytimes.com/",
       "date": "2019-11-21",
-      "shows": "homepage HTML (November): same masthead controls",
-      "file": "g7-evidence/nytimes/wb-nytimes-home-nov.png"
+      "shows": "homepage HTML (November): same masthead controls"
     }
   ],
   "features": [

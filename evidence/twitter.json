@@ -6,42 +6,36 @@
       "id": "s1",
       "url": "https://freshvanroot.com/blog/twitter-redesign-2019-newtwitter/",
       "date": "2019-02-07",
-      "file": "/home/claude/sweeps/g4-evidence/twitter/fvr-old-timeline-crop.png",
       "shows": "signed-in legacy home: top bar Home/Notifications/Messages, bird, Search Twitter, avatar, Tweet pill; profile card, trends, Who to follow, footer"
     },
     {
       "id": "s2",
       "url": "https://freshvanroot.com/blog/twitter-redesign-2019-newtwitter/",
       "date": "2019-02-07",
-      "file": "/home/claude/sweeps/g4-evidence/twitter/fvr-old-profile-crop.png",
       "shows": "signed-in legacy profile: banner, stats bar, Tweets / Tweets & replies / Media tabs"
     },
     {
       "id": "s3",
       "url": "https://www.digitalinformationworld.com/2019/06/twitter-redesigns-its-desktop-again.html",
       "date": "2019-06",
-      "file": "/home/claude/sweeps/g4-evidence/twitter/diw-2019-06-old.png",
       "shows": "legacy profile: Tweets/Following/Followers/Likes stats, Following button, Tweet to / Message, Who to follow (Refresh, View all), Trends for you, reply/retweet/like/DM row"
     },
     {
       "id": "s4",
       "url": "https://web.archive.org/web/20190301000000/https://twitter.com/jack",
       "date": "2019-03",
-      "file": "/home/claude/sweeps/g4-evidence/twitter/wb-profile.png",
       "shows": "signed-out legacy profile: Home/Moments bar, Search Twitter, Have an account? Log in, Follow, New to Twitter? Sign up, footer Terms/Privacy policy/Cookies/Ads info, Joined date, Pinned Tweet"
     },
     {
       "id": "s5",
       "url": "https://web.archive.org/web/20190601000000id_/https://twitter.com/?lang=en",
       "date": "2019-06-01",
-      "file": "/home/claude/sweeps/g4-evidence/twitter/wb-landing-201906.png",
       "shows": "signed-out landing: blue panel with three lines, login fields, See what's happening in the world right now, Join Twitter today, Sign Up / Log in, footer About Help Center Blog Status Jobs Terms Privacy Policy Cookies Ads info Brand Apps Advertise Marketing Businesses Developers Directory Settings, (c) 2019 Twitter"
     },
     {
       "id": "s6",
       "url": "https://web.archive.org/web/2019/https://twitter.com/hashtag/superbowl",
       "date": "2019-03",
-      "file": "/home/claude/sweeps/g4-evidence/twitter/wb-search.png",
       "shows": "legacy search: query band, Top/Latest/People/Photos/Videos/News/Broadcasts tabs, New to Twitter? Sign up"
     },
     {
@@ -54,21 +48,18 @@
       "id": "s8",
       "url": "https://freshvanroot.com/blog/twitter-redesign-2019-newtwitter/",
       "date": "2019-02-07",
-      "file": "/home/claude/sweeps/g4-evidence/twitter/fvr-new-timeline-20190207.png",
       "shows": "the opt-in new layout of early 2019 (Explore, Bookmarks), not the default"
     },
     {
       "id": "s9",
       "url": "https://web.archive.org/web/2019/https://twitter.com/i/moments",
       "date": "2019-03",
-      "file": "/home/claude/sweeps/g4-evidence/twitter/wb-explore.png",
       "shows": "legacy Moments/explore page"
     },
     {
       "id": "s10",
       "url": "https://web.archive.org/web/20190301000000id_/https://twitter.com/",
       "date": "2019-03-01",
-      "file": "/home/claude/sweeps/g4-evidence/twitter/wb-landing-201903.html",
       "shows": "landing markup: StaticLoggedOutHomePage communication items with edge-icons search/people/reply glyphs, StreamsFooter"
     }
   ],

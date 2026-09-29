@@ -6,36 +6,31 @@
       "id": "s2",
       "url": "https://seibert.group/blog/en/microsoft-word-online-vs-google-docs-comparing-twelve-features/",
       "date": "2019-09",
-      "shows": "Docs editor: doc icon, title, star, move-to-folder, menus File Edit View Insert Format Tools Add-ons Help Accessibility, 'Last edit was 4 days ago' link, activity dashboard, comments, blue Share, avatar; toolbar undo redo print spellcheck paint-format 100% Title Arial 18 (dropdown) B I U A highlight link comment image align line-spacing more, pencil mode, collapse ^; outline button; Explore panel",
-      "file": "/home/claude/sweeps/g1-evidence/gdrive/s2-seibert-explore.jpg"
+      "shows": "Docs editor: doc icon, title, star, move-to-folder, menus File Edit View Insert Format Tools Add-ons Help Accessibility, 'Last edit was 4 days ago' link, activity dashboard, comments, blue Share, avatar; toolbar undo redo print spellcheck paint-format 100% Title Arial 18 (dropdown) B I U A highlight link comment image align line-spacing more, pencil mode, collapse ^; outline button; Explore panel"
     },
     {
       "id": "s3",
       "url": "https://workspaceupdates.googleblog.com/2019/08/drive-shortcuts-beta.html",
       "date": "2019-08",
-      "shows": "Google's own Drive GIF: Drive logo, Search Drive field, New pill with four-colour plus, nav Priority / My Drive / Shared drives / Shared with me (blue pill) / Recent / Starred / Trash, grid toggle and details (i), file cards",
-      "file": "/home/claude/sweeps/g1-evidence/gdrive/s3-gblog-frame.png"
+      "shows": "Google's own Drive GIF: Drive logo, Search Drive field, New pill with four-colour plus, nav Priority / My Drive / Shared drives / Shared with me (blue pill) / Recent / Starred / Trash, grid toggle and details (i), file cards"
     },
     {
       "id": "s6",
       "url": "https://gsuiteupdates.googleblog.com/2019/04/drive-offiline-mode.html",
       "date": "2019-04",
-      "shows": "Drive header: grey search field with dropdown arrow at the right",
-      "file": "/home/claude/sweeps/g1-evidence/gdrive/s6-gsu-offline-d4.png"
+      "shows": "Drive header: grey search field with dropdown arrow at the right"
     },
     {
       "id": "s7",
       "url": "https://gsuiteupdates.googleblog.com/2019/07/more-header-footer-options-docs.html",
       "date": "2019-07",
-      "shows": "Docs page with ruler and header options",
-      "file": "/home/claude/sweeps/g1-evidence/gdrive/s7-gsu-headerfooter-frame.png"
+      "shows": "Docs page with ruler and header options"
     },
     {
       "id": "g11",
       "url": "https://itsblog.manhattan.edu/2019/05/write-now-send-later-with-scheduled.html",
       "date": "2019-04",
-      "shows": "2019 G Suite side panel (Calendar, Keep, Tasks, +) shared by Gmail, Docs and Drive",
-      "file": "/home/claude/sweeps/g1-evidence/gmail/s11-manhattan-frame.png"
+      "shows": "2019 G Suite side panel (Calendar, Keep, Tasks, +) shared by Gmail, Docs and Drive"
     }
   ],
   "features": [

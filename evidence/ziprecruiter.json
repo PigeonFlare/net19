@@ -6,7 +6,6 @@
    "id": "raw-home-2019-11",
    "url": "https://arquivo.pt/noFrame/replay/20191101012410id_/https://www.ziprecruiter.com/",
    "date": "2019-11-01",
-   "file": "/home/claude/sweeps/g12-evidence/ziprecruiter/home-2019-11-raw.html",
    "shows": "the 2019 home HTML, including the logo file zrs/f810ae13/img/logos/ziprecruiter-blacktext.svg"
   },
   {
@@ -19,71 +18,61 @@
    "id": "home-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190301050616/https://www.ziprecruiter.com/",
    "date": "2019-03-01",
-   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/ziprecruiter-home-a201903.png"
+   "shows": "home page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "home-a201907b",
    "url": "https://arquivo.pt/noFrame/replay/20190701144214/https://www.ziprecruiter.com/",
    "date": "2019-07-01",
-   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/ziprecruiter-home-a201907b.png"
+   "shows": "home page as served in 2019-07 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "home-a201911c",
    "url": "https://arquivo.pt/noFrame/replay/20191101012410/https://www.ziprecruiter.com/",
    "date": "2019-11-01",
-   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/ziprecruiter-home-a201911c.png"
+   "shows": "home page as served in 2019-11 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "item-a201912",
    "url": "https://arquivo.pt/noFrame/replay/20191214074250/https://www.ziprecruiter.com/jobs/seiler-instrument-mfg-co-b63983d2/land-surveyor-support-technician-6c08bd75",
    "date": "2019-12-14",
-   "shows": "item page as served in 2019-12 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/ziprecruiter-item-a201912.png"
+   "shows": "item page as served in 2019-12 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "login-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190327034147/https://www.ziprecruiter.com/login",
    "date": "2019-03-27",
-   "shows": "login page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/ziprecruiter-login-a201903.png"
+   "shows": "login page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "login-a201909b",
    "url": "https://arquivo.pt/noFrame/replay/20190902223053/https://www.ziprecruiter.com/login/forgot-password",
    "date": "2019-09-02",
-   "shows": "login page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/ziprecruiter-login-a201909b.png"
+   "shows": "login page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "search-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190328015501/https://www.ziprecruiter.com/Jobs/Account-Manager",
    "date": "2019-03-28",
-   "shows": "search page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/ziprecruiter-search-a201903.png"
+   "shows": "search page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "search-a201903d",
    "url": "https://arquivo.pt/noFrame/replay/20190328015532/https://www.ziprecruiter.com/Jobs/Software-Engineer",
    "date": "2019-03-28",
-   "shows": "search page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/ziprecruiter-search-a201903d.png"
+   "shows": "search page as served in 2019-03 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "search-a201909b",
    "url": "https://arquivo.pt/noFrame/replay/20190902223303/https://www.ziprecruiter.com/jobs/search",
    "date": "2019-09-02",
-   "shows": "search page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/ziprecruiter-search-a201909b.png"
+   "shows": "search page as served in 2019-09 (Arquivo.pt capture rendered with its 2019 CSS)"
   },
   {
    "id": "search-a201912c",
    "url": "https://arquivo.pt/noFrame/replay/20191214075400/https://www.ziprecruiter.com/jobs/search",
    "date": "2019-12-14",
-   "shows": "search page as served in 2019-12 (Arquivo.pt capture rendered with its 2019 CSS)",
-   "file": "/home/claude/sweeps/g12-wbr/ziprecruiter-search-a201912c.png"
+   "shows": "search page as served in 2019-12 (Arquivo.pt capture rendered with its 2019 CSS)"
   }
  ],
  "features": [

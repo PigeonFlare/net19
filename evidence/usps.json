@@ -6,36 +6,31 @@
    "id": "home-a20190320",
    "url": "https://arquivo.pt/noFrame/replay/20190320165230/https://www.usps.com/",
    "date": "2019-03-20",
-   "shows": "home page as served on 2019-03-20 (Arquivo.pt capture rendered with its archived 2019 CSS)",
-   "file": "h6-evidence/usps/usps-home-a20190320.png"
+   "shows": "home page as served on 2019-03-20 (Arquivo.pt capture rendered with its archived 2019 CSS)"
   },
   {
    "id": "home-w20190301",
    "url": "https://web.archive.org/web/20190301161330/https://www.usps.com/",
    "date": "2019-03-01",
-   "shows": "home-w20190301 page as served on 2019-03-01 (Wayback capture rendered with its archived 2019 CSS)",
-   "file": "h6-evidence/usps/usps-home-w20190301.png"
+   "shows": "home-w20190301 page as served on 2019-03-01 (Wayback capture rendered with its archived 2019 CSS)"
   },
   {
    "id": "ship-w20190103",
    "url": "https://web.archive.org/web/20190103205027/https://www.usps.com/ship/",
    "date": "2019-01-03",
-   "shows": "ship-w20190103 page as served on 2019-01-03 (Wayback capture rendered with its archived 2019 CSS)",
-   "file": "h6-evidence/usps/usps-ship-w20190103.png"
+   "shows": "ship-w20190103 page as served on 2019-01-03 (Wayback capture rendered with its archived 2019 CSS)"
   },
   {
    "id": "ship-w20190709",
    "url": "https://web.archive.org/web/20190709171106/https://www.usps.com/ship/",
    "date": "2019-07-09",
-   "shows": "ship-w20190709 page as served on 2019-07-09 (Wayback capture rendered with its archived 2019 CSS)",
-   "file": "h6-evidence/usps/usps-ship-w20190709.png"
+   "shows": "ship-w20190709 page as served on 2019-07-09 (Wayback capture rendered with its archived 2019 CSS)"
   },
   {
    "id": "ship-w20191202",
    "url": "https://web.archive.org/web/20191202093926/https://www.usps.com/ship/",
    "date": "2019-12-02",
-   "shows": "ship-w20191202 page as served on 2019-12-02 (Wayback capture rendered with its archived 2019 CSS)",
-   "file": "h6-evidence/usps/usps-ship-w20191202.png"
+   "shows": "ship-w20191202 page as served on 2019-12-02 (Wayback capture rendered with its archived 2019 CSS)"
   }
  ],
  "features": [

@@ -6,36 +6,31 @@
    "id": "home-a201903",
    "url": "https://arquivo.pt/noFrame/replay/20190301074800/http://abcnews.go.com/",
    "date": "2019-03-01",
-   "shows": "home page as served on 2019-03-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/gocom/gocom-home-a201903.png"
+   "shows": "home page as served on 2019-03-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "home-a201907",
    "url": "https://arquivo.pt/noFrame/replay/20190701223230/https://abcnews.go.com/",
    "date": "2019-07-01",
-   "shows": "home page as served on 2019-07-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/gocom/gocom-home-a201907.png"
+   "shows": "home page as served on 2019-07-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "home-a201911",
    "url": "https://arquivo.pt/noFrame/replay/20191101185117/https://abcnews.go.com/",
    "date": "2019-11-01",
-   "shows": "home page as served on 2019-11-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/gocom/gocom-home-a201911.png"
+   "shows": "home page as served on 2019-11-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "abc-a201901",
    "url": "https://arquivo.pt/noFrame/replay/20190102124337/https://abc.go.com/",
    "date": "2019-01-02",
-   "shows": "abc page as served on 2019-01-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/gocom/gocom-abc-a201901.png"
+   "shows": "abc page as served on 2019-01-02 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   },
   {
    "id": "abc-a201904",
    "url": "https://arquivo.pt/noFrame/replay/20190401100407/https://abc.go.com/",
    "date": "2019-04-01",
-   "shows": "abc page as served on 2019-04-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)",
-   "file": "/home/claude/sweeps/g12b-evidence/gocom/gocom-abc-a201904.png"
+   "shows": "abc page as served on 2019-04-01 (Arquivo.pt capture: HTML and its 2019 stylesheets)"
   }
  ],
  "features": [

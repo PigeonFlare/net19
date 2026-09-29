@@ -2,28 +2,179 @@
   "theme": "facebook",
   "era": "2019 classic desktop Facebook: flat #4267b2 blue bar; logged-out landing with the login form in the bar and 'Connect with friends…' plus Sign Up on the page. The white-card login (FB5 era) reached most users in August 2020 (s3), so it is not used.",
   "sources": [
-    { "id": "s1", "url": "https://abcnews.com/Business/small-change-facebooks-slogan/story?id=65240239", "date": "2019-08", "shows": "logged-out landing: blue bar with Email or Phone / Password / Log In / Forgot account?, 'Connect with friends and the world around you on Facebook.', three feature lines, Sign Up 'It's quick and easy.', footer 'Facebook © 2019'", "file": "g5-evidence/facebook/land-01.jpg" },
-    { "id": "s2", "url": "https://web.archive.org/web/20190615000017/https://www.facebook.com/", "date": "2019-06", "shows": "Wayback render of the same landing: 82px blue bar, form in bar, Sign Up column, languages row with '+' button, footer links (Sign Up, Log In, Messenger, Facebook Lite, Watch, People, Pages, … Privacy, Cookies, AdChoices, Terms, Help)", "file": "g5-evidence/facebook/wb-2019-06-home.png" },
-    { "id": "s3", "url": "https://ishadeed.com/snippet/facebook-new-login/", "date": "2020-08-12", "shows": "author compares the old landing (blue bar, identical to s1) with the new white-card login that appeared that morning", "file": "g5-evidence/facebook/login-01.jpg" },
-    { "id": "s4", "url": "https://web.archive.org/web/2019/https://www.facebook.com/facebook", "date": "2019", "shows": "logged-out Page: same bar with Email or Phone / Password / Log In / Forgot account?", "file": "g5-evidence/facebook/wb-2019-page.png" },
-    { "id": "s5", "url": "https://www.gadgetmatch.com/facebook-f8-news-feed-update/", "date": "2019-05", "shows": "OLD (2019 desktop) vs NEW (FB5 preview): old News Feed with blue bar, left nav, composer, right rail", "file": "g5-evidence/facebook/feed-02.jpg" },
-    { "id": "s6", "url": "https://appuals.com/how-to-fix-facebook-news-feed-not-working/", "date": "2019", "shows": "desktop News Feed: blue bar, left rail News Feed / Messenger / Watch / Marketplace, Shortcuts, Explore, Create, Sponsored right rail", "file": "g5-evidence/facebook/feed-04.jpg" },
-    { "id": "s7", "url": "https://louisem.com/60629/control-your-facebook-newsfeed", "date": "2018-2019", "shows": "desktop News Feed: Make Post / Photo/Video Album / Live Video composer, Stories, Trending", "file": "g5-evidence/facebook/feed-08.jpg" }
+    {
+      "id": "s1",
+      "url": "https://abcnews.com/Business/small-change-facebooks-slogan/story?id=65240239",
+      "date": "2019-08",
+      "shows": "logged-out landing: blue bar with Email or Phone / Password / Log In / Forgot account?, 'Connect with friends and the world around you on Facebook.', three feature lines, Sign Up 'It's quick and easy.', footer 'Facebook © 2019'"
+    },
+    {
+      "id": "s2",
+      "url": "https://web.archive.org/web/20190615000017/https://www.facebook.com/",
+      "date": "2019-06",
+      "shows": "Wayback render of the same landing: 82px blue bar, form in bar, Sign Up column, languages row with '+' button, footer links (Sign Up, Log In, Messenger, Facebook Lite, Watch, People, Pages, … Privacy, Cookies, AdChoices, Terms, Help)"
+    },
+    {
+      "id": "s3",
+      "url": "https://ishadeed.com/snippet/facebook-new-login/",
+      "date": "2020-08-12",
+      "shows": "author compares the old landing (blue bar, identical to s1) with the new white-card login that appeared that morning"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/2019/https://www.facebook.com/facebook",
+      "date": "2019",
+      "shows": "logged-out Page: same bar with Email or Phone / Password / Log In / Forgot account?"
+    },
+    {
+      "id": "s5",
+      "url": "https://www.gadgetmatch.com/facebook-f8-news-feed-update/",
+      "date": "2019-05",
+      "shows": "OLD (2019 desktop) vs NEW (FB5 preview): old News Feed with blue bar, left nav, composer, right rail"
+    },
+    {
+      "id": "s6",
+      "url": "https://appuals.com/how-to-fix-facebook-news-feed-not-working/",
+      "date": "2019",
+      "shows": "desktop News Feed: blue bar, left rail News Feed / Messenger / Watch / Marketplace, Shortcuts, Explore, Create, Sponsored right rail"
+    },
+    {
+      "id": "s7",
+      "url": "https://louisem.com/60629/control-your-facebook-newsfeed",
+      "date": "2018-2019",
+      "shows": "desktop News Feed: Make Post / Photo/Video Album / Live Video composer, Stories, Trending"
+    }
   ],
   "features": [
-    { "match": "^email$", "in2019": true, "required": true, "evidence": ["s1", "s2", "s4"], "note": "Email or Phone field in the blue bar" },
-    { "match": "^pass$", "in2019": true, "required": true, "evidence": ["s1", "s2", "s4"], "note": "Password field in the blue bar" },
-    { "match": "^Log In$", "in2019": true, "required": true, "evidence": ["s1", "s2", "s4"], "note": "Log In button in the blue bar" },
-    { "match": "^(form|main) area$", "in2019": true, "evidence": ["s1", "s2"], "note": "login form in the bar and the page body" },
-    { "match": "^(Log In|Log in)$", "in2019": true, "evidence": ["s1", "s2", "s4"] },
-    { "match": "^Forgot (account|password)\\?$", "in2019": true, "evidence": ["s1", "s2", "s4"] },
-    { "match": "^(Sign Up|Create New Account)$", "in2019": true, "evidence": ["s1", "s2", "s4"], "note": "green Sign Up button; the registration link" },
-    { "match": "^(email|pass|Email or Phone( Number)?|Password)$", "in2019": true, "evidence": ["s1", "s2"] },
-    { "match": "^(English \\(US\\)|Español|Français \\(France\\)|中文\\(简体\\)|العربية|Português \\(Brasil\\)|Italiano|Deutsch|हिन्दी|日本語|한국어|Tiếng Việt|Bahasa Indonesia)$", "in2019": true, "evidence": ["s1", "s2"], "note": "language row" },
-    { "match": "^(Messenger|Facebook Lite|Watch|People|Pages|Page Categories|Places|Games|Locations|Marketplace|Groups|Instagram|Local|Fundraisers|Services|About|Create Ad|Create Page|Developers|Careers|Privacy|Cookies|AdChoices|Ad choices|Terms|Account Security|Login Help|Help)$", "in2019": true, "evidence": ["s1", "s2"], "note": "2019 footer links" },
-    { "match": "^(Video|Privacy Policy|Create ad|More languages…)$", "in2019": true, "evidence": ["s2"], "note": "renamed back by the theme to Watch, Privacy, Create Ad and the '+' button" },
-    { "match": "^(Meta Pay|Meta Store|Ray-Ban Meta|Muse|Threads|Consumer Health Privacy|Privacy Center|Contact Uploading & Non-Users|Meta Verified|Voting Information Center)$", "in2019": false, "evidence": ["absent from s1/s2 footers; Meta rename 2021-10, Threads 2023-07, Privacy Center 2022"], "action": "hidden" },
-    { "match": "^(News Feed|Home|Messenger|Watch|Marketplace|Groups|Pages|Events|Friends|Saved|Memories|Fundraisers|Gaming Video|Jobs|Offers|Search Facebook|Search|Create|Notifications|Account Settings)$", "in2019": true, "evidence": ["s5", "s6", "s7"], "note": "signed-in bar and left rail (not reachable from the cloud; mapped from screenshots)" },
-    { "match": "^(Reels|Reels and short videos|Meta AI|Ask Meta AI|Feeds|Professional dashboard|Meta Verified|Avatars|Imagine)$", "in2019": false, "evidence": ["Reels 2021 (US), Meta AI 2023, Feeds tab 2022"], "action": "hidden" }
+    {
+      "match": "^email$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s4"
+      ],
+      "note": "Email or Phone field in the blue bar"
+    },
+    {
+      "match": "^pass$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s4"
+      ],
+      "note": "Password field in the blue bar"
+    },
+    {
+      "match": "^Log In$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s4"
+      ],
+      "note": "Log In button in the blue bar"
+    },
+    {
+      "match": "^(form|main) area$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "login form in the bar and the page body"
+    },
+    {
+      "match": "^(Log In|Log in)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s4"
+      ]
+    },
+    {
+      "match": "^Forgot (account|password)\\?$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s4"
+      ]
+    },
+    {
+      "match": "^(Sign Up|Create New Account)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s4"
+      ],
+      "note": "green Sign Up button; the registration link"
+    },
+    {
+      "match": "^(email|pass|Email or Phone( Number)?|Password)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "match": "^(English \\(US\\)|Español|Français \\(France\\)|中文\\(简体\\)|العربية|Português \\(Brasil\\)|Italiano|Deutsch|हिन्दी|日本語|한국어|Tiếng Việt|Bahasa Indonesia)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "language row"
+    },
+    {
+      "match": "^(Messenger|Facebook Lite|Watch|People|Pages|Page Categories|Places|Games|Locations|Marketplace|Groups|Instagram|Local|Fundraisers|Services|About|Create Ad|Create Page|Developers|Careers|Privacy|Cookies|AdChoices|Ad choices|Terms|Account Security|Login Help|Help)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "2019 footer links"
+    },
+    {
+      "match": "^(Video|Privacy Policy|Create ad|More languages…)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "renamed back by the theme to Watch, Privacy, Create Ad and the '+' button"
+    },
+    {
+      "match": "^(Meta Pay|Meta Store|Ray-Ban Meta|Muse|Threads|Consumer Health Privacy|Privacy Center|Contact Uploading & Non-Users|Meta Verified|Voting Information Center)$",
+      "in2019": false,
+      "evidence": [
+        "absent from s1/s2 footers; Meta rename 2021-10, Threads 2023-07, Privacy Center 2022"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(News Feed|Home|Messenger|Watch|Marketplace|Groups|Pages|Events|Friends|Saved|Memories|Fundraisers|Gaming Video|Jobs|Offers|Search Facebook|Search|Create|Notifications|Account Settings)$",
+      "in2019": true,
+      "evidence": [
+        "s5",
+        "s6",
+        "s7"
+      ],
+      "note": "signed-in bar and left rail (not reachable from the cloud; mapped from screenshots)"
+    },
+    {
+      "match": "^(Reels|Reels and short videos|Meta AI|Ask Meta AI|Feeds|Professional dashboard|Meta Verified|Avatars|Imagine)$",
+      "in2019": false,
+      "evidence": [
+        "Reels 2021 (US), Meta AI 2023, Feeds tab 2022"
+      ],
+      "action": "hidden"
+    }
   ]
 }

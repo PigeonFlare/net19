@@ -6,28 +6,24 @@
       "id": "s1",
       "url": "https://web.archive.org/web/20190614235937/https://telegram.org/",
       "date": "2019-06-14",
-      "file": "/home/claude/sweeps/g4-evidence/telegramsite/wb-home-201906.png",
       "shows": "home: nav Home FAQ Apps API Protocol, Twitter, logo, a new era of messaging, Recent News, app links, A native app for every platform, Why switch to Telegram?"
     },
     {
       "id": "s2",
       "url": "https://web.archive.org/web/20190520000000cs_/https://telegram.org/css/telegram.css?161",
       "date": "2019-05-20",
-      "file": "/home/claude/sweeps/g4-evidence/telegramsite/wb-telegram.css",
       "shows": "2019 stylesheet"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20190614235937id_/https://telegram.org/",
       "date": "2019-06-14",
-      "file": "/home/claude/sweeps/g4-evidence/telegramsite/wb-201906.dec.html",
       "shows": "2019 markup and copy"
     },
     {
       "id": "s4",
       "url": "https://web.archive.org/web/20190615000000id_/https://telegram.org/apps",
       "date": "2019-06",
-      "file": "/home/claude/sweeps/g4-evidence/telegramsite/wb-apps-2019.html",
       "shows": "apps page: Telegram Applications, Mobile/Desktop/Web apps, TDLib, Telegram X, Unofficial apps (Unigram, Telegram CLI, MadelineProto), Source code with GitHub links and licenses, security contact"
     }
   ],

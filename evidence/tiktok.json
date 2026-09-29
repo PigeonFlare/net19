@@ -6,35 +6,30 @@
       "id": "s1",
       "url": "https://web.archive.org/web/2019/https://www.tiktok.com/@charlidamelio",
       "date": "2019-12",
-      "file": "/home/claude/sweeps/g3-evidence/tiktok/wb-profile-2019-light-bare.png",
       "shows": "late-2019 profile (Wayback capture rendered offline, its own CSS in wb-profile-2019/): white 80px header with soft shadow (Home, About, Trending, Discover, menu), 48px sofiapro-bold name, 18px @handle with grey 'Verified account' pill, '860 Following 9.6m Followers 246.1m Likes' 15px, grey #8b8b91 bio, rule, Creators/Discover cards with pink See All, footer; no search, no log in, no follow or message buttons"
     },
     {
       "id": "s2",
       "url": "https://web.archive.org/web/20190810/https://www.tiktok.com/trending",
       "date": "2019-08-10",
-      "file": "/home/claude/sweeps/g3-evidence/tiktok/wb-trending-20190810-light-bare.png",
       "shows": "mid-2019 trending page, older black variant (logo, Trending, language, menu, Trending Hashtags, Get the App)"
     },
     {
       "id": "s3",
       "url": "https://izea.com/resources/tik-tok-influencers/",
       "date": "2020-01-03",
-      "file": "/home/claude/sweeps/g3-evidence/tiktok/izea-2020-01-profile-1.png",
       "shows": "profile screenshot dated 2020-01-03: round avatar left, 48px bold name, @handle with 'Verified account' pill, '135 Following 18.9M Followers 558.6M Likes', grey bio, rule"
     },
     {
       "id": "s4",
       "url": "https://nighteye.app/",
       "date": "2020-01",
-      "file": "/home/claude/sweeps/g3-evidence/tiktok/dl-nighteye-2020-01-1.png",
       "shows": "trending, hashtag, video modal and discover pages of the white web design (shown through a dark-mode extension, so layout only): header links Trending/Discover with pink underline, 3-column video cards with heart counts, Creators/Discover cards with See All, video modal with author, caption, '2.3M likes · 19.3K comments', share icons"
     },
     {
       "id": "s5",
       "url": "https://mediamodifier.com/",
       "date": "2020-03",
-      "file": "/home/claude/sweeps/g3-evidence/tiktok/dl-tiktok-profile-mockup-desktop.jpg",
       "shows": "mockup template of the then-current web profile and video page: header menu + logo + Trending/Discover, round avatar, bold name, stats, 3-column grid, Suggested accounts card, share icons"
     }
   ],

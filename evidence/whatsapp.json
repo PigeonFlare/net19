@@ -2,16 +2,71 @@
   "theme": "whatsapp",
   "era": "WhatsApp Web 2019: teal #00bfa5/#1ebea5 band, white QR card \"To use WhatsApp on your computer:\", and the two-pane app (#ededed headers, #e5ddd5 chat, #dcf8c6 outgoing bubbles)",
   "sources": [
-    { "id": "s1", "url": "https://www.securitynewspaper.com/2019/07/08/check-if-your-whatsapp-is-hacked-or-not/", "date": "2019-07-08", "file": "/home/claude/sweeps/g4-evidence/whatsapp/web-whatsapp-2019-07-securitynewspaper.png", "shows": "web.whatsapp.com landing: WHATSAPP WEB band, To use WhatsApp on your computer:, three steps, QR, Need help to get started?, Keep me signed in" },
-    { "id": "s2", "url": "https://techpp.com/2019/02/18/whatsapp-web-tricks/", "date": "2019-02-18", "file": "/home/claude/sweeps/g4-evidence/whatsapp/desktop-2019-02-techpp.jpg", "shows": "the same QR card in the desktop app" },
-    { "id": "s3", "url": "https://www.redmondpie.com/install-whatsapp-web-on-ipad-thanks-to-ios-13-and-ipados-13/", "date": "2019-06-28", "file": "/home/claude/sweeps/g4-evidence/whatsapp/redmondpie-web-whatsapp-ipad-02.jpg", "shows": "signed-in web.whatsapp.com: Status / New chat / Menu icons, Search or start new chat, chat list, e2e notice, wallpaper, Type a message composer with emoji and mic" },
-    { "id": "s4", "url": "https://web.archive.org/web/20191231000000/https://web.whatsapp.com/", "date": "2019-12-31", "shows": "2019 stylesheets cssm_qr / cssm_app (colors and sizes, see project doc 2026-09-telegram-whatsapp-themes.md)" }
+    {
+      "id": "s1",
+      "url": "https://www.securitynewspaper.com/2019/07/08/check-if-your-whatsapp-is-hacked-or-not/",
+      "date": "2019-07-08",
+      "shows": "web.whatsapp.com landing: WHATSAPP WEB band, To use WhatsApp on your computer:, three steps, QR, Need help to get started?, Keep me signed in"
+    },
+    {
+      "id": "s2",
+      "url": "https://techpp.com/2019/02/18/whatsapp-web-tricks/",
+      "date": "2019-02-18",
+      "shows": "the same QR card in the desktop app"
+    },
+    {
+      "id": "s3",
+      "url": "https://www.redmondpie.com/install-whatsapp-web-on-ipad-thanks-to-ios-13-and-ipados-13/",
+      "date": "2019-06-28",
+      "shows": "signed-in web.whatsapp.com: Status / New chat / Menu icons, Search or start new chat, chat list, e2e notice, wallpaper, Type a message composer with emoji and mic"
+    },
+    {
+      "id": "s4",
+      "url": "https://web.archive.org/web/20191231000000/https://web.whatsapp.com/",
+      "date": "2019-12-31",
+      "shows": "2019 stylesheets cssm_qr / cssm_app (colors and sizes, see project doc 2026-09-telegram-whatsapp-themes.md)"
+    }
   ],
   "features": [
-    { "match": "^(form area|main area|header area|section area|dialog area|region area)$", "in2019": true, "evidence": ["s1", "s3"] },
-    { "match": "^(To use WhatsApp on your computer:|Need help to get started\\?.*|Keep me signed in)$", "in2019": true, "evidence": ["s1", "s2"] },
-    { "match": "^(Scan to log in|Log in with phone number|Create an account|Get started|Phone number|Privacy Policy|Terms of Service|Terms & Privacy Policy|Your personal messages are end-to-end encrypted)$", "in2019": false, "evidence": ["2021+ multi-device landing, phone-number linking and in-browser sign-up; s1 and s2 show only the QR card"], "action": "hidden" },
-    { "match": "^(Search or start new chat|Chats|Status|New chat|Menu|Type a message|Attach|Emoji|Voice message|Search…|Search)$", "in2019": true, "evidence": ["s3"], "note": "signed-in app controls" },
-    { "match": "^(Channels|Communities|New community|Meta AI|Calls|Lists|Favourites|Favorites|Unread|Groups)$", "in2019": false, "evidence": ["Communities 2022, Channels 2023, Meta AI 2024, chat filters 2024; absent from s3"], "action": "hidden" }
+    {
+      "match": "^(form area|main area|header area|section area|dialog area|region area)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ]
+    },
+    {
+      "match": "^(To use WhatsApp on your computer:|Need help to get started\\?.*|Keep me signed in)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "match": "^(Scan to log in|Log in with phone number|Create an account|Get started|Phone number|Privacy Policy|Terms of Service|Terms & Privacy Policy|Your personal messages are end-to-end encrypted)$",
+      "in2019": false,
+      "evidence": [
+        "2021+ multi-device landing, phone-number linking and in-browser sign-up; s1 and s2 show only the QR card"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Search or start new chat|Chats|Status|New chat|Menu|Type a message|Attach|Emoji|Voice message|Search…|Search)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "signed-in app controls"
+    },
+    {
+      "match": "^(Channels|Communities|New community|Meta AI|Calls|Lists|Favourites|Favorites|Unread|Groups)$",
+      "in2019": false,
+      "evidence": [
+        "Communities 2022, Channels 2023, Meta AI 2024, chat filters 2024; absent from s3"
+      ],
+      "action": "hidden"
+    }
   ]
 }

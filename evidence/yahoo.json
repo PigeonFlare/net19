@@ -6,49 +6,42 @@
       "id": "s1",
       "url": "https://arun.is/blog/10-year-challenge/",
       "date": "2019-01-22",
-      "file": "/home/claude/sweeps/g9-evidence/yahoo/arun-2019-01-yahoo.jpg",
       "shows": "homepage: YAHOO! logo, square search box with blue search button, Sign in, bell (Notifications), Mail; purple nav Mail/News/Finance/Sports/Politics/Entertainment/Lifestyle/More...; hero story with 5 thumbnails, stream with category label, publisher, reactions count; right rail Make Yahoo your homepage, Trending Now 1-10, ad, weather with 4 days"
     },
     {
       "id": "s2",
       "url": "https://www.versionmuseum.com/history-of/yahoo-website",
       "date": "2019",
-      "file": "/home/claude/sweeps/g9-evidence/yahoo/versionmuseum-2019-yahoo.jpg",
       "shows": "homepage 2019: same header and nav, hero with reactions, stream with related links, Trending Now with Father's Day tab, weather Chicago with 4 days"
     },
     {
       "id": "s3",
       "url": "https://www.webdesignmuseum.org/gallery/yahoo-2019",
       "date": "2019-12",
-      "file": "/home/claude/sweeps/g9-evidence/wb/wdm/t-yahoo-2019.jpg",
       "shows": "full homepage late 2019: header, nav incl. Shopping/Subscriptions/My Channel, hero, stream, Trending Now + Holiday Searches, weather, scoreboard, horoscope, footer Terms/Privacy/Advertise/About Our Ads/Careers/Help/Feedback"
     },
     {
       "id": "s4",
       "url": "https://web.archive.org/web/20190615235626/https://www.yahoo.com/",
       "date": "2019-06-15",
-      "file": "/home/claude/sweeps/g9-evidence/wb/yahoo-home.png",
       "shows": "homepage labels (CSS missing in the capture): Sign in, Notifications, Mail, nav, Search, stream with Reactions, Trending Now, weather United States Today..., Scoreboard, The best TV for free video module with previous/next, Horoscopes, footer"
     },
     {
       "id": "s5",
       "url": "https://www.bleepingcomputer.com/news/security/tech-support-scammers-target-search-ads-on-isp-start-pages/",
       "date": "2019-06-25",
-      "file": "/home/claude/sweeps/g9-evidence/yahoo/bleeping-2019-06-serp.jpg",
       "shows": "real user search.yahoo.com SERP: grey header band with search box, tabs Web/Images/Video/News/More/Anytime, Also try, ads and results with blue titles and green URLs"
     },
     {
       "id": "s6",
       "url": "https://web.archive.org/web/20180325051704/http://search.yahoo.com/search?p=weather",
       "date": "2018-03-25",
-      "file": "/home/claude/sweeps/g9-evidence/wb/yahoo-serp.png",
       "shows": "nearest capture of the same SERP design (no 2019 capture exists): #f1f1f1 73px band, 520x48 square field + 80px #542dfe button at x=124, Sign in, mail, apps, YAHOO! logo on the right; tabs 13px bold with 2px underline; Also try; weather answer; titles 18px #330099; snippets 13px #525252; footer Settings/Help/Suggestions/Privacy/Terms/Advertise/About ads/About this page"
     },
     {
       "id": "s7",
       "url": "https://web.archive.org/web/20190615235723/https://news.yahoo.com/",
       "date": "2019-06-15",
-      "file": "(labels via inventory of the capture)",
       "shows": "Yahoo News nav: News, US, World, Politics, Originals, Health, Science, stories"
     }
   ],

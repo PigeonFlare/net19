@@ -6,29 +6,25 @@
       "id": "s1",
       "url": "https://www.google.com/search?udm=2&q=wsj.com+homepage+2019+screenshot",
       "date": "2019",
-      "shows": "Google Images: WSJ 'WSJ.com Turns 25' history collage and infoHOST device mockups of the late-2010s homepage",
-      "file": "g7-evidence/wsj/gimg-home.jpg"
+      "shows": "Google Images: WSJ 'WSJ.com Turns 25' history collage and infoHOST device mockups of the late-2010s homepage"
     },
     {
       "id": "s2",
       "url": "https://web.archive.org/web/20190916001042/https://www.wsj.com/",
       "date": "2019-09-16",
-      "shows": "homepage and HTML: DOW JONES, A NEWS CORP COMPANY bar, market ticker (DJIA, Nasdaq, U.S. 10 Yr, Crude Oil, Euro), centered masthead, U.S. Edition, date, Print Edition, Video, Subscribe / Sign In, nav Home World U.S. Politics Economy Business Tech Markets Opinion Life & Arts Real Estate WSJ. Magazine, Search, What's News, Markets data box, Opinion, Weekend Reads",
-      "file": "g7-evidence/wsj/wb-wsj-home.png"
+      "shows": "homepage and HTML: DOW JONES, A NEWS CORP COMPANY bar, market ticker (DJIA, Nasdaq, U.S. 10 Yr, Crude Oil, Euro), centered masthead, U.S. Edition, date, Print Edition, Video, Subscribe / Sign In, nav Home World U.S. Politics Economy Business Tech Markets Opinion Life & Arts Real Estate WSJ. Magazine, Search, What's News, Markets data box, Opinion, Weekend Reads"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20190410234652/https://www.wsj.com/",
       "date": "2019-04-10",
-      "shows": "homepage (April): same masthead and nav, What's News, Markets and Opinion rails",
-      "file": "g7-evidence/wsj/wb-wsj-home-apr.png"
+      "shows": "homepage (April): same masthead and nav, What's News, Markets and Opinion rails"
     },
     {
       "id": "s4",
       "url": "https://web.archive.org/web/20191229210023/https://www.wsj.com/articles/amid-brexit-a-different-common-currency-is-raising-a-ruckus-11568567949",
       "date": "2019-09",
-      "shows": "article: SHARE rail, flashline (A-HED), headline, dek, By …, Updated time, PRINT, TEXT, comment count, body",
-      "file": "g7-evidence/wsj/wb-wsj-article.png"
+      "shows": "article: SHARE rail, flashline (A-HED), headline, dek, By …, Updated time, PRINT, TEXT, comment count, body"
     }
   ],
   "features": [

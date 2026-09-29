@@ -6,92 +6,79 @@
       "id": "s1",
       "url": "https://www.computerworld.com/article/1721340/gmail-redesigned.html",
       "date": "2019-04",
-      "shows": "inbox with Primary/Social/Promotions tabs, Primary in red with red underline",
-      "file": "/home/claude/sweeps/g1-evidence/gmail/s1-cw-inbox.jpg"
+      "shows": "inbox with Primary/Social/Promotions tabs, Primary in red with red underline"
     },
     {
       "id": "s2",
       "url": "https://www.dantilden.com/2019/03/20/google-inbox/",
       "date": "2019-03",
-      "shows": "row hover actions archive/delete/mark read/snooze",
-      "file": "/home/claude/sweeps/g1-evidence/gmail/s2-dt-actions.png"
+      "shows": "row hover actions archive/delete/mark read/snooze"
     },
     {
       "id": "s3",
       "url": "https://www.uxteam.com/5-things-the-new-gmail-design-got-wrong/",
       "date": "2018-06",
-      "shows": "new Gmail nav (Compose pill, Inbox red on pink, Starred, Snoozed, Sent, Drafts, labels, More)",
-      "file": "/home/claude/sweeps/g1-evidence/gmail/s3-uxteam-2.png"
+      "shows": "new Gmail nav (Compose pill, Inbox red on pink, Starred, Snoozed, Sent, Drafts, labels, More)"
     },
     {
       "id": "s4",
       "url": "https://appsedu.com/blog/2018/04/new-gmail-features-deep-dive.html",
       "date": "2018-04",
-      "shows": "full new Gmail: header, Search mail with dropdown, apps grid, account; toolbar select/refresh/more, density and settings gear; side panel Calendar/Keep/Tasks/+; footer storage, Program Policies, Last account activity Details",
-      "file": "/home/claude/sweeps/g1-evidence/gmail/s4-appsedu-2.png"
+      "shows": "full new Gmail: header, Search mail with dropdown, apps grid, account; toolbar select/refresh/more, density and settings gear; side panel Calendar/Keep/Tasks/+; footer storage, Program Policies, Last account activity Details"
     },
     {
       "id": "s6",
       "url": "https://www.tomsguide.com/us/new-gmail-features,news-27070.html",
       "date": "2019-04",
-      "shows": "compose confidential mode dialog, Material dialog buttons",
-      "file": "/home/claude/sweeps/g1-evidence/gmail/s6-toms-2.jpg"
+      "shows": "compose confidential mode dialog, Material dialog buttons"
     },
     {
       "id": "s7",
       "url": "https://seibert.group/blog/en/switching-from-google-inbox-to-gmail-comparison-of-features-and-tips/",
       "date": "2019-07",
-      "shows": "stock inbox: header, Search mail field with dropdown arrow, Compose, Inbox/Starred/Snoozed/Sent/Drafts/More, selection toolbar, rows, pagination 1-27 of 27",
-      "file": "/home/claude/sweeps/g1-evidence/gmail/s7-seibert-Gmail-Spam.jpg"
+      "shows": "stock inbox: header, Search mail field with dropdown arrow, Compose, Inbox/Starred/Snoozed/Sent/Drafts/More, selection toolbar, rows, pagination 1-27 of 27"
     },
     {
       "id": "s8",
       "url": "https://www.theverge.com/2018/4/25/17277360/gmail-redesign-live-features-google-update",
       "date": "2018-04",
-      "shows": "Compose pill, Inbox, Snoozed, Important, Sent",
-      "file": "/home/claude/sweeps/g1-evidence/gmail/s8-verge-2018.jpg"
+      "shows": "Compose pill, Inbox, Snoozed, Important, Sent"
     },
     {
       "id": "s9",
       "url": "https://www.droidviews.com/gmail-signature-android-windows/",
       "date": "2019-10",
-      "shows": "settings gear menu (Display density, Configure inbox, Settings, Themes, Get add-ons, Send feedback, Help)",
-      "file": "/home/claude/sweeps/g1-evidence/gmail/s9-droidviews-settings.jpg"
+      "shows": "settings gear menu (Display density, Configure inbox, Settings, Themes, Get add-ons, Send feedback, Help)"
     },
     {
       "id": "s10",
       "url": "https://www.alphr.com/gear-icon-gmail/",
       "date": "2019-06",
-      "shows": "full-width inbox on a picture theme: header Support (?), apps grid, account; toolbar density and gear; side panel Calendar/Keep/Tasks; on the picture theme the nav labels are white with a soft dark text shadow (Gmail's own 0 1px 2px rgba(0,0,0,.65)) and the selected Inbox is a translucent white pill with white bold text, not the red-on-pink of the default theme (zoom: /home/claude/sweeps/h2-evidence/gmail/alphr-nav-zoom.png)",
-      "file": "/home/claude/sweeps/g1-evidence/gmail/s10-alphr-1.png"
+      "shows": "full-width inbox on a picture theme: header Support (?), apps grid, account; toolbar density and gear; side panel Calendar/Keep/Tasks; on the picture theme the nav labels are white with a soft dark text shadow (Gmail's own 0 1px 2px rgba(0,0,0,.65)) and the selected Inbox is a translucent white pill with white bold text, not the red-on-pink of the default theme"
     },
     {
       "id": "s11",
       "url": "https://itsblog.manhattan.edu/2019/05/write-now-send-later-with-scheduled.html",
       "date": "2019-04",
-      "shows": "Google's own schedule-send GIF: full 2019 inbox (header, toolbar with gear, red Primary tab) and compose window with dark header, To, Subject, blue Send with dropdown, formatting A, attach, link, emoji, Drive, photo, confidential mode, trash, more",
-      "file": "/home/claude/sweeps/g1-evidence/gmail/s11-manhattan-frame.png"
+      "shows": "Google's own schedule-send GIF: full 2019 inbox (header, toolbar with gear, red Primary tab) and compose window with dark header, To, Subject, blue Send with dropdown, formatting A, attach, link, emoji, Drive, photo, confidential mode, trash, more"
     },
     {
       "id": "s12",
       "url": "https://www.laptopmag.com/articles/schedule-emails-gmail",
       "date": "2019-04",
-      "shows": "Compose pill, red Inbox and Primary tab",
-      "file": "/home/claude/sweeps/g1-evidence/gmail/s12-laptopmag-9hZ3iLLJgfKh5pqZSyc5t3.jpg"
+      "shows": "Compose pill, red Inbox and Primary tab"
     },
     {
       "id": "s13",
       "url": "https://www.fonearena.com/blog/274986/gmail-web-right-click-context-menu-reply-forward-mute.html",
       "date": "2019-02",
-      "shows": "Google's 2019 inbox image with the message actions Reply, Reply all, Forward, Archive, Delete, Mark as unread, Snooze, Move to, Label as, Mute, Open in new window",
-      "file": "/home/claude/sweeps/g1-evidence/gmail/s13-fonearena-rightclick.jpg"
+      "shows": "Google's 2019 inbox image with the message actions Reply, Reply all, Forward, Archive, Delete, Mark as unread, Snooze, Move to, Label as, Mute, Open in new window"
     },
     {
       "id": "s1b",
       "url": "https://www.computerworld.com/article/1721340/gmail-redesigned.html",
       "date": "2019-04",
-      "shows": "open message: back, archive, report spam, delete, mark unread, snooze, move to, labels, more; subject with Inbox chip; print and new-window icons; sender row with date, star, reply, more",
-      "file": "/home/claude/sweeps/g1-evidence/gmail/s1-cw-email.jpg"
+      "shows": "open message: back, archive, report spam, delete, mark unread, snooze, move to, labels, more; subject with Inbox chip; print and new-window icons; sender row with date, star, reply, more"
     }
   ],
   "features": [

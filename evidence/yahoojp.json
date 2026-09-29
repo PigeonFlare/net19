@@ -6,21 +6,18 @@
       "id": "s1",
       "url": "https://www.glad-cube.com/blog/?p=16580",
       "date": "2019-01-23",
-      "file": "/home/claude/sweeps/g9-evidence/yahoojp/gladcube-2019-01-top.png",
       "shows": "PC top page Jan 2019 (laptop capture): icon header with the red YAHOO! JAPAN logo, search band, left service list, centre news tabs and recommendations, right ad and login"
     },
     {
       "id": "s2",
       "url": "https://laterabbit.net/yahoo-top-renewal-comparison/",
       "date": "2019-06-02",
-      "file": "/home/claude/sweeps/g9-evidence/yahoojp/laterabbit-2019-06-compare.png",
       "shows": "full page June 2019, old (mainstream) design beside the test design: header icons トラベル/ヤフオク!/ショッピング, logo, プレミアム/カード/メール; ホームページに設定する, きっず版, アプリ版, ヘルプ; search tabs ウェブ 画像 動画 知恵袋 地図 リアルタイム 求人 一覧 and blue 検索; 主なサービス list (ショッピング, ヤフオク!, LOHACO, トラベル, 一休.com, 一休.comレストラン, ニュース, 天気・災害, スポーツナビ, ファイナンス, テレビ, GYAO!, ゲーム, Yahoo!モバゲー, 地図, 路線情報, Retty, クラシル, 不動産, 自動車, ブログ, TRILL, パートナー), お気に入り (ebookjapan, 映画, 占い, ロコ), news tabs, あなたへのおすすめ, login box, weather, 運行情報, 会員特典, footer 会社概要/投資家情報/社会的責任/企業行動憲章/広告掲載について/採用情報/利用規約/免責事項/メディアステートメント/プライバシー"
     },
     {
       "id": "s3",
       "url": "https://web.archive.org/web/20190616000258/https://www.yahoo.co.jp/",
       "date": "2019-06-16",
-      "file": "/home/claude/sweeps/g9-evidence/wb/yahoojp-home.png",
       "shows": "crawler variant (unsupported-browser page): same logo/icon header, ウェブ検索, ログイン box, service links and footer; used only for the footer and header labels"
     }
   ],
