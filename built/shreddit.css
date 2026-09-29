@@ -380,8 +380,8 @@ aside.subreddit-right-rail-community-info faceplate-tracker[noun="menu_click"]>a
 [data-n19-premium-button]{border-radius:4px;background:#ff4500;color:#fff;font:700 12px/28px var(--n19-font);letter-spacing:.5px;text-transform:uppercase}
 :where(:root:not([data-n19-safe])) #pdp-right-rail-after-answers,#pdp-right-rail-after-answers:where(:root:not([data-n19-safe])){display:flex!important;flex-direction:column!important}
 :where(:root:not([data-n19-safe])) #pdp-right-rail-after-answers>aside[aria-label="Community information"],#pdp-right-rail-after-answers:where(:root:not([data-n19-safe]))>aside[aria-label="Community information"]{order:-1!important;margin:0 0 16px!important}
-[id^="feed-post-credit-bar"]>[slot="authorName"] :is(span[avatar],.snoovatar){display:none!important}
-[id^="feed-post-credit-bar"]>[slot="authorName"] a{font-weight:400!important;color:var(--n19-meta)!important}
+[id^="feed-post-credit-bar"] [slot="authorName"] :is(span[avatar],.snoovatar){display:none!important}
+[id^="feed-post-credit-bar"] [slot="authorName"] a{font-weight:400!important;color:var(--n19-meta)!important}
 [id^="feed-post-credit-bar"]>[data-n19-posted]+[slot="authorName"]~.created-separator{display:none!important}
 :where(:root:not([data-n19-safe])) main#main-content search-telemetry-tracker>div[data-testid^="search-post"] a.absolute.inset-0{z-index:0!important}
 :where(:root:not([data-n19-safe])) main#main-content search-telemetry-tracker>div[data-testid^="search-post"] :is(a[data-testid="post-title-text"],a[id^="search-post-title"]){position:relative!important;z-index:1!important}
@@ -391,3 +391,32 @@ reddit-pdp-right-rail-post h3{font-size:14px!important;line-height:18px!importan
 :where(:root:not([data-n19-safe])) reddit-pdp-right-rail-post h3{max-height:54px!important}
 [data-n19-later]{display:none!important}
 html body #right-sidebar-contents aside[aria-label="Related Posts Section"],html body aside[aria-label="Related Posts Section"]{display:none!important}
+:where(:root:not([data-n19-safe])) shreddit-feed>article:has(>:is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic])),:where(:root:not([data-n19-safe])) shreddit-feed>article:has(>shreddit-ad-post){margin:0!important}
+:where(:root:not([data-n19-safe])) shreddit-feed :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]){position:relative!important;margin:0 0 -1px!important}
+shreddit-feed :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]){border-radius:0!important}
+:where(:root:not([data-n19-safe])) shreddit-feed :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]){padding:8px 8px 0 48px!important}
+:where(:root:not([data-n19-safe])) shreddit-feed :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]):hover{position:relative!important;z-index:1!important}
+shreddit-feed>article:first-of-type>:is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]){border-radius:4px 4px 0 0!important}
+:is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]) shreddit-join-button{display:none!important}
+:where(:root:not([data-n19-safe])) :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]) [data-testid="post-thumbnail"],:is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]):where(:root:not([data-n19-safe])) [data-testid="post-thumbnail"]{width:96px!important;height:72px!important}
+:is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]) [data-testid="post-thumbnail"]{border-radius:4px!important}
+:where(:root:not([data-n19-safe])) :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]) [data-testid="post-thumbnail"],:is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]):where(:root:not([data-n19-safe])) [data-testid="post-thumbnail"]{margin:0!important}
+:where(:root:not([data-n19-safe])) :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]) [data-testid="post-thumbnail"] img,:is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]):where(:root:not([data-n19-safe])) [data-testid="post-thumbnail"] img{width:96px!important;height:72px!important}
+:is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]) [data-testid="post-thumbnail"] img{object-fit:cover!important}
+:where(:root:not([data-n19-safe])) :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]) a[id^="post-title-"],:is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]):where(:root:not([data-n19-safe])) a[id^="post-title-"]{display:inline!important}
+:is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]) a[id^="post-title-"]{font-size:16px!important;line-height:20px!important}
+:where(:root:not([data-n19-safe])) :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]) a[id^="post-title-"],:is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]):where(:root:not([data-n19-safe])) a[id^="post-title-"]{margin:0!important}
+:where(:root:not([data-n19-safe])) :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]) [slot="credit-bar"],:is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]):where(:root:not([data-n19-safe])) [slot="credit-bar"]{margin:0!important}
+:where(:root:not([data-n19-safe])) [data-n19-domain],[data-n19-domain]:where(:root:not([data-n19-safe])){position:relative;z-index:1;margin:0 0 0 4px}
+[data-n19-domain]{color:var(--n19-link)!important;font:400 12px/16px var(--n19-font);text-decoration:none}
+:where(:root:not([data-n19-safe])) [data-n19-domain],[data-n19-domain]:where(:root:not([data-n19-safe])){white-space:nowrap}
+[data-n19-domain]:hover{text-decoration:underline}
+:is(shreddit-post,shreddit-ad-post) [slot="credit-bar"] a[data-testid="subreddit-name"] :is(span[avatar],span[avatar]>span,img){border-radius:50%!important}
+:where(:root:not([data-n19-safe])) :is(shreddit-post,shreddit-ad-post) [slot="credit-bar"] a[data-testid="subreddit-name"] :is(span[avatar],span[avatar]>span,img),:is(shreddit-post,shreddit-ad-post):where(:root:not([data-n19-safe])) [slot="credit-bar"] a[data-testid="subreddit-name"] :is(span[avatar],span[avatar]>span,img){overflow:hidden!important}
+shreddit-feed :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]),shreddit-feed :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]):hover{background:var(--n19-card) linear-gradient(to right, var(--n19-vote) 40px, transparent 40px)!important}
+[id^="feed-post-credit-bar"] [slot="authorName"] a *{font-weight:400!important;color:inherit!important}
+[id^="feed-post-credit-bar"]:not(:has(a[data-testid="subreddit-name"]))>.created-separator{display:none!important}
+[id^="feed-post-credit-bar"]>[data-n19-posted]{color:var(--n19-meta)!important;font-size:12px!important}
+shreddit-ad-post[data-n19-classic] [slot="title"] .headline{font-size:16px!important;line-height:20px!important;font-weight:500!important}
+:where(:root:not([data-n19-safe])) shreddit-ad-post[data-n19-classic] [slot="thumbnail"] :is(img,video){width:96px!important;height:72px!important}
+shreddit-ad-post[data-n19-classic] [slot="thumbnail"] :is(img,video){object-fit:cover!important;border-radius:4px!important}

@@ -203,14 +203,14 @@ test('switching net19 off removes every script and rule', async () => {
   expect((await open('https://en.wikipedia.org/wiki/Cat')).url()).toBe('https://en.wikipedia.org/wiki/Cat');
 });
 
-test('popup is two switches and a Donate link, nothing else', async ({}, info) => {
+test('popup is two switches and a support link, nothing else', async ({}, info) => {
   const site = await open('https://www.youtube.com/watch?v=x');
   const tabId = await worker.evaluate(async () => (await chrome.tabs.query({ url: 'https://www.youtube.com/*' }))[0].id!);
   const popup = await context.newPage();
   await popup.addInitScript(({ tabId }) => { const api = (globalThis as any).chrome; if (api?.tabs) api.tabs.query = async () => [{ id: tabId, url: 'https://www.youtube.com/watch?v=x', incognito: false }]; }, { tabId });
   await popup.setViewportSize({ width: 260, height: 200 }); await popup.goto(`chrome-extension://${extensionId}/popup.html`);
   await expect(popup.locator('#site')).toHaveText('youtube.com');
-  expect((await popup.locator('body').innerText()).split('\n').map(line => line.trim()).filter(Boolean)).toEqual(['net19', 'youtube.com', 'Donate']);
+  expect((await popup.locator('body').innerText()).split('\n').map(line => line.trim()).filter(Boolean)).toEqual(['net19', 'youtube.com', 'Support further development']);
   await expect(popup.locator('input[type=checkbox]')).toHaveCount(2); await expect(popup.locator('button, select, input[type=range]')).toHaveCount(0);
   await expect(popup.locator('a')).toHaveCount(1); await expect(popup.locator('a')).toHaveAttribute('href', 'https://buymeacoffee.com/0wtynrfutb');
   await popup.screenshot({ path: resolve(info.outputDir, 'popup.png') });
@@ -227,5 +227,5 @@ test('the popup shows no site switch on a site without a theme', async () => {
   await popup.addInitScript(({ tabId }) => { const api = (globalThis as any).chrome; if (api?.tabs) api.tabs.query = async () => [{ id: tabId, url: 'https://www.example.com/', incognito: false }]; }, { tabId });
   await popup.goto(`chrome-extension://${extensionId}/popup.html`);
   await expect(popup.locator('#site-row')).toBeHidden();
-  expect((await popup.locator('body').innerText()).split('\n').map(line => line.trim()).filter(Boolean)).toEqual(['net19', 'Donate']);
+  expect((await popup.locator('body').innerText()).split('\n').map(line => line.trim()).filter(Boolean)).toEqual(['net19', 'Support further development']);
 });

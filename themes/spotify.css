@@ -17,7 +17,7 @@ html:root, html.encore-dark-theme {
 #global-nav-bar { background: var(--n19-rail) !important; margin: 0 !important; width: auto !important; height: 64px !important; align-items: center !important; }
 #Desktop_LeftSidebar_Id section { background: transparent !important; border-radius: 0 !important; padding-top: 8px !important; padding-bottom: 8px !important; }
 #Desktop_LeftSidebar_Id h1 { text-transform: uppercase !important; letter-spacing: .16em !important; font-size: 11px !important; color: #b3b3b3 !important; }
-input[data-testid="search-input"] { background: #fff !important; color: #000 !important; height: 40px !important; min-height: 0 !important; block-size: 40px !important; }
+input[data-testid="search-input"] { background: #fff !important; color: #000 !important; height: 40px !important; min-height: 0 !important; block-size: 40px !important; padding-top: 0 !important; padding-bottom: 0 !important; }
 input[data-testid="search-input"] ~ div span, input[data-testid="search-input"]::placeholder { color: #7f7f7f !important; }
 #global-nav-bar form svg { color: #000 !important; fill: currentColor; }
 #global-nav-bar form:has(input[data-testid="search-input"]) { margin-top: 4px !important; }

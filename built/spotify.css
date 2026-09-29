@@ -14,7 +14,7 @@ html:root,html.encore-dark-theme{--encore-corner-radius-base:0px!important;--enc
 :where(:root:not([data-n19-safe])) #Desktop_LeftSidebar_Id section,#Desktop_LeftSidebar_Id:where(:root:not([data-n19-safe])) section{padding-top:8px!important;padding-bottom:8px!important}
 #Desktop_LeftSidebar_Id h1{text-transform:uppercase!important;letter-spacing:.16em!important;font-size:11px!important;color:#b3b3b3!important}
 input[data-testid="search-input"]{background:#fff!important;color:#000!important}
-:where(:root:not([data-n19-safe])) input[data-testid="search-input"]{height:40px!important;min-height:0!important;block-size:40px!important}
+:where(:root:not([data-n19-safe])) input[data-testid="search-input"]{height:40px!important;min-height:0!important;block-size:40px!important;padding-top:0!important;padding-bottom:0!important}
 input[data-testid="search-input"]~div span,input[data-testid="search-input"]::placeholder{color:#7f7f7f!important}
 #global-nav-bar form svg{color:#000!important;fill:currentColor}
 :where(:root:not([data-n19-safe])) #global-nav-bar form:has(input[data-testid="search-input"]),#global-nav-bar:where(:root:not([data-n19-safe])) form:has(input[data-testid="search-input"]){margin-top:4px!important}

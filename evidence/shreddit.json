@@ -64,6 +64,13 @@
       "date": "2019-01-30",
       "file": "/home/claude/sweeps/g4-evidence/shreddit/r19-1m6ufcczhhd21.png",
       "shows": "post overflow menu (Hide, Report) of the redesign"
+    },
+    {
+      "id": "s10",
+      "url": "user-supplied screenshot of the signed-out redesign front page (Google Images)",
+      "date": "2020-03",
+      "file": "supplied in chat",
+      "shows": "signed-out Classic view: vote column, thumbnail left, title with domain link, round community icon, 'r/sub • Posted by u/x N hours ago', N Comments / Share / Save / Hide / Report row, rows joined in one bordered list, no JOIN buttons in the feed"
     }
   ],
   "features": [
@@ -209,6 +216,14 @@
         "s3"
       ],
       "note": "free text of 14+ characters: post titles, comment links, rule titles and trophy descriptions of the sampled pages (every such label in this run was reviewed by hand; module labels are all shorter and mapped above)"
+    },
+    {
+      "match": "^(classic view|feed thumbnail|post domain link)$",
+      "in2019": true,
+      "evidence": [
+        "s10"
+      ],
+      "note": "signed-out feeds default to the Classic view (compact=true cookie); card view stays available from the VIEW menu"
     }
   ]
 }

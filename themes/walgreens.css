@@ -9,7 +9,7 @@ section.promo-contain { background: var(--n19-strip) !important; }
 section.promo-contain :is(a, span, strong) { color: var(--n19-strip-text) !important; font-size: 13px !important; font-weight: 400 !important; }
 
 .nav__top-container form { min-height: 0 !important; max-width: 490px !important; height: 32px !important; border: 1px solid var(--n19-field-line) !important; border-radius: 15px !important; box-shadow: none !important; }
-.nav__top-container form input { height: 28px !important; font-size: 13px !important; font-weight: 400 !important; font-family: Georgia, serif !important; }
+.nav__top-container form input { height: 28px !important; padding-top: 0 !important; padding-bottom: 0 !important; font-size: 13px !important; font-weight: 400 !important; font-family: Georgia, serif !important; }
 .nav__top-container form input::placeholder { font-family: Georgia, serif !important; font-weight: 400 !important; color: #888 !important; }
 .nav__top-container form button { height: 28px !important; }
 .nav__top-container .logo-contain img { height: 34px !important; width: auto !important; }

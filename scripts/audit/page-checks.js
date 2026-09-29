@@ -126,6 +126,60 @@ function net19PageChecks() {
   }
   out.lowcontrast = net19Contrast();
   out.dim = net19Dim();
+  out.cropped = net19Cropped();
+  return out;
+}
+
+function net19Cropped() {
+  const out = [], W = innerWidth, H = innerHeight;
+  const up = e => e.parentElement || (e.parentNode && e.parentNode.host) || null;
+  const name = e => (e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + (typeof e.className === 'string' && e.className ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '')).slice(0, 60);
+  const text = e => (e.getAttribute('aria-label') || e.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 30);
+  const visible = (e, r) => { const c = getComputedStyle(e); return r.width > 1 && r.height > 1 && r.bottom > 0 && r.right > 0 && r.top < H && r.left < W && c.visibility === 'visible' && +c.opacity > .05; };
+  const shownPart = (e, r) => {
+    let left = r.left, top = r.top, right = r.right, bottom = r.bottom;
+    for (let a = up(e); a && a !== document.documentElement; a = up(a)) {
+      if (!(a instanceof Element)) continue;
+      const c = getComputedStyle(a);
+      if (c.position === 'fixed') break;
+      const q = a.getBoundingClientRect();
+      if (/hidden|clip/.test(c.overflowX)) { left = Math.max(left, q.left); right = Math.min(right, q.right); }
+      if (/hidden|clip/.test(c.overflowY)) { top = Math.max(top, q.top); bottom = Math.min(bottom, q.bottom); }
+    }
+    return Math.max(0, right - left) * Math.max(0, bottom - top) / (r.width * r.height);
+  };
+  const seen = new Set();
+  const report = (e, detail, r) => { const k = name(e) + detail; if (seen.has(k) || out.length >= 40) return; seen.add(k); out.push({ what: `${name(e)} "${text(e) || text(up(e) || e)}"`, detail, x: Math.round(r.left), y: Math.round(r.top), w: Math.round(r.width), h: Math.round(r.height) }); };
+  const walk = root => {
+    for (const e of root.querySelectorAll('*')) {
+      if (e.shadowRoot) walk(e.shadowRoot);
+      const r = e.getBoundingClientRect();
+      if (r.width < 6 || r.height < 6 || !visible(e, r)) continue;
+      const c = getComputedStyle(e);
+      const icon = (e.tagName === 'svg' || e.tagName === 'IMG' || /url\(/.test(c.backgroundImage) || /url\(/.test(c.maskImage || c.webkitMaskImage || '')) && r.width <= 48 && r.height <= 48 && !(e.tagName === 'svg' && up(e)?.tagName === 'svg');
+      if (icon) {
+        const part = shownPart(e, r);
+        if (part > .05 && part < .85) report(e, `icon cut to ${Math.round(part * 100)}% by an ancestor`, r);
+        if (/url\(/.test(c.backgroundImage) && !/repeat(?!-)/.test(c.backgroundRepeat.replace('no-repeat', ''))) {
+          const [bw, bh] = c.backgroundSize.split(' ').map(v => /px$/.test(v) ? parseFloat(v) : NaN);
+          const sprite = /-\d/.test(c.backgroundPosition) || bw > r.width * 1.6 || (bh || bw) > r.height * 1.6;
+          if (!sprite && (bw > r.width + 1.5 || (bh || bw) > r.height + 1.5)) report(e, `background icon ${bw}x${bh || bw} in a ${Math.round(r.width)}x${Math.round(r.height)} box`, r);
+        }
+        continue;
+      }
+      if (/^(INPUT|TEXTAREA)$/.test(e.tagName) && !/^(checkbox|radio|range|color|file|hidden|image|submit|button|reset)$/.test(e.type)) {
+        const size = parseFloat(c.fontSize), inner = e.clientHeight - parseFloat(c.paddingTop) - parseFloat(c.paddingBottom);
+        if (e.tagName === 'INPUT' && inner > 0 && inner < size * 1.05) report(e, `text ${size}px tall in a ${Math.round(inner)}px field`, r);
+        continue;
+      }
+      const own = [...e.childNodes].some(n => n.nodeType === 3 && n.nodeValue.trim());
+      if (!own || r.height > 64 || c.clip !== 'auto' || c.clipPath !== 'none' || r.width < 16 && r.height < 16) continue;
+      const clamp = c.webkitLineClamp && c.webkitLineClamp !== 'none';
+      if (/hidden|clip/.test(c.overflowX) && c.textOverflow !== 'ellipsis' && !clamp && e.scrollWidth > e.clientWidth + 2 && c.whiteSpace !== 'normal') report(e, `text ${e.scrollWidth}px wide cut to ${e.clientWidth}px`, r);
+      else if (/hidden|clip/.test(c.overflowY) && !clamp && e.scrollHeight > e.clientHeight + 3 && e.clientHeight < parseFloat(c.fontSize) * 1.6) report(e, `text ${e.scrollHeight}px tall cut to ${e.clientHeight}px`, r);
+    }
+  };
+  walk(document);
   return out;
 }
 

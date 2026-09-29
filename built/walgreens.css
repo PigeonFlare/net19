@@ -6,7 +6,7 @@ section.promo-contain{background:var(--n19-strip)!important}
 section.promo-contain :is(a,span,strong){color:var(--n19-strip-text)!important;font-size:13px!important;font-weight:400!important}
 :where(:root:not([data-n19-safe])) .nav__top-container form,.nav__top-container:where(:root:not([data-n19-safe])) form{min-height:0!important;max-width:490px!important;height:32px!important}
 .nav__top-container form{border:1px solid var(--n19-field-line)!important;border-radius:15px!important;box-shadow:none!important}
-:where(:root:not([data-n19-safe])) .nav__top-container form input,.nav__top-container:where(:root:not([data-n19-safe])) form input{height:28px!important}
+:where(:root:not([data-n19-safe])) .nav__top-container form input,.nav__top-container:where(:root:not([data-n19-safe])) form input{height:28px!important;padding-top:0!important;padding-bottom:0!important}
 .nav__top-container form input{font-size:13px!important;font-weight:400!important;font-family:Georgia, serif!important}
 .nav__top-container form input::placeholder{font-family:Georgia, serif!important;font-weight:400!important;color:#888!important}
 :where(:root:not([data-n19-safe])) .nav__top-container form button,.nav__top-container:where(:root:not([data-n19-safe])) form button{height:28px!important}

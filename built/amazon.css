@@ -76,3 +76,4 @@ a.a-link-normal:hover .a-text-normal,h2 a.a-link-normal:hover,#bylineInfo:hover{
 #navbar-main{background:var(--n19-nav)!important}
 :where(:root:not([data-n19-safe])) #navbar-main #nav-main>.nav-fill,#navbar-main:where(:root:not([data-n19-safe])) #nav-main>.nav-fill{position:relative!important;overflow:hidden!important;height:44px!important}
 :where(:root:not([data-n19-safe])) #navbar-main #nav-main #nav-xshop,#navbar-main:where(:root:not([data-n19-safe])) #nav-main #nav-xshop{overflow:hidden!important;height:44px!important}
+:where(:root:not([data-n19-safe])) #nav-main>.nav-right:has(>#nav-swmslot),#nav-main:where(:root:not([data-n19-safe]))>.nav-right:has(>#nav-swmslot){position:absolute!important;right:0!important;top:-52px!important;height:52px!important;display:flex!important;align-items:center!important}
