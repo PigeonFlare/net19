@@ -45,4 +45,4 @@ media-info-tile .poster-tile-meta rt-text:not([slot]) { --textColor: var(--n19-t
 rt-header search-results-controls input, watchlist-button, rt-button { --borderRadius: 3px; }
 
 button.arti-desktop, button[aria-label="Open aRTi"], [slot="arti-desktop"], [slot="arti-mobile"] { display: none !important; }
-html[data-net19-flip] #main > header[data-net19-keep] { position: relative !important; z-index: 20 !important; }
+

@@ -6,7 +6,4 @@ html[lang="en"] body.skin-vector-legacy #p-logo a.mw-wiki-logo{background-image:
 :where(:root:not([data-n19-safe])) body.skin-vector-legacy .vector-menu-tabs-legacy li a{padding-top:calc(1.25em - 5px)!important}
 body.skin-vector-legacy #simpleSearch #mw-searchButton.mw-fallbackSearchButton{visibility:hidden!important}
 body.skin-vector-legacy :is(#t-urlshortener,#t-urlshortener-qrcode,#t-parsermigration,#parsermigration-switch-to-legacy,#t-collapsible-toggle-all,#t-expand-all,.wb-otherproject-abstract,.wb-otherproject-wikifunctions,#footer-places-legal-safety-contacts,#footer-places-wm-codeofconduct,#footer-info-renderedwith,#p-dock-bottom),body.skin-vector-legacy #mw-panel li:has(>a[href*="abstract.wikipedia.org"i],>a[href*="wikifunctions.org"i],>a[href*="useparsoid="i]),body.skin-vector-legacy :is(.ve-init-mw-diffPage-diffMode,.mw-diffPage-inlineToggle-container),body.skin-vector-legacy :is(#vector-sticky-header,.vector-sticky-header,#vector-appearance,#vector-appearance-pinned-container,.vector-appearance-landmark,.vector-client-prefs-landmark,.vector-page-toolbar,.vector-column-end){display:none!important}
-html[data-net19-flip] body .ext-wpb-pagebanner :is(.wpb-topbanner,.wpb-topbanner-toc){filter:contrast(1.13636) hue-rotate(180deg) invert(1)!important}
-html[data-net19-flip] body .ext-wpb-pagebanner .wpb-topbanner-toc{background-color:rgba(0, 0, 0, .5)!important}
-html[data-net19-flip] body .wpb-topbanner img.wpb-banner-image{filter:none!important}
 html[data-net19-reskin] body{visibility:hidden!important}

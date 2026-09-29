@@ -23,8 +23,6 @@ header nav.main-nav>ul>li>:is(button,a):hover{color:var(--n19-nav-hover)!importa
 header nav.main-nav>ul>li>:is(button,a) svg{color:currentColor!important;fill:currentColor!important}
 main :is(img,picture,figure,video){border-radius:0!important}
 main a[class*="rounded"],main button[class*="rounded"]{border-radius:0!important}
-html[data-net19-flip]:where(:root:not([data-n19-safe])) header nav.main-nav[data-net19-reflip]>a.logo{top:-48px!important}
-html[data-net19-flip] header nav.main-nav[data-net19-reflip]>a.logo{filter:contrast(1.13636) hue-rotate(180deg) invert(1)!important}
 header nav.main-nav>a.logo{background-color:var(--n19-cardinal)!important}
 main#main-content>div:not([class]):has(>section.cc){display:none!important}
 main#main-content>div.bg-bg-subtle :is(form,div,input,button){border-radius:0!important}

@@ -18,7 +18,6 @@ header[class*="styles_header__"] a[class*="CDS_Button_button"] { background: tra
 [class*="styles_searchForm"] button[class*="CDS_Button_button"] { background: var(--n19-green) !important; color: #fff !important; }
 [class*="styles_searchForm"] button[class*="CDS_Button_button"]:hover { background: var(--n19-green-hover) !important; }
 
-html[data-net19-flip] { --n19-hero-text: #000; }
 [class*="styles_heroContainer"] { background: var(--n19-hero) !important; }
 [class*="styles_searchContainer"] [class*="styles_heading"] { color: var(--n19-hero-text) !important; font-size: 46px !important; line-height: 60px !important; font-weight: 700 !important; }
 [class*="styles_searchContainer"] [class*="styles_subheading"] { color: var(--n19-hero-text) !important; font-size: 18px !important; line-height: 24px !important; font-weight: 500 !important; }

@@ -17,16 +17,9 @@ html .uhf-header, html uhf-header .uhf-header, html .uhf-header.uhf-theme--dark 
 }
 html header.uhf-header.uhf-header.uhf-header.uhf-header { background: var(--n19-bar) !important; color: var(--n19-bar-text) !important; }
 html div.uhf-header { background-color: var(--n19-bar) !important; }
-html[data-net19-flip] div.uhf-header { position: relative; z-index: 1000 !important; }
+
 html .uhf-header :is(.uhf-nav-item, .uhf-nav-button, .uhf-dropdown-link, .uhf-cart, .uhf-mecontrol-signin-label, uhf-icon, .ms-Icon) { color: var(--n19-bar-text) !important; }
 html .uhf-header .uhf-site-logo img:is([alt="Xbox" i], [src*="logo_xbox"]) { content: url("https://uhf.microsoft.com/images/xbox/RW4ESm.png") !important; width: 75px !important; height: auto !important; }
-
-html[data-net19-flip] .uhf-header :is(.uhf-site-logo, .uhf-microsoft-logo) img { filter: contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
-
-html[data-net19-flip] .expandable-background-slider img:is(:not([data-net19-keep] *), [data-net19-reflip] *):not(#n19-none) { filter: blur(16px) brightness(.5) contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
-html[data-net19-flip] [class*="AgeGatingCards-module__"] img:is(:not([data-net19-keep] *), [data-net19-reflip] *):not(#n19-none) { filter: blur(25px) contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
-html[data-net19-flip] [class*="ProductDetailsHeader-module__backgroundImage"] img:is(:not([data-net19-keep] *), [data-net19-reflip] *):not(#n19-none) { filter: blur(16px) contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
-html[data-net19-flip] .trans.m-in-page-navigation div[data-js-in-page-navigation-wrapper="true"] { background-color: rgba(255, 255, 255, .7) !important; }
 
 [data-n19-black] { font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif !important; letter-spacing: 0 !important; font-weight: 600 !important; text-transform: none !important; }
 :is(h1, h2, h3)[data-n19-black], :is(h1, h2, h3) [data-n19-black] { font-weight: 200 !important; }
@@ -43,8 +36,6 @@ html body [data-n19-lime]:not(#n19-none)[data-n19-lime~="afterbg"]::after, html 
 html body [data-n19-lime]:not(#n19-none)[data-n19-lime~="line"] { color: var(--n19-green) !important; }
 
 [class*="typography-module__"] { font-family: "Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
-
-html[data-net19-flip] a[class*="basicLink"] { color: rgb(79, 201, 79) !important; }
 
 html .mwf-v1-xbox.mwf-v1-xbox { --accent: var(--n19-green) !important; --accent-fg: #fff !important; --accent-ink: var(--n19-green) !important;
   --accent-glow: rgba(16, 124, 16, .3) !important;

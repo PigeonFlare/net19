@@ -30,7 +30,6 @@ form[role="search"] [aria-label="Search by voice"]{background:url("https://www.g
 form[role="search"] [aria-label="Search by voice"]>svg{visibility:hidden!important}
 div:has(>svg[viewBox="0 0 272 92"]){background:url("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png") center bottom / 272px 92px no-repeat!important}
 div:has(>svg[viewBox="0 0 272 92"])>svg{visibility:hidden!important}
-html[data-net19-flip] :is(div:has(>svg[viewBox="0 0 272 92"]),form[role="search"] [aria-label="Search by voice"],a#logo,a[href*="webhp"]:has(svg[viewBox="0 0 272 92"])){filter:contrast(1.13636) hue-rotate(180deg) invert(1)!important}
 input[name="btnK"],input[name="btnI"]{background:var(--n19-button)!important;border:1px solid var(--n19-button)!important;border-radius:4px!important;color:var(--n19-button-text)!important;font-size:14px!important;font-family:arial, sans-serif!important;box-shadow:none!important}
 :where(:root:not([data-n19-safe])) input[name="btnK"],:where(:root:not([data-n19-safe])) input[name="btnI"]{height:36px!important}
 input[name="btnK"],input[name="btnI"]{line-height:27px!important}
@@ -94,7 +93,6 @@ html[data-net19-mode="dark"]{--n19-signin:#8ab4f8;--n19-signin-text:#202124}
 [data-net19-logo]::before{content:""}
 :where(:root:not([data-n19-safe])) [data-net19-logo]::before,[data-net19-logo]:where(:root:not([data-n19-safe]))::before{display:block;flex:none;width:272px;height:92px}
 [data-net19-logo]::before{background:url("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png") center / 272px 92px no-repeat}
-html[data-net19-flip] [data-net19-logo]::before{filter:contrast(1.13636) hue-rotate(180deg) invert(1)}
 #rcnt :is(div,span,a,h1,h2,h3,cite,td,th,li,p,em,b),#botstuff :is(div,span,a),div[role="navigation"] :is(div,span,a){font-family:arial, sans-serif!important}
 div[role="navigation"] [aria-current="page"],div[role="navigation"] [aria-current="page"] *{color:var(--n19-accent)!important}
 div[role="navigation"] [aria-current="page"]::after,div[role="navigation"] [aria-current="page"]::before{background:var(--n19-accent)!important;border-color:var(--n19-accent)!important}

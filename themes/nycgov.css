@@ -40,5 +40,5 @@ html:not([data-net19-mode="dark"]) #primary-header .nyc-header__title img { filt
 #primary-header .official-website-banner, #primary-header .official-website-banner * { box-shadow: none !important; }
 .cmp-news-carousel a.cmp-button { background: var(--n19-blue) !important; border-color: var(--n19-blue) !important; }
 .cmp-news-carousel a.cmp-button:hover { background: var(--n19-blue-dark) !important; }
-html[data-net19-flip] { --n19-hero-text: #000; }
+
 h1 > .main-heading--subhead { color: var(--n19-hero-text) !important; }

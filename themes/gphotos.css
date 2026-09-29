@@ -6,7 +6,7 @@ html[data-n19-g="photos"] {
   & [role="menubar"].QtDoYb { box-shadow: none !important; }
   & :is([role="menubar"].QtDoYb, [role="navigation"].RSjvib) svg:not([aria-label^="Google Account"] *) { color: var(--n19-text-2) !important; fill: var(--n19-text-2) !important; }
   & [role="menubar"].QtDoYb a[aria-label] .EIug8e { color: var(--n19-text-2) !important; font-size: 22px !important; }
-  &[data-net19-flip] [role="menubar"].QtDoYb a[aria-label] .UDKXKd { filter: contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
+
   & [role="menubar"].QtDoYb .Aul2T { border-radius: 8px !important; background: var(--n19-field) !important; max-width: 720px !important; }
   & [role="menubar"].QtDoYb .Aul2T:focus-within { background: var(--n19-bg) !important; box-shadow: var(--n19-shadow) !important; }
   & [role="menubar"].QtDoYb .Aul2T input { font: 400 16px var(--n19-sans) !important; }

@@ -177,7 +177,7 @@ import { rgba } from './color.js';
   };
 
   const CONTENT = 'a[href] :is(h1, h2, h3), :is(h1, h2, h3) a[href], article';
-  const ROOT_MARKS = /^data-(?:net19|n19)-(?:mode|flip|canvas)$/;
+  const ROOT_MARKS = /^data-(?:net19|n19)-(?:mode|flip|canvas|recolor|rc|glyph|plain|photo|reading)$/;
   const marks = el => [...el.attributes].filter(a => /^data-(?:net19|n19)-/.test(a.name) && !ROOT_MARKS.test(a.name));
   const intended = typeof theme.intended === 'string' ? theme.intended : '';
   const protectedBlocks = new WeakSet();
@@ -230,7 +230,7 @@ import { rgba } from './color.js';
       }
       if (added) { dirty = true; soon(); }
     }).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style', 'hidden', 'open', 'aria-expanded', 'placeholder'] });
-    new MutationObserver(() => { dirty = true; soon(50); }).observe(root, { attributes: true, attributeFilter: ['data-net19-mode', 'data-net19-flip', 'class'] });
+    new MutationObserver(() => { dirty = true; soon(50); }).observe(root, { attributes: true, attributeFilter: ['data-net19-mode', 'data-net19-recolor', 'class'] });
     for (const type of ['pointerover', 'focusin', 'click', 'keyup']) addEventListener(type, () => soon(), { capture: true, passive: true });
     for (const type of ['transitionend', 'animationend']) addEventListener(type, () => { dirty = true; soon(200); }, { capture: true, passive: true });
     addEventListener('scroll', () => { dirty = true; soon(300); }, { capture: true, passive: true });

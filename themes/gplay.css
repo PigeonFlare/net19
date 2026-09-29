@@ -9,7 +9,7 @@ html[data-n19-g="play"] {
   & header[role="banner"] { background: var(--n19-play-card) !important; box-shadow: var(--n19-play-bar-shadow) !important; border-bottom: 0 !important; }
   & header[role="banner"] a[aria-label="Google Play logo"] > svg { background: var(--n19-play-logo) center / contain no-repeat !important; }
   & header[role="banner"] a[aria-label="Google Play logo"] > svg > * { display: none !important; }
-  &[data-net19-flip] header[role="banner"] a[aria-label="Google Play logo"] > svg { filter: contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
+
   & header[role="banner"] [role="tablist"] button[role="tab"] :is(.VfPpkd-jY41G-V67aGc, span) { font: 400 14px/20px var(--n19-sans) !important; color: var(--n19-play-sub) !important; letter-spacing: 0 !important; }
   & header[role="banner"] [role="tablist"] button[role="tab"][aria-selected="true"] :is(.VfPpkd-jY41G-V67aGc, span) { font-weight: 500 !important; color: var(--n19-play-head) !important; }
   & header[role="banner"] [role="tablist"] .VfPpkd-AznF2e-wEcVzc { border-color: var(--n19-play-green) !important; }

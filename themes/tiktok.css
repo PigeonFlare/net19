@@ -6,10 +6,7 @@ html { --n19-ink: #fe2c55; --n19-primary: #fe2c55; --n19-primary-hover: #ef2950;
 html[data-net19-mode="dark"] { --n19-page: #121212; --n19-bar: #121212; --n19-panel: #1e1e1e; --n19-field: #2f2f2f;
   --n19-text: rgba(255,255,255,.9); --n19-text-2: rgba(255,255,255,.75); --n19-text-3: rgba(255,255,255,.5); --n19-desc: rgba(255,255,255,.5); --n19-rule: rgba(255,255,255,.12);
   --n19-circle: rgba(255,255,255,.12); --n19-circle-hover: rgba(255,255,255,.2); --n19-head-shadow: 0 1px 0 rgba(255,255,255,.08); }
-html[data-net19-mode="dark"][data-net19-flip][data-net19-tone="light"] {
-  --n19-page: #010101; --n19-bar: #010101; --n19-panel: #141414; --n19-field: #1a1a1b;
-  --n19-text: #e6e8f2; --n19-text-2: rgba(230,232,242,.75); --n19-text-3: rgba(230,232,242,.5); --n19-desc: #7a7a80; --n19-rule: rgba(230,232,242,.12);
-  --n19-circle: rgba(230,232,242,.06); --n19-circle-hover: rgba(230,232,242,.12); --n19-head-shadow: 2px 4px 20px rgba(139,192,191,.2); }
+
 html:root, html[data-theme] {
   --tux-colorPrimary: var(--n19-primary) !important; --tux-colorLink: var(--n19-ink) !important; --ui-shape-primary: var(--n19-primary) !important;
   --ui-text-primary-display: var(--n19-ink) !important;

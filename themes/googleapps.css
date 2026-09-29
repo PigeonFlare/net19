@@ -95,7 +95,7 @@ html[data-n19-g="accounts"] .TcuCfd ~ .wmGw4, html[data-n19-g="accounts"] .wmGw4
 html[data-n19-g="accounts"] .wmGw4 footer { width: auto !important; padding: 0 !important; }
 html[data-n19-g="accounts"] .TcuCfd main > div:first-child > :first-child img { visibility: hidden !important; width: 75px !important; height: 24px !important; }
 html[data-n19-g="accounts"] .TcuCfd main > div:first-child > :first-child:has(img) > * { background: url("https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_74x24dp.png") center / 75px 24px no-repeat !important; width: 75px !important; height: 24px !important; }
-html[data-net19-flip][data-n19-g="accounts"] .TcuCfd main > div:first-child > :first-child:has(img) > * { filter: contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
+
 html[data-n19-g="accounts"] .TcuCfd main { flex-direction: column !important; flex-wrap: nowrap !important; width: auto !important; }
 html[data-n19-g="accounts"] .TcuCfd main > div { width: auto !important; max-width: none !important; flex: none !important; margin-left: 0 !important; margin-right: 0 !important; padding-left: 0 !important; padding-right: 0 !important; }
 html[data-n19-g="accounts"] .TcuCfd main > div:first-child { text-align: center !important; }
@@ -154,4 +154,4 @@ html:is([data-n19-g="fi"], [data-n19-g="store"]) a.IvQv9b.rkH8Ae:is(.g4h7rc, .m2
 
 html[data-n19-g="wallet"] a#sdgBod > img { content: url("https://www.gstatic.com/instantbuy/svg/light_gpay.svg") !important; width: 48px !important; height: 20px !important; object-fit: contain !important; }
 html[data-n19-g="wallet"][data-net19-mode="dark"] a#sdgBod > img { content: url("https://www.gstatic.com/instantbuy/svg/dark_gpay.svg") !important; }
-html[data-n19-g="wallet"][data-net19-flip] .glue-header__logo-custom img { content: url("https://www.gstatic.com/instantbuy/svg/dark_gpay.svg") !important; object-fit: contain !important; }
+

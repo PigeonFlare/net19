@@ -23,7 +23,7 @@ h1[class*="StyledHeading-c11n"], h1[class*="Text-c11n"] { font-family: "Ivar Dis
 .with-product-nav__top-and-main div:has(> div > h1[class*="StyledHeading-c11n"]) > div { width: 100% !important; max-width: none !important; text-align: left !important; }
 .with-product-nav__top-and-main div:has(> div > h1[class*="StyledHeading-c11n"]) input { height: 60px !important; font-size: 16px !important; }
 .with-product-nav__top-and-main div:has(> div > h1[class*="StyledHeading-c11n"]) button svg { color: var(--n19-blue) !important; fill: var(--n19-blue) !important; }
-html[data-net19-flip] { --n19-hero-text: #000; }
+
 .with-product-nav__top-and-main h1[class*="StyledHeading-c11n"] { color: var(--n19-hero-text) !important; }
 .with-product-nav__product-nav { display: none !important; }
 .with-product-nav__wrapper { grid-template-columns: 0 minmax(0, 1fr) !important; }

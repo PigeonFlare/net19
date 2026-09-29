@@ -30,4 +30,3 @@ h2 rt-text[context="heading"],.dynamic-poster-list__sponsored-header rt-text,[sl
 media-info-tile .poster-tile-meta rt-text:not([slot]){--textColor:var(--n19-text)!important}
 rt-header search-results-controls input,watchlist-button,rt-button{--borderRadius:3px}
 button.arti-desktop,button[aria-label="Open aRTi"],[slot="arti-desktop"],[slot="arti-mobile"]{display:none!important}
-html[data-net19-flip]:where(:root:not([data-n19-safe])) #main>header[data-net19-keep]{position:relative!important;z-index:20!important}

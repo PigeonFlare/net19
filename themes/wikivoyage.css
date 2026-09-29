@@ -19,8 +19,4 @@ body.skin-vector-legacy :is(.ve-init-mw-diffPage-diffMode, .mw-diffPage-inlineTo
 body.skin-vector-legacy :is(#vector-sticky-header, .vector-sticky-header, #vector-appearance, #vector-appearance-pinned-container,
   .vector-appearance-landmark, .vector-client-prefs-landmark, .vector-page-toolbar, .vector-column-end) { display: none !important; }
 
-html[data-net19-flip] body .ext-wpb-pagebanner :is(.wpb-topbanner, .wpb-topbanner-toc) { filter: contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
-html[data-net19-flip] body .ext-wpb-pagebanner .wpb-topbanner-toc { background-color: rgba(0, 0, 0, .5) !important; }
-html[data-net19-flip] body .wpb-topbanner img.wpb-banner-image { filter: none !important; }
-
 html[data-net19-reskin] body { visibility: hidden !important; }

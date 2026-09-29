@@ -241,9 +241,7 @@ body.docs-gm .docs-branding-icon:has(> .docs-branding-icon-drive) { background-i
 #gb img[src*="logo_drive"], #gb img[src*="/drive_2020q4"], #gb img[src*="drive_2026"] { content: url("https://www.gstatic.com/images/branding/product/2x/drive_48dp.png") !important; width: 40px !important; height: 40px !important; }
 #drive-main-page #gb a[aria-label="Drive"] > span:not([aria-hidden]), #drive-main-page #gb [aria-label="Drive"] + div {
   color: var(--n19-text-2) !important; font-family: "Product Sans", "Google Sans", Arial, sans-serif !important; font-size: 22px !important; }
-html[data-net19-flip] #gb img[src*="logo_drive"], html[data-net19-flip] #gb img[src*="drive_2026"], html[data-net19-flip] #gb img[src*="/drive_2020q4"],
-html[data-net19-flip] body.docs-gm .docs-branding-icon {
-  filter: contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
+
 #gb a[href*="ServiceLogin"], #gb a[href*="accounts.google.com/"][aria-label="Sign in"] { border-radius: 4px !important; background: var(--n19-accent) !important; color: var(--n19-on-accent) !important; }
 #gb a[href*="ServiceLogin"] span { color: inherit !important; }
 

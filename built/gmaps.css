@@ -32,7 +32,6 @@ html[data-net19-mode="dark"]{--n19-map-box-shadow:0 2px 4px rgba(0,0,0,.6);--n19
 :is(html[data-n19-g="maps"]) [role="tablist"].RWPxGd button[role="tab"] .Gpq6kf{font:500 14px/24px var(--n19-sans)!important}
 :is(html[data-n19-g="maps"]) [role="tablist"].RWPxGd button[role="tab"][aria-selected="true"] .Gpq6kf{color:var(--n19-accent-text)!important}
 :is(html[data-n19-g="maps"]) button.Dx2nRe{border-radius:4px!important}
-:is(html[data-n19-g="maps"])[data-net19-flip] button.Dx2nRe{filter:contrast(1.13636) hue-rotate(180deg) invert(1)!important}
 :is(html[data-n19-g="maps"]) :is(.B5aTzc,button.Zf54rc,.WzvKIe){border-radius:2px!important;box-shadow:var(--n19-map-control-shadow)!important}
 :is(html[data-n19-g="maps"]) .B5aTzc :is(button.rM8v5b){border-radius:2px 2px 0 0!important}
 :is(html[data-n19-g="maps"]) .B5aTzc :is(button.TlWmQ){border-radius:0 0 2px 2px!important}

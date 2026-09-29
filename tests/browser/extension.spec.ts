@@ -1,5 +1,6 @@
 import { chromium, expect, test, type BrowserContext, type Page, type Worker } from '@playwright/test';
 import { mkdir } from 'node:fs/promises';
+import sharp from 'sharp';
 import { resolve } from 'node:path';
 
 const PAGE = (title: string) => `<!doctype html><html><head><meta charset="utf-8"><title>${title}</title></head><body style="background:#fff;color:#111"><header><a href="/">${title}</a></header><main><h1>${title}</h1>` +
@@ -53,22 +54,54 @@ test('a themed site is styled from its first paint; any other site is left alone
   expect(await fitRecords()).toEqual([]);
 });
 
-test('the device decides light or dark: a light site is flipped for a dark device, with photos, colorful logos and dark bars kept', async () => {
+test('the device decides light or dark: a light site is recolored for a dark device, with pictures untouched, dark icons turned light and dark bars kept', async () => {
   const page = await open('https://www.youtube.com/');
   const html = page.locator('html');
-  await expect(html).toHaveAttribute('data-net19-mode', 'light');
-  await expect(html).toHaveAttribute('data-net19-flip', '');
-  expect(await html.evaluate(el => getComputedStyle(el).filter)).toContain('invert(1)');
-  expect(await page.locator('#photo').evaluate(el => getComputedStyle(el).filter)).toMatch(/^contrast.*invert\(1\)$/);
-  await expect.poll(() => page.locator('#badge').evaluate(el => getComputedStyle(el).filter)).toMatch(/^contrast.*invert\(1\)$/);
-  expect(await page.locator('#logo').evaluate(el => getComputedStyle(el).filter)).toBe('none');
-  await expect(page.locator('#bar')).toHaveAttribute('data-net19-keep', '');
-  await expect(page.locator('#hero')).toHaveAttribute('data-net19-keep', '');
-  await page.locator('#modal').evaluate((el: HTMLDialogElement) => el.showModal());
-  expect(await page.locator('#modal').evaluate(el => getComputedStyle(el).filter)).toContain('invert(1)');
+  await expect(html).toHaveAttribute('data-net19-recolor', 'dark');
+  await expect(html).toHaveAttribute('data-net19-mode', 'dark');
+  expect(await html.evaluate(el => getComputedStyle(el).filter)).toBe('none');
+  const light = (selector: string, property: string) => page.locator(selector).evaluate((el, p) => {
+    const m = getComputedStyle(el).getPropertyValue(p).match(/[\d.]+/g)!.map(Number);
+    return (.2126 * m[0] + .7152 * m[1] + .0722 * m[2]) / 255;
+  }, property);
+  await expect.poll(() => light('body', 'background-color')).toBeLessThan(.2);
+  await expect.poll(() => light('h1', 'color')).toBeGreaterThan(.6);
+  expect(await light('#bar', 'background-color')).toBeLessThan(.2);
+  expect(await page.locator('#photo').evaluate(el => getComputedStyle(el).filter)).toBe('none');
+  await expect(page.locator('#logo')).toHaveAttribute('data-net19-glyph', '');
+  await page.waitForTimeout(300);
+  await expect(page.locator('#badge')).not.toHaveAttribute('data-net19-glyph', /.*/);
+  expect(await page.locator('#hero span').evaluate(el => getComputedStyle(el).color)).toBe('rgb(255, 255, 255)');
   await page.emulateMedia({ colorScheme: 'light' });
-  await expect(html).not.toHaveAttribute('data-net19-flip', /.*/);
-  await expect(page.locator('#bar')).not.toHaveAttribute('data-net19-keep', /.*/);
+  await expect(html).not.toHaveAttribute('data-net19-recolor', /.*/);
+  await expect.poll(() => light('body', 'background-color')).toBeGreaterThan(.9);
+});
+
+test('pictures keep their exact colors when a page is recolored either way', async () => {
+  const stripes = [[255, 255, 255], [128, 128, 128], [220, 40, 40], [20, 40, 160], [0, 0, 0]];
+  const pixels = Buffer.alloc(200 * 40 * 3);
+  for (let y = 0; y < 40; y++) for (let x = 0; x < 200; x++) pixels.set(stripes[Math.floor(x / 40)], (y * 200 + x) * 3);
+  const png = await sharp(pixels, { raw: { width: 200, height: 40, channels: 3 } }).png().toBuffer();
+  await context.route('https://www.youtube.com/swatch.png', route => route.fulfill({ contentType: 'image/png', body: png }));
+  for (const [scheme, dark] of [['light', true], ['dark', false]] as const) {
+    await context.route('https://www.youtube.com/colors', route => route.fulfill({ contentType: 'text/html',
+      body: `<!doctype html><html${dark ? ' dark' : ''}><body style="margin:0;background:${dark ? '#0f0f0f' : '#fff'};color:${dark ? '#fff' : '#111'}"><p>${'Words '.repeat(40)}</p><img id="swatch" src="/swatch.png" width="200" height="40"></body></html>` }));
+    const page = await context.newPage();
+    await page.emulateMedia({ colorScheme: scheme });
+    await page.goto('https://www.youtube.com/colors');
+    await expect(page.locator('html')).toHaveAttribute('data-net19-recolor', scheme);
+    await page.waitForTimeout(300);
+    const shot = await page.locator('#swatch').screenshot();
+    const { data, info } = await sharp(shot).removeAlpha().raw().toBuffer({ resolveWithObject: true });
+    const scale = info.width / 200;
+    stripes.forEach((want, i) => {
+      const at = (Math.round(20 * scale) * info.width + Math.round((i * 40 + 20) * scale)) * 3;
+      const got = [data[at], data[at + 1], data[at + 2]];
+      expect(Math.max(...got.map((v, c) => Math.abs(v - want[c]))), `${scheme} device, stripe ${i}: ${got} vs ${want}`).toBeLessThanOrEqual(10);
+    });
+    await page.close();
+    await context.unroute('https://www.youtube.com/colors');
+  }
 });
 
 test('post-2019 features are hidden and unreadable text is given readable ink, on every themed site', async () => {
@@ -183,7 +216,7 @@ test('popup is two switches and a Donate link, nothing else', async ({}, info) =
   await popup.screenshot({ path: resolve(info.outputDir, 'popup.png') });
   await popup.locator('#site-switch').uncheck();
   await expect.poll(scripts).not.toContain('net19-theme-youtube');
-  expect(await scripts()).toContain('net19-theme-google');
+  await expect.poll(scripts).toContain('net19-theme-google');
   await site.reload();
   await expect(site.locator('html')).not.toHaveAttribute('data-net19-mode', /.*/);
 });

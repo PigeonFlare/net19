@@ -10,7 +10,7 @@ html[data-net19-mode="dark"] { --n19-wash: #18191a; --n19-card: #242526; --n19-c
   --n19-land: #18191a; --n19-land-card: #242526; --n19-land-field: #3a3b3c; --n19-land-line: #3e4042; --n19-login: #2d88ff; --n19-green: #42b72a; --n19-heading: #e4e6eb; --n19-foot: #242526; --n19-foot-text: #8a8d91; --n19-foot-link: #9cb4e8;
   --n19-land-bar: #29487d; --n19-land-bar-top: #30528c; --n19-land-bar-line: #1b2f55; --n19-land-logo: #e4e6eb; --n19-land-on-bar: #e4e6eb; --n19-land-forgot: #b8c4de; --n19-land-soft: #b0b3b8; --n19-green-top: #4c9a3c; --n19-green-line: #2c5a1a;
   --n19-land-shadow: 0 2px 4px rgba(0,0,0,.3), 0 8px 16px rgba(0,0,0,.3); }
-html[data-net19-flip] { --n19-land-field: #cdcecf; --n19-land-bar: #a1c5ff; --n19-land-bar-line: #c2dcff; --n19-land-logo: #000; --n19-land-on-bar: #000; --n19-land-forgot: #404549; }
+
 html:root, html.__fb-light-mode, html.__fb-dark-mode, html .__fb-light-mode, html .__fb-dark-mode {
   --web-wash: var(--n19-wash) !important; --wash: var(--n19-hover) !important; --surface-background: var(--n19-card) !important;
   --card-background: var(--n19-card) !important; --card-background-flat: var(--n19-card-2) !important; --comment-background: var(--n19-comment) !important;

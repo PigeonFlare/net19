@@ -55,7 +55,7 @@ html[data-n19-g="calendar"] {
   & .dwlvNd button.gPr58d .bjMtic { font: 500 14px/48px var(--n19-display) !important; letter-spacing: .25px !important; color: var(--n19-create-text) !important; display: flex !important; align-items: center !important; }
   & .dwlvNd button.gPr58d .bjMtic > i:first-child { font-size: 0 !important; width: 36px !important; height: 36px !important; margin-right: 12px !important;
     background: url("https://www.gstatic.com/images/icons/material/colored_icons/2x/create_32dp.png") center / 36px 36px no-repeat !important; }
-  &[data-net19-flip] .dwlvNd button.gPr58d .bjMtic > i:first-child { filter: contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
+
   & .dwlvNd button.gPr58d .bjMtic > i.fPL74e { display: none !important; }
 
   & [role="main"] .pbeTDb[role="grid"] { border-radius: 0 !important; background: var(--n19-bg) !important; }

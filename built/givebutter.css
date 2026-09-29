@@ -59,4 +59,3 @@ html[data-wf-site] .navbar_v2 .navbar_platform_top-heading{color:var(--n19-gb-te
 html[data-wf-site] .navbar_v2 .navbar_platform_top-button{background:var(--n19-gb-blue)!important;color:#fff!important;border-radius:3px!important}
 html[data-wf-site] .navbar_v2 .navbar_platform_top-button img{filter:brightness(0) invert(1)!important}
 html[data-wf-site] section.section-component{--butter-base-ffbf00:var(--n19-gb-soft)}
-html[data-net19-flip] :is(img.navbar_logo_icon,img.footer-v2_logo,header.bg-brand-butter-primary>a>img){filter:contrast(1.13636) hue-rotate(180deg) invert(1)!important}

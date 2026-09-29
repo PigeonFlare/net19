@@ -60,7 +60,6 @@ html[data-net19-mode="dark"]{--n19-cal-line:#5f6368;--n19-cal-head:#e8eaed;--n19
 :is(html[data-n19-g="calendar"]) .dwlvNd button.gPr58d .bjMtic>i:first-child{font-size:0!important}
 :where(:root:not([data-n19-safe])) :is(html[data-n19-g="calendar"]) .dwlvNd button.gPr58d .bjMtic>i:first-child,:is(html[data-n19-g="calendar"]):where(:root:not([data-n19-safe])) .dwlvNd button.gPr58d .bjMtic>i:first-child{width:36px!important;height:36px!important;margin-right:12px!important}
 :is(html[data-n19-g="calendar"]) .dwlvNd button.gPr58d .bjMtic>i:first-child{background:url("https://www.gstatic.com/images/icons/material/colored_icons/2x/create_32dp.png") center / 36px 36px no-repeat!important}
-:is(html[data-n19-g="calendar"])[data-net19-flip] .dwlvNd button.gPr58d .bjMtic>i:first-child{filter:contrast(1.13636) hue-rotate(180deg) invert(1)!important}
 :is(html[data-n19-g="calendar"]) .dwlvNd button.gPr58d .bjMtic>i.fPL74e{display:none!important}
 :is(html[data-n19-g="calendar"]) [role="main"] .pbeTDb[role="grid"]{border-radius:0!important;background:var(--n19-bg)!important}
 :is(html[data-n19-g="calendar"]) [role="main"] .pbeTDb .sVASAd.tWjOu{text-transform:uppercase!important;font:500 11px/32px var(--n19-sans)!important;letter-spacing:.8px!important}

@@ -39,7 +39,9 @@ function syncScripts(): Promise<unknown> {
       addRules: navigationRules(config, theme => signedIn.has(theme.id)) });
     const desired: chrome.scripting.RegisteredContentScript[] = THEMES.filter(active).map(theme => ({
       id: `net19-theme-${theme.id}`, matches: themeMatches(theme), ...(theme.exclude ? { excludeMatches: theme.exclude } : {}), ...themeFiles(theme), runAt: 'document_start', allFrames: !!theme.frames, persistAcrossSessions: true }));
-    const signature = (list: chrome.scripting.RegisteredContentScript[]) => JSON.stringify(list.map(s => [s.id, [...s.matches ?? []].sort(), [...s.excludeMatches ?? []].sort(), s.css, s.js, !!s.allFrames]).sort());
+    const watched = [...new Set(THEMES.filter(active).flatMap(themeMatches))].sort();
+    if (watched.length) desired.push({ id: 'net19-watch', matches: watched, js: ['main.js'], world: 'MAIN', runAt: 'document_start', persistAcrossSessions: true });
+    const signature = (list: chrome.scripting.RegisteredContentScript[]) => JSON.stringify(list.map(s => [s.id, [...s.matches ?? []].sort(), [...s.excludeMatches ?? []].sort(), s.css, s.js, !!s.allFrames, s.world ?? 'ISOLATED']).sort());
     const current = registered.filter(script => script.id.startsWith('net19-'));
     if (signature(current) !== signature(desired)) {
       if (current.length) await chrome.scripting.unregisterContentScripts({ ids: current.map(script => script.id) });

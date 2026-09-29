@@ -66,3 +66,4 @@ body.wp-theme-tc-24 main h1:is(.wp-block-query-title,.wp-block-heading,.has-gree
 body.wp-theme-tc-24 :is(.wp-element-button,.wp-block-button__link,.btn__link,[class*="btn"]>button,button[class*="select-all"i]){border-radius:0!important}
 footer.wp-block-template-part,footer .has-black-500-background-color,footer .has-background{background-color:#f5f5f5!important}
 footer.wp-block-template-part :is(a,p,span,h2,h3,li){color:#333!important}
+@media (max-width:1180px){:where(:root:not([data-n19-safe])) .wp-site-blocks>.hero-ad-container,.wp-site-blocks:where(:root:not([data-n19-safe]))>.hero-ad-container{overflow:hidden!important}}

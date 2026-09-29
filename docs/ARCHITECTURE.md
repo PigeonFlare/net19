@@ -30,7 +30,7 @@ A theme can `extends` another: Google's apps (Maps, Calendar, Photos, Play and t
   - optionally, a map from the site's current palette colors to 2019 colors;
   - optionally, `only: 'dark'` for designs that were dark-only in 2019.
 
-The shared engine runs after it (`content.js`, built from `src/content/palette.js` and `src/content/guard.js`) in the same isolated world. When `<body>` starts (stylesheets in `<head>` are parsed and nothing has painted yet), it:
+The shared engine runs after it (`content.js`, built from `src/content/`) in the same isolated world. When `<body>` starts (stylesheets in `<head>` are parsed and nothing has painted yet), it:
 
 1. marks `html[data-net19-mode]`;
 2. re-points every root custom property that holds a mapped color;
@@ -40,32 +40,15 @@ Palette maps are rescanned only on mode changes or new stylesheets, and those re
 
 ### Light and dark follow the device
 
-The device's `prefers-color-scheme` decides the mode. When the site's own mode differs, `palette.js` flips the page instead of recoloring it piece by piece:
+The device's `prefers-color-scheme` decides the mode, and `html[data-net19-mode]` is set to it, so each theme draws its own 2019 light or dark design. When the site itself shows the other mode, `recolor.js` recolors the page instead of flipping it with a filter, so pictures, video, canvases and embeds are never touched and keep their exact colors:
 
-- `html[data-net19-flip]` gets `filter: invert(1) hue-rotate(180deg) contrast(.88)`.
-- Media gets the exact inverse filter, so it shows its real colors. This covers `img`, `video`, `canvas`, `iframe`, `embed`, `object` and SVG `image`.
-- Top-layer elements get the filter themselves, because they are drawn outside the root's filter. These are modal dialogs, popovers and fullscreen elements.
-- Some elements are marked `data-net19-keep` and turned back whole:
-  - elements with a photo as a CSS background;
-  - opaque bars and panels that already suit the target mode, such as a dark header for a dark device.
-- Translucent scrims (`data-net19-scrim`) get a background color that flips back to their own. Only the scrim itself is recolored, so a dialog sitting on it still flips.
-- Whatever is laid over a picture is kept with it, because it was drawn for that picture:
-  - a hero headline;
-  - a video's length badge;
-  - a card's gradient shade and title;
-  - a map's controls.
-
-  The picture's host (its largest ancestor with the picture's own box) is kept whole when it holds a small overlay. A gradient shade overlapping a picture is kept as well. Pictures that load late are judged again when they get a size, at load, and two seconds later.
-- A theme can name the parts the generic rules judge wrong:
-  - `keep`: parts drawn for a photo behind them, such as Gmail's bar and drawer on a picture theme;
-  - `reflip`: panels inside kept parts that flip again, such as Gmail's search field;
-  - `flat`: media that flips with the page, such as the canvas Google Docs draws its page on, so the DOM caret over it stays visible.
-
-  `theme.rejudge()` reclassifies the page after the state these depend on changes.
-
-Classification runs once per element in `requestAnimationFrame`, before the frame is painted. It reads style first and layout only for candidates.
-
-On cnn.com, flipping adds about 150–250 ms of main-thread time during load. There is no cost when the site already matches the device.
+- Every element's background, text, border, outline, gradient and SVG fill/stroke color, and those of its `::before`, `::after` and `::placeholder`, is moved to the other side in OKLab lightness while its hue and saturation stay; a color that doesn't fit in sRGB loses saturation, never lightness. Backgrounds go dark (or light), text and icons go light (or dark), borders follow the background, and a vivid brand color keeps its tone. Colors that already suit the target, such as a dark header on a dark device, a theme's own dark tokens, or white text on a photo, are left as they are, so recoloring twice changes nothing.
+- The new colors live in one constructed stylesheet of rules keyed by `data-net19-rc`, shared by every element with the same colors and adopted into open and closed shadow roots. They carry two id selectors' worth of specificity and `!important`.
+- Elements are read as they appear, before they paint. Hover, focus and presses re-read the elements involved from their own colors. After stylesheets load, a full pass reads the page in time slices of about 24 ms.
+- Small one-color icons in images or CSS backgrounds (black on a light site, white on a dark one) are inverted with `data-net19-glyph`, so they stay visible. Colorful logos are left alone. A theme's `flat` selector names drawn surfaces that should be inverted too, such as the canvas Google Docs draws its page on.
+- `color-scheme` is set to the target, so scrollbars and native form controls match.
+- A theme can leave parts exactly as the site draws them, such as bands designed around a photo, with `keep` (a selector) or `data-net19-keep` on the element, and recolor panels inside those again with `reflip`.
+- `theme.rejudge()` recolors the page again after a theme changes something the colors depend on.
 
 ### Guard
 
@@ -75,7 +58,7 @@ On cnn.com, flipping adds about 150–250 ms of main-thread time during load. Th
 
 **Readability.** After loading, a change of mode, and every hover, click, key press, animation end or scroll, visible text is checked against the background it sits on:
 
-- The check accounts for translucent layers and gradients (taken as the average of their colors). It also accounts for every `invert()` filter actually applied on the way: the page flip, the turned-back pictures, and a theme's own filters.
+- The check accounts for translucent layers and gradients (taken as the average of their colors), and for any `invert()` filter a theme applies.
 - Text below 3:1 contrast is given whichever of a dark or light ink reads better. The floor is 2.2:1 for large text, and 2.5:1 for white or black lettering on a strong brand color.
 - Text over photos or media, including those in sibling layers, is left alone, because its background is unknown.
 - Ink is removed again once the text reads correctly without it.

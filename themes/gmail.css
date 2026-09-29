@@ -53,9 +53,6 @@ header#gb form[role="search"] input[name="q"] { background: transparent !importa
 header#gb form[role="search"] input::placeholder, header#gb form.aJf input::placeholder { color: var(--n19-text-2) !important; opacity: 1 !important; }
 header#gb form[role="search"] :is(button, [role="button"]) svg { fill: var(--n19-icon) !important; }
 
-html[data-net19-flip]:not([data-n19-picture]) header#gb a[href*="#inbox"] img, html[data-net19-flip]:not([data-n19-picture]) header#gb img[src*="logo_gmail"],
-html[data-net19-flip] .z0 > .L3::before, html[data-net19-flip] .aic .T-I.T-I-KE.L3::before { filter: contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
-
 html[data-n19-picture] header#gb { background: transparent !important; }
 html[data-n19-picture="white"] { --n19-logo: url("https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_dark_2x.png"); }
 header#gb form button[aria-label="Search mail"] svg { visibility: hidden !important; }

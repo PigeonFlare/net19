@@ -25,7 +25,6 @@ nav.quick-links [class*="shadow"]{display:none!important}
 [data-testid="unibrow-text"],.unibrow span{font-family:FoundersGroteskMono, Courier, "Courier New", monospace!important;text-transform:uppercase!important}
 .package-title,[data-testid="package-title-top-border"]{border-radius:0!important}
 [data-testid="bacon__header"],[data-testid="vertvideo__header__top-border"]{border-radius:0!important}
-html[data-net19-flip] .bg-background__wrapper.bg-use-background :is(h1,h2,p,a,span){color:#111!important}
 [data-testid="subscriber-badge"],.subscriber-badge{display:none!important}
 .article-hero__bg-container::before{display:none!important}
 .article-hero-headline__htag{font-family:FoundersGroteskCond, "Arial Narrow", Arial, sans-serif!important;letter-spacing:-.01em!important}

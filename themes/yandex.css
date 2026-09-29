@@ -6,7 +6,6 @@ html { --n19-yellow: #fc0; --n19-yellow-press: #f2cf46; --n19-link: #1a0dab; --n
   --n19-logo-pogoda: url("https://yastatic.net/s3/weather-frontend/10.15.4/i/service-name/ru.svg"); }
 html[data-net19-mode="dark"] { --n19-link: #8ab4f8; --n19-visited: #c58af9; --n19-hover: #ff6b6b; --n19-path: #5bb974; --n19-text: #e8e8e8;
   --n19-text-2: #9a9a9a; --n19-page: #1f1f1f; --n19-gray-page: #161616; --n19-card: #262626; --n19-rule: #3a3a3a; --n19-field: #262626; }
-html[data-net19-mode="dark"]:not([data-net19-flip]) { --n19-logo-filter: invert(1) hue-rotate(180deg); }
 
 html[data-n19-ya="serp"] body :is(.serp-item, .HeaderDesktop, .HeaderForm, .HeaderNav, .Organic, .Path, .OrganicText, .SerpFooter) { font-family: var(--n19-font) !important; }
 html[data-n19-ya="serp"] .HeaderLogo { background: var(--n19-logo-ys) no-repeat left center / 86px 35px !important; min-width: 86px !important; filter: var(--n19-logo-filter, none); }

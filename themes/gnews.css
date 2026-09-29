@@ -90,6 +90,15 @@ header#gb a[href*="ServiceLogin"] * { font: inherit !important; color: inherit !
   body > c-wiz:has(main) main { margin-left: auto !important; margin-right: auto !important; max-width: min(1040px, calc(100vw - 280px - 48px)) !important; }
   body > c-wiz:has(main) > div > div:first-child:empty { height: 16px !important; min-height: 0 !important; }
 }
+@media (min-width: 1024px) and (max-width: 1279px) {
+  body > c-wiz[role="navigation"] { width: 224px !important; }
+  body > c-wiz[role="navigation"] > [role="tablist"], body > c-wiz[role="navigation"] > [role="tablist"] > *, body > c-wiz[role="navigation"] > [role="tablist"] > [role="tab"] > a { width: 208px !important; }
+  body > c-wiz[role="navigation"] > [role="tablist"] > [role="tab"] > a { padding-left: 60px !important; }
+  body > c-wiz[role="navigation"] > [role="tablist"] > [role="tab"] > a::before { left: 20px !important; }
+  body > c-wiz[role="navigation"] > [role="tablist"] > :not([role="tab"]) { width: 184px !important; }
+  body > c-wiz:has(main) { padding-left: 224px !important; }
+  body > c-wiz:has(main) main { max-width: calc(100vw - 224px - 32px) !important; }
+}
 @media (max-width: 1023px) {
   body > c-wiz[role="navigation"] { background: var(--n19-bg) !important; box-shadow: var(--n19-header-shadow) !important; }
   body > c-wiz[role="navigation"] [role="tab"] > a { font: 500 14px var(--n19-display) !important; color: var(--n19-text-2) !important; }

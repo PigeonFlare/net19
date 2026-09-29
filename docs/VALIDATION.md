@@ -11,7 +11,7 @@ Browser tests check that:
 - themed sites get their theme and other sites get nothing;
 - Wikipedia gets `useskin=vector`;
 - Reddit redirects to old.reddit.com only while `reddit_session` exists, keeping path and query, and never for settings pages or share links;
-- a light site on a dark device flips, with photos keeping their colors;
+- a light site on a dark device is recolored, and pictures keep their exact pixel colors in both directions;
 - the popup switches remove themes and rules as expected.
 
 ## Live audits
@@ -24,12 +24,11 @@ Run these for every theme you change, in both `SCHEME=light` and `SCHEME=dark`:
 | `npm run audit:diff -- <id>` | Runs the page checks with and without net19 and reports only what net19 introduced, including CONTENT LOST |
 | `npm run audit:nav -- <id>` | Follows header, menu, launcher and footer links; reports unstyled destinations |
 
-`scripts/audit/page-checks.js` runs inside the page and reports `covered`, `offcenter`, `textoffcenter`, `overlap` and `lowcontrast` (contrast measured as actually shown, after the dark-mode flip). Also use it on signed-in pages.
+`scripts/audit/page-checks.js` runs inside the page and reports `covered`, `offcenter`, `textoffcenter`, `overlap` and `lowcontrast` (contrast measured as actually shown). Also use it on signed-in pages.
 
 `URLS='{"id":"https://..."}'` points any audit at a specific page.
 
 ## Known limits
 
 - Sites that serve bot checks to automated browsers (Instagram, eBay, Etsy, Indeed, Booking.com, Expedia, Canva, Quora, Yelp and others) have to be checked by hand in a real Chrome.
-- Saturated brand colors lose some saturation in a flipped page, because hue rotation clips outside sRGB.
 - Expected false flags: consent banners, ad iframes, carousels, A/B home pages, line-clamped text and sites' own two-line labels.

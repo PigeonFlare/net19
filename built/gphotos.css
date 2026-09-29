@@ -4,7 +4,6 @@ html[data-net19-mode="dark"]{--n19-ph-nav-text:#e8eaed;--n19-ph-line:#5f6368}
 :is(html[data-n19-g="photos"]) [role="menubar"].QtDoYb{box-shadow:none!important}
 :is(html[data-n19-g="photos"]) :is([role="menubar"].QtDoYb,[role="navigation"].RSjvib) svg:not([aria-label^="Google Account"] *){color:var(--n19-text-2)!important;fill:var(--n19-text-2)!important}
 :is(html[data-n19-g="photos"]) [role="menubar"].QtDoYb a[aria-label] .EIug8e{color:var(--n19-text-2)!important;font-size:22px!important}
-:is(html[data-n19-g="photos"])[data-net19-flip] [role="menubar"].QtDoYb a[aria-label] .UDKXKd{filter:contrast(1.13636) hue-rotate(180deg) invert(1)!important}
 :is(html[data-n19-g="photos"]) [role="menubar"].QtDoYb .Aul2T{border-radius:8px!important;background:var(--n19-field)!important}
 :where(:root:not([data-n19-safe])) :is(html[data-n19-g="photos"]) [role="menubar"].QtDoYb .Aul2T,:is(html[data-n19-g="photos"]):where(:root:not([data-n19-safe])) [role="menubar"].QtDoYb .Aul2T{max-width:720px!important}
 :is(html[data-n19-g="photos"]) [role="menubar"].QtDoYb .Aul2T:focus-within{background:var(--n19-bg)!important;box-shadow:var(--n19-shadow)!important}

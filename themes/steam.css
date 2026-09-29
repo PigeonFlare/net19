@@ -106,3 +106,7 @@ label:has(> input[name="review_playtime_type"][value="deck"]),
 a.game_area_details_specs_ctn[href*="category2=62&"], a.game_area_details_specs_ctn[href$="category2=62"],
 #gift_card_banner_mobile, a.submenuitem[href*="/points/"], a.submenuitem[href*="/account/familymanagement"],
 .review_award_aggregated, .review_award_button, .profile_avatar_frame, .profile_awards, .profile_header_valve_employee, #marketBetaNoteCtn, [data-featuretarget="footer"] a[href*="bsky.app"] { display: none !important; }
+
+@media (max-width: 1040px) {
+  .home_page_body_ctn { overflow-x: clip !important; }
+}

@@ -38,7 +38,6 @@ html[data-n19-g="maps"] {
   & [role="tablist"].RWPxGd button[role="tab"] .Gpq6kf { font: 500 14px/24px var(--n19-sans) !important; }
   & [role="tablist"].RWPxGd button[role="tab"][aria-selected="true"] .Gpq6kf { color: var(--n19-accent-text) !important; }
   & button.Dx2nRe { border-radius: 4px !important; }
-  &[data-net19-flip] button.Dx2nRe { filter: contrast(1.13636) hue-rotate(180deg) invert(1) !important; }
 
   & :is(.B5aTzc, button.Zf54rc, .WzvKIe) { border-radius: 2px !important; box-shadow: var(--n19-map-control-shadow) !important; }
   & .B5aTzc :is(button.rM8v5b) { border-radius: 2px 2px 0 0 !important; }

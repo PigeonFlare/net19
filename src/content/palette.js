@@ -1,4 +1,4 @@
-import { rgba } from './color.js';
+import { createRecolor } from './recolor.js';
 (() => {
   const theme = globalThis.net19Theme;
   if (!theme || globalThis.net19PaletteStarted) return;
@@ -50,300 +50,21 @@ import { rgba } from './color.js';
     return values;
   };
   const device = matchMedia('(prefers-color-scheme: dark)');
-  const FLIP_DARK = 'invert(1) hue-rotate(180deg) contrast(.88)';
-  const UNFLIP_DARK = 'contrast(1.13636) hue-rotate(180deg) invert(1)';
-  const FLIP_LIGHT = 'invert(1) hue-rotate(180deg) brightness(var(--net19-lift,1))';
-  const UNFLIP_LIGHT = 'brightness(var(--net19-unlift,1)) hue-rotate(180deg) invert(1)';
-  const MEDIA = 'img,video,canvas,iframe,embed,object,image,[data-net19-keep]';
-  const flipRules = (tone, flipFilter, unflipFilter) => {
-    const on = `html[data-net19-flip]${tone === 'light' ? '[data-net19-tone="light"]' : ':not([data-net19-tone="light"])'}`;
-    return `${on}{filter:${flipFilter}!important}` +
-      `${on} :is(dialog:modal,:popover-open,:fullscreen):not(${MEDIA}){filter:${flipFilter}!important}` +
-      `${on} :is(${MEDIA}):not([data-net19-keep] *,:fullscreen,img[src*=".svg" i]:not([data-net19-real]),img[src^="data:image/svg" i]:not([data-net19-real]),[data-net19-flat]${theme.flat ? ',' + theme.flat : ''}){filter:${unflipFilter}!important}` +
-      `${on} [data-net19-keep] [data-net19-reflip]{filter:${flipFilter}!important}` +
-      `${on} [data-net19-reflip] :is(${MEDIA}){filter:${unflipFilter}!important}`;
-  };
-  const flipCSS = flipRules('dark', FLIP_DARK, UNFLIP_DARK) + flipRules('light', FLIP_LIGHT, UNFLIP_LIGHT);
-  const PAPER = .98;
-  const MAX_LIFT = 1.4;
-  const tone = () => {
-    const root = document.documentElement;
-    if (target !== 'light' || !root.hasAttribute('data-net19-flip')) return;
-    const samples = [];
-    for (const [x, y] of [[.5, .5], [.3, .4], [.7, .4], [.5, .8], [.2, .7], [.8, .7]]) {
-      for (let n = document.elementFromPoint(innerWidth * x, innerHeight * y); n; n = n.parentElement) {
-        const c = rgba(getComputedStyle(n).backgroundColor);
-        if (c && c[3] >= .9) { samples.push((.2126 * c[0] + .7152 * c[1] + .0722 * c[2]) / 255); break; }
-      }
-    }
-    if (!samples.length) return;
-    samples.sort((a, b) => a - b);
-    const shade = samples[Math.floor(samples.length / 2)];
-    const lift = Math.min(MAX_LIFT, Math.max(1, PAPER / Math.max(.01, 1 - shade)));
-    root.style.setProperty('--net19-lift', lift.toFixed(3));
-    root.style.setProperty('--net19-unlift', (1 / lift).toFixed(3));
-  };
-  let flipSheet = null, keepObserver = null, target = 'dark', interactions = false;
-  const lum = ([r, g, b]) => (.2126 * r + .7152 * g + .0722 * b) / 255;
-  const unflip = ([r, g, b, a]) => {
-    const lift = +(document.documentElement.style.getPropertyValue('--net19-lift') || 1);
-    const [cr, cg, cb] = [r, g, b].map(v => Math.min(1, Math.max(0, target === 'light' ? v / 255 / lift : (v / 255 - .5) / .88 + .5)));
-    const [hr, hg, hb] = [-.574 * cr + 1.43 * cg + .144 * cb, .426 * cr + .43 * cg + .144 * cb, .426 * cr + 1.43 * cg - .856 * cb];
-    return `rgba(${[hr, hg, hb].map(v => Math.round(255 * (1 - Math.min(1, Math.max(0, v))))).join(',')},${a})`;
-  };
-  const scrims = new Map();
-  const scrim = color => {
-    let id = scrims.get(color);
-    if (id === undefined) {
-      id = scrims.size; scrims.set(color, id);
-      flipSheet.textContent += `html[data-net19-flip] [data-net19-scrim="${id}"]{background-color:${unflip(rgba(color))}!important}`;
-    }
-    return id;
-  };
-  let seen = new WeakSet(), small = new Set();
-  const DRAWN = /\.(png|gif|svg)(\b|[?#"'])|image\/(png|gif|svg)/i;
-  const PHOTO = /\.(jpe?g|webp|avif)(\b|[?#"'])|image\/(jpeg|webp|avif)|[?&](fm|format)=(jpe?g|webp|avif)/i;
-  const ICON = /\.(png|gif|svg)(\b|[?#])|^data:image\/(png|gif|svg)/i;
-  const VECTOR = /\.svg(\b|[?#])|^data:image\/svg/i;
-  const inkBySource = new Map();
-  const inkOf = src => {
-    if (inkBySource.has(src)) return inkBySource.get(src);
-    const reading = new Promise(resolve => {
-      const probe = new Image();
-      probe.crossOrigin = 'anonymous';
-      probe.onload = () => {
-        try {
-          const side = 24;
-          const pen = new OffscreenCanvas(side, side).getContext('2d', { willReadFrequently: true });
-          pen.drawImage(probe, 0, 0, side, side);
-          const px = pen.getImageData(0, 0, side, side).data;
-          let opaque = 0, colored = 0;
-          for (let i = 0; i < px.length; i += 4) {
-            if (px[i + 3] < 48) continue;
-            opaque++;
-            if (Math.max(px[i], px[i + 1], px[i + 2]) - Math.min(px[i], px[i + 1], px[i + 2]) > 56) colored++;
-          }
-          resolve(!opaque ? 'unknown' : colored / opaque > .06 ? 'colorful' : 'mono');
-        } catch { resolve('unknown'); }
-      };
-      probe.onerror = () => resolve('unknown');
-      probe.src = src;
-    });
-    inkBySource.set(src, reading);
-    return reading;
-  };
-  const GLYPH_MAX = 32;
-  const judgeIcon = img => {
-    const src = img.currentSrc || img.src || '';
-    if (!ICON.test(src)) return;
-    const vector = VECTOR.test(src);
-    const judge = () => {
-      const w = img.offsetWidth, h = img.offsetHeight;
-      if (!h || h > 120 || w > 400) { if (vector && h) img.setAttribute('data-net19-real', ''); return; }
-      inkOf(src).then(ink => {
-        const flips = ink === 'mono' || (ink === 'unknown' && Math.max(w, h) <= GLYPH_MAX);
-        if (flips && !vector) img.setAttribute('data-net19-flat', '');
-        if (!flips && vector) img.setAttribute('data-net19-real', '');
-      });
-    };
-    if (img.complete) judge(); else img.addEventListener('load', judge, { once: true });
-  };
-  const SKIP = /^(IMG|VIDEO|CANVAS|IFRAME|SVG|svg|PATH|path|SCRIPT|STYLE|LINK|META|BR)$/;
-  const keepSel = theme.keep || '', reflipSel = theme.reflip || '';
-  const sizes = new ResizeObserver(entries => {
-    for (const { target: media, contentRect: box } of entries) {
-      if (box.width < 2 || box.height < 2) continue;
-      sizes.unobserve(media);
-      if (!media.isConnected || !document.documentElement.hasAttribute('data-net19-flip') || media.hasAttribute('data-net19-flat')) continue;
-      const d = new Map();
-      overlaid(media, d, e => (e.closest('[data-net19-keep]') ? 'kept' : 'flipped'));
-      for (const [e, v] of d) e.setAttribute(`data-net19-${v}`, '');
-    }
-  });
-  const judgedAt = new WeakMap();
-  const rescanMedia = () => {
-    if (!document.documentElement.hasAttribute('data-net19-flip')) return;
-    const d = new Map();
-    const outside = e => (e.closest('[data-net19-keep]') ? 'kept' : 'flipped');
-    for (const media of document.querySelectorAll('img, video, canvas')) {
-      if (media.closest('[data-net19-keep]') || media.hasAttribute('data-net19-flat')) continue;
-      const size = `${media.offsetWidth}x${media.offsetHeight}`;
-      if (judgedAt.get(media) === size) continue;
-      judgedAt.set(media, size);
-      if (overlaid(media, d, outside) || media.offsetWidth < 120 || media.offsetHeight < 64) continue;
-      for (const shade of shadesNear(media)) if (!d.has(shade) && !shade.closest('[data-net19-keep]') && shadeOver(shade)) d.set(shade, 'keep');
-    }
-    for (const [e, v] of d) e.setAttribute(`data-net19-${v}`, '');
-  };
-  const shadesNear = media => {
-    const found = [];
-    for (let n = media.parentElement, i = 0; n && n !== document.body && i < 3; n = n.parentElement, i++) {
-      const all = n.getElementsByTagName('*');
-      if (all.length > 60) break;
-      for (const e of all) {
-        if (e === media || e.contains(media)) continue;
-        const image = getComputedStyle(e).backgroundImage;
-        if (image.includes('gradient(') && !image.includes('url(')) found.push(e);
-      }
-    }
-    return found;
-  };
-  const shadeOver = el => {
-    const r = el.getBoundingClientRect();
-    if (r.width < 96 || r.height < 48) return false;
-    for (let n = el.parentElement, i = 0; n && n !== document.body && i < 3; n = n.parentElement, i++) {
-      if (n.getElementsByTagName('*').length > 60) break;
-      for (const m of n.querySelectorAll('img, video, picture > img')) {
-        if (el.contains(m)) continue;
-        const q = m.getBoundingClientRect();
-        const ox = Math.min(q.right, r.right) - Math.max(q.left, r.left), oy = Math.min(q.bottom, r.bottom) - Math.max(q.top, r.top);
-        if (ox > 0 && oy > 0 && ox * oy > .25 * r.width * r.height && q.width >= 120 && q.height >= 64) return true;
-      }
-    }
-    return false;
-  };
-  const overlaid = (media, decided, context) => {
-    const r = media.getBoundingClientRect();
-    if (r.width < 120 || r.height < 64) {
-      if (r.width < 2 || r.height < 2 || (media.tagName === 'IMG' && !media.complete)) sizes.observe(media);
-      return false;
-    }
-    if (media.hasAttribute('data-net19-flat')) return false;
-    let host = null;
-    for (let n = media.parentElement, i = 0; n && n !== document.body && i < 6; n = n.parentElement, i++) {
-      const q = n.getBoundingClientRect();
-      if ((q.width < 1 && q.height < 1) || n.tagName === 'PICTURE') continue;
-      if (Math.abs(q.width - r.width) > Math.max(8, r.width * .08) || Math.abs(q.height - r.height) > Math.max(8, r.height * .08)) break;
-      host = n;
-    }
-    if (!host || !host.querySelector(':scope *:not(img, picture, source, video, canvas, svg, svg *)')) return false;
-    const text = (host.textContent || '').replace(/\s+/g, ' ').trim();
-    const hr = host.getBoundingClientRect();
-    if (text.length > 2000 || host.getElementsByTagName('*').length > 250 || host.querySelector('[role="navigation"], nav, main, [role="main"]') ||
-      hr.width * hr.height > .85 * innerWidth * innerHeight) return false;
-    if (!text && !host.querySelector('[style*="gradient"], [class*="gradient" i], [class*="overlay" i], [class*="shade" i]')) return false;
-    if (context(host) !== 'flipped' || host.closest('[data-net19-keep]')) return false;
-    decided.set(host, 'keep');
-    return true;
-  };
-  const keepPhotos = roots => {
-    const decided = new Map(), scrimColor = new Map();
-    const context = el => {
-      for (let n = el.parentElement, i = 0; n && i < 40; n = n.parentElement, i++) {
-        const d = decided.get(n) || (n.hasAttribute('data-net19-reflip') ? 'reflip' : n.hasAttribute('data-net19-keep') ? 'keep' : '');
-        if (d === 'keep') return 'kept';
-        if (d === 'reflip') return 'none';
-      }
-      return 'flipped';
-    };
-    for (const root of roots) {
-      if (!root?.isConnected) continue;
-      const grown = [];
-      for (let n = root.parentElement, i = 0; n && i < 8; n = n.parentElement, i++) if (small.has(n)) { small.delete(n); seen.delete(n); grown.unshift(n); }
-      const list = root.querySelectorAll ? [...grown, root, ...root.querySelectorAll('*')] : grown;
-      for (const el of list) {
-        if (seen.has(el)) continue;
-        seen.add(el);
-        if (el.tagName === 'IMG' || el.tagName === 'VIDEO' || el.tagName === 'CANVAS') {
-          if (el.tagName === 'IMG') judgeIcon(el);
-          overlaid(el, decided, context);
-          continue;
-        }
-        if (el === document.body) continue;
-        if (SKIP.test(el.tagName) || el.hasAttribute('data-net19-keep') || el.hasAttribute('data-net19-reflip') || el.hasAttribute('data-net19-scrim')) continue;
-        if (keepSel && el.matches(keepSel)) { if (context(el) === 'flipped') decided.set(el, 'keep'); continue; }
-        if (reflipSel && el.matches(reflipSel)) { if (context(el) === 'kept') decided.set(el, 'reflip'); continue; }
-        const style = getComputedStyle(el);
-        const image = style.backgroundImage;
-        if (!image.includes('url(') && image.includes('gradient(') && shadeOver(el) && context(el) === 'flipped') { decided.set(el, 'keep'); continue; }
-        const photo = image.includes('url(') && !DRAWN.test(image);
-        const surely = photo && PHOTO.test(image);
-        const color = photo ? null : rgba(style.backgroundColor);
-        if (!photo && (!color || color[3] < .15)) continue;
-        const l = color && lum(color);
-        const vivid = color && color[3] >= .9 && Math.max(color[0], color[1], color[2]) - Math.min(color[0], color[1], color[2]) > 90;
-        const suits = color && (vivid || (target === 'dark' ? l < .36 : l > .75));
-        const opposite = color && color[3] >= .9 && (target === 'dark' ? l > .75 : l < .3);
-        if (!photo && !suits && !opposite) continue;
-        const where = context(el);
-        if (where === 'none' || (where === 'flipped' && !photo && !suits) || (where === 'kept' && !opposite)) continue;
-        const w = el.offsetWidth, h = el.offsetHeight;
-        if (w < 96 || h < 24 || (photo && h < (surely ? 64 : 200))) { small.add(el); continue; }
-        if (where === 'kept') decided.set(el, 'reflip');
-        else if (photo) { if (!overlaid(el, decided, context)) decided.set(el, 'keep'); }
-        else if (color[3] >= .9) decided.set(el, 'keep');
-        else { decided.set(el, 'scrim'); scrimColor.set(el, style.backgroundColor); }
-      }
-    }
-    for (const [el, d] of decided) {
-      if (d === 'scrim') el.setAttribute('data-net19-scrim', scrim(scrimColor.get(el)));
-      else el.setAttribute(`data-net19-${d}`, '');
-    }
-  };
-  const setFlip = (on, mode) => {
-    const root = document.documentElement;
-    if (on === root.hasAttribute('data-net19-flip') && (!on || mode === target)) return;
-    keepObserver?.disconnect(); keepObserver = null;
-    for (const el of document.querySelectorAll('[data-net19-keep],[data-net19-reflip],[data-net19-scrim],[data-net19-flat],[data-net19-real]')) for (const a of ['data-net19-keep', 'data-net19-reflip', 'data-net19-scrim', 'data-net19-flat', 'data-net19-real']) el.removeAttribute(a);
-    seen = new WeakSet(); small = new Set();
-    if (!on) { for (const a of ['data-net19-flip', 'data-net19-canvas', 'data-net19-tone']) root.removeAttribute(a); root.style.removeProperty('--net19-lift'); root.style.removeProperty('--net19-unlift'); return; }
-    target = mode;
-    if (!flipSheet) {
-      flipSheet = document.createElement('style'); flipSheet.id = 'net19-flip';
-      flipSheet.textContent = flipCSS + 'html[data-net19-flip][data-net19-canvas]{background-color:#fff!important}';
-      (document.head || root).append(flipSheet);
-    }
-    root.setAttribute('data-net19-flip', '');
-    if (mode === 'light') root.setAttribute('data-net19-tone', 'light'); else root.removeAttribute('data-net19-tone');
-    requestAnimationFrame(tone);
-    addEventListener('load', () => setTimeout(tone, 300), { once: true });
-    const canvas = () => {
-      const bare = [root, document.body].every(n => !n || (rgba(getComputedStyle(n).backgroundColor) || [0, 0, 0, 0])[3] === 0);
-      if (bare) root.setAttribute('data-net19-canvas', '');
-    };
-    canvas();
-    addEventListener('load', canvas, { once: true });
-    let added = [document.body], frame = 0;
-    const flush = () => { frame = 0; const roots = added; added = []; keepPhotos(roots); };
-    frame = requestAnimationFrame(flush);
-    keepObserver = new MutationObserver(records => {
-      for (const r of records) for (const n of r.addedNodes) if (n.nodeType === 1) added.push(n);
-      if (added.length && !frame) frame = requestAnimationFrame(flush);
-    });
-    keepObserver.observe(document.body || root, { childList: true, subtree: true });
-    if (!interactions) {
-      interactions = true;
-      const recheck = () => setTimeout(() => requestAnimationFrame(() => {
-        if (!document.documentElement.hasAttribute('data-net19-flip')) return;
-        const opened = [];
-        for (const el of small) {
-          if (!el.isConnected) { small.delete(el); continue; }
-          if (el.offsetWidth >= 96 && el.offsetHeight >= 24) { small.delete(el); seen.delete(el); opened.push(el); }
-        }
-        if (opened.length) keepPhotos(opened);
-      }), 250);
-      for (const type of ['click', 'keyup', 'focusin']) addEventListener(type, recheck, { capture: true, passive: true });
-    }
-    addEventListener('load', () => { keepPhotos([document.body]); rescanMedia(); setTimeout(rescanMedia, 2000); }, { once: true });
-    if (document.readyState === 'complete') setTimeout(rescanMedia, 1000);
-  };
-  theme.rejudge = () => {
-    if (!document.documentElement.hasAttribute('data-net19-flip')) return;
-    for (const el of document.querySelectorAll('[data-net19-keep],[data-net19-reflip],[data-net19-scrim]')) for (const a of ['data-net19-keep', 'data-net19-reflip', 'data-net19-scrim']) el.removeAttribute(a);
-    seen = new WeakSet(); small = new Set();
-    tone();
-    keepPhotos([document.body]);
-  };
+  const recolor = createRecolor(theme);
+  theme.rejudge = () => recolor.refresh();
   const apply = (force = false) => {
     const root = document.documentElement;
     if (!root) return;
     if (sheet?.sheet) sheet.sheet.disabled = true;
-    const mode = detect();
+    const shown = root.getAttribute('data-net19-mode');
+    if (shown) root.removeAttribute('data-net19-mode');
+    const mode = recolor.pause(detect);
+    if (shown) root.setAttribute('data-net19-mode', shown);
     if (sheet?.sheet) sheet.sheet.disabled = false;
-    if (root.getAttribute('data-net19-mode') !== mode) root.setAttribute('data-net19-mode', mode);
     const fixed = typeof theme.only === 'function' ? theme.only() : theme.only;
     const wanted = fixed === 'dark' || fixed === 'light' ? fixed : device.matches ? 'dark' : 'light';
-    setFlip(wanted !== mode, wanted);
+    if (root.getAttribute('data-net19-mode') !== wanted) root.setAttribute('data-net19-mode', wanted);
+    if (wanted !== mode) recolor.start(wanted); else recolor.stop();
     if (!hasMap || mode === lastMode && !force) return;
     lastMode = mode;
     const table = tables[mode];
@@ -371,8 +92,8 @@ import { rgba } from './color.js';
     const observer = new MutationObserver(records => {
       let attributes = false, sheets = false;
       for (const r of records) {
-        if (r.type === 'attributes' && r.attributeName !== 'data-net19-mode' && r.attributeName !== 'data-net19-flip') attributes = true;
-        else if (r.type === 'childList') for (const n of r.addedNodes) if (n !== sheet && n !== flipSheet && (n.nodeName === 'STYLE' || n.nodeName === 'LINK')) sheets = true;
+        if (r.type === 'attributes' && r.attributeName !== 'data-net19-mode' && r.attributeName !== 'data-net19-recolor') attributes = true;
+        else if (r.type === 'childList') for (const n of r.addedNodes) if (n !== sheet && !/^net19-/.test(n.id || '') && (n.nodeName === 'STYLE' || n.nodeName === 'LINK')) sheets = true;
       }
       if (attributes || sheets) later(sheets);
     });

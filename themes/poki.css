@@ -1,13 +1,6 @@
 html { --n19-page: #83ffe7; --n19-text: #002b50; --n19-tile: #fff; --n19-line: #f0f5fc; --n19-blue: #009cff; --n19-glass: rgba(255, 255, 255, .2); }
 html[data-net19-mode="dark"] { --n19-page: #83ffe7; --n19-text: #002b50; --n19-tile: #fff; --n19-line: #f0f5fc; --n19-blue: #009cff; --n19-glass: rgba(255, 255, 255, .2); }
 
-html[data-net19-flip] img[data-net19-flat]:is([src*="img.poki-cdn.com"], [srcset*="img.poki-cdn.com"], [src*="/cdn-cgi/image/"]) {
-  filter: contrast(1.13636) hue-rotate(180deg) invert(1) !important;
-}
-
-html[data-net19-flip] section[role="search"] { background-color: #d4f8f0 !important; }
-html[data-net19-flip] section[role="search"] + div:empty { background-color: rgb(138, 153, 182) !important; }
-
 #nav div:has(> #profile-btn) { display: none !important; }
 #nav button[aria-label="Search"] { flex: 1 1 auto !important; width: 100% !important; border-left: 0 !important; border-radius: 0 0 16px 16px !important; }
 

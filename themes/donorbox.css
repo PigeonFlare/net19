@@ -75,8 +75,7 @@ body.wp-theme-genesis header#app_header nav.navbar { background: var(--n19-db-ba
 body.wp-theme-genesis header#app_header nav.navbar .navbar-nav > li > a.nav-link:not(.theme-btn) { color: var(--n19-db-bar-text) !important; font-size: 16px !important; font-weight: 500 !important; }
 body.wp-theme-genesis header#app_header nav.navbar a.theme-btn { background: var(--n19-db-bar-2) !important; color: #fff !important; border-radius: 3px !important; border: 0 !important; }
 body.wp-theme-genesis header#app_header nav.navbar .dropdown-menu { border-radius: 3px !important; }
-html[data-net19-flip] header#app_header, html[data-net19-flip] body.application main > section#fastest_donation_checkout, html[data-net19-flip] section.section_hero.dark, html[data-net19-flip] body.wp-theme-genesis header#app_header nav.navbar { background: #123547 !important; }
-html[data-net19-flip] header#app_header #nav_menu_org_signup_link.button, html[data-net19-flip] body.wp-theme-genesis header#app_header nav.navbar a.theme-btn { background: #1d5b7a !important; }
+
 header#app_header #nav_dropdown_platform .submenu { width: auto !important; right: auto !important; justify-content: flex-start !important; }
 header#app_header :is(#nav_dropdown_company, #nav_dropdown_login) .submenu li > a { padding-top: 16px !important; padding-bottom: 16px !important; align-items: center !important; }
 header.header-component#app_header { height: 76px !important; }
@@ -87,7 +86,7 @@ header.header-component#app_header nav .nav-login-container > .nav-item-button {
 header.header-component#app_header nav a.nav-signup-link { background: var(--n19-db-bar-2) !important; color: #fff !important; border: 0 !important; border-radius: 3px !important; box-shadow: none !important; font-weight: 500 !important; }
 header.header-component#app_header .nav-item-dropdown { border-radius: 3px !important; }
 header.header-component#app_header .nav-item-dropdown :is(a, span, li, dt, dd) { color: var(--n19-db-ink) !important; font-family: var(--n19-db-font) !important; }
-html[data-net19-flip] header.header-component#app_header nav a.nav-signup-link { background: #1d5b7a !important; }
+
 header.header-component#app_header nav .nav-login-container > .nav-item-button { padding: 8px 14px !important; }
 header.header-component#app_header nav .nav-item-button::after { filter: brightness(0) invert(1) !important; }
 #storyblok-body main a.button:not(.button-outline), #storyblok-body > section a.button:not(.button-outline) { background: linear-gradient(to right, var(--n19-db-cta-a), var(--n19-db-cta-b)) !important; color: #fff !important;

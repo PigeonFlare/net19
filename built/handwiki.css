@@ -19,7 +19,6 @@ body.skin-timeless #p-logo a.timeless-logo img{content:url("https://handwiki.org
 :where(:root:not([data-n19-safe])) body.skin-timeless #p-logo a.timeless-logo img{width:170px!important;height:90px!important;max-width:100%!important}
 body.skin-timeless #p-logo a.timeless-logo img{object-fit:contain}
 :where(:root:not([data-n19-safe])) body.skin-timeless #p-logo a.timeless-logo img{display:block!important;margin:0 auto!important}
-html[data-net19-flip] body.skin-timeless #p-logo a.timeless-logo img{filter:contrast(1.13636) hue-rotate(180deg) invert(1)!important}
 body.skin-timeless #mw-site-navigation,body.skin-timeless #mw-related-navigation{background:transparent!important}
 body.skin-timeless :is(#mw-site-navigation,#mw-related-navigation) .sidebar-chunk{background:transparent!important;border:0!important;box-shadow:none!important;border-radius:0!important}
 body.skin-timeless :is(#mw-site-navigation,#mw-related-navigation) .sidebar-chunk h3{background:var(--n19-label-from)!important;background-image:linear-gradient(to right, var(--n19-label-from), var(--n19-label-to))!important;color:#fff!important;font-variant:small-caps;font-weight:700!important;font-size:1.1em!important;line-height:1.5!important}

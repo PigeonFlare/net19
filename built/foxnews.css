@@ -44,4 +44,3 @@ html[data-net19-mode="dark"] .article-body p a:hover{background:transparent!impo
 .recommended-navbar{display:none!important}
 .nav-item.watch-live,.nav-item.watch-live a,.nav-item a{border-radius:0!important}
 .site-header .primary-nav .dropdown-content{border-radius:0!important;box-shadow:none!important}
-html[data-net19-flip] a.logo{filter:contrast(1.13636) hue-rotate(180deg) invert(1)!important}

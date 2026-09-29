@@ -1,6 +1,5 @@
 html{--n19-gl-card:#fff;--n19-gl-text:#202124;--n19-gl-hover:rgba(60,64,67,.04);--n19-gl-hover-border:#dadce0;--n19-gl-focus:#e8f0fe;--n19-gl-divider:#e8eaed;--n19-gl-link:#1a73e8;--n19-gl-shadow:0 1px 2px 0 rgba(60,64,67,.3), 0 2px 6px 2px rgba(60,64,67,.15)}
 html[data-net19-mode="dark"]{--n19-gl-card:#2d2e30;--n19-gl-text:#e8eaed;--n19-gl-hover:rgba(232,234,237,.04);--n19-gl-hover-border:#5f6368;--n19-gl-focus:#394457;--n19-gl-divider:#3c4043;--n19-gl-link:#8ab4f8;--n19-gl-shadow:0 1px 2px 0 rgba(0,0,0,.6), 0 2px 6px 2px rgba(0,0,0,.3)}
-html[data-net19-flip][data-net19-canvas]:not([data-n19-g="gemini"]){background-color:transparent!important}
 html:has(li[data-is-draggable]>a[data-pid]) [role="complementary"]>div:has(li[data-is-draggable]){background:var(--n19-gl-card)!important;border-radius:8px!important;box-shadow:var(--n19-gl-shadow)!important}
 html:has(li[data-is-draggable]>a[data-pid]):where(:root:not([data-n19-safe])) [role="complementary"]>div:has(li[data-is-draggable]){padding:12px 8px 0!important}
 html:has(li[data-is-draggable]>a[data-pid]) div:has(>div>ul>li[data-is-draggable]){background:transparent!important;border-radius:0!important;box-shadow:none!important}
@@ -16,8 +15,6 @@ html:has(li[data-is-draggable]>a[data-pid]) li[data-is-draggable]>a[data-pid]:fo
 html:has(li[data-is-draggable]>a[data-pid]):where(:root:not([data-n19-safe])) li[data-is-draggable]>a[data-pid]>div:has(>span[style*="background"]){margin-top:2px!important;height:64px!important;display:flex!important;align-items:center!important;justify-content:center!important}
 html:has(li[data-is-draggable]>a[data-pid]):where(:root:not([data-n19-safe])) li[data-is-draggable]>a[data-pid] span[style*="background"]{flex:none!important;transform:scale(1.2075)!important}
 html:has(li[data-is-draggable]>a[data-pid]) li[data-is-draggable]>a[data-pid] span[style*="background-image"]{border-radius:50%!important;background-size:cover!important}
-html[data-net19-flip]:has(li[data-is-draggable]>a[data-pid]) [role="complementary"]>div:has(li[data-is-draggable]){background:#d7d8db!important;box-shadow:0 1px 2px 0 rgba(255,255,255,.6), 0 2px 6px 2px rgba(255,255,255,.3)!important}
-html[data-net19-flip] li[data-is-draggable]>a[data-pid] span[style*="background"]{filter:contrast(1.13636) hue-rotate(180deg) invert(1)!important}
 html:has(li[data-is-draggable]>a[data-pid]) li[data-is-draggable]>a[data-pid]>span:last-child{font:400 13px/18px Roboto, Arial, sans-serif!important;letter-spacing:.09px!important;color:var(--n19-gl-text)!important}
 html:has(li[data-is-draggable]>a[data-pid]):where(:root:not([data-n19-safe])) li[data-is-draggable]>a[data-pid]>span:last-child{margin-top:2px!important}
 html:has(li[data-is-draggable]>a[data-pid]) a[href*="about.google/products"]{font:500 14px/36px "Google Sans", Roboto, Arial, sans-serif!important;letter-spacing:.25px!important}

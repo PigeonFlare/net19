@@ -4,7 +4,7 @@ import sharp from 'sharp';
 import { buildStyles } from './styles.mjs';
 
 const root = new URL('../', import.meta.url);
-await build({ entryPoints: { background: 'src/background.ts', popup: 'src/popup.ts', content: 'src/content/index.js' },
+await build({ entryPoints: { background: 'src/background.ts', popup: 'src/popup.ts', content: 'src/content/index.js', main: 'src/content/main.js' },
   outdir: root.pathname, bundle: true, platform: 'browser', target: 'chrome120', format: 'iife',
   minify: true, legalComments: 'eof', logLevel: 'warning' });
 await buildStyles(root);
