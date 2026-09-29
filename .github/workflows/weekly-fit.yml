@@ -1,0 +1,40 @@
+name: Weekly site check
+on:
+  schedule:
+    - cron: '17 9 * * 1'
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: weekly-fit
+  cancel-in-progress: true
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+      - uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38 # v6
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - run: node scripts/audit/fit.mjs
+        env:
+          OUT: test-results/fit
+          PARALLEL: '2'
+          SETTLE_MS: '4000'
+      - name: Open, update or close the site-check issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="Weekly site check"
+          number=$(gh issue list --state open --search "\"$title\" in:title" --json number --jq '.[0].number // empty')
+          if [ -s test-results/fit/broken.txt ]; then
+            if [ -n "$number" ]; then gh issue edit "$number" --body-file test-results/fit/report.md
+            else gh issue create --title "$title" --body-file test-results/fit/report.md; fi
+          elif [ -n "$number" ]; then
+            gh issue close "$number" --comment "Every reachable theme fits again."
+          fi

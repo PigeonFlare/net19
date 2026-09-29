@@ -1,7 +1,12 @@
 name: Extension checks
 on:
   push:
+    paths-ignore: ['**.md', 'docs/**', '.github/ISSUE_TEMPLATE/**']
   pull_request:
+    paths-ignore: ['**.md', 'docs/**', '.github/ISSUE_TEMPLATE/**']
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
 permissions:
   contents: read
 jobs:
