@@ -46,6 +46,89 @@
   ],
   "features": [
     {
+      "match": "^Menu$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "hamburger in the search card (the cloud audit browser gets search and place pages without the search card even without net19)"
+    },
+    {
+      "match": "^(Search|Search Google Maps)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s1",
+        "s2",
+        "s5"
+      ],
+      "note": "floating search card"
+    },
+    {
+      "match": "^Directions$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start",
+        "place"
+      ],
+      "evidence": [
+        "s1",
+        "s2",
+        "s5"
+      ],
+      "note": "directions button in the search card and on place pages"
+    },
+    {
+      "match": "^Results$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "search"
+      ],
+      "evidence": [
+        "s5"
+      ],
+      "note": "results side panel"
+    },
+    {
+      "match": "^Available filters for this search$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "search"
+      ],
+      "evidence": [
+        "s5"
+      ],
+      "note": "Price / Rating / Hours filter row"
+    },
+    {
+      "match": "^Collapse side panel$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "search",
+        "place"
+      ],
+      "evidence": [
+        "s1",
+        "s5"
+      ],
+      "note": "side panel toggle"
+    },
+    {
       "match": "^(search area|Menu|Search|Close|Directions|Search Google Maps)$",
       "in2019": true,
       "evidence": [
@@ -118,7 +201,7 @@
       "note": "search results and places (content)"
     },
     {
-      "match": "^(Photo of |Actions for |Information for |About (Space Needle|this data)|Popular times|Photos of |Reviews|region area|repeated div|Observation deck)",
+      "match": "^(Photo of |Actions for( |$)|Information for |About (Space Needle|this data)|Popular times|Photos of |Reviews|region area|main area|repeated div|Observation deck)",
       "in2019": true,
       "evidence": [
         "s1"
@@ -196,6 +279,14 @@
         "category chip row beside the search box is 2020+; in 2019 Explore nearby categories sat in the panel (s1)"
       ],
       "action": "hidden"
+    },
+    {
+      "match": "^(Get the most out of Google Maps(Sign in)?|Sign in)$",
+      "in2019": false,
+      "action": "kept: function",
+      "evidence": [
+        "limited-view card Google serves signed-out automated browsers on place pages; it only offers sign-in, a function the user needs"
+      ]
     }
   ]
 }

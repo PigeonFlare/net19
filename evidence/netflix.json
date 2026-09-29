@@ -33,6 +33,118 @@
   ],
   "features": [
     {
+      "match": "^Netflix$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "login"
+      ],
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "red NETFLIX logo in the header"
+    },
+    {
+      "match": "^Sign In$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "red Sign In button in the header"
+    },
+    {
+      "match": "^(Get Started|Join free for a month|Try 30 days free)",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "red call-to-action next to the email field"
+    },
+    {
+      "match": "^email$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s2",
+        "s4"
+      ],
+      "note": "email field of the sign-up form"
+    },
+    {
+      "match": "^userLoginId$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "login"
+      ],
+      "evidence": [
+        "s4"
+      ],
+      "note": "email field of the sign-in form"
+    },
+    {
+      "match": "^FAQ$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "footer"
+    },
+    {
+      "match": "^Help Center$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "footer"
+    },
+    {
+      "match": "^Terms of Use$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "footer"
+    },
+    {
+      "match": "^Privacy$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "footer"
+    },
+    {
+      "match": "^Cookie Preferences$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "footer"
+    },
+    {
       "match": "^(Browse Games|Netflix House|Netflix Shop|Games|Trending Now|Next|Previous)$",
       "in2019": false,
       "evidence": [

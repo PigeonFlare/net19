@@ -68,6 +68,130 @@
   ],
   "features": [
     {
+      "match": "^email$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s6",
+        "s7"
+      ],
+      "note": "login field (phone, username or email)"
+    },
+    {
+      "match": "^pass$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s6",
+        "s7"
+      ],
+      "note": "password field"
+    },
+    {
+      "match": "^About Us$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4",
+        "s6"
+      ],
+      "note": "uppercase footer row"
+    },
+    {
+      "match": "^Privacy$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4",
+        "s6"
+      ],
+      "note": "footer"
+    },
+    {
+      "match": "^Terms$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4",
+        "s6"
+      ],
+      "note": "footer"
+    },
+    {
+      "match": "^Posts(POSTS)?$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "profile"
+      ],
+      "evidence": [
+        "s4",
+        "s5",
+        "s8"
+      ],
+      "note": "POSTS tab with icon and uppercase label"
+    },
+    {
+      "match": "^Tagged(TAGGED)?$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "profile"
+      ],
+      "evidence": [
+        "s4",
+        "s5",
+        "s8"
+      ],
+      "note": "TAGGED tab"
+    },
+    {
+      "match": "^Follow$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "profile"
+      ],
+      "evidence": [
+        "s8"
+      ],
+      "note": "blue Follow button next to the username (logged out it opens the login page, as in 2019)"
+    },
+    {
+      "match": "followers$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "profile"
+      ],
+      "evidence": [
+        "s4",
+        "s8"
+      ],
+      "note": "follower count in the profile header"
+    },
+    {
+      "match": "profile picture$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "profile"
+      ],
+      "evidence": [
+        "s4",
+        "s8"
+      ],
+      "note": "round profile photo"
+    },
+    {
       "match": "^repeated ",
       "in2019": true,
       "evidence": [
@@ -122,7 +246,7 @@
       "note": "right-rail Stories and Suggestions; the account Switch link and the Follow button on feed posts are hidden"
     },
     {
-      "match": "^(Posts|IGTV|Saved|Tagged|POSTS|IGTV|SAVED|TAGGED|Edit Profile|Edit profile|Options|More options|followers|following|posts)$",
+      "match": "^((Posts|IGTV|Saved|Tagged)(POSTS|IGTV|SAVED|TAGGED)?|POSTS|SAVED|TAGGED|Edit Profile|Edit profile|Options|More options|followers|following|posts)$",
       "in2019": true,
       "evidence": [
         "s4",

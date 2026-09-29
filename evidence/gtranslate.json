@@ -71,6 +71,139 @@
   ],
   "features": [
     {
+      "match": "^Main menu$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "hamburger in the header"
+    },
+    {
+      "match": "^Google Translate$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "product wordmark"
+    },
+    {
+      "match": "^Google apps$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "apps grid"
+    },
+    {
+      "match": "^(Text|Text translation)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4",
+        "s6"
+      ],
+      "note": "Text mode tab"
+    },
+    {
+      "match": "^(Documents|Document translation)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4",
+        "s6"
+      ],
+      "note": "Documents mode tab"
+    },
+    {
+      "match": "^Detect language$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start",
+        "text"
+      ],
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "source language tab"
+    },
+    {
+      "match": "^Swap languages",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "swap button between the language bars"
+    },
+    {
+      "match": "^Source text$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "source text area (the prefilled text page waits on the translation service, which does not answer the cloud audit browser even without net19)"
+    },
+    {
+      "match": "^History$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start",
+        "text"
+      ],
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "bottom shortcut"
+    },
+    {
+      "match": "^Saved$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start",
+        "text"
+      ],
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "bottom shortcut; the 2019 Community shortcut is not required because Google closed Translate Community in 2024"
+    },
+    {
+      "match": "^(Browse your files|Browse your computer)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "docs"
+      ],
+      "evidence": [
+        "s6"
+      ],
+      "note": "Documents upload button"
+    },
+    {
       "match": "^(banner area|Main menu|Google Translate|Google apps|Sign in|Settings|nav area)$",
       "in2019": true,
       "evidence": [

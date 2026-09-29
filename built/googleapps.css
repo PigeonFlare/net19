@@ -21,6 +21,7 @@ html:not([data-n19-g="gemini"]) :is(.VfPpkd-LgbsSe-OWXEXe-k8QpJ,.VfPpkd-LgbsSe-O
 html:not([data-n19-g="gemini"]) :is(.VfPpkd-LgbsSe-OWXEXe-k8QpJ,.VfPpkd-LgbsSe-OWXEXe-MV7yeb):not(:disabled,[data-n19-hollow],[data-n19-probe]):hover{box-shadow:0 1px 2px 0 rgba(66,133,244,.3), 0 1px 3px 1px rgba(66,133,244,.15)!important}
 html:not([data-n19-g="gemini"]) :is(.VfPpkd-LgbsSe-OWXEXe-INsAgc){border:1px solid var(--n19-border)!important;color:var(--n19-accent)!important}
 html:not([data-n19-g="gemini"]) :is(.glue-button,[class*="glue-button--"],.glue-cta,.glue-fab){border-radius:4px!important}
+:where(:root:not([data-n19-safe])) .glue-header__bar--desktop,.glue-header__bar--desktop:where(:root:not([data-n19-safe])){transform:none!important}
 html:not([data-n19-g="gemini"]) [data-n19-shape="btn"],html:not([data-n19-g="gemini"]) [data-n19-shape="btn"]>:is(span,div):only-of-type:empty{border-radius:4px!important}
 html:not([data-n19-g="gemini"]) [data-n19-shape="btn"]::before,html:not([data-n19-g="gemini"]) [data-n19-shape="btn"]::after{border-radius:4px!important}
 html:not([data-n19-g="gemini"]) [data-n19-shape="field"]{border-radius:8px!important}

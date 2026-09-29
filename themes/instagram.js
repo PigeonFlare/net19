@@ -120,6 +120,16 @@ globalThis.net19Theme = {
     mark(header.querySelector('svg[aria-label="Options"]')?.closest('[role="button"]'), 'options');
     const edit = header.querySelector('a[href="/accounts/edit/"]');
     if (edit && settled) for (const node of edit.querySelectorAll('span, div')) if (node.childElementCount === 0 && node.textContent === 'Edit profile') node.textContent = 'Edit Profile';
+    if (!actions && settled && document.querySelector('a[href^="/accounts/login"]') && !header.querySelector('[data-n19-ig="follow"]')) {
+      const follow = document.createElement('a');
+      follow.setAttribute('data-n19-ig', 'follow');
+      follow.href = `/accounts/login/?next=${encodeURIComponent(location.pathname)}`;
+      follow.textContent = 'Follow';
+      const options = header.querySelector('svg[aria-label="Options"]')?.closest('[role="button"]');
+      let slot = options;
+      while (slot && slot.parentElement && !slot.parentElement.contains(name)) slot = slot.parentElement;
+      if (slot && slot.parentElement) slot.before(follow); else name.after(follow);
+    }
     if (!actions) return;
     const head = header.getBoundingClientRect(), box = name.getBoundingClientRect();
     const left = `${Math.round(box.right - head.left + 20)}px`, top = `${Math.round(box.top - head.top + (box.height - 30) / 2)}px`;
@@ -144,7 +154,8 @@ globalThis.net19Theme = {
       let layer = dialog;
       for (let up = dialog.parentElement; up && up !== document.body; up = up.parentElement) {
         const box = up.getBoundingClientRect();
-        if (getComputedStyle(up).position === 'fixed' && box.width >= innerWidth - 20 && box.height >= innerHeight - 20) layer = up;
+        const overlay = getComputedStyle(up).position === 'fixed' || (box.top <= 1 && box.height <= innerHeight + 20 && !up.contains(document.querySelector('main')));
+        if (overlay && box.width >= innerWidth - 20 && box.height >= innerHeight - 20) layer = up;
       }
       mark(layer, 'later');
       document.documentElement.setAttribute('data-n19-igwall', '');
@@ -249,16 +260,16 @@ globalThis.net19Theme = {
       if (t === 'Edited' || t === '· Edited' || t === 'Note...' || t === 'Your note') mark(span, 'later');
     }
     for (const tab of document.querySelectorAll('main [role="tablist"] a:not([data-n19-ig="later"])')) {
-      const svg = tab.querySelector('svg[aria-label]');
-      const name = svg?.getAttribute('aria-label') || '';
+      const svg = tab.querySelector('svg[aria-label]') || tab.querySelector('svg');
+      const name = svg?.getAttribute('aria-label') || tab.getAttribute('aria-label') || svg?.querySelector('title')?.textContent.trim() || '';
       if (/^reels$/i.test(name) || /^reels$/i.test(tab.textContent.trim()) || /\/reels\/?$/.test(tab.getAttribute('href') || '')) { mark(tab.parentElement?.children.length === 1 ? tab.parentElement : tab, 'later'); continue; }
-      if (tab.hasAttribute('data-n19-ig')) continue;
+      if (tab.querySelector('[data-n19-ig="tablabel"]')) continue;
       tab.setAttribute('data-n19-ig', 'tab');
-      if (name && settled && !tab.querySelector('[data-n19-ig="tablabel"]')) {
+      if (name && settled) {
         const text = document.createElement('span');
         text.setAttribute('data-n19-ig', 'tablabel');
         text.textContent = name.toUpperCase();
-        (svg.parentElement || tab).after(text);
+        if (svg && svg.parentElement !== tab) svg.parentElement.after(text); else tab.append(text);
       }
     }
     if (document.querySelector('main header')) profileHeader();

@@ -39,6 +39,42 @@
   ],
   "features": [
     {
+      "match": "^(Your phone number|Phone number)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "a"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "phone number field of the 2019 Sign in card (the web.telegram.org/k/ card is not listed by the inventory at all, a checker limit, so it is checked by screenshot)"
+    },
+    {
+      "match": "^(Sign in|Telegram)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "a"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "card heading, shown as Sign in"
+    },
+    {
+      "match": "^form area$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "a"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "the phone sign-in form"
+    },
+    {
       "match": "^(dialog area|form area|main area|section area|header area)$",
       "in2019": true,
       "evidence": [
@@ -47,7 +83,7 @@
       ]
     },
     {
-      "match": "^(Sign in|Log in by phone number.?|Next|Country|Phone number|Code|OK)$",
+      "match": "^(Sign in|Telegram|Log in by phone number.?|Next|Country|Phone number|Your phone number|Code|OK)$",
       "in2019": true,
       "evidence": [
         "s1",

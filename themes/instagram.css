@@ -111,6 +111,7 @@ main [role="tablist"] a { border-bottom: none !important; border-top: 1px solid 
 main [role="tablist"] a[aria-selected="true"] { border-top-color: rgb(var(--n19-text)) !important; color: rgb(var(--n19-text)) !important; }
 main [role="tablist"] a svg { width: 12px !important; height: 12px !important; }
 main [role="tablist"] a:not([aria-selected="true"]) svg { color: rgb(var(--n19-text-2)) !important; }
+[data-n19-ig="follow"] { display: inline-block !important; flex: 0 0 auto !important; margin: 0 0 0 20px !important; padding: 5px 9px !important; border-radius: 4px !important; background: #3897f0 !important; color: #fff !important; font: 600 14px/18px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important; text-decoration: none !important; align-self: center !important; }
 [data-n19-ig="tablabel"] { font-size: 12px !important; font-weight: 600 !important; letter-spacing: 1px !important; text-transform: uppercase !important; margin-left: 6px !important; line-height: 12px !important; }
 [data-n19-ig="row"] { gap: 28px !important; margin-bottom: 28px !important; }
 [data-n19-ig="row"] > * { margin: 0 !important; flex: 1 1 0 !important; min-width: 0 !important; }

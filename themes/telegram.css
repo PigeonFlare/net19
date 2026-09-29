@@ -167,7 +167,7 @@ html .btn-menu .btn-menu-item .tgico, html .btn-menu .btn-menu-item-icon { color
 html.no-touch .btn-menu .btn-menu-item:hover { background: var(--n19-menu-hover) !important; }
 html .btn-menu .btn-menu-item.danger { color: #c05f5a !important; }
 
-html #auth-pages { background: linear-gradient(var(--n19-head) 0 226px, var(--n19-page) 226px) !important; font-family: var(--n19-font) !important; }
+html #auth-pages { background: var(--n19-page) !important; box-shadow: inset 0 226px 0 var(--n19-head) !important; font-family: var(--n19-font) !important; }
 html #auth-pages::before { content: ""; position: absolute; top: 24px; left: 50%; margin-left: -202px; width: 76px; height: 18px; background: var(--n19-title) no-repeat; pointer-events: none; z-index: 1; }
 html #auth-pages > button[class*="_themeButton_"] { display: none !important; }
 html #auth-pages [class*="_card_"] { max-width: 404px !important; width: 100% !important; border-radius: 2px !important; background: var(--n19-window) !important; box-shadow: var(--n19-card-shadow) !important;
@@ -321,7 +321,7 @@ html .Menu .MenuItem { font-size: 13px !important; color: var(--n19-menu-text) !
 html .Menu .MenuItem .icon { color: var(--n19-icon) !important; }
 html .Menu .MenuItem:hover, html .Menu .MenuItem:focus { background: var(--n19-menu-hover) !important; }
 
-html .Transition.is-auth { background: linear-gradient(var(--n19-head) 0 226px, var(--n19-page) 226px) !important; }
+html .Transition.is-auth { background: var(--n19-page) !important; box-shadow: inset 0 226px 0 var(--n19-head) !important; }
 html .Auth { background: transparent !important; }
 html .Auth .auth-form { max-width: 404px !important; background: var(--n19-window) !important; border-radius: 2px !important; box-shadow: var(--n19-card-shadow) !important; padding: 44px 65px !important;
   margin: 95px auto 40px !important; box-sizing: border-box !important; position: relative !important; font-family: var(--n19-font) !important; }
@@ -333,6 +333,10 @@ html .Auth .auth-form .Button { text-transform: none !important; font-size: 13px
 html .Auth .auth-form .Button.text { color: var(--n19-link) !important; }
 html .Auth .auth-form .Button.primary:not(.text) { background: var(--n19-head) !important; }
 html .Auth .auth-form .input-group input { border-radius: 0 !important; border-width: 0 0 1px !important; font-size: 13px !important; }
+html .Auth .auth-form > #logo, html .Auth .auth-form label.Checkbox:has(#sign-in-keep-session) { display: none !important; }
+html .Auth .auth-form > :is(h1, p.note) { text-align: left !important; }
+html .Auth .auth-form > h1[data-n19-label] { font-size: 0 !important; margin: 0 0 12px !important; }
+html .Auth .auth-form > h1[data-n19-label]::before { content: attr(data-n19-label); font-size: 15px; }
 html #auth-pages [class*="_pageSignQR_"]:has(> button) > div:first-child, html #auth-pages [class*="_pageSignQR_"]:has(> button) > ol, html #auth-pages [class*="_pageSignQR_"] > div[style]:has(> button) { display: none !important; }
 html #auth-pages [class*="_pageSignQR_"] > .n19-sign-in { display: block; margin: 8px 0 12px; text-align: center; font: 700 15px/20px var(--n19-font); color: var(--n19-name); }
 html #auth-pages [class*="_pageSignQR_"] > button.btn-primary-transparent { background: var(--n19-head) !important; color: #fff !important; margin-top: 16px !important; }

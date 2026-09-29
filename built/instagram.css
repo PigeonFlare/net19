@@ -106,6 +106,9 @@ main [role="tablist"] a{color:rgb(var(--n19-text-2))!important}
 main [role="tablist"] a[aria-selected="true"]{border-top-color:rgb(var(--n19-text))!important;color:rgb(var(--n19-text))!important}
 :where(:root:not([data-n19-safe])) main [role="tablist"] a svg{width:12px!important;height:12px!important}
 main [role="tablist"] a:not([aria-selected="true"]) svg{color:rgb(var(--n19-text-2))!important}
+:where(:root:not([data-n19-safe])) [data-n19-ig="follow"],[data-n19-ig="follow"]:where(:root:not([data-n19-safe])){display:inline-block!important;flex:0 0 auto!important;margin:0 0 0 20px!important;padding:5px 9px!important}
+[data-n19-ig="follow"]{border-radius:4px!important;background:#3897f0!important;color:#fff!important;font:600 14px/18px -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif!important;text-decoration:none!important}
+:where(:root:not([data-n19-safe])) [data-n19-ig="follow"],[data-n19-ig="follow"]:where(:root:not([data-n19-safe])){align-self:center!important}
 [data-n19-ig="tablabel"]{font-size:12px!important;font-weight:600!important;letter-spacing:1px!important;text-transform:uppercase!important}
 :where(:root:not([data-n19-safe])) [data-n19-ig="tablabel"],[data-n19-ig="tablabel"]:where(:root:not([data-n19-safe])){margin-left:6px!important}
 [data-n19-ig="tablabel"]{line-height:12px!important}
