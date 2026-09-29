@@ -133,9 +133,10 @@ import { rgba } from './color.js';
   inkSheet.textContent = '[data-net19-hidden]{display:none!important}' +
     '[data-net19-ink="dark"],[data-net19-ink="dark"] *{color:#1d1d1f!important;-webkit-text-fill-color:#1d1d1f!important}' +
     '[data-net19-ink="light"],[data-net19-ink="light"] *{color:#f5f5f7!important;-webkit-text-fill-color:#f5f5f7!important}' +
+    'svg[data-net19-icon="light"]{filter:brightness(0) invert(.92)!important}svg[data-net19-icon="dark"]{filter:brightness(0) invert(.12)!important}' +
     ':is(input,textarea)[data-net19-ink="dark"]{caret-color:#1d1d1f!important}:is(input,textarea)[data-net19-ink="dark"]::placeholder{color:#5f6368!important;-webkit-text-fill-color:#5f6368!important;opacity:1!important}' +
     ':is(input,textarea)[data-net19-ink="light"]{caret-color:#f5f5f7!important}:is(input,textarea)[data-net19-ink="light"]::placeholder{color:#bdc1c6!important;-webkit-text-fill-color:#bdc1c6!important;opacity:1!important}';
-  const original = new WeakMap();
+  const original = new WeakMap(), inline = new WeakMap();
   let textCache = null;
   const textElements = () => {
     if (textCache) return textCache;
@@ -145,6 +146,36 @@ import { rgba } from './color.js';
     });
     for (let n = walker.nextNode(); n && found.size < 3000; n = walker.nextNode()) if (n.parentElement) found.add(n.parentElement);
     return found;
+  };
+  const lift = (text, pt, under, goal) => {
+    const tryWith = end => {
+      let lo = 0, hi = 1, best = null;
+      for (let i = 0; i < 12; i++) {
+        const t = (lo + hi) / 2, c = [0, 1, 2].map(k => Math.round(text[k] + (end[k] - text[k]) * t)).concat(1);
+        if (ratio(over(shownAs(c, pt), under), under) >= goal) { best = c; hi = t; } else lo = t;
+      }
+      return best;
+    };
+    const toDark = tryWith([0, 0, 0]), toLight = tryWith([255, 255, 255]);
+    const pick = toDark && toLight ? (ratio(over(shownAs(toDark, pt), under), under) <= ratio(over(shownAs(toLight, pt), under), under) ? toDark : toLight) : toDark || toLight;
+    if (!pick) return ratio(shownAs([29, 29, 31, 1], pt), under) >= ratio(shownAs([245, 245, 247, 1], pt), under) ? 'dark' : 'light';
+    return `rgb(${pick[0]}, ${pick[1]}, ${pick[2]})`;
+  };
+  const SHAPES = 'path, circle, rect, polygon, polyline, ellipse, line, use';
+  const iconColor = svg => {
+    const colors = new Set();
+    let first = null;
+    for (const shape of [...svg.querySelectorAll(SHAPES)].slice(0, 12)) {
+      const st = getComputedStyle(shape);
+      for (const value of [st.fill, st.stroke]) {
+        if (!value || value === 'none' || /url\(/.test(value)) continue;
+        const c = rgba(value);
+        if (!c || c[3] < .3) continue;
+        colors.add(c.slice(0, 3).join());
+        first ||= c;
+      }
+    }
+    return colors.size === 1 ? first : null;
   };
   const check = () => {
     if (!document.body) return;
@@ -167,12 +198,12 @@ import { rgba } from './color.js';
       const current = el.getAttribute('data-net19-ink');
       const size = parseFloat(style.fontSize), large = size >= 24 || (size >= 18.6 && +style.fontWeight >= 600);
       const chroma = c => Math.max(...c.slice(0, 3)) - Math.min(...c.slice(0, 3));
-      const floor = large ? 2.2 : chroma(inText) > 90 || chroma(shown) > 90 ? 2.5 : 3;
+      const floor = large ? 3 : chroma(inText) > 90 || chroma(shown) > 90 ? 3.2 : 4;
       if (ratio(shown, inText) >= floor) { if (current) changes.push([el, null]); continue; }
       if (!current && overPicture(el, box)) continue;
       if (!original.has(el)) original.set(el, text);
-      const ink = ratio(shownAs([29, 29, 31, 1], pt), inText) >= ratio(shownAs([245, 245, 247, 1], pt), inText) ? 'dark' : 'light';
-      if (current !== ink) changes.push([el, ink]);
+      const lifted = lift(text, pt, inText, floor + .3);
+      if (current !== lifted) changes.push([el, lifted]);
     }
     for (const f of document.querySelectorAll('input:not([type=hidden]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=submit]):not([type=button]):not([type=image]):not([type=reset]), textarea')) {
       const box = f.getBoundingClientRect();
@@ -193,8 +224,28 @@ import { rgba } from './color.js';
       if (current !== ink) changes.push([f, ink]);
     }
     for (const [el, ink] of changes) {
-      if (ink) el.setAttribute('data-net19-ink', ink);
-      else { el.removeAttribute('data-net19-ink'); original.delete(el); }
+      const before = inline.get(el);
+      if (before) { el.style.setProperty('color', before[0], before[1]); el.style.setProperty('-webkit-text-fill-color', before[2], before[3]); if (!before[0]) el.style.removeProperty('color'); if (!before[2]) el.style.removeProperty('-webkit-text-fill-color'); inline.delete(el); }
+      if (!ink) { el.removeAttribute('data-net19-ink'); original.delete(el); continue; }
+      el.setAttribute('data-net19-ink', ink);
+      if (ink.startsWith('rgb')) {
+        inline.set(el, [el.style.getPropertyValue('color'), el.style.getPropertyPriority('color'), el.style.getPropertyValue('-webkit-text-fill-color'), el.style.getPropertyPriority('-webkit-text-fill-color')]);
+        el.style.setProperty('color', ink, 'important'); el.style.setProperty('-webkit-text-fill-color', ink, 'important');
+      }
+    }
+    for (const svg of document.querySelectorAll('svg')) {
+      if (svg.closest('[data-net19-hidden], a[href] img, picture') || svg.parentElement?.closest('svg')) continue;
+      const box = svg.getBoundingClientRect();
+      if (box.width < 10 || box.height < 10 || box.width > 64 || box.height > 64 || box.bottom < 0 || box.top > view.h || box.right < 0 || box.left > view.w) continue;
+      const current = svg.getAttribute('data-net19-icon');
+      const paint = iconColor(svg);
+      if (!paint) { if (current) svg.removeAttribute('data-net19-icon'); continue; }
+      const bg = backdrop(svg);
+      if (!bg) continue;
+      const pt = parity(svg), shown = over(shownAs(paint, pt), bg.color);
+      if (ratio(shown, bg.color) >= 2.6) { if (current) svg.removeAttribute('data-net19-icon'); continue; }
+      const want = ratio(shownAs([29, 29, 31, 1], pt), bg.color) >= ratio(shownAs([232, 234, 237, 1], pt), bg.color) ? 'dark' : 'light';
+      if (current !== want) svg.setAttribute('data-net19-icon', want);
     }
   };
 

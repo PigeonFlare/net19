@@ -29,7 +29,7 @@ globalThis.net19Theme = {
     .rpl-vote-button-group:has(button[upvote][aria-pressed="true"]) > span { color: var(--n19-up) !important; }
     .rpl-vote-button-group:has(button[downvote][aria-pressed="true"]) > span { color: var(--n19-down) !important; }
     h2.condensed-post-title-heading, h1 { margin: 0 0 8px !important; }
-    :host([view-type="cardView"]) div:has(> h2.condensed-post-title-heading):has(> div > slot[name="post-flair"]) { display: block !important; font-size: 18px !important; line-height: 22px !important; margin-bottom: 8px !important; }
+    :host([view-type="cardView"]) div:has(> h2.condensed-post-title-heading):has(> div > slot[name="post-flair"]) { display: block !important; font-size: 18px !important; line-height: 22px !important; margin-bottom: 8px !important; padding-right: 8px !important; }
     :host([view-type="cardView"]) div:has(> h2.condensed-post-title-heading):has(> div > slot[name="post-flair"]) > h2.condensed-post-title-heading { display: inline !important; margin: 0 !important; line-height: 22px !important; }
     :host([view-type="cardView"]) div:has(> slot[name="post-flair"]) { display: inline-block !important; margin: 0 0 0 6px !important; vertical-align: middle !important; line-height: 16px !important; }
     .vote-icon-outline { display: none !important; }
@@ -58,6 +58,9 @@ globalThis.net19Theme = {
       width: 32px !important; padding: 0 !important; margin: 0 4px 0 0 !important; box-shadow: none !important; }
     button.toggle__expando-button:hover { background: var(--n19-hover) !important; }
     div:has(> slot[name="expando-content"]) { margin: 0 0 8px !important; }
+  `;
+  const CARD_ACTIONS = `
+    #unpacked-actions > :is([data-item-id*="repost" i], [data-item-id*="crosspost" i], [data-n19-later]) { display: none !important; }
   `;
   const ACTIONS = `
     :host { max-width: 100% !important; min-width: 0 !important; }
@@ -591,7 +594,8 @@ globalThis.net19Theme = {
     for (const row of document.querySelectorAll('shreddit-comment-action-row')) style(row, COMMENT + (row.closest('shreddit-comment') ? TREE_VOTES : ''));
     for (const award of document.querySelectorAll('award-button')) style(award, AWARD);
     for (const menu of document.querySelectorAll('shreddit-feed :is(shreddit-post[view-type="compactView"], shreddit-ad-post) unpacking-overflow-menu')) style(menu, ACTIONS);
-    for (const item of document.querySelectorAll('shreddit-feed shreddit-post[view-type="compactView"] unpacking-overflow-menu')) for (const action of item.shadowRoot?.querySelectorAll('#unpacked-actions > :not([data-n19-later])') || []) if (/^(?:repost|crosspost)$/i.test(globalThis.net19English(action.textContent.trim()))) action.setAttribute('data-n19-later', '');
+    for (const menu of document.querySelectorAll('shreddit-post[view-type="cardView"] unpacking-overflow-menu')) style(menu, CARD_ACTIONS);
+    for (const item of document.querySelectorAll('shreddit-post:is([view-type="compactView"], [view-type="cardView"]) unpacking-overflow-menu')) for (const action of item.shadowRoot?.querySelectorAll('#unpacked-actions > :not([data-n19-later])') || []) if (/^(?:repost|crosspost)$/i.test(globalThis.net19English(action.textContent.trim()))) action.setAttribute('data-n19-later', '');
     for (const search of document.querySelectorAll('reddit-search-large')) {
       if (search.shadowRoot && !search.hasAttribute('data-n19-watched')) { search.setAttribute('data-n19-watched', ''); new MutationObserver(() => later()).observe(search.shadowRoot, { childList: true, subtree: true }); }
       if (search.shadowRoot) weeklyToMembers(search.shadowRoot);
