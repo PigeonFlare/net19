@@ -89,7 +89,7 @@
    "note": "main nav"
   },
   {
-   "match": "^(About\\ Stanford|Accreditation|Business|Directory|Education|Emergency\\ Info|Engineering|Facebook|Facts|History|Humanities\\ \\&\\ Sciences|Instagram|Law|Maps\\ \\&\\ Directions|Medicine|News|Non\\-discrimination\\ policy|Ownership\\ and\\ use\\ of\\ Stanford\\ trademarks\\ and\\ images|Privacy\\ and\\ cookie\\ policy|Report\\ alleged\\ copyright\\ infringement|Report\\ web\\ accessibility\\ issues|Search\\ Stanford|Stanford\\ Home|Stanford\\ Profiles|Stanford\\ University|Terms\\ of\\ use\\ for\\ sites|YouTube|header\\ area|nav\\ area|section\\ area)$",
+   "match": "^(About|About\\ Stanford|Academics|Accreditation|Alumni|Business|Careers|Contact|Directory|Education|Emergency\\ Info|Engineering|Facebook|Facts|Faculty\\ \\&\\ Staff|History|Humanities\\ \\&\\ Sciences|Instagram|Law|Maps\\ \\&\\ Directions|Medicine|News|Non\\-discrimination\\ policy|Ownership\\ and\\ use\\ of\\ Stanford\\ trademarks\\ and\\ images|Privacy\\ and\\ cookie\\ policy|Report\\ alleged\\ copyright\\ infringement|Report\\ web\\ accessibility\\ issues|Research|Search\\ Stanford|Stanford\\ Home|Stanford\\ Profiles|Stanford\\ University|Terms\\ of\\ use\\ for\\ sites|YouTube|header\\ area|nav\\ area|repeated\\ div|repeated\\ section|section\\ area)$",
    "in2019": true,
    "evidence": [
     "about-a20191120",

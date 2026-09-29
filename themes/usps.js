@@ -1,4 +1,4 @@
-globalThis.net19Theme = {};
+globalThis.net19Theme = { intended: 'footer a:is([href*="instagram.com"], [href*="threads.net"], [href*="threads.com"])' };
 (() => {
   const words = { Send: 'Mail & Ship', Receive: 'Track & Manage', Shop: 'Postal Store' };
   const fix = () => {

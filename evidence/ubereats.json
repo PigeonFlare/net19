@@ -166,6 +166,83 @@
     "home-a201905"
    ],
    "note": "content: restaurant and dish names and city names (2019 store pages listed the same) (names may include non-Latin script and ®)"
+  },
+  {
+   "match": "^Uber Eats Home$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201905",
+    "home-a201907",
+    "store-a201904"
+   ],
+   "note": "required: Uber Eats logo in the header"
+  },
+  {
+   "match": "^Enter delivery address$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201905",
+    "home-a201907",
+    "store-a201904"
+   ],
+   "note": "required: delivery address field in the hero"
+  },
+  {
+   "match": "^Find Food$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201905",
+    "home-a201907",
+    "store-a201904"
+   ],
+   "note": "required: Find Food button beside the address field"
+  },
+  {
+   "match": "^Sign up$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201905",
+    "home-a201907",
+    "store-a201904"
+   ],
+   "note": "required: Sign up in the header"
+  },
+  {
+   "match": "^Log in$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201905",
+    "home-a201907",
+    "store-a201904"
+   ],
+   "note": "required: Log in / Sign in link"
+  },
+  {
+   "match": "^Cities near me$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201905",
+    "home-a201907",
+    "store-a201904"
+   ],
+   "note": "required: the cities list"
+  },
+  {
+   "match": "^Get Help$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201907",
+    "home2-a201907",
+    "store-a201908"
+   ],
+   "note": "required: footer links"
   }
  ]
 }

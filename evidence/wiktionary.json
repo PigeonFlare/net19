@@ -931,6 +931,124 @@
     "wolf",
     "قطة"
    ]
+  },
+  {
+   "match": "^Preview definitions of .*$",
+   "in2019": false,
+   "evidence": [
+    "https://en.wiktionary.org/wiki/MediaWiki:Gadget-PagePreviews.js (first revision 2024-07-14, 'Page Previews for Wiktionary', a default gadget that draws .wikt-page-preview)"
+   ],
+   "note": "hover preview card on links and contents entries",
+   "action": "hidden"
+  },
+  {
+   "match": "^Visit the main page$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home2-201908"
+   ],
+   "note": "required: Wiktionary logo at the top of the sidebar"
+  },
+  {
+   "match": "^Tools$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "entry2-201909",
+    "entry4-201910",
+    "entry5-201907"
+   ],
+   "note": "required: sidebar Tools portal"
+  },
+  {
+   "match": "^Print/export$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "entry2-201909",
+    "entry4-201910",
+    "entry5-201907"
+   ],
+   "note": "required: sidebar Print/export portal"
+  },
+  {
+   "match": "^View the content page",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "entry2-201909",
+    "entry4-201910",
+    "entry5-201907"
+   ],
+   "note": "required: Entry / Discussion tabs"
+  },
+  {
+   "match": "^Read$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "entry2-201909",
+    "entry4-201910",
+    "entry5-201907"
+   ],
+   "note": "required: Read / Edit / History tabs"
+  },
+  {
+   "match": "^Search Wiktionary$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "entry2-201909",
+    "entry4-201910",
+    "entry5-201907"
+   ],
+   "note": "required: search box at the top right"
+  },
+  {
+   "match": "^Contents$",
+   "in2019": true,
+   "required": true,
+   "pages": [
+    "start"
+   ],
+   "evidence": [
+    "entry2-201909",
+    "entry4-201910",
+    "entry5-201907"
+   ],
+   "note": "required: table of contents box on entries"
+  },
+  {
+   "match": "^Visit the main page \\[alt-z\\]$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home2-201908"
+   ],
+   "note": "required: Main page link in the sidebar navigation"
+  },
+  {
+   "match": "^Load a random page",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "entry2-201909",
+    "entry4-201910",
+    "entry5-201907"
+   ],
+   "note": "required: Random entry in the sidebar navigation"
+  },
+  {
+   "match": "^Requested entries$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "entry2-201909",
+    "entry4-201910",
+    "entry5-201907"
+   ],
+   "note": "required: sidebar navigation"
   }
  ]
 }

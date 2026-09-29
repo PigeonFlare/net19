@@ -286,6 +286,149 @@
     "celeb-a201903"
    ],
    "note": "content item links and trending topics: film and show titles, people and editorial stories (2019 pages listed the same kinds of links and the trending topics)"
+  },
+  {
+   "match": "^\\d{1,3}%$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201906",
+    "celeb-a201903"
+   ],
+   "note": "Tomatometer percentage on each movie tile (content; the value changes with the movie shown)"
+  },
+  {
+   "match": "^Rotten Tomatoes$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "celeb-a201903",
+    "home-a201903",
+    "home-a201906"
+   ],
+   "note": "required: logo in the red header"
+  },
+  {
+   "match": "^Search$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "celeb-a201903",
+    "home-a201903",
+    "home-a201906"
+   ],
+   "note": "required: search field in the header"
+  },
+  {
+   "match": "^Movies$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "celeb-a201903",
+    "home-a201903",
+    "home-a201906"
+   ],
+   "note": "required: MOVIES / TV / NEWS / TICKETS & SHOWTIMES navigation"
+  },
+  {
+   "match": "^News$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "celeb-a201903",
+    "home-a201903",
+    "home-a201906"
+   ],
+   "note": "required: main navigation"
+  },
+  {
+   "match": "^Tickets & Showtimes$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "movie-a201905",
+    "movie-a201911",
+    "home-a201911"
+   ],
+   "note": "required: main navigation"
+  },
+  {
+   "match": "^Sign up \\| Log in$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "movie-a201905",
+    "movie-a201911",
+    "home-a201911"
+   ],
+   "note": "required: login link in the header"
+  },
+  {
+   "match": "^What’s the Tomatometer®\\?$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "movie-a201905",
+    "movie-a201911",
+    "home-a201911"
+   ],
+   "note": "required: Tomatometer link in the header"
+  },
+  {
+   "match": "^Top 10 Box Office$",
+   "in2019": true,
+   "required": true,
+   "pages": [
+    "start"
+   ],
+   "evidence": [
+    "movie-a201905",
+    "movie-a201911",
+    "home-a201911"
+   ],
+   "note": "required: box office list on the home page"
+  },
+  {
+   "match": "^Audience Reviews$",
+   "in2019": true,
+   "required": true,
+   "pages": [
+    "movie"
+   ],
+   "evidence": [
+    "movie-a201905",
+    "movie-a201911",
+    "movie2-a201909"
+   ],
+   "note": "required: audience reviews on the movie page"
+  },
+  {
+   "match": "^Tomatometer$",
+   "in2019": true,
+   "required": true,
+   "pages": [
+    "movie"
+   ],
+   "evidence": [
+    "movie-a201905",
+    "movie-a201911",
+    "home-a201911"
+   ],
+   "note": "required: Tomatometer score on the movie page"
+  },
+  {
+   "match": "^Audience Score$",
+   "in2019": true,
+   "required": true,
+   "pages": [
+    "movie"
+   ],
+   "evidence": [
+    "movie-a201905",
+    "movie-a201911",
+    "home-a201911"
+   ],
+   "note": "required: audience score beside the Tomatometer"
   }
  ]
 }

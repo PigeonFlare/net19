@@ -170,6 +170,72 @@
     "home-a201912"
    ],
    "note": "content: image titles, captions and keyword/related-search links (2019 detail pages listed keyword chips such as 'Aire libre Fotos', 'Humo Fotos')"
+  },
+  {
+   "match": "^Getty Images homepage$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201912",
+    "home-a201911",
+    "detail2-a201911",
+    "video-a201911"
+   ],
+   "note": "required: Getty Images logo in the header"
+  },
+  {
+   "match": "^Creative$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "detail2-a201911",
+    "home-a201911",
+    "home-a201912"
+   ],
+   "note": "required: CREATIVE / EDITORIAL / VIDEO navigation"
+  },
+  {
+   "match": "^Editorial$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "detail2-a201911",
+    "home-a201911",
+    "home-a201912"
+   ],
+   "note": "required: main navigation"
+  },
+  {
+   "match": "^Video$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201911",
+    "home-a201912",
+    "video-a201911"
+   ],
+   "note": "required: main navigation"
+  },
+  {
+   "match": "^Boards$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "detail2-a201911",
+    "home-a201911",
+    "home-a201912"
+   ],
+   "note": "required: Boards in the header"
+  },
+  {
+   "match": "^Sign in$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201911",
+    "home-a201912"
+   ],
+   "note": "required: Sign in in the header"
   }
  ]
 }

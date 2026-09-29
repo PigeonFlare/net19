@@ -41,6 +41,7 @@ html:root {
 .tad-explore-box .tad-teaser--list-compact .tad-teaser__image, .tad-explore-box .tad-teaser--list-compact .tad-box__edge,
 .tad-explore-box .tad-teaser--list-compact .tad-teaser__abstract { display: none !important; }
 .tad-explore-box .tad-teaser--list-compact .tad-teaser__box { padding: 4px 0 !important; min-height: 0 !important; background: transparent !important; }
+.tad-explore-box .tad-teaser--list-compact article.tad-box { margin: 0 !important; padding: 0 !important; min-height: 0 !important; }
 .tad-explore-box .tad-teaser--list-compact .tad-teaser__heading { font-size: 13px !important; line-height: 18px !important; color: var(--n19-link) !important; }
 .tad-explore-box .tad-teaser--list-compact:hover .tad-teaser__heading { text-decoration: underline; }
 .tad-explore-box__content { gap: 2px !important; font-size: 13px !important; }
@@ -57,3 +58,12 @@ html:root {
 .tad-explore-box input[type="submit"] { width: auto !important; height: 2em !important; line-height: 2em !important; padding: 0 1em !important; font-size: 13px !important; font-weight: 400 !important; border-radius: 0 !important; }
 .picker-city__input { border-radius: 2px 0 0 2px !important; font-size: 13px !important; }
 .picker-city__button { border-radius: 0 2px 2px 0 !important; }
+.feedback-bar__wrap, footer .footer-card, footer nav.footer__links-block--services, footer nav.footer__links-block--sites, footer .footer__links h4, footer .footer__social h4 { display: none !important; }
+footer .footer__social-icons a:is([href*="linkedin.com"], [href*="instagram.com"], [href*="youtube.com"]) { display: none !important; }
+footer nav.footer__links-block--company li:has(> a:is([href="/company/jobs"], [href*="feedback.html"], [href="/information/contact.html"], [href="/newsletter/"])) { display: none !important; }
+footer .footer__links { display: flex !important; flex-wrap: wrap !important; align-items: center !important; justify-content: flex-end !important; gap: 6px 0 !important; }
+footer .footer__links nav, footer .footer__links > section { margin: 0 !important; padding: 0 !important; width: auto !important; min-width: 0 !important; }
+footer .footer__links ul { display: flex !important; flex-wrap: wrap !important; margin: 0 !important; padding: 0 !important; }
+footer .footer__links li { list-style: none !important; margin: 0 !important; padding: 0 6px !important; border-left: 1px solid #999 !important; line-height: 12px !important; }
+footer .footer__links a { font-size: 12px !important; }
+footer .footer__social { display: flex !important; align-items: center !important; padding-left: 10px !important; }

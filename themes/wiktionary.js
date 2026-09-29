@@ -1,4 +1,4 @@
-globalThis.net19Theme = {};
+globalThis.net19Theme = { intended: '.wikt-page-preview' };
 (() => {
   if (!/^[a-z-]+\.wiktionary\.org$/.test(location.hostname) || location.hostname === 'www.wiktionary.org') return;
   const root = document.documentElement;

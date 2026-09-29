@@ -1,0 +1,161 @@
+{
+ "theme": "timeanddate",
+ "era": "timeanddate.com as served through 2019 (Arquivo captures Jan, Jul and Dec 2019 of the home and World Clock pages; Wayback Jan, Jul and Dec 2019): white header with the coloured-arcs logo, a dark grey nav bar (Home, World Clock, Time Zones, Calendar, Weather, Sun & Moon, Timers, Calculators, Apps & API, Free Fun, account icon, search), a small grey sub-bar (Newsletter, About Us, Site Map, Account/Settings), blue #4d66a5 section headings with link lists, and a one-line footer (logo, copyright, About Us | Advertising | Disclaimer | Privacy | Sitemap).",
+ "sources": [
+  {
+   "id": "home-a20190102",
+   "url": "https://arquivo.pt/noFrame/replay/20190102073727/https://www.timeanddate.com/",
+   "date": "2019-01-02",
+   "shows": "home page as served on 2019-01-02 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/timeanddate/timeanddate-home-a20190102.png"
+  },
+  {
+   "id": "home-a20190718",
+   "url": "https://arquivo.pt/noFrame/replay/20190718020004/https://www.timeanddate.com/",
+   "date": "2019-07-18",
+   "shows": "home page as served on 2019-07-18 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/timeanddate/timeanddate-home-a20190718.png"
+  },
+  {
+   "id": "home-a20191231",
+   "url": "https://arquivo.pt/noFrame/replay/20191231191905/https://www.timeanddate.com/",
+   "date": "2019-12-31",
+   "shows": "home page as served on 2019-12-31 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/timeanddate/timeanddate-home-a20191231.png"
+  },
+  {
+   "id": "worldclock-a20190102",
+   "url": "https://arquivo.pt/noFrame/replay/20190102073838/https://www.timeanddate.com/worldclock/",
+   "date": "2019-01-02",
+   "shows": "worldclock page as served on 2019-01-02 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/timeanddate/timeanddate-worldclock-a20190102.png"
+  },
+  {
+   "id": "worldclock-a20191231",
+   "url": "https://arquivo.pt/noFrame/replay/20191231192316/https://www.timeanddate.com/worldclock/",
+   "date": "2019-12-31",
+   "shows": "worldclock page as served on 2019-12-31 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/timeanddate/timeanddate-worldclock-a20191231.png"
+  },
+  {
+   "id": "home-w20190101",
+   "url": "https://web.archive.org/web/20190101101137/https://www.timeanddate.com/",
+   "date": "2019-01-01",
+   "shows": "home-w20190101 page as served on 2019-01-01 (Wayback capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/timeanddate/timeanddate-home-w20190101.png"
+  },
+  {
+   "id": "home-w20190701",
+   "url": "https://web.archive.org/web/20190701015316/https://www.timeanddate.com/",
+   "date": "2019-07-01",
+   "shows": "home-w20190701 page as served on 2019-07-01 (Wayback capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/timeanddate/timeanddate-home-w20190701.png"
+  },
+  {
+   "id": "home-w20191201",
+   "url": "https://web.archive.org/web/20191201103817/https://www.timeanddate.com/",
+   "date": "2019-12-01",
+   "shows": "home-w20191201 page as served on 2019-12-01 (Wayback capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/timeanddate/timeanddate-home-w20191201.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Link policy|Terms & Conditions|Do Not Sell My Info|Privacy Settings)$",
+   "in2019": false,
+   "evidence": [
+    "legal links"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(News|Careers/Jobs|Contact Details|Contact Us|Newsletter|RSS Feeds|LinkedIn|Instagram|YouTube|timeanddate\\.no|timeanddate\\.de|Love Our Site\\? Become a Supporter|Illustration of a pink shield with a white heart\\.|Vote for having a (good|bad) experience|Company|Legal|Services|Sites|Follow Us)$",
+   "in2019": false,
+   "evidence": [
+    "2019 nav started with Home and had no News item; the 2019 footer was a single row (logo, copyright, About Us, Advertising, Disclaimer, Privacy, Sitemap) with no supporter card, feedback bar, service / site / social columns or column headings"
+   ],
+   "action": "hidden (timeanddate.css footer rules, timeanddate.js later labels)"
+  },
+  {
+   "match": "^(World Clock|Time Zones|Calendar|Weather|Sun, Moon & Space|Timers|Calculators|My Account|nav area|Search)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190718",
+    "home-a20191231"
+   ],
+   "required": true,
+   "note": "dark nav bar: 2019 had World Clock, Time Zones, Calendar, Weather, Sun & Moon, Timers, Calculators, the account icon and search"
+  },
+  {
+   "match": "^(Apps|Calendar|Enter\\ year\\ as\\ a\\ 4\\-digit\\ number\\.|Search\\ for\\ city\\ or\\ place…|Sun\\ \\&\\ Moon|Time\\ Zones|Weather|World\\ Clock|article\\ area|form\\ area|typ)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190102",
+    "home-a20190718",
+    "home-a20191231"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Search)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190718",
+    "home-a20191231",
+    "home-w20191201"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(About\\ us|Facebook)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191201"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Africa|Asia|Australia/Pacific|Capitals|CityCountryTime|Configure\\ table\\ settings|Coordinated\\ Universal\\ Time|Current\\ Local\\ Times\\ Around\\ the\\ World|Europe|Go\\ to\\ Personal\\ World\\ Clock|Greenwich\\ Mean\\ Time|Home|London|My\\ Cities\\ \\(Personal\\ World\\ Clock\\)\\ \\.\\.\\.\\ edit|Need\\ some\\ help\\?|New\\ York|North\\ America|South\\ America|The\\ World\\ Clock\\ —\\ Worldwide|Tokyo|repeated\\ h2|section\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "worldclock-a20190102",
+    "worldclock-a20191231"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Daylight\\ Saving\\ Time)$",
+   "in2019": true,
+   "evidence": [
+    "worldclock-a20191231"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Home page timeanddate\\.com|© Time and Date AS 1995–20\\d\\d|About us|Sitemap|Advertising|Disclaimer|Privacy Policy|footer area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190718"
+   ],
+   "note": "2019 footer: logo, copyright, About Us | Advertising | Disclaimer | Privacy | Sitemap"
+  },
+  {
+   "match": "^(Facebook|X \\(Twitter\\)|API|Apps)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190718",
+    "home-w20191201"
+   ],
+   "note": "'Follow us on Facebook / Twitter' and the Apps & API menu"
+  },
+  {
+   "match": "^(DST changes worldwide|More time zone tools|Holidays & observances worldwide|Explore our calculators|Explore our astronomy content|Weather conditions around the globe|Search for city, state or country…|San Jose|aside area|main area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190718",
+    "worldclock-a20190102"
+   ],
+   "note": "home sections (2019: Time Zones, Calendar, Calculators & Timers, Sun & Moon, Weather with 'Search for city or place...') and World Clock city tiles"
+  }
+ ]
+}

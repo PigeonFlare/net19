@@ -1,0 +1,112 @@
+{
+ "theme": "donorbox",
+ "era": "Donorbox 2019 marketing site (Arquivo captures Jul, Oct and Nov 2019 of the home and features pages, and campaign pages Apr and Jun 2019): white header with the donorbox logo and Product / Pricing / Contact / Donor Login / Org Login / Org Signup, large feature sections, 'Over 25,000 organizations' strip, footer with Support, Affiliate Partner Program, Nonprofit Blog, FAQ, Terms, Privacy, solution pages, platform plugins and a language list. Donorbox had no dark design; the theme keeps light.",
+ "sources": [
+  {
+   "id": "features-a20191023",
+   "url": "https://arquivo.pt/noFrame/replay/20191023062206/https://donorbox.org/features",
+   "date": "2019-10-23",
+   "shows": "features page as served on 2019-10-23 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/donorbox/donorbox-features-a20191023.png"
+  },
+  {
+   "id": "home-a20190718",
+   "url": "https://arquivo.pt/noFrame/replay/20190718055609/https://donorbox.org/",
+   "date": "2019-07-18",
+   "shows": "home page as served on 2019-07-18 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/donorbox/donorbox-home-a20190718.png"
+  },
+  {
+   "id": "home-a20191002",
+   "url": "https://arquivo.pt/noFrame/replay/20191002063533/https://donorbox.org/",
+   "date": "2019-10-02",
+   "shows": "home page as served on 2019-10-02 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/donorbox/donorbox-home-a20191002.png"
+  },
+  {
+   "id": "home-a20191117",
+   "url": "https://arquivo.pt/noFrame/replay/20191117054155/https://donorbox.org/",
+   "date": "2019-11-17",
+   "shows": "home page as served on 2019-11-17 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/donorbox/donorbox-home-a20191117.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Text-to-Give|Peer-to-Peer|Memberships|Events|Donor Portal with QuickDonate|QuickDonate™ Donor Portal|Crowdfunding|Webflow Donation App|Careers|Security|Library|Charity Fundraising|About Us|Nederlands|Social Links|Facebook Logo|Instagram Logo|Linkedin Logo|Twitter Logo|Tiktok Logo|Youtube Logo|Jay·AI|Donorbox Live™ Kiosk|Tap to Donate)$",
+   "in2019": false,
+   "evidence": [
+    "2019 captures (home, features) list no text-to-give, peer-to-peer, memberships, events, donor portal, crowdfunding, Webflow, careers, security, library, charity, about-us or Dutch links and no social icons; those products and pages came later (Donorbox Live kiosk, Jay AI, Tap to Donate are 2022+)"
+   ],
+   "action": "hidden (donorbox.js later labels, donorbox.css social links)"
+  },
+  {
+   "match": "^(Like most websites, we use cookies!|Allow all cookies|Use only necessary cookies)$",
+   "in2019": false,
+   "evidence": [
+    "cookie consent banner"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Platform|Resources|Company|Login|Sign up now|nav area|header area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20191117",
+    "features-a20191023"
+   ],
+   "required": true,
+   "pages": [
+    "home",
+    "features"
+   ],
+   "note": "header nav: 2019 had Product, Pricing, Contact, Donor Login, Org Login and Org Signup; the current site groups them as Platform / Resources / Company menus, Login and Sign up now"
+  },
+  {
+   "match": "^(API\\ Doc\\ \\+\\ Zapier|Donorbox\\ logo|English|Español|FAQ|Français|Joomla\\ Donation|Political\\ Fundraising|Pricing|Privacy|Squarespace\\ Donation\\ Form|Terms|Weebly\\ Donation\\ App|Wix\\ Donation\\ Form|WordPress\\ Donation\\ Plugin|footer\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "features-a20191023",
+    "home-a20190718",
+    "home-a20191002"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Donation Forms|Donate Buttons|Donation Pages|WordPress|Weebly|SquareSpace|Wix|Other Platforms)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20191117",
+    "features-a20191023"
+   ],
+   "note": "product tabs: 2019 had the donation form, donate button, campaign pages and the WordPress / Squarespace / Wix / Weebly / Joomla / API integrations"
+  },
+  {
+   "match": "^(Contact Us|Blog|FAQ|Terms|Privacy|Affiliate Partnership|Political Fundraising|Medical Fundraising|Fundraising For Nonprofits|Fundraising For Schools|WordPress Donation Plugin|Language selector)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20191117",
+    "features-a20191023"
+   ],
+   "note": "footer: 2019 had Contact, Nonprofit Blog, FAQ, Terms, Privacy, Affiliate Partner Program, the Political / Medical Research / Nonprofit / College & Private School solution pages, the WordPress Donation Plugin and the language list"
+  },
+  {
+   "match": "^(article area|main area|section area|repeated article|repeated section|repeated div|repeated li|form area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20191117",
+    "features-a20191023"
+   ],
+   "note": "page structure: feature sections and testimonial cards"
+  },
+  {
+   "match": "^(Find out more|Learn more ➔|View case study ➔|Learn more|Get started|Get Started)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20191117",
+    "features-a20191023"
+   ],
+   "note": "call-to-action links (2019: Live Example, Try It Now, Get Started, Start Fundraising Now)"
+  }
+ ]
+}

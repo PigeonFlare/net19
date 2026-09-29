@@ -1,4 +1,7 @@
-globalThis.net19Theme = {};
+globalThis.net19Theme = {
+  intended: '.feedback-bar__wrap, footer .footer-card, footer nav.footer__links-block--services, footer nav.footer__links-block--sites',
+  later: /^(?:news|rss feeds)$/i,
+};
 (() => {
   const COLORS = [
     [/calculat|timer|countdown|rechner/i, '#ed1c66'], [/sun|moon|space|astronom|eclipse|sonne|mond/i, '#ffc907'],

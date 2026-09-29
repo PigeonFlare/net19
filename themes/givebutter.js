@@ -1,6 +1,7 @@
 globalThis.net19Theme = {
   detect: () => 'light',
-  later: /^(?:givebutter wallet|wallet|earn rewards on every donation|givebutter plus|the spread|ask ai|ai writer|write with ai|generate with ai)$/i,
+  intended: '.intercom-lightweight-app, #intercom-container, html[data-wf-site] :is(.section_compare2-results, .section_home2-help, .section_home2-unlock), html[data-wf-site] .footer-v2 form',
+  later: /^(?:see all comparisons|switch to givebutter|stripe payments company|stripe verified partner badge.?|givebutter wallet|wallet|earn rewards on every donation|givebutter plus|the spread|ask ai|ai writer|write with ai|generate with ai)$/i,
 };
 (() => {
   const navLabels = new Map([['Log in', 'Sign in'], ['Sign up for free', 'Sign up']]);

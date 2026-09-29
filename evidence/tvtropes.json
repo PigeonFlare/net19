@@ -1,0 +1,127 @@
+{
+ "theme": "tvtropes",
+ "era": "TV Tropes 2019 (Arquivo captures Jan, Jul, Sep and Dec 2019): dark slate header with the TV Tropes logo, Tropes / Media / Browse / Indexes / Forums / Videos nav, Join / Login and search, blue sub-bar (SugarWiki, DarthWiki, YMMV, WMG, Trivia), white content column with a grey right sidebar, and a slate footer with Subscribe + social icons and TVTropes / Community / Tropes HQ columns. The 2019 site offered a night-vision (dark) mode.",
+ "sources": [
+  {
+   "id": "home-a20190730",
+   "url": "https://arquivo.pt/noFrame/replay/20190730231943/https://tvtropes.org/",
+   "date": "2019-07-30",
+   "shows": "home page as served on 2019-07-30 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/tvtropes/tvtropes-home-a20190730.png"
+  },
+  {
+   "id": "home-a20191223",
+   "url": "https://arquivo.pt/noFrame/replay/20191223090218/https://tvtropes.org/",
+   "date": "2019-12-23",
+   "shows": "home page as served on 2019-12-23 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/tvtropes/tvtropes-home-a20191223.png"
+  },
+  {
+   "id": "homepage-a20190905",
+   "url": "https://arquivo.pt/noFrame/replay/20190905035913/https://tvtropes.org/",
+   "date": "2019-09-05",
+   "shows": "homepage page as served on 2019-09-05 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/tvtropes/tvtropes-homepage-a20190905.png"
+  },
+  {
+   "id": "trope-a20190101",
+   "url": "https://arquivo.pt/noFrame/replay/20190101230301/https://tvtropes.org/pmwiki/pmwiki.php/Main/ChekhovsGun",
+   "date": "2019-01-01",
+   "shows": "trope page as served on 2019-01-01 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/tvtropes/tvtropes-trope-a20190101.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Report Bug|Changelog|TV Tropes)$",
+   "in2019": false,
+   "evidence": [
+    "2019 footer (home-a20191223) had Subscribe, social icons and the TVTropes / Community / Tropes HQ columns, with no footer logo, Report Bug or Changelog links"
+   ],
+   "action": "hidden (tvtropes.css footer logo, tvtropes.js later labels)"
+  },
+  {
+   "match": "^(Terms Of Service|Your Privacy Choices)$",
+   "in2019": false,
+   "evidence": [
+    "2019 footer had the Privacy Policy link only"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Tropes|Media|Browse|Indexes|Forums|Videos)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20191223",
+    "home-a20190730"
+   ],
+   "required": true,
+   "pages": [
+    "home"
+   ],
+   "note": "main header nav"
+  },
+  {
+   "match": "^(About\\ TVTropes|About\\ Us|Ask\\ The\\ Tropers|Browse|Contact\\ Us|DMCA\\ Notice|DarthWiki|Forum|Forums|Go\\ Ad\\-Free|Indexes|Join|Login|Media|More|Privacy\\ Policy|Reviews|Search|SugarWiki|TVTropes\\ Customs|TVTropes\\ Goals|Trivia|Trope\\ Finder|Trope\\ Launch\\ Pad|Tropes|Tropes\\ of\\ Legend|Troping\\ Code|Videos|WMG|YMMV|footer\\ area|header\\ area|nav\\ area|repeated\\ div|repeated\\ li|thestaff@tvtropes\\.org)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190730",
+    "home-a20191223",
+    "homepage-a20190905"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Edit\\ Reasons)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190730",
+    "homepage-a20190905"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(form\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20191223",
+    "trope-a20190101"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^Media Finder$",
+   "in2019": true,
+   "evidence": [
+    "home-a20191223"
+   ],
+   "note": "the 2019 footer's 'You Know That Show' (same query.php?type=ykts page, renamed)"
+  },
+  {
+   "match": "^(Forum Games|Image Pickin'|Rolling Human Loop|Supervillain|Recent Videos)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20191223",
+    "home-a20190730"
+   ],
+   "note": "home content lists: 2019 home had the forum, image-pickin and random trope lists and a video block"
+  },
+  {
+   "match": "^(contentinfo area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20191223"
+   ],
+   "note": "footer"
+  },
+  {
+   "match": "^[A-Z0-9][\\w'’.-]*( (of|the|a|an|and|in|on|to|for|is|with|vs\\.?|[A-Z0-9][\\w'’.-]*)){0,6}$",
+   "in2019": true,
+   "evidence": [
+    "home-a20191223",
+    "home-a20190730"
+   ],
+   "note": "last resort for the home page's randomised trope lists (Title Case trope names that change on every load); the 2019 home had the same random trope and crowner lists"
+  }
+ ]
+}

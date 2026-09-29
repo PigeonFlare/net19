@@ -1,0 +1,109 @@
+{
+ "theme": "fundrazr",
+ "era": "FundRazr 2019 site (Arquivo captures Jun, Sep 2019 of the home page, Nov 2019 of /find): white header with the FundRazr logo, Tour / About / search, orange 'Get Started Free' and 'Request a Demo', a 'who is fundraising' chooser (Me or my friend, My nonprofit, My sports team, My school, My business), toolset sections, 'Trusted by over 4,000 leading nonprofits' strip and a dark multi-column footer (Personal Fundraising, Nonprofit Crowdfunding, Business and CSR ... Terms of Service, Privacy Policy). FundRazr had no dark design.",
+ "sources": [
+  {
+   "id": "home-a20190619",
+   "url": "https://arquivo.pt/noFrame/replay/20190619170936/https://fundrazr.com/",
+   "date": "2019-06-19",
+   "shows": "home page as served on 2019-06-19 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/fundrazr/fundrazr-home-a20190619.png"
+  },
+  {
+   "id": "home-a20190905",
+   "url": "https://arquivo.pt/noFrame/replay/20190905230938/https://fundrazr.com/",
+   "date": "2019-09-05",
+   "shows": "home page as served on 2019-09-05 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/fundrazr/fundrazr-home-a20190905.png"
+  },
+  {
+   "id": "home-a20190927",
+   "url": "https://arquivo.pt/noFrame/replay/20190927015826/https://fundrazr.com/",
+   "date": "2019-09-27",
+   "shows": "home page as served on 2019-09-27 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/fundrazr/fundrazr-home-a20190927.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Fundraiser’s Hub|Wishlists and Perks|Medical|Pet Fundraising|Accidents and Disasters|Memorials|Fiscal Sponsors|Powered by ConnectionPoint®?|Back to top|facebook|twitter|linkedin|instagram|youtube|FundRazr on (Facebook|X|LinkedIn|Instagram)|FundRazr YouTube channel)$",
+   "in2019": false,
+   "evidence": [
+    "2019 footer and pages (home captures) had no hub, wishlist, medical / pet / accident / memorial category, fiscal-sponsor or ConnectionPoint links, no social icon row and no back-to-top button"
+   ],
+   "action": "hidden (fundrazr.js later labels)"
+  },
+  {
+   "match": "^(Start your FREE campaign|Start your free campaign|Get started)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190619",
+    "home-a20190927"
+   ],
+   "required": true,
+   "pages": [
+    "home"
+   ],
+   "note": "orange sign-up call to action (2019: Get Started Free / Start now)"
+  },
+  {
+   "match": "^(search|Search all|Search)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190619",
+    "home-a20190927"
+   ],
+   "required": true,
+   "pages": [
+    "home"
+   ],
+   "note": "site search (2019: 'Search our Website & blog' and 'Find campaigns')"
+  },
+  {
+   "match": "^(About|Contact\\ Us|FAQ|Get\\ started\\ free|Peer\\-to\\-Peer\\ Fundraising|Personal\\ Fundraising|Platform\\ Tour|Privacy\\ Policy|Request\\ a\\ Demo|School\\ Fundraising|Sports\\ Fundraising|Support|Terms\\ of\\ Service|contentinfo\\ area|form\\ area|repeated\\ div)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190619",
+    "home-a20190905",
+    "home-a20190927"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(For Professional|For Personal|Fundraising Solutions|Resources|Talk with us|Main Menu|Secondary Navigation)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190619",
+    "home-a20190927"
+   ],
+   "note": "header navigation: 2019 had Tour, About, the Me-or-my-friend / My nonprofit / My business audience chooser and Request a Demo; the current site names them For Personal, For Professional, Fundraising Solutions, Resources and Talk with us"
+  },
+  {
+   "match": "^(About Us|Pricing|Why FundRazr|Discover Campaigns|Explore All Features|FundRazr Blog|Help Centre|Help|Success Guide for Individuals|Success Guide for Organizations|Speak with a Strategist|Corporate Responsibility|Donation Form|Nonprofits and Movements|PayPal Fundraising|White Label Crowdfunding|For Professionals|footer area|FundRazr)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190619",
+    "home-a20190927"
+   ],
+   "note": "footer: 2019 had About FundRazr, Pricing and Fees, Platform Tour, Find campaigns, Blog, Support, Guide for Personal Campaigns, Success Navigator for Nonprofits, Request a Demo, Business and CSR, Fundraising Widgets, Nonprofit Crowdfunding, PayPal and Enterprise crowdfunding"
+  },
+  {
+   "match": "^(main area|repeated div|repeated article|section area|form area|banner area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190619",
+    "home-a20190927"
+   ],
+   "note": "page structure"
+  },
+  {
+   "match": "^(Laser-focused on your fundraising success|I’m a Professional Fundraiser|I’m a Personal Fundraiser|for many causes .+|Easily Launch .+|Host Fundraising and Peer-to-Peer Events|FundRazr is a #1 .+|Learn More|microprojects|project has surpassed .+|they have raised .+|View campaign|More campaigns from here|Trending)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190619",
+    "home-a20190927"
+   ],
+   "note": "content: 2019 home had the audience chooser (You or a friend / Your nonprofit ...), 'Next generation online fundraising platform', 'Innovative Crowdfunding Toolset', campaign success stories and Find campaigns"
+  }
+ ]
+}

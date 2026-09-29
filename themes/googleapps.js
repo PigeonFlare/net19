@@ -207,3 +207,21 @@
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();
 
+(() => {
+  if (!location.pathname.startsWith('/finance')) return;
+  const fix = () => {
+    for (const heading of document.querySelectorAll('main [role="heading"]')) {
+      if (heading.firstChild?.nodeValue?.trim() !== 'Latest updates') continue;
+      heading.firstChild.nodeValue = 'Top stories';
+      for (const badge of [...heading.children]) badge.remove();
+    }
+    for (const el of document.querySelectorAll('main div:not(:has(*))')) {
+      if (el.textContent.trim() !== 'Upcoming earnings') continue;
+      const block = el.closest('c-wiz') || el.parentElement;
+      if (block && !block.hasAttribute('data-net19-hidden')) block.setAttribute('data-net19-hidden', '');
+    }
+  };
+  let queued = false;
+  const start = () => { fix(); new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; fix(); }); } }).observe(document.body, { childList: true, subtree: true }); };
+  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+})();

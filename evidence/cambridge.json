@@ -1,0 +1,116 @@
+{
+ "theme": "cambridge",
+ "era": "Cambridge Dictionary for most of 2019 (Wayback captures Jan and Jul 2019): dark #3d3d3d top bar with the menu button, Dictionary / Translate / Grammar (gold top rule on the current one), Log in, English (UK) and Follow us icons; blue hero with the crest wordmark and 'Make your words meaningful', a wide search box with the dictionary select and gold search button, English–Spanish / Spanish–English / Grammar chips, a gold 'My Dictionary' panel and the 'Explore the Cambridge Dictionary' carousel. The late-2019 redesign (Dec 2019 capture) added Cambridge Dictionary +Plus; the theme follows the Jan-Jul majority layout.",
+ "sources": [
+  {
+   "id": "home-w20190107",
+   "url": "https://web.archive.org/web/20190107050238/https://dictionary.cambridge.org/",
+   "date": "2019-01-07",
+   "shows": "home-w20190107 page as served on 2019-01-07 (Wayback capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/cambridge/cambridge-home-w20190107.png"
+  },
+  {
+   "id": "home-w20190701",
+   "url": "https://web.archive.org/web/20190701191908/https://dictionary.cambridge.org/",
+   "date": "2019-07-01",
+   "shows": "home-w20190701 page as served on 2019-07-01 (Wayback capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/cambridge/cambridge-home-w20190701.png"
+  },
+  {
+   "id": "home-w20191201",
+   "url": "https://web.archive.org/web/20191201025343/https://dictionary.cambridge.org/",
+   "date": "2019-12-01",
+   "shows": "home-w20191201 page as served on 2019-12-01 (Wayback capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/cambridge/cambridge-home-w20191201.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Clear search)$",
+   "in2019": false,
+   "evidence": [
+    "clears the search field"
+   ],
+   "action": "kept: function (search)"
+  },
+  {
+   "match": "^(AI Terms of Use|Games|Word Scramble|Thesaurus|Word of the Year 20(2\\d)|Popular searches|Browse the English Dictionary|index)$",
+   "in2019": false,
+   "evidence": [
+    "2019 home (all captures) had no Games / Word Scramble, no Thesaurus tab, no Word of the Year list, no Popular searches or A–Z browse block and no AI terms"
+   ],
+   "action": "hidden (cambridge.css / cambridge.js later labels)"
+  },
+  {
+   "match": "^(Manage Your Privacy Choices|Privacy)$",
+   "in2019": false,
+   "evidence": [
+    "privacy / cookie choices"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Set dictionary search to (English–Spanish|Spanish–English|Grammar))$",
+   "in2019": true,
+   "evidence": [
+    "home-w20190107",
+    "home-w20190701"
+   ],
+   "required": true,
+   "pages": [
+    "home"
+   ],
+   "note": "dictionary chips under the search box"
+  },
+  {
+   "match": "^(About|Accessibility|Become\\ our\\ fan!|Cambridge\\ Dictionary|Cambridge\\ English|Cookies\\ and\\ Privacy|Corpus|Develop|Dictionary|Dictionary\\ API|Double\\-Click\\ Lookup|Explore\\ the\\ Cambridge\\ Dictionary|Follow\\ us!|Followers|Grammar|Help|In\\ Print|Learn|License\\ Data|Likes|New\\ Words|Search|Search\\ Widgets|Terms\\ of\\ Use|Translate|footer\\ area|form\\ area|header\\ area|nav\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20190107",
+    "home-w20190701",
+    "home-w20191201"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Change\\ language\\ direction|Choose\\ a\\ dictionary|Close\\ autocomplete|Close\\ header\\ popups|English\\ dictionaries|Follow\\ our\\ Instagram!|Go\\ to\\ \\+\\ Plus|Instagram|Open\\ language\\ selection\\ panel|Open\\ site\\ navigation\\ panel|Share\\ on\\ Facebook|Translation\\ dictionaries)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191201"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(\\+Plus Cambridge Dictionary \\+Plus)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191201"
+   ],
+   "note": "Cambridge Dictionary +Plus in the top bar (Dec 2019 capture)"
+  },
+  {
+   "match": "^(Cambridge University Press & Assessment)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191201"
+   ],
+   "note": "footer 'Cambridge University Press' (renamed 2021)"
+  },
+  {
+   "match": "^(Share on X)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191201"
+   ],
+   "note": "'Share on Twitter'"
+  },
+  {
+   "match": "^(See more See less|repeated div)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191201"
+   ],
+   "note": "'See more' on the dictionary list"
+  }
+ ]
+}

@@ -1,0 +1,119 @@
+{
+ "theme": "target",
+ "era": "Target.com 2019 (Wayback captures Mar and Sep 2019 of the home page, Jul 2019 category and product, Dec 2019 search, rendered with their CSS; Arquivo Nov 2019 home for labels): red #cc0000 header bar with the white bullseye, Categories / Deals / Trending (Gifting in December) / Same Day Delivery menus, a white rounded search field, Sign in and cart; white sub-bar with 'You're shopping: <store>' and Registries & Lists, Weekly Ad, REDcard, Gift Cards, Find Stores, Orders, favourites and More; footer with collapsed Help / Stores / Apps / Social / More sections and a legal row (Recalls, Terms, Interest-Based Ads, CA Privacy Rights, CA Supply Chain Act, Privacy). Target had no dark design.",
+ "sources": [
+  {
+   "id": "wb-home-201903",
+   "url": "https://web.archive.org/web/2019/https://www.target.com/",
+   "date": "2019-03",
+   "shows": "home page, header and sub-bar (Wayback, rendered with its CSS)",
+   "file": "h6-evidence/target/home-wb-2019-03.png"
+  },
+  {
+   "id": "wb-home-201909",
+   "url": "https://web.archive.org/web/20190914/https://www.target.com/",
+   "date": "2019-09-14",
+   "shows": "home page with Categories / Deals / Trending / Same Day Delivery, search, Sign in, cart and the store sub-bar",
+   "file": "h6-evidence/target/home-wb-2019-09.png"
+  },
+  {
+   "id": "wb-category-201907",
+   "url": "https://web.archive.org/web/2019/https://www.target.com/c/",
+   "date": "2019-07",
+   "shows": "category page",
+   "file": "h6-evidence/target/category-wb-2019-07.png"
+  },
+  {
+   "id": "wb-item-201907",
+   "url": "https://web.archive.org/web/2019/https://www.target.com/p/",
+   "date": "2019-07",
+   "shows": "product page",
+   "file": "h6-evidence/target/item-wb-2019-07.png"
+  },
+  {
+   "id": "wb-search-201912",
+   "url": "https://web.archive.org/web/20191229/https://www.target.com/s?searchTerm=LEGO",
+   "date": "2019-12-29",
+   "shows": "search page with Gifting menu, footer Help / Stores / Apps / Social / More and the legal row",
+   "file": "h6-evidence/target/search-wb-2019-12.png"
+  },
+  {
+   "id": "home-2019-11",
+   "url": "https://arquivo.pt/noFrame/replay/20191103051321/https://www.target.com/",
+   "date": "2019-11-03",
+   "shows": "home-2019-11 page as served on 2019-11-03 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/target/target-home-2019-11.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Ship to location: .+|Target Circle™|Target Circle 360™|Club Target|Tiktok|Sign in for the best experience|Sign in or create account|close|Get top deals, latest trends, and more\\.|email-address|Sign up)$",
+   "in2019": false,
+   "evidence": [
+    "2019 sub-bar (wb-home-201909, wb-search-201912) had no ship-to ZIP or Target Circle links, no sign-in popover and no newsletter sign-up; Target Circle 360 is 2024, Club Target and TikTok are post-2019"
+   ],
+   "action": "hidden (target.css / target.js later labels)"
+  },
+  {
+   "match": "^(Your Privacy Choices|Health Privacy Policy)$",
+   "in2019": false,
+   "evidence": [
+    "privacy links added after 2019"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Categories|Deals|pickup and delivery|Target home|Account, sign in|search|reset|What can we help you find\\? suggestions appear below|Primary)$",
+   "in2019": true,
+   "evidence": [
+    "wb-home-201909",
+    "wb-search-201912",
+    "home-2019-11"
+   ],
+   "required": true,
+   "note": "red header: Categories, Deals, Same Day Delivery, search, Sign in"
+  },
+  {
+   "match": "^(Find\\ Stores|RedCard|Same\\ Day\\ Delivery|Weekly\\ Ad|cart\\ 0\\ items|form\\ area|repeated\\ div)$",
+   "in2019": true,
+   "evidence": [
+    "home-2019-11"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Store: .+|Registry & Wish List)$",
+   "in2019": true,
+   "evidence": [
+    "wb-home-201909",
+    "wb-search-201912"
+   ],
+   "note": "sub-bar: 'You're shopping: <store>' and Registries & Lists"
+  },
+  {
+   "match": "^(Shop all .+|Up to.+|.+ Collection|tablist area|repeated div role=presentation|main area|Carousel)$",
+   "in2019": true,
+   "evidence": [
+    "wb-home-201903",
+    "wb-home-201909"
+   ],
+   "note": "home promotions and category carousels ('Don't miss the Anniversary Collection', '20 Years of Design for All')"
+  },
+  {
+   "match": "^(Footer|footer area|About Target|Careers|News & Blog|Target Brands|Bullseye Shop|Sustainability & Governance|Press Center|Advertise with Us|Investors|Affiliates & Partners|Suppliers|TargetPlus|Target Help|Returns|Track Orders|Recalls|Contact Us|Feedback|Accessibility|Security & Fraud|Team Member Services|Legal & Privacy|Find a Store|Clinic|Pharmacy|Target Optical|More In-Store Services|Target Circle™ Card|Target App|Registry|Order Pickup|Drive Up|Free 2-Day Shipping|Shipping & Delivery|More Services|Facebook|Instagram|Pinterest|Youtube)$",
+   "in2019": true,
+   "evidence": [
+    "wb-search-201912"
+   ],
+   "note": "footer: 2019 grouped these under Help / Stores / Apps / Social / More (collapsed); REDcard is now Target Circle Card, Corporate Responsibility is Sustainability & Governance"
+  },
+  {
+   "match": "^(Terms|CA Supply Chain|Privacy Policy|Your CA Privacy Rights|Interest Based Ads|Legal|\\*See details\\..+)$",
+   "in2019": true,
+   "evidence": [
+    "wb-search-201912"
+   ],
+   "note": "2019 legal row: Recalls, Terms, Interest-Based Ads, CA Privacy Rights, CA Supply Chain Act, Privacy and '*See offer details'"
+  }
+ ]
+}

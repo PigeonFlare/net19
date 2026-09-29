@@ -1,0 +1,161 @@
+{
+ "theme": "usps",
+ "era": "USPS.com as served through 2019 (Wayback captures Mar 2019 home and Jan, Jul, Dec 2019 Mail & Ship page, rendered with their CSS; Arquivo Mar 2019 home for labels): utility row with icons (English, Locations, Support, Informed Delivery, Register / Sign In), USPS.COM eagle logo, grey mega-menu bar with the navy 'Quick Tools' tab, Mail & Ship, Track & Manage, Postal Store, Business, International, Help and search; photo hero with a headline and navy button; a white three-column tool row (Track a Package with its field, Click-N-Ship, Stamps and Supplies); expandable photo tiles; and the grey footer with Helpful Links, On About.USPS.com, Other USPS Sites, Legal Information and Facebook / Twitter / Pinterest / YouTube icons. USPS had no dark design.",
+ "sources": [
+  {
+   "id": "home-a20190320",
+   "url": "https://arquivo.pt/noFrame/replay/20190320165230/https://www.usps.com/",
+   "date": "2019-03-20",
+   "shows": "home page as served on 2019-03-20 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/usps/usps-home-a20190320.png"
+  },
+  {
+   "id": "home-w20190301",
+   "url": "https://web.archive.org/web/20190301161330/https://www.usps.com/",
+   "date": "2019-03-01",
+   "shows": "home-w20190301 page as served on 2019-03-01 (Wayback capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/usps/usps-home-w20190301.png"
+  },
+  {
+   "id": "ship-w20190103",
+   "url": "https://web.archive.org/web/20190103205027/https://www.usps.com/ship/",
+   "date": "2019-01-03",
+   "shows": "ship-w20190103 page as served on 2019-01-03 (Wayback capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/usps/usps-ship-w20190103.png"
+  },
+  {
+   "id": "ship-w20190709",
+   "url": "https://web.archive.org/web/20190709171106/https://www.usps.com/ship/",
+   "date": "2019-07-09",
+   "shows": "ship-w20190709 page as served on 2019-07-09 (Wayback capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/usps/usps-ship-w20190709.png"
+  },
+  {
+   "id": "ship-w20191202",
+   "url": "https://web.archive.org/web/20191202093926/https://www.usps.com/ship/",
+   "date": "2019-12-02",
+   "shows": "ship-w20191202 page as served on 2019-12-02 (Wayback capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/usps/usps-ship-w20191202.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Instagram|Threads)$",
+   "in2019": false,
+   "evidence": [
+    "2019 footer icons were Facebook, Twitter, Pinterest and YouTube only (home-w20190301)"
+   ],
+   "action": "hidden (usps.css)"
+  },
+  {
+   "match": "^(Accessibility Statement|Fair Chance Act|No FEAR Act/EEO Contacts|Rights & Permissions)$",
+   "in2019": false,
+   "evidence": [
+    "2019 legal row: Privacy Policy, Terms of Use, FOIA, No FEAR Act EEO Data"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Main|USPS\\.com|Search)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20190301",
+    "ship-w20190709"
+   ],
+   "required": true,
+   "pages": [
+    "home",
+    "ship"
+   ],
+   "note": "logo, main nav bar and its search button"
+  },
+  {
+   "match": "^(Search or Track Packages|USPS\\.com Search Bar)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20190301",
+    "home-a20190320"
+   ],
+   "required": true,
+   "pages": [
+    "home"
+   ],
+   "note": "2019 'Track a Package' block with the tracking field ('Search or Enter a Tracking Number')"
+  },
+  {
+   "match": "^(Current\\ language:\\ English|Register\\ /\\ Sign\\ In)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190320",
+    "home-w20190301"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(About\\ USPS\\ Home|Business|Business\\ Customer\\ Gateway|Careers|Contact\\ Us|FAQs|FOIA|FREE\\ BOXES|Forms\\ \\&\\ Publications|Government\\ Services|Help|Inspector\\ General|International|Mail\\ \\&\\ Ship|National\\ Postal\\ Museum|Newsroom|PASSPORTS|PO\\ BOXES|Postal\\ Explorer|Postal\\ Inspectors|Postal\\ Store|PostalPro|Privacy\\ Policy|Quick\\ Tools|Resources\\ for\\ Developers|Search\\ USPS\\.com|Search\\ or\\ Enter\\ a\\ Tracking\\ Number|Site\\ Index|Terms\\ of\\ Use|Track\\ \\&\\ Manage|USPS\\ Service\\ Updates|footer\\ area|menubar\\ area|nav\\ area|search\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190320",
+    "home-w20190301",
+    "ship-w20190103"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Schedule\\ a\\ Pickup)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190320",
+    "ship-w20190103",
+    "ship-w20190709"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Feedback)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20190301",
+    "ship-w20190103",
+    "ship-w20190709"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(repeated\\ section|section\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "ship-w20190103",
+    "ship-w20190709",
+    "ship-w20191202"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Back\\ \\^|Shipping\\ \\&\\ Mailing\\ with\\ USPS|repeated\\ div)$",
+   "in2019": true,
+   "evidence": [
+    "ship-w20190709",
+    "ship-w20191202"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Help Fund the Fight|Featured USPS® Products & Services|USPS Stamps|USPS Updates|Next Slide|Previous Slide)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20190301",
+    "home-a20190320"
+   ],
+   "note": "hero promotion and product blocks (2019: Moving Soon?, Click-N-Ship, Stamps and Supplies, PO Boxes Online, Apply for a Passport, Grow Your Business, Current Stamp Pricing)"
+  },
+  {
+   "match": "^(Facebook|Pinterest|Youtube)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20190301"
+   ],
+   "note": "footer social icons"
+  }
+ ]
+}

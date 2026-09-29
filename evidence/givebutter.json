@@ -1,0 +1,109 @@
+{
+ "theme": "givebutter",
+ "era": "Givebutter 2019 home page (Arquivo captures May, Sep and Dec 2019): blue announcement bar, white header (logo, Products, Solutions, Community, Pricing, Sign in, outlined Sign up), centred hero 'Raise more. Pay less. Give better.' with a blue Get Started button, product tabs (Donate Button, Fundraising Pages, Event Ticketing, All-in-one Platform) and the 'Loved by over 10,000 nonprofits' strip. Givebutter had no dark design.",
+ "sources": [
+  {
+   "id": "home-a20190503",
+   "url": "https://arquivo.pt/noFrame/replay/20190503135412/https://givebutter.com/",
+   "date": "2019-05-03",
+   "shows": "home page as served on 2019-05-03 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/givebutter/givebutter-home-a20190503.png"
+  },
+  {
+   "id": "home-a20190927",
+   "url": "https://arquivo.pt/noFrame/replay/20190927000015/https://givebutter.com/",
+   "date": "2019-09-27",
+   "shows": "home page as served on 2019-09-27 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/givebutter/givebutter-home-a20190927.png"
+  },
+  {
+   "id": "home-a20191202",
+   "url": "https://arquivo.pt/noFrame/replay/20191202015713/https://givebutter.com/",
+   "date": "2019-12-02",
+   "shows": "home page as served on 2019-12-02 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/givebutter/givebutter-home-a20191202.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Givebutter leads the pack in user satisfaction|See all comparisons|Switch to Givebutter|The help you need,?\\s?here for you 24/7|Contact us ->|Contact us 24/7\\.|Unlock even more possibilities with|Subscribe|Enter your email|Stripe Payments Company|Stripe verified partner badge.?)$",
+   "in2019": false,
+   "evidence": [
+    "2019 home (all captures) had no review-comparison section, no 24/7 help block, no Givebutter Plus block (launched 2023), no newsletter form and no Stripe partner badges"
+   ],
+   "action": "hidden (givebutter.css sections, givebutter.js later labels)"
+  },
+  {
+   "match": "^(Givebutter logo|banner area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190503",
+    "home-a20190927"
+   ],
+   "required": true,
+   "pages": [
+    "home"
+   ],
+   "note": "header with logo"
+  },
+  {
+   "match": "^(tablist area|Collect more donations|Grow your community|Host your best event ever|Get the insights you need)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190503",
+    "home-a20190927"
+   ],
+   "required": true,
+   "pages": [
+    "home"
+   ],
+   "note": "product tabs (2019: Donate Button / Fundraising Pages / Event Ticketing / All-in-one Platform with Collect / Fundraise / Events / Platform sections)"
+  },
+  {
+   "match": "^(Sign\\ in|Sign\\ up)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190503",
+    "home-a20190927"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Pricing)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190503",
+    "home-a20190927",
+    "home-a20191202"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Where changemakers go to grow|Raise funds better, faster, and for free with Givebutter)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190503",
+    "home-a20190927",
+    "home-a20191202"
+   ],
+   "note": "hero and closing headline (2019: 'Raise more. Pay less. Give better.')"
+  },
+  {
+   "match": "^(Enter your work email|form area|Sign up for free|Request a demo →|Request a demo ->)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190927"
+   ],
+   "note": "sign-up call to action (2019: Get Started, Sign up)"
+  },
+  {
+   "match": "^(Trusted by millions of changemakers at nonprofits like yours|section area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190503",
+    "home-a20190927"
+   ],
+   "note": "customer strip (2019: 'Loved by over 10,000 nonprofits, student groups, sports teams, companies')"
+  }
+ ]
+}

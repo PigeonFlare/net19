@@ -1,0 +1,59 @@
+{
+ "theme": "localwiki",
+ "era": "LocalWiki as served through 2019 (Arquivo captures Mar, Jun and Sep 2019 of the home page, Apr 2019 of the Oakland and San Francisco region pages): grey header bar with the green localwiki logo, search field, Explore / About / Blog / Donate / API / Help and log in / create account, full-width photo hero 'LocalWiki is a grassroots effort to collect, share and open the world's local knowledge', Explore LocalWiki region tiles and Recent blog posts. The site has not been redesigned since; the theme adds nothing and keeps the site as it is.",
+ "sources": [
+  {
+   "id": "home-a20190321",
+   "url": "https://arquivo.pt/noFrame/replay/20190321050934/https://localwiki.org/",
+   "date": "2019-03-21",
+   "shows": "home page as served on 2019-03-21 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/localwiki/localwiki-home-a20190321.png"
+  },
+  {
+   "id": "home-a20190620",
+   "url": "https://arquivo.pt/noFrame/replay/20190620000443/https://localwiki.org/",
+   "date": "2019-06-20",
+   "shows": "home page as served on 2019-06-20 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/localwiki/localwiki-home-a20190620.png"
+  },
+  {
+   "id": "home-a20190922",
+   "url": "https://arquivo.pt/noFrame/replay/20190922133341/https://localwiki.org/",
+   "date": "2019-09-22",
+   "shows": "home page as served on 2019-09-22 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/localwiki/localwiki-home-a20190922.png"
+  },
+  {
+   "id": "oakland-a20190421",
+   "url": "https://arquivo.pt/noFrame/replay/20190421173610/https://localwiki.org/oakland/",
+   "date": "2019-04-21",
+   "shows": "oakland page as served on 2019-04-21 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/localwiki/localwiki-oakland-a20190421.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Explore|About|Blog|Donate|API|Help|log in|create account|Search LocalWiki)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190321",
+    "home-a20190922"
+   ],
+   "required": true,
+   "pages": [
+    "home"
+   ],
+   "note": "header nav and search"
+  },
+  {
+   "match": "^(Donate|Explore\\ LocalWiki|Explore\\ all\\ communities|LocalWiki\\ is\\ a\\ grassroots\\ effort\\ to\\ collect,\\ share\\ and\\ open\\ the\\ world'|More\\ blog\\ posts|Recent\\ blog\\ posts|Search\\ LocalWiki|repeated\\ div|repeated\\ li)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190321",
+    "home-a20190620",
+    "home-a20190922"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  }
+ ]
+}

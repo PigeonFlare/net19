@@ -570,6 +570,116 @@
     "crime",
     "Île-de-France"
    ]
+  },
+  {
+   "match": "^Visit the main page$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "article2-201906",
+    "article5-201909",
+    "article8-201909"
+   ],
+   "note": "required: Wikivoyage logo at the top of the sidebar"
+  },
+  {
+   "match": "^Main page$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "article2-201906",
+    "article5-201909",
+    "article8-201909"
+   ],
+   "note": "required: sidebar navigation"
+  },
+  {
+   "match": "^Travel destinations$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "article2-201906",
+    "article5-201909",
+    "article8-201909"
+   ],
+   "note": "required: sidebar navigation"
+  },
+  {
+   "match": "^Get involved$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home1-201903",
+    "article5-201909",
+    "https://www.mediawiki.org/wiki/Extension:DismissableSiteNotice"
+   ],
+   "note": "required: sidebar Get involved portal"
+  },
+  {
+   "match": "^Tools$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "article5-201909",
+    "article8-201909",
+    "home1-201903"
+   ],
+   "note": "required: sidebar Tools portal"
+  },
+  {
+   "match": "^Print/export$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "article5-201909",
+    "article8-201909",
+    "home1-201903"
+   ],
+   "note": "required: sidebar Print/export portal"
+  },
+  {
+   "match": "^Read$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "article2-201906",
+    "article5-201909",
+    "article8-201909"
+   ],
+   "note": "required: Read / Edit / View history tabs"
+  },
+  {
+   "match": "^Past revisions of this page",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "article2-201906",
+    "article5-201909",
+    "article8-201909"
+   ],
+   "note": "required: View history tab"
+  },
+  {
+   "match": "^Search Wikivoyage$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "article2-201906",
+    "article5-201909",
+    "article8-201909"
+   ],
+   "note": "required: search box at the top right"
+  },
+  {
+   "match": "^View the content page",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "article2-201906",
+    "article5-201909",
+    "article8-201909"
+   ],
+   "note": "required: Page / Discussion tabs"
   }
  ]
 }

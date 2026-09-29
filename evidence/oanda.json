@@ -133,6 +133,50 @@
     "home-a201905"
    ],
    "note": "content: currency names and codes in the pickers, rate rows, promo headlines and articles (2019 pages listed the same)"
+  },
+  {
+   "match": "^Oanda$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "converter-a201903",
+    "converter-a201907",
+    "converter-a201911"
+   ],
+   "note": "required: OANDA logo at the left of the header"
+  },
+  {
+   "match": "^Currency Converter$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "converter-a201903",
+    "converter-a201907",
+    "converter-a201911"
+   ],
+   "note": "required: Currency Converter in the main navigation"
+  },
+  {
+   "match": "^numberformat$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201905",
+    "converter-a201911",
+    "converter-a201907"
+   ],
+   "note": "required: the converter amount field"
+  },
+  {
+   "match": "^Legal$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "converter-a201903",
+    "converter-a201907",
+    "converter-a201911"
+   ],
+   "note": "required: the regulatory footer links"
   }
  ]
 }

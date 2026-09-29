@@ -1,0 +1,131 @@
+{
+ "theme": "givesendgo",
+ "era": "GiveSendGo 2019 home page (Wayback captures Mar, Jul and Nov 2019, rendered with their CSS): white header with the logo, Search, Discover, Categories, green 'Start a GiveSendGo' and Login, 'Our Givers' ticker, Trending Campaigns cards with a green progress bar, Campaign Map, Categories tiles (Mission, Medical, Memorial, Family, Community, Church), Testimonies and a dark footer with Pricing and Fees, Common questions, Blog, Contact Us, Terms, Privacy, email signup and Facebook / Twitter / Pinterest / Google+ / YouTube. GiveSendGo had no dark design.",
+ "sources": [
+  {
+   "id": "home-w20190302",
+   "url": "https://web.archive.org/web/20190302202355/https://www.givesendgo.com/",
+   "date": "2019-03-02",
+   "shows": "home-w20190302 page as served on 2019-03-02 (Wayback capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/givesendgo/givesendgo-home-w20190302.png"
+  },
+  {
+   "id": "home-w20190706",
+   "url": "https://web.archive.org/web/20190706051606/https://www.givesendgo.com/",
+   "date": "2019-07-06",
+   "shows": "home-w20190706 page as served on 2019-07-06 (Wayback capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/givesendgo/givesendgo-home-w20190706.png"
+  },
+  {
+   "id": "home-w20191113",
+   "url": "https://web.archive.org/web/20191113031629/https://www.givesendgo.com/",
+   "date": "2019-11-13",
+   "shows": "home-w20191113 page as served on 2019-11-13 (Wayback capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/givesendgo/givesendgo-home-w20191113.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Jobs|Press|Prayer Wall|GiveSendGo Tips|Follow Instagram|Follow LinkedIn|Follow X)$",
+   "in2019": false,
+   "evidence": [
+    "2019 footer (all captures) had Pricing and Fees, Common questions, Blog, Contact Us, Terms, Privacy and Facebook / Twitter / Pinterest / Google+ / YouTube only"
+   ],
+   "action": "hidden (givesendgo.js later labels)"
+  },
+  {
+   "match": "^(Cookies Policy\\.|I Understand)$",
+   "in2019": false,
+   "evidence": [
+    "cookie notice"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Sign In|About|Pricing & Fees|header area)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20190302",
+    "home-w20190706",
+    "home-w20191113"
+   ],
+   "required": true,
+   "pages": [
+    "home"
+   ],
+   "note": "header: 2019 had Login, Pricing and Fees and the About/FAQ pages"
+  },
+  {
+   "match": "^(The\\ Leader\\ in\\ Online\\ Fundraising)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20190302"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Blog|Categories|Church|Discover|GiveSendGo\\ Logo|Privacy\\ Policy|Search|Start\\ a\\ GiveSendGo|footer\\ area|section\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20190302",
+    "home-w20190706",
+    "home-w20191113"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(form\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191113"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Trending Fundraisers|See More Fundraisers|region area|repeated div role=tabpanel|Give|Next|Prev|Go to slide \\d+|God Did It Movement)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20190302",
+    "home-w20191113"
+   ],
+   "required": false,
+   "note": "Trending Campaigns carousel of campaign cards (2019 heading 'Trending Campaigns', 'load more...')"
+  },
+  {
+   "match": "^(Animals & Pets|Creative|View All)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20190302",
+    "home-w20191113"
+   ],
+   "note": "category tiles (2019: Mission, Medical, Memorial, Family, Community, Church)"
+  },
+  {
+   "match": "^(GiveSendGo operates in over|Making us a world leader in crowdfunding\\.|Explore all countries →)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20190302",
+    "home-w20191113"
+   ],
+   "note": "campaign map block (2019 'Campaign Map')"
+  },
+  {
+   "match": "^(Why Choose Us|About GiveSendGo|Learn More|GiveSendGo|Support GiveSendGo|Testimonials)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20190302",
+    "home-w20191113"
+   ],
+   "note": "'The Leader In Christian Fundraising' and Testimonies blocks, Read more"
+  },
+  {
+   "match": "^(Enter your email|Subscribe to Newsletter|Help Center|Terms of Service|Follow Facebook|Follow YouTube)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20190302",
+    "home-w20191113"
+   ],
+   "note": "footer: 2019 had the email address signup, Common questions, Terms, Facebook and YouTube"
+  }
+ ]
+}

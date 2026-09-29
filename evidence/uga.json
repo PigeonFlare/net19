@@ -1,0 +1,110 @@
+{
+ "theme": "uga",
+ "era": "University of Georgia home page as served through 2019 (Arquivo captures Jan, May and Dec 2019): black top strip with audience links (Students, Faculty / Staff, Alumni, Parents, Visitors, Community) and A–Z INDEX, white header with the red UGA wordmark and a 'Search UGA websites and directory' field, Quick links menu, Features / Headlines / Events sections and a black footer with About UGA, Academics, Student life, Helpful links and the legal row.",
+ "sources": [
+  {
+   "id": "home-a20190106",
+   "url": "https://arquivo.pt/noFrame/replay/20190106145015/https://www.uga.edu/",
+   "date": "2019-01-06",
+   "shows": "home page as served on 2019-01-06 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/uga/uga-home-a20190106.png"
+  },
+  {
+   "id": "home-a20190502",
+   "url": "https://arquivo.pt/noFrame/replay/20190502143522/https://www.uga.edu/",
+   "date": "2019-05-02",
+   "shows": "home page as served on 2019-05-02 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/uga/uga-home-a20190502.png"
+  },
+  {
+   "id": "home-a20191223",
+   "url": "https://arquivo.pt/noFrame/replay/20191223053756/https://www.uga.edu/",
+   "date": "2019-12-23",
+   "shows": "home page as served on 2019-12-23 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/uga/uga-home-a20191223.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Privacy Notice|OK)$",
+   "in2019": false,
+   "evidence": [
+    "cookie notice"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Report an Accessibility Barrier)$",
+   "in2019": false,
+   "evidence": [
+    "accessibility reporting link"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Pause video)$",
+   "in2019": false,
+   "evidence": [
+    "pause control for the autoplaying hero video"
+   ],
+   "action": "kept: function (stops the moving hero)"
+  },
+  {
+   "match": "^706‑542‑3000$",
+   "in2019": false,
+   "evidence": [
+    "university switchboard number in the footer"
+   ],
+   "action": "kept: function (contact)"
+  },
+  {
+   "match": "^(A–Z Directory|Menu|Search)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190106",
+    "home-a20191223"
+   ],
+   "required": true,
+   "pages": [
+    "home"
+   ],
+   "note": "header: 2019 had the A–Z INDEX link, the Quick links menu and the search field"
+  },
+  {
+   "match": "^(Alumni|Community|Copyright\\ and\\ Trademarks|Employment\\ Opportunities|Faculty\\ \\&\\ Staff|Human\\ Trafficking\\ Notice|MyUGA|Privacy|Reporting\\ Hotline|Schools\\ and\\ Colleges|Students|University\\ of\\ Georgia|Website\\ Feedback|footer\\ area|nav\\ area|section\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190106",
+    "home-a20190502",
+    "home-a20191223"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(UGA\\ on\\ Facebook|UGA\\ on\\ Instagram|UGA\\ on\\ LinkedIn|UGA\\ on\\ Twitter|UGA\\ on\\ YouTube)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190502"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Directory)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20191223"
+   ],
+   "note": "footer 'UGA Directory'"
+  },
+  {
+   "match": "^(University News|Read More|news\\.uga\\.edu|UGA extends .+|repeated li|repeated section)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190106",
+    "home-a20190502",
+    "home-a20191223"
+   ],
+   "note": "Headlines and Features blocks with story links"
+  }
+ ]
+}

@@ -1,0 +1,107 @@
+{
+ "theme": "patreon",
+ "era": "",
+ "sources": [
+  {
+   "id": "about-a20190704",
+   "url": "https://arquivo.pt/noFrame/replay/20190704084545/https://www.patreon.com/about",
+   "date": "2019-07-04",
+   "shows": "about page as served on 2019-07-04 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/patreon/patreon-about-a20190704.png"
+  },
+  {
+   "id": "creator-a20190919",
+   "url": "https://arquivo.pt/noFrame/replay/20190919202806/https://www.patreon.com/aadm",
+   "date": "2019-09-19",
+   "shows": "creator page as served on 2019-09-19 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/patreon/patreon-creator-a20190919.png"
+  },
+  {
+   "id": "creator2-a20191107",
+   "url": "https://arquivo.pt/noFrame/replay/20191107065034/https://www.patreon.com/activistpost",
+   "date": "2019-11-07",
+   "shows": "creator2 page as served on 2019-11-07 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/patreon/patreon-creator2-a20191107.png"
+  },
+  {
+   "id": "home-a20190303",
+   "url": "https://arquivo.pt/noFrame/replay/20190303185251/https://www.patreon.com/",
+   "date": "2019-03-03",
+   "shows": "home page as served on 2019-03-03 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/patreon/patreon-home-a20190303.png"
+  },
+  {
+   "id": "home-a20190630",
+   "url": "https://arquivo.pt/noFrame/replay/20190630174759/https://www.patreon.com/",
+   "date": "2019-06-30",
+   "shows": "home page as served on 2019-06-30 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/patreon/patreon-home-a20190630.png"
+  },
+  {
+   "id": "home-a20191030",
+   "url": "https://arquivo.pt/noFrame/replay/20191030180619/https://www.patreon.com/",
+   "date": "2019-10-30",
+   "shows": "home page as served on 2019-10-30 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/patreon/patreon-home-a20191030.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(About|Careers|Create\\ on\\ Patreon|Go\\ to\\ home\\ page|Log\\ in|Press|Sitemap|header\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "about-a20190704",
+    "creator-a20190919",
+    "creator2-a20191107"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Help\\ Center\\ \\&\\ FAQ|Musicians|Podcasters|Pricing|Resources|Video\\ creators)$",
+   "in2019": true,
+   "evidence": [
+    "about-a20190704",
+    "home-a20190630",
+    "home-a20191030"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Privacy\\ policy)$",
+   "in2019": true,
+   "evidence": [
+    "creator-a20190919",
+    "creator2-a20191107",
+    "home-a20190303"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(repeated\\ div)$",
+   "in2019": true,
+   "evidence": [
+    "creator2-a20191107",
+    "home-a20190303",
+    "home-a20190630"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Patreon)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190303"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Get\\ Started)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190630",
+    "home-a20191030"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  }
+ ]
+}

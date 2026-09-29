@@ -1,0 +1,92 @@
+{
+ "theme": "handwiki",
+ "era": "HandWiki Start page as captured in Dec 2019 (Wayback, rendered with its CSS; the only 2019 capture of the site, which opened in 2019): teal gradient top bar with 'HandWiki Encyclopedia of science and computing' and a menu icon, left sidebar with the HandWiki globe logo, a search field and teal section bars (Navigation, Help, Tools), the page title with an Actions button, and teal 'Welcome to HandWiki' / 'Search' panels. Only one 2019 capture exists (Arquivo has none), so the three-source rule could not be met.",
+ "sources": [
+  {
+   "id": "home-w20191203",
+   "url": "https://web.archive.org/web/20191203132508/https://handwiki.org/wiki/Start",
+   "date": "2019-12-03",
+   "shows": "home-w20191203 page as served on 2019-12-03 (Wayback capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/handwiki/handwiki-home-w20191203.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Citation manager|Recent pages|Go to Footer|Information on how to cite this page|📝 Add a new article|🔎 Search services|🔎 Search in categories|🔎 Search using prefix|📒 Curated articles|🤝 Support|💛 Donate|💛 Donate Now)$",
+   "in2019": false,
+   "evidence": [
+    "the 2019 sidebar (home-w20191203) had Table of contents, Search in topics, Popular searches, Find pages in topics, About HandWiki, FAQs, HandWiki editing, MediaWiki editing, List of categories, Recent changes, Random page and the Tools box; no citation manager, recent pages, go-to-footer, cite, add-article, search-services / categories / prefix, curated, support or donate items"
+   ],
+   "action": "hidden (handwiki.js later labels)"
+  },
+  {
+   "match": "^(HandWiki|Visit the main page|banner area|Search HandWiki|Search the pages for this text|Go to a page with this exact name if it exists)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191203"
+   ],
+   "required": true,
+   "pages": [
+    "home"
+   ],
+   "note": "top bar wordmark, sidebar logo and search (2019: 'Search' field, 'Try exact match' / 'Search full text')"
+  },
+  {
+   "match": "^(About\\ HandWiki|Powered\\ by\\ MediaWiki|form\\ area|🗂️\\ About\\ HandWiki)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191203"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Main page|A list of recent changes in the wiki \\[alt-shift-r\\]|Load a random page \\[alt-shift-x\\]|List of categories|How to edit|Formatting articles|Category:HandWiki help|Special pages|A list of all wiki pages that link here \\[alt-shift-j\\]|Recent changes in pages linked from this page \\[alt-shift-k\\]|Printable version of this page \\[alt-shift-p\\]|Permanent link to this revision of this page|More information about this page|Page logs)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191203"
+   ],
+   "required": false,
+   "note": "sidebar Navigation / Help / Tools items visible on the 2019 capture: Main page, Recent changes, Random page, List of categories, HandWiki editing, MediaWiki editing, FAQs, What links here, Related changes, Special pages, Printable version, Permanent link"
+  },
+  {
+   "match": "^(Discussion about the content page \\[alt-shift-t\\]|View the content page \\[alt-shift-c\\]|This page is protected\\. You can view its source \\[alt-shift-e\\]|Anonymous)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191203"
+   ],
+   "note": "page tabs and user menu (2019: 'Actions' menu and 'login or request account using the top-right menu')"
+  },
+  {
+   "match": "^(HandWiki:.+|.+:Start|Book:.+|Read More|Read more \\.\\.|Publish With Us|Add article)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191203"
+   ],
+   "note": "topic portal boxes (2019: Mathematics, Data Analysis, Computers ... boxes with book icons)"
+  },
+  {
+   "match": "^(Privacy policy|Disclaimers|Copyright|Contact)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191203"
+   ],
+   "note": "footer (2019: HandWiki:Privacy policy, HandWiki:General disclaimer, Creative Commons Attribution)"
+  },
+  {
+   "match": "^(Supported by KMF)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191203"
+   ],
+   "note": "sponsor badge (2019: 'Sponsored by: JWork.ORG')"
+  },
+  {
+   "match": "^(🔎 Search in topics|💬 FAQs|✏️ Add an (author-owned|encyclopedic) article|Physics:PP/Start|contentinfo area|main area|navigation area|repeated div|repeated div role=navigation)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191203"
+   ],
+   "note": "sidebar Search in topics and FAQs, the welcome panel's post-and-edit invitation, portal boxes and page structure"
+  }
+ ]
+}

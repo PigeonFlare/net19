@@ -2,7 +2,7 @@
   const root = document.documentElement;
   const night = () => !!document.getElementById('user-prefs')?.classList.contains('night-vision') || /(?:^|;\s*)night-vision=true/.test(document.cookie);
   const mirror = () => { const on = night(); if (root.hasAttribute('data-n19-tvt-night') !== on) root.toggleAttribute('data-n19-tvt-night', on); };
-  globalThis.net19Theme = { detect: () => (mirror(), night() ? 'dark' : 'light'), watch: ['data-n19-tvt-night'] };
+  globalThis.net19Theme = { detect: () => (mirror(), night() ? 'dark' : 'light'), watch: ['data-n19-tvt-night'], later: /^(?:report bug|changelog)$/i };
 
   const RESTORE = { '/pmwiki/review_activity.php': ['/pmwiki/browse.php', 'Browse'], '/pmwiki/popular-pages.php': ['/pmwiki/index_report.php', 'Indexes'] };
   const fix = () => {

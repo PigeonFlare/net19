@@ -1,4 +1,7 @@
-globalThis.net19Theme = {};
+globalThis.net19Theme = {
+  intended: '#headerPrimary [class*="styles_ndsPopover"][class*="styles_dismissible"], [data-n19-post2019]',
+  later: /^(?:ship to location: .+|target circle™?(?: 360™?)?|club target|tiktok)$/i,
+};
 (() => {
   const root = document.documentElement;
   const SEL = '[class*="styles_storycardWrapper"]:has(:is([class*="customTextPosition"], [class*="flexTextPosition"]))';
@@ -39,4 +42,17 @@ globalThis.net19Theme = {};
   let queued = false;
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
   new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
+})();
+(() => {
+  const mark = () => {
+    for (const heading of document.querySelectorAll('h3')) {
+      if (!/^Get top deals, latest trends, and more\.?$/.test(heading.textContent.trim())) continue;
+      const box = heading.parentElement;
+      if (box && !box.hasAttribute('data-n19-post2019') && box.querySelector('input')) box.setAttribute('data-n19-post2019', '');
+    }
+  };
+  let queued = false;
+  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
+  const start = () => { mark(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
+  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();

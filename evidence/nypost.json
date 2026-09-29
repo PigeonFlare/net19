@@ -40,6 +40,15 @@
   ],
   "features": [
     {
+      "match": "^(Subscribe now|Unlock .+)$",
+      "in2019": false,
+      "evidence": [
+        "Zephr subscription flyout (2023+); none in s1-s3"
+      ],
+      "action": "hidden",
+      "note": "subscription flyout"
+    },
+    {
       "match": "^(banner|header|nav|footer|main|section|article|form|search|aside|dialog|region) area$|^repeated |^(Footer|Legal|Primary Menu Sections)$",
       "in2019": true,
       "evidence": [
@@ -108,15 +117,6 @@
       "note": "article: Read Next / More Stories related modules, comments, Filed-under tags and date"
     },
     {
-      "match": "^(cftc|gambling|Kalshi|lawsuits|Bond No\\. 9|Best saunas|Neck cream|woman sleeping|Charlotte Lawrence|Marc Vartabedian|Steve Cuozzo|Charles Gasparino|Ken Fisher|Ryan King|Geoff Earle|Victor Nava|Zach Braziller)$",
-      "in2019": true,
-      "evidence": [
-        "s1",
-        "s3"
-      ],
-      "note": "today's story tags, product-story teasers and bylines/columnists (content; the inventory cannot tell these short content labels from controls)"
-    },
-    {
       "match": "^(Subscription Terms|Log in|Post Sports Plus|Try It Free|Play our newest games!|See more games|Sports Betting|TikTok|Snapchat)$",
       "in2019": false,
       "evidence": [
@@ -163,6 +163,15 @@
         "s1"
       ],
       "note": "required: centred masthead"
+    },
+    {
+      "match": "^(?=.{3,34}$)[\\w’'.&,!?:$-]+( [\\w’'.&,!?:$-]+){0,4}$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "story topic tags, short headlines (Fallout begins …), bylines and photo captions on story items (content: the 2019 captures s1, s2 have the same short headlines and tags); listed after every post-2019 entry"
     }
   ]
 }

@@ -149,6 +149,66 @@
         "cookie consent banner and US privacy choice link (2023+ privacy law)"
       ],
       "action": "kept: legal"
+    },
+    {
+      "match": "^buy me a coffee$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "required: logo centred in the header"
+    },
+    {
+      "match": "^Log in$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "required: Log in in the header"
+    },
+    {
+      "match": "^Sign up$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "required: Sign up button in the header"
+    },
+    {
+      "match": "^Start my page$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "required: the Start my page call to action"
+    },
+    {
+      "match": "^Help center$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "required: footer links"
     }
   ]
 }

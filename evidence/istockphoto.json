@@ -250,6 +250,83 @@
     "detail-a201909"
    ],
    "note": "content: image titles and related keyword links (2019 search pages listed related searches)"
+  },
+  {
+   "match": "^iStock Photos homepage$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201901",
+    "home2-a201901",
+    "search-a201910"
+   ],
+   "note": "required: iStock logo at the top left"
+  },
+  {
+   "match": "^Photos$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "detail-a201909",
+    "detail2-a201903",
+    "home-a201901"
+   ],
+   "note": "required: Video / Photos / Illustrations navigation"
+  },
+  {
+   "match": "^Illustrations$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "detail-a201909",
+    "detail2-a201903",
+    "home-a201901"
+   ],
+   "note": "required: main navigation"
+  },
+  {
+   "match": "^Pricing$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "detail-a201909",
+    "detail2-a201903",
+    "home-a201901"
+   ],
+   "note": "required: Pricing in the header"
+  },
+  {
+   "match": "^Boards$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "detail-a201909",
+    "detail2-a201903",
+    "home-a201901"
+   ],
+   "note": "required: Boards in the header"
+  },
+  {
+   "match": "^Sign in$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "detail-a201909",
+    "detail2-a201903",
+    "home-a201901"
+   ],
+   "note": "required: Sign in in the header"
+  },
+  {
+   "match": "^text$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201901",
+    "home2-a201901",
+    "search-a201910"
+   ],
+   "note": "required: the search bar"
   }
  ]
 }

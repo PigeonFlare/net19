@@ -1,0 +1,129 @@
+{
+ "theme": "dictionary",
+ "era": "Dictionary.com 2019 (Arquivo captures Jan, Jul and Dec 2019 of the home page; Mar, Sep and Nov 2019 of word pages): grey top strip with the menu button and Dictionary.com / Thesaurus.com tabs, blue #3b77c5 header with the white Dictionary.com logo and a white search box, TRENDING ticker, article cards and a Word of the Day panel with SUBSCRIBE NOW. The 2019 menu held Everything After Z (featured articles), Word of the Day, Grammar, Crossword Solver / Daily Crossword, Slang, Emoji, Gender & Sexuality and Acronyms.",
+ "sources": [
+  {
+   "id": "home-a20190101",
+   "url": "https://arquivo.pt/noFrame/replay/20190101122655/https://www.dictionary.com/",
+   "date": "2019-01-01",
+   "shows": "home page as served on 2019-01-01 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/dictionary/dictionary-home-a20190101.png"
+  },
+  {
+   "id": "home-a20190703",
+   "url": "https://arquivo.pt/noFrame/replay/20190703092019/https://www.dictionary.com/",
+   "date": "2019-07-03",
+   "shows": "home page as served on 2019-07-03 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/dictionary/dictionary-home-a20190703.png"
+  },
+  {
+   "id": "home-a20191231",
+   "url": "https://arquivo.pt/noFrame/replay/20191231015744/https://www.dictionary.com/",
+   "date": "2019-12-31",
+   "shows": "home page as served on 2019-12-31 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/dictionary/dictionary-home-a20191231.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(The Dictionary for the Real World|Help)$",
+   "in2019": false,
+   "evidence": [
+    "2019 home had no tagline headline and no Help link in the footer (About, Careers, Contact Us, Cookies, Terms, & Privacy)"
+   ],
+   "action": "hidden (dictionary.css / dictionary.js later labels)"
+  },
+  {
+   "match": "^(Don't sell my info)$",
+   "in2019": false,
+   "evidence": [
+    "privacy opt-out"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Search a word or phrase)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190101",
+    "home-a20190703"
+   ],
+   "required": true,
+   "pages": [
+    "home",
+    "word"
+   ],
+   "note": "search box"
+  },
+  {
+   "match": "^(Cookies,\\ terms\\ \\&\\ privacy|Dictionary\\.com|Thesaurus\\.com|footer\\ area|form\\ area|header\\ area|section\\ area|site\\ navigation)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190101",
+    "home-a20190703",
+    "home-a20191231"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Careers|Contact\\ us)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190703",
+    "home-a20191231"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Word\\ of\\ the\\ Day)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20191231"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Featured|Cultural|Writing tips|Games)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190703"
+   ],
+   "note": "top links: the 2019 menu's Everything After Z (featured), Slang / Emoji / Gender & Sexuality (cultural), Grammar (writing tips) and Daily Crossword (games)"
+  },
+  {
+   "match": "^(Trending Words|Popular searches:|GOAT|breakcore|embarrass|kayfabe|lethargic|nonplussed|red herring)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190101",
+    "home-a20190703",
+    "home-a20191231"
+   ],
+   "note": "TRENDING ticker of looked-up words ('What Are Users Looking Up On Dictionary.com Every Day?')"
+  },
+  {
+   "match": "^(embosk|play audio of .+|Get the Word of the Day|region area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190703"
+   ],
+   "note": "Word of the Day panel with its audio button and newsletter sign-up"
+  },
+  {
+   "match": "^(Featured Articles|All articles|Word Origins|repeated a|Where Did the Word .+)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190101",
+    "home-a20190703"
+   ],
+   "note": "article cards (2019: 'Do You Know The Names For The Different Types Of Fireworks?', 'Kangaroo Words')"
+  },
+  {
+   "match": "^(Entry list)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190703"
+   ],
+   "note": "'Browse Dictionary' index"
+  }
+ ]
+}

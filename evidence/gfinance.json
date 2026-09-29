@@ -19,6 +19,68 @@
   ],
   "features": [
     {
+      "match": "^Google Finance$|^Finance$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "Google Finance wordmark"
+    },
+    {
+      "match": "^Search for stocks, ETFs,? (and|&) more$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "grey search field"
+    },
+    {
+      "match": "^Google apps$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "apps grid"
+    },
+    {
+      "match": "^Top stories$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "news list"
+    },
+    {
+      "match": "^Disclaimer$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "disclaimer link"
+    },
+    {
+      "match": "^Overview$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "quote"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "quote page tab"
+    },
+    {
       "match": "^(header|main|search|tablist|navigation|contentinfo|nav) area$",
       "in2019": true,
       "evidence": [
@@ -75,7 +137,7 @@
       "note": "stock page range tabs, chart type and data sections (the 2019 stock page carried range tabs and key stats)"
     },
     {
-      "match": "^(Add to list|Follow|Add to watchlist|Your watchlist|Recently searched|You may be interested in|Top stories|More news stories|Upcoming earnings)$",
+      "match": "^(Add to list|Follow|Add to watchlist|Your watchlist|Recently searched|You may be interested in|Top stories|More news stories)$",
       "in2019": true,
       "evidence": [
         "s1"
@@ -91,20 +153,20 @@
       "note": "company links (content)"
     },
     {
-      "match": "^(Latest updates.*)$",
-      "in2019": true,
-      "evidence": [
-        "s1"
-      ],
-      "note": "the news list (Top stories in 2019)"
-    },
-    {
       "match": "^(Research|Research panel|Analysis|Compare to financial entity|Select technical indicator|Create a portfolio|Lists|Ask.*|Deep search)$",
       "in2019": false,
       "evidence": [
         "lists/portfolios 2020-2023, compare/indicators 2023, Research and Analysis (AI) 2025"
       ],
       "action": "hidden"
+    },
+    {
+      "match": "^(Upcoming earnings|Latest updates.*|Live)$",
+      "in2019": false,
+      "evidence": [
+        "s1 has Top stories and no live update feed or earnings calendar; the live Latest updates feed and Upcoming earnings arrived with the 2025 redesign"
+      ],
+      "action": "hidden (the news feed is shown as the 2019 Top stories)"
     }
   ]
 }

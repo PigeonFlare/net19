@@ -1,0 +1,105 @@
+{
+ "theme": "freefunder",
+ "era": "FreeFunder 2019 home page (Wayback captures Feb, Sep and Dec 2019, rendered with their CSS): white header with the FreeFunder wordmark, Discover, Create, About menu and a green Log In button, a full-width photo hero with 'Raise funds for the personal causes that are important to you. For free.' and a 'CREATE FREE FUNDRAISER' button, 'Raise Money For What Matters To You', 'FreeFunder Works!' stories, 'A Few Current Campaigns' cards with Medical / Funerals categories, and an email signup. FreeFunder had no dark design.",
+ "sources": [
+  {
+   "id": "home-w20190212",
+   "url": "https://web.archive.org/web/20190212054622/https://www.freefunder.com/",
+   "date": "2019-02-12",
+   "shows": "home-w20190212 page as served on 2019-02-12 (Wayback capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/freefunder/freefunder-home-w20190212.png"
+  },
+  {
+   "id": "home-w20190921",
+   "url": "https://web.archive.org/web/20190921161037/https://www.freefunder.com/",
+   "date": "2019-09-21",
+   "shows": "home-w20190921 page as served on 2019-09-21 (Wayback capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/freefunder/freefunder-home-w20190921.png"
+  },
+  {
+   "id": "home-w20191208",
+   "url": "https://web.archive.org/web/20191208035253/https://www.freefunder.com/",
+   "date": "2019-12-08",
+   "shows": "home-w20191208 page as served on 2019-12-08 (Wayback capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/freefunder/freefunder-home-w20191208.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Privacy Policy|Terms & Conditions)$",
+   "in2019": false,
+   "evidence": [
+    "no footer legal row in the 2019 captures"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Text-To-Donate|youtube-icon)$",
+   "in2019": false,
+   "evidence": [
+    "2019 home had no text-to-donate feature and no YouTube link"
+   ],
+   "action": "hidden (freefunder.js later labels)"
+  },
+  {
+   "match": "^(Login|Create a FreeFunder|FreeFunder Free Crowdfunding Home Page|nav area|header area)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20190212",
+    "home-w20190921",
+    "home-w20191208"
+   ],
+   "required": true,
+   "pages": [
+    "home"
+   ],
+   "note": "header: wordmark, Log In, Create Free Fundraiser"
+  },
+  {
+   "match": "^(Discover|FreeFunder)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20190212",
+    "home-w20190921",
+    "home-w20191208"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(See\\ More\\ Stories)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191208"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Home|How it Works|Features|FAQ|Blog|Contact Us)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20190212",
+    "home-w20191208"
+   ],
+   "note": "header links: 2019 had Discover, Create and an About menu (how it works, FAQ, blog, contact); the current site lists them flat"
+  },
+  {
+   "match": "^(Free Fundraising|section area|Why FreeFunder\\?|Learn More|Click here|let us know|View More Campaigns|Success Stories|Frequently Asked Questions|View all FAQs|FAQs|Medical Fundraising|Memorial Fundraising|Pricing)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20190212",
+    "home-w20190921",
+    "home-w20191208"
+   ],
+   "note": "hero, 'Raise Money For What Matters To You', 'FreeFunder Works!' stories, 'See More Current Campaigns', Medical and Funerals categories"
+  },
+  {
+   "match": "^(Your Email Address|Subscribe|Connect With Us!)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20190212",
+    "home-w20191208"
+   ],
+   "note": "email signup (2019 'Email Address' field)"
+  }
+ ]
+}

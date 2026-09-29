@@ -78,3 +78,4 @@ body:is(.wp-singular, .page, .home, .single, .blog, .archive, .search) #ajax-con
 #footer-outer #copyright { border-top: 1px solid var(--n19-edge) !important; }
 #ajax-content-wrap .nectar-animated-gradient { display: none !important; }
 #cmp-grid .widget .details p.description { display: -webkit-box !important; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden !important; }
+a.connect-icon, li:has(> a.connect-icon), a[href*="connectionpoint.com"], #to-top { display: none !important; }

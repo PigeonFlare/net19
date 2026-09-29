@@ -127,6 +127,66 @@
         "2019 footer had one \"Privacy Policy\" link"
       ],
       "action": "kept: legal"
+    },
+    {
+      "match": "^Poki$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s5",
+        "s6"
+      ],
+      "note": "required: Poki logo tile at the top left of the grid"
+    },
+    {
+      "match": "^Search$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s5",
+        "s6"
+      ],
+      "note": "required: search tile beside the logo"
+    },
+    {
+      "match": "^Car Games$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s5",
+        "s6"
+      ],
+      "note": "required: category links"
+    },
+    {
+      "match": "^Free online games on Poki$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s5",
+        "s6"
+      ],
+      "note": "required: the description block under the grid"
+    },
+    {
+      "match": "^Terms of Use$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s5",
+        "s6"
+      ],
+      "note": "required: footer links"
     }
   ]
 }
