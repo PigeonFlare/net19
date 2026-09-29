@@ -20,6 +20,8 @@
     'Gaming': { es: 'Videojuegos', fr: 'Jeux vidéo', pt: 'Jogos', it: 'Videogiochi', ja: 'ゲーム', zh: '游戏', ko: '게임', ru: 'Видеоигры', hi: 'गेमिंग', ar: 'ألعاب فيديو' },
     'News': { es: 'Noticias', fr: 'Actualités', pt: 'Notícias', it: 'Notizie', ja: 'ニュース', zh: '新闻', ko: '뉴스', ru: 'Новости', hi: 'समाचार', ar: 'أخبار' },
     'Live': { es: 'En directo', fr: 'En direct', pt: 'Ao vivo', it: 'Dal vivo', ja: 'ライブ', zh: '直播', ko: '실시간', ru: 'Трансляции', hi: 'लाइव', ar: 'بث مباشر' },
+    'Bookmarks': { es: 'Guardados', fr: 'Signets', pt: 'Itens salvos', it: 'Segnalibri', ja: 'ブックマーク', zh: '书签', ko: '북마크', ru: 'Закладки', hi: 'बुकमार्क', ar: 'العلامات المرجعية' },
+    'Lists': { es: 'Listas', fr: 'Listes', pt: 'Listas', it: 'Liste', ja: 'リスト', zh: '列表', ko: '리스트', ru: 'Списки', hi: 'सूचियां', ar: 'القوائم' },
     'Uploads': { es: 'Subidas', fr: 'Mises en ligne', pt: 'Envios', it: 'Caricamenti', ja: 'アップロード動画', zh: '上传的视频', ko: '업로드한 동영상', ru: 'Загрузки', hi: 'अपलोड', ar: 'التحميلات' },
     'My communities': { es: 'Mis comunidades', fr: 'Mes communautés', pt: 'Minhas comunidades', it: 'Le mie community', ja: 'マイコミュニティ', zh: '我的社区', ko: '내 커뮤니티', ru: 'Мои сообщества', hi: 'मेरे समुदाय', ar: 'مجتمعاتي' },
     'Reddit feeds': { es: 'Feeds de Reddit', fr: 'Flux Reddit', pt: 'Feeds do Reddit', it: 'Feed di Reddit', ja: 'Reddit フィード', zh: 'Reddit 动态', ko: 'Reddit 피드', ru: 'Ленты Reddit', hi: 'Reddit फ़ीड', ar: 'خلاصات Reddit' },

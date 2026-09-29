@@ -92,6 +92,27 @@ globalThis.net19Theme = {
       const labels = [...list.querySelectorAll('[role="tab"]')].map(t => t.textContent.trim());
       if (labels.includes('For you') && labels.includes('Following')) { list.setAttribute('data-n19-tw', 'hometabs'); walk(list); }
     }
+    const profile = document.querySelector('header nav a[data-testid="AppTabBar_Profile_Link"]');
+    if (profile && !profile.parentElement.querySelector('a[data-net19-nav]')) {
+      const user = profile.getAttribute('href') || '';
+      for (const [label, href, d] of [['Bookmarks', '/i/bookmarks', 'M17 3H7c-1.1 0-2 .9-2 2v16l7-3 7 3V5c0-1.1-.9-2-2-2zm0 15-5-2.18L7 18V5h10v13z'], ['Lists', `${user}/lists`, 'M3 5h2v2H3zm4 0h14v2H7zM3 11h2v2H3zm4 0h14v2H7zm-4 6h2v2H3zm4 0h14v2H7z']]) {
+        const text = net19.say(label);
+        if (!text) continue;
+        const copy = profile.cloneNode(true);
+        copy.href = href;
+        copy.setAttribute('aria-label', text);
+        copy.setAttribute('data-net19-nav', '');
+        copy.removeAttribute('data-testid');
+        copy.removeAttribute('aria-current');
+        const group = copy.querySelector('svg g') || copy.querySelector('svg');
+        const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+        path.setAttribute('d', d);
+        group?.replaceChildren(path);
+        const span = copy.querySelector('div[dir] span');
+        if (span) span.textContent = text;
+        profile.before(copy);
+      }
+    }
     for (const board of document.querySelectorAll('[data-testid="sidebarColumn"] [data-testid$="_scores_sidebar"]')) {
       let box = board;
       while (box.parentElement && box.parentElement.childElementCount < 3 && !box.parentElement.matches('[data-testid="sidebarColumn"]')) box = box.parentElement;

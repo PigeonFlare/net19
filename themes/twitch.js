@@ -60,6 +60,7 @@ globalThis.net19Theme = {
     main.prepend(div);
   };
   const fix = () => {
+    for (const heading of document.querySelectorAll('nav[aria-label="Left Navigation"] h3:not([data-net19-hidden])')) if (/^For You$/.test(heading.textContent.trim())) heading.setAttribute('data-net19-hidden', '');
     for (const callout of document.querySelectorAll('.tw-callout-message')) {
       const bar = callout.closest('article');
       if (bar && !bar.hasAttribute('data-net19-hidden') && /Join the Twitch community/i.test(callout.textContent || '')) bar.setAttribute('data-net19-hidden', '');
