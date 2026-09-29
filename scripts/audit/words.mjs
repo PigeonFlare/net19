@@ -1,5 +1,5 @@
 import { chromium } from '@playwright/test';
-import { mkdirSync, readFileSync, writeFileSync } from 'node:fs';
+import { existsSync, mkdirSync, readFileSync, writeFileSync } from 'node:fs';
 
 const root = new URL('../../', import.meta.url);
 const EXT = root.pathname.replace(/\/$/, '');
@@ -55,40 +55,44 @@ const visit = async (ctx, url, script) => {
 const pool = async (items, run, width = 3) => { let next = 0; await Promise.all(Array.from({ length: width }, async () => { while (next < items.length) await run(items[next++]); })); };
 
 const noise = (local, english) => local === english || local.length > 48 || !/\p{L}/u.test(local) || /\d{2}/.test(local) || /^[\p{Lu}\d\s]{1,3}$/u.test(local);
-const report = {};
-const en = await open('en-US');
-const english = {};
-await pool(list, async id => { english[id] = (await visit(en, URLS[id], ENGLISH)) || []; });
-await en.close();
-const pending = new Set(list.filter(id => english[id].length));
-for (const lang of LANGS) {
-  const ctx = await open(lang);
-  await pool([...pending], async id => {
-    const url = localized(id, lang);
-    if (!url) return;
-    const items = english[id];
-    const seen = await visit(ctx, url, LOCAL(items.map(item => item.sel)));
-    if (!seen) return;
-    if (/^en\b/i.test(seen.lang) && lang === LANGS[0]) { pending.delete(id); return; }
-    const pairs = {};
-    items.forEach((item, k) => {
-      const local = seen.found[k];
-      if (!local || local.length !== item.leaves.length) return;
-      local.forEach((value, n) => {
-        const from = item.leaves[n];
-        if (from.startsWith('@') !== value.startsWith('@')) return;
-        const a = value.replace(/^@[a-z-]+:/, ''), b = from.replace(/^@[a-z-]+:/, '');
-        if (!noise(a, b)) pairs[a] = b;
+const harvest = async () => {
+  const report = {};
+  const en = await open('en-US');
+  const english = {};
+  await pool(list, async id => { english[id] = (await visit(en, URLS[id], ENGLISH)) || []; });
+  await en.close();
+  const pending = new Set(list.filter(id => english[id].length));
+  for (const lang of LANGS) {
+    const ctx = await open(lang);
+    await pool([...pending], async id => {
+      const url = localized(id, lang);
+      if (!url) return;
+      const items = english[id];
+      const seen = await visit(ctx, url, LOCAL(items.map(item => item.sel)));
+      if (!seen) return;
+      if (/^en\b/i.test(seen.lang) && lang === LANGS[0]) { pending.delete(id); return; }
+      const pairs = {};
+      items.forEach((item, k) => {
+        const local = seen.found[k];
+        if (!local || local.length !== item.leaves.length) return;
+        local.forEach((value, n) => {
+          const from = item.leaves[n];
+          if (from.startsWith('@') !== value.startsWith('@')) return;
+          const a = value.replace(/^@[a-z-]+:/, ''), b = from.replace(/^@[a-z-]+:/, '');
+          if (!noise(a, b)) pairs[a] = b;
+        });
       });
+      if (Object.keys(pairs).length) (report[id] ||= {})[short(lang)] = pairs;
     });
-    if (Object.keys(pairs).length) (report[id] ||= {})[short(lang)] = pairs;
-  });
-  await ctx.close();
-  console.log(`${lang}: ${Object.values(report).filter(r => r[short(lang)]).length} themes with words`);
-}
-mkdirSync(new URL('.', REPORT), { recursive: true });
-writeFileSync(REPORT, JSON.stringify(report, null, 1));
-console.log(`Wrote ${REPORT.pathname}`);
+    await ctx.close();
+    console.log(`${lang}: ${Object.values(report).filter(r => r[short(lang)]).length} themes with words`);
+  }
+  mkdirSync(new URL('.', REPORT), { recursive: true });
+  writeFileSync(REPORT, JSON.stringify(report, null, 1));
+  console.log(`Wrote ${REPORT.pathname}`);
+  return report;
+};
+const report = args.includes('--reuse') && existsSync(REPORT) ? JSON.parse(readFileSync(REPORT, 'utf8')) : await harvest();
 
 if (WRITE) {
   const conflicts = [];
@@ -108,7 +112,7 @@ if (WRITE) {
       if (!(local in words)) words[local] = label;
     }
     if (JSON.stringify(words) === before) continue;
-    const next = `globalThis.net19Theme.words = ${JSON.stringify(words)};`;
+    const next = `globalThis.net19Theme.words = ${JSON.stringify(words).replace(/","/g, '", "').replace(/":"/g, '": "')};`;
     writeFileSync(file, line ? source.replace(line[0], next) : `${source.replace(/\n?$/, '\n')}${next}\n`);
     console.log(`themes/${id}.js: ${Object.keys(words).length} words`);
   }

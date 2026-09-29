@@ -64,3 +64,4 @@ globalThis.net19Theme = {
   };
   net19.onBody(start);
 })();
+globalThis.net19Theme.words = {"Comunidades": "Communities", "Cambiar la paleta": "Change palette", "Communautés": "Communities", "Changer la palette": "Change palette", "Mudar paleta": "Change palette", "Community": "Communities", "Cambia colori": "Change palette", "コミュニティ": "Communities", "パレットを変更": "Change palette", "社区": "Communities", "更改调色板": "Change palette", "커뮤니티": "Communities", "팔레트 바꾸기": "Change palette", "Сообщества": "Communities", "Изменить палитру": "Change palette", "समुदाय": "Communities", "पैलेट बदलें": "Change palette"};

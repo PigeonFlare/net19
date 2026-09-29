@@ -59,3 +59,4 @@ globalThis.net19Theme = {
   };
   net19.onBody(start);
 })();
+globalThis.net19Theme.words = {"Política de cookies": "Cookie Policy", "Politique d’utilisation des cookies": "Cookie Policy", "Política de Cookies": "Cookie Policy", "Normativa sui cookie": "Cookie Policy", "Cookieポリシー": "Cookie Policy", "Cookie 政策": "Cookie Policy", "쿠키 정책": "Cookie Policy", "Политика в отношении файлов cookie": "Cookie Policy", "कुकी पॉलिसी": "Cookie Policy", "سياسة ملفات تعريف الارتباط": "Cookie Policy"};

@@ -44,7 +44,7 @@ Palette maps are rescanned only on mode changes or new stylesheets, and those re
 
 Themes match a site's labels in English. `src/content/runtime.js` makes that work on pages in other languages:
 
-- `theme.words` maps a site's own labels in other languages (Spanish, French, Portuguese, Italian, Japanese, Chinese, Korean, Russian, Hindi, Arabic) to the English label a rule tests, so a post-2019 feature is hidden whatever language the page is in. The lists come from loading the same page in each language and pairing what sits in the same place.
+- `theme.words` maps a site's own labels in other languages (Spanish, French, Portuguese, Italian, Japanese, Chinese, Korean, Russian, Hindi, Arabic) to the English label a rule tests, so a post-2019 feature is hidden whatever language the page is in. The lists come from `npm run audit:words`, which loads each theme's page in English and in each language, pairs the labels of what net19 hides by where they sit, and writes `artifacts/audit/words.json` (`--write` merges new pairs into the themes; `--reuse` writes from the last report without loading pages again). Review the report before writing: a site that shuffles its layout by language can pair the wrong labels.
 - `net19Say(label)` gives the few labels a theme adds itself (such as Reddit's "Posted by" or its feed menu) in the page's language, or `null` for a language it doesn't know.
 - Outside English, themes leave the site's own wording alone (search placeholders, taglines) instead of writing the 2019 English text over it, and skip added blocks that are only prose.
 - Right-to-left pages mirror the positioned rules with `:dir(rtl)`.
