@@ -1,0 +1,174 @@
+{
+ "theme": "stanford",
+ "era": "Stanford home and about pages as served all through 2019 (Arquivo captures Jan, Jul, Dec 2019 and Nov 2019): cardinal #b1040e top bar with the serif 'Stanford University' wordmark and audience links, white centred main nav (News, Events, Academics, Research, Health Care, Campus Life, Admission, About), full-width video hero, story teasers, grey weather/social strip and a white footer with cardinal UPPERCASE column headings and outlined Applying/Visiting/Giving/Careers buttons, cardinal global footer.",
+ "sources": [
+  {
+   "id": "about-a20191120",
+   "url": "https://arquivo.pt/noFrame/replay/20191120141032/https://www.stanford.edu/about/",
+   "date": "2019-11-20",
+   "shows": "about page as served on 2019-11-20 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/stanford/stanford-about-a20191120.png"
+  },
+  {
+   "id": "home-a20190101",
+   "url": "https://arquivo.pt/noFrame/replay/20190101083319/https://www.stanford.edu/",
+   "date": "2019-01-01",
+   "shows": "home page as served on 2019-01-01 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/stanford/stanford-home-a20190101.png"
+  },
+  {
+   "id": "home-a20190715",
+   "url": "https://arquivo.pt/noFrame/replay/20190715122429/https://www.stanford.edu/",
+   "date": "2019-07-15",
+   "shows": "home page as served on 2019-07-15 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/stanford/stanford-home-a20190715.png"
+  },
+  {
+   "id": "home-a20191231",
+   "url": "https://arquivo.pt/noFrame/replay/20191231024547/https://www.stanford.edu/",
+   "date": "2019-12-31",
+   "shows": "home page as served on 2019-12-31 (Arquivo.pt capture rendered with its archived 2019 CSS)",
+   "file": "h6-evidence/stanford/stanford-home-a20191231.png"
+  }
+ ],
+ "features": [
+  {
+   "match": "^Athletics$",
+   "in2019": false,
+   "evidence": [
+    "the 2019 main nav (all captures) had no Athletics item"
+   ],
+   "action": "hidden (stanford.js marks the nav item and footer link)"
+  },
+  {
+   "match": "^(Newsletter|LinkedIn|Apple Podcasts|Reconnect|Faculty Positions|Career Education|Sustainability)$",
+   "in2019": false,
+   "evidence": [
+    "2019 footer (all captures) had Facebook, Twitter, Instagram, YouTube, iTunes U and no newsletter, LinkedIn, podcasts, Reconnect, faculty-position or career-education links; the Doerr School of Sustainability opened in 2022"
+   ],
+   "action": "hidden (stanford.css footer rules)"
+  },
+  {
+   "match": "^(Cookies|Policies)$",
+   "in2019": false,
+   "evidence": [
+    "2019 had one 'Privacy and cookie policy' link"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Applicants|Faculty & Staff|Families|Alumni|Information for)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190101",
+    "home-a20190715",
+    "about-a20191120"
+   ],
+   "required": true,
+   "note": "audience links in the cardinal top bar: 2019 had Students, Faculty & Staff, Parents, Visitors, Alumni there; the current site keeps its audience links (Applicants, Faculty & Staff, Families, Alumni) in a menu, and stanford.js copies them into the top bar"
+  },
+  {
+   "match": "^(Admissions & Aid|Health & Medicine|Life on the Farm|Main Menu)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190715",
+    "about-a20191120"
+   ],
+   "required": true,
+   "note": "main nav items: the 2019 nav had Admission, Health Care and Campus Life in the same row; the current site renamed them"
+  },
+  {
+   "match": "^(About|Academics|Research)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190101",
+    "home-a20190715",
+    "about-a20191120"
+   ],
+   "required": true,
+   "note": "main nav"
+  },
+  {
+   "match": "^(About\\ Stanford|Accreditation|Business|Directory|Education|Emergency\\ Info|Engineering|Facebook|Facts|History|Humanities\\ \\&\\ Sciences|Instagram|Law|Maps\\ \\&\\ Directions|Medicine|News|Non\\-discrimination\\ policy|Ownership\\ and\\ use\\ of\\ Stanford\\ trademarks\\ and\\ images|Privacy\\ and\\ cookie\\ policy|Report\\ alleged\\ copyright\\ infringement|Report\\ web\\ accessibility\\ issues|Search\\ Stanford|Stanford\\ Home|Stanford\\ Profiles|Stanford\\ University|Terms\\ of\\ use\\ for\\ sites|YouTube|header\\ area|nav\\ area|section\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "about-a20191120",
+    "home-a20190101",
+    "home-a20190715"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(article\\ area)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190101",
+    "home-a20190715",
+    "home-a20191231"
+   ],
+   "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Search query|Submit search|search area|How can we help\\?)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190715",
+    "about-a20191120"
+   ],
+   "note": "site search: 2019 top bar had Search"
+  },
+  {
+   "match": "^(Overview|Action|Follow Us|The 7 Schools|Careers|Contact)$",
+   "in2019": true,
+   "evidence": [
+    "about-a20191120"
+   ],
+   "note": "footer column headings: 2019 footer had UPPERCASE cardinal column headings (SCHOOLS, DEPARTMENTS, HEALTH CARE, ABOUT STANFORD, RESOURCES) - see the capture's footer"
+  },
+  {
+   "match": "^(Home|Apply|Visit|Give|Work at Stanford|X/Twitter|Important Stanford links|Stanford legal and policy links|Terms of Use|Privacy|Copyright|Trademarks|Non-Discrimination|Accessibility)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190715",
+    "about-a20191120"
+   ],
+   "note": "footer links: 2019 had Stanford Home, Applying, Visiting, Giving, Careers, Twitter and the legal row (Terms of use, Privacy, copyright, trademarks, Non-discrimination, web accessibility); the current site shortened the labels"
+  },
+  {
+   "match": "^(page hero|video player|play|pause|closed captions)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190101",
+    "home-a20190715",
+    "home-a20191231"
+   ],
+   "note": "2019 home opened on a full-width video hero (the cardinal panel in the captures is its poster fallback); play/pause and captions controls are its media controls"
+  },
+  {
+   "match": "^(repeated li|repeated div|repeated section|repeated article)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190715"
+   ],
+   "note": "repeated story and event teasers"
+  },
+  {
+   "match": ".+ (Learn more|Visit|Read more|Navigate to) .+|^Learn (more|about) .+$|^Learn more$|^(Impact|Leadership)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190715",
+    "about-a20191120"
+   ],
+   "note": "teaser call-to-action links (2019: 'More Stanford Events', 'More about Debbie', 'More About Stanford', 'Watch the video')"
+  },
+  {
+   "match": "^(Newest students .+|Achieving the promise .+|An infrastructure for innovation|Financial aid places .+|Financial support that makes a difference|Research for a Better World|Strong relationships with our neighbors|Excellence in education across disciplines|The Spirit of the West|Advancing the Frontier|Stanford News|Stanford Report)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190715",
+    "about-a20191120"
+   ],
+   "note": "story and section headings (2019: 'The nature of dark matter', 'Stanford Events', 'About Stanford', '“Be Here” – a virtual reality experience of Stanford')"
+  }
+ ]
+}

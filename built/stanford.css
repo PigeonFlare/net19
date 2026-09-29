@@ -26,3 +26,21 @@ main a[class*="rounded"],main button[class*="rounded"]{border-radius:0!important
 header nav.main-nav>a.logo{background-color:var(--n19-cardinal)!important}
 main#main-content>div:not([class]):has(>section.cc){display:none!important}
 main#main-content>div.bg-bg-subtle :is(form,div,input,button){border-radius:0!important}
+[data-n19-post2019]{display:none!important}
+footer li:has(>a:is([href*="linkedin.com"],[href*="news.stanford.edu/subscribe"],[href*="podcasts.apple.com"],[href="https://alumni.stanford.edu"],[href*="openfacultypositions"],[href*="careered.stanford.edu"],[href*="sustainability.stanford.edu"],[href="/athletics"])){display:none!important}
+footer nav>h2{text-transform:uppercase!important;font-weight:700!important;color:var(--n19-cardinal)!important;letter-spacing:0!important}
+html[data-net19-mode="dark"] footer nav>h2{color:#f4795b!important}
+:where(:root:not([data-n19-safe])) header .bg-bg-knockout-brand-strong>nav{display:flex!important;flex-wrap:nowrap!important;align-items:center!important;justify-content:flex-end!important}
+:where(:root:not([data-n19-safe])) header .bg-bg-knockout-brand-strong>nav>div:has(form){width:300px!important;flex:0 0 300px!important;margin-left:0!important}
+:where(:root:not([data-n19-safe])) header .n19-audience{display:flex!important;align-items:center!important;gap:32px!important;margin:0 28px 0 auto!important;padding:0!important}
+header .n19-audience{list-style:none!important}
+:where(:root:not([data-n19-safe])) header .n19-audience{height:48px!important}
+:where(:root:not([data-n19-safe])) header .n19-audience li{margin:0!important;padding:0!important}
+header .n19-audience li{list-style:none!important}
+header .n19-audience a{color:#fff!important;font-size:17px!important;line-height:48px!important;text-decoration:none!important}
+:where(:root:not([data-n19-safe])) header .n19-audience a{white-space:nowrap!important}
+header .n19-audience a:hover{text-decoration:underline!important}
+main h1.font-serif{font-family:"Source Sans Pro", "Source Sans 3", Arial, sans-serif!important;font-weight:700!important;font-size:40px!important;line-height:1.2!important;letter-spacing:0!important}
+main picture img,main figure img{border-radius:0!important}
+main section>div.overflow-hidden:has(>picture){clip-path:none!important}
+html[data-net19-mode="dark"] header .n19-audience a{color:#fff!important}
