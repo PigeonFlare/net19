@@ -101,7 +101,7 @@ globalThis.net19Theme = {
   };
   const start = () => {
     fix();
-    new MutationObserver(fix).observe(document.body, { childList: true, subtree: true });
+    new MutationObserver(fix).observe(document.documentElement, { childList: true, subtree: true });
     new MutationObserver(() => requestAnimationFrame(fix)).observe(document.documentElement, { attributes: true, attributeFilter: ['data-net19-flip'] });
   };
   net19.onBody(start);

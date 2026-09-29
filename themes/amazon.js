@@ -33,7 +33,7 @@ globalThis.net19Theme = {
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
   const start = () => {
     fix();
-    new MutationObserver(later).observe(document.body, { childList: true, subtree: true, characterData: true });
+    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
   };
   net19.onBody(start);
 })();

@@ -159,7 +159,7 @@ globalThis.net19Theme = {
         else for (const n of r.addedNodes) if (n.nodeType === 1) pending.push(n); else if (n.nodeType === 3 && n.parentElement) pending.push(n.parentElement);
       }
       later();
-    }).observe(document.body, { childList: true, subtree: true, characterData: true });
+    }).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
     const title = document.querySelector('title');
     if (title) new MutationObserver(later).observe(title, { childList: true, characterData: true, subtree: true });
     setInterval(() => { if (!document.hidden) recolor(); }, 1500);
@@ -235,7 +235,7 @@ globalThis.net19Theme = {
   const start = () => {
     if (location.pathname !== '/') return;
     fix();
-    new MutationObserver(() => { if (location.pathname === '/') later(); }).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
+    new MutationObserver(() => { if (location.pathname === '/') later(); }).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
   };
   net19.onBody(start);
 })();
@@ -343,7 +343,7 @@ globalThis.net19Theme = {
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; layout(); }); };
   const start = () => {
     layout();
-    new MutationObserver(later).observe(document.body, { childList: true, subtree: true });
+    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
     globalThis.navigation?.addEventListener?.('navigatesuccess', later);
   };
   net19.onBody(start);

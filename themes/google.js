@@ -181,6 +181,6 @@ globalThis.net19Theme = {
   const run = () => { if (location.pathname !== '/search') return; modules(); shapes(); };
   let timer = 0;
   const later = () => { if (timer) return; timer = requestAnimationFrame(() => { timer = 0; run(); }); };
-  const start = () => { run(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); addEventListener('load', later, { once: true }); };
+  const start = () => { run(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); addEventListener('load', later, { once: true }); };
   net19.onBody(start);
 })();

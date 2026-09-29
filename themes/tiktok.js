@@ -55,7 +55,7 @@ globalThis.net19Theme = {
   const start = () => {
     fix(); verified();
     new MutationObserver(records => { for (const r of records) if (!(r.target instanceof Element && r.target.closest('[data-n19-tt]'))) { later(); return; } })
-      .observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['href', 'src'] });
+      .observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['href', 'src'] });
   };
   net19.onBody(start);
 })();

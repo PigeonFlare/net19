@@ -9,7 +9,7 @@ globalThis.net19Theme = {
 (() => {
   if (location.hostname !== 'support.spotify.com') return;
   const fix = () => { if (globalThis.net19Lang?.() === 'en') for (const f of document.querySelectorAll('[class*="EntryPoint_textareaWrapper"] textarea')) if (f.placeholder !== 'Search') f.placeholder = 'Search'; };
-  const start = () => { fix(); new MutationObserver(fix).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] }); };
+  const start = () => { fix(); new MutationObserver(fix).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] }); };
   net19.onBody(start);
 })();
 (() => {
@@ -24,7 +24,7 @@ globalThis.net19Theme = {
       if (tag.textContent !== word) tag.textContent = word;
     }
   };
-  const start = () => { fix(); new MutationObserver(fix).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['aria-label'] }); };
+  const start = () => { fix(); new MutationObserver(fix).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['aria-label'] }); };
   net19.onBody(start);
 })();
 globalThis.net19Theme.words = {"Importar tu música": "Import your music", "Importer votre musique": "Import your music", "Importar suas músicas": "Import your music", "Importa la tua musica": "Import your music", "音楽をインポート": "Import your music", "导入你的音乐": "Import your music", "내 음악 가져오기": "Import your music", "Импорт музыки": "Import your music", "अपना म्यूज़िक इंपोर्ट करें": "Import your music", "استيراد ملفاتك الموسيقية": "Import your music"};

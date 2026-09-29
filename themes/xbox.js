@@ -90,7 +90,7 @@ globalThis.net19Theme = {
         }
       }
       if (pending.length && !queued) { queued = true; requestAnimationFrame(flush); }
-    }).observe(document.body, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['class', 'aria-selected', 'aria-current', 'aria-pressed', 'aria-expanded'] });
+    }).observe(document.documentElement, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['class', 'aria-selected', 'aria-current', 'aria-pressed', 'aria-expanded'] });
     const ready = () => setTimeout(() => { textsReady = true; scanAgain(); }, 1500);
     if (document.readyState === 'complete') ready(); else addEventListener('load', ready, { once: true });
   };

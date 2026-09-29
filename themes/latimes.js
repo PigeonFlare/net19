@@ -17,6 +17,6 @@ globalThis.net19Theme = {
   };
   let queued = false;
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(document); }); };
-  const start = () => { fix(document); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
+  const start = () => { fix(document); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); };
   net19.onBody(start);
 })();

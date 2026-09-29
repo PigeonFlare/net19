@@ -48,6 +48,6 @@
   };
   let queued = false;
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; hide(); choosePhoneLogin(); signInTitle(); }); };
-  const start = () => { hide(); choosePhoneLogin(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
+  const start = () => { hide(); choosePhoneLogin(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); };
   net19.onBody(start);
 })();

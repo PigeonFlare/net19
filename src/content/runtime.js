@@ -47,7 +47,7 @@
   };
   const watch = (run, options = { childList: true, subtree: true }) => {
     const later = frame(run);
-    onBody(() => { run(); new MutationObserver(later).observe(document.body, options); });
+    onBody(() => { run(); new MutationObserver(later).observe(document.documentElement, options); });
     return later;
   };
   globalThis.net19 = { lang, say, english, onBody, frame, watch };

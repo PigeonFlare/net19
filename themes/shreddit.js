@@ -617,7 +617,7 @@ globalThis.net19Theme = {
   function later() { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; scan(); }); }
   const start = () => {
     scan();
-    new MutationObserver(() => { retries = 0; later(); }).observe(document.body, { childList: true, subtree: true });
+    new MutationObserver(() => { retries = 0; later(); }).observe(document.documentElement, { childList: true, subtree: true });
     setInterval(() => times(document), 30000);
   };
   const VIEWS = [['/', 'true'], ['/r/', 'false'], ['/r/popular', 'true'], ['/r/all', 'true']];

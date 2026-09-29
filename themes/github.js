@@ -79,7 +79,7 @@ globalThis.net19Theme = {
   let queued = false;
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
   const start = () => {
-    fix(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true });
+    fix(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
     addEventListener('load', later, { once: true }); for (const t of [1000, 3000, 6000]) setTimeout(later, t);
   };
   net19.onBody(start);

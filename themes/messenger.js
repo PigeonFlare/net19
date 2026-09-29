@@ -55,7 +55,7 @@ globalThis.net19Theme = {
   const later = () => { if (queued) return; queued = true; setTimeout(() => requestAnimationFrame(() => { queued = false; fix(); }), 120); };
   const start = () => {
     fix();
-    new MutationObserver(later).observe(document.body, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['placeholder'] });
+    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['placeholder'] });
   };
   net19.onBody(start);
 })();

@@ -53,7 +53,7 @@ globalThis.net19Theme = (() => {
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); comments(); sections(); }); };
   const start = () => {
     fix(); comments(); sections();
-    new MutationObserver(later).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
+    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
   };
   net19.onBody(start);
 })();
@@ -75,7 +75,7 @@ globalThis.net19Theme = (() => {
   };
   let queued = false;
   const start = () => new MutationObserver(() => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); })
-    .observe(document.body, { childList: true, subtree: true });
+    .observe(document.documentElement, { childList: true, subtree: true });
   if (document.body) { mark(); start(); } else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); mark(); start(); } }).observe(document.documentElement, { childList: true });
 })();
 (() => {

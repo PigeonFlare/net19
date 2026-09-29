@@ -15,6 +15,6 @@ globalThis.net19Theme = {
       if (title.textContent.trim() === 'Short Stories') title.closest('[data-module], .PageList, bsp-playlist-module-carousel')?.setAttribute('data-n19-later', '');
     }
   };
-  const start = () => { fix(); new MutationObserver(() => requestAnimationFrame(fix)).observe(document.body, { childList: true, subtree: true }); };
+  const start = () => { fix(); new MutationObserver(() => requestAnimationFrame(fix)).observe(document.documentElement, { childList: true, subtree: true }); };
   net19.onBody(start);
 })();

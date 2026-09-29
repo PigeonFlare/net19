@@ -12,7 +12,7 @@ globalThis.net19Theme = {
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
   const start = () => {
     fix();
-    new MutationObserver(later).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
+    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
   };
   net19.onBody(start);
 })();
@@ -30,7 +30,7 @@ globalThis.net19Theme = {
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
   const start = () => {
     later();
-    new MutationObserver(later).observe(document.body, { childList: true, subtree: true });
+    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
     new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-flip'] });
   };
   net19.onBody(start);

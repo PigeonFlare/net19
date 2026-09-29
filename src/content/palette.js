@@ -100,6 +100,7 @@ import { createRecolor } from './recolor.js';
     observer.observe(document.documentElement, { attributes: true, attributeFilter: theme.watch || ['class', 'dark', 'data-color-mode', 'data-theme', 'style'] });
     if (hasMap && document.head) observer.observe(document.head, { childList: true });
     if (document.body) observer.observe(document.body, { attributes: true, attributeFilter: ['class', 'style'] });
+    new MutationObserver(() => { if (document.body) observer.observe(document.body, { attributes: true, attributeFilter: ['class', 'style'] }); }).observe(document.documentElement, { childList: true });
     addEventListener('load', () => later(true), { once: true });
     device.addEventListener?.('change', () => later(true));
   };

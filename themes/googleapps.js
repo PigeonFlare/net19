@@ -182,7 +182,7 @@
         else if (r.target.nodeType === 1 && r.target !== document.body) again.push(r.target);
       }
       if (again.length) requestAnimationFrame(() => rejudge([...new Set(again)]));
-    }).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['aria-selected', 'aria-current', 'aria-expanded', 'open', 'data-selected'] });
+    }).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['aria-selected', 'aria-current', 'aria-expanded', 'open', 'data-selected'] });
     let sheetTimer = 0;
     const sheets = () => { clearTimeout(sheetTimer); sheetTimer = setTimeout(full, 60); };
     addEventListener('load', e => { if (e.target instanceof HTMLLinkElement || e.target === window || e.target === document) sheets(); }, true);
@@ -203,7 +203,7 @@
     }
   };
   let queued = false;
-  const start = () => { rename(); new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; rename(); }); } }).observe(document.body, { childList: true, subtree: true, characterData: true }); };
+  const start = () => { rename(); new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; rename(); }); } }).observe(document.documentElement, { childList: true, subtree: true, characterData: true }); };
   net19.onBody(start);
 })();
 
@@ -222,6 +222,6 @@
     }
   };
   let queued = false;
-  const start = () => { fix(); new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; fix(); }); } }).observe(document.body, { childList: true, subtree: true }); };
+  const start = () => { fix(); new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; fix(); }); } }).observe(document.documentElement, { childList: true, subtree: true }); };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();

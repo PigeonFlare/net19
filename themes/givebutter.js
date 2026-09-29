@@ -14,6 +14,6 @@ globalThis.net19Theme = {
       }
     }
   };
-  const start = () => { relabel(); new MutationObserver(() => requestAnimationFrame(relabel)).observe(document.body, { childList: true, subtree: true }); };
+  const start = () => { relabel(); new MutationObserver(() => requestAnimationFrame(relabel)).observe(document.documentElement, { childList: true, subtree: true }); };
   net19.onBody(start);
 })();

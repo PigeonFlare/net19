@@ -32,7 +32,7 @@ globalThis.net19Theme = {
   const start = () => {
     fix();
     observer = new MutationObserver(later);
-    observer.observe(document.body, { childList: true, subtree: true, characterData: true });
+    observer.observe(document.documentElement, { childList: true, subtree: true, characterData: true });
   };
   net19.onBody(start);
 })();

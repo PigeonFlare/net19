@@ -9,6 +9,6 @@ globalThis.net19Theme = { detect: () => (matchMedia('(prefers-color-scheme: dark
       a.append(t);
     }
   };
-  const start = () => { fix(); new MutationObserver(fix).observe(document.body, { childList: true, subtree: true }); };
+  const start = () => { fix(); new MutationObserver(fix).observe(document.documentElement, { childList: true, subtree: true }); };
   net19.onBody(start);
 })();
