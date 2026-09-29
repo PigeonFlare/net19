@@ -109,3 +109,4 @@ section.login-page::before,section.login-page::after,.bg-big-circle::before,.bg-
 .faqtab_box .tab-list .tab-item,.faqtab_box .tab-trigger,.faqtab_box .tab-list{box-shadow:none!important}
 .faqtab_box .tab-list .tab-item::before,.faqtab_box .tab-list .tab-item::after,.faqtab_box .tab-trigger::before,.faqtab_box .tab-trigger::after,.faqtab_box .tab-list::before,.faqtab_box .tab-list::after{display:none!important}
 body .donation-contributor-sidebar .contributor-box .contributor-flex .anony{color:#707070!important}
+a:has(>img[alt="youtube-icon"]){display:none!important}

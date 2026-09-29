@@ -32,3 +32,4 @@ html:root{--radius-button:4px!important;--radius-card:0px!important;--radius-inp
 :is([class*="styles_utilityHeaderWrapper"],[class*="styles_utilityWrapper"]) a,:is([class*="styles_utilityHeaderWrapper"],[class*="styles_utilityWrapper"]) button,:is([class*="styles_utilityHeaderWrapper"],[class*="styles_utilityWrapper"]) span{font-size:13px!important}
 body{font-family:"Helvetica Neue", Helvetica, Arial, sans-serif}
 a[data-test="@web/GlobalHeader/UtilityHeader/TargetCircle360"]{display:none!important}
+#headerPrimary [class*="styles_ndsPopover"][class*="styles_dismissible"],[data-n19-post2019]{display:none!important}

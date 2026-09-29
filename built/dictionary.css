@@ -63,3 +63,4 @@ blockquote.box-examples,blockquote.box-examples>em,blockquote.box-examples p{bor
 .box-item-entry{background-image:none!important}
 :where(:root:not([data-n19-safe])) body.pg-dcom-home .wrapper-site-hdr,:where(:root:not([data-n19-safe])) body.pg-dcom-home header#id-site-hdr{height:auto!important;min-height:88px!important}
 :where(:root:not([data-n19-safe])) body.pg-dcom-home .wrapper-site-hdr{padding-bottom:28px!important}
+h2.hdr-for-real-world,footer.site-ftr a[href*="help.dictionary.com"]{display:none!important}

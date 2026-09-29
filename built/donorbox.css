@@ -65,3 +65,5 @@ header.header-component#app_header nav .nav-item-button::after{filter:brightness
 #storyblok-body a.button.button-outline{background:var(--n19-db-teal)!important;border-color:var(--n19-db-teal)!important;color:#fff!important;border-radius:3px!important}
 #storyblok-body :is(h1,h2):not(.dark *){color:var(--n19-db-ink)!important}
 #storyblok-body :is(h1,h2,h3,h4,p,a,span,li,dt,dd,button,label):not(.material-icons,[class*="icon"]){font-family:var(--n19-db-font)!important;letter-spacing:0!important}
+footer nav[aria-label="Social Links"]{display:none!important}
+footer li:has(>a:is([href*="library.donorbox.org"],[href$="/security"],[href*="greenhouse.io"],[href$="/explore/about-us"],[href$="/charity-fundraising"],[href*="webflow"])){display:none!important}

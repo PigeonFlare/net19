@@ -48,3 +48,4 @@ html:root{--wp--custom--utility--radius:0!important}
 li:has(>a[href*="subscription-terms"i]),a[href*="subscription-terms"i]{display:none!important}
 .social-icons__icon--comments,.social-icons__icon--comments *{color:var(--n19-text)!important}
 .social-icons__icon--comments svg,.social-icons__icon--comments svg *{fill:currentColor!important}
+.nyp-zephr-flyout,iframe[id^="zephr-component-"]{display:none!important}

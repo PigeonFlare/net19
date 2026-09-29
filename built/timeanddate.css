@@ -31,6 +31,7 @@ html:root{--color-text-link:var(--n19-link)!important;--color-text-primary:var(-
 .tad-explore-box .tad-teaser--list-compact .tad-teaser__image,.tad-explore-box .tad-teaser--list-compact .tad-box__edge,.tad-explore-box .tad-teaser--list-compact .tad-teaser__abstract{display:none!important}
 :where(:root:not([data-n19-safe])) .tad-explore-box .tad-teaser--list-compact .tad-teaser__box,.tad-explore-box:where(:root:not([data-n19-safe])) .tad-teaser--list-compact .tad-teaser__box{padding:4px 0!important;min-height:0!important}
 .tad-explore-box .tad-teaser--list-compact .tad-teaser__box{background:transparent!important}
+:where(:root:not([data-n19-safe])) .tad-explore-box .tad-teaser--list-compact article.tad-box,.tad-explore-box:where(:root:not([data-n19-safe])) .tad-teaser--list-compact article.tad-box{margin:0!important;padding:0!important;min-height:0!important}
 .tad-explore-box .tad-teaser--list-compact .tad-teaser__heading{font-size:13px!important;line-height:18px!important;color:var(--n19-link)!important}
 .tad-explore-box .tad-teaser--list-compact:hover .tad-teaser__heading{text-decoration:underline}
 :where(:root:not([data-n19-safe])) .tad-explore-box__content,.tad-explore-box__content:where(:root:not([data-n19-safe])){gap:2px!important}
@@ -51,3 +52,14 @@ html:root{--color-text-link:var(--n19-link)!important;--color-text-primary:var(-
 .tad-explore-box input[type="submit"]{font-size:13px!important;font-weight:400!important;border-radius:0!important}
 .picker-city__input{border-radius:2px 0 0 2px!important;font-size:13px!important}
 .picker-city__button{border-radius:0 2px 2px 0!important}
+.feedback-bar__wrap,footer .footer-card,footer nav.footer__links-block--services,footer nav.footer__links-block--sites,footer .footer__links h4,footer .footer__social h4{display:none!important}
+footer .footer__social-icons a:is([href*="linkedin.com"],[href*="instagram.com"],[href*="youtube.com"]){display:none!important}
+footer nav.footer__links-block--company li:has(>a:is([href="/company/jobs"],[href*="feedback.html"],[href="/information/contact.html"],[href="/newsletter/"])){display:none!important}
+:where(:root:not([data-n19-safe])) footer .footer__links{display:flex!important;flex-wrap:wrap!important;align-items:center!important;justify-content:flex-end!important;gap:6px 0!important}
+:where(:root:not([data-n19-safe])) footer .footer__links nav,:where(:root:not([data-n19-safe])) footer .footer__links>section{margin:0!important;padding:0!important;width:auto!important;min-width:0!important}
+:where(:root:not([data-n19-safe])) footer .footer__links ul{display:flex!important;flex-wrap:wrap!important;margin:0!important;padding:0!important}
+footer .footer__links li{list-style:none!important}
+:where(:root:not([data-n19-safe])) footer .footer__links li{margin:0!important;padding:0 6px!important}
+footer .footer__links li{border-left:1px solid #999!important;line-height:12px!important}
+footer .footer__links a{font-size:12px!important}
+:where(:root:not([data-n19-safe])) footer .footer__social{display:flex!important;align-items:center!important;padding-left:10px!important}

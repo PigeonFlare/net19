@@ -10,3 +10,4 @@ a[href="/pmwiki/query.php?type=wl"]{display:none!important}
 .video-star-rating,.video-comment-count{display:none!important}
 @media (max-width:1060px){#main-header-nav a{font-size:15px!important}}
 @media (max-width:1035px){#main-header-nav a{font-size:14px!important}}
+.footer-left>a.img-link{display:none!important}

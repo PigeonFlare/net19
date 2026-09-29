@@ -59,3 +59,7 @@ html[data-wf-site] .navbar_v2 .navbar_platform_top-heading{color:var(--n19-gb-te
 html[data-wf-site] .navbar_v2 .navbar_platform_top-button{background:var(--n19-gb-blue)!important;color:#fff!important;border-radius:3px!important}
 html[data-wf-site] .navbar_v2 .navbar_platform_top-button img{filter:brightness(0) invert(1)!important}
 html[data-wf-site] section.section-component{--butter-base-ffbf00:var(--n19-gb-soft)}
+html[data-wf-site] :is(.section_compare2-results,.section_home2-help,.section_home2-unlock){display:none!important}
+html[data-wf-site] .footer-v2 form,html[data-wf-site] .footer-v2 :has(>form){display:none!important}
+html[data-wf-site] .footer-v2 a:is([href*="stripe.com"],[href*="tiktok.com"],[href*="apps.apple.com"],[href*="play.google.com"]){display:none!important}
+.intercom-lightweight-app,#intercom-container,.intercom-launcher,iframe[name="intercom-launcher-frame"]{display:none!important}

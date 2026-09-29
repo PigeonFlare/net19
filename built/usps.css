@@ -27,3 +27,4 @@ a.button--primary:hover,.button--primary:hover{background:var(--n19-navy-hover)!
 :where(:root:not([data-n19-safe])) nav[aria-label="Main"] ul.nav-list{display:inline-flex!important;justify-content:space-between!important;align-items:stretch!important}
 :where(:root:not([data-n19-safe])) nav[aria-label="Main"] ul.nav-list>li.menuheader:not(.qt-nav):not(.nav-search){width:auto!important;flex:0 0 auto!important}
 nav[aria-label="Main"] a.menuitem.nav-first-element{color:#fff!important;background-image:linear-gradient(transparent, transparent)!important}
+footer a:is([href*="instagram.com"],[href*="threads.net"],[href*="threads.com"]),footer li:has(>a:is([href*="instagram.com"],[href*="threads.net"],[href*="threads.com"])){display:none!important}
