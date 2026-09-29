@@ -276,6 +276,7 @@ section:has(> :is([class^="upperContainer_"], [class*=" upperContainer_"])) { bo
   background-size: calc(100% - 40px) 1px; background-position: 20px 0;
 }
 [data-list-id="chat-messages"] > li:first-of-type [class*="cozyMessage_"][class*="groupStart_"] { background-image: none; }
+[data-list-id="chat-messages"] > li[id^="chat-messages-"]:is(:has(+ li [class*="groupStart_"]), :has(+ :not(li[id^="chat-messages-"])), :last-of-type) [class*="cozyMessage_"] { padding-bottom: 20px !important; }
 [data-list-id="chat-messages"] [class*="cozyMessage_"] > [class*="contents_"] > img[class*="avatar_"],
 [data-list-id="chat-messages"] [class*="cozyMessage_"] > [class*="contents_"] > [class*="avatar_"]:not([class*="avatarDecoration_"]) {
   width: 40px !important; height: 40px !important; left: 16px !important; border-radius: 50% !important;

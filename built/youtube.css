@@ -536,3 +536,6 @@ html[data-n19-yt="music"] ytmusic-app :is(button,a):is(.ytSpecButtonShapeNextHos
 html[data-n19-yt="studio"] :is(ytcp-button,ytcp-button-shape) :is(button,.ytcp-button-shape-impl){border-radius:2px!important}
 html[data-n19-yt="studio"] ytcp-button .label,html[data-n19-yt="studio"] ytcp-button-shape .ytSpecButtonShapeNextButtonTextContent{text-transform:uppercase!important;letter-spacing:.5px!important}
 html[data-n19-yt="music"] ytmusic-nav-bar #right-content :is(a,button,.sign-in-link){border-radius:2px!important}
+ytd-comment-replies-renderer :is([class*="ytSubThreadConnection"],[class*="ytSubThreadShadow"]){display:none!important}
+:where(:root:not([data-n19-safe])) ytd-comment-replies-renderer [class*="ytSubThreadSubThread"]{margin-top:0!important}
+:where(:root:not([data-n19-safe])) ytd-comment-replies-renderer :is(#more-replies-sub-thread,#more-replies,#less-replies,#less-replies-sub-thread) button{height:32px!important}

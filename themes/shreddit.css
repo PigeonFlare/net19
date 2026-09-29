@@ -172,7 +172,8 @@ reddit-pdp-right-rail-post h3.i18n-list-item-post-title, reddit-pdp-right-rail-p
   color: #fff !important; font-size: 10px !important; font-weight: 700 !important; letter-spacing: .5px !important; }
 create-post-entry-point-wrapper { display: none !important; }
 shreddit-subreddit-header-buttons button, shreddit-join-button button { border-radius: 4px !important; text-transform: uppercase !important; font-size: 12px !important; font-weight: 700 !important; letter-spacing: .5px !important; }
-.grid-container { --ab-award-count: none !important; --ab-repost-display: none !important; }
+.grid-container, shreddit-post, shreddit-ad-post { --ab-award-count: none !important; --ab-repost-display: none !important; }
+shreddit-post[view-type="cardView"] > a[slot="title"] { margin: 0 !important; }
 #answers-suggested-queries-pdp, aside[aria-label="People also ask about section"], #right-rail-experience-root { display: none !important; }
 community-highlight-carousel, shreddit-community-highlights, [id="community-highlights"], achievements-progress-toast,
 [class*="floating-translation"], shreddit-translation-toggle, translation-toggle { display: none !important; }
