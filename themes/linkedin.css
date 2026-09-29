@@ -145,3 +145,4 @@ html[data-n19-li-app] body { font-family: -apple-system, system-ui, BlinkMacSyst
 [data-n19-li="pill"] { border-radius: 2px !important; }
 .google-auth-button, [class*="google-auth-button"], .alternate-signin-container, .or-separator, [class*="alternate-signin"] { display: none !important; }
 svg:is([id^="verified-"], [aria-label="Verified profile"]) { display: none !important; }
+[data-n19-li="fill"] { background-color: transparent !important; }

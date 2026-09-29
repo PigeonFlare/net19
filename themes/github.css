@@ -226,7 +226,7 @@ header.GlobalNav [data-n19-repotitle] a { color: var(--n19-link) !important; tex
 header.GlobalNav [data-n19-repotitle] span { margin: 0 4px; }
 header.GlobalNav [data-n19-repotitle] a[data-n19-repo] { font-weight: 600; }
 
-react-app[app-name="code-view"] [class*="PageLayout-Header-"]:has(#repo-title-component) { padding: 20px 0 62px !important; margin: 0 0 24px !important; background: var(--n19-bg-2) !important; box-shadow: 0 0 0 100vmax var(--n19-bg-2) !important; clip-path: inset(0 -100vmax) !important; }
+react-app[app-name="code-view"] [class*="PageLayout-Header-"]:has(#repo-title-component) { padding: 20px 0 62px !important; margin: 0 0 24px !important; background: var(--n19-bg-2) !important; box-shadow: 0 0 0 100vmax var(--n19-bg-2), 0 1px 0 100vmax var(--n19-border) !important; clip-path: inset(0 -100vmax -1px) !important; }
 react-app[app-name="code-view"] [class*="PageLayout-Header-"]:has(#repo-title-component) > div, react-app[app-name="code-view"] [class*="PageLayout-Header-"] :has(> .hide-whenNarrow) { padding: 0 !important; border: 0 !important; margin: 0 !important; }
 react-app[app-name="code-view"] [class*="PageLayout-Header-"] .d-md-flex:has(#repo-title-component) { justify-content: space-between !important; flex-wrap: nowrap !important; }
 #repo-title-component > div { justify-content: flex-start !important; font-size: 20px !important; }
@@ -239,3 +239,4 @@ react-app[app-name="code-view"] [class*="PageLayout-Header-"] .d-md-flex:has(#re
 button[aria-label^="Edit repository" i]:has([data-n19-edit]) { width: auto !important; height: 28px !important; padding: 3px 10px !important; font-size: 12px !important; font-weight: 600 !important; line-height: 20px !important; border: 1px solid var(--n19-btn-border) !important; border-radius: 3px !important; background: linear-gradient(-180deg, var(--n19-btn-from), var(--n19-btn-to) 90%) !important; color: var(--n19-btn-text) !important; }
 button[aria-label^="Edit repository" i]:has([data-n19-edit]) svg { display: none !important; }
 react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child > h2:has(button[aria-label^="Edit repository" i]) { display: flex !important; order: 99 !important; margin: 0 0 0 auto !important; font-size: 0 !important; line-height: 0 !important; }
+.d-md-flex:has(#repo-title-component) :is(li, div):has(> button[aria-label^="Pin " i]), .d-md-flex:has(#repo-title-component) button[aria-label^="Pin " i] { display: none !important; }

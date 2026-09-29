@@ -195,7 +195,7 @@ import { rgba } from './color.js';
     for (let n = walker.nextNode(); n && found.size < 3000; n = walker.nextNode()) if (n.parentElement) found.add(n.parentElement);
     return found;
   };
-  const lift = (text, pt, under, goal, alpha = 1) => {
+  const lift = (text, pt, under, goal, alpha = 1, side = null) => {
     const drawn = c => over(shownAs([...c.slice(0, 3), alpha], pt), under);
     const tryWith = end => {
       let lo = 0, hi = 1, best = null;
@@ -205,9 +205,9 @@ import { rgba } from './color.js';
       }
       return best;
     };
-    const toDark = tryWith([0, 0, 0]), toLight = tryWith([255, 255, 255]);
+    const toDark = side === 'light' ? null : tryWith([0, 0, 0]), toLight = side === 'dark' ? null : tryWith([255, 255, 255]);
     const pick = toDark && toLight ? (ratio(drawn(toDark), under) <= ratio(drawn(toLight), under) ? toDark : toLight) : toDark || toLight;
-    if (!pick) return ratio(shownAs([29, 29, 31, 1], pt), under) >= ratio(shownAs([245, 245, 247, 1], pt), under) ? 'dark' : 'light';
+    if (!pick) return side || (ratio(shownAs([29, 29, 31, 1], pt), under) >= ratio(shownAs([245, 245, 247, 1], pt), under) ? 'dark' : 'light');
     return `rgb(${pick[0]}, ${pick[1]}, ${pick[2]})`;
   };
   const SHAPES = 'path, circle, rect, polygon, polyline, ellipse, line, use';
@@ -262,12 +262,13 @@ import { rgba } from './color.js';
       const current = el.getAttribute('data-net19-ink');
       const size = parseFloat(style.fontSize), large = size >= 24 || (size >= 18.6 && +style.fontWeight >= 600);
       const chroma = c => Math.max(...c.slice(0, 3)) - Math.min(...c.slice(0, 3));
-      const floor = unknown ? (large ? 4.5 : 6.5) : large ? 3 : chroma(inText) > 90 || chroma(shown) > 90 ? 2.3 : 4;
+      const floor = unknown ? (large ? 4.5 : 6.5) : large ? 3 : chroma(inText) > 90 || chroma(shown) > 90 ? 3 : 4.5;
       if (ratio(shown, inText) >= floor) { if (current) changes.push([el, null]); continue; }
       if (!unknown && !current && overPicture(el, box)) continue;
       if (!unknown && !current && !agrees(el, bg.painter)) continue;
       if (!original.has(el)) original.set(el, text);
-      const lifted = lift(text, pt, inText, floor + .3, text[3] * fade);
+      const side = unknown ? (lum(shownAs(seen, pt)) >= lum(bg.wash([128, 128, 128, 1])) ? 'light' : 'dark') : null;
+      const lifted = lift(text, pt, inText, floor + .3, text[3] * fade, side);
       if (current !== lifted) changes.push([el, lifted]);
     }
     for (const f of document.querySelectorAll('input:not([type=hidden]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=submit]):not([type=button]):not([type=image]):not([type=reset]), textarea')) {
@@ -314,7 +315,7 @@ import { rgba } from './color.js';
       const shown = over(shownAs(paint, pt), under);
       if (ratio(shown, under) >= 2.6) { if (current) svg.removeAttribute('data-net19-icon'); continue; }
       if (!unknown && !current && !agrees(svg, bg.painter)) continue;
-      const want = ratio(shownAs([29, 29, 31, 1], pt), under) >= ratio(shownAs([232, 234, 237, 1], pt), under) ? 'dark' : 'light';
+      const want = unknown ? (lum(shownAs(paint, pt)) >= lum(bg.wash([128, 128, 128, 1])) ? 'light' : 'dark') : ratio(shownAs([29, 29, 31, 1], pt), under) >= ratio(shownAs([232, 234, 237, 1], pt), under) ? 'dark' : 'light';
       if (current !== want) svg.setAttribute('data-net19-icon', want);
     }
   };

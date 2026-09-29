@@ -71,6 +71,13 @@ globalThis.net19Theme = {
       const style = getComputedStyle(el);
       if (parseFloat(style.borderTopLeftRadius) >= 6 && opaque(style) && (style.boxShadow !== 'none' || style.borderTopStyle !== 'none')) mark(el, 'card');
     }
+    for (const card of main.querySelectorAll('[data-n19-li="card"]')) {
+      for (const inner of card.querySelectorAll(':scope > div, :scope > div > div, :scope > section, :scope > div > section')) {
+        if (inner.hasAttribute('data-n19-li') || inner.offsetWidth < card.offsetWidth * .9 || inner.offsetHeight < card.offsetHeight * .6) continue;
+        const style = getComputedStyle(inner);
+        if (opaque(style) && style.backgroundImage === 'none') mark(inner, 'fill');
+      }
+    }
     for (const button of main.querySelectorAll('button, a[role="button"], [role="button"]')) {
       if (checked.has(button) || button.hasAttribute('data-n19-li') || !button.offsetWidth) continue;
       checked.add(button);

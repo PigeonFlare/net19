@@ -542,3 +542,4 @@ html[data-n19-yt="music"] ytmusic-nav-bar #right-content :is(a, button, .sign-in
 ytd-comment-replies-renderer :is([class*="ytSubThreadConnection"], [class*="ytSubThreadShadow"]) { display: none !important; }
 ytd-comment-replies-renderer [class*="ytSubThreadSubThread"] { margin-top: 0 !important; }
 ytd-comment-replies-renderer :is(#more-replies-sub-thread, #more-replies, #less-replies, #less-replies-sub-thread) button { height: 32px !important; }
+ytd-structured-description-content-renderer :is(#video-summary, ytd-video-description-infocards-section-renderer, ytd-expandable-metadata-renderer) { display: none !important; }
