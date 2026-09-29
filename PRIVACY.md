@@ -11,6 +11,7 @@ Nothing about you. Net19 has no server and sends nothing anywhere. Its themes ar
 Two themes use a site's own settings:
 
 - Wikipedia article links get `useskin=vector`, Wikipedia's own legacy skin.
+- Signed in to Reddit, opening the feed menu asks reddit.com itself for the list of communities you subscribe to, the same list Reddit's own sidebar shows, so the menu can show them as it did in 2019. The list stays in the open page.
 - Reddit feeds open in Reddit's own Classic view: signed out, net19 sets Reddit's `compact=true` preference cookie, the same one Reddit's own View menu sets. Choosing another view in that menu keeps your choice.
 
 ## Access and storage
