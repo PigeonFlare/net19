@@ -92,9 +92,6 @@ globalThis.net19Theme = {
     links();
     join();
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
-  const start = () => { fix(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.watch(fix);
 })();
-globalThis.net19Theme.words = {"Anuncio": "Ad", "Deja comentarios sobre este anuncio": "Leave feedback for this Ad", "Publicité": "Ad", "Laisser un commentaire sur cette annonce": "Leave feedback for this Ad"};
+globalThis.net19Theme.words = {"Anuncio": "Ad", "Deja comentarios sobre este anuncio": "Leave feedback for this Ad", "Publicité": "Ad", "Laisser un commentaire sur cette annonce": "Leave feedback for this Ad", "Anúncio": "Ad", "Deixar feedback sobre este anúncio": "Leave feedback for this Ad", "Annuncio": "Ad", "Lascia un feedback per questo annuncio": "Leave feedback for this Ad", "広告": "Ad", "この広告のフィードバックを残す": "Leave feedback for this Ad", "Twitchコミュニティに参加しよう！": "Join the Twitch community!", "世界最高のライブ配信を楽しもう。": "Discover the best live streams anywhere.", "登録": "Sign Up", "广告": "Ad", "对此广告留下反馈": "Leave feedback for this Ad", "加入 Twitch 社区！": "Join the Twitch community!", "探索全球最精彩的直播内容。": "Discover the best live streams anywhere.", "注册": "Sign Up", "광고": "Ad", "이 광고에 대한 피드백을 남겨주세요": "Leave feedback for this Ad", "Twitch 커뮤니티와 함께하세요!": "Join the Twitch community!", "어디서나 최고의 생방송을 즐겨보세요.": "Discover the best live streams anywhere.", "회원가입": "Sign Up", "Реклама": "Ad", "Оставить отзыв для этой рекламы": "Leave feedback for this Ad", "إعلان": "Ad", "اترك تعليقًا على هذا الإعلان": "Leave feedback for this Ad", "الانضمام إلى مجتمع Twitch!": "Join the Twitch community!", "استكشف أفضل عمليات البث المباشر في أي مكان.": "Discover the best live streams anywhere.", "تسجيل": "Sign Up"};

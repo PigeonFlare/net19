@@ -627,7 +627,7 @@ globalThis.net19Theme = {
   function later() { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; scan(); }); }
   const start = () => {
     scan();
-    new MutationObserver(() => { retries = 0; later(); }).observe(document.body, { childList: true, subtree: true });
+    new MutationObserver(() => { retries = 0; later(); }).observe(document.documentElement, { childList: true, subtree: true });
     setInterval(() => times(document), 30000);
   };
   const VIEWS = [['/', 'true'], ['/r/', 'false'], ['/svc/shreddit/community-more-posts', 'false'], ['/r/popular', 'true'], ['/r/all', 'true']];
@@ -657,6 +657,6 @@ globalThis.net19Theme = {
   };
   viewsByDefault();
   loadFonts();
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();
 globalThis.net19Theme.words = {"Accesibilidad": "Accessibility", "Accessibilité": "Accessibility", "Acessibilidade": "Accessibility", "Accessibilità": "Accessibility", "アクセシビリティ": "Accessibility", "无障碍": "Accessibility", "접근성": "Accessibility", "Специальные возможности": "Accessibility", "सुलभता": "Accessibility", "إمكانية الوصول": "Accessibility"};

@@ -106,7 +106,7 @@ globalThis.net19Theme = {
     repost();
     guest();
     app();
-    new MutationObserver(later).observe(document.body, { childList: true, subtree: true });
+    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true }); else start();
 })();

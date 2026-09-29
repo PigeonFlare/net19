@@ -49,6 +49,8 @@ test('a themed site is styled from its first paint; any other site is left alone
   expect(await other.url()).toBe('https://www.example.com/page');
   expect(requests.filter(url => /archive\.org|archive\.(is|ph|today)/.test(url))).toEqual([]);
   expect(await scripts()).not.toContain('net19-start');
+  await themed.evaluate(() => { const ask = document.createElement('button'); ask.id = 'late-ask'; ask.setAttribute('aria-label', 'Ask Gemini'); document.body.append(ask); });
+  await expect(themed.locator('#late-ask')).toHaveAttribute('data-net19-hidden', '');
   await themed.evaluate(() => document.dispatchEvent(new CustomEvent('net19-fit-check')));
   await expect(themed.locator('html')).toHaveAttribute('data-n19-fit', /^fit/);
   expect(await fitRecords()).toEqual([]);
@@ -146,7 +148,10 @@ test('a theme that stops fitting a redesigned page steps back to its safe layer,
   await expect(page.locator('#shorts')).toBeHidden();
   await expect(html).toHaveAttribute('data-net19-mode', /^(light|dark)$/);
   await expect.poll(fitRecords).toEqual(['youtube.com/redesign']);
+  await expect.poll(scripts).toContain('net19-safe');
+  await page.addInitScript(() => document.addEventListener('readystatechange', () => { if (document.readyState === 'interactive') (globalThis as any).safeEarly = document.documentElement.hasAttribute('data-n19-safe'); }));
   await page.reload();
+  expect(await page.evaluate(() => (globalThis as any).safeEarly)).toBe(true);
   await expect(html).toHaveAttribute('data-n19-safe', '');
   broken = false;
   for (let load = 0; load < 2; load++) {
@@ -156,6 +161,7 @@ test('a theme that stops fitting a redesigned page steps back to its safe layer,
     await expect(html).toHaveAttribute('data-n19-fit', /^fit/);
   }
   await expect.poll(fitRecords).toEqual([]);
+  await expect.poll(scripts).not.toContain('net19-safe');
   await page.reload();
   await check();
   await expect(html).toHaveAttribute('data-n19-fit', /^fit/);

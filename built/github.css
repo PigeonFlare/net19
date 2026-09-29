@@ -13,6 +13,8 @@ header.HeaderMktg button[aria-label^="Search or jump"i]{background:var(--n19-hea
 :where(:root:not([data-n19-safe])) header.HeaderMktg button[aria-label^="Search or jump"i]{height:34px!important;padding:0 10px!important;align-items:center!important}
 header.HeaderMktg button[aria-label^="Search or jump"i]{line-height:20px!important;color:var(--n19-header-dim)!important;font-size:14px!important;font-weight:400!important}
 header.HeaderMktg button[aria-label^="Search or jump"i] svg{display:none!important}
+header.HeaderMktg button[aria-label^="Search or jump"i]:has([data-net19-label]) [class*="HeaderSearch-module__label"]{visibility:hidden!important}
+:where(:root:not([data-n19-safe])) header.HeaderMktg :has(>button[aria-label^="Search or jump"i]){width:auto!important;max-width:none!important;margin-inline-end:16px!important}
 :where(:root:not([data-n19-safe])) header.HeaderMktg button[aria-label^="Search or jump"i]>span{justify-content:flex-start!important}
 header.HeaderMktg button[aria-label^="Search or jump"i]>span{text-align:left!important}
 :where(:root:not([data-n19-safe])) header.HeaderMktg button[aria-label^="Search or jump"i]>span{width:100%!important}

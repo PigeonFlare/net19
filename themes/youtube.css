@@ -186,6 +186,13 @@ html[data-n19-yt="www"] {
   & ytd-feed-nudge-renderer, & ytd-feed-nudge-renderer :is(#dismissible, #contents, #content, div) { background: transparent !important; border: 0 !important; box-shadow: none !important; border-radius: 0 !important; }
   & ytd-feed-nudge-renderer #title { font-size: 24px !important; font-weight: 400 !important; line-height: 32px !important; color: var(--n19-text) !important; }
   & ytd-feed-nudge-renderer #subtitle { font-size: 14px !important; line-height: 21px !important; color: var(--n19-text-2) !important; }
+  & .n19-best { margin: 40px auto 0 !important; text-align: center !important; }
+  & .n19-best h2 { font-size: 16px !important; font-weight: 500 !important; line-height: 20px !important; letter-spacing: .5px !important; text-transform: uppercase !important; color: var(--n19-text-2) !important; margin: 0 0 20px !important; }
+  & .n19-best-row { display: flex !important; justify-content: center !important; flex-wrap: wrap !important; gap: 24px !important; }
+  & .n19-best-row a { display: flex !important; flex-direction: column !important; align-items: center !important; gap: 8px !important; width: 96px !important; font-size: 14px !important; line-height: 18px !important; color: var(--n19-text) !important; text-decoration: none !important; }
+  & .n19-best-row a span { display: flex !important; align-items: center !important; justify-content: center !important; width: 64px !important; height: 64px !important; border-radius: 50% !important; background: #ff0000 !important; }
+  & .n19-best-row a svg { width: 32px !important; height: 32px !important; fill: #fff !important; }
+  & .n19-best-row a:hover { color: var(--n19-text) !important; } & .n19-best-row a:hover span { background: #cc0000 !important; }
   & ytd-background-promo-renderer :is(a, button).ytSpecButtonShapeNextHost, & ytd-message-renderer :is(a, button).ytSpecButtonShapeNextHost { border-radius: 2px !important; text-transform: uppercase !important; }
 
   & ytd-browse[page-subtype="channels"] ytd-rich-grid-renderer { width: 100% !important; max-width: 1284px !important; margin: 0 auto !important; display: block !important; }

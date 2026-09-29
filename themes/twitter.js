@@ -159,13 +159,13 @@ globalThis.net19Theme = {
         else for (const n of r.addedNodes) if (n.nodeType === 1) pending.push(n); else if (n.nodeType === 3 && n.parentElement) pending.push(n.parentElement);
       }
       later();
-    }).observe(document.body, { childList: true, subtree: true, characterData: true });
+    }).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
     const title = document.querySelector('title');
     if (title) new MutationObserver(later).observe(title, { childList: true, characterData: true, subtree: true });
     setInterval(() => { if (!document.hidden) recolor(); }, 1500);
     new MutationObserver(recolor).observe(document.documentElement, { attributes: true, attributeFilter: ['data-net19-mode', 'data-n19-tw-bg'] });
   };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();
 (() => {
   const WORDS = new Map([['Happening now', 'See what’s happening in the world right now'], ['Continue with phone', 'Sign up'],
@@ -235,9 +235,9 @@ globalThis.net19Theme = {
   const start = () => {
     if (location.pathname !== '/') return;
     fix();
-    new MutationObserver(() => { if (location.pathname === '/') later(); }).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
+    new MutationObserver(() => { if (location.pathname === '/') later(); }).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
   };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();
 (() => {
   const BIRD = 'https://abs.twimg.com/favicons/twitter.2.ico';
@@ -343,8 +343,8 @@ globalThis.net19Theme = {
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; layout(); }); };
   const start = () => {
     layout();
-    new MutationObserver(later).observe(document.body, { childList: true, subtree: true });
+    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
     globalThis.navigation?.addEventListener?.('navigatesuccess', later);
   };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();

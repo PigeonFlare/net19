@@ -31,7 +31,7 @@ globalThis.net19Theme = {
   };
   let queued = false;
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
-  const start = () => { fix(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true, characterData: true }); addEventListener("load", later); };
+  const start = () => { fix(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, characterData: true }); addEventListener("load", later); };
   if (document.body) start();
   else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement || document, { childList: true, subtree: true });
 })();

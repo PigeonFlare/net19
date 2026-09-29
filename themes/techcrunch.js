@@ -15,6 +15,6 @@ globalThis.net19Theme = {
     if (!RAIL.matches) return;
     for (const logo of document.querySelectorAll(`${LOGO}[inert], ${LOGO}[aria-hidden="true"]`)) { logo.removeAttribute('inert'); logo.removeAttribute('aria-hidden'); }
   };
-  const start = () => { fix(); new MutationObserver(fix).observe(document.body, { subtree: true, childList: true, attributes: true, attributeFilter: ['inert', 'aria-hidden'] }); };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  const start = () => { fix(); new MutationObserver(fix).observe(document.documentElement, { subtree: true, childList: true, attributes: true, attributeFilter: ['inert', 'aria-hidden'] }); };
+  net19.onBody(start);
 })();

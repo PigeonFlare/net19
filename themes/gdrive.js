@@ -34,8 +34,8 @@ if (location.hostname === 'docs.google.com') addEventListener('load', () => setT
     for (const field of document.querySelectorAll('#gb input[name="q"][placeholder="Search in Drive"]')) { field.placeholder = 'Search Drive'; field.setAttribute('aria-label', 'Search Drive'); }
   };
   let queued = false;
-  const start = () => { run(); new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; run(); }); } }).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  const start = () => { run(); new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; run(); }); } }).observe(document.documentElement, { childList: true, subtree: true }); };
+  net19.onBody(start);
 })();
 (() => {
   if (location.hostname !== 'docs.google.com') return;
@@ -44,6 +44,6 @@ if (location.hostname === 'docs.google.com') addEventListener('load', () => setT
     if (menu && menu.textContent.trim() === 'Extensions') for (const node of menu.childNodes) if (node.nodeType === 3 && node.nodeValue.trim() === 'Extensions') node.nodeValue = 'Add-ons';
   };
   let queued = false;
-  const start = () => { run(); new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; run(); }); } }).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  const start = () => { run(); new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; run(); }); } }).observe(document.documentElement, { childList: true, subtree: true }); };
+  net19.onBody(start);
 })();

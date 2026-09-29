@@ -14,6 +14,6 @@ globalThis.net19Theme = {
     link.href = 'https://www.politico.com/magazine/'; link.removeAttribute('target'); link.removeAttribute('data-tracking'); link.textContent = 'Magazine';
     pro.parentElement.before(item);
   };
-  const start = () => { addMagazine(); new MutationObserver(addMagazine).observe(document.body, { childList: true, subtree: true }); };
+  const start = () => { addMagazine(); new MutationObserver(addMagazine).observe(document.documentElement, { childList: true, subtree: true }); };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();

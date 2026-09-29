@@ -13,7 +13,7 @@ import { rgba } from './color.js';
   const CONTROL = 'button, a, [role="button"], [role="tab"], [role="menuitem"], [role="link"], [role="option"], [class*="chip" i]';
   const ASKING = /^ask (?:gmail|google|photos|drive|maps|youtube|docs)\b|\b(?:or ask\b|ask anything|ask (?:a|any|your) question|ask (?:ai|me|gemini|copilot|rufus)|chat with)/i;
   const hideLater = scope => {
-    for (const el of scope.querySelectorAll?.(CONTROL) || []) {
+    for (const el of [...(scope.matches?.(CONTROL) ? [scope] : []), ...scope.querySelectorAll?.(CONTROL) || []]) {
       if (el.hasAttribute('data-net19-hidden')) continue;
       const words = el.textContent;
       if (words.length > 200 && !el.hasAttribute('aria-label') && !el.hasAttribute('title')) continue;
@@ -23,7 +23,7 @@ import { rgba } from './color.js';
         if (item && /^(LI|YT-CHIP-CLOUD-CHIP-RENDERER)$/.test(item.tagName) && item.children.length === 1) item.setAttribute('data-net19-hidden', '');
       }
     }
-    for (const field of scope.querySelectorAll?.('input[placeholder], textarea[placeholder]') || []) {
+    for (const field of [...(scope.matches?.('input[placeholder], textarea[placeholder]') ? [scope] : []), ...scope.querySelectorAll?.('input[placeholder], textarea[placeholder]') || []]) {
       const text = field.getAttribute('placeholder');
       if (!ASKING.test(text)) continue;
       const plain = text.replace(/\s*(?:,|\bor\b)?\s*(?:ask|chat)\b.*$/i, '').trim();
@@ -242,6 +242,7 @@ import { rgba } from './color.js';
     new MutationObserver(records => {
       let added = false;
       for (const r of records) {
+        if ((r.type === 'attributes' && r.target === root) || r.target === document.head || r.target.parentNode === document.head) continue;
         if (r.type === 'childList') {
           textCache = null;
           for (const n of r.addedNodes) { if (n.nodeType === 1) { hideLater(n); added = true; } }
@@ -250,7 +251,7 @@ import { rgba } from './color.js';
         if (r.type === 'attributes' && r.attributeName === 'placeholder' && ASKING.test(r.target.getAttribute('placeholder') || '')) hideLater(r.target.parentElement || r.target);
       }
       if (added) { dirty = true; soon(); }
-    }).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style', 'hidden', 'open', 'aria-expanded', 'placeholder'] });
+    }).observe(root, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style', 'hidden', 'open', 'aria-expanded', 'placeholder'] });
     new MutationObserver(() => { dirty = true; soon(50); }).observe(root, { attributes: true, attributeFilter: ['data-net19-mode', 'data-net19-recolor', 'class'] });
     for (const type of ['pointerover', 'focusin', 'click', 'keyup']) addEventListener(type, () => soon(), { capture: true, passive: true });
     for (const type of ['transitionend', 'animationend']) addEventListener(type, () => { dirty = true; soon(200); }, { capture: true, passive: true });

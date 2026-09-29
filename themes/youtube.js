@@ -53,9 +53,9 @@ globalThis.net19Theme = (() => {
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); comments(); sections(); }); };
   const start = () => {
     fix(); comments(); sections();
-    new MutationObserver(later).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
+    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
   };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();
 (() => {
   if (!/^(www\.)?youtube\.com$/.test(location.hostname)) return;
@@ -75,7 +75,7 @@ globalThis.net19Theme = (() => {
   };
   let queued = false;
   const start = () => new MutationObserver(() => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); })
-    .observe(document.body, { childList: true, subtree: true });
+    .observe(document.documentElement, { childList: true, subtree: true });
   if (document.body) { mark(); start(); } else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); mark(); start(); } }).observe(document.documentElement, { childList: true });
 })();
 (() => {
@@ -310,6 +310,39 @@ globalThis.net19Theme = (() => {
     if (!english()) return;
     for (const text of document.querySelectorAll('ytd-search-header-renderer #filter-button .ytSpecButtonShapeNextButtonTextContent, ytd-search-header-renderer #filter-button .ytSpecButtonShapeNextButtonTextContent span')) if (/^\s*Filters\s*$/.test(text.textContent) && !text.firstElementChild) text.textContent = 'Filter';
   };
+  const BEST = [['Music', '/channel/UC-9-kyTW8ZkZNDHQJ6FgpwQ', 'M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z'],
+    ['Sports', '/channel/UCEgdi0XIXXZ-qJOFPf4JSKw', 'M19 5h-2V3H7v2H5c-1.1 0-2 .9-2 2v1c0 2.55 1.92 4.63 4.39 4.94A5.01 5.01 0 0 0 11 15.9V19H7v2h10v-2h-4v-3.1a5.01 5.01 0 0 0 3.61-2.96C19.08 12.63 21 10.55 21 8V7c0-1.1-.9-2-2-2zM5 8V7h2v3.82C5.84 10.4 5 9.3 5 8zm14 0c0 1.3-.84 2.4-2 2.82V7h2v1z'],
+    ['Gaming', '/gaming', 'M21 6H3c-1.1 0-2 .9-2 2v8c0 1.1.9 2 2 2h18c1.1 0 2-.9 2-2V8c0-1.1-.9-2-2-2zm-10 7H8v3H6v-3H3v-2h3V8h2v3h3v2zm4.5 2c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zm4-3c-.83 0-1.5-.67-1.5-1.5S18.67 9 19.5 9s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z'],
+    ['News', '/channel/UCYfdidRxbB8Qhf0Nx7ioOYw', 'M20 3H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM11 17H5v-2h6v2zm0-4H5v-2h6v2zm0-4H5V7h6v2zm8 8h-6V7h6v10z'],
+    ['Live', '/channel/UC4R8DWoMoI7CAwX8_LjQHig', 'M16.94 6.91l-1.41 1.45c.9.94 1.46 2.22 1.46 3.64s-.56 2.71-1.46 3.64l1.41 1.45c1.27-1.31 2.05-3.11 2.05-5.09s-.78-3.79-2.05-5.09zM19.77 4l-1.41 1.45C19.98 7.13 21 9.44 21 12.01c0 2.57-1.01 4.88-2.64 6.54l1.4 1.45c2.01-2.04 3.24-4.87 3.24-7.99 0-3.13-1.23-5.96-3.23-8.01zM7.06 6.91c-1.27 1.3-2.05 3.1-2.05 5.09s.78 3.79 2.05 5.09l1.41-1.45c-.9-.94-1.46-2.22-1.46-3.64s.56-2.71 1.46-3.64L7.06 6.91zM5.64 5.45 4.24 4C2.23 6.04 1 8.87 1 11.99c0 3.13 1.23 5.96 3.23 8.01l1.41-1.45C4.02 16.87 3 14.56 3 11.99s1.01-4.88 2.64-6.54zM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6z']];
+  const bestOf = () => {
+    const home = document.querySelector('ytd-browse[page-subtype="home"]:not([hidden])');
+    const nudge = home?.querySelector('ytd-feed-nudge-renderer #content-wrapper');
+    const empty = nudge && !home.querySelector('ytd-rich-item-renderer');
+    const shelf = document.querySelector('.n19-best');
+    if (!empty) { shelf?.remove(); return; }
+    if (shelf?.parentElement === nudge) return;
+    const box = document.createElement('div');
+    box.className = 'n19-best';
+    const heading = net19.say('Best of YouTube');
+    if (heading) { const h = document.createElement('h2'); h.textContent = heading; box.append(h); }
+    const row = document.createElement('div');
+    row.className = 'n19-best-row';
+    for (const [label, href, path] of BEST) {
+      const a = document.createElement('a');
+      a.href = href;
+      const circle = document.createElement('span');
+      circle.append(icon(path));
+      a.append(circle);
+      const text = net19.say(label);
+      if (text) a.append(document.createTextNode(text));
+      a.title = text || '';
+      row.append(a);
+    }
+    box.append(row);
+    shelf?.remove();
+    nudge.append(box);
+  };
   const LIBRARY = /^\s*You\s*$/;
   const guide = () => {
     if (!english()) return;
@@ -318,10 +351,7 @@ globalThis.net19Theme = (() => {
       else if (/^\s*Explore\s*$/.test(title.textContent || '') && !title.querySelector('*') && title.matches('#guide-section-title')) title.textContent = 'Best of YouTube';
     }
   };
-  let queued = false;
-  const run = () => { stats(); channel(); search(); guide(); metadata(); filterLabel(); };
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; run(); }); };
-  const start = () => { run(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['aria-label', 'aria-selected', 'hidden'] }); };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  const run = () => { stats(); channel(); search(); guide(); metadata(); filterLabel(); bestOf(); };
+  net19.watch(run, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['aria-label', 'aria-selected', 'hidden'] });
 })();
 globalThis.net19Theme.words = {"Capítulos": "Chapters", "Ver todo": "View all", "Transcripción": "Transcript", "Sigue la transcripción para no perderte nada.": "Follow along using the transcript.", "Mostrar transcripción": "Show transcript", "Chapitres": "Chapters", "Tout afficher": "View all", "Transcription": "Transcript", "Suivez la vidéo à l'aide de la transcription.": "Follow along using the transcript.", "Afficher la transcription": "Show transcript", "Capitoli": "Chapters", "チャプター": "Chapters", "章节": "Chapters", "챕터": "Chapters", "Главы": "Chapters", "चैप्टर": "Chapters", "الفصول": "Chapters", "Transcrição": "Transcript", "Trascrizione": "Transcript", "文字起こし": "Transcript", "转写文稿": "Transcript", "스크립트": "Transcript", "Текст видео": "Transcript", "ट्रांसक्रिप्ट": "Transcript", "النص": "Transcript"};

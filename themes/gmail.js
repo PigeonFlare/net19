@@ -41,9 +41,9 @@
     addEventListener('load', () => setTimeout(() => globalThis.net19Theme.rejudge?.(), 600), { once: true });
     for (const wait of [1500, 4000]) setTimeout(() => { picture(); globalThis.net19Theme.rejudge?.(); }, wait);
     new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; picture(); }); } })
-      .observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['style'] });
+      .observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['style'] });
   };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();
 (() => {
   const TABS = /^(?:discover|flows|activity)$/i;
@@ -64,7 +64,7 @@
   let queued = false;
   const start = () => {
     panel();
-    new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; panel(); }); } }).observe(document.body, { childList: true, subtree: true });
+    new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; panel(); }); } }).observe(document.documentElement, { childList: true, subtree: true });
   };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();

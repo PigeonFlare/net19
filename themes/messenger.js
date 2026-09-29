@@ -55,7 +55,8 @@ globalThis.net19Theme = {
   const later = () => { if (queued) return; queued = true; setTimeout(() => requestAnimationFrame(() => { queued = false; fix(); }), 120); };
   const start = () => {
     fix();
-    new MutationObserver(later).observe(document.body, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['placeholder'] });
+    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['placeholder'] });
   };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();
+globalThis.net19Theme.words = {"Política de cookies": "Cookie Policy", "Politique d’utilisation des cookies": "Cookie Policy", "Política de Cookies": "Cookie Policy", "Normativa sui cookie": "Cookie Policy", "Cookieポリシー": "Cookie Policy", "Cookie 政策": "Cookie Policy", "쿠키 정책": "Cookie Policy", "Политика в отношении файлов cookie": "Cookie Policy", "कुकी पॉलिसी": "Cookie Policy", "سياسة ملفات تعريف الارتباط": "Cookie Policy"};

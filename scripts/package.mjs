@@ -2,7 +2,7 @@ import { zipSync } from 'fflate';
 import { readdir, readFile, mkdir, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 const root = new URL('../', import.meta.url);
-const EXTENSION = /^(?:icons\/\d+\.png|(?:background|popup|content|main)\.js|popup\.html|ui\.css|themes\/[a-z0-9]+\.js|built\/[a-z0-9]+\.css|manifest\.json)$/;
+const EXTENSION = /^(?:icons\/\d+\.png|(?:background|popup|content|main|runtime|safe|safe-narrow)\.js|popup\.html|ui\.css|themes\/[a-z0-9]+\.js|built\/[a-z0-9]+\.css|manifest\.json)$/;
 const SOURCES = /^(?:themes\/[a-z0-9]+\.css|icons\/logo\.png)$/;
 const files = {};
 async function collect(directory, prefix = '') {

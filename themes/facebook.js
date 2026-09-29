@@ -185,9 +185,9 @@ globalThis.net19Theme = {
   const later = () => { if (queued) return; queued = setTimeout(() => requestAnimationFrame(run), Math.max(0, 300 - (performance.now() - last))); };
   const start = () => {
     run();
-    new MutationObserver(later).observe(document.body, { childList: true, subtree: true });
+    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
   };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  net19.onBody(start);
 })();
 (() => {
   if (!/^\/help\b/.test(location.pathname)) return;
@@ -205,6 +205,6 @@ globalThis.net19Theme = {
   };
   let queued = false;
   const later = () => { if (queued) return; queued = true; setTimeout(() => { queued = false; fix(); }, 300); };
-  const start = () => { fix(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  const start = () => { fix(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); };
+  net19.onBody(start);
 })();

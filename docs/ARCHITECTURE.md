@@ -30,7 +30,7 @@ A theme can `extends` another: Google's apps (Maps, Calendar, Photos, Play and t
   - optionally, a map from the site's current palette colors to 2019 colors;
   - optionally, `only: 'dark'` for designs that were dark-only in 2019.
 
-Theme scripts start as soon as `<body>` exists, not at `DOMContentLoaded`, and batch their work into `requestAnimationFrame`, which runs before the next paint. A page that streams in is changed piece by piece before any of it is shown, so the current design never flashes first.
+`runtime.js` loads before every theme and gives it `globalThis.net19`: `onBody(run)`, `watch(run)` (run once `<body>` exists, then again after DOM changes, batched into one `requestAnimationFrame`), `frame(run)`, and the language helpers below. Theme scripts start as soon as `<body>` exists, not at `DOMContentLoaded`, and batch their work into `requestAnimationFrame`, which runs before the next paint. A page that streams in is changed piece by piece before any of it is shown, so the current design never flashes first.
 
 The shared engine runs after it (`content.js`, built from `src/content/`) in the same isolated world. When `<body>` starts (stylesheets in `<head>` are parsed and nothing has painted yet), it:
 
@@ -42,9 +42,9 @@ Palette maps are rescanned only on mode changes or new stylesheets, and those re
 
 ### Languages
 
-Themes match a site's labels in English. `src/content/language.js` makes that work on pages in other languages:
+Themes match a site's labels in English. `src/content/runtime.js` makes that work on pages in other languages:
 
-- `theme.words` maps a site's own labels in other languages (Spanish, French, Portuguese, Italian, Japanese, Chinese, Korean, Russian, Hindi, Arabic) to the English label a rule tests, so a post-2019 feature is hidden whatever language the page is in. The lists come from loading the same page in each language and pairing what sits in the same place.
+- `theme.words` maps a site's own labels in other languages (Spanish, French, Portuguese, Italian, Japanese, Chinese, Korean, Russian, Hindi, Arabic) to the English label a rule tests, so a post-2019 feature is hidden whatever language the page is in. The lists come from `npm run audit:words`, which loads each theme's page in English and in each language, pairs the labels of what net19 hides by where they sit, and writes `artifacts/audit/words.json` (`--write` merges new pairs into the themes; `--reuse` writes from the last report without loading pages again). Review the report before writing: a site that shuffles its layout by language can pair the wrong labels.
 - `net19Say(label)` gives the few labels a theme adds itself (such as Reddit's "Posted by" or its feed menu) in the page's language, or `null` for a language it doesn't know.
 - Outside English, themes leave the site's own wording alone (search placeholders, taglines) instead of writing the 2019 English text over it, and skip added blocks that are only prose.
 - Right-to-left pages mirror the positioned rules with `:dir(rtl)`.
@@ -97,7 +97,7 @@ The check takes about 10–100 ms, depending on the size of the page.
 
 **Small screens.** Themes are drawn for desktop widths. On a phone-sized screen (under 760 px) or a touch-only screen under 1000 px, `fit.js` starts on the safe layer at `document_start`, before anything paints, and skips the check, so a site's mobile layout keeps working with 2019 colors, fonts and dark mode and without post-2019 features. Width here is the smaller of the window and the screen, because a phone reports a 980 px window until the page's viewport tag is read. Resizing the window, rotating a device or zooming re-decides it. Verdicts made under 1100 px are stored apart from desktop ones, so a narrow split-screen window never sends a wide window to the safe layer. The attribute is put back if a site's framework rewrites `<html>`.
 
-**Falling back.** A page that no longer fits switches to the safe layer at once. Its section (host plus first path segment, such as `youtube.com/watch`) is remembered in `chrome.storage.local`, so later visits start on the safe layer. Every visit keeps checking, and two fitting visits in a row return the section to the full theme. Nothing is stored for sections that fit, and updating net19 clears the list.
+**Falling back.** A page that no longer fits switches to the safe layer at once. Its section (host plus first path segment, such as `youtube.com/watch`) is remembered in `chrome.storage.local`, so later visits start on the safe layer. The background worker turns the stored sections into one small `document_start` script (`safe.js`, or `safe-narrow.js` for narrow verdicts) that sets `data-n19-safe` before anything paints, so a page that doesn't fit never shows the full theme first. Every visit keeps checking, and two fitting visits in a row return the section to the full theme. Nothing is stored for sections that fit, and updating net19 clears the list.
 
 **Weekly check.** `.github/workflows/weekly-fit.yml` runs `scripts/audit/fit.mjs` against every start URL in `scripts/audit/urls.json` each Monday. When a theme stops fitting or stops applying, it opens or updates a single "Weekly site check" issue, and closes it once everything fits again. Sites that block GitHub's servers are listed separately.
 

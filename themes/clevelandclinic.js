@@ -31,8 +31,5 @@ globalThis.net19Theme = {
     for (const el of document.querySelectorAll('span.font-bold')) if (text(el) === 'Medically Reviewed.') mark(el.closest('section'));
     for (const el of document.querySelectorAll('p, div')) if (/^Cleveland Clinic is a non-profit academic medical center\. Advertising/.test(text(el)) && el.children.length <= 1) mark(el);
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
-  const start = () => { fix(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
+  const later = net19.watch(fix);
 })();
