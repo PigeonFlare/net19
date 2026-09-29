@@ -146,7 +146,9 @@ import { rgba } from './color.js';
     const last = layers[layers.length - 1];
     if (last && last.color[3] >= .95) { base = shownAs(last.color, parity(last.el)); layers.pop(); }
     for (let i = layers.length - 1; i >= 0; i--) base = over(shownAs(layers[i].color, parity(layers[i].el)), base);
-    return { color: base, painter: last && last.color[3] >= .95 ? last.el : root };
+    const veil = 1 - layers.reduce((keep, l) => keep * (1 - l.color[3]), 1);
+    const wash = under => { let c = under; for (let i = layers.length - 1; i >= 0; i--) c = over(shownAs(layers[i].color, parity(layers[i].el)), c); return c; };
+    return { color: base, painter: last && last.color[3] >= .95 ? last.el : root, veil, wash };
   };
   const agrees = (el, painter) => {
     const b = el.getBoundingClientRect();
@@ -246,18 +248,24 @@ import { rgba } from './color.js';
       if (text[3] < .2) continue;
       const bg = backdrop(el);
       if (!bg) { if (el.hasAttribute('data-net19-ink')) changes.push([el, null]); continue; }
-      const pt = parity(el), inText = bg.color;
+      const pt = parity(el);
+      let inText = bg.color;
       const fade = fadeOf(el);
       if (fade < .15) continue;
       const seen = [...text.slice(0, 3), text[3] * fade];
+      const unknown = bg.veil >= .3 && (overPicture(el, box) || !agrees(el, bg.painter));
+      if (unknown) {
+        const light = bg.wash([255, 255, 255, 1]), dark = bg.wash([0, 0, 0, 1]);
+        inText = ratio(over(shownAs(seen, pt), light), light) <= ratio(over(shownAs(seen, pt), dark), dark) ? light : dark;
+      }
       const shown = over(shownAs(seen, pt), inText);
       const current = el.getAttribute('data-net19-ink');
       const size = parseFloat(style.fontSize), large = size >= 24 || (size >= 18.6 && +style.fontWeight >= 600);
       const chroma = c => Math.max(...c.slice(0, 3)) - Math.min(...c.slice(0, 3));
-      const floor = large ? 3 : chroma(inText) > 90 || chroma(shown) > 90 ? 2.3 : 4;
+      const floor = unknown ? (large ? 4.5 : 6.5) : large ? 3 : chroma(inText) > 90 || chroma(shown) > 90 ? 2.3 : 4;
       if (ratio(shown, inText) >= floor) { if (current) changes.push([el, null]); continue; }
-      if (!current && overPicture(el, box)) continue;
-      if (!current && !agrees(el, bg.painter)) continue;
+      if (!unknown && !current && overPicture(el, box)) continue;
+      if (!unknown && !current && !agrees(el, bg.painter)) continue;
       if (!original.has(el)) original.set(el, text);
       const lifted = lift(text, pt, inText, floor + .3, text[3] * fade);
       if (current !== lifted) changes.push([el, lifted]);
@@ -299,10 +307,14 @@ import { rgba } from './color.js';
       if (!paint) { if (current) svg.removeAttribute('data-net19-icon'); continue; }
       const bg = backdrop(svg);
       if (!bg) continue;
-      const pt = parity(svg), shown = over(shownAs(paint, pt), bg.color);
-      if (ratio(shown, bg.color) >= 2.6) { if (current) svg.removeAttribute('data-net19-icon'); continue; }
-      if (!current && !agrees(svg, bg.painter)) continue;
-      const want = ratio(shownAs([29, 29, 31, 1], pt), bg.color) >= ratio(shownAs([232, 234, 237, 1], pt), bg.color) ? 'dark' : 'light';
+      const pt = parity(svg);
+      let under = bg.color;
+      const unknown = bg.veil >= .3 && !agrees(svg, bg.painter);
+      if (unknown) { const light = bg.wash([255, 255, 255, 1]), dark = bg.wash([0, 0, 0, 1]); under = ratio(over(shownAs(paint, pt), light), light) <= ratio(over(shownAs(paint, pt), dark), dark) ? light : dark; }
+      const shown = over(shownAs(paint, pt), under);
+      if (ratio(shown, under) >= 2.6) { if (current) svg.removeAttribute('data-net19-icon'); continue; }
+      if (!unknown && !current && !agrees(svg, bg.painter)) continue;
+      const want = ratio(shownAs([29, 29, 31, 1], pt), under) >= ratio(shownAs([232, 234, 237, 1], pt), under) ? 'dark' : 'light';
       if (current !== want) svg.setAttribute('data-net19-icon', want);
     }
   };

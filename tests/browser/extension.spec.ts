@@ -10,7 +10,8 @@ const PAGE = (title: string) => `<!doctype html><html><head><meta charset="utf-8
   `<dialog id="modal">modal</dialog>` +
   `<input id="q" placeholder="Search or ask a question"><button id="gen">🍌 Create images</button><a id="ask" href="/x">Ask Question</a>` +
   `<div id="results" data-net19-hidden style="display:none"><a href="/1"><h3>One</h3></a><a href="/2"><h3>Two</h3></a><a href="/3"><h3>Three</h3></a></div>` +
-  `<div id="menu" style="background:rgba(250,250,252,.95);width:300px;height:40px"><a id="faint" href="/y" style="color:#fff">Find a Store</a><span id="dim" style="color:#8a8a8a">Grey on near-white</span><svg id="glyph" width="20" height="20" viewBox="0 0 20 20"><path d="M2 2h16v16H2z" fill="#f4f4f6"/></svg></div></main></body></html>`;
+  `<div id="menu" style="background:rgba(250,250,252,.95);width:300px;height:40px"><a id="faint" href="/y" style="color:#fff">Find a Store</a><span id="dim" style="color:#8a8a8a">Grey on near-white</span><svg id="glyph" width="20" height="20" viewBox="0 0 20 20"><path d="M2 2h16v16H2z" fill="#f4f4f6"/></svg></div></main>` +
+  `<div style="position:relative;width:500px;height:60px"><div style="position:absolute;inset:0;background:url(https://example.com/scene.jpg) #8a9bb0"></div><div style="position:relative;height:100%;background:rgba(22,22,22,.8)"><span id="veiled" style="color:#6d7176">Read mail on a picture</span></div></div></body></html>`;
 let context: BrowserContext, worker: Worker, extensionId: string, requests: string[], unexpected: string[];
 
 test.beforeEach(async ({}, info) => {
@@ -119,6 +120,8 @@ test('post-2019 features are hidden and unreadable text is given readable ink, o
   await expect(page.locator('#dim')).toHaveAttribute('data-net19-ink', /^rgb/);
   await expect(page.locator('#glyph')).toHaveAttribute('data-net19-icon', 'dark');
   await expect(page.locator('#bar')).not.toHaveAttribute('data-net19-ink', /.*/);
+  await expect(page.locator('#veiled')).toHaveAttribute('data-net19-ink', /.+/);
+  expect(Math.min(...await page.locator('#veiled').evaluate(e => getComputedStyle(e).color.match(/\d+/g).slice(0, 3).map(Number)))).toBeGreaterThan(180);
   await expect(page.locator('#results')).toBeVisible();
 });
 
