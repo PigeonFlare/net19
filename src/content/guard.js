@@ -72,12 +72,41 @@ import { rgba } from './color.js';
   };
   const MEDIA = 'img, picture, video, canvas, svg image, iframe';
   let layerOf = new Map(), mediaOf = new Map();
+  const tiles = new Map();
+  const texture = image => {
+    const url = /^url\("?([^")]+)"?\)$/.exec(image.trim())?.[1];
+    if (!url || /^data:image\/svg/.test(url)) return null;
+    if (tiles.has(url)) return tiles.get(url) || null;
+    let same = false;
+    try { same = /^data:/.test(url) || new URL(url, location.href).origin === location.origin; } catch {}
+    if (!same) { tiles.set(url, null); return null; }
+    tiles.set(url, null);
+    const img = new Image();
+    img.onload = () => {
+      try {
+        const canvas = new OffscreenCanvas(8, 8), ctx = canvas.getContext('2d', { willReadFrequently: true });
+        ctx.drawImage(img, 0, 0, 8, 8);
+        const d = ctx.getImageData(0, 0, 8, 8).data, sum = [0, 0, 0, 0];
+        for (let i = 0; i < d.length; i += 4) { sum[0] += d[i] * d[i + 3]; sum[1] += d[i + 1] * d[i + 3]; sum[2] += d[i + 2] * d[i + 3]; sum[3] += d[i + 3]; }
+        if (sum[3] / 64 < 200) return;
+        const mean = [sum[0] / sum[3], sum[1] / sum[3], sum[2] / sum[3], 1], m = lum(mean);
+        let spread = 0;
+        for (let i = 0; i < d.length; i += 4) spread = Math.max(spread, Math.abs(lum([d[i], d[i + 1], d[i + 2]]) - m));
+        if (spread > .12) return;
+        tiles.set(url, mean);
+        dirty = true; soon(50);
+      } catch {}
+    };
+    img.src = url;
+    return null;
+  };
   const layer = e => {
     let info = layerOf.get(e);
     if (!info) {
       const style = getComputedStyle(e);
       const shade = style.backgroundImage !== 'none' ? gradient(style.backgroundImage) : null;
-      info = { blocked: style.backgroundImage !== 'none' && !shade, shade, color: rgba(style.backgroundColor) };
+      const tile = style.backgroundImage !== 'none' && !shade ? texture(style.backgroundImage) : null;
+      info = { blocked: style.backgroundImage !== 'none' && !shade && !tile, shade: shade || tile, color: rgba(style.backgroundColor) };
       layerOf.set(e, info);
     }
     return info;
@@ -118,12 +147,13 @@ import { rgba } from './color.js';
     for (let i = layers.length - 1; i >= 0; i--) base = over(shownAs(layers[i].color, parity(layers[i].el)), base);
     return { color: base };
   };
-  const painted = e => { const st = getComputedStyle(e); return /url\(/.test(st.backgroundImage) || ['::before', '::after'].some(p => /url\(/.test(getComputedStyle(e, p).backgroundImage)); };
+  const painted = e => { const st = getComputedStyle(e); return (/url\(/.test(st.backgroundImage) && !texture(st.backgroundImage)) || ['::before', '::after'].some(p => /url\(/.test(getComputedStyle(e, p).backgroundImage)); };
   const overPicture = (el, box) => {
     const x = Math.min(innerWidth - 1, Math.max(0, box.left + Math.min(box.width, 60) / 2)), y = Math.min(innerHeight - 1, Math.max(0, box.top + box.height / 2));
     for (const hit of document.elementsFromPoint(x, y)) {
       if (hit === el || el.contains(hit)) continue;
       if (hit.matches(MEDIA) || painted(hit)) return true;
+      if (texture(getComputedStyle(hit).backgroundImage)) return false;
       const color = rgba(getComputedStyle(hit).backgroundColor);
       if (color && color[3] >= .95) return false;
     }
