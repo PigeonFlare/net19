@@ -50,6 +50,88 @@
   ],
   "features": [
     {
+      "match": "^Google Play logo$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s5",
+        "wb1"
+      ],
+      "note": "logo at the left of the bar"
+    },
+    {
+      "match": "^Games$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s5",
+        "wb2"
+      ],
+      "note": "Games section"
+    },
+    {
+      "match": "^Apps$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s5",
+        "wb2"
+      ],
+      "note": "Apps section"
+    },
+    {
+      "match": "^Search$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s5",
+        "s7"
+      ],
+      "note": "search"
+    },
+    {
+      "match": "^Terms of Service$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "wb1"
+      ],
+      "note": "footer"
+    },
+    {
+      "match": "^Privacy$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "wb1"
+      ],
+      "note": "footer"
+    },
+    {
+      "match": "^See more information on About this app$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "wb1"
+      ],
+      "note": "About this app section (the Install / Add to wishlist buttons sit in a repeated row the inventory does not list; they are in the app screenshot)"
+    },
+    {
+      "match": "^See more information on Ratings and reviews$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "wb1"
+      ],
+      "note": "reviews section"
+    },
+    {
       "match": "^(Google Play logo|Page Header|banner area|header area|Main|tablist area)$",
       "in2019": true,
       "evidence": [
