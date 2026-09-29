@@ -2,5 +2,8 @@ html { --n19-purple: #7360f2; --n19-text: #323232; --n19-page: #fff; }
 html[data-net19-mode="dark"] { --n19-purple: #7360f2; --n19-text: #323232; --n19-page: #fff; }
 
 .page-template-template-home .new-social { display: none !important; }
+a.global-btn-green { background-color: #56a01c !important; border-color: #56a01c !important; color: #fff !important; }
+:is(main .welcome, a.global-btn-green), main .welcome * { -webkit-text-fill-color: currentcolor !important; }
+main .welcome :is(h1, h2) { text-shadow: none !important; }
 
 li.categories_item:has(> a.categories_link:is([href*="-ChatGPT"], [href*="-AI-on-Viber"], [href*="-Viber-Pay"], [href*="-Viber-Plus"], [href*="-Viber-Dating"])) { display: none !important; }

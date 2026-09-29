@@ -29,9 +29,88 @@
       "date": "2019-2020",
       "shows": "header and hero",
       "file": "g5-evidence/viber/home-06.jpg"
+    },
+    {
+      "id": "s5",
+      "url": "https://arquivo.pt/wayback/20200416002929/https://www.viber.com/en/about/",
+      "date": "2020-04-16",
+      "shows": "About Viber page as captured in April 2020, before any later redesign and with the 2019 footer of s1: About Viber, Support / Media inquiries / Careers / Viber blog with in-text here, Brand Center and blog links",
+      "file": "/home/claude/sweeps/h3-evidence/viber/about-20200416.html"
     }
   ],
   "features": [
+    {
+      "match": "^Download$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "header menu"
+    },
+    {
+      "match": "^Features$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "header menu"
+    },
+    {
+      "match": "^Communities$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "header menu (Viber Communities launched January 2019)"
+    },
+    {
+      "match": "^Viber Out$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "header menu"
+    },
+    {
+      "match": "^Business$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "Business pill"
+    },
+    {
+      "match": "^Free and secure calls and messages to anyone, anywhere$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "hero headline"
+    },
+    {
+      "match": "^(Privacy Policy|Terms of Service)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "footer"
+    },
     {
       "match": "^(header|section|dialog|main|footer) area$|^repeated ",
       "in2019": true,
@@ -39,6 +118,15 @@
         "s1",
         "s3"
       ]
+    },
+    {
+      "match": "^(About Viber|Support|Media inquiries|Careers|Viber blog|here|blog|Brand Center|media@viber\\.com)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s5"
+      ],
+      "note": "About Viber page: s1 (2019) links to it from the footer; s5 is the earliest capture of the page itself (April 2020, same footer as 2019)"
     },
     {
       "match": "^(Free and secure calls and messages to anyone, anywhere|Keep your conversations going no matter where you are\\.|More than messaging|Always secure|Don't have Viber yet\\?|Viber|Company|Download|viber logo|Features|Communities|Security|Viber Out|Blog|Business|Download Viber|Learn more|Discover More Features|More About Security)$",
