@@ -8,7 +8,7 @@ globalThis.net19Theme = (() => {
   if (document.documentElement.getAttribute('data-n19-line') !== 'lp') return;
   const keep = () => { const mv = document.getElementById('mvArea'); if (mv) mv.setAttribute('data-net19-keep', ''); return !!mv; };
   const start = () => { if (keep()) return; const o = new MutationObserver(() => { if (keep()) o.disconnect(); }); o.observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();
 (() => {
   if (document.documentElement.getAttribute('data-n19-line') !== 'lp') return;
@@ -31,5 +31,5 @@ globalThis.net19Theme = (() => {
     }
   };
   const start = () => { fix(); new MutationObserver(() => requestAnimationFrame(fix)).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();

@@ -9,34 +9,13 @@ async function settings(): Promise<Settings> {
   return settingsFrom((await chrome.storage.local.get(SETTINGS_KEY))[SETTINGS_KEY]);
 }
 
-async function hasAccount(url: string): Promise<boolean> {
-  try {
-    const response = await fetch(url, { credentials: 'include', cache: 'no-store' });
-    if (!response.ok) return false;
-    const account = await response.json() as { data?: { name?: string }; name?: string };
-    return !!(account.data?.name || account.name);
-  } catch {
-    return false;
-  }
-}
-
-async function signedInThemes(): Promise<Set<string>> {
-  const ids = new Set<string>();
-  await Promise.all(THEMES.filter(theme => theme.legacy?.signedIn).map(async theme => {
-    const { url, name, account } = theme.legacy!.signedIn!;
-    const cookie = await chrome.cookies.get({ url, name }).catch(() => null);
-    if (cookie?.value && (!account || await hasAccount(account))) ids.add(theme.id);
-  }));
-  return ids;
-}
-
 function syncScripts(): Promise<unknown> {
   sync = sync.catch(() => undefined).then(async () => {
-    const [config, registered, signedIn] = await Promise.all([settings(), chrome.scripting.getRegisteredContentScripts(), signedInThemes()]);
+    const [config, registered] = await Promise.all([settings(), chrome.scripting.getRegisteredContentScripts()]);
     const active = (theme: HandmadeTheme) => config.enabled && !themePaused(theme, config.disabledHosts);
     const oldRules = await chrome.declarativeNetRequest.getDynamicRules();
     await chrome.declarativeNetRequest.updateDynamicRules({ removeRuleIds: oldRules.map(rule => rule.id),
-      addRules: navigationRules(config, theme => signedIn.has(theme.id)) });
+      addRules: navigationRules(config) });
     const desired: chrome.scripting.RegisteredContentScript[] = THEMES.filter(active).map(theme => ({
       id: `net19-theme-${theme.id}`, matches: themeMatches(theme), ...(theme.exclude ? { excludeMatches: theme.exclude } : {}), ...themeFiles(theme), runAt: 'document_start', allFrames: !!theme.frames, persistAcrossSessions: true }));
     const watched = [...new Set(THEMES.filter(active).flatMap(themeMatches))].sort();
@@ -87,5 +66,3 @@ chrome.runtime.onMessage.addListener((message, sender, respond) => {
 });
 chrome.runtime.onInstalled.addListener(() => { void cleanUp().catch(() => undefined).then(syncScripts).catch(() => undefined); });
 chrome.runtime.onStartup.addListener(() => { void syncScripts().catch(() => undefined); });
-const sessionCookies = THEMES.flatMap(theme => theme.legacy?.signedIn ? [theme.legacy.signedIn.name] : []);
-chrome.cookies.onChanged.addListener(({ cookie }) => { if (sessionCookies.includes(cookie.name)) void syncScripts().catch(() => undefined); });

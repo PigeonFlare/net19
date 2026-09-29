@@ -383,3 +383,7 @@ shreddit-feed :is(shreddit-post[view-type="compactView"], shreddit-ad-post[data-
 [id^="feed-post-credit-bar"] > [data-n19-posted] { color: var(--n19-meta) !important; font-size: 12px !important; }
 shreddit-ad-post[data-n19-classic] [slot="title"] .headline { font-size: 16px !important; line-height: 20px !important; font-weight: 500 !important; }
 shreddit-ad-post[data-n19-classic] [slot="thumbnail"] :is(img, video) { width: 96px !important; height: 72px !important; object-fit: cover !important; border-radius: 4px !important; }
+[data-n19-menu] { max-height: calc(100vh - 64px); overflow-y: auto; }
+[data-n19-menu] > a > span:first-child img { width: 20px; height: 20px; border-radius: 50%; object-fit: cover; margin: 0; }
+html:dir(rtl) shreddit-feed :is(shreddit-post, shreddit-ad-post) { padding: 8px 48px 2px 8px !important; background-image: linear-gradient(to left, var(--n19-vote) 40px, transparent 40px) !important; }
+html:dir(rtl) shreddit-feed :is(shreddit-post[view-type="compactView"], shreddit-ad-post[data-n19-classic]) { padding: 8px 48px 0 8px !important; background: var(--n19-card) linear-gradient(to left, var(--n19-vote) 40px, transparent 40px) !important; }

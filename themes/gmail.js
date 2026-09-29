@@ -43,7 +43,7 @@
     new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; picture(); }); } })
       .observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['style'] });
   };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();
 (() => {
   const TABS = /^(?:discover|flows|activity)$/i;
@@ -66,5 +66,5 @@
     panel();
     new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; panel(); }); } }).observe(document.body, { childList: true, subtree: true });
   };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();

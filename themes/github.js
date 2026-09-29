@@ -82,5 +82,5 @@ globalThis.net19Theme = {
     fix(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true });
     addEventListener('load', later, { once: true }); for (const t of [1000, 3000, 6000]) setTimeout(later, t);
   };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();

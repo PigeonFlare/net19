@@ -40,7 +40,7 @@
         if (s.paddingLeft === '72px' || s.marginLeft === '72px') { mark(e, 'offset'); break; }
       }
     }
-    for (const input of document.querySelectorAll('#searchBoxContainer input')) if (input.placeholder !== 'Search') input.placeholder = 'Search';
+    if (globalThis.net19Lang?.() === 'en') for (const input of document.querySelectorAll('#searchBoxContainer input')) if (input.placeholder !== 'Search') input.placeholder = 'Search';
     for (const el of document.querySelectorAll('#searchBoxContainer [data-test-id="dynamic-search-placeholder"], #searchBoxContainer [data-test-id="searchBarPlaceholder"]')) mark(el, 'later');
     const signup = document.querySelector('[role="main"] form input[type="email"], [role="main"] form input[name="id"]')?.closest('form');
     const module = document.querySelector('[data-test-id^="homepage-section-"]');
@@ -88,7 +88,7 @@
     new MutationObserver(later).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
     addEventListener('resize', later, { passive: true });
   };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();
 (() => {
   const FAMILIES = ['Pin Sans', 'PinSans', 'PinterestSansPro', 'Pinterest Sans', 'Pinterest Sans Pro'];
@@ -104,3 +104,4 @@
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', add, { once: true }); else add();
   addEventListener('load', add, { once: true });
 })();
+globalThis.net19Theme.words = {"Aviso de recopilación de información": "Notice at collection", "Explorar": "Explore", "Informations concernant la collecte de données": "Notice at collection", "Explorer": "Explore", "Avviso sulla raccolta": "Notice at collection", "Esplora": "Explore", "情報収集に関するお知らせ": "Notice at collection", "アイデアを探す": "Explore", "信息收集声明": "Notice at collection", "探索": "Explore", "컬렉션 알림": "Notice at collection", "탐색": "Explore", "संग्रह के दौरान नोटिस": "Notice at collection", "إشعار على المختارات": "Notice at collection", "استكشاف": "Explore"};

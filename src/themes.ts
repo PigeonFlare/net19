@@ -5,7 +5,6 @@ export type HandmadeTheme = {
   matches?: string[];
   exclude?: string[];
   query?: { pattern: string; params: Array<[string, string]> };
-  legacy?: { pattern: string; substitution: string; except?: string; signedIn?: { url: string; name: string; account?: string } };
   extends?: string;
   frames?: boolean;
 };
@@ -48,9 +47,7 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'youtube', name: 'YouTube', domains: ['youtube.com'] },
   { id: 'wikipedia', name: 'Wikipedia', domains: ['wikipedia.org'],
     query: { pattern: '^https://[a-z-]+\\.wikipedia\\.org/wiki/[^?#]*(#.*)?$', params: [['useskin', 'vector']] } },
-  { id: 'reddit', name: 'Reddit', domains: ['reddit.com'], matches: ['*://old.reddit.com/*'],
-    legacy: { pattern: '^https://(?:www\\.)?reddit\\.com(/(?:(?:r|u|user|comments|search|domain|hot|new|rising|controversial|top|best)(?:[/?#].*)?|[?#].*)?)$',
-      substitution: 'https://old.reddit.com\\1', except: '^https://(?:www\\.)?reddit\\.com/r/[^/]+/s/', signedIn: { url: 'https://www.reddit.com/', name: 'reddit_session', account: 'https://www.reddit.com/api/me.json' } } },
+  { id: 'reddit', name: 'Reddit', domains: ['reddit.com'], matches: ['*://old.reddit.com/*'] },
   { id: 'shreddit', name: 'Reddit', domains: ['reddit.com'], matches: ['*://www.reddit.com/*', '*://reddit.com/*', '*://new.reddit.com/*', '*://sh.reddit.com/*', '*://np.reddit.com/*'] },
   { id: 'github', name: 'GitHub', domains: ['github.com'] },
   { id: 'yahoo', name: 'Yahoo', domains: ['yahoo.com'] },

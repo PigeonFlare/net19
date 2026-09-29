@@ -32,7 +32,7 @@ globalThis.net19Theme = {
       const real = item.querySelector('[data-e2e="feed-follow"]');
       let follow = content.querySelector(':scope > [data-n19-tt="follow"]');
       if (!follow) {
-        follow = make('button', 'follow'); follow.type = 'button'; follow.textContent = 'Follow';
+        follow = make('button', 'follow'); follow.type = 'button'; follow.textContent = globalThis.net19Say?.('Follow') ?? 'Follow';
         follow.addEventListener('click', event => { event.preventDefault(); event.stopPropagation(); event.currentTarget.closest(ITEM)?.querySelector('[data-e2e="feed-follow"]')?.click(); });
         content.append(follow);
       }
@@ -57,5 +57,6 @@ globalThis.net19Theme = {
     new MutationObserver(records => { for (const r of records) if (!(r.target instanceof Element && r.target.closest('[data-n19-tt]'))) { later(); return; } })
       .observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['href', 'src'] });
   };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();
+globalThis.net19Theme.words = {"Boutique": "Shop", "Explorer": "Explore", "Mini-dramas": "Short dramas"};

@@ -11,10 +11,10 @@ globalThis.net19Theme = (() => {
 })();
 (() => {
   const fix = () => {
-    for (const input of document.querySelectorAll('ytmusic-search-box input')) if (input.placeholder && input.placeholder !== 'Search') input.placeholder = 'Search';
+    if (globalThis.net19Lang?.() === 'en') for (const input of document.querySelectorAll('ytmusic-search-box input')) if (input.placeholder && input.placeholder !== 'Search') input.placeholder = 'Search';
     const masthead = document.querySelector('#masthead, ytd-masthead');
     if (!masthead) return;
-    for (const input of masthead.querySelectorAll('input[name="search_query"], textarea[name="search_query"], .ytSearchboxComponentInput')) if (input.placeholder !== 'Search') input.placeholder = 'Search';
+    if (globalThis.net19Lang?.() === 'en') for (const input of masthead.querySelectorAll('input[name="search_query"], textarea[name="search_query"], .ytSearchboxComponentInput')) if (input.placeholder !== 'Search') input.placeholder = 'Search';
     for (const node of masthead.querySelectorAll('button, a, yt-button-shape, [role="button"]')) {
       if (/^\s*Ask YouTube\s*$/i.test(node.textContent || '') && !node.closest('[data-net19-hidden]')) node.setAttribute('data-net19-hidden', '');
     }
@@ -22,8 +22,9 @@ globalThis.net19Theme = (() => {
   const LATER_SECTIONS = /^(?:Featured places|Places|Ask|Explore the podcast|Chapters|Transcript|How this was made|Key concepts|Inferred places)$/;
   const sections = () => {
     for (const item of document.querySelectorAll('ytd-structured-description-content-renderer #items > :not([data-net19-hidden])')) {
+      if (item.matches('ytd-video-description-transcript-section-renderer, ytd-horizontal-card-list-renderer:has(ytd-macro-markers-list-item-renderer, macro-markers-panel-item-view-model)')) { item.setAttribute('data-net19-hidden', ''); continue; }
       const headings = item.querySelectorAll('h1, h2, h3, #title, [class*="Title" i], [class*="header" i]');
-      if ([...headings].some(heading => LATER_SECTIONS.test((heading.textContent || '').trim()))) item.setAttribute('data-net19-hidden', '');
+      if ([...headings].some(heading => LATER_SECTIONS.test(globalThis.net19English((heading.textContent || '').trim())))) item.setAttribute('data-net19-hidden', '');
     }
   };
   const comments = () => {
@@ -54,7 +55,7 @@ globalThis.net19Theme = (() => {
     fix(); comments(); sections();
     new MutationObserver(later).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
   };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();
 (() => {
   if (!/^(www\.)?youtube\.com$/.test(location.hostname)) return;
@@ -75,7 +76,7 @@ globalThis.net19Theme = (() => {
   let queued = false;
   const start = () => new MutationObserver(() => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); })
     .observe(document.body, { childList: true, subtree: true });
-  if (document.body) { mark(); start(); } else document.addEventListener('DOMContentLoaded', () => { mark(); start(); }, { once: true });
+  if (document.body) { mark(); start(); } else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); mark(); start(); } }).observe(document.documentElement, { childList: true });
 })();
 (() => {
   if (!/^(www\.)?youtube\.com$/.test(location.hostname)) return;
@@ -155,12 +156,12 @@ globalThis.net19Theme = (() => {
       about = last.cloneNode(true);
       about.classList.add('n19-about');
       about.removeAttribute('tab-identifier');
-      about.setAttribute('tab-title', 'About');
+      about.setAttribute('tab-title', globalThis.net19Say?.('About') ?? 'About');
       about.setAttribute('aria-selected', 'false');
       about.classList.remove('ytTabShapeHostSelected');
       for (const bar of about.querySelectorAll('.ytTabShapeTabBarActive')) bar.classList.remove('ytTabShapeTabBarActive');
       const text = about.querySelector('.ytTabShapeTab');
-      if (text) text.textContent = 'About';
+      if (text) text.textContent = globalThis.net19Say?.('About') ?? 'About';
       about.addEventListener('click', event => {
         event.preventDefault();
         event.stopPropagation();
@@ -304,5 +305,6 @@ globalThis.net19Theme = (() => {
   const run = () => { stats(); channel(); search(); guide(); metadata(); filterLabel(); };
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; run(); }); };
   const start = () => { run(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['aria-label', 'aria-selected', 'hidden'] }); };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();
+globalThis.net19Theme.words = {"Capítulos": "Chapters", "Ver todo": "View all", "Transcripción": "Transcript", "Sigue la transcripción para no perderte nada.": "Follow along using the transcript.", "Mostrar transcripción": "Show transcript", "Chapitres": "Chapters", "Tout afficher": "View all", "Transcription": "Transcript", "Suivez la vidéo à l'aide de la transcription.": "Follow along using the transcript.", "Afficher la transcription": "Show transcript", "Capitoli": "Chapters", "チャプター": "Chapters", "章节": "Chapters", "챕터": "Chapters", "Главы": "Chapters", "चैप्टर": "Chapters", "الفصول": "Chapters", "Transcrição": "Transcript", "Trascrizione": "Transcript", "文字起こし": "Transcript", "转写文稿": "Transcript", "스크립트": "Transcript", "Текст видео": "Transcript", "ट्रांसक्रिप्ट": "Transcript", "النص": "Transcript"};

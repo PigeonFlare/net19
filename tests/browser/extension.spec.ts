@@ -119,26 +119,13 @@ test('Wikipedia opens in its legacy skin', async () => {
   expect(page.url()).toBe('https://en.wikipedia.org/wiki/Cat?useskin=vector');
 });
 
-test('signed in, Reddit opens on old.reddit.com with the 2019 list; signed out, even with a stale session cookie, it stays put', async () => {
-  let page = await open('https://www.reddit.com/r/pics/');
-  expect(page.url()).toBe('https://www.reddit.com/r/pics/');
-  expect(await redirects()).toBe(0);
-  await worker.evaluate(() => { (globalThis as any).fetch = async () => new Response('{}'); });
-  await context.addCookies([{ name: 'reddit_session', value: 'stale', domain: '.reddit.com', path: '/', secure: true, httpOnly: true }]);
-  await page.waitForTimeout(800);
-  expect(await redirects()).toBe(0);
-  await worker.evaluate(() => { (globalThis as any).fetch = async () => new Response('{"data":{"name":"fixture"}}'); });
+test('Reddit keeps its own address signed in or out, with no account check, and gets the 2019 theme', async () => {
   await context.addCookies([{ name: 'reddit_session', value: 'fixture', domain: '.reddit.com', path: '/', secure: true, httpOnly: true }]);
-  await expect.poll(redirects).toBe(1);
-  page = await open('https://www.reddit.com/r/pics/?sort=top');
-  expect(page.url()).toBe('https://old.reddit.com/r/pics/?sort=top');
+  const page = await open('https://www.reddit.com/r/pics/?sort=top');
   await expect(page.locator('html')).toHaveAttribute('data-net19-mode', 'dark');
-  page = await open('https://www.reddit.com/settings/');
-  expect(page.url()).toBe('https://www.reddit.com/settings/');
-  page = await open('https://www.reddit.com/r/pics/s/AbCd');
-  expect(page.url()).toBe('https://www.reddit.com/r/pics/s/AbCd');
-  await context.clearCookies({ name: 'reddit_session' });
-  await expect.poll(redirects).toBe(0);
+  expect(page.url()).toBe('https://www.reddit.com/r/pics/?sort=top');
+  expect(await redirects()).toBe(0);
+  expect(requests.filter(url => url.includes('/api/me.json'))).toEqual([]);
 });
 
 const REDESIGN = (broken: boolean) => `<!doctype html><html><head><meta charset="utf-8"><title>Redesign</title>` +

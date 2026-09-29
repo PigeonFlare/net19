@@ -6,12 +6,12 @@ Net19 restyles 150 popular websites to look as they did in 2019. It has no devel
 
 ## What leaves your device
 
-Nothing. Net19 makes no network requests of its own. Its themes are stylesheets and small scripts bundled inside the extension. A few themes show a site's own older logo or icon images, such as Google, Bing and Wikipedia's, the Twitter bird from abs.twimg.com, Reddit's snoo from redditstatic.com and WeChat's pictures from res.wx.qq.com. Your browser loads these from that site's own servers like any other part of the page.
+Nothing about you. Net19 has no server and sends nothing anywhere. Its themes are stylesheets and small scripts bundled inside the extension. Some themes show a site's own older logos, icons or fonts, such as Google, Bing and Wikipedia's logos, the Twitter bird from abs.twimg.com, and Reddit's 2019 fonts and snoo from redditstatic.com. Your browser loads these from that same site's own servers, like any other part of the page.
 
-Two themes send you to an older version of a site on that site's own servers:
+Two themes use a site's own settings:
 
 - Wikipedia article links get `useskin=vector`, Wikipedia's own legacy skin.
-- While you are signed in to Reddit, reddit.com links open on old.reddit.com. To know whether you are signed in, net19 checks locally whether Reddit's `reddit_session` cookie exists. It never reads the cookie's contents into storage, copies it, or sends it anywhere.
+- Reddit feeds open in Reddit's own Classic view: signed out, net19 sets Reddit's `compact=true` preference cookie, the same one Reddit's own View menu sets. Choosing another view in that menu keeps your choice.
 
 ## Access and storage
 

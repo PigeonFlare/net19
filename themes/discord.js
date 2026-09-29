@@ -64,7 +64,7 @@ globalThis.net19Theme = {
     if (document.head) new MutationObserver(later).observe(document.head, { childList: true });
     addEventListener('load', later, { once: true });
   };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();
 (() => {
   if (!/^\/(?:$|download|nitro|safety|company|blog|careers|developers|servers|community)/.test(location.pathname)) return;
@@ -104,5 +104,5 @@ globalThis.net19Theme = {
     new MutationObserver(fix).observe(document.body, { childList: true, subtree: true });
     new MutationObserver(() => requestAnimationFrame(fix)).observe(document.documentElement, { attributes: true, attributeFilter: ['data-net19-flip'] });
   };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();

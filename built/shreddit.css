@@ -420,3 +420,11 @@ shreddit-feed :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n
 shreddit-ad-post[data-n19-classic] [slot="title"] .headline{font-size:16px!important;line-height:20px!important;font-weight:500!important}
 :where(:root:not([data-n19-safe])) shreddit-ad-post[data-n19-classic] [slot="thumbnail"] :is(img,video){width:96px!important;height:72px!important}
 shreddit-ad-post[data-n19-classic] [slot="thumbnail"] :is(img,video){object-fit:cover!important;border-radius:4px!important}
+:where(:root:not([data-n19-safe])) [data-n19-menu],[data-n19-menu]:where(:root:not([data-n19-safe])){max-height:calc(100vh - 64px);overflow-y:auto}
+:where(:root:not([data-n19-safe])) [data-n19-menu]>a>span:first-child img,[data-n19-menu]:where(:root:not([data-n19-safe]))>a>span:first-child img{width:20px;height:20px}
+[data-n19-menu]>a>span:first-child img{border-radius:50%;object-fit:cover}
+:where(:root:not([data-n19-safe])) [data-n19-menu]>a>span:first-child img,[data-n19-menu]:where(:root:not([data-n19-safe]))>a>span:first-child img{margin:0}
+html:dir(rtl):where(:root:not([data-n19-safe])) shreddit-feed :is(shreddit-post,shreddit-ad-post){padding:8px 48px 2px 8px!important}
+html:dir(rtl) shreddit-feed :is(shreddit-post,shreddit-ad-post){background-image:linear-gradient(to left, var(--n19-vote) 40px, transparent 40px)!important}
+html:dir(rtl):where(:root:not([data-n19-safe])) shreddit-feed :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]){padding:8px 48px 0 8px!important}
+html:dir(rtl) shreddit-feed :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]){background:var(--n19-card) linear-gradient(to left, var(--n19-vote) 40px, transparent 40px)!important}

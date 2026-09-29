@@ -14,6 +14,7 @@ globalThis.net19Theme = {
     [data-testid="action-row"] :is(a.button, button.button, .button):not([upvote]):not([downvote]):hover { background: var(--n19-hover) !important; }
     [data-testid="action-row"] :is(.rpl-cab--content, faceplate-number) { color: inherit !important; font-weight: 700 !important; font-size: 12px !important; }
     [data-testid="action-row"] .rpl-cab--leading-icon svg { width: 20px !important; height: 20px !important; }
+    :host(:dir(rtl)) [data-testid="action-row"] > span:has(shreddit-vote-animations) { left: auto !important; right: 0 !important; }
     [data-testid="action-row"] > span:has(shreddit-vote-animations) { position: absolute !important; left: 0 !important; top: 0 !important; width: 40px !important; height: auto !important;
       padding: 8px 0 0 !important; box-sizing: border-box !important; background: transparent !important; border: 0 !important; z-index: 1 !important; }
     .rpl-vote-button-group { flex-direction: column !important; height: auto !important; background: transparent !important; border: 0 !important; padding: 0 !important; gap: 0 !important; width: 40px !important; }
@@ -47,6 +48,8 @@ globalThis.net19Theme = {
     rpl-action-bar > div { margin: 2px 0 0 -4px !important; gap: 0 !important; height: 32px !important; overflow: visible !important; }
     rpl-action-bar span.relative:has(> shreddit-vote-animations) { position: absolute !important; left: 0 !important; top: 0 !important; width: 40px !important; height: 100% !important;
       padding: 4px 0 0 !important; box-sizing: border-box !important; display: flex !important; justify-content: center !important; }
+    :host(:dir(rtl)) rpl-action-bar span.relative:has(> shreddit-vote-animations) { left: auto !important; right: 0 !important; }
+    :host(:dir(rtl)) div:has(> slot[name="thumbnail"]) { margin: 0 0 8px 8px !important; }
     button.toggle__expando-button { background: transparent !important; border: 0 !important; border-radius: 2px !important; color: var(--n19-action) !important; height: 32px !important;
       width: 32px !important; padding: 0 !important; margin: 0 4px 0 0 !important; box-shadow: none !important; }
     button.toggle__expando-button:hover { background: var(--n19-hover) !important; }
@@ -150,19 +153,39 @@ globalThis.net19Theme = {
     community: ['M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm0 1.8a6.2 6.2 0 1 1 0 12.4 6.2 6.2 0 0 1 0-12.4zM10 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z'],
     user: ['M10 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm0 1.5c-3.3 0-6 1.8-6 4v1.5h12v-1.5c0-2.2-2.7-4-6-4z'],
   };
+  const say = text => globalThis.net19Say?.(text) ?? text;
+  const english = () => globalThis.net19Lang?.() === 'en';
   const FEEDS = [['home', 'Home', '/'], ['popular', 'Popular', '/r/popular/'], ['all', 'All', '/r/all/']];
   const make = (tag, attrs = {}, ...kids) => { const el = document.createElement(tag); for (const [k, v] of Object.entries(attrs)) el.setAttribute(k, v); el.append(...kids); return el; };
+  const signedIn = () => !!document.querySelector('reddit-header-large nav') && !document.querySelector('reddit-header-large :is(#login-button, a[href*="/login"])');
   const currentFeed = () => {
     const path = location.pathname;
-    if (path === '/' || path === '') return ['popular', 'Popular'];
-    if (/^\/r\/popular\/?/i.test(path)) return ['popular', 'Popular'];
-    if (/^\/r\/all\/?/i.test(path)) return ['all', 'All'];
+    if (path === '/' || path === '') return signedIn() ? ['home', say('Home')] : ['popular', say('Popular')];
+    if (/^\/r\/popular\/?/i.test(path)) return ['popular', say('Popular')];
+    if (/^\/r\/all\/?/i.test(path)) return ['all', say('All')];
     const sub = path.match(/^\/r\/([^/]+)/);
     if (sub) return ['community', `r/${sub[1]}`];
     const user = path.match(/^\/(?:u|user)\/([^/]+)/);
     if (user) return ['user', `u/${user[1]}`];
-    if (/^\/search/.test(path)) return ['popular', 'Search results'];
-    return ['popular', 'Popular'];
+    if (/^\/search/.test(path)) return ['popular', say('Search')];
+    return ['popular', say('Popular')];
+  };
+  const myCommunities = menu => {
+    for (const old of menu.querySelectorAll('[data-n19-mine]')) old.remove();
+    if (!signedIn()) return;
+    const seen = new Set();
+    const items = [];
+    for (const a of document.querySelectorAll('#left-sidebar-container a[href^="/r/"], #left-sidebar-container a[href^="https://www.reddit.com/r/"]')) {
+      const path = new URL(a.href, location.origin).pathname.replace(/\/$/, '');
+      if (!/^\/r\/[^/]+$/.test(path) || /^\/r\/(?:popular|all)$/i.test(path) || seen.has(path.toLowerCase())) continue;
+      seen.add(path.toLowerCase());
+      const icon = a.querySelector('img');
+      items.push(make('a', { href: path + '/', role: 'menuitem', 'data-n19-mine': '' },
+        make('span', {}, icon?.src ? make('img', { src: icon.currentSrc || icon.src, alt: '' }) : svgIcon(ICONS.community)), make('span', {}, path.slice(1))));
+    }
+    if (!items.length) return;
+    items.sort((a, b) => a.textContent.localeCompare(b.textContent));
+    menu.append(make('div', { 'data-n19-menu-title': '', 'data-n19-mine': '' }, say('My communities')), ...items);
   };
   const communityIcon = () => document.querySelector('.masthead img[src*="communityIcon"], .masthead img.shreddit-subreddit-icon__icon, #pdp-credit-bar img.shreddit-subreddit-icon__icon');
   const header = () => {
@@ -172,13 +195,13 @@ globalThis.net19Theme = {
     const [kind, label] = currentFeed();
     let feeds = nav.querySelector('[data-n19-feeds]');
     if (left && !feeds) {
-      const menu = make('div', { 'data-n19-menu': '', role: 'menu' }, make('div', { 'data-n19-menu-title': '' }, 'Reddit feeds'));
-      for (const [icon, name, href] of FEEDS) menu.append(make('a', { href, role: 'menuitem' }, make('span', {}, svgIcon(ICONS[icon])), make('span', {}, name)));
+      const menu = make('div', { 'data-n19-menu': '', role: 'menu' }, make('div', { 'data-n19-menu-title': '' }, say('Reddit feeds')));
+      for (const [icon, name, href] of FEEDS) menu.append(make('a', { href, role: 'menuitem' }, make('span', {}, svgIcon(ICONS[icon])), make('span', {}, say(name))));
       const button = make('button', { type: 'button', 'aria-haspopup': 'menu', 'aria-expanded': 'false' },
         make('span', { 'data-n19-feed-icon': '' }), make('span', { 'data-n19-feed-label': '' }), make('span', { 'data-n19-caret': '' }, svgIcon(ICONS.caret)));
       feeds = make('div', { 'data-n19-feeds': '' }, button, menu);
       const close = () => { feeds.removeAttribute('data-open'); button.setAttribute('aria-expanded', 'false'); };
-      button.addEventListener('click', event => { event.stopPropagation(); const open = !feeds.hasAttribute('data-open'); if (open) { feeds.setAttribute('data-open', ''); button.setAttribute('aria-expanded', 'true'); } else close(); });
+      button.addEventListener('click', event => { event.stopPropagation(); const open = !feeds.hasAttribute('data-open'); if (open) { myCommunities(menu); feeds.setAttribute('data-open', ''); button.setAttribute('aria-expanded', 'true'); } else close(); });
       document.addEventListener('click', event => { if (!feeds.contains(event.target)) close(); });
       document.addEventListener('keydown', event => { if (event.key === 'Escape') close(); });
       left.append(feeds);
@@ -198,8 +221,8 @@ globalThis.net19Theme = {
     const right = nav.querySelector(':scope > div.ps-lg');
     if (right && !right.querySelector('[data-n19-links]')) {
       const links = make('div', { 'data-n19-links': '' },
-        make('a', { href: '/r/popular/', 'aria-label': 'Popular', title: 'Popular' }, svgIcon(ICONS.popular)),
-        make('a', { href: '/r/all/', 'aria-label': 'All', title: 'All' }, svgIcon(ICONS.all)));
+        make('a', { href: '/r/popular/', 'aria-label': say('Popular'), title: say('Popular') }, svgIcon(ICONS.popular)),
+        make('a', { href: '/r/all/', 'aria-label': say('All'), title: say('All') }, svgIcon(ICONS.all)));
       right.prepend(links);
     }
     const drawer = nav.querySelector('#expand-user-drawer-button');
@@ -213,21 +236,21 @@ globalThis.net19Theme = {
   const sortBar = () => {
     const row = document.querySelector('shreddit-async-loader[bundlename="shreddit_sort_dropdown"] > div');
     if (!row || row.querySelector(':scope > [data-n19-bar-label]')) return;
-    if (row.querySelector(':scope > shreddit-layout-event-setter')) row.prepend(make('span', { 'data-n19-bar-label': 'view' }, 'View'));
-    row.prepend(make('span', { 'data-n19-bar-label': 'sort' }, 'Sort'));
+    if (row.querySelector(':scope > shreddit-layout-event-setter')) row.prepend(make('span', { 'data-n19-bar-label': 'view' }, say('View')));
+    row.prepend(make('span', { 'data-n19-bar-label': 'sort' }, say('Sort')));
   };
   const heading = () => {
     const feed = document.querySelector('main#main-content > shreddit-feed');
     if (!feed || feed.previousElementSibling?.hasAttribute('data-n19-heading')) return;
     if (!/^\/(?:r\/popular\/?)?$/i.test(location.pathname)) return;
-    feed.before(make('div', { 'data-n19-heading': '' }, 'Popular posts'));
+    feed.before(make('div', { 'data-n19-heading': '' }, say('Popular posts')));
   };
   const ASSETS = 'https://www.redditstatic.com/desktop2x/img/id-cards/';
   const idCard = () => {
     const side = document.querySelector('#right-sidebar-contents');
     const front = /^\/(?:r\/popular\/?)?(?:best|hot|new|top|rising)?\/?$/i.test(location.pathname);
     const card = side?.querySelector(':scope > [data-n19-idcard]');
-    if (!side || !front) { card?.remove(); side?.querySelector(':scope > [data-n19-premium]')?.remove(); return; }
+    if (!side || !front || !english()) { card?.remove(); side?.querySelector(':scope > [data-n19-premium]')?.remove(); return; }
     if (card) return;
     const box = make('div', { 'data-n19-idcard': '' },
       make('div', { 'data-n19-idcard-banner': '' }),
@@ -241,7 +264,7 @@ globalThis.net19Theme = {
   };
   const trendingTitle = () => {
     const title = document.querySelector('#right-sidebar-container aside.right-rail-popular-communities h2 .i18n-translatable-text') || document.querySelector('#right-sidebar-container aside.right-rail-popular-communities h2');
-    if (title && !title.children.length && /popular communities/i.test(title.textContent)) title.textContent = 'Trending Communities';
+    if (title && !title.children.length && /popular communities/i.test(title.textContent)) title.textContent = say('Trending Communities');
   };
   const footer = () => {
     const last = document.querySelector('#right-sidebar-container .legal-links li:last-child');
@@ -259,10 +282,10 @@ globalThis.net19Theme = {
   const after2019 = () => {
     for (const a of document.querySelectorAll('#right-sidebar-container .legal-links a, .legal-links a')) {
       const text = a.textContent.replace(/\s+/g, ' ').trim();
-      if (LEGAL_LATER.test(text)) hide(a.closest('li') || a);
+      if (LEGAL_LATER.test(globalThis.net19English(text))) hide(a.closest('li') || a);
       else if (LEGAL_WORDS.has(text)) a.textContent = LEGAL_WORDS.get(text);
     }
-    for (const p of document.querySelectorAll('#right-sidebar-container p')) if (STAT_LATER.test(p.textContent.trim())) hide(p.parentElement?.tagName === 'ACTIVATE-FEATURE' ? p.parentElement.parentElement : p.parentElement);
+    for (const p of document.querySelectorAll('#right-sidebar-container p')) if (STAT_LATER.test(globalThis.net19English(p.textContent.trim()))) hide(p.parentElement?.tagName === 'ACTIVATE-FEATURE' ? p.parentElement.parentElement : p.parentElement);
     for (const button of document.querySelectorAll('button[aria-label="Feed options"]')) hide(button.closest('shreddit-layout-event-setter, rpl-dropdown') || button);
     for (const card of document.querySelectorAll('rpl-hovercard:has(> span.block):has(.verification-content)')) hide(card.parentElement?.children.length === 1 ? card.parentElement : card);
     for (const h of document.querySelectorAll('#right-sidebar-container h2')) if (/^(?:View Post in|Top Posts|Related Answers|Related Posts)$/i.test(h.textContent.trim())) hide(h.closest('div.border-solid, aside, section') || h.parentElement);
@@ -294,12 +317,14 @@ globalThis.net19Theme = {
         .catch(() => {});
     }
   };
-  const styled = new WeakMap();
+  const styled = new WeakMap(), sheets = new Map();
+  const sheetFor = css => { let sheet = sheets.get(css); if (!sheet) { sheet = new CSSStyleSheet(); sheet.replaceSync(css); sheets.set(css, sheet); } return sheet; };
   const add = (root, css) => {
     if (!root) return;
-    const node = styled.get(root);
-    if (node) { if (node.textContent !== css) node.textContent = css; return; }
-    const sheet = document.createElement('style'); sheet.textContent = css; root.append(sheet); styled.set(root, sheet);
+    const sheet = sheetFor(css), had = styled.get(root);
+    if (had === sheet) return;
+    root.adoptedStyleSheets = [...root.adoptedStyleSheets.filter(s => s !== had), sheet];
+    styled.set(root, sheet);
   };
   let retry = 0, retries = 0;
   const style = (host, css) => {
@@ -340,24 +365,24 @@ globalThis.net19Theme = {
       const bar = post.querySelector(':scope > [slot="credit-bar"] [id^="feed-post-credit-bar"]');
       const community = bar?.querySelector('a[data-testid="subreddit-name"]');
       if (community && /^\s*u\//.test(community.textContent) && !bar.querySelector('[data-n19-posted]') && post.tagName === 'SHREDDIT-POST') {
-        mark(bar, 'data-n19-posted', 'Posted by', s => community.closest('span.flex, faceplate-hovercard')?.before(s));
+        mark(bar, 'data-n19-posted', say('Posted by'), s => community.closest('span.flex, faceplate-hovercard')?.before(s));
       }
       if (author && bar && community && /^\s*r\//.test(community.textContent) && !bar.querySelector('[data-n19-posted]') && post.tagName === 'SHREDDIT-POST') {
         const time = bar.querySelector(':scope > faceplate-timeago');
         if (time) {
           const posted = document.createElement('span'); posted.setAttribute('data-n19-posted', '');
-          posted.append('Posted by ');
+          posted.append(say('Posted by') + ' ');
           const a = document.createElement('a'); a.href = `/user/${encodeURIComponent(author)}/`; a.textContent = `u/${author}`; a.style.position = 'relative';
           posted.append(a);
           time.before(posted);
         }
       }
       const byline = bar?.querySelector('[slot="authorName"]');
-      if (byline && !bar.querySelector('[data-n19-posted]')) mark(bar, 'data-n19-posted', 'Posted by', s => (byline.parentElement?.matches('span.relative') ? byline.parentElement : byline).before(s));
+      if (byline && !bar.querySelector('[data-n19-posted]')) mark(bar, 'data-n19-posted', say('Posted by'), s => (byline.parentElement?.matches('span.relative') ? byline.parentElement : byline).before(s));
       const pdp = post.querySelector(':scope > #pdp-credit-bar [slot="authorName"]');
-      if (pdp && !pdp.querySelector('[data-n19-posted]')) mark(pdp, 'data-n19-posted', 'Posted by u/', s => pdp.prepend(s));
+      if (pdp && !pdp.querySelector('[data-n19-posted]')) mark(pdp, 'data-n19-posted', say('Posted by') + ' u/', s => pdp.prepend(s));
       const comments = post.shadowRoot?.querySelector('[data-post-click-location="comments-button"] .rpl-cab--content, [data-action-bar-action="comments"] .rpl-cab--content');
-      if (comments && !comments.querySelector('[data-n19-label]')) mark(comments, 'data-n19-label', ' Comments', s => comments.append(s));
+      if (comments && english() && !comments.querySelector('[data-n19-label]')) mark(comments, 'data-n19-label', ' Comments', s => comments.append(s));
     }
     for (const row of document.querySelectorAll('shreddit-comment-action-row')) style(row, COMMENT + (row.closest('shreddit-comment') ? TREE_VOTES : ''));
     for (const award of document.querySelectorAll('award-button')) style(award, AWARD);
@@ -365,7 +390,7 @@ globalThis.net19Theme = {
     for (const search of document.querySelectorAll('reddit-search-large')) {
       for (const name of ['show-ask-button', 'ask-button-variant', 'show-ask-text', 'expanded-composer-enabled', 'expanded-composer-ask-enabled']) if (search.hasAttribute(name)) search.removeAttribute(name);
       const input = search.shadowRoot?.querySelector('faceplate-search-input');
-      if (input && input.getAttribute('placeholder') !== 'Search Reddit') input.setAttribute('placeholder', 'Search Reddit');
+      if (input && english() && input.getAttribute('placeholder') !== 'Search Reddit') input.setAttribute('placeholder', 'Search Reddit');
     }
     for (const join of document.querySelectorAll('shreddit-join-button')) style(join, JOIN);
     for (const holder of document.querySelectorAll('shreddit-subreddit-header-buttons')) for (const join of holder.shadowRoot?.querySelectorAll('shreddit-join-button') || []) style(join, JOIN);
@@ -384,7 +409,7 @@ globalThis.net19Theme = {
       style(search, SEARCH + FIELD); if (search.shadowRoot) deep(search.shadowRoot, SEARCH + FIELD);
     }
     const about = document.querySelector('#right-sidebar-contents aside.subreddit-right-rail-community-info > div > shreddit-subreddit-header');
-    if (about && !about.parentElement.querySelector(':scope > [data-n19-strip]')) { const strip = document.createElement('div'); strip.setAttribute('data-n19-strip', ''); strip.textContent = 'Community Details'; about.before(strip); }
+    if (about && !about.parentElement.querySelector(':scope > [data-n19-strip]')) { const strip = document.createElement('div'); strip.setAttribute('data-n19-strip', ''); strip.textContent = say('Community Details'); about.before(strip); }
     for (const box of document.querySelectorAll('comment-body-header faceplate-textarea-input[placeholder="Join the conversation"]')) box.setAttribute('placeholder', 'What are your thoughts?');
     for (const sort of document.querySelectorAll('shreddit-sort-dropdown')) style(sort, SORT);
     for (const auth of document.querySelectorAll('auth-flow-modal')) {
@@ -416,5 +441,6 @@ globalThis.net19Theme = {
   };
   classicByDefault();
   loadFonts();
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();
+globalThis.net19Theme.words = {"Accesibilidad": "Accessibility", "Accessibilité": "Accessibility", "Acessibilidade": "Accessibility", "Accessibilità": "Accessibility", "アクセシビリティ": "Accessibility", "无障碍": "Accessibility", "접근성": "Accessibility", "Специальные возможности": "Accessibility", "सुलभता": "Accessibility", "إمكانية الوصول": "Accessibility"};

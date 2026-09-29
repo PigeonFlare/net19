@@ -114,7 +114,7 @@ globalThis.net19Theme = {
     for (const button of document.querySelectorAll('[role="dialog"] .jetfuel-style-root button:not([data-n19-tw])')) if (/^(?:sign up|continue with phone)$/i.test(button.textContent.trim())) button.setAttribute('data-n19-tw', 'wallsignup');
     for (const button of document.querySelectorAll('body button:is(:has(img), :has(svg), :has(canvas))')) if (!button.hasAttribute('data-n19-tw') && /^scan to get the app/i.test(button.textContent.trim())) button.setAttribute('data-n19-tw', 'qr');
     for (const input of document.querySelectorAll('[data-testid="SearchBox_Search_Input"], aside input[placeholder="Search"], header input[placeholder="Search"], [role="search"] input[placeholder="Search"]')) {
-      if (input.placeholder !== 'Search Twitter') input.placeholder = 'Search Twitter';
+      if (globalThis.net19Lang?.() === 'en' && input.placeholder !== 'Search Twitter') input.placeholder = 'Search Twitter';
     }
     if (/ \/ X$| on X: /.test(document.title)) document.title = document.title.replace(/ \/ X$/, ' / Twitter').replace(/ on X: /, ' on Twitter: ');
     extras();
@@ -165,7 +165,7 @@ globalThis.net19Theme = {
     setInterval(() => { if (!document.hidden) recolor(); }, 1500);
     new MutationObserver(recolor).observe(document.documentElement, { attributes: true, attributeFilter: ['data-net19-mode', 'data-n19-tw-bg'] });
   };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();
 (() => {
   const WORDS = new Map([['Happening now', 'See what’s happening in the world right now'], ['Continue with phone', 'Sign up'],
@@ -205,7 +205,7 @@ globalThis.net19Theme = {
     const goBox = go && (go.closest('button, [role="button"]') || [...form.children].find(c => c.contains(go)) || go);
     mark(field, 'field');
     for (const el of field.querySelectorAll('span, div')) if (!el.querySelector('input') && el.textContent.trim()) mark(el, 'cap');
-    if (input.placeholder !== 'Phone, email, or username') input.placeholder = 'Phone, email, or username';
+    if (globalThis.net19Lang?.() === 'en' && input.placeholder !== 'Phone, email, or username') input.placeholder = 'Phone, email, or username';
     mark(goBox, 'go');
     for (const start of [field, goBox]) for (let n = start?.parentElement; n && n !== main; n = n.parentElement) if (!n.hasAttribute('data-n19-tw')) mark(n, 'static');
     for (const el of main.querySelectorAll('a[href*="/onboarding/"], button, .jf-gsi-face')) {
@@ -228,7 +228,7 @@ globalThis.net19Theme = {
     fix();
     new MutationObserver(() => { if (location.pathname === '/') later(); }).observe(document.body, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
   };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();
 (() => {
   const BIRD = 'https://abs.twimg.com/favicons/twitter.2.ico';
@@ -337,5 +337,5 @@ globalThis.net19Theme = {
     new MutationObserver(later).observe(document.body, { childList: true, subtree: true });
     globalThis.navigation?.addEventListener?.('navigatesuccess', later);
   };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();

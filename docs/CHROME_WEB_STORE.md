@@ -21,11 +21,11 @@ Keep the version in `package.json` and `manifest.json` in sync.
 
 net19 restyles well over a hundred of the most visited websites, including Google, YouTube, Wikipedia, Reddit, Discord and the big news, shopping and game sites, to look as they did in 2019. Each look is designed by hand, applies before the page first appears, and follows your device's light or dark setting.
 
-Wikipedia opens in its legacy Vector skin, and signed-in Reddit opens on old.reddit.com.
+Wikipedia opens in its legacy Vector skin, and Reddit feeds open in Reddit's own Classic view.
 
 The popup has two switches: net19 on or off, and on or off for the current site.
 
-net19 makes no network requests and runs on no other website. No account, server, analytics or telemetry.
+net19 runs on no other website and sends nothing anywhere: no account, server, analytics or telemetry. Some themes show a site's own older logos or fonts, which your browser loads from that site's own servers.
 
 ## Disclosures
 
@@ -37,8 +37,7 @@ net19 makes no network requests and runs on no other website. No account, server
 | Single purpose | Restyle a fixed set of websites to look as they did in 2019 |
 | Host permissions | Only the themed sites, to apply their themes |
 | `scripting` | Register bundled theme files at document start |
-| `declarativeNetRequestWithHostAccess` | Wikipedia legacy-skin parameter; signed-in Reddit to old.reddit.com |
-| `cookies` | Check whether a Reddit session cookie exists; its value is never stored or sent |
+| `declarativeNetRequestWithHostAccess` | Wikipedia legacy-skin parameter |
 | `storage` | The two switches |
 | Remote code | None |
 | Data | None collected or transmitted |
@@ -47,7 +46,7 @@ net19 makes no network requests and runs on no other website. No account, server
 
 1. Open youtube.com, google.com or github.com: the 2019 look applies on first load.
 2. Open a Wikipedia article: the URL gains `useskin=vector`.
-3. Sign in to Reddit and open reddit.com: it opens on old.reddit.com.
+3. Open reddit.com: the feed shows the 2019 Classic view (thumbnail left, title and actions to the right).
 4. Turn the site or net19 off in the popup: the site is normal on its next load.
 
 ## Assets

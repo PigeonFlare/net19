@@ -23,7 +23,7 @@ globalThis.net19Theme = {
     if (document.querySelector('#global-nav, header.global-nav')) return;
     for (const heading of document.querySelectorAll('main#main-content > :is(section, div) h2')) {
       const block = heading.closest('main#main-content > :is(section, div)');
-      if (block && LATER_SECTIONS.test(heading.textContent.trim()) && !block.hasAttribute('data-net19-hidden')) block.setAttribute('data-net19-hidden', '');
+      if (block && LATER_SECTIONS.test(globalThis.net19English(heading.textContent.trim())) && !block.hasAttribute('data-net19-hidden')) block.setAttribute('data-net19-hidden', '');
     }
     for (const heading of document.querySelectorAll('main section > h2, main section > div > h2')) {
       if (!/^Products$/.test(heading.textContent.trim())) continue;
@@ -39,7 +39,7 @@ globalThis.net19Theme = {
       if (/^(Sign in with Apple|Continue with Apple|Continue with google|Sign in with Google|Sign in with Email|View C2PA information|Where are the filters\?)$/i.test(label) && !button.hasAttribute('data-net19-hidden')) button.setAttribute('data-net19-hidden', '');
     }
     for (const link of document.querySelectorAll('main#main-content section.directory a, footer a')) {
-      if (!LATER_LINKS.test(link.textContent.trim())) continue;
+      if (!LATER_LINKS.test(globalThis.net19English(link.textContent.trim()))) continue;
       const item = link.closest('li') || link;
       if (!item.hasAttribute('data-net19-hidden')) item.setAttribute('data-net19-hidden', '');
     }
@@ -61,7 +61,7 @@ globalThis.net19Theme = {
     if (band !== bar) mark(band, 'band');
     for (const layer of bar.querySelectorAll('div')) if (layer.offsetWidth >= bar.offsetWidth - 4 && !layer.hasAttribute('data-n19-li') && opaque(getComputedStyle(layer))) mark(layer, 'band');
     mark(search, 'search');
-    if (settled && search.placeholder !== 'Search') search.placeholder = 'Search';
+    if (settled && globalThis.net19Lang?.() === 'en' && search.placeholder !== 'Search') search.placeholder = 'Search';
     for (const item of bar.querySelectorAll('a[aria-label], button[aria-label], a[href]')) mark(item, 'navitem');
     const main = document.querySelector('main');
     if (!main) return;
@@ -87,7 +87,7 @@ globalThis.net19Theme = {
     }
     for (const control of main.querySelectorAll('button, a')) {
       const text = (control.getAttribute('aria-label') || control.textContent).replace(/\s+/g, ' ').trim();
-      if (LATER_RAIL.test(text) || /^Send in a private message/i.test(text)) hide(control.closest('li') || control);
+      if (LATER_RAIL.test(globalThis.net19English(text)) || /^Send in a private message/i.test(text)) hide(control.closest('li') || control);
     }
     if (settled) for (const root of [bar, ...main.querySelectorAll('button, a')]) {
       const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
@@ -110,3 +110,4 @@ globalThis.net19Theme = {
   };
   if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, { once: true }); else start();
 })();
+globalThis.net19Theme.words = {"Iniciar sesión con el email": "Sign in with email", "S’identifier avec un e-mail": "Sign in with email", "Entrar com e-mail": "Sign in with email", "Accedi con l’email": "Sign in with email", "メールでサインイン": "Sign in with email", "使用邮箱登录": "Sign in with email", "이메일로 로그인": "Sign in with email", "Войти с помощью адреса эл. почты": "Sign in with email", "Нет предыдущего контента": "No more previous content", "Сообщите, что вы в поиске работы": "Let the right people know you’re open to work", "Оставайтесь в курсе отраслевых новостей": "Stay up to date on your industry", "Нет последующего контента": "No more next content", "ईमेल के ज़रिए साइन इन करें": "Sign in with email", "تسجيل الدخول باستخدام البريد الإلكتروني": "Sign in with email", "لا يوجد المزيد من المحتويات السابقة": "No more previous content", "محادثات اليوم قد تقودك إلى فرصتك المنتظرة غدًا": "Let the right people know you’re open to work", "إبق على اطلاع بأحدث أخبار مجالك المهني": "Stay up to date on your industry", "لا يوجد المزيد من المحتوى التالي": "No more next content", "Juegos": "Games", "Jeux": "Games", "Jogos": "Games", "Giochi": "Games", "ゲーム": "Games", "游戏": "Games", "게임": "Games", "Игры": "Games", "गेम्स": "Games", "الألعاب": "Games"};

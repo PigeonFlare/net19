@@ -25,7 +25,7 @@ globalThis.net19Theme = {
   const footer = foot => {
     for (const link of foot.querySelectorAll('a')) {
       const text = link.textContent.trim();
-      if (FOOT_LATER.test(text)) { let box = link; while (box.parentElement && box.parentElement !== foot && box.parentElement.childElementCount === 1) box = box.parentElement; mark(box, 'later'); continue; }
+      if (FOOT_LATER.test(globalThis.net19English(text))) { let box = link; while (box.parentElement && box.parentElement !== foot && box.parentElement.childElementCount === 1) box = box.parentElement; mark(box, 'later'); continue; }
       if (!FOOT_WORDS.has(text)) continue;
       const walker = document.createTreeWalker(link, NodeFilter.SHOW_TEXT);
       for (let node = walker.nextNode(); node; node = walker.nextNode()) if (node.nodeValue.trim() === text) node.nodeValue = FOOT_WORDS.get(text);
@@ -58,16 +58,16 @@ globalThis.net19Theme = {
       if (settled && !list.querySelector('[data-n19-fb="signup-head"]')) {
         const head = document.createElement('div');
         head.setAttribute('data-n19-fb', 'signup-head');
-        head.textContent = 'Sign Up';
+        head.textContent = globalThis.net19Say?.('Sign Up') ?? 'Sign Up';
         const sub = document.createElement('div');
         sub.setAttribute('data-n19-fb', 'signup-sub');
         sub.textContent = 'It\u2019s quick and easy.';
-        list.prepend(head, sub);
+        list.prepend(head, ...(globalThis.net19Lang?.() === 'en' ? [sub] : []));
       }
     }
     const hero = row.querySelector('[data-n19-fb="hero"]');
     const headline = hero && [...hero.querySelectorAll('span')].find(s => s.textContent.trim().length > 20);
-    if (settled && headline && !hero.querySelector('[data-n19-fb="features"]')) {
+    if (settled && headline && globalThis.net19Lang?.() === 'en' && !hero.querySelector('[data-n19-fb="features"]')) {
       const list = document.createElement('div');
       list.setAttribute('data-n19-fb', 'features');
       for (const [bold, rest] of FEATURES) {
@@ -144,7 +144,7 @@ globalThis.net19Theme = {
         if (settled && inner && !card.querySelector('[data-n19-fb="create-head"]')) {
           const head = document.createElement('div');
           head.setAttribute('data-n19-fb', 'create-head');
-          head.textContent = 'Create Post';
+          head.textContent = globalThis.net19Say?.('Create Post') ?? 'Create Post';
           inner.prepend(head);
         }
       }
@@ -187,7 +187,7 @@ globalThis.net19Theme = {
     run();
     new MutationObserver(later).observe(document.body, { childList: true, subtree: true });
   };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();
 (() => {
   if (!/^\/help\b/.test(location.pathname)) return;
@@ -206,5 +206,5 @@ globalThis.net19Theme = {
   let queued = false;
   const later = () => { if (queued) return; queued = true; setTimeout(() => { queued = false; fix(); }, 300); };
   const start = () => { fix(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();

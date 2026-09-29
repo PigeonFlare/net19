@@ -2,17 +2,10 @@ import assert from 'node:assert/strict';
 import { test } from 'node:test';
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { settingsFrom } from '../src/settings';
-import { navigationRules } from '../src/navigation';
 import { compileTheme } from '../scripts/styles.mjs';
 import { THEMES, THEMED_DOMAINS, themeFiles, themeFor, themeMatches, themePaused } from '../src/themes';
 
 const rule = (id: string) => THEMES.find(theme => theme.id === id)!;
-const legacy = (url: string) => {
-  const { pattern, substitution, except } = rule('reddit').legacy!;
-  if (except && new RegExp(except).test(url)) return null;
-  const match = url.match(new RegExp(pattern));
-  return match ? substitution.replace('\\1', match[1]) : null;
-};
 
 test('settings keep only the two switches', () => {
   assert.deepEqual(settingsFrom(null), { enabled: true, disabledHosts: [] });
@@ -23,7 +16,8 @@ test('net19 only touches the sites it has a theme for', () => {
   const manifest = JSON.parse(readFileSync('manifest.json', 'utf8'));
   assert.deepEqual(manifest.host_permissions, THEMED_DOMAINS.map(domain => `*://*.${domain}/*`));
   assert.ok(!manifest.web_accessible_resources && !manifest.permissions.includes('offscreen') && !manifest.permissions.includes('webNavigation'));
-  assert.match(manifest.content_security_policy.extension_pages, /connect-src https:\/\/www\.reddit\.com\/api\/me\.json;/);
+  assert.ok(!manifest.permissions.includes('cookies'));
+  assert.match(manifest.content_security_policy.extension_pages, /connect-src 'none';/);
   for (const theme of THEMES) {
     for (const file of [...themeFiles(theme).css, ...themeFiles(theme).js]) assert.ok(existsSync(file), `${theme.id}: ${file}`);
     for (const pattern of themeMatches(theme)) assert.ok(theme.domains.some(domain => pattern.includes(domain)), pattern);
@@ -39,8 +33,6 @@ test('the per-site switch pauses the whole site, whichever host it was set on', 
   assert.ok(themePaused(rule('shreddit'), ['www.reddit.com']));
   assert.ok(themePaused(rule('reddit'), ['old.reddit.com']));
   assert.ok(!themePaused(rule('reddit'), ['notreddit.com', 'youtube.com']));
-  const rules = navigationRules(settingsFrom({ disabledHosts: ['reddit.com'] }), () => true);
-  assert.ok(!rules.some(r => r.action.redirect?.regexSubstitution));
 });
 
 test('Wikipedia gets its legacy skin by URL parameter, once', () => {
@@ -49,21 +41,6 @@ test('Wikipedia gets its legacy skin by URL parameter, once', () => {
   assert.ok(!new RegExp(pattern).test('https://en.wikipedia.org/wiki/Cat?useskin=vector'));
 });
 
-test('signed-in Reddit opens on old.reddit.com; signed out it stays put', () => {
-  assert.equal(legacy('https://www.reddit.com/'), 'https://old.reddit.com/');
-  assert.equal(legacy('https://reddit.com/r/pics/'), 'https://old.reddit.com/r/pics/');
-  assert.equal(legacy('https://www.reddit.com/r/pics/comments/abc/title/?sort=top'), 'https://old.reddit.com/r/pics/comments/abc/title/?sort=top');
-  assert.equal(legacy('https://www.reddit.com/?feed=home'), 'https://old.reddit.com/?feed=home');
-  assert.equal(legacy('https://www.reddit.com/user/someone'), 'https://old.reddit.com/user/someone');
-  for (const url of ['https://www.reddit.com/settings/', 'https://www.reddit.com/media?url=x', 'https://www.reddit.com/r/pics/s/AbCd',
-    'https://www.reddit.com/rules', 'https://old.reddit.com/', 'https://www.reddit.com.evil.example/', 'https://notreddit.com/']) assert.equal(legacy(url), null, url);
-  const redirects = (signedIn: boolean) => navigationRules(settingsFrom({}), () => signedIn).filter(r => r.action.redirect?.regexSubstitution);
-  assert.equal(redirects(true).length, 1);
-  assert.equal(redirects(false).length, 0);
-  assert.equal(navigationRules(settingsFrom({ enabled: false }), () => true).length, 0);
-  const ids = navigationRules(settingsFrom({}), () => true).map(r => r.id);
-  assert.equal(new Set(ids).size, ids.length);
-});
 
 test('theme stylesheets follow the styling-rule contract', () => {
   for (const file of readdirSync('themes').filter(name => name.endsWith('.css'))) {

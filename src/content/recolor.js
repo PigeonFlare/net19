@@ -73,13 +73,15 @@ export function makeRecolor(target) {
 const SKIP = new Set(['IMG', 'VIDEO', 'CANVAS', 'IFRAME', 'EMBED', 'OBJECT', 'PICTURE', 'SOURCE', 'TRACK', 'SCRIPT', 'STYLE', 'LINK', 'META', 'NOSCRIPT', 'TEMPLATE', 'BR', 'WBR', 'HEAD', 'TITLE', 'image', 'foreignObject', 'mask', 'clipPath', 'defs', 'linearGradient', 'radialGradient', 'stop', 'filter', 'pattern', 'symbol']);
 const SIDES = ['top', 'right', 'bottom', 'left'];
 const OBSERVE = { childList: true, subtree: true, attributes: true };
-const OWN = /^data-net19-(?:rc|glyph|plain|photo|reading|recolor|mode)$/;
+const OWN = /^data-net19-(?:rc|glyph|plain|photo|reading|recolor|mode|pending)$/;
 const SHAPES = /^(svg|g|path|circle|rect|ellipse|line|polyline|polygon|text|tspan|use)$/;
 
 export function createRecolor(theme) {
   const root = document.documentElement;
   const ATTR = 'data-net19-rc', GLYPH = 'data-net19-glyph', READING = 'data-net19-reading', PLAIN = 'data-net19-plain', PHOTOED = 'data-net19-photo';
-  let target = null, tools = null, sheet = null, observer = null;
+  let target = null, tools = null, sheet = null, observer = null, veil = 0;
+  const PENDING = 'data-net19-pending';
+  const reveal = () => { clearTimeout(veil); veil = 0; root.removeAttribute(PENDING); };
   const roots = new Set();
   const closedRoot = globalThis.chrome?.dom?.openOrClosedShadowRoot;
   const shadowOf = el => {
@@ -282,7 +284,7 @@ export function createRecolor(theme) {
     for (const el of shallow) enqueue(el, true);
     for (const n of below) for (const el of n.getElementsByTagName('*')) enqueue(el, false);
     queue = new Set(); shallow = new Set(); below = new Set();
-    const started = performance.now(), budget = first ? 250 : document.readyState === 'complete' ? 30 : 60;
+    const started = performance.now(), budget = first || veil ? 250 : document.readyState === 'complete' ? 30 : 60;
     first = false;
     while ((urgent.length || work.length) && performance.now() - started < budget) {
       const slice = urgent.length ? urgent.splice(0, 200) : work.splice(0, 400);
@@ -310,6 +312,7 @@ export function createRecolor(theme) {
       for (const el of careful) el.removeAttribute(READING);
     }
     if (work.length || urgent.length) frame = requestAnimationFrame(process);
+    else if (veil && document.readyState !== 'loading') reveal();
     if (glyphWork.length || textureWork.length || pictureWork.length) (globalThis.requestIdleCallback || setTimeout)(sizeGlyphs, { timeout: 500 });
   };
   const sizeGlyphs = () => {
@@ -421,7 +424,8 @@ export function createRecolor(theme) {
     const bare = reading(() => [root, document.body].every(n => !n || (rgba(getComputedStyle(n).backgroundColor) || [0, 0, 0, 0])[3] === 0));
     const flat = theme.flat ? `,${theme.flat}` : '';
     return `html[data-net19-recolor]{color-scheme:${target}!important${bare ? `;background-color:${canvas}!important` : ''}}` +
-      `html[data-net19-recolor] :is([${GLYPH}]${flat}){filter:invert(1) hue-rotate(180deg)!important}`;
+      `html[data-net19-recolor] :is([${GLYPH}]${flat}){filter:invert(1) hue-rotate(180deg)!important}` +
+      `html[${PENDING}] body{opacity:0!important}`;
   };
 
   let base = null;
@@ -431,6 +435,7 @@ export function createRecolor(theme) {
     target = mode;
     tools = makeRecolor(mode);
     root.setAttribute('data-net19-recolor', mode);
+    if (document.readyState === 'loading') { root.setAttribute(PENDING, ''); veil = setTimeout(reveal, 1500); }
     base = document.createElement('style');
     base.id = 'net19-recolor-base';
     (document.head || root).append(base);
@@ -456,10 +461,11 @@ export function createRecolor(theme) {
     addEventListener('load', onLoad, true);
     document.addEventListener('net19-css', onStyles);
     addEventListener('load', () => { if (base) base.textContent = baseRules(); refreshAll(0); setTimeout(() => refreshAll(0), 2500); }, { once: true });
-    document.addEventListener('DOMContentLoaded', () => { if (base) base.textContent = baseRules(); refreshAll(0); }, { once: true });
+    document.addEventListener('DOMContentLoaded', () => { if (base) base.textContent = baseRules(); refreshAll(0); if (veil && !frame) reveal(); }, { once: true });
   };
   const stop = () => {
     if (!target) return;
+    reveal();
     target = null; tools = null;
     observer?.disconnect(); observer = null;
     for (const type of ['pointerover', 'pointerout', 'focusin', 'focusout', 'pointerdown', 'pointerup', 'keyup', 'transitionend', 'animationend']) removeEventListener(type, onEvent, { capture: true });

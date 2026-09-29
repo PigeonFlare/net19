@@ -48,7 +48,7 @@ globalThis.net19Theme = {
   let queued = false;
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; hide(); }); };
   const start = () => { hide(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();
 (() => {
   const LUCKY = /^i['’]?m feeling lucky$/i;
@@ -62,7 +62,7 @@ globalThis.net19Theme = {
   let queued = false;
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
   const start = () => { mark(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();
 (() => {
   const home = () => /^\/(?:webhp)?$/.test(location.pathname) && !document.getElementById('rso');
@@ -88,7 +88,7 @@ globalThis.net19Theme = {
     const button = document.createElement('button');
     button.type = 'button';
     button.setAttribute('data-net19-gsearch', '');
-    button.textContent = 'Google Search';
+    button.textContent = globalThis.net19Say?.('Google Search') ?? 'Google Search';
     button.addEventListener('click', event => {
       event.preventDefault();
       const q = (document.querySelector('form[role="search"] textarea[name="q"], form[role="search"] input[name="q"]')?.value || '').trim();
@@ -111,7 +111,7 @@ globalThis.net19Theme = {
   let queued = false;
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; run(); }); };
   const start = () => { run(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();
 (() => {
   const leaveAiMode = () => {
@@ -189,7 +189,7 @@ globalThis.net19Theme = {
   };
   const run = () => { if (location.pathname !== '/search') return; modules(); shapes(); };
   let timer = 0;
-  const later = () => { clearTimeout(timer); timer = setTimeout(run, 200); };
+  const later = () => { if (timer) return; timer = requestAnimationFrame(() => { timer = 0; run(); }); };
   const start = () => { run(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); addEventListener('load', later, { once: true }); };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();
