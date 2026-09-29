@@ -60,6 +60,29 @@ globalThis.net19Theme = {
       else if (/^(Notifications|Explore)$/.test(label) || link.querySelector('img')) mark(item, 'baricon');
     }
   };
+  const barSearch = () => {
+    const item = document.querySelector('[data-n19-ig="barsearch"]');
+    const link = item?.querySelector('[data-n19-ig="barsearch-link"]');
+    if (!item || !link || item === link || item.querySelector('[data-n19-ig="barsearch-box"]')) return;
+    const word = globalThis.net19Say?.('Search') ?? 'Search';
+    const box = document.createElement('label');
+    box.setAttribute('data-n19-ig', 'barsearch-box');
+    const icon = link.querySelector('svg')?.cloneNode(true);
+    if (icon) { icon.removeAttribute('aria-label'); icon.setAttribute('aria-hidden', 'true'); icon.setAttribute('data-n19-ig', 'barsearch-icon'); box.append(icon); }
+    const input = document.createElement('input');
+    input.type = 'text';
+    input.autocomplete = 'off';
+    input.placeholder = word;
+    input.setAttribute('aria-label', word);
+    input.setAttribute('data-n19-ig', 'barsearch-input');
+    input.addEventListener('keydown', event => {
+      const query = input.value.trim();
+      if (event.key === 'Enter' && query) location.assign(`/explore/search/keyword/?q=${encodeURIComponent(query)}`);
+      if (event.key === 'Escape') { input.value = ''; input.blur(); }
+    });
+    box.append(input);
+    item.append(box);
+  };
   const feedLayout = () => {
     const main = document.querySelector('main');
     const article = main?.querySelector('article');
@@ -207,6 +230,7 @@ globalThis.net19Theme = {
     }
     const rail = document.querySelector('[data-n19-ig="rail"]');
     if (rail && !rail.querySelector('[data-n19-ig="barrow"]')) topBar(rail);
+    barSearch();
     if (rail) document.documentElement.setAttribute('data-n19-igbar', '');
     feedLayout();
     for (const label of LATER_ICONS) {

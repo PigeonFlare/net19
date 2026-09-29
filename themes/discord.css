@@ -34,7 +34,7 @@ html, html :is(.theme-light, .theme-dark, .theme-darker, .theme-midnight) {
   --font-primary: var(--n19-font) !important; --font-display: var(--n19-font) !important;
   --font-headline: var(--n19-font) !important; --font-display-marketing: var(--n19-font) !important;
   --font-display-marketing-header: var(--n19-font) !important;
-  --background-base-lowest: var(--n19-tertiary) !important; --background-base-lower: var(--n19-secondary) !important;
+  --background-base-lowest: var(--n19-tertiary) !important; --background-base-lower: var(--n19-primary) !important;
   --background-base-low: var(--n19-secondary-alt) !important; --background-secondary-alt: var(--n19-secondary-alt) !important;
   --background-surface-high: var(--n19-primary) !important; --background-surface-higher: var(--n19-floating) !important;
   --background-surface-highest: var(--n19-floating) !important; --app-frame-background: var(--n19-tertiary) !important;
@@ -132,13 +132,18 @@ nav[class*="guilds_"], nav[class*="guilds_"] [class*="scroller_"], [class*="side
 [data-list-id="guildsnav"] { padding-top: 12px !important; }
 [data-list-id="guildsnav"] :is([class^="listItem_"], [class*=" listItem_"]) { margin: 0 0 8px !important; }
 [data-list-id="guildsnav"] foreignObject { mask: none !important; }
-[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"]):has(> svg > foreignObject)[style*="width: 32px"] { zoom: 1.5; }
-[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"]):has(> svg > foreignObject)[style*="width: 40px"] { zoom: 1.2; }
-[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"]):has(> svg > foreignObject)[style*="width: 44px"] { zoom: 1.090909; }
-[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"]):has(> svg > foreignObject)[style*="width: 52px"] { zoom: .923077; }
-[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"])[style*="width: 32px"] > :is([class^="lowerBadge_"], [class*=" lowerBadge_"], [class^="upperBadge_"], [class*=" upperBadge_"]) { zoom: .666667; }
-[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"])[style*="width: 40px"] > :is([class^="lowerBadge_"], [class*=" lowerBadge_"], [class^="upperBadge_"], [class*=" upperBadge_"]) { zoom: .833333; }
-[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"])[style*="width: 44px"] > :is([class^="lowerBadge_"], [class*=" lowerBadge_"], [class^="upperBadge_"], [class*=" upperBadge_"]) { zoom: .916667; }
+[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"]):has(> svg > foreignObject)[style*="width: 32px"] { zoom: 1 !important; transform: scale(1.5); transform-origin: 50% 50%; margin: 8px 0 !important; }
+[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"]):has(> svg > foreignObject)[style*="width: 40px"] { zoom: 1 !important; transform: scale(1.2); transform-origin: 50% 50%; margin: 4px 0 !important; }
+[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"]):has(> svg > foreignObject)[style*="width: 44px"] { zoom: 1 !important; transform: scale(1.090909); transform-origin: 50% 50%; margin: 2px 0 !important; }
+[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"]):has(> svg > foreignObject)[style*="width: 52px"] { zoom: 1 !important; transform: scale(.923077); transform-origin: 50% 50%; margin: -2px 0 !important; }
+[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"])[style*="width: 32px"] > :is([class^="lowerBadge_"], [class*=" lowerBadge_"]) { transform: scale(.666667); transform-origin: 100% 100%; }
+[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"])[style*="width: 32px"] > :is([class^="upperBadge_"], [class*=" upperBadge_"]) { transform: scale(.666667); transform-origin: 100% 0; }
+[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"])[style*="width: 40px"] > :is([class^="lowerBadge_"], [class*=" lowerBadge_"]) { transform: scale(.833333); transform-origin: 100% 100%; }
+[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"])[style*="width: 40px"] > :is([class^="upperBadge_"], [class*=" upperBadge_"]) { transform: scale(.833333); transform-origin: 100% 0; }
+[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"])[style*="width: 44px"] > :is([class^="lowerBadge_"], [class*=" lowerBadge_"]) { transform: scale(.916667); transform-origin: 100% 100%; }
+[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"])[style*="width: 44px"] > :is([class^="upperBadge_"], [class*=" upperBadge_"]) { transform: scale(.916667); transform-origin: 100% 0; }
+[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"])[style*="width: 52px"] > :is([class^="lowerBadge_"], [class*=" lowerBadge_"]) { transform: scale(1.083333); transform-origin: 100% 100%; }
+[data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"])[style*="width: 52px"] > :is([class^="upperBadge_"], [class*=" upperBadge_"]) { transform: scale(1.083333); transform-origin: 100% 0; }
 [data-list-id="guildsnav"] foreignObject > *, [data-list-id="guildsnav"] foreignObject > * > :is(img, [class*="childWrapper_"], [class*="icon_"]) { width: 100% !important; height: 100% !important; }
 [data-list-id="guildsnav"] foreignObject > *, [data-list-id="guildsnav"] foreignObject > * > :is(img, [class*="childWrapper_"], [class*="icon_"]) {
   border-radius: 50% !important; transition: border-radius .15s ease-out, background-color .15s ease-out !important; overflow: hidden;
@@ -175,9 +180,33 @@ html [class*="sidebarList_"] {
   --background-base-lowest: var(--n19-secondary) !important; --background-gradient-high: initial !important;
   --background-gradient-lowest: initial !important; --background-gradient-app-frame: initial !important;
 }
-[class*="privateChannels_"] [class*="searchBarComponent_"] {
+[class*="privateChannels_"] > [class*="searchBar_"] {
+  --control-secondary-background-default: var(--n19-tertiary) !important; --control-secondary-background-hover: var(--n19-tertiary) !important;
+  --control-secondary-background-active: var(--n19-tertiary) !important; --control-secondary-text-default: var(--n19-muted) !important;
+  --control-secondary-text-hover: var(--n19-muted) !important; --control-secondary-text-active: var(--n19-muted) !important;
+  --control-secondary-border-default: transparent !important; --control-secondary-border-hover: transparent !important;
+  --control-secondary-border-active: transparent !important; padding: 0 10px !important;
+}
+[class*="privateChannels_"] :is([class*="searchBarComponent_"], [class*="searchBar_"] > button, [class*="searchBar_"] > * > button, [class*="searchBar_"] > [role="button"]) {
   background: var(--n19-tertiary) !important; border: 0 !important; border-radius: 4px !important; box-shadow: none !important;
-  height: 28px !important; color: var(--n19-muted) !important; font-size: 14px !important;
+  height: 28px !important; min-height: 28px !important; padding: 0 6px !important; justify-content: flex-start !important; text-align: start !important;
+  color: var(--n19-muted) !important; font-size: 14px !important; font-weight: 500 !important; line-height: 28px !important;
+}
+[class*="privateChannels_"] :is([class*="searchBar_"] > button, [class*="searchBar_"] > * > button) * {
+  color: var(--n19-muted) !important; font-size: 14px !important; font-weight: 500 !important; justify-content: flex-start !important;
+  margin-inline-start: 0 !important; text-align: start !important;
+}
+[class*="privateChannels_"] [class*="interactive_"] {
+  --interactive-text-default: var(--n19-channels) !important; --text-muted: var(--n19-channels) !important; --channels-default: var(--n19-channels) !important;
+  color: var(--n19-channels) !important;
+}
+[class*="privateChannels_"] [class*="interactive_"]:is(:hover, :focus-visible) {
+  --interactive-text-default: var(--n19-int-hover) !important; --text-muted: var(--n19-int-hover) !important; --channels-default: var(--n19-int-hover) !important;
+  color: var(--n19-int-hover) !important;
+}
+[class*="privateChannels_"] [class*="interactive_"]:is([class*="selected_"], [class*="interactiveSelected_"]) {
+  --interactive-text-default: var(--n19-int-active) !important; --text-muted: var(--n19-int-active) !important; --channels-default: var(--n19-int-active) !important;
+  color: var(--n19-int-active) !important;
 }
 [class*="sidebarList_"], [class*="sidebarList_"] > nav, [class*="privateChannels_"] {
   background: var(--n19-secondary) !important; border: 0 !important; border-radius: 0 !important;
