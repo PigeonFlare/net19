@@ -111,7 +111,13 @@ globalThis.net19Theme = (() => {
     for (const meta of document.querySelectorAll('ytd-watch-flexy ytd-watch-metadata')) {
       const fold = meta.querySelector('#above-the-fold');
       const tip = meta.querySelector('ytd-watch-info-text tp-yt-paper-tooltip #tooltip');
-      const parts = (tip?.textContent || '').split(/\s+[•·]\s+/).map(part => part.trim()).filter(Boolean);
+      let parts = (tip?.textContent || '').split(/\s+[•·]\s+/).map(part => part.trim()).filter(Boolean);
+      if (parts.length < 2) {
+        const info = meta.querySelector('ytd-watch-info-text');
+        const count = (info?.querySelector('#view-count')?.getAttribute('aria-label') || '').trim();
+        const when = [...(info?.querySelectorAll('#info > span') || [])].map(span => span.textContent.trim()).find(text => /\d/.test(text) && !text.startsWith('#'));
+        parts = [count, when].filter(Boolean);
+      }
       if (!fold || parts.length < 2 || !/\d/.test(parts[0])) { meta.removeAttribute('data-n19-stats'); continue; }
       const date = (parts.slice(1).find(part => /\d/.test(part) && !part.startsWith('#')) || '').replace(/^(Premiered|Streamed live on|Published on)\s+/i, '');
       setText(own(fold, 'n19-views'), date ? `${parts[0]} • ${date}` : parts[0]);

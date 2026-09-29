@@ -57,7 +57,8 @@ globalThis.net19Theme = {
       }
     }
     for (const box of document.querySelectorAll('body#ysch #right ol:not([data-net19-scout])')) {
-      if (/Yahoo Scout/.test(box.textContent || '')) box.setAttribute('data-net19-scout', '');
+      const text = (box.textContent || '').replace(/\s+/g, ' ');
+      if (/Yahoo Scout/.test(text) && text.replace(/[^.]*Yahoo Scout[^.]*/g, '').trim().length < 160 && !box.querySelector('img, h2, h3')) box.setAttribute('data-net19-scout', '');
     }
   };
   let queued = false;

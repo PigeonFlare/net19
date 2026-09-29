@@ -33,6 +33,7 @@ body, body #a-page { font-family: Arial, sans-serif !important; }
 #nav-belt #nav-tools { display: flex !important; padding: 0 !important; }
 #nav-belt #nav-tools > :is(a, div) { height: 40px !important; top: 0 !important; margin-top: 0 !important; margin-bottom: 0 !important; padding-bottom: 0 !important; box-sizing: border-box !important; overflow: visible !important; }
 #nav-belt #nav-tools > :is(a, div) > :is(a, div, span):not(.nav-line-1-container, .nav-line-1, .nav-line-2, #nav-cart-count-container) { height: 40px !important; }
+#nav-belt #nav-tools > #nav-cart #nav-cart-text-container { padding-bottom: 5px !important; box-sizing: border-box !important; }
 #nav-main > .nav-fill { padding-left: 207px !important; padding-right: 420px !important; box-sizing: border-box !important; }
 #nav-main #nav-xshop { height: 44px !important; display: flex !important; align-items: center !important; }
 #nav-search-bar-form, .nav-search-field, #nav-search .nav-fill { border-radius: 4px !important; }
