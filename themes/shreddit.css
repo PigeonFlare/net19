@@ -501,3 +501,7 @@ aside.subreddit-right-rail-community-info div.px-md faceplate-tracker > a[class~
 aside.subreddit-right-rail-community-info div.px-md faceplate-tracker > a[class~="button"] * { color: inherit !important; font: inherit !important; }
 aside.subreddit-right-rail-community-info div.px-md faceplate-tracker > a[class~="button"]:hover { background: var(--n19-hover) !important; }
 [data-testid="search-results-sidebar"] p:is(.text-ellipsis, [class*="line-clamp"]) { display: block !important; -webkit-line-clamp: none !important; line-clamp: none !important; white-space: nowrap !important; overflow: hidden !important; text-overflow: ellipsis !important; }
+[data-n19-menu] { max-height: calc(100vh - 64px); overflow-y: auto; }
+[data-n19-menu] > a > span:first-child img { width: 20px; height: 20px; border-radius: 50%; object-fit: cover; margin: 0; }
+html:dir(rtl) shreddit-feed :is(shreddit-post, shreddit-ad-post) { padding: 8px 48px 2px 8px !important; background-image: linear-gradient(to left, var(--n19-vote) 40px, transparent 40px) !important; }
+html:dir(rtl) shreddit-feed :is(shreddit-post[view-type="compactView"], shreddit-ad-post[data-n19-classic]) { padding: 8px 48px 0 8px !important; background: var(--n19-card) linear-gradient(to left, var(--n19-vote) 40px, transparent 40px) !important; }

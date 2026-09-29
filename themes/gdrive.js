@@ -35,7 +35,7 @@ if (location.hostname === 'docs.google.com') addEventListener('load', () => setT
   };
   let queued = false;
   const start = () => { run(); new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; run(); }); } }).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();
 (() => {
   if (location.hostname !== 'docs.google.com') return;
@@ -45,5 +45,5 @@ if (location.hostname === 'docs.google.com') addEventListener('load', () => setT
   };
   let queued = false;
   const start = () => { run(); new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; run(); }); } }).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();

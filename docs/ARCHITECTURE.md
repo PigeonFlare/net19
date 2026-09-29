@@ -30,6 +30,8 @@ A theme can `extends` another: Google's apps (Maps, Calendar, Photos, Play and t
   - optionally, a map from the site's current palette colors to 2019 colors;
   - optionally, `only: 'dark'` for designs that were dark-only in 2019.
 
+Theme scripts start as soon as `<body>` exists, not at `DOMContentLoaded`, and batch their work into `requestAnimationFrame`, which runs before the next paint. A page that streams in is changed piece by piece before any of it is shown, so the current design never flashes first.
+
 The shared engine runs after it (`content.js`, built from `src/content/`) in the same isolated world. When `<body>` starts (stylesheets in `<head>` are parsed and nothing has painted yet), it:
 
 1. marks `html[data-net19-mode]`;
@@ -37,6 +39,15 @@ The shared engine runs after it (`content.js`, built from `src/content/`) in the
 3. repeats when the site changes mode.
 
 Palette maps are rescanned only on mode changes or new stylesheets, and those rescans are batched. net19's own sheet is disabled while the site's values are read, so the engine never wakes itself.
+
+### Languages
+
+Themes match a site's labels in English. `src/content/language.js` makes that work on pages in other languages:
+
+- `theme.words` maps a site's own labels in other languages (Spanish, French, Portuguese, Italian, Japanese, Chinese, Korean, Russian, Hindi, Arabic) to the English label a rule tests, so a post-2019 feature is hidden whatever language the page is in. The lists come from loading the same page in each language and pairing what sits in the same place.
+- `net19Say(label)` gives the few labels a theme adds itself (such as Reddit's "Posted by" or its feed menu) in the page's language, or `null` for a language it doesn't know.
+- Outside English, themes leave the site's own wording alone (search placeholders, taglines) instead of writing the 2019 English text over it, and skip added blocks that are only prose.
+- Right-to-left pages mirror the positioned rules with `:dir(rtl)`.
 
 ### Light and dark follow the device
 
@@ -49,6 +60,7 @@ The device's `prefers-color-scheme` decides the mode, and `html[data-net19-mode]
 - `color-scheme` is set to the target, so scrollbars and native form controls match.
 - A theme can leave parts exactly as the site draws them, such as bands designed around a photo, with `keep` (a selector) or `data-net19-keep` on the element, and recolor panels inside those again with `reflip`.
 - `theme.rejudge()` recolors the page again after a theme changes something the colors depend on.
+- While a page is still loading, `data-net19-pending` keeps its body transparent over the recolored page background until the first recolor pass has caught up (at most 1.5 s), so the site's own colors never flash before net19's.
 
 ### Guard
 
@@ -93,19 +105,12 @@ The check takes about 10–100 ms, depending on the size of the page.
 
 ## A site's own older frontend
 
-Two sites still serve an older frontend themselves. declarativeNetRequest rules send navigations there:
-
-- **Wikipedia**: article URLs without a query get `useskin=vector`, the legacy Vector skin.
-- **Reddit**: `/`, `/r/…`, `/user/…`, `/comments/…`, `/search`, and the listing tabs go to the same path on old.reddit.com.
-  - This happens only while the `reddit_session` cookie exists, because signed out, old.reddit.com only shows a sign-in page.
-  - The worker checks the cookie with `chrome.cookies` and follows `cookies.onChanged`, so signing in or out switches the rule on or off.
-  - Share links (`/r/<sub>/s/<id>`) and pages old Reddit does not have (settings, media, chat) are left alone.
-  - In light mode, old.reddit.com is left exactly as Reddit draws it. Old Reddit never had a dark mode, so in dark mode the device's preference applies a dark palette to the same layout. Subreddit stylesheets, written for a white page, are switched off via their `media` attribute while dark.
-  - Signed out, www.reddit.com gets the `shreddit` theme: the 2019 redesign's header, cards, fonts and night mode on the current app.
+- **Wikipedia** still serves its older frontend: a declarativeNetRequest rule gives article URLs without a query `useskin=vector`, the legacy Vector skin.
+- **Reddit** stays on www.reddit.com, signed in or out, with the `shreddit` theme: the 2019 redesign's header, Classic feed view, fonts and night mode on the current app. Signed out, feeds default to Reddit's own Classic view through its `compact=true` cookie; signed in, the feed menu lists your communities. Anyone who opens old.reddit.com directly gets the `reddit` theme there (a dark palette in dark mode, as old Reddit had none).
 
 ## Worker
 
-On install, update, startup, settings changes, and Reddit session changes, the worker:
+On install, update, startup and settings changes, the worker:
 
 - registers each active theme as a top-frame `document_start` content script: the theme's built CSS, its JS, then `content.js`. It re-registers only when the set changes, because an unregister/register cycle leaves a moment in which a loading page would miss its theme.
 - replaces its dynamic navigation rules.
@@ -121,8 +126,7 @@ Settings are `{ enabled, disabledHosts }`. Only the popup can change them. Switc
 | --- | --- |
 | Host access to the themed domains (153 domains for 163 themes) | Register the themes and navigation rules on those sites only |
 | `scripting` | Register the document-start theme scripts |
-| `declarativeNetRequestWithHostAccess` | Wikipedia's legacy-skin parameter and the old.reddit.com redirect |
-| `cookies` | Check whether a Reddit session exists, so old.reddit.com is only used when it works |
+| `declarativeNetRequestWithHostAccess` | Wikipedia's legacy-skin parameter |
 | `storage` | The two switches, and the site sections currently on a theme's safe layer |
 
 The extension-page CSP allows no connections.

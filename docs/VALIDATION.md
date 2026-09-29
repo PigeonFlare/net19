@@ -4,13 +4,13 @@
 
 Typecheck, unit tests, production build, then Chromium tests that load the built extension against local fixtures (any outside request fails the test).
 
-Unit tests cover the settings shape, host permissions matching the themed domains, per-site pause, the Wikipedia and Reddit URL rules, and the stylesheet contract: no generated text, no script-computed layout, no `html, body` backgrounds, dark tokens wherever light ones exist, and themes never switching a site's own mode.
+Unit tests cover the settings shape, host permissions matching the themed domains, per-site pause, the Wikipedia URL rule, and the stylesheet contract: no generated text, no script-computed layout, no `html, body` backgrounds, dark tokens wherever light ones exist, and themes never switching a site's own mode.
 
 Browser tests check that:
 
 - themed sites get their theme and other sites get nothing;
 - Wikipedia gets `useskin=vector`;
-- Reddit redirects to old.reddit.com only while `reddit_session` exists, keeping path and query, and never for settings pages or share links;
+- Reddit stays on reddit.com signed in or out, with no account check;
 - a light site on a dark device is recolored, and pictures keep their exact pixel colors in both directions;
 - the popup switches remove themes and rules as expected.
 

@@ -91,3 +91,9 @@ html[data-net19-mode="dark"]{--n19-title:#8ab4f8;--n19-url:#81c995;--n19-field:#
 #imgcrtr_key,#imginspn_key,.b_primary_nav_item:has(>a[href*="/images/create"]),.b_primary_nav_item:has(>a[href*="shorts"i]),.vnt-root,li:has(>a[href*="/videos/shorts"i]),#sb_feedback_floating,#id_h #id_mobile,#b_results a.b_algoReadMore{display:none!important}
 #b_header #id_l [data-n19-signin]{font:13px/50px Arial, Helvetica, sans-serif;color:var(--n19-scopebar)}
 :where(:root:not([data-n19-safe])) #b_header #id_l [data-n19-signin],#b_header:where(:root:not([data-n19-safe])) #id_l [data-n19-signin]{margin-right:8px}
+html:dir(rtl):where(:root:not([data-n19-safe])) #hp_app .sbox_sl{left:auto!important;right:241px!important}
+html:dir(rtl):where(:root:not([data-n19-safe])) #hp_app .sbox_sl::before{left:auto;right:-153px}
+html:dir(rtl):where(:root:not([data-n19-safe])) #hp_app header#hdr #headCont{margin-left:0!important;margin-right:64px!important}
+html:dir(rtl):where(:root:not([data-n19-safe])) #hp_app header#hdr .identity_wrapper{margin-right:0!important;margin-left:64px!important}
+html:dir(rtl):where(:root:not([data-n19-safe])) #b_header .b_searchboxForm{left:auto!important;right:100px!important}
+html:dir(rtl):where(:root:not([data-n19-safe])) #sb_form_q{padding-left:0!important;padding-right:12px!important}

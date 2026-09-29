@@ -568,3 +568,11 @@ aside.subreddit-right-rail-community-info div.px-md faceplate-tracker>a[class~="
 aside.subreddit-right-rail-community-info div.px-md faceplate-tracker>a[class~="button"]:hover{background:var(--n19-hover)!important}
 :where(:root:not([data-n19-safe])) [data-testid="search-results-sidebar"] p:is(.text-ellipsis,[class*="line-clamp"]),[data-testid="search-results-sidebar"]:where(:root:not([data-n19-safe])) p:is(.text-ellipsis,[class*="line-clamp"]){display:block!important;-webkit-line-clamp:none!important;line-clamp:none!important;white-space:nowrap!important;overflow:hidden!important}
 [data-testid="search-results-sidebar"] p:is(.text-ellipsis,[class*="line-clamp"]){text-overflow:ellipsis!important}
+:where(:root:not([data-n19-safe])) [data-n19-menu],[data-n19-menu]:where(:root:not([data-n19-safe])){max-height:calc(100vh - 64px);overflow-y:auto}
+:where(:root:not([data-n19-safe])) [data-n19-menu]>a>span:first-child img,[data-n19-menu]:where(:root:not([data-n19-safe]))>a>span:first-child img{width:20px;height:20px}
+[data-n19-menu]>a>span:first-child img{border-radius:50%;object-fit:cover}
+:where(:root:not([data-n19-safe])) [data-n19-menu]>a>span:first-child img,[data-n19-menu]:where(:root:not([data-n19-safe]))>a>span:first-child img{margin:0}
+html:dir(rtl):where(:root:not([data-n19-safe])) shreddit-feed :is(shreddit-post,shreddit-ad-post){padding:8px 48px 2px 8px!important}
+html:dir(rtl) shreddit-feed :is(shreddit-post,shreddit-ad-post){background-image:linear-gradient(to left, var(--n19-vote) 40px, transparent 40px)!important}
+html:dir(rtl):where(:root:not([data-n19-safe])) shreddit-feed :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]){padding:8px 48px 0 8px!important}
+html:dir(rtl) shreddit-feed :is(shreddit-post[view-type="compactView"],shreddit-ad-post[data-n19-classic]){background:var(--n19-card) linear-gradient(to left, var(--n19-vote) 40px, transparent 40px)!important}

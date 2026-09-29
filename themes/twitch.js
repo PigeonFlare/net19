@@ -38,7 +38,7 @@ globalThis.net19Theme = {
     const main = document.querySelector('#front-page-main-content');
     const box = main?.querySelector(':scope > [data-net19-join]');
     const signup = document.querySelector('nav.top-nav [data-a-target="signup-button"]');
-    if (!main || !signup) { box?.remove(); return; }
+    if (!main || !signup || !(globalThis.net19Lang?.() === 'en')) { box?.remove(); return; }
     const bar = [...document.querySelectorAll('.tw-callout-message')].find(c => /Join the Twitch community/i.test(c.textContent || ''));
     if (box) {
       const img = !box.querySelector('img') && bar?.querySelector('img');
@@ -95,5 +95,6 @@ globalThis.net19Theme = {
   let queued = false;
   const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
   const start = () => { fix(); new MutationObserver(later).observe(document.body, { childList: true, subtree: true }); };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();
+globalThis.net19Theme.words = {"Anuncio": "Ad", "Deja comentarios sobre este anuncio": "Leave feedback for this Ad", "Publicité": "Ad", "Laisser un commentaire sur cette annonce": "Leave feedback for this Ad"};

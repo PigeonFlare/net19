@@ -9,13 +9,15 @@ import { rgba } from './color.js';
   const extra = theme.later instanceof RegExp ? theme.later : null;
   const keep = theme.keepLabels instanceof RegExp ? theme.keepLabels : null;
   const label = text => String(text || '').replace(/\s+/g, ' ').replace(/^[^\p{L}\p{N}]+|[^\p{L}\p{N})]+$/gu, '').trim();
-  const later = text => { const t = label(text); return t.length > 1 && t.length < 40 && !keep?.test(t) && (LATER.test(t) || !!extra?.test(t)); };
+  const later = text => { const t = label(globalThis.net19English(label(text))); return t.length > 1 && t.length < 40 && !keep?.test(t) && (LATER.test(t) || !!extra?.test(t)); };
   const CONTROL = 'button, a, [role="button"], [role="tab"], [role="menuitem"], [role="link"], [role="option"], [class*="chip" i]';
   const ASKING = /^ask (?:gmail|google|photos|drive|maps|youtube|docs)\b|\b(?:or ask\b|ask anything|ask (?:a|any|your) question|ask (?:ai|me|gemini|copilot|rufus)|chat with)/i;
   const hideLater = scope => {
     for (const el of scope.querySelectorAll?.(CONTROL) || []) {
       if (el.hasAttribute('data-net19-hidden')) continue;
-      if (later(el.textContent) || later(el.getAttribute('aria-label')) || later(el.getAttribute('title'))) {
+      const words = el.textContent;
+      if (words.length > 200 && !el.hasAttribute('aria-label') && !el.hasAttribute('title')) continue;
+      if (later(words) || later(el.getAttribute('aria-label')) || later(el.getAttribute('title'))) {
         el.setAttribute('data-net19-hidden', '');
         const item = el.parentElement;
         if (item && /^(LI|YT-CHIP-CLOUD-CHIP-RENDERER)$/.test(item.tagName) && item.children.length === 1) item.setAttribute('data-net19-hidden', '');
@@ -69,19 +71,39 @@ import { rgba } from './color.js';
     return [0, 1, 2, 3].map(i => stops.reduce((sum, c) => sum + c[i], 0) / stops.length);
   };
   const MEDIA = 'img, picture, video, canvas, svg image, iframe';
+  let layerOf = new Map(), mediaOf = new Map();
+  const layer = e => {
+    let info = layerOf.get(e);
+    if (!info) {
+      const style = getComputedStyle(e);
+      const shade = style.backgroundImage !== 'none' ? gradient(style.backgroundImage) : null;
+      info = { blocked: style.backgroundImage !== 'none' && !shade, shade, color: rgba(style.backgroundColor) };
+      layerOf.set(e, info);
+    }
+    return info;
+  };
+  const mediaBoxes = e => {
+    let boxes = mediaOf.get(e);
+    if (!boxes) {
+      boxes = [];
+      for (const child of e.children) if (child.matches(MEDIA) || child.querySelector?.(':scope > img, :scope > video, :scope > picture')) boxes.push(child.getBoundingClientRect());
+      mediaOf.set(e, boxes);
+    }
+    return boxes;
+  };
   const backdrop = el => {
     const layers = [];
+    let b = null;
     for (let e = el; e; e = e.parentElement) {
-      const style = getComputedStyle(e);
-      let shade = null;
-      if (style.backgroundImage !== 'none') { shade = gradient(style.backgroundImage); if (!shade) return null; }
-      if (e !== el) for (const child of e.children) {
-        if (child.matches(MEDIA) || child.querySelector?.(':scope > img, :scope > video, :scope > picture')) {
-          const a = child.getBoundingClientRect(), b = el.getBoundingClientRect();
-          if (a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom) return null;
+      const { blocked, shade, color } = layer(e);
+      if (blocked) return null;
+      if (e !== el) {
+        const boxes = mediaBoxes(e);
+        if (boxes.length) {
+          b ??= el.getBoundingClientRect();
+          for (const a of boxes) if (a.left < b.right && b.left < a.right && a.top < b.bottom && b.top < a.bottom) return null;
         }
       }
-      const color = rgba(style.backgroundColor);
       if (shade && shade[3] > 0) layers.push({ color: shade, el: e });
       if (shade && shade[3] >= .95) break;
       if (color && color[3] > 0) {
@@ -126,7 +148,7 @@ import { rgba } from './color.js';
   };
   const check = () => {
     if (!document.body) return;
-    flips = new Map();
+    flips = new Map(); layerOf = new Map(); mediaOf = new Map();
     const view = { w: innerWidth, h: innerHeight };
     const changes = [];
     for (const el of textElements()) {

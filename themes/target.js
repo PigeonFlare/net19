@@ -27,7 +27,7 @@ globalThis.net19Theme = {
     addEventListener('load', later, { once: true });
     new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-flip'] });
   };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  if (document.body) start(); else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement, { childList: true });
 })();
 (() => {
   const fix = () => {
