@@ -200,6 +200,7 @@ main [role="tablist"] [role="presentation"]:has(> a[role="tab"]:is([href$="/high
 [data-n19-tw="main"] [data-n19-tw="go"] :is(p, span, div) { color: var(--n19-blue) !important; font-size: 15px !important; }
 [data-n19-tw="main"] button:is([data-n19-tw="signup"], [data-n19-tw="alt"]) > div.flex ~ div.flex { display: none !important; }
 [data-n19-tw="or"], [data-n19-tw="qr"] { display: none !important; }
+[data-n19-tw="main"] a[data-n19-tw-login] { margin-top: 0 !important; color: var(--n19-blue) !important; font-size: 15px !important; font-weight: 700 !important; text-decoration: none !important; box-sizing: border-box !important; width: 100% !important; }
 [data-n19-tw="row"] ~ footer nav { font-size: 13px !important; gap: 0 !important; padding: 12px 0 !important; background: var(--n19-page) !important; }
 [data-n19-tw="row"] ~ footer nav a, [data-n19-tw="row"] ~ footer nav > span { color: var(--n19-text-2) !important; font-size: 13px !important; }
 [data-n19-tw="row"] ~ footer nav a { margin: 0 8px !important; }
@@ -236,6 +237,7 @@ html[data-n19-tp] [data-n19-tl="pavatar"] > div { border-color: var(--n19-card) 
 html[data-n19-tp] [data-n19-tl="ptabs"] [role="tab"], html[data-n19-tp] [data-n19-tl="ptabs"] [role="tab"] * { font-size: 18px !important; font-weight: 700 !important; color: var(--n19-blue) !important; }
 html[data-n19-tp] [data-n19-tl="ptabs"] [role="tab"][aria-selected="true"], html[data-n19-tp] [data-n19-tl="ptabs"] [role="tab"][aria-selected="true"] * { color: var(--n19-text) !important; }
 html[data-n19-tp] [data-n19-tl="ptabs"] [role="tab"]:hover { background-color: transparent !important; text-decoration: underline; }
+html[data-n19-tp] main a.rounded-xs:hover { background-color: transparent !important; text-decoration: underline !important; }
 html[data-n19-tp] [data-n19-tl="ptabs"] [role="tablist"] > :is(span[role="presentation"], div.pointer-events-none) { background: transparent !important; }
 html[data-n19-tp] [data-n19-tl="pbuttons"] button[data-slot="xds-button"] { height: 36px !important; min-height: 0 !important; }
 html[data-n19-tp] [data-n19-tl="pbuttons"] button[data-slot="xds-button"] * { font-size: 14px !important; }

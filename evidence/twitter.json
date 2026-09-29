@@ -74,6 +74,175 @@
   ],
   "features": [
     {
+      "match": "^See what’s happening in the world right now$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s5"
+      ],
+      "note": "landing headline"
+    },
+    {
+      "match": "^Log in$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "log in button or link (on the landing the outlined Log in under Sign up)"
+    },
+    {
+      "match": "^Sign up$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "sign up in the New to Twitter? box (the landing Sign up links to a 4-level /i/jf/onboarding path, which the inventory skips as a story link; it is in the landing screenshots)",
+      "pages": [
+        "profile"
+      ]
+    },
+    {
+      "match": "^Phone, email, or username$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s5"
+      ],
+      "note": "landing login field"
+    },
+    {
+      "match": "^(About|Help Center)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home",
+        "start"
+      ],
+      "evidence": [
+        "s5",
+        "s10"
+      ],
+      "note": "landing footer"
+    },
+    {
+      "match": "^Terms$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "footer"
+    },
+    {
+      "match": "^Privacy Policy$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "note": "footer"
+    },
+    {
+      "match": "^Follow$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "profile"
+      ],
+      "evidence": [
+        "s4"
+      ],
+      "note": "Follow button on the profile"
+    },
+    {
+      "match": "^Tweets(Tweets)?$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "profile"
+      ],
+      "evidence": [
+        "s2",
+        "s4"
+      ],
+      "note": "Tweets tab"
+    },
+    {
+      "match": "^Tweets & replies(Tweets & replies)?$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "profile"
+      ],
+      "evidence": [
+        "s2"
+      ],
+      "note": "Tweets & replies tab"
+    },
+    {
+      "match": "^Media(Media)?$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "profile"
+      ],
+      "evidence": [
+        "s2"
+      ],
+      "note": "Media tab"
+    },
+    {
+      "match": "Followers$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "profile"
+      ],
+      "evidence": [
+        "s3",
+        "s4"
+      ],
+      "note": "follower count"
+    },
+    {
+      "match": "^New to Twitter\\?$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "profile"
+      ],
+      "evidence": [
+        "s4"
+      ],
+      "note": "sign-up box in the side column"
+    },
+    {
+      "match": "^Search",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "profile"
+      ],
+      "evidence": [
+        "s4"
+      ],
+      "note": "search"
+    },
+    {
       "match": "^(See what’s happening in the world right now|Join Twitter today\\.?)$",
       "in2019": true,
       "evidence": [

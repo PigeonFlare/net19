@@ -213,6 +213,15 @@ globalThis.net19Theme = {
       mark(el, /mode=signup/.test(el.getAttribute('href') || '') || /^Continue with phone$|^Sign up$/.test(text(el)) ? 'signup' : 'alt');
     }
     for (const el of main.querySelectorAll('div')) if (text(el) === 'or' && !el.querySelector('input, button, a')) { mark(el, 'or'); break; }
+    const signup = main.querySelector('[data-n19-tw="signup"]');
+    if (signup && !main.querySelector('[data-n19-tw-login]')) {
+      const login = document.createElement('a');
+      login.href = '/login';
+      login.textContent = 'Log in';
+      login.setAttribute('data-n19-tw-login', '');
+      mark(login, 'alt');
+      signup.after(login);
+    }
     const walker = document.createTreeWalker(row, NodeFilter.SHOW_TEXT);
     for (let node = walker.nextNode(); node; node = walker.nextNode()) {
       const to = WORDS.get(node.nodeValue.trim());
