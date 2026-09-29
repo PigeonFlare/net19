@@ -29,8 +29,9 @@ globalThis.net19Theme = {
     .rpl-vote-button-group:has(button[upvote][aria-pressed="true"]) > span { color: var(--n19-up) !important; }
     .rpl-vote-button-group:has(button[downvote][aria-pressed="true"]) > span { color: var(--n19-down) !important; }
     h2.condensed-post-title-heading, h1 { margin: 0 0 8px !important; }
-    :host([view-type="cardView"]) div:has(> h2.condensed-post-title-heading):has(> div > slot[name="post-flair"]) { flex-flow: row wrap !important; align-items: center !important; column-gap: 8px !important; }
-    :host([view-type="cardView"]) div:has(> h2.condensed-post-title-heading):has(> div > slot[name="post-flair"]) > * { flex: 0 1 auto !important; margin-bottom: 8px !important; }
+    :host([view-type="cardView"]) div:has(> h2.condensed-post-title-heading):has(> div > slot[name="post-flair"]) { display: block !important; font-size: 18px !important; line-height: 22px !important; margin-bottom: 8px !important; }
+    :host([view-type="cardView"]) div:has(> h2.condensed-post-title-heading):has(> div > slot[name="post-flair"]) > h2.condensed-post-title-heading { display: inline !important; margin: 0 !important; line-height: 22px !important; }
+    :host([view-type="cardView"]) div:has(> slot[name="post-flair"]) { display: inline-block !important; margin: 0 0 0 6px !important; vertical-align: middle !important; line-height: 16px !important; }
     .vote-icon-outline { display: none !important; }
     .vote-icon-fill { display: flex !important; }
     slot[name="post-stats-entry-point"], slot[name="post-insights-panel"] { display: none !important; }
