@@ -120,6 +120,8 @@ globalThis.net19Theme = {
   const SEARCH = `
     .reddit-search-bar { background: var(--n19-field) !important; border: 1px solid var(--n19-field-border) !important; border-radius: 4px !important; box-shadow: none !important; }
     .reddit-search-bar:hover, .reddit-search-bar:focus-within { background: var(--n19-card) !important; border-color: var(--n19-blue) !important; }
+    .reddit-search-bar > div.pb-xs:has(> form) { padding-bottom: 0 !important; border-bottom: 0 !important; }
+    .reddit-search-bar:focus-within:not(:has(#reddit-typeahead-container *, [role="listbox"] [role="option"], faceplate-tracker [role="option"])) { height: auto !important; }
     faceplate-search-input { height: 34px !important; }
     [slot="trailingContent"]:has(a[href*="/answers"]), a[href*="/answers"] { display: none !important; }
     .leadingIcon { flex: 0 0 20px !important; width: 20px !important; height: 20px !important; min-width: 20px !important; overflow: visible !important; color: var(--n19-action) !important; }
@@ -612,10 +614,14 @@ globalThis.net19Theme = {
     for (const comment of document.querySelectorAll('shreddit-comment[score]')) {
       const meta = comment.querySelector(':scope > details > summary [slot="commentMeta"] .author-name-meta');
       const trigger = meta?.closest('span.author-hovercard-trigger');
-      if (trigger && !trigger.parentElement.querySelector(':scope > [data-n19-points]')) {
-        const n = +comment.getAttribute('score');
-        if (Number.isFinite(n)) mark(trigger, 'data-n19-points', `${pretty(n)} point${n === 1 ? '' : 's'}`, s => trigger.after(s));
-      }
+      if (!trigger) continue;
+      const live = comment.querySelector(':scope > shreddit-comment-action-row')?.shadowRoot?.querySelector('.rpl-vote-button-group faceplate-number[number]')?.getAttribute('number');
+      const n = +(live ?? comment.getAttribute('score'));
+      if (!Number.isFinite(n)) continue;
+      const text = `${pretty(n)} point${n === 1 ? '' : 's'}`;
+      const shown = trigger.parentElement.querySelector(':scope > [data-n19-points]');
+      if (!shown) mark(trigger, 'data-n19-points', text, s => trigger.after(s));
+      else if (shown.textContent !== text) shown.textContent = text;
     }
     for (const search of document.querySelectorAll('reddit-search-large, faceplate-search-input, pdp-comment-search-input')) {
       const css = SEARCH + FIELD + (search.tagName === 'REDDIT-SEARCH-LARGE' ? SEARCH_FIELD : '');
@@ -635,6 +641,7 @@ globalThis.net19Theme = {
   const start = () => {
     scan();
     new MutationObserver(() => { retries = 0; later(); }).observe(document.documentElement, { childList: true, subtree: true });
+    addEventListener('click', event => { if (event.composedPath().some(n => n.hasAttribute?.('upvote') || n.hasAttribute?.('downvote'))) for (const wait of [150, 700, 1600]) setTimeout(later, wait); }, true);
     setInterval(() => times(document), 30000);
   };
   const VIEWS = [['/', 'true'], ['/r/', 'false'], ['/svc/shreddit/community-more-posts', 'false'], ['/r/popular', 'true'], ['/r/all', 'true']];

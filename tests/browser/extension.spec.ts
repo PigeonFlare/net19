@@ -169,8 +169,7 @@ test('a theme that stops fitting a redesigned page steps back to its safe layer,
   await expect.poll(fitRecords).toEqual([]);
   await expect.poll(scripts).not.toContain('net19-safe');
   await page.reload();
-  await check();
-  await expect(html).toHaveAttribute('data-n19-fit', /^fit/);
+  await expect.poll(async () => { await check(); return html.getAttribute('data-n19-fit'); }).toMatch(/^fit/);
   await expect(html).not.toHaveAttribute('data-n19-safe', /.*/);
 });
 
