@@ -104,9 +104,10 @@ import { rgba } from './color.js';
     let info = layerOf.get(e);
     if (!info) {
       const style = getComputedStyle(e);
-      const shade = style.backgroundImage !== 'none' ? gradient(style.backgroundImage) : null;
+      const masked = (style.maskImage && style.maskImage !== 'none') || (style.webkitMaskImage && style.webkitMaskImage !== 'none') || /text|padding|content/.test(style.backgroundClip);
+      const shade = style.backgroundImage !== 'none' && !masked ? gradient(style.backgroundImage) : null;
       const tile = style.backgroundImage !== 'none' && !shade ? texture(style.backgroundImage) : null;
-      info = { blocked: style.backgroundImage !== 'none' && !shade && !tile, shade: shade || tile, color: rgba(style.backgroundColor) };
+      info = { blocked: style.backgroundImage !== 'none' && !masked && !shade && !tile, shade: shade || tile, color: rgba(style.backgroundColor), blend: style.mixBlendMode };
       layerOf.set(e, info);
     }
     return info;
@@ -163,10 +164,13 @@ import { rgba } from './color.js';
   inkSheet.textContent = '[data-net19-hidden]{display:none!important}' +
     '[data-net19-ink="dark"],[data-net19-ink="dark"] *{color:#1d1d1f!important;-webkit-text-fill-color:#1d1d1f!important}' +
     '[data-net19-ink="light"],[data-net19-ink="light"] *{color:#f5f5f7!important;-webkit-text-fill-color:#f5f5f7!important}' +
+    '[data-net19-blend]{mix-blend-mode:normal!important}' +
     'svg[data-net19-icon="light"]{filter:brightness(0) invert(.92)!important}svg[data-net19-icon="dark"]{filter:brightness(0) invert(.12)!important}' +
     ':is(input,textarea)[data-net19-ink="dark"]{caret-color:#1d1d1f!important}:is(input,textarea)[data-net19-ink="dark"]::placeholder{color:#5f6368!important;-webkit-text-fill-color:#5f6368!important;opacity:1!important}' +
     ':is(input,textarea)[data-net19-ink="light"]{caret-color:#f5f5f7!important}:is(input,textarea)[data-net19-ink="light"]::placeholder{color:#bdc1c6!important;-webkit-text-fill-color:#bdc1c6!important;opacity:1!important}';
   const original = new WeakMap(), inline = new WeakMap();
+  let blendDark = null, fades = new Map();
+  const fadeOf = e => { if (!e || e === root || e.nodeType !== 1) return 1; let f = fades.get(e); if (f === undefined) { f = +getComputedStyle(e).opacity * fadeOf(e.parentElement); fades.set(e, f); } return f; };
   let textCache = null;
   const textElements = () => {
     if (textCache) return textCache;
@@ -177,17 +181,18 @@ import { rgba } from './color.js';
     for (let n = walker.nextNode(); n && found.size < 3000; n = walker.nextNode()) if (n.parentElement) found.add(n.parentElement);
     return found;
   };
-  const lift = (text, pt, under, goal) => {
+  const lift = (text, pt, under, goal, alpha = 1) => {
+    const drawn = c => over(shownAs([...c.slice(0, 3), alpha], pt), under);
     const tryWith = end => {
       let lo = 0, hi = 1, best = null;
       for (let i = 0; i < 12; i++) {
         const t = (lo + hi) / 2, c = [0, 1, 2].map(k => Math.round(text[k] + (end[k] - text[k]) * t)).concat(1);
-        if (ratio(over(shownAs(c, pt), under), under) >= goal) { best = c; hi = t; } else lo = t;
+        if (ratio(drawn(c), under) >= goal) { best = c; hi = t; } else lo = t;
       }
       return best;
     };
     const toDark = tryWith([0, 0, 0]), toLight = tryWith([255, 255, 255]);
-    const pick = toDark && toLight ? (ratio(over(shownAs(toDark, pt), under), under) <= ratio(over(shownAs(toLight, pt), under), under) ? toDark : toLight) : toDark || toLight;
+    const pick = toDark && toLight ? (ratio(drawn(toDark), under) <= ratio(drawn(toLight), under) ? toDark : toLight) : toDark || toLight;
     if (!pick) return ratio(shownAs([29, 29, 31, 1], pt), under) >= ratio(shownAs([245, 245, 247, 1], pt), under) ? 'dark' : 'light';
     return `rgb(${pick[0]}, ${pick[1]}, ${pick[2]})`;
   };
@@ -209,11 +214,17 @@ import { rgba } from './color.js';
   };
   const check = () => {
     if (!document.body) return;
-    flips = new Map(); layerOf = new Map(); mediaOf = new Map();
+    flips = new Map(); layerOf = new Map(); mediaOf = new Map(); fades = new Map();
     const view = { w: innerWidth, h: innerHeight };
     const changes = [];
+    const dark = root.getAttribute('data-net19-mode') === 'dark';
+    if (dark !== blendDark) { blendDark = dark; for (const e of document.querySelectorAll('[data-net19-blend]')) e.removeAttribute('data-net19-blend'); }
     for (const el of textElements()) {
       if (el.closest('script, style, noscript, [data-net19-hidden]')) continue;
+      for (let e = el, i = 0; e && e !== root && i < 12; e = e.parentElement, i++) {
+        const { blend } = layer(e);
+        if ((dark && blend === 'multiply') || (!dark && blend === 'screen')) { if (!e.hasAttribute('data-net19-blend')) e.setAttribute('data-net19-blend', ''); }
+      }
       const box = el.getBoundingClientRect();
       if (box.width < 2 || box.height < 2 || box.bottom < 0 || box.top > view.h || box.right < 0 || box.left > view.w) continue;
       const style = getComputedStyle(el);
@@ -224,7 +235,10 @@ import { rgba } from './color.js';
       const bg = backdrop(el);
       if (!bg) { if (el.hasAttribute('data-net19-ink')) changes.push([el, null]); continue; }
       const pt = parity(el), inText = bg.color;
-      const shown = over(shownAs(text, pt), inText);
+      const fade = fadeOf(el);
+      if (fade < .15) continue;
+      const seen = [...text.slice(0, 3), text[3] * fade];
+      const shown = over(shownAs(seen, pt), inText);
       const current = el.getAttribute('data-net19-ink');
       const size = parseFloat(style.fontSize), large = size >= 24 || (size >= 18.6 && +style.fontWeight >= 600);
       const chroma = c => Math.max(...c.slice(0, 3)) - Math.min(...c.slice(0, 3));
@@ -232,7 +246,7 @@ import { rgba } from './color.js';
       if (ratio(shown, inText) >= floor) { if (current) changes.push([el, null]); continue; }
       if (!current && overPicture(el, box)) continue;
       if (!original.has(el)) original.set(el, text);
-      const lifted = lift(text, pt, inText, floor + .3);
+      const lifted = lift(text, pt, inText, floor + .3, text[3] * fade);
       if (current !== lifted) changes.push([el, lifted]);
     }
     for (const f of document.querySelectorAll('input:not([type=hidden]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=submit]):not([type=button]):not([type=image]):not([type=reset]), textarea')) {
