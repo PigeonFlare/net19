@@ -105,11 +105,9 @@ globalThis.net19Theme = {
     .reddit-search-bar { background: var(--n19-field) !important; border: 1px solid var(--n19-field-border) !important; border-radius: 4px !important; box-shadow: none !important; }
     .reddit-search-bar:hover, .reddit-search-bar:focus-within { background: var(--n19-card) !important; border-color: var(--n19-blue) !important; }
     faceplate-search-input { height: 34px !important; }
-    .leadingIcon > slot > svg, .leadingIcon > slot::slotted(svg) { visibility: hidden !important; }
     [slot="trailingContent"]:has(a[href*="/answers"]), a[href*="/answers"] { display: none !important; }
-    .leadingIcon { flex: 0 0 20px !important; width: 20px !important; height: 20px !important; min-width: 20px !important; overflow: visible !important; background: no-repeat center / 18px 18px url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Ccircle cx='8.5' cy='8.5' r='5.8' fill='none' stroke='%23878a8c' stroke-width='1.8'/%3E%3Cpath d='M12.8 12.8l4.4 4.4' stroke='%23878a8c' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E") !important; }
+    .leadingIcon { flex: 0 0 20px !important; width: 20px !important; height: 20px !important; min-width: 20px !important; overflow: visible !important; color: var(--n19-action) !important; }
     .centered-placeholder { display: none !important; }
-    faceplate-search-input > [slot="leadingIcon"] { visibility: hidden !important; width: 18px !important; }
     faceplate-search-input > [slot="footer"] { display: none !important; }
     form.rounded-5, .rounded-5 { border-radius: 4px !important; }
     input, textarea { text-align: left !important; color: var(--n19-text) !important; font-family: var(--n19-font) !important; font-size: 14px !important; }
@@ -149,7 +147,6 @@ globalThis.net19Theme = {
     popular: ['M12.5 5h5v5l-1.9-1.9-4.6 4.6-3-3L3.7 14l-1.2-1.2L8 7.3l3 3 3.4-3.4z'],
     all: ['M3 11h3v6H3zM8.5 3h3v14h-3zM14 7h3v10h-3z'],
     caret: ['M5.5 8h9L10 12.7z'],
-    close: ['M5.2 4 10 8.8 14.8 4 16 5.2 11.2 10l4.8 4.8-1.2 1.2-4.8-4.8L5.2 16 4 14.8 8.8 10 4 5.2z'],
     community: ['M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm0 1.8a6.2 6.2 0 1 1 0 12.4 6.2 6.2 0 0 1 0-12.4zM10 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z'],
     user: ['M10 10a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zm0 1.5c-3.3 0-6 1.8-6 4v1.5h12v-1.5c0-2.2-2.7-4-6-4z'],
   };
