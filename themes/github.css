@@ -30,6 +30,8 @@ header.HeaderMktg button[aria-label^="Search or jump" i] {
   height: 34px !important; padding: 0 10px !important; align-items: center !important; line-height: 20px !important; color: var(--n19-header-dim) !important; font-size: 14px !important; font-weight: 400 !important;
 }
 header.HeaderMktg button[aria-label^="Search or jump" i] svg { display: none !important; }
+header.HeaderMktg button[aria-label^="Search or jump" i]:has([data-net19-label]) [class*="HeaderSearch-module__label"] { visibility: hidden !important; }
+header.HeaderMktg :has(> button[aria-label^="Search or jump" i]) { width: auto !important; max-width: none !important; margin-inline-end: 16px !important; }
 header.HeaderMktg button[aria-label^="Search or jump" i] > span { justify-content: flex-start !important; text-align: left !important; width: 100% !important; }
 header.HeaderMktg button[aria-label^="Search or jump" i] { position: relative !important; }
 header.HeaderMktg button[aria-label^="Search or jump" i] [data-net19-label] { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); line-height: 20px; color: var(--n19-header-dim) !important; }
