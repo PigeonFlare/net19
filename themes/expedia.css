@@ -54,3 +54,4 @@ header.global-navigation-site-header a[data-stid="listYourProperty-link"] { bord
 :is(input.uitk-field-input, button.uitk-fake-input, .uitk-field select) { border-radius: 2px !important; }
 #search_button.uitk-button-only-icon, button[data-stid="search-button"].uitk-button-only-icon { border-radius: 3px !important; }
 #ai-property-expert-banner, [data-stid^="ai-property-expert"] { display: none !important; }
+header.global-navigation-site-header li:has(a[href="/inbox/notifications"]), [role="region"][aria-label*="OneKeyCash"] { display: none !important; }

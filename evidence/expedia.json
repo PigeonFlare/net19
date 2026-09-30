@@ -1,0 +1,132 @@
+{
+  "theme": "expedia",
+  "era": "2019 expedia.com as every visitor saw it (Arquivo.pt captures January, July and November 2019 agree): yellow #ffcb00 header with the navy Expedia globe logo, 'Add your property' outlined button, Account / My Trips / Support / Español on the right and a second row Flights / Hotels / Bundle and Save / Cars / Cruises / Things to Do / Discover / Vacation Rentals / Deals / Rewards / Mobile; a dark grey search wizard with grey icon tabs (the selected one blue), white labelled fields and a yellow Search button; hotel search results with a map, 'Search by property name', price filter, sort and member-price prompts; hotel pages with a photo gallery, rooms and reviews; footer link columns and country list.",
+  "sources": [
+    {
+      "id": "home-a201901",
+      "url": "https://arquivo.pt/noFrame/replay/20190101045205/https://www.expedia.com/",
+      "date": "2019-01-01",
+      "shows": "home: yellow header, nav row Flights/Hotels/Bundle and Save/Cars/Cruises/Things to Do/Discover/Vacation Rentals/Deals/Rewards/Mobile, Account menu (Sign In, Create an Account, My Lists, My Trips), Support, Español, wizard tabs 1 of 7, Origin/Destination/dates/Travelers fields, Advanced options, Search, 'The world is a big place' destinations, footer columns and country list"
+    },
+    {
+      "id": "home-a201907",
+      "url": "https://arquivo.pt/noFrame/replay/20190701001254/https://www.expedia.com/",
+      "date": "2019-07-01",
+      "shows": "home: same yellow header and dark grey wizard with icon tabs, Flight + Hotel sub-tabs, 'I only need a hotel for part of my stay', Preferred class, yellow Search with 'Save up to $583'"
+    },
+    {
+      "id": "home-a201911",
+      "url": "https://arquivo.pt/noFrame/replay/20191120185443/https://www.expedia.com/",
+      "date": "2019-11-20",
+      "shows": "home page as served in 2019-11: same header, wizard, deals and footer"
+    },
+    {
+      "id": "srp-a201907",
+      "url": "https://arquivo.pt/noFrame/replay/20190701105403/https://www.expedia.com/Hotel-Search",
+      "date": "2019-07-01",
+      "shows": "hotel search page: header, search form, map, filters (Search by property name, price, star rating), sort, member-price sign-in prompt, results"
+    },
+    {
+      "id": "srp-a201909",
+      "url": "https://arquivo.pt/noFrame/replay/20190908084127/https://www.expedia.com/Hotel-Search?rfrrid=TG.LP.CheckPrices.Hotel&adults=2&regionId=181363&startDate=10%2F25%2F2019&endDate=10%2F27%2F2019",
+      "date": "2019-09-08",
+      "shows": "hotel search results as served in 2019-09 (capture listed in the Arquivo.pt index)"
+    },
+    {
+      "id": "srp-a201912",
+      "url": "https://arquivo.pt/noFrame/replay/20191204021034/https://www.expedia.com/Hotel-Search",
+      "date": "2019-12-04",
+      "shows": "hotel search page as served in 2019-12"
+    },
+    {
+      "id": "hip-a201909",
+      "url": "https://arquivo.pt/noFrame/replay/20190908050614/https://www.expedia.com/Las-Vegas-Hotels-Luxor-Hotel-And-Casino.h15237.Hotel-Information",
+      "date": "2019-09-08",
+      "shows": "hotel page: gallery, name and stars, price, rooms, amenities, reviews, map"
+    },
+    {
+      "id": "hip-a201907",
+      "url": "https://arquivo.pt/noFrame/replay/20190711004630/https://www.expedia.com/Las-Vegas-Hotels-Polo-Towers-By-Diamond-Resorts.h1619187.Hotel-Information",
+      "date": "2019-07-11",
+      "shows": "hotel page as served in 2019-07"
+    },
+    {
+      "id": "hip-a201909b",
+      "url": "https://arquivo.pt/noFrame/replay/20190908073041/https://www.expedia.com/Las-Vegas-Hotels-Hampton-Inn-Suites-Las-Vegas-South.h1604634.Hotel-Information",
+      "date": "2019-09-08",
+      "shows": "hotel page as served in 2019-09"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header area|section area|tablist area|form area|Filter by|repeated .*|Skip to main content)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201901",
+        "home-a201907",
+        "srp-a201907"
+      ],
+      "note": "page frame: header, wizard tabs and form, results filters; repeated items are deals and hotels"
+    },
+    {
+      "match": "^(Expedia logo|Shop travel|Open app|USD•?|English|Español|List your property|Support|Trips|Sign in)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201901",
+        "home-a201907",
+        "home-a201911"
+      ],
+      "note": "logo, travel menu (2019: Flights/Hotels/... nav row), Mobile app link, language link, 'Add your property' (now List your property), Support, My Trips, Account/Sign In",
+      "required": true
+    },
+    {
+      "match": "^(Stays|Hotels|Flights|Cars|Packages|Bundle and Save|Things to do|Cruises|Vacation Rentals|Where to\\?.*|Going to|Search|Book now|See more deals|Show (previous|next) image)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201901",
+        "home-a201907"
+      ],
+      "note": "wizard tabs (2019: Flights, Hotels, Bundle and Save, Cars, Cruises, Things to Do, Vacation Rentals), destination field, Search, deal cards and carousels"
+    },
+    {
+      "match": "^(.*Sale.*|Sale: .*|.*Members save .*)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201907",
+        "home-a201911"
+      ],
+      "note": "deal and member-price promos (2019 home had deals, 'Save up to $583' and member pricing)",
+      "action": "kept: content"
+    },
+    {
+      "match": "^(The one place you go to go places)$",
+      "in2019": false,
+      "evidence": [
+        "home-a201901",
+        "home-a201907"
+      ],
+      "note": "hero tagline above the wizard; the 2019 home had the wizard alone",
+      "action": "kept: page heading"
+    },
+    {
+      "match": "^(Communication Center|Click to open VAC widget.*|Promotion: .*OneKeyCash.*)$",
+      "in2019": false,
+      "evidence": [
+        "home-a201901",
+        "home-a201907"
+      ],
+      "note": "inbox bell (2021+), virtual-agent chat launcher and OneKeyCash rewards (2023) promos",
+      "action": "hidden"
+    },
+    {
+      "match": "^(static map image|View in a map|Search by property name|.*Nightly price|More information on how our sort order works.*|Sort by .*|Sign in for extra savings|Show more stays)$",
+      "in2019": true,
+      "evidence": [
+        "srp-a201907",
+        "srp-a201909",
+        "srp-a201912"
+      ],
+      "note": "hotel results: map, property-name search, price range, sort with its explanation link, member-price sign-in prompt, more results"
+    }
+  ]
+}
