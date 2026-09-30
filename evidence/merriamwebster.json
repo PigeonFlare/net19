@@ -1,6 +1,6 @@
 {
  "theme": "merriamwebster",
- "era": "",
+ "era": "2019 Merriam-Webster (blue #2d5f7c bar with the round logo, uppercase nav links, dictionary/thesaurus search tabs, entry sections Definition / Examples / First Known Use / History and Etymology / Dictionary Entries near / Kids Definition)",
  "sources": [
   {
    "id": "entry1-201911",
@@ -55,6 +55,30 @@
    "url": "https://arquivo.pt/noFrame/replay/20191211105629/https://www.merriam-webster.com/word-of-the-day",
    "date": "2019-12-11",
    "shows": "wotd3 page as served in 2019-12 (Arquivo.pt capture rendered with its 2019 CSS)"
+  },
+  {
+   "id": "love-a20190920",
+   "url": "https://arquivo.pt/noFrame/replay/20190920122545/https://www.merriam-webster.com/dictionary/love",
+   "date": "2019-09-20",
+   "shows": "entry page: header (logo, SINCE 1828, JOIN MWU, GAMES, BROWSE THESAURUS, WORD OF THE DAY, WORDS AT PLAY, MORE, TIME TRAVELER), search with clear and search buttons and dictionary/thesaurus tabs, Save Word, Definition, Synonyms & Antonyms, Examples in a Sentence with source links, First Known Use, History and Etymology with cross-reference links, Learn More about, related articles, Dictionary Entries near, Statistics, English Language Learners Definition, Kids Definition, Word of the Day rail, Test Your Vocabulary, Words at Play and Word Games rail, Word of the Day sign-up, footer with WORDCENTRAL FOR KIDS, SCRABBLE WORD FINDER, Dictionary API, Shop"
+  },
+  {
+   "id": "wap-a20190920",
+   "url": "https://arquivo.pt/noFrame/replay/20190920000000/https://www.merriam-webster.com/words-at-play",
+   "date": "2019-09",
+   "shows": "Words at Play: Recent Posts, Words We're Watching, Usage & Grammar, Commonly Confused sections, Word of the Day newsletter sign-up"
+  },
+  {
+   "id": "home-a20191231",
+   "url": "https://arquivo.pt/noFrame/replay/20191231225608/https://www.merriam-webster.com/",
+   "date": "2019-12-31",
+   "shows": "home: three promo cards, TRENDING NOW, quiz, Word of the Day, PODCAST, Videos module with play buttons and See All Videos, Word Games, Editors' Picks, Our Apps, Time Traveler link, footer Shop / Apps"
+  },
+  {
+   "id": "thes-a20190913",
+   "url": "https://arquivo.pt/noFrame/replay/20190913094944/https://www.merriam-webster.com/thesaurus/celebrate",
+   "date": "2019-09-13",
+   "shows": "thesaurus entry: same 2019 header, headword, Synonyms and Antonyms of celebrate, Synonym Discussion, Learn More about with Definition of link, related articles, Word of the Day rail, Words at Play and games rail"
   }
  ],
  "features": [
@@ -205,17 +229,6 @@
    ]
   },
   {
-   "match": "^Merriam Webster$",
-   "in2019": true,
-   "required": true,
-   "evidence": [
-    "entry1-201911",
-    "entry3-201909",
-    "entry6-201909"
-   ],
-   "note": "required: logo"
-  },
-  {
    "match": "^Search$",
    "in2019": true,
    "required": true,
@@ -227,7 +240,7 @@
    "note": "required: dictionary search"
   },
   {
-   "match": "^Games$",
+   "match": "^Word of the Day$",
    "in2019": true,
    "required": true,
    "evidence": [
@@ -238,15 +251,193 @@
    "note": "required: header nav"
   },
   {
-   "match": "^Word of the Day$",
+   "match": "^Merriam Webster( - established 1828)?$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "entry1-201911",
+    "love-a20190920"
+   ],
+   "note": "required: the round Merriam-Webster logo (2019 alt: Merriam-Webster Logo, with SINCE 1828 beside it)"
+  },
+  {
+   "match": "^(Dictionary On\\. Search will provide dictionary results\\.|Thesaurus On\\. Search will provide thesaurus results\\.|Dictionary|Thesaurus|Close Search|Search Word)$",
+   "in2019": true,
+   "evidence": [
+    "love-a20190920",
+    "entry3-201909"
+   ],
+   "note": "2019 search form: dictionary/thesaurus tabs, clear-term button, search button"
+  },
+  {
+   "match": "^(More|Grammar|Word Finder|Newsletters|Books)$",
+   "in2019": true,
+   "evidence": [
+    "love-a20190920",
+    "wap-a20190920",
+    "home-a20191231"
+   ],
+   "note": "2019 header had MORE; Grammar is the 2019 Words at Play 'Usage & Grammar' section, Word Finder the 2019 SCRABBLE WORD FINDER footer link, Newsletters the 2019 Word of the Day newsletter sign-up, Books the 2019 Shop"
+  },
+  {
+   "match": "^(Navigate to Time Traveler page|Select a year)$",
+   "in2019": true,
+   "evidence": [
+    "love-a20190920",
+    "entry6-201909",
+    "home2-201907"
+   ],
+   "note": "Time Traveler (2019 header link and home module)"
+  },
+  {
+   "match": ".*",
+   "within": ".home-general-promo-item",
+   "in2019": true,
+   "evidence": [
+    "home-a20191231",
+    "home1-201901"
+   ],
+   "note": "home Apps / Podcast / Shop cards: 2019 home had Our Apps and PODCAST modules and the Shop link"
+  },
+  {
+   "match": ".*",
+   "within": ".wap-featured-media-promo-item",
+   "in2019": true,
+   "evidence": [
+    "home-a20191231",
+    "home2-201907"
+   ],
+   "note": "featured video in the home Videos module (2019 Videos module with play buttons)"
+  },
+  {
+   "match": "^(MERRIAM-WEBSTER DICTIONARY API|Kid's Dictionary|Browse the Kid's Dictionary)$",
+   "in2019": true,
+   "evidence": [
+    "love-a20190920"
+   ],
+   "note": "2019 footer: Dictionary API and WORDCENTRAL FOR KIDS"
+  },
+  {
+   "match": ".*",
+   "within": ".entry-word-section-container",
+   "in2019": true,
+   "evidence": [
+    "love-a20190920",
+    "entry1-201911"
+   ],
+   "note": "entry head: headword, part of speech, pronunciation, synonyms link (2019 Synonyms & Antonyms link)"
+  },
+  {
+   "match": "^(Examples of .* in a Sentence|Word History|Browse Nearby Words|Kids Definition|More from Merriam-Webster on .*|Articles Related to .*|See More|Read More|View source|Merriam-Webster unabridged|Sign up for Word of the Day|Sign Up)$",
+   "in2019": true,
+   "evidence": [
+    "love-a20190920",
+    "entry1-201911"
+   ],
+   "note": "2019 entry sections: Examples in a Sentence with source links, History and Etymology, Dictionary Entries near, Kids Definition, Learn More about, related articles, unabridged link, Word of the Day sign-up"
+  },
+  {
+   "match": ".*",
+   "within": "#word-history",
+   "in2019": true,
+   "evidence": [
+    "love-a20190920"
+   ],
+   "note": "History and Etymology cross-reference links"
+  },
+  {
+   "match": ".*",
+   "within": "#nearby-entries",
+   "in2019": true,
+   "evidence": [
+    "love-a20190920"
+   ],
+   "note": "Dictionary Entries near: word links"
+  },
+  {
+   "match": ".*",
+   "within": ".wotd-side",
+   "in2019": true,
+   "evidence": [
+    "love-a20190920",
+    "wotd2-201909"
+   ],
+   "note": "Word of the Day rail (2019 WORD OF THE DAY with the headword)"
+  },
+  {
+   "match": "^(Popular in Grammar & Usage|Popular in Wordplay|Games & Quizzes)$",
+   "in2019": true,
+   "evidence": [
+    "love-a20190920",
+    "wap-a20190920"
+   ],
+   "note": "2019 bottom and rail modules: usage articles, Words at Play articles and word games"
+  },
+  {
+   "match": "^(Frequently Asked Questions|Cite this Entry|Copy Citation)$",
+   "in2019": false,
+   "evidence": [
+    "absent from every 2019 entry capture (love, house, Évora)"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^(Slang|Merch|Browse Example Sentences)$",
+   "in2019": false,
+   "evidence": [
+    "absent from the 2019 header, home and footer captures"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": ".*",
+   "within": ".big-3-promos-container",
+   "in2019": true,
+   "evidence": [
+    "home-a20191231",
+    "home1-201901",
+    "home2-201907"
+   ],
+   "note": "home top row of three editorial promo cards (2019: Words of the Year, Puku app, Word of the Year promos); card headlines are content"
+  },
+  {
+   "match": "^(Grammar & Usage|Wordplay)$",
+   "in2019": true,
+   "evidence": [
+    "wap-a20190920",
+    "home-a20191231"
+   ],
+   "note": "2019 Words at Play 'Usage & Grammar' section and home Editors' Picks wordplay articles"
+  },
+  {
+   "match": "^Games( & Quizzes)?$",
    "in2019": true,
    "required": true,
    "evidence": [
     "entry1-201911",
     "entry3-201909",
-    "entry6-201909"
+    "entry6-201909",
+    "home-a20191231"
    ],
-   "note": "required: header nav"
+   "note": "required: GAMES header link (the home header labels it Games & Quizzes)"
+  },
+  {
+   "match": "^(Synonyms of .*|Definition of .*|Thesaurus On\\. Search results will provide Thesaurus results\\.)$",
+   "in2019": true,
+   "evidence": [
+    "thes-a20190913"
+   ],
+   "note": "2019 thesaurus: Synonyms and Antonyms of <word>, Definition of <word> links, dictionary/thesaurus search tabs"
+  },
+  {
+   "match": ".*",
+   "within": "#related-articles",
+   "in2019": true,
+   "evidence": [
+    "thes-a20190913",
+    "love-a20190920"
+   ],
+   "note": "related Words at Play articles under the entry (2019 had them)"
   }
  ]
 }

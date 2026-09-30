@@ -84,3 +84,7 @@ header#home-header #home-search-term { border-radius: 0 !important; }
   letter-spacing: .0625em !important; color: var(--n19-nav-text) !important; border-radius: 0 !important; border-left: 1px solid var(--n19-rule); height: 14px !important; line-height: 14px !important; }
 .storybook-global-header header nav > a:first-child { border-left: 0; }
 .storybook-global-header .gh-more-dropdown { border-radius: 0 !important; }
+#faqs, #citations, .left-sidebar li:has(> a[href="#citations"]), .left-sidebar li:has(> a[href="#faqs"]), .left-sidebar li:has(> a[href="#faqs-anchor"]) { display: none !important; }
+li:has(> #mw-global-nav-slang-words), li:has(> #mw-slim-header-nav-slang-mobile), li:has(> a[href="/slang"]), li:has(> #mw-global-nav-shop-merch), a[href*="threadless.com"], .home-general-promo-item-card .col:has(a[href*="threadless.com"]) { display: none !important; }
+.browse--sentences { display: none !important; }
+.redesign-container:has([id^="thesaurus-entry"]) :is(#examples, li:has(> a[href="#examples"])) { display: none !important; }
