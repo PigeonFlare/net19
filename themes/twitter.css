@@ -115,6 +115,7 @@ main [role="tablist"] > span[role="presentation"] { background: var(--n19-blue) 
 main [role="tablist"] [role="tab"] svg[data-icon="icon-chevron-down-md"], main [role="tablist"] [role="tab"] span.w-4:has(svg[data-icon="icon-chevron-down-md"]) { display: none !important; }
 main :is(.sticky, [data-orientation="horizontal"]) > .border-b-\[0\.5px\] { border-bottom: 1px solid var(--n19-rule) !important; }
 [data-n19-tw="hometabs"] > [role="presentation"]:nth-child(n+3) { display: none !important; }
+:has(> [data-testid="ScrollSnap-SwipeableList"] > [data-n19-tw="hometabs"]) > [data-testid$="ButtonWrapper"] { display: none !important; }
 [data-n19-tw="hometabs"] [role="tab"] :is(span, div) { font-weight: 700 !important; font-size: 15px !important; }
 
 aside.flex-col > div > div > section.rounded-md, [data-testid="sidebarColumn"] div:has(> :is(section[role="region"], aside[role="complementary"])), [data-testid="sidebarColumn"] aside[role="complementary"] {

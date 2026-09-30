@@ -69,6 +69,7 @@ main [role="tablist"]>span[role="presentation"]{border-radius:0!important}
 main [role="tablist"] [role="tab"] svg[data-icon="icon-chevron-down-md"],main [role="tablist"] [role="tab"] span.w-4:has(svg[data-icon="icon-chevron-down-md"]){display:none!important}
 main :is(.sticky,[data-orientation="horizontal"])>.border-b-\[0\.5px\]{border-bottom:1px solid var(--n19-rule)!important}
 [data-n19-tw="hometabs"]>[role="presentation"]:nth-child(n+3){display:none!important}
+:has(>[data-testid="ScrollSnap-SwipeableList"]>[data-n19-tw="hometabs"])>[data-testid$="ButtonWrapper"]{display:none!important}
 [data-n19-tw="hometabs"] [role="tab"] :is(span,div){font-weight:700!important;font-size:15px!important}
 aside.flex-col>div>div>section.rounded-md,[data-testid="sidebarColumn"] div:has(>:is(section[role="region"],aside[role="complementary"])),[data-testid="sidebarColumn"] aside[role="complementary"]{background-color:var(--n19-panel)!important;border:0!important;border-radius:14px!important}
 aside.flex-col>div>div>section.rounded-md h2,[data-testid="sidebarColumn"] section h2,[data-testid="sidebarColumn"] aside h2{font-size:19px!important;font-weight:800!important;color:var(--n19-text)!important}
