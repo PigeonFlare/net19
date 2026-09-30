@@ -62,6 +62,7 @@ html:not([data-wf-site]) .campaign-sidebar button#donate-sidebar, html:not([data
 html:not([data-wf-site]) .campaign-page .main-goal-bar .rounded-full { border-radius: 3px !important; }
 html:not([data-wf-site]) .bg-brand-butter-primary:not(header) { background: var(--n19-gb-soft) !important; }
 html[data-wf-site] .navbar_v2 .navbar_dropdown > div > .hide-tablet { display: none !important; }
+@media (min-width: 992px) { html[data-wf-site] .navbar_v2 .navbar_dropdown:not(.is-active) { display: none !important; } }
 html[data-wf-site] .navbar_v2 .navbar_dropdown > div:has(> .hide-tablet) { grid-template-columns: 1fr !important; width: auto !important; }
 html[data-wf-site] .navbar_v2 :is(.navbar_platform_top, .navbar_switch_top) { background: var(--n19-gb-soft) !important; border-radius: 3px !important; }
 html[data-wf-site] .navbar_v2 .navbar_platform_top-heading { color: var(--n19-gb-text) !important; font-weight: 600 !important; font-size: 18px !important; }
