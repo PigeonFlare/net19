@@ -16,6 +16,7 @@ body,button,input,select,textarea{font-family:Lato, "Helvetica Neue", Arial, san
 html[data-n19-home] .site-width>div>div:has(>div>div>h1){background:var(--n19-hero)!important}
 html[data-n19-home] .site-width>div>div>div>div>h1{font-size:46px!important;font-weight:400!important;color:var(--n19-text)!important;letter-spacing:0!important;font-family:Lato, "Helvetica Neue", Arial, sans-serif!important}
 html[data-n19-home] .site-width>div>div>div>div>h1~:is(p,a){display:none!important}
+html[data-n19-home]:where(:root:not([data-n19-safe])) .site-width>div>div>div:has(>div>h1){padding-bottom:20px!important}
 [data-testid="container-search-bar"]>div>div>div{border-radius:0!important}
 .landing-top-menu .landing-top-menu__item a{text-transform:uppercase!important;font-size:16px!important;font-weight:400!important;color:var(--n19-text)!important}
 .landing-top-menu .landing-top-menu__item:first-child a{border-bottom:3px solid var(--n19-purple)!important}
