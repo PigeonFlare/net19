@@ -270,6 +270,20 @@
       ],
       "note": "header Devlogs link",
       "required": true
+    },
+    {
+      "match": "^(?!.*youtube).{2,70}$",
+      "within": "section.large_promo_section",
+      "pages": [
+        "start",
+        "home"
+      ],
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "front-page rotating featured-game banner (large_promo_section): the 2019 captures show the same widget with the game's name, blurb, screenshots and a 'Get the game' / 'Get the tool' button (Far Blade on 2019-04-11, RPG in a Box on 2019-09-02); only its YouTube link is later"
     }
   ]
 }

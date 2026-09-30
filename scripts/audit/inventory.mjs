@@ -14,7 +14,7 @@ const EVIDENCE_FILE = resolve(`evidence/${id}.json`);
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
 const proxy = process.env.HTTPS_PROXY ? [`--proxy-server=${process.env.HTTPS_PROXY}`] : [];
 
-function collectFeatures() {
+function collectFeatures(scopes = []) {
   const SECTION = 'header, nav, main, aside, footer, section, article, dialog, form, [role=banner], [role=navigation], [role=main], [role=complementary], [role=contentinfo], [role=region], [role=search], [role=dialog], [role=tablist], [role=toolbar], [role=feed], [role=menubar]';
   const HEADING = 'h1, h2, h3, h4, [role=heading]';
   const CONTROL = 'button, a[href], [role=button], [role=tab], [role=link], [role=menuitem], input:not([type=hidden]), textarea, select';
@@ -34,7 +34,7 @@ function collectFeatures() {
     const key = `${kind}|${label.toLowerCase()}`;
     if (seen.has(key)) return;
     seen.add(key);
-    features.push({ kind, label, tag: el.tagName.toLowerCase(), role: el.getAttribute('role') || '', box: box(el) });
+    features.push({ kind, label, tag: el.tagName.toLowerCase(), role: el.getAttribute('role') || '', box: box(el), within: scopes.filter(s => el.closest(s)) });
   };
   const repeats = new WeakMap();
   const isRepeated = n => {
@@ -121,12 +121,12 @@ for (const [name, url] of Object.entries(PAGES)) {
   for (let y = 0; y < 4; y++) { await page.mouse.wheel(0, 800); await page.waitForTimeout(700); }
   await page.evaluate(() => scrollTo(0, 0));
   await page.waitForTimeout(800);
-  const features = await page.evaluate(collectFeatures).catch(() => []);
+  const features = await page.evaluate(collectFeatures, [...new Set(evidence.features.filter(e => e.within).map(e => e.within))]).catch(() => []);
   const shot = await page.screenshot({ fullPage: true }).catch(() => null);
   const meta = shot ? await sharp(shot).metadata() : null;
   report.push(`## ${name}: ${url}\n`);
   for (const [i, f] of features.entries()) {
-    const known = evidence.features.find(e => e.pattern.test(f.label));
+    const known = evidence.features.find(e => e.pattern.test(f.label) && (!e.within || f.within.includes(e.within) && (!e.pages || e.pages.includes(name))));
     const verdict = !known ? 'UNVERIFIED' : known.in2019 ? '2019' : /^kept/i.test(known.action || '') ? 'KEPT' : 'POST-2019 STILL SHOWN';
     if (verdict !== '2019' && verdict !== 'KEPT') problems++;
     let crop = '';
