@@ -15,7 +15,9 @@ globalThis.net19Theme = {
       const creator = item.querySelector('[class*="--DivCreatorInfoContainer"]');
       const authorLink = item.querySelector('a[data-e2e="video-author-avatar"]');
       const href = (creator?.querySelector('a[href*="/@"]') || authorLink)?.getAttribute('href') || '';
-      const id = decodeURIComponent((href.match(/\/@([^/?#]+)/) || [])[1] || '');
+      const handle = (href.match(/\/@([^/?#]+)/) || [])[1] || '';
+      let id = handle;
+      try { id = decodeURIComponent(handle); } catch {}
       if (!content || !creator || !id) continue;
       let avatar = content.querySelector(':scope > [data-n19-tt="avatar"]');
       if (!avatar) { avatar = make('a', 'avatar'); avatar.append(document.createElement('img')); content.prepend(avatar); }

@@ -25,7 +25,7 @@ Wikipedia and other wikis open in their legacy skins, and Reddit feeds open in R
 
 The popup has two switches, net19 on or off and on or off for the current site, and a link to support development.
 
-net19 runs on no other website and sends nothing anywhere: no account, server, analytics or telemetry. Some themes show a site's own older logos or fonts, which your browser loads from that site's own servers.
+net19 runs on no other website and sends nothing anywhere: no account, server, analytics or telemetry. Some themes show a site's own older logos or fonts, which your browser loads from that site's own servers or, for a few sites' fonts, from a font service or file host (Google Fonts, Adobe Fonts, CloudFront).
 
 ## Disclosures
 

@@ -29,7 +29,9 @@
     if (!storage) return;
     writes = writes.then(async () => {
       const all = await records();
-      if (record.safe) all[key] = record; else if (key in all) delete all[key]; else return;
+      const stored = all[key];
+      if (record.safe ? stored?.safe && stored.fits === record.fits : !stored) return;
+      if (record.safe) all[key] = record; else delete all[key];
       const keys = Object.keys(all);
       for (const old of keys.slice(0, Math.max(0, keys.length - MAX_SECTIONS))) delete all[old];
       await storage.set({ [STORE]: all });
@@ -152,5 +154,12 @@
       else schedule(SETTLE_MS);
     }, 250);
   });
-  document.addEventListener('net19-fit-check', () => { lastJudged = Date.now(); ready.then(judge); });
+  const REQUEST_GAP_MS = 1000;
+  let lastRequested = -Infinity;
+  document.addEventListener('net19-fit-check', () => {
+    if (performance.now() - lastRequested < REQUEST_GAP_MS) return;
+    lastRequested = performance.now();
+    lastJudged = Date.now();
+    ready.then(judge);
+  });
 })();

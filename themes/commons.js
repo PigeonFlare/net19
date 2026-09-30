@@ -4,7 +4,8 @@ globalThis.net19Theme = {};
   const root = document.documentElement;
   const url = new URL(location.href);
   const MEDIA = /^\/wiki\/Special:MediaSearch\/?$/i;
-  const media = u => u.origin === location.origin && (MEDIA.test(decodeURIComponent(u.pathname)) || /^Special:MediaSearch$/i.test(u.searchParams.get('title') || ''));
+  const decoded = text => { try { return decodeURIComponent(text); } catch { return text; } };
+  const media = u => u.origin === location.origin && (MEDIA.test(decoded(u.pathname)) || /^Special:MediaSearch$/i.test(u.searchParams.get('title') || ''));
   const classic = u => {
     const out = new URL('/w/index.php', location.origin);
     out.searchParams.set('title', 'Special:Search');

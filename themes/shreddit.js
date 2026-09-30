@@ -213,7 +213,7 @@ globalThis.net19Theme = {
     try {
       let after = '';
       for (let page = 0; page < 5; page++) {
-        const response = await fetch(`/subreddits/mine/subscriber.json?limit=100&raw_json=1${after ? `&after=${after}` : ''}`, { credentials: 'include' });
+        const response = await fetch(`/subreddits/mine/subscriber.json?limit=100&raw_json=1${after ? `&after=${encodeURIComponent(after)}` : ''}`, { credentials: 'include' });
         if (!response.ok) break;
         const data = (await response.json())?.data;
         for (const child of data?.children || []) {
@@ -222,7 +222,7 @@ globalThis.net19Theme = {
           const icon = (d.community_icon || d.icon_img || '').split('?')[0];
           list.push({ name: d.display_name_prefixed, icon: /^https:\/\/[a-z.]*redd\.it\//.test(icon) ? icon : '' });
         }
-        after = data?.after;
+        after = typeof data?.after === 'string' ? data.after : '';
         if (!after) break;
       }
     } catch {}
@@ -314,7 +314,10 @@ globalThis.net19Theme = {
     }
   };
 
-  const communityName = () => { const m = location.pathname.match(/^\/r\/([^/?#]+)/); return m && !/^(?:popular|all)$/i.test(m[1]) ? decodeURIComponent(m[1]) : ''; };
+  const decoded = text => { try { return decodeURIComponent(text); } catch { return text; } };
+  const REDDIT_MEDIA = /^https:\/\/(?:[a-z0-9-]+\.)*(?:redd\.it|redditmedia\.com|redditstatic\.com)\//i;
+  const media = url => typeof url === 'string' && REDDIT_MEDIA.test(url) ? url : '';
+  const communityName = () => { const m = location.pathname.match(/^\/r\/([^/?#]+)/); return m && !/^(?:popular|all)$/i.test(m[1]) ? decoded(m[1]) : ''; };
   const abouts = new Map();
   const aboutOf = name => {
     const key = name.toLowerCase();
@@ -326,7 +329,7 @@ globalThis.net19Theme = {
       .then(json => {
         const d = json?.data;
         if (!d) return;
-        const info = { name: d.display_name || name, subscribers: +d.subscribers || 0, icon: d.community_icon || d.icon_img || '', banner: d.banner_background_image || d.banner_img || '',
+        const info = { name: d.display_name || name, subscribers: +d.subscribers || 0, icon: media(d.community_icon) || media(d.icon_img), banner: media(d.banner_background_image) || media(d.banner_img),
           bannerColor: d.banner_background_color || d.primary_color || '', key: d.key_color || '', description: d.public_description || '' };
         abouts.set(key, info);
         try { sessionStorage.setItem(`n19-about-${key}`, JSON.stringify(info)); } catch {}
@@ -349,8 +352,8 @@ globalThis.net19Theme = {
     if (!box || box.dataset.n19Sub !== name) {
       box?.remove();
       box = make('div', { 'data-n19-masthead': '', 'data-n19-sub': name },
-        make('div', { 'data-n19-banner': '' }, make('a', { href: `/r/${name}/`, 'data-n19-banner-name': '' }, make('span', { 'data-n19-banner-icon': '' }), make('span', {}, `r/${name}`))),
-        make('nav', { 'data-n19-tabs': '', 'aria-label': 'Community navigation' }, make('a', { href: `/r/${name}/`, 'data-n19-tab': '', 'aria-current': 'page' }, 'Posts')));
+        make('div', { 'data-n19-banner': '' }, make('a', { href: `/r/${encodeURIComponent(name)}/`, 'data-n19-banner-name': '' }, make('span', { 'data-n19-banner-icon': '' }), make('span', {}, `r/${name}`))),
+        make('nav', { 'data-n19-tabs': '', 'aria-label': 'Community navigation' }, make('a', { href: `/r/${encodeURIComponent(name)}/`, 'data-n19-tab': '', 'aria-current': 'page' }, 'Posts')));
       grid.prepend(box);
     }
     const color = HEX.test(info?.bannerColor || '') ? info.bannerColor : '#33a8ff';
@@ -422,7 +425,7 @@ globalThis.net19Theme = {
       counted.add(line);
       const link = (line.closest('[data-testid="search-community"], search-telemetry-tracker, li, [data-testid]')?.querySelector('a[href^="/r/"], a[href*="reddit.com/r/"]') || line.closest('a[href*="/r/"]'));
       const name = link?.getAttribute('href').match(/\/r\/([^/?#]+)/)?.[1];
-      const info = name ? aboutOf(decodeURIComponent(name)) : null;
+      const info = name ? aboutOf(decoded(name)) : null;
       if (!info) { line.style.visibility = 'hidden'; continue; }
       line.setAttribute('data-n19-members', '');
       line.style.visibility = '';
@@ -465,7 +468,7 @@ globalThis.net19Theme = {
     let head = body.querySelector(':scope > [data-n19-profile-head]');
     if (!head) {
       const icon = document.querySelector('#profile-icon, img[data-testid="profile-icon"]');
-      const shown = document.querySelector('main#main-content [data-testid="profile-display-name"] [data-testid="nameplate"]')?.textContent.trim() || decodeURIComponent(user);
+      const shown = document.querySelector('main#main-content [data-testid="profile-display-name"] [data-testid="nameplate"]')?.textContent.trim() || decoded(user);
       const follow = make('button', { type: 'button', 'data-n19-profile-follow': '' }, 'Follow');
       follow.addEventListener('click', () => {
         const inner = document.querySelector('follow-button')?.shadowRoot?.querySelector('button') || document.querySelector('follow-button button, follow-button a');
@@ -473,7 +476,7 @@ globalThis.net19Theme = {
       });
       head = make('div', { 'data-n19-profile-head': '' },
         ...(icon?.src ? [make('img', { src: icon.currentSrc || icon.src, alt: '', width: 80, height: 80 })] : []),
-        make('h2', {}, shown), make('p', {}, `u/${decodeURIComponent(user)}`));
+        make('h2', {}, shown), make('p', {}, `u/${decoded(user)}`));
       body.prepend(head);
       const stats = body.querySelector(':scope > div.grid');
       (stats || body.querySelector('[data-testid="profile-details-content-wrapper"]') || head).after(follow);
