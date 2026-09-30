@@ -1,5 +1,6 @@
 globalThis.net19Theme = {
-  intended: '#navigation .language-onboarding-container, #navigation button.category-tab-wrapper, #navigation a.section-item[href^="/flas-indirimler"], footer .footer-custom-section, footer a.footer-bar-social-media-item[href*="tiktok.com"]',
+  keep: '.ty-plus-price-badge__label',
+  intended: '#navigation .language-onboarding-container, #navigation button.category-tab-wrapper, #navigation a.section-item[href^="/flas-indirimler"], footer .footer-custom-section, footer a.footer-bar-social-media-item[href*="tiktok.com"], [data-testid="seller-store-widget"] [data-testid="seller-store-visit-store"], a[data-testid="product-card"] div:has(> button[data-testid="add-to-basket-button-button"])',
   later: /^(?:trendyol asistan|asistan|ai asistan|alışveriş asistanı|asistana sor|yapay zeka asistanı|ai ile özetle|ai özet|yorum özeti|yapay zeka yorum özeti)$/i,
 };
 (() => {

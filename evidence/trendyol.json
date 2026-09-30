@@ -228,12 +228,55 @@
       "action": "hidden"
     },
     {
-      "match": "^(Mağazaya Git|Sonraki slayt|Önceki slayt)$",
+      "match": "^Mağazaya Git$",
+      "in2019": false,
+      "evidence": [
+        "sponsored store row with its Mağazaya Git (visit store) button is post-2019; 2019 search pages had only product cards (s3)"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Sonraki slayt|Önceki slayt|Mağaza bannerı)$",
       "in2019": false,
       "evidence": [
         "sponsored store row is post-2019"
       ],
       "action": "kept: results (sponsored store results are never hidden)"
+    },
+    {
+      "match": "^Sepete Ekle$",
+      "in2019": false,
+      "evidence": [
+        "2019 listing cards had the favourite heart, brand + title, rating, price and cargo tags but no Sepete Ekle button (s3)"
+      ],
+      "pages": [
+        "search"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^telefon$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "pages": [
+        "search"
+      ],
+      "note": "the 2019 header search field, labelled here by the audited query it holds"
+    },
+    {
+      "match": "^iPhone \\d+.*$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "pages": [
+        "home",
+        "start"
+      ],
+      "note": "links inside the home page's SEO text block (seoText in the 2019 home markup)"
     },
     {
       "match": "^(Flaş Ürünler|Yüksek Puanlı Ürünler|Yüksek Puanlı Satıcılar)$",
