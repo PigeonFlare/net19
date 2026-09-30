@@ -1,0 +1,79 @@
+{
+  "theme": "medium",
+  "era": "2019 medium.com: black M monogram, Marat Sans UI, Charter 21px body, serif story titles, green #03a87c accents, outlined buttons",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://arquivo.pt/wayback/20190715000000/https://medium.com/",
+      "date": "2019-07-15",
+      "shows": "homepage (signed out): serif Medium wordmark, Sign in (green) and Get started (green outlined), uppercase topic nav HOME ONEZERO ELEMENTAL GEN ZORA FORGE HUMAN PARTS..., featured grid with title, subtitle, author in publication, date · N min read ★, Never miss a story signup"
+    },
+    {
+      "id": "s2",
+      "url": "https://arquivo.pt/noFrame/replay/20190715000000id_/https://cdn-static-1.medium.com/_/fp/css/main-branding-base.DUpq82k2YI6OvEW6173IfA.css",
+      "date": "2019-07",
+      "shows": "stylesheet: #03a87c primary buttons, rgba(0,0,0,.84)/.54 text, 37px outlined buttons with 4px radius, magic underlines, mint highlight"
+    },
+    {
+      "id": "s3",
+      "url": "https://arquivo.pt/wayback/20191014211203/https://medium.com/%E8%B3%B4%E5%8F%94%E7%9D%87%E8%82%B2/why-is-anti-mask-law-not-the-cure-but-another-damage-for-hong-kong-b629b777c676",
+      "date": "2019-10-14",
+      "shows": "article: black-square M logo and publication in a 65px white bar, Sign in / Get started, serif 40/48 title, grey sans subtitle, 48px avatar, name with outlined Follow, 'Oct 5 · 5 min read ★', Charter 21px body, clap circle at the end"
+    },
+    {
+      "id": "s4",
+      "url": "https://glyph.medium.com/css/m2.css",
+      "date": "2019 and live",
+      "shows": "font families: medium-content-serif-font = Charter, medium-content-title-font, medium-content-sans-serif-font = Marat Sans"
+    },
+    {
+      "id": "s5",
+      "url": "https://fontsinuse.com/uses/18899/medium-com-2017",
+      "date": "2017-10-16",
+      "shows": "Charter for text, Marat Sans for UI, 2017 flat M logo in use until the Oct 2020 rebrand"
+    },
+    {
+      "id": "s6",
+      "url": "https://medium.com/blog/a-better-medium-com-d468104ebb90",
+      "date": "2022-02",
+      "shows": "later redesign: left rail, sticky action bar, topic chips, audio; used to date post-2019 features"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|nav|footer|main|section|article|form|search|aside|dialog|region|contentinfo) area$|^repeated |^(Main)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "page regions and repeated story items"
+    },
+    {
+      "match": "^(Medium|Homepage|Search|Search Medium|Sign in|Sign up|Get started|Write|Follow|Following|Member-only story|\\d+ min read|Share|Bookmark|Responses?|Claps?|More from .*|Help|Status|About|Careers|Blog|Privacy|Terms|Press|Rules|Text to speech)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "header, byline, story actions and footer (Write link on the Dec 2019 landing page)"
+    },
+    {
+      "match": "^(Get app|Get the Medium app|Open in app|Listen|Top highlight|Store|Lists?|Your library|Staff picks|For you|Summarize with AI|Ask AI|Share this story with AI)$",
+      "in2019": false,
+      "evidence": [
+        "Get the app button, audio listen, Top highlight labels, Lists (Jul 2021), Your library, Staff picks, For you tabs and AI summaries are from the 2021-2022 redesign and later (s6)"
+      ],
+      "note": "hidden"
+    },
+    {
+      "match": "^(?=.{12,}$).*\\s.*$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "story titles, subtitles and text (content)"
+    }
+  ]
+}

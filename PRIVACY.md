@@ -2,11 +2,11 @@
 
 Effective September 29, 2026. Applies to net19 0.20.0.
 
-Net19 restyles 163 popular websites to look as they did in 2019. It has no developer-operated server, account system, analytics, advertisements, remote AI, or telemetry.
+Net19 restyles 165 popular websites to look as they did in 2019. It has no developer-operated server, account system, analytics, advertisements, remote AI, or telemetry.
 
 ## What leaves your device
 
-Nothing about you. Net19 has no server and sends nothing anywhere. Its themes are stylesheets and small scripts bundled inside the extension. Some themes show a site's own older logos, icons or fonts, such as Google, Bing and Wikipedia's logos, the Twitter bird from abs.twimg.com, and Reddit's 2019 fonts and snoo from redditstatic.com. Your browser loads these from that same site's own servers, like any other part of the page. To keep text readable on a site's own flat or gradient panel images, net19 may draw such an image from the same site (normally already in your browser's cache) into a small local canvas to read its average color; the result stays on your device.
+Nothing about you. Net19 has no server and sends nothing anywhere. Its themes are stylesheets and small scripts bundled inside the extension. Some themes show a site's own older logos, icons or fonts, such as Google, Bing and Wikipedia's logos, the Twitter bird from abs.twimg.com, and Reddit's 2019 fonts and snoo from redditstatic.com, and Medium's 2019 fonts from glyph.medium.com. The Substack and crowdfunding themes load their 2019 web fonts from Google Fonts (fonts.gstatic.com), where those sites load their own fonts. Your browser loads these from that same site's own servers, like any other part of the page. To keep text readable on a site's own flat or gradient panel images, net19 may draw such an image from the same site (normally already in your browser's cache) into a small local canvas to read its average color; the result stays on your device.
 
 Some themes use a site's own settings:
 
@@ -17,7 +17,7 @@ Some themes use a site's own settings:
 
 ## Access and storage
 
-Net19 has access only to the 163 sites it themes (153 domains, listed in `src/themes.ts`). It does not run on any other site and cannot read them.
+Net19 has access only to the 165 sites it themes (155 domains, listed in `src/themes.ts`). It does not run on any other site and cannot read them.
 
 Chrome local extension storage holds your settings: whether net19 is on, and which sites you switched off. When a themed site's redesign stops a theme from fitting, it also holds that site section's name (for example `youtube.com/watch`) until the theme fits again, so later visits start on the theme's safe layer. Updating from an earlier version deletes the archive profiles and other data those versions kept.
 
