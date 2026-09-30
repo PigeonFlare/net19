@@ -44,3 +44,4 @@ body.skin-timeless #mw-footer-container :is(li, div, span, p) { color: var(--n19
 
 body.skin-timeless :is(#darkswitch, #hwbookmark, div[id^="rating_"]) { display: none !important; }
 body .swal2-container.swal2-bottom-end { display: none !important; }
+body.skin-timeless .mw-portlet:has(li):not(:has(li:not([data-net19-hidden]))) { display: none !important; }
