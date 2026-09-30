@@ -1,0 +1,32 @@
+{
+  "theme": "indeed",
+  "era": "Indeed.com 2019 (Arquivo.pt captures of job search result pages Mar and Sep 2019 and job pages Sep-Oct 2019): top links Find Jobs / Company Reviews / Find Salaries, Upload your resume, Sign in and Employers / Post Job; the Indeed logo with the What ('job title, keywords, or company') and Where ('city, state, or zip code') fields and the Find Jobs button; result pages with the 'X jobs in Y' heading, filters, result cards with save job and pagination; job pages with Apply Now, save and report job; the footer with Hiring Lab, Career Advice, Browse Jobs, Browse Companies, Salaries, Employer Events, Work at Indeed, Countries, About, Help Center and 'Cookies, Privacy and Terms'. No 2019 capture of the bare home page exists on Arquivo.pt (Indeed redirected crawlers), so the home page's header, search form and footer are backed by the same elements on the 2019 result and job pages. The live site is behind Cloudflare, so the inventory was taken read-only in the user's Chrome with the inventory collector.",
+  "sources": [
+    { "id": "s1", "url": "https://arquivo.pt/wayback/20190321081308/https://www.indeed.com/jobs?q=Dallas+Cowboys+Football+Club&start=10", "date": "2019-03-21", "shows": "results: Find Jobs, Company Reviews, Find Salaries, Find Resumes, Employers / Post Job, Upload your resume, Sign in, What / Where fields (Job title, keywords, or company / City, state, or zip code), Advanced Job Search, 'Dallas Cowboys Football Club jobs' heading, salary / job type / location / company filters, result cards with reviews and save job" },
+    { "id": "s2", "url": "https://arquivo.pt/wayback/20190910144844/https://www.indeed.com/jobs?q=&l=Belgium%2C+WI", "date": "2019-09-10", "shows": "results: header, What / Where, 'jobs in Belgium, WI' heading, cards, pagination" },
+    { "id": "s3", "url": "https://arquivo.pt/wayback/20190910135417/https://www.indeed.com/jobs?q=&l=Belgium%2C+WI&start=10", "date": "2019-09-10", "shows": "results page 2: pagination with Previous / Next, footer" },
+    { "id": "j1", "url": "https://arquivo.pt/wayback/20190924070036/https://www.indeed.com/viewjob?jk=ecd056f157c98513", "date": "2019-09-24", "shows": "job page: header, what / where, job title, save job, report job, Apply Now, Save this job, Follow, footer (Hiring Lab, Career Advice, Browse Jobs, Browse Companies, Salaries, Find Certifications, Employer Events, Work at Indeed, Countries, About, Help Center, Cookies, Privacy and Terms)" },
+    { "id": "j2", "url": "https://arquivo.pt/wayback/20190924065500/https://www.indeed.com/viewjob?from=appsharedroid&jk=8aef0ffdf96ebe76", "date": "2019-09-24", "shows": "job page: same layout" },
+    { "id": "j3", "url": "https://arquivo.pt/wayback/20191007121015/https://www.indeed.com/viewjob?jk=77951c03e094b48f&from=cobra&tk=1djn856bjo9pi802&iaal=1", "date": "2019-10-07", "shows": "job page: same layout" }
+  ],
+  "features": [
+    { "match": "^(header area|nav area|main area|footer area|form area|search area|section area|Primary|complementary area|contentinfo area|pagination|repeated .*)$", "in2019": true, "evidence": ["s1", "j1"], "note": "page frame: top links, search form, results column, footer" },
+    { "match": "^(Find jobs|Company reviews|Find salaries|Home|Indeed Home)$", "in2019": true, "evidence": ["s1", "j1"], "note": "top links and logo" },
+    { "match": "^Sign in$", "in2019": true, "required": true, "evidence": ["s1", "s2", "j1"], "note": "required: Sign in" },
+    { "match": "^(Employers / Post Job|Post a job|Upload your resume)$", "in2019": true, "evidence": ["s1", "j1"], "note": "employer link and resume upload" },
+    { "match": "^Register$", "in2019": false, "evidence": ["2019 had Sign in only (s1, j1)"], "action": "kept: function (account creation)" },
+    { "match": "^(United States \\(English\\)|español)$", "in2019": false, "evidence": ["language switcher is newer (s1)"], "action": "kept: function (language)" },
+    { "match": "^(search: )?(Job title, keywords, or company|What)$", "in2019": true, "required": true, "evidence": ["s1", "s2", "j1"], "note": "required: What field" },
+    { "match": "^(Edit location|Where|City, state, zip code.*)$", "in2019": true, "evidence": ["s1", "j1"], "note": "Where field" },
+    { "match": "^(Find jobs|Search)$", "in2019": true, "required": true, "evidence": ["s1", "s2", "j1"], "note": "required: Find Jobs button" },
+    { "match": "^(.* jobs in .*|Next Page|Report job|Marketing Manager, Netflix House Dallas)$", "in2019": true, "evidence": ["s1", "s2", "j1"], "note": "results heading, pagination, job titles (content), report job" },
+    { "match": "^(Job details|Full job description)$", "in2019": false, "evidence": ["the 2019 result list opened jobs on their own page (s1, j1)"], "action": "kept: function (the selected result's detail pane)" },
+    { "match": "^(People also searched:|Similar jobs nearby)$", "in2019": false, "evidence": ["not on the 2019 result pages (s1, s2)"], "action": "kept: recommendation (related searches and similar jobs; recommendations are never hidden)" },
+    { "match": "^(Your next job starts here|Get Started)$", "in2019": false, "evidence": ["account prompt on the home page is newer; 2019 pages showed Upload your resume in the header (s1, j1)"], "action": "hidden (indeed.css [data-testid=account-focused-homepage] > div:has(> h2))" },
+    { "match": "^(What's trending on Indeed|Employer Resources)$", "in2019": false, "evidence": ["SEO link lists newer than 2019 (s1, j1)"], "action": "hidden (indeed.css jobsearch-Content collapsible, #mosaic-provider-linking-widget)" },
+    { "match": "^ESG at Indeed$", "in2019": false, "evidence": ["ESG page launched after 2019; not in the 2019 footer (j1)"], "action": "hidden (indeed.css li:has(a[href*=indeed.com/esg]))" },
+    { "match": "^(Hiring Lab|Career advice|Browse jobs|Browse companies|Salaries|Indeed Events|Work at Indeed|Countries|About|Help|Help Center|Terms)$", "in2019": true, "evidence": ["j1", "j2", "j3"], "note": "footer (Employer Events is now Indeed Events; Cookies, Privacy and Terms)" },
+    { "match": "^Download app$", "in2019": false, "evidence": ["not in the 2019 footer (j1)"], "action": "kept: function (app download)" },
+    { "match": "^(Your Privacy Choices|Accessibility at Indeed|Privacy Center and Ad Choices)$", "in2019": false, "evidence": ["legal notices added after 2019 (CCPA 2020)"], "action": "kept: legal" }
+  ]
+}

@@ -51,3 +51,4 @@ html[data-n19-home]:where(:root:not([data-n19-safe])) #gnav-main-container ul{ma
 .jobsearch-Footer{border-top:5px solid var(--n19-orange)!important}
 .job_seen_beacon,.cardOutline,.resultWithShelf,.slider_container,.jobsearch-RightPane,#jobsearch-ViewjobPaneWrapper,.jobsearch-ViewJobLayout--embedded{border-radius:4px!important}
 .jobTitle,.jobTitle a,h2.jobTitle span[title],.jcs-JobTitle{color:var(--n19-title)!important}
+[data-testid="account-focused-homepage"]>div:has(>h2),[data-testid="jobsearch-Content"]>div:has(>button[aria-controls$="-body"]),#mosaic-aboveFooter #mosaic-provider-linking-widget,li:has(>span>a[href*="indeed.com/esg"]){display:none!important}
