@@ -10,7 +10,8 @@ globalThis.net19Theme = {
 .button__solid.emphasized,a.link-cta.emphasized{background-color:var(--n19-red)!important;border-color:var(--n19-red)!important;color:#fff!important;border-radius:0!important}
 .quicklink-nav a,.quicklink-nav a *{color:var(--n19-text)!important;font-weight:700!important}
 .quicklink-nav a:hover,.quicklink-nav a:hover *{color:var(--n19-red)!important}
-.quicklink-nav a img,.quicklink-nav a svg{display:none!important}`;
+.quicklink-nav a img,.quicklink-nav a svg{display:none!important}
+.quicklink-nav a[href*="glp1" i],.quicklink-nav li:has(> a[href*="glp1" i]){display:none!important}`;
   let sheet = null;
   const done = new WeakSet();
   const visit = root => {

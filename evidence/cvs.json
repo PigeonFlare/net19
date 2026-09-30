@@ -1,0 +1,109 @@
+{
+ "theme": "cvs",
+ "era": "2019 cvs.com desktop (late 2018 to 2020): white header with the red-heart CVS pharmacy logo, Pharmacy / MinuteClinic / Shop / ExtraCare / Contact Lenses / Photo, a Search box with a red magnifier, Easy Reorder and Basket; red #cc0000 square buttons and black bold Helvetica headings. Arquivo.pt only holds the 'not available outside the United States' page for 2019, the Wayback Machine, archive.ph and the Library of Congress archive did not load from the cloud or from Chrome, and no dated 2019 search-results or product-page screenshot was found; the sources are a November 2018 article, a CVS designer's portfolio and a January 2020 review showing the same design. cvs.com blocks headless browsers on search and product pages, so only the home page was inventoried; features without a 2019 source are left visible and marked unproven.",
+ "sources": [
+  {
+   "id": "c1",
+   "url": "https://mhealthspot.com/2018/11/cvs-pharmacy-launches-pilot-carepass-program-boston/",
+   "date": "2018-11-08",
+   "shows": "cvs.com Join CarePass page as the site looked from late 2018 through 2019: red-heart CVS pharmacy logo, nav Pharmacy, MinuteClinic, Shop, ExtraCare, Contact Lenses, Photo; Search box with a red magnifier; Easy Reorder and Basket; breadcrumb Home | Join CarePass; bold black headings; square red Join CarePass now button"
+  },
+  {
+   "id": "c2",
+   "url": "https://samcabral.com/cvs-minute-clinic",
+   "date": "2018-2019",
+   "shows": "CVS designer portfolio: the CVS / Google Assistant landing page and home-page ad on cvs.com with the same header (logo, Pharmacy, MinuteClinic, Shop, ExtraCare, Contact Lenses, Photo) and red square buttons"
+  },
+  {
+   "id": "c3",
+   "url": "https://www.doctorofcredit.com/cvs-carepass-review-4-5-monthly-fee-get-a-10-monthly-credit-free-shipping/",
+   "date": "2020-01-04",
+   "shows": "CarePass review (updated January 2020) with the cvs.com CarePass banner: red and pale-blue hero, bold navy headline"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(CVS pharmacy|CVS|CVS Health|Home)$",
+   "in2019": true,
+   "evidence": [
+    "c1",
+    "c2"
+   ],
+   "note": "logo"
+  },
+  {
+   "match": "^(Search|Search products|Easy Reorder|Basket|Cart|Sign in|Pharmacy|MinuteClinic|Shop|ExtraCare|Contact Lenses|Photo)$",
+   "in2019": true,
+   "evidence": [
+    "c1",
+    "c2"
+   ],
+   "note": "header links and search"
+  },
+  {
+   "match": "^(repeated div|repeated li|main area|header area|footer area|tablist area)$",
+   "in2019": true,
+   "evidence": [
+    "c1",
+    "c2"
+   ],
+   "note": "page regions"
+  },
+  {
+   "match": "^GLP-1 Support$",
+   "in2019": false,
+   "evidence": [
+    "GLP-1 weight-loss programs are 2023 and later; the 2019 nav (c1, c2) was Pharmacy, MinuteClinic, Shop, ExtraCare, Contact Lenses, Photo"
+   ],
+   "action": "hidden in the header quick links: .quicklink-nav a[href*=glp1]"
+  },
+  {
+   "match": "^Learn more about GLP-1s$",
+   "in2019": false,
+   "evidence": [
+    "home-page promotion, post-2019"
+   ],
+   "action": "kept: home-page promotion content"
+  },
+  {
+   "match": "^(Our commitments to you|Schedule your vaccinations|You are on first slide|Next slide|Previous slide|ExtraCare terms and conditions)$",
+   "in2019": false,
+   "evidence": [
+    "no 2019 home-page screenshot found"
+   ],
+   "action": "kept: unproven, no 2019 source found either way"
+  },
+  {
+   "match": "^(Prescriptions|Health support|Shop and save)$",
+   "in2019": false,
+   "evidence": [
+    "this home-page tab row is not in the late-2018 / 2019 screenshots (c1, c2), but no 2019 home page was found to prove it absent"
+   ],
+   "action": "kept: unproven, no 2019 source found either way"
+  },
+  {
+   "match": "^Improving your site experience$",
+   "in2019": false,
+   "evidence": [
+    "site survey / consent dialog"
+   ],
+   "action": "kept: consent"
+  },
+  {
+   "match": "^Access Denied$",
+   "in2019": false,
+   "evidence": [
+    "cvs.com denies headless browsers on search and product pages"
+   ],
+   "action": "kept: bot block page, not a site feature"
+  },
+  {
+   "match": "^(Ask a question.*)$",
+   "in2019": false,
+   "evidence": [
+    "AI question field is post-2019"
+   ],
+   "action": "placeholder replaced with Search"
+  }
+ ]
+}
