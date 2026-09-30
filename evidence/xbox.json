@@ -105,6 +105,60 @@
         "2019 footer had Privacy & cookies, Terms of use, Trademarks, Safety & eco, About our ads"
       ],
       "action": "kept: legal"
+    },
+    {
+      "match": "^Join Game Pass$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "content: Game Pass promo module button; 2019 had Game Pass modules and the Game Pass menu (see the editorial-module entry)"
+    },
+    {
+      "match": "^Xbox$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "Xbox logo link in the UHF header",
+      "required": true
+    },
+    {
+      "match": "^(Game Pass|Games|Devices|Community|Support)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "header nav",
+      "required": true
+    },
+    {
+      "match": "^Search Xbox\\.com$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "header search",
+      "required": true
+    },
+    {
+      "match": "^Cart$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "header cart",
+      "required": true
     }
   ]
 }
