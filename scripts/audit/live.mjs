@@ -152,6 +152,11 @@ for (const [id, url] of Object.entries(URLS)) for (const scheme of SCHEMES) for 
     await p.mouse.move(5, 850);
     const search = await p.$('input[type=search], input[name=q], input[name=search_query], textarea[name=q], input[role=combobox], input[placeholder*="earch" i], input[aria-label*="earch" i]');
     if (search && await search.isVisible().catch(() => false)) {
+      const collapsed = await search.evaluate(f => { const r = f.getBoundingClientRect(); return r.width < 60 || r.left + Math.min(r.width / 2, 60) >= innerWidth; }).catch(() => false);
+      if (collapsed) {
+        const opener = await p.evaluate(() => { const t = [...document.querySelectorAll('a, button, [role=button]')].find(e => /search/i.test(e.getAttribute('aria-label') || '') && e.getBoundingClientRect().width > 4 && e.getBoundingClientRect().right <= innerWidth); if (!t) return null; const r = t.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2 }; }).catch(() => null);
+        if (opener) { await p.mouse.click(opener.x, opener.y); await p.waitForTimeout(800); }
+      }
       const box = await search.boundingBox();
       const shellBefore = await search.evaluate(f => { const r = (f.closest('form, [role=search]') || f).getBoundingClientRect(); return { left: r.left, top: r.top, right: r.right, bottom: r.bottom }; }).catch(() => null);
       if (box) await p.mouse.click(box.x + Math.min(box.width / 2, 60), box.y + box.height / 2); else await search.click({ timeout: 3000 }).catch(() => {});
@@ -190,7 +195,7 @@ for (const [id, url] of Object.entries(URLS)) for (const scheme of SCHEMES) for 
         }
         for (const list of document.querySelectorAll('[role=listbox], [role=menu]')) {
           const r = list.getBoundingClientRect();
-          if (r.width < 40 || r.height < 10 || getComputedStyle(list).visibility !== 'visible') continue;
+          if (r.width < 40 || r.height < 10 || r.top >= innerHeight || r.bottom <= 0 || getComputedStyle(list).visibility !== 'visible') continue;
           if (list.scrollHeight > list.clientHeight + 4 && /hidden|clip/.test(getComputedStyle(list).overflowY)) problems.push('suggestions are cut off inside their box');
           for (let a = list.parentElement; a && a !== document.body; a = a.parentElement) {
             const c = getComputedStyle(a); if (!/hidden|clip/.test(c.overflowX + c.overflowY)) continue;
