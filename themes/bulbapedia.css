@@ -88,3 +88,4 @@ body.skin-bulbavector #footer.bv-footer a { color: var(--n19-link) !important; }
 body.skin-bulbavector #catlinks { border: 1px solid var(--n19-rule) !important; background: var(--n19-box) !important; border-radius: 0 !important; font-size: 12px; }
 
 body.skin-bulbavector :is(#bvDesktopBackToTopBar, #bvBackToTopBtn, #bvDesktopBackToTopBtn) { display: none !important; }
+#n-Bluesky, #n-Mastodon { display: none !important; }
