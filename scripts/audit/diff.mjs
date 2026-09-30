@@ -21,7 +21,7 @@ async function run(url, withExtension, width) {
     await p.waitForTimeout(+(process.env.WAIT || 4000));
     result = await p.evaluate(`(() => { ${CHECKS}; const r = net19PageChecks(); Object.assign(r, net19Content()); return r; })()`);
     if (withExtension) await p.screenshot({ path: `${OUT}/${new URL(url).hostname}${width === WIDTHS[0] ? '' : '-' + width}.png` }).catch(() => {});
-  } catch (e) { result = { error: e.message.slice(0, 80) }; }
+  } catch (e) { result = { failed: e.message.slice(0, 80) }; }
   await ctx.close();
   return result;
 }
@@ -29,7 +29,7 @@ const TARGETS = process.env.URLS ? Object.entries(JSON.parse(process.env.URLS)) 
 for (const [id, url] of TARGETS) for (const width of WIDTHS) {
   const [before, after] = [await run(url, false, width), await run(url, true, width)];
   const added = {};
-  if (before && after && !before.error && !after.error) {
+  if (before && after && !before.failed && !after.failed) {
     for (const k of ['covered', 'offcenter', 'textoffcenter', 'overlap', 'lowcontrast', 'dim', 'cropped', 'collide', 'effects', 'clipline', 'rowwrap', 'rowalign', 'spill', 'iconovertext', 'gap', 'btnsize', 'scrollreach', 'badgealign', 'loose']) {
       const had = new Set((before[k] || []).map(key));
       added[k] = (after[k] || []).filter(item => !had.has(key(item)));
@@ -38,8 +38,9 @@ for (const [id, url] of TARGETS) for (const width of WIDTHS) {
     if (after.text < before.text * .6) added.contentlost.push({ what: 'visible text', detail: `${before.text} -> ${after.text} characters (${Math.round(100 * after.text / before.text)}%)` });
     if (before.items >= 5 && after.items < before.items * .6) added.contentlost.push({ what: 'result and item links', detail: `${before.items} -> ${after.items} (${Math.round(100 * after.items / before.items)}%)` });
   }
-  appendFileSync(`${OUT}/report.jsonl`, JSON.stringify({ id, url, scheme, width, added, error: before?.error || after?.error }) + '\n');
+  appendFileSync(`${OUT}/report.jsonl`, JSON.stringify({ id, url, scheme, width, added, error: before?.failed || after?.failed, checkerror: [before?.error, after?.error].filter(Boolean).join(' | ') || undefined }) + '\n');
   if (added.contentlost?.length) console.log(`${id} ${width}: CONTENT LOST ${added.contentlost.map(c => `${c.what} ${c.detail}`).join('; ')}`);
-  console.log(`${id} ${width}: ` + (Object.keys(added).length ? Object.entries(added).map(([k, v]) => `${v.length} ${k}`).join(', ') : 'not compared (' + (before?.error || after?.error || 'no result') + ')'));
+  console.log(`${id} ${width}: ` + (Object.keys(added).length ? Object.entries(added).map(([k, v]) => `${v.length} ${k}`).join(', ') : 'not compared (' + (before?.failed || after?.failed || 'no result') + ')'));
+  for (const [side, r] of [['without', before], ['with', after]]) if (r?.error) console.log(`  check error ${side} net19: ${r.error.slice(0, 160)}`);
   for (const [k, list] of Object.entries(added)) for (const item of list.slice(0, 4)) console.log(`  ${k}: ${item.what.slice(0, 70)} | ${item.detail.slice(0, 70)}`);
 }

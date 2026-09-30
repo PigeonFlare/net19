@@ -1,6 +1,25 @@
 // eslint-disable-next-line no-unused-vars
 function net19PageChecks() {
   const out = { covered: [], offcenter: [], textoffcenter: [], overlap: [] };
+  const errors = [];
+  const attempt = (check, run, fallback) => { try { return run(); } catch (e) { errors.push(`${check}: ${String(e && e.message || e).slice(0, 120)}`); return fallback; } };
+  const lines = attempt('core', () => net19Core(out), []);
+  out.lowcontrast = attempt('lowcontrast', net19Contrast, []);
+  out.dim = attempt('dim', net19Dim, []);
+  out.cropped = attempt('cropped', net19Cropped, []);
+  Object.assign(out, attempt('layout', net19Layout, { collide: [], effects: [] }));
+  Object.assign(out, attempt('rows', net19Rows, {}));
+  Object.assign(out, attempt('rhythm', net19Rhythm, {}));
+  Object.assign(out, attempt('badges', net19Badges, {}));
+  const reach = attempt('reach', () => net19Reach(lines), { btnsize: [], scrollreach: [], overdrawn: [] });
+  out.overlap.push(...reach.overdrawn);
+  out.btnsize = reach.btnsize;
+  out.scrollreach = reach.scrollreach;
+  if (errors.length) out.error = errors.join('; ');
+  return out;
+}
+
+function net19Core(out) {
   const W = innerWidth, H = innerHeight;
   const shown = e => { const r = e.getBoundingClientRect(); const c = getComputedStyle(e);
     return r.width > 1 && r.height > 1 && r.bottom > 0 && r.right > 0 && r.top < H && r.left < W && c.visibility === 'visible' && +c.opacity > .05 && c.display !== 'none'; };
@@ -148,18 +167,7 @@ function net19PageChecks() {
       if (out.overlap.length > 30) break;
     }
   }
-  out.lowcontrast = net19Contrast();
-  out.dim = net19Dim();
-  out.cropped = net19Cropped();
-  Object.assign(out, net19Layout());
-  Object.assign(out, net19Rows());
-  Object.assign(out, net19Rhythm());
-  Object.assign(out, net19Badges());
-  const reach = net19Reach(lines);
-  out.overlap.push(...reach.overdrawn);
-  out.btnsize = reach.btnsize;
-  out.scrollreach = reach.scrollreach;
-  return out;
+  return lines;
 }
 
 function net19Reach(lines) {
@@ -170,7 +178,7 @@ function net19Reach(lines) {
   const label = e => (e.getAttribute?.('aria-label') || e.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 30);
   const box = r => ({ x: Math.round(r.left), y: Math.round(r.top), w: Math.round(r.width), h: Math.round(r.height) });
   const all = [];
-  const collect = root => { for (const e of root.querySelectorAll('*')) { all.push(e); if (e.shadowRoot) collect(e.shadowRoot); } };
+  const collect = root => { for (const e of root.querySelectorAll('*')) { if (!net19Genuine(e)) continue; all.push(e); if (e.shadowRoot) collect(e.shadowRoot); } };
   collect(document);
   const styleOf = new Map(), rectOf = new Map();
   const cs = e => styleOf.get(e) || styleOf.set(e, getComputedStyle(e)).get(e);
@@ -270,13 +278,13 @@ function net19Rows() {
   const seen = new Set();
   const report = (k, e, detail, r) => { const key = k + name(e) + detail.replace(/[\d.-]+px/g, ''); if (seen.has(key) || found[k].length >= 40) return; seen.add(key); found[k].push({ what: `${name(e)} "${label(e)}"`, detail, ...box(r) }); };
   const all = [];
-  const collect = root => { for (const e of root.querySelectorAll('*')) { all.push(e); if (e.shadowRoot) collect(e.shadowRoot); } };
+  const collect = root => { for (const e of root.querySelectorAll('*')) { if (!net19Genuine(e)) continue; all.push(e); if (e.shadowRoot) collect(e.shadowRoot); } };
   collect(document);
   const styleOf = new Map(), rectOf = new Map();
   const cs = e => styleOf.get(e) || styleOf.set(e, getComputedStyle(e)).get(e);
   const rect = e => rectOf.get(e) || rectOf.set(e, e.getBoundingClientRect()).get(e);
   const onScreen = r => r.width > 1 && r.height > 1 && r.bottom > 0 && r.right > 0 && r.top < H && r.left < W;
-  const deep = root => { const list = []; const walk = r => { for (const e of r.querySelectorAll('*')) { list.push(e); if (e.shadowRoot) walk(e.shadowRoot); } }; walk(root.shadowRoot || root); if (root.shadowRoot) walk(root); return list; };
+  const deep = root => { const list = []; const walk = r => { for (const e of r.querySelectorAll('*')) { if (!net19Genuine(e)) continue; list.push(e); if (e.shadowRoot) walk(e.shadowRoot); } }; walk(root.shadowRoot || root); if (root.shadowRoot) walk(root); return list; };
   const seenEl = e => { if (!onScreen(rect(e))) return false; for (let n = e; n && n.nodeType === 1; n = up(n)) { const c = cs(n); if (c.display === 'none' || c.visibility !== 'visible' && n === e || +c.opacity < .05) return false; } return true; };
   const inPopup = e => { for (let n = e; n && n.nodeType === 1; n = up(n)) if (n.matches('[role=dialog], [role=menu], [role=listbox], [role=tooltip], dialog')) return true; return false; };
   const alphaOf = c => { const m = String(c).match(/[\d.]+/g); return !m ? 0 : m.length > 3 ? +m[3] : 1; };
@@ -286,6 +294,7 @@ function net19Rows() {
     const lines = [];
     const walk = r => { const t = document.createTreeWalker(r, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
       for (let n = t.nextNode(); n && lines.length < limit; n = t.nextNode()) {
+        if (n.nodeType !== 3 && !net19Genuine(n)) continue;
         if (n.nodeType === 1) { if (n.shadowRoot) walk(n.shadowRoot); continue; }
         if (!n.nodeValue.trim() || !n.parentElement || n.parentElement.closest('script,style,noscript')) continue;
         const c = cs(n.parentElement); if (c.visibility !== 'visible' || c.display === 'none') continue;
@@ -454,7 +463,7 @@ function net19Rows() {
     if (/^(BODY|HTML)$/.test(e.tagName) || r.width < 150 || r.height < 80 || r.height > 700 || r.top < 0 || r.bottom > H || !seenEl(e) || inPopup(e) || /grid/.test(c.display)) continue;
     const bands = textLines(e, 300).map(l => [l.q.top, l.q.bottom]);
     for (const d of e.querySelectorAll('img, svg, video, canvas, iframe, input, textarea, button, select, hr, [role=img], [role=button]')) { if (d.matches('svg *')) continue; const q = rect(d); if (q.width > 2 && q.height > 2 && seenEl(d)) bands.push([q.top, q.bottom]); }
-    for (const d of e.querySelectorAll('*')) { const dc = cs(d); if (d.matches('svg *')) continue; const pic = /url\(/.test(dc.backgroundImage); if (pic || painted(dc)) { const q = rect(d); if (q.width > 8 && q.height > 2 && (pic || q.height < Math.min(200, r.height * .6))) bands.push([q.top, q.bottom]); } }
+    for (const d of e.querySelectorAll('*')) { if (!net19Genuine(d)) continue; const dc = cs(d); if (d.matches('svg *')) continue; const pic = /url\(/.test(dc.backgroundImage); if (pic || painted(dc)) { const q = rect(d); if (q.width > 8 && q.height > 2 && (pic || q.height < Math.min(200, r.height * .6))) bands.push([q.top, q.bottom]); } }
     if (bands.length < 2) continue;
     bands.sort((a, b) => a[0] - b[0]);
     let reach = bands[0][1], worst = 0, at = 0;
@@ -474,7 +483,7 @@ function net19Rhythm() {
   const seen = new Set();
   const report = (k, e, detail, r) => { const key = k + name(e); if (seen.has(key) || found[k].length >= 30) return; seen.add(key); found[k].push({ what: `${name(e)} "${label(e)}"`, detail, ...box(r) }); };
   const all = [];
-  const collect = root => { for (const e of root.querySelectorAll('*')) { all.push(e); if (e.shadowRoot) collect(e.shadowRoot); } };
+  const collect = root => { for (const e of root.querySelectorAll('*')) { if (!net19Genuine(e)) continue; all.push(e); if (e.shadowRoot) collect(e.shadowRoot); } };
   collect(document);
   const styleOf = new Map(), rectOf = new Map();
   const cs = e => styleOf.get(e) || styleOf.set(e, getComputedStyle(e)).get(e);
@@ -532,6 +541,7 @@ function net19Rhythm() {
     const own = n => { for (let k = n; k && k !== item; k = k.assignedSlot || up(k)) if (sigOf(k) === sigOf(item) || k.tagName === item.tagName && k.tagName.includes('-')) return false; return true; };
     const walk = root => { const t = document.createTreeWalker(root, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
       for (let n = t.nextNode(), i = 0; n && i < 600; n = t.nextNode(), i++) {
+        if (n.nodeType !== 3 && !net19Genuine(n)) continue;
         if (n.nodeType === 1) { if (n.shadowRoot) walk(n.shadowRoot); if (n.tagName === 'SLOT') for (const k of n.assignedElements()) walk(k); if (n.matches('img, svg, video, canvas, iframe, input, textarea, select, hr, [role=img]') && !n.matches('svg *') && own(n) && visible(n, true)) { const q = shownRect(n); if (q.width > 4 && q.height > 4) solid.push(q); } continue; }
         const el = n.parentElement || n.parentNode?.host;
         if (!n.nodeValue.trim() || !el || !visible(el, true) || srOnly(el) || !own(el) || el.closest('button, [role=button], [role=toolbar], select, .btn, a[class*="btn" i], a[class*="button" i]')) continue;
@@ -545,6 +555,7 @@ function net19Rhythm() {
   const filled = [];
   const gather = root => { const t = document.createTreeWalker(root, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
     for (let n = t.nextNode(); n && filled.length < 4000; n = t.nextNode()) {
+      if (n.nodeType !== 3 && !net19Genuine(n)) continue;
       if (n.nodeType === 1) { if (n.shadowRoot) gather(n.shadowRoot); if (n.matches('img, svg, video, canvas, iframe, input, textarea, select, button, [role=button], [role=img]') && !n.matches('svg *')) { const q = shownRect(n); if (q.width > 4 && q.height > 4 && q.bottom > 0 && q.top < H && visible(n)) filled.push(q); } continue; }
       const el = n.parentElement || n.parentNode?.host;
       if (!n.nodeValue.trim() || !el || !visible(el, true) || srOnly(el)) continue;
@@ -610,6 +621,7 @@ function net19Badges() {
   const lines = [], badges = [];
   const walk = root => { const t = document.createTreeWalker(root, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
     for (let n = t.nextNode(); n && lines.length < 3000; n = t.nextNode()) {
+      if (n.nodeType !== 3 && !net19Genuine(n)) continue;
       if (n.nodeType === 1) {
         if (n.shadowRoot) walk(n.shadowRoot);
         if (n.matches('button, [role=button], input, select, textarea, svg, svg *, img, video, canvas')) continue;
@@ -714,6 +726,7 @@ function net19Cropped() {
   const report = (e, detail, r) => { const k = name(e) + detail; if (seen.has(k) || out.length >= 40) return; seen.add(k); out.push({ what: `${name(e)} "${text(e) || text(up(e) || e)}"`, detail, x: Math.round(r.left), y: Math.round(r.top), w: Math.round(r.width), h: Math.round(r.height) }); };
   const walk = root => {
     for (const e of root.querySelectorAll('*')) {
+      if (!net19Genuine(e)) continue;
       if (e.shadowRoot) walk(e.shadowRoot);
       const r = e.getBoundingClientRect();
       if (r.width < 6 || r.height < 6 || !visible(e, r)) continue;
@@ -811,7 +824,7 @@ function net19Contrast() {
   const name = e => (e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + (typeof e.className === 'string' && e.className ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '')).slice(0, 60);
   let layerList = null;
   const layers = () => layerList ||= [...document.querySelectorAll('body *')].filter(e => {
-    const q = e.getBoundingClientRect();
+    const q = Element.prototype.getBoundingClientRect.call(e);
     if (q.width < 200 || q.height < 200) return false;
     const c = getComputedStyle(e);
     return c.pointerEvents === 'none' && (/^(IMG|VIDEO|CANVAS)$/.test(e.tagName) || /url\(/.test(c.backgroundImage)) ||
@@ -819,7 +832,7 @@ function net19Contrast() {
   });
   const hidden = (x, y, stack, above) => layers().find(l => {
     if (stack.includes(l) || l.contains(above)) return false;
-    const q = l.getBoundingClientRect();
+    const q = Element.prototype.getBoundingClientRect.call(l);
     if (!(x >= q.left && x <= q.right && y >= q.top && y <= q.bottom)) return false;
     for (let a = l.parentElement; a && a !== document.body; a = a.parentElement) {
       const c = getComputedStyle(a);
@@ -930,5 +943,8 @@ function net19Contrast() {
     if (cr < 3) report(k, `caret contrast ${cr.toFixed(2)}:1`, r);
   }
   return out;
+}
+function net19Genuine(e) {
+  return typeof e.tagName === 'string' && typeof e.getBoundingClientRect === 'function' && typeof e.matches === 'function';
 }
 if (typeof module !== 'undefined') module.exports = { net19PageChecks };
