@@ -1,7 +1,7 @@
 html { --n19-header: #fff; --n19-header-text: #2a3035; --n19-header-edge: #e0e3e5; --n19-green: #57b228; --n19-green-hover: #4a9a21; --n19-green-text: #3d8a17;
-  --n19-field-border: #c8ccd0; --n19-strip: #f1f3f4; --n19-button-2: #fff; }
+  --n19-field-border: #c8ccd0; --n19-strip: #f1f3f4; --n19-button-2: #fff; --n19-placeholder: #767676; }
 html[data-net19-mode="dark"] { --n19-header: #1f2326; --n19-header-text: #e6e8ea; --n19-header-edge: #33393e; --n19-green: #57b228; --n19-green-hover: #6cc53c; --n19-green-text: #7fd052;
-  --n19-field-border: #4a5157; --n19-strip: #262b2f; --n19-button-2: #1f2326; }
+  --n19-field-border: #4a5157; --n19-strip: #262b2f; --n19-button-2: #1f2326; --n19-placeholder: #9aa1a7; }
 body, body :is(p, span, a, button, input, select, textarea, h1, h2, h3, h4, li, label, div) { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important; }
 
 header .bg-black:not(.absolute, .fixed, .rounded-full, [class*="opacity-"]) { background: var(--n19-header) !important; border-bottom: 1px solid var(--n19-header-edge) !important; }
@@ -34,7 +34,8 @@ section [class*="md:text-\[37px\]"] { font-size: 30px !important; }
 
 #main-content + div, [data-n19-post] { display: none !important; }
 section[data-sentry-component="BeSeenFirstSearchBar"] { background: var(--n19-header) !important; border-bottom: 1px solid var(--n19-header-edge) !important; padding-top: 12px !important; padding-bottom: 12px !important; justify-content: flex-start !important; padding-left: 72px !important; }
-section[data-sentry-component="BeSeenFirstSearchBar"] input:not([type="hidden"]) { height: 34px !important; font-size: 13px !important; }
+section[data-sentry-component="BeSeenFirstSearchBar"] input:not([type="hidden"]) { height: 34px !important; padding-top: 0 !important; padding-bottom: 0 !important; font-size: 13px !important; line-height: 34px !important; }
+section[data-sentry-component="BeSeenFirstSearchBar"] input::placeholder { color: var(--n19-placeholder) !important; opacity: 1 !important; }
 section[data-sentry-component="BeSeenFirstSearchBar"] div.rounded-8:has(> input) { height: 36px !important; border: 1px solid var(--n19-field-border) !important; border-radius: 2px !important; background: var(--n19-header) !important; }
 section[data-sentry-component="BeSeenFirstSearchBar"] form { align-items: center !important; }
 section[data-sentry-component="BeSeenFirstSearchBar"] form > button { height: 36px !important; font-size: 13px !important; padding: 0 20px !important; }
