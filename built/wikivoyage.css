@@ -15,3 +15,4 @@ body.skin-vector-legacy #p-lang :is(.mw-interlanguage-selector,.uls-settings-tri
 body.skin-vector-legacy :is(#n-Trip-planner,#n-Arrivals-lounge){display:none!important}
 body.skin-vector-legacy #p-wikibase-otherprojects li:has(>a[href*="wikifunctions.org"i],>a[href*="outreach.wikimedia.org"i],>a[href^="https://wikisource.org"i]){display:none!important}
 html[data-net19-mode] :is(.ext-wpb-pagebanner .wpb-topbanner,.ext-wpb-pagebanner .wpb-topbanner-toc,.jcarousel-item .banner-image),html[data-net19-mode] :is(.ext-wpb-pagebanner .wpb-topbanner,.ext-wpb-pagebanner .wpb-topbanner-toc,.jcarousel-item .banner-image) *{-webkit-text-fill-color:currentcolor!important}
+html[data-net19-mode] .ext-wpb-pagebanner .wpb-name{background-color:rgba(0, 0, 0, .5)!important}
