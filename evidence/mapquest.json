@@ -1,6 +1,6 @@
 {
  "theme": "mapquest",
- "era": "",
+ "era": "2019 MapQuest (yogi panel design, 2016-2020): floating white left panel with the MapQuest logo, Sign up / Log in and menu, search field with clear and search buttons, green directions button, category icons (Hotels, Food, Shopping, Coffee, Grocery, Gas), full-window map with zoom, locate, layer and share controls",
  "sources": [
   {
    "id": "directions-a20191218",
@@ -13,6 +13,30 @@
    "url": "https://arquivo.pt/noFrame/replay/20190701202759/https://www.mapquest.com/",
    "date": "2019-07-01",
    "shows": "home page as served on 2019-07-01 (Arquivo.pt capture rendered headless): 400px left panel with the MapQuest logo, search form and blue directions button, panel toggle, map pane, Help tab"
+  },
+  {
+   "id": "bi-201910",
+   "url": "https://www.businessinsider.com/verizon-sells-mapquest-to-system1-2019-10",
+   "date": "2019-10",
+   "shows": "Business Insider screenshot of mapquest.com search results (Google Images): MapQuest logo, Sign up | Log in, search field with search and clear buttons, green directions button, category icons Food/Shopping/Coffee/Grocery/Gas and More Hotels, result list items with Book Now buttons, Print, map with markers"
+  },
+  {
+   "id": "hsw-mapquest",
+   "url": "https://money.howstuffworks.com/mapquest.htm",
+   "date": "2019-2020",
+   "shows": "HowStuffWorks screenshot of the same panel design: MapQuest logo, Sign up | Log in, menu button, Start Searching field, search button, green directions button, Hotels/Food/Shopping/Coffee/Grocery/Gas icons, map zoom +/-, pan compass, locate, globe, traffic and share controls"
+  },
+  {
+   "id": "help-directions",
+   "url": "https://help.mapquest.com/hc/en-us/articles/205362134-How-to-get-directions",
+   "date": "2019-2020",
+   "shows": "MapQuest Help screenshots of the directions panel in the same design: back arrow, Directions, drive and walk mode icons, start and destination fields, reverse button, Add stop, route options, Get Directions"
+  },
+  {
+   "id": "help-reverse",
+   "url": "https://help.mapquest.com/hc/en-us/articles/206081596-How-to-reverse-your-route-stops",
+   "date": "2019-2020",
+   "shows": "directions panel: back arrow, travel mode icons, start/destination fields with the swap button, Add stop, Route settings"
   }
  ],
  "features": [
@@ -50,15 +74,6 @@
    "note": "required: logo"
   },
   {
-   "match": "^Search places or paste a link$",
-   "in2019": true,
-   "required": true,
-   "evidence": [
-    "home-a20190701"
-   ],
-   "note": "required: panel search field"
-  },
-  {
    "match": "^Directions$",
    "in2019": true,
    "required": true,
@@ -66,6 +81,82 @@
     "home-a20190701"
    ],
    "note": "required: directions button"
+  },
+  {
+   "match": "^Search places or paste a link$",
+   "in2019": true,
+   "required": true,
+   "pages": [
+    "start",
+    "home",
+    "search"
+   ],
+   "evidence": [
+    "home-a20190701",
+    "bi-201910",
+    "hsw-mapquest"
+   ],
+   "note": "required: panel search field (2019 'Start Searching...')"
+  },
+  {
+   "match": "^(Log in|Main Menu|clear search|MapQuest it!|Looking for directions\\?|Search Places)$",
+   "in2019": true,
+   "evidence": [
+    "bi-201910",
+    "hsw-mapquest"
+   ],
+   "note": "2019 panel: Log in, menu button, clear search, green directions button, search"
+  },
+  {
+   "match": "^(Category navigation|toolbar area|nav area|Looking for directions\\?)$",
+   "in2019": true,
+   "evidence": [
+    "bi-201910",
+    "hsw-mapquest"
+   ],
+   "note": "2019 panel: category icon row (Hotels, Food, Shopping, Coffee, Grocery, Gas) and panel header"
+  },
+  {
+   "match": "^(repeated a role=listitem|Results Realty)$",
+   "in2019": true,
+   "evidence": [
+    "bi-201910"
+   ],
+   "note": "search result list items (content)"
+  },
+  {
+   "match": "^(Back|more options|driving directions|walking directions|biking directions|Leave now|Where are you starting\\?|Add stop|Swap Directions|Get Directions)$",
+   "in2019": true,
+   "evidence": [
+    "help-directions",
+    "help-reverse",
+    "directions-a20191218"
+   ],
+   "note": "2019 directions panel: back arrow, travel modes, leave-now/route options, start and stop fields, reverse button, Add stop, Get Directions"
+  },
+  {
+   "match": "^___$",
+   "in2019": false,
+   "action": "kept: invisible bot-trap link (opacity 0.01, aria-hidden, z-index -999), never seen by users",
+   "evidence": [
+    "not a visible feature"
+   ]
+  },
+  {
+   "match": "^(Curated lists near you|Scroll right|United States Map|Canada Map|Stream local radio stations|Live Radio)$",
+   "in2019": false,
+   "evidence": [
+    "absent from the 2019 panel screenshots (bi-201910, hsw-mapquest, home-a20190701)"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^(Best |Top ).* in .*\\d+ places$",
+   "in2019": false,
+   "evidence": [
+    "curated lists are absent from the 2019 panel"
+   ],
+   "action": "hidden"
   }
  ]
 }

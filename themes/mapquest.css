@@ -33,3 +33,4 @@ button[data-testid="directions-cta-button"] svg { color: var(--n19-lime-text) !i
 h1, h2, h3 { font-weight: 700 !important; color: var(--n19-text); }
 .rounded-xl, .rounded-2xl, .rounded-\[16px\] { border-radius: 4px !important; }
 a[aria-label^="MapQuest has a new app" i] { display: none !important; }
+[data-testid="nearby-collections"], [data-testid="top-cities"], [data-testid="radio-streamer"] { display: none !important; }
