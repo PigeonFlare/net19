@@ -1,0 +1,239 @@
+{
+  "theme": "trendyol",
+  "era": "2019 trendyol.com desktop: white header with the orange-tagged trendyol logo, a wide rounded grey search field 'Aradığınız ürün veya markayı yazınız' with an orange magnifier, Giriş Yap / Favorilerim / Sepetim icons with labels underneath, 'Trendyol'da Satış Yap | Yardım & Destek' top-right links, a bold UPPERCASE category bar (KADIN ERKEK ÇOCUK AYAKKABI & ÇANTA SAAT & AKSESUAR KOZMETİK EV & YAŞAM ELEKTRONİK SÜPERMARKET), boutique cards on the home page, listings with '\"q\" araması için N sonuç listeleniyor', brand filter search, 'Önerilen sıralama', favourite hearts and KARGO BEDAVA / 24 SAATTE KARGODA tags. Captures across March, June, November and December 2019 agree; there is no separate crawler variant (the page is server-rendered for everyone).",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://arquivo.pt/wayback/20190327002830/https://www.trendyol.com/",
+      "date": "2019-03-27",
+      "shows": "home rendered: logo with .com tag, rounded search 'Aradığınız ürün veya markayı yazınız', Giriş Yap / Favorilerim / Sepetim, 'Yardım & Destek', UPPERCASE category bar, boutique cards with 'Butik Kapanış' countdown, cookie notice"
+    },
+    {
+      "id": "s2",
+      "url": "https://arquivo.pt/wayback/20191214063600/https://www.trendyol.com/",
+      "date": "2019-12-14",
+      "shows": "home markup: top links 'Trendyol'da Satış Yap' and 'Yardım & Destek', account menu (Siparişlerim, Kullanıcı Bilgilerim, Değerlendirmelerim, İndirim Kuponlarım, Adres Bilgilerim, Kayıtlı Kartlarım, Trendyol Elite), category mega menus, footer Biz Kimiz / Kariyer / Bize Ulaşın / Nasıl Tedarikçi Olurum?, Kampanyalar (Aktif Kampanyalar, Elite Üyelik), Yardım (Sıkça Sorulan Sorular, Canlı Yardım, Nasıl İade Ederim, Nasıl Sipariş Verilir), Güvenli Alışveriş, Mobil Uygulamalar, Sosyal Medya (Facebook, Instagram, Twitter, Youtube), Kullanım Koşulları, DSM Grup, KVK ve Gizlilik Politikası, Yukarı Çık"
+    },
+    {
+      "id": "s3",
+      "url": "https://arquivo.pt/wayback/20191121000015/https://www.trendyol.com/elbise",
+      "date": "2019-11-21",
+      "shows": "listing page: '\"Elbise\" araması için 34109 sonuç listeleniyor', brand filter with 'marka ara', 'Önerilen sıralama', product cards with favourite heart, brand + title, rating count, price, KARGO BEDAVA and 24 SAATTE KARGODA tags"
+    },
+    {
+      "id": "s4",
+      "url": "https://arquivo.pt/wayback/20190902210034/https://www.trendyol.com/butik/liste/kadin",
+      "date": "2019-09-02",
+      "shows": "KADIN boutique list page with the same header and category bar"
+    },
+    {
+      "id": "s5",
+      "url": "https://arquivo.pt/wayback/20190602135343/https://www.trendyol.com/",
+      "date": "2019-06-02",
+      "shows": "home: same header, category bar and footer as March and December 2019"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header area|main area|footer area|Product carousel|repeated .*|banner-boutique|Tümünü Gör)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "page frame, boutique banners and product carousels; repeated items are content"
+    },
+    {
+      "match": "^Trendyol$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: logo"
+    },
+    {
+      "match": "^(Aradığınız ürün veya markayı yazınız|Ürün, kategori veya marka ara)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: search field (the theme restores the 2019 placeholder)",
+      "pages": [
+        "home"
+      ]
+    },
+    {
+      "match": "^(ayakkabı|ayakkabi|tişört|elbise)$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "search field showing the typed query"
+    },
+    {
+      "match": "^Giriş Yap$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required"
+    },
+    {
+      "match": "^Favorilerim$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required"
+    },
+    {
+      "match": "^Sepetim$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required"
+    },
+    {
+      "match": "^Kadın$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: category bar (KADIN)"
+    },
+    {
+      "match": "^(Erkek|Anne & Çocuk|Çocuk|Ev & Yaşam|Süpermarket|Kozmetik|Ayakkabı & Çanta|Elektronik|Saat & Aksesuar|Spor & Outdoor)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "category bar entries; ÇOCUK is now named Anne & Çocuk, Spor & Outdoor was a 2019 mega-menu group"
+    },
+    {
+      "match": "^Scroll right$",
+      "in2019": false,
+      "evidence": [
+        "no arrow in 2019: all categories fitted in one row"
+      ],
+      "action": "kept: function (scrolls the category bar when the window is narrow)"
+    },
+    {
+      "match": "^Yardım & Destek$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "match": "^Trendyol'da Satış Yap$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "top link in December 2019"
+    },
+    {
+      "match": "^(İndirim Kuponlarım|Hakkımızda)$",
+      "in2019": false,
+      "evidence": [
+        "2019 top bar had only 'Trendyol'da Satış Yap' and 'Yardım & Destek' (s2); coupons were in the account menu"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^Change Language$",
+      "in2019": false,
+      "evidence": [
+        "language switcher arrived with the international storefronts (2021+); none in s1, s2"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Kategoriler|Çok Satanlar)( Yeni)?$",
+      "in2019": false,
+      "evidence": [
+        "not in the 2019 bar (s1, s2); entries flagged Yeni (new) are post-2019"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^Flaş Ürünler( Yeni)?$",
+      "in2019": false,
+      "evidence": [
+        "not in the 2019 bar (s1, s2)"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Biz Kimiz|Kariyer|İletişim|Kampanyalar|Sıkça Sorulan Sorular|Canlı Yardım|Nasıl İade Edebilirim|Kullanım Koşulları|DSM Grup|instagram-icon|youtube-icon|facebook-icon|x-icon)$",
+      "in2019": true,
+      "evidence": [
+        "s2"
+      ],
+      "note": "footer links and social icons (Twitter is now X)"
+    },
+    {
+      "match": "^(Trendyol'da Güvenlik|Geri Çağrılan Ürünler|Alışveriş Kredisi|Hediye Fikirleri|Satıcı|Temel Kavramlar|Trendyol Akademi|İşlem Rehberi|Ülke Değiştir|Ülke Seç|Güven Damgası|tiktok-icon)$",
+      "in2019": false,
+      "evidence": [
+        "not in the 2019 footer (s2)"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Kişisel Verilerin Korunması|Çerez Tercihleri|Çerez banner'ı|Tanımlama Bilgisi Ayarları|Tümünü Reddet|Tüm Tanımlama Bilgilerini Kabul Et|close|ETBİS)$",
+      "in2019": false,
+      "evidence": [
+        "KVKK / cookie choices and the ETBİS registration seal are legally required in Turkey"
+      ],
+      "action": "kept: legal"
+    },
+    {
+      "match": "^(Add to favorites|Favorilere Ekle)$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "favourite heart on product cards"
+    },
+    {
+      "match": "^Marka Ara$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "brand filter search"
+    },
+    {
+      "match": "^\\d+ renk seçeneği$",
+      "in2019": false,
+      "evidence": [
+        "colour-count chips not on 2019 cards (s3)"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(Mağazaya Git|Sonraki slayt|Önceki slayt)$",
+      "in2019": false,
+      "evidence": [
+        "sponsored store row is post-2019"
+      ],
+      "action": "kept: results (sponsored store results are never hidden)"
+    }
+  ]
+}
