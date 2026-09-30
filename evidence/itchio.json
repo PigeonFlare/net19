@@ -226,6 +226,50 @@
         "2019 devlog sections (s-extra viva-mortis) list posts with no \"View all posts\" link"
       ],
       "action": "hidden (itchio.css)"
+    },
+    {
+      "match": "^(Browse Games|Game Jams|Upload Game)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "header navigation",
+      "required": true
+    },
+    {
+      "match": "^Search for games or creators$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "header search field",
+      "required": true
+    },
+    {
+      "match": "^(Log in|Register)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "header Log in / Register buttons",
+      "required": true
+    },
+    {
+      "match": "^Devlogs$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "header Devlogs link",
+      "required": true
     }
   ]
 }
