@@ -74,3 +74,4 @@ footer[class*="kds-group/footer"] :is(.kds-button,.kds-select__button){backgroun
 footer[class*="kds-group/footer"] :is(.kds-button,.kds-select__button) svg,footer[class*="kds-group/footer"]>div>div svg.kds-icon{fill:currentColor!important;color:var(--n19-text)!important}
 footer[class*="kds-group/footer"] a:has(>svg.kds-block){display:none!important}
 footer[class*="kds-group/footer"] li:has(>a[href*="bsky.app"]){display:none!important}
+footer nav:has(a[href*="apps.apple.com"],a[href*="itunes.apple.com"],a[href*="play.google.com"]){display:none!important}

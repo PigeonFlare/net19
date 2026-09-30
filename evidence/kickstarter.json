@@ -1,6 +1,6 @@
 {
  "theme": "kickstarter",
- "era": "",
+ "era": "2019 Kickstarter: white header with the green kickstarter wordmark, Explore and Start a project on the left, search and Log in / Sign up on the right; section nav (Arts, Comics & Illustration, Design & Tech, Film, Food & Craft, Games, Music, Publishing) and on discover the 15 categories; project cards with Projects We Love badges and save; footer About / Support / More from Kickstarter columns, language and currency selectors, social icons and legal links. Post-2019 Status, Forward Funds, Brand assets, Kickstarter Project Updates and the app-store badges are hidden.",
  "sources": [
   {
    "id": "about-a20190702",
@@ -43,6 +43,24 @@
    "url": "https://arquivo.pt/noFrame/replay/20190922222554/https://www.kickstarter.com/projects/1116368506/evercam-the-wirefree-security-cam-with-365-day-bat",
    "date": "2019-09-22",
    "shows": "project page as served on 2019-09-22 (Arquivo.pt capture rendered with its archived 2019 CSS)"
+  },
+  {
+   "id": "strings-2019",
+   "url": "https://arquivo.pt/wayback/20190630000000/https://www.kickstarter.com/locale/3422/en.js",
+   "date": "2019-06-30",
+   "shows": "the English strings bundle the 2019 discover and home captures load (the header and footer were built by script from it): nav_bar Explore, Search, Start a project, Sign in, Log in, Sign up; search Search for projects or categories; global.footer About us, Our charter, Stats, Press, Jobs, Help Center, Our Rules, Creator Handbook, Newsletters, Research, Mobile apps, Kickstarter Magazine, The Creative Independent, Change currency display; Trust & Safety, Terms of Use, Privacy Policy, Cookie Policy; Projects We Love, Save, Remind me, Read more"
+  },
+  {
+   "id": "discover-raw20190630",
+   "url": "https://arquivo.pt/wayback/20190630000000/https://www.kickstarter.com/discover",
+   "date": "2019-06-30",
+   "shows": "discover page markup: category menu Art, Comics, Crafts, Dance, Design, Fashion, Film & Video, Food, Games, Journalism, Music, Photography, Publishing, Technology, Theater with subcategories; sorts Magic, Popularity, Newest, End Date, Most Funded; filters Projects We Love, Saved projects; Explore N projects, Load more"
+  },
+  {
+   "id": "home-raw20190630",
+   "url": "https://arquivo.pt/wayback/20190630184536/https://www.kickstarter.com/",
+   "date": "2019-06-30",
+   "shows": "home page markup: section nav, Featured project, Recommended, View more projects, collections with creator names, Learn more, Subscribe, The Creative Independent articles; the global footer's state lists the sections and currencies, the page's locales are English, Deutsch, Español, Français, Italiano, 日本語, 繁體中文, and its icon sprite carries the facebook, twitter, instagram, tumblr and youtube footer icons"
   }
  ],
  "features": [
@@ -94,6 +112,124 @@
     "home-a20190630"
    ],
    "note": "home page category navigation (Arts ... Publishing row, 2019 captures)"
+  },
+  {
+   "match": "^(For creators|Start a project)$",
+   "in2019": true,
+   "evidence": [
+    "strings-2019",
+    "home-raw20190630",
+    "discover-raw20190630"
+   ],
+   "note": "the header's creator entry (2019 Start a project, now For creators)",
+   "required": true
+  },
+  {
+   "match": "^(Log in|Sign in|Sign up)$",
+   "in2019": true,
+   "evidence": [
+    "strings-2019",
+    "home-raw20190630",
+    "discover-raw20190630"
+   ],
+   "note": "header Log in",
+   "required": true
+  },
+  {
+   "match": "^(Search projects, creators, and categories|Search for projects or categories|Search)$",
+   "in2019": true,
+   "evidence": [
+    "strings-2019",
+    "home-raw20190630",
+    "discover-raw20190630"
+   ],
+   "note": "header search",
+   "required": true
+  },
+  {
+   "match": "^(Art|Comics|Crafts|Dance|Design|Fashion|Film & Video|Food|Games|Journalism|Music|Photography|Publishing|Technology|Theater|Discover|Explore)$",
+   "in2019": true,
+   "evidence": [
+    "discover-raw20190630",
+    "strings-2019"
+   ],
+   "note": "the 15 2019 categories and Explore/discover"
+  },
+  {
+   "match": "^(toolbar area|nav area|main area|repeated nav|Additional site navigation and resources|Social media|Bring a creative project to life\\.)$",
+   "in2019": true,
+   "evidence": [
+    "strings-2019",
+    "home-raw20190630",
+    "discover-raw20190630"
+   ],
+   "note": "category bar, page body and the script-built 2019 footer with its link columns and social icons; the home heading is the page's own lead"
+  },
+  {
+   "match": "^(Project We Love|Projects We Love|Save this project|Save|Discover more|View more projects|Read more|Read the guide|Learn more)$",
+   "in2019": true,
+   "evidence": [
+    "strings-2019",
+    "home-raw20190630",
+    "discover-raw20190630"
+   ],
+   "note": "project card badge and save, section more links"
+  },
+  {
+   "match": "^(About us|Our charter|Stats|Press|Jobs|Help Center|Our Rules|Creator Resources|Creator Handbook|Newsletters|The Creative Independent|Mobile apps|Research|Kickstarter Magazine)$",
+   "in2019": true,
+   "evidence": [
+    "strings-2019"
+   ],
+   "note": "2019 global.footer links (Creator Resources is the renamed Creator Handbook)"
+  },
+  {
+   "match": "^(Facebook|Instagram|Twitter|YouTube|Tumblr)$",
+   "in2019": true,
+   "evidence": [
+    "home-raw20190630"
+   ],
+   "note": "2019 footer social icons"
+  },
+  {
+   "match": "^(Change the language you browse Kickstarter with|Change the currency display to your preferred currency|English.*|.*\\((EUR|USD|AUD|CAD)\\).*)$",
+   "in2019": true,
+   "evidence": [
+    "home-raw20190630",
+    "strings-2019"
+   ],
+   "note": "2019 footer language and currency (Change currency display) selectors"
+  },
+  {
+   "match": "^(Trust & Safety|Terms of Use|Privacy Policy|Cookie Policy)$",
+   "in2019": true,
+   "evidence": [
+    "strings-2019"
+   ],
+   "note": "2019 legal links"
+  },
+  {
+   "match": "^(Cookie Preferences|Accessibility Statement|CA Notice of Consent)$",
+   "in2019": false,
+   "action": "kept: legal and privacy links",
+   "evidence": []
+  },
+  {
+   "match": "^(How to Protect Your Kickstarter Campaign From Scams|How Blockbuster Projects Benefit Smaller Projects)$|^[A-Z][a-z]+( [A-Z][A-Za-z'.-]+){1,2}$",
+   "in2019": false,
+   "action": "kept: editorial article titles and creator names are content (2019 home had The Creative Independent articles and creator names on cards)",
+   "evidence": [
+    "home-raw20190630"
+   ],
+   "within": "main"
+  },
+  {
+   "match": "^(Status|Forward Funds|Brand assets|Kickstarter Project Updates|Download our mobile app|Download on the App Store|Get it on Google Play)$",
+   "in2019": false,
+   "evidence": [
+    "strings-2019"
+   ],
+   "note": "not in the 2019 footer; hidden by the theme"
   }
  ]
 }
