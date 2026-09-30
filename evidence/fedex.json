@@ -1,0 +1,142 @@
+{
+ "theme": "fedex",
+ "era": "fedex.com US home page 2019 (Arquivo.pt captures Mar, Sep and Dec 2019): purple #4d148c header with the FedEx logo, Shipping / Tracking / Printing Services / Locations / Support menus, 'Sign Up or Log In' and the search icon; hero with the Rate & Ship / Track / Locations panel and a Tracking ID field with an orange TRACK button; featured offers ('Personalize Your Deliveries', 'Get Started and Get Saving', 'More Than Shipping'); footer with Our Company (About FedEx, Our Portfolio, Investor Relations, Careers, FedEx Blog, Corporate Responsibility, Newsroom, Contact Us), More From FedEx (FedEx Compatible, Developer Resource Center, FedEx Logistics), Language picker, Follow FedEx (Newsletter, Facebook, Twitter, Instagram, LinkedIn, YouTube, Pinterest), Site Map, Terms of Use and Privacy & Security.",
+ "sources": [
+  {
+   "id": "h1",
+   "url": "https://arquivo.pt/wayback/20190321040423/https://www.fedex.com/en-us/home.html",
+   "date": "2019-03-21",
+   "shows": "home: header menus (Open Shipping / Tracking / Printing Services / Locations / Customer Support Menu), Sign Up or Log In, Search, tracking panel, footer columns, Follow FedEx icons, Site Map, Terms of Use, Privacy & Security"
+  },
+  {
+   "id": "h2",
+   "url": "https://arquivo.pt/wayback/20190905083943/https://www.fedex.com/en-us/home.html",
+   "date": "2019-09-05",
+   "shows": "home: same header, Rate & Ship / Track / Locations, Personalize Your Deliveries, Get Started and Get Saving, More Than Shipping, footer Our Company / More From FedEx (Developer Resource Center) / Language / Follow FedEx with Facebook, Twitter, Instagram, LinkedIn, YouTube, Pinterest"
+  },
+  {
+   "id": "h3",
+   "url": "https://arquivo.pt/wayback/20191209120501/https://www.fedex.com/en-us/home.html",
+   "date": "2019-12-09",
+   "shows": "home: same header, panel and footer"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(header area|nav area|footer area|main area|section area|form area|repeated .*)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "page frame; repeated items are the featured offers and panel tiles"
+  },
+  {
+   "match": "^FedEx Logo$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "required: logo"
+  },
+  {
+   "match": "^Open (Shipping|Tracking) Menu$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "required: Shipping and Tracking menus"
+  },
+  {
+   "match": "^Open (Design & Print|Printing Services|Locations|Customer Support) (Menu|menu)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "header menus (Design & Print is the renamed Printing Services, relabelled by the theme)"
+  },
+  {
+   "match": "^Sign Up or Log In$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "required: Sign Up or Log In"
+  },
+  {
+   "match": "^(Search|Tracking (number|ID)|TRACK|Track)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "search icon and tracking field"
+  },
+  {
+   "match": "^No PID\\? No clearance\\. Prep now\\.$",
+   "in2019": true,
+   "evidence": [
+    "h2",
+    "h3"
+   ],
+   "note": "featured offer headline (content); 2019 had the same featured-offer blocks ('Personalize Your Deliveries', 'Get Started and Get Saving')"
+  },
+  {
+   "match": "^(About FedEx|Our Portfolio|Investor Relations|Careers|FedEx Blog|Corporate Responsibility|Newsroom|Contact Us|FedEx Compatible|FedEx Developer Portal|FedEx Logistics|United States|Please select language from below drop down|Newsletter Signup|FedEx on (Facebook|Twitter|Instagram|LinkedIn|YouTube|Pinterest)|Site Map|Terms of Use|Privacy & Security)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "footer columns, language picker and Follow FedEx icons (Developer Portal is the renamed Developer Resource Center)"
+  },
+  {
+   "match": "^(Ad Choices|Your Privacy Choices|Cookie Consent)$",
+   "in2019": false,
+   "evidence": [
+    "privacy and cookie choices"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^Transportation Contracting Opportunities$",
+   "in2019": false,
+   "evidence": [
+    "not in the 2019 footer (h1-h3)"
+   ],
+   "action": "hidden (fedex.css contracting.fedex.com link)"
+  },
+  {
+   "match": "^(FedEx\\. The New Power Move\\.(SM)?|Access our customer portal\\.)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "hero campaign headline and featured-offer links (content); 2019 had a hero headline over the photo with the Rate & Ship / Track panel below"
+  },
+  {
+   "match": "^(Play video|Pause video|Unmute video|Mute video)$",
+   "in2019": false,
+   "evidence": [
+    "the 2019 hero was a still photo; the current hero is a video"
+   ],
+   "action": "kept: function (play and sound controls for the autoplaying hero video)"
+  }
+ ]
+}

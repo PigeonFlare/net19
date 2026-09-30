@@ -23,3 +23,4 @@ h1, h2, .fxg-title { font-weight: 300 !important; }
 .fxg-hero.fxg-hero_homepage:has(> .fxg-hero__image) { background-color: #000 !important; }
 
 .nuance-chat-floating-container, #nuanMessagingFrame, #inqChatStage { display: none !important; }
+.button_v1:has(> .link a[href*="contracting.fedex.com"]), .button_v1:has(a[href*="contracting.fedex.com"]) { display: none !important; }
