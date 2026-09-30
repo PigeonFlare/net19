@@ -1,0 +1,170 @@
+{
+  "theme": "realtor",
+  "era": "2019 realtor.com as every visitor saw it (Arquivo.pt captures January, July and October 2019 agree): white header with the red serif realtor.com wordmark, Buy / Sell / Rent / Mortgage / Find Realtors® / My Home / News & Insights with a red underline on the current item, Log In / Sign Up / Advertise on the right, a 'Get Pre-Approved' strip, a grey photo hero 'The Home of Home Search' with BUY / RENT / JUST SOLD / HOME VALUE tabs over a white search field and a red Search button; search results with a map, a filter bar and photo cards; listing pages with a photo gallery, price, beds/baths/sqft and a contact-agent form; dark footer with social icons, About us / Careers / Feedback / Media room / Ad Choices / Advertise with us / Agent support / Privacy / Terms / Home Made / Tech Blog / Sitemap, PRODUCTS and NEWS CORP rows.",
+  "sources": [
+    {
+      "id": "home-a201901",
+      "url": "https://arquivo.pt/noFrame/replay/20190103180256/https://www.realtor.com/",
+      "date": "2019-01-03",
+      "shows": "home: header, Get Pre-Approved strip, hero with BUY/RENT/JUST SOLD/HOME VALUE tabs and search, 'Need a home loan? Get pre-approved', Find Your Neighborhood, NAR links, Popular Real Estate Markets, property records by state, dark footer with Facebook/Twitter/LinkedIn/Instagram/Pinterest/YouTube icons, footer links, PRODUCTS and NEWS CORP rows"
+    },
+    {
+      "id": "home-a201907",
+      "url": "https://arquivo.pt/noFrame/replay/20190708170530/https://www.realtor.com/",
+      "date": "2019-07-08",
+      "shows": "home page as served in 2019-07: same header, hero tabs and search, footer"
+    },
+    {
+      "id": "home-a201910",
+      "url": "https://arquivo.pt/noFrame/replay/20191001170554/https://www.realtor.com/",
+      "date": "2019-10-01",
+      "shows": "home page as served in 2019-10: same header, hero tabs and search, footer"
+    },
+    {
+      "id": "srp-a201903",
+      "url": "https://arquivo.pt/noFrame/replay/20190306183525/https://www.realtor.com/realestateandhomes-search/Alabama",
+      "date": "2019-03-06",
+      "shows": "search/overview page: header, search field with clear (Cross) and Search buttons, 'Alabama Real Estate Overview', county cards with View N Homes for Sale / for Rent links"
+    },
+    {
+      "id": "srp-a201903b",
+      "url": "https://arquivo.pt/noFrame/replay/20190326151622/https://www.realtor.com/realestateandhomes-search/03038",
+      "date": "2019-03-26",
+      "shows": "search results for 03038: result count, sort, filter bar (Price, Beds, Home Type, More filters), map, photo cards with price, beds, baths, sqft, address, brokered by, Save search"
+    },
+    {
+      "id": "srp-a201910",
+      "url": "https://arquivo.pt/noFrame/replay/20191008163919/https://www.realtor.com/realestateandhomes-search/06840",
+      "date": "2019-10-08",
+      "shows": "search results as served in 2019-10 (capture listed in the Arquivo.pt index)"
+    },
+    {
+      "id": "ldp-a201904",
+      "url": "https://arquivo.pt/noFrame/replay/20190405195954/https://www.realtor.com/realestateandhomes-detail/1210-E-1st-St_Aberdeen_WA_98520_M29206-57087",
+      "date": "2019-04-05",
+      "shows": "listing page: photo gallery, price, beds/baths/sqft, address, contact-agent form, property details, price history, neighborhood, mortgage calculator"
+    },
+    {
+      "id": "ldp-a201910",
+      "url": "https://arquivo.pt/noFrame/replay/20191008190956/https://www.realtor.com/realestateandhomes-detail/10441-Sarah-St_Toluca-Lake_CA_91602_M19621-03190",
+      "date": "2019-10-08",
+      "shows": "listing page as served in 2019-10"
+    },
+    {
+      "id": "ldp-a201910b",
+      "url": "https://arquivo.pt/noFrame/replay/20191008164128/https://www.realtor.com/realestateandhomes-detail/117-Turtle-Back-Rd_New-Canaan_CT_06840_M47380-47979",
+      "date": "2019-10-08",
+      "shows": "listing page as served in 2019-10"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(Drawer|Navigation|Main|Primary|banner area|nav area|main area|pages|header area|footer area|Realtor\\.com footer|form area|section area|Property photos|Pagination|repeated .*)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201901",
+        "srp-a201903b",
+        "ldp-a201904"
+      ],
+      "note": "page frame: header menu drawer, navigation, hero tabs, main column, footer; repeated items are listings and articles"
+    },
+    {
+      "match": "^.+ homes for sale & real estate$|^.+ (Real Estate Overview|Real Estate & Homes for Sale)$",
+      "in2019": true,
+      "evidence": [
+        "srp-a201903",
+        "srp-a201903b"
+      ],
+      "note": "search page heading"
+    },
+    {
+      "match": "^(View all listing photos|Click to expand photos|Homes for sale|.+ Homes for Sale|.+ county|Full name|Email|Phone|How can an agent help\\?|Email Agent|Alabama|Alaska|Arizona|Arkansas|California|Colorado|Connecticut|Delaware|Florida|Georgia|Hawaii|Idaho|Illinois|Indiana|Iowa|Kansas|Kentucky|Louisiana|Maine|Maryland|Massachusetts|Michigan|Minnesota|Mississippi|Missouri|Montana|Nebraska|Nevada|New Hampshire|New Jersey|New Mexico|New York|North Carolina|North Dakota|Ohio|Oklahoma|Oregon|Pennsylvania|Rhode Island|South Carolina|South Dakota|Tennessee|Texas|Utah|Vermont|Virginia|Washington|West Virginia|Wisconsin|Wyoming|District of Columbia|New Canaan)$",
+      "in2019": true,
+      "evidence": [
+        "ldp-a201904",
+        "ldp-a201910"
+      ],
+      "note": "listing page: photo gallery button, breadcrumb (2019: '98520 Homes for Sale', 'Aberdeen Homes for Sale'), contact-agent form with name, email, phone and message; place names in the breadcrumb are content (New Canaan is the audited listing's city)"
+    },
+    {
+      "match": "^(Add to calendar)$",
+      "in2019": false,
+      "evidence": [
+        "ldp-a201904",
+        "ldp-a201910"
+      ],
+      "note": "open-house add-to-calendar button, not on the 2019 listing pages",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Navigation )?(Buy|Sell|Rent|Mortgage|Find an Agent|Find Realtors®|My Home|News & Insights)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201901",
+        "home-a201907",
+        "srp-a201903"
+      ],
+      "note": "main nav (Find Realtors® is now labelled Find an Agent)",
+      "required": true
+    },
+    {
+      "match": "^(Realtor\\.com|Save search|List|Map|Filters|Price|Rooms|Beds|Home type|More filters|Contact agent|Email agent|Next→?|Previous|How much home can I afford\\?|Houselogic|Search by location, price, room and more)$",
+      "in2019": true,
+      "evidence": [
+        "srp-a201903b",
+        "ldp-a201904",
+        "home-a201901"
+      ],
+      "note": "logo, search results tools (Save search, list/map, Price / Beds / Home Type / More filters), card contact button, pagination, the affordability calculator (2019 menu: How Much House Can I Afford) and the houselogic footer badge",
+      "required": false
+    },
+    {
+      "match": "^(Below market avg.*|Min .* Lot|Hide pending / contingent|Last \\d+ days|No HOA|New construction|Price reduced|Open house.*)$",
+      "in2019": false,
+      "evidence": [
+        "srp-a201903b"
+      ],
+      "note": "one-tap recommended filter chips next to the filter bar (post-2019); 2019 had only the Price / Beds / Home Type / More filters dropdowns",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Advertise|Log In|Sign Up|Sign in|Search|Search by location, price, rooms, and more|Address, City, Zip, or Neighborhood|Just sold|Home value|Cross|Clear.*)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201901",
+        "home-a201910",
+        "srp-a201903"
+      ],
+      "note": "header account links, hero tabs BUY/RENT/JUST SOLD/HOME VALUE and the search field with red Search button",
+      "required": false
+    },
+    {
+      "match": "^(Manage rentals|Pre-approval|Get your realtor domain|Agent Blog|Avail|UpNest|Builder Solutions|News Corp Australia|News UK)$",
+      "in2019": false,
+      "evidence": [
+        "home-a201901",
+        "home-a201910"
+      ],
+      "note": "landlord link in the header, the Pre-approval hero tab (2019 hero tabs were Buy, Rent, Just Sold, Home Value; pre-approval was a separate strip), the .realtor domain promo and footer products/News Corp links added after 2019",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Like us on Facebook|Follow us on Twitter|Connect on Linked In|Follow us on Instagram|Find us on Pinterest|Follow our You Tube Channel|Realtors Relief Foundation|About us|Careers|Feedback|Media room|Ad Choices|Advertise with us|Agent support|Privacy|Terms|Home Made|Tech Blog|Sitemap|Download on the App Store|Get it on Google Play|Leads & Branding|ListHub|Moving\\.com|International( Properties)?|Barrons|Financial News|Harper Collins|Mansion Global|Market ?Watch|New York Post|REA Group|Storyful|Wall Street Journal|Housing\\.com|National Association of REALTORS®|Move, Inc\\.)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201901",
+        "home-a201907"
+      ],
+      "note": "2019 footer: social icons, footer links, PRODUCTS and NEWS CORP rows, NAR and Move copyright; the iOS/Android app links were in the 2019 Mobile Apps menu"
+    },
+    {
+      "match": "^(Accessibility|Do Not Sell or Share My Personal Information)$",
+      "in2019": false,
+      "evidence": [
+        "home-a201901"
+      ],
+      "note": "accessibility and US privacy notices",
+      "action": "kept: legal"
+    }
+  ]
+}

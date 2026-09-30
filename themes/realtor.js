@@ -1,1 +1,1 @@
-globalThis.net19Theme = {};
+globalThis.net19Theme = { later: /^(?:add to calendar)$/i };

@@ -9,3 +9,5 @@ a.bgh-nav_menu-text[aria-current="page"]::after{background:var(--n19-red)!import
 .hero-content a[id^="hero-tab-"][aria-current="page"]{box-shadow:inset 0 -3px 0 var(--n19-red)!important}
 .hero-content a[id^="hero-tab-"][aria-current="page"]::after,.hero-content a[id^="hero-tab-"][aria-current="page"]::before{background:var(--n19-red)!important;border-color:var(--n19-red)!important}
 h1,h2,h3{font-weight:700!important}
+li:has(>a[href="/landlords"]),.bgheader_header-element a[href="/landlords"],#hero-tab-preapproval,li:has(>a[href*="get.realtor"]),li.footer-text-link:has(>a:is([href*="avail.co"],[href*="upnest.com"],[href*="/marketing/resources"],[href*="builder"],[href*="news.co.uk"],[href*="news.com.au"])){display:none!important}
+[data-testid^="recommended-filter-"]{display:none!important}
