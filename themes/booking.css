@@ -1,6 +1,6 @@
-html { --n19-navy: #003580; --n19-blue: #0071c2; --n19-blue-hover: #00487a; --n19-yellow: #febb02; --n19-white: #fff;
+html { --n19-navy: #003580; --n19-blue: #0071c2; --n19-blue-hover: #00487a; --n19-yellow: #febb02; --n19-white: #fff; --n19-cta: #0071c2; --n19-cta-hover: #00487a;
   --n19-font: BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
-html[data-net19-mode="dark"] { --n19-navy: #002a66; --n19-blue: #4aa3ff; --n19-blue-hover: #1f8ce0; --n19-yellow: #febb02; --n19-white: #1e1e1e; }
+html[data-net19-mode="dark"] { --n19-navy: #002a66; --n19-blue: #4aa3ff; --n19-blue-hover: #1f8ce0; --n19-yellow: #febb02; --n19-white: #1e1e1e; --n19-cta: #0071c2; --n19-cta-hover: #00487a; }
 html:root {
   --bui_border_radius_100: 2px !important; --bui_border_radius_200: 3px !important; --bui_border_radius_300: 3px !important;
 }
@@ -24,6 +24,10 @@ header.Header_root nav.Header_tab a[aria-current="page"] { font-weight: 500 !imp
 #HeroBannerDesktop div:has(> header) { flex: 1 1 auto !important; max-width: none !important; }
 #HeroBannerDesktop header, #HeroBannerDesktop h1, #HeroBannerDesktop [data-testid="herobanner-title1"], #HeroBannerDesktop [data-testid="herobanner-subtitile"] {
   width: auto !important; max-width: 900px !important; height: auto !important; }
+
+[data-testid="promotional-banner-content-cta"][data-n19-filled] { background-color: var(--n19-cta) !important; color: #fff !important; }
+[data-testid="promotional-banner-content-cta"][data-n19-filled]::before { background-color: var(--n19-cta) !important; }
+[data-testid="promotional-banner-content-cta"][data-n19-filled]:hover, [data-testid="promotional-banner-content-cta"][data-n19-filled]:hover::before { background-color: var(--n19-cta-hover) !important; }
 
 [data-testid="searchbox-layout-wide"] { background: var(--n19-yellow) !important; border-radius: 2px !important; padding: 4px !important; }
 [data-testid="searchbox-layout-wide"] > div { border-radius: 2px !important; }

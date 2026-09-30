@@ -23,8 +23,17 @@ globalThis.net19Theme = {
     while (row && label && !row.contains(label)) row = row.parentElement;
     if (row && !row.querySelector('input[name="sb_travel_purpose"]') && !row.hasAttribute('data-n19-post2019')) row.setAttribute('data-n19-post2019', '');
   };
+  const markFilledButtons = () => {
+    for (const cta of document.querySelectorAll('[data-testid="promotional-banner-content-cta"]:not([data-n19-filled])')) {
+      const fill = getComputedStyle(cta, '::before');
+      const parts = fill.backgroundColor.match(/[\d.]+/g) || [];
+      const alpha = parts.length === 4 ? +parts[3] : parts.length === 3 ? 1 : 0;
+      if (fill.content !== 'none' && alpha >= .5) cta.setAttribute('data-n19-filled', '');
+    }
+  };
   const fix = () => {
     markSections();
+    markFilledButtons();
     markFlightAddOn();
     const input = document.querySelector('input[name="ss"], #searchbox-horizontal-destination-input');
     if (input && input.placeholder !== 'Where are you going?') input.placeholder = 'Where are you going?';

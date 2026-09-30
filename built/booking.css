@@ -1,5 +1,5 @@
-html{--n19-navy:#003580;--n19-blue:#0071c2;--n19-blue-hover:#00487a;--n19-yellow:#febb02;--n19-white:#fff;--n19-font:BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif}
-html[data-net19-mode="dark"]{--n19-navy:#002a66;--n19-blue:#4aa3ff;--n19-blue-hover:#1f8ce0;--n19-yellow:#febb02;--n19-white:#1e1e1e}
+html{--n19-navy:#003580;--n19-blue:#0071c2;--n19-blue-hover:#00487a;--n19-yellow:#febb02;--n19-white:#fff;--n19-cta:#0071c2;--n19-cta-hover:#00487a;--n19-font:BlinkMacSystemFont, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif}
+html[data-net19-mode="dark"]{--n19-navy:#002a66;--n19-blue:#4aa3ff;--n19-blue-hover:#1f8ce0;--n19-yellow:#febb02;--n19-white:#1e1e1e;--n19-cta:#0071c2;--n19-cta-hover:#00487a}
 html:root{--bui_border_radius_100:2px!important;--bui_border_radius_200:3px!important;--bui_border_radius_300:3px!important}
 header.Header_root,#HeroBannerDesktop>div>div:first-child{background:var(--n19-navy)!important}
 header.Header_root a[data-testid="header-sign-up-button"],header.Header_root a[data-testid="header-sign-in-button"]{background:var(--n19-white)!important;color:var(--n19-blue)!important;border:1px solid var(--n19-blue)!important;border-radius:2px!important}
@@ -18,6 +18,9 @@ header.Header_root nav.Header_tab a[aria-current="page"]{font-weight:500!importa
 #HeroBannerDesktop [data-testid="herobanner-cta"]{border-radius:2px!important;background:var(--n19-blue)!important}
 :where(:root:not([data-n19-safe])) #HeroBannerDesktop div:has(>header),#HeroBannerDesktop:where(:root:not([data-n19-safe])) div:has(>header){flex:1 1 auto!important;max-width:none!important}
 :where(:root:not([data-n19-safe])) #HeroBannerDesktop header,#HeroBannerDesktop:where(:root:not([data-n19-safe])) header,:where(:root:not([data-n19-safe])) #HeroBannerDesktop h1,#HeroBannerDesktop:where(:root:not([data-n19-safe])) h1,:where(:root:not([data-n19-safe])) #HeroBannerDesktop [data-testid="herobanner-title1"],#HeroBannerDesktop:where(:root:not([data-n19-safe])) [data-testid="herobanner-title1"],:where(:root:not([data-n19-safe])) #HeroBannerDesktop [data-testid="herobanner-subtitile"],#HeroBannerDesktop:where(:root:not([data-n19-safe])) [data-testid="herobanner-subtitile"]{width:auto!important;max-width:900px!important;height:auto!important}
+[data-testid="promotional-banner-content-cta"][data-n19-filled]{background-color:var(--n19-cta)!important;color:#fff!important}
+[data-testid="promotional-banner-content-cta"][data-n19-filled]::before{background-color:var(--n19-cta)!important}
+[data-testid="promotional-banner-content-cta"][data-n19-filled]:hover,[data-testid="promotional-banner-content-cta"][data-n19-filled]:hover::before{background-color:var(--n19-cta-hover)!important}
 [data-testid="searchbox-layout-wide"]{background:var(--n19-yellow)!important;border-radius:2px!important}
 :where(:root:not([data-n19-safe])) [data-testid="searchbox-layout-wide"],[data-testid="searchbox-layout-wide"]:where(:root:not([data-n19-safe])){padding:4px!important}
 [data-testid="searchbox-layout-wide"]>div{border-radius:2px!important}
