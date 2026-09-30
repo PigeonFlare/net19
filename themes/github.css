@@ -183,7 +183,8 @@ header.HeaderMktg nav li:has(> a[href$="/features/codespaces"]), header.HeaderMk
 header.HeaderMktg nav li:has(> a[href^="https://maintainers.github.com"]), header.HeaderMktg nav li:has(> a[href^="https://stars.github.com"]) { display: none !important; }
 header.GlobalNav { background: var(--n19-header) !important; position: relative !important; box-shadow: none !important; border: 0 !important; }
 header.GlobalNav > div:first-child { min-height: 62px !important; padding: 0 16px !important; box-sizing: border-box !important; width: 100% !important; max-width: 1012px; margin: 0 auto !important; justify-content: flex-start !important; }
-header.GlobalNav > div:first-child > div { padding-left: 0 !important; padding-right: 0 !important; }
+header.GlobalNav > div:first-child > div { padding: 0 !important; margin-top: 0 !important; margin-bottom: 0 !important; align-self: stretch !important; align-items: center !important; }
+header.GlobalNav > div:first-child > div > * { margin-top: 0 !important; margin-bottom: 0 !important; }
 header.GlobalNav > div:first-child :is(a, button), header.GlobalNav > div:first-child svg { color: var(--n19-header-text) !important; }
 header.GlobalNav [class*="styles-module__left__"] { width: auto !important; flex: none !important; }
 header.GlobalNav [class*="styles-module__left__"] > div:has(> button) { display: none !important; }

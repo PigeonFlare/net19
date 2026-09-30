@@ -185,3 +185,5 @@ hr:has(+ [data-n19-shape="pill"]), [data-n19-shape="pill"] + hr { visibility: hi
 
 #rcnt :is(.cUnQKe, [jscontroller="Da4hkd"]):has(.related-question-pair), #botstuff :is(.cUnQKe, [jscontroller="Da4hkd"]):has(.related-question-pair) { display: none !important; }
 form[role="search"] ~ * [role="button"][aria-label="Share" i][data-dt], form[role="search"] + div > [role="button"][aria-label="Share" i] { display: none !important; }
+#rso :is(a.DHZ0Bd, .D33W6b a[href], a.Gwptse), #rso :is(a.DHZ0Bd, .D33W6b a[href], a.Gwptse) :is(span, div) { color: var(--n19-link) !important; -webkit-text-fill-color: var(--n19-link) !important; }
+#rso :is(a.DHZ0Bd, .D33W6b a[href], a.Gwptse):visited, #rso :is(a.DHZ0Bd, .D33W6b a[href], a.Gwptse):visited :is(span, div) { color: var(--n19-visited) !important; -webkit-text-fill-color: var(--n19-visited) !important; }

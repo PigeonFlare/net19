@@ -118,3 +118,4 @@ html[data-net19-mode="dark"] #dp :is(.a-carousel-heading,.a-carousel-header-row 
 html:where(:root:not([data-n19-safe])) body #navbar.nav-flex #nav-belt.nav-updated-pinned-config,html:where(:root:not([data-n19-safe])) body #navbar #nav-belt[style*="top"]{position:relative!important;top:auto!important;transform:none!important}
 html body #navbar.nav-flex #nav-belt.nav-updated-pinned-config,html body #navbar #nav-belt[style*="top"]{animation:none!important;box-shadow:none!important}
 [class*="badgeMessage"]:is([class*="npack-asin-card"],[class*="_badgeMessage_"]),[class*="_badgeMessage_"]{background:transparent!important}
+:where(:root:not([data-n19-safe])) #nav-main #nav-xshop,#nav-main:where(:root:not([data-n19-safe])) #nav-xshop{transform:translateY(9px)!important}

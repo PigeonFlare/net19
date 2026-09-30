@@ -165,7 +165,8 @@ header.GlobalNav{background:var(--n19-header)!important}
 :where(:root:not([data-n19-safe])) header.GlobalNav{position:relative!important}
 header.GlobalNav{box-shadow:none!important;border:0!important}
 :where(:root:not([data-n19-safe])) header.GlobalNav>div:first-child{min-height:62px!important;padding:0 16px!important;box-sizing:border-box!important;width:100%!important;max-width:1012px;margin:0 auto!important;justify-content:flex-start!important}
-:where(:root:not([data-n19-safe])) header.GlobalNav>div:first-child>div{padding-left:0!important;padding-right:0!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav>div:first-child>div{padding:0!important;margin-top:0!important;margin-bottom:0!important;align-self:stretch!important;align-items:center!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav>div:first-child>div>*{margin-top:0!important;margin-bottom:0!important}
 header.GlobalNav>div:first-child :is(a,button),header.GlobalNav>div:first-child svg{color:var(--n19-header-text)!important}
 :where(:root:not([data-n19-safe])) header.GlobalNav [class*="styles-module__left__"]{width:auto!important;flex:none!important}
 header.GlobalNav [class*="styles-module__left__"]>div:has(>button){display:none!important}

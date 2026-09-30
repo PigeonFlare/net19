@@ -137,3 +137,4 @@ header#navbar-main { position: relative !important; z-index: 300 !important; }
 .s-main-slot [class*="_c2Itd_"] { font-family: "Amazon Ember", Arial, sans-serif !important; }
 html body #navbar.nav-flex #nav-belt.nav-updated-pinned-config, html body #navbar #nav-belt[style*="top"] { position: relative !important; top: auto !important; transform: none !important; animation: none !important; box-shadow: none !important; }
 [class*="badgeMessage"]:is([class*="npack-asin-card"], [class*="_badgeMessage_"]), [class*="_badgeMessage_"] { background: transparent !important; }
+#nav-main #nav-xshop { transform: translateY(9px) !important; }

@@ -410,7 +410,7 @@ html[data-n19-yt="www"] {
   & ytd-watch-metadata #actions :is(yt-button-view-model, ytd-button-renderer):has(:is(button, a):is([aria-label="Clip" i], [aria-label="Thanks" i], [aria-label^="Ask" i], [aria-label^="Remix" i], [aria-label="Create" i], [aria-label^="Hype" i])),
   & ytd-watch-metadata #actions :is(ytd-download-button-renderer, ytd-clip-button-renderer) { display: none !important; }
   & ytd-watch-metadata #actions yt-button-shape#button-shape :is(button, a), & ytd-watch-metadata #actions ytd-menu-renderer > yt-button-shape :is(button, a) { padding: 0 !important; width: 36px !important; justify-content: center !important; }
-  & ytd-watch-metadata #owner { grid-area: owner !important; display: flex !important; flex-direction: row !important; align-items: center !important; justify-content: space-between !important; margin: 0 !important; padding: 16px 0 0 !important; min-width: 0 !important; width: auto !important; }
+  & ytd-watch-metadata #owner { grid-area: owner !important; display: flex !important; flex-direction: row !important; align-items: center !important; justify-content: space-between !important; margin: 0 !important; padding: 12px 0 0 !important; min-width: 0 !important; width: auto !important; }
   & ytd-watch-metadata ytd-video-owner-renderer { flex: 1 1 auto !important; margin: 0 !important; min-width: 0 !important; align-items: center !important; }
   & ytd-watch-metadata ytd-video-owner-renderer #avatar, & ytd-watch-metadata ytd-video-owner-renderer #avatar img { width: 48px !important; height: 48px !important; border-radius: 50% !important; }
   & ytd-watch-metadata ytd-video-owner-renderer #avatar { display: block !important; margin: 0 !important; }
@@ -426,7 +426,7 @@ html[data-n19-yt="www"] {
   & ytd-watch-metadata #owner #subscribe-button { margin: 0 0 0 8px !important; flex: none !important; }
   & ytd-watch-metadata #bottom-row { grid-area: desc !important; display: block !important; margin: 0 !important; padding: 0 0 16px 64px !important; border-bottom: 1px solid var(--n19-divider) !important; }
   & ytd-watch-metadata #bottom-row #bottom-actions:empty { display: none !important; }
-  & ytd-watch-metadata #description { background: transparent !important; border-radius: 0 !important; margin: 0 !important; padding: 12px 0 0 !important; max-width: 615px !important; cursor: default !important; }
+  & ytd-watch-metadata #description { background: transparent !important; border-radius: 0 !important; margin: 0 !important; padding: 4px 0 0 !important; max-width: 615px !important; cursor: default !important; }
   & ytd-watch-metadata #description:hover { background: transparent !important; }
   & ytd-watch-metadata #description-inner { margin: 0 !important; padding: 0 !important; }
   & ytd-watch-metadata #description-interaction { display: none !important; }

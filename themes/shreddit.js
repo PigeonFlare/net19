@@ -206,6 +206,7 @@ globalThis.net19Theme = {
     items.sort((a, b) => a.textContent.localeCompare(b.textContent, undefined, { sensitivity: 'base' }));
     menu.append(make('div', { 'data-n19-menu-title': '', 'data-n19-mine': '' }, say('My communities')), ...items);
   };
+  const voteStart = new WeakMap();
   let subscribed = null;
   const loadSubscribed = async () => {
     const list = [];
@@ -678,8 +679,11 @@ globalThis.net19Theme = {
       const meta = comment.querySelector(':scope > details > summary [slot="commentMeta"] .author-name-meta');
       const trigger = meta?.closest('span.author-hovercard-trigger');
       if (!trigger) continue;
-      const live = comment.querySelector(':scope > shreddit-comment-action-row')?.shadowRoot?.querySelector('.rpl-vote-button-group faceplate-number[number]')?.getAttribute('number');
-      const n = +(live ?? comment.getAttribute('score'));
+      const group = comment.querySelector(':scope > shreddit-comment-action-row')?.shadowRoot?.querySelector('.rpl-vote-button-group');
+      const vote = group ? (group.querySelector('button[upvote][aria-pressed="true"]') ? 1 : group.querySelector('button[downvote][aria-pressed="true"]') ? -1 : 0) : 0;
+      let start = voteStart.get(comment);
+      if (!start) { start = { score: +comment.getAttribute('score'), vote }; voteStart.set(comment, start); }
+      const n = start.score - start.vote + vote;
       if (!Number.isFinite(n)) continue;
       const text = `${pretty(n)} point${n === 1 ? '' : 's'}`;
       const shown = trigger.parentElement.querySelector(':scope > [data-n19-points]');
@@ -704,7 +708,7 @@ globalThis.net19Theme = {
   const start = () => {
     scan();
     new MutationObserver(() => { retries = 0; later(); }).observe(document.documentElement, { childList: true, subtree: true });
-    addEventListener('click', event => { if (event.composedPath().some(n => n.hasAttribute?.('upvote') || n.hasAttribute?.('downvote'))) for (const wait of [150, 700, 1600]) setTimeout(later, wait); }, true);
+    addEventListener('click', event => { if (event.composedPath().some(n => n.hasAttribute?.('upvote') || n.hasAttribute?.('downvote'))) for (const wait of [40, 150, 700, 1600]) setTimeout(later, wait); }, true);
     setInterval(() => times(document), 30000);
   };
   const VIEWS = [['/', 'true'], ['/r/', 'false'], ['/svc/shreddit/community-more-posts', 'false'], ['/r/popular', 'true'], ['/r/all', 'true']];

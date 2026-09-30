@@ -173,7 +173,10 @@ nav.top-nav { --color-background-base: var(--n19-bar) !important; --color-backgr
   --color-background-button-secondary-default: var(--n19-button-2) !important; --color-background-button-secondary-hover: var(--n19-button-2-hover) !important;
   --color-background-interactable-hover: var(--n19-button-2) !important; --color-background-hover: var(--n19-button-2) !important; --color-background-button-text-hover: var(--n19-button-2) !important; color: var(--n19-text) !important; }
 nav.top-nav .tw-animated-glitch-logo svg, nav.top-nav a[aria-label="Twitch Home"] svg { filter: none !important; }
-nav.top-nav .tw-animated-glitch-logo svg [class*="ScFace"] { fill: var(--n19-logo) !important; }
-nav.top-nav .tw-animated-glitch-logo svg [class*="ScEyes"] { fill: var(--n19-bar) !important; }
+nav.top-nav .tw-animated-glitch-logo svg [class*="ScFace"] { fill: var(--n19-bar) !important; }
+nav.top-nav .tw-animated-glitch-logo svg [class*="ScEyes"], nav.top-nav .tw-animated-glitch-logo svg [class*="ScEyes"] * { fill: var(--n19-logo) !important; }
 nav.top-nav [data-a-target="user-menu-toggle"] :is(figure, .tw-avatar, [class*="ScAvatar"]) { background: transparent !important; box-shadow: none !important; border-color: transparent !important; }
 nav.top-nav [class*="ScKeyboardPromptContainer"] { display: none !important; }
+.metadata-layout__support { flex-wrap: nowrap !important; align-items: center !important; column-gap: 16px !important; }
+.metadata-layout__support > :first-child { flex: 0 0 auto !important; }
+.metadata-layout__support > :nth-child(2) { flex: 1 1 0 !important; min-width: 0 !important; flex-wrap: wrap !important; row-gap: 8px !important; justify-content: flex-end !important; }
