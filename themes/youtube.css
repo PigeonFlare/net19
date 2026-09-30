@@ -141,7 +141,7 @@ html[data-n19-yt="www"] {
   & ytd-rich-item-renderer:has(:is(ytm-shorts-lockup-view-model, ytm-shorts-lockup-view-model-v2, a[href^="/shorts/"])),
   & :is(ytd-video-renderer, ytd-grid-video-renderer, ytd-compact-video-renderer, ytd-playlist-video-renderer):has(a#thumbnail[href^="/shorts/"]),
   & yt-lockup-view-model:has(a[href^="/shorts/"] :is(img, yt-image, yt-thumbnail-view-model)),
-  & yt-tab-shape:is([tab-title="Shorts" i], [tab-title="Live" i], [tab-title="Podcasts" i], [tab-title="Releases" i], [tab-title="Store" i], [tab-title="Courses" i], [tab-title="Membership" i]) { display: none !important; }
+  & yt-tab-shape:is([tab-title="Shorts" i], [tab-title="Live" i], [tab-title="Shows" i], [tab-title="Podcasts" i], [tab-title="Releases" i], [tab-title="Store" i], [tab-title="Courses" i], [tab-title="Membership" i]) { display: none !important; }
 
   & :is(ytd-feed-filter-chip-bar-renderer, #chips-wrapper.ytd-feed-filter-chip-bar-renderer) { display: none !important; }
   & ytd-browse[page-subtype="home"] ytd-rich-grid-renderer > #header, & ytd-browse[page-subtype="subscriptions"] ytd-rich-grid-renderer > #header:has(chip-bar-view-model) { display: none !important; }
@@ -340,7 +340,7 @@ html[data-n19-yt="www"] {
   & ytd-search ytd-video-renderer #channel-info ytd-channel-name { margin: 0 !important; }
   & ytd-search ytd-video-renderer #channel-info :is(ytd-channel-name, #text, a, yt-formatted-string) { font-size: 13px !important; line-height: 18px !important; color: var(--n19-text-2) !important; }
   & .n19-sep { margin: 0 4px !important; }
-  & .ytContentMetadataViewModelMetadataRow[data-n19-collab] { flex-wrap: wrap !important; }
+  & .ytContentMetadataViewModelMetadataRow[data-n19-split] { flex-wrap: wrap !important; }
   & .n19-break { flex: 0 0 100% !important; height: 0 !important; }
   & .ytBadgeShapeIcon .yt-icon-shape > div { height: 100% !important; }
   & ytd-search ytd-video-renderer .n19-dot { margin: 0 4px !important; color: var(--n19-text-2) !important; font-size: 13px !important; line-height: 18px !important; }
@@ -458,7 +458,7 @@ html[data-n19-yt="www"] {
 
   & ytd-watch-flexy #secondary :is(yt-lockup-view-model, ytd-compact-video-renderer) { margin: 0 0 8px !important; }
   & ytd-watch-flexy #secondary yt-lockup-view-model .ytLockupViewModelContentImage { width: 168px !important; min-width: 168px !important; max-width: 168px !important; margin-right: 8px !important; padding: 0 !important; }
-  & ytd-watch-flexy #secondary yt-lockup-view-model :is(a.ytLockupViewModelContentImage, yt-thumbnail-view-model) { width: 168px !important; height: 94px !important; border-radius: 0 !important; overflow: hidden !important; flex: none !important; }
+  & ytd-watch-flexy #secondary yt-lockup-view-model :is(a.ytLockupViewModelContentImage, yt-thumbnail-view-model) { width: 168px !important; height: 94px !important; padding: 0 !important; border-radius: 0 !important; overflow: hidden !important; flex: none !important; }
   & ytd-watch-flexy #secondary yt-lockup-view-model yt-thumbnail-view-model img { width: 168px !important; height: 94px !important; object-fit: cover !important; }
   & ytd-watch-flexy #secondary yt-lockup-view-model :is(.ytLockupMetadataViewModelTitle, .ytLockupMetadataViewModelTitle *) { font-size: 14px !important; font-weight: 500 !important; line-height: 16px !important; color: var(--n19-text) !important; }
   & ytd-watch-flexy #secondary yt-lockup-view-model .ytLockupMetadataViewModelTitle { max-height: 32px !important; overflow: hidden !important; display: -webkit-box !important; -webkit-line-clamp: 2 !important; -webkit-box-orient: vertical !important; }

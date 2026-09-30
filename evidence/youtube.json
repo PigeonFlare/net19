@@ -133,10 +133,10 @@
       "action": "hidden"
     },
     {
-      "match": "^(Download|Clip|Thanks|Hype|Podcasts|Releases|Store|Courses|Membership|Posts|Dubbed|Auto-dubbed|Latest|Popular|Oldest|All|Unwatched|Recently uploaded|Videos only|Watched|For you)$",
+      "match": "^(Download|Clip|Thanks|Hype|Shows|Podcasts|Releases|Store|Courses|Membership|Posts|Dubbed|Auto-dubbed|Latest|Popular|Oldest|All|Unwatched|Recently uploaded|Videos only|Watched|For you)$",
       "in2019": false,
       "evidence": [
-        "desktop Download 2022, Clip 2021, Thanks 2021, Hype 2024, channel Live/Podcasts/Releases/Store tabs 2022+, Posts renamed from Community 2023, auto-dubbing 2024, chip bars on search (tested 2022-03, sej-2022-03-search-chips.png) and channel videos (2022); none in s1-s11"
+        "desktop Download 2022, Clip 2021, Thanks 2021, Hype 2024, channel Live/Podcasts/Releases/Store tabs 2022+, channel Shows tab 2025 (s4 and s5 show only HOME VIDEOS PLAYLISTS CHANNELS DISCUSSION/COMMUNITY ABOUT), Posts renamed from Community 2023, auto-dubbing 2024, chip bars on search (tested 2022-03, sej-2022-03-search-chips.png) and channel videos (2022); none in s1-s11"
       ],
       "action": "hidden, or renamed to its 2019 name (Posts -> Community, chips -> SORT BY menu)"
     },

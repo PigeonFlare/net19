@@ -287,7 +287,15 @@ globalThis.net19Theme = (() => {
         const cut = row.querySelector(':scope > .n19-break');
         if (cut && more.compareDocumentPosition(cut) & Node.DOCUMENT_POSITION_FOLLOWING) for (let e = more.nextElementSibling; e && e !== cut; e = e.nextElementSibling) if (!e.hasAttribute('data-net19-hidden')) e.setAttribute('data-net19-hidden', '');
         for (let e = more.previousElementSibling; e && (e.classList.contains('n19-sep') || /delimiter/i.test(e.className)); e = e.previousElementSibling) if (!e.hasAttribute('data-net19-hidden')) e.setAttribute('data-net19-hidden', '');
-        if (!row.hasAttribute('data-n19-collab')) row.setAttribute('data-n19-collab', '');
+        if (!row.hasAttribute('data-n19-split')) row.setAttribute('data-n19-split', '');
+      } else if (row.closest('ytd-rich-item-renderer')) {
+        const views = parts.find(part => /\bviews?$/i.test(part.textContent.trim()));
+        if (views && views !== parts[0] && !views.previousElementSibling?.classList.contains('n19-break')) { const cut = document.createElement('span'); cut.className = 'n19-break'; views.before(cut); }
+        const cut = views?.previousElementSibling?.classList.contains('n19-break') ? views.previousElementSibling : null;
+        if (cut) {
+          for (let e = cut.previousElementSibling; e && (e.classList.contains('n19-sep') || /delimiter/i.test(e.className)); e = e.previousElementSibling) if (!e.hasAttribute('data-net19-hidden')) e.setAttribute('data-net19-hidden', '');
+          if (!row.hasAttribute('data-n19-split')) row.setAttribute('data-n19-split', '');
+        }
       }
       const shown = parts.filter(part => part.getClientRects().length);
       for (let i = 1; i < shown.length; i++) {

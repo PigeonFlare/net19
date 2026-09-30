@@ -216,6 +216,14 @@
         "s2, s7 and s8 show plain 'Subscribe' and Gift labels; promotional suffixes such as 'up to 30% off' and 'Bonus Subs' are post-2019"
       ],
       "action": "relabeled Subscribe and Gift a Sub in English (theme)"
+    },
+    {
+      "match": "^Only \\d+ (Hours|Days) of Bonus Gift Subs left$",
+      "in2019": false,
+      "evidence": [
+        "the Subtember gift-sub callout under the player (subtember-callout-container, seen on a live channel 2026-09); s2, s7 and s8 show the channel bar directly under the player with nothing between it and the stream info"
+      ],
+      "action": "hidden (theme)"
     }
   ]
 }

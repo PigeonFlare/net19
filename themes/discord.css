@@ -228,7 +228,8 @@ html [class*="sidebarList_"] {
 #channels :is([class^="modeSelected_"], [class*=" modeSelected_"]) :is([class^="link_"], [class*=" link_"]),
 #channels li[class*="selected"] :is([class^="link_"], [class*=" link_"]) { background-color: var(--n19-selected) !important; }
 #channels [class*="unread_"] { background-color: var(--n19-pill) !important; width: 8px !important; height: 8px !important; border-radius: 0 4px 4px 0 !important; }
-#channels :is(li, [role="listitem"]):has(a:is([href$="/@home"], [href$="/channels-and-roles"], [href$="/browse-channels"], [href$="/shop"], [href$="/game-shop"], [href$="/role-subscriptions"], [href$="/guild-directory"], [href$="/conjuring"]), [data-list-item-id$="guild-home"], [data-list-item-id$="channel-browser"], [data-list-item-id$="customize-community"], [data-list-item-id$="guild-boosts"]) { display: none !important; }
+#channels :is(li, [role="listitem"]):has(a:is([href$="/@home"], [href$="/channels-and-roles"], [href$="/browse-channels"], [href$="/shop"], [href$="/game-shop"], [href$="/role-subscriptions"], [href$="/guild-directory"], [href$="/conjuring"]), [data-list-item-id$="guild-home"], [data-list-item-id$="channel-browser"], [data-list-item-id$="customize-community"], [data-list-item-id$="guild-boosts"], [data-list-item-id^="channels___upcoming-events-"], [data-list-item-id^="channels___channels-"], [data-list-item-id^="channels___members-"]) { display: none !important; }
+#channels [role="button"]:has([class*="progressContainer_"]) { display: none !important; }
 
 [class*="privateChannels_"] :is(li, [role="listitem"]):has(a:is([href="/store"], [href="/shop"], [href^="/quest-home"], [href^="/discovery"], [href^="/family-center"], [href="/message-requests"], [href="/activity"])) { display: none !important; }
 [class*="privateChannels_"] :is([class^="interactive_"], [class*=" interactive_"]) { border-radius: 3px !important; }

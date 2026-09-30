@@ -119,7 +119,7 @@ div:has(>[data-a-target="follow-button"]),div:has(>[data-a-target="unfollow-butt
 [data-a-target="subscribe-button"]{background:var(--n19-purple)!important;color:#fff!important}
 [data-a-target="subscribe-button"] *,[data-a-target="follow-button"] *{color:#fff!important;fill:currentColor}
 button[class*="ScCoreButton"]:not([class*="ScButtonIcon"]),a[class*="ScCoreButton"]:not([class*="ScButtonIcon"]){border-radius:4px!important}
-html body :is(.vertical-selector-card__container,[class*="vertical-selector__wrapper"],[class*="storiesLeftNavSection"],[data-a-target*="guest-star"],[data-test-selector*="guest-star"],.community-highlight-stack__card,[class*="community-highlight-stack"],[data-test-selector*="hype-chat"],[class*="hype-chat"],[data-test-selector*="discovery-feed"],[data-a-target*="discovery-feed"],[data-test-selector="community-points-summary"],.community-points-summary,.disclosure-tool){display:none!important}
+html body :is(.vertical-selector-card__container,[class*="vertical-selector__wrapper"],[class*="storiesLeftNavSection"],[data-a-target*="guest-star"],[data-test-selector*="guest-star"],.community-highlight-stack__card,[class*="community-highlight-stack"],[data-test-selector*="hype-chat"],[class*="hype-chat"],[data-test-selector*="discovery-feed"],[data-a-target*="discovery-feed"],[data-test-selector="community-points-summary"],.community-points-summary,[class*="subtember-callout"],.disclosure-tool){display:none!important}
 html [data-net19-hidden][data-net19-hidden]{display:none!important}
 main [role="tablist"] [role="tab"] :is(p,span){font-size:14px!important;font-weight:400!important}
 main [role="tablist"] a[role="tab"][href$="/schedule"]{display:none!important}

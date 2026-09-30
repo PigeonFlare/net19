@@ -149,7 +149,7 @@ html body :is(.vertical-selector-card__container, [class*="vertical-selector__wr
 [data-a-target*="guest-star"], [data-test-selector*="guest-star"],
 .community-highlight-stack__card, [class*="community-highlight-stack"], [data-test-selector*="hype-chat"], [class*="hype-chat"],
 [data-test-selector*="discovery-feed"], [data-a-target*="discovery-feed"],
-[data-test-selector="community-points-summary"], .community-points-summary,
+[data-test-selector="community-points-summary"], .community-points-summary, [class*="subtember-callout"],
 .disclosure-tool) { display: none !important; }
 html [data-net19-hidden][data-net19-hidden] { display: none !important; }
 main [role="tablist"] [role="tab"] :is(p, span) { font-size: 14px !important; font-weight: 400 !important; }

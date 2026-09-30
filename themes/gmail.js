@@ -30,8 +30,12 @@
     const label = on && document.querySelector('.aeN .TO:not(.nZ) .nU, .aqn .TO:not(.nZ) .nU');
     const white = label && /^rgba?\((2[3-5]\d),\s*(2[3-5]\d),\s*(2[3-5]\d)/.test(getComputedStyle(label).color);
     const value = on ? (white ? 'white' : 'dark') : null;
-    if (value === document.documentElement.getAttribute('data-n19-picture')) return;
-    if (value) document.documentElement.setAttribute('data-n19-picture', value); else document.documentElement.removeAttribute('data-n19-picture');
+    const panel = on && document.querySelector('.bkK > .nH');
+    const list = panel && /^rgba?\((2[3-5]\d),\s*(2[3-5]\d),\s*(2[3-5]\d)(?:,\s*(?:0?\.[5-9]\d*|1))?\)$/.test(getComputedStyle(panel).backgroundColor) ? 'light' : null;
+    const root = document.documentElement;
+    if (list !== root.getAttribute('data-n19-list')) { if (list) root.setAttribute('data-n19-list', list); else root.removeAttribute('data-n19-list'); }
+    if (value === root.getAttribute('data-n19-picture')) return;
+    if (value) root.setAttribute('data-n19-picture', value); else root.removeAttribute('data-n19-picture');
     if (globalThis.net19Theme.rejudge) globalThis.net19Theme.rejudge(); else requestAnimationFrame(() => globalThis.net19Theme.rejudge?.());
     if (value === 'dark') requestAnimationFrame(() => requestAnimationFrame(picture));
   };

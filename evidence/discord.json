@@ -204,6 +204,14 @@
         "s4"
       ],
       "note": "scrubbed personal names and messages in snapshots"
+    },
+    {
+      "match": "^(Events|Channels & Roles|Members|Boost Goal)$",
+      "in2019": false,
+      "evidence": [
+        "channel list shortcuts above the categories: Events (scheduled events 2021), Channels & Roles (onboarding 2023), Members (member list page 2023) and the Boost Goal bar (2024); s4, s5 and s6 channel lists start with the first category"
+      ],
+      "action": "hidden (theme)"
     }
   ]
 }
