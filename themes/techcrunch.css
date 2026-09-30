@@ -162,14 +162,16 @@ footer.wp-block-template-part :is(a, p, span, h2, h3, li) { color: #333 !importa
   main .loop-card--featured-bg .loop-card__author { color: var(--n19-body) !important; }
   main .loop-card--featured-bg .loop-card__cat { color: var(--n19-green) !important; }
   .hero-package-2 .loop-card--featured-bg .loop-card__content { order: 1 !important; padding: 0 !important; }
-  .hero-package-2 .loop-card--featured-bg .loop-card__figure { order: 2 !important; margin: 12px 0 0 !important; }
+  .hero-package-2 .loop-card--featured-bg .loop-card__figure { order: 2 !important; margin: 12px 0 0 !important; height: auto !important; aspect-ratio: auto !important; }
   .hero-package-2__featured .loop-card__figure img { position: static !important; width: 447px !important; height: 259px !important; max-height: none !important; aspect-ratio: auto !important; object-fit: cover !important; }
   .hero-package-2__upnext .loop-card__figure { display: none !important; }
   .hero-package-2 .loop-card--featured-bg :is(.loop-card__title-link, .loop-card__meta, .loop-card__meta-item, .loop-card__time) { color: var(--n19-text) !important; }
   .hero-package-2 .loop-card--featured-bg .loop-card__author { color: var(--n19-body) !important; }
   .hero-package-2 .loop-card--featured-bg .loop-card__cat { color: var(--n19-green) !important; }
   .hero-package-2__featured .loop-card__title, .hero-package-2__featured .loop-card__title-link { font: 800 36px/1.1 var(--n19-font) !important; letter-spacing: -1.8px !important; margin: 4px 0 10px !important; }
-  .hero-package-2 :is(.hero-package-2__upnext, .hero-package-2__list) .loop-card { border: 0 !important; border-bottom: 1px solid #ddd !important; padding: 0 0 12px !important; margin: 0 0 14px !important; }
+  .hero-package-2__featured .loop-card__content { gap: 0 !important; }
+  .hero-package-2 :is(.hero-package-2__featured, .hero-package-2__upnext, .hero-package-2__list) .loop-card__title > .loop-card__title-link { margin: 0 !important; }
+  .hero-package-2 :is(.hero-package-2__upnext, .hero-package-2__list) .loop-card { border: 0 !important; border-bottom: 1px solid #ddd !important; padding: 0 0 8px !important; margin: 0 0 10px !important; }
   .hero-package-2 :is(.hero-package-2__upnext, .hero-package-2__list) :is(.loop-card__title, .loop-card__title-link) { font: 800 18px/1.11 var(--n19-font) !important; letter-spacing: -.7px !important; margin: 0 0 10px !important; }
   .hero-package-2 :is(.hero-package-2__upnext, .hero-package-2__list) :is(.loop-card__content, .loop-card)::before { display: none !important; }
   .hero-package-2 :is(.hero-package-2__upnext, .hero-package-2__list) .loop-card__content { display: block !important; padding: 0 !important; }
