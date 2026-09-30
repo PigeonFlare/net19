@@ -29,10 +29,10 @@ store-hero-featured-xl-video { max-height: 460px !important; overflow: hidden !i
 store-hero-featured-xl-video img, store-hero-featured-slider-item img { object-fit: cover !important; }
 main :is(store-hero-featured-slider-item, store-hero-featured-xl-video, store-hero-featured-video) :is(h1, h2) { font-size: 34px !important; line-height: 40px !important; font-weight: 600 !important; }
 main :is(h2, h3) { letter-spacing: normal !important; }
-[theme="day"] store-button[appearance*="button"], [theme="light"] store-button[appearance*="button"] { --ds-button-color: #fff !important; --ds-button-border-color: #000 !important; --ds-icon-color: #fff !important; }
-[theme="day"] store-button[appearance*="button"] a, [theme="light"] store-button[appearance*="button"] a { background: #000 !important; color: #fff !important; border: 2px solid #000 !important; }
-[theme="night"] store-button[appearance*="button"], [theme="dark"] store-button[appearance*="button"] { --ds-button-color: #000 !important; --ds-button-border-color: #fff !important; --ds-icon-color: #000 !important; }
-[theme="night"] store-button[appearance*="button"] a, [theme="dark"] store-button[appearance*="button"] a { background: #fff !important; color: #000 !important; border: 2px solid #fff !important; }
+[theme="day"] store-button[appearance*="button"]:not([theme="night"], [theme="dark"]), [theme="light"] store-button[appearance*="button"]:not([theme="night"], [theme="dark"]) { --ds-button-color: #fff !important; --ds-button-border-color: #000 !important; --ds-icon-color: #fff !important; }
+[theme="day"] store-button[appearance*="button"]:not([theme="night"], [theme="dark"]) a, [theme="light"] store-button[appearance*="button"]:not([theme="night"], [theme="dark"]) a { background: #000 !important; color: #fff !important; border: 2px solid #000 !important; }
+[theme="night"] store-button[appearance*="button"], [theme="dark"] store-button[appearance*="button"], store-button[appearance*="button"]:is([theme="night"], [theme="dark"]) { --ds-button-color: #000 !important; --ds-button-border-color: #fff !important; --ds-icon-color: #000 !important; }
+[theme="night"] store-button[appearance*="button"] a, [theme="dark"] store-button[appearance*="button"] a, store-button[appearance*="button"]:is([theme="night"], [theme="dark"]) a { background: #fff !important; color: #000 !important; border: 2px solid #fff !important; }
 store-button a { border-radius: 0 !important; font-size: 15px !important; }
 store-tag { border-radius: 0 !important; }
 

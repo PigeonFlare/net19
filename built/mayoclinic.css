@@ -73,5 +73,4 @@ form#mayoform>.main>header>.row,form#mayoform>.main>header>div{border-color:var(
 .cmp-container--ccg-header :is([role="tab"][aria-selected="true"],[aria-current="page"]){background:#d2d2cc!important}
 main h2{color:var(--n19-text)!important}
 .cmp-hero-card:has(video) .cmp-hero-card__container{background:linear-gradient(to right, rgba(0,0,0,.6), rgba(0,0,0,.25) 60%, transparent)!important}
-.cmp-hero-card:has(video) .cmp-hero-card__container :is(h1,h2,p,a,span){text-shadow:0 1px 3px rgba(0,0,0,.6)!important}
 .cmp-hero-card:has(video) .cmp-hero-card__container :is(h1,h2,p,a,span)[data-net19-ink],.cmp-hero-card:has(video) .cmp-hero-card__container [data-net19-ink] *{color:#fff!important;-webkit-text-fill-color:#fff!important}

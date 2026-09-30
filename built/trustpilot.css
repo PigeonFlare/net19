@@ -36,3 +36,5 @@ main section:has(a[href$="writeareview"]):not(:has(a[href*="review/"])),main sec
 [class*="styles_heroSearch"] button[class*="CDS_Button_circle"][data-n19-label]::after{content:attr(data-n19-label);color:#fff}
 main a[href*="/evaluate/"][class*="CDS_Button"]{background:var(--n19-green)!important;border-color:var(--n19-green)!important;color:#fff!important}
 main a[href*="/evaluate/"][class*="CDS_Button"]:hover{background:var(--n19-green-hover)!important}
+html:not([data-net19-mode="dark"]) input[class*="styles_searchInputField"]::placeholder{color:#6c6c85!important;opacity:1!important}
+html:not([data-net19-mode="dark"]) input[class*="styles_searchInputField"]{color:#191919!important;caret-color:#191919!important}

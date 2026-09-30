@@ -20,3 +20,4 @@ body.home,.template-root{background:var(--n19-page)!important}
 .basic-header .afb-nav-container,.header-upsell,a.upsell-ad[href*="/g-account/offerings"]{display:none!important}
 [data-n19-later]{display:none!important}
 .temp-container>.temp{line-height:1.05!important}
+:where(:root:not([data-n19-safe])) .thumbnail-right-rail a.cta,.thumbnail-right-rail:where(:root:not([data-n19-safe])) a.cta{padding-top:6px!important}

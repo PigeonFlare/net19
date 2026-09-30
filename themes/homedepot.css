@@ -28,7 +28,7 @@ button.sui-rounded-full.sui-border-solid, a.sui-rounded-full.sui-border-solid { 
 #root a.sui-whitespace-nowrap span.sui-text-ellipsis { color: var(--n19-text) !important; font-size: 14px !important; }
 #root a.sui-whitespace-nowrap:hover span.sui-text-ellipsis { color: var(--n19-orange) !important; text-decoration: underline !important; }
 #sign-in-bubble { display: none !important; }
-#header-nav-container :is([data-testid="header-button-Account"], [data-testid*="Cart" i]) { flex-direction: row-reverse !important; align-items: center !important; gap: 6px !important; width: auto !important; padding: 0 8px !important; }
+#header-nav-container :is([data-testid="header-button-Account"], [data-testid*="Cart" i]) { flex-direction: row-reverse !important; align-items: center !important; align-self: flex-end !important; gap: 6px !important; width: auto !important; padding: 0 8px !important; }
 #header-nav-container :is([data-testid="header-button-Account"], [data-testid*="Cart" i]) > div { width: auto !important; margin: 0 !important; }
 #header-nav-container :is([data-testid="header-button-Account"], [data-testid*="Cart" i]) p { font-size: 14px !important; font-weight: 700 !important; color: var(--n19-text) !important; overflow: visible !important; }
 [data-testid="similar-items-button"] { display: none !important; }

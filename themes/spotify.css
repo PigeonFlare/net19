@@ -51,3 +51,5 @@ main [data-testid="adaptiveEntityTitle"] h1, main [data-testid="entityTitle"] h1
 aside[aria-label="Now playing view"], button[aria-label="Show Now Playing view"], button[aria-label="Hide Now Playing view"], [data-testid="action-bar-row"] button[role="combobox"],
 section[aria-label="Music videos"], section[aria-label="Profiles"], [data-testid="carousel-scroller"] a[href$="/users"] { display: none !important; }
 [data-testid="global-nav-bar"] form[role="search"] span:has(> kbd) { display: none !important; }
+#main-view main a[href^="/section/"]:not([data-testid]) { align-items: center !important; }
+li[class*="-type-list-item"]:has(> a[href*="legal" i], > a[href*="privacy" i], > a[href*="cookie" i], > a[href*="accessibility" i], > a[href*="ads" i]) { padding-block: 0 !important; line-height: 25px !important; }

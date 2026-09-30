@@ -51,3 +51,6 @@ input[data-testid="search-input"]~div:not(:has([role="listbox"],[role="option"])
 main [data-testid="adaptiveEntityTitle"] h1,main [data-testid="entityTitle"] h1,main section[data-testid="artist-page"] h1{font-size:clamp(32px, 3.75vw, 48px)!important;line-height:1.15!important;letter-spacing:-.02em!important}
 aside[aria-label="Now playing view"],button[aria-label="Show Now Playing view"],button[aria-label="Hide Now Playing view"],[data-testid="action-bar-row"] button[role="combobox"],section[aria-label="Music videos"],section[aria-label="Profiles"],[data-testid="carousel-scroller"] a[href$="/users"]{display:none!important}
 [data-testid="global-nav-bar"] form[role="search"] span:has(>kbd){display:none!important}
+:where(:root:not([data-n19-safe])) #main-view main a[href^="/section/"]:not([data-testid]),#main-view:where(:root:not([data-n19-safe])) main a[href^="/section/"]:not([data-testid]){align-items:center!important}
+:where(:root:not([data-n19-safe])) li[class*="-type-list-item"]:has(>a[href*="legal"i],>a[href*="privacy"i],>a[href*="cookie"i],>a[href*="accessibility"i],>a[href*="ads"i]){padding-block:0!important}
+li[class*="-type-list-item"]:has(>a[href*="legal"i],>a[href*="privacy"i],>a[href*="cookie"i],>a[href*="accessibility"i],>a[href*="ads"i]){line-height:25px!important}
