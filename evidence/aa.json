@@ -1,0 +1,105 @@
+{
+ "theme": "aa",
+ "era": "2019 aa.com (the 2016 design used through 2019): white header with the American Airlines logo, Log in, language and region picker, search, and Plan Travel / Travel Information / AAdvantage menus in light blue; the home booking box with Book, Your trips / Check in and Flight status tabs; News and offers slideshow; Help / About American / Extras footer. Arquivo.pt captures from March, September and November 2019 agree. Checked live read-only in the user's Chrome (aa.com blocks headless browsers); the header and footer are inside adc-header / adc-footer shadow roots, which the inventory does not read, so they were listed by hand.",
+ "sources": [
+  {
+   "id": "h1",
+   "url": "https://arquivo.pt/wayback/20191116072804/https://www.aa.com/homePage.do",
+   "date": "2019-11-16",
+   "shows": "home page: header with logo, Log in, Travel alerts, English language/region picker (Select Country / Region, Select Language, Remember this selection?), Search aa.com with Submit search, Menu link, Plan Travel / Travel Information / AAdvantage menus; booking box with Book, Your trips / Check in and Flight status tabs, Flight / Vacation packages / Hotel / Car, Round trip / One way, Redeem miles, From / To City or airport, mm/dd/yyyy dates, Search; News and offers slideshow with Previous slide, Next slide and Pause slideshow; Today's specials; footer Help, About American, Extras; cookie alerts"
+  },
+  {
+   "id": "f1",
+   "url": "https://arquivo.pt/wayback/20190320155602/https://www.aa.com/booking/find-flights",
+   "date": "2019-03-20",
+   "shows": "find flights page (Portuguese locale): same header, language picker and Plan Travel / Travel Information / AAdvantage menus; Round trip / One way / Multi-city, City or airport fields, date fields, passengers, search options; same Help / About American / Extras footer"
+  },
+  {
+   "id": "b1",
+   "url": "https://arquivo.pt/wayback/20190902051446/https://www.aa.com/i18n/travel-info/baggage/baggage.jsp",
+   "date": "2019-09-02",
+   "shows": "baggage information page (Portuguese locale): same header, menus and footer, Cookie policy link"
+  },
+  {
+   "id": "a1",
+   "url": "https://arquivo.pt/wayback/20190320154937/https://www.aa.com/",
+   "date": "2019-03-20",
+   "shows": "home page capture listed for aa.com in March 2019"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(main content|main area|form area|section area|tablist area|header area|footer area|banner area|contentinfo area|navigation area)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "f1",
+    "b1"
+   ],
+   "note": "page structure"
+  },
+  {
+   "match": "^repeated ",
+   "in2019": true,
+   "evidence": [
+    "h1"
+   ],
+   "note": "offer cards"
+  },
+  {
+   "match": "^(book|manage trips / check-in|your trips / check in|flight status|check in)$",
+   "in2019": true,
+   "evidence": [
+    "h1"
+   ],
+   "note": "booking box tabs (Your trips / Check in is now Manage trips / Check-in)",
+   "required": true,
+   "pages": [
+    "home"
+   ]
+  },
+  {
+   "match": "^(flight|triptype|redeemmiles|city or airport|mm/dd/yyyy|from|to|search)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "f1"
+   ],
+   "note": "flight search fields"
+  },
+  {
+   "match": "^(today's offers|today's specials|news and offers)$",
+   "in2019": true,
+   "evidence": [
+    "h1"
+   ],
+   "note": "offers section"
+  },
+  {
+   "match": "^(previous slide|next slide|pause slideshow|play slideshow)$",
+   "in2019": true,
+   "evidence": [
+    "h1"
+   ],
+   "note": "offers slideshow controls"
+  },
+  {
+   "match": "^(american airlines logo link to home page|american airlines|plan travel|travel information|aadvantage®?|english|select region|select country / region|select language|remember this selection\\?|submit search|menu link|log in|help|about american|extras)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "f1",
+    "b1"
+   ],
+   "note": "header, language picker and footer"
+  },
+  {
+   "match": "^(cookie banner|privacy and cookies|cookie policy)$",
+   "in2019": false,
+   "evidence": [
+    "consent banner"
+   ],
+   "action": "kept: legal"
+  }
+ ]
+}
