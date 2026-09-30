@@ -99,3 +99,18 @@ test('evidence files back every 2019 feature with a source and name what they hi
     }
   }
 });
+
+test('docs and metadata describe the current release', () => {
+  const version = JSON.parse(readFileSync('manifest.json', 'utf8')).version;
+  const lock = JSON.parse(readFileSync('package-lock.json', 'utf8'));
+  assert.equal(JSON.parse(readFileSync('package.json', 'utf8')).version, version);
+  assert.equal(lock.version, version);
+  assert.equal(lock.packages[''].version, version);
+  assert.match(readFileSync('PRIVACY.md', 'utf8'), new RegExp(`Applies to net19 ${version.replace(/\./g, '\\.')}\\.`));
+  assert.match(readFileSync('.github/ISSUE_TEMPLATE/broken-site.yml', 'utf8'), new RegExp(`placeholder: "${version.replace(/\./g, '\\.')}"`));
+  const counted = `${THEMES.length} `;
+  for (const file of ['PRIVACY.md', 'docs/ARCHITECTURE.md']) {
+    const text = readFileSync(file, 'utf8');
+    for (const [, count] of text.matchAll(/\b(\d{3}) (?:popular websites|sites|themes)\b/g)) assert.equal(`${count} `, counted, `${file}: ${count} themes`);
+  }
+});

@@ -54,4 +54,4 @@ body:
     attributes:
       label: net19 version
       description: Shown on net19's card at chrome://extensions
-      placeholder: "0.14.0"
+      placeholder: "0.20.0"

@@ -13,9 +13,11 @@ net19 is a set of handmade themes and a service worker that registers them. It d
 | `src/themes.ts` | the list of themed sites, their domains and URL rules |
 | `src/background.ts`, `src/navigation.ts`, `src/settings.ts` | the service worker: registers themes, redirects to legacy frontends, stores the two switches |
 | `src/popup.ts` | the popup's two switches |
-| `src/content/palette.js`, `src/content/guard.js`, `src/content/fit.js` | the engine that runs after every theme (light/dark, post-2019 features, readability, redesign fallback) |
+| `src/content/runtime.js` | loads before every theme: `net19.watch`/`onBody`/`frame` and the language helpers |
+| `src/content/palette.js`, `src/content/recolor.js`, `src/content/guard.js`, `src/content/fit.js` | the engine that runs after every theme (light/dark, post-2019 features, readability, redesign fallback) |
+| `evidence/<id>.json` | each theme's 2019 sources and every feature it shows or hides, checked by `tests/` and `npm run audit:inventory` |
 | `scripts/` | build and package; `styles.mjs` compiles `themes/*.css` into `built/` |
-| `scripts/audit/` | live-site checks in a real browser (`page-checks.js` runs inside pages; `fit.mjs` is the weekly redesign check) |
+| `scripts/audit/` | live-site checks in a real browser (`page-checks.js` runs inside pages; `fit.mjs` is the weekly redesign check; see [Validation](VALIDATION.md)) |
 | `tests/` | unit tests and browser tests on local fixtures |
 
 ## Themes
@@ -77,7 +79,7 @@ The device's `prefers-color-scheme` decides the mode, and `html[data-net19-mode]
 
 **Content protection.** A theme's hiding marker that lands on a block with several linked headings or articles is taken back. A theme lists the post-2019 sections it hides on purpose, with their 2019 evidence, in `intended` (a selector), and those are left hidden.
 
-The looks follow the Web Design Museum's captures of each site (2019 where one exists, otherwise the nearest year), rebuilt by hand as rules for the live pages rather than copied.
+Each look is built from real 2019 screenshots of what users saw, recorded in `evidence/<id>.json`, and rebuilt by hand as rules for the live pages rather than copied. Every feature a page shows has to be backed by a 2019 source there, and the main 2019 features are marked as required.
 
 ## When a site redesigns
 
@@ -105,8 +107,8 @@ The check takes about 10–100 ms, depending on the size of the page.
 
 ## A site's own older frontend
 
-- **Wikipedia** still serves its older frontend: a declarativeNetRequest rule gives article URLs without a query `useskin=vector`, the legacy Vector skin.
-- **Reddit** stays on www.reddit.com, signed in or out, with the `shreddit` theme: the 2019 redesign's header, Classic feed view, fonts and night mode on the current app. Signed out, feeds default to Reddit's own Classic view through its `compact=true` cookie; signed in, the feed menu lists your communities. Anyone who opens old.reddit.com directly gets the `reddit` theme there (a dark palette in dark mode, as old Reddit had none).
+- **Wikipedia** and other MediaWiki sites (Wiktionary, Wikivoyage, Wikimedia Commons, Miraheze, Bulbapedia) still serve their older frontends: a declarativeNetRequest rule adds a `useskin` parameter to article URLs that have no query, selecting the legacy skin (Vector, or MonoBook on Bulbapedia).
+- **Reddit** stays on www.reddit.com, signed in or out, with the `shreddit` theme: the 2019 redesign's header, Classic feed view, fonts and night mode on the current app. Feeds default to Reddit's own views through its `compact` cookie, set per path: Classic on the home, Popular and All feeds, Card on communities, as in 2019. An `n19view` cookie records that net19 has set them, and a view picked in Reddit's menu is kept. Signed in, the feed menu lists your communities. Anyone who opens old.reddit.com directly gets the `reddit` theme there (a dark palette in dark mode, as old Reddit had none).
 
 ## Worker
 
@@ -126,7 +128,7 @@ Settings are `{ enabled, disabledHosts }`. Only the popup can change them. Switc
 | --- | --- |
 | Host access to the themed domains (153 domains for 163 themes) | Register the themes and navigation rules on those sites only |
 | `scripting` | Register the document-start theme scripts |
-| `declarativeNetRequestWithHostAccess` | Wikipedia's legacy-skin parameter |
+| `declarativeNetRequestWithHostAccess` | The legacy-skin parameter on Wikipedia and other wikis |
 | `storage` | The two switches, and the site sections currently on a theme's safe layer |
 
 The extension-page CSP allows no connections.
@@ -137,6 +139,6 @@ net19 needs Chrome 120 or newer, or any browser built on the same Chromium with 
 
 ## Limits
 
-- Themes restyle the current markup; they do not move sites back to their 2019 layout where the structure changed. Old Reddit and Wikipedia's legacy skin are the exceptions, because those sites still serve that structure.
+- Themes restyle the current markup; they do not move sites back to their 2019 layout where the structure changed. Old Reddit and the wikis' legacy skins are the exceptions, because those sites still serve that structure.
 - Logged-in pages that could not be inspected are best-effort.
 - After a redesign, a theme can fall back to its safe layer (colors, fonts and dark mode on the site's current layout) until it is updated.
