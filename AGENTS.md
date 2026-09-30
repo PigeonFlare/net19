@@ -52,5 +52,6 @@
 - Run `npm run audit:nav -- <id>` for every theme you change. It follows the header, menu, launcher and footer links and reports every destination net19 leaves unstyled.
 - Run focused tests for changes, then `npm run check` once at release readiness.
 - Keep logs, test browser profiles, environment files, and working notes out of version control and shipping packages.
+- A release raises the version everywhere it is written (`manifest.json`, `package.json`, `package-lock.json`, `PRIVACY.md`, the broken-site issue template) and keeps the README, `PRIVACY.md`, `docs/` and the store listing in step with what the extension does; `npm test` checks the versions and site counts.
 - Build and package the exact verified source. Stage an explicit file list; inspect the staged file names and diff before publication.
 - Do not delegate routine work. Keep tool output and progress reports focused.

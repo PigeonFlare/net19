@@ -2,10 +2,10 @@
 
 A Chrome extension that shows popular websites as they looked in **2019**.
 
-[Download net19](https://github.com/henry-xli/net19/archive/refs/heads/main.zip) · [Privacy](PRIVACY.md) · [Architecture](docs/ARCHITECTURE.md) · [Validation](docs/VALIDATION.md)
+[Download net19](https://github.com/PigeonFlare/net19/archive/refs/heads/main.zip) · [Privacy](PRIVACY.md) · [Architecture](docs/ARCHITECTURE.md) · [Validation](docs/VALIDATION.md)
 
 ## Install 
-1. Clone the folder with `git clone https://github.com/henry-xli/net19.git`, or click **Code → Download ZIP** on GitHub and extract it.
+1. Clone the folder with `git clone https://github.com/PigeonFlare/net19.git`, or click **Code → Download ZIP** on GitHub and extract it.
 2. Open `chrome://extensions` and turn on **Developer mode**.
 3. Click **Load unpacked** and select the `net19` folder.
 
@@ -14,11 +14,11 @@ A Chrome extension that shows popular websites as they looked in **2019**.
 2. Click the extension's **Reload** button once. Its card in `chrome://extensions` shows the currently-run version. 
 
 ## Features
-- **150+ popular sites in their 2019 design:** All the major websites are individually designed and tested to look like their 2019 selves, from Youtube to Yandex. ([full list](src/themes.ts)). The targeted websites are US-centric, but I took care to cover major foreign websites like Telegram and WhatsApp. Each website design is lightly cached and applied before websites even load.
-- **Minimal changes:** Many website features such as icons are left untouched. Websites that adhere to old design standards might be left completely intact. For example, Wikipedia opens in its legacy skin, and Reddit feeds open in its own Classic view. Backend features such as search results and entry recommendations stay intact. Features added after 2019 such as AI integration and shorts are removed from display.
+- **160+ popular sites in their 2019 design:** All the major websites are individually designed and tested to look like their 2019 selves, from YouTube to Yandex ([full list](src/themes.ts)). Every design is checked against real 2019 screenshots of the site. The targeted websites are US-centric, but I took care to cover major foreign websites like Telegram and WhatsApp. Each design is bundled with the extension and applied before the page first appears.
+- **Minimal changes:** Many website features such as icons are left untouched. Websites that adhere to old design standards might be left completely intact. For example, Wikipedia and other wikis open in their legacy skins, and Reddit feeds open in Reddit's own Classic and Card views. Backend features such as search results and entry recommendations stay intact. Features added after 2019 such as AI integration and shorts are removed from display.
 - **Individual website control:** If you like modern features on certain popular websites, like AI summaries on Google, you can disable the extension for those websites individually. You can also disable it entirely with another simple toggle.
 - **Smaller websites are unaffected:** Smaller and personal websites load exactly as they are, so you don't need to worry about how the extension messes with more niche styles or indie work.
-- **Minimal UI:** The extension features just two toggles, one to toggle it on and off for a particlar website, and the other to toggle it on and off in general, plus a "Support further development" link. 
+- **Minimal UI:** The extension features just two toggles, one to toggle it on and off for a particular website, and the other to toggle it on and off in general, plus a "Support further development" link. 
 - **Color themes:** Naturally adapts websites to your computer's light or dark theme, while keeping the 2019 style, and maintaining true color for important media such as photos and videos. 
 - **Survives redesigns:** If a site redesign stops a design from fitting, that part of the site falls back to its 2019 colors and fonts on the current layout instead of breaking (post-2019 features stay hidden), and switches back once the design fits again. A weekly check flags the design for an update.
 - **Any screen, any Chromium browser:** Works in Chrome, Edge, Brave, Opera, Vivaldi and Arc on computers and Chromebooks, and in Android browsers that support extensions (Edge, Lemur, Yandex). On phones and narrow windows, sites keep their own mobile layout with the 2019 colors and fonts, so nothing gets squeezed or cut off.
@@ -31,8 +31,8 @@ A Chrome extension that shows popular websites as they looked in **2019**.
 
 ## Report a problem or request a site
 
-- **Something looks broken?** [Report a broken site](https://github.com/henry-xli/net19/issues/new?template=broken-site.yml)
-- **Want a site themed?** [Request a site](https://github.com/henry-xli/net19/issues/new?template=site-request.yml). Add a 👍 to [existing requests](https://github.com/henry-xli/net19/issues?q=is%3Aissue+is%3Aopen+label%3A%22site+request%22+sort%3Areactions-%2B1-desc) instead of opening duplicates; the most-voted sites come first.
+- **Something looks broken?** [Report a broken site](https://github.com/PigeonFlare/net19/issues/new?template=broken-site.yml)
+- **Want a site themed?** [Request a site](https://github.com/PigeonFlare/net19/issues/new?template=site-request.yml). Add a 👍 to [existing requests](https://github.com/PigeonFlare/net19/issues?q=is%3Aissue+is%3Aopen+label%3A%22site+request%22+sort%3Areactions-%2B1-desc) instead of opening duplicates; the most-voted sites come first.
 
 ## Limits
 
