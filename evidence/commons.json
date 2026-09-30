@@ -979,6 +979,54 @@
     "September 28",
     "Лисабон"
    ]
+  },
+  {
+   "match": "^English$",
+   "in2019": true,
+   "evidence": [
+    "c-cm-star-201909"
+   ],
+   "note": "ULS 'English' link in the personal bar"
+  },
+  {
+   "match": "^Visit the main page$",
+   "in2019": true,
+   "evidence": [
+    "home2-201910",
+    "home3-201911"
+   ],
+   "note": "Commons logo link",
+   "required": true
+  },
+  {
+   "match": "^Search Wikimedia Commons$",
+   "in2019": true,
+   "evidence": [
+    "home2-201910",
+    "c-cm-star-201909"
+   ],
+   "note": "search field in the Vector header",
+   "required": true
+  },
+  {
+   "match": "^Upload file$",
+   "in2019": true,
+   "evidence": [
+    "home2-201910",
+    "c-cm-star-201909"
+   ],
+   "note": "sidebar Upload file link",
+   "required": true
+  },
+  {
+   "match": "^Welcome$",
+   "in2019": true,
+   "evidence": [
+    "home2-201910",
+    "c-cm-star-201909"
+   ],
+   "note": "sidebar Welcome link",
+   "required": true
   }
  ]
 }
