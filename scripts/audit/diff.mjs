@@ -9,7 +9,7 @@ const WIDTHS = (process.env.WIDTHS || '1280,1000').split(',').map(Number);
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
 const proxy = process.env.HTTPS_PROXY ? [`--proxy-server=${process.env.HTTPS_PROXY}`] : [];
 mkdirSync(OUT, { recursive: true });
-const key = item => item.what.replace(/\s+/g, ' ');
+const key = item => item.what.replace(/\s+/g, ' ').replace(/[0-9a-f]{8}(-[0-9a-f]{4}){3}-[0-9a-f]{12}/gi, '#');
 async function run(url, withExtension, width) {
   const ctx = await chromium.launchPersistentContext('', { channel: 'chromium', headless: true, viewport: { width, height: 860 }, colorScheme: scheme, userAgent: UA,
     args: [...proxy, ...(withExtension ? [`--disable-extensions-except=${ext}`, `--load-extension=${ext}`] : [])] });
