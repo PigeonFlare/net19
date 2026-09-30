@@ -1,0 +1,28 @@
+@font-face{font-family:"n19 Libre Franklin";font-style:normal;font-weight:100 900;font-display:swap;src:url("https://fonts.gstatic.com/s/librefranklin/v20/jizDREVItHgc8qDIbSTKq4XkRiUf2zcZiVbJ.woff2") format("woff2");unicode-range:U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD}
+html{--n19-font:"n19 Libre Franklin", -apple-system, BlinkMacSystemFont, Roboto, "Droid Sans", Helvetica, Arial, sans-serif;--n19-bar:#fff;--n19-bar-line:#e2e2e2;--n19-text:#333;--n19-text-2:#585858;--n19-link:#0c82a5;--n19-red:#c82021;--n19-red-hover:#e62e2e;--n19-red-text:#fff;--n19-field:#fff;--n19-field-line:#ccc;--n19-logo:url("https://ssl.cdn-redfin.com/static-images/images/redfin-logo-transparent-bg-260x66.png")}
+html[data-net19-mode="dark"]{--n19-bar:#1e1e1e;--n19-bar-line:#3a3a3a;--n19-text:#eee;--n19-text-2:#bbb;--n19-link:#4fb3d3;--n19-red:#c82021;--n19-red-hover:#e62e2e;--n19-red-text:#fff;--n19-field:#2a2a2a;--n19-field-line:#555;--n19-logo:url("https://ssl.cdn-redfin.com/static-images/images/redfin-logo-transparent-bg-260x66.png")}
+body.customer-facing,body.customer-facing :is(h1,h2,h3,h4,p,a,button,input,span,li,div,label){font-family:var(--n19-font)!important;letter-spacing:0!important}
+body.customer-facing header:is(.LargeHeader,.SmallHeader){background:var(--n19-bar)!important;border-bottom:1px solid var(--n19-bar-line)!important;box-shadow:none!important}
+:where(:root:not([data-n19-safe])) [data-n19-rf="logo"],[data-n19-rf="logo"]:where(:root:not([data-n19-safe])){display:inline-block!important;width:118px!important;height:30px!important}
+[data-n19-rf="logo"]{background:var(--n19-logo) 0 50% / contain no-repeat!important}
+[data-n19-rf="logo"]>svg{visibility:hidden!important}
+body.customer-facing header:is(.LargeHeader,.SmallHeader) a.dropdownWidget{color:var(--n19-text)!important;font-size:14px!important;font-weight:400!important}
+body.customer-facing header:is(.LargeHeader,.SmallHeader) a.dropdownWidget:hover{color:var(--n19-red)!important}
+body.customer-facing .combinedLoginLinkWrapper .bp-Button.headerMenuButton{background:var(--n19-red)!important;border-color:var(--n19-red)!important;color:var(--n19-red-text)!important;border-radius:4px!important;font-weight:600!important}
+body.customer-facing .combinedLoginLinkWrapper .bp-Button.headerMenuButton:hover{background:var(--n19-red-hover)!important;border-color:var(--n19-red-hover)!important}
+body.customer-facing .combinedLoginLinkWrapper .bp-Button.headerMenuButton *{color:inherit!important}
+body.customer-facing .bp-SearchBox .bp-InputBox{border-radius:4px 0 0 4px!important;box-shadow:none!important}
+body.customer-facing .bp-SearchBox .SearchButton{background:var(--n19-red)!important;border-radius:0 4px 4px 0!important;color:var(--n19-red-text)!important}
+body.customer-facing .bp-SearchBox .SearchButton:hover{background:var(--n19-red-hover)!important}
+body.customer-facing .bp-SearchBox .SearchButton svg{fill:currentColor!important;color:currentColor!important}
+body.customer-facing .bp-Button:is(.bp-Button__type--primary){background:var(--n19-red)!important;border-color:var(--n19-red)!important;color:var(--n19-red-text)!important;border-radius:4px!important}
+body.customer-facing .bp-Button:is(.bp-Button__type--secondary-outlined,.bp-Button__type--secondary){border-radius:4px!important}
+body.customer-facing .SearchTabs .TabBar__list{background:transparent!important}
+:where(:root:not([data-n19-safe])) body.customer-facing .SearchTabs .TabBar__list{gap:24px!important}
+body.customer-facing .SearchTabs .TabBarItem{background:transparent!important;border:0!important;border-radius:0!important;box-shadow:none!important}
+:where(:root:not([data-n19-safe])) body.customer-facing .SearchTabs .TabBarItem{padding:0 0 6px!important}
+body.customer-facing .SearchTabs .TabBarItem{color:#fff!important;font-size:16px!important;font-weight:400!important}
+body.customer-facing .SearchTabs .TabBarItem *{color:inherit!important;background:transparent!important;border-color:transparent!important;box-shadow:none!important}
+body.customer-facing .SearchTabs .TabBarItem:is([aria-selected="true"],.TabBarItem--selected,[class*="selected"]){font-weight:600!important;box-shadow:inset 0 -2px 0 #fff!important}
+.Flyout__container:has(.ai-search-tagline),.Flyout:has(.ai-search-tagline){display:none!important}
+body.customer-facing header:is(.LargeHeader,.SmallHeader) a:not(.bp-Button):not(.dropdownWidget):not([data-n19-rf]){color:var(--n19-text)!important;font-size:14px!important}
