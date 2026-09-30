@@ -4,54 +4,14 @@ title: "[Broken] "
 labels: ["broken site"]
 body:
   - type: input
-    id: site
-    attributes:
-      label: Site
-      placeholder: youtube.com
-    validations:
-      required: true
-  - type: input
     id: url
     attributes:
-      label: Page URL
-      description: The exact page. Remove anything private, such as account IDs or search terms you'd rather not share.
+      label: Website URL
       placeholder: https://www.youtube.com/watch?v=...
     validations:
       required: true
   - type: textarea
-    id: problem
+    id: description
     attributes:
-      label: What's wrong
-      description: What you expected to see and what you saw instead.
-    validations:
-      required: true
-  - type: dropdown
-    id: mode
-    attributes:
-      label: Light or dark mode
-      options:
-        - Light
-        - Dark
-        - Both
-    validations:
-      required: true
-  - type: dropdown
-    id: signed-in
-    attributes:
-      label: Signed in to the site?
-      options:
-        - "Yes"
-        - "No"
-    validations:
-      required: true
-  - type: textarea
-    id: screenshots
-    attributes:
-      label: Screenshots
-      description: Drag images here. A screenshot with net19 off for the site helps too. Blur names, emails and anything personal.
-  - type: input
-    id: version
-    attributes:
-      label: net19 version
-      description: Shown on net19's card at chrome://extensions
-      placeholder: "0.20.0"
+      label: Description (optional)
+      placeholder: What looks wrong? Screenshots help.
