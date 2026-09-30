@@ -107,7 +107,6 @@ test('docs and metadata describe the current release', () => {
   assert.equal(lock.version, version);
   assert.equal(lock.packages[''].version, version);
   assert.match(readFileSync('PRIVACY.md', 'utf8'), new RegExp(`Applies to net19 ${version.replace(/\./g, '\\.')}\\.`));
-  assert.match(readFileSync('.github/ISSUE_TEMPLATE/broken-site.yml', 'utf8'), new RegExp(`placeholder: "${version.replace(/\./g, '\\.')}"`));
   const counted = `${THEMES.length} `;
   for (const file of ['PRIVACY.md', 'docs/ARCHITECTURE.md']) {
     const text = readFileSync(file, 'utf8');

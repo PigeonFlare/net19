@@ -9,7 +9,7 @@ npm audit --omit=dev
 npm run package   # artifacts/net19-<version>.zip
 ```
 
-When you raise the version, change it in `manifest.json`, `package.json`, `package-lock.json`, the `PRIVACY.md` header and the version placeholder in `.github/ISSUE_TEMPLATE/broken-site.yml`; `npm test` fails until they all match, and until the site counts in `PRIVACY.md` and `docs/ARCHITECTURE.md` match `src/themes.ts`.
+When you raise the version, change it in `manifest.json`, `package.json`, `package-lock.json`, and the `PRIVACY.md` header; `npm test` fails until they all match, and until the site counts in `PRIVACY.md` and `docs/ARCHITECTURE.md` match `src/themes.ts`.
 
 ## Listing
 
