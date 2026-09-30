@@ -23,6 +23,36 @@
   ],
   "features": [
     {
+      "match": "^(close)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "close button of the Subscribe bar; Subscribe was in the 2019 blog header"
+    },
+    {
+      "match": "^(YouTube Official Blog)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "2019 header blog title",
+      "required": true
+    },
+    {
+      "match": "^(News \\& Events|News and Events|Creator \\& Artist Stories|Creator and Artist Stories|Culture \\& Trends|Culture and Trends|Inside YouTube)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "2019 blog label navigation",
+      "required": true
+    },
+    {
       "match": "^(AI|AI, \\d+ of \\d+|Shorts|Shorts, \\d+ of \\d+|Podcast|Podcast, \\d+ of \\d+|Made On YouTube|Made On YouTube, \\d+ of \\d+|YouTube Shorts|Yoodles)$",
       "in2019": false,
       "evidence": [

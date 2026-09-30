@@ -29,6 +29,36 @@
   ],
   "features": [
     {
+      "match": "^(WSJ Logo|The Wall Street Journal)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "2019 masthead logo",
+      "required": true
+    },
+    {
+      "match": "^(Subscribe|Sign In)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "2019 masthead Subscribe and Sign In",
+      "required": true
+    },
+    {
+      "match": "^(World|Business|Markets|Opinion)$",
+      "in2019": true,
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "2019 section navigation",
+      "required": true
+    },
+    {
       "match": "^(header|nav|footer|main|section|article|form|search|aside|dialog|region|banner|menubar|tablist|none) area$|^repeated |^(Primary|Utility Bar|What to Read Next|Most Popular News|Most Popular Opinion|true flashline)$",
       "in2019": true,
       "evidence": [

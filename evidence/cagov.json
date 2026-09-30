@@ -29,6 +29,15 @@
  ],
  "features": [
   {
+   "match": "^(Search this website|Search CA\\.gov)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201911"
+   ],
+   "note": "2019 header search field (labelled Search CA.gov today)",
+   "required": true
+  },
+  {
    "match": "^(Accessibility|Back\\ to\\ top|Conditions\\ of\\ use|Home|Privacy\\ policy|Sitemap|Translate|feedback)$",
    "in2019": true,
    "evidence": [

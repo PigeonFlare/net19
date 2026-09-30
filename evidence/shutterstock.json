@@ -41,6 +41,39 @@
  ],
  "features": [
   {
+   "match": "^(Search)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "image-a201910",
+    "search-a201904"
+   ],
+   "note": "2019 header search bar",
+   "required": true
+  },
+  {
+   "match": "^(Log in)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "2019 header log-in link",
+   "required": true
+  },
+  {
+   "match": "^(Images|Video|Music|Editorial)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "2019 header media-type navigation",
+   "required": true
+  },
+  {
    "match": "^(Templates|Sound effects|Studios|AI .*|3D|Search Assistant|Get Unlimited.*)$",
    "in2019": false,
    "evidence": [

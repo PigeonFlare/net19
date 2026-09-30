@@ -41,6 +41,17 @@
  ],
  "features": [
   {
+   "match": "^(NEWS)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "standings-a201901"
+   ],
+   "note": "2019 top navigation",
+   "required": true
+  },
+  {
    "match": "^(Injuries|Podcasts|Transactions)$",
    "in2019": true,
    "evidence": [
