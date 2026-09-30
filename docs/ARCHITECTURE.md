@@ -1,6 +1,6 @@
 # Architecture
 
-net19 is a set of handmade themes and a service worker that registers them. It does nothing on any site without a theme and keeps no cache. Its only network requests are a site's own fonts and logos, loaded from that site's servers.
+net19 is a set of handmade themes and a service worker that registers them. It does nothing on any site without a theme and keeps no cache. Its only network requests go to the site being themed: its own older fonts and logos, and on Reddit its own `about.json` for a community's sidebar details and, signed in, your subscribed communities for the feed menu.
 
 ## Layout
 

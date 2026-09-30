@@ -25,6 +25,7 @@ Run these for every theme you change, in both `SCHEME=light` and `SCHEME=dark`:
 | `npm run audit:inventory -- <id>` | Lists every visible section, heading, control, tab, field and badge against `evidence/<id>.json`; must end with 0 unverified, 0 post-2019 still shown and 0 missing required 2019 features |
 | `npm run audit:fit -- <id>` | Checks that the full theme still fits the live page (the weekly redesign check runs this for every site) |
 | `npm run audit:nav -- <id>` | Follows header, menu, launcher and footer links; reports unstyled destinations |
+| `npm run audit:rhythm -- <id>` | Pixel-based spacing and readability check (faint text, mismatched color patches, items padded unevenly); writes a crop gallery to review |
 | `npm run audit:words` | Pairs each theme's labels across languages for `theme.words` |
 
 `scripts/audit/page-checks.js` runs inside the page and reports `covered`, `offcenter`, `textoffcenter`, `overlap`, `lowcontrast` (contrast measured as actually shown), `dim`, `collide`, `cropped`, `effects`, `clipline`, `rowwrap`, `rowalign`, `spill`, `iconovertext` and `gap`; `AGENTS.md` says what each one means. Also use it on signed-in pages.

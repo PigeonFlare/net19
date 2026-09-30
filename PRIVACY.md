@@ -11,7 +11,8 @@ Nothing about you. Net19 has no server and sends nothing anywhere. Its themes ar
 Some themes use a site's own settings:
 
 - Wikipedia, Wiktionary, Wikivoyage, Wikimedia Commons, Miraheze and Bulbapedia article links get a `useskin` parameter, which selects the site's own legacy skin.
-- Signed in to Reddit, opening the feed menu asks reddit.com itself for the list of communities you subscribe to, the same list Reddit's own sidebar shows, so the menu can show them as it did in 2019. The list stays in the open page.
+- Signed in to Reddit, opening the feed menu asks reddit.com itself for the list of communities you subscribe to, the same list Reddit's own sidebar shows, so the menu can show them as it did in 2019.
+- On a Reddit community page, net19 asks reddit.com for that community's public details (member count and description) to show its 2019 COMMUNITY DETAILS box. Both answers stay in the open page (the community details are kept for that browser tab only). The list stays in the open page.
 - Reddit feeds open in Reddit's own views: Classic on the home, Popular and All feeds, and Card on communities. net19 sets Reddit's `compact` preference cookie, the same one Reddit's own View menu sets, plus an `n19view` cookie on reddit.com that records that it has done so. Choosing another view in that menu keeps your choice. Like any Reddit cookie, they stay in your browser and are sent only to Reddit.
 
 ## Access and storage
