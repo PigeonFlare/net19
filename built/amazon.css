@@ -12,7 +12,7 @@ body,body #a-page{font-family:Arial, sans-serif!important}
 :where(:root:not([data-n19-safe])) #nav-main #nav-hamburger-menu,#nav-main:where(:root:not([data-n19-safe])) #nav-hamburger-menu{z-index:2!important;position:absolute!important;left:8px!important;top:-46px!important;width:38px!important;height:38px!important;padding:0!important;margin:0!important;display:flex!important;align-items:center!important;justify-content:center!important}
 #nav-main #nav-hamburger-menu{border:1px solid transparent!important;border-radius:2px!important}
 :where(:root:not([data-n19-safe])) #nav-main #nav-hamburger-menu,#nav-main:where(:root:not([data-n19-safe])) #nav-hamburger-menu{box-sizing:border-box!important}
-#nav-main #nav-hamburger-menu{border-color:rgba(255,255,255,.55)!important}
+#nav-main #nav-hamburger-menu{border-color:transparent!important}
 #nav-main #nav-hamburger-menu:hover{border-color:#fff!important}
 :where(:root:not([data-n19-safe])) #nav-main #nav-hamburger-menu .hm-icon,#nav-main:where(:root:not([data-n19-safe])) #nav-hamburger-menu .hm-icon{display:block!important;margin:0!important;flex:none!important}
 #nav-main #nav-hamburger-menu .hm-icon-label{display:none!important}
@@ -121,3 +121,5 @@ html body #navbar.nav-flex #nav-belt.nav-updated-pinned-config,html body #navbar
 :where(:root:not([data-n19-safe])) #nav-main #nav-xshop,#nav-main:where(:root:not([data-n19-safe])) #nav-xshop{transform:translateY(9px)!important}
 :where(:root:not([data-n19-safe])) #navbar #nav-flyout-iss-anchor,#navbar:where(:root:not([data-n19-safe])) #nav-flyout-iss-anchor{position:relative!important;z-index:300!important}
 html[data-net19-mode="dark"] #nav-flyout-searchAjax .s-suggestion-close-icon-display,html[data-net19-mode="dark"] #nav-flyout-searchAjax .a-icon-close{filter:invert(1)!important;opacity:.8!important}
+:where(:root:not([data-n19-safe])) .dcl-badge [class*="_badgeContainer_"],.dcl-badge:where(:root:not([data-n19-safe])) [class*="_badgeContainer_"]{flex-wrap:wrap!important;row-gap:4px!important}
+:where(:root:not([data-n19-safe])) .dcl-badge [class*="_badgeContainer_"]>[class*="_badgeMessage_"],.dcl-badge:where(:root:not([data-n19-safe])) [class*="_badgeContainer_"]>[class*="_badgeMessage_"]{flex:0 0 100%!important;margin-left:0!important}
