@@ -25,6 +25,7 @@ header.global-navigation-site-header :is(button, a).uitk-button { color: var(--n
 header.global-navigation-site-header a[data-stid="listYourProperty-link"] { border: 1px solid var(--n19-header-text) !important; font-weight: 700 !important; min-height: 32px !important; }
 
 [data-testid="hero-title-campaign"] { visibility: hidden !important; }
+html[data-net19-mode="dark"] header.global-navigation-site-header img[alt="Expedia logo" i] { filter: invert(1) hue-rotate(180deg) !important; }
 
 [data-testid="multi-product-search-form"] .uitk-card { background: var(--n19-wizard) !important; border: none !important; border-radius: 3px !important;
   box-shadow: 0 2px 6px rgba(0,0,0,.4) !important; }

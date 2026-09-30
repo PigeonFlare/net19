@@ -106,7 +106,7 @@
         "home-a201907"
       ],
       "note": "hero tagline above the wizard; the 2019 home had the wizard alone",
-      "action": "kept: page heading"
+      "action": "hidden: theme JS marks the heading by its text inside the home search-form region"
     },
     {
       "match": "^(Communication Center|Click to open VAC widget.*|Promotion: .*OneKeyCash.*)$",
