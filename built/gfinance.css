@@ -13,3 +13,4 @@ html[data-n19-g="finance"] main a[target="_blank"][href^="http"]:hover>div:first
 html[data-n19-g="finance"]:not([data-net19-mode="dark"]) .t3Nuo>i{color:#fff!important}
 html[data-n19-g="finance"] :is(button[role="tab"]#analysis,button[aria-label^="Compare to"i],button[aria-label^="Select technical indicator"i],button[aria-label^="Add to list"i],button[aria-label="Create a portfolio"i]){display:none!important}
 html[data-n19-g="finance"] [role="region"]>div:has(button[aria-label="Create a portfolio"i]){display:none!important}
+html[data-n19-g="finance"] footer>div:has(a[href]){background-color:var(--n19-bg)!important}
