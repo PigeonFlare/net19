@@ -84,6 +84,46 @@
         "s1"
       ],
       "note": "news items, FAQ entries"
+    },
+    {
+      "match": "^Why Telegram\\?$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "home-page intro heading",
+      "required": true
+    },
+    {
+      "match": "^Recent News$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "Recent News column",
+      "required": true
+    },
+    {
+      "match": "^Telegram for Android$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "app download link",
+      "required": true
+    },
+    {
+      "match": "^Telegram for iPhone / iPad$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "app download link",
+      "required": true
     }
   ]
 }
