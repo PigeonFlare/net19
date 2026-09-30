@@ -20,6 +20,7 @@ header [data-testid="global-message-ui"] a:hover span{text-decoration:underline!
 #search-bar input.sb-input{font-size:14px!important}
 .sb-trend-list-chips-wrapper>*,.sb-trend-list-chips-wrapper>* *,.sb-trend-list-chips-wrapper>*::before,.sb-trend-list-chips-wrapper>*::after{border-radius:2px!important}
 #search-bar form section svg{color:var(--n19-blue)!important;fill:currentColor}
+:where(:root:not([data-n19-safe])) #search-bar button.sb-search-icon,#search-bar:where(:root:not([data-n19-safe])) button.sb-search-icon{display:inline-flex!important;align-items:center!important;justify-content:center!important}
 header nav .nav-diy-icons :is(a,button) span,#cart-label-text{color:var(--n19-text)!important;font-size:13px!important}
 header nav .nav-diy-icons svg{color:var(--n19-navy)!important}
 #mh-nav-link-wrapper,#mh-nav-link-wrapper>div{background:var(--n19-blue)!important}
