@@ -114,5 +114,6 @@ test('docs and metadata describe the current release', () => {
   for (const file of ['PRIVACY.md', 'docs/ARCHITECTURE.md']) {
     const text = readFileSync(file, 'utf8');
     for (const [, count] of text.matchAll(/\b(\d{3}) (?:popular websites|sites|themes)\b/g)) assert.equal(`${count} `, counted, `${file}: ${count} themes`);
+    for (const [, count] of text.matchAll(/\b(\d{3}) domains\b/g)) assert.equal(Number(count), JSON.parse(readFileSync('manifest.json', 'utf8')).host_permissions.length, `${file}: ${count} domains`);
   }
 });
