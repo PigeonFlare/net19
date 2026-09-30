@@ -1,0 +1,189 @@
+{
+ "theme": "lowes",
+ "era": "2019 lowes.com desktop: a white header with the blue Lowe's logo, the store link, 'What are you looking for today?' search, MyLowe's and cart; early 2019 a blue bar with Departments and the search field, from about September 2019 a blue top strip (store, Order Status, Lowe's Credit Cards, Weekly Ad) with Shop / Services / Savings in the white header. Arquivo.pt has no 2019 captures (only redirects), and the Wayback Machine, archive.ph and the Library of Congress archive did not load from the cloud or from Chrome, so the sources are a dated 2019 screenshot, a February 2019 forum question and a 2020 Lowe's corporate story showing the 2019 site. No 2019 search-results or product-page screenshot was found, and lowes.com blocks headless browsers on those pages; features without a 2019 source are left visible and marked unproven.",
+ "sources": [
+  {
+   "id": "h1",
+   "url": "https://furniturecap.com/wp-content/uploads/2019/09/Lowes_website-1.png",
+   "date": "2019-09",
+   "shows": "home (screenshot uploaded September 2019, offer ends 9/25/19): blue top strip with the store (Brooklyn Lowe's, Open till 12AM) and Order Status, Lowe's Credit Cards, Weekly Ad; white header with the Lowe's logo, Shop, Services, Savings, search 'What are you looking for today?', account and cart icons; grey FREE SHIPPING ON HUNDREDS OF THOUSANDS OF ITEMS strip; Craftsman Days hero and offer tiles"
+  },
+  {
+   "id": "h2",
+   "url": "https://support.mozilla.org/en-US/questions/1250253",
+   "date": "2019-02-14",
+   "shows": "Firefox support question about lowes.com, screenshots of a lowes.com store page: logo, store name, account and cart, blue bar with Departments and the search field"
+  },
+  {
+   "id": "h3",
+   "url": "https://corporate.lowes.com/newsroom/stories/inside-lowes/instruction-inspiration-what-you-didnt-know-about-lowescom",
+   "date": "2020-03-16",
+   "shows": "Lowe's corporate story with lowes.com screenshots from the 2019 site: logo, Open until 10PM store link, mylowes Sign In, cart count; blue #0471af-like bar with Departments and 'What are you looking for today?'; buying-guide, how-to and project-calculator pages with blue link headings"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(header area|search area|form area|section area|footer area|presentation area|Navigation icons|repeated div|main area|navigation area)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "page regions"
+  },
+  {
+   "match": "^Link to Lowe's Home Improvement Home Page$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "Lowe's logo",
+   "required": true
+  },
+  {
+   "match": "^(find_a_store|.*Lowe's.*Open.*|Open (until|till) .*)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "store link",
+   "required": true
+  },
+  {
+   "match": "^(Search Query|Search|What are you looking for today\\?)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "search field and button",
+   "required": true
+  },
+  {
+   "match": "^(MyLowes|MyLowe's|mylowes|Sign In)$",
+   "in2019": true,
+   "evidence": [
+    "h2",
+    "h3"
+   ],
+   "note": "account",
+   "required": true
+  },
+  {
+   "match": "^(Cart Count|Cart)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "cart",
+   "required": true
+  },
+  {
+   "match": "^(Order Status|Weekly Ad|Lowe's Credit Center|Lowe's Credit Cards)$",
+   "in2019": true,
+   "evidence": [
+    "h1"
+   ],
+   "note": "utility links in the top strip"
+  },
+  {
+   "match": "^(Shop All|Departments|Shop)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "department menu (Departments / Shop)",
+   "required": true
+  },
+  {
+   "match": "^(Installations|Services)$",
+   "in2019": true,
+   "evidence": [
+    "h1"
+   ],
+   "note": "services menu"
+  },
+  {
+   "match": "^(Deals|Savings)$",
+   "in2019": true,
+   "evidence": [
+    "h1"
+   ],
+   "note": "savings menu"
+  },
+  {
+   "match": "^(Find great gifts.*|FREE SHIPPING.*|.*Shop Now)$",
+   "in2019": true,
+   "evidence": [
+    "h1"
+   ],
+   "note": "promo strip under the header"
+  },
+  {
+   "match": "^Lowe's PRO$",
+   "in2019": false,
+   "evidence": [
+    "not in the 2019 top strip (h1)"
+   ],
+   "action": "kept: unproven, no 2019 source found either way"
+  },
+  {
+   "match": "^(Design|\\$99 Maintenance|Appliances|Bathroom|Lighting|Flooring|Building Supplies|Tools|Holiday Decorations|Outdoor|Lawn & Garden|Tailgate|Kitchen|Paint|Plumbing|Electrical|Hardware|Home Decor|Patio|Storage)$",
+   "in2019": false,
+   "evidence": [
+    "2019 sources show a Departments / Shop menu (h1-h3) but not this row of category buttons"
+   ],
+   "action": "kept: unproven, no 2019 source found either way"
+  },
+  {
+   "match": "^(title|Outdoors filter option|Scroll filter options)$",
+   "in2019": false,
+   "evidence": [
+    "home carousels and filters not in the 2019 sources"
+   ],
+   "action": "kept: unproven, no 2019 source found either way"
+  },
+  {
+   "match": "^(Help Center|Gift Cards|Installation Services|Lowe's App|Who We Are|Careers|Our Responsibilities|Investors|Newsroom|Lowe's Suppliers|Safety Unites Us|Lowe’s Creators|Lowe’s Brands|Lowe’s Marketplace|Find a Store|Store Directory|Brand Directory|Store Services|Subscriptions|DIY Workshops|MyLowe’s Rewards Program|Resources for Pros|MyLowe’s Pro Rewards Program|Site Directory|Best Sellers|Lowe’s Rental|Rebates|Returns & Exchanges|Pickup, Shipping & Delivery|Special Orders|Recalls & Product Safety|Protection Plans|Military Discount|Coupons|Facebook|Twitter|Pinterest|Instagram|YouTube)$",
+   "in2019": false,
+   "evidence": [
+    "no 2019 footer source found"
+   ],
+   "action": "kept: unproven, no 2019 source found either way"
+  },
+  {
+   "match": "^(Terms|Privacy Statement|Interest-Based Ads|CA Privacy Rights|Do Not Sell/Share My Personal Information|Limit the Use of My Sensitive Personal Information|Notice of Financial Incentive/Loyalty Programs)$",
+   "in2019": false,
+   "evidence": [
+    "legal links"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Mylow|Ask Mylow|MyLow)$",
+   "in2019": false,
+   "evidence": [
+    "Mylow AI assistant launched 2023"
+   ],
+   "action": "hidden: data-linkid=mylow, .ChatInviteButton, EntryPointMyLow"
+  },
+  {
+   "match": "^Access Denied$",
+   "in2019": false,
+   "evidence": [
+    "lowes.com denies headless browsers on search and product pages"
+   ],
+   "action": "kept: bot block page, not a site feature"
+  }
+ ]
+}
