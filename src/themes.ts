@@ -214,4 +214,11 @@ export function themePaused(theme: HandmadeTheme, disabledHosts: string[]): bool
   return disabledHosts.some(host => theme.domains.some(domain => within(host, domain) || within(domain, host)));
 }
 
+export const siteKey = (hostname: string) => hostname.toLowerCase().replace(/^www\./, '');
+export const siteMatches = (site: string) => [`*://${site}/*`, `*://www.${site}/*`];
+
+export function themeExcludes(theme: HandmadeTheme, pausedSites: string[]): string[] {
+  return [...(theme.exclude ?? []), ...pausedSites.filter(site => theme.domains.some(domain => within(site, domain))).flatMap(siteMatches)];
+}
+
 export const THEMED_DOMAINS = [...new Set(THEMES.flatMap(theme => theme.domains))];

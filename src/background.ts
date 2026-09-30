@@ -1,5 +1,5 @@
 import { settingsFrom, SETTINGS_KEY, type Settings } from './settings';
-import { THEMES, themeFiles, themeFor, themeMatches, themePaused, type HandmadeTheme } from './themes';
+import { THEMES, siteMatches, themeExcludes, themeFiles, themeFor, themeMatches, themePaused, type HandmadeTheme } from './themes';
 import { navigationRules } from './navigation';
 
 let sync: Promise<unknown> = Promise.resolve();
@@ -17,9 +17,10 @@ function syncScripts(): Promise<unknown> {
     await chrome.declarativeNetRequest.updateDynamicRules({ removeRuleIds: oldRules.map(rule => rule.id),
       addRules: navigationRules(config) });
     const desired: chrome.scripting.RegisteredContentScript[] = THEMES.filter(active).map(theme => ({
-      id: `net19-theme-${theme.id}`, matches: themeMatches(theme), ...(theme.exclude ? { excludeMatches: theme.exclude } : {}), ...themeFiles(theme), runAt: 'document_start', allFrames: !!theme.frames, persistAcrossSessions: true }));
+      id: `net19-theme-${theme.id}`, matches: themeMatches(theme), ...exclude(themeExcludes(theme, config.pausedSites)), ...themeFiles(theme), runAt: 'document_start', allFrames: !!theme.frames, persistAcrossSessions: true }));
+    const paused = [...new Set(config.pausedSites.flatMap(siteMatches))].sort();
     const watched = [...new Set(THEMES.filter(active).flatMap(themeMatches))].sort();
-    if (watched.length) desired.push({ id: 'net19-watch', matches: watched, js: ['main.js'], world: 'MAIN', runAt: 'document_start', persistAcrossSessions: true });
+    if (watched.length) desired.push({ id: 'net19-watch', matches: watched, ...exclude(paused), js: ['main.js'], world: 'MAIN', runAt: 'document_start', persistAcrossSessions: true });
     const signature = (list: chrome.scripting.RegisteredContentScript[]) => JSON.stringify(list.map(s => [s.id, [...s.matches ?? []].sort(), [...s.excludeMatches ?? []].sort(), s.css, s.js, !!s.allFrames, s.world ?? 'ISOLATED']).sort());
     const current = registered.filter(script => script.id.startsWith('net19-') && !script.id.startsWith(SAFE_ID));
     if (signature(current) !== signature(desired)) {
@@ -30,6 +31,8 @@ function syncScripts(): Promise<unknown> {
   });
   return sync;
 }
+
+const exclude = (list: string[]) => list.length ? { excludeMatches: list } : {};
 
 const SAFE_ID = 'net19-safe';
 const FIT_KEY = 'net19-fit';
@@ -49,9 +52,9 @@ async function syncSafe(config: Settings, registered: chrome.scripting.Registere
   const group = (narrow: boolean) => [...new Set(keys.filter(key => key.endsWith(' narrow') === narrow).flatMap(safeMatches))].sort();
   const desired: chrome.scripting.RegisteredContentScript[] = [[SAFE_ID, 'safe.js', group(false)], [`${SAFE_ID}-narrow`, 'safe-narrow.js', group(true)]]
     .filter(([, , matches]) => matches.length)
-    .map(([id, file, matches]) => ({ id: id as string, js: [file as string], matches: matches as string[], runAt: 'document_start', persistAcrossSessions: true }));
+    .map(([id, file, matches]) => ({ id: id as string, js: [file as string], matches: matches as string[], ...exclude([...new Set(config.pausedSites.flatMap(siteMatches))].sort()), runAt: 'document_start', persistAcrossSessions: true }));
   const current = registered.filter(script => script.id.startsWith(SAFE_ID));
-  const signature = (list: chrome.scripting.RegisteredContentScript[]) => JSON.stringify(list.map(s => [s.id, [...s.matches ?? []].sort()]).sort());
+  const signature = (list: chrome.scripting.RegisteredContentScript[]) => JSON.stringify(list.map(s => [s.id, [...s.matches ?? []].sort(), [...s.excludeMatches ?? []].sort()]).sort());
   if (signature(current) === signature(desired)) return;
   if (current.length) await chrome.scripting.unregisterContentScripts({ ids: current.map(script => script.id) });
   if (desired.length) await chrome.scripting.registerContentScripts(desired);

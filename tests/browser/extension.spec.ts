@@ -225,6 +225,31 @@ test('popup is two switches and a support link, nothing else', async ({}, info) 
   await expect(site.locator('html')).not.toHaveAttribute('data-net19-mode', /.*/);
 });
 
+test('the site switch pauses only the exact site it names', async () => {
+  await worker.evaluate(() => chrome.storage.local.set({ settings: { enabled: false, disabledHosts: [], pausedSites: [] } }));
+  const ui = await context.newPage(); await ui.goto(`chrome-extension://${extensionId}/popup.html`);
+  await ui.getByLabel('net19', { exact: true }).check();
+  await expect.poll(scripts).toContain('net19-theme-youtube');
+  const music = await open('https://music.youtube.com/');
+  const tabId = await worker.evaluate(async () => (await chrome.tabs.query({ url: 'https://music.youtube.com/*' }))[0].id!);
+  const popup = await context.newPage();
+  await popup.addInitScript(({ tabId }) => { const api = (globalThis as any).chrome; if (api?.tabs) api.tabs.query = async () => [{ id: tabId, url: 'https://music.youtube.com/', incognito: false }]; }, { tabId });
+  await popup.goto(`chrome-extension://${extensionId}/popup.html`);
+  await expect(popup.locator('#site')).toHaveText('music.youtube.com');
+  await expect(popup.locator('#site-switch')).toBeChecked();
+  await popup.locator('#site-switch').uncheck();
+  await expect.poll(async () => (await worker.evaluate(async () => (await chrome.scripting.getRegisteredContentScripts({ ids: ['net19-theme-youtube'] }))[0]?.excludeMatches ?? []))).toContain('*://music.youtube.com/*');
+  await music.reload();
+  await expect(music.locator('html')).not.toHaveAttribute('data-net19-mode', /.*/);
+  await expect((await open('https://www.youtube.com/')).locator('html')).toHaveAttribute('data-net19-mode', /.+/);
+  await popup.reload();
+  await expect(popup.locator('#site-switch')).not.toBeChecked();
+  await popup.locator('#site-switch').check();
+  await expect.poll(async () => (await worker.evaluate(async () => { const s = (await chrome.scripting.getRegisteredContentScripts()).find(s => s.id === 'net19-theme-youtube'); return s ? (s.excludeMatches ?? []).length : -1; }))).toBe(0);
+  await music.reload();
+  await expect(music.locator('html')).toHaveAttribute('data-net19-mode', /.+/);
+});
+
 test('the popup shows no site switch on a site without a theme', async () => {
   const tabId = 1;
   const popup = await context.newPage();
