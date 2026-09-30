@@ -52,7 +52,7 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'github', name: 'GitHub', domains: ['github.com'] },
   { id: 'yahoo', name: 'Yahoo', domains: ['yahoo.com'] },
   { id: 'twitch', name: 'Twitch', domains: ['twitch.tv'] },
-  { id: 'amazon', name: 'Amazon', domains: ['amazon.com'] },
+  { id: 'amazon', name: 'Amazon', domains: ['amazon.com', 'amazon.co.uk', 'amazon.de', 'amazon.co.jp', 'amazon.in'] },
   { id: 'ebay', name: 'eBay', domains: ['ebay.com'] },
   { id: 'bing', name: 'Bing', domains: ['bing.com'] },
   { id: 'stackoverflow', name: 'Stack Overflow', domains: ['stackoverflow.com'] },
@@ -212,6 +212,13 @@ export function themeFor(hostname: string): HandmadeTheme | undefined {
 
 export function themePaused(theme: HandmadeTheme, disabledHosts: string[]): boolean {
   return disabledHosts.some(host => theme.domains.some(domain => within(host, domain) || within(domain, host)));
+}
+
+export const siteKey = (hostname: string) => hostname.toLowerCase().replace(/^www\./, '');
+export const siteMatches = (site: string) => [`*://${site}/*`, `*://www.${site}/*`];
+
+export function themeExcludes(theme: HandmadeTheme, pausedSites: string[]): string[] {
+  return [...(theme.exclude ?? []), ...pausedSites.filter(site => theme.domains.some(domain => within(site, domain))).flatMap(siteMatches)];
 }
 
 export const THEMED_DOMAINS = [...new Set(THEMES.flatMap(theme => theme.domains))];

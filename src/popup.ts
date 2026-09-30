@@ -1,5 +1,5 @@
 import { type Settings } from './settings';
-import { themeFor, themePaused, type HandmadeTheme } from './themes';
+import { siteKey, themeFor, themePaused, type HandmadeTheme } from './themes';
 
 type State = { settings: Settings };
 
@@ -13,10 +13,11 @@ const power = document.getElementById('power') as HTMLInputElement;
 const siteSwitch = document.getElementById('site-switch') as HTMLInputElement;
 let settings: Settings;
 let theme: HandmadeTheme | undefined;
+let site = '';
 
 function paint(): void {
   power.checked = settings.enabled;
-  siteSwitch.checked = !!theme && !themePaused(theme, settings.disabledHosts);
+  siteSwitch.checked = !!theme && !themePaused(theme, settings.disabledHosts) && !settings.pausedSites.includes(site);
   siteSwitch.disabled = !settings.enabled;
 }
 async function save(patch: Partial<Settings>): Promise<void> {
@@ -26,10 +27,10 @@ async function save(patch: Partial<Settings>): Promise<void> {
 power.addEventListener('change', () => { void save({ enabled: power.checked }).catch(paint); });
 siteSwitch.addEventListener('change', () => {
   if (!theme) return;
-  const site = theme;
-  const hosts = settings.disabledHosts.filter(host => !themePaused(site, [host]));
-  if (!siteSwitch.checked) hosts.push(site.domains[0]);
-  void save({ disabledHosts: hosts }).catch(paint);
+  const current = theme;
+  const pausedSites = settings.pausedSites.filter(s => s !== site);
+  if (!siteSwitch.checked) pausedSites.push(site);
+  void save({ disabledHosts: settings.disabledHosts.filter(host => !themePaused(current, [host])), pausedSites }).catch(paint);
 });
 
 const isWeb = (tab?: chrome.tabs.Tab) => !!tab?.url && /^https?:/.test(tab.url);
@@ -51,7 +52,8 @@ void (async () => {
   try { if (tab?.url && !tab.incognito && /^https?:$/.test(new URL(tab.url).protocol)) host = new URL(tab.url).hostname; } catch { }
   theme = host ? themeFor(host) : undefined;
   if (theme) {
-    document.getElementById('site')!.textContent = theme.domains.find(domain => host === domain || host.endsWith(`.${domain}`)) ?? theme.domains[0];
+    site = siteKey(host);
+    document.getElementById('site')!.textContent = site;
     siteSwitch.setAttribute('aria-label', theme.name);
     document.getElementById('site-row')!.hidden = false;
   }

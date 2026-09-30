@@ -1,7 +1,7 @@
 globalThis.net19Theme = {
   detect: () => document.documentElement.classList.contains('tw-root--theme-dark') ? 'dark' : 'light',
   watch: ['class'],
-  keep: 'nav.top-nav',
+  keep: 'nav.top-nav, .video-player',
   later: /^(?:stories|create a story|view stories|discovery feed|try the discovery feed|clips feed|watch clips feed|shorts|guest star|request to join|hype chat|send a hype chat|top clip|last stream|replay ad|leave feedback for this ad|try 1-month ad-free|go ad-free(?: for free)?|ad-free for free)$/i,
 };
 (() => {

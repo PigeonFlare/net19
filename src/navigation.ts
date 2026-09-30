@@ -14,7 +14,7 @@ export function navigationRules(config: Settings, themes = THEMES): Rule[] {
     if (themePaused(theme, config.disabledHosts)) continue;
     if (theme.query) rules.push({ id: id++, priority: 1,
       action: { type: REDIRECT, redirect: { transform: { queryTransform: { addOrReplaceParams: theme.query.params.map(([key, value]) => ({ key, value })) } } } },
-      condition: { regexFilter: theme.query.pattern, resourceTypes: MAIN, requestMethods: GET } });
+      condition: { regexFilter: theme.query.pattern, resourceTypes: MAIN, requestMethods: GET, ...(config.pausedSites.length ? { excludedRequestDomains: config.pausedSites.flatMap(site => [site, `www.${site}`]) } : {}) } });
   }
   return rules;
 }

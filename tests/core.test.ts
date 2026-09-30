@@ -3,13 +3,13 @@ import { test } from 'node:test';
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { settingsFrom } from '../src/settings';
 import { compileTheme } from '../scripts/styles.mjs';
-import { THEMES, THEMED_DOMAINS, themeFiles, themeFor, themeMatches, themePaused } from '../src/themes';
+import { THEMES, THEMED_DOMAINS, siteKey, themeExcludes, themeFiles, themeFor, themeMatches, themePaused } from '../src/themes';
 
 const rule = (id: string) => THEMES.find(theme => theme.id === id)!;
 
 test('settings keep only the two switches', () => {
-  assert.deepEqual(settingsFrom(null), { enabled: true, disabledHosts: [] });
-  assert.deepEqual(settingsFrom({ enabled: false, year: 2012, waitMs: 3000, disabledHosts: ['www.youtube.com', 'bad host', 7] }), { enabled: false, disabledHosts: ['www.youtube.com'] });
+  assert.deepEqual(settingsFrom(null), { enabled: true, disabledHosts: [], pausedSites: [] });
+  assert.deepEqual(settingsFrom({ enabled: false, year: 2012, waitMs: 3000, disabledHosts: ['www.youtube.com', 'bad host', 7] }), { enabled: false, disabledHosts: ['www.youtube.com'], pausedSites: [] });
 });
 
 test('net19 only touches the sites it has a theme for', () => {
@@ -33,6 +33,9 @@ test('the per-site switch pauses the whole site, whichever host it was set on', 
   assert.ok(themePaused(rule('shreddit'), ['www.reddit.com']));
   assert.ok(themePaused(rule('reddit'), ['old.reddit.com']));
   assert.ok(!themePaused(rule('reddit'), ['notreddit.com', 'youtube.com']));
+  assert.equal(siteKey('www.Google.com'), 'google.com');
+  assert.deepEqual(themeExcludes(rule('gmail'), ['mail.google.com', 'youtube.com']), ['*://mail.google.com/*', '*://www.mail.google.com/*']);
+  assert.deepEqual(themeExcludes(rule('youtube'), ['mail.google.com']), []);
 });
 
 test('Wikipedia gets its legacy skin by URL parameter, once', () => {
