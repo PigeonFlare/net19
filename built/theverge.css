@@ -113,4 +113,5 @@ nav[aria-label="Top Navigation"] li:has(>a[href$="/policy"]),footer a[href*="thr
 :where(:root:not([data-n19-safe])) .duet--page-layout--category main p.duet--group--description,.duet--page-layout--category:where(:root:not([data-n19-safe])) main p.duet--group--description{max-width:620px!important;margin:0 auto!important}
 .duet--page-layout--category main p.duet--group--description{text-align:center!important}
 a[href^="/auth/login"]>svg,a[href^="/auth/login"]>svg *{color:#fff!important;fill:#fff!important}
+.duet--app>div:has(nav[aria-label="Top Navigation"]) a[href^="/auth/login"],.duet--app>div:has(nav[aria-label="Top Navigation"]) a[href^="/auth/login"] span{color:var(--n19-bar-text)!important}
 #zephr-overlay,.duet--layout--rail div:has(>div:first-child+ol)>div:first-child{display:none!important}

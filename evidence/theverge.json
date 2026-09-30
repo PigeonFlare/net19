@@ -506,6 +506,17 @@
         "article2-201911"
       ],
       "note": "affiliate disclosure line under deal and review stories (2019: For more information, see our ethics policy)"
+    },
+    {
+      "match": ".*",
+      "within": ".duet--content-cards--content-card",
+      "in2019": true,
+      "evidence": [
+        "home-201903",
+        "home-201907",
+        "home-a201911"
+      ],
+      "note": "story headline links inside story cards: a story shown in two home modules repeats its headline (content)"
     }
   ]
 }

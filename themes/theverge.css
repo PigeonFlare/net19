@@ -137,4 +137,5 @@ div:has(> a[href^="/auth/login"] > svg) { margin-right: 56px !important; }
 .duet--page-layout--category main div:has(> div > div > h1.duet--article--dangerously-set-cms-markup) > div { background: transparent !important; background-image: none !important; }
 .duet--page-layout--category main p.duet--group--description { max-width: 620px !important; margin: 0 auto !important; text-align: center !important; }
 a[href^="/auth/login"] > svg, a[href^="/auth/login"] > svg * { color: #fff !important; fill: #fff !important; }
+.duet--app > div:has(nav[aria-label="Top Navigation"]) a[href^="/auth/login"], .duet--app > div:has(nav[aria-label="Top Navigation"]) a[href^="/auth/login"] span { color: var(--n19-bar-text) !important; }
 #zephr-overlay, .duet--layout--rail div:has(> div:first-child + ol) > div:first-child { display: none !important; }
