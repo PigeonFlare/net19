@@ -68,7 +68,7 @@ ps-header header [data-element="navigation-button"] { border: 1px solid var(--n1
 ps-header header [data-element="navigation-button"] [data-element="label"], ps-header header > button:first-child span { font: 700 13px/1 var(--n19-sans) !important; letter-spacing: 0 !important; text-transform: none !important; color: var(--n19-text) !important; }
 ps-header header [data-element="search-button"] { border: 1px solid var(--n19-rule) !important; border-radius: 2px !important; }
 .page-subheader, .page-subheader > div { background: var(--n19-page) !important; border-bottom: 1px solid var(--n19-rule) !important; }
-.page-subheader gn-quicklinks li > a { font: 700 14px/44px var(--n19-sans) !important; letter-spacing: 0 !important; text-transform: none !important; color: var(--n19-text) !important; }
+.page-subheader gn-quicklinks li > a { font: 700 14px/36px var(--n19-sans) !important; letter-spacing: 0 !important; text-transform: none !important; color: var(--n19-text) !important; padding-top: 0 !important; padding-bottom: 0 !important; border-top: 4px solid transparent !important; }
 .page-subheader gn-quicklinks li > a:hover { color: var(--n19-link) !important; }
 .page-subheader gn-quicklinks li > button:has(> svg[data-element="chevron-icon"]) { display: none !important; }
 [data-n19-later], #coral_talk_stream, gn-quicklinks li:has(> a[href*="/lifestyle/image"]), [data-element="navigation-menu"] li:has(a[data-element="navigation-item-link"][href*="/lifestyle/image"]),
