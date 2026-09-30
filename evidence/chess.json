@@ -179,6 +179,51 @@
         "the 2019 sidebar was script-rendered and is not in the captures; these are the current names of the sidebar sections (2019 used Social and More) and the language picker"
       ],
       "action": "kept: function (sidebar navigation and language choice)"
+    },
+    {
+      "match": "^Chess\\.com - Play Chess Online$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "logo link",
+      "required": true
+    },
+    {
+      "match": "^Play Chess Online on the #1 Site!?$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "home-page hero heading",
+      "required": true
+    },
+    {
+      "match": "^(Play|Learn|Watch)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "sidebar sections",
+      "required": true
+    },
+    {
+      "match": "^(Sign Up|Log In)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s4"
+      ],
+      "note": "Sign Up / Log In buttons",
+      "required": true
     }
   ]
 }
