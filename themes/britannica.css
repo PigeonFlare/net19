@@ -16,3 +16,7 @@ body, .font-serif, .topic-paragraph, .reading-channel, .topic-header, h1, h2, h3
 main .rounded, main .rounded-lg, main .rounded-md, main img.rounded, main .card { border-radius: 0 !important; }
 .btn:not(.btn-circle), .btn-blue:not(.btn-circle), .btn-outline-blue, .gtm-topic-tool, .btn-unstyled, .js-more-btn { border-radius: 0 !important; }
 .category-link-CHATBOT, .header-topic-britannica-ai-module, .toc-sticky-header-ai-container, .js-inline-ai-ask-button, .js-inline-ai-simplify-button, a[href$="/chatbot"].nav-bar-category { display: none !important; }
+.category-link-PROCON, .category-link-MONEY, a.nav-bar-category[href="/procon"], a.nav-bar-category[href="/money"] { display: none !important; }
+#homepage-content > .qa-homepage-procon, #homepage-content > .qa-featured-games, #homepage-content > .qa-videos, #homepage-content > .calcularors, #homepage-content > .gtm-money-cta { display: none !important; }
+.reading-channel .recent-news { display: none !important; }
+#search-tab-ai, .search-page-tabs[role=tablist], li.search-ai-prompt, .search-ai-prompt { display: none !important; }
