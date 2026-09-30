@@ -4,7 +4,7 @@ globalThis.net19Theme = { intended: '[data-n19-later]' };
   const photo = el => [el, ...el.querySelectorAll('div')].slice(0, 60).some(d => !d.hasAttribute('data-n19-photo') && getComputedStyle(d).backgroundImage.includes('url('));
   const keep = el => { if (el && !el.hasAttribute('data-net19-keep')) { el.removeAttribute('data-net19-scrim'); el.setAttribute('data-net19-keep', ''); } };
   const mark = () => {
-    if (!root.hasAttribute('data-net19-flip')) return;
+    if (!root.hasAttribute('data-net19-recolor')) return;
     for (const h1 of document.querySelectorAll('main h1')) {
       const hero = h1.closest('main > div');
       if (!hero || hero.hasAttribute('data-net19-keep') || hero.querySelector('input[id^="location-typeahead-home"]') || !photo(hero)) continue;
@@ -18,7 +18,7 @@ globalThis.net19Theme = { intended: '[data-n19-later]' };
   const start = () => {
     later();
     new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
-    new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-flip'] });
+    new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-recolor'] });
   };
   start();
 })();

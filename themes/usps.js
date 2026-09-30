@@ -17,7 +17,7 @@ globalThis.net19Theme = { intended: 'footer a:is([href*="instagram.com"], [href*
 (() => {
   const root = document.documentElement;
   const mark = () => {
-    if (!root.hasAttribute('data-net19-flip')) return;
+    if (!root.hasAttribute('data-net19-recolor')) return;
     for (const el of document.querySelectorAll('nav[aria-label="Main"] a.menuitem.nav-first-element')) if (!el.hasAttribute('data-net19-keep')) el.setAttribute('data-net19-keep', '');
   };
   let queued = false;
@@ -25,7 +25,7 @@ globalThis.net19Theme = { intended: 'footer a:is([href*="instagram.com"], [href*
   const start = () => {
     later();
     new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
-    new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-flip'] });
+    new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-recolor'] });
   };
   start();
 })();

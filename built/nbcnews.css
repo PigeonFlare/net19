@@ -38,8 +38,8 @@ a[data-testid="social-cta-link"][href*="google.com/preferences"],a[href*="google
 .gsc-control-cse,.gsc-input-box{border-radius:0!important}
 li.shortcuts-list-item:has(>a[href$="/select"]),li.menu-list-item:has(>a[href$="/select"]),.login.login--non-subscriber,.login:has(>.login__button--anon),#account-dropdown-menu,[data-testid="subscriber-badge"],footer li:has(>a[href*="/subscribe"]),footer a[href*="nbcnews.com/subscribe"]{display:none!important}
 li:has(>a[href$="nbcnews.com/select"]),a[href$="nbcnews.com/select"],.standard-layout__badge:has([data-testid="subscriber-badge"]),button:is([aria-label="Save"],[data-testid*="save"i],[class*="bookmark"i]){display:none!important}
-html:not([data-net19-flip]):not([data-net19-mode="dark"]) .article-hero__bg-container{background:#0e2240!important}
-html:not([data-net19-flip]):not([data-net19-mode="dark"]) .article-hero__bg-container :is(h1,.article-hero-headline__htag,.article-dek,[class*="dek"],[class*="unibrow"],[class*="unibrow"] a,[class*="eyebrow"],[class*="eyebrow"] a){color:#fff!important}
-html:not([data-net19-flip]) button.hamburger.js-menu-toggle{background:#0e2240!important;color:#fff!important}
-html:not([data-net19-flip]) button.hamburger.js-menu-toggle :is(span,i,svg,svg *){background-color:#fff;fill:#fff!important}
+html:not([data-net19-mode="dark"]) .article-hero__bg-container{background:#0e2240!important}
+html:not([data-net19-mode="dark"]) .article-hero__bg-container :is(h1,.article-hero-headline__htag,.article-dek,[class*="dek"],[class*="unibrow"],[class*="unibrow"] a,[class*="eyebrow"],[class*="eyebrow"] a){color:#fff!important}
+html button.hamburger.js-menu-toggle{background:#0e2240!important;color:#fff!important}
+html button.hamburger.js-menu-toggle:not(#n19) :is(span,i,svg,svg *){background-color:#fff!important;fill:#fff!important}
 li:has(>a:is([href*="/sudoku"],[href*="peacocktv.com"],[href*="nbcuacademy"])){display:none!important}

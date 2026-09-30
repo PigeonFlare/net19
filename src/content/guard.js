@@ -199,7 +199,7 @@ import { rgba } from './color.js';
       });
       for (let n = walker.nextNode(); n && found.size < 3000; n = walker.nextNode()) {
         if (n.nodeType === 1) { if (scopes.length < 400) scopes.push(n.shadowRoot); }
-        else if (n.parentElement) found.add(n.parentElement);
+        else { const parent = n.parentElement || (n.parentNode && n.parentNode.host); if (parent) found.add(parent); }
       }
     }
     return found;
@@ -247,13 +247,14 @@ import { rgba } from './color.js';
       blendSeen.add(media);
       for (let e = media, i = 0; e && e !== root && i < 4; e = e.parentElement, i++) if (getComputedStyle(e).mixBlendMode === 'multiply') { e.setAttribute('data-net19-blend', ''); break; }
     }
+    const blends = new Set();
     for (const el of textElements()) {
       if (el.closest('script, style, noscript, [data-net19-hidden]')) continue;
       const box = el.getBoundingClientRect();
       if (box.width < 2 || box.height < 2 || box.bottom < 0 || box.top > view.h || box.right < 0 || box.left > view.w) continue;
       for (let e = el, i = 0; e && e !== root && i < 12; e = up(e), i++) {
         const { blend } = layer(e);
-        if ((dark && blend === 'multiply') || (!dark && blend === 'screen')) { if (!e.hasAttribute('data-net19-blend')) e.setAttribute('data-net19-blend', ''); }
+        if ((dark && blend === 'multiply') || (!dark && blend === 'screen')) { if (!e.hasAttribute('data-net19-blend')) blends.add(e); }
       }
       const style = getComputedStyle(el);
       if (style.visibility !== 'visible' || +style.opacity < .1 || parseFloat(style.fontSize) < 8) continue;
@@ -303,6 +304,7 @@ import { rgba } from './color.js';
       const ink = ratio(shownAs([29, 29, 31, 1], pt), bg.color) >= ratio(shownAs([245, 245, 247, 1], pt), bg.color) ? 'dark' : 'light';
       if (current !== ink) changes.push([f, ink]);
     }
+    for (const e of blends) e.setAttribute('data-net19-blend', '');
     for (const [el, ink] of changes) {
       const before = inline.get(el);
       if (before) { el.style.setProperty('color', before[0], before[1]); el.style.setProperty('-webkit-text-fill-color', before[2], before[3]); if (!before[0]) el.style.removeProperty('color'); if (!before[2]) el.style.removeProperty('-webkit-text-fill-color'); inline.delete(el); }
@@ -391,7 +393,7 @@ import { rgba } from './color.js';
       if (added) { dirty = true; soon(); }
     }).observe(root, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style', 'hidden', 'open', 'aria-expanded', 'placeholder', 'aria-label', 'role'] });
     new MutationObserver(() => { dirty = true; soon(50); }).observe(root, { attributes: true, attributeFilter: ['data-net19-mode', 'data-net19-recolor', 'class'] });
-    for (const type of ['pointerover', 'focusin', 'click', 'keyup']) addEventListener(type, () => soon(), { capture: true, passive: true });
+    for (const type of ['pointerover', 'focusin', 'click', 'keyup']) addEventListener(type, () => { dirty = true; soon(); }, { capture: true, passive: true });
     for (const type of ['transitionend', 'animationend']) addEventListener(type, () => { dirty = true; soon(200); }, { capture: true, passive: true });
     addEventListener('scroll', () => { dirty = true; soon(300); }, { capture: true, passive: true });
     addEventListener('load', () => { dirty = true; soon(100); }, { once: true });

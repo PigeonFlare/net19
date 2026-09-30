@@ -1,5 +1,5 @@
 import { type Settings } from './settings';
-import { siteKey, themeFor, themePaused, type HandmadeTheme } from './themes';
+import { siteKey, themeCover, themeFor, themePaused, type HandmadeTheme } from './themes';
 
 type State = { settings: Settings };
 
@@ -16,6 +16,7 @@ let theme: HandmadeTheme | undefined;
 let site = '';
 
 function paint(): void {
+  power.disabled = false;
   power.checked = settings.enabled;
   siteSwitch.checked = !!theme && !themePaused(theme, settings.disabledHosts) && !settings.pausedSites.includes(site);
   siteSwitch.disabled = !settings.enabled;
@@ -46,11 +47,12 @@ async function siteTab(): Promise<chrome.tabs.Tab | undefined> {
 }
 
 void (async () => {
-  const [state, tab] = await Promise.all([send<State>('STATE'), siteTab()]);
+  const [state, tab] = await Promise.all([send<State>('STATE'), siteTab().catch(() => undefined)]);
   settings = state.settings;
   let host = '';
   try { if (tab?.url && !tab.incognito && /^https?:$/.test(new URL(tab.url).protocol)) host = new URL(tab.url).hostname; } catch { }
   theme = host ? themeFor(host) : undefined;
+  if (theme && !themeCover(theme, host)) theme = undefined;
   if (theme) {
     site = siteKey(host);
     document.getElementById('site')!.textContent = site;
@@ -58,4 +60,4 @@ void (async () => {
     document.getElementById('site-row')!.hidden = false;
   }
   paint();
-})();
+})().catch(() => { document.getElementById('error')!.hidden = false; });

@@ -21,7 +21,7 @@ globalThis.net19Theme = { intended: '[data-n19-later]', later: /^(?:create with 
   };
   const mark = () => {
     restore();
-    if (!root.hasAttribute('data-net19-flip')) return;
+    if (!root.hasAttribute('data-net19-recolor')) return;
     for (const el of document.querySelectorAll(SEL)) if (!el.hasAttribute('data-net19-keep')) { el.removeAttribute('data-net19-scrim'); el.setAttribute('data-net19-keep', ''); }
   };
   let queued = false;
@@ -29,7 +29,7 @@ globalThis.net19Theme = { intended: '[data-n19-later]', later: /^(?:create with 
   const start = () => {
     later();
     new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
-    new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-flip'] });
+    new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-recolor'] });
   };
   net19.onBody(start);
 })();

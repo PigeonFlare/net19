@@ -102,7 +102,7 @@ globalThis.net19Theme = {
   const start = () => {
     fix();
     new MutationObserver(fix).observe(document.documentElement, { childList: true, subtree: true });
-    new MutationObserver(() => requestAnimationFrame(fix)).observe(document.documentElement, { attributes: true, attributeFilter: ['data-net19-flip'] });
+    new MutationObserver(() => requestAnimationFrame(fix)).observe(document.documentElement, { attributes: true, attributeFilter: ['data-net19-recolor', 'data-net19-mode'] });
   };
   net19.onBody(start);
 })();

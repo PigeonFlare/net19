@@ -15,7 +15,7 @@ function syncScripts(): Promise<unknown> {
     const active = (theme: HandmadeTheme) => config.enabled && !themePaused(theme, config.disabledHosts);
     const oldRules = await chrome.declarativeNetRequest.getDynamicRules();
     const rules = navigationRules(config);
-    if (JSON.stringify(oldRules) !== JSON.stringify(rules)) await chrome.declarativeNetRequest.updateDynamicRules({ removeRuleIds: oldRules.map(rule => rule.id), addRules: rules });
+    if (canonical(oldRules) !== canonical(rules)) await chrome.declarativeNetRequest.updateDynamicRules({ removeRuleIds: oldRules.map(rule => rule.id), addRules: rules });
     const desired: chrome.scripting.RegisteredContentScript[] = THEMES.filter(active).map(theme => ({
       id: `net19-theme-${theme.id}`, matches: themeMatches(theme), ...exclude(themeExcludes(theme, config.pausedSites)), ...themeFiles(theme), runAt: 'document_start', allFrames: !!theme.frames, persistAcrossSessions: true }));
     const paused = [...new Set(config.pausedSites.flatMap(siteMatches))].sort();
@@ -31,6 +31,8 @@ function syncScripts(): Promise<unknown> {
   });
   return sync;
 }
+
+const canonical = (value: unknown): string => JSON.stringify(value, (_, v) => v && typeof v === 'object' && !Array.isArray(v) ? Object.fromEntries(Object.entries(v).sort(([a], [b]) => a < b ? -1 : 1)) : v);
 
 const exclude = (list: string[]) => list.length ? { excludeMatches: list } : {};
 
@@ -70,7 +72,7 @@ function syncFit(): Promise<unknown> {
 
 async function cleanUp(): Promise<void> {
   const stored = await chrome.storage.local.get(null);
-  const stale = Object.keys(stored).filter(key => key !== SETTINGS_KEY);
+  const stale = Object.keys(stored).filter(key => key !== SETTINGS_KEY && key !== FIT_KEY);
   if (stale.length) await chrome.storage.local.remove(stale);
   await chrome.storage.session.clear();
   const session = await chrome.declarativeNetRequest.getSessionRules();
@@ -102,7 +104,10 @@ chrome.runtime.onMessage.addListener((message, sender, respond) => {
   void handle(message, sender).then(respond, () => respond({ error: 'net19 could not complete this action.' }));
   return true;
 });
-chrome.runtime.onInstalled.addListener(() => { void cleanUp().catch(() => undefined).then(syncScripts).catch(() => undefined); });
+chrome.runtime.onInstalled.addListener(({ reason }) => {
+  const tidy = reason === 'install' || reason === 'update' ? cleanUp().catch(() => undefined) : Promise.resolve();
+  void tidy.then(syncScripts).catch(() => undefined);
+});
 chrome.storage.onChanged.addListener((changes, area) => { if (area === 'local' && changes[FIT_KEY]) void syncFit().catch(() => undefined); });
 chrome.runtime.onStartup.addListener(() => { void syncScripts().catch(() => undefined); });
 void syncScripts().catch(() => undefined);

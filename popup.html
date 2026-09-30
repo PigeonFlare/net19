@@ -2,7 +2,8 @@
 <html lang="en">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>net19</title><link rel="stylesheet" href="ui.css"><script src="popup.js" defer></script></head>
 <body>
-  <label class="row"><span class="name">net19</span><input id="power" class="switch" type="checkbox" checked aria-label="net19"></label>
+  <label class="row"><span class="name">net19</span><input id="power" class="switch" type="checkbox" checked disabled aria-label="net19"></label>
+  <div class="row error" id="error" role="alert" hidden>Couldn’t load settings. Reopen to retry.</div>
   <label class="row" id="site-row" hidden><span class="site" id="site"></span><input id="site-switch" class="switch" type="checkbox" checked></label>
   <a class="row donate" href="https://buymeacoffee.com/0wtynrfutb" target="_blank" rel="noopener">Support further development</a>
 </body>

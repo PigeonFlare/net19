@@ -374,7 +374,6 @@ export function createRecolor(theme) {
   };
   const sizeGlyphs = () => {
     const pictures = pictureWork; pictureWork = [];
-    const hosts = [];
     const mark = media => {
       const hosts = [];
       const host = hostOf(media);
@@ -517,7 +516,7 @@ export function createRecolor(theme) {
             if (n.nodeType !== 1 || n === base) continue;
             if (n.tagName === 'STYLE' || n.tagName === 'LINK') sheets = true; else nodes.push(n);
           }
-        } else if (!OWN.test(r.attributeName) && !animated(r.target, r.attributeName)) { shallow.add(r.target); below.add(r.target); }
+        } else if (!OWN.test(r.attributeName) && !animated(r.target, r.attributeName)) { shallow.add(r.target); if (r.target === document.documentElement || r.target === document.body) refreshAll(); else below.add(r.target); }
       }
       if (sheets) { if (veil) full = true; else refreshAll(document.readyState === 'complete' ? 2000 : 300); }
       schedule(nodes);

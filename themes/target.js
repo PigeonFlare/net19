@@ -6,7 +6,7 @@ globalThis.net19Theme = {
   const root = document.documentElement;
   const SEL = '[class*="styles_storycardWrapper"]:has(:is([class*="customTextPosition"], [class*="flexTextPosition"]))';
   const mark = () => {
-    if (!root.hasAttribute('data-net19-flip')) return;
+    if (!root.hasAttribute('data-net19-recolor')) return;
     for (const el of document.querySelectorAll(SEL)) {
       if (el.hasAttribute('data-net19-keep')) continue;
       if (!el.querySelector('[class*="customTextPosition"]')) {
@@ -25,7 +25,7 @@ globalThis.net19Theme = {
     later();
     new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
     addEventListener('load', later, { once: true });
-    new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-flip'] });
+    new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-recolor'] });
   };
   net19.onBody(start);
 })();

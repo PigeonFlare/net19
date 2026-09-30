@@ -38,9 +38,9 @@ globalThis.net19Theme = { intended: 'rt-header-nav-item[slot="shop"], [data-n19-
   const root = document.documentElement;
   const keep = () => {
     const header = document.querySelector('rt-header')?.closest('header') || document.querySelector('rt-header');
-    if (header && root.hasAttribute('data-net19-flip') && !header.hasAttribute('data-net19-keep')) header.setAttribute('data-net19-keep', '');
+    if (header && root.hasAttribute('data-net19-recolor') && !header.hasAttribute('data-net19-keep')) header.setAttribute('data-net19-keep', '');
   };
-  new MutationObserver(keep).observe(root, { attributes: true, attributeFilter: ['data-net19-flip'] });
+  new MutationObserver(keep).observe(root, { attributes: true, attributeFilter: ['data-net19-recolor'] });
   const start = () => {
     fix(); keep();
     new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['placeholder'] });

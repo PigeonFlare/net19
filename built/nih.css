@@ -259,10 +259,6 @@ html[data-n19-www] footer.usa-footer .usa-footer__social-links .grid-col-auto:ha
 [data-n19-later]{display:none!important}
 html[data-n19-www]:where(:root:not([data-n19-safe])) .region-hero,html[data-n19-www]:where(:root:not([data-n19-safe])) .region-hero section.usa-hero{margin-bottom:0!important}
 html[data-n19-www]:where(:root:not([data-n19-safe])) main#main-content,html[data-n19-www]:where(:root:not([data-n19-safe])) main#main-content>.grid-container,html[data-n19-www]:where(:root:not([data-n19-safe])) main#main-content .region-content{padding-top:0!important;margin-top:0!important}
-html[data-n19-www][data-net19-flip]{--n19-www-hhs:#85c1fd;--n19-www-nav-top:#5fadf9;--n19-www-nav-bottom:#a0d7ff;--n19-www-sep:#c7e6ff}
-html[data-n19-www][data-net19-flip] header.usa-header--extended::before{color:#000}
-html[data-n19-www][data-net19-flip] nav.usa-nav li.usa-nav__primary-item>.usa-nav__link,html[data-n19-www][data-net19-flip] nav.usa-nav li.usa-nav__primary-item>.usa-nav__link>span{color:#000!important}
-html[data-n19-www][data-net19-flip] nav.usa-nav li.usa-nav__primary-item>.usa-nav__link:hover,html[data-n19-www][data-net19-flip] nav.usa-nav li.usa-nav__primary-item>.usa-nav__link[aria-expanded="true"]{background:rgba(0,0,0,.12)!important}
 #home-page .homepage-action .action-url a,#home-page .homepage-action li a,#home-page .homepage-action a:not(.action-title a){text-decoration:underline!important}
 #home-page .homepage-action :is(li,.action-url,p){border-bottom:1px solid #ddd!important}
 :where(:root:not([data-n19-safe])) #home-page .homepage-action :is(li,.action-url,p),#home-page:where(:root:not([data-n19-safe])) .homepage-action :is(li,.action-url,p){padding:3px 6px!important;margin:0!important}

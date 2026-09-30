@@ -49,7 +49,7 @@ globalThis.net19Theme = {
 (() => {
   const root = document.documentElement;
   const mark = () => {
-    if (!root.hasAttribute('data-net19-flip')) return;
+    if (!root.hasAttribute('data-net19-recolor')) return;
     const hero = document.querySelector('[class*="styles_heroContainer"]');
     if (hero && !hero.hasAttribute('data-net19-keep')) { hero.removeAttribute('data-net19-scrim'); hero.setAttribute('data-net19-keep', ''); }
   };
@@ -58,7 +58,7 @@ globalThis.net19Theme = {
   const start = () => {
     later();
     new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
-    new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-flip'] });
+    new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-recolor'] });
   };
   net19.onBody(start);
 })();
