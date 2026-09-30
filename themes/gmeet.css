@@ -29,3 +29,4 @@ main :is(h1, h2) { font-family: "Google Sans", "Product Sans", Roboto, Arial, sa
 
 a[aria-label="Google Meet"] > img { content: url("https://www.gstatic.com/images/branding/product/2x/meet_48dp.png") !important; width: 40px !important; height: 40px !important; object-fit: contain !important; }
 [role="dialog"][aria-label="Receive desktop notifications from Meet"], button[aria-label="Open calendar"], [style*="display: contents"]:has(button[aria-label="Previous week"]) { display: none !important; }
+span[data-is-tooltip-wrapper]:has(button[data-rp-placement-id*="tnfm"]), button[data-rp-placement-id*="tnfm"], div:has(> div > [role="dialog"][aria-modal="true"][aria-label="Welcome"]) { display: none !important; }

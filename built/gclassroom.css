@@ -2,3 +2,4 @@ a[data-focus-id="titlebar-home"] img[src*="/classroom/logo_square"]{content:url(
 body{background-color:var(--n19-bg)!important}
 div:has(>div>[role="dialog"][aria-label^="Welcome to the new"]){display:none!important}
 nav[aria-label="Titlebar navigation"]{border-bottom:1px solid var(--n19-border)!important;box-shadow:none!important}
+main>div:has(button[aria-label="Due soon section"]),[data-course-states]>[role="tablist"],svg[width="32"][height="32"]:has(>path[d^="M 32,0 H -32"]){display:none!important}

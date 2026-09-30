@@ -138,6 +138,93 @@
         "Gemini is 2023+"
       ],
       "action": "hidden"
+    },
+    {
+      "match": "^(mic_detect_auto)?In-person notes$",
+      "in2019": false,
+      "action": "hidden",
+      "note": "In-person notes (Gemini note taking, 2025) button beside New meeting"
+    },
+    {
+      "match": "^(Welcome|Enjoy longer group calls and more|Got it)$",
+      "in2019": false,
+      "action": "hidden",
+      "note": "premium-features welcome dialog (Google One, 2021+)"
+    },
+    {
+      "match": "^(Meet|Google Meet|Hangouts Meet)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1",
+        "s8"
+      ],
+      "note": "header logo and name"
+    },
+    {
+      "match": "^(Enter a code or link|Use a meeting code)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1",
+        "s8"
+      ],
+      "note": "join by code"
+    },
+    {
+      "match": "^(New meeting|New|Start a new meeting|Join or start a meeting)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1",
+        "s8"
+      ],
+      "note": "start a meeting"
+    },
+    {
+      "match": "^Settings$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "settings gear"
+    },
+    {
+      "match": "^Google apps$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "launcher"
+    },
+    {
+      "match": "^Google Account",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "avatar"
     }
   ]
 }

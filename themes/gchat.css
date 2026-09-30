@@ -16,3 +16,4 @@ button[role="switch"][aria-label="Unread"], div:has(~ div button[role="switch"][
 [role="button"][aria-label="Hide side panel"], [role="button"][aria-label="Show side panel"], header#gb [role="button"][aria-label="Main menu"] { display: none !important; }
 div:has(> div > span > button[aria-label="Close zero state reply pane"]) { display: none !important; }
 div[jsname="tfhEld"][role="button"] { text-transform: uppercase !important; font: 500 11px/16px Roboto, Arial, sans-serif !important; letter-spacing: .8px !important; color: var(--n19-text-2) !important; }
+[role="banner"] :is(div[data-guest-app-id], div[jscontroller="EdTKdf"]) { display: none !important; }

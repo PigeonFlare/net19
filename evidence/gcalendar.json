@@ -278,6 +278,168 @@
         "s6"
       ],
       "note": "General settings: time zone section"
+    },
+    {
+      "match": "^Calendar$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "header product name beside the dated logo"
+    },
+    {
+      "match": "^Main drawer$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s2"
+      ],
+      "note": "hamburger"
+    },
+    {
+      "match": "^Today",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "outlined Today button"
+    },
+    {
+      "match": "^Previous (day|week|month|year|period)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "previous chevron"
+    },
+    {
+      "match": "^Next (day|week|month|year|period)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s2",
+        "s3"
+      ],
+      "note": "next chevron"
+    },
+    {
+      "match": "^Search$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s2"
+      ],
+      "note": "header search icon"
+    },
+    {
+      "match": "^Settings menu$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s2"
+      ],
+      "note": "settings gear"
+    },
+    {
+      "match": "^(Day|Week|Month|Year|Schedule|4 days|Custom view)(arrow_drop_down)?$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s2",
+        "s7"
+      ],
+      "note": "view switcher"
+    },
+    {
+      "match": "^Google apps$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s2"
+      ],
+      "note": "launcher"
+    },
+    {
+      "match": "^Google Account",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s2"
+      ],
+      "note": "avatar"
+    },
+    {
+      "match": "^(add)?Create(arrow_drop_down)?$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "Create pill"
+    },
+    {
+      "match": "^Search for people$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s2"
+      ],
+      "note": "Meet with... people search under the mini month"
+    },
+    {
+      "match": "^My calendars",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s2",
+        "s8"
+      ],
+      "note": "calendar list group"
     }
   ]
 }

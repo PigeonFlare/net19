@@ -163,6 +163,85 @@
         "Gemini is 2023+"
       ],
       "action": "hidden"
+    },
+    {
+      "match": "^(Studio)$",
+      "in2019": false,
+      "action": "hidden",
+      "note": "Studio guest-app button in the header (Workspace Studio, 2025); the Gemini sparkle beside it is hidden with it"
+    },
+    {
+      "match": "^(Chat logo|Chat)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s6",
+        "s1"
+      ],
+      "note": "header logo"
+    },
+    {
+      "match": "^(Search chat|Find people, rooms, bots)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s6"
+      ],
+      "note": "search field"
+    },
+    {
+      "match": "^Status: (Active|Away|Do not disturb)",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s6"
+      ],
+      "note": "status chip"
+    },
+    {
+      "match": "^Settings$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s6"
+      ],
+      "note": "settings"
+    },
+    {
+      "match": "^Google apps$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s6"
+      ],
+      "note": "launcher"
+    },
+    {
+      "match": "^Google Account",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s6"
+      ],
+      "note": "avatar"
     }
   ]
 }

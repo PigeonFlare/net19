@@ -31,7 +31,7 @@
       ]
     },
     {
-      "match": "^(Google Account|Google apps|Search Google Account|Main menu|Help|Send feedback|Privacy|Terms|About|View Google's (Privacy Policy|Terms of Service)|Learn more)$",
+      "match": "^(Google Account|Google apps|Search Google Account|Main menu|Help|Send feedback|Privacy|Terms|About|View Google's (Privacy Policy|Terms of Service)|Learn more|Learn more about Google Account)$",
       "in2019": true,
       "evidence": [
         "s1",
@@ -80,6 +80,115 @@
         "Google password and Linked apps nav 2025, Family nav 2024, quick-access chips 2023, AI plans 2024"
       ],
       "action": "hidden"
+    },
+    {
+      "match": "^(Google Account|Google Account settings)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "header wordmark"
+    },
+    {
+      "match": "^Search Google Account$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "header search"
+    },
+    {
+      "match": "^Google apps$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "launcher"
+    },
+    {
+      "match": "^Google Account:",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "avatar"
+    },
+    {
+      "match": "^Home(Home)?$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "Home nav item"
+    },
+    {
+      "match": "^Personal info(Personal info)?$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "Personal info nav item"
+    },
+    {
+      "match": "^(Data & (personalization|privacy))+$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "Data & personalization nav item"
+    },
+    {
+      "match": "^(Security|Security & sign-in)+$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "Security nav item"
+    },
+    {
+      "match": "^(People & sharing)+$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "People & sharing nav item"
     }
   ]
 }

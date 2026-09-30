@@ -128,6 +128,80 @@
         "Gemini/NotebookLM tools are 2024+"
       ],
       "action": "hidden"
+    },
+    {
+      "match": "^(Due soon|Due soon section|View To-do)$",
+      "in2019": false,
+      "action": "hidden",
+      "note": "Due soon card of the new Classroom Home (2025); the 2019 home was the class card grid"
+    },
+    {
+      "match": "^(Views|Teacher view|Enrolled view)$",
+      "in2019": false,
+      "action": "hidden",
+      "note": "Teaching / Enrolled view switch of the new Classroom Home (2025)"
+    },
+    {
+      "match": "^Main Menu$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s9",
+        "s11"
+      ],
+      "note": "hamburger"
+    },
+    {
+      "match": "^Classroom$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s9",
+        "s11"
+      ],
+      "note": "Classroom logo and name"
+    },
+    {
+      "match": "^(Create or join a class|Create class|Join class|Add class)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s3"
+      ],
+      "note": "+ menu"
+    },
+    {
+      "match": "^Google apps$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s9"
+      ],
+      "note": "launcher"
+    },
+    {
+      "match": "^Google Account",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s9"
+      ],
+      "note": "avatar"
     }
   ]
 }

@@ -58,7 +58,7 @@
       "note": "Create contact pill; empty-state link"
     },
     {
-      "match": "^(person)?Contacts( \\d+)?$",
+      "match": "^(person)?Contacts( ?\\d+)?$",
       "in2019": true,
       "evidence": [
         "s1",
@@ -186,6 +186,128 @@
         "info tooltip is 2021+; s7 has none"
       ],
       "action": "hidden"
+    },
+    {
+      "match": "^Contacts$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1",
+        "s8"
+      ],
+      "note": "header product name"
+    },
+    {
+      "match": "^Main menu$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "hamburger"
+    },
+    {
+      "match": "^Search$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1",
+        "s8"
+      ],
+      "note": "grey search field"
+    },
+    {
+      "match": "^(Add new contact|Create contact|(add)?Create contact)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1",
+        "s8"
+      ],
+      "note": "Create contact pill"
+    },
+    {
+      "match": "^(person)?Contacts( ?\\d+)?$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "Contacts nav item"
+    },
+    {
+      "match": "^(archive)?Other contacts$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s7"
+      ],
+      "note": "Other contacts"
+    },
+    {
+      "match": "^(download)?Import( contacts)?$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s3",
+        "s7"
+      ],
+      "note": "Import"
+    },
+    {
+      "match": "^Google apps$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "launcher"
+    },
+    {
+      "match": "^Google Account",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "avatar"
+    },
+    {
+      "match": "^repeated div$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s7"
+      ],
+      "note": "contact list rows (content)"
     }
   ]
 }

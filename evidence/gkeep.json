@@ -121,6 +121,170 @@
         "Gemini in Keep is 2024+"
       ],
       "action": "hidden"
+    },
+    {
+      "match": "^Main menu$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s3"
+      ],
+      "note": "hamburger"
+    },
+    {
+      "match": "^Keep$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s3",
+        "s4"
+      ],
+      "note": "Keep bulb logo"
+    },
+    {
+      "match": "^Search$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s3",
+        "s4"
+      ],
+      "note": "grey Search field"
+    },
+    {
+      "match": "^(List view|Grid view)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "layout toggle"
+    },
+    {
+      "match": "^Settings$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "settings gear"
+    },
+    {
+      "match": "^Notes$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s3"
+      ],
+      "note": "Notes drawer entry"
+    },
+    {
+      "match": "^Reminders$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s3"
+      ],
+      "note": "Reminders"
+    },
+    {
+      "match": "^Archive$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s3"
+      ],
+      "note": "Archive"
+    },
+    {
+      "match": "^Trash$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s3"
+      ],
+      "note": "Trash"
+    },
+    {
+      "match": "^New list$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s3"
+      ],
+      "note": "Take a note bar list button"
+    },
+    {
+      "match": "^Google apps$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s3"
+      ],
+      "note": "launcher"
+    },
+    {
+      "match": "^Google Account",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "app"
+      ],
+      "evidence": [
+        "s3"
+      ],
+      "note": "avatar"
+    },
+    {
+      "match": "^Select (pinned )?note$",
+      "in2019": true,
+      "evidence": [
+        "s3",
+        "s4"
+      ],
+      "note": "the round select check on a hovered note (multi-select), on the 2019 note cards"
+    },
+    {
+      "match": "^Untitled document$",
+      "in2019": true,
+      "evidence": [
+        "s3"
+      ],
+      "note": "content: the title of a note's linked document (user content)"
     }
   ]
 }
