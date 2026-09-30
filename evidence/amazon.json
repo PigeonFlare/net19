@@ -1,6 +1,6 @@
 {
   "theme": "amazon",
-  "era": "2019 desktop amazon.com as every signed-out and signed-in US visitor saw it: navy #232f3e two-row header (logo with Try Prime, All-scope search with orange button, promo slot top right, Deliver to / nav links / EN, Account & Lists, Orders, Try Prime, Cart), grey home page with white square cards, search results with a bordered left refinement column and 'Sort by: Featured', product pages with a gradient buy box. All 2019 sources agree (s1-s16); there is no crawler-only variant for Amazon.",
+  "era": "2019 desktop amazon.com as every signed-out and signed-in US visitor saw it: navy #232f3e two-row header (logo with Try Prime, All-scope search with orange button, promo slot top right, Deliver to / nav links / EN, Account & Lists, Orders, Try Prime, Cart), grey home page with white square cards, search results with a bordered left refinement column and 'Sort by: Featured', product pages with a gradient buy box. The same header and page designs ran on amazon.co.uk, amazon.de, amazon.co.jp and amazon.in in their own languages (s23-s26). All 2019 sources agree (s1-s16); there is no crawler-only variant for Amazon.",
   "sources": [
     {
       "id": "s1",
@@ -133,6 +133,30 @@
       "url": "https://www.smartinsights.com/ecommerce/amazons-asin-targeting-feature-will-take-your-ad-strategy-to-the-next-level/",
       "date": "2019-02",
       "shows": "product page: List Price / Price / You Save rows, color swatch row, 'Challenge by GNC, Exclusively on Amazon' sponsored row, 'Sponsored products related to this item' carousel"
+    },
+    {
+      "id": "s23",
+      "url": "https://arquivo.pt/noFrame/replay/20190630192949/https://www.amazon.co.uk/",
+      "date": "2019-06",
+      "shows": "amazon.co.uk home: same navy two-row header as amazon.com (logo, All-scope search with orange button, Deliver to, EN, Hello Sign in Account & Lists, Returns & Orders, Try Prime, Basket)"
+    },
+    {
+      "id": "s24",
+      "url": "https://arquivo.pt/noFrame/replay/20190701025613/https://www.amazon.de/",
+      "date": "2019-07",
+      "shows": "amazon.de home in German: same navy two-row header, Alle search scope, Alle Kategorien, Bestseller, Geschenkideen, Neuerscheinungen, DE language picker, Hallo! Anmelden Konto und Listen, Rücksendungen und Bestellungen, Entdecken Sie Prime, Einkaufswagen, Prime Day promo slot"
+    },
+    {
+      "id": "s25",
+      "url": "https://arquivo.pt/noFrame/replay/20190701103732/https://www.amazon.co.jp/",
+      "date": "2019-07",
+      "shows": "amazon.co.jp home in Japanese: same navy two-row header with the amazon.co.jp logo, すべて search scope, カテゴリー, ランキング, JP picker, アカウント＆リスト, 注文履歴, プライム, カート, promo slot top right"
+    },
+    {
+      "id": "s26",
+      "url": "https://arquivo.pt/noFrame/replay/20190630141010/https://www.amazon.in/",
+      "date": "2019-06",
+      "shows": "amazon.in home: same navy two-row header with the amazon.in logo, All search scope, Shop by Category, Hello Sign in Account & Lists, Your Orders, Try Prime, Cart"
     }
   ],
   "features": [

@@ -52,7 +52,7 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'github', name: 'GitHub', domains: ['github.com'] },
   { id: 'yahoo', name: 'Yahoo', domains: ['yahoo.com'] },
   { id: 'twitch', name: 'Twitch', domains: ['twitch.tv'] },
-  { id: 'amazon', name: 'Amazon', domains: ['amazon.com'] },
+  { id: 'amazon', name: 'Amazon', domains: ['amazon.com', 'amazon.co.uk', 'amazon.de', 'amazon.co.jp', 'amazon.in'] },
   { id: 'ebay', name: 'eBay', domains: ['ebay.com'] },
   { id: 'bing', name: 'Bing', domains: ['bing.com'] },
   { id: 'stackoverflow', name: 'Stack Overflow', domains: ['stackoverflow.com'] },
