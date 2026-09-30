@@ -1,0 +1,357 @@
+{
+ "theme": "ozon",
+ "era": "2019 ozon.ru desktop (the Vue 'widgets' site, same for every visitor): white header with the blue OZON logo, 'Искать на Ozon' search with a blue button, Заказы / Избранное / Корзина, a Каталог button (from autumn 2019) and a horizontal link menu; results and product pages in the same header; captures March to December 2019 agree. Live-checked read-only in a real Chrome (ozon.ru blocks headless browsers): home, a category page and a product page.",
+ "sources": [
+  {
+   "id": "h1",
+   "url": "https://arquivo.pt/wayback/20190323095421/https://www.ozon.ru/",
+   "date": "2019-03-23",
+   "shows": "home: top links Пункты выдачи заказов, Условия доставки/оплаты/возврата, Помощь; logo; 'Искать на Ozon' search; Заказы, Избранное, Корзина; category bar (Электроника, Бытовая техника, Дом и сад, Детские товары, Книги, Одежда..., Аптека); Все акции, Все магазины; deal carousels with −% badges, old and new price, Назад/Вперед arrows; shop tiles; footer (Ваши товары на OZON.ru, Партнёрская программа, Пресс-центр, Вакансии, О компании, Доставка, Оплата, Контакты, Подарочные сертификаты, © 1998 – 2019)"
+  },
+  {
+   "id": "h2",
+   "url": "https://arquivo.pt/wayback/20190520091312/https://www.ozon.ru/",
+   "date": "2019-05-20",
+   "shows": "home: same header and search; longer category list (Продукты питания, Товары для животных, Автотовары, Канцелярские товары, Подарочные сертификаты, OZON Premium, Уцененные товары, Авиа и ж/д билеты); Хочу Premium, Акции, Магазины, Одежда и обувь; deal carousels"
+  },
+  {
+   "id": "h3",
+   "url": "https://arquivo.pt/wayback/20191214061439/https://www.ozon.ru/",
+   "date": "2019-12-14",
+   "shows": "home: city button Москва, top links (Мобильное приложение, Подарочные сертификаты, Пункты выдачи, Бесплатная доставка, Оплата, Возврат, Служба поддержки); Каталог button; 'Искать на Ozon'; Вход или регистрация, Заказы, Избранное, Корзина; menu Хочу Premium, Новый год, Акции, Бренды, Одежда и обувь, Авиа и ж/д билеты; Супермаркет in the catalog; В корзину buttons on tiles"
+  },
+  {
+   "id": "c1",
+   "url": "https://arquivo.pt/wayback/20191227195440/https://www.ozon.ru/category/foto-i-videokamery-15623/",
+   "date": "2019-12-27",
+   "shows": "category results: same header; h1 Фото- и видеокамеры; subcategory list (Экшн-камеры, Фотоаппараты, Объективы...); filters (Быстрая доставка, price от/до, brands, Бестселлеры, Товары со скидкой, colours) with Все фильтры; product tiles with В корзину"
+  },
+  {
+   "id": "c2",
+   "url": "https://arquivo.pt/wayback/20191227201240/https://www.ozon.ru/category/knigi-16500/",
+   "date": "2019-12-27",
+   "shows": "category: header, book subcategory list, product tiles"
+  },
+  {
+   "id": "c3",
+   "url": "https://arquivo.pt/wayback/20191227194400/https://www.ozon.ru/category/instrumenty-dlya-remonta-i-stroitelstva-9856/",
+   "date": "2019-12-27",
+   "shows": "category: h1 Инструменты для ремонта и строительства, subcategory list, tiles"
+  },
+  {
+   "id": "p1",
+   "url": "https://arquivo.pt/wayback/20191214061731/https://www.ozon.ru/context/detail/id/138140043/",
+   "date": "2019-12-14",
+   "shows": "product: breadcrumbs, h1 title, 2 отзыва, В избранное, Поделиться, Перейти к описанию, Узнать о снижении цены, Ozon.Card price, Добавить в корзину, Доставка (Изменить, Пункты выдачи и постаматы), similar items with В корзину, h2 Описание, Характеристики, Подборки товаров"
+  },
+  {
+   "id": "p2",
+   "url": "https://arquivo.pt/wayback/20191227195420/https://www.ozon.ru/context/detail/id/135433311/",
+   "date": "2019-12-27",
+   "shows": "product: h1, В избранное, Поделиться, Узнать о поступлении, similar items, Описание, Характеристики; footer (Ваши товары на Ozon, Стать Поставщиком, Пресс-центр, Вакансии, Реквизиты, О компании, Как сделать заказ, Доставка, Оплата, Контакты, © 1998 – 2019)"
+  },
+  {
+   "id": "p3",
+   "url": "https://arquivo.pt/wayback/20191112051815/https://www.ozon.ru/context/detail/id/144819597/",
+   "date": "2019-11-12",
+   "shows": "product: breadcrumbs, h1, 16 отзывов, В избранное, Поделиться, Перейти к описанию"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(Ozon|OZON|Ozon маркетплейс.*)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "c1",
+    "c2",
+    "c3",
+    "p1",
+    "p2",
+    "p3"
+   ],
+   "note": "logo / home link",
+   "required": true
+  },
+  {
+   "match": "^Каталог$",
+   "in2019": true,
+   "evidence": [
+    "h3",
+    "c1",
+    "p1"
+   ],
+   "note": "catalog button (late-2019 header)",
+   "required": true
+  },
+  {
+   "match": "^(Искать на Ozon|Поиск|Везде)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "c1",
+    "c2",
+    "c3",
+    "p1",
+    "p2",
+    "p3"
+   ],
+   "note": "search field and button",
+   "required": true
+  },
+  {
+   "match": "^(Заказы|Избранное|Корзина)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "c1",
+    "c2",
+    "c3",
+    "p1",
+    "p2",
+    "p3"
+   ],
+   "note": "account shortcuts",
+   "required": true
+  },
+  {
+   "match": "^(Войти|Вход или регистрация)$",
+   "in2019": true,
+   "evidence": [
+    "h3"
+   ],
+   "note": "sign in"
+  },
+  {
+   "match": "^(Москва|Санкт-Петербург)$",
+   "in2019": true,
+   "evidence": [
+    "h3",
+    "c1",
+    "p1"
+   ],
+   "note": "city button"
+  },
+  {
+   "match": "^(Ozon fresh|Супермаркет)$",
+   "in2019": true,
+   "evidence": [
+    "h3",
+    "c1"
+   ],
+   "note": "links to the supermarket category, listed as Супермаркет in 2019"
+  },
+  {
+   "match": "^(Билеты, отели|Авиа и ж/д билеты)$",
+   "in2019": true,
+   "evidence": [
+    "h2",
+    "h3",
+    "c1"
+   ],
+   "note": "travel link"
+  },
+  {
+   "match": "^(Одежда|Одежда и обувь|Электроника|Сертификаты|Подарочные сертификаты|Акции|Бренды|Все акции.*)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "horizontal menu links"
+  },
+  {
+   "match": "^(Скидки на .*|Новый год|Хочу Premium)$",
+   "in2019": true,
+   "evidence": [
+    "h2",
+    "h3"
+   ],
+   "note": "seasonal promo link in the horizontal menu, like 2019's Новый год"
+  },
+  {
+   "match": "^(Ozon Банк|Товары за 1₽)$",
+   "in2019": false,
+   "evidence": [
+    "Ozon Bank launched 2022; Товары за 1₽ links to an ozon-bank highlight; 2019 menus (h3, c1) have neither"
+   ],
+   "action": "hidden: [data-widget=horizontalMenu] li with a /fintech or ozon-bank link"
+  },
+  {
+   "match": "^(Для бизнеса|Склад для Ozon)$",
+   "in2019": false,
+   "evidence": [
+    "not in any 2019 header (h1, h2, h3); 2019 had only a Покупка товаров (b2b) footer link"
+   ],
+   "action": "hidden: theme.later labels"
+  },
+  {
+   "match": "^Укажите адрес$",
+   "in2019": false,
+   "evidence": [
+    "2019 header had only the city (h3)"
+   ],
+   "action": "hidden: theme.later label"
+  },
+  {
+   "match": "^RU$",
+   "in2019": false,
+   "evidence": [
+    "no language/currency switch in 2019 (h1-h3)"
+   ],
+   "action": "hidden: [data-widget=selectedCurrencyLanguage]"
+  },
+  {
+   "match": "^(header area|form area|aside area|section area|footer area|main area|repeated div|repeated article)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "c1",
+    "c2",
+    "c3",
+    "p1",
+    "p2",
+    "p3"
+   ],
+   "note": "page regions"
+  },
+  {
+   "match": "^(Фото и видеокамеры|Фото- и видеокамеры|Экшн-камеры|Аксессуары для экшн-камер|Зеркальные фотоаппараты|Беззеркальные фотоаппараты|Объективы|Электроника|Посмотреть все|Категория)$",
+   "in2019": true,
+   "evidence": [
+    "c1",
+    "c3"
+   ],
+   "note": "category heading, breadcrumb and subcategory list",
+   "required": true,
+   "pages": [
+    "category"
+   ]
+  },
+  {
+   "match": "^(Популярные|Сортировка.*)$",
+   "in2019": true,
+   "evidence": [
+    "c1",
+    "c2"
+   ],
+   "note": "sort control"
+  },
+  {
+   "match": "^(Распродажа|Быстрая доставка|Завтра|Послезавтра|\\d+ (сентября|октября|ноября|декабря|января|февраля|марта|апреля|мая|июня|июля|августа))$",
+   "in2019": true,
+   "evidence": [
+    "c1"
+   ],
+   "note": "filters and tile badges; 2019 had Товары со скидкой / Быстрая доставка filters and −% badges"
+  },
+  {
+   "match": "^(Об Ozon.*|О компании|Контакты|Оплата|Доставка|Возврат товаров|Условия возврата|Вакансии|Пресс-центр)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "p2"
+   ],
+   "note": "footer links",
+   "required": true,
+   "pages": [
+    "home"
+   ]
+  },
+  {
+   "match": "^(1998 – 20\\d\\d.*|© 1998.*)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "p2"
+   ],
+   "note": "copyright"
+  },
+  {
+   "match": "^(Ozon Беларусь|Ozon Казахстан|Ozon Узбекистан)$",
+   "in2019": false,
+   "evidence": [
+    "no country sites in the 2019 footer (h1, p2)"
+   ],
+   "action": "hidden: [data-widget=footer] links to ozon.by, ozon.kz, ozon.uz"
+  },
+  {
+   "match": "^(Политика обработки данных|рекомендательные технологии)$",
+   "in2019": false,
+   "evidence": [
+    "legal disclosures required after 2019"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^Для слабовидящих$",
+   "in2019": false,
+   "evidence": [
+    "accessibility version, not in 2019"
+   ],
+   "action": "kept: accessibility"
+  },
+  {
+   "match": "^(Доставка и возврат|Доставка)$",
+   "in2019": true,
+   "evidence": [
+    "p1"
+   ],
+   "note": "product delivery block"
+  },
+  {
+   "match": "^(Поделиться|В избранное|Добавить в избранное)$",
+   "in2019": true,
+   "evidence": [
+    "p1",
+    "p2",
+    "p3"
+   ],
+   "note": "product actions",
+   "required": true,
+   "pages": [
+    "item"
+   ]
+  },
+  {
+   "match": "^(В корзину.*|Добавить в корзину)$",
+   "in2019": true,
+   "evidence": [
+    "h3",
+    "c1",
+    "p1",
+    "p2"
+   ],
+   "note": "add to cart",
+   "required": true,
+   "pages": [
+    "item"
+   ]
+  },
+  {
+   "match": "^(Артикул: .*|В сравнение|Купить сейчас)$",
+   "in2019": false,
+   "evidence": [
+    "not in the 2019 product pages (p1-p3)"
+   ],
+   "action": "kept: product purchase controls"
+  },
+  {
+   "match": "^.* ₽( С банками| с Ozon Банком)?$",
+   "in2019": true,
+   "evidence": [
+    "p1"
+   ],
+   "note": "price (2019 showed an Ozon.Card price the same way)"
+  }
+ ]
+}
