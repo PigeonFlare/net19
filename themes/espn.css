@@ -22,6 +22,7 @@ body, #global-viewport, #pane-main, .main-content { background-color: var(--n19-
 
 .quicklinks__heading, .module__header, .headlineStack__header h2 { color: var(--n19-text) !important; font-size: 12px !important; font-weight: 700 !important; }
 .quicklinks__header, .headlineStack__header { border-bottom: 1px solid var(--n19-rule) !important; }
+.quicklinks__header { height: 32px !important; min-height: 32px !important; }
 .quicklinks_list__item { border: 0 !important; }
 .quicklinks_list__link { height: 40px !important; min-height: 40px !important; }
 .quicklinks_list__name { color: var(--n19-text) !important; font-size: 12px !important; }
@@ -51,3 +52,5 @@ body, #global-viewport, #pane-main, .main-content { background-color: var(--n19-
 [data-n19-later], [id^="taboola"] { display: none !important; }
 #global-nav li.pillar:is(.watch, .fantasy, .listen) .nav-logo-wrap { display: none !important; }
 .Card__Header__SubLink--presby:has(img[alt*="draft" i], a[href*="draftkings" i], a[href*="espnbet" i]), .Card__Header__SubLink--presby:has(.Card__Presby__Logo) { display: none !important; }
+html[data-net19-mode="dark"] .cscore_notes { color: var(--n19-text-2) !important; }
+html[data-net19-mode="dark"] .cscore_name { color: var(--n19-text) !important; }
