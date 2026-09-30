@@ -1,0 +1,45 @@
+{
+  "theme": "ups",
+  "era": "2019 ups.com: dark brown #351c15 header with white utility links (Log In, Sign Up, Locations, country, My Profile) and white Tracking / Shipping / Services menus with gold #ffb500 highlights, green #008369 action buttons (hover #006a55), #404040 text in Tahoma with Georgia headings",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://arquivo.pt/noFrame/replay/20190320004044/https://www.ups.com/us/en/Home.page",
+      "date": "2019-03-20",
+      "shows": "home page: gold alert bar, brown header with Log In / Sign Up / Locations / United States - English / My Profile, search field with green button, Quick Start panel (Track, Ship, Find a Service, Quote, Locations, View & Pay Bill), Tracking / Shipping / Services menus, green Create a Shipment and Customer Service buttons, NEWS & INFORMATION in Georgia"
+    },
+    {
+      "id": "s2",
+      "url": "https://arquivo.pt/noFrame/replay/20190320004044id_/https://www.ups.com/assets/resources/styles/ups.styles.a9f2c1.css",
+      "date": "2019-03",
+      "shows": "stylesheet: #351c15 brown, #ffb500 gold, #008369 / #006a55 green, #404040 and #6e6e6e text, Tahoma, Helvetica, Arial with Georgia, Times for headings"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|nav|footer|main|section|article|form|search|aside|dialog|region|contentinfo|banner|navigation|complementary) area$|^repeated |^(Main)$",
+      "in2019": true,
+      "evidence": ["s1"],
+      "note": "page regions"
+    },
+    {
+      "match": "^(UPS|Log In|Sign Up|Locations|Location Finder|Support|Service Alerts|United States - English|Tracking|Shipping|Services|Products & Services|The UPS Store|Search|Track|Ship|Quote|Create a Shipment|Customer Service|Get Help|My Profile)$",
+      "in2019": true,
+      "required": true,
+      "evidence": ["s1", "s2"],
+      "note": "header, menus and main actions"
+    },
+    {
+      "match": "^(Ask UPS|UPS AI|Virtual Assistant)$",
+      "in2019": false,
+      "evidence": ["AI assistants postdate s1"],
+      "note": "hidden"
+    },
+    {
+      "match": "^(?=.{12,}$).*\\s.*$",
+      "in2019": true,
+      "evidence": ["s1"],
+      "note": "text (content)"
+    }
+  ]
+}

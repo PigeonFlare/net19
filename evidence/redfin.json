@@ -1,0 +1,51 @@
+{
+  "theme": "redfin",
+  "era": "2019 redfin.com: white header with the red small-caps REDFIN wordmark, #333 14px Buy / Sell / Real Estate Agents menus, a red #c82021 Sign Up button, hero search with white text tabs (Find a Home / Sell My Home / See Home Estimate) over the photo and a red square search button, #0c82a5 links, all in Libre Franklin",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://arquivo.pt/noFrame/replay/20190624062030/https://www.redfin.com/",
+      "date": "2019-06-24",
+      "shows": "home page: REDFIN wordmark, phone number, Buy / Sell / Real Estate Agents menus, Log In and Sign Up, hero 'Sell for more, pay a 1.5% listing fee' with Find a Home / Sell My Home / See Home Estimate text tabs, search field with red search button, selling section with a red Next button"
+    },
+    {
+      "id": "s2",
+      "url": "https://arquivo.pt/noFrame/replay/20190624062030id_/https://ssl.cdn-redfin.com/vLATEST/corvstatic/customer-pages/common.e9a05194c5582ed23d49.styles.css",
+      "date": "2019-06",
+      "shows": "common stylesheet: Libre Franklin, .button.primary #c82021 (hover #e62e2e), #333 / #585858 text, #0c82a5 links, #e2e2e2 rules"
+    },
+    {
+      "id": "s3",
+      "url": "https://ssl.cdn-redfin.com/static-images/images/redfin-logo-transparent-bg-260x66.png",
+      "date": "2019 (still served)",
+      "shows": "the red small-caps REDFIN wordmark referenced by the 2019 home page (s1)"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|nav|footer|main|section|article|form|search|aside|dialog|region|contentinfo|banner|navigation|complementary) area$|^repeated |^(Main)$",
+      "in2019": true,
+      "evidence": ["s1"],
+      "note": "page regions and repeated listings"
+    },
+    {
+      "match": "^(Redfin|REDFIN|Buy|Rent|Sell|Mortgage|Real Estate Agents|Feed|Log In|Sign Up|Join / Sign in|Search|City, Address, School, Agent, ZIP|Find a Home|Sell My Home|See Home Estimate|My Home Value|Next|Previous)$",
+      "in2019": true,
+      "required": true,
+      "evidence": ["s1", "s2"],
+      "note": "header menus, sign-up button, hero search and its tabs (Mortgage, Rent and My Home Value are the later names of the same search choices)"
+    },
+    {
+      "match": "^(Ask Redfin|Redfin AI)$",
+      "in2019": false,
+      "evidence": ["AI assistants postdate s1"],
+      "note": "hidden"
+    },
+    {
+      "match": "^(?=.{12,}$).*\\s.*$",
+      "in2019": true,
+      "evidence": ["s1"],
+      "note": "listing addresses, prices and descriptions (content)"
+    }
+  ]
+}
