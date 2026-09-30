@@ -142,3 +142,4 @@ html[data-net19-mode="dark"] #gb form button[aria-label="Advanced search"i]{back
 #drive-main-page [role="radiogroup"] [role="radio"]:not([aria-checked="true"]){border:0!important;box-shadow:none!important}
 #drive-main-page table[role="grid"]{border:0!important}
 :is([role="tab"],[role="button"])[aria-label="Contacts"]:is([aria-label="Side panel"i] *,.companion-app-switcher-container *){display:none!important}
+#gb span[data-is-tooltip-wrapper]:has(>button[aria-label="AI Overview search"i]),#gb button[aria-label="AI Overview search"i]{display:none!important}

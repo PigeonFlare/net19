@@ -85,7 +85,7 @@
       "note": "blue Share button"
     },
     {
-      "match": "^(Google Account|Google apps|Main menu|Support|Settings)$",
+      "match": "^(Google Account(: .*)?|Google apps|Main menu|Support|Settings)$",
       "in2019": true,
       "evidence": [
         "s2",
@@ -206,6 +206,109 @@
         "Gemini 2024, Gemini bottom bar 2025, Meet in editors 2020"
       ],
       "action": "hidden"
+    },
+    {
+      "match": "^AI Overview search$",
+      "in2019": false,
+      "action": "hidden",
+      "note": "AI Overview search button in the Drive search field (Gemini, 2025)"
+    },
+    {
+      "match": "^Drive$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "drive"
+      ],
+      "evidence": [
+        "s3"
+      ],
+      "note": "Drive logo"
+    },
+    {
+      "match": "^(Search Drive|Search in Drive)$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "drive"
+      ],
+      "evidence": [
+        "s3",
+        "s6"
+      ],
+      "note": "grey Search Drive field"
+    },
+    {
+      "match": "^My Drive(Collapsed|Expanded)?$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "drive"
+      ],
+      "evidence": [
+        "s3"
+      ],
+      "note": "My Drive nav"
+    },
+    {
+      "match": "^Shared with me$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "drive"
+      ],
+      "evidence": [
+        "s3"
+      ],
+      "note": "nav"
+    },
+    {
+      "match": "^Recent$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "drive"
+      ],
+      "evidence": [
+        "s3"
+      ],
+      "note": "nav"
+    },
+    {
+      "match": "^Starred$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "drive"
+      ],
+      "evidence": [
+        "s3"
+      ],
+      "note": "nav"
+    },
+    {
+      "match": "^Trash$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "drive"
+      ],
+      "evidence": [
+        "s3"
+      ],
+      "note": "nav"
+    },
+    {
+      "match": "^Google apps$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "drive"
+      ],
+      "evidence": [
+        "s3"
+      ],
+      "note": "launcher"
     }
   ]
 }

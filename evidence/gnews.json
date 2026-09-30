@@ -26,7 +26,7 @@
       "note": "story cards (content)"
     },
     {
-      "match": "^(Google News|Main menu|Search for topics, locations & sources|Search|Advanced search|Google apps|Google Account|Sign in)$",
+      "match": "^(Google News|Main menu|Search for topics, locations & sources|Search|Advanced search|Google apps|Google Account(: .*)?|Sign in)$",
       "in2019": true,
       "evidence": [
         "s1"
@@ -88,6 +88,60 @@
         "Saved stories nav item 2023, finance ticker 2023, AI summaries 2025"
       ],
       "action": "hidden"
+    },
+    {
+      "match": "^Google News$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "wordmark"
+    },
+    {
+      "match": "^Search for topics, locations (&|\\+) sources$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "search field"
+    },
+    {
+      "match": "^Top stories$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "Top stories nav (Home is relabelled)"
+    },
+    {
+      "match": "^World$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "section nav"
+    },
+    {
+      "match": "^Business$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "section nav"
+    },
+    {
+      "match": "^Technology$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "section nav"
     }
   ]
 }
