@@ -19,3 +19,4 @@ main :is(button, a).button:not(.accent):not(.arc-link-button):not(.carousel-dot)
 main :is(button, a).button:not(.accent):not(.arc-link-button):not(.carousel-dot) * { color: inherit !important; }
 header.header-wrapper #anonymous-profile :not(img) { background: transparent !important; color: inherit !important; border-color: transparent !important; box-shadow: none !important; }
 header.header-wrapper #anonymous-profile::before, header.header-wrapper #anonymous-profile::after { background: transparent !important; box-shadow: none !important; }
+@media (min-width: 1024px) { header.header-wrapper section#nav { grid-template-rows: 40px 84px !important; } }
