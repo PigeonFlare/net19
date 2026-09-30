@@ -208,6 +208,60 @@
         "2019 footer: Privacy Policy, Legal, Steam Subscriber Agreement, Refunds"
       ],
       "action": "kept: legal (privacy, cookie choices, accessibility statement, legal notices, EU hardware recycling notice, subscriber agreement)"
+    },
+    {
+      "match": "^Link to the Steam Homepage$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "STEAM logo link in the global header",
+      "required": true
+    },
+    {
+      "match": "^(STORE|COMMUNITY|SUPPORT)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "global header tabs",
+      "required": true
+    },
+    {
+      "match": "^search the store$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "store search field",
+      "required": true
+    },
+    {
+      "match": "^Install Steam$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3"
+      ],
+      "note": "green Install Steam button",
+      "required": true
+    },
+    {
+      "match": "^(New and Trending|Top Selling|Specials)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "home-page tabs",
+      "required": true
     }
   ]
 }
