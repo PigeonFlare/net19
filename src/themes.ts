@@ -57,7 +57,6 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'bing', name: 'Bing', domains: ['bing.com'] },
   { id: 'stackoverflow', name: 'Stack Overflow', domains: ['stackoverflow.com'] },
   { id: 'cnn', name: 'CNN', domains: ['cnn.com'] },
-  { id: 'nytimes', name: 'The New York Times', domains: ['nytimes.com'] },
   { id: 'medium', name: 'Medium', domains: ['medium.com'] },
   { id: 'substack', name: 'Substack', domains: ['substack.com'] },
   { id: 'imdb', name: 'IMDb', domains: ['imdb.com'] },

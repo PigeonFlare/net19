@@ -18,7 +18,6 @@ const BRAND = {
   instagram: ['facebook.com', 'threads.com'],
   twitter: ['twitter.com', 'x.com'],
   amazon: ['amazon.jobs', 'aboutamazon.com'],
-  nytimes: ['nyt.com'],
 };
 const registrable = host => { const l = host.replace(/^www\./, '').split('.'); return l.slice(/^(co|com|ne|or|ac|go|net|org|gov|edu)\.[a-z]{2}$/.test(l.slice(-2).join('.')) ? -3 : -2).join('.'); };
 const siteOf = id => THEMES.find(t => t.id === id);
