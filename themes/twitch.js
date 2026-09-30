@@ -91,6 +91,13 @@ globalThis.net19Theme = {
     for (const a of document.querySelectorAll('#front-page-main-content h2 > a[href="/directory/all"]')) {
       if (!a.children.length && a.textContent.trim() === 'Live on Twitch') a.textContent = 'Recommended live channels';
     }
+    if (globalThis.net19Lang?.() === 'en') {
+      for (const leaf of document.querySelectorAll('.metadata-layout__support :is([data-a-target="subscribe-button"], [data-a-target="gift-button"]) :not(:has(*))')) {
+        const text = leaf.textContent.trim();
+        if (/^Subscribe:\s/.test(text)) leaf.textContent = 'Subscribe';
+        else if (/^Gift:\s/.test(text)) leaf.textContent = 'Gift a Sub';
+      }
+    }
     links();
     join();
   };

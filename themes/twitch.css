@@ -35,7 +35,6 @@ body { background-color: var(--n19-page) !important; }
 .twilight-main, .root-scrollable, main { background-color: var(--n19-page) !important; }
 
 nav.top-nav .top-nav__menu { background: var(--n19-bar) !important; box-shadow: none !important; border: 0 !important; border-bottom: 1px solid var(--n19-bar-border) !important; box-sizing: border-box !important; }
-nav.top-nav .tw-animated-glitch-logo svg [class*="ScBody"] { fill: var(--n19-logo) !important; }
 nav.top-nav .navigation-link, nav.top-nav .navigation-link p { color: var(--n19-bar-link) !important; font-size: 14px !important; font-weight: 600 !important; }
 nav.top-nav .navigation-link:hover, nav.top-nav .navigation-link:hover p, nav.top-nav .navigation-link.active p, nav.top-nav .navigation-link[aria-current] p { color: var(--n19-bar-link-hover) !important; }
 nav.top-nav .navigation-link::after, nav.top-nav .navigation-link div::after, nav.top-nav .navigation-link__indicator-container { background: var(--n19-purple) !important; }
@@ -173,10 +172,14 @@ nav.top-nav { --color-background-base: var(--n19-bar) !important; --color-backgr
   --color-background-button-secondary-default: var(--n19-button-2) !important; --color-background-button-secondary-hover: var(--n19-button-2-hover) !important;
   --color-background-interactable-hover: var(--n19-button-2) !important; --color-background-hover: var(--n19-button-2) !important; --color-background-button-text-hover: var(--n19-button-2) !important; color: var(--n19-text) !important; }
 nav.top-nav .tw-animated-glitch-logo svg, nav.top-nav a[aria-label="Twitch Home"] svg { filter: none !important; }
-nav.top-nav .tw-animated-glitch-logo svg [class*="ScFace"] { fill: var(--n19-bar) !important; }
-nav.top-nav .tw-animated-glitch-logo svg [class*="ScEyes"], nav.top-nav .tw-animated-glitch-logo svg [class*="ScEyes"] * { fill: var(--n19-logo) !important; }
+nav.top-nav .tw-animated-glitch-logo { --color-fill-brand: #9146ff !important; }
 nav.top-nav [data-a-target="user-menu-toggle"] :is(figure, .tw-avatar, [class*="ScAvatar"]) { background: transparent !important; box-shadow: none !important; border-color: transparent !important; }
 nav.top-nav [class*="ScKeyboardPromptContainer"] { display: none !important; }
-.metadata-layout__support { flex-wrap: nowrap !important; align-items: center !important; column-gap: 16px !important; }
-.metadata-layout__support > :first-child { flex: 0 0 auto !important; }
-.metadata-layout__support > :nth-child(2) { flex: 1 1 0 !important; min-width: 0 !important; flex-wrap: wrap !important; row-gap: 8px !important; justify-content: flex-end !important; }
+.metadata-layout__support { flex-wrap: wrap !important; align-items: center !important; column-gap: 16px !important; row-gap: 8px !important; }
+.metadata-layout__support > :first-child { flex: 0 0 auto !important; max-width: 100% !important; }
+.metadata-layout__support > :nth-child(2) { flex: 1 1 auto !important; min-width: 0 !important; max-width: 100% !important; flex-wrap: wrap !important; row-gap: 8px !important; justify-content: flex-end !important; }
+.metadata-layout__support > :nth-child(2) > div { flex-wrap: wrap !important; justify-content: flex-end !important; row-gap: 8px !important; min-width: 0 !important; max-width: 100% !important; }
+.side-nav__title:has(> [data-net19-hidden]:only-child) { display: none !important; }
+.followed-side-nav-header { margin: 4px 0 !important; }
+.followed-side-nav-header [class*="followed-side-nav-header__dropdown"] { height: 32px !important; padding-right: 44px !important; box-sizing: border-box !important; }
+.followed-side-nav-header [class*="followed-side-nav-header__dropdown"] > div:has(> .tw-svg) { display: none !important; }

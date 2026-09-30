@@ -200,6 +200,22 @@
         "s6"
       ],
       "note": "stream and category cards"
+    },
+    {
+      "match": "^(Sort Followed Channels|Sort)$",
+      "in2019": false,
+      "evidence": [
+        "s6 shows the signed-in sidebar header 'Followed Channels' with only the collapse arrow; the sidebar sort menu (the arrows icon beside the heading) is post-2019"
+      ],
+      "action": "sort icon hidden in the Followed Channels header (theme)"
+    },
+    {
+      "match": "^(Subscribe: .*|Gift: .*)$",
+      "in2019": false,
+      "evidence": [
+        "s2, s7 and s8 show plain 'Subscribe' and Gift labels; promotional suffixes such as 'up to 30% off' and 'Bonus Subs' are post-2019"
+      ],
+      "action": "relabeled Subscribe and Gift a Sub in English (theme)"
     }
   ]
 }
