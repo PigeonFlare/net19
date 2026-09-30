@@ -1,0 +1,51 @@
+{
+  "theme": "mailru",
+  "era": "2019 mail.ru portal: the blue @mail.ru logo, a plain row of 13px #005bd1 project links (Почта, Мой Мир, Одноклассники, Игры, Знакомства, Новости, Все проекты) with Регистрация and Вход as links, a square-cornered search field with a blue outline and an orange Найти button, the mail login box in a grey #f0f0f0 panel with a blue Войти button, Arial throughout",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://arquivo.pt/noFrame/replay/20190630170648/https://mail.ru/",
+      "date": "2019-06-30",
+      "shows": "portal home: top row of project links and Регистрация / Вход, big blue @mail.ru logo, Поиск в интернете with Картинки / Видео / Ответы, search field and orange Найти, Почта login panel with Войти and Регистрация в почте, ICQ, Мой Мир, Одноклассники, Агент Mail.Ru, Облако, games column"
+    },
+    {
+      "id": "s2",
+      "url": "https://limg.imgsmail.ru/splash/v/c/splash-fp-d92f96ca40.css",
+      "date": "2019-06 (still served)",
+      "shows": "portal stylesheet loaded by s1: .search__button #ff9e00 with 2px corners (#f26d00 darker orange), #005bd1 / #005ff9 blues, #222 text, #f0f0f0 and #d0d0d0 panels"
+    },
+    {
+      "id": "s3",
+      "url": "https://limg.imgsmail.ru/splash/v/i/logo_big-fp-fc63e19c4d.png",
+      "date": "2019 (still served)",
+      "shows": "the 2019 blue @mail.ru logo used by s1"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|nav|footer|main|section|article|form|search|aside|dialog|region|contentinfo|banner|navigation|complementary) area$|^repeated |^(Main)$",
+      "in2019": true,
+      "evidence": ["s1"],
+      "note": "page regions and repeated news items"
+    },
+    {
+      "match": "^(Mail\\.ru|Почта|Облако|ОК|Одноклассники|VK|Новости|Знакомства|Мой Мир|Игры|Календарь|Все проекты|Регистрация|Войти|Вход|Создать почту|Найти|Поиск Яндекса|Телепрограмма|Гороскоп)$",
+      "in2019": true,
+      "required": true,
+      "evidence": ["s1", "s2"],
+      "note": "project links, login, search and widgets"
+    },
+    {
+      "match": "^(Дзен|Алиса|AI|Нейросеть|GigaChat)$",
+      "in2019": false,
+      "evidence": ["AI assistants and the Дзен feed link postdate s1"],
+      "note": "hidden"
+    },
+    {
+      "match": "^(?=.{12,}$).*\\s.*$",
+      "in2019": true,
+      "evidence": ["s1"],
+      "note": "headlines (content)"
+    }
+  ]
+}
