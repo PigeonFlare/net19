@@ -1,0 +1,255 @@
+{
+ "theme": "yelp",
+ "era": "2019 yelp.com desktop (same for every visitor): on the home page a full-width photo hero with the red Yelp burst logo, Write a Review, Events, Talk, Log In and Sign Up, and Find / Near fields with a red search button; on search and business pages a red #d32323 header with the logo, the same fields, a white category bar (Restaurants, Home Services, Auto Services, More), Write a Review and For Businesses. Arquivo captures March to November 2019 agree. Not live-verified: yelp.com serves a CAPTCHA to every headless browser, so these features are mapped from the theme's existing selectors and the 2019 captures only; no inventory run.",
+ "sources": [
+  {
+   "id": "h1",
+   "url": "https://arquivo.pt/wayback/20190325133843/https://www.yelp.com/",
+   "date": "2019-03-25",
+   "shows": "home page (title Restaurants, Dentists, Bars, Beauty Salons, Doctors - Yelp): red photo hero with the Yelp burst logo, search fields"
+  },
+  {
+   "id": "h2",
+   "url": "https://arquivo.pt/wayback/20190825173214/https://www.yelp.com/",
+   "date": "2019-08-25",
+   "shows": "home: hero with Write a Review, Events, Talk, Log In, Sign Up; Find / Near search fields with red search button; Restaurants, Home Services, Delivery links; Find the Best Businesses in Town tiles; Yelp city links; Hot & New Businesses; The Local Yelp"
+  },
+  {
+   "id": "h3",
+   "url": "https://arquivo.pt/wayback/20191107101112/https://www.yelp.com/",
+   "date": "2019-11-07",
+   "shows": "home: same hero and search; Find the Best Businesses in Town, Help the Community / Start Your First Review, Hot & New Businesses, Review of the Day, Recent Collections, Recent Activity, Browse Businesses by Category, Yelp Mobile Apps, footer About / Discover / Yelp for Business Owners / Languages / Countries"
+  },
+  {
+   "id": "s1",
+   "url": "https://arquivo.pt/wayback/20190925211147/https://www.yelp.com/search?ns=1&find_desc=Doughnut+Plant&choq=1&find_loc=New+York%2C+NY",
+   "date": "2019-09-25",
+   "shows": "search results: red header with logo, Find/Near fields, Log In, Sign Up, category bar (Restaurants, Home Services, Auto Services, More), Write a Review, For Businesses, filter bar (price, open now, all filters), Sponsored Results, All Results numbered 1-5 with categories and read more, Start Order, Can't find the business? Add A Business, Related Talk Topics, footer"
+  },
+  {
+   "id": "s2",
+   "url": "https://arquivo.pt/wayback/20191121141535/https://www.yelp.com/search?find_desc=%E2%98%94&find_loc=Los+Angeles%2C+CA",
+   "date": "2019-11-21",
+   "shows": "search results Los Angeles: same header, filters (price, open now, waitlist, online booking, rewards), Sort By, Neighborhoods, Distance, Price, Features, Category, numbered results"
+  },
+  {
+   "id": "b1",
+   "url": "https://arquivo.pt/wayback/20190925065911/https://www.yelp.com/biz/aaron-schats-roadhouse-bishop",
+   "date": "2019-09-25",
+   "shows": "business page: same header, See All photos, h1 name, categories, Edit, Add Photo, Review Highlights, Location & Hours with Get directions, Known For, About the Business, Ask the Community, Recommended Reviews with Search within reviews, Start your review, Order Food, Collections, People Also Viewed"
+  },
+  {
+   "id": "b2",
+   "url": "https://arquivo.pt/wayback/20191121145413/https://www.yelp.com/biz/aa-auto-service-center-redmond",
+   "date": "2019-11-21",
+   "shows": "business page: Details, Photos and Videos, Services Offered, Review Highlights, About the Business, Location & Hours, Known For"
+  }
+ ],
+ "features": [
+  {
+   "match": "^Yelp$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "s1",
+    "s2",
+    "b1",
+    "b2"
+   ],
+   "note": "Yelp burst logo",
+   "required": true
+  },
+  {
+   "match": "^(Log In|Sign Up)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "s1",
+    "s2",
+    "b1",
+    "b2"
+   ],
+   "note": "account links",
+   "required": true
+  },
+  {
+   "match": "^Write a Review$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "s1",
+    "s2",
+    "b1",
+    "b2"
+   ],
+   "note": "header link",
+   "required": true
+  },
+  {
+   "match": "^(For Businesses|Yelp for Business)$",
+   "in2019": true,
+   "evidence": [
+    "s1",
+    "s2",
+    "b1",
+    "b2"
+   ],
+   "note": "header link"
+  },
+  {
+   "match": "^(Events|Talk)$",
+   "in2019": true,
+   "evidence": [
+    "h2",
+    "h3"
+   ],
+   "note": "home header links"
+  },
+  {
+   "match": "^(Restaurants|Home Services|Auto Services|Delivery|More|Home & Garden|Health & Beauty|Travel & Activities)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "s1",
+    "s2",
+    "b1",
+    "b2"
+   ],
+   "note": "category bar"
+  },
+  {
+   "match": "^(Find|Near|burgers, barbers, spas, handymen|tacos, cheap dinner|address, neighborhood, city, state or zip|things to do|search|submit)",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "s1",
+    "s2",
+    "b1",
+    "b2"
+   ],
+   "note": "Find and Near search fields with the red search button",
+   "required": true
+  },
+  {
+   "match": "^(banner|search|navigation|contentinfo|main) area$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "s1",
+    "s2",
+    "b1",
+    "b2"
+   ],
+   "note": "page frame"
+  },
+  {
+   "match": "^Find the Best Businesses in Town$",
+   "in2019": true,
+   "evidence": [
+    "h2",
+    "h3"
+   ],
+   "note": "home category tiles"
+  },
+  {
+   "match": "^(Hot & New Businesses|Review of the Day|Recent Collections|Recent Activity|Browse Businesses by Category|More Categories|Help the Community|Start Your First Review)$",
+   "in2019": true,
+   "evidence": [
+    "h3"
+   ],
+   "note": "home modules"
+  },
+  {
+   "match": "^(Sort By|Neighborhoods|Distance|Price|Features|Category|Open Now|All filters?|Filters)$",
+   "in2019": true,
+   "evidence": [
+    "s1",
+    "s2"
+   ],
+   "note": "search filters"
+  },
+  {
+   "match": "^(Sponsored Results|All Results)$",
+   "in2019": true,
+   "evidence": [
+    "s1",
+    "s2"
+   ],
+   "note": "result groups"
+  },
+  {
+   "match": "^Start Order$",
+   "in2019": true,
+   "evidence": [
+    "s1"
+   ],
+   "note": "order button on results"
+  },
+  {
+   "match": "^(Can't find the business\\?|Add A Business|Related Talk Topics)$",
+   "in2019": true,
+   "evidence": [
+    "s1",
+    "s2"
+   ],
+   "note": "results page footer modules"
+  },
+  {
+   "match": "^(Review Highlights|Location & Hours|Get directions|Known For|About the Business|Ask the Community|Recommended Reviews|Order Food|People Also Viewed|Services Offered|Photos and Videos|Collections Including .*)$",
+   "in2019": true,
+   "evidence": [
+    "b1",
+    "b2"
+   ],
+   "note": "business page sections",
+   "required": true,
+   "pages": [
+    "biz"
+   ]
+  },
+  {
+   "match": "^(See All \\d+|Add Photo|Edit|Edit business info|Search within reviews|Start your review.*)$",
+   "in2019": true,
+   "evidence": [
+    "b1",
+    "b2"
+   ],
+   "note": "business page controls"
+  },
+  {
+   "match": "^(About|Discover|Yelp for Business Owners|Languages|Countries|About Yelp|Careers|Press|Investor Relations|Content Guidelines|Terms of Service|Privacy Policy|Ad Choices|Yelp Blog|Support|Developers|Claim your Business Page|Advertise on Yelp|Business Support)$",
+   "in2019": true,
+   "evidence": [
+    "h3",
+    "s1"
+   ],
+   "note": "footer"
+  },
+  {
+   "match": "^repeated ",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "s1",
+    "s2",
+    "b1",
+    "b2"
+   ],
+   "note": "repeated result and review items"
+  }
+ ]
+}
