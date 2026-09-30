@@ -11,7 +11,7 @@ html[data-net19-mode="dark"]{--n19-page:#1f1f1f;--n19-text:#ddd;--n19-text-2:#aa
 #chat-input-main .chat-input-wrapper:focus-within{border-color:var(--n19-focus)!important}
 #chat-input-main .chat-input-container{border-radius:0!important;background:transparent!important}
 #chat-input-main .right-tools-wrapper{background:transparent!important}
-#chat-textarea{font-size:16px!important;color:var(--n19-text)!important}
+#chat-textarea{font-size:16px!important;color:var(--n19-text)!important;caret-color:var(--n19-text)!important}
 #chat-submit-button{background:var(--n19-blue)!important;border:0!important;border-bottom:1px solid var(--n19-blue-edge)!important;border-radius:0!important;box-shadow:none!important;color:#fff!important;font-size:16px!important;letter-spacing:1px}
 #chat-submit-button:hover{background:var(--n19-blue-hover)!important}
 #chat-submit-button *{color:#fff!important}

@@ -25,6 +25,24 @@
         "s1"
       ],
       "note": "top links (图片 and 网盘 sit in the slots of 2019's 学术/更多产品), search field and button, footer links; the search field's placeholder is hidden to match 2019"
+    },
+    {
+      "match": "^百度一下$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "blue search button beside the square search box",
+      "required": true
+    },
+    {
+      "match": "^登录$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "top-right sign-in link",
+      "required": true
     }
   ]
 }
