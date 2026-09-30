@@ -22,3 +22,4 @@ img[data-n19-oz="logo"]{content:var(--n19-logo)!important;object-fit:contain!imp
 [data-widget="webGallery"] img{border-radius:0!important}
 [data-widget^="total"] :is(button,button>div),[data-widget*="Cart"i] button:not(:has(svg:only-child)){border-radius:var(--n19-radius)!important}
 [data-widget="horizontalMenu"] li:has(>a:is([href*="/fintech"],[href*="ozon-bank"])),[data-widget="horizontalMenu"] li:has([data-net19-hidden]):not(:has(:is(a,button):not([data-net19-hidden]))),[data-widget="selectedCurrencyLanguage"],[data-widget="footer"] a:is([href*="ozon.by"],[href*="ozon.kz"],[href*="ozon.uz"]){display:none!important}
+[data-widget="addressBookBarWeb"] div:has(>span:only-child):has(+div>[data-net19-hidden]:only-child){display:none!important}
