@@ -31,3 +31,6 @@ body,.gfu-layout{color:var(--n19-text)!important}
 .gfu-project-card__title{font-size:16px!important;line-height:22px!important;color:var(--n19-text)!important}
 .gfu-footer div:has(>.fa-lightbulb):has(>.gfu-bt--caption){display:none!important}
 .gfu-footer-section{background-image:none!important}
+[role="region"]:has(>section[aria-label="Become a creator statistics"]),section[aria-labelledby="home-global-tags-title"]{display:none!important}
+.gfu-header__actions .gfu-navbar-item:has(>button[aria-label="Language"],>button[aria-label="Activity"]){display:none!important}
+section[aria-labelledby="home-categories-title"] [role="listitem"]:has(a[href*="projectCatalogCategories=TTRPG"]){display:none!important}

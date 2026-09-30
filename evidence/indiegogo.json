@@ -1,0 +1,355 @@
+{
+ "theme": "indiegogo",
+ "era": "2019 Indiegogo (the 2016 redesign kept through 2019): white header with the pink INDIEGOGO wordmark, Explore, What We Do, For Entrepreneurs, pink Start a Campaign, Log In and Sign Up; Benton Sans with a serif display face; square project cards with pink progress bars; explore with Category, Project Timing, Sort By and Project Type filters; campaign pages with Back It, Follow, Story / FAQ / Updates / Comments / Community tabs and perks. The site now runs on Gamefound: its Late Pledge, Pledge Manager, For you, TTRPG, Gaming Culture and Gamefound tabs and the creator pitch are hidden; campaign results, the Spotlight feed and the pledge controls stay.",
+ "sources": [
+  {
+   "id": "h1",
+   "url": "https://arquivo.pt/wayback/20190101231202/https://www.indiegogo.com/",
+   "date": "2019-01-01",
+   "shows": "home page: full-width black hero carousel with left/right arrows and 2/5 counter, GOGOPICKS pill, campaign title and SEE CAMPAIGN; Find it first on Indiegogo panel with SIGN UP NOW and LEARN MORE; Funding (Back campaigns) and Marketplace (Shop products) cards; collections (10 Cool & Clever Finds, Team Favorites, Holiday Collection, Production Ready); Which categories interest you? with Home, Phones & Accessories, Travel & Outdoors, Health & Fitness, Audio, Film; From the Journal with READ NOW"
+  },
+  {
+   "id": "h2",
+   "url": "https://arquivo.pt/wayback/20191005103635/https://www3.indiegogo.com/",
+   "date": "2019-10-05",
+   "shows": "home page capture, same Vue homepage shell and title Crowdfund Innovations & Support Entrepreneurs"
+  },
+  {
+   "id": "n1",
+   "url": "https://g2.iggcdn.com/assets/navigation-8959a838242fc3d891bdb5161a6ac9309503540055e37d8a8990d6bcd7a4e5e1.js",
+   "date": "2019-01-01",
+   "shows": "the site's own header and footer bundle loaded by the 2019-01-01 home and explore captures (still hosted): header Home, Explore, What We Do, For Entrepreneurs, Start a Campaign, Search, Log In, Sign Up, user menu My Campaigns / My Contributions / Profile / Settings / Log Out; explore dropdown Funding (Back Campaigns) and Marketplace (Shop Products) with the category list Tech & Innovation, Creative Works, Community Projects, Tabletop Games, Video Games, Film, Audio and the rest; project cards with days left, raised, InDemand, Save for later, Gogopicks pill; footer About Us, Blog, Careers, Contact, Press, Trust & Safety, Help & Support, How It Works, Indiegogo vs. Kickstarter, Education Center, Experts Directory, Fees, Enterprise, Privacy Policy, Terms of Use, Cookie Policy, newsletter, Facebook / Twitter / Instagram / YouTube / LinkedIn links"
+  },
+  {
+   "id": "e1",
+   "url": "https://arquivo.pt/wayback/20190101231419/https://www.indiegogo.com/explore",
+   "date": "2019-01-01",
+   "shows": "explore page capture (title Explore Crowdfunding Campaigns & Unique Products), loading the browse, navigation and English i18n bundles"
+  },
+  {
+   "id": "e2",
+   "url": "https://g2.iggcdn.com/assets/i18n/en-bb8a381fa96a6dbede346b750132037f574561761ee0728529f57031f742bcb0.js",
+   "date": "2019-01-01",
+   "shows": "English strings bundle loaded by the 2019 explore capture: Filter, Category, All Categories, Project Timing (Ending soon, Just launched, Launching soon), Sort By (Trending, Most funded), Project Type (All Project Types, Funding, Marketplace, Investing), Showing %{count} campaigns, No results found"
+  },
+  {
+   "id": "e3",
+   "url": "https://arquivo.pt/wayback/20190201002159/https://www.indiegogo.com/explore/tech-innovation",
+   "date": "2019-02-01",
+   "shows": "Tech & Innovation explore page capture; explore/creative-works and explore/community-projects are captured through 2019 as the three top-level categories"
+  },
+  {
+   "id": "p1",
+   "url": "https://arquivo.pt/wayback/20190907084637/https://www.indiegogo.com/projects/12-short-stories-about-real-people",
+   "date": "2019-09-07",
+   "shows": "campaign page capture, loading the vue-campaign bundle"
+  },
+  {
+   "id": "p2",
+   "url": "https://g2.iggcdn.com/assets/vue-campaign-1712a78ab51137baad327e5f796baa9a4094dcd9ebe4137e1ac23f7758500d60.js",
+   "date": "2019-09-07",
+   "shows": "the 2019 campaign page bundle: Back It / Back this project, Make a contribution, Follow / Following, Story, FAQ, Updates, Comments, Community tabs, perks with Get this perk, Estimated Shipping, claimed counts, Share, Featured In, campaign owner and Ask a question"
+  },
+  {
+   "id": "p3",
+   "url": "https://arquivo.pt/wayback/20191007044826/https://www.indiegogo.com/projects/3d-print-finisher",
+   "date": "2019-10-07",
+   "shows": "campaign page capture (3D print finisher), same campaign bundle"
+  },
+  {
+   "id": "w1",
+   "url": "https://en.wikipedia.org/wiki/File:Indiegogo_screenshot.jpg",
+   "date": "2017-02-16",
+   "shows": "home page with the same design used through 2019: white header with pink INDIEGOGO wordmark, Explore, What We Do, START A CAMPAIGN pink button, Sign Up, Log In; full-width photo hero; project cards with pink progress bars; Explore categories tiles"
+  }
+ ],
+ "features": [
+  {
+   "match": "^Indiegogo$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "n1",
+    "w1"
+   ],
+   "note": "pink wordmark logo",
+   "required": true
+  },
+  {
+   "match": "^(type to search|search|search button)$",
+   "in2019": true,
+   "evidence": [
+    "n1"
+   ],
+   "note": "header search (2019 Search form)",
+   "required": true
+  },
+  {
+   "match": "^(log ?in|sign ?up|log in or sign up)$",
+   "in2019": true,
+   "evidence": [
+    "n1",
+    "w1"
+   ],
+   "note": "account links"
+  },
+  {
+   "match": "^(form|banner|search|contentinfo|section|footer|nav|main|aside|region|tablist|list) area$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "n1",
+    "w1",
+    "e1",
+    "e2",
+    "e3",
+    "n1"
+   ],
+   "note": "page structure"
+  },
+  {
+   "match": "^repeated ",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "n1",
+    "w1",
+    "e1",
+    "e2",
+    "e3",
+    "n1",
+    "p1",
+    "p2",
+    "p3"
+   ],
+   "note": "project cards, perks and list rows"
+  },
+  {
+   "match": "^(hero banner|slide navigation|scroll left|scroll right)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "w1"
+   ],
+   "note": "hero carousel with arrows"
+  },
+  {
+   "match": "^(start your campaign|start a campaign|launch|become a creator)$",
+   "in2019": true,
+   "evidence": [
+    "n1",
+    "w1"
+   ],
+   "note": "Start a Campaign call to action (header button in 2019)"
+  },
+  {
+   "match": "^(category|categories|all|tech & innovation|creative works|community projects|board & card games|tabletop games|video games|others|other creations)$",
+   "in2019": true,
+   "evidence": [
+    "n1",
+    "e2",
+    "e3",
+    "h1"
+   ],
+   "note": "2019 explore categories (Tabletop Games shown today as Board & card games)"
+  },
+  {
+   "match": "^(featured|backer favorites|team favorites|view more projects|explore)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "n1"
+   ],
+   "note": "curated collections and See the Collection links"
+  },
+  {
+   "match": "^(crowdfunding|upcoming|coming soon|new|ending soon|trending|most funded|active|all-time|indiegogo)$",
+   "in2019": true,
+   "evidence": [
+    "e2",
+    "n1"
+   ],
+   "note": "Funding, Launching soon, Just launched, Ending soon, Trending, Most funded filters"
+  },
+  {
+   "match": "^projects \\(.*results\\)$",
+   "in2019": true,
+   "evidence": [
+    "e2"
+   ],
+   "note": "result count (Showing %{count} campaigns)",
+   "pages": [
+    "search"
+   ]
+  },
+  {
+   "match": "^(filters?|sort: .*|sort by|load more)$",
+   "in2019": true,
+   "evidence": [
+    "e2"
+   ],
+   "note": "explore Filter and Sort By",
+   "required": true,
+   "pages": [
+    "search"
+   ]
+  },
+  {
+   "match": "^(follow|following)$",
+   "in2019": true,
+   "evidence": [
+    "p2"
+   ],
+   "note": "Follow a campaign"
+  },
+  {
+   "match": "^(back this project|back it|project|story|more info|your pledge amount|add to pledge|get this perk)$",
+   "in2019": true,
+   "evidence": [
+    "p1",
+    "p2",
+    "p3"
+   ],
+   "note": "campaign page: Back It, Story tab, contribution amount, perks"
+  },
+  {
+   "match": "^(back this project|back it)$",
+   "in2019": true,
+   "evidence": [
+    "p1",
+    "p2",
+    "p3"
+   ],
+   "required": true,
+   "pages": [
+    "item"
+   ],
+   "note": "main campaign button"
+  },
+  {
+   "match": "^(facebook|twitter|x|instagram|youtube|linkedin)$",
+   "in2019": true,
+   "evidence": [
+    "n1"
+   ],
+   "note": "footer social links"
+  },
+  {
+   "match": "^(contact|blog|help|help & support|fees|enterprise|enterprise solutions|crowdfunding guide|education center)$",
+   "in2019": true,
+   "evidence": [
+    "n1"
+   ],
+   "note": "footer links (Education Center is now Crowdfunding guide, Enterprise now Enterprise solutions)"
+  },
+  {
+   "match": "^(privacy policy|terms of service|terms of use)$",
+   "in2019": true,
+   "evidence": [
+    "n1"
+   ],
+   "note": "footer legal links"
+  },
+  {
+   "match": "^(privacy settings|we do not sell your data|do not sell or share my personal information)$",
+   "in2019": false,
+   "evidence": [
+    "CCPA opt-out links added 2020"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^please select",
+   "in2019": false,
+   "evidence": [
+    "no language picker in the 2019 navigation bundle"
+   ],
+   "action": "kept: function",
+   "note": "footer platform language picker; the only way to switch language"
+  },
+  {
+   "match": "^(usd|cart|change location)$",
+   "in2019": false,
+   "evidence": [
+    "pledge cart and currency picker came with the Gamefound platform"
+   ],
+   "action": "kept: function",
+   "note": "needed to pledge on today's campaign pages"
+  },
+  {
+   "match": "^toggle details$",
+   "in2019": false,
+   "evidence": [
+    "project card flip, Gamefound platform"
+   ],
+   "action": "kept: function",
+   "note": "control inside a result card"
+  },
+  {
+   "match": "^spotlight$",
+   "in2019": false,
+   "evidence": [
+    "live activity feed of campaigns, Gamefound platform"
+   ],
+   "action": "kept: recommendations",
+   "note": "lists campaigns; recommendations are never hidden"
+  },
+  {
+   "match": "^(for you|late pledge|ttrpg|gamefound|gaming culture|pledge manager|marketing services)$",
+   "in2019": false,
+   "evidence": [
+    "Gamefound platform (2025): personalised feed, late pledges, pledge manager and Gamefound tabs"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^(language|activity)$",
+   "in2019": false,
+   "evidence": [
+    "no header language flag or notification bell in the 2019 navigation bundle"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^(#?tags)$",
+   "in2019": false,
+   "evidence": [
+    "tag cloud, Gamefound platform"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^(join creati.*|become a creator statistics|become a creator values|most advanced crowdfunding technology|all in one solution|enormous community|20\\+ secure payments)$",
+   "in2019": false,
+   "evidence": [
+    "Gamefound creator pitch naming Pledge Manager and Late Pledge"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^.{40,90}$",
+   "in2019": true,
+   "evidence": [
+    "h1"
+   ],
+   "pages": [
+    "home"
+   ],
+   "note": "the hero campaign's title, used as the hero heading and the main region's name (content, changes daily); 2019 hero showed the campaign title the same way"
+  },
+  {
+   "match": "^.{2,60}$",
+   "in2019": true,
+   "evidence": [
+    "p2"
+   ],
+   "pages": [
+    "item"
+   ],
+   "note": "last-resort content match on campaign pages only: the campaign owner link and the perk's included-item links (2019: campaign owner, Included Items)"
+  }
+ ]
+}
