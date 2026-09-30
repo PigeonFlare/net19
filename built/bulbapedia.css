@@ -48,3 +48,5 @@ body.skin-bulbavector #footer.bv-footer a{color:var(--n19-link)!important}
 body.skin-bulbavector #catlinks{border:1px solid var(--n19-rule)!important;background:var(--n19-box)!important;border-radius:0!important;font-size:12px}
 body.skin-bulbavector :is(#bvDesktopBackToTopBar,#bvBackToTopBtn,#bvDesktopBackToTopBtn){display:none!important}
 #n-Bluesky,#n-Mastodon{display:none!important}
+html[data-net19-mode="dark"] #localNotice,html[data-net19-mode="dark"] #localNotice :not(a){color:#222!important;-webkit-text-fill-color:#222!important}
+html[data-net19-mode="dark"] #localNotice a{color:#002bb8!important;-webkit-text-fill-color:#002bb8!important}
