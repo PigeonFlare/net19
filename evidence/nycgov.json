@@ -41,6 +41,60 @@
  ],
  "features": [
   {
+   "match": "^(NYC Logo)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201903",
+    "home-h201907",
+    "home-h201911"
+   ],
+   "note": "2019 header: NYC logo",
+   "required": true,
+   "pages": [
+    "start"
+   ]
+  },
+  {
+   "match": "^(Search)$",
+   "in2019": true,
+   "evidence": [
+    "311-h201903",
+    "home-h201903",
+    "home-h201907"
+   ],
+   "note": "2019 header search",
+   "required": true,
+   "pages": [
+    "start"
+   ]
+  },
+  {
+   "match": "^(Services|Events|Your government)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201911",
+    "home-h201907"
+   ],
+   "note": "2019 main navigation tabs",
+   "required": true,
+   "pages": [
+    "start"
+   ]
+  },
+  {
+   "match": "^(311|NYC 311)$",
+   "in2019": true,
+   "evidence": [
+    "311-h201903",
+    "home-h201911"
+   ],
+   "note": "2019 311 link",
+   "required": true,
+   "pages": [
+    "start"
+   ]
+  },
+  {
    "match": "^(Website feedback|About nyc\\.gov content|Image credits|Find what you need on nyc\\.gov)$",
    "in2019": false,
    "evidence": [
@@ -167,7 +221,7 @@
    ]
   },
   {
-   "match": "^(Official website|NYC Logo|Services|Events|Your government|Search|Language|Toggle Language Translation|daily status info|Select date|Tuesday,.*|Latest News, carousel|upcoming events, carousel|previous slide|next slide|More on nyc\\.gov|nyc\\.gov home|311|NYC 311|Contact NYC government|Register to vote|Emergency alerts|Careers|Jobs|Privacy policy|Privacy Policy\\.?|Terms of use|Terms of Use\\.?|Learn more about Digital Accessibility .*|Browse Topics|Report Problems|Look Up Service Requests|About 311|Home|NYC Today .*|Close broadcast alert message\\.|banner area|navigation area|nav area|form area|contentinfo area|footer area|repeated .*)$",
+   "match": "^(Official website|NYC Logo|Services|Events|Your government|Search|Language|Toggle Language Translation|daily status info|Select date|(Mon|Tues|Wednes|Thurs|Fri|Satur|Sun)day,.*|Latest News, carousel|upcoming events, carousel|previous slide|next slide|More on nyc\\.gov|nyc\\.gov home|311|NYC 311|Contact NYC government|Register to vote|Emergency alerts|Careers|Jobs|Privacy policy|Privacy Policy\\.?|Terms of use|Terms of Use\\.?|Learn more about Digital Accessibility .*|Browse Topics|Report Problems|Look Up Service Requests|About 311|Home|NYC Today .*|Close broadcast alert message\\.|banner area|navigation area|nav area|form area|contentinfo area|footer area|repeated .*)$",
    "in2019": true,
    "evidence": [
     "home-h201911",
