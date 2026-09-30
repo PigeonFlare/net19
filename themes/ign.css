@@ -33,3 +33,4 @@ html[data-net19-mode="dark"] :is(.filter-title, .page-header) [style*="#bf1313" 
 
 html body :is(.homepage-daily-games, .playables-daily, .object-box-shorts, section.carousel-section:has(.vertical-video-shelf-button),
   .plus-promo, .sidebar-playables-promo, .preferred-source-container, [data-net19-hidden]) { display: none !important; }
+footer a[data-net19-hidden] + span[class*="dot"] { display: none !important; }

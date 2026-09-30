@@ -1,6 +1,6 @@
 {
  "theme": "ign",
- "era": "",
+ "era": "2019 IGN (US): red header with the IGN logo, News, Video, Reviews, Shows, Wikis and More menus, search and Sign In; home Latest News feed with Latest / Videos / TV filter tabs; reviews with score badges; footer strip of guide and deal links, IGN Entertainment, Follow Us and legal links. Post-2019 sister sites (Eurogamer, VG247, Rock Paper Shotgun, Maxroll, HowLongToBeat, MapGenie), Planet Pokemon, IGN Store, Book, Streaming and LEGO guide links, Prime Big Deal Days, Game Release Dates and TikTok are hidden.",
  "sources": [
   {
    "id": "article-a20190822",
@@ -25,6 +25,18 @@
    "url": "https://arquivo.pt/noFrame/replay/20191212043405/https://www.ign.com/reviews",
    "date": "2019-12-12",
    "shows": "reviews page as served on 2019-12-12 (Arquivo.pt capture rendered with its archived 2019 CSS)"
+  },
+  {
+   "id": "home-w20191015",
+   "url": "https://web.archive.org/web/20191015000000/https://www.ign.com/",
+   "date": "2019-10-15",
+   "shows": "US home page markup: header Sign In, News, Video, Reviews, Shows, Wikis, More (Games, PlayStation, Xbox, Nintendo, PC, Mobile, Upcoming, eSports, Entertainment, Movies, TV Shows, Comics, Tech, Trailers, Best Games, Best Picks); Latest News with Filter tabs Latest / Videos / TV; Trending Topics, Out This Week, The Latest Reviews; footer strip of guide and deal links (Borderlands 3 Map, Mario Kart Tour Tips and Tricks, Best PS4 Deals, Amazon's Best Game and Tech Deals); footer IGN Entertainment, Follow Us (YouTube, Twitter, Facebook), About Us, Accessibility, AdChoices, Privacy Policy, Site Map, Standards, Terms of Use, Change Region"
+  },
+  {
+   "id": "reviews-raw20191025",
+   "url": "https://arquivo.pt/wayback/20191025074003/https://www.ign.com/reviews",
+   "date": "2019-10-25",
+   "shows": "US reviews page markup: same header and footer; All Reviews with All / TV tabs, Review Scores, Editors' Choice, Sort By, platform filters; the same footer guide and deal link strip"
   }
  ],
  "features": [
@@ -107,6 +119,84 @@
     "reviews-a20191212"
    ],
    "note": "header menu button (Open Menu)"
+  },
+  {
+   "match": "^(main area|Filters|Filter|Latest|Videos|TV|All)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191015",
+    "reviews-raw20191025"
+   ],
+   "note": "Latest News feed with its Filter tabs Latest / Videos / TV"
+  },
+  {
+   "match": "^(Guides|Wikis|Game Guides)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191015",
+    "reviews-raw20191025"
+   ],
+   "note": "guides (2019 Wikis header link and the guide links in the footer strip)"
+  },
+  {
+   "match": "^(Best Deals Today|Best .* Deals)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191015",
+    "reviews-raw20191025"
+   ],
+   "note": "deal links in the 2019 footer strip"
+  },
+  {
+   "match": "^(IGN YouTube|IGN on X|YouTube|Twitter|Facebook)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191015",
+    "reviews-raw20191025"
+   ],
+   "note": "2019 Follow Us links"
+  },
+  {
+   "match": "^(Join for free|Sign In|Contact Us)$",
+   "in2019": false,
+   "action": "kept: account sign-up next to the 2019 Sign In, and the contact link",
+   "evidence": [
+    "home-w20191015",
+    "reviews-raw20191025"
+   ]
+  },
+  {
+   "match": "^(form area)$",
+   "in2019": false,
+   "action": "kept: an editorial reader poll in the feed; page content",
+   "evidence": []
+  },
+  {
+   "match": "^(Book Guides|Streaming Guides|LEGO Guides|Prime Big Deal Days|Planet Pokemon|IGN Store|Game Release Dates|MapGenie|Eurogamer|HowLongToBeat|Maxroll|VG247|Rock Paper Shotgun|IGN TikTok)$",
+   "in2019": false,
+   "evidence": [
+    "home-w20191015",
+    "reviews-raw20191025"
+   ],
+   "note": "not in the 2019 header or footer (sister sites joined IGN from 2022); hidden by the theme"
+  },
+  {
+   "match": "^(Comics|Movies|Games|Tech)$",
+   "in2019": true,
+   "evidence": [
+    "home-w20191015",
+    "reviews-raw20191025"
+   ],
+   "note": "2019 section names (More menu Comics, Movies, Games, Tech) used as review filter tabs"
+  },
+  {
+   "match": "^[A-Z][a-z]+( [A-Z][A-Za-z'.-]+){1,2}$",
+   "in2019": false,
+   "action": "kept: reviewer bylines on review cards are content",
+   "evidence": [
+    "reviews-raw20191025"
+   ],
+   "within": "main"
   }
  ]
 }
