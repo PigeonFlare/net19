@@ -33,3 +33,8 @@ main [class*="btn"],main button{border-radius:3px!important}
 #menu-holiday-quick-link{display:none!important}
 .nav__main .nav__main-container>li>:is(a,button) :is(span,strong),.nav__main .nav__main-container>li>:is(a,button){font-size:17px!important;font-weight:400!important}
 :where(:root:not([data-n19-safe])) .nav__main .nav__main-container>li>:is(a,button),.nav__main:where(:root:not([data-n19-safe])) .nav__main-container>li>:is(a,button){padding:0 16px!important}
+:where(:root:not([data-n19-safe])) main .link__caret .icon:has(>svg){overflow:visible!important}
+:where(:root:not([data-n19-safe])) main .wag-glider-header{padding-bottom:4px!important}
+:where(:root:not([data-n19-safe])) main a.quicklinkcard-link.wag-card{justify-content:flex-start!important}
+:where(:root:not([data-n19-safe])) main a.quicklinkcard-link.wag-card>.wag-contain{flex:0 0 auto!important}
+#federated-search-box div[style*="position: fixed"][style*="background-color"]{background-color:transparent!important}

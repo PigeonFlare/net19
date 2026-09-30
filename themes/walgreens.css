@@ -38,3 +38,8 @@ main [class*="btn"], main button { border-radius: 3px !important; }
 #menu-holiday-quick-link { display: none !important; }
 .nav__main .nav__main-container > li > :is(a, button) :is(span, strong), .nav__main .nav__main-container > li > :is(a, button) { font-size: 17px !important; font-weight: 400 !important; }
 .nav__main .nav__main-container > li > :is(a, button) { padding: 0 16px !important; }
+main .link__caret .icon:has(> svg) { overflow: visible !important; }
+main .wag-glider-header { padding-bottom: 4px !important; }
+main a.quicklinkcard-link.wag-card { justify-content: flex-start !important; }
+main a.quicklinkcard-link.wag-card > .wag-contain { flex: 0 0 auto !important; }
+#federated-search-box div[style*="position: fixed"][style*="background-color"] { background-color: transparent !important; }
