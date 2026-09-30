@@ -1,5 +1,6 @@
 globalThis.net19Theme = {
   intended: '[data-testid="sub-nav-links-container"]',
+  keep: 'main div.card-wrapper:has(img)',
   later: /^(?:ask sparky|sparky|chat with sparky|try sparky|meet sparky|try walmart\+.*|join walmart\+.*|walmart\+ (?:week|deals|members)?.*|learn about spark driver|walmart business|walmart in the know.*|brand shop directory)$/i,
   light: { '#0053e2': '#0071ce', '#002e99': '#004c91' },
   dark: { '#0053e2': '#0071ce', '#002e99': '#004c91' },
@@ -13,25 +14,6 @@ globalThis.net19Theme = {
   const start = () => {
     fix();
     new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
-  };
-  net19.onBody(start);
-})();
-(() => {
-  const root = document.documentElement;
-  const SEL = 'main div.card-wrapper';
-  const mark = () => {
-    if (!root.hasAttribute('data-net19-flip')) return;
-    for (const el of document.querySelectorAll(SEL)) {
-      if (el.hasAttribute('data-net19-keep') || !el.querySelector('img')) continue;
-      el.removeAttribute('data-net19-scrim'); el.setAttribute('data-net19-keep', '');
-    }
-  };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
-  const start = () => {
-    later();
-    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
-    new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-flip'] });
   };
   net19.onBody(start);
 })();

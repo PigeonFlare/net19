@@ -1,6 +1,8 @@
+@font-face { font-family: "n19 Bogle"; font-weight: 700; font-style: normal; font-display: swap; ascent-override: 92%; descent-override: 25%; line-gap-override: 0%; src: url("https://i5.walmartimages.com/dfw/63fd9f59-a78c/fcfae9b6-2f69-4f89-beed-f0eeb4237946/v1/BogleWeb_subset-Bold.woff2") format("woff2"); }
+@font-face { font-family: "n19 Bogle"; font-weight: 400; font-style: normal; font-display: swap; ascent-override: 92%; descent-override: 25%; line-gap-override: 0%; src: url("https://i5.walmartimages.com/dfw/63fd9f59-a78c/fcfae9b6-2f69-4f89-beed-f0eeb4237946/v1/BogleWeb_subset-Regular.woff2") format("woff2"); }
 html { --n19-bar: #041e42; --n19-bar-hover: rgba(255,255,255,.12); --n19-bar-text: #fff; --n19-field: #fff; --n19-field-text: #000; --n19-icon: #041e42;
   --n19-row: #fff; --n19-row-border: #e6e7e8; --n19-row-text: #041e42; --n19-bubble: #0a2f5c; --n19-yellow: #ffc220; --n19-foot: #fff; --n19-foot-text: #2e2f32;
-  --n19-font: Bogle, BogleWeb, "Helvetica Neue", Helvetica, Arial, sans-serif; }
+  --n19-font: "n19 Bogle", Bogle, BogleWeb, "Helvetica Neue", Helvetica, Arial, sans-serif; }
 html[data-net19-mode="dark"] { --n19-bar: #041e42; --n19-bar-hover: rgba(255,255,255,.12); --n19-bar-text: #fff; --n19-field: #1f2023; --n19-field-text: #e3e4e5; --n19-icon: #e3e4e5;
   --n19-row: #16181b; --n19-row-border: #2e3033; --n19-row-text: #e3e4e5; --n19-bubble: #0a2f5c; --n19-yellow: #ffc220; --n19-foot: #fff; --n19-foot-text: #2e2f32; }
 body {
@@ -33,7 +35,7 @@ header nav a.desktop-header-trigger > i, header #cart-button-header > i {
   display: flex !important; align-items: center; justify-content: center; width: 28px !important; height: 28px !important; padding: 0 !important; margin: 0 !important;
   border-radius: 0 !important; background: transparent !important; font-size: 24px !important; color: var(--n19-bar-text) !important; }
 header nav a.desktop-header-trigger > div, header #cart-button-header .cart-total { display: none !important; }
-header section:has(> #gic-wrapper), header #gic-wrapper { display: none !important; }
+header section:has(> #gic-wrapper), header #gic-wrapper, div.gic-wrapper.sticky { display: none !important; }
 span.bg-secondary.sticky > div.header-navigation { background: var(--n19-row) !important; border-bottom: 1px solid var(--n19-row-border) !important; height: 40px !important; }
 span.bg-secondary.sticky > div.header-navigation section.br-pill { background: transparent !important; border-radius: 0 !important; margin: 0 !important; }
 span.bg-secondary.sticky > div.header-navigation :is(button, a) { color: var(--n19-row-text) !important; font-size: 14px !important; border-radius: 0 !important; }
@@ -52,3 +54,4 @@ header input.search-bar { height: 40px !important; }
 section[aria-label="Sort and Filter section"] :is(button, a) { border-radius: 0 !important; border-color: transparent !important; background: transparent !important; box-shadow: none !important; }
 section[aria-label="Sort and Filter section"] :is(button, a) i:first-child:not(:only-child) { display: none !important; }
 footer :is(a, li):is([aria-label^="Walmart In the Know" i], :has(> a[aria-label^="Walmart In the Know" i])) { display: none !important; }
+div.header-navigation-mobile.sticky { top: 60px !important; }
