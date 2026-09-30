@@ -75,6 +75,41 @@
         "s4"
       ],
       "note": "post titles, subtitles and text (content)"
+    },
+    {
+      "match": "^Email$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "the email field of the subscribe forms"
+    },
+    {
+      "match": "^(Post|Post header)$",
+      "in2019": true,
+      "evidence": [
+        "s4"
+      ],
+      "note": "the post page and its title and byline block (page regions)"
+    },
+    {
+      "match": "^Subscribe$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "Subscribe in the top bar"
+    },
+    {
+      "match": "^Sign in$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s4"
+      ],
+      "note": "Sign in in the top bar"
     }
   ]
 }
