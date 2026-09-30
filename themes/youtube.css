@@ -241,12 +241,16 @@ html[data-n19-yt="www"] {
   & ytd-browse[page-subtype="channels"] yt-page-header-view-model :is(.ytPageHeaderViewModelPageHeaderHeadline, .ytPageHeaderViewModelHeadline, .yt-page-header-view-model-wiz__page-header-headline) { flex: 1 1 auto !important; display: flex !important; flex-direction: row !important; align-items: center !important; min-width: 0 !important; }
   & ytd-browse[page-subtype="channels"] yt-page-header-view-model :is(h1, h1 *, yt-dynamic-text-view-model, .ytPageHeaderViewModelTitle) { font-size: 24px !important; font-weight: 400 !important; line-height: 30px !important; color: var(--n19-text) !important; letter-spacing: 0 !important; margin: 0 !important; }
   & ytd-browse[page-subtype="channels"] yt-page-header-view-model :is(yt-description-preview-view-model, yt-attribution-view-model) { display: none !important; }
+  & ytd-browse[page-subtype="channels"] yt-page-header-view-model h1 .ytAttributedStringImageElement { width: 14px !important; height: 14px !important; margin: 0 0 0 6px !important; vertical-align: 0 !important; }
+  & ytd-browse[page-subtype="channels"] yt-page-header-view-model h1 .ytAttributedStringImageElement :is(.yt-icon-shape, .yt-icon-shape > div, svg) { width: 14px !important; height: 14px !important; }
+  & ytd-browse[page-subtype="channels"] yt-page-header-view-model h1 :is(.ytAttributedStringImageElement, .ytAttributedStringImageElement *) { color: var(--n19-text-2) !important; fill: var(--n19-text-2) !important; }
   & ytd-browse[page-subtype="channels"] yt-page-header-view-model yt-content-metadata-view-model { margin: 0 !important; }
   & ytd-browse[page-subtype="channels"] yt-page-header-view-model yt-content-metadata-view-model .ytContentMetadataViewModelMetadataRow { display: block !important; }
   & ytd-browse[page-subtype="channels"] yt-page-header-view-model yt-content-metadata-view-model :is(span, a) { font-size: 14px !important; line-height: 21px !important; color: var(--n19-text-2) !important; font-weight: 400 !important; }
   & ytd-browse[page-subtype="channels"] yt-page-header-view-model yt-content-metadata-view-model [data-n19-part="handle"], & ytd-browse[page-subtype="channels"] yt-page-header-view-model yt-content-metadata-view-model [data-n19-part="videos"],
   & ytd-browse[page-subtype="channels"] yt-page-header-view-model yt-content-metadata-view-model .ytContentMetadataViewModelDelimiter { display: none !important; }
-  & ytd-browse[page-subtype="channels"] yt-page-header-view-model yt-flexible-actions-view-model { flex: none !important; margin: 0 0 0 16px !important; padding: 0 !important; align-self: center !important; }
+  & ytd-browse[page-subtype="channels"] yt-page-header-view-model yt-flexible-actions-view-model { flex: none !important; margin: 0 0 0 16px !important; padding: 0 !important; align-self: center !important; align-items: center !important; }
+  & ytd-browse[page-subtype="channels"] yt-page-header-view-model yt-flexible-actions-view-model :is(button, a).ytSpecButtonShapeNextHost { box-sizing: border-box !important; height: 36px !important; padding-top: 0 !important; padding-bottom: 0 !important; align-items: center !important; }
   & ytd-browse[page-subtype="channels"] yt-page-header-view-model :is(.ytPageHeaderViewModelPageHeaderFlexibleActions, .yt-page-header-view-model-wiz__page-header-flexible-actions) { margin: 0 !important; padding: 0 !important; flex: none !important; }
 
   & ytd-tabbed-page-header, & ytd-tabbed-page-header :is(#tabs-container, #tabs-inner-container, tp-yt-app-toolbar), & ytd-tabbed-page-header yt-tab-group-shape { background: var(--n19-header) !important; }
@@ -368,6 +372,7 @@ html[data-n19-yt="www"] {
 
   & ytd-watch-flexy #primary.ytd-watch-flexy { padding-top: 24px !important; }
   & ytd-watch-flexy #secondary.ytd-watch-flexy { padding-top: 24px !important; }
+  & ytd-watch-flexy[split-scroll]:is(:not([fixed-panel-watch-next])[fixed-panel-expanded], [fixed-panel-watch-next], [side-rail-dismissible-panels]) #secondary.ytd-watch-flexy { height: calc(100vh - var(--ytd-masthead-height-accounting-for-hidden, 56px) - 24px) !important; }
   & ytd-watch-flexy :is(#player-container-outer, #player-container-inner, #player-container, #ytd-player, #movie_player, .html5-video-player, #player .ytd-player, ytd-player, #container.ytd-player, #player-api, #error-screen, yt-playability-error-supported-renderers, #player-error-message-container, .ytp-error) { border-radius: 0 !important; }
   & ytd-watch-flexy :is(#cinematics, #cinematics-container, #cinematic-container) { display: none !important; }
   & ytd-watch-metadata { margin: 0 !important; padding: 0 !important; }

@@ -65,7 +65,7 @@ function inPage() {
   return { texts, modern, misaligned, inside, mode: document.documentElement.dataset.net19Mode || '', flip: document.documentElement.hasAttribute('data-net19-flip'), title: document.title.slice(0, 50) };
 }
 
-const ROWS = ['clipline', 'rowwrap', 'rowalign', 'spill', 'iconovertext', 'gap'];
+const ROWS = ['clipline', 'rowwrap', 'rowalign', 'spill', 'iconovertext', 'gap', 'btnsize', 'scrollreach'];
 const TITLES = 'a[href] :is(h2, h3, [role=heading]), :is(h2, h3, [role=heading]) a[href], a#video-title, main [role=heading], [data-testid*="title" i]';
 function findTitles(selector) {
   const out = [];
@@ -218,6 +218,6 @@ for (const [id, url] of Object.entries(URLS)) for (const scheme of SCHEMES) {
     }
   } catch (e) { result.err = e.message.slice(0, 100); }
   appendFileSync(`${OUT}/report.jsonl`, JSON.stringify(result) + '\n');
-  console.log(id, scheme, result.blocked ? 'BLOCKED: ' + result.blocked : '', result.fieldgrow ? 'FIELD GREW: ' + result.fieldgrow : '', result.focus ? 'FOCUS: ' + result.focus : '', result.titleclick ? 'TITLE CLICK: ' + result.titleclick : '', Object.entries(result.states).map(([k, v]) => `${k}:${(v.faint?.length || 0)}f/${(v.modern?.length || 0)}m/${(v.misaligned?.length || 0)}a/${(v.inside?.length || 0)}i/${(v.covered?.length || 0)}c/${(v.offcenter?.length || 0) + (v.textoffcenter?.length || 0)}o/${(v.overlap?.length || 0)}x/${(v.collide?.length || 0)}k/${(v.effects?.length || 0)}e/${(v.cropped?.length || 0)}r/${(v.lowcontrast?.length || 0)}l/${(v.clipline?.length || 0)}q/${(v.rowwrap?.length || 0)}w/${(v.rowalign?.length || 0)}n/${(v.spill?.length || 0)}s/${(v.iconovertext?.length || 0)}v/${(v.gap?.length || 0)}g/${(v.patch?.length || 0)}p/${(v.tight?.length || 0)}t/${(v.loose?.length || 0)}z`).join(' '));
+  console.log(id, scheme, result.blocked ? 'BLOCKED: ' + result.blocked : '', result.fieldgrow ? 'FIELD GREW: ' + result.fieldgrow : '', result.focus ? 'FOCUS: ' + result.focus : '', result.titleclick ? 'TITLE CLICK: ' + result.titleclick : '', Object.entries(result.states).map(([k, v]) => `${k}:${(v.faint?.length || 0)}f/${(v.modern?.length || 0)}m/${(v.misaligned?.length || 0)}a/${(v.inside?.length || 0)}i/${(v.covered?.length || 0)}c/${(v.offcenter?.length || 0) + (v.textoffcenter?.length || 0)}o/${(v.overlap?.length || 0)}x/${(v.collide?.length || 0)}k/${(v.effects?.length || 0)}e/${(v.cropped?.length || 0)}r/${(v.lowcontrast?.length || 0)}l/${(v.clipline?.length || 0)}q/${(v.rowwrap?.length || 0)}w/${(v.rowalign?.length || 0)}n/${(v.spill?.length || 0)}s/${(v.iconovertext?.length || 0)}v/${(v.gap?.length || 0)}g/${(v.btnsize?.length || 0)}b/${(v.scrollreach?.length || 0)}h/${(v.patch?.length || 0)}p/${(v.tight?.length || 0)}t/${(v.loose?.length || 0)}z`).join(' '));
   await ctx.close();
 }

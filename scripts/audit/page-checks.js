@@ -130,7 +130,91 @@ function net19PageChecks() {
   Object.assign(out, net19Layout());
   Object.assign(out, net19Rows());
   Object.assign(out, net19Rhythm());
+  const reach = net19Reach(lines);
+  out.overlap.push(...reach.overdrawn);
+  out.btnsize = reach.btnsize;
+  out.scrollreach = reach.scrollreach;
   return out;
+}
+
+function net19Reach(lines) {
+  const W = innerWidth, H = innerHeight;
+  const found = { btnsize: [], scrollreach: [], overdrawn: [] };
+  const up = e => e.parentElement || (e.parentNode && e.parentNode.host) || null;
+  const name = e => (e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + (typeof e.className === 'string' && e.className ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '')).slice(0, 60);
+  const label = e => (e.getAttribute?.('aria-label') || e.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 30);
+  const box = r => ({ x: Math.round(r.left), y: Math.round(r.top), w: Math.round(r.width), h: Math.round(r.height) });
+  const all = [];
+  const collect = root => { for (const e of root.querySelectorAll('*')) { all.push(e); if (e.shadowRoot) collect(e.shadowRoot); } };
+  collect(document);
+  const styleOf = new Map(), rectOf = new Map();
+  const cs = e => styleOf.get(e) || styleOf.set(e, getComputedStyle(e)).get(e);
+  const rect = e => rectOf.get(e) || rectOf.set(e, e.getBoundingClientRect()).get(e);
+  const onScreen = r => r.width > 1 && r.height > 1 && r.bottom > 0 && r.right > 0 && r.top < H && r.left < W;
+  const seenEl = e => { if (!onScreen(rect(e))) return false; for (let n = e; n && n.nodeType === 1; n = up(n)) { const c = cs(n); if (c.display === 'none' || c.visibility !== 'visible' && n === e || +c.opacity < .05) return false; } return true; };
+  const inPopup = e => { for (let n = e; n && n.nodeType === 1; n = up(n)) if (n.matches('[role=dialog], [role=menu], [role=listbox], [role=tooltip], dialog')) return true; return false; };
+  const alphaOf = c => { const m = String(c).match(/[\d.]+/g); return !m ? 0 : m.length > 3 ? +m[3] : 1; };
+  const filled = e => { const c = cs(e); return alphaOf(c.backgroundColor) > .5 || /url\(|gradient/.test(c.backgroundImage) || ['Top', 'Bottom'].every(s => parseFloat(c[`border${s}Width`]) >= 1 && c[`border${s}Style`] !== 'none' && alphaOf(c[`border${s}Color`]) > .3); };
+  const face = e => { if (filled(e)) return rect(e); const r = rect(e); for (const k of e.children) { const q = rect(k); if (filled(k) && q.width >= r.width * .9 && q.height >= r.height * .6) return q; } return null; };
+  const ancestors = e => { const list = []; for (let n = up(e); n && n.nodeType === 1 && list.length < 6; n = up(n)) list.push(n); return list; };
+
+  const buttons = all.filter(e => e.matches('button, [role=button], a[href]') && !up(e)?.closest?.('button, [role=button]') && seenEl(e) && !inPopup(e))
+    .map(e => ({ e, f: face(e) })).filter(b => b.f && b.f.height >= 16 && b.f.height <= 64 && b.f.width >= 24 && b.f.width <= 400 && label(b.e)).slice(0, 400);
+  const reported = new Set();
+  for (let i = 0; i < buttons.length; i++) for (let j = i + 1; j < buttons.length; j++) {
+    const a = buttons[i], b = buttons[j];
+    if (a.e.contains(b.e) || b.e.contains(a.e)) continue;
+    const [l, r] = a.f.left <= b.f.left ? [a, b] : [b, a];
+    const gapX = r.f.left - l.f.right, overlapY = Math.min(a.f.bottom, b.f.bottom) - Math.max(a.f.top, b.f.top);
+    if (gapX < -2 || gapX > 40 || overlapY < Math.min(a.f.height, b.f.height) * .5) continue;
+    const shared = ancestors(a.e).find(n => n.contains(b.e) || n.shadowRoot?.contains(b.e));
+    if (!shared || ancestors(b.e).indexOf(shared) < 0) continue;
+    const dh = b.f.height - a.f.height, dc = (b.f.top + b.f.height / 2) - (a.f.top + a.f.height / 2);
+    if (Math.abs(dh) <= 3 && Math.abs(dc) <= 3) continue;
+    const key = name(l.e) + label(l.e) + '|' + name(r.e) + label(r.e);
+    if (reported.has(key) || found.btnsize.length >= 30) continue;
+    reported.add(key);
+    found.btnsize.push({ what: `"${label(l.e)}" ${name(l.e)} / "${label(r.e)}" ${name(r.e)}`, detail: `side-by-side buttons ${Math.round(l.f.height)}px and ${Math.round(r.f.height)}px tall, middles ${Math.abs(Math.round(dc))}px apart in ${name(shared)}`, ...box({ left: l.f.left, top: Math.min(l.f.top, r.f.top), width: r.f.right - l.f.left, height: Math.max(l.f.bottom, r.f.bottom) - Math.min(l.f.top, r.f.top) }) });
+  }
+
+  const page = document.scrollingElement || document.documentElement;
+  const pageLeft = Math.max(0, page.scrollHeight - page.clientHeight - page.scrollTop);
+  const pinned = e => { for (let n = e; n && n.nodeType === 1; n = up(n)) if (cs(n).position === 'fixed') return true; return false; };
+  for (const e of all) {
+    const c = cs(e), r = rect(e);
+    const frame = e.tagName === 'IFRAME' && r.width >= 150 && r.height >= 150;
+    const scroller = /auto|scroll/.test(c.overflowY) && e.scrollHeight > e.clientHeight + 2 && r.height >= 60 && r.width >= 60 && !/^(BODY|HTML)$/.test(e.tagName);
+    if (!frame && !scroller || r.top > H - 40 || r.bottom < 40 || !seenEl(e) || inPopup(e)) continue;
+    const what = `${frame ? 'frame' : 'scroll box'} ${name(e)}`;
+    let cut = null;
+    for (let n = up(e); n && n.nodeType === 1 && !/^(BODY|HTML)$/.test(n.tagName); n = up(n)) {
+      const nc = cs(n);
+      if (!/hidden|clip/.test(nc.overflowY)) continue;
+      const q = rect(n);
+      if (q.bottom < r.bottom - 2 && q.bottom > r.top + 20) { cut = `its bottom ${Math.round(r.bottom - q.bottom)}px is clipped off by ${name(n)}`; break; }
+    }
+    if (!cut && r.bottom > H + 2) {
+      const stuck = pinned(e);
+      const short = r.bottom - H - (stuck ? 0 : pageLeft);
+      if (short > 2) cut = `its bottom lies ${Math.round(short)}px below the ${stuck ? 'window on a fixed panel' : 'end of the page'} and can never be scrolled into view`;
+    }
+    if (cut && found.scrollreach.length < 20) found.scrollreach.push({ what, detail: cut, ...box({ left: r.left, top: Math.max(0, r.bottom - 40), width: r.width, height: 40 }) });
+  }
+
+  for (const b of buttons.filter(b => b.e.matches('button, [role=button]'))) {
+    const f = b.f;
+    const under = lines.find(t => {
+      if (b.e.contains(t.el) || t.el.contains(b.e) || (t.el.getRootNode() !== document && b.e.contains(t.el.getRootNode().host))) return false;
+      const ox = Math.min(f.right, t.q.right) - Math.max(f.left, t.q.left), oy = Math.min(f.bottom, t.q.bottom) - Math.max(f.top, t.q.top);
+      if (ox < 4 || oy < Math.max(4, t.q.height * .3)) return false;
+      const x = Math.max(f.left, t.q.left) + ox / 2, y = Math.max(f.top, t.q.top) + oy / 2;
+      let top = document.elementFromPoint(x, y); while (top && top.shadowRoot) { const inner = top.shadowRoot.elementFromPoint(x, y); if (!inner || inner === top) break; top = inner; }
+      return !!top && (b.e === top || b.e.contains(top) || top.getRootNode() !== document && b.e.contains(top.getRootNode().host));
+    });
+    if (under) found.overdrawn.push({ what: `button "${label(b.e)}" / "${under.t}"`, detail: `${name(b.e)} drawn over the text of ${name(under.el)}`, ...box(f) });
+    if (found.overdrawn.length > 20) break;
+  }
+  return found;
 }
 
 function net19Rows() {

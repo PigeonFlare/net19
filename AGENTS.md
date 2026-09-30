@@ -26,6 +26,8 @@
     - `spill`: a painted box (fill, border or shadow) extending more than 1px past a bordered or focus-ringed box, or a child crossing or drawn below its parent's bottom border.
     - `iconovertext`: an icon overlapping the text area of a field (its content box, up to the end of the text or placeholder).
     - `gap`: an empty band taller than 32px between the content of a card or row with its own background, border or shadow.
+    - `btnsize`: filled buttons side by side in one row whose heights or vertical middles differ by more than 3px.
+    - `scrollreach`: a scroll box or frame whose bottom is clipped off by an ancestor, or lies below the window where no page scroll can reach it (a fixed panel taller than the window).
     - `contentlost` (`audit:diff`): visible text or result and item links drop below 60% of the page without net19.
     - **Content hover** (`audit`): hovers the first 3 result or card titles and runs every check in that state (`overlap` catches a hover card drawn over the original), then reports `TITLE CLICK` when the first title neither links off the page nor navigates when clicked.
   - **Light mode:** light is as important as dark. Dark sites shown in light mode must look like their own 2019 light design, not an inverted grey; the page checks report `dim`.
@@ -36,7 +38,7 @@
     - `covered`: a control another element sits on, so a real click never reaches it;
     - `offcenter`: icons off the center of their button or rail;
     - `textoffcenter`: text off the vertical middle of its row;
-    - `overlap`: text drawn over other text.
+    - `overlap`: text drawn over other text, or a filled button drawn over text outside it.
   - Then click the page's main controls with the real mouse, type into its fields, and read screenshots in light and dark.
   - Verify every selector on the live markup. For example, a site's buttons may be `div[role=button]` rather than `<button>`.
 - Run `npm run audit:diff -- <id>` for every theme you change, in both schemes (`SCHEME=light` and `SCHEME=dark`). It runs the page checks with and without net19 and lists only the problems net19 introduced. Fix every stable item. A light-only run is how Gmail, Docs and Google's search field shipped broken in dark mode.
