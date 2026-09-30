@@ -1,0 +1,63 @@
+{
+  "theme": "roblox",
+  "era": "2019 roblox.com before the late-2019 light/dark refresh: 40px #0074bd header with the white 2016 ROBLOX wordmark, white 16px Games / Catalog / Create / Robux links, a white search box and white Robux, notification and settings icons; a 175px white left column (Home, Profile, Messages, Friends, Avatar, Inventory, Trade, Groups, My Feed, Blog, Official Store, Gift Cards) in 16px medium text; #e3e3e3 page with white game cards (16px medium names), blue 'See All' buttons, white footer with grey links, in Gotham SSm. The 2019 dark theme uses a #232527 header and page with #393b3d panels",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://arquivo.pt/noFrame/replay/20190326233204/https://www.roblox.com/catalog",
+      "date": "2019-03-26",
+      "shows": "catalog capture: #0074bd header with the tilted-square logo, Games Catalog Create Robux, white search box, Log In and green Sign Up, #e3e3e3 page, white footer with About Us Jobs Blog Parents Help Terms Privacy and the 2019 copyright line"
+    },
+    {
+      "id": "s2",
+      "url": "https://arquivo.pt/noFrame/replay/20190902203439/https://www.roblox.com/games",
+      "date": "2019-09-02",
+      "shows": "games page capture: the same blue header in September 2019"
+    },
+    {
+      "id": "s3",
+      "url": "https://static.rbxcdn.com/css/92624c2e02ffc60f49ec6f26fcc2898cf039f3127e44ba57ccf5f8e1894ee378.css/fetch",
+      "date": "2019-03 (still served)",
+      "shows": "StyleGuide bundle loaded by s1: .rbx-header #0074bd 40px, white .nav-menu-title with rgba(25,25,25,.1) 5px hover, roblox_logo_11212016.svg 118x30, body #e3e3e3 #191919 Gotham SSm, .rbx-left-col 175px white with a 0 0 3px shadow, 16px medium items with 5px gaps, .btn-secondary-xs #00a2ff 14px medium 3px corners (hover #32b5ff), white .game-card-container with 3px corners and 16px medium names, dark theme #232527 header/page, #393b3d panels and left column, outlined grey See All"
+    },
+    {
+      "id": "s4",
+      "url": "https://www.webdesignmuseum.org/gallery/roblox-2019",
+      "date": "2019",
+      "shows": "signed-out 2019 landing page with the blue Play / About / Platforms bar and the ROBLOX Powering Imagination sign-up screen"
+    },
+    {
+      "id": "s5",
+      "url": "https://www.reddit.com/r/roblox/",
+      "date": "2019",
+      "shows": "users' 2019 signed-in home screenshots (r/roblox 'yall like my homepage?'): blue header, white left column with Home Profile Messages Friends Avatar Inventory Trade Groups My Feed Blog Official Store Gift Cards and Upgrade Now, grey page with white Friends and Recently Played sections and blue See All buttons"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|nav|footer|main|section|article|form|search|aside|dialog|region|contentinfo|banner|navigation|complementary) area$|^repeated |^(Main)$",
+      "in2019": true,
+      "evidence": ["s1", "s3", "s5"],
+      "note": "page regions and repeated game and friend tiles"
+    },
+    {
+      "match": "^(Roblox|Games|Catalog|Charts|Marketplace|Create|Robux|Search|Home|Profile|Messages|Friends|Avatar|Inventory|Trade|Groups|Communities|My Feed|Blog|Newsroom|Official Store|Gift Cards|Buy Gift Cards|Upgrade Now|Get Premium|Premium|Notifications|Settings|See All|Add Friends|Play|Favorite|Follow|About|Store|Servers|Log In|Sign Up|Log Out|Help|Terms|Privacy|Parents|Jobs|About Us|Chat|Continue|Recommended For You|Friends \\(\\d+\\))$",
+      "in2019": true,
+      "required": true,
+      "evidence": ["s1", "s3", "s5"],
+      "note": "header, left column, home sections and footer (Charts, Marketplace, Communities, Newsroom and Buy Gift Cards are the later names of Games, Catalog, Groups, Blog and Gift Cards and are shown with their 2019 names in English)"
+    },
+    {
+      "match": "^(Roblox Plus|Get Roblox Plus|Subscribe|More fun for less Robux.*)$",
+      "in2019": false,
+      "evidence": ["Roblox Plus launched in 2025, long after s1-s5"],
+      "note": "hidden"
+    },
+    {
+      "match": "^(?=.{12,}$).*\\s.*$",
+      "in2019": true,
+      "evidence": ["s5"],
+      "note": "game names, ratings and descriptions (content)"
+    }
+  ]
+}

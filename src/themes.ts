@@ -188,6 +188,7 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'poki', name: 'Poki', domains: ['poki.com'] },
   { id: 'xbox', name: 'Xbox', domains: ['xbox.com'] },
   { id: 'chess', name: 'Chess.com', domains: ['chess.com'] },
+  { id: 'roblox', name: 'Roblox', domains: ['roblox.com'] },
   { id: 'ign', name: 'IGN', domains: ['ign.com'] },
   { id: 'patreon', name: 'Patreon', domains: ['patreon.com'] },
   { id: 'givesendgo', name: 'GiveSendGo', domains: ['givesendgo.com'] },
