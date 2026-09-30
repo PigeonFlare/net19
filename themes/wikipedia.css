@@ -20,6 +20,7 @@ html[data-net19-mode="dark"] body.skin-vector-legacy .vector-menu-tabs li, html[
 html[data-net19-mode="dark"] body.skin-vector-legacy .vector-menu-tabs li a { background: var(--n19-page) !important; background-image: none !important; }
 html[data-net19-mode="dark"] body.skin-vector-legacy .vector-menu-tabs li.selected, html[data-net19-mode="dark"] body.skin-vector-legacy .vector-menu-tabs li.selected a { background: var(--n19-content) !important; color: var(--n19-text) !important; }
 html[data-net19-mode="dark"] body.skin-vector-legacy #mw-panel .vector-menu-heading, html[data-net19-mode="dark"] body.skin-vector-legacy .vector-menu-heading { color: var(--n19-text-2) !important; }
+html[data-net19-mode="dark"] body.skin-vector-legacy #mw-panel .vector-menu-heading { background-image: linear-gradient(to right, rgba(84, 89, 93, 0) 0, var(--n19-border) 33%, var(--n19-border) 66%, rgba(84, 89, 93, 0) 100%) !important; }
 html[data-net19-mode="dark"] body.skin-vector-legacy .infobox, html[data-net19-mode="dark"] body.skin-vector-legacy .toc, html[data-net19-mode="dark"] body.skin-vector-legacy #toc,
 html[data-net19-mode="dark"] body.skin-vector-legacy .thumbinner, html[data-net19-mode="dark"] body.skin-vector-legacy .navbox, html[data-net19-mode="dark"] body.skin-vector-legacy .navbox-title,
 html[data-net19-mode="dark"] body.skin-vector-legacy .navbox-group, html[data-net19-mode="dark"] body.skin-vector-legacy .navbox-abovebelow, html[data-net19-mode="dark"] body.skin-vector-legacy table.wikitable,
