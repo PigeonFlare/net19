@@ -14,6 +14,8 @@ body.rbx-body #container-main h2 { font-size: 21px !important; font-weight: 400 
 
 #header.rbx-header { background: var(--n19-bar) !important; border-bottom: 1px solid var(--n19-bar-line) !important; box-shadow: none !important; }
 #header.rbx-header .nav-menu-title, #header.rbx-header .nav-menu-title:is(:hover, :focus, :active, :link, :visited) { color: var(--n19-bar-text) !important; font-family: var(--n19-font) !important; font-size: 16px !important; font-weight: 500 !important; }
+@media (min-width: 1141px) { #header.rbx-header .rbx-nav-collapse > :is(button, a):not(#skip-to-main-content) { display: none !important; } }
+#header.rbx-header .rbx-navbar > li { flex: 1 1 0 !important; min-width: 0 !important; }
 #header.rbx-header .rbx-navbar li .nav-menu-title:is(:hover, :focus) { background-color: var(--n19-bar-hover) !important; border-radius: 5px !important; }
 #header.rbx-header .icon-logo { background: url("https://images.rbxcdn.com/fa68672f5c59945eaa0ef9fea7f35b2e-roblox_logo_11212016.svg") 50% 50% / 118px 30px no-repeat !important; -webkit-mask: none !important; mask: none !important; width: 118px !important; height: 30px !important; }
 #header.rbx-header .icon-logo > * { visibility: hidden !important; }
@@ -23,7 +25,7 @@ body.rbx-body #container-main h2 { font-size: 21px !important; font-weight: 400 
 #header.rbx-header .navbar-search :is(svg, [class*="icon"]):not(input) { color: #7b7c7d !important; }
 #header.rbx-header .navbar-icon-item :is(.nav-robux-amount, [class*="text"], span:not([class*="icon"]):not(:has(*))) { color: var(--n19-bar-text) !important; }
 #header.rbx-header .navbar-icon-item :is(svg, img, [class*="icon-"]:not(:has(*))) { filter: var(--n19-icon-filter) !important; }
-#header.rbx-header .navbar-icon-item :is(.notification-red, .notification-blue, [class*="badge"], [class*="notification"]) { filter: none !important; }
+#header.rbx-header .navbar-icon-item :is(.notification-red, .notification-blue, .notification, [class*="badge"]) { filter: none !important; }
 #header.rbx-header :is(.age-bracket-label, .age-bracket-label *) { color: var(--n19-bar-text) !important; }
 
 #left-navigation-container .left-nav { background: var(--n19-nav) !important; box-shadow: var(--n19-nav-shadow) !important; border: 0 !important; }
@@ -34,12 +36,13 @@ html[data-n19-rbx="nav"] #wrap.left-nav-new-width > :is(#container-main, footer)
 html[data-n19-rbx="nav"] #wrap.left-nav-new-width > #container-main { width: auto !important; max-width: none !important; }
 #left-navigation-container .left-nav nav ul { gap: 0 !important; }
 #left-navigation-container .left-nav nav li { margin: 5px 0 !important; width: 155px !important; }
-#left-navigation-container .left-nav nav li > a { height: 30px !important; min-height: 0 !important; padding: 0 4px !important; gap: 8px !important; border-radius: 3px !important; color: var(--n19-nav-text) !important; background: transparent !important;
+#left-navigation-container .left-nav nav li > :is(a, button) { height: 30px !important; min-height: 0 !important; padding: 0 4px !important; gap: 8px !important; border-radius: 3px !important; color: var(--n19-nav-text) !important; background: transparent !important;
   font-family: var(--n19-font) !important; font-size: 16px !important; font-weight: 500 !important; line-height: 30px !important; }
-#left-navigation-container .left-nav nav li > a:hover { background: var(--n19-nav-hover) !important; }
-#left-navigation-container .left-nav nav li > a * { color: inherit !important; font: inherit !important; }
-#left-navigation-container .left-nav nav li > a > span:first-child { width: 28px !important; height: 28px !important; min-width: 28px !important; }
-#left-navigation-container .left-nav nav li > a > span:first-child :is(svg, img, span[class*="size-"]) { width: 24px !important; height: 24px !important; }
+#left-navigation-container .left-nav nav li > :is(a, button):hover { background: var(--n19-nav-hover) !important; }
+#left-navigation-container .left-nav nav li > :is(a, button) * { color: inherit !important; font: inherit !important; }
+#left-navigation-container .left-nav nav li > :is(a, button) > span:first-child { width: 28px !important; height: 28px !important; min-width: 28px !important; }
+#left-navigation-container .left-nav nav li > :is(a, button) > span:first-child :is(svg, img, span[class*="size-"]) { width: 24px !important; height: 24px !important; }
+#left-navigation-container .left-nav nav li > :is(a, button) .icon { background-color: var(--n19-nav-text) !important; }
 
 body.rbx-body footer.container-footer { background: var(--n19-panel) !important; }
 body.rbx-body footer.container-footer :is(a, p, span, div) { font-family: var(--n19-font) !important; }
