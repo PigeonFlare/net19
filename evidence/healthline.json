@@ -59,6 +59,37 @@
  ],
  "features": [
   {
+   "match": "^(Health Conditions|Health Topics)$",
+   "in2019": true,
+   "evidence": [
+    "article-html-201910",
+    "articleC-a201907"
+   ],
+   "note": "2019 header menu",
+   "required": true
+  },
+  {
+   "match": "^(Wellness|Tools|Featured|Connect)$",
+   "in2019": true,
+   "evidence": [
+    "article-html-201910",
+    "articleC-a201907"
+   ],
+   "note": "2019 header menu",
+   "required": true
+  },
+  {
+   "match": "^(Healthline|Healthline home|Go to our homepage)$",
+   "in2019": true,
+   "evidence": [
+    "articleA-a201907",
+    "articleB-a201907",
+    "article-html-201910"
+   ],
+   "note": "2019 header logo link",
+   "required": true
+  },
+  {
    "match": "^(More in Hypertension|Related Conditions|Scroll Right|Explore more in .*)$",
    "in2019": false,
    "evidence": [
@@ -67,7 +98,7 @@
    "action": "hidden (nav[aria-label^=\"Explore more in\"])"
   },
   {
-   "match": "^(Medical News Today|Greatist|Psych Central|Bezzy|Medical Affairs|Content Integrity|Sitemap|Advertise with us|@TRUST, AACI Certified logo|Fitness|Mental Well-Being|Product Reviews|Recipes|Skin Care|tablist area|Product Reviews|Medications|Resources)$",
+   "match": "^(Medical News Today|Greatist|Psych Central|Bezzy|Medical Affairs|Licensing Requests|Content Integrity|Sitemap|Advertise with us|@TRUST, AACI Certified logo|Fitness|Mental Well-Being|Product Reviews|Recipes|Skin Care|tablist area|Product Reviews|Medications|Resources)$",
    "in2019": false,
    "evidence": [
     "not in the 2019 HTML (article-html-201910, home-html-201907): the sister-site links came with the 2020 Red Ventures acquisitions, the Top Reads category tabs and the certification badge are later"

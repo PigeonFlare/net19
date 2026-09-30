@@ -1,6 +1,6 @@
 globalThis.net19Theme = {
   intended: '[data-n19-later], nav[aria-label*="more in" i], a:has(img[alt*="AACI" i])',
-  later: /^(?:medical news today|greatist|psych central|bezzy|medical affairs|content integrity|sitemap|advertise with us|product reviews|medications|resources|visit our youtube page|@trust, aacci certified logo|@trust, aaci certified logo)$/i,
+  later: /^(?:medical news today|greatist|psych central|bezzy|medical affairs|content integrity|sitemap|advertise with us|licensing requests|product reviews|medications|resources|visit our youtube page|@trust, aacci certified logo|@trust, aaci certified logo)$/i,
 };
 (() => {
   const words = { 'Health Conditions': 'Health Topics' };
