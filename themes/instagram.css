@@ -90,7 +90,8 @@ main article { background: rgb(var(--n19-card)) !important; border: 1px solid rg
 [data-n19-ig="feedcol"] { width: 614px !important; max-width: 614px !important; min-width: 0 !important; }
 [data-n19-ig="feedcol"] main article, [data-n19-ig="feedcol"] article { width: 100% !important; max-width: none !important; }
 main article span a[href^="/"][role="link"] :is(span, h2, div):not(:has(*)) { font-weight: 600 !important; }
-[data-n19-ig="pad"] { padding-left: 16px !important; padding-right: 16px !important; box-sizing: border-box !important; }
+[data-n19-ig="pad"], [data-n19-ig="head"] { padding-left: 16px !important; padding-right: 16px !important; box-sizing: border-box !important; }
+[data-n19-ig="head"] { padding-top: 8px !important; padding-bottom: 8px !important; }
 [data-n19-ig="stamp"], [data-n19-ig="stamp"] * { text-transform: uppercase !important; font-size: 10px !important; letter-spacing: .2px !important; color: rgb(var(--n19-text-2)) !important; }
 [data-n19-ig="addrow"] { border-top: 1px solid rgb(var(--n19-line)) !important; min-height: 56px !important; box-sizing: border-box !important; border-radius: 0 !important; background: transparent !important; }
 [data-n19-ig="addrow"] textarea { font-size: 14px !important; }

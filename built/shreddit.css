@@ -70,7 +70,7 @@ shreddit-post [slot="text-body"],shreddit-post .md,shreddit-comment .md{font-fam
 shreddit-post .md a,shreddit-comment .md a{color:var(--n19-link)!important}
 shreddit-post-flair .flair,shreddit-post [slot="post-flair"] .flair,.flair-content{border-radius:2px!important;font-size:12px!important;font-weight:500!important}
 shreddit-post :is(img,video,shreddit-player,shreddit-player-2,gallery-carousel),shreddit-post [slot="post-media-container"] *{border-radius:0!important}
-:where(:root:not([data-n19-safe])) shreddit-post [slot="post-media-container"]{margin-left:-8px!important;margin-right:-8px!important}
+:where(:root:not([data-n19-safe])) shreddit-post [slot="post-media-container"]{margin-left:0!important;margin-right:0!important}
 main#main-content:has(>shreddit-post[view-context="CommentsPage"]){background:var(--n19-card)!important;border:1px solid var(--n19-border)!important;border-radius:4px!important}
 :where(:root:not([data-n19-safe])) main#main-content:has(>shreddit-post[view-context="CommentsPage"]){padding:0 16px 16px 0!important;box-sizing:border-box!important}
 :where(:root:not([data-n19-safe])) shreddit-post[view-context="CommentsPage"]{position:relative!important}
@@ -157,7 +157,11 @@ reddit-pdp-right-rail-post h3.i18n-list-item-post-title,reddit-pdp-right-rail-po
 #right-sidebar-contents aside.subreddit-right-rail-community-info div.px-md>div.mb-sm>h2,#right-sidebar-contents aside.subreddit-right-rail-community-info div.px-md>div.mb-sm>h2 *{color:#fff!important;font-size:10px!important;font-weight:700!important;letter-spacing:.5px!important}
 create-post-entry-point-wrapper{display:none!important}
 shreddit-subreddit-header-buttons button,shreddit-join-button button{border-radius:4px!important;text-transform:uppercase!important;font-size:12px!important;font-weight:700!important;letter-spacing:.5px!important}
-.grid-container{--ab-award-count:none!important;--ab-repost-display:none!important}
+.grid-container,shreddit-post,shreddit-ad-post{--ab-award-count:none!important;--ab-repost-display:none!important}
+:where(:root:not([data-n19-safe])) shreddit-post[view-type="cardView"]>a[slot="title"]{margin:0!important;display:inline!important}
+:where(:root:not([data-n19-safe])) shreddit-post[view-type="cardView"]>shreddit-post-flair[slot="post-flair"]{margin:0!important}
+:where(:root:not([data-n19-safe])) shreddit-post[view-type="cardView"]>[slot="text-body"]{display:block!important;margin-top:8px!important;margin-right:8px!important}
+:where(:root:not([data-n19-safe])) shreddit-post[view-type="cardView"]>[slot="credit-bar"]{margin-right:8px!important}
 #answers-suggested-queries-pdp,aside[aria-label="People also ask about section"],#right-rail-experience-root{display:none!important}
 community-highlight-carousel,shreddit-community-highlights,[id="community-highlights"],achievements-progress-toast,[class*="floating-translation"],shreddit-translation-toggle,translation-toggle{display:none!important}
 html{--n19-tip:#0e1113}
@@ -580,3 +584,24 @@ main#main-content [data-testid="sdui-post-unit"] .post-credit-row search-telemet
 :where(:root:not([data-n19-safe])) reddit-pdp-right-rail-post a:has(>.ms-xs.truncate),:where(:root:not([data-n19-safe])) reddit-pdp-right-rail-post a>.ms-xs.truncate{flex-shrink:0!important;max-width:none!important;overflow:visible!important}
 reddit-pdp-right-rail-post a:has(>.ms-xs.truncate),reddit-pdp-right-rail-post a>.ms-xs.truncate{text-overflow:clip!important}
 :where(:root:not([data-n19-safe])) main#main-content search-telemetry-tracker>div[data-testid^="search-post"]:is(:hover,:focus-within){z-index:2!important}
+svg[data-testid="verification-icon"],svg[icon-name="verified-fill"][aria-label*="verification"i]{display:none!important}
+:where(:root:not([data-n19-safe])) [data-n19-pinned],[data-n19-pinned]:where(:root:not([data-n19-safe])){display:block;margin:0 0 10px}
+:where(:root:not([data-n19-safe])) [data-n19-pin],[data-n19-pin]:where(:root:not([data-n19-safe])){display:flex!important}
+[data-n19-pin]{background:var(--n19-card)!important;border:1px solid var(--n19-border)!important;border-radius:4px!important}
+:where(:root:not([data-n19-safe])) [data-n19-pin],[data-n19-pin]:where(:root:not([data-n19-safe])){margin:0 0 10px!important}
+[data-n19-pin]{text-decoration:none!important;color:var(--n19-text)!important}
+:where(:root:not([data-n19-safe])) [data-n19-pin],[data-n19-pin]:where(:root:not([data-n19-safe])){overflow:hidden}
+[data-n19-pin]:hover{border-color:var(--n19-border-hover)!important}
+:where(:root:not([data-n19-safe])) [data-n19-pin-score],[data-n19-pin-score]:where(:root:not([data-n19-safe])){flex:none;width:40px}
+[data-n19-pin-score]{background:var(--n19-vote)}
+:where(:root:not([data-n19-safe])) [data-n19-pin-score],[data-n19-pin-score]:where(:root:not([data-n19-safe])){padding:12px 0 8px}
+[data-n19-pin-score]{text-align:center;font:700 12px/16px var(--n19-font);color:var(--n19-text)}
+:where(:root:not([data-n19-safe])) [data-n19-pin-body],[data-n19-pin-body]:where(:root:not([data-n19-safe])){display:flex;flex-direction:column;gap:4px;padding:8px 8px 8px 8px;min-width:0}
+:where(:root:not([data-n19-safe])) [data-n19-pin-tag],[data-n19-pin-tag]:where(:root:not([data-n19-safe])){display:flex;align-items:center;gap:4px}
+[data-n19-pin-tag]{font:700 10px/16px var(--n19-font);letter-spacing:.5px;text-transform:uppercase;color:#13803a}
+html[data-net19-mode="dark"] [data-n19-pin-tag]{color:#46d160}
+:where(:root:not([data-n19-safe])) [data-n19-pin-tag] svg,[data-n19-pin-tag]:where(:root:not([data-n19-safe])) svg{width:14px;height:14px}
+[data-n19-pin-tag] svg{fill:currentColor!important;color:inherit!important}
+[data-n19-pin-tag] svg path{fill:currentColor!important}
+[data-n19-pin-title]{font:500 18px/22px var(--n19-font);color:var(--n19-title)}
+[data-n19-pin-meta]{font:700 12px/16px var(--n19-font);color:var(--n19-action)}

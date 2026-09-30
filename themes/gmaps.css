@@ -52,5 +52,7 @@ html[data-n19-g="maps"] {
   & [role="main"] :is(button[aria-label^="More Admissions"], button[aria-label^="More Experiences"], button[aria-label="Your Maps history"]) { display: none !important; }
   & [role="main"] div:has(> button[aria-label="Your Maps history"]), & [role="main"] div:has(> button[aria-label$="more options"]):not(:has(a, h1, [role="tab"])) { display: none !important; }
   & :is(button[aria-label="Show imagery"], a[href*="orderType="], a[href*="/searchviewer/"]) { display: none !important; }
+  & :is(div:has(> button[aria-label="Show imagery"]), div:has(> div > button[aria-label="Show imagery"]), div:has(> div > div > button[aria-label="Show imagery"]), div:has(> div > div > div > button[aria-label="Show imagery"])) { width: auto !important; min-width: 0 !important; }
+  & [role="region"][aria-label="This area"] { display: none !important; }
   & :is([role="dialog"], [role="alertdialog"]):not(.dBl9De) { border-radius: 8px !important; }
 }

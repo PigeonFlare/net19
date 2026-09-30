@@ -129,6 +129,7 @@ function net19PageChecks() {
   out.cropped = net19Cropped();
   Object.assign(out, net19Layout());
   Object.assign(out, net19Rows());
+  Object.assign(out, net19Rhythm());
   return out;
 }
 
@@ -332,6 +333,84 @@ function net19Rows() {
     let reach = bands[0][1], worst = 0, at = 0;
     for (const [t, b] of bands.slice(1)) { if (t - reach > worst) { worst = t - reach; at = reach; } reach = Math.max(reach, b); }
     if (worst > 32) report('gap', e, `${Math.round(worst)}px empty band between its content at y=${Math.round(at)}`, { left: r.left, top: at, width: r.width, height: worst });
+  }
+  return found;
+}
+
+function net19Rhythm() {
+  const W = innerWidth, H = innerHeight;
+  const found = { patch: [], tight: [], loose: [] };
+  const up = e => e.parentElement || (e.parentNode && e.parentNode.host) || null;
+  const name = e => (e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + (typeof e.className === 'string' && e.className ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '')).slice(0, 60);
+  const label = e => (e.getAttribute?.('aria-label') || e.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 30);
+  const box = r => ({ x: Math.round(r.left), y: Math.round(r.top), w: Math.round(r.width), h: Math.round(r.height) });
+  const seen = new Set();
+  const report = (k, e, detail, r) => { const key = k + name(e); if (seen.has(key) || found[k].length >= 30) return; seen.add(key); found[k].push({ what: `${name(e)} "${label(e)}"`, detail, ...box(r) }); };
+  const all = [];
+  const collect = root => { for (const e of root.querySelectorAll('*')) { all.push(e); if (e.shadowRoot) collect(e.shadowRoot); } };
+  collect(document);
+  const styleOf = new Map(), rectOf = new Map();
+  const cs = e => styleOf.get(e) || styleOf.set(e, getComputedStyle(e)).get(e);
+  const rect = e => rectOf.get(e) || rectOf.set(e, e.getBoundingClientRect()).get(e);
+  const visible = (e, anywhere) => { const r = rect(e); if (r.width < 2 || r.height < 2 || (!anywhere && (r.bottom < 0 || r.top > H || r.right < 0 || r.left > W))) return false;
+    for (let n = e; n && n.nodeType === 1; n = up(n)) { const c = cs(n); if (c.display === 'none' || c.visibility === 'hidden' || +c.opacity < .05) return false; } return true; };
+  const rgb = t => { const m = String(t).match(/[\d.]+/g); return m ? m.map(Number) : null; };
+  const lightness = ([r, g, b]) => { const f = v => { v /= 255; return v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; }; const y = .2126 * f(r) + .7152 * f(g) + .0722 * f(b); return y > .008856 ? 116 * Math.cbrt(y) - 16 : 903.3 * y; };
+  const neutral = ([r, g, b]) => Math.max(r, g, b) - Math.min(r, g, b) < 28;
+  const fillOf = c => { const bg = rgb(c.backgroundColor); if (bg && (bg[3] ?? 1) > .5) return bg; const g = c.backgroundImage.match(/rgba?\([^)]*\)/g); if (g) for (const stop of g) { const v = rgb(stop); if (v && (v[3] ?? 1) > .5) return v; } return null; };
+  const behind = e => { for (let n = up(e); n && n.nodeType === 1; n = up(n)) { const f = fillOf(cs(n)); if (f && !/url\(/.test(cs(n).backgroundImage)) return f; } return rgb(getComputedStyle(document.body).backgroundColor) || [255, 255, 255]; };
+  const pictured = e => { for (let n = e; n && n.nodeType === 1; n = up(n)) { if (/url\(/.test(cs(n).backgroundImage) || n.matches('video, canvas, picture, [role=img], [class*="player" i], [class*="thumbnail" i], [class*="media" i]')) return true; } return false; };
+  for (const e of all) {
+    const c = cs(e), own = fillOf(c);
+    if (!own || !neutral(own) || e.matches('img, svg, svg *, video, canvas, iframe, input[type=range]')) continue;
+    const r = rect(e);
+    if (r.width > 500 || r.height > 120 || !visible(e) || pictured(e)) continue;
+    const under = behind(e);
+    if (!neutral(under)) continue;
+    const d = Math.abs(lightness(own) - lightness(under));
+    if (d > 45) report('patch', e, `neutral ${lightness(own) < lightness(under) ? 'dark' : 'light'} patch (L ${Math.round(lightness(own))}) on L ${Math.round(lightness(under))}`, r);
+  }
+  const groups = new Map();
+  for (const e of all) {
+    const p = up(e);
+    if (!p || !visible(e, true)) continue;
+    const r = rect(e);
+    if (r.height < 30 || r.height > 900 || r.width < 200) continue;
+    const key = (p.tagName || '') + (p.getRootNode() === document ? '' : '#shadow');
+    const sig = e.tagName + '|' + (typeof e.className === 'string' ? e.className.split(/\s+/).filter(x => !/\d/.test(x)).sort().join('.') : '');
+    let m = groups.get(key); if (!m) groups.set(key, m = new Map());
+    (m.get(sig) || m.set(sig, []).get(sig)).push(e);
+  }
+  const content = e => { let top = Infinity, bottom = -Infinity;
+    const t = document.createTreeWalker(e.shadowRoot || e, NodeFilter.SHOW_TEXT);
+    for (let n = t.nextNode(), i = 0; n && i < 400; n = t.nextNode(), i++) { if (!n.nodeValue.trim() || !n.parentElement || !visible(n.parentElement, true)) continue; const range = document.createRange(); range.selectNodeContents(n); for (const q of range.getClientRects()) if (q.height > 2) { top = Math.min(top, q.top); bottom = Math.max(bottom, q.bottom); } }
+    for (const k of (e.shadowRoot || e).querySelectorAll('img, svg, video, button, input, textarea')) { if (k.matches('svg *')) continue; const q = rect(k); if (q.width > 4 && q.height > 4 && visible(k, true)) { top = Math.min(top, q.top); bottom = Math.max(bottom, q.bottom); } }
+    return top < bottom ? { top, bottom } : null; };
+  for (const m of groups.values()) for (const list of m.values()) {
+    if (list.length < 3) continue;
+    const pads = list.slice(0, 12).map(e => { const r = rect(e), k = content(e); return k && { e, r, above: k.top - r.top, below: r.bottom - k.bottom }; }).filter(Boolean);
+    if (pads.length < 3) continue;
+    const tight = pads.filter(p => p.above >= 12 && p.below <= 3);
+    if (tight.length >= Math.ceil(pads.length / 2)) report('tight', tight[0].e, `repeated items keep ${Math.round(tight[0].above)}px above their content but ${Math.round(tight[0].below)}px below`, tight[0].r);
+  }
+  const srOnly = e => { for (let n = e, i = 0; n && n.nodeType === 1 && i < 4; n = up(n), i++) { const c = cs(n), q = rect(n); if ((c.clip && c.clip !== 'auto') || /inset\(50%|circle\(0/.test(c.clipPath) || (q.width <= 2 || q.height <= 2) && c.overflow !== 'visible') return true; } return false; };
+  const bands = e => { const list = [];
+    const walk = root => { const t = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
+      for (let n = t.nextNode(), i = 0; n && i < 400; n = t.nextNode(), i++) { if (!n.nodeValue.trim() || !n.parentElement || !visible(n.parentElement, true) || srOnly(n.parentElement)) continue; const range = document.createRange(); range.selectNodeContents(n); for (const q of range.getClientRects()) if (q.height > 2 && q.width > 1) list.push([q.top, q.bottom]); }
+      for (const k of root.querySelectorAll('img, svg, video, canvas, button, [role=button], input, textarea')) { if (k.matches('svg *')) continue; const q = rect(k); if (q.width > 4 && q.height > 4 && visible(k, true)) list.push([q.top, q.bottom]); }
+      for (const k of root.querySelectorAll('*')) if (k.shadowRoot) walk(k.shadowRoot); };
+    walk(e); if (e.shadowRoot) walk(e.shadowRoot);
+    return list.sort((a, b) => a[0] - b[0]); };
+  for (const m of groups.values()) for (const list of m.values()) {
+    if (list.length < 3) continue;
+    let flagged = 0;
+    for (const item of list.slice(0, 6)) {
+      const r = rect(item); if (r.height > 700) continue;
+      const b = bands(item); if (b.length < 3) continue;
+      let reach = b[0][1];
+      for (const [t, bottom] of b.slice(1)) { const gap = t - reach; if (gap > 18 && gap < 120 && t < r.bottom) { report('loose', item, `${Math.round(gap)}px empty between its content at y=${Math.round(reach)}`, { left: r.left, top: reach, width: r.width, height: gap }); flagged++; break; } reach = Math.max(reach, bottom); }
+      if (flagged) break;
+    }
   }
   return found;
 }

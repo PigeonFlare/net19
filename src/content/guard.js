@@ -57,7 +57,7 @@ import { rgba } from './color.js';
   const parity = el => {
     if (!el || el.nodeType !== 1) return 0;
     if (flips.has(el)) return flips.get(el);
-    let p = parity(el.parentElement);
+    let p = parity(up(el));
     const f = getComputedStyle(el).filter;
     const m = f && f !== 'none' && f.match(/invert\(([\d.]+)\)/);
     if (m && +m[1] > .5) p ^= 1;
@@ -70,14 +70,46 @@ import { rgba } from './color.js';
     if (!stops.length) return null;
     return [0, 1, 2, 3].map(i => stops.reduce((sum, c) => sum + c[i], 0) / stops.length);
   };
+  const up = e => e.parentElement || (e.parentNode && e.parentNode.host) || null;
+  const holds = (a, el) => { for (let e = el; e; e = up(e)) if (e === a) return true; return false; };
   const MEDIA = 'img, picture, video, canvas, svg image, iframe';
   let layerOf = new Map(), mediaOf = new Map();
+  const tiles = new Map();
+  const texture = image => {
+    const url = /^url\("?([^")]+)"?\)$/.exec(image.trim())?.[1];
+    if (!url || /^data:image\/svg/.test(url)) return null;
+    if (tiles.has(url)) return tiles.get(url) || null;
+    let same = false;
+    try { same = /^data:/.test(url) || new URL(url, location.href).origin === location.origin; } catch {}
+    if (!same) { tiles.set(url, null); return null; }
+    tiles.set(url, null);
+    const img = new Image();
+    img.onload = () => {
+      try {
+        const canvas = new OffscreenCanvas(8, 8), ctx = canvas.getContext('2d', { willReadFrequently: true });
+        ctx.drawImage(img, 0, 0, 8, 8);
+        const d = ctx.getImageData(0, 0, 8, 8).data, sum = [0, 0, 0, 0];
+        for (let i = 0; i < d.length; i += 4) { sum[0] += d[i] * d[i + 3]; sum[1] += d[i + 1] * d[i + 3]; sum[2] += d[i + 2] * d[i + 3]; sum[3] += d[i + 3]; }
+        if (sum[3] / 64 < 200) return;
+        const mean = [sum[0] / sum[3], sum[1] / sum[3], sum[2] / sum[3], 1], m = lum(mean);
+        let spread = 0;
+        for (let i = 0; i < d.length; i += 4) spread = Math.max(spread, Math.abs(lum([d[i], d[i + 1], d[i + 2]]) - m));
+        if (spread > .12) return;
+        tiles.set(url, mean);
+        dirty = true; soon(50);
+      } catch {}
+    };
+    img.src = url;
+    return null;
+  };
   const layer = e => {
     let info = layerOf.get(e);
     if (!info) {
       const style = getComputedStyle(e);
-      const shade = style.backgroundImage !== 'none' ? gradient(style.backgroundImage) : null;
-      info = { blocked: style.backgroundImage !== 'none' && !shade, shade, color: rgba(style.backgroundColor) };
+      const masked = (style.maskImage && style.maskImage !== 'none') || (style.webkitMaskImage && style.webkitMaskImage !== 'none') || /text|padding|content/.test(style.backgroundClip);
+      const shade = style.backgroundImage !== 'none' && !masked ? gradient(style.backgroundImage) : null;
+      const tile = style.backgroundImage !== 'none' && !shade ? texture(style.backgroundImage) : null;
+      info = { blocked: style.backgroundImage !== 'none' && !masked && !shade && !tile, shade: shade || tile, color: rgba(style.backgroundColor), blend: style.mixBlendMode };
       layerOf.set(e, info);
     }
     return info;
@@ -94,7 +126,7 @@ import { rgba } from './color.js';
   const backdrop = el => {
     const layers = [];
     let b = null;
-    for (let e = el; e; e = e.parentElement) {
+    for (let e = el; e; e = up(e)) {
       const { blocked, shade, color } = layer(e);
       if (blocked) return null;
       if (e !== el) {
@@ -116,14 +148,29 @@ import { rgba } from './color.js';
     const last = layers[layers.length - 1];
     if (last && last.color[3] >= .95) { base = shownAs(last.color, parity(last.el)); layers.pop(); }
     for (let i = layers.length - 1; i >= 0; i--) base = over(shownAs(layers[i].color, parity(layers[i].el)), base);
-    return { color: base };
+    const veil = 1 - layers.reduce((keep, l) => keep * (1 - l.color[3]), 1);
+    const wash = under => { let c = under; for (let i = layers.length - 1; i >= 0; i--) c = over(shownAs(layers[i].color, parity(layers[i].el)), c); return c; };
+    return { color: base, painter: last && last.color[3] >= .95 ? last.el : root, veil, wash };
   };
-  const painted = e => { const st = getComputedStyle(e); return /url\(/.test(st.backgroundImage) || ['::before', '::after'].some(p => /url\(/.test(getComputedStyle(e, p).backgroundImage)); };
+  const agrees = (el, painter) => {
+    const b = el.getBoundingClientRect();
+    const x = Math.min(innerWidth - 1, Math.max(0, b.left + b.width / 2)), y = Math.min(innerHeight - 1, Math.max(0, b.top + b.height / 2));
+    for (const hit of document.elementsFromPoint(x, y)) {
+      if (hit === el || el.contains(hit)) continue;
+      if (hit === painter || holds(hit, el)) { if (hit === painter) return true; continue; }
+      const st = getComputedStyle(hit), c = rgba(st.backgroundColor);
+      if ((c && c[3] >= .5) || st.backgroundImage !== 'none' || hit.matches(MEDIA)) return false;
+    }
+    for (const e of [el.parentElement, painter]) for (const p of ['::before', '::after']) { if (!e || e === root) continue; const st = getComputedStyle(e, p); if (st.content !== 'none' && st.content !== 'normal' && ((rgba(st.backgroundColor)?.[3] ?? 0) >= .5 || st.backgroundImage !== 'none')) return false; }
+    return true;
+  };
+  const painted = e => { const st = getComputedStyle(e); return (/url\(/.test(st.backgroundImage) && !texture(st.backgroundImage)) || ['::before', '::after'].some(p => /url\(/.test(getComputedStyle(e, p).backgroundImage)); };
   const overPicture = (el, box) => {
     const x = Math.min(innerWidth - 1, Math.max(0, box.left + Math.min(box.width, 60) / 2)), y = Math.min(innerHeight - 1, Math.max(0, box.top + box.height / 2));
     for (const hit of document.elementsFromPoint(x, y)) {
       if (hit === el || el.contains(hit)) continue;
       if (hit.matches(MEDIA) || painted(hit)) return true;
+      if (texture(getComputedStyle(hit).backgroundImage)) return false;
       const color = rgba(getComputedStyle(hit).backgroundColor);
       if (color && color[3] >= .95) return false;
     }
@@ -133,26 +180,73 @@ import { rgba } from './color.js';
   inkSheet.textContent = '[data-net19-hidden]{display:none!important}' +
     '[data-net19-ink="dark"],[data-net19-ink="dark"] *{color:#1d1d1f!important;-webkit-text-fill-color:#1d1d1f!important}' +
     '[data-net19-ink="light"],[data-net19-ink="light"] *{color:#f5f5f7!important;-webkit-text-fill-color:#f5f5f7!important}' +
+    '[data-net19-blend]{mix-blend-mode:normal!important}' +
+    'svg[data-net19-icon="light"]{filter:brightness(0) invert(.92)!important}svg[data-net19-icon="dark"]{filter:brightness(0) invert(.12)!important}' +
     ':is(input,textarea)[data-net19-ink="dark"]{caret-color:#1d1d1f!important}:is(input,textarea)[data-net19-ink="dark"]::placeholder{color:#5f6368!important;-webkit-text-fill-color:#5f6368!important;opacity:1!important}' +
     ':is(input,textarea)[data-net19-ink="light"]{caret-color:#f5f5f7!important}:is(input,textarea)[data-net19-ink="light"]::placeholder{color:#bdc1c6!important;-webkit-text-fill-color:#bdc1c6!important;opacity:1!important}';
-  const original = new WeakMap();
+  const original = new WeakMap(), inline = new WeakMap();
+  let blendDark = null, fades = new Map();
+  const fadeOf = e => { if (!e || e === root || e.nodeType !== 1) return 1; let f = fades.get(e); if (f === undefined) { f = +getComputedStyle(e).opacity * fadeOf(up(e)); fades.set(e, f); } return f; };
   let textCache = null;
   const textElements = () => {
     if (textCache) return textCache;
     const found = textCache = new Set();
-    const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, {
-      acceptNode: n => n.nodeValue.trim().length > 1 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP,
-    });
-    for (let n = walker.nextNode(); n && found.size < 3000; n = walker.nextNode()) if (n.parentElement) found.add(n.parentElement);
+    const scopes = [document.body];
+    for (let i = 0; i < scopes.length && found.size < 3000; i++) {
+      const walker = document.createTreeWalker(scopes[i], NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT, {
+        acceptNode: n => n.nodeType === 1 ? (n.shadowRoot ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP) : n.nodeValue.trim().length > 1 ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP,
+      });
+      for (let n = walker.nextNode(); n && found.size < 3000; n = walker.nextNode()) {
+        if (n.nodeType === 1) { if (scopes.length < 400) scopes.push(n.shadowRoot); }
+        else if (n.parentElement) found.add(n.parentElement);
+      }
+    }
     return found;
+  };
+  const lift = (text, pt, under, goal, alpha = 1, side = null) => {
+    const drawn = c => over(shownAs([...c.slice(0, 3), alpha], pt), under);
+    const tryWith = end => {
+      let lo = 0, hi = 1, best = null;
+      for (let i = 0; i < 12; i++) {
+        const t = (lo + hi) / 2, c = [0, 1, 2].map(k => Math.round(text[k] + (end[k] - text[k]) * t)).concat(1);
+        if (ratio(drawn(c), under) >= goal) { best = c; hi = t; } else lo = t;
+      }
+      return best;
+    };
+    const toDark = side === 'light' ? null : tryWith([0, 0, 0]), toLight = side === 'dark' ? null : tryWith([255, 255, 255]);
+    const pick = toDark && toLight ? (ratio(drawn(toDark), under) <= ratio(drawn(toLight), under) ? toDark : toLight) : toDark || toLight;
+    if (!pick) return side || (ratio(shownAs([29, 29, 31, 1], pt), under) >= ratio(shownAs([245, 245, 247, 1], pt), under) ? 'dark' : 'light');
+    return `rgb(${pick[0]}, ${pick[1]}, ${pick[2]})`;
+  };
+  const SHAPES = 'path, circle, rect, polygon, polyline, ellipse, line, use';
+  const iconColor = svg => {
+    const colors = new Set();
+    let first = null;
+    for (const shape of [...svg.querySelectorAll(SHAPES)].slice(0, 12)) {
+      const st = getComputedStyle(shape);
+      for (const value of [st.fill, st.stroke]) {
+        if (!value || value === 'none' || /url\(/.test(value)) continue;
+        const c = rgba(value);
+        if (!c || c[3] < .3) continue;
+        colors.add(c.slice(0, 3).join());
+        first ||= c;
+      }
+    }
+    return colors.size === 1 ? first : null;
   };
   const check = () => {
     if (!document.body) return;
-    flips = new Map(); layerOf = new Map(); mediaOf = new Map();
+    flips = new Map(); layerOf = new Map(); mediaOf = new Map(); fades = new Map();
     const view = { w: innerWidth, h: innerHeight };
     const changes = [];
+    const dark = root.getAttribute('data-net19-mode') === 'dark';
+    if (dark !== blendDark) { blendDark = dark; for (const e of document.querySelectorAll('[data-net19-blend]')) e.removeAttribute('data-net19-blend'); }
     for (const el of textElements()) {
       if (el.closest('script, style, noscript, [data-net19-hidden]')) continue;
+      for (let e = el, i = 0; e && e !== root && i < 12; e = up(e), i++) {
+        const { blend } = layer(e);
+        if ((dark && blend === 'multiply') || (!dark && blend === 'screen')) { if (!e.hasAttribute('data-net19-blend')) e.setAttribute('data-net19-blend', ''); }
+      }
       const box = el.getBoundingClientRect();
       if (box.width < 2 || box.height < 2 || box.bottom < 0 || box.top > view.h || box.right < 0 || box.left > view.w) continue;
       const style = getComputedStyle(el);
@@ -162,17 +256,28 @@ import { rgba } from './color.js';
       if (text[3] < .2) continue;
       const bg = backdrop(el);
       if (!bg) { if (el.hasAttribute('data-net19-ink')) changes.push([el, null]); continue; }
-      const pt = parity(el), inText = bg.color;
-      const shown = over(shownAs(text, pt), inText);
+      const pt = parity(el);
+      let inText = bg.color;
+      const fade = fadeOf(el);
+      if (fade < .15) continue;
+      const seen = [...text.slice(0, 3), text[3] * fade];
+      const unknown = bg.veil >= .3 && (overPicture(el, box) || !agrees(el, bg.painter));
+      if (unknown) {
+        const light = bg.wash([255, 255, 255, 1]), dark = bg.wash([0, 0, 0, 1]);
+        inText = ratio(over(shownAs(seen, pt), light), light) <= ratio(over(shownAs(seen, pt), dark), dark) ? light : dark;
+      }
+      const shown = over(shownAs(seen, pt), inText);
       const current = el.getAttribute('data-net19-ink');
       const size = parseFloat(style.fontSize), large = size >= 24 || (size >= 18.6 && +style.fontWeight >= 600);
       const chroma = c => Math.max(...c.slice(0, 3)) - Math.min(...c.slice(0, 3));
-      const floor = large ? 2.2 : chroma(inText) > 90 || chroma(shown) > 90 ? 2.5 : 3;
+      const floor = unknown ? (large ? 4.5 : 6.5) : large ? 3 : chroma(inText) > 90 || chroma(shown) > 90 ? 3 : 4.5;
       if (ratio(shown, inText) >= floor) { if (current) changes.push([el, null]); continue; }
-      if (!current && overPicture(el, box)) continue;
+      if (!unknown && !current && overPicture(el, box)) continue;
+      if (!unknown && !current && !agrees(el, bg.painter)) continue;
       if (!original.has(el)) original.set(el, text);
-      const ink = ratio(shownAs([29, 29, 31, 1], pt), inText) >= ratio(shownAs([245, 245, 247, 1], pt), inText) ? 'dark' : 'light';
-      if (current !== ink) changes.push([el, ink]);
+      const side = unknown ? (lum(shownAs(seen, pt)) >= lum(bg.wash([128, 128, 128, 1])) ? 'light' : 'dark') : null;
+      const lifted = lift(text, pt, inText, floor + .3, text[3] * fade, side);
+      if (current !== lifted) changes.push([el, lifted]);
     }
     for (const f of document.querySelectorAll('input:not([type=hidden]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=submit]):not([type=button]):not([type=image]):not([type=reset]), textarea')) {
       const box = f.getBoundingClientRect();
@@ -193,8 +298,34 @@ import { rgba } from './color.js';
       if (current !== ink) changes.push([f, ink]);
     }
     for (const [el, ink] of changes) {
-      if (ink) el.setAttribute('data-net19-ink', ink);
-      else { el.removeAttribute('data-net19-ink'); original.delete(el); }
+      const before = inline.get(el);
+      if (before) { el.style.setProperty('color', before[0], before[1]); el.style.setProperty('-webkit-text-fill-color', before[2], before[3]); if (!before[0]) el.style.removeProperty('color'); if (!before[2]) el.style.removeProperty('-webkit-text-fill-color'); inline.delete(el); }
+      if (!ink) { el.removeAttribute('data-net19-ink'); original.delete(el); continue; }
+      el.setAttribute('data-net19-ink', ink);
+      const paint = ink.startsWith('rgb') ? ink : el.getRootNode() !== document ? (ink === 'dark' ? 'rgb(29, 29, 31)' : 'rgb(245, 245, 247)') : null;
+      if (paint) {
+        inline.set(el, [el.style.getPropertyValue('color'), el.style.getPropertyPriority('color'), el.style.getPropertyValue('-webkit-text-fill-color'), el.style.getPropertyPriority('-webkit-text-fill-color')]);
+        el.style.setProperty('color', paint, 'important'); el.style.setProperty('-webkit-text-fill-color', paint, 'important');
+      }
+    }
+    for (const svg of document.querySelectorAll('svg')) {
+      if (svg.closest('[data-net19-hidden], a[href] img, picture') || svg.parentElement?.closest('svg')) continue;
+      const box = svg.getBoundingClientRect();
+      if (box.width < 10 || box.height < 10 || box.width > 64 || box.height > 64 || box.bottom < 0 || box.top > view.h || box.right < 0 || box.left > view.w) continue;
+      const current = svg.getAttribute('data-net19-icon');
+      const paint = iconColor(svg);
+      if (!paint) { if (current) svg.removeAttribute('data-net19-icon'); continue; }
+      const bg = backdrop(svg);
+      if (!bg) continue;
+      const pt = parity(svg);
+      let under = bg.color;
+      const unknown = bg.veil >= .3 && !agrees(svg, bg.painter);
+      if (unknown) { const light = bg.wash([255, 255, 255, 1]), dark = bg.wash([0, 0, 0, 1]); under = ratio(over(shownAs(paint, pt), light), light) <= ratio(over(shownAs(paint, pt), dark), dark) ? light : dark; }
+      const shown = over(shownAs(paint, pt), under);
+      if (ratio(shown, under) >= 2.6) { if (current) svg.removeAttribute('data-net19-icon'); continue; }
+      if (!unknown && !current && !agrees(svg, bg.painter)) continue;
+      const want = unknown ? (lum(shownAs(paint, pt)) >= lum(bg.wash([128, 128, 128, 1])) ? 'light' : 'dark') : ratio(shownAs([29, 29, 31, 1], pt), under) >= ratio(shownAs([232, 234, 237, 1], pt), under) ? 'dark' : 'light';
+      if (current !== want) svg.setAttribute('data-net19-icon', want);
     }
   };
 
@@ -243,6 +374,7 @@ import { rgba } from './color.js';
       let added = false;
       for (const r of records) {
         if ((r.type === 'attributes' && r.target === root) || r.target === document.head || r.target.parentNode === document.head) continue;
+        if (r.attributeName === 'aria-label' || r.attributeName === 'role') { if (later(r.target.getAttribute('aria-label'))) hideLater(r.target); continue; }
         if (r.type === 'childList') {
           textCache = null;
           for (const n of r.addedNodes) { if (n.nodeType === 1) { hideLater(n); added = true; } }
@@ -251,7 +383,7 @@ import { rgba } from './color.js';
         if (r.type === 'attributes' && r.attributeName === 'placeholder' && ASKING.test(r.target.getAttribute('placeholder') || '')) hideLater(r.target.parentElement || r.target);
       }
       if (added) { dirty = true; soon(); }
-    }).observe(root, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style', 'hidden', 'open', 'aria-expanded', 'placeholder'] });
+    }).observe(root, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style', 'hidden', 'open', 'aria-expanded', 'placeholder', 'aria-label', 'role'] });
     new MutationObserver(() => { dirty = true; soon(50); }).observe(root, { attributes: true, attributeFilter: ['data-net19-mode', 'data-net19-recolor', 'class'] });
     for (const type of ['pointerover', 'focusin', 'click', 'keyup']) addEventListener(type, () => soon(), { capture: true, passive: true });
     for (const type of ['transitionend', 'animationend']) addEventListener(type, () => { dirty = true; soon(200); }, { capture: true, passive: true });

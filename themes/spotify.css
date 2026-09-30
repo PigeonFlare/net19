@@ -18,7 +18,7 @@ html:root, html.encore-dark-theme {
 #Desktop_LeftSidebar_Id section { background: transparent !important; border-radius: 0 !important; padding-top: 8px !important; padding-bottom: 8px !important; }
 #Desktop_LeftSidebar_Id h1 { text-transform: uppercase !important; letter-spacing: .16em !important; font-size: 11px !important; color: #b3b3b3 !important; }
 input[data-testid="search-input"] { background: #fff !important; color: #000 !important; height: 40px !important; min-height: 0 !important; block-size: 40px !important; padding-top: 0 !important; padding-bottom: 0 !important; }
-input[data-testid="search-input"] ~ div span, input[data-testid="search-input"]::placeholder { color: #7f7f7f !important; }
+input[data-testid="search-input"] ~ div:not(:has([role="listbox"], [role="option"])) span:not([role="listbox"] *, [role="option"] *), input[data-testid="search-input"]::placeholder { color: #7f7f7f !important; }
 #global-nav-bar form svg { color: #000 !important; fill: currentColor; }
 #global-nav-bar form:has(input[data-testid="search-input"]) { margin-top: 4px !important; }
 #main-view main section h2 { font-size: 28px !important; line-height: 34px !important; letter-spacing: -.02em !important; }
@@ -50,3 +50,4 @@ input[data-testid="search-input"] ~ div span, input[data-testid="search-input"]:
 main [data-testid="adaptiveEntityTitle"] h1, main [data-testid="entityTitle"] h1, main section[data-testid="artist-page"] h1 { font-size: clamp(32px, 3.75vw, 48px) !important; line-height: 1.15 !important; letter-spacing: -.02em !important; }
 aside[aria-label="Now playing view"], button[aria-label="Show Now Playing view"], button[aria-label="Hide Now Playing view"], [data-testid="action-bar-row"] button[role="combobox"],
 section[aria-label="Music videos"], section[aria-label="Profiles"], [data-testid="carousel-scroller"] a[href$="/users"] { display: none !important; }
+[data-testid="global-nav-bar"] form[role="search"] span:has(> kbd) { display: none !important; }

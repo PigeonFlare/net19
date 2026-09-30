@@ -140,3 +140,12 @@ header#gb form button[aria-label="Advanced search options" i] { background: var(
 :is([role="tab"], [role="button"])[aria-label*="Workspace Studio" i], [data-net19-studio] { display: none !important; }
 .nH.Hd :is([aria-label="Insert signature" i], [data-tooltip="Insert signature" i]) { display: none !important; }
 .aKh .aDG { color: #fff !important; -webkit-text-fill-color: #fff !important; }
+html[data-n19-picture="white"] .aeN .TO.nZ { background: transparent !important; }
+html[data-n19-picture="white"] .aeN .TO.nZ .TN { background: rgba(255, 255, 255, .2) !important; }
+html[data-n19-picture="white"] .aeN :is(.bsU, h2, [role="heading"]) { color: #fff !important; }
+html[data-n19-picture="white"] .aeN { background: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, .5) 64px, rgba(0, 0, 0, .5)) !important; }
+html[data-n19-picture="white"] .aeN :is(.nU, .bsU, a, h2, [role="heading"]) { text-shadow: 0 0 4px rgba(0, 0, 0, .75), 0 1px 2px rgba(0, 0, 0, .6) !important; }
+html[data-n19-picture="white"] :is(.aeF, .aeH) :is(.T-Jo, .amI, .amJ, .d-Na-hFsbo, [role="tab"]:not([aria-selected="true"]) .aKp),
+html[data-n19-picture="white"] :is(.aeF, .aeH) .T-KT:not(.T-KT-Jp)::before { filter: brightness(0) invert(1) !important; }
+html[data-n19-picture="white"] tr.zA .T-Jo { opacity: .7 !important; }
+html[data-n19-picture="white"] tr.zA:hover .T-Jo { opacity: 1 !important; }

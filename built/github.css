@@ -161,3 +161,86 @@ footer :is(li,div):has(>button[aria-label^="English"i]),footer details:has(summa
 :where(:root:not([data-n19-safe])) react-app[app-name="issues-react"] [class*="SidebarPageLayout-module__PageLayoutRoot"]{max-width:1012px!important;margin-left:auto!important;margin-right:auto!important}
 [data-testid="sidebar-types-section"],[data-testid="sidebar-relationships-section"],[data-testid="sidebar-development-section"]{display:none!important}
 header.HeaderMktg nav [class*="NavGroup-module__group"]:has(a[href$="/security/advanced-security"]),header.HeaderMktg nav li:has(>a[href$="/features/codespaces"]),header.HeaderMktg nav li:has(>a[href$="/features/code-quality"]),header.HeaderMktg nav li:has(>a[href^="https://maintainers.github.com"]),header.HeaderMktg nav li:has(>a[href^="https://stars.github.com"]){display:none!important}
+header.GlobalNav{background:var(--n19-header)!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav{position:relative!important}
+header.GlobalNav{box-shadow:none!important;border:0!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav>div:first-child{min-height:62px!important;padding:0 16px!important;box-sizing:border-box!important;width:100%!important;max-width:1012px;margin:0 auto!important;justify-content:flex-start!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav>div:first-child>div{padding-left:0!important;padding-right:0!important}
+header.GlobalNav>div:first-child :is(a,button),header.GlobalNav>div:first-child svg{color:var(--n19-header-text)!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav [class*="styles-module__left__"]{width:auto!important;flex:none!important}
+header.GlobalNav [class*="styles-module__left__"]>div:has(>button){display:none!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav [class*="styles-module__left__"] a[href="/"]{width:32px!important;height:32px!important;padding:0!important}
+header.GlobalNav [class*="styles-module__left__"] a[href="/"]{background:transparent!important;border:0!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav [class*="styles-module__left__"] a[href="/"]{margin-right:16px!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav [class*="styles-module__center__"]{flex:1 1 auto!important;justify-content:flex-start!important;gap:0!important}
+header.GlobalNav nav[aria-label="Breadcrumbs"],header.GlobalNav [class*="styles-module__center__"]>:not([data-n19-links]):not(:has(button[aria-label*="search"i])){display:none!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav [class*="styles-module__center__"]>:has(button[aria-label*="search"i]){order:0!important;flex:none!important;margin:0 16px 0 0!important;width:auto!important}
+header.GlobalNav [class*="styles-module__center__"]>:has(button[aria-label*="search"i]) [class*="ButtonGroup-Item"]:not(:has(button[aria-label*="search"i])){display:none!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav button[aria-label*="search"i]{width:300px!important;height:30px!important}
+header.GlobalNav button[aria-label*="search"i]{background:var(--n19-header-field)!important;border:0!important;border-radius:3px!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav button[aria-label*="search"i]{justify-content:flex-start!important;padding:0 8px!important;position:relative!important}
+header.GlobalNav button[aria-label*="search"i]:has([data-net19-label])>span:not([data-net19-label]){visibility:hidden!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav button[aria-label*="search"i] [data-net19-label]{position:absolute;left:8px;top:50%;transform:translateY(-50%)}
+header.GlobalNav button[aria-label*="search"i] [data-net19-label]{font-size:14px;line-height:20px;font-weight:400;color:var(--n19-header-dim)!important;visibility:visible!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav [data-n19-links]{order:1!important;display:flex!important;align-items:center!important}
+header.GlobalNav [data-n19-links] a{color:var(--n19-header-text)!important;font-size:14px!important;font-weight:600!important;line-height:20px!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav [data-n19-links] a{margin-right:16px!important}
+header.GlobalNav [data-n19-links] a{text-decoration:none!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav [data-n19-links] a{white-space:nowrap!important}
+header.GlobalNav [data-n19-links] a:hover{color:var(--n19-header-dim)!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav [class*="styles-module__right__"]{width:auto!important;flex:none!important}
+header.GlobalNav [class*="styles-module__right__"] :is(.hide-sm.hide-md,a[href="/issues"],a[href="/pulls"],a[href="/repos"],a[href="/copilot"],[class*="CopilotItems"]){display:none!important}
+header.GlobalNav [class*="styles-module__right__"] :is(button,a[data-n19-bell]){background:transparent!important;border:0!important;box-shadow:none!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav a[data-n19-bell]{display:inline-flex!important;align-items:center!important;justify-content:center!important;width:32px!important;height:32px!important}
+header.GlobalNav a[data-n19-bell] svg{fill:currentColor!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav [class*="styles-module__right__"] img{width:20px!important;height:20px!important}
+header.GlobalNav [class*="styles-module__right__"] img{border-radius:3px!important}
+header.GlobalNav nav[aria-label="Repository"]{background:var(--n19-bg-2)!important;border-bottom:1px solid var(--n19-border)!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav nav[aria-label="Repository"]{margin:0!important}
+header.GlobalNav nav[aria-label="Repository"]{box-shadow:none!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav nav[aria-label="Repository"]{padding:0 max(16px, calc((100% - 980px) / 2))!important;box-sizing:border-box!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav nav[aria-label="Repository"]>ul{margin:0!important;padding:0!important;flex:1 1 auto!important;gap:0!important}
+header.GlobalNav nav[aria-label="Repository"] li:has(>a:is([href$="/actions"],[href*="/agents"])){display:none!important}
+@media (min-width:1012px){header.GlobalNav nav[aria-label="Repository"] [class*="MoreButtonContainer"]{display:none!important}}
+:where(:root:not([data-n19-safe])) header.GlobalNav nav[aria-label="Repository"] li{margin:0!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav nav[aria-label="Repository"] a{height:auto!important;padding:7px 12px 8px!important;margin-bottom:-1px!important}
+header.GlobalNav nav[aria-label="Repository"] a{border:1px solid transparent!important;border-top-width:3px!important;border-radius:3px 3px 0 0!important;color:var(--n19-text-2)!important;font-size:14px!important;line-height:20px!important;background:transparent!important}
+header.GlobalNav nav[aria-label="Repository"] a:hover{color:var(--n19-text)!important}
+header.GlobalNav nav[aria-label="Repository"] a[aria-current]:not([aria-current="false"]){border-color:var(--n19-tab-edge) var(--n19-border) transparent!important;background:var(--n19-bg)!important;color:var(--n19-text)!important}
+header.GlobalNav nav[aria-label="Repository"] a::after,header.GlobalNav nav[aria-label="Repository"] a::before{display:none!important}
+header.GlobalNav nav[aria-label="Repository"] a svg{color:var(--n19-text-2)!important}
+header.GlobalNav nav[aria-label="Repository"] a [class*="Counter"],header.GlobalNav nav[aria-label="Repository"] a [data-component="counter"]{background:var(--n19-counter)!important;color:var(--n19-text)!important}
+html[data-n19-repohead]:where(:root:not([data-n19-safe])) header.GlobalNav nav[aria-label="Repository"]{position:absolute!important;left:0!important;right:0!important;top:var(--n19-tabs-top, 100%)!important;transform:translateY(-100%)!important}
+html[data-n19-repohead] header.GlobalNav nav[aria-label="Repository"]{background:transparent!important}
+html[data-n19-repohead]:where(:root:not([data-n19-safe])) header.GlobalNav nav[aria-label="Repository"]{z-index:1!important}
+header.GlobalNav [data-n19-repotitle]{background:var(--n19-bg-2)!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav [data-n19-repotitle]{padding:20px 0 20px!important}
+:where(:root:not([data-n19-safe])) header.GlobalNav [data-n19-repotitle]>div{max-width:980px;margin:0 auto;display:flex;align-items:center}
+header.GlobalNav [data-n19-repotitle]>div{font-size:20px;line-height:30px;color:var(--n19-text-2)}
+header.GlobalNav [data-n19-repotitle] svg{fill:var(--n19-text-2)}
+:where(:root:not([data-n19-safe])) header.GlobalNav [data-n19-repotitle] svg{margin-right:8px}
+header.GlobalNav [data-n19-repotitle] a{color:var(--n19-link)!important;text-decoration:none}
+:where(:root:not([data-n19-safe])) header.GlobalNav [data-n19-repotitle] span{margin:0 4px}
+header.GlobalNav [data-n19-repotitle] a[data-n19-repo]{font-weight:600}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="PageLayout-Header-"]:has(#repo-title-component){padding:20px 0 62px!important;margin:0 0 24px!important}
+react-app[app-name="code-view"] [class*="PageLayout-Header-"]:has(#repo-title-component){background:var(--n19-bg-2)!important;box-shadow:0 0 0 100vmax var(--n19-bg-2), 0 1px 0 100vmax var(--n19-border)!important;clip-path:inset(0 -100vmax -1px)!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="PageLayout-Header-"]:has(#repo-title-component)>div,:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="PageLayout-Header-"] :has(>.hide-whenNarrow){padding:0!important}
+react-app[app-name="code-view"] [class*="PageLayout-Header-"]:has(#repo-title-component)>div,react-app[app-name="code-view"] [class*="PageLayout-Header-"] :has(>.hide-whenNarrow){border:0!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="PageLayout-Header-"]:has(#repo-title-component)>div,:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="PageLayout-Header-"] :has(>.hide-whenNarrow){margin:0!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="PageLayout-Header-"] .d-md-flex:has(#repo-title-component){justify-content:space-between!important;flex-wrap:nowrap!important}
+:where(:root:not([data-n19-safe])) #repo-title-component>div,#repo-title-component:where(:root:not([data-n19-safe]))>div{justify-content:flex-start!important}
+#repo-title-component>div{font-size:20px!important}
+#repo-title-component img.avatar,#repo-title-component>div>img{display:none!important}
+#repo-title-component [data-n19-book]{fill:var(--n19-text-2)}
+:where(:root:not([data-n19-safe])) #repo-title-component [data-n19-book],#repo-title-component:where(:root:not([data-n19-safe])) [data-n19-book]{margin-right:8px;flex:none}
+#repo-title-component [data-n19-owner] a{color:var(--n19-link)!important;font-weight:400!important}
+:where(:root:not([data-n19-safe])) #repo-title-component [data-n19-slash],#repo-title-component:where(:root:not([data-n19-safe])) [data-n19-slash]{margin:0 4px}
+#repo-title-component [data-n19-slash]{color:var(--n19-text-2)}
+#repo-title-component strong a{color:var(--n19-link)!important;font-weight:600!important}
+#repo-title-component .prc-Label-Label-,#repo-title-component [class*="Label-Label"]{display:none!important}
+:where(:root:not([data-n19-safe])) button[aria-label^="Edit repository"i]:has([data-n19-edit]){width:auto!important;height:28px!important;padding:3px 10px!important}
+button[aria-label^="Edit repository"i]:has([data-n19-edit]){font-size:12px!important;font-weight:600!important;line-height:20px!important;border:1px solid var(--n19-btn-border)!important;border-radius:3px!important;background:linear-gradient(-180deg, var(--n19-btn-from), var(--n19-btn-to) 90%)!important;color:var(--n19-btn-text)!important}
+button[aria-label^="Edit repository"i]:has([data-n19-edit]) svg{display:none!important}
+:where(:root:not([data-n19-safe])) react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child>h2:has(button[aria-label^="Edit repository"i]){display:flex!important;order:99!important;margin:0 0 0 auto!important}
+react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child>h2:has(button[aria-label^="Edit repository"i]){font-size:0!important;line-height:0!important}
+.d-md-flex:has(#repo-title-component) :is(li,div):has(>button[aria-label^="Pin "i]),.d-md-flex:has(#repo-title-component) button[aria-label^="Pin "i]{display:none!important}

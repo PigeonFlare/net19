@@ -114,6 +114,7 @@ main [role="tablist"] [role="tab"][aria-selected="true"], main [role="tablist"] 
 main [role="tablist"] > span[role="presentation"] { background: var(--n19-blue) !important; height: 2px !important; border-radius: 0 !important; }
 main [role="tablist"] [role="tab"] svg[data-icon="icon-chevron-down-md"], main [role="tablist"] [role="tab"] span.w-4:has(svg[data-icon="icon-chevron-down-md"]) { display: none !important; }
 main :is(.sticky, [data-orientation="horizontal"]) > .border-b-\[0\.5px\] { border-bottom: 1px solid var(--n19-rule) !important; }
+[data-n19-tw="hometabs"] > [role="presentation"]:nth-child(n+3) { display: none !important; }
 [data-n19-tw="hometabs"] [role="tab"] :is(span, div) { font-weight: 700 !important; font-size: 15px !important; }
 
 aside.flex-col > div > div > section.rounded-md, [data-testid="sidebarColumn"] div:has(> :is(section[role="region"], aside[role="complementary"])), [data-testid="sidebarColumn"] aside[role="complementary"] {
@@ -364,7 +365,7 @@ html[data-n19-tp] [data-timeline-entry]:not([role="link"]) > article .text-gray-
 [data-n19-tw="title"]::after { content: attr(data-n19-label); display: block; margin-top: 48px; font-size: 15px; line-height: 20px; font-weight: 700; color: var(--n19-text); }
 [data-n19-tl="gate"], a[aria-label="Mention"][data-n19-tw="later"] { display: none !important; }
 [data-timeline-entry]:has(:is(a, button)[aria-label^="Trade on "], :is(a, button)[aria-label^="Trade $"], svg[data-icon="icon-clock-instant"]) { display: none !important; }
-:is(nav, header, aside, [role="menu"], [role="dialog"], [data-testid="Dropdown"]) a:is([href^="/i/money"], [href^="/i/radar"], [href^="/i/business"], [href^="/i/communitynotes"], [href^="/i/jf/explore/news"], [href^="/i/premium_sign_up"], [href^="/i/bookmarks"], [href$="/articles"], [href^="/i/jf/stories"], [href="/i/chat/grok"]) { display: none !important; }
+:is(nav, header, aside, [role="menu"], [role="dialog"], [data-testid="Dropdown"]) a:is([href^="/i/money"], [href^="/i/radar"], [href^="/i/business"], [href^="/i/communitynotes"], [href^="/i/jf/explore/news"], [href^="/i/premium_sign_up"], [href^="/i/bookmarks"]:not([data-net19-nav]), [href$="/articles"], [href^="/i/jf/stories"], [href="/i/chat/grok"]) { display: none !important; }
 [data-n19-tw="wallsignup"] svg { display: none !important; }
 [data-n19-tw="wallgo"] { background-color: var(--n19-blue) !important; border-color: var(--n19-blue) !important; opacity: 1 !important; }
 [data-n19-tw="wallgo"] * { color: #fff !important; font-weight: 700 !important; }

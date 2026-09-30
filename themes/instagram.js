@@ -59,6 +59,30 @@ globalThis.net19Theme = {
       else if (/^Search$/.test(label)) { mark(item, 'barsearch'); mark(link, 'barsearch-link'); }
       else if (/^(Notifications|Explore)$/.test(label) || link.querySelector('img')) mark(item, 'baricon');
     }
+    compass(rail);
+  };
+  const compass = rail => {
+    if (rail.querySelector('a[data-n19-explore], svg[aria-label="Explore"]')) return;
+    const bell = rail.querySelector('svg[aria-label="Notifications"]')?.closest('[data-n19-ig="baricon"]');
+    if (!bell) return;
+    const link = document.createElement('a');
+    link.href = '/explore/';
+    link.setAttribute('data-n19-explore', '');
+    link.setAttribute('data-n19-ig', 'baricon');
+    link.setAttribute('aria-label', 'Explore');
+    const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    svg.setAttribute('viewBox', '0 0 24 24');
+    svg.setAttribute('fill', 'none');
+    svg.setAttribute('stroke', 'currentColor');
+    svg.setAttribute('stroke-width', '2');
+    svg.setAttribute('stroke-linejoin', 'round');
+    const ring = document.createElementNS(svg.namespaceURI, 'circle');
+    ring.setAttribute('cx', '12'); ring.setAttribute('cy', '12'); ring.setAttribute('r', '10.5');
+    const needle = document.createElementNS(svg.namespaceURI, 'path');
+    needle.setAttribute('d', 'M15.9 8.1 10.3 10.3 8.1 15.9 13.7 13.7Z');
+    svg.append(ring, needle);
+    link.append(svg);
+    bell.before(link);
   };
   const barSearch = () => {
     const item = document.querySelector('[data-n19-ig="barsearch"]');
@@ -230,6 +254,7 @@ globalThis.net19Theme = {
     }
     const rail = document.querySelector('[data-n19-ig="rail"]');
     if (rail && !rail.querySelector('[data-n19-ig="barrow"]')) topBar(rail);
+    else if (rail) compass(rail);
     barSearch();
     if (rail) document.documentElement.setAttribute('data-n19-igbar', '');
     feedLayout();
@@ -266,6 +291,9 @@ globalThis.net19Theme = {
         }
       };
       walk(post, 0);
+      const top = Math.min(...media.map(m => m.getBoundingClientRect().top));
+      const head = [...post.querySelectorAll('[data-n19-ig="pad"]')].find(p => p.getBoundingClientRect().bottom <= top + 2);
+      if (head) head.setAttribute('data-n19-ig', 'head');
     }
     for (const time of document.querySelectorAll('main time:not([data-n19-ig]), [role="dialog"] article time:not([data-n19-ig])')) {
       if (parseFloat(getComputedStyle(time).fontSize) <= 12.5) mark(time.closest('a') || time, 'stamp');

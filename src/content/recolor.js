@@ -112,7 +112,9 @@ export function createRecolor(theme) {
     if (image !== 'none' && image.includes('gradient(')) { const g = tools.gradient(image); if (g) out.push(['background-image', g]); }
     if (!(el && (el.closest('[data-net19-ink]') || surfaceIsPhoto(el)))) {
       const fg = tools.shift(cs.color, 'fg');
-      if (fg) out.push(['color', fg], ['-webkit-text-fill-color', fg]);
+      if (fg) out.push(['color', fg]);
+      const fill = cs.webkitTextFillColor;
+      if (fill && fill !== cs.color) { const f = tools.shift(fill, 'fg'); if (f) out.push(['-webkit-text-fill-color', f]); }
     }
     if (cs.borderStyle !== 'none') {
       const widths = cs.borderWidth;

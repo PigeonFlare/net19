@@ -19,6 +19,8 @@ html[data-net19-mode="dark"]{--n19-ph-nav-text:#e8eaed;--n19-ph-line:#5f6368}
 :is(html[data-n19-g="photos"]) [role="navigation"].RSjvib a.oUj9s[jsname="LUZAsb"]{display:none!important}
 :is(html[data-n19-g="photos"]) [role="navigation"] a[role="tab"]:is([href$="/documents"],[href*="/documents/"],[href$="/places"],[href$="/lockedfolder"],[aria-label="Favorites"],[aria-label="Videos"],[aria-label="Recently added"]){display:none!important}
 :is(html[data-n19-g="photos"]) [role="navigation"] div:has(+div a[href$="/albums"]):not(:has(*)){display:none!important}
+:is(html[data-n19-g="photos"]) [role="navigation"] c-wiz:has(a[href$="/documents"]):not(:has(a[href$="/albums"])),:is(html[data-n19-g="photos"]) [role="navigation"] a[href*="/documents/"]{display:none!important}
+:is(html[data-n19-g="photos"]) [role="navigation"] div:has(>a[href$="/albums"])>[role="button"]{display:none!important}
 :is(html[data-n19-g="photos"]) [role="navigation"] c-wiz:has(a[href*="/quotamanagement"]){display:none!important}
 :is(html[data-n19-g="photos"]) [data-nudge-id]{display:none!important}
 :is(html[data-n19-g="photos"]) [role="navigation"].RSjvib .AeBiU-LgbsSe,:is(html[data-n19-g="photos"]) [role="navigation"].RSjvib .AeBiU-LgbsSe .UTNHae{border-radius:4px!important}

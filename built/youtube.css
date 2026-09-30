@@ -492,6 +492,12 @@ html[data-n19-yt="www"],html[data-n19-yt="www"] ytd-app,html[data-n19-yt="www"] 
 :is(html[data-n19-yt="www"]) .html5-video-player :is(.ytp-left-controls,.ytp-right-controls,.ytp-time-wrapper,.ytp-chrome-controls .ytp-button,.ytp-time-display){border-radius:0!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none!important}
 :is(html[data-n19-yt="www"]) .html5-video-player .ytp-chrome-bottom .ytp-chrome-controls{background:transparent!important}
 :where(:root:not([data-n19-safe])) :is(html[data-n19-yt="www"]) .html5-video-player .ytp-gradient-bottom,:is(html[data-n19-yt="www"]):where(:root:not([data-n19-safe])) .html5-video-player .ytp-gradient-bottom{display:block!important}
+:where(:root:not([data-n19-safe])) :is(html[data-n19-yt="www"]) .html5-video-player .ytp-gradient-bottom,:is(html[data-n19-yt="www"]):where(:root:not([data-n19-safe])) .html5-video-player .ytp-gradient-bottom{height:110px!important}
+:is(html[data-n19-yt="www"]) .html5-video-player .ytp-gradient-bottom{background:linear-gradient(to top, rgba(0, 0, 0, .75), rgba(0, 0, 0, .35) 55%, rgba(0, 0, 0, 0))!important}
+:is(html[data-n19-yt="www"]) .html5-video-player .ytp-volume-area{background:transparent!important;border-radius:0!important;box-shadow:none!important;backdrop-filter:none!important}
+:is(html[data-n19-yt="www"]) .html5-video-player .ytp-time-display,:is(html[data-n19-yt="www"]) .html5-video-player .ytp-chrome-controls .ytp-button{text-shadow:0 0 2px rgba(0, 0, 0, .8)!important}
+:is(html[data-n19-yt="www"]) .html5-video-player .ytp-chrome-controls .ytp-button svg{filter:drop-shadow(0 0 1px rgba(0, 0, 0, .9)) drop-shadow(0 0 2px rgba(0, 0, 0, .5))!important}
+:is(html[data-n19-yt="www"]) .html5-video-player .ytp-subtitles-button[aria-disabled="true"] svg path,:is(html[data-n19-yt="www"]) .html5-video-player .ytp-subtitles-button:not([aria-pressed]) svg path{fill-opacity:.6!important}
 :is(html[data-n19-yt="www"]) .html5-video-player .ytp-time-display :is(.ytp-time-current,.ytp-time-separator,.ytp-time-duration,.ytp-time-contents){color:#ddd!important;-webkit-text-fill-color:#ddd!important}
 :is(html[data-n19-yt="www"]) ytd-active-account-header-renderer #channel-handle{display:none!important}
 :is(html[data-n19-yt="www"]) [data-net19-hidden]{display:none!important}
@@ -536,3 +542,7 @@ html[data-n19-yt="music"] ytmusic-app :is(button,a):is(.ytSpecButtonShapeNextHos
 html[data-n19-yt="studio"] :is(ytcp-button,ytcp-button-shape) :is(button,.ytcp-button-shape-impl){border-radius:2px!important}
 html[data-n19-yt="studio"] ytcp-button .label,html[data-n19-yt="studio"] ytcp-button-shape .ytSpecButtonShapeNextButtonTextContent{text-transform:uppercase!important;letter-spacing:.5px!important}
 html[data-n19-yt="music"] ytmusic-nav-bar #right-content :is(a,button,.sign-in-link){border-radius:2px!important}
+ytd-comment-replies-renderer :is([class*="ytSubThreadConnection"],[class*="ytSubThreadShadow"]){display:none!important}
+:where(:root:not([data-n19-safe])) ytd-comment-replies-renderer [class*="ytSubThreadSubThread"]{margin-top:0!important}
+:where(:root:not([data-n19-safe])) ytd-comment-replies-renderer :is(#more-replies-sub-thread,#more-replies,#less-replies,#less-replies-sub-thread) button{height:32px!important}
+ytd-structured-description-content-renderer :is(#video-summary,ytd-video-description-infocards-section-renderer,ytd-expandable-metadata-renderer){display:none!important}

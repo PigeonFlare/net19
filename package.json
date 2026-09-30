@@ -17,7 +17,8 @@
     "audit:nav": "node --import tsx scripts/audit/nav.mjs",
     "audit:fit": "node scripts/audit/fit.mjs",
     "audit:inventory": "node scripts/audit/inventory.mjs",
-    "audit:words": "node scripts/audit/words.mjs"
+    "audit:words": "node scripts/audit/words.mjs",
+    "audit:rhythm": "node scripts/audit/rhythm.mjs"
   },
   "engines": {
     "node": ">=22"

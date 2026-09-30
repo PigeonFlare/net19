@@ -6,11 +6,12 @@ Net19 restyles 163 popular websites to look as they did in 2019. It has no devel
 
 ## What leaves your device
 
-Nothing about you. Net19 has no server and sends nothing anywhere. Its themes are stylesheets and small scripts bundled inside the extension. Some themes show a site's own older logos, icons or fonts, such as Google, Bing and Wikipedia's logos, the Twitter bird from abs.twimg.com, and Reddit's 2019 fonts and snoo from redditstatic.com. Your browser loads these from that same site's own servers, like any other part of the page.
+Nothing about you. Net19 has no server and sends nothing anywhere. Its themes are stylesheets and small scripts bundled inside the extension. Some themes show a site's own older logos, icons or fonts, such as Google, Bing and Wikipedia's logos, the Twitter bird from abs.twimg.com, and Reddit's 2019 fonts and snoo from redditstatic.com. Your browser loads these from that same site's own servers, like any other part of the page. To keep text readable on a site's own flat or gradient panel images, net19 may draw such an image from the same site (normally already in your browser's cache) into a small local canvas to read its average color; the result stays on your device.
 
 Some themes use a site's own settings:
 
 - Wikipedia, Wiktionary, Wikivoyage, Wikimedia Commons, Miraheze and Bulbapedia article links get a `useskin` parameter, which selects the site's own legacy skin.
+- Signed in to Reddit, opening the feed menu asks reddit.com itself for the list of communities you subscribe to, the same list Reddit's own sidebar shows, so the menu can show them as it did in 2019. The list stays in the open page.
 - Reddit feeds open in Reddit's own views: Classic on the home, Popular and All feeds, and Card on communities. net19 sets Reddit's `compact` preference cookie, the same one Reddit's own View menu sets, plus an `n19view` cookie on reddit.com that records that it has done so. Choosing another view in that menu keeps your choice. Like any Reddit cookie, they stay in your browser and are sent only to Reddit.
 
 ## Access and storage

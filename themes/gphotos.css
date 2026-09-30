@@ -20,6 +20,8 @@ html[data-n19-g="photos"] {
   & [role="navigation"].RSjvib a.oUj9s[jsname="LUZAsb"] { display: none !important; }
   & [role="navigation"] a[role="tab"]:is([href$="/documents"], [href*="/documents/"], [href$="/places"], [href$="/lockedfolder"], [aria-label="Favorites"], [aria-label="Videos"], [aria-label="Recently added"]) { display: none !important; }
   & [role="navigation"] div:has(+ div a[href$="/albums"]):not(:has(*)) { display: none !important; }
+  & [role="navigation"] c-wiz:has(a[href$="/documents"]):not(:has(a[href$="/albums"])), & [role="navigation"] a[href*="/documents/"] { display: none !important; }
+  & [role="navigation"] div:has(> a[href$="/albums"]) > [role="button"] { display: none !important; }
   & [role="navigation"] c-wiz:has(a[href*="/quotamanagement"]) { display: none !important; }
   & [data-nudge-id] { display: none !important; }
   & [role="navigation"].RSjvib .AeBiU-LgbsSe, & [role="navigation"].RSjvib .AeBiU-LgbsSe .UTNHae { border-radius: 4px !important; }

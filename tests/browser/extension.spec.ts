@@ -10,7 +10,8 @@ const PAGE = (title: string) => `<!doctype html><html><head><meta charset="utf-8
   `<dialog id="modal">modal</dialog>` +
   `<input id="q" placeholder="Search or ask a question"><button id="gen">🍌 Create images</button><a id="ask" href="/x">Ask Question</a>` +
   `<div id="results" data-net19-hidden style="display:none"><a href="/1"><h3>One</h3></a><a href="/2"><h3>Two</h3></a><a href="/3"><h3>Three</h3></a></div>` +
-  `<div id="menu" style="background:rgba(250,250,252,.95);width:300px;height:40px"><a id="faint" href="/y" style="color:#fff">Find a Store</a></div></main></body></html>`;
+  `<div id="menu" style="background:rgba(250,250,252,.95);width:300px;height:40px"><a id="faint" href="/y" style="color:#fff">Find a Store</a><span id="dim" style="color:#8a8a8a">Grey on near-white</span><svg id="glyph" width="20" height="20" viewBox="0 0 20 20"><path d="M2 2h16v16H2z" fill="#f4f4f6"/></svg></div></main>` +
+  `<div style="position:relative;width:500px;height:60px"><div style="position:absolute;inset:0;background:url(https://example.com/scene.jpg) #8a9bb0"></div><div style="position:relative;height:30px;background:rgba(22,22,22,.8)"><span id="veiled" style="color:#6d7176">Read mail on a picture</span></div><div style="position:relative;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,.5))"><span id="veiledWhite" style="color:#fff">Starred</span></div></div><div id="shade-host" style="background:#dae0e6;width:300px"><template shadowrootmode="open"><span id="inner" style="color:#b8bcc0">Admin notifications</span></template></div></body></html>`;
 let context: BrowserContext, worker: Worker, extensionId: string, requests: string[], unexpected: string[];
 
 test.beforeEach(async ({}, info) => {
@@ -51,6 +52,8 @@ test('a themed site is styled from its first paint; any other site is left alone
   expect(await scripts()).not.toContain('net19-start');
   await themed.evaluate(() => { const ask = document.createElement('button'); ask.id = 'late-ask'; ask.setAttribute('aria-label', 'Ask Gemini'); document.body.append(ask); });
   await expect(themed.locator('#late-ask')).toHaveAttribute('data-net19-hidden', '');
+  await themed.evaluate(() => { const tool = document.createElement('div'); tool.id = 'late-label'; tool.setAttribute('role', 'button'); tool.textContent = '0'; document.body.append(tool); setTimeout(() => tool.setAttribute('aria-label', 'Ask Gemini'), 100); });
+  await expect(themed.locator('#late-label')).toHaveAttribute('data-net19-hidden', '');
   await themed.evaluate(() => document.dispatchEvent(new CustomEvent('net19-fit-check')));
   await expect(themed.locator('html')).toHaveAttribute('data-n19-fit', /^fit/);
   expect(await fitRecords()).toEqual([]);
@@ -111,8 +114,17 @@ test('post-2019 features are hidden and unreadable text is given readable ink, o
   await expect(page.locator('#gen')).toBeHidden();
   await expect(page.locator('#ask')).toBeVisible();
   await expect(page.locator('#q')).toHaveAttribute('placeholder', 'Search');
-  await expect(page.locator('#faint')).toHaveAttribute('data-net19-ink', 'dark');
+  await expect(page.locator('#faint')).toHaveAttribute('data-net19-ink', /.+/);
+  const inked = await page.locator('#faint').evaluate(e => getComputedStyle(e).color.match(/\d+/g).slice(0, 3).map(Number));
+  expect(Math.max(...inked)).toBeLessThan(120);
+  await expect(page.locator('#dim')).toHaveAttribute('data-net19-ink', /^rgb/);
+  await expect(page.locator('#glyph')).toHaveAttribute('data-net19-icon', 'dark');
   await expect(page.locator('#bar')).not.toHaveAttribute('data-net19-ink', /.*/);
+  await expect(page.locator('#veiled')).toHaveAttribute('data-net19-ink', /.+/);
+  expect(Math.min(...await page.locator('#veiled').evaluate(e => getComputedStyle(e).color.match(/\d+/g).slice(0, 3).map(Number)))).toBeGreaterThan(180);
+  await expect(page.locator('#veiledWhite')).not.toHaveAttribute('data-net19-ink', 'dark');
+  expect(Math.min(...await page.locator('#veiledWhite').evaluate(e => getComputedStyle(e).color.match(/\d+/g).slice(0, 3).map(Number)))).toBeGreaterThan(230);
+  await expect.poll(() => page.evaluate(() => document.querySelector('#shade-host')!.shadowRoot!.querySelector('#inner')!.getAttribute('data-net19-ink'))).toBeTruthy();
   await expect(page.locator('#results')).toBeVisible();
 });
 
@@ -163,8 +175,7 @@ test('a theme that stops fitting a redesigned page steps back to its safe layer,
   await expect.poll(fitRecords).toEqual([]);
   await expect.poll(scripts).not.toContain('net19-safe');
   await page.reload();
-  await check();
-  await expect(html).toHaveAttribute('data-n19-fit', /^fit/);
+  await expect.poll(async () => { await check(); return html.getAttribute('data-n19-fit'); }).toMatch(/^fit/);
   await expect(html).not.toHaveAttribute('data-n19-safe', /.*/);
 });
 

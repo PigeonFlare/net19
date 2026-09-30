@@ -1,7 +1,7 @@
 globalThis.net19Theme = {
   detect: () => document.documentElement.classList.contains('tw-root--theme-dark') ? 'dark' : 'light',
   watch: ['class'],
-  later: /^(?:stories|create a story|view stories|discovery feed|try the discovery feed|clips feed|watch clips feed|shorts|guest star|request to join|hype chat|send a hype chat|top clip|last stream|replay ad|leave feedback for this ad)$/i,
+  later: /^(?:stories|create a story|view stories|discovery feed|try the discovery feed|clips feed|watch clips feed|shorts|guest star|request to join|hype chat|send a hype chat|top clip|last stream|replay ad|leave feedback for this ad|try 1-month ad-free|go ad-free(?: for free)?|ad-free for free)$/i,
 };
 (() => {
   const copyOf = (item, label, href) => {
@@ -60,6 +60,7 @@ globalThis.net19Theme = {
     main.prepend(div);
   };
   const fix = () => {
+    for (const heading of document.querySelectorAll('nav[aria-label="Left Navigation"] h3:not([data-net19-hidden])')) if (/^For You$/.test(heading.textContent.trim())) heading.setAttribute('data-net19-hidden', '');
     for (const callout of document.querySelectorAll('.tw-callout-message')) {
       const bar = callout.closest('article');
       if (bar && !bar.hasAttribute('data-net19-hidden') && /Join the Twitch community/i.test(callout.textContent || '')) bar.setAttribute('data-net19-hidden', '');
