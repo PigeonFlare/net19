@@ -24,6 +24,7 @@ header[class*="styles_header__"] a[class*="CDS_Button_button"] { background: tra
 [class*="styles_searchContainer"] [class*="styles_transparencyLink"] :is(p, a, span, svg) { color: var(--n19-hero-text) !important; fill: var(--n19-hero-text) !important; }
 [class*="styles_heroSearch"] :is(input[class*="styles_searchInputField"], input[class*="styles_textSuggestion"]) { border-radius: 3px !important; border: none !important; box-shadow: 1px 2px 5px -2px rgba(1,1,1,.1), 0 2px 7px 0 rgba(22,65,89,.03) !important; }
 [class*="styles_heroSearch"] button[class*="CDS_Button_circle"] { border-radius: 3px !important; width: 64px !important; background: var(--n19-green) !important; color: #fff !important; }
+[class*="styles_searchContainer"] [class*="styles_heroSearch"] { margin-top: 24px !important; }
 [class*="styles_heroSearch"] button[class*="CDS_Button_circle"] svg { fill: #fff !important; color: #fff !important; }
 [class*="styles_curvedWrapper"] { border-radius: 0 !important; }
 [class*="styles_card"], article[class*="styles_reviewCard"], section[class*="styles_reviewCard"] { border-radius: 4px !important; }
