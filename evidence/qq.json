@@ -1,0 +1,51 @@
+{
+  "theme": "qq",
+  "era": "2019 www.qq.com (腾讯网): white header with the 腾讯网 logo, a rounded search field with a blue #0c82ff 搜狗搜索 button, a light 登录 button, and a full-width #1479d7 blue channel bar with white 18px 新闻 / 视频 / 图片 / 军事 / 体育 / NBA ... links",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://arquivo.pt/noFrame/replay/20190702142728/https://www.qq.com/",
+      "date": "2019-07-02",
+      "shows": "home page: white header with the 腾讯网 logo, 网页 search scope, blue 搜狗搜索 button, 登录; blue rounded channel bar (新闻 视频 图片 军事 体育 NBA 娱乐 财经 科技 时尚 汽车 房产 教育 文化 游戏 星座 更多); 要闻 and 今日话题 columns, app grid, 热门赛事"
+    },
+    {
+      "id": "s2",
+      "url": "https://mat1.gtimg.com/pingjs/ext2020/qqindex2018/dist/css/qq_c20806dc.css",
+      "date": "2019-07 (still served)",
+      "shows": "stylesheet loaded by s1: .qq-nav .nav-mod #1479d7 50px high with 3px corners and 18px links, #0c82ff search button, #cae0f3 lines, #404040 text, Microsoft Yahei"
+    },
+    {
+      "id": "s3",
+      "url": "https://mat1.gtimg.com/pingjs/ext2020/qqindex2018/dist/img/qq_logo_2x.png",
+      "date": "2019 (still served)",
+      "shows": "the 2019 腾讯网 logo used by s1"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|nav|footer|main|section|article|form|search|aside|dialog|region|contentinfo|banner|navigation|complementary) area$|^repeated |^(Main)$",
+      "in2019": true,
+      "evidence": ["s1"],
+      "note": "page regions and repeated stories"
+    },
+    {
+      "match": "^(腾讯网|搜索|搜狗搜索|登录|邮箱|最新游戏|网页设置|快捷访问|要闻|新闻|视频|图片|科技|财经|教育|国际|军事|娱乐|电视剧|体育|NBA|汽车|房产|游戏|QQ游戏|小游戏中心|更多|产品推荐)$",
+      "in2019": true,
+      "required": true,
+      "evidence": ["s1", "s2"],
+      "note": "header, search and channel bar"
+    },
+    {
+      "match": "^(问AI|AI|Skills服务|Skills服务NEW|热问|安装电脑版.*)$",
+      "in2019": false,
+      "evidence": ["the AI assistant, AI channel, Skills service and the PC app install button postdate s1"],
+      "note": "hidden"
+    },
+    {
+      "match": "^(?=.{12,}$).*\\s.*$|^[\\p{Script=Han}，、。！？：；“”《》（）\\d\\s|·-]{8,}$",
+      "in2019": true,
+      "evidence": ["s1"],
+      "note": "headlines (content)"
+    }
+  ]
+}

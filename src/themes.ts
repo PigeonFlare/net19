@@ -192,6 +192,7 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'redfin', name: 'Redfin', domains: ['redfin.com'] },
   { id: 'ups', name: 'UPS', domains: ['ups.com'] },
   { id: 'mailru', name: 'Mail.ru', domains: ['mail.ru'], matches: ['*://mail.ru/*', '*://www.mail.ru/*'] },
+  { id: 'qq', name: 'Tencent QQ.com', domains: ['qq.com'], matches: ['*://www.qq.com/*', '*://qq.com/*'] },
   { id: 'ign', name: 'IGN', domains: ['ign.com'] },
   { id: 'patreon', name: 'Patreon', domains: ['patreon.com'] },
   { id: 'givesendgo', name: 'GiveSendGo', domains: ['givesendgo.com'] },
