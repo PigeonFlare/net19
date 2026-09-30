@@ -1,6 +1,6 @@
 {
  "theme": "nfl",
- "era": "",
+ "era": "2019 NFL.com (the 2018-2020 Wildcat site, before the July 2020 redesign): navy header bar with the NFL shield (NFL 100 in 2019), News, Scores, Schedule, Standings, Highlights, NFL 100, NFL Shop and a menu with Game Pass, Stats, Next Gen Stats, Ways to Watch, NFL Network, Photos, NFL Films; a score strip of game tiles with previous/next arrows; grey page with white story modules and More links. Post-2019 NFL+, My Team, Tickets, VIP Experiences, app download, TikTok/Snapchat links and the post-2019 footer columns are hidden; legal and privacy links and the consent dialog stay.",
  "sources": [
   {
    "id": "article0-a201909",
@@ -37,87 +37,200 @@
    "url": "https://arquivo.pt/noFrame/replay/20190113064216/https://www.nfl.com/teams",
    "date": "2019-01-13",
    "shows": "teams page as served in 2019-01 (Arquivo.pt capture rendered with its 2019 CSS)"
+  },
+  {
+   "id": "home-w201910",
+   "url": "https://web.archive.org/web/20191014232503/https://www.nfl.com/",
+   "date": "2019-10-14",
+   "shows": "home page: header links News, Scores, Schedule, Standings, Highlights, NFL 100, the menu with Super Bowl, Pro Bowl, Combine, Draft, Stats, Next Gen Stats, Ways to Watch, NFL Network, Photos, NFL Films, Game Pass; score strip with Previous/Next Options"
+  },
+  {
+   "id": "home-w201912",
+   "url": "https://web.archive.org/web/20191215000000/https://www.nfl.com/",
+   "date": "2019-12-15",
+   "shows": "home page: header adds Playoff Picture and NFL Shop; scoreStripGames (the game tiles with team, record and kickoff time); modules GO TO NEWS, MORE ANALYSIS, More Featured, More NFL 100, Watch, Next Gen Stats, Fantasy Home; official accounts YouTube, Twitter, Facebook, Instagram, LinkedIn, Pinterest"
+  },
+  {
+   "id": "article-a201902",
+   "url": "https://arquivo.pt/wayback/20190204082720/http://www.nfl.com/news/story/09000d5d8098885f/article",
+   "date": "2019-02-04",
+   "shows": "news story page: header, News Home, Injuries, Inactives, Transactions, Features, Podcasts subnav, team tags, Headlines/Latest/Team lists with More News >, Videos, Photos and NFL Shop modules; loads the Wildcat footer and the Gigya sign-in"
   }
  ],
  "features": [
   {
-   "match": "^(NEWS)$",
+   "match": "^(header area|Site|Secondary|nav area|aside area|main area|section area|article area|repeated (section|div|li|article))$",
    "in2019": true,
    "evidence": [
-    "home-a201903",
-    "home-a201907",
-    "standings-a201901"
+    "home-w201910",
+    "home-w201912",
+    "article-a201902"
    ],
-   "note": "2019 top navigation",
+   "note": "2019 header bar, score strip row and grey page of story modules"
+  },
+  {
+   "match": "^(Homepage|NFL\\.com|NFL)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201907",
+    "home-w201910",
+    "home-w201912"
+   ],
+   "note": "NFL shield linking home",
    "required": true
   },
   {
-   "match": "^(Injuries|Podcasts|Transactions)$",
+   "match": "^(WATCH|STATS|TEAMS|NEWS)(Chevron Down)?$",
    "in2019": true,
    "evidence": [
+    "home-w201910",
+    "home-w201912",
+    "teams-a201901"
+   ],
+   "note": "2019 header links and menu: News, Stats, Watch, Teams page"
+  },
+  {
+   "match": "^(GAMES)(Chevron Down)?$",
+   "in2019": false,
+   "action": "kept: the menu holding Scores and Schedule, the first two 2019 header links (home-w201910); hiding it would drop access to scores",
+   "evidence": [
+    "home-w201910"
+   ]
+  },
+  {
+   "match": "^(NFL Shop|NFL Films)(Arrow Upright)?$",
+   "in2019": true,
+   "evidence": [
+    "home-w201912",
+    "article-a201902"
+   ],
+   "note": "NFL Shop header link and module"
+  },
+  {
+   "match": "^Sign In$",
+   "in2019": false,
+   "action": "kept: account sign-in (2019 pages load the Gigya sign-in, article-a201902)",
+   "evidence": [
+    "article-a201902"
+   ]
+  },
+  {
+   "match": "^(Previous|Next|Previous page|Next page|Chevron (Left|Right))$",
+   "in2019": true,
+   "evidence": [
+    "home-a201907",
+    "home-w201910"
+   ],
+   "note": "score strip and carousel Previous/Next Options arrows"
+  },
+  {
+   "match": "^(SUN|MON|TUE|WED|THU|FRI|SAT) \\d|^(INTL|FINAL|LIVE)?.*\\d+-\\d+.*\\b(wins?|losses|ties)\\b",
+   "in2019": true,
+   "evidence": [
+    "home-w201912",
+    "article-a201902"
+   ],
+   "note": "score strip game tiles (scoreStripGames: teams, records, kickoff time)"
+  },
+  {
+   "match": "^(More News|More|See All|GO TO NEWS|Latest|Headlines)(Chevron Right)?( >)?$",
+   "in2019": true,
+   "evidence": [
+    "home-w201912",
+    "article-a201902"
+   ],
+   "note": "More News > / GO TO NEWS module links"
+  },
+  {
+   "match": "^NEXT LEVEL STATS\\. NEXT LEVEL INSIGHT\\.$",
+   "in2019": true,
+   "evidence": [
+    "home-w201910",
+    "home-w201912"
+   ],
+   "note": "Next Gen Stats module (2019 header menu and home module)"
+  },
+  {
+   "match": "^(SHOP NOW)$",
+   "in2019": true,
+   "evidence": [
+    "article-a201902"
+   ],
+   "note": "NFL Shop module on 2019 pages"
+  },
+  {
+   "match": "^(AFC|NFC)$",
+   "in2019": true,
+   "evidence": [
+    "teams-a201901",
+    "standings-a201901"
+   ],
+   "note": "AFC and NFC team groupings of the 2019 teams and standings pages"
+  },
+  {
+   "match": "^(Baltimore Ravens|Buffalo Bills|Cincinnati Bengals|Cleveland Browns|Denver Broncos|Houston Texans|Indianapolis Colts|Jacksonville Jaguars|Kansas City Chiefs|Las Vegas Raiders|Oakland Raiders|Los Angeles Chargers|Miami Dolphins|New England Patriots|New York Jets|Pittsburgh Steelers|Tennessee Titans|Arizona Cardinals|Atlanta Falcons|Carolina Panthers|Chicago Bears|Dallas Cowboys|Detroit Lions|Green Bay Packers|Los Angeles Rams|Minnesota Vikings|New Orleans Saints|New York Giants|Philadelphia Eagles|San Francisco 49ers|Seattle Seahawks|Tampa Bay Buccaneers|Washington Commanders|Washington Redskins)$",
+   "in2019": true,
+   "evidence": [
+    "teams-a201901",
+    "article-a201902"
+   ],
+   "note": "team logo links (2019 teams page, team tags on stories)"
+  },
+  {
+   "match": "^(Facebook|Youtube|YouTube|Instagram|Twitter|LinkedIn|Pinterest)$",
+   "in2019": true,
+   "evidence": [
+    "home-w201912"
+   ],
+   "note": "official accounts listed by the 2019 home page"
+  },
+  {
+   "match": "^(Support|Privacy Policy|Terms & Conditions|Terms of Service|Accessibility|Ad Choices|AdChoices|Your Privacy Choices|Cookie Settings|Preference Center: .*|Sitemap|Privacy|Privacy Preference Center|Strictly Necessary|Performance|Functional|Selling, Sharing, Targeted Advertising|Accept All|Reject All|Confirm My Choices|Close|Allow All|Allow|No Thanks|Inline Form)$",
+   "in2019": false,
+   "action": "kept: legal, privacy, consent and browser-permission prompts",
+   "evidence": []
+  },
+  {
+   "match": "^(NFL\\+|MY TEAM|Tickets|VIP Experiences|Download the App|Download iOS App|Download Android App|Tiktok|TikTok|Snapchat|Subscription Terms & Conditions|Careers|NFL Writers|Series|The Athletic|Inclusion|In the Community|Inspire Change|NFL HBCU|Por La Cultura|Play Football|Play 60|NFL Origins|NFL Football Operations|On Location|Pro Football Hall of Fame|USA Football|NFL Extra Points Credit Card|NFL Ticket Exchange|NFL Auction|Flag Football|Activate - CTV|NFL Communications|Media Guides|Record & Fact Book|Rule Book|Licensing|NFL Health & Safety|Player Engagement|NFL Legends Community|NFL Alumni Association|NFL Player Care)(Arrow Upright)?$",
+   "in2019": false,
+   "evidence": [
+    "home-w201910",
+    "home-w201912"
+   ],
+   "note": "not on the 2019 header, menu or home modules; hidden by the theme (NFL+ launched 2022)"
+  },
+  {
+   "match": "^(.* REPLAYS.*|CHOOSE YOUR ?FAVORITE TEAM|Favorite Team Card|SIGN UP)$",
+   "in2019": false,
+   "evidence": [
+    "home-w201910",
+    "home-w201912"
+   ],
+   "note": "NFL+ Game Replays package and the favorite-team sign-up card are post-2019; hidden by the theme"
+  },
+  {
+   "match": "^(News Home|Podcasts|Injuries|Transactions|NFL NEWS|News)$",
+   "in2019": true,
+   "evidence": [
+    "article-a201902",
     "article0-a201909"
    ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Injuries",
-    "Podcasts",
-    "Transactions"
-   ]
+   "note": "2019 news section subnav News Home, Injuries, Inactives, Transactions, Features, Podcasts"
   },
   {
-   "match": "^(Standings|main\\ area)$",
+   "match": "^(Players|Standings|Tie-Breaking Procedures|DIVISION|CONFERENCE|LEAGUE|Division|Conference|League)$",
    "in2019": true,
    "evidence": [
-    "article0-a201909",
-    "home-a201903",
-    "home-a201907"
+    "standings-a201901",
+    "home-w201912"
    ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "Standings",
-    "main area"
-   ]
+   "note": "2019 standings page: DIVISION / CONFERENCE / LEAGUE views and TIE-BREAKING PROCEDURES; Players in the 2019 header data"
   },
   {
-   "match": "^(nav\\ area)$",
-   "in2019": true,
-   "evidence": [
-    "article0-a201909",
-    "standings-a201901"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "nav area"
-   ]
-  },
-  {
-   "match": "^(NEWS)$",
-   "in2019": true,
-   "evidence": [
-    "home-a201903",
-    "home-a201907",
-    "standings-a201901"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "NEWS"
-   ]
-  },
-  {
-   "match": "^(repeated\\ div)$",
-   "in2019": true,
-   "evidence": [
-    "standings-a201901"
-   ],
-   "note": "the same label appears on the 2019 capture(s) cited",
-   "auto": true,
-   "labels": [
-    "repeated div"
-   ]
+   "match": "^(Terms and Conditions|Reject Optional Tracking|Acknowledge Tracking)$",
+   "in2019": false,
+   "action": "kept: tracking consent banner and its terms link, required by law",
+   "evidence": []
   }
  ]
 }

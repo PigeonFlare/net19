@@ -27,3 +27,7 @@ main [class*="bg-ls-level-2"],main [class*="bg-white"]{background-color:var(--n1
 html[data-net19-mode="dark"] .d3-o-tabbed-controls-selector li:not(.active)>a{color:#c8d1dd!important;border-color:#c8d1dd!important}
 .d3-l-wrap :is(h1,h2,h3){font-family:var(--n19-font)!important;font-style:normal!important}
 nav[aria-label="Site"] li:has(>a[href*="the-athletic"]),nav[aria-label="Site"] li:has(>a[href*="theathletic.com"]),nav[aria-label="Site"] li:has(>a[href*="fantasy.espn.com"]),nav[aria-label="Site"] li:has(>a[href*="espn.com/fantasy"]){display:none!important}
+footer[data-testid="footer-section"] nav:has(a[href*="apps.apple.com"],a[href*="play.google.com"]){display:none!important}
+footer[data-testid="footer-section"] li:has(>a[href*="tiktok.com"]),footer[data-testid="footer-section"] li:has(>a[href*="snapchat.com"]),footer[data-testid="footer-section"] a:is([href*="tiktok.com"],[href*="snapchat.com"]){display:none!important}
+main section:is([data-testid^="FavoriteTeamCard"],[data-testid^="ReplaysPackage"]){display:none!important}
+footer[data-testid="footer-section"] section:has(>nav[aria-labelledby]):not(:has(li:not([data-net19-hidden]))){display:none!important}
