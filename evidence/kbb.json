@@ -59,6 +59,65 @@
  ],
  "features": [
   {
+   "match": "^(Best (SUVs|Trucks|Minivans|EVs|Hybrids|Sedans|Cars|Crossovers|Luxury Cars|Electric Cars)|region area|presentation area|repeated div role=region)$",
+   "in2019": true,
+   "evidence": [
+    "raw-home-2019-07"
+   ],
+   "note": "2019 home browse-by-type block: 'Searching for the Best Car?', Top 10 Lists and Popular Used SUVs, Trucks, Minivans, Hybrid and Electric, Sedans; the aside beside it is the 2019 ad column"
+  },
+  {
+   "match": "^(Privacy)$",
+   "in2019": false,
+   "evidence": [
+    "cookie consent dialog"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Kelley Blue Book)$",
+   "in2019": true,
+   "evidence": [
+    "raw-home-2019-07",
+    "home-a201907b"
+   ],
+   "note": "2019 header logo link",
+   "required": true
+  },
+  {
+   "match": "^(Car Values)$",
+   "in2019": true,
+   "evidence": [
+    "forsale-a201907",
+    "home-a201903",
+    "home-a201906c"
+   ],
+   "note": "2019 main navigation",
+   "required": true
+  },
+  {
+   "match": "^(Cars for Sale)$",
+   "in2019": true,
+   "evidence": [
+    "forsale-a201907",
+    "home-a201903",
+    "home-a201906c"
+   ],
+   "note": "2019 main navigation",
+   "required": true
+  },
+  {
+   "match": "^(Car Reviews)$",
+   "in2019": true,
+   "evidence": [
+    "forsale-a201907",
+    "home-a201903",
+    "home-a201906c"
+   ],
+   "note": "2019 main navigation",
+   "required": true
+  },
+  {
    "match": "^(Private Seller Listings|Deals & Incentives|Dealer Reviews & Ratings|Electric Vehicle Guide|Videos|Car Match Quiz|Car Finance Guide|Car Depreciation|Car Financing 101|Service & Repair|Auto Repair Pricing|Maintenance Pricing|Service Advisor|OBD-II Codes|Find an Auto Shop|Repair or Replace|KBB Canada|Facebook Icon|X Icon|RSS Icon|LinkedIn Icon|YouTube Icon|Kelley Knows Motorcycles, Too)$",
    "in2019": false,
    "evidence": [
