@@ -224,6 +224,60 @@
         "the Subtember gift-sub callout under the player (subtember-callout-container, seen on a live channel 2026-09); s2, s7 and s8 show the channel bar directly under the player with nothing between it and the stream info"
       ],
       "action": "hidden (theme)"
+    },
+    {
+      "match": "^Twitch Home$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s6"
+      ],
+      "note": "glitch logo"
+    },
+    {
+      "match": "^Browse$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s6"
+      ],
+      "note": "Browse in the top bar"
+    },
+    {
+      "match": "^Search Input$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s6"
+      ],
+      "note": "search field"
+    },
+    {
+      "match": "^Log In$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "start"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "Log In button"
+    },
+    {
+      "match": "^Sign Up$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "start"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "Sign Up button"
     }
   ]
 }

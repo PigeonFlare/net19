@@ -146,6 +146,57 @@
         "absent from s1 (full 2019 page); Open To Work 2020-06, Newsletters 2021, Games 2024, Apple/Google sign-in 2021+"
       ],
       "action": "hidden"
+    },
+    {
+      "match": "^LinkedIn$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "start"
+      ],
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "logo"
+    },
+    {
+      "match": "^Join now$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "start"
+      ],
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "Join now"
+    },
+    {
+      "match": "^Sign in$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "start"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "Sign in"
+    },
+    {
+      "match": "^Welcome to your professional community$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "start"
+      ],
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "hero headline"
     }
   ]
 }

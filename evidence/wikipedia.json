@@ -1354,6 +1354,104 @@
     "മലയാളം",
     "အဓိကလိတ်မဲ့ငါ – Pa'O"
    ]
+  },
+  {
+   "match": "^Visit the main page$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "article2-201909",
+    "article5-201909",
+    "article8-201909"
+   ],
+   "note": "puzzle-globe logo"
+  },
+  {
+   "match": "^Search Wikipedia$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "article2-201909",
+    "article5-201909",
+    "article8-201909"
+   ],
+   "note": "Search Wikipedia box"
+  },
+  {
+   "match": "^View the content page \\[alt-c\\]$",
+   "in2019": true,
+   "required": true,
+   "pages": [
+    "start"
+   ],
+   "evidence": [
+    "article2-201909",
+    "article5-201909",
+    "article8-201909"
+   ],
+   "note": "Article tab"
+  },
+  {
+   "match": "^Discuss improvements to the content page \\[alt-t\\]$",
+   "in2019": true,
+   "required": true,
+   "pages": [
+    "start"
+   ],
+   "evidence": [
+    "article2-201909",
+    "article5-201909",
+    "article8-201909"
+   ],
+   "note": "Talk tab"
+  },
+  {
+   "match": "^Read$",
+   "in2019": true,
+   "required": true,
+   "pages": [
+    "start"
+   ],
+   "evidence": [
+    "article2-201909",
+    "article5-201909",
+    "article8-201909"
+   ],
+   "note": "Read tab"
+  },
+  {
+   "match": "^Past revisions of this page \\[alt-h\\]$",
+   "in2019": true,
+   "required": true,
+   "pages": [
+    "start"
+   ],
+   "evidence": [
+    "article2-201909",
+    "article5-201909",
+    "article8-201909"
+   ],
+   "note": "View history tab"
+  },
+  {
+   "match": "^Interaction$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "c-home-201904",
+    "article5-201909"
+   ],
+   "note": "sidebar Interaction portlet"
+  },
+  {
+   "match": "^Tools$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "c-home-201904",
+    "article5-201909"
+   ],
+   "note": "sidebar Tools portlet"
   }
  ]
 }

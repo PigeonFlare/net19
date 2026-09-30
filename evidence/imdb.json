@@ -303,6 +303,50 @@
     "chart-a201907"
    ],
    "note": "content item links: film and series titles, people's names and characters in filmography, cast and search results (2019 pages listed the same kinds of links)"
+  },
+  {
+   "match": "^Home$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "IMDb logo link"
+  },
+  {
+   "match": "^Search IMDb$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "search field"
+  },
+  {
+   "match": "^Watchlist$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "Watchlist in the header"
+  },
+  {
+   "match": "^Sign [Ii]n$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "Sign In in the header"
   }
  ]
 }

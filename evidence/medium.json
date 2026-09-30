@@ -74,6 +74,52 @@
         "s3"
       ],
       "note": "story titles, subtitles and text (content)"
+    },
+    {
+      "match": "^(Medium|Homepage)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "Medium logo in the top bar"
+    },
+    {
+      "match": "^(Search|Search Medium)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "search in the top bar"
+    },
+    {
+      "match": "^Sign in$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "start"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "green Sign in (signed out)"
+    },
+    {
+      "match": "^Get started$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "start"
+      ],
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "green outlined Get started (signed out)"
     }
   ]
 }

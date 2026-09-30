@@ -45,6 +45,63 @@
       "evidence": [
         "s1"
       ]
+    },
+    {
+      "match": "^hot$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "header tab"
+    },
+    {
+      "match": "^new$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "header tab"
+    },
+    {
+      "match": "^top$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "header tab"
+    },
+    {
+      "match": "^(login|log in)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "login or sign up link in the header"
+    },
+    {
+      "match": "^search$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "search field"
+    },
+    {
+      "match": "^submit a new link$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "start"
+      ],
+      "evidence": [
+        "s1"
+      ],
+      "note": "sidebar submit button"
     }
   ]
 }
