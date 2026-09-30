@@ -678,11 +678,25 @@ function net19Layout() {
     const r = e.getBoundingClientRect(); const c = getComputedStyle(e);
     return r.width >= 120 && r.height >= 40 && !/fixed|sticky|absolute/.test(c.position) && !e.closest('[role=dialog], [role=menu], [role=listbox], dialog');
   });
+  const shownPart = e => {
+    const r = e.getBoundingClientRect();
+    let left = r.left, top = r.top, right = r.right, bottom = r.bottom;
+    for (let a = e.parentElement; a && a !== document.body && a !== document.documentElement; a = a.parentElement) {
+      const c = getComputedStyle(a);
+      if (c.overflowX === 'visible' && c.overflowY === 'visible') continue;
+      const q = a.getBoundingClientRect();
+      if (c.overflowX !== 'visible') { left = Math.max(left, q.left); right = Math.min(right, q.right); }
+      if (c.overflowY !== 'visible') { top = Math.max(top, q.top); bottom = Math.min(bottom, q.bottom); }
+      if (right - left < 1 || bottom - top < 1) return null;
+    }
+    return { left, top, right, bottom, width: right - left, height: bottom - top };
+  };
   const seen = new Set();
   for (let i = 0; i < blocks.length && i < 400; i++) for (let j = i + 1; j < blocks.length && j < 400; j++) {
     const a = blocks[i], b = blocks[j];
     if (a.contains(b) || b.contains(a)) continue;
-    const p = a.getBoundingClientRect(), q = b.getBoundingClientRect();
+    const p = shownPart(a), q = shownPart(b);
+    if (!p || !q) continue;
     const ox = Math.min(p.right, q.right) - Math.max(p.left, q.left), oy = Math.min(p.bottom, q.bottom) - Math.max(p.top, q.top);
     if (ox < 12 || oy < 12) continue;
     const key = name(a) + '|' + name(b);
