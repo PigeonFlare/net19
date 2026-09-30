@@ -1,0 +1,75 @@
+{
+  "theme": "duckduckgo",
+  "era": "2019 duckduckgo.com: home page with the large Dax logo and DuckDuckGo wordmark centred over a square-cornered 590px search box on #f7f7f7, grey magnifier that turns into a green button once something is typed, tagline under the box; results page with a #fafafa header (36px round logo, 44px search box with 4px corners), Web / Images / Videos / News tabs in 600-weight grey with a 1px dark line under the current one, All Regions / Safe Search / Any Time filters, and results as a #00278e title, a favicon with the full green #20692b URL, then a #494949 snippet, all in Proxima Nova",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://searchenginewatch.com/wp-content/uploads/2019/04/Screenshot-2019-04-19-at-17.39.06.png",
+      "date": "2019-04-19",
+      "shows": "results for 'social media trends' (Search Engine Watch, 'What's it like using DuckDuckGo in 2019?'): round logo, square-cornered search box with grey magnifier, Web (current, dark) Images Videos News tabs, All Regions / Safe Search: Moderate / Any Time filters, ad with sitelinks, results as blue title, favicon + green full URL, grey snippet with bold terms, sidebar ad"
+    },
+    {
+      "id": "s2",
+      "url": "https://searchenginewatch.com/wp-content/uploads/2019/04/Screenshot-2019-04-20-at-15.36.27.png",
+      "date": "2019-04-20",
+      "shows": "results for 'alternative to google search': Web Images Videos News | Software tabs with the current one underlined, software cards module, filters row, result with blue title, favicon + green URL and snippet"
+    },
+    {
+      "id": "s3",
+      "url": "https://searchenginewatch.com/wp-content/uploads/2019/04/Screenshot-2019-04-19-at-17.34.00.png",
+      "date": "2019-04-19",
+      "shows": "home page: large round Dax logo over the DuckDuckGo wordmark, centred square-cornered search box with grey magnifier, tagline 'The search engine that doesn't track you.' with a link, hamburger menu top right, 'Add DuckDuckGo to Chrome' balloon"
+    },
+    {
+      "id": "s4",
+      "url": "https://arquivo.pt/noFrame/replay/20190907100225/https://duckduckgo.com/",
+      "date": "2019-09-07",
+      "shows": "home page capture: logo_homepage.normal.v108.svg logo and wordmark centred on #f7f7f7, search box, menu"
+    },
+    {
+      "id": "s5",
+      "url": "https://arquivo.pt/noFrame/replay/20190907100324id_/https://duckduckgo.com/r1820.css",
+      "date": "2019-09-07",
+      "shows": "results stylesheet: .result__a #00278e (visited #6c00a2), .result__url #20692b, .result__snippet #494949, .header-wrap #fafafa with a 1px rgba(0,0,0,.15) shadow, 36px logo_header.v108.svg, .search 4px corners, 1px rgba(0,0,0,.15) border, 0 2px 3px rgba(0,0,0,.06) shadow, 44px header search, .zcm__link #666 600 weight with the current tab #111 and a 1px #111 line, Proxima Nova"
+    },
+    {
+      "id": "s6",
+      "url": "https://arquivo.pt/noFrame/replay/20190907035125id_/https://duckduckgo.com/s1820.css",
+      "date": "2019-09-07",
+      "shows": "home stylesheet: 205x200 logo_homepage.normal.v108.svg (logo_homepage.alt.v108.svg on dark themes), html #f7f7f7, home search button turns #5b9e4d green with a white icon once there is text (#66ad57 on hover), Proxima Nova Reg/Sbold/Bold/RegIt from /font/"
+    },
+    {
+      "id": "s7",
+      "url": "https://arquivo.pt/noFrame/replay/20190907101158/https://duckduckgo.com/?q=teste",
+      "date": "2019-09-07",
+      "shows": "results page header capture: #fafafa bar with round logo and square-cornered search box"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|nav|footer|main|section|article|form|search|aside|dialog|region|contentinfo|banner|navigation|complementary) area$|^repeated |^(Main)$",
+      "in2019": true,
+      "evidence": ["s1", "s3"],
+      "note": "page regions and repeated results"
+    },
+    {
+      "match": "^(DuckDuckGo|DuckDuckGo home|Learn about DuckDuckGo|Search|Search privately|Search with DuckDuckGo|Clear search input|Open menu|Web|All|Images|Videos|News|Maps|Shopping|More|Settings|Search Settings|All regions|Safe search: .*|Any time|Past (day|week|month|year)|Feedback|More results|Next page|Ad|Report Ad|Privacy Policy|Terms of Service|About DuckDuckGo|Help|Homepage|Themes)$",
+      "in2019": true,
+      "required": true,
+      "evidence": ["s1", "s2", "s3", "s5"],
+      "note": "logo, search box, vertical tabs, filters, results chrome and menu"
+    },
+    {
+      "match": "^(Duck\\.ai|Ask AI|Ask Duck\\.ai|Search Assist|AI Settings|Private|Download Browser|Set As Default Search|Upgrade to our browser|Get the DuckDuckGo Browser|Share Feedback|Switch to DuckDuckGo.*|Trusted by .*|Optional|Toggle to private AI chat.*|disable in settings)$",
+      "in2019": false,
+      "evidence": ["Duck.ai chat (2024), Search Assist AI answers (2023), the Search / Ask AI toggle, the DuckDuckGo browser download cards and popover (desktop browser 2022-2023), the Private privacy reminder chip and the Share Feedback button are all later than s1-s3"],
+      "note": "hidden"
+    },
+    {
+      "match": "^(?=.{12,}$).*\\s.*$",
+      "in2019": true,
+      "evidence": ["s1", "s2"],
+      "note": "result titles, URLs and snippets (content)"
+    }
+  ]
+}

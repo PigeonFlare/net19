@@ -55,6 +55,7 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'amazon', name: 'Amazon', domains: ['amazon.com', 'amazon.co.uk', 'amazon.de', 'amazon.co.jp', 'amazon.in'] },
   { id: 'ebay', name: 'eBay', domains: ['ebay.com'] },
   { id: 'bing', name: 'Bing', domains: ['bing.com'] },
+  { id: 'duckduckgo', name: 'DuckDuckGo', domains: ['duckduckgo.com'] },
   { id: 'stackoverflow', name: 'Stack Overflow', domains: ['stackoverflow.com'] },
   { id: 'cnn', name: 'CNN', domains: ['cnn.com'] },
   { id: 'nytimes', name: 'The New York Times', domains: ['nytimes.com'] },

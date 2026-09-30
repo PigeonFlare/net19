@@ -27,6 +27,7 @@
     "*://*.amazon.in/*",
     "*://*.ebay.com/*",
     "*://*.bing.com/*",
+    "*://*.duckduckgo.com/*",
     "*://*.stackoverflow.com/*",
     "*://*.cnn.com/*",
     "*://*.nytimes.com/*",
