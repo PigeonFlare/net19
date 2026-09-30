@@ -1,0 +1,26 @@
+@font-face{font-family:"n19 Larsseit";font-weight:400;font-style:normal;font-display:swap;src:url("https://s.aolcdn.com/aoldotcom-releases/site/fonts/larsseit/2DE4E0_4_0.woff2") format("woff2"), url("https://s.aolcdn.com/aoldotcom-releases/site/fonts/larsseit/2DE4E0_4_0.woff") format("woff")}
+@font-face{font-family:"n19 Larsseit";font-weight:700;font-style:normal;font-display:swap;src:url("https://s.aolcdn.com/aoldotcom-releases/site/fonts/larsseit/2DE4E0_1_0.woff2") format("woff2"), url("https://s.aolcdn.com/aoldotcom-releases/site/fonts/larsseit/2DE4E0_1_0.woff") format("woff")}
+html{--n19-font:"n19 Larsseit", "Helvetica Neue", Helvetica, Arial, sans-serif;--n19-bar:#fff;--n19-bar-line:#e0e0e0;--n19-text:#000;--n19-text-2:#333;--n19-muted:#999;--n19-link:#39f;--n19-field:#fff;--n19-field-line:#b3b3b3;--n19-field-text:#000;--n19-search:#e81d82;--n19-search-hover:#c9166f;--n19-search-text:#fff}
+html[data-net19-mode="dark"]{--n19-bar:#1b1b1b;--n19-bar-line:#333;--n19-text:#f2f2f2;--n19-text-2:#ddd;--n19-muted:#aaa;--n19-link:#5cadff;--n19-field:#2a2a2a;--n19-field-line:#555;--n19-field-text:#f2f2f2;--n19-search:#c9166f;--n19-search-hover:#e81d82;--n19-search-text:#fff}
+body,body :is(h1,h2,h3,h4,p,a,button,input,span,li,div){font-family:var(--n19-font)!important}
+header.m-AolHeader .m-AolHeader__top-wrap{background:var(--n19-bar)!important;border-bottom:1px solid var(--n19-bar-line)!important;box-shadow:none!important}
+header.m-AolHeader .m-AolHeader__top-wrap .logo-link svg{color:var(--n19-text)!important;fill:currentColor!important}
+header.m-AolHeader .m-AolHeader__top-wrap button:has(>svg):first-child svg,header.m-AolHeader .m-AolHeader__top-wrap button[aria-label] svg{color:var(--n19-text)!important}
+header.m-AolHeader #header-form{background:transparent!important}
+:where(:root:not([data-n19-safe])) header.m-AolHeader #header-form-search-input{height:34px!important}
+header.m-AolHeader #header-form-search-input{border-radius:0!important;border:1px solid var(--n19-field-line)!important;border-right:0!important;background:var(--n19-field)!important;color:var(--n19-field-text)!important;font:400 16px var(--n19-font)!important;box-shadow:none!important}
+header.m-AolHeader #header-form-search-input::placeholder{color:transparent!important}
+:where(:root:not([data-n19-safe])) header.m-AolHeader #header-form-search-button{height:34px!important;width:auto!important;min-width:88px!important;padding:0 14px!important}
+header.m-AolHeader #header-form-search-button{border-radius:0!important;border:0!important;background:var(--n19-search)!important;color:var(--n19-search-text)!important}
+header.m-AolHeader #header-form-search-button:hover{background:var(--n19-search-hover)!important}
+header.m-AolHeader #header-form-search-button svg{color:inherit!important;fill:currentColor!important}
+:where(:root:not([data-n19-safe])) header.m-AolHeader #header-form .header-search-form{align-items:center!important}
+header.m-AolHeader :is(.m-mail__button,.m-profile__signin){background:transparent!important;border:0!important;box-shadow:none!important;color:var(--n19-text-2)!important;font:400 14px var(--n19-font)!important}
+header.m-AolHeader :is(.m-mail__button,.m-profile__signin) svg{color:var(--n19-text-2)!important;fill:currentColor!important}
+header.m-AolHeader :is(.m-mail__button,.m-profile__signin):hover{color:var(--n19-link)!important}
+main :is(h2,h3){letter-spacing:0!important}
+main a:is([class*="LinkLine"],[class*="linkline"]){color:var(--n19-link)!important}
+header.m-AolHeader #header-form-search-button:has([data-n19-aol="search"]) svg{display:none!important}
+[data-n19-aol="search"]{font:400 15px var(--n19-font)!important;letter-spacing:1px!important;color:inherit!important}
+header.m-AolHeader .m-profile__signin :is(svg,img){display:none!important}
+main .dl__slide__title,main .dl__slide__title a{font-size:26px!important;line-height:1.2!important;font-weight:400!important}

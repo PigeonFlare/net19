@@ -1,0 +1,51 @@
+{
+  "theme": "aol",
+  "era": "2019 aol.com home page: white header with the black AOL logo, a square-cornered search field with a magenta #e81d82 SEARCH button, plain grey Login / Join text, black and #333 headlines with #39f links, all in Larsseit. The 2019 logo file is no longer hosted, so the current logo is kept",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://arquivo.pt/noFrame/replay/20190701000000/https://www.aol.com/",
+      "date": "2019-07-01",
+      "shows": "home page capture: white header with the black Aol. logo, square search field and magenta SEARCH button, Login / Join at the right, left menu (Mail, Login / Join, News, Entertainment, Finance, Lifestyle, Video, Games), hero story, local news, latest headlines with READ MORE links in blue, horoscope module"
+    },
+    {
+      "id": "s2",
+      "url": "https://arquivo.pt/noFrame/replay/20190701000000id_/https://s.blogsmithmedia.com/www.aol.com/assets-hdc9e07419710f529f79725b323b0afa0/stylesheets/application.css",
+      "date": "2019-07",
+      "shows": "stylesheet: .m-search__button #e81d82 white 15px Larsseit 34px high, #39f links, Larsseit and Larsseit-Bold from s.aolcdn.com/aoldotcom-releases/site/fonts/larsseit, black 42x16 logo"
+    },
+    {
+      "id": "s3",
+      "url": "https://s.aolcdn.com/aoldotcom-releases/assets/20190424_1823/stylesheets/homepage-grid.css",
+      "date": "2019-04-24",
+      "shows": "2019 home page grid stylesheet (still served) with the white header and module layout"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|nav|footer|main|section|article|form|search|aside|dialog|region|contentinfo|banner|navigation|complementary) area$|^repeated |^(Main)$",
+      "in2019": true,
+      "evidence": ["s1"],
+      "note": "page regions and repeated stories"
+    },
+    {
+      "match": "^(AOL|Aol|Search|SEARCH|Navigation|Menu|Mail|Sign in|Login / Join|News|Entertainment|Finance|Lifestyle|Video|Games|Weather|Sports|Horoscopes?|Local News|Read More|More to Explore|Trending Now)$",
+      "in2019": true,
+      "required": true,
+      "evidence": ["s1", "s2"],
+      "note": "header, menu, search and home page modules"
+    },
+    {
+      "match": "^(24/7 Help|Get help 24/7|AOL Desktop Gold)$",
+      "in2019": false,
+      "evidence": ["the 24/7 Help flyout in the header is not on the 2019 home page (s1)"],
+      "note": "hidden"
+    },
+    {
+      "match": "^(?=.{12,}$).*\\s.*$",
+      "in2019": true,
+      "evidence": ["s1"],
+      "note": "headlines and summaries (content)"
+    }
+  ]
+}
