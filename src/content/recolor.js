@@ -72,7 +72,7 @@ export function makeRecolor(target) {
 
 const SKIP = new Set(['IMG', 'VIDEO', 'CANVAS', 'IFRAME', 'EMBED', 'OBJECT', 'PICTURE', 'SOURCE', 'TRACK', 'SCRIPT', 'STYLE', 'LINK', 'META', 'NOSCRIPT', 'TEMPLATE', 'BR', 'WBR', 'HEAD', 'TITLE', 'image', 'foreignObject', 'mask', 'clipPath', 'defs', 'linearGradient', 'radialGradient', 'stop', 'filter', 'pattern', 'symbol']);
 const SIDES = ['top', 'right', 'bottom', 'left'];
-const OBSERVE = { childList: true, subtree: true, attributes: true };
+const OBSERVE = { childList: true, subtree: true, attributes: true, attributeOldValue: true };
 const OWN = /^data-net19-(?:rc|glyph|plain|photo|reading|recolor|mode|pending)$/;
 const SHAPES = /^(svg|g|path|circle|rect|ellipse|line|polyline|polygon|text|tspan|use)$/;
 
@@ -324,53 +324,91 @@ export function createRecolor(theme) {
     }
     return measure(el, cs);
   };
+  const settle = (list, size) => {
+    const slice = list.splice(0, size);
+    for (const el of slice) { workSet.delete(el); urgentSet.delete(el); }
+    const careful = slice.filter(el => el.nodeType === 1 && exact.has(el));
+    for (const el of careful) el.setAttribute(READING, '');
+    const stale = careful.filter(el => decided.get(el));
+    for (const el of stale) el.removeAttribute(ATTR);
+    const results = slice.map(el => {
+      const precise = exact.has(el) || !decided.get(el);
+      exact.delete(el);
+      let parts = null;
+      try { parts = read(el); } catch { }
+      return [el, parts && (precise ? parts : merge(partsOf.get(el), parts))];
+    });
+    for (const [el, parts] of results) {
+      if (parts) partsOf.set(el, parts);
+      const id = parts && parts.length ? ruleFor(parts) : null;
+      const had = decided.get(el) ?? null;
+      decided.set(el, id);
+      if (id !== null) { if (el.getAttribute(ATTR) !== id) el.setAttribute(ATTR, id); }
+      else if (had !== null) el.removeAttribute(ATTR);
+    }
+    for (const el of careful) if (el.isConnected) getComputedStyle(el).color;
+    for (const el of careful) el.removeAttribute(READING);
+  };
+  const nearFirst = list => {
+    const near = [], far = [];
+    for (const el of list) (el.nodeType === 1 && el.isConnected && inView(el) ? near : far).push(el);
+    return [near, far];
+  };
+  let idle = 0;
+  const later = globalThis.requestIdleCallback || (fn => setTimeout(() => fn({ timeRemaining: () => 8, didTimeout: true }), 50));
+  const unlater = globalThis.cancelIdleCallback || clearTimeout;
+  const background = deadline => {
+    idle = 0;
+    if (!target) return;
+    tints = new WeakMap();
+    const started = performance.now(), spare = () => performance.now() - started < 8 && (deadline.didTimeout || deadline.timeRemaining() > 2);
+    while (work.length && spare()) settle(work, 60);
+    judgeNow();
+    if (work.length && !idle) idle = later(background, { timeout: 800 });
+  };
   const process = () => {
+    const started = performance.now();
     frame = 0;
     tints = new WeakMap();
     if (!target) return;
+    const carried = urgent.length;
     if (full) { full = false; pseudoSelector = null; for (const el of all(root)) enqueue(el, false); }
+    const settled = work.length;
     for (const n of queue) for (const el of all(n)) enqueue(el, !!decided.get(el), true);
     for (const el of shallow) enqueue(el, true);
     for (const n of below) for (const el of n.getElementsByTagName('*')) enqueue(el, false);
     queue = new Set(); shallow = new Set(); below = new Set();
     const arriving = veil || document.readyState === 'loading';
-    const started = performance.now(), budget = first || arriving ? 250 : document.readyState === 'complete' ? 30 : 60;
+    const eager = first || arriving;
     first = false;
-    if (arriving && document.body) {
-      const lead = list => { const near = [], far = []; for (const el of list) (el.nodeType === 1 && inView(el) ? near : far).push(el); return [near, far]; };
-      const [nearUrgent, farUrgent] = lead(urgent), [nearWork, farWork] = lead(work);
+    let near = 0;
+    if (document.body && arriving) {
+      const [nearUrgent, farUrgent] = nearFirst(urgent), [nearWork, farWork] = nearFirst(work);
       urgent = [...nearUrgent, ...nearWork]; work = [...farUrgent, ...farWork];
       for (const el of nearWork) { workSet.delete(el); urgentSet.add(el); }
       for (const el of farUrgent) { urgentSet.delete(el); workSet.add(el); }
+    } else if (document.body && !eager) {
+      const [nearUrgent, farUrgent] = nearFirst(urgent.splice(carried)), [nearWork, farWork] = nearFirst(work.splice(settled));
+      for (const el of nearWork) { workSet.delete(el); urgentSet.add(el); }
+      work.push(...farWork);
+      near = nearUrgent.length + nearWork.length;
+      urgent = [...nearUrgent, ...nearWork, ...urgent, ...farUrgent];
     }
-    while ((urgent.length || work.length) && performance.now() - started < budget) {
-      const slice = urgent.length ? urgent.splice(0, 200) : work.splice(0, 400);
-      for (const el of slice) { workSet.delete(el); urgentSet.delete(el); }
-      const careful = slice.filter(el => el.nodeType === 1 && exact.has(el));
-      for (const el of careful) el.setAttribute(READING, '');
-      const stale = careful.filter(el => decided.get(el));
-      for (const el of stale) el.removeAttribute(ATTR);
-      const results = slice.map(el => {
-        const precise = exact.has(el) || !decided.get(el);
-        exact.delete(el);
-        let parts = null;
-        try { parts = read(el); } catch { }
-        return [el, parts && (precise ? parts : merge(partsOf.get(el), parts))];
-      });
-      for (const [el, parts] of results) {
-        if (parts) partsOf.set(el, parts);
-        const id = parts && parts.length ? ruleFor(parts) : null;
-        const had = decided.get(el) ?? null;
-        decided.set(el, id);
-        if (id !== null) { if (el.getAttribute(ATTR) !== id) el.setAttribute(ATTR, id); }
-        else if (had !== null) el.removeAttribute(ATTR);
-      }
-      for (const el of careful) if (el.isConnected) getComputedStyle(el).color;
-      for (const el of careful) el.removeAttribute(READING);
-    }
+    const budget = eager ? 250 : 10;
+    let done = 0;
+    const settling = performance.now();
+    const within = () => done < near ? performance.now() - settling < 50 : performance.now() - started < budget;
+    while (urgent.length && within()) { const size = done < near ? Math.min(200, near - done) : 100; settle(urgent, size); done += size; }
+    while (eager && work.length && within()) settle(work, 400);
     if (veil && !urgent.length && document.body && sheetsReady()) reveal();
-    if (work.length || urgent.length) frame = requestAnimationFrame(process);
-    if (glyphWork.length || textureWork.length || pictureWork.length) (globalThis.requestIdleCallback || setTimeout)(sizeGlyphs, { timeout: 500 });
+    judgeNow();
+    if (urgent.length || (eager && work.length)) frame = requestAnimationFrame(process);
+    else if (work.length && !idle) idle = later(background, { timeout: 800 });
+    if (textureWork.length || pictureWork.length) later(sizeGlyphs, { timeout: 500 });
+  };
+  const judgeNow = () => {
+    const list = glyphWork; glyphWork = [];
+    for (const [el, src] of list) if (el.isConnected) judgeGlyph(el, src, el.offsetWidth, el.offsetHeight);
   };
   const sizeGlyphs = () => {
     const pictures = pictureWork; pictureWork = [];
@@ -393,8 +431,6 @@ export function createRecolor(theme) {
       if (PHOTO.test(src)) mark(media);
       else inkOf(src).then(ink => { if (target && ink === 'colorful' && media.isConnected) mark(media); });
     }
-    const list = glyphWork; glyphWork = [];
-    for (const [el, src] of list) if (el.isConnected) judgeGlyph(el, src, el.offsetWidth, el.offsetHeight);
     const textures = textureWork; textureWork = [];
     for (const [el, src] of textures) {
       if (!el.isConnected || textured.has(el) || el.offsetWidth < 24 || el.offsetHeight < 16) continue;
@@ -517,7 +553,7 @@ export function createRecolor(theme) {
             if (n.nodeType !== 1 || n === base) continue;
             if (n.tagName === 'STYLE' || n.tagName === 'LINK') sheets = true; else nodes.push(n);
           }
-        } else if (!OWN.test(r.attributeName) && !animated(r.target, r.attributeName)) { shallow.add(r.target); below.add(r.target); }
+        } else if (!OWN.test(r.attributeName) && r.oldValue !== r.target.getAttribute(r.attributeName) && !animated(r.target, r.attributeName)) { shallow.add(r.target); below.add(r.target); }
       }
       if (sheets) { if (veil) full = true; else refreshAll(document.readyState === 'complete' ? 2000 : 300); }
       schedule(nodes);
@@ -539,7 +575,7 @@ export function createRecolor(theme) {
     for (const type of ['pointerover', 'pointerout', 'focusin', 'focusout', 'pointerdown', 'pointerup', 'keyup', 'transitionend', 'animationend']) removeEventListener(type, onEvent, { capture: true });
     removeEventListener('load', onLoad, true);
     document.removeEventListener('net19-css', onStyles);
-    cancelAnimationFrame(frame); frame = 0; queue = new Set(); shallow = new Set(); below = new Set(); full = false; work = []; urgent = []; urgentSet = new Set(); workSet = new Set(); glyphWork = []; textureWork = []; pictureWork = []; first = true;
+    cancelAnimationFrame(frame); frame = 0; if (idle) unlater(idle); idle = 0; queue = new Set(); shallow = new Set(); below = new Set(); full = false; work = []; urgent = []; urgentSet = new Set(); workSet = new Set(); glyphWork = []; textureWork = []; pictureWork = []; first = true;
     for (const host of roots) {
       for (const el of host.querySelectorAll?.(`[${ATTR}],[${GLYPH}],[${PLAIN}],[${PHOTOED}]`) || []) for (const a of [ATTR, GLYPH, PLAIN, PHOTOED]) el.removeAttribute(a);
       host.adoptedStyleSheets = host.adoptedStyleSheets.filter(s => s !== sheet);

@@ -82,6 +82,42 @@ test('the device decides light or dark: a light site is recolored for a dark dev
   await expect.poll(() => light('body', 'background-color')).toBeGreaterThan(.9);
 });
 
+test('content inserted after load is recolored in the frame it appears, in-view first, never hidden, and same-value attribute writes cost nothing', async () => {
+  const page = await open('https://www.youtube.com/');
+  await expect(page.locator('html')).toHaveAttribute('data-net19-recolor', 'dark');
+  await page.waitForLoadState('load');
+  await page.waitForTimeout(3500);
+  const first = await page.evaluate(() => new Promise<string[]>(done => {
+    const far = document.createElement('div');
+    far.style.cssText = 'position:absolute;top:4000px;left:0';
+    for (let i = 0; i < 6000; i++) { const row = document.createElement('div'); row.style.cssText = 'color:#111;background:#fff;border:1px solid #ddd'; row.textContent = 'row'; far.append(row); }
+    document.body.append(far);
+    const late = document.createElement('div');
+    late.id = 'late';
+    late.innerHTML = '<span id="count" style="color:#0f0f0f">1.2K</span><svg id="thumb" width="16" height="16" viewBox="0 0 16 16"><path d="M1 1h14v14H1z" fill="#030303"/></svg>';
+    document.querySelector('main')!.prepend(late);
+    requestAnimationFrame(() => setTimeout(() => {
+      const late = document.getElementById('late')!, style = getComputedStyle(late);
+      done([getComputedStyle(document.getElementById('count')!).color, getComputedStyle(document.querySelector('#thumb path')!).fill, style.opacity, style.visibility]);
+    }));
+  }));
+  const luma = (value: string) => { const m = value.match(/[\d.]+/g)!.map(Number); return (.2126 * m[0] + .7152 * m[1] + .0722 * m[2]) / 255; };
+  expect(luma(first[0]), `text ${first[0]}`).toBeGreaterThan(.6);
+  expect(luma(first[1]), `icon ${first[1]}`).toBeGreaterThan(.6);
+  expect(first.slice(2)).toEqual(['1', 'visible']);
+  await page.evaluate(() => document.querySelector('main')!.setAttribute('class', 'feed'));
+  await page.waitForTimeout(300);
+  const rereads = await page.evaluate(() => new Promise<number>(done => {
+    let seen = 0;
+    const main = document.querySelector('main')!;
+    new MutationObserver(records => { seen += records.length; }).observe(main, { attributes: true, subtree: true, attributeFilter: ['data-net19-reading'] });
+    let left = 10;
+    const again = () => { main.setAttribute('class', 'feed'); if (--left) requestAnimationFrame(again); else setTimeout(() => done(seen), 300); };
+    again();
+  }));
+  expect(rereads).toBe(0);
+});
+
 test('pictures keep their exact colors when a page is recolored either way', async () => {
   const stripes = [[255, 255, 255], [128, 128, 128], [220, 40, 40], [20, 40, 160], [0, 0, 0]];
   const pixels = Buffer.alloc(200 * 40 * 3);
