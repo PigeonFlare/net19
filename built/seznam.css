@@ -42,3 +42,4 @@ form.login button[type="submit"]:hover{background-color:var(--n19-red-hover)!imp
 form.login .sn-buttons button,form.login .submit-and-fido iframe{border-radius:4px!important}
 a[href*="ucet.seznam.cz/bezreklam"],footer a[href^="https://vyvojari.seznam.cz"],li:has(>a[href^="https://podcasty.seznam.cz"]),button:is([aria-label="Ohodnoťte výsledky hledání"]),[class*="feedback"i]:has(textarea){display:none!important}
 [data-n19-later]{display:none!important}
+.mol-trending-topics-popup-card{display:none!important}

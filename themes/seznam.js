@@ -1,4 +1,4 @@
-globalThis.net19Theme = { intended: '[data-n19-later]' };
+globalThis.net19Theme = { intended: '[data-n19-later], .mol-trending-topics-popup-card' };
 (() => {
   const mark = el => { if (el && !el.hasAttribute('data-n19-later')) el.setAttribute('data-n19-later', ''); };
   const topBlock = (el, stop) => { let n = el; while (n.parentElement && n.parentElement !== stop && !n.parentElement.matches(stop)) n = n.parentElement; return n; };

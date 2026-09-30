@@ -39,6 +39,58 @@
         "s1"
       ],
       "note": "content: news-box entries (publisher names such as Vlasta or Pestrá zahrada, comment counts, video play links, sponsored label, article cards); s1 shows the same boxes with publisher names, likes and hide-article controls"
+    },
+    {
+      "match": "^(Seznam AI|Shrnutí generováno.*)$",
+      "in2019": false,
+      "evidence": [
+        "the trending-topics hover card with an AI summary is not on the 2019 homepage (s1)"
+      ],
+      "action": "hidden"
+    },
+    {
+      "match": "^(advert|sklik)-paw$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "ad-information marker on adverts, like onegar-paw"
+    },
+    {
+      "match": "^Seznam\\.cz - hlavní strana$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "red Seznam logo link",
+      "required": true
+    },
+    {
+      "match": "^Internet$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "service tab above the search field",
+      "required": true
+    },
+    {
+      "match": "^Mapy$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "service tab",
+      "required": true
+    },
+    {
+      "match": "^Vyhledat$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "search field and Vyhledat button",
+      "required": true
     }
   ]
 }
