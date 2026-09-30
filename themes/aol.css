@@ -6,7 +6,7 @@ html { --n19-font: "n19 Larsseit", "Helvetica Neue", Helvetica, Arial, sans-seri
 html[data-net19-mode="dark"] { --n19-bar: #1b1b1b; --n19-bar-line: #333; --n19-text: #f2f2f2; --n19-text-2: #ddd; --n19-muted: #aaa; --n19-link: #5cadff;
   --n19-field: #2a2a2a; --n19-field-line: #555; --n19-field-text: #f2f2f2; --n19-search: #c9166f; --n19-search-hover: #e81d82; --n19-search-text: #fff; }
 
-body, body :is(h1, h2, h3, h4, p, a, button, input, span, li, div) { font-family: var(--n19-font) !important; }
+body, body :is(h1, h2, h3, h4, p, a, button, input, span, li, div):not(.video-js *, [class*="icon" i]) { font-family: var(--n19-font) !important; }
 header.m-AolHeader .m-AolHeader__top-wrap { background: var(--n19-bar) !important; border-bottom: 1px solid var(--n19-bar-line) !important; box-shadow: none !important; }
 header.m-AolHeader .m-AolHeader__top-wrap .logo-link svg { color: var(--n19-text) !important; fill: currentColor !important; }
 header.m-AolHeader .m-AolHeader__top-wrap button:has(> svg):first-child svg, header.m-AolHeader .m-AolHeader__top-wrap button[aria-label] svg { color: var(--n19-text) !important; }
@@ -26,4 +26,4 @@ main a:is([class*="LinkLine"], [class*="linkline"]) { color: var(--n19-link) !im
 header.m-AolHeader #header-form-search-button:has([data-n19-aol="search"]) svg { display: none !important; }
 [data-n19-aol="search"] { font: 400 15px var(--n19-font) !important; letter-spacing: 1px !important; color: inherit !important; }
 header.m-AolHeader .m-profile__signin :is(svg, img) { display: none !important; }
-main .dl__slide__title, main .dl__slide__title a { font-size: 26px !important; line-height: 1.2 !important; font-weight: 400 !important; }
+main .dl__slide__title, main .dl__slide__title a { font-size: clamp(18px, 2vw, 26px) !important; line-height: 1.2 !important; font-weight: 400 !important; }
