@@ -1,0 +1,144 @@
+{
+ "theme": "bloomberg",
+ "era": "2019 bloomberg.com (the 2017 redesign used through 2019): black company bar, white header with the Bloomberg wordmark, Sign In and Subscribe, and a menu of Markets, Technology, Politics, Pursuits, Opinion, Businessweek and Video; articles with SHARE THIS ARTICLE, Read This Next and Most Read. Arquivo.pt has the Markets section front (February 2019) and article pages (February, September, October 2019), but no 2019 home page capture; the home page is mapped from those. Checked live read-only in the user's Chrome (bloomberg.com blocks headless browsers).",
+ "sources": [
+  {
+   "id": "m1",
+   "url": "https://arquivo.pt/wayback/20190203103510/https://www.bloomberg.com/markets",
+   "date": "2019-02-03",
+   "shows": "Markets section front: top bar with Bloomberg the Company & Its Products, Bloomberg Anywhere Remote Login, Bloomberg Terminal Demo Request; header with Toggle menu, Search, Bloomberg wordmark, Sign In, Subscribe; menu Home, Markets, Technology, Politics, Pursuits, Opinion, Businessweek, Video, Podcasts, Radio, Newsletters, Watchlist with sub-links (Economics, Deals, Crypto, Currencies, Stocks, AI, Equality, US / Europe / Asia live TV and more); The Latest story list"
+  },
+  {
+   "id": "a1",
+   "url": "https://arquivo.pt/wayback/20190905053843/https://www.bloomberg.com/news/articles/2016-02-19/what-would-brexit-really-mean-for-firms-in-london-s-city-q-a",
+   "date": "2019-09-05",
+   "shows": "article page: same top bar, header and menu (plus Help Center, License, Facebook / Twitter / Instagram / LinkedIn)"
+  },
+  {
+   "id": "a2",
+   "url": "https://arquivo.pt/wayback/20191001032556/https://www.bloomberg.com/news/articles/2015-08-13/wall-street-s-gilded-maternity-perk-flying-nannies",
+   "date": "2019-10-01",
+   "shows": "article page: same header and menu; headline, SHARE THIS ARTICLE with Facebook / Twitter / LinkedIn / email, Open image in viewer, Have a confidential tip for our reporters?, Read This Next, Most Read, footer Terms of Service, Trademarks, Careers, Made in NYC, Advertise, Help"
+  },
+  {
+   "id": "a3",
+   "url": "https://arquivo.pt/wayback/20190209104010/https://www.bloomberg.com/news/articles/2016-06-07/samsung-said-to-consider-phones-with-bendable-screens-for-2017-ip4tgw",
+   "date": "2019-02-09",
+   "shows": "article page capture, same header"
+  }
+ ],
+ "features": [
+  {
+   "match": "^(main|nav|section|article|header|footer|banner|navigation|contentinfo|form) area$",
+   "in2019": true,
+   "evidence": [
+    "m1",
+    "a1",
+    "a2"
+   ],
+   "note": "page structure"
+  },
+  {
+   "match": "^repeated ",
+   "in2019": true,
+   "evidence": [
+    "m1",
+    "a1",
+    "a2"
+   ],
+   "note": "story lists and cards"
+  },
+  {
+   "match": "^bloomberg the company.*$|^bloomberg terminal demo request$|^bloomberg anywhere remote login.*$",
+   "in2019": true,
+   "evidence": [
+    "m1",
+    "a1",
+    "a2"
+   ],
+   "note": "top company bar",
+   "required": true
+  },
+  {
+   "match": "^(bloomberg customer support.*|customer support|help center|help)$",
+   "in2019": true,
+   "evidence": [
+    "a1",
+    "a2"
+   ],
+   "note": "Help Center link"
+  },
+  {
+   "match": "^(sign in|subscribe|search|text-input|toggle menu|menu)$",
+   "in2019": true,
+   "evidence": [
+    "m1",
+    "a1",
+    "a2"
+   ],
+   "note": "header controls",
+   "required": true
+  },
+  {
+   "match": "^(home|markets|finance|economics|tech|technology|politics|businessweek|opinion|video|live tv|pursuits|podcasts|radio|newsletters|equality|deals|ai|crypto|currencies|stocks|europe|uk|u\\.s\\.|us|asia|middle east|energy|commodities|wealth)$",
+   "in2019": true,
+   "evidence": [
+    "m1",
+    "a1",
+    "a2"
+   ],
+   "note": "sections and sub-sections of the 2019 menu (Finance was Future Finance; Live TV the US / Europe / Asia live channels); also used as story-card eyebrows"
+  },
+  {
+   "match": "^video player$",
+   "in2019": true,
+   "evidence": [
+    "m1"
+   ],
+   "note": "Video section and live TV"
+  },
+  {
+   "match": "^(previous|next|go to page \\d+|navigation dot)$",
+   "in2019": false,
+   "evidence": [
+    "story carousel controls"
+   ],
+   "action": "kept: function",
+   "note": "pager of a story carousel"
+  },
+  {
+   "match": "^explore more$",
+   "in2019": false,
+   "evidence": [
+    "section-link list heading"
+   ],
+   "action": "kept: function",
+   "note": "links to the sections listed above"
+  },
+  {
+   "match": "^(privacy policy|terms of service|trademarks|careers|advertise)$",
+   "in2019": true,
+   "evidence": [
+    "a2"
+   ],
+   "note": "footer links"
+  },
+  {
+   "match": "^select region$",
+   "in2019": false,
+   "evidence": [
+    "edition picker"
+   ],
+   "action": "kept: function",
+   "note": "chooses the regional edition"
+  },
+  {
+   "match": "^(green|industries|management & work|citylab|follow|gift this article|gift|save|saved|takeaways by bloomberg ai|bloomberg ai|ai summary)$",
+   "in2019": false,
+   "evidence": [
+    "Bloomberg Green launched January 2020, Bloomberg CityLab June 2020, Industries and Management & Work sections and topic Follow buttons later; gift links, saves and AI summaries 2020s"
+   ],
+   "action": "hidden"
+  }
+ ]
+}
