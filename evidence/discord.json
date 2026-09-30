@@ -49,6 +49,24 @@
       "url": "https://discord.com/assets/web.d4c7976eccf337f1.js",
       "date": "2026-09-29",
       "shows": "not a 2019 source: Discord's current BlobMask and guild-bar code (avatar 40px or 44px, svg n+8 wide with viewBox -4 -4, pill as an absolute overlay), used only to reproduce the current markup so the 2019 geometry of s4 (48px icons 12px from each edge of a 72px rail, 56px pitch) can be applied without cropping"
+    },
+    {
+      "id": "s9",
+      "url": "https://wpguru.co.uk/2019/06/screensharing-and-video-calls-in-discord/",
+      "date": "2019-06-05",
+      "shows": "Friends page tab bar (screenshot Screen-Shot-2019-06-05-at-23.38.48.png): Friends, Online, All (grey selected pill), Pending, Blocked, then Add Friend as a small green #43b581 pill with white text and 3px corners"
+    },
+    {
+      "id": "s10",
+      "url": "https://www.dummies.com/article/technology/social-media/general-social-media/how-to-connect-with-friends-on-discord-270421/",
+      "date": "2019 (Discord For Dummies, 2019; web page updated 2020-04-29)",
+      "shows": "text: the Add Friend option is highlighted in green on the Friends page"
+    },
+    {
+      "id": "s11",
+      "url": "https://www.reddit.com/r/discordapp/comments/cw35oi/where_are_suggested_friends_bug/",
+      "date": "2019-08 (r/discordapp post; Google Images date filter 2019)",
+      "shows": "Friends page with the Add Friend tab selected: green Add Friend text on no fill beside Online, All, Pending, Blocked; ADD FRIEND form below"
     }
   ],
   "features": [
@@ -149,6 +167,20 @@
         "s6"
       ],
       "note": "DM list: Friends",
+      "required": true,
+      "pages": [
+        "dm"
+      ]
+    },
+    {
+      "match": "^(Add Friend)$",
+      "in2019": true,
+      "evidence": [
+        "s9",
+        "s10",
+        "s11"
+      ],
+      "note": "Friends tab bar: Add Friend is a green #43b581 pill with white text; selected it turns into green text on no fill",
       "required": true,
       "pages": [
         "dm"

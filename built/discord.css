@@ -291,3 +291,6 @@ html[data-wf-site] .home--hero~:is(.home--2section,.home--3section,.home--4secti
 html[data-wf-site] .footer_new :is(a[href="/application-directory"],a[href="/gift-cards"],a[href="/newsroom"],a[href="/safety"],a[href="/creators"],a[href^="/ads/"],a[href="/acknowledgements"],a[href="/licenses"],a[href="/company-information"],a[href="#"],a[href*="youtube.com"],a[href*="tiktok.com"]){display:none!important}
 html[data-wf-site] :is(.discord_banner .relative-2025,.footer_new .container_word){display:none!important}
 :where(:root:not([data-n19-safe])) [data-list-id="guildsnav"] foreignObject :is([class^="wrapper_"],[class*=" wrapper_"]),[data-list-id="guildsnav"]:where(:root:not([data-n19-safe])) foreignObject :is([class^="wrapper_"],[class*=" wrapper_"]){transform:none!important;width:100%!important;height:100%!important;margin:0!important}
+[role="tablist"] [role="tab"]:is([class*="addFriend_"],[aria-label="Add Friend"]){background-color:#3ca374!important;color:#fff!important}
+[role="tablist"] [role="tab"]:is([class*="addFriend_"],[aria-label="Add Friend"]) *{color:inherit!important}
+[role="tablist"] [role="tab"]:is([class*="addFriend_"],[aria-label="Add Friend"])[aria-selected="true"]{background-color:transparent!important;color:#3ca374!important}
