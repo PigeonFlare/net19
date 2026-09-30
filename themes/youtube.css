@@ -273,12 +273,19 @@ html[data-n19-yt="www"] {
   & yt-tab-shape[aria-selected="true"] .ytTabShapeTab, & yt-tab-shape[aria-selected="true"] div, & yt-tab-shape:hover .ytTabShapeTab { color: var(--n19-text) !important; }
   & yt-tab-shape .ytTabShapeTabBar { height: 0 !important; }
   & yt-tab-shape .ytTabShapeTabBarActive, & yt-tab-shape[aria-selected="true"] .ytTabShapeTabBar { height: 3px !important; background: var(--n19-text-2) !important; }
-  & yt-tab-shape .ytTabShapeTabBarHover { display: none !important; }
+  & yt-tab-shape .ytTabShapeTabBarHover, & ytd-tabbed-page-header .tabGroupShapeSlider { display: none !important; }
+  & yt-tab-group-shape:has(yt-tab-shape[tab-title="Live" i][aria-selected="true"]) yt-tab-shape[tab-title="Videos" i] .ytTabShapeTabBar { height: 3px !important; background: var(--n19-text-2) !important; }
+  & yt-tab-group-shape:has(yt-tab-shape[tab-title="Live" i][aria-selected="true"]) yt-tab-shape[tab-title="Videos" i] .ytTabShapeTab { color: var(--n19-text) !important; }
   & ytd-tabbed-page-header #tabs-divider { border-bottom: 1px solid var(--n19-divider) !important; }
   & ytd-tabbed-page-header yt-tab-shape.n19-about { cursor: pointer !important; }
 
   & .n19-uploads { display: flex !important; align-items: center !important; height: 20px !important; margin: 24px 0 24px !important; width: 100% !important; box-sizing: border-box !important; }
-  & .n19-uploads-title { font-size: 16px !important; font-weight: 500 !important; line-height: 20px !important; color: var(--n19-text) !important; margin-right: 8px !important; }
+  & .n19-uploads .n19-kind { position: relative !important; margin-right: 8px !important; }
+  & .n19-uploads .n19-uploads-title { display: inline-flex !important; align-items: center !important; height: 36px !important; padding: 0 !important; border: 0 !important; background: transparent !important; cursor: pointer !important;
+    font-family: inherit !important; font-size: 16px !important; font-weight: 500 !important; line-height: 20px !important; color: var(--n19-text) !important; }
+  & .n19-uploads .n19-uploads-title svg { width: 24px !important; height: 24px !important; margin-left: 4px !important; fill: var(--n19-icon) !important; }
+  & .n19-uploads .n19-uploads-title.n19-single { cursor: default !important; }
+  & .n19-uploads .n19-uploads-title.n19-single svg, & .n19-uploads a.n19-play-all[hidden] { display: none !important; }
   & .n19-uploads a.n19-play-all { display: inline-flex !important; align-items: center !important; height: 36px !important; padding: 0 16px 0 8px !important; color: var(--n19-text-2) !important; font-size: 14px !important;
     font-weight: 500 !important; letter-spacing: .007px !important; text-transform: uppercase !important; text-decoration: none !important; }
   & .n19-uploads a.n19-play-all svg { width: 24px !important; height: 24px !important; margin-right: 8px !important; fill: var(--n19-icon) !important; }
@@ -287,12 +294,13 @@ html[data-n19-yt="www"] {
   & .n19-uploads .n19-sort > button { display: inline-flex !important; align-items: center !important; height: 36px !important; padding: 0 8px !important; border: 0 !important; background: transparent !important;
     color: var(--n19-text-2) !important; font-size: 14px !important; font-weight: 500 !important; letter-spacing: .007px !important; text-transform: uppercase !important; cursor: pointer !important; }
   & .n19-uploads .n19-sort > button svg { width: 24px !important; height: 24px !important; margin-right: 8px !important; fill: var(--n19-icon) !important; }
-  & .n19-uploads .n19-sort-menu { position: absolute !important; right: 0 !important; top: 100% !important; z-index: 2050 !important; min-width: 200px !important; padding: 8px 0 !important;
+  & .n19-uploads :is(.n19-sort-menu, .n19-kind-menu) { position: absolute !important; right: 0 !important; top: 100% !important; z-index: 2050 !important; min-width: 200px !important; padding: 8px 0 !important;
     background: var(--n19-card) !important; box-shadow: var(--n19-menu-shadow) !important; border-radius: 0 !important; }
-  & .n19-uploads .n19-sort-menu[hidden] { display: none !important; }
-  & .n19-uploads .n19-sort-menu button { display: block !important; width: 100% !important; height: 48px !important; padding: 0 36px 0 16px !important; border: 0 !important; background: transparent !important;
+  & .n19-uploads :is(.n19-sort-menu, .n19-kind-menu)[hidden] { display: none !important; }
+  & .n19-uploads .n19-kind-menu { left: 0 !important; right: auto !important; }
+  & .n19-uploads :is(.n19-sort-menu, .n19-kind-menu) button { display: block !important; width: 100% !important; height: 48px !important; padding: 0 36px 0 16px !important; border: 0 !important; background: transparent !important;
     color: var(--n19-text) !important; font-size: 14px !important; font-weight: 400 !important; text-align: left !important; white-space: nowrap !important; cursor: pointer !important; }
-  & .n19-uploads .n19-sort-menu button:hover, & .n19-uploads .n19-sort-menu button[aria-checked="true"] { background: var(--n19-active) !important; }
+  & .n19-uploads :is(.n19-sort-menu, .n19-kind-menu) button:is(:hover, [aria-checked="true"]) { background: var(--n19-active) !important; }
 
   & :is(ytd-subscribe-button-renderer, yt-subscribe-button-view-model, #subscribe-button, ytd-channel-renderer #buttons, yt-flexible-actions-view-model) :is(button, a).ytSpecButtonShapeNextHost:not([aria-label*="notification" i]):not(.ytSpecButtonShapeNextIconButton),
   & :is(a, button).ytSpecButtonShapeNextHost[aria-label^="Subscribe" i] {

@@ -97,6 +97,18 @@
       "url": "https://ahrefs.com/blog/youtube-seo/",
       "date": "2019-03",
       "shows": "search suggestions on 2019 desktop (also 2019-youtube_suggest_with_asterisk.jpg): a plain white dropdown hanging from the masthead's bottom edge 12px under the field, as wide as the field (not the button), no page dimming, no backdrop, the field stays in place; 16px padding, 30px rows, plain text with the typed part regular and the completion medium weight, no icons, thumbnails or subtitles"
+    },
+    {
+      "id": "s17",
+      "url": "https://web.archive.org/web/20190618071504/https://www.youtube.com/user/NASAtelevision/videos",
+      "date": "2019-06-18",
+      "shows": "channel Videos tab ytInitialData channelSubMenuRenderer.contentTypeSubMenuItems: 'All videos', 'Uploads' (selected), 'Live streams' (the Uploads dropdown, reaching past live streams from inside the VIDEOS tab); same list on https://web.archive.org/web/20190611222032/https://www.youtube.com/user/gamespot/videos (2019-06-11) and https://web.archive.org/web/20191030100535/https://www.youtube.com/user/gamespot/videos (2019-10-30); s11's template renders it as yt-dropdown-menu use-label ('Uploads' with a drop arrow) before PLAY ALL"
+    },
+    {
+      "id": "s18",
+      "url": "https://www.tubefilter.com/2022/10/28/youtube-channel-layout-short-long-form-live-streams/",
+      "date": "2022-10-28",
+      "shows": "YouTube splits channel videos, Shorts and live streams into separate tabs in October 2022: the LIVE channel tab did not exist in 2019"
     }
   ],
   "features": [
@@ -136,7 +148,7 @@
       "match": "^(Download|Clip|Thanks|Hype|Shows|Podcasts|Releases|Store|Courses|Membership|Posts|Dubbed|Auto-dubbed|Latest|Popular|Oldest|All|Unwatched|Recently uploaded|Videos only|Watched|For you)$",
       "in2019": false,
       "evidence": [
-        "desktop Download 2022, Clip 2021, Thanks 2021, Hype 2024, channel Live/Podcasts/Releases/Store tabs 2022+, channel Shows tab 2025 (s4 and s5 show only HOME VIDEOS PLAYLISTS CHANNELS DISCUSSION/COMMUNITY ABOUT), Posts renamed from Community 2023, auto-dubbing 2024, chip bars on search (tested 2022-03, sej-2022-03-search-chips.png) and channel videos (2022); none in s1-s11"
+        "desktop Download 2022, Clip 2021, Thanks 2021, Hype 2024, channel Live/Podcasts/Releases/Store tabs 2022+ (Live tab 2022-10, s18), channel Shows tab 2025 (s4 and s5 show only HOME VIDEOS PLAYLISTS CHANNELS DISCUSSION/COMMUNITY ABOUT), Posts renamed from Community 2023, auto-dubbing 2024, chip bars on search (tested 2022-03, sej-2022-03-search-chips.png) and channel videos (2022); none in s1-s11"
       ],
       "action": "hidden, or renamed to its 2019 name (Posts -> Community, chips -> SORT BY menu)"
     },
@@ -599,6 +611,19 @@
       "note": "required 2019 feature: comments SORT BY",
       "pages": [
         "watch"
+      ]
+    },
+    {
+      "match": "^(Live streams|Uploads)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s17",
+        "s11"
+      ],
+      "note": "required 2019 feature: the VIDEOS tab's 'Uploads ▾' dropdown with 'Uploads' and 'Live streams' (s17). The post-2019 LIVE tab stays hidden and the dropdown's 'Live streams' item opens the channel's /streams list through it, with VIDEOS underlined as in 2019; the dropdown only appears when the channel has live streams. 'All videos' has no current equivalent and is left out.",
+      "pages": [
+        "channel"
       ]
     }
   ]

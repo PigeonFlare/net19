@@ -178,20 +178,47 @@ globalThis.net19Theme = (() => {
       last.after(about);
     } else if (last.nextElementSibling !== about) last.after(about);
   };
+  const KINDS = { videos: 'Uploads', live: 'Live streams' };
+  const KIND_PATHS = { videos: 'videos', live: 'streams' };
+  const channelPath = () => (/^\/(@[^/]+|channel\/[^/]+|c\/[^/]+|user\/[^/]+)/.exec(location.pathname) || ['', ''])[0];
   const SORTS = { latest: 'Date added (newest)', popular: 'Most popular', oldest: 'Date added (oldest)' };
   const uploads = browse => {
     const grid = browse.querySelector('ytd-two-column-browse-results-renderer ytd-rich-grid-renderer');
     const selected = (browse.querySelector('yt-tab-shape[aria-selected="true"]')?.getAttribute('tab-title') || '').toLowerCase();
     const bar = grid?.querySelector(':scope > #header');
     const existing = grid?.querySelector(':scope > .n19-uploads');
-    if (!grid || selected !== 'videos') { existing?.remove(); return; }
+    if (!grid || !KINDS[selected]) { existing?.remove(); return; }
     const chips = [...(bar?.querySelectorAll('chip-view-model, yt-chip-cloud-chip-renderer') || [])];
     const box = existing || document.createElement('div');
     if (!existing) {
       box.className = 'n19-uploads';
-      const title = document.createElement('span');
-      title.className = 'n19-uploads-title';
-      title.textContent = 'Uploads';
+      const title = document.createElement('div');
+      title.className = 'n19-kind';
+      const kindToggle = document.createElement('button');
+      kindToggle.type = 'button';
+      kindToggle.className = 'n19-uploads-title';
+      kindToggle.setAttribute('aria-haspopup', 'menu');
+      kindToggle.append(document.createElement('span'), icon('M7 10l5 5 5-5z'));
+      const kindMenu = document.createElement('div');
+      kindMenu.className = 'n19-kind-menu';
+      kindMenu.setAttribute('role', 'menu');
+      kindMenu.hidden = true;
+      kindMenu.append(...Object.entries(KINDS).map(([tab, label]) => {
+        const item = document.createElement('button');
+        item.type = 'button';
+        item.setAttribute('role', 'menuitemradio');
+        item.dataset.tab = tab;
+        item.textContent = globalThis.net19Say?.(label) ?? label;
+        item.addEventListener('click', () => {
+          kindMenu.hidden = true;
+          const target = browse.querySelector(`ytd-tabbed-page-header yt-tab-shape[tab-title="${tab}" i]`);
+          if (target) target.click(); else location.assign(`${channelPath()}/${KIND_PATHS[tab]}`);
+        });
+        return item;
+      }));
+      kindToggle.addEventListener('click', () => { if (!kindToggle.classList.contains('n19-single')) kindMenu.hidden = !kindMenu.hidden; });
+      document.addEventListener('click', event => { if (!title.contains(event.target)) kindMenu.hidden = true; }, true);
+      title.append(kindToggle, kindMenu);
       const play = document.createElement('a');
       play.className = 'n19-play-all';
       play.append(icon('M8 5v14l11-7z'), document.createTextNode('Play all'));
@@ -212,9 +239,15 @@ globalThis.net19Theme = (() => {
       box.append(title, play, spacer, sort);
       if (bar) bar.after(box); else grid.prepend(box);
     }
-    const id = (document.querySelector('link[rel="canonical"]')?.href || '').match(/\/channel\/UC([\w-]{22})/);
+    const kindToggle = box.querySelector('.n19-uploads-title');
+    setText(kindToggle.firstChild, globalThis.net19Say?.(KINDS[selected]) ?? KINDS[selected]);
+    const hasLive = !!browse.querySelector('ytd-tabbed-page-header yt-tab-shape[tab-title="Live" i]');
+    kindToggle.classList.toggle('n19-single', !hasLive);
+    for (const item of box.querySelectorAll('.n19-kind-menu > button')) item.setAttribute('aria-checked', String(item.dataset.tab === selected));
+    const id = (document.querySelector('link[rel="canonical"]')?.href || '').match(/\/channel\/UC([\w-]{22})/) || (document.querySelector('link[type="application/rss+xml"]')?.href || '').match(/channel_id=UC([\w-]{22})/);
     const play = box.querySelector('.n19-play-all');
-    if (id) { const href = `/playlist?list=UU${id[1]}`; if (play.getAttribute('href') !== href) play.setAttribute('href', href); play.hidden = false; } else play.hidden = true;
+    if (selected !== 'videos') play.hidden = true;
+    else if (id) { const href = `/playlist?list=UU${id[1]}`; if (play.getAttribute('href') !== href) play.setAttribute('href', href); play.hidden = false; } else play.hidden = true;
     const menu = box.querySelector('.n19-sort-menu');
     const sort = box.querySelector('.n19-sort');
     sort.hidden = !chips.length;
