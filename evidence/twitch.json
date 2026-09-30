@@ -12,7 +12,7 @@
       "id": "s2",
       "url": "https://www.webwise.ie/parents/explained-what-is-twitch/",
       "date": "2019-08",
-      "shows": "channel page: channel bar (avatar, name, verified, LIVE, Videos 804, Clips, Events, Followers, Following), purple Follow, grey Subscribe, player, Stream Chat with Send a message and Chat button, stream title and Category"
+      "shows": "channel page: channel bar (avatar, name, verified, LIVE, Videos 804, Clips, Events, Followers, Following), purple Follow, grey Subscribe, player, Stream Chat with Send a message and Chat button, stream title and Category; chat input (IMG2343.png): white #fff field with a 1px #dad8de border and 4px corners on the #faf9fa chat footer, grey Send a message placeholder, bits and emote icons inside, purple Chat button below"
     },
     {
       "id": "s3",
@@ -60,7 +60,7 @@
       "id": "s10",
       "url": "https://www.trishtech.com/how-to-enable-dark-mode-on-twitch/",
       "date": "2019-01",
-      "shows": "dark mode (Google Images thumbnails of the article's screenshots; the originals are no longer served): purple top bar kept in dark mode, dark sidebar and page, user menu with Dark Mode toggle; gthumb-trishtech-2019-01-3.jpg shows light mode"
+      "shows": "dark mode (Google Images thumbnails of the article's screenshots; the originals are no longer served): purple top bar kept in dark mode, dark sidebar and page, user menu with Dark Mode toggle; gthumb-trishtech-2019-01-3.jpg shows light mode; dark chat input: a near-black field (about #151515) with a thin grey border (about #29282a) under the chat, not the purple search colours"
     },
     {
       "id": "s11",
