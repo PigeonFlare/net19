@@ -37,3 +37,12 @@ li[role="option"]:has(> div > [data-testid="autocomplete-result"] > [data-testid
 
 main h2 { font-family: var(--n19-font) !important; }
 [data-testid="filters-search-widget"] { display: none !important; }
+
+header [data-testid="header-help-center"], header nav li:has(> a#cruises), header nav li:has(> a#attractions),
+[data-testid="usp-container"], .trip-types-carousel-more-workaround, [data-n19-post2019],
+footer li:has(> a[href*="/trust_and_safety.html"]), footer li:has(> a[href*="/co_brand_card.html"]), footer li:has(> a[href*="/genius.html"]),
+footer li:has(> a[href*="/traveller-awards/"]), footer li:has(> a[href*="/extended-stays/"]), footer li:has(> a[href*="/flights/sitemap.html"]),
+footer li:has(> a[href*="/cars/sitemap.html"]), footer li:has(> a[href*="/holidays/sitemap.html"]), footer li:has(> a[href*="/guides/index.html"]),
+footer li:has(> a[href*="/discover.html"]), footer li:has(> a[href*="/deals/index.html"]) { display: none !important; }
+div:has(> div > [role="dialog"][aria-label*="sign in to Booking.com"]) { display: none !important; }
+html body:has([role="dialog"][aria-label*="sign in to Booking.com"]) { overflow: auto !important; }

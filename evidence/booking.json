@@ -1,0 +1,520 @@
+{
+ "theme": "booking",
+ "era": "2019 booking.com desktop: navy #003580 header with logo, currency, language flag, List Your Property, Register and Sign in, a product tab row (Accommodations, Flights, Flight + Hotel, Car Rentals, Airport Taxis), yellow-framed search box, property-type and destination carousels, and a white footer of link columns. All 2019 captures agree (h1-h4, s1); there is no crawler-only variant.",
+ "sources": [
+  {
+   "id": "h1",
+   "url": "https://arquivo.pt/wayback/20190101193215/https://www.booking.com/",
+   "date": "2019-01-01",
+   "shows": "home: navy header with logo, currency, language flag, List Your Property, Register, Sign in; Accommodations/Flights/Flight + Hotel/Car Rentals/Airport Taxis tabs; yellow-framed search box; property-type grid; destinations; footer link columns"
+  },
+  {
+   "id": "h2",
+   "url": "https://arquivo.pt/wayback/20190314175346/https://www.booking.com/",
+   "date": "2019-03-14",
+   "shows": "home: 'Find deals for any season' search box with I'm traveling for work, Easter Deals promo card with View deals, 'Whatever accommodations you're looking for' property-type carousel, Get inspiration articles, destination grid, 'Destinations we love' with Regions/Cities/Places of Interest tabs, Save time save money newsletter, footer"
+  },
+  {
+   "id": "h3",
+   "url": "https://arquivo.pt/wayback/20190904194737/https://www.booking.com/",
+   "date": "2019-09-04",
+   "shows": "home: same header and tabs, Genius 'Get 7 days of travel rewards' sign-in banner, Off-Peak Deals promo, 'Millions of homes' property types, travel communities, 'More than just hotels' unique homes carousel, destination grid"
+  },
+  {
+   "id": "h4",
+   "url": "https://arquivo.pt/wayback/20191231184718/https://www.booking.com/",
+   "date": "2019-12-31",
+   "shows": "home at year end: same header, tabs, search box and modules"
+  },
+  {
+   "id": "s1",
+   "url": "https://arquivo.pt/wayback/20190320065052/https://www.booking.com/searchresults.html",
+   "date": "2019-03-20",
+   "shows": "search results page: header and tabs, breadcrumb (Home), results heading 'N properties are available', Map View, left 'Search' sidebar box with destination, dates, guests and Search button, newsletter and footer"
+  },
+  {
+   "id": "p1",
+   "url": "https://arquivo.pt/wayback/20190326023223/https://www.booking.com/hotel/gb/12-young-road-excel.html",
+   "date": "2019-03-26",
+   "shows": "property page: breadcrumb, name heading, tab row Info & prices / Facilities / House Rules / Guest Reviews (153), Reserve and We Price Match top right, photo gallery with previous/next, review score box with 'Guests love...', show map, Yes/No helpfulness buttons, availability table with See availability, area info, left search sidebar, footer"
+  }
+ ],
+ "features": [
+  {
+   "match": "^Booking\\.com$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "h4"
+   ],
+   "note": "logo link",
+   "required": true,
+   "pages": [
+    "home",
+    "search",
+    "hotel"
+   ]
+  },
+  {
+   "match": "^Prices in .*|^Select your currency",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "h4"
+   ],
+   "note": "currency picker"
+  },
+  {
+   "match": "^Language: |^Select your language",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "h4"
+   ],
+   "note": "language flag picker"
+  },
+  {
+   "match": "^List your property$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "h4"
+   ],
+   "note": "List Your Property button",
+   "required": true,
+   "pages": [
+    "home"
+   ]
+  },
+  {
+   "match": "^Register( an account)?$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "h4"
+   ],
+   "note": "Register button"
+  },
+  {
+   "match": "^Sign in$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "h4"
+   ],
+   "note": "Sign in button",
+   "required": true,
+   "pages": [
+    "home",
+    "search",
+    "hotel"
+   ]
+  },
+  {
+   "match": "^(Stays|Accommodations)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "h4"
+   ],
+   "note": "first product tab (named Accommodations in 2019)",
+   "required": true,
+   "pages": [
+    "home"
+   ]
+  },
+  {
+   "match": "^Flights$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "h4"
+   ],
+   "note": "product tab"
+  },
+  {
+   "match": "^Flight \\+ Hotel$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "h4"
+   ],
+   "note": "product tab"
+  },
+  {
+   "match": "^Car rentals?$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "h4"
+   ],
+   "note": "product tab and footer link"
+  },
+  {
+   "match": "^Airport taxis$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "h4"
+   ],
+   "note": "product tab"
+  },
+  {
+   "match": "^Cruises$",
+   "in2019": false,
+   "evidence": [
+    "Cruises tab added to the product bar after 2019; absent from every 2019 capture (h1-h4)"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^Attractions$",
+   "in2019": false,
+   "evidence": [
+    "Attractions tab added after 2019; absent from h1-h4"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^Customer support$",
+   "in2019": false,
+   "evidence": [
+    "header help-center icon added after 2019; 2019 kept Customer Service Help in the footer (h1-h4)"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^Add flights$",
+   "in2019": false,
+   "evidence": [
+    "search box flight add-on checkbox; 2019 box had only I'm traveling for work (h2)"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^(header|nav|main|footer|form|section|contentinfo|menubar|region|tablist) area$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "s1"
+   ],
+   "note": "page landmarks: header, product tab bar, main, footer, search form"
+  },
+  {
+   "match": "^What are you looking for\\?$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "h4"
+   ],
+   "note": "product tab bar (nav label)"
+  },
+  {
+   "match": "^Search properties$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "s1"
+   ],
+   "note": "yellow-framed search box on home, search sidebar on results",
+   "required": true,
+   "pages": [
+    "home",
+    "search",
+    "hotel"
+   ]
+  },
+  {
+   "match": "^Search in your own words$|^Enter destination$|^Where are you going\\?$|^Type your destination$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "s1"
+   ],
+   "note": "destination field; the theme restores the 2019 placeholder 'Where are you going?'"
+  },
+  {
+   "match": "^Search$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "s1"
+   ],
+   "note": "Search button"
+  },
+  {
+   "match": "^I'?m traveling for work$",
+   "in2019": true,
+   "evidence": [
+    "h2",
+    "h3"
+   ],
+   "note": "business-travel checkbox"
+  },
+  {
+   "match": "^Sign in, save money$|^Travel more, spend less",
+   "in2019": true,
+   "evidence": [
+    "h3"
+   ],
+   "note": "Genius sign-in banner ('Get 7 days of travel rewards' in 2019)"
+  },
+  {
+   "match": "^Window offering discounts of 10% or more when you sign in to Booking\\.com$|^Dismiss sign-in info\\.?$",
+   "in2019": false,
+   "evidence": [
+    "Genius sign-in modal over the home page; 2019 showed the offer as an inline banner (h3), not a dialog"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^Why Booking\\.com\\?$",
+   "in2019": false,
+   "evidence": [
+    "USP cards module added after 2019; absent from h1-h4"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^Quick and easy trip planner$|^(Wellness|Family Entertainment|Art Galleries|Food & Cooking|Nightlife & Fun|Arts & Culture|Adventurous Activities|Coastal Relaxation|Wineries & Vineyards|Outdoor Adventures)$|^Next: Quick and easy trip planner$",
+   "in2019": false,
+   "evidence": [
+    "trip-planner carousel with interest tabs added after 2019; absent from h1-h4"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^Save more with weekend deals$|^Deals for the weekend$",
+   "in2019": false,
+   "evidence": [
+    "weekend deals carousel added after 2019; 2019 promoted deals with a single promo card (Easter / Off-Peak Deals, h2, h3)"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^Offers$|^Learn more about the card$|^Explore the card$|^View deals$",
+   "in2019": true,
+   "evidence": [
+    "h2",
+    "h3"
+   ],
+   "note": "promo slot: 2019 home showed one deals card with a button (Easter Deals / Off-Peak Deals, View deals)"
+  },
+  {
+   "match": "^Browse by property type$|^(Apartments|Resorts|Villas|Hostels|B&Bs|Guest Houses|Vacation Homes|Hotels|Cabins|Cottages)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "property-type carousel ('Whatever accommodations you're looking for' / 'Millions of homes')",
+   "required": true,
+   "pages": [
+    "home"
+   ]
+  },
+  {
+   "match": "^Explore .+|^(Monterey|Napa|Big Sur|Santa Barbara|Ojai|Santa Monica|Laguna Beach)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "destination grid with pictures (New York, Dubai, Las Vegas ... in 2019)"
+  },
+  {
+   "match": "^Stay at our top unique properties$|^Homes guests love$",
+   "in2019": true,
+   "evidence": [
+    "h2",
+    "h3"
+   ],
+   "note": "unique-homes carousel ('More than just hotels… discover pure comfort with homes')"
+  },
+  {
+   "match": "^(Domestic cities|International cities|Regions|Countries|Places to stay|Things to do|Cities)$|^Hotels in .+|^Show more$",
+   "in2019": true,
+   "evidence": [
+    "h2",
+    "h1"
+   ],
+   "note": "'Destinations we love' link block with tabs (Regions, Cities, Places of Interest in 2019) and footer country/region/city links"
+  },
+  {
+   "match": "^Quick Links$|^(Districts|Airports|Places of interest|Unique places to stay|All destinations)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "s1"
+   ],
+   "note": "footer destination link row"
+  },
+  {
+   "match": "^(Manage your trips|Contact Customer Service|Travel articles|Booking\\.com for Business|Flight finder|Restaurant reservations|Booking\\.com for Travel Agents|Extranet login|Partner help|Become an affiliate|About Booking\\.com|Press center|Careers|Investor relations|Corporate contact|Privacy Notice|Terms of Service)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "s1"
+   ],
+   "note": "footer links (2019: Make changes online to your booking, Customer Service Help, Unpacked: Travel articles, Flight Finder, Restaurant Reservations, Extranet Login, Partner Help, Privacy & Cookie Statement, Terms & Conditions ...)"
+  },
+  {
+   "match": "^(Safety Resource Center|Genius Rewards Visa®?|Genius loyalty program|Seasonal and holiday deals|Traveller Review Awards|Discover monthly stays|All flight destinations|All car rental locations|All vacation destinations|Guides|Discover|Sustainability|How We Work)$",
+   "in2019": false,
+   "evidence": [
+    "footer links added after 2019; absent from the 2019 footers (h1-h4, s1)"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^(Manage cookie settings|Don't sell or share my personal information|Accessibility Statement|Dispute resolution|Modern Slavery Statement|Human Rights Statement|Content guidelines and reporting)$",
+   "in2019": false,
+   "evidence": [
+    "legally required notices (CCPA, EU DSA, UK Modern Slavery Act, accessibility, cookie choice)"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^Filters$|^Filter by:?$",
+   "in2019": true,
+   "evidence": [
+    "s1"
+   ],
+   "note": "results sidebar (2019: search box above filter groups)"
+  },
+  {
+   "match": "^.+: [\\d,]+ properties found$|^[\\d,]+ properties",
+   "in2019": true,
+   "evidence": [
+    "s1"
+   ],
+   "note": "results heading",
+   "required": true,
+   "pages": [
+    "search"
+   ]
+  },
+  {
+   "match": "^(Home|United Kingdom|Greater London|London)$|^Hotels on Booking\\.com$|^Hotels in .+",
+   "in2019": true,
+   "evidence": [
+    "s1",
+    "p1"
+   ],
+   "note": "breadcrumb"
+  },
+  {
+   "match": "^Show on map$|^Map View$",
+   "in2019": true,
+   "evidence": [
+    "s1",
+    "p1"
+   ],
+   "note": "map link"
+  },
+  {
+   "match": "^Sort by: .+",
+   "in2019": true,
+   "evidence": [
+    "s1"
+   ],
+   "note": "sort bar over results"
+  },
+  {
+   "match": "^Carousel$|^Photo gallery for .+|^Guests who stayed here loved|^See what guests loved the most:?$|^(Overview|Info & prices|Amenities|House rules|Important and legal info)$|^Guest reviews \\([\\d,]+\\)$|^Internal page link$|^We Price Match$|^See availability$|^Read all reviews$|^Next$",
+   "in2019": true,
+   "evidence": [
+    "p1"
+   ],
+   "note": "property page: photo gallery, review highlights, tab row (Info & prices, Facilities/Amenities, House Rules, The Fine Print/Important and legal info, Guest Reviews), We Price Match, See availability"
+  },
+  {
+   "match": "^Survey with \\d+ questions$",
+   "in2019": false,
+   "evidence": [
+    "in-page feedback survey added after 2019"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^repeated ",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "h4",
+    "s1"
+   ],
+   "note": "content items (property cards, results, reviews)"
+  },
+  {
+   "match": "^(Yes|No)$",
+   "in2019": true,
+   "evidence": [
+    "p1"
+   ],
+   "note": "helpfulness Yes/No buttons on the property page"
+  },
+  {
+   "match": "^Wonderful .+|^[\\d.]+ miles from downtown$|^Subway Access$|^.+, London ?Show on map$|^Standard Double Room$|^Deluxe Double Room$|^Double Room$|^Studio$|^.+ (Room|Suite|Apartment|Studio)$",
+   "in2019": true,
+   "evidence": [
+    "p1"
+   ],
+   "note": "per-result and per-property details (distance from center, room names, review subscores, show map)"
+  },
+  {
+   "match": "^Looking for a .+ trip\\?$",
+   "in2019": false,
+   "evidence": [
+    "themed trip-type carousels added after 2019; 2019 home had only the destination grid (h1-h4)"
+   ],
+   "action": "hidden"
+  }
+ ]
+}
