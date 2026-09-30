@@ -23,5 +23,5 @@ globalThis.net19Theme = {
     }
   };
   net19.watch(run);
-  addEventListener('resize', () => net19.frame(run));
+  addEventListener('resize', net19.frame(run));
 })();
