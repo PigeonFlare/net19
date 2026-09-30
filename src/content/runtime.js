@@ -1,5 +1,5 @@
 (() => {
-  if (globalThis.net19) return;
+  if (typeof globalThis.net19?.watch === 'function') return;
   const WORDS = {
     'Search': { es: 'Buscar', fr: 'Rechercher', pt: 'Pesquisar', it: 'Cerca', ja: '検索', zh: '搜索', ko: '검색', ru: 'Поиск', hi: 'खोजें', ar: 'بحث' },
     'Sign Up': { es: 'Registrarse', fr: 'S’inscrire', pt: 'Cadastre-se', it: 'Iscriviti', ja: '登録', zh: '注册', ko: '가입하기', ru: 'Регистрация', hi: 'साइन अप करें', ar: 'إنشاء حساب' },
@@ -49,7 +49,7 @@
   };
   const watch = (run, options = { childList: true, subtree: true }) => {
     const later = frame(run);
-    onBody(() => { run(); new MutationObserver(later).observe(document.documentElement, options); });
+    onBody(() => { new MutationObserver(later).observe(document.documentElement, options); run(); });
     return later;
   };
   globalThis.net19 = { lang, say, english, onBody, frame, watch };

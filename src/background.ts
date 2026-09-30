@@ -14,8 +14,8 @@ function syncScripts(): Promise<unknown> {
     const [config, registered] = await Promise.all([settings(), chrome.scripting.getRegisteredContentScripts()]);
     const active = (theme: HandmadeTheme) => config.enabled && !themePaused(theme, config.disabledHosts);
     const oldRules = await chrome.declarativeNetRequest.getDynamicRules();
-    await chrome.declarativeNetRequest.updateDynamicRules({ removeRuleIds: oldRules.map(rule => rule.id),
-      addRules: navigationRules(config) });
+    const rules = navigationRules(config);
+    if (JSON.stringify(oldRules) !== JSON.stringify(rules)) await chrome.declarativeNetRequest.updateDynamicRules({ removeRuleIds: oldRules.map(rule => rule.id), addRules: rules });
     const desired: chrome.scripting.RegisteredContentScript[] = THEMES.filter(active).map(theme => ({
       id: `net19-theme-${theme.id}`, matches: themeMatches(theme), ...exclude(themeExcludes(theme, config.pausedSites)), ...themeFiles(theme), runAt: 'document_start', allFrames: !!theme.frames, persistAcrossSessions: true }));
     const paused = [...new Set(config.pausedSites.flatMap(siteMatches))].sort();
@@ -105,3 +105,4 @@ chrome.runtime.onMessage.addListener((message, sender, respond) => {
 chrome.runtime.onInstalled.addListener(() => { void cleanUp().catch(() => undefined).then(syncScripts).catch(() => undefined); });
 chrome.storage.onChanged.addListener((changes, area) => { if (area === 'local' && changes[FIT_KEY]) void syncFit().catch(() => undefined); });
 chrome.runtime.onStartup.addListener(() => { void syncScripts().catch(() => undefined); });
+void syncScripts().catch(() => undefined);
