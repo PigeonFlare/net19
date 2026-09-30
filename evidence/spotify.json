@@ -104,6 +104,48 @@
         "s5"
       ],
       "note": "content: artist, album, track and playlist names seen on the sampled pages"
+    },
+    {
+      "match": "^What do you want to play\\?$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s7"
+      ],
+      "note": "required: search field"
+    },
+    {
+      "match": "^Create playlist$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s7"
+      ],
+      "note": "required: library Create playlist"
+    },
+    {
+      "match": "^Sign up free$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s3",
+        "s4",
+        "s5",
+        "s7"
+      ],
+      "note": "required: Sign up free"
     }
   ]
 }

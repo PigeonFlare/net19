@@ -7,6 +7,12 @@
    "url": "https://arquivo.pt/noFrame/replay/20191218061448/https://www.mapquest.com/directions",
    "date": "2019-12-18",
    "shows": "directions page as served on 2019-12-18 (Arquivo.pt capture rendered with its archived 2019 CSS)"
+  },
+  {
+   "id": "home-a20190701",
+   "url": "https://arquivo.pt/noFrame/replay/20190701202759/https://www.mapquest.com/",
+   "date": "2019-07-01",
+   "shows": "home page as served on 2019-07-01 (Arquivo.pt capture rendered headless): 400px left panel with the MapQuest logo, search form and blue directions button, panel toggle, map pane, Help tab"
   }
  ],
  "features": [
@@ -17,6 +23,49 @@
     "directions-a20191218"
    ],
    "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(main area|form area|section area|Map)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190701"
+   ],
+   "note": "2019 layout: left panel (main) with the search form beside the full-height map pane"
+  },
+  {
+   "match": "^(MapQuest|Directions|Help|toggle panel|Search places or paste a link)$",
+   "in2019": true,
+   "evidence": [
+    "home-a20190701"
+   ],
+   "note": "2019 panel controls: logo, search field, directions button, panel toggle, Help tab"
+  },
+  {
+   "match": "^MapQuest$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a20190701"
+   ],
+   "note": "required: logo"
+  },
+  {
+   "match": "^Search places or paste a link$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a20190701"
+   ],
+   "note": "required: panel search field"
+  },
+  {
+   "match": "^Directions$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a20190701"
+   ],
+   "note": "required: directions button"
   }
  ]
 }

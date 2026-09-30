@@ -294,6 +294,50 @@
     "cap-evaluate-2019-09"
    ],
    "note": "search results page ('Show all results' in the 2019 search box), its filters (2019 listing filters and 'Filter by: Rating'), adding a missing company (2019 /evaluate); Got it / Close are the consent banner's buttons"
+  },
+  {
+   "match": "^Categories$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "category-a201903",
+    "category-a201910c",
+    "home-a201907b"
+   ],
+   "note": "required: header nav"
+  },
+  {
+   "match": "^(Log in)$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "category-a201903",
+    "category-a201909b",
+    "category-a201910c"
+   ],
+   "note": "required: Log in"
+  },
+  {
+   "match": "^(For businesses|For companies)$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201907b",
+    "review-a201907b",
+    "category-a201903"
+   ],
+   "note": "required: header link"
+  },
+  {
+   "match": "^(search input field|Search company or category)$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201903",
+    "category-a201910c",
+    "review-a201911c"
+   ],
+   "note": "required: hero search"
   }
  ]
 }

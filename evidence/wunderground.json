@@ -226,6 +226,71 @@
     "home-a201907"
    ],
    "note": "2019 city pages: Today, Hourly, 10-Day, Calendar, History (Historical Weather with daily/weekly/monthly observations and summaries), WunderMap, Manage Favorites, Search Locations, the 'City Weather Conditions star_rate home' title, favourites bar, Customer Feedback, AdChoices and ad slots (sponsored links are ad content), news cards"
+  },
+  {
+   "match": "^Sensor Network$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "forecast-h201904",
+    "forecast-h201909",
+    "home-a201911"
+   ],
+   "note": "required: header nav"
+  },
+  {
+   "match": "^Maps & Radar$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "forecast-h201904",
+    "forecast-h201909",
+    "home-a201911"
+   ],
+   "note": "required: header nav"
+  },
+  {
+   "match": "^Severe Weather$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "forecast-h201904",
+    "forecast-h201909",
+    "home-a201911"
+   ],
+   "note": "required: header nav"
+  },
+  {
+   "match": "^News & Blogs$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "forecast-h201904",
+    "forecast-h201909",
+    "home-a201911"
+   ],
+   "note": "required: header nav"
+  },
+  {
+   "match": "^Log In$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "forecast-h201909",
+    "home-a201911",
+    "home-h201911"
+   ],
+   "note": "required: Log In"
+  },
+  {
+   "match": "^(Search|Search Locations\\.\\.\\.)$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "forecast-h201909",
+    "home-h201911"
+   ],
+   "note": "required: location search"
   }
  ]
 }

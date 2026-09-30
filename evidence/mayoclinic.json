@@ -141,6 +141,38 @@
     "disease-a201907"
    ],
    "note": "the 2019 disease page had the same Products & Services / Mayo Clinic Marketplace promo block (book and newsletter offers are its content)"
+  },
+  {
+   "match": "^Mayo Clinic$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "disease-a201907",
+    "home-a201903",
+    "home-a201907"
+   ],
+   "note": "required: logo"
+  },
+  {
+   "match": "^Find a doctor$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "disease-a201907",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "required: header nav"
+  },
+  {
+   "match": "^Search$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "disease-a201907",
+    "home-a201907"
+   ],
+   "note": "required: search"
   }
  ]
 }

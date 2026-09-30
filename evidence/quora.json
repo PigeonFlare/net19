@@ -101,6 +101,46 @@
         "not in 2019 captures (s1–s4); Quora+ 2021, Poe 2023"
       ],
       "action": "hidden"
+    },
+    {
+      "match": "^Quora$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "required: logo"
+    },
+    {
+      "match": "^Search Quora$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "required: search"
+    },
+    {
+      "match": "^(Sign In|Login)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "required: sign in"
+    },
+    {
+      "match": "^Upvote( · [\\d.,KM]+)?$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: upvote action"
     }
   ]
 }

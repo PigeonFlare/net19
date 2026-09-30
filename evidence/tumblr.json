@@ -117,6 +117,92 @@
         "Communities 2023, Blaze 2022, TumblrMart 2021, Live 2022"
       ],
       "action": "hidden"
+    },
+    {
+      "match": "^Explore$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s4"
+      ],
+      "note": "required: header Explore"
+    },
+    {
+      "match": "^(Search|Search Tumblr)$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s4"
+      ],
+      "note": "required: header search"
+    },
+    {
+      "match": "^Log in$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s4"
+      ],
+      "note": "required: Log in button"
+    },
+    {
+      "match": "^Sign up$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s4"
+      ],
+      "note": "required: Sign up button"
+    },
+    {
+      "match": "^Trending$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s4"
+      ],
+      "note": "required: Explore tab"
+    },
+    {
+      "match": "^Staff Picks$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3",
+        "s4"
+      ],
+      "note": "required: Explore tab"
+    },
+    {
+      "match": "^Reblog$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: post action"
+    },
+    {
+      "match": "^Like$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "required: post action"
     }
   ]
 }

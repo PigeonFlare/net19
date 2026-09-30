@@ -108,6 +108,64 @@
     "rent-a201905"
    ],
    "note": "2019 header, hero (the theme restores 'Reimagine home'), search, Buy / Sell / Rent a home cards and footer ('News' was 'Blog', 'Terms of use' was 'Terms of use & Privacy')"
+  },
+  {
+   "match": "^Zillow Real Estate$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201905"
+   ],
+   "note": "required: logo"
+  },
+  {
+   "match": "^Buy$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201905"
+   ],
+   "note": "required: header nav"
+  },
+  {
+   "match": "^Rent$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201905"
+   ],
+   "note": "required: header nav"
+  },
+  {
+   "match": "^Sell$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201905"
+   ],
+   "note": "required: header nav"
+  },
+  {
+   "match": "^Search$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201905",
+    "raw-home-2019-05",
+    "rent-a201905"
+   ],
+   "note": "required: hero search"
+  },
+  {
+   "match": "^Sign in$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201905",
+    "rent-a201905",
+    "rent-a201910b"
+   ],
+   "note": "required: Sign in"
   }
  ]
 }

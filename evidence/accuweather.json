@@ -90,6 +90,16 @@
     "home-wbref"
    ],
    "note": "2019 forecast page: location title, Today/Tonight/Tomorrow, Current Weather, New York Weather Radar with More Maps, Hourly, Daily (10-day), Allergies, Recent and Popular Locations, news lists and the search field; the hourly strip scrolls"
+  },
+  {
+   "match": "^Search$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "forecast-html-201912",
+    "home-wbref"
+   ],
+   "note": "required: location search"
   }
  ]
 }

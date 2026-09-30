@@ -205,6 +205,39 @@
     "home-h201907"
    ],
    "note": "point-forecast headings and the observing-station name (content; the 2019 Beaufort forecast shows the same layout with its own station), the office headline story (content), page regions"
+  },
+  {
+   "match": "^National Weather Service$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "forecast-h201911",
+    "home-a201903",
+    "home-a201907"
+   ],
+   "note": "required: header"
+  },
+  {
+   "match": "^myfcst-location-input$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "required: location search"
+  },
+  {
+   "match": "^inputstring$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "required: site search"
   }
  ]
 }

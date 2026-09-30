@@ -127,6 +127,33 @@
     "home-a201903"
    ],
    "note": "2019 navigation (Today, Hourly, 5 Day, 10 Day, Weekend, Monthly, Maps, More Forecasts with Allergy, Cold & Flu and Air Quality, MENU), current conditions, 36-hour/daily forecast, map, Trending and news modules (their titles are content)"
+  },
+  {
+   "match": "^Today$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-wbref"
+   ],
+   "note": "required: forecast nav"
+  },
+  {
+   "match": "^Hourly$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-wbref"
+   ],
+   "note": "required: forecast nav"
+  },
+  {
+   "match": "^10 Day$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-wbref"
+   ],
+   "note": "required: forecast nav"
   }
  ]
 }

@@ -207,6 +207,50 @@
     "home-a201911c"
    ],
    "note": "2019 '#1 Rated Job Search App' and 'What They're Saying' testimonials"
+  },
+  {
+   "match": "^ZipRecruiter Homepage$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201911c",
+    "search-a201909b"
+   ],
+   "note": "required: logo"
+  },
+  {
+   "match": "^Job title or keyword$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201911c",
+    "search-a201909b"
+   ],
+   "note": "required: job search"
+  },
+  {
+   "match": "^Search location$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201911c",
+    "search-a201909b"
+   ],
+   "note": "required: location search"
+  },
+  {
+   "match": "^Search Jobs$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907b",
+    "home-a201911c"
+   ],
+   "note": "required: search button"
   }
  ]
 }

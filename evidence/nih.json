@@ -406,6 +406,48 @@
     "home-a201911"
    ],
    "note": "the current hero promo title; the rotating hero promo slot is on every 2019 capture with other promos (content)"
+  },
+  {
+   "match": "^Search$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "article-a201906",
+    "article-a201911",
+    "pubmed-a201903"
+   ],
+   "note": "required: PubMed search"
+  },
+  {
+   "match": "^Advanced$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "nd19-legacy-home",
+    "nd19-new-results",
+    "home-a201907"
+   ],
+   "note": "required: advanced search"
+  },
+  {
+   "match": "^Log in$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "nd19-new-home",
+    "so19-new-home"
+   ],
+   "note": "required: Log in"
+  },
+  {
+   "match": "^Pubmed Logo$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "nd19-legacy-home",
+    "home-a201907"
+   ],
+   "note": "required: PubMed logo"
   }
  ]
 }

@@ -45,6 +45,164 @@
    "labels": [
     "contentinfo area"
    ]
+  },
+  {
+   "match": "^(New York State Home|Services|Programs|Government|News|Local|Search|Search this website|Translate)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201907",
+    "home-h201911",
+    "home-wbref"
+   ],
+   "note": "2019 header: NEW YORK STATE logo (title New York State Home), Services / News / Government / Local, Search, Translate; Programs is a 2019 label on the same page"
+  },
+  {
+   "match": "^(Popular Services|Apply For SNAP|Unemployment Assistance|Government Jobs|Pay Traffic Violation|Featured|Plan Ahead|Stay Informed|Stay Updated|Download NY State Apps|Follow State Agencies|Connect( with us)?|Events|Excelsior Scholarship)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201907",
+    "home-h201911",
+    "home-wbref"
+   ],
+   "note": "2019 home sections: Popular Services tiles, Featured, PLAN Ahead, STAY Informed, Download NY State Apps, Follow State Agencies, CONNECT"
+  },
+  {
+   "match": "^(Governor|Comptroller|Attorney General|Judicial|Legislative|Legislature|Court of Appeals|NY State Unified Court System|NY State Senate|NY State Assembly|NY State Congressional Delegation)( .*)?$",
+   "in2019": true,
+   "evidence": [
+    "home-h201907",
+    "home-h201911",
+    "home-wbref"
+   ],
+   "note": "2019 New York State Government block: Governor, Comptroller, Attorney General, Judicial and Legislative links (office holders are content)"
+  },
+  {
+   "match": "^(Accessibility|Agencies|App Directory|Disclaimer|Events|Language Access|Privacy Policy|Site Map|Twitter|Instagram|Facebook|YouTube)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201907",
+    "home-h201911",
+    "home-wbref"
+   ],
+   "note": "2019 footer links"
+  },
+  {
+   "match": "^.+ on (X|Twitter|facebook|flickr|instagram|youtube|soundcloud|linkedIn)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201907",
+    "home-h201911",
+    "home-wbref"
+   ],
+   "note": "2019 government block linked the Governor's and Comptroller's Twitter, Facebook, Flickr, Instagram and YouTube (hrefs in the 2019-07 markup)"
+  },
+  {
+   "match": "^(PRESS RELEASE|Learn More|Get the Details|Visit Site|See all|All Services|Places to Fish)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201907",
+    "home-h201911",
+    "home-wbref"
+   ],
+   "note": "2019 hero, Featured and Popular Services slots each carried a call-to-action link; the wording is content"
+  },
+  {
+   "match": "^(English|Español|中文|繁體中文|Русский|יידיש|বাংলা|한국어|Kreyòl Ayisyen|Italiano|العربية|Polski|Français|اردو)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201907",
+    "home-h201911",
+    "home-wbref"
+   ],
+   "note": "languages offered by the 2019 Translate control"
+  },
+  {
+   "match": "^New York State Home$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-h201907",
+    "home-h201911",
+    "home-wbref"
+   ],
+   "note": "required: logo"
+  },
+  {
+   "match": "^Services$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-h201907",
+    "home-h201911",
+    "home-wbref"
+   ],
+   "note": "required: header nav"
+  },
+  {
+   "match": "^Government$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-h201907",
+    "home-h201911",
+    "home-wbref"
+   ],
+   "note": "required: header nav"
+  },
+  {
+   "match": "^News$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-h201907",
+    "home-h201911",
+    "home-wbref"
+   ],
+   "note": "required: header nav"
+  },
+  {
+   "match": "^Search$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-h201907",
+    "home-h201911",
+    "home-wbref"
+   ],
+   "note": "required: header search"
+  },
+  {
+   "match": "^Popular Services$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-h201907",
+    "home-h201911",
+    "home-wbref"
+   ],
+   "note": "required: Popular Services"
+  },
+  {
+   "match": "^Apply For SNAP$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-h201907",
+    "home-h201911",
+    "home-wbref"
+   ],
+   "note": "required: Popular Services tile"
+  },
+  {
+   "match": "^Featured$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-h201907",
+    "home-h201911",
+    "home-wbref"
+   ],
+   "note": "required: Featured section"
   }
  ]
 }

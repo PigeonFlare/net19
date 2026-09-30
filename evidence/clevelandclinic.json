@@ -218,6 +218,59 @@
     "articleA-a201907"
    ],
    "note": "content of the audited article (its 2019 version 'Fat: What You Need to Know' is articleA) and page regions"
+  },
+  {
+   "match": "^Cleveland Clinic logo$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "articleB-a201907",
+    "articleC-a201907",
+    "disease-wbref"
+   ],
+   "note": "required: logo"
+  },
+  {
+   "match": "^Find a Doctor$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "articleA-a201907",
+    "articleB-a201907",
+    "articleC-a201907"
+   ],
+   "note": "required: header nav"
+  },
+  {
+   "match": "^Locations$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "articleA-a201907",
+    "articleB-a201907",
+    "articleC-a201907"
+   ],
+   "note": "required: header nav"
+  },
+  {
+   "match": "^Health Library$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "articleA-a201907",
+    "articleB-a201907",
+    "articleC-a201907"
+   ],
+   "note": "required: header nav"
+  },
+  {
+   "match": "^Diagnosis and Tests$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "disease-wbref"
+   ],
+   "note": "required: article contents"
   }
  ]
 }

@@ -203,6 +203,50 @@
     "Podcast",
     "repeated li"
    ]
+  },
+  {
+   "match": "^Merriam Webster$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "entry1-201911",
+    "entry3-201909",
+    "entry6-201909"
+   ],
+   "note": "required: logo"
+  },
+  {
+   "match": "^Search$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "entry1-201911",
+    "entry3-201909",
+    "entry6-201909"
+   ],
+   "note": "required: dictionary search"
+  },
+  {
+   "match": "^Games$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "entry1-201911",
+    "entry3-201909",
+    "entry6-201909"
+   ],
+   "note": "required: header nav"
+  },
+  {
+   "match": "^Word of the Day$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "entry1-201911",
+    "entry3-201909",
+    "entry6-201909"
+   ],
+   "note": "required: header nav"
   }
  ]
 }

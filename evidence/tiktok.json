@@ -105,6 +105,28 @@
         "s4"
       ],
       "note": "content: creator nicknames in the feed (names with emoji or non-Latin letters, or two to four plain words); the feed is random, so names differ per load"
+    },
+    {
+      "match": "^For You$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4",
+        "s5"
+      ],
+      "note": "required: For You nav"
+    },
+    {
+      "match": "^Profile$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s4",
+        "s5"
+      ],
+      "note": "required: Profile nav"
     }
   ]
 }
