@@ -25,6 +25,7 @@ html[data-net19-mode="dark"] { --n19-bar: #262626; --n19-bar-text: #e6e6e6; --n1
 .Page-header-leaderboardAd { display: none !important; }
 .Page-trendingZephr-entitlements, #desktop-entitlements, .Page-actions-google-trigger, .Page-actions-commentCounter, .PagePromo-commentCount,
 .CommentCount-template, .PagePromo-readingtime, .PagePromo-byline-live, .PageListTrending-LiveTag, bsp-news-letter, .PageListStandardB-NewsLetter, .ReadingTime-template, .Zephr-bar, .viafoura, .Newsletter-Banner, [class*="Zephr-mod"] { display: none !important; }
+.PagePromo-byline-container:not(:has(> .PagePromo-byline:not(.PagePromo-byline-live, :empty))) { display: none !important; }
 
 body.Page-body { background: var(--n19-page) !important; color: var(--n19-text) !important; }
 .Page-content, .Page-twoColumn, .SectionPage, .StoryPage, .Page-main { background: transparent !important; }
@@ -47,6 +48,7 @@ html[data-net19-mode="dark"] .PagePromo-description, html[data-net19-mode="dark"
 :is(.PageListStandardE, .PageListRightRailA, .PageListStandardD, .PageListStandardB, .PageListCarouselA, .PageListEnhancementGeneric)[data-module],
 :is(.PageListStandardE, .PageListRightRailA, .PageListStandardD, .PageListStandardB, .PageListCarouselA) { background: var(--n19-card) !important; }
 :is(.PageListStandardE, .PageListRightRailA, .PageListStandardD, .PageListStandardB) { padding: 16px !important; box-sizing: border-box; }
+.PageListStandardE .PageListStandardE-divider { margin: 16px 0 12px !important; }
 .PagePromo-media--backgroundSecondary, .PagePromo-media { background: transparent !important; }
 
 .StoryPage-lede, .StoryPage-lede-content { background: transparent !important; color: var(--n19-text) !important; }

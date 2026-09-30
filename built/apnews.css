@@ -16,6 +16,7 @@ html[data-net19-mode="dark"]{--n19-bar:#262626;--n19-bar-text:#e6e6e6;--n19-red:
 .Page-header-bar .MainNavigationItem-text a:hover,.Page-header-bar .MainNavigationItem-more:hover{text-decoration:underline!important}
 .Page-header-stickyWrap :is(.Page-trendingZephr-wrapper,.Page-trendingZephr,.Page-header-trending,.PageListTrending),.Page-trendingZephr-trendingBar,.Page-header-leaderboardAd{display:none!important}
 .Page-trendingZephr-entitlements,#desktop-entitlements,.Page-actions-google-trigger,.Page-actions-commentCounter,.PagePromo-commentCount,.CommentCount-template,.PagePromo-readingtime,.PagePromo-byline-live,.PageListTrending-LiveTag,bsp-news-letter,.PageListStandardB-NewsLetter,.ReadingTime-template,.Zephr-bar,.viafoura,.Newsletter-Banner,[class*="Zephr-mod"]{display:none!important}
+.PagePromo-byline-container:not(:has(>.PagePromo-byline:not(.PagePromo-byline-live,:empty))){display:none!important}
 body.Page-body{background:var(--n19-page)!important;color:var(--n19-text)!important}
 .Page-content,.Page-twoColumn,.SectionPage,.StoryPage,.Page-main{background:transparent!important}
 :is(.PagePromo-title,.PageList-header-title,.Page-headline,.PageListStandardE-items-secondary-title,.VideoPlaylistItemCard-title,.PagePromoTrending){font-family:var(--ap19-cond)!important;font-stretch:75%!important;color:var(--n19-text)!important;letter-spacing:0!important;text-transform:none!important}
@@ -34,6 +35,7 @@ html[data-net19-mode="dark"] .PagePromo-description,html[data-net19-mode="dark"]
 .PageList-header,.PageList-header-alternativedivider{border:none!important}
 :is(.PageListStandardE,.PageListRightRailA,.PageListStandardD,.PageListStandardB,.PageListCarouselA,.PageListEnhancementGeneric)[data-module],:is(.PageListStandardE,.PageListRightRailA,.PageListStandardD,.PageListStandardB,.PageListCarouselA){background:var(--n19-card)!important}
 :where(:root:not([data-n19-safe])) :is(.PageListStandardE,.PageListRightRailA,.PageListStandardD,.PageListStandardB),:is(.PageListStandardE,.PageListRightRailA,.PageListStandardD,.PageListStandardB):where(:root:not([data-n19-safe])){padding:16px!important;box-sizing:border-box}
+:where(:root:not([data-n19-safe])) .PageListStandardE .PageListStandardE-divider,.PageListStandardE:where(:root:not([data-n19-safe])) .PageListStandardE-divider{margin:16px 0 12px!important}
 .PagePromo-media--backgroundSecondary,.PagePromo-media{background:transparent!important}
 .StoryPage-lede,.StoryPage-lede-content{background:transparent!important;color:var(--n19-text)!important}
 .StoryPage-lede .Page-breadcrumbs a{color:var(--n19-meta)!important;font-family:var(--ap19-sans)!important;font-stretch:100%!important;font-weight:400!important;text-transform:uppercase!important;font-size:12px!important}
