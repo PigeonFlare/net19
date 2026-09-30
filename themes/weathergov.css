@@ -4,3 +4,4 @@ body, input, select, button { font-family: Arial, Helvetica, sans-serif !importa
 .panel-default { border-color: var(--n19-panel-border); }
 #myfcst .myfcst-policy a { color: #0d4a12 !important; }
 [data-n19-later] { display: none !important; }
+html[data-net19-mode="dark"] #cap-alerts-link a { color: #8ab4e8 !important; }
