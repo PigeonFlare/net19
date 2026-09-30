@@ -555,6 +555,3 @@ html[data-n19-settings] { --n19-page: var(--n19-card); }
 [data-n19-profile-banner] { position: absolute !important; top: 8px !important; right: 8px !important; z-index: 1 !important; width: auto !important; height: auto !important; min-height: 0 !important; margin: 0 !important; background: none !important; overflow: visible !important; }
 #right-sidebar-contents aside[aria-label="Profile information"] :is(div.p-md, div:has(> div.grid)):has(> [data-n19-profile-head]) { padding: 12px !important; overflow: visible !important; height: auto !important; }
 button[data-n19-sort-button] [data-n19-sort-text] { display: inline-block; }
-reddit-header-large :is([id*="chat" i], [aria-label*="chat" i]):is(button, a) { background: transparent !important; color: var(--n19-action) !important; }
-reddit-header-large :is([id*="chat" i], [aria-label*="chat" i]):is(button, a):hover { background: var(--n19-hover) !important; }
-reddit-header-large :is([id*="chat" i], [aria-label*="chat" i]):is(button, a) :is(svg, svg *, rpl-icon, span) { color: var(--n19-action) !important; fill: currentColor !important; visibility: visible !important; opacity: 1 !important; }
