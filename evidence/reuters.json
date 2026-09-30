@@ -1,0 +1,190 @@
+{
+  "theme": "reuters",
+  "era": "2019 reuters.com as every visitor saw it for most of the year (Arquivo.pt captures 2019-03 and 2019-06 agree): dark grey #333/#404040 header with the orange-dot REUTERS logo centred over 'Edition: United States', a nav row Business / Markets / World / Politics / Tech / Breakingviews / Wealth / Life / Pictures / Video with a search icon, THE WIRE column, orange EXCLUSIVE labels and bullets, MARKETS box with Stocks/Bonds/Currencies/Commodities tabs, uppercase section headings with a rule, serif article body with a '1 MIN READ' line and Twitter/Facebook share buttons. In December 2019 article pages moved to a white header (art-a201912); the theme keeps the design most of 2019 showed. There were no sign-in, save, text-size or WhatsApp features in 2019.",
+  "sources": [
+    {
+      "id": "home-a201903",
+      "url": "https://arquivo.pt/noFrame/replay/20190315181251/https://www.reuters.com/",
+      "date": "2019-03-15",
+      "shows": "home: dark header, Edition: United States, nav Business/Markets/World/Politics/Tech/Breakingviews/Wealth/Life/Pictures/Video, search icon, THE WIRE, hero with EXCLUSIVE label and orange bullets, MARKETS box with Stocks/Bonds/Currencies/Commodities, SPONSORED CONTENT, FEATURED, full section menu (Business, Markets, World, Politics, Tech, Breakingviews, Wealth, Life, Pictures, Video) and edition list"
+    },
+    {
+      "id": "home-a201906",
+      "url": "https://arquivo.pt/wayback/20190601000000/https://www.reuters.com/",
+      "date": "2019-06-01",
+      "shows": "home: same dark header and nav with home, camera and video icons and search, THE WIRE with time-ago lines, hero 'Mexico urges Trump to back down on unfair tariff threat' with orange bullets, MARKETS box with S&P/Dow/Nasdaq/FTSE 100/Nikkei 225, SPONSORED CONTENT"
+    },
+    {
+      "id": "art-a201912",
+      "url": "https://arquivo.pt/noFrame/replay/20191219021127/https://www.reuters.com/article/11-drillisch-telefonica-de-spectrum-idUSL8N28S58I",
+      "date": "2019-12-19",
+      "shows": "article: section kicker and dateline in small caps, large headline, '1 MIN READ', Twitter and Facebook share buttons, serif body, 'Reporting by ...', 'Our Standards: The Thomson Reuters Trust Principles', TRENDING; footer Apps, Newsletters, Advertise with Us, Advertising Guidelines, Cookies, Terms of Use, Privacy, social twitter/facebook/youtube/instagram/linkedin, '© 2019 Reuters. All Rights Reserved.'; top strip Discover Thomson Reuters, Directory of sites, Login, Contact, Support"
+    },
+    {
+      "id": "art-a201910",
+      "url": "https://arquivo.pt/wayback/20191001083634/https://www.reuters.com/article/us-3dprinters-market/3d-printers-bring-hi-tech-manufacturing-to-the-home-idUSBRE88B0GA20120912",
+      "date": "2019-10-01",
+      "shows": "article page as served in 2019-10: headline, byline, share buttons, serif body, footer links"
+    },
+    {
+      "id": "art-a201912b",
+      "url": "https://arquivo.pt/wayback/20191206190425/https://www.reuters.com/article/us-3m-divestiture/3m-exploring-1-billion-sale-of-drug-delivery-systems-unit-bloomberg-idUSKBN1YA1WQ",
+      "date": "2019-12-06",
+      "shows": "article page as served in 2019-12: kicker, dateline, headline, MIN READ, share buttons, serif body, Our Standards line"
+    },
+    {
+      "id": "search-a201904",
+      "url": "https://arquivo.pt/noFrame/replay/20190401173736/https://www.reuters.com/search/news",
+      "date": "2019-04-01",
+      "shows": "search page: search field with Search button, News results list with headline, excerpt and date, sort by Relevance/Date, date range filter"
+    },
+    {
+      "id": "search-a201909",
+      "url": "https://arquivo.pt/noFrame/replay/20190907215157/https://www.reuters.com/search/news",
+      "date": "2019-09-07",
+      "shows": "search page in 2019-09: same search field, sort and date filters and results list under the dark header"
+    },
+    {
+      "id": "search-a201910",
+      "url": "https://arquivo.pt/noFrame/replay/20191001173524/https://www.reuters.com/search/news",
+      "date": "2019-10-01",
+      "shows": "search page in 2019-10: same layout"
+    },
+    {
+      "id": "alamy",
+      "url": "https://www.alamy.com/stock-photo/reuters-logo.html",
+      "date": "2018-2019",
+      "shows": "stock photos of reuters.com on a screen (Google Images, 'reuters.com website 2019'): dark header with the orange-dot REUTERS logo and the nav row World / Tech / Breakingviews / Life"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header area|Main|main area|section area|form area|tablist area|Commentary|Latest|Browse|Media|repeated .*)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201903",
+        "home-a201906",
+        "art-a201912"
+      ],
+      "note": "page frame: header, main nav, main column, search form, story lists, footer link columns; repeated items are stories",
+      "required": false
+    },
+    {
+      "match": "^.{40,}$",
+      "in2019": true,
+      "evidence": [
+        "home-a201903",
+        "art-a201912"
+      ],
+      "note": "story headlines (article titles and next-story titles are content)"
+    },
+    {
+      "match": "^(Reuters home|World|Business|Markets|Legal|More|Open search bar|Search|Clear search text)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201903",
+        "home-a201906",
+        "art-a201912"
+      ],
+      "note": "logo link, Business/Markets/World in the nav (Legal was a Business subsection), More, search icon and field",
+      "required": true
+    },
+    {
+      "match": "^(Commentary)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201903"
+      ],
+      "note": "opinion section (Breakingviews and commentary were in the 2019 nav and menu)"
+    },
+    {
+      "match": "^(Sustainability)$",
+      "in2019": false,
+      "evidence": [
+        "home-a201903",
+        "home-a201906"
+      ],
+      "note": "Sustainability section launched in 2021; not in the 2019 nav",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Sign In|Register)$",
+      "in2019": false,
+      "evidence": [
+        "home-a201903",
+        "home-a201906"
+      ],
+      "note": "Reuters accounts and registration (2021+); the 2019 dark header had no sign-in",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Save article.*|Change text size|Tags|Suggested Topics:?)$",
+      "in2019": false,
+      "evidence": [
+        "art-a201912",
+        "art-a201912b"
+      ],
+      "note": "2019 articles had only Twitter/Facebook share buttons next to the MIN READ line; the topic tag row under the article is also post-2019",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Share article|Summary|Companies|Read Next|Purchase Licensing Rights.*)$",
+      "in2019": true,
+      "evidence": [
+        "art-a201912",
+        "art-a201912b"
+      ],
+      "note": "share buttons; the summary bullets, company tickers, topics and next stories are article content (kept)",
+      "action": "kept: content"
+    },
+    {
+      "match": "^(Energy category|.*category|Navigate to .*|Previous stories|Next stories.*|All|Any time|Newest|Oldest|Relevance|NewestOldestRelevance|Filter by|Search results for .*)$",
+      "in2019": true,
+      "evidence": [
+        "search-a201904",
+        "search-a201909",
+        "search-a201910"
+      ],
+      "note": "search results, sort (2019: Relevance / Date) and date filter, story category labels, pagination",
+      "required": false
+    },
+    {
+      "match": "^(Pictures|Videos|Graphics|Podcasts|Watch Now.*|Breakingviews|Visit|Scroll image (backward|forward)|Technology|Investigations|Sports|Science|Lifestyle|Home|Authors|Topic Sitemap|Archive|Article Sitemap)$",
+      "in2019": true,
+      "evidence": [
+        "home-a201903",
+        "home-a201906"
+      ],
+      "note": "section links and home sections: Pictures, Video, Breakingviews, Tech, Sports, Science, Life were all in the 2019 menu; section rails are content",
+      "required": false
+    },
+    {
+      "match": "^(About Reuters|About Reuters, opens new tab|Stay Informed|Follow Us|Information you can trust|Media Center, opens new tab|Advertise with Us, opens new tab|Careers, opens new tab|Reuters News Agency, opens new tab|Reuters Fact Check|Commercial Disclosure \\(Japan\\), opens new tab|Download the App \\(iOS\\), opens new tab|Download the App \\(Android\\), opens new tab|Newsletters|Sign up|Visit Reuters on (X|facebook|instagram|youtube|linkedin)|Advertising Guidelines|Cookies, opens new tab|Terms & Conditions|Privacy, opens new tab|Copyright, opens new tab|Corrections|See here for a list of exchanges and delays\\.|All rights reserved|Data Disclosure and Sources, opens new tab|Site Feedback, opens new tab)$",
+      "in2019": true,
+      "evidence": [
+        "art-a201912",
+        "home-a201903"
+      ],
+      "note": "2019 footer: Apps, Newsletters, Advertise with Us, Advertising Guidelines, Cookies, Terms of Use, Privacy, Twitter/Facebook/YouTube/Instagram/LinkedIn, Reuters News Agency, delayed-quotes notice and copyright; newsletter sign-up promos (2019 footer had Newsletters)"
+    },
+    {
+      "match": "^(Digital Accessibility, opens new tab|Manage Cookies & Your Privacy Choices|Notice of Your Privacy Choices|Close)$",
+      "in2019": false,
+      "evidence": [
+        "art-a201912"
+      ],
+      "note": "accessibility and US privacy notices",
+      "action": "kept: legal"
+    },
+    {
+      "match": "^(Brand Attribution Guidelines, opens new tab|Reuters and AI, opens new tab|Reuters Leadership, opens new tab|Reuters Diversity Report, opens new tab|Visit Reuters on whatsapp|LSEG Products|Workspace, opens new tab|Data Catalogue, opens new tab|World-Check, opens new tab|Get real-time market data from LSEG)$",
+      "in2019": false,
+      "evidence": [
+        "art-a201912",
+        "home-a201903"
+      ],
+      "note": "footer links and LSEG product cards added after 2019 (LSEG bought Refinitiv in 2021; WhatsApp channels 2023; Reuters and AI 2023)",
+      "action": "hidden"
+    }
+  ]
+}
