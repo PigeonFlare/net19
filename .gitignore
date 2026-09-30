@@ -7,3 +7,5 @@ playwright-report/
 .env.*
 *.log
 downloads/
+screenshots/
+Claude outputs/

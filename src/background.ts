@@ -21,12 +21,7 @@ function syncScripts(): Promise<unknown> {
     const paused = [...new Set(config.pausedSites.flatMap(siteMatches))].sort();
     const watched = [...new Set(THEMES.filter(active).flatMap(themeMatches))].sort();
     if (watched.length) desired.push({ id: 'net19-watch', matches: watched, ...exclude(paused), js: ['main.js'], world: 'MAIN', runAt: 'document_start', persistAcrossSessions: true });
-    const signature = (list: chrome.scripting.RegisteredContentScript[]) => JSON.stringify(list.map(s => [s.id, [...s.matches ?? []].sort(), [...s.excludeMatches ?? []].sort(), s.css, s.js, !!s.allFrames, s.world ?? 'ISOLATED']).sort());
-    const current = registered.filter(script => script.id.startsWith('net19-') && !script.id.startsWith(SAFE_ID));
-    if (signature(current) !== signature(desired)) {
-      if (current.length) await chrome.scripting.unregisterContentScripts({ ids: current.map(script => script.id) });
-      if (desired.length) await chrome.scripting.registerContentScripts(desired);
-    }
+    await reconcile(registered.filter(script => script.id.startsWith('net19-') && !script.id.startsWith(SAFE_ID)), desired);
     await syncSafe(config, registered);
   });
   return sync;
@@ -55,11 +50,21 @@ async function syncSafe(config: Settings, registered: chrome.scripting.Registere
   const desired: chrome.scripting.RegisteredContentScript[] = [[SAFE_ID, 'safe.js', group(false)], [`${SAFE_ID}-narrow`, 'safe-narrow.js', group(true)]]
     .filter(([, , matches]) => matches.length)
     .map(([id, file, matches]) => ({ id: id as string, js: [file as string], matches: matches as string[], ...exclude([...new Set(config.pausedSites.flatMap(siteMatches))].sort()), runAt: 'document_start', persistAcrossSessions: true }));
-  const current = registered.filter(script => script.id.startsWith(SAFE_ID));
-  const signature = (list: chrome.scripting.RegisteredContentScript[]) => JSON.stringify(list.map(s => [s.id, [...s.matches ?? []].sort(), [...s.excludeMatches ?? []].sort()]).sort());
-  if (signature(current) === signature(desired)) return;
-  if (current.length) await chrome.scripting.unregisterContentScripts({ ids: current.map(script => script.id) });
-  if (desired.length) await chrome.scripting.registerContentScripts(desired);
+  await reconcile(registered.filter(script => script.id.startsWith(SAFE_ID)), desired);
+}
+
+type Script = chrome.scripting.RegisteredContentScript;
+const shape = (s: Script) => JSON.stringify([[...s.matches ?? []].sort(), [...s.excludeMatches ?? []].sort(), s.css ?? [], s.js ?? [], !!s.allFrames, s.world ?? 'ISOLATED', s.runAt ?? 'document_idle']);
+
+async function reconcile(current: Script[], desired: Script[]): Promise<void> {
+  const now = new Map(current.map(s => [s.id, s]));
+  const wanted = new Set(desired.map(s => s.id));
+  const gone = current.filter(s => !wanted.has(s.id)).map(s => s.id);
+  const changed = desired.filter(s => now.has(s.id) && shape(now.get(s.id)!) !== shape(s)).map(s => ({ ...s, excludeMatches: s.excludeMatches ?? [] }));
+  const added = desired.filter(s => !now.has(s.id));
+  if (gone.length) await chrome.scripting.unregisterContentScripts({ ids: gone });
+  if (changed.length) await chrome.scripting.updateContentScripts(changed);
+  if (added.length) await chrome.scripting.registerContentScripts(added);
 }
 
 function syncFit(): Promise<unknown> {
