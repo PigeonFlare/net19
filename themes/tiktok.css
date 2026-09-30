@@ -30,6 +30,7 @@ body:has(#app-header) [class*="--DivCategoryListWrapper"] { top: var(--n19-head)
 body:has(#app-header) :is([class*="--DivColumnListContainer"], [class*="--DivMainContainer"]#main-content-homepage_hot, #main-content-homepage_hot) { height: calc(100vh - var(--n19-head)) !important; }
 body:has(#app-header) [data-e2e="recommend-list-item-container"] { height: calc(100vh - var(--n19-head)) !important; min-height: calc(100vh - var(--n19-head)) !important; }
 #app-header [class*="--DivHeaderWrapperMain"] { max-width: 1150px !important; margin: 0 auto !important; padding: 0 16px !important; }
+#app-header [class*="--DivHeaderWrapperMain"] > button:first-child:not(:focus) { top: 0 !important; width: 1px !important; height: 1px !important; padding: 0 !important; border: 0 !important; overflow: hidden !important; opacity: 0 !important; }
 #app-header [class*="--StyledLinkLogo"] svg { height: 42px !important; width: auto !important; }
 #app-header [class*="--DivHeaderCenterContainer"] { flex: 0 1 361px !important; }
 #app-header form[data-e2e="search-box"] { background: var(--n19-field) !important; border-radius: 92px !important; border: 1px solid transparent !important; height: 46px !important; width: 361px !important; }
@@ -63,6 +64,7 @@ body:has(#app-header) [data-e2e="recommend-list-item-container"] { height: calc(
 
 [data-e2e="recommend-list-item-container"]:has([data-n19-tt="avatar"]) [class*="--DivContentFlexLayout"] { align-self: flex-end !important; }
 [data-e2e="recommend-list-item-container"]:has([data-n19-tt="avatar"]) [class*="--SectionMediaCardContainer"] { height: calc(100vh - var(--n19-head) - 32px - 112px) !important; max-height: none !important; width: auto !important; min-height: 0 !important; min-width: 0 !important; }
+:is([data-e2e="recommend-list-item-container"], article[id^="one-column-item"]) [class*="--SectionMediaCardContainer"] { max-height: calc(100vh - var(--n19-head) - 32px) !important; }
 [data-e2e="recommend-list-item-container"] :is([class*="--BasePlayerContainer"], [class*="--DivVideoPlayerContainer"], [class*="--DivPlayerPlaceHolder"], [class*="--DivMediaCardOverlay"]:not([class*="--DivMediaCardOverlayBottom"]):not([class*="--DivMediaCardOverlayTop"])) { border-radius: 8px !important; }
 [data-e2e="recommend-list-item-container"] :is(video, canvas, img[imagex-type]) { border-radius: 8px !important; }
 [data-e2e="recommend-list-item-container"] [class*="--DivMediaCardOverlayBottomSection"] { position: absolute !important; left: 0 !important; right: 0 !important; bottom: 100% !important; overflow: visible !important; border-radius: 0 !important; }
