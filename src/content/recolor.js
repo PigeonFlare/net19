@@ -95,7 +95,7 @@ export function createRecolor(theme) {
   const adopt = host => {
     if (roots.has(host)) return;
     roots.add(host);
-    if (!sheet) { sheet = new CSSStyleSheet(); sheet.insertRule(`[${READING}]{transition:none!important}`); sheet.insertRule(`[${PLAIN}]:not(#n19-a):not(#n19-b):not(#n19-c){background-image:none!important}`, 1); }
+    if (!sheet) { sheet = new CSSStyleSheet(); sheet.insertRule(`[${READING}],[${READING}]::before,[${READING}]::after{transition:none!important}`); sheet.insertRule(`[${PLAIN}]:not(#n19-a):not(#n19-b):not(#n19-c){background-image:none!important}`, 1); }
     host.adoptedStyleSheets = [...host.adoptedStyleSheets, sheet];
     if (host !== document) observer?.observe(host, OBSERVE);
   };
@@ -307,7 +307,7 @@ export function createRecolor(theme) {
         const id = parts && parts.length ? ruleFor(parts) : null;
         const had = decided.get(el) ?? null;
         decided.set(el, id);
-        if (id !== null) el.setAttribute(ATTR, id);
+        if (id !== null) { if (el.getAttribute(ATTR) !== id) el.setAttribute(ATTR, id); }
         else if (had !== null) el.removeAttribute(ATTR);
       }
       for (const el of careful) if (el.isConnected) getComputedStyle(el).color;
@@ -400,6 +400,14 @@ export function createRecolor(theme) {
     for (let n = el, i = 0; n && n.nodeType === 1 && i < 8; n = n.parentElement, i++) out.push(n);
     return out;
   };
+  const PAINT_ATTRS = /^(?:class|fill|stroke|color|stop-color)$/;
+  const churn = new WeakMap();
+  const animated = (el, name) => {
+    if (el.namespaceURI === 'http://www.w3.org/2000/svg' && el.localName !== 'svg' && !PAINT_ATTRS.test(name)) return true;
+    const now = performance.now(), seen = churn.get(el);
+    if (!seen || now - seen[0] > 1000) { churn.set(el, [now, 1]); return false; }
+    return ++seen[1] > 20;
+  };
   let refreshTimer = 0, lastRefresh = 0;
   const refreshAll = (delay = 300) => {
     clearTimeout(refreshTimer);
@@ -451,7 +459,7 @@ export function createRecolor(theme) {
             if (n.nodeType !== 1 || n === base) continue;
             if (n.tagName === 'STYLE' || n.tagName === 'LINK') sheets = true; else nodes.push(n);
           }
-        } else if (!OWN.test(r.attributeName)) { shallow.add(r.target); below.add(r.target); }
+        } else if (!OWN.test(r.attributeName) && !animated(r.target, r.attributeName)) { shallow.add(r.target); below.add(r.target); }
       }
       if (sheets) refreshAll(document.readyState === 'complete' ? 2000 : 300);
       schedule(nodes);

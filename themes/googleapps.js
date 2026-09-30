@@ -167,7 +167,7 @@
     for (const root of roots) texts(root);
     if (list.length) classify(list);
   };
-  const queue = root => { pending.add(root); if (!frame) frame = requestAnimationFrame(flush); };
+  const queue = root => { if (!root) return; pending.add(root); if (!frame) frame = requestAnimationFrame(flush); };
   const rejudge = els => {
     for (const el of els) { for (const a of ATTRS) el.removeAttribute(a); seen.delete(el); }
     classify(els.filter(el => el.isConnected).map(el => (seen.add(el), el)));

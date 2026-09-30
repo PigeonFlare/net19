@@ -115,15 +115,15 @@ test('post-2019 features are hidden and unreadable text is given readable ink, o
   await expect(page.locator('#ask')).toBeVisible();
   await expect(page.locator('#q')).toHaveAttribute('placeholder', 'Search');
   await expect(page.locator('#faint')).toHaveAttribute('data-net19-ink', /.+/);
-  const inked = await page.locator('#faint').evaluate(e => getComputedStyle(e).color.match(/\d+/g).slice(0, 3).map(Number));
+  const inked = await page.locator('#faint').evaluate(e => getComputedStyle(e).color.match(/\d+/g)!.slice(0, 3).map(Number));
   expect(Math.max(...inked)).toBeLessThan(120);
   await expect(page.locator('#dim')).toHaveAttribute('data-net19-ink', /^rgb/);
   await expect(page.locator('#glyph')).toHaveAttribute('data-net19-icon', 'dark');
   await expect(page.locator('#bar')).not.toHaveAttribute('data-net19-ink', /.*/);
   await expect(page.locator('#veiled')).toHaveAttribute('data-net19-ink', /.+/);
-  expect(Math.min(...await page.locator('#veiled').evaluate(e => getComputedStyle(e).color.match(/\d+/g).slice(0, 3).map(Number)))).toBeGreaterThan(180);
+  expect(Math.min(...await page.locator('#veiled').evaluate(e => getComputedStyle(e).color.match(/\d+/g)!.slice(0, 3).map(Number)))).toBeGreaterThan(180);
   await expect(page.locator('#veiledWhite')).not.toHaveAttribute('data-net19-ink', 'dark');
-  expect(Math.min(...await page.locator('#veiledWhite').evaluate(e => getComputedStyle(e).color.match(/\d+/g).slice(0, 3).map(Number)))).toBeGreaterThan(230);
+  expect(Math.min(...await page.locator('#veiledWhite').evaluate(e => getComputedStyle(e).color.match(/\d+/g)!.slice(0, 3).map(Number)))).toBeGreaterThan(230);
   await expect.poll(() => page.evaluate(() => document.querySelector('#shade-host')!.shadowRoot!.querySelector('#inner')!.getAttribute('data-net19-ink'))).toBeTruthy();
   await expect(page.locator('#results')).toBeVisible();
 });
