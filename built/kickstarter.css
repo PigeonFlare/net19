@@ -17,7 +17,7 @@ html body :is(.medium,.kds-font-medium){font-weight:400!important}
 :where(:root:not([data-n19-safe])) #global-header .global-nav>div:has(#global-nav-search-input) svg,#global-header:where(:root:not([data-n19-safe])) .global-nav>div:has(#global-nav-search-input) svg{width:18px!important;height:18px!important}
 #global-header .global-nav>div:has(#global-nav-search-input) svg{fill:var(--n19-text)!important}
 :where(:root:not([data-n19-safe])) #global-header .global-nav>div:has(#global-nav-search-input)>div,#global-header:where(:root:not([data-n19-safe])) .global-nav>div:has(#global-nav-search-input)>div{max-width:300px!important}
-:where(:root:not([data-n19-safe])) #global-nav-search-input,#global-nav-search-input:where(:root:not([data-n19-safe])){height:40px!important}
+:where(:root:not([data-n19-safe])) #global-nav-search-input,#global-nav-search-input:where(:root:not([data-n19-safe])){height:40px!important;padding-top:8px!important;padding-bottom:8px!important}
 #global-nav-search-input{border-radius:0!important;box-shadow:none!important;border:0!important;background:transparent!important;color:var(--n19-text)!important;font-size:16px!important}
 #global-nav-search-input::placeholder{color:var(--n19-sub)!important}
 :where(:root:not([data-n19-safe])) #global-header .global-nav-user-menu,#global-header:where(:root:not([data-n19-safe])) .global-nav-user-menu{justify-self:end!important;justify-content:flex-end!important;margin-left:0!important}

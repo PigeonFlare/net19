@@ -48,7 +48,7 @@ html body :is(.medium, .kds-font-medium) { font-weight: 400 !important; }
 #global-header .global-nav > div:has(#global-nav-search-input) { max-width: none !important; padding-left: 0 !important; background: transparent !important; box-shadow: none !important; border: 0 !important; }
 #global-header .global-nav > div:has(#global-nav-search-input) svg { width: 18px !important; height: 18px !important; fill: var(--n19-text) !important; }
 #global-header .global-nav > div:has(#global-nav-search-input) > div { max-width: 300px !important; }
-#global-nav-search-input { height: 40px !important; border-radius: 0 !important; box-shadow: none !important; border: 0 !important; background: transparent !important; color: var(--n19-text) !important; font-size: 16px !important; }
+#global-nav-search-input { height: 40px !important; padding-top: 8px !important; padding-bottom: 8px !important; border-radius: 0 !important; box-shadow: none !important; border: 0 !important; background: transparent !important; color: var(--n19-text) !important; font-size: 16px !important; }
 #global-nav-search-input::placeholder { color: var(--n19-sub) !important; }
 #global-header .global-nav-user-menu { justify-self: end !important; justify-content: flex-end !important; margin-left: 0 !important; }
 #global-header .global-nav-user-menu .kds-button { border: 0 !important; background: transparent !important; box-shadow: none !important; color: var(--n19-text) !important; font-size: 16px !important; padding: 0 12px !important; min-height: 40px !important; height: 40px !important; }
