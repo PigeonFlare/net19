@@ -434,6 +434,7 @@ function net19Rows() {
 
   const fields = all.filter(e => e.matches('input:not([type=hidden]):not([type=checkbox]):not([type=radio]):not([type=range]):not([type=color]):not([type=submit]):not([type=button]):not([type=image]):not([type=reset]):not([type=file]), textarea, [contenteditable=true], [role=textbox], [role=searchbox], input[role=combobox]'));
   const icons = all.filter(e => e.matches('svg, img, i, [class*="icon" i]') && !e.parentElement?.closest('svg'));
+  const onOpaquePanel = (k, f, kr) => { for (let n = up(k); n && n.nodeType === 1 && !n.contains(f); n = up(n)) { const c = cs(n); if (/absolute|fixed/.test(c.position) && alphaOf(c.backgroundColor) > .9) { const q = rect(n); return q.left <= kr.left && q.right >= kr.right && q.top <= kr.top && q.bottom >= kr.bottom; } } return false; };
   for (const f of fields) {
     if (!seenEl(f)) continue;
     const fr = rect(f), fc = cs(f);
@@ -452,6 +453,7 @@ function net19Rows() {
       const hit = document.elementsFromPoint(Math.max(kr.left, left) + ox / 2, Math.max(kr.top, top) + oy / 2);
       const iconIdx = hit.findIndex(h => h === k || k.contains(h) || h.contains?.(k) && h.matches('svg, i, [class*="icon" i]')), fieldIdx = hit.indexOf(f);
       if (fieldIdx >= 0 && iconIdx > fieldIdx && alphaOf(fc.backgroundColor) > .9) continue;
+      if (onOpaquePanel(k, f, kr)) continue;
       report('iconovertext', k, `icon covers ${Math.round(ox)}x${Math.round(oy)}px of the ${text ? 'text' : 'text area'} of field "${label(f)}" ${name(f)}`, kr);
     }
   }
