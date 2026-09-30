@@ -70,7 +70,7 @@ import { rgba } from './color.js';
     if (!stops.length) return null;
     return [0, 1, 2, 3].map(i => stops.reduce((sum, c) => sum + c[i], 0) / stops.length);
   };
-  const up = e => e.parentElement || (e.parentNode && e.parentNode.host) || null;
+  const up = e => e.assignedSlot || e.parentElement || (e.parentNode && e.parentNode.host) || null;
   const holds = (a, el) => { for (let e = el; e; e = up(e)) if (e === a) return true; return false; };
   const MEDIA = 'img, picture, video, canvas, svg image, iframe';
   let layerOf = new Map(), mediaOf = new Map();

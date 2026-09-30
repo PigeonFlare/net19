@@ -43,6 +43,12 @@
       "url": "https://web.archive.org/web/20191209120944/https://www.bbc.co.uk/search?q=brexit",
       "date": "2019-12",
       "shows": "search: wide field with search button, Filter tabs All / News / Programmes / Newsround / Sport / Newsbeat / More Filters, result rows with date, thumbnail, title, snippet"
+    },
+    {
+      "id": "s8",
+      "url": "https://pressgazette.co.uk/paywalls/bbc-com-launches-dynamic-paywall-for-us-users/",
+      "date": "2025-06-26",
+      "shows": "BBC.com launches a paywall/subscription for US users in June 2025 (also niemanlab.org 2025-06)"
     }
   ],
   "features": [
@@ -222,6 +228,16 @@
         "s4"
       ],
       "note": "required: BBC News nav"
+    },
+    {
+      "match": "^(BBC subscribers get unlimited access.*|See benefits)$",
+      "in2019": false,
+      "evidence": [
+        "s8"
+      ],
+      "action": "hidden",
+      "scope": "#subliminal-banner (Piano subscription bar pinned to the bottom)",
+      "note": "post-2019 subscription prompt"
     }
   ]
 }

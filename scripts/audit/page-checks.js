@@ -22,7 +22,7 @@ function net19PageChecks() {
 function net19Core(out) {
   const W = innerWidth, H = innerHeight;
   const shown = e => { const r = e.getBoundingClientRect(); const c = getComputedStyle(e);
-    return r.width > 1 && r.height > 1 && r.bottom > 0 && r.right > 0 && r.top < H && r.left < W && c.visibility === 'visible' && +c.opacity > .05 && c.display !== 'none'; };
+    return r.width > 1 && r.height > 1 && r.bottom > 0 && r.right > 0 && r.top < H && r.left < W && c.visibility === 'visible' && +c.opacity > .05 && c.display !== 'none' && e.checkVisibility?.({ opacityProperty: true, visibilityProperty: true }) !== false; };
   const name = e => (e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + (typeof e.className === 'string' && e.className ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '')).slice(0, 70);
   const label = e => (e.getAttribute('aria-label') || e.getAttribute('placeholder') || e.textContent || '').replace(/\s+/g, ' ').trim().slice(0, 40);
   const box = (e, r = e.getBoundingClientRect()) => ({ x: Math.round(r.left), y: Math.round(r.top), w: Math.round(r.width), h: Math.round(r.height) });
@@ -131,7 +131,7 @@ function net19Core(out) {
   const clipOf = el => {
     if (clips.has(el)) return clips.get(el);
     let clip = null;
-    for (let a = el; a && a !== document.documentElement; a = a.parentElement || a.getRootNode?.().host) {
+    for (let a = el; a && a !== document.documentElement; a = a.assignedSlot || a.parentElement || a.getRootNode?.().host) {
       const cs = getComputedStyle(a);
       if (cs.overflowX !== 'visible' || cs.overflowY !== 'visible') {
         const r = a.getBoundingClientRect();
@@ -866,8 +866,9 @@ function net19Contrast() {
     }
     return true;
   });
+  const deep = (root, x, y, seen) => { const out = []; for (const s of root.elementsFromPoint(x, y)) { if (seen.has(s)) continue; seen.add(s); if (s.shadowRoot && s.shadowRoot !== root) out.push(...deep(s.shadowRoot, x, y, seen)); out.push(s); } return out; };
   const behind = (el, x, y) => {
-    const stack = document.elementsFromPoint(x, y);
+    const stack = deep(document, x, y, new Set());
     let i = stack.indexOf(el);
     if (i < 0 && getComputedStyle(el).pointerEvents !== 'none' && stack[0] && !el.contains(stack[0])) return { covered: true };
     if (i < 0) {

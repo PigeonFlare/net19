@@ -49,3 +49,4 @@ rt-header-nav-item[slot="shop"], [data-n19-app-promo], rt-app-modal-content, a[h
 rt-header > a[href="/about"], rt-header > a[href="/critics"], rt-header > ul[slot="nav-links"] a, rt-header > ul[slot="nav-links"] button, rt-header #masthead-show-login-btn, rt-header-nav-item > a[slot="link"] { color: #fff !important; }
 rt-header ul[slot="nav-links"] > li:has(> a[href="/about"]) { display: flex !important; align-items: center !important; }
 editorial-spotlight-tile > div[slot="caption"] :is(h2, p) { white-space: normal !important; overflow-wrap: anywhere !important; max-width: 100% !important; }
+editorial-spotlight-tile > img[slot="image"] { background: var(--n19-page) !important; }
