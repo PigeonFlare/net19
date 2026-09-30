@@ -33,3 +33,7 @@ body.skin-vector-legacy #p-wikibase-otherprojects li:has(> a[href*="wikifunction
 html[data-net19-mode] :is(.ext-wpb-pagebanner .wpb-topbanner, .ext-wpb-pagebanner .wpb-topbanner-toc, .jcarousel-item .banner-image),
 html[data-net19-mode] :is(.ext-wpb-pagebanner .wpb-topbanner, .ext-wpb-pagebanner .wpb-topbanner-toc, .jcarousel-item .banner-image) * { -webkit-text-fill-color: currentcolor !important; }
 html[data-net19-mode] .ext-wpb-pagebanner .wpb-name { background-color: rgba(0, 0, 0, .5) !important; }
+html .ext-wpb-pagebanner .wpb-banner-toc ul ul:has(> li) { background-color: #fff !important; border: 1px solid #a2a9b1 !important; box-shadow: 0 2px 4px rgba(0, 0, 0, .2) !important; }
+html .ext-wpb-pagebanner .wpb-banner-toc ul ul a { color: #0645ad !important; }
+html[data-net19-mode="dark"] .ext-wpb-pagebanner .wpb-banner-toc ul ul:has(> li) { background-color: #202122 !important; border-color: #54595d !important; }
+html[data-net19-mode="dark"] .ext-wpb-pagebanner .wpb-banner-toc ul ul a { color: #fff !important; }
