@@ -17,7 +17,7 @@ header#app_header nav :is(button,a:not(.button)) svg{color:var(--n19-db-bar-text
 header#app_header nav .submenu a,header#app_header nav .submenu :is(p,dt,dd,span,button){color:var(--n19-db-ink)!important;font-size:15px!important}
 header#app_header nav .submenu{background:#fff!important;border-radius:3px!important;box-shadow:0 6px 18px rgba(20, 50, 70, .18)!important}
 header#app_header nav .submenu a:hover{color:var(--n19-db-link)!important;background:#f4f8fb!important}
-header#app_header #nav_dropdown_login .menu_title button{border:1px solid rgba(255, 255, 255, .85)!important;border-radius:3px!important;background:transparent!important}
+header#app_header #nav_dropdown_login .menu_title button{border:1px solid rgba(255, 255, 255, .85)!important;border-radius:3px!important;background:transparent!important;line-height:22px!important}
 header#app_header #nav_menu_org_signup_link.button{background:var(--n19-db-bar-2)!important;background-image:none!important;color:#fff!important;border:0!important;border-radius:3px!important;box-shadow:none!important;font-weight:500!important}
 header#app_header #nav_menu_org_signup_link.button:hover{background:#3593bd!important}
 body.application main a.button:not(#nav_menu_org_signup_link):not(.outline):not(.btn-outline-white),body.application main input.button,body.wp-theme-genesis :is(.btn-primary,.button:not(.outline)){background:linear-gradient(to right, var(--n19-db-cta-a), var(--n19-db-cta-b))!important;color:#fff!important;border:0!important;border-radius:3px!important;box-shadow:0 10px 22px -8px rgba(229, 88, 89, .55)!important;font-weight:500!important;text-transform:none!important}
