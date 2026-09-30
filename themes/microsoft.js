@@ -1,4 +1,4 @@
-globalThis.net19Theme = { intended: '[data-n19-later]', later: /^(?:ask learn|summarize this article(?: for me)?|ask copilot|try copilot(?: free)?|get copilot|copilot(?: pro| app)?|microsoft 365 copilot(?: app)?)$/i };
+globalThis.net19Theme = { keep: 'store-card-promo store-button[appearance*="button"]', intended: '[data-n19-later]', later: /^(?:ask learn|summarize this article(?: for me)?|ask copilot|try copilot(?: free)?|get copilot|copilot(?: pro| app)?|microsoft 365 copilot(?: app)?)$/i };
 (() => {
   const root = document.documentElement;
   const SEL = 'store-hero-featured-xl-video, store-hero-featured-slider-item';
