@@ -32,14 +32,14 @@ header[data-n19-wa-part="head"] ._av3e a:not(._av3b a):hover span { text-decorat
 header[data-n19-wa-part="head"] ._av3b { border-radius: 3px !important; }
 header[data-n19-wa-part="head"] ._av3b a, header[data-n19-wa-part="head"] ._av3b a span { color: #191919 !important; font-weight: 400 !important; }
 header[data-n19-wa-part="head"] ._av3b a:hover span { color: var(--n19-teal-text) !important; }
-header[data-n19-wa-part="head"] a[class*="_9u4j"]:not(._auta a) { background: transparent !important; border: 2px solid rgba(255, 255, 255, .85) !important; color: #fff !important; }
+header[data-n19-wa-part="head"] a[class*="_9u4j"]:not(._auta a) { background: transparent !important; border: 1px solid rgba(255, 255, 255, .85) !important; box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .85) !important; color: #fff !important; }
 header[data-n19-wa-part="head"] a[class*="_9u4j"]:not(._auta a) :is(span, svg) { color: #fff !important; }
 
 a[class*="_9u4i"] { background-color: var(--n19-green) !important; border-color: var(--n19-green) !important; color: #fff !important; }
 a[class*="_9u4i"]:hover { background-color: var(--n19-green-hover) !important; border-color: var(--n19-green-hover) !important; }
 a[class*="_9u4i"] :is(span, svg) { color: #fff !important; }
 a[class*="_9u4i"] span, a[class*="_9u4j"] span { text-transform: uppercase !important; letter-spacing: .071em !important; font-weight: 500 !important; }
-#content-wrapper a[class*="_9u4j"], footer[data-n19-wa-part="foot"] a[class*="_9u4j"] { background-color: transparent !important; border: 2px solid var(--n19-outline) !important;
+#content-wrapper a[class*="_9u4j"], footer[data-n19-wa-part="foot"] a[class*="_9u4j"] { background-color: transparent !important; border: 1px solid var(--n19-outline) !important; box-shadow: inset 0 0 0 1px var(--n19-outline) !important;
   color: var(--n19-teal-text) !important; }
 #content-wrapper a[class*="_9u4j"] :is(span, svg), footer[data-n19-wa-part="foot"] a[class*="_9u4j"] :is(span, svg) { color: var(--n19-teal-text) !important; }
 footer[data-n19-wa-part="foot"] a[class*="_9u4j"] :is(span, svg) { color: #fff !important; }

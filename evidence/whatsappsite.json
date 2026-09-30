@@ -66,6 +66,42 @@
       "evidence": [
         "s1"
       ]
+    },
+    {
+      "match": "^WhatsApp's homepage$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "2019 logo link in the teal header",
+      "required": true
+    },
+    {
+      "match": "^Features$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "header FEATURES link",
+      "required": true
+    },
+    {
+      "match": "^Download the WhatsApp app$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "header DOWNLOAD button",
+      "required": true
+    },
+    {
+      "match": "^Simple\\. Secure\\. Reliable messaging\\.$",
+      "in2019": true,
+      "evidence": [
+        "s1"
+      ],
+      "note": "2019 hero heading",
+      "required": true
     }
   ]
 }
