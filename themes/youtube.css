@@ -177,6 +177,7 @@ html[data-n19-yt="www"] {
   & ytd-rich-item-renderer:not(:hover) yt-lockup-metadata-view-model button-view-model { opacity: 0; }
   & ytd-rich-item-renderer .yt-spec-avatar-shape__image, & ytd-rich-item-renderer .ytSpecAvatarShapeImage { border-radius: 50% !important; }
   & ytd-browse[page-subtype="home"] ytd-rich-item-renderer .ytLockupMetadataViewModelAvatar { width: 36px !important; margin-right: 12px !important; }
+  & ytd-rich-item-renderer .ytLockupMetadataViewModelAvatar { margin-top: 8px !important; }
   & ytd-browse[page-subtype="home"] ytd-rich-item-renderer :is(.ytLockupMetadataViewModelTitle, .ytLockupMetadataViewModelTitle *, #video-title) { font-size: 16px !important; line-height: 22px !important; font-weight: 500 !important; }
   & ytd-browse[page-subtype="home"] ytd-rich-item-renderer :is(.ytLockupMetadataViewModelTitle, #video-title) { max-height: 44px !important; }
   & ytd-browse[page-subtype="home"] ytd-rich-item-renderer { margin-bottom: 24px !important; }
