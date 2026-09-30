@@ -1,0 +1,89 @@
+@font-face{font-family:"n19 Proxima Nova";font-weight:400;font-style:normal;font-display:swap;src:url("https://duckduckgo.com/font/ProximaNova-Reg-webfont.woff") format("woff")}
+@font-face{font-family:"n19 Proxima Nova";font-weight:400;font-style:italic;font-display:swap;src:url("https://duckduckgo.com/font/ProximaNova-RegIt-webfont.woff") format("woff")}
+@font-face{font-family:"n19 Proxima Nova";font-weight:600;font-style:normal;font-display:swap;src:url("https://duckduckgo.com/font/ProximaNova-Sbold-webfont.woff") format("woff")}
+@font-face{font-family:"n19 Proxima Nova";font-weight:700;font-style:normal;font-display:swap;src:url("https://duckduckgo.com/font/ProximaNova-Bold-webfont.woff") format("woff")}
+html{--n19-font:"n19 Proxima Nova", "Helvetica Neue", Helvetica, "Segoe UI", Arial, sans-serif;--n19-page:#f7f7f7;--n19-bg:#fff;--n19-bar:#fafafa;--n19-bar-line:rgba(0,0,0,.15);--n19-text:#333;--n19-title:#00278e;--n19-visited:#6c00a2;--n19-url:#20692b;--n19-snippet:#494949;--n19-tab:#666;--n19-tab-on:#111;--n19-muted:#666;--n19-field:#fff;--n19-field-line:rgba(0,0,0,.15);--n19-field-shadow:0 2px 3px rgba(0,0,0,.06);--n19-icon:#999;--n19-go:#5b9e4d;--n19-go-hover:#66ad57;--n19-home-logo:url("https://duckduckgo.com/assets/logo_homepage.normal.v108.svg");--n19-header-logo:url("https://duckduckgo.com/assets/logo_header.v108.svg")}
+html[data-net19-mode="dark"]{--n19-page:#1c1c1c;--n19-bg:#1c1c1c;--n19-bar:#232323;--n19-bar-line:rgba(255,255,255,.12);--n19-text:#ddd;--n19-title:#9fb8ff;--n19-visited:#caa2ff;--n19-url:#6fc27e;--n19-snippet:#bbb;--n19-tab:#aaa;--n19-tab-on:#eee;--n19-muted:#aaa;--n19-field:#2b2b2b;--n19-field-line:rgba(255,255,255,.18);--n19-field-shadow:0 2px 3px rgba(0,0,0,.3);--n19-icon:#aaa;--n19-go:#5b9e4d;--n19-go-hover:#66ad57;--n19-home-logo:url("https://duckduckgo.com/assets/logo_homepage.alt.v108.svg");--n19-header-logo:url("https://duckduckgo.com/assets/logo_header.v108.svg")}
+main[data-testid="home-desktop"]{background:var(--n19-page)!important;font-family:var(--n19-font)!important}
+:where(:root:not([data-n19-safe])) main[data-testid="home-desktop"] header{position:relative!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:flex-start!important;height:auto!important;min-height:0!important;padding:18vh 0 0!important;margin:0 auto!important;width:100%!important;max-width:none!important}
+main[data-testid="home-desktop"] header{background:transparent!important}
+:where(:root:not([data-n19-safe])) main[data-testid="home-desktop"] header>section{width:auto!important;max-width:none!important;margin:0!important;padding:0!important}
+:where(:root:not([data-n19-safe])) main[data-testid="home-desktop"] header>section:first-child a{display:block!important;width:205px!important;height:200px!important;margin:0 auto 26px!important}
+main[data-testid="home-desktop"] header>section:first-child a{background:var(--n19-home-logo) 50% 50% / 100% no-repeat!important}
+main[data-testid="home-desktop"] header>section:first-child a>*{visibility:hidden!important}
+:where(:root:not([data-n19-safe])) main[data-testid="home-desktop"] header>section:has(form#searchbox_homepage){display:block!important;width:590px!important;max-width:calc(100vw - 32px)!important;height:auto!important}
+main[data-testid="home-desktop"] [data-testid="ai-toggle"]{background:transparent!important;border:0!important;box-shadow:none!important}
+:where(:root:not([data-n19-safe])) main[data-testid="home-desktop"] [data-testid="ai-toggle"]{padding:0!important}
+main[data-testid="home-desktop"] [data-testid="ai-toggle"]>button:first-child{font-size:0!important}
+:where(:root:not([data-n19-safe])) main[data-testid="home-desktop"] [data-testid="ai-toggle"]>button:first-child{width:44px!important;height:42px!important}
+main[data-testid="home-desktop"] [data-testid="ai-toggle"]>button:first-child{border:0!important;border-radius:0 3px 3px 0!important}
+:where(:root:not([data-n19-safe])) main[data-testid="home-desktop"] [data-testid="ai-toggle"]>button:first-child{margin:0 -3px 0 0!important;min-width:0!important;padding:0!important;justify-content:center!important}
+main[data-testid="home-desktop"] [data-testid="ai-toggle"]>button:first-child{color:var(--n19-icon)!important;background:transparent!important;box-shadow:none!important}
+:where(:root:not([data-n19-safe])) main[data-testid="home-desktop"] [data-testid="ai-toggle"]>button:first-child svg{width:18px!important;height:18px!important;margin:0!important}
+main[data-testid="home-desktop"] [data-testid="ai-toggle"]>button:not(:first-child){display:none!important}
+:where(:root:not([data-n19-safe])) main[data-testid="home-desktop"] header>section:last-child{position:absolute!important;top:16px!important;right:16px!important;width:auto!important}
+:where(:root:not([data-n19-safe])) main[data-testid="home-desktop"] header>section:last-child:dir(rtl){right:auto!important;left:16px!important}
+:where(:root:not([data-n19-safe])) main[data-testid="home-desktop"] form#searchbox_homepage{width:100%!important;height:auto!important;min-height:0!important;margin:0!important}
+main[data-testid="home-desktop"] form#searchbox_homepage{background:transparent!important;border:0!important;box-shadow:none!important}
+:where(:root:not([data-n19-safe])) main[data-testid="home-desktop"] form#searchbox_homepage{overflow:visible!important}
+:where(:root:not([data-n19-safe])) main[data-testid="home-desktop"] form#searchbox_homepage>div{min-height:44px!important;height:auto!important}
+main[data-testid="home-desktop"] form#searchbox_homepage>div{background:var(--n19-field)!important;border:1px solid var(--n19-field-line)!important;border-radius:4px!important;box-shadow:var(--n19-field-shadow)!important}
+:where(:root:not([data-n19-safe])) main[data-testid="home-desktop"] form#searchbox_homepage>div{box-sizing:border-box!important}
+main[data-testid="home-desktop"] form#searchbox_homepage :is(input,textarea){font-family:var(--n19-font)!important;font-size:16px!important;color:var(--n19-text)!important;background:transparent!important}
+main[data-testid="home-desktop"] [data-testid="ai-toggle"]>button:first-child{color:var(--n19-icon)!important;border-radius:0 3px 3px 0!important}
+main[data-testid="home-desktop"] header>section[data-n19-typed] [data-testid="ai-toggle"]>button:first-child{background-color:var(--n19-go)!important;color:#fff!important}
+main[data-testid="home-desktop"] header>section[data-n19-typed] [data-testid="ai-toggle"]>button:first-child:hover{background-color:var(--n19-go-hover)!important}
+main[data-testid="home-desktop"] :is([data-testid="duckai-drawer-promotion"],[data-testid="aichat-button"],[data-testid="cta-cards-sadbrowser"],[data-testid="social-proof"],[data-testid="home-desktop-customizer"],[data-testid="pull-tab-scroll-button"]){display:none!important}
+main[data-testid="home-desktop"] section:has(>h1):not(:has(form)) h1{display:none!important}
+:where(:root:not([data-n19-safe])) [data-n19-ddg="tagline"],[data-n19-ddg="tagline"]:where(:root:not([data-n19-safe])){margin:18px 0 0!important}
+[data-n19-ddg="tagline"]{font:400 15px/1.4 var(--n19-font)!important;color:var(--n19-muted)!important;text-align:center!important}
+[data-n19-ddg="tagline"] a{color:var(--n19-title)!important;text-decoration:none!important}
+[data-n19-ddg="tagline"] a:hover{text-decoration:underline!important}
+body.body--serp,body.body--serp #header_wrapper~*{font-family:var(--n19-font)!important}
+body.body--serp{background:var(--n19-bg)!important}
+body.body--serp #header_wrapper{background:var(--n19-bar)!important;box-shadow:0 1px 0 var(--n19-bar-line)!important;border:0!important}
+:where(:root:not([data-n19-safe])) body.body--serp #header_wrapper .header__logo{width:36px!important;height:36px!important;margin-top:6px!important}
+body.body--serp #header_wrapper .header__logo{background:var(--n19-header-logo) 50% 50% / 36px 36px no-repeat!important}
+body.body--serp #header_wrapper .header__logo>:not(.visually-hidden){visibility:hidden!important}
+:where(:root:not([data-n19-safe])) body.body--serp #header_wrapper .header__search-wrap{max-width:680px!important}
+:where(:root:not([data-n19-safe])) body.body--serp [data-testid="search-form-input-wrapper"]{height:44px!important;min-height:0!important}
+body.body--serp [data-testid="search-form-input-wrapper"]{border-radius:4px!important;background:var(--n19-field)!important;border:1px solid var(--n19-field-line)!important;box-shadow:var(--n19-field-shadow)!important}
+:where(:root:not([data-n19-safe])) body.body--serp [data-testid="search-form-input-wrapper"]{box-sizing:border-box!important}
+body.body--serp [data-testid="search-form-input-wrapper"]:focus-within{border-color:var(--n19-field-line)!important;box-shadow:var(--n19-field-shadow)!important}
+body.body--serp [data-testid="search-form-input-wrapper"] :is(input,textarea){font-family:var(--n19-font)!important;font-size:16px!important;color:var(--n19-text)!important}
+body.body--serp [data-testid="search-form-input-wrapper"] button{color:var(--n19-icon)!important;background:transparent!important;border-radius:0!important}
+body.body--serp [data-testid="duckbar"] nav a,body.body--serp [data-testid="duckbar"] nav button{color:var(--n19-tab)!important;font-family:var(--n19-font)!important;font-size:14px!important;font-weight:600!important;background:transparent!important;border-radius:0!important}
+body.body--serp [data-testid="duckbar"] nav :is(a,button) :is(strong,span){color:inherit!important;font-weight:600!important}
+body.body--serp [data-testid="duckbar"] nav a[data-n19-ddg="tab-on"]{color:var(--n19-tab-on)!important;box-shadow:inset 0 -1px 0 var(--n19-tab-on)!important}
+body.body--serp [data-testid="duckbar"] nav li>a svg,body.body--serp [data-testid="duckbar"] nav li>a::after{display:none!important}
+body.body--serp [data-testid="duckbar"] nav a[href*="assist=true"],body.body--serp [data-testid="duckbar"] nav a[href*="ia=chat"]{display:none!important}
+body.body--serp [data-testid="duckbar"] :is(div,section,nav,ul,li){background:transparent!important;box-shadow:none!important}
+body.body--serp [data-testid="duckbar"] :is(div,section,nav,ul,li)::before,body.body--serp [data-testid="duckbar"] :is(div,section,nav,ul,li)::after{background:none!important;box-shadow:none!important}
+body.body--serp :is([data-testid="serp-popover-promo"],[data-testid="privacy-reminder"]){display:none!important}
+:where(:root:not([data-n19-safe])) body.body--serp article[data-testid="result"]{display:flex!important;flex-direction:column!important;padding-top:8px!important;padding-bottom:8px!important}
+body.body--serp article[data-testid="result"]{border:0!important}
+:where(:root:not([data-n19-safe])) body.body--serp article[data-testid="result"]>*{order:3}
+:where(:root:not([data-n19-safe])) body.body--serp article[data-testid="result"]>div:has(>h2){order:1!important;margin:0 0 2px!important}
+:where(:root:not([data-n19-safe])) body.body--serp article[data-testid="result"]>div:has([data-testid="result-extras-url-link"]){order:2!important;margin:0 0 3px!important;height:auto!important;min-height:0!important}
+body.body--serp article[data-testid="result"]>div:first-child:has(>button[type="button"]){display:none!important}
+body.body--serp article[data-testid="result"] h2,body.body--serp article[data-testid="result"] h2 a[data-testid="result-title-a"]{font-family:var(--n19-font)!important;font-size:19px!important;line-height:1.22!important;font-weight:400!important}
+body.body--serp a[data-testid="result-title-a"],body.body--serp a[data-testid="result-title-a"] *{color:var(--n19-title)!important;text-decoration:none!important}
+body.body--serp a[data-testid="result-title-a"]:visited,body.body--serp a[data-testid="result-title-a"]:visited *{color:var(--n19-visited)!important}
+body.body--serp a[data-testid="result-title-a"]:hover span{text-decoration:underline!important}
+:where(:root:not([data-n19-safe])) body.body--serp article[data-testid="result"] :is(span,div):has(>a[data-testid="result-extras-site-search-link"]){width:16px!important;height:16px!important;min-width:16px!important;margin:0 6px 0 0!important;padding:0!important;align-self:center!important}
+:where(:root:not([data-n19-safe])) body.body--serp a[data-testid="result-extras-site-search-link"],:where(:root:not([data-n19-safe])) body.body--serp a[data-testid="result-extras-site-search-link"]>div{display:flex!important;align-items:center!important;justify-content:center!important;width:16px!important;height:16px!important}
+body.body--serp a[data-testid="result-extras-site-search-link"],body.body--serp a[data-testid="result-extras-site-search-link"]>div{background:transparent!important;border-radius:0!important}
+:where(:root:not([data-n19-safe])) body.body--serp a[data-testid="result-extras-site-search-link"],:where(:root:not([data-n19-safe])) body.body--serp a[data-testid="result-extras-site-search-link"]>div{padding:0!important}
+:where(:root:not([data-n19-safe])) body.body--serp a[data-testid="result-extras-site-search-link"] img{width:16px!important;height:16px!important}
+:where(:root:not([data-n19-safe])) body.body--serp article[data-testid="result"] div:has(>a[data-testid="result-extras-url-link"]){display:flex!important;align-items:center!important;height:18px!important}
+body.body--serp article[data-testid="result"] div:has(>a[data-testid="result-extras-url-link"])>p{display:none!important}
+:where(:root:not([data-n19-safe])) body.body--serp article[data-testid="result"] div:has(>div>span>a[data-testid="result-extras-site-search-link"]){align-items:center!important;height:18px!important}
+body.body--serp a[data-testid="result-extras-url-link"],body.body--serp a[data-testid="result-extras-url-link"] *{color:var(--n19-url)!important;font-family:var(--n19-font)!important;font-size:14px!important;line-height:18px!important}
+body.body--serp article[data-testid="result"]>div:not(:has(h2)):not(:has([data-testid^="result-extras"])) span{color:var(--n19-snippet)!important;font-family:var(--n19-font)!important}
+body.body--serp article[data-testid="result"]>div:not(:has(h2)):not(:has([data-testid^="result-extras"])) b{color:var(--n19-snippet)!important;font-weight:700!important}
+body.body--serp article[data-testid="result"] li a h3,body.body--serp article[data-testid="result"] li a h3 *{color:var(--n19-title)!important;font-family:var(--n19-font)!important;font-weight:400!important}
+body.body--serp [data-testid="search-autocomplete-menu"]>div{border-radius:0 0 4px 4px!important;border:1px solid var(--n19-field-line)!important;border-top:0!important;box-shadow:var(--n19-field-shadow)!important;background:var(--n19-field)!important}
+body.body--serp [data-testid="search-form-input-wrapper"]:has(+* [data-testid="search-autocomplete-menu"] [role="option"]),body.body--serp [data-testid="search-form-input-wrapper"]:has([data-testid="search-autocomplete-menu"] [role="option"]){border-radius:4px 4px 0 0!important}
+:is(body.body--serp,main[data-testid="home-desktop"]) [role="option"][data-key*="duckai"]{display:none!important}
+:where(:root:not([data-n19-safe])) body.body--serp article[data-testid="result"] :is(ul,ul>li){height:auto!important;min-height:0!important;max-height:none!important}
+:where(:root:not([data-n19-safe])) body.body--serp article[data-testid="result"] div:has(>ul>li>a h3),:where(:root:not([data-n19-safe])) body.body--serp article[data-testid="result"]>div:has(ul li a h3),:where(:root:not([data-n19-safe])) body.body--serp article[data-testid="result"]>div:not(:has(h2)):not(:has([data-testid^="result-extras"]))>div{height:auto!important;max-height:none!important}
