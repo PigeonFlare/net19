@@ -104,6 +104,20 @@ export function createRecolor(theme) {
     try { return fn(); } finally { if (sheet) sheet.disabled = false; }
   };
 
+  const onColor = (el, color) => {
+    if (!el || !target) return false;
+    const c = rgba(color);
+    if (!c) return false;
+    const text = toLab(c)[0];
+    if (target === 'light' ? text < .75 : text > .45) return false;
+    for (let e = el, i = 0; e && i < 6; e = e.parentElement, i++) {
+      const bg = rgba(getComputedStyle(e).backgroundColor);
+      if (!bg || bg[3] < .5) continue;
+      const [L, a, b] = toLab(bg), C = Math.hypot(a, b);
+      return C > .08 && (target === 'light' ? L < .72 : L > .5);
+    }
+    return false;
+  };
   const declarations = (cs, pseudo, el) => {
     const out = [];
     const bg = tools.shift(cs.backgroundColor, 'bg');
@@ -111,7 +125,7 @@ export function createRecolor(theme) {
     const image = cs.backgroundImage;
     if (image !== 'none' && image.includes('gradient(')) { const g = tools.gradient(image); if (g) out.push(['background-image', g]); }
     if (!(el && (el.closest('[data-net19-ink]') || surfaceIsPhoto(el)))) {
-      const fg = tools.shift(cs.color, 'fg');
+      const fg = onColor(el, cs.color) ? null : tools.shift(cs.color, 'fg');
       if (fg) out.push(['color', fg]);
       const fill = cs.webkitTextFillColor;
       if (fill && fill !== cs.color) { const f = tools.shift(fill, 'fg'); if (f) out.push(['-webkit-text-fill-color', f]); }
@@ -129,7 +143,7 @@ export function createRecolor(theme) {
     if (!pseudo && el && el.namespaceURI === 'http://www.w3.org/2000/svg') {
       for (const prop of ['fill', 'stroke']) {
         const v = cs.getPropertyValue(prop);
-        if (v && v !== 'none' && !v.startsWith('url(')) { const s = tools.shift(v, 'fg'); if (s) out.push([prop, s]); }
+        if (v && v !== 'none' && !v.startsWith('url(') && !onColor(el, v)) { const s = tools.shift(v, 'fg'); if (s) out.push([prop, s]); }
       }
     }
     return out;
