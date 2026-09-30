@@ -31,7 +31,9 @@ globalThis.net19Theme = {
     h2.condensed-post-title-heading, h1 { margin: 0 0 8px !important; }
     :host([view-type="cardView"]) div:has(> h2.condensed-post-title-heading):has(> div > slot[name="post-flair"]) { display: block !important; font-size: 18px !important; line-height: 22px !important; margin-bottom: 8px !important; padding-right: 8px !important; }
     :host([view-type="cardView"]) div:has(> h2.condensed-post-title-heading):has(> div > slot[name="post-flair"]) > h2.condensed-post-title-heading { display: inline !important; margin: 0 !important; line-height: 22px !important; }
-    :host([view-type="cardView"]) div:has(> slot[name="post-flair"]) { display: inline-block !important; margin: 0 0 0 6px !important; vertical-align: middle !important; line-height: 16px !important; }
+    :host([view-type="cardView"]) div:has(> slot[name="post-flair"]) { display: inline-flex !important; align-items: center !important; height: 22px !important; margin: 0 0 0 6px !important; vertical-align: top !important; line-height: 16px !important; }
+    :host([view-type="cardView"]) [data-testid="action-row"] { padding-top: 0 !important; }
+    :host([view-type="cardView"]) h2.condensed-post-title-heading { font-size: 18px !important; }
     .vote-icon-outline { display: none !important; }
     .vote-icon-fill { display: flex !important; }
     slot[name="post-stats-entry-point"], slot[name="post-insights-panel"] { display: none !important; }
@@ -81,7 +83,7 @@ globalThis.net19Theme = {
   `;
   const PDP = `[data-testid="action-row"] > span:has(shreddit-vote-animations) { top: 8px !important; }`;
   const TREE_VOTES = `
-    shreddit-vote-animations { position: absolute !important; left: 4px !important; top: -32px !important; z-index: 1 !important; }
+    shreddit-vote-animations { position: absolute !important; left: 4px !important; top: -24px !important; z-index: 1 !important; }
     .rpl-vote-button-group { flex-direction: column !important; height: auto !important; width: 24px !important; gap: 0 !important; padding: 0 !important; }
     .rpl-vote-button-group > span { display: none !important; }
     .rpl-vote-button-group button { width: 24px !important; height: 24px !important; min-height: 0 !important; }
@@ -232,7 +234,9 @@ globalThis.net19Theme = {
   const pinned = () => {
     const feed = document.querySelector('main#main-content shreddit-feed');
     const carousel = document.querySelector('community-highlight-carousel');
-    const old = document.querySelector('[data-n19-pinned]');
+    const boxes = [...document.querySelectorAll('[data-n19-pinned]')];
+    const old = boxes.length === 1 ? boxes[0] : null;
+    if (boxes.length > 1) boxes.forEach(box => box.remove());
     if (!feed || !carousel || !/^\/r\/[^/]+\/?(?:(?:hot|new|top|rising|best|controversial)\/?)?$/i.test(location.pathname)) { old?.remove(); return; }
     const rows = [];
     const seen = new Set();

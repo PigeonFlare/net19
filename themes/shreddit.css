@@ -175,8 +175,17 @@ shreddit-subreddit-header-buttons button, shreddit-join-button button { border-r
 .grid-container, shreddit-post, shreddit-ad-post { --ab-award-count: none !important; --ab-repost-display: none !important; }
 shreddit-post[view-type="cardView"] > a[slot="title"] { margin: 0 !important; display: inline !important; }
 shreddit-post[view-type="cardView"] > shreddit-post-flair[slot="post-flair"] { margin: 0 !important; }
-shreddit-post[view-type="cardView"] > [slot="text-body"] { display: block !important; margin-top: 8px !important; margin-right: 8px !important; }
+shreddit-post[view-type="cardView"] > [slot="text-body"] { display: block !important; margin: 13px 8px 2px 0 !important; }
 shreddit-post[view-type="cardView"] > [slot="credit-bar"] { margin-right: 8px !important; }
+shreddit-post[view-type="cardView"] [slot="credit-bar"] { min-height: 16px !important; }
+shreddit-post[view-type="cardView"] [slot="credit-bar"] shreddit-async-loader:has(> shreddit-post-overflow-menu) { margin-block: -8px !important; }
+shreddit-post[view-type="cardView"] div:has(> a[slot="title"]) { display: inline !important; }
+shreddit-post[view-type="cardView"] a[slot="title"] { display: inline !important; margin: 0 !important; }
+shreddit-post[view-type="cardView"] div:has(> shreddit-post-flair[slot="post-flair"]) { display: inline-flex !important; align-items: center !important; height: 22px !important; margin: 0 0 0 6px !important; vertical-align: top !important; }
+shreddit-post[view-type="cardView"] shreddit-post-flair[slot="post-flair"] a { display: flex !important; line-height: 16px !important; }
+shreddit-post[view-type="cardView"] shreddit-post-flair[slot="post-flair"] a > span { margin: 0 !important; top: 0 !important; }
+shreddit-post[view-type="cardView"] div:has(> div > a.post-link) { margin: 8px 0 !important; }
+shreddit-post[view-type="cardView"] { padding-bottom: 0 !important; }
 #answers-suggested-queries-pdp, aside[aria-label="People also ask about section"], #right-rail-experience-root { display: none !important; }
 community-highlight-carousel, shreddit-community-highlights, [id="community-highlights"], achievements-progress-toast,
 [class*="floating-translation"], shreddit-translation-toggle, translation-toggle { display: none !important; }
@@ -248,6 +257,16 @@ auth-flow-google-one-tap-prompt { display: none !important; }
 #right-sidebar-container .legal-links li:last-child { grid-column: 1 / -1 !important; margin-top: 12px !important; }
 shreddit-comment > details > .comment-main-grid > div.col-start-2.relative:has(> div[slot="actionRow"]) { position: static !important; }
 shreddit-comment > details > .comment-main-grid > .ssr-thread-line { top: 20px !important; }
+shreddit-comment [slot="commentAvatar"] { height: 0 !important; overflow: hidden !important; }
+shreddit-comment [slot="comment"] { padding-left: 0 !important; }
+shreddit-comment [slot="comment"] > div { margin-left: 0 !important; margin-right: 0 !important; }
+shreddit-comment [slot="comment"] p { margin: 0 0 7px !important; }
+shreddit-comment [slot="comment"] p:last-child { margin-bottom: 0 !important; }
+shreddit-comment div[slot="actionRow"] { min-height: 24px !important; }
+shreddit-comment-action-row > :is(award-button, shreddit-overflow-menu) { margin-block: -4px !important; }
+shreddit-comment-action-row > shreddit-comment-share-button { display: flex !important; }
+shreddit-comment .comment-main-grid > svg.collapse-container { margin-top: 2px !important; }
+shreddit-comment-action-row :is(button.button, a.button, button[rpl]) { height: 24px !important; min-height: 0 !important; }
 shreddit-app { padding-top: 49px !important; }
 reddit-header-large div.h-\[40px\] { padding: 0 !important; height: 48px !important; align-items: center !important; }
 reddit-header-large div.h-\[40px\] > div { position: static !important; height: 36px !important; align-items: flex-start !important; overflow: visible !important; }
