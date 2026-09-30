@@ -34,3 +34,4 @@ body,.gfu-layout{color:var(--n19-text)!important}
 [role="region"]:has(>section[aria-label="Become a creator statistics"]),section[aria-labelledby="home-global-tags-title"]{display:none!important}
 .gfu-header__actions .gfu-navbar-item:has(>button[aria-label="Language"],>button[aria-label="Activity"]){display:none!important}
 section[aria-labelledby="home-categories-title"] [role="listitem"]:has(a[href*="projectCatalogCategories=TTRPG"]){display:none!important}
+html[data-net19-mode="dark"] .gfu-scrollable-overlay::after{background-image:linear-gradient(rgba(26, 26, 26, 0) 1.74%, var(--n19-page) 50%)!important}
