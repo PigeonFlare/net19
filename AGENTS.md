@@ -41,7 +41,7 @@
     - `covered`: a control another element sits on, so a real click never reaches it;
     - `offcenter`: icons off the center of their button or rail;
     - `textoffcenter`: text off the vertical middle of its row;
-    - `overlap`: text drawn over other text, or a filled button drawn over text outside it.
+    - `overlap`: text drawn over other text, or a filled button drawn over text outside it; lines hidden by a clipping box or line clamp are not counted.
   - Then click the page's main controls with the real mouse, type into its fields, and read screenshots in light and dark.
   - Verify every selector on the live markup. For example, a site's buttons may be `div[role=button]` rather than `<button>`.
 - Run `npm run audit:diff -- <id>` for every theme you change, in both schemes (`SCHEME=light` and `SCHEME=dark`). It runs the page checks with and without net19 and lists only the problems net19 introduced. Fix every stable item. A light-only run is how Gmail, Docs and Google's search field shipped broken in dark mode.

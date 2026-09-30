@@ -108,12 +108,36 @@ function net19PageChecks() {
   }
 
   const lines = [];
+  const clips = new Map();
+  const clipOf = el => {
+    if (clips.has(el)) return clips.get(el);
+    let clip = null;
+    for (let a = el; a && a !== document.documentElement; a = a.parentElement || a.getRootNode?.().host) {
+      const cs = getComputedStyle(a);
+      if (cs.overflowX !== 'visible' || cs.overflowY !== 'visible') {
+        const r = a.getBoundingClientRect();
+        clip = clip ? { left: Math.max(clip.left, r.left), top: Math.max(clip.top, r.top), right: Math.min(clip.right, r.right), bottom: Math.min(clip.bottom, r.bottom) } : { left: r.left, top: r.top, right: r.right, bottom: r.bottom };
+      }
+    }
+    clips.set(el, clip);
+    return clip;
+  };
+  const drawn = (q, el) => {
+    const c = clipOf(el);
+    if (!c) return q;
+    const left = Math.max(q.left, c.left), top = Math.max(q.top, c.top), right = Math.min(q.right, c.right), bottom = Math.min(q.bottom, c.bottom);
+    return right - left > 4 && bottom - top > q.height * .5 ? { left, top, right, bottom, width: right - left, height: bottom - top } : null;
+  };
   const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
   for (let n = walker.nextNode(); n && lines.length < 900; n = walker.nextNode()) {
     const t = n.nodeValue.trim(); const el = n.parentElement;
     if (t.length < 2 || !el || !shown(el) || el.closest('script,style,noscript,[aria-hidden=true]')) continue;
     const range = document.createRange(); range.selectNodeContents(n);
-    for (const q of range.getClientRects()) if (q.width > 4 && q.height > 6 && q.top < H && q.bottom > 0) lines.push({ q, el, t: t.slice(0, 30) });
+    for (const raw of range.getClientRects()) {
+      if (raw.width <= 4 || raw.height <= 6 || raw.top >= H || raw.bottom <= 0) continue;
+      const q = drawn(raw, el);
+      if (q) lines.push({ q, el, t: t.slice(0, 30) });
+    }
   }
   for (let i = 0; i < lines.length; i++) for (let j = i + 1; j < lines.length; j++) {
     const a = lines[i], b = lines[j];
