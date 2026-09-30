@@ -9,6 +9,7 @@ const pick = process.argv.slice(2);
 const URLS = process.env.URLS ? JSON.parse(process.env.URLS) : Object.fromEntries(Object.entries(ALL).filter(([id]) => !pick.length || pick.includes(id)));
 const OUT = resolve(process.env.OUT || 'test-results/audit'), ext = resolve(process.env.EXT || '.');
 const SCHEMES = (process.env.SCHEMES || 'light,dark').split(',');
+const WIDTHS = (process.env.WIDTHS || '1280,1000').split(',').map(Number);
 const UA = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36';
 const MODERN = /\b(AI|Gemini|Copilot|Grok|ChatGPT|Rufus|Meta AI|Shorts|Reels|Quests|Communities|Spaces)\b|^ask\b(?! question)|create images?|brainstorm|ask about|generate|help me write|or ask a question|ask anything/i;
 
@@ -65,7 +66,7 @@ function inPage() {
   return { texts, modern, misaligned, inside, mode: document.documentElement.dataset.net19Mode || '', flip: document.documentElement.hasAttribute('data-net19-flip'), title: document.title.slice(0, 50) };
 }
 
-const ROWS = ['clipline', 'rowwrap', 'rowalign', 'spill', 'iconovertext', 'gap', 'btnsize', 'scrollreach'];
+const ROWS = ['clipline', 'rowwrap', 'rowalign', 'spill', 'iconovertext', 'gap', 'btnsize', 'scrollreach', 'badgealign', 'loose'];
 const TITLES = 'a[href] :is(h2, h3, [role=heading]), :is(h2, h3, [role=heading]) a[href], a#video-title, main [role=heading], [data-testid*="title" i]';
 function findTitles(selector) {
   const out = [];
@@ -90,9 +91,9 @@ function titleTarget({ x, y }) {
 }
 
 const lum = (r, g, b) => { const f = v => { v /= 255; return v <= .03928 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; }; return .2126 * f(r) + .7152 * f(g) + .0722 * f(b); };
-async function faint(png, texts) {
+async function faint(png, texts, width) {
   const { data, info } = await sharp(png).raw().toBuffer({ resolveWithObject: true });
-  const W = info.width, H = info.height, C = info.channels, scale = W / 1280;
+  const W = info.width, H = info.height, C = info.channels, scale = W / width;
   const L = (x, y) => { const i = (Math.min(H - 1, Math.max(0, y)) * W + Math.min(W - 1, Math.max(0, x))) * C; return lum(data[i], data[i + 1], data[i + 2]); };
   const out = [];
   for (const t of texts) {
@@ -109,30 +110,32 @@ async function faint(png, texts) {
   }
   return out;
 }
-async function mark(png, boxes, file) {
-  const img = sharp(png); const meta = await img.metadata(); const s = meta.width / 1280;
+async function mark(png, boxes, file, width) {
+  const img = sharp(png); const meta = await img.metadata(); const s = meta.width / width;
   const rects = boxes.map(b => `<rect x="${b.x * s - 2}" y="${b.y * s - 2}" width="${b.w * s + 4}" height="${b.h * s + 4}" fill="none" stroke="${b.c}" stroke-width="3"/>`).join('');
   await img.composite([{ input: Buffer.from(`<svg width="${meta.width}" height="${meta.height}">${rects}</svg>`) }]).png().toFile(file);
 }
 
-for (const [id, url] of Object.entries(URLS)) for (const scheme of SCHEMES) {
+for (const [id, url] of Object.entries(URLS)) for (const scheme of SCHEMES) for (const width of WIDTHS) {
+  const full = width === WIDTHS[0], at = full ? '' : `w${width}-`;
   mkdirSync(`${OUT}/${id}`, { recursive: true });
-  const ctx = await chromium.launchPersistentContext(`/tmp/stress-${id}-${scheme}-${Date.now()}`, { channel: 'chromium', headless: true, viewport: { width: 1280, height: 860 }, colorScheme: scheme, userAgent: UA,
+  const ctx = await chromium.launchPersistentContext(`/tmp/stress-${id}-${scheme}-${width}-${Date.now()}`, { channel: 'chromium', headless: true, viewport: { width, height: 860 }, colorScheme: scheme, userAgent: UA,
     args: [...(process.env.HTTPS_PROXY ? [`--proxy-server=${process.env.HTTPS_PROXY}`] : []), `--disable-extensions-except=${ext}`, `--load-extension=${ext}`] });
   await new Promise(r => setTimeout(r, 1500));
   const p = await ctx.newPage();
-  const result = { id, scheme, states: {} };
+  const result = { id, scheme, width, states: {} };
   const record = async state => {
+    state = at + state;
     const png = await p.screenshot().catch(() => null); if (!png) return;
     const info = await p.evaluate(inPage).catch(e => ({ err: e.message.slice(0, 80) }));
     if (info.err) { result.states[state] = info; return; }
-    const faintOnes = await faint(png, info.texts);
+    const faintOnes = await faint(png, info.texts, width);
     const checks = await p.evaluate(`(() => { ${PAGE_CHECKS}; return net19PageChecks(); })()`).catch(() => ({ covered: [], offcenter: [], textoffcenter: [], overlap: [] }));
     result.states[state] = { mode: info.mode, flip: info.flip, title: info.title, faint: faintOnes.map(f => `${f.t} (${f.ratio})`), modern: info.modern.map(m => m.t), misaligned: info.misaligned.map(m => `${m.t} ${m.dy}px`), inside: info.inside.map(m => m.t || 'button'), inked: info.texts.filter(t => t.ink).length,
       covered: checks.covered.map(c => `${c.what} ${c.detail}`), offcenter: checks.offcenter.map(c => `${c.what} ${c.detail}`), textoffcenter: checks.textoffcenter.map(c => `${c.what} ${c.detail}`), overlap: checks.overlap.map(c => `${c.what} ${c.detail}`), collide: (checks.collide || []).map(c => `${c.what} ${c.detail}`), effects: (checks.effects || []).map(c => `${c.what} ${c.detail}`), cropped: (checks.cropped || []).map(c => `${c.what} ${c.detail}`), lowcontrast: (checks.lowcontrast || []).map(c => `${c.what} ${c.detail}`),
       ...Object.fromEntries(ROWS.map(k => [k, (checks[k] || []).map(c => `${c.what} ${c.detail}`)])) };
     const boxes = [...faintOnes.map(b => ({ ...b, c: 'magenta' })), ...info.modern.map(b => ({ ...b, c: 'orange' })), ...info.misaligned.map(b => ({ ...b, c: 'cyan' })), ...info.inside.map(b => ({ ...b, c: 'lime' })), ...checks.covered.map(b => ({ ...b, c: 'red' })), ...checks.offcenter.map(b => ({ ...b, c: 'yellow' })), ...checks.textoffcenter.map(b => ({ ...b, c: 'yellow' })), ...checks.overlap.map(b => ({ ...b, c: 'blue' })), ...ROWS.flatMap(k => (checks[k] || []).map(b => ({ ...b, c: 'deeppink' })))];
-    await mark(png, boxes, `${OUT}/${id}/${scheme}-${state}.png`);
+    await mark(png, boxes, `${OUT}/${id}/${scheme}-${state}.png`, width);
   };
   try {
     await p.goto(url, { waitUntil: 'load', timeout: 40000 }).catch(() => {});
@@ -140,7 +143,8 @@ for (const [id, url] of Object.entries(URLS)) for (const scheme of SCHEMES) {
     await record('load');
     const triggers = await p.$$eval('header a, header button, nav a, nav button, [role=navigation] a, [aria-haspopup]:not([aria-haspopup=false]), [aria-expanded]', els => els.map((e, i) => { const r = e.getBoundingClientRect(); return { i, x: r.left + r.width / 2, y: r.top + r.height / 2, ok: r.width > 8 && r.height > 8 && r.top >= 0 && r.top < 130 && getComputedStyle(e).visibility === 'visible' }; }).filter(e => e.ok).slice(0, 6)).catch(() => []);
     let n = 0;
-    for (const t of triggers) { await p.mouse.move(t.x, t.y); await p.waitForTimeout(900); await record(`hover${++n}`); }
+    for (const t of full ? triggers : triggers.slice(0, 1)) { await p.mouse.move(t.x, t.y); await p.waitForTimeout(900); await record(`hover${++n}`); }
+    if (full) {
     const sideItems = await p.$$eval('nav a, aside a, [role=navigation] a, [role=complementary] a, [role=tree] [role=treeitem], [role=listitem] a', els => els.map(e => { const r = e.getBoundingClientRect(); return { x: r.left + r.width / 2, y: r.top + r.height / 2, ok: r.width > 20 && r.height > 12 && r.top >= 130 && r.bottom < innerHeight && getComputedStyle(e).visibility === 'visible' }; }).filter(e => e.ok).filter((e, i, all) => all.findIndex(o => Math.abs(o.x - e.x) < 40 && Math.abs(o.y - e.y) < 40) === i).slice(0, 4)).catch(() => []);
     for (const t of sideItems) { await p.mouse.move(t.x, t.y); await p.waitForTimeout(700); await record(`sidehover${++n}`); }
     const titles = await p.evaluate(`(${findTitles})(${JSON.stringify(TITLES)})`).catch(() => []);
@@ -216,8 +220,9 @@ for (const [id, url] of Object.entries(URLS)) for (const scheme of SCHEMES) {
         if (!moved) result.titleclick = `result title "${first.text}": ${target.why}, and clicking it opened nothing`;
       }
     }
+    }
   } catch (e) { result.err = e.message.slice(0, 100); }
   appendFileSync(`${OUT}/report.jsonl`, JSON.stringify(result) + '\n');
-  console.log(id, scheme, result.blocked ? 'BLOCKED: ' + result.blocked : '', result.fieldgrow ? 'FIELD GREW: ' + result.fieldgrow : '', result.focus ? 'FOCUS: ' + result.focus : '', result.titleclick ? 'TITLE CLICK: ' + result.titleclick : '', Object.entries(result.states).map(([k, v]) => `${k}:${(v.faint?.length || 0)}f/${(v.modern?.length || 0)}m/${(v.misaligned?.length || 0)}a/${(v.inside?.length || 0)}i/${(v.covered?.length || 0)}c/${(v.offcenter?.length || 0) + (v.textoffcenter?.length || 0)}o/${(v.overlap?.length || 0)}x/${(v.collide?.length || 0)}k/${(v.effects?.length || 0)}e/${(v.cropped?.length || 0)}r/${(v.lowcontrast?.length || 0)}l/${(v.clipline?.length || 0)}q/${(v.rowwrap?.length || 0)}w/${(v.rowalign?.length || 0)}n/${(v.spill?.length || 0)}s/${(v.iconovertext?.length || 0)}v/${(v.gap?.length || 0)}g/${(v.btnsize?.length || 0)}b/${(v.scrollreach?.length || 0)}h/${(v.patch?.length || 0)}p/${(v.tight?.length || 0)}t/${(v.loose?.length || 0)}z`).join(' '));
+  console.log(id, scheme, width, result.blocked ? 'BLOCKED: ' + result.blocked : '', result.fieldgrow ? 'FIELD GREW: ' + result.fieldgrow : '', result.focus ? 'FOCUS: ' + result.focus : '', result.titleclick ? 'TITLE CLICK: ' + result.titleclick : '', Object.entries(result.states).map(([k, v]) => `${k}:${(v.faint?.length || 0)}f/${(v.modern?.length || 0)}m/${(v.misaligned?.length || 0)}a/${(v.inside?.length || 0)}i/${(v.covered?.length || 0)}c/${(v.offcenter?.length || 0) + (v.textoffcenter?.length || 0)}o/${(v.overlap?.length || 0)}x/${(v.collide?.length || 0)}k/${(v.effects?.length || 0)}e/${(v.cropped?.length || 0)}r/${(v.lowcontrast?.length || 0)}l/${(v.clipline?.length || 0)}q/${(v.rowwrap?.length || 0)}w/${(v.rowalign?.length || 0)}n/${(v.spill?.length || 0)}s/${(v.iconovertext?.length || 0)}v/${(v.gap?.length || 0)}g/${(v.btnsize?.length || 0)}b/${(v.scrollreach?.length || 0)}h/${(v.patch?.length || 0)}p/${(v.tight?.length || 0)}t/${(v.loose?.length || 0)}z/${(v.badgealign?.length || 0)}d`).join(' '));
   await ctx.close();
 }

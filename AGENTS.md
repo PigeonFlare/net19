@@ -28,6 +28,9 @@
     - `gap`: an empty band taller than 32px between the content of a card or row with its own background, border or shadow.
     - `btnsize`: filled buttons side by side in one row whose heights or vertical middles differ by more than 3px.
     - `scrollreach`: a scroll box or frame whose bottom is clipped off by an ancestor, or lies below the window where no page scroll can reach it (a fixed panel taller than the window).
+    - `badgealign`: a small filled badge, tag or flair (up to 26px tall, 24 characters) whose middle sits more than 2px off the middle of the text line beside it.
+    - `loose`: an empty band inside a repeated item (card, comment, result): more than max(8px, 0.4 line) under its first, smaller-type byline row, or more than max(24px, 1.5 lines) between any other lines, not counting prose paragraph spacing; reports each item's worst gap.
+    - **Widths:** `audit` and `audit:diff` run at every width in `WIDTHS` (default `1280,1000`); narrower widths check load and the first header hover. `overlap` also reports a button drawn over an icon, badge or picture next to text (a Follow button over a verified badge).
     - `contentlost` (`audit:diff`): visible text or result and item links drop below 60% of the page without net19.
     - **Content hover** (`audit`): hovers the first 3 result or card titles and runs every check in that state (`overlap` catches a hover card drawn over the original), then reports `TITLE CLICK` when the first title neither links off the page nor navigates when clicked.
   - **Light mode:** light is as important as dark. Dark sites shown in light mode must look like their own 2019 light design, not an inverted grey; the page checks report `dim`.

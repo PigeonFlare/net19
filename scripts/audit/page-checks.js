@@ -130,6 +130,7 @@ function net19PageChecks() {
   Object.assign(out, net19Layout());
   Object.assign(out, net19Rows());
   Object.assign(out, net19Rhythm());
+  Object.assign(out, net19Badges());
   const reach = net19Reach(lines);
   out.overlap.push(...reach.overdrawn);
   out.btnsize = reach.btnsize;
@@ -212,6 +213,24 @@ function net19Reach(lines) {
       return !!top && (b.e === top || b.e.contains(top) || top.getRootNode() !== document && b.e.contains(top.getRootNode().host));
     });
     if (under) found.overdrawn.push({ what: `button "${label(b.e)}" / "${under.t}"`, detail: `${name(b.e)} drawn over the text of ${name(under.el)}`, ...box(f) });
+    if (found.overdrawn.length > 20) break;
+  }
+  const marks = all.filter(e => e.matches('svg, img, [role=img]') && !up(e)?.closest?.('svg') && seenEl(e) && !inPopup(e)).map(e => ({ e, q: rect(e) }))
+    .filter(({ q }) => q.width >= 8 && q.height >= 8 && q.width <= 32 && q.height <= 32)
+    .map(m => ({ ...m, by: lines.find(t => !t.el.contains(m.e) && Math.min(t.q.bottom, m.q.bottom) - Math.max(t.q.top, m.q.top) > Math.min(t.q.height, m.q.height) * .4 && Math.max(t.q.left - m.q.right, m.q.left - t.q.right) <= 12) }))
+    .filter(m => m.by);
+  for (const b of buttons.filter(b => b.e.matches('button, [role=button]'))) {
+    const f = b.f;
+    for (const m of marks) {
+      if (b.e.contains(m.e) || m.e.contains(b.e) || b.e.contains(m.by.el) || m.e.getRootNode() !== document && b.e.contains(m.e.getRootNode().host)) continue;
+      const ox = Math.min(f.right, m.q.right) - Math.max(f.left, m.q.left), oy = Math.min(f.bottom, m.q.bottom) - Math.max(f.top, m.q.top);
+      if (ox < 3 || oy < 3) continue;
+      const x = Math.max(f.left, m.q.left) + ox / 2, y = Math.max(f.top, m.q.top) + oy / 2;
+      let top = document.elementFromPoint(x, y); while (top && top.shadowRoot) { const inner = top.shadowRoot.elementFromPoint(x, y); if (!inner || inner === top) break; top = inner; }
+      if (!top || !(b.e === top || b.e.contains(top) || top.getRootNode() !== document && b.e.contains(top.getRootNode().host))) continue;
+      found.overdrawn.push({ what: `button "${label(b.e)}" / ${m.e.tagName.toLowerCase()} beside "${m.by.t}"`, detail: `${name(b.e)} drawn over the ${Math.round(m.q.width)}x${Math.round(m.q.height)} ${name(m.e)} next to ${name(m.by.el)}`, ...box(f) });
+      break;
+    }
     if (found.overdrawn.length > 20) break;
   }
   return found;
@@ -478,23 +497,126 @@ function net19Rhythm() {
     if (tight.length >= Math.ceil(pads.length / 2)) report('tight', tight[0].e, `repeated items keep ${Math.round(tight[0].above)}px above their content but ${Math.round(tight[0].below)}px below`, tight[0].r);
   }
   const srOnly = e => { for (let n = e, i = 0; n && n.nodeType === 1 && i < 4; n = up(n), i++) { const c = cs(n), q = rect(n); if ((c.clip && c.clip !== 'auto') || /inset\(50%|circle\(0/.test(c.clipPath) || (q.width <= 2 || q.height <= 2) && c.overflow !== 'visible') return true; } return false; };
-  const bands = e => { const list = [];
-    const walk = root => { const t = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-      for (let n = t.nextNode(), i = 0; n && i < 400; n = t.nextNode(), i++) { if (!n.nodeValue.trim() || !n.parentElement || !visible(n.parentElement, true) || srOnly(n.parentElement)) continue; const range = document.createRange(); range.selectNodeContents(n); for (const q of range.getClientRects()) if (q.height > 2 && q.width > 1) list.push([q.top, q.bottom]); }
-      for (const k of root.querySelectorAll('img, svg, video, canvas, button, [role=button], input, textarea')) { if (k.matches('svg *')) continue; const q = rect(k); if (q.width > 4 && q.height > 4 && visible(k, true)) list.push([q.top, q.bottom]); }
-      for (const k of root.querySelectorAll('*')) if (k.shadowRoot) walk(k.shadowRoot); };
-    walk(e); if (e.shadowRoot) walk(e.shadowRoot);
-    return list.sort((a, b) => a[0] - b[0]); };
+  const sigOf = e => e.tagName + '|' + (typeof e.className === 'string' ? e.className.split(/\s+/).filter(x => !/\d/.test(x)).sort().join('.') : '');
+  const blockOf = el => { for (let n = el; n && n.nodeType === 1; n = up(n)) if (!/^inline/.test(cs(n).display) && cs(n).display !== 'contents') return n; return el; };
+  const prose = b => b.matches('p, li, blockquote, pre, dd') || b.tagName === 'DIV' && [...b.childNodes].some(n => n.nodeType === 3 && n.nodeValue.trim().length > 40);
+  const lineHeight = el => { const c = cs(el), v = parseFloat(c.lineHeight); return v > 0 ? v : parseFloat(c.fontSize) * 1.2; };
+  const shownRect = e => { const q = rect(e); let { top, bottom, left, right } = q;
+    for (let n = up(e), i = 0; n && n.nodeType === 1 && i < 12; n = up(n), i++) { const c = cs(n); if (c.position === 'fixed') break; if (/hidden|clip|auto|scroll/.test(c.overflowX + c.overflowY)) { const b = rect(n); top = Math.max(top, b.top); bottom = Math.min(bottom, b.bottom); left = Math.max(left, b.left); right = Math.min(right, b.right); } }
+    return { top, bottom, left, right, width: right - left, height: bottom - top }; };
+  const rowsOf = item => { const lines = [], solid = [];
+    const own = n => { for (let k = n; k && k !== item; k = k.assignedSlot || up(k)) if (sigOf(k) === sigOf(item) || k.tagName === item.tagName && k.tagName.includes('-')) return false; return true; };
+    const walk = root => { const t = document.createTreeWalker(root, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
+      for (let n = t.nextNode(), i = 0; n && i < 600; n = t.nextNode(), i++) {
+        if (n.nodeType === 1) { if (n.shadowRoot) walk(n.shadowRoot); if (n.tagName === 'SLOT') for (const k of n.assignedElements()) walk(k); if (n.matches('img, svg, video, canvas, iframe, input, textarea, select, hr, [role=img]') && !n.matches('svg *') && own(n) && visible(n, true)) { const q = shownRect(n); if (q.width > 4 && q.height > 4) solid.push(q); } continue; }
+        const el = n.parentElement || n.parentNode?.host;
+        if (!n.nodeValue.trim() || !el || !visible(el, true) || srOnly(el) || !own(el) || el.closest('button, [role=button], [role=toolbar], select, .btn, a[class*="btn" i], a[class*="button" i]')) continue;
+        const range = document.createRange(); range.selectNodeContents(n);
+        for (const q of range.getClientRects()) if (q.height > 4 && q.width > 1) lines.push({ top: q.top, bottom: q.bottom, left: q.left, right: q.right, el, block: blockOf(el) });
+      } };
+    walk(item); if (item.shadowRoot) walk(item.shadowRoot);
+    for (const k of item.querySelectorAll('button, [role=button]')) { const q = shownRect(k); if (q.width > 4 && q.height > 4 && own(k) && visible(k, true)) solid.push(q); }
+    lines.sort((a, b) => a.top - b.top);
+    return { lines, solid }; };
+  const filled = [];
+  const gather = root => { const t = document.createTreeWalker(root, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
+    for (let n = t.nextNode(); n && filled.length < 4000; n = t.nextNode()) {
+      if (n.nodeType === 1) { if (n.shadowRoot) gather(n.shadowRoot); if (n.matches('img, svg, video, canvas, iframe, input, textarea, select, button, [role=button], [role=img]') && !n.matches('svg *')) { const q = shownRect(n); if (q.width > 4 && q.height > 4 && q.bottom > 0 && q.top < H && visible(n)) filled.push(q); } continue; }
+      const el = n.parentElement || n.parentNode?.host;
+      if (!n.nodeValue.trim() || !el || !visible(el, true) || srOnly(el)) continue;
+      const range = document.createRange(); range.selectNodeContents(n);
+      for (const q of range.getClientRects()) if (q.height > 4 && q.width > 1 && q.bottom > 0 && q.top < H) filled.push(q);
+    } };
+  gather(document);
+  const loose = new Map();
+  const emptyBand = (r, top, bottom) => !filled.some(q => q.left < r.right && q.right > r.left && q.top < bottom - 1 && q.bottom > top + 1 && !(q.top < top - 4 && q.bottom > bottom + 4));
   for (const m of groups.values()) for (const list of m.values()) {
     if (list.length < 3) continue;
-    let flagged = 0;
-    for (const item of list.slice(0, 6)) {
-      const r = rect(item); if (r.height > 700) continue;
-      const b = bands(item); if (b.length < 3) continue;
-      let reach = b[0][1];
-      for (const [t, bottom] of b.slice(1)) { const gap = t - reach; if (gap > 18 && gap < 120 && t < r.bottom) { report('loose', item, `${Math.round(gap)}px empty between its content at y=${Math.round(reach)}`, { left: r.left, top: reach, width: r.width, height: gap }); flagged++; break; } reach = Math.max(reach, bottom); }
-      if (flagged) break;
+    for (const item of list.slice(0, 8)) {
+      const r = rect(item); if (r.height > 900 || r.bottom < 0 || r.top > H || !visible(item)) continue;
+      const { lines, solid } = rowsOf(item);
+      let worst = null;
+      const segs = new Set();
+      for (const la of lines) {
+        const seg = [la]; let top = la.top, bottom = la.bottom, left = la.left, right = la.right;
+        for (let grew = true; grew;) { grew = false;
+          for (const q of [...lines, ...solid.filter(q => q.height <= 40)]) {
+            if (seg.includes(q) || Math.min(q.bottom, bottom) - Math.max(q.top, top) < Math.min(q.bottom - q.top, bottom - top) * .5 || q.left > right + 12 || q.right < left - 12) continue;
+            seg.push(q); top = Math.min(top, q.top); bottom = Math.max(bottom, q.bottom); left = Math.min(left, q.left); right = Math.max(right, q.right); grew = true;
+          } }
+        const sig = [top, bottom, left, right].map(Math.round).join(',');
+        if (segs.has(sig)) continue;
+        segs.add(sig);
+        const below = lines.filter(l => !seg.includes(l) && l.top >= bottom - 2 && Math.min(l.right, right) - Math.max(l.left, left) > 0);
+        if (!below.length) continue;
+        const lb = below.filter(l => l.top < below[0].top + 6).sort((x, y) => parseFloat(cs(y.el).fontSize) - parseFloat(cs(x.el).fontSize))[0], nextTop = below[0].top;
+        const up2 = seg.filter(l => l.el).sort((x, y) => y.bottom - x.bottom)[0];
+        const gap = nextTop - bottom, x0 = Math.max(left, lb.left), x1 = Math.min(right, lb.right);
+        if (gap <= 0 || solid.some(q => q.top < nextTop - 1 && q.bottom > bottom + 1 && q.left < x1 && q.right > x0 && !(q.top < bottom - 4 && q.bottom > nextTop + 4)) || !emptyBand({ left: x0, right: x1 }, bottom, nextTop)) continue;
+        if (up2.block !== lb.block && prose(up2.block) && prose(lb.block) && Math.abs(parseFloat(cs(up2.el).fontSize) - parseFloat(cs(lb.el).fontSize)) < 1) continue;
+        const size = l => parseFloat(cs(l.el).fontSize), rowSize = Math.max(...seg.filter(l => l.el).map(size));
+        const byline = seg.some(l => l.el && Math.abs(l.top - lines[0].top) < 3) && rowSize < size(lb) - .5;
+        const limit = byline ? Math.max(8, .4 * lineHeight(lb.el)) : Math.max(24, 1.5 * Math.max(lineHeight(up2.el), lineHeight(lb.el)));
+        if (gap > limit && gap < 120 && (!worst || gap - limit > worst.gap - worst.limit)) worst = { gap, limit, byline, a: { ...up2, bottom }, b: lb };
+      }
+      if (!worst) continue;
+      const key = [worst.a.left, worst.a.bottom, worst.b.left, worst.b.top].map(Math.round).join(',');
+      const was = loose.get(key);
+      if (!was || r.width * r.height > was.area) loose.set(key, { area: r.width * r.height, what: `${name(item)} "${label(item)}"`, detail: `${Math.round(worst.gap)}px between ${worst.byline ? 'its byline ' : ''}"${(worst.a.el.textContent || '').trim().slice(0, 20)}" and "${(worst.b.el.textContent || '').trim().slice(0, 20)}" (limit ${Math.round(worst.limit)}px)`, ...box({ left: r.left, top: worst.a.bottom, width: r.width, height: worst.gap }) });
     }
+  }
+  found.loose = [...loose.values()].slice(0, 30).map(({ area, ...rest }) => rest);
+  return found;
+}
+
+function net19Badges() {
+  const W = innerWidth, H = innerHeight;
+  const found = { badgealign: [] };
+  const up = e => e.assignedSlot || e.parentElement || (e.parentNode && e.parentNode.host) || null;
+  const name = e => (e.tagName.toLowerCase() + (e.id ? '#' + e.id : '') + (typeof e.className === 'string' && e.className ? '.' + e.className.trim().split(/\s+/).slice(0, 2).join('.') : '')).slice(0, 60);
+  const text = e => (e.textContent || '').replace(/\s+/g, ' ').trim();
+  const box = r => ({ x: Math.round(r.left), y: Math.round(r.top), w: Math.round(r.width), h: Math.round(r.height) });
+  const styleOf = new Map(), rectOf = new Map();
+  const cs = e => styleOf.get(e) || styleOf.set(e, getComputedStyle(e)).get(e);
+  const rect = e => rectOf.get(e) || rectOf.set(e, e.getBoundingClientRect()).get(e);
+  const seenEl = e => { const r = rect(e); if (r.width < 2 || r.height < 2 || r.bottom < 0 || r.top > H || r.right < 0 || r.left > W) return false; for (let n = e; n && n.nodeType === 1; n = up(n)) { const c = cs(n); if (c.display === 'none' || c.visibility !== 'visible' || +c.opacity < .05) return false; } return true; };
+  const alphaOf = c => { const m = String(c).match(/[\d.]+/g); return !m ? 0 : m.length > 3 ? +m[3] : 1; };
+  const painted = c => alphaOf(c.backgroundColor) > .05 || /gradient/.test(c.backgroundImage) || ['Top', 'Right', 'Bottom', 'Left'].every(s => parseFloat(c[`border${s}Width`]) >= 1 && c[`border${s}Style`] !== 'none' && alphaOf(c[`border${s}Color`]) > .1);
+  const inside = (el, outer) => { for (let n = el; n; n = up(n)) if (n === outer) return true; return false; };
+  const lines = [], badges = [];
+  const walk = root => { const t = document.createTreeWalker(root, NodeFilter.SHOW_TEXT | NodeFilter.SHOW_ELEMENT);
+    for (let n = t.nextNode(); n && lines.length < 3000; n = t.nextNode()) {
+      if (n.nodeType === 1) {
+        if (n.shadowRoot) walk(n.shadowRoot);
+        if (n.matches('button, [role=button], input, select, textarea, svg, svg *, img, video, canvas')) continue;
+        const c = cs(n);
+        if (!painted(c) || /absolute|fixed/.test(c.position) || /super|sub/.test(c.verticalAlign)) continue;
+        const r = rect(n), t2 = text(n);
+        if (r.height < 10 || r.height > 26 || r.width < 10 || r.width > 220 || !t2 || t2.length > 24 || r.bottom < 0 || r.top > H) continue;
+        badges.push(n);
+        continue;
+      }
+      const el = n.parentElement || n.parentNode?.host;
+      if (!n.nodeValue.trim() || !el || el.closest('script, style, noscript')) continue;
+      const range = document.createRange(); range.selectNodeContents(n);
+      for (const q of range.getClientRects()) if (q.width > 2 && q.height > 6 && q.bottom > 0 && q.top < H) lines.push({ q, el });
+    } };
+  walk(document);
+  const seen = new Set();
+  for (const b of badges) {
+    if (badges.some(o => o !== b && inside(o, b) && text(o) === text(b)) || !seenEl(b)) continue;
+    const r = rect(b), mid = r.top + r.height / 2;
+    const near = lines.filter(({ q, el }) => {
+      if (inside(el, b) || badges.some(o => o !== b && inside(el, o) && !inside(b, o)) || !seenEl(el)) return false;
+      const oy = Math.min(q.bottom, r.bottom) - Math.max(q.top, r.top), gx = Math.max(q.left - r.right, r.left - q.right);
+      return oy > Math.min(q.height, r.height) * .5 && gx >= -1 && gx <= 16 && q.height >= r.height * .5;
+    }).sort((a, b2) => parseFloat(cs(b2.el).fontSize) - parseFloat(cs(a.el).fontSize) || Math.abs(a.q.top + a.q.height / 2 - mid) - Math.abs(b2.q.top + b2.q.height / 2 - mid));
+    if (!near.length) continue;
+    const line = near[0], d = mid - (line.q.top + line.q.height / 2);
+    const key = text(b) + '|' + Math.round(r.top) + '|' + Math.round(r.left);
+    if (Math.abs(d) <= 2 || seen.has(key) || found.badgealign.length >= 30) continue;
+    seen.add(key);
+    found.badgealign.push({ what: `${name(b)} "${text(b)}"`, detail: `badge middle ${Math.abs(Math.round(d))}px ${d < 0 ? 'above' : 'below'} the middle of the text beside it ("${text(line.el).slice(0, 24)}" ${name(line.el)})`, ...box(r) });
   }
   return found;
 }
