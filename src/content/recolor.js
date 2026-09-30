@@ -27,7 +27,7 @@ const withLightness = ([L, a, b], next) => {
 const CURVES = {
   dark: {
     bg: (L, C) => Math.min(L, Math.max(.95 - .75 * L, C > .12 ? .6 : 0)),
-    fg: L => Math.max(L, .92 - .75 * L),
+    fg: (L, C) => Math.max(L, .97 - .6 * L, C > .06 ? .76 : 0),
     line: L => Math.min(L, .8 - .6 * L),
   },
   light: {

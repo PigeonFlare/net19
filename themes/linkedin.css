@@ -5,7 +5,7 @@ html { --n19-canvas: #f3f6f8; --n19-card: #fff; --n19-text: rgba(0,0,0,.9); --n1
   --n19-guest-bar: #fff; --n19-headline: #2572c0; --n19-band: #faf9f7; --n19-line: rgba(0,0,0,.6); --n19-field-shadow: 0 4px 6px -2px rgba(0,0,0,.15);
   --n19-pill: rgba(0,0,0,.08); --n19-pill-hover: rgba(0,0,0,.15); --n19-pill-text: rgba(0,0,0,.6); --n19-orange: #b24020; }
 html[data-net19-mode="dark"] { --n19-canvas: #1d2226; --n19-card: #283036; --n19-text: rgba(255,255,255,.9); --n19-text-2: rgba(255,255,255,.6); --n19-blue: #70b5f9; --n19-blue-hover: #9ccbfa;
-  --n19-link: #70b5f9; --n19-hover: rgba(255,255,255,.08); --n19-divider: #3d4449; --n19-nav: #1d2226; --n19-nav-text: #a8b3bb; --n19-nav-active: #fff;
+  --n19-link: #93c9ff; --n19-hover: rgba(255,255,255,.08); --n19-divider: #3d4449; --n19-nav: #1d2226; --n19-nav-text: #a8b3bb; --n19-nav-active: #fff;
   --n19-nav-field: #38434f; --n19-nav-field-text: rgba(255,255,255,.9); --n19-nav-placeholder: rgba(255,255,255,.6);
   --n19-card-shadow: 0 0 0 1px rgba(255,255,255,.12); --n19-on-blue: #1d2226;
   --n19-guest-bar: #283036; --n19-headline: #70b5f9; --n19-band: #1d2226; --n19-line: rgba(255,255,255,.6); --n19-field-shadow: none;

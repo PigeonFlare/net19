@@ -605,3 +605,4 @@ html[data-net19-mode="dark"] [data-n19-pin-tag]{color:#46d160}
 [data-n19-pin-tag] svg path{fill:currentColor!important}
 [data-n19-pin-title]{font:500 18px/22px var(--n19-font);color:var(--n19-title)}
 [data-n19-pin-meta]{font:700 12px/16px var(--n19-font);color:var(--n19-action)}
+:is(faceplate-hovercard,rpl-hovercard,[id*="hovercard"i],[class*="hovercard"i],[slot="content"]) :is(a,button,[tabindex]):focus{outline:none!important;box-shadow:none!important}
