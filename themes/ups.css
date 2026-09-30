@@ -1,0 +1,21 @@
+html { --n19-font: Tahoma, Helvetica, Arial, sans-serif; --n19-serif: Georgia, Times, serif; --n19-bar: #351c15; --n19-bar-text: #fff; --n19-bar-dim: #e8e8e6; --n19-gold: #ffb500;
+  --n19-go: #008369; --n19-go-hover: #006a55; --n19-go-text: #fff; --n19-text: #404040; --n19-text-2: #6e6e6e; }
+html[data-net19-mode="dark"] { --n19-bar: #2a1611; --n19-bar-text: #fff; --n19-bar-dim: #d6d6d2; --n19-gold: #ffb500;
+  --n19-go: #008369; --n19-go-hover: #00a080; --n19-go-text: #fff; --n19-text: #e6e6e6; --n19-text-2: #bebebe; }
+
+body, body :is(p, a, button, input, span, li, label, div, h3, h4, h5) { font-family: var(--n19-font) !important; }
+body main :is(h1, h2) { font-family: var(--n19-serif) !important; font-weight: 400 !important; letter-spacing: 0 !important; }
+header.header-wrapper { background: var(--n19-bar) !important; }
+header.header-wrapper > :not(.global-alert), header.header-wrapper > :not(.global-alert) > div:not([id$="-hover"]):not(.contents) { background-color: transparent !important; box-shadow: none !important; border-color: transparent !important; }
+header.header-wrapper :is(#location-finder, #service-alerts-button, #language-picker, a.button:not([class*="popup"]):not(:is([id$="-hover"], .contents) *), nav button, #search, #anonymous-profile) { color: var(--n19-bar-text) !important; background: transparent !important; }
+header.header-wrapper :is(#location-finder, #service-alerts-button, #language-picker, a.button:not([class*="popup"]):not(:is([id$="-hover"], .contents) *), #search) { font-size: 12px !important; }
+header.header-wrapper :is(#location-finder, #service-alerts-button, #language-picker, a.button, #search, #anonymous-profile) img { filter: brightness(0) invert(1) !important; }
+header.header-wrapper nav button { font-size: 14px !important; font-weight: 400 !important; letter-spacing: .5px !important; }
+header.header-wrapper nav button:hover, header.header-wrapper nav button[aria-expanded="true"] { color: var(--n19-gold) !important; }
+header.header-wrapper #anonymous-profile { border: 0 !important; border-radius: 0 !important; font-size: 13px !important; font-weight: 400 !important; padding: 0 8px !important; }
+header.header-wrapper #anonymous-profile:hover { text-decoration: underline !important; }
+main :is(button, a).button:not(.accent):not(.arc-link-button):not(.carousel-dot) { background: var(--n19-go) !important; border-color: var(--n19-go) !important; color: var(--n19-go-text) !important; border-radius: 3px !important; }
+main :is(button, a).button:not(.accent):not(.arc-link-button):not(.carousel-dot):hover { background: var(--n19-go-hover) !important; border-color: var(--n19-go-hover) !important; }
+main :is(button, a).button:not(.accent):not(.arc-link-button):not(.carousel-dot) * { color: inherit !important; }
+header.header-wrapper #anonymous-profile :not(img) { background: transparent !important; color: inherit !important; border-color: transparent !important; box-shadow: none !important; }
+header.header-wrapper #anonymous-profile::before, header.header-wrapper #anonymous-profile::after { background: transparent !important; box-shadow: none !important; }

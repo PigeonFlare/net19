@@ -2,7 +2,7 @@
 
 Effective September 29, 2026. Applies to net19 0.20.0.
 
-Net19 restyles 168 popular websites to look as they did in 2019. It has no developer-operated server, account system, analytics, advertisements, remote AI, or telemetry.
+Net19 restyles 169 popular websites to look as they did in 2019. It has no developer-operated server, account system, analytics, advertisements, remote AI, or telemetry.
 
 ## What leaves your device
 
@@ -17,7 +17,7 @@ Some themes use a site's own settings:
 
 ## Access and storage
 
-Net19 has access only to the 168 sites it themes (162 domains, listed in `src/themes.ts`). It does not run on any other site and cannot read them.
+Net19 has access only to the 169 sites it themes (163 domains, listed in `src/themes.ts`). It does not run on any other site and cannot read them.
 
 Chrome local extension storage holds your settings: whether net19 is on, and which sites you switched off. When a themed site's redesign stops a theme from fitting, it also holds that site section's name (for example `youtube.com/watch`) until the theme fits again, so later visits start on the theme's safe layer. Updating from an earlier version deletes the archive profiles and other data those versions kept.
 
