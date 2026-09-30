@@ -52,9 +52,14 @@ import { createRecolor } from './recolor.js';
   const device = matchMedia('(prefers-color-scheme: dark)');
   const recolor = createRecolor(theme);
   theme.rejudge = () => recolor.refresh();
+  let lastSig = null;
+  const signature = root => [root.className, root.getAttribute('style'), ...(theme.watch || []).map(a => root.getAttribute(a)), document.body?.className, document.body?.style.background, document.body?.style.backgroundColor, device.matches].join('|');
   const apply = (force = false) => {
     const root = document.documentElement;
     if (!root) return;
+    const sig = signature(root);
+    if (!force && sig === lastSig) return;
+    lastSig = sig;
     if (sheet?.sheet) sheet.sheet.disabled = true;
     const shown = root.getAttribute('data-net19-mode');
     if (shown) root.removeAttribute('data-net19-mode');

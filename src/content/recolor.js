@@ -110,13 +110,21 @@ export function createRecolor(theme) {
     if (!c) return false;
     const text = toLab(c)[0];
     if (target === 'light' ? text < .75 : text > .45) return false;
-    for (let e = el, i = 0; e && i < 6; e = e.parentElement, i++) {
-      const bg = rgba(getComputedStyle(e).backgroundColor);
-      if (!bg || bg[3] < .5) continue;
-      const [L, a, b] = toLab(bg), C = Math.hypot(a, b);
-      return C > .08 && (target === 'light' ? L < .72 : L > .5);
-    }
-    return false;
+    const surface = tint(el, 0);
+    if (!surface) return false;
+    const [L, C] = surface;
+    return C > .08 && (target === 'light' ? L < .72 : L > .5);
+  };
+  let tints = new WeakMap();
+  const tint = (e, depth) => {
+    if (!e || depth > 6) return null;
+    if (tints.has(e)) return tints.get(e);
+    const bg = rgba(getComputedStyle(e).backgroundColor);
+    let out;
+    if (bg && bg[3] >= .5) { const [L, a, b] = toLab(bg); out = [L, Math.hypot(a, b)]; }
+    else out = tint(e.parentElement, depth + 1);
+    tints.set(e, out);
+    return out;
   };
   const declarations = (cs, pseudo, el) => {
     const out = [];
@@ -175,10 +183,32 @@ export function createRecolor(theme) {
       }
     }
     pseudoSelector = found.size ? [...found].join(',') : '';
+    pseudoIndex = new Map();
+    const loose = [];
+    for (const base of found) {
+      let subject = base;
+      for (let i = 0; i < 8 && /\([^()]*\)/.test(subject); i++) subject = subject.replace(/\([^()]*\)/g, '');
+      subject = subject.split(/\s*[\s>+~]\s*/).pop().replace(/::?[\w-]+/g, '').replace(/\[[^\]]*\]/g, '');
+      const key = /#([\w-]+)/.exec(subject)?.[0] || /\.([\w-]+)/.exec(subject)?.[0] || (/^[a-z][\w-]*/i.exec(subject)?.[0] || '').toLowerCase();
+      if (!key) { loose.push(base); continue; }
+      if (!pseudoIndex.has(key)) pseudoIndex.set(key, []);
+      pseudoIndex.get(key).push(base);
+    }
+    for (const [key, list] of pseudoIndex) pseudoIndex.set(key, list.join(','));
+    pseudoLoose = loose.join(',');
   };
+  let pseudoIndex = new Map(), pseudoLoose = '';
   const decorated = el => {
     if (pseudoSelector === null) scanPseudo();
-    try { return !!pseudoSelector && el.matches(pseudoSelector); } catch { return false; }
+    if (!pseudoSelector) return false;
+    try {
+      if (pseudoLoose && el.matches(pseudoLoose)) return true;
+      const keys = [el.localName];
+      if (el.id) keys.push('#' + el.id);
+      for (const c of el.classList) keys.push('.' + c);
+      for (const key of keys) { const list = pseudoIndex.get(key); if (list && el.matches(list)) return true; }
+    } catch { }
+    return false;
   };
   const measure = (el, cs = getComputedStyle(el)) => {
     const parts = [['', declarations(cs, false, el)]];
@@ -294,6 +324,7 @@ export function createRecolor(theme) {
   };
   const process = () => {
     frame = 0;
+    tints = new WeakMap();
     if (!target) return;
     if (full) { full = false; pseudoSelector = null; for (const el of all(root)) enqueue(el, false); }
     for (const n of queue) for (const el of all(n)) enqueue(el, !!decided.get(el), true);

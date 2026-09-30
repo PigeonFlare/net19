@@ -249,12 +249,12 @@ import { rgba } from './color.js';
     }
     for (const el of textElements()) {
       if (el.closest('script, style, noscript, [data-net19-hidden]')) continue;
+      const box = el.getBoundingClientRect();
+      if (box.width < 2 || box.height < 2 || box.bottom < 0 || box.top > view.h || box.right < 0 || box.left > view.w) continue;
       for (let e = el, i = 0; e && e !== root && i < 12; e = up(e), i++) {
         const { blend } = layer(e);
         if ((dark && blend === 'multiply') || (!dark && blend === 'screen')) { if (!e.hasAttribute('data-net19-blend')) e.setAttribute('data-net19-blend', ''); }
       }
-      const box = el.getBoundingClientRect();
-      if (box.width < 2 || box.height < 2 || box.bottom < 0 || box.top > view.h || box.right < 0 || box.left > view.w) continue;
       const style = getComputedStyle(el);
       if (style.visibility !== 'visible' || +style.opacity < .1 || parseFloat(style.fontSize) < 8) continue;
       let text = original.get(el);
@@ -360,16 +360,16 @@ import { rgba } from './color.js';
     }
   };
 
-  let dirty = true, timer = 0, lastRun = 0;
+  let dirty = true, timer = 0, lastRun = 0, cost = 0;
   const soon = (delay = 250) => {
     if (timer) return;
     timer = setTimeout(() => {
       timer = 0;
       if (!dirty) return;
-      const wait = 600 - (performance.now() - lastRun);
+      const wait = Math.max(600, cost * 6) - (performance.now() - lastRun);
       if (wait > 0) { soon(wait); return; }
       dirty = false; lastRun = performance.now();
-      (globalThis.requestIdleCallback || (f => f()))(() => { protect(); check(); }, { timeout: 300 });
+      (globalThis.requestIdleCallback || (f => f()))(() => { const began = performance.now(); protect(); check(); cost = performance.now() - began; lastRun = performance.now(); }, { timeout: 300 });
     }, delay);
   };
   const start = () => {

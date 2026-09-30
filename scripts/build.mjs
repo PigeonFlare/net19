@@ -6,7 +6,7 @@ import { buildStyles } from './styles.mjs';
 const root = new URL('../', import.meta.url);
 await build({ entryPoints: { background: 'src/background.ts', popup: 'src/popup.ts', content: 'src/content/index.js', main: 'src/content/main.js', runtime: 'src/content/runtime.js', safe: 'src/content/safe.js', 'safe-narrow': 'src/content/safe-narrow.js' },
   outdir: root.pathname, bundle: true, platform: 'browser', target: 'chrome120', format: 'iife',
-  minify: true, legalComments: 'eof', logLevel: 'warning' });
+  minify: !process.env.N19_PLAIN, keepNames: !!process.env.N19_PLAIN, legalComments: 'eof', logLevel: 'warning' });
 await buildStyles(root);
 const icon = await readFile(new URL('icons/logo.png', root));
 for (const size of [16, 32, 48, 128]) {
