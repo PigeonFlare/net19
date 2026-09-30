@@ -28,3 +28,9 @@ body { color: var(--n19-text) !important; }
 .card__title-text, .card__title { font-weight: 400 !important; letter-spacing: 0 !important; color: var(--n19-title) !important; }
 .card, .card__content, .mntl-card, .card__media, .card__img { border-radius: 0 !important; }
 .mntl-breadcrumbs__link, .mntl-breadcrumbs__item { color: var(--n19-text) !important; }
+.mntl-utility-nav__sweepstakes, .mntl-utility-nav__signin--myr-app, a[href*="myrecipes.com"], .mm-myrecipes-toast, .mm-myrecipes-toast-promo, #site-wide-notification_1-0, .site-wide-notification { display: none !important; }
+:is(.mntl-header-nav__list-item, .mntl-fullscreen-nav__list-item, .mntl-footer-nav__list-item):has(> a[href*="/food-news-trends"]) { display: none !important; }
+.social-nav__item--tiktok, .social-nav__item--flipboard { display: none !important; }
+.mntl-footer-links__item:has(> a[href*="#toc-editorial-guidelines"], > a[href*="#toc-product-reviews"]) { display: none !important; }
+.homepage-overview__our-people-section, .recipe-ugc-qanda-wrapper, .mm-recipes-ugc-qanda, .mm-recipes-ugc-threaded-carousel { display: none !important; }
+.mm-recipes-ugc-shared-response-button { display: none !important; }

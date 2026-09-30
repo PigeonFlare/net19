@@ -1,0 +1,479 @@
+{
+ "theme": "allrecipes",
+ "era": "2019 allrecipes.com (the Meredith-era design every visitor saw until the 2021 Dotdash Meredith rebuild): orange header with the Allrecipes logo, BROWSE menu, 'Find a recipe' search, My Favorites and Create a profile, recipe cards with star ratings, and recipe pages with Ingredients, Directions, Nutrition Facts and Reviews. Arquivo captures from January to November 2019 agree.",
+ "sources": [
+  {
+   "id": "h1",
+   "url": "https://arquivo.pt/wayback/20190111141719/https://www.allrecipes.com/",
+   "date": "2019-01-11",
+   "shows": "home: orange header with Allrecipes logo, BROWSE menu, Find a recipe search with Ingredient Search, My Favorites, Create a profile, Get the Allrecipes magazine, social links (Pinterest, Facebook, Instagram, Twitter), editorial carousel, Recipe of the Day, recipe card grid with ratings and By author, footer"
+  },
+  {
+   "id": "h2",
+   "url": "https://arquivo.pt/wayback/20190811101533/https://www.allrecipes.com/",
+   "date": "2019-08-11",
+   "shows": "home: same header; BROWSE menu columns Meal Type (Appetizers & Snacks, Breakfast & Brunch, Desserts, Dinner, Drinks), Ingredient, Diet & Health, Seasonal (More Holidays & Events), Dish Type, Cooking Style, World Cuisine, Special Collections (Food Wishes with Chef John); Personalize your home page, Recipe of the Day, recipe cards; footer Newsroom, Jobs at Allrecipes, Advertise with Us, Meredith Women's Network, Site Map, Contact Us, Customer Support, Privacy Policy Your California Rights, Terms of Service, AdChoices, Allrecipes Magazine – Subscribe, Allrecipes Apps, Food Wishes Videos, The Allrecipes Blog"
+  },
+  {
+   "id": "h3",
+   "url": "https://arquivo.pt/wayback/20191113004055/https://www.allrecipes.com/",
+   "date": "2019-11-13",
+   "shows": "home: same header and footer, Thanksgiving editorial carousel, Newsletters, Dinner Spinner TV, Ask the Community, recipe card grid, Allrecipes Magazine promo"
+  },
+  {
+   "id": "c1",
+   "url": "https://arquivo.pt/wayback/20190402112915/https://www.allrecipes.com/recipes/1049/fruits-and-vegetables/fruits/berries/cranberries/",
+   "date": "2019-04-02",
+   "shows": "category results page: breadcrumb, sub-category links, Inspiration and Ideas, Tips & Tricks, Most Made Today, recipe card grid, Videos to Watch"
+  },
+  {
+   "id": "r1",
+   "url": "https://arquivo.pt/wayback/20190402113032/https://www.allrecipes.com/recipe/10033/iced-pumpkin-cookies/",
+   "date": "2019-04-02",
+   "shows": "recipe page: breadcrumb, h1, rating and Read Review Details, photos, Save this recipe, I made it, Rate this recipe, Printer Friendly View, Pinterest and Facebook share, Ingredients with servings and cals, Directions, Nutrition Facts, Reviews with Rate and review and Read all reviews, Explore more, footer"
+  },
+  {
+   "id": "r2",
+   "url": "https://arquivo.pt/wayback/20190909143721/https://www.allrecipes.com/recipe/100502/irish-soda-farls/",
+   "date": "2019-09-09",
+   "shows": "recipe page Irish Soda Farls: same layout, On Sale, Get the magazine, I made it!, Share, Explore more related recipes, Reviews, More Reviews"
+  },
+  {
+   "id": "r3",
+   "url": "https://arquivo.pt/wayback/20191008181550/https://www.allrecipes.com/recipe/10022/pignoli-cookies-i/",
+   "date": "2019-10-08",
+   "shows": "recipe page Pignoli Cookies I: same layout"
+  }
+ ],
+ "features": [
+  {
+   "match": "^Visit Allrecipes' homepage$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "r1",
+    "r2",
+    "r3",
+    "c1"
+   ],
+   "note": "logo",
+   "required": true
+  },
+  {
+   "match": "^Find a recipe or ingredient$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "r1",
+    "r2",
+    "r3",
+    "c1"
+   ],
+   "note": "search field (Find a recipe)",
+   "required": true
+  },
+  {
+   "match": "^Click to search$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "r1",
+    "r2",
+    "r3",
+    "c1"
+   ],
+   "note": "search button"
+  },
+  {
+   "match": "^Close search bar$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "r1",
+    "r2",
+    "r3",
+    "c1"
+   ],
+   "note": "search field control"
+  },
+  {
+   "match": "^(banner|search|contentinfo|section) area$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "r1",
+    "r2",
+    "r3",
+    "c1"
+   ],
+   "note": "page frame"
+  },
+  {
+   "match": "^Header$",
+   "in2019": true,
+   "evidence": [
+    "h2"
+   ],
+   "note": "BROWSE navigation"
+  },
+  {
+   "match": "^Newsletters$",
+   "in2019": true,
+   "evidence": [
+    "h3"
+   ],
+   "note": "Newsletters link"
+  },
+  {
+   "match": "^Sweepstakes$",
+   "in2019": false,
+   "evidence": [
+    "no sweepstakes link on any 2019 page (h1-h3); hidden"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^Get the MyRecipes app$",
+   "in2019": false,
+   "evidence": [
+    "MyRecipes app promo is post-2019 (2019 had only the footer Allrecipes Apps link); hidden"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^News$",
+   "in2019": false,
+   "evidence": [
+    "Allrecipes food news section (/food-news-trends) is not in the 2019 BROWSE menu (h2); hidden"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^(Dinner Tonight|Dinners?|Recipes|Ingredients|Occasions|Cuisines|Meals)$",
+   "in2019": true,
+   "evidence": [
+    "h2"
+   ],
+   "note": "BROWSE menu groups: Meal Type (Dinner), Ingredient, Seasonal holidays and events, World Cuisine"
+  },
+  {
+   "match": "^(In the Kitchen|Kitchen Tips|Features)$",
+   "in2019": true,
+   "evidence": [
+    "c1",
+    "h2"
+   ],
+   "note": "Tips & Tricks articles and The Allrecipes Blog"
+  },
+  {
+   "match": "^Community$",
+   "in2019": true,
+   "evidence": [
+    "h3"
+   ],
+   "note": "Ask the Community"
+  },
+  {
+   "match": "^Video$",
+   "in2019": true,
+   "evidence": [
+    "h2",
+    "h3"
+   ],
+   "note": "Food Wishes Videos, Dinner Spinner TV"
+  },
+  {
+   "match": "^About Us$",
+   "in2019": true,
+   "evidence": [
+    "h2"
+   ],
+   "note": "Newsroom and company links in the 2019 footer"
+  },
+  {
+   "match": "^GET THE MAGAZINE$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "Get the Allrecipes magazine",
+   "required": true,
+   "pages": [
+    "start"
+   ]
+  },
+  {
+   "match": "^Visit Allrecipes's (Facebook|Instagram|Pinterest|YouTube)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "social links (Food Wishes videos on YouTube)"
+  },
+  {
+   "match": "^Visit Allrecipes's (TikTok|Flipboard)$",
+   "in2019": false,
+   "evidence": [
+    "2019 social links were Pinterest, Facebook, Instagram, Twitter (h1-h3); hidden"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^(Privacy Policy|Terms of Service|Careers|Contact|Advertise|Manage Your Magazine Subscription|Magazine Subscription Help)$",
+   "in2019": true,
+   "evidence": [
+    "h2",
+    "h3"
+   ],
+   "note": "footer: Privacy Policy, Terms of Service, Jobs at Allrecipes, Contact Us, Advertise with Us, Allrecipes Magazine – Subscribe, Customer Support"
+  },
+  {
+   "match": "^Your Privacy Choices$",
+   "in2019": true,
+   "evidence": [
+    "h2"
+   ],
+   "note": "privacy choices (Your California Rights in 2019)",
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Editorial Process|Product Vetting)$",
+   "in2019": false,
+   "evidence": [
+    "Dotdash Meredith editorial policy links are post-2019; hidden"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^People Inc\\.$",
+   "in2019": true,
+   "evidence": [
+    "h2"
+   ],
+   "note": "owner network credit (Meredith Women's Network in 2019)"
+  },
+  {
+   "match": "^(The Latest|Trending Now|Nicole\\'s Perfect Bite)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "editorial carousels and recipe collections on the home page (Recipe of the Day, curated collections)"
+  },
+  {
+   "match": "^Home of the Home Cook$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3"
+   ],
+   "note": "community members' recipes with their names (2019 recipe cards By community cooks)"
+  },
+  {
+   "match": "^Our People$",
+   "in2019": false,
+   "evidence": [
+    "staff overview (Editorial Leadership, Contributors, Test Kitchen) is post-2019; hidden"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^Search here\\.\\.\\.$",
+   "in2019": true,
+   "evidence": [
+    "c1",
+    "h2"
+   ],
+   "note": "category search (Ingredient Search in 2019)"
+  },
+  {
+   "match": "^repeated ",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "r1",
+    "r2",
+    "r3",
+    "c1"
+   ],
+   "note": "repeated recipe cards and content items"
+  },
+  {
+   "match": "^(View Recipe|Save Recipe)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "r1",
+    "r2",
+    "r3",
+    "c1"
+   ],
+   "note": "recipe cards and Save this recipe"
+  },
+  {
+   "match": "^Close$",
+   "in2019": true,
+   "evidence": [
+    "h2"
+   ],
+   "note": "site consent banner close",
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Previous Card|Next Card|Left|Right)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h3"
+   ],
+   "note": "carousel arrows (2019 home carousel)"
+  },
+  {
+   "match": "^Best Chocolate Chip Cookies$",
+   "in2019": true,
+   "evidence": [
+    "r1",
+    "r2",
+    "r3"
+   ],
+   "note": "recipe title",
+   "required": true,
+   "pages": [
+    "recipe"
+   ]
+  },
+  {
+   "match": "^Ingredients$",
+   "in2019": true,
+   "evidence": [
+    "r1",
+    "r2",
+    "r3"
+   ],
+   "note": "Ingredients",
+   "required": true,
+   "pages": [
+    "recipe"
+   ]
+  },
+  {
+   "match": "^Directions$",
+   "in2019": true,
+   "evidence": [
+    "r1",
+    "r2",
+    "r3"
+   ],
+   "note": "Directions",
+   "required": true,
+   "pages": [
+    "recipe"
+   ]
+  },
+  {
+   "match": "^Nutrition Facts",
+   "in2019": true,
+   "evidence": [
+    "r1",
+    "r2",
+    "r3"
+   ],
+   "note": "Nutrition Facts"
+  },
+  {
+   "match": "^Reviews \\(",
+   "in2019": true,
+   "evidence": [
+    "r1",
+    "r2",
+    "r3"
+   ],
+   "note": "Reviews"
+  },
+  {
+   "match": "^Print this article\\.$",
+   "in2019": true,
+   "evidence": [
+    "r1",
+    "r2",
+    "r3"
+   ],
+   "note": "Printer Friendly View"
+  },
+  {
+   "match": "^Ask the Community",
+   "in2019": false,
+   "evidence": [
+    "recipe questions and answers (UGC Q&A) are post-2019; hidden"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^Featured Tweaks$",
+   "in2019": false,
+   "evidence": [
+    "Featured Tweaks review carousel is post-2019; hidden"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^(Most-Saved Recipes Like This|You.ll Also Love)$",
+   "in2019": true,
+   "evidence": [
+    "r1",
+    "r2",
+    "r3"
+   ],
+   "note": "related recipes (Explore more in 2019), recommendations"
+  },
+  {
+   "match": "^[0-9][0-9,.]*K?$",
+   "in2019": true,
+   "evidence": [
+    "r1",
+    "r2",
+    "r3"
+   ],
+   "note": "photo count (| 12 photos in 2019)"
+  },
+  {
+   "match": "^Reply$",
+   "in2019": false,
+   "evidence": [
+    "replies to reviews are post-2019 (2019 reviews had no reply, r1-r3); hidden"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^What did you think about this recipe",
+   "in2019": true,
+   "evidence": [
+    "r1",
+    "r2",
+    "r3"
+   ],
+   "note": "Rate and review"
+  }
+ ]
+}
