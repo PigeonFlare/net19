@@ -15,8 +15,9 @@ globalThis.net19Theme = {
     return location.hostname === 'docs.google.com' ? 'light' : undefined;
   },
   watch: ['class', 'style'],
-  flat: '.kix-appview-editor canvas',
-  later: /^(?:upgrade|studio|workspace studio|google workspace studio|ask gemini\b.*|gemini in (?:drive|docs|sheets|slides)|help me (?:create|organi[sz]e|visuali[sz]e|analy[sz]e)|summari[sz]e (?:this )?(?:file|folder|document|doc|presentation|spreadsheet)|ask about (?:this )?(?:file|folder|document)|catch me up|beautify this (?:slide|image)|generate (?:an )?(?:image|video|audio|table)|create (?:a )?(?:video|audio overview)|listen to (?:this )?doc|audio overview|building blocks|smart chips|meet|present (?:tab )?to (?:a )?(?:call|meeting)|join (?:a )?call(?: here)?|try gemini|get gemini|google one ai premium|google ai (?:pro|ultra)|workspace labs|emoji reactions?|react(?:ion)?s?|add (?:emoji )?reaction)$/i,
+  flat: '.kix-appview-editor canvas, .kix-cursor-caret',
+  keep: '#docs-titlebar-share-client-button',
+  later: /^(?:upgrade|studio|workspace studio|google workspace studio|ask gemini\b.*|gemini in (?:drive|docs|sheets|slides)|help me (?:create|organi[sz]e|visuali[sz]e|analy[sz]e)|summari[sz]e (?:this )?(?:file|folder|document|doc|presentation|spreadsheet)|ask about (?:this )?(?:file|folder|document)|catch me up|beautify this (?:slide|image)|generate (?:an )?(?:image|video|audio|table)|create (?:a )?(?:video|audio overview)|listen to (?:this )?doc|audio overview|building blocks|smart chips|meet|present (?:tab )?to (?:a )?(?:call|meeting)|join (?:a )?call(?: here)?|try gemini|get gemini|google one ai premium|google ai (?:pro|ultra)|workspace labs|emoji reactions?|react(?:ion)?s?|add (?:emoji )?reaction|security limitations|add shortcut to drive.*)$/i,
   keepLabels: /^(?:meeting notes|meetings)$/i,
 };
 })();

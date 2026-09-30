@@ -192,18 +192,18 @@
       "action": "hidden"
     },
     {
-      "match": "^(Extensions|Checklist.*|Search the menus.*|Decrease font size.*|Increase font size.*|Details|Security limitations|Document tabs|Add tab|Tab \\d+|Tab options|Contacts|Maps)$",
+      "match": "^(Extensions|Checklist.*|Search the menus.*|Decrease font size.*|Increase font size.*|Details|Security limitations|Add shortcut to Drive.*|Document tabs|Add tab|Tab \\d+|Tab options|Contacts|Maps)$",
       "in2019": false,
       "evidence": [
-        "Extensions menu renamed 2021, checklists 2022, toolbar menu search 2021, font size steppers 2021, document tabs 2024, Contacts/Maps side panel 2020+"
+        "Extensions menu renamed 2021, checklists 2022, toolbar menu search 2021, font size steppers 2021, document tabs 2024, Contacts/Maps side panel 2020+, Add shortcut to Drive in the editor File menu 2020, security limitations 2023"
       ],
       "action": "hidden"
     },
     {
-      "match": "^(Ask Gemini|Try Gemini|Gemini|Upgrade|Upgrade for premium features|Meet|Present to a call|Join a call)$",
+      "match": "^(Ask Gemini|Expand Gemini bottom bar|Try Gemini|Gemini|Upgrade|Upgrade for premium features|Meet|Present to a call|Join a call)$",
       "in2019": false,
       "evidence": [
-        "Gemini 2024, Meet in editors 2020"
+        "Gemini 2024, Gemini bottom bar 2025, Meet in editors 2020"
       ],
       "action": "hidden"
     }

@@ -120,7 +120,8 @@ main [role="tablist"] a:not([aria-selected="true"]) svg { color: rgb(var(--n19-t
 [data-n19-ig="tablabel"] { font-size: 12px !important; font-weight: 600 !important; letter-spacing: 1px !important; text-transform: uppercase !important; margin-left: 6px !important; line-height: 12px !important; }
 [data-n19-ig="row"] { gap: 28px !important; margin-bottom: 28px !important; }
 [data-n19-ig="row"] > * { margin: 0 !important; flex: 1 1 0 !important; min-width: 0 !important; }
-[data-n19-ig="grid"] { gap: 28px !important; }
+[data-n19-ig="grid"] { gap: 28px !important; margin-bottom: 28px !important; }
+[data-n19-ig="kwhead"] { position: static !important; width: auto !important; margin-right: 0 !important; padding: 24px 0 16px !important; background: transparent !important; }
 [data-n19-ig="ratio"] { padding-bottom: 100% !important; height: auto !important; }
 [data-n19-ig="ratio-box"] { aspect-ratio: 1 / 1 !important; height: auto !important; }
 

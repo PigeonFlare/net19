@@ -163,10 +163,14 @@ globalThis.net19Theme = {
       if (/^(Note\.\.\.|Message)$/.test(text)) mark(button, 'later');
     }
     const newHighlight = [...header.querySelectorAll('[role="menu"] *')].find(e => e.childElementCount && e.textContent.trim() === 'New' && e.getBoundingClientRect().width < 140);
-    if (newHighlight) mark(newHighlight.closest('li') || newHighlight, 'later');
+    if (newHighlight) {
+      mark(newHighlight.closest('li') || newHighlight, 'later');
+      const shelf = newHighlight.closest('section');
+      if (shelf?.parentElement === header && [...shelf.querySelectorAll('li')].every(li => li.closest('[data-n19-ig="later"]') || (!li.textContent.trim() && !li.querySelector('img')))) mark(shelf, 'later');
+    }
     mark(header.querySelector('svg[aria-label="Options"]')?.closest('[role="button"]'), 'options');
     const edit = header.querySelector('a[href="/accounts/edit/"]');
-    if (edit && settled) for (const node of edit.querySelectorAll('span, div')) if (node.childElementCount === 0 && node.textContent === 'Edit profile') node.textContent = 'Edit Profile';
+    if (edit && settled) for (const node of [edit, ...edit.querySelectorAll('span, div')]) if (node.childElementCount === 0 && node.textContent === 'Edit profile') node.textContent = 'Edit Profile';
     if (!actions && settled && document.querySelector('a[href^="/accounts/login"]') && !header.querySelector('[data-n19-ig="follow"]')) {
       const follow = document.createElement('a');
       follow.setAttribute('data-n19-ig', 'follow');
@@ -328,15 +332,24 @@ globalThis.net19Theme = {
     if (settled) { footer(); loginWords(); }
     loginWall();
     loggedOutExtras();
+    if (location.pathname.startsWith('/explore')) {
+      for (const part of document.querySelector('main')?.firstElementChild?.children || []) {
+        if (part.hasAttribute('data-n19-ig') || part.querySelector('a')) continue;
+        if (part.querySelector('input')) mark(part, 'later');
+        else if (getComputedStyle(part).position === 'sticky') mark(part, part.textContent.trim() ? 'kwhead' : 'later');
+      }
+    }
     if (document.querySelector('main header') || location.pathname.startsWith('/explore')) {
       for (const link of document.querySelectorAll('main a[href*="/p/"]:not([data-n19-ig]), main a[href*="/reel/"]:not([data-n19-ig])')) {
-        if (!link.querySelector('img')) continue;
+        if (!link.querySelector('img, video')) continue;
         link.setAttribute('data-n19-ig', 'tile');
         const tile = link.parentElement, row = tile?.parentElement;
         if (!row) continue;
         const display = getComputedStyle(row).display;
         if (display === 'flex' && row.children.length >= 2 && row.children.length <= 4) mark(row, 'row');
         else if (display === 'grid') mark(row, 'grid');
+        else if (row.parentElement && getComputedStyle(row.parentElement).display === 'grid') mark(row.parentElement, 'grid');
+        if (!link.querySelector('img')) continue;
         const box = link.getBoundingClientRect();
         if (box.height > box.width * 1.5) continue;
         for (const d of link.querySelectorAll('div')) {

@@ -116,7 +116,9 @@ main [role="tablist"] a:not([aria-selected="true"]) svg{color:rgb(var(--n19-text
 [data-n19-ig="tablabel"]{line-height:12px!important}
 :where(:root:not([data-n19-safe])) [data-n19-ig="row"],[data-n19-ig="row"]:where(:root:not([data-n19-safe])){gap:28px!important;margin-bottom:28px!important}
 :where(:root:not([data-n19-safe])) [data-n19-ig="row"]>*,[data-n19-ig="row"]:where(:root:not([data-n19-safe]))>*{margin:0!important;flex:1 1 0!important;min-width:0!important}
-:where(:root:not([data-n19-safe])) [data-n19-ig="grid"],[data-n19-ig="grid"]:where(:root:not([data-n19-safe])){gap:28px!important}
+:where(:root:not([data-n19-safe])) [data-n19-ig="grid"],[data-n19-ig="grid"]:where(:root:not([data-n19-safe])){gap:28px!important;margin-bottom:28px!important}
+:where(:root:not([data-n19-safe])) [data-n19-ig="kwhead"],[data-n19-ig="kwhead"]:where(:root:not([data-n19-safe])){position:static!important;width:auto!important;margin-right:0!important;padding:24px 0 16px!important}
+[data-n19-ig="kwhead"]{background:transparent!important}
 :where(:root:not([data-n19-safe])) [data-n19-ig="ratio"],[data-n19-ig="ratio"]:where(:root:not([data-n19-safe])){padding-bottom:100%!important;height:auto!important}
 :where(:root:not([data-n19-safe])) [data-n19-ig="ratio-box"],[data-n19-ig="ratio-box"]:where(:root:not([data-n19-safe])){aspect-ratio:1 / 1!important;height:auto!important}
 [role="menu"],[role="listbox"]{border-radius:4px!important}

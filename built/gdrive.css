@@ -71,6 +71,13 @@ body.docs-gm .docs-branding-icon:has(>[class*="docs-icon-drawings-"]){background
 body.docs-gm .docs-branding-icon:has(>.docs-branding-icon-drive){background-image:url("https://www.gstatic.com/images/branding/product/2x/drive_48dp.png")!important}
 #gb img[src*="logo_drive"],#gb img[src*="/drive_2020q4"],#gb img[src*="drive_2026"]{content:url("https://www.gstatic.com/images/branding/product/2x/drive_48dp.png")!important}
 :where(:root:not([data-n19-safe])) #gb img[src*="logo_drive"],#gb:where(:root:not([data-n19-safe])) img[src*="logo_drive"],:where(:root:not([data-n19-safe])) #gb img[src*="/drive_2020q4"],#gb:where(:root:not([data-n19-safe])) img[src*="/drive_2020q4"],:where(:root:not([data-n19-safe])) #gb img[src*="drive_2026"],#gb:where(:root:not([data-n19-safe])) img[src*="drive_2026"]{width:40px!important;height:40px!important}
+#gb img[src*="/logo_docs_20"]{content:url("https://www.gstatic.com/images/branding/product/2x/docs_48dp.png")!important}
+:where(:root:not([data-n19-safe])) #gb img[src*="/logo_docs_20"],#gb:where(:root:not([data-n19-safe])) img[src*="/logo_docs_20"]{width:40px!important;height:40px!important}
+#gb img[src*="/logo_sheets_20"]{content:url("https://www.gstatic.com/images/branding/product/2x/sheets_48dp.png")!important}
+:where(:root:not([data-n19-safe])) #gb img[src*="/logo_sheets_20"],#gb:where(:root:not([data-n19-safe])) img[src*="/logo_sheets_20"]{width:40px!important;height:40px!important}
+#gb img[src*="/logo_slides_20"]{content:url("https://www.gstatic.com/images/branding/product/2x/slides_48dp.png")!important}
+:where(:root:not([data-n19-safe])) #gb img[src*="/logo_slides_20"],#gb:where(:root:not([data-n19-safe])) img[src*="/logo_slides_20"]{width:40px!important;height:40px!important}
+body.docs-gm .kixWizBarkickWrapper:has(button[aria-label*="Gemini"i]),body.docs-gm :is(.docs-action-updated-dot,.docs-action-updated-dot-submenu){display:none!important}
 #drive-main-page #gb a[aria-label="Drive"]>span:not([aria-hidden]),#drive-main-page #gb [aria-label="Drive"]+div{color:var(--n19-text-2)!important;font-family:"Product Sans", "Google Sans", Arial, sans-serif!important;font-size:22px!important}
 #gb a[href*="ServiceLogin"],#gb a[href*="accounts.google.com/"][aria-label="Sign in"]{border-radius:4px!important;background:var(--n19-accent)!important;color:var(--n19-on-accent)!important}
 #gb a[href*="ServiceLogin"] span{color:inherit!important}
