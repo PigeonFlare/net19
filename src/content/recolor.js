@@ -82,6 +82,8 @@ export function createRecolor(theme) {
   let target = null, tools = null, sheet = null, observer = null, veil = 0;
   const PENDING = 'data-net19-pending';
   const reveal = () => { clearTimeout(veil); veil = 0; root.removeAttribute(PENDING); };
+  const inView = el => { const r = el.getBoundingClientRect(); return (r.width > 0 || r.height > 0) && r.bottom >= 0 && r.top <= innerHeight && r.right >= 0 && r.left <= innerWidth; };
+  const sheetsReady = () => { for (const link of document.querySelectorAll('link[rel~="stylesheet" i]')) if (!link.sheet && !link.disabled && (!link.media || matchMedia(link.media).matches)) return false; return true; };
   const roots = new Set();
   const closedRoot = globalThis.chrome?.dom?.openOrClosedShadowRoot;
   const shadowOf = el => {
@@ -331,8 +333,16 @@ export function createRecolor(theme) {
     for (const el of shallow) enqueue(el, true);
     for (const n of below) for (const el of n.getElementsByTagName('*')) enqueue(el, false);
     queue = new Set(); shallow = new Set(); below = new Set();
-    const started = performance.now(), budget = first || veil ? 250 : document.readyState === 'complete' ? 30 : 60;
+    const arriving = veil || document.readyState === 'loading';
+    const started = performance.now(), budget = first || arriving ? 250 : document.readyState === 'complete' ? 30 : 60;
     first = false;
+    if (arriving && document.body) {
+      const lead = list => { const near = [], far = []; for (const el of list) (el.nodeType === 1 && inView(el) ? near : far).push(el); return [near, far]; };
+      const [nearUrgent, farUrgent] = lead(urgent), [nearWork, farWork] = lead(work);
+      urgent = [...nearUrgent, ...nearWork]; work = [...farUrgent, ...farWork];
+      for (const el of nearWork) { workSet.delete(el); urgentSet.add(el); }
+      for (const el of farUrgent) { urgentSet.delete(el); workSet.add(el); }
+    }
     while ((urgent.length || work.length) && performance.now() - started < budget) {
       const slice = urgent.length ? urgent.splice(0, 200) : work.splice(0, 400);
       for (const el of slice) { workSet.delete(el); urgentSet.delete(el); }
@@ -358,8 +368,8 @@ export function createRecolor(theme) {
       for (const el of careful) if (el.isConnected) getComputedStyle(el).color;
       for (const el of careful) el.removeAttribute(READING);
     }
+    if (veil && !urgent.length && document.body && sheetsReady()) reveal();
     if (work.length || urgent.length) frame = requestAnimationFrame(process);
-    else if (veil && document.readyState !== 'loading') reveal();
     if (glyphWork.length || textureWork.length || pictureWork.length) (globalThis.requestIdleCallback || setTimeout)(sizeGlyphs, { timeout: 500 });
   };
   const sizeGlyphs = () => {
@@ -472,7 +482,10 @@ export function createRecolor(theme) {
     if (stylesTimer) return;
     stylesTimer = setTimeout(() => { stylesTimer = 0; lastStyles = performance.now(); schedule([], true); }, Math.max(200, 1000 - (performance.now() - lastStyles)));
   };
-  const onLoad = event => { if (event.target instanceof HTMLLinkElement && event.target.rel === 'stylesheet') refreshAll(document.readyState === 'complete' ? 2000 : 300); };
+  const onLoad = event => {
+    if (!(event.target instanceof HTMLLinkElement && /stylesheet/i.test(event.target.rel))) return;
+    if (veil || document.readyState === 'loading') schedule([], true); else refreshAll(document.readyState === 'complete' ? 2000 : 300);
+  };
 
   const baseRules = () => {
     const canvas = target === 'dark' ? 'rgb(24, 24, 24)' : 'rgb(255, 255, 255)';
@@ -490,7 +503,7 @@ export function createRecolor(theme) {
     target = mode;
     tools = makeRecolor(mode);
     root.setAttribute('data-net19-recolor', mode);
-    if (document.readyState === 'loading') { root.setAttribute(PENDING, ''); veil = setTimeout(reveal, 1500); }
+    if (document.readyState === 'loading') { root.setAttribute(PENDING, ''); veil = setTimeout(reveal, 400); }
     base = document.createElement('style');
     base.id = 'net19-recolor-base';
     (document.head || root).append(base);
@@ -506,7 +519,7 @@ export function createRecolor(theme) {
           }
         } else if (!OWN.test(r.attributeName) && !animated(r.target, r.attributeName)) { shallow.add(r.target); below.add(r.target); }
       }
-      if (sheets) refreshAll(document.readyState === 'complete' ? 2000 : 300);
+      if (sheets) { if (veil) full = true; else refreshAll(document.readyState === 'complete' ? 2000 : 300); }
       schedule(nodes);
     });
     observer.observe(root, OBSERVE);
@@ -516,7 +529,7 @@ export function createRecolor(theme) {
     addEventListener('load', onLoad, true);
     document.addEventListener('net19-css', onStyles);
     addEventListener('load', () => { if (base) base.textContent = baseRules(); refreshAll(0); setTimeout(() => refreshAll(0), 2500); }, { once: true });
-    document.addEventListener('DOMContentLoaded', () => { if (base) base.textContent = baseRules(); refreshAll(0); if (veil && !frame) reveal(); }, { once: true });
+    document.addEventListener('DOMContentLoaded', () => { if (base) base.textContent = baseRules(); refreshAll(0); if (veil && !frame && sheetsReady()) reveal(); }, { once: true });
   };
   const stop = () => {
     if (!target) return;

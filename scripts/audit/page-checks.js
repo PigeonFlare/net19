@@ -162,7 +162,7 @@ function net19Core(out) {
     const a = lines[i], b = lines[j];
     if (a.el === b.el || a.el.contains(b.el) || b.el.contains(a.el)) continue;
     const ox = Math.min(a.q.right, b.q.right) - Math.max(a.q.left, b.q.left), oy = Math.min(a.q.bottom, b.q.bottom) - Math.max(a.q.top, b.q.top);
-    if (ox > 6 && oy > Math.min(a.q.height, b.q.height) * .4) {
+    if (ox > 6 && oy > Math.min(a.q.height, b.q.height) * .4 && !net19Buried(a.el, b.el, Math.max(a.q.left, b.q.left) + ox / 2, Math.max(a.q.top, b.q.top) + oy / 2)) {
       out.overlap.push({ what: `"${a.t}" / "${b.t}"`, detail: `${name(a.el)} over ${name(b.el)}`, ...box(null, a.q) });
       if (out.overlap.length > 30) break;
     }
@@ -242,7 +242,7 @@ function net19Reach(lines) {
       if (ox < 4 || oy < Math.max(4, t.q.height * .3)) return false;
       const x = Math.max(f.left, t.q.left) + ox / 2, y = Math.max(f.top, t.q.top) + oy / 2;
       let top = document.elementFromPoint(x, y); while (top && top.shadowRoot) { const inner = top.shadowRoot.elementFromPoint(x, y); if (!inner || inner === top) break; top = inner; }
-      return !!top && (b.e === top || b.e.contains(top) || top.getRootNode() !== document && b.e.contains(top.getRootNode().host));
+      return !!top && (b.e === top || b.e.contains(top) || top.getRootNode() !== document && b.e.contains(top.getRootNode().host)) && !net19Buried(b.e, t.el, x, y, true);
     });
     if (under) found.overdrawn.push({ what: `button "${label(b.e)}" / "${under.t}"`, detail: `${name(b.e)} drawn over the text of ${name(under.el)}`, ...box(f) });
     if (found.overdrawn.length > 20) break;
@@ -458,14 +458,24 @@ function net19Rows() {
     }
   }
 
+  const showsIn = (d, outer, q) => {
+    if (cs(d).visibility !== 'visible') return false;
+    for (let n = d; n && n.nodeType === 1; n = up(n)) {
+      const c = cs(n);
+      if (+c.opacity < .05 || c.display === 'none' || /inset\(50%\)|inset\(100%\)|circle\(0/.test(c.clipPath) || /rect\(0(px)?,? 0(px)?,? 0(px)?,? 0(px)?\)|rect\(1px,? 1px,? 1px,? 1px\)/.test(c.clip)) return false;
+      if (n !== d && /hidden|clip/.test(c.overflowX + c.overflowY)) { const b = rect(n); if (q.bottom <= b.top + 1 || q.top >= b.bottom - 1 || q.right <= b.left + 1 || q.left >= b.right - 1) return false; }
+      if (n === outer) break;
+    }
+    return true;
+  };
   for (const e of all) {
     const c = cs(e);
     if (!(alphaOf(c.backgroundColor) > .05 && c.backgroundColor !== cs(up(e) || document.documentElement).backgroundColor || ringed(c) || c.boxShadow !== 'none')) continue;
     const r = rect(e);
     if (/^(BODY|HTML)$/.test(e.tagName) || r.width < 150 || r.height < 80 || r.height > 700 || r.top < 0 || r.bottom > H || !seenEl(e) || inPopup(e) || /grid/.test(c.display)) continue;
-    const bands = textLines(e, 300).map(l => [l.q.top, l.q.bottom]);
-    for (const d of e.querySelectorAll('img, svg, video, canvas, iframe, input, textarea, button, select, hr, [role=img], [role=button]')) { if (d.matches('svg *')) continue; const q = rect(d); if (q.width > 2 && q.height > 2 && seenEl(d)) bands.push([q.top, q.bottom]); }
-    for (const d of e.querySelectorAll('*')) { if (!net19Genuine(d)) continue; const dc = cs(d); if (d.matches('svg *')) continue; const pic = /url\(/.test(dc.backgroundImage); if (pic || painted(dc)) { const q = rect(d); if (q.width > 8 && q.height > 2 && (pic || q.height < Math.min(200, r.height * .6))) bands.push([q.top, q.bottom]); } }
+    const bands = textLines(e, 300).filter(l => showsIn(l.el, e, l.q)).map(l => [l.q.top, l.q.bottom]);
+    for (const d of e.querySelectorAll('img, svg, video, canvas, iframe, input, textarea, button, select, hr, [role=img], [role=button]')) { if (d.matches('svg *')) continue; const q = rect(d); if (q.width > 2 && q.height > 2 && seenEl(d) && showsIn(d, e, q)) bands.push([q.top, q.bottom]); }
+    for (const d of e.querySelectorAll('*')) { if (!net19Genuine(d)) continue; const dc = cs(d); if (d.matches('svg *')) continue; const pic = /url\(/.test(dc.backgroundImage); if (pic || painted(dc)) { const q = rect(d); if (q.width > 8 && q.height > 2 && (pic || q.height < Math.min(200, r.height * .6)) && showsIn(d, e, q)) bands.push([q.top, q.bottom]); } }
     if (bands.length < 2) continue;
     bands.sort((a, b) => a[0] - b[0]);
     let reach = bands[0][1], worst = 0, at = 0;
@@ -860,7 +870,11 @@ function net19Contrast() {
     const stack = document.elementsFromPoint(x, y);
     let i = stack.indexOf(el);
     if (i < 0 && getComputedStyle(el).pointerEvents !== 'none' && stack[0] && !el.contains(stack[0])) return { covered: true };
-    if (i < 0) i = stack.findIndex(s => s.contains(el));
+    if (i < 0) {
+      i = stack.findIndex(s => s.contains(el));
+      const pic = stack.slice(0, i < 0 ? stack.length : i).find(s => /^(IMG|VIDEO|CANVAS|PICTURE)$/.test(s.tagName) || /url\(/.test(getComputedStyle(s).backgroundImage));
+      if (pic) return { picture: pic, shade: null };
+    }
     let color = null, painter = null, shade = null;
     for (const s of stack.slice(Math.max(0, i))) {
       if (s !== el && el.contains(s)) continue;
@@ -959,6 +973,25 @@ function net19Contrast() {
     if (cr < 3) report(k, `caret contrast ${cr.toFixed(2)}:1`, r);
   }
   return out;
+}
+function net19Buried(a, b, x, y, ownFaceShows) {
+  const lift = e => { while (e && e.getRootNode() !== document && e.getRootNode().host) e = e.getRootNode().host; return e; };
+  const [p, q] = [lift(a), lift(b)];
+  if (!p || !q || p === q) return false;
+  const stack = document.elementsFromPoint(x, y);
+  const at = e => stack.findIndex(s => s === e || e.contains(s));
+  const ia = at(p), ib = at(q);
+  if (ia < 0 || ib < 0) return false;
+  const [upper, lower, from, to] = ia < ib ? [p, q, ia, ib] : [q, p, ib, ia];
+  for (let i = from; i < to; i++) {
+    const s = stack[i];
+    if (s.contains(lower) || ownFaceShows && upper === p && (s === upper || upper.contains(s))) continue;
+    const c = getComputedStyle(s), r = s.getBoundingClientRect();
+    const alpha = (String(c.backgroundColor).match(/[\d.]+/g) || []).map(Number);
+    const opaque = alpha.length >= 3 && (alpha.length < 4 || alpha[3] >= .9) || /url\(|gradient/.test(c.backgroundImage);
+    if (opaque && r.width >= 200 && r.height >= 30) return true;
+  }
+  return false;
 }
 function net19Genuine(e) {
   return typeof e.tagName === 'string' && typeof e.getBoundingClientRect === 'function' && typeof e.matches === 'function';
