@@ -49,7 +49,7 @@ mc-search div:has(> input.search-input) { background: var(--n19-field) !importan
   box-shadow: inset 0 1px 3px rgba(0,0,0,.15) !important; }
 input[type="search"], input[type="text"] { border-radius: 2px !important; }
 
-ul.cmp-alphabet-facet--inner { grid-template-columns: repeat(12, 36px) !important; gap: 6px !important; }
+ul.cmp-alphabet-facet--inner { grid-template-columns: repeat(auto-fill, 36px) !important; gap: 6px !important; max-width: 498px !important; }
 a.cmp-button__inner--type-alphabetFacet { width: 36px !important; height: 36px !important; min-width: 36px !important; border-radius: 0 !important;
   border: 1px solid var(--n19-box) !important; background: var(--n19-page) !important; color: var(--n19-text) !important; font-size: 18px !important; font-weight: 400 !important; }
 a.cmp-button__inner--type-alphabetFacet * { color: var(--n19-text) !important; font-weight: 400 !important; font-size: 18px !important; }
