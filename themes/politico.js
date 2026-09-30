@@ -1,5 +1,6 @@
 globalThis.net19Theme = {
   detect: () => 'light',
+  keep: 'header#js-top-header .header__branding svg, header.sticky.top-0 a[aria-label="Politico home"] svg',
   later: /^(?:add politico on google.*|listen to this article|listen|gift this article|share this article with ai|politico pro upgrade|more from politico)$/i,
   keepLabels: /^(?:search|pro|magazine)$/i,
   intended: '.homepageNav, .articleNav, header#js-top-header .actions-lineup__item:has(> a:is([href*="politico.eu"], [href*="eenews.net"]))',
@@ -7,13 +8,13 @@ globalThis.net19Theme = {
 (() => {
   const addMagazine = () => {
     const pro = document.querySelector('header#js-top-header .actions-lineup__item > a[href*="politicopro.com"]');
-    if (!pro || pro.closest('.actions-lineup__list').querySelector('[data-n19-magazine]')) return;
+    const label = net19.say('Magazine');
+    if (!label || !pro || pro.closest('.actions-lineup__list').querySelector('[data-n19-magazine]')) return;
     const item = pro.parentElement.cloneNode(true);
     item.setAttribute('data-n19-magazine', '');
     const link = item.querySelector('a');
-    link.href = 'https://www.politico.com/magazine/'; link.removeAttribute('target'); link.removeAttribute('data-tracking'); link.textContent = 'Magazine';
+    link.href = 'https://www.politico.com/magazine/'; link.removeAttribute('target'); link.removeAttribute('data-tracking'); link.textContent = label;
     pro.parentElement.before(item);
   };
-  const start = () => { addMagazine(); new MutationObserver(addMagazine).observe(document.documentElement, { childList: true, subtree: true }); };
-  if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
+  net19.watch(addMagazine);
 })();
