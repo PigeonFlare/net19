@@ -359,6 +359,8 @@ html[data-n19-yt="www"] {
   & ytd-search ytd-video-renderer yt-interaction, & ytd-search ytd-channel-renderer yt-interaction { display: none !important; }
   & :is(ytd-badge-supported-renderer, #badges) :is(badge-shape.ytBadgeShapeDefault, .badge-style-type-simple):not(.ytBadgeShapeNoText) {
     background: var(--n19-badge) !important; color: var(--n19-badge-text) !important; border-radius: 2px !important; font-size: 12px !important; font-weight: 500 !important; padding: 0 4px !important; line-height: 18px !important; }
+  & yt-content-metadata-view-model > .n19-new-row { display: flex !important; margin: 4px 0 0 !important; }
+  & .n19-new-badge { display: inline-block !important; background: var(--n19-badge) !important; color: var(--n19-badge-text) !important; border-radius: 2px !important; font: 500 12px/18px Roboto, Arial, sans-serif !important; padding: 0 4px !important; }
   & ytd-search ytd-channel-renderer #content-section { display: flex !important; align-items: center !important; }
   & ytd-search ytd-channel-renderer #avatar-section { flex: none !important; width: 246px !important; margin-right: 16px !important; }
   & ytd-search ytd-channel-renderer #avatar-section > a, & ytd-search ytd-channel-renderer #avatar { width: 246px !important; display: flex !important; justify-content: center !important; padding: 0 !important; }

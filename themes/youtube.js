@@ -314,6 +314,26 @@ globalThis.net19Theme = (() => {
       if (/^(?:Dubbed|Auto-dubbed)$/i.test((badge.textContent || '').trim()) && !badge.hasAttribute('data-net19-hidden')) badge.setAttribute('data-net19-hidden', '');
     }
   };
+  const newBadge = () => {
+    for (const overlay of document.querySelectorAll('yt-lockup-view-model yt-thumbnail-overlay-badge-view-model:is(.ytThumbnailOverlayBadgeViewModelTopStart, :has(.ytThumbnailOverlayBadgeViewModelTopStart))')) {
+      const label = (overlay.textContent || '').trim();
+      if (globalThis.net19English(label) !== 'New') continue;
+      const lockup = overlay.closest('yt-lockup-view-model');
+      const meta = lockup.querySelector('yt-content-metadata-view-model');
+      if (!meta) continue;
+      if (!overlay.hasAttribute('data-net19-hidden')) overlay.setAttribute('data-net19-hidden', '');
+      const moved = meta.querySelector(':scope > .n19-new-row');
+      if (moved?.textContent === label) continue;
+      moved?.remove();
+      const row = document.createElement('div');
+      row.className = 'n19-new-row';
+      const badge = document.createElement('span');
+      badge.className = 'n19-new-badge';
+      badge.textContent = label;
+      row.append(badge);
+      meta.append(row);
+    }
+  };
   const filterLabel = () => {
     if (!english()) return;
     for (const text of document.querySelectorAll('ytd-search-header-renderer #filter-button .ytSpecButtonShapeNextButtonTextContent, ytd-search-header-renderer #filter-button .ytSpecButtonShapeNextButtonTextContent span')) if (/^\s*Filters\s*$/.test(text.textContent) && !text.firstElementChild) text.textContent = 'Filter';
@@ -359,7 +379,7 @@ globalThis.net19Theme = (() => {
       else if (/^\s*Explore\s*$/.test(title.textContent || '') && !title.querySelector('*') && title.matches('#guide-section-title')) title.textContent = 'Best of YouTube';
     }
   };
-  const run = () => { stats(); channel(); search(); guide(); metadata(); filterLabel(); bestOf(); };
+  const run = () => { stats(); channel(); search(); guide(); metadata(); newBadge(); filterLabel(); bestOf(); };
   net19.watch(run, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['aria-label', 'aria-selected', 'hidden'] });
 })();
 globalThis.net19Theme.words = {"Capítulos": "Chapters", "Ver todo": "View all", "Transcripción": "Transcript", "Sigue la transcripción para no perderte nada.": "Follow along using the transcript.", "Mostrar transcripción": "Show transcript", "Chapitres": "Chapters", "Tout afficher": "View all", "Transcription": "Transcript", "Suivez la vidéo à l'aide de la transcription.": "Follow along using the transcript.", "Afficher la transcription": "Show transcript", "Capitoli": "Chapters", "チャプター": "Chapters", "章节": "Chapters", "챕터": "Chapters", "Главы": "Chapters", "चैप्टर": "Chapters", "الفصول": "Chapters", "Transcrição": "Transcript", "Trascrizione": "Transcript", "文字起こし": "Transcript", "转写文稿": "Transcript", "스크립트": "Transcript", "Текст видео": "Transcript", "ट्रांसक्रिप्ट": "Transcript", "النص": "Transcript"};
