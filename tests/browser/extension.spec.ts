@@ -219,7 +219,8 @@ test('popup is two switches and a support link, nothing else', async ({}, info) 
   await expect(popup.locator('a')).toHaveCount(1); await expect(popup.locator('a')).toHaveAttribute('href', 'https://buymeacoffee.com/0wtynrfutb');
   await popup.screenshot({ path: resolve(info.outputDir, 'popup.png') });
   await popup.locator('#site-switch').uncheck();
-  await expect.poll(scripts).not.toContain('net19-theme-youtube');
+  const excluded = () => worker.evaluate(async () => (await chrome.scripting.getRegisteredContentScripts()).filter(s => s.id === 'net19-theme-youtube').flatMap(s => s.excludeMatches ?? []).some(m => m.includes('youtube.com')));
+  await expect.poll(excluded).toBe(true);
   await expect.poll(scripts).toContain('net19-theme-google');
   await site.reload();
   await expect(site.locator('html')).not.toHaveAttribute('data-net19-mode', /.*/);
