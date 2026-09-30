@@ -43,4 +43,4 @@ footer[class*="site-footer"],[class*="site-footer-module__container"]{background
 header[data-testid="SiteHeader"] a[href*="/account/sign-in"],header[data-testid="SiteHeader"] [class*="nav-bar-module__nav-item"]:has(>[class*="nav-button"]>a[href="/sustainability/"]){display:none!important}
 button[aria-label^="Save article"],nav[data-testid="Tags"],[data-testid="ToolbarItemContainer"]:has(>button[aria-label="Change text size"]){display:none!important}
 footer :is(li:has(>a[href*="/info-pages/reuters-and-ai"]),li:has(>a[href*="brand-attribution"]),li:has(>a[href*="leadership"]),li:has(>a[href*="diversity"i]),li:has(>a[href="/sustainability/"]),li:has(>a[href*="whatsapp.com"])){display:none!important}
-footer section:has([class*="product-cards-module"]),[class*="product-cards-module__product-container"],a[href*="lseg.com"][href*="market-data"]{display:none!important}
+footer section:has([class*="product-cards-module"]),[class*="product-cards-module__product-container"],a[href*="lseg.com"][href*="market-data"],[class*="market-bar-module"] a:is([href^="/lseg"],[href*="reuters.com/lseg"]){display:none!important}
