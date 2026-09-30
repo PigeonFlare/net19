@@ -38,3 +38,4 @@ footer .footer-link-section:has(> .footer-link-section-header a[href^="https://p
 footer .footer-custom-section:has(a.country-selection, a[href="/en"]), footer a.country-selection,
 footer a.footer-bar-social-media-item[href*="tiktok.com"], footer :is(a, .certificate-icon):has(> img[alt="Güven Damgası" i]), #navigation .bottom-navigation a.section-item:has(.badge.new),
 [role="button"][aria-label$="renk seçeneği" i] { display: none !important; }
+.search-result-sub-header [data-testid="quick-filters"], [data-testid="hierarchical-badge"], #eyeAble_container_ID { display: none !important; }

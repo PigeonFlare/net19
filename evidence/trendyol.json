@@ -234,6 +234,40 @@
         "sponsored store row is post-2019"
       ],
       "action": "kept: results (sponsored store results are never hidden)"
+    },
+    {
+      "match": "^(Flaş Ürünler|Yüksek Puanlı Ürünler|Yüksek Puanlı Satıcılar)$",
+      "in2019": false,
+      "evidence": [
+        "s3"
+      ],
+      "pages": [
+        "search"
+      ],
+      "note": "quick-filter chip row above search results; the November 2019 listing had only the result count and 'Önerilen sıralama' (KARGO BEDAVA was a product tag, not a filter chip)",
+      "action": "hidden: .search-result-sub-header [data-testid=quick-filters]"
+    },
+    {
+      "match": "^En Çok (Satan|Ziyaret Edilen|Favorilenen|Değerlendirilen) \\d+\\. Ürün$",
+      "in2019": false,
+      "evidence": [
+        "s3"
+      ],
+      "pages": [
+        "search"
+      ],
+      "note": "ranked best-seller stickers on product images; 2019 product cards carried only KARGO BEDAVA and 24 SAATTE KARGODA tags",
+      "action": "hidden: [data-testid=hierarchical-badge]"
+    },
+    {
+      "match": "^Eye-Able.*$",
+      "in2019": false,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "Eye-Able accessibility launcher at the bottom left; no 2019 capture has it",
+      "action": "hidden: #eyeAble_container_ID"
     }
   ]
 }
