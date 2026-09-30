@@ -1,5 +1,5 @@
 html { --n19-header: #24292e; --n19-header-text: #fff; --n19-header-dim: rgba(255,255,255,.75); --n19-header-field: rgba(255,255,255,.125); --n19-header-border: #444d56;
-  --n19-hero: #2b3137; --n19-hero-lead: rgba(255,255,255,.6); --n19-signup-box: #fafbfc; --n19-signup-text: #24292e; --n19-signup-note: #6a737d; --n19-signup-green: #2ebc4f; --n19-signup-green-hover: #28a745;
+  --n19-hero: #2b3137; --n19-hero-lead: rgba(255,255,255,.6); --n19-signup-box: #fafbfc; --n19-signup-text: #24292e; --n19-signup-note: #6a737d; --n19-signup-green: #28a745; --n19-signup-green-hover: #22863a;
   --n19-bg: #fff; --n19-bg-2: #fafbfc; --n19-bg-3: #f6f8fa; --n19-text: #24292e; --n19-text-2: #586069; --n19-link: #0366d6; --n19-border: #e1e4e8; --n19-row-border: #eaecef;
   --n19-btn-from: #fafbfc; --n19-btn-to: #eff3f6; --n19-btn-hover-from: #f0f3f6; --n19-btn-hover-to: #e6ebf1; --n19-btn-border: rgba(27,31,35,.2); --n19-btn-text: #24292e;
   --n19-primary-from: #2ea44f; --n19-primary-to: #22863a; --n19-primary-hover-from: #2c974b; --n19-primary-hover-to: #1e7b34;
@@ -7,7 +7,7 @@ html { --n19-header: #24292e; --n19-header-text: #fff; --n19-header-dim: rgba(25
   --n19-commit-bar: #f1f8ff; --n19-commit-border: #c8e1ff; --n19-folder: #79b8ff; --n19-file: #6a737d;
   --n19-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
 html[data-net19-mode="dark"] { --n19-header: #161b22; --n19-header-text: #f0f6fc; --n19-header-dim: rgba(240,246,252,.7); --n19-header-field: rgba(255,255,255,.07); --n19-header-border: #30363d;
-  --n19-hero: #2b3137; --n19-hero-lead: rgba(255,255,255,.6); --n19-signup-box: #fafbfc; --n19-signup-text: #24292e; --n19-signup-note: #6a737d; --n19-signup-green: #2ebc4f; --n19-signup-green-hover: #28a745;
+  --n19-hero: #2b3137; --n19-hero-lead: rgba(255,255,255,.6); --n19-signup-box: #fafbfc; --n19-signup-text: #24292e; --n19-signup-note: #6a737d; --n19-signup-green: #28a745; --n19-signup-green-hover: #22863a;
   --n19-bg: #0d1117; --n19-bg-2: #161b22; --n19-bg-3: #161b22; --n19-text: #c9d1d9; --n19-text-2: #8b949e; --n19-link: #58a6ff; --n19-border: #30363d; --n19-row-border: #21262d;
   --n19-btn-from: #2d333b; --n19-btn-to: #22272e; --n19-btn-hover-from: #373e47; --n19-btn-hover-to: #2d333b; --n19-btn-border: rgba(240,246,252,.1); --n19-btn-text: #c9d1d9;
   --n19-primary-from: #2ea043; --n19-primary-to: #238636; --n19-primary-hover-from: #3fb950; --n19-primary-hover-to: #2ea043;
@@ -42,7 +42,7 @@ header.HeaderMktg a[href^="/signup"] { background: transparent !important; borde
 .lp-Home .lp-Intro-gradient, .lp-Home .lp-IntroVisuals { display: none !important; }
 .lp-Home .lp-Intro > .lp-Spacer:not(.lp-IntroTop-spacer):not(.lp-IntroVisuals-spacer) { height: 0 !important; }
 .lp-Home .lp-IntroTop-spacer { height: 136px !important; }
-.lp-Home .lp-IntroVisuals-spacer { height: 96px !important; }
+.lp-Home .lp-IntroVisuals-spacer { height: 24px !important; }
 .lp-Home .lp-IntroHero { position: relative !important; top: auto !important; left: auto !important; transform: none !important; opacity: 1 !important; filter: none !important; }
 .lp-Home .lp-HeroCarousel-background, .lp-Home .lp-Intro::after, .lp-Home .lp-HeroCarousel-content::before { display: none !important; }
 .lp-Home .lp-IntroHero { display: grid !important; grid-template-columns: 7fr 5fr; align-items: center; column-gap: 48px; max-width: 1012px; margin: 0 auto !important; padding: 0 16px; box-sizing: border-box; }
@@ -241,3 +241,16 @@ button[aria-label^="Edit repository" i]:has([data-n19-edit]) { width: auto !impo
 button[aria-label^="Edit repository" i]:has([data-n19-edit]) svg { display: none !important; }
 react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child > h2:has(button[aria-label^="Edit repository" i]) { display: flex !important; order: 99 !important; margin: 0 0 0 auto !important; font-size: 0 !important; line-height: 0 !important; }
 .d-md-flex:has(#repo-title-component) :is(li, div):has(> button[aria-label^="Pin " i]), .d-md-flex:has(#repo-title-component) button[aria-label^="Pin " i] { display: none !important; }
+.lp-Home .lp-SectionIntroWebGL, .lp-Home .lp-SectionIntro-mascot, .lp-Home #collaboration .lp-SectionHero, .lp-Home .lp-Cta-mascots-wrap { display: none !important; }
+.lp-Home, .lp-Home main, .lp-Home :is(#collaboration, #cta), .lp-Home :is(#collaboration, #cta) .lp-SectionBlock { background: var(--n19-bg) !important; background-image: none !important; }
+.lp-Home :is(#collaboration, #cta) :is(h1, h2, h3, h4, p, span, li, summary, button, div) { color: var(--n19-text) !important; }
+.lp-Home :is(#collaboration, #cta) :is(p, p *) { color: var(--n19-text-2) !important; }
+.lp-Home :is(#collaboration, #cta) a, .lp-Home :is(#collaboration, #cta) a * { color: var(--n19-link) !important; }
+.lp-Home :is(#collaboration, #cta) :is(.lp-SectionBlock-content--lines, .lp-SectionBlock-content--lines *, [class*="Accordion"], hr) { border-color: var(--n19-border) !important; }
+.lp-Home #cta .lp-Spacer { display: none !important; }
+.lp-Home #collaboration .lp-SectionIntro > .lp-Spacer:first-child { height: 64px !important; }
+.lp-Home :is(#collaboration, #cta) :is(h2, p, .CtaForm, [class*="Grid__column"], .lp-SectionTemplate-content, .lp-SectionTemplate-testimonial) { opacity: 1 !important; transform: none !important; }
+.lp-Home #cta .CtaForm { display: flex !important; justify-content: center !important; }
+.lp-Home #cta .CtaForm button, .lp-Home #cta .CtaForm button * { color: #fff !important; }
+.lp-Home :is(#collaboration, #cta) :is(.lp-SectionBlock, .lp-SectionBlock-content, [class*="Grid__column"]) { border-color: var(--n19-border) !important; }
+.lp-Home #collaboration .lp-SectionTemplate-content { row-gap: 16px !important; }
