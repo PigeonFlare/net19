@@ -1,0 +1,17 @@
+html{--n19-font:Arial, Helvetica, sans-serif;--n19-link:#005bd1;--n19-text:#222;--n19-muted:#999;--n19-brand:#005ff9;--n19-brand-text:#fff;--n19-go:#f26d00;--n19-go-hover:#e05f00;--n19-go-text:#fff;--n19-field:#fff;--n19-field-line:#95b7ef;--n19-box:#f0f0f0;--n19-box-line:#d0d0d0;--n19-logo:url("https://limg.imgsmail.ru/splash/v/i/logo_big-fp-fc63e19c4d.png")}
+html[data-net19-mode="dark"]{--n19-link:#6fa8ff;--n19-text:#eee;--n19-muted:#aaa;--n19-brand:#005ff9;--n19-brand-text:#fff;--n19-go:#f26d00;--n19-go-hover:#ff8a1e;--n19-go-text:#fff;--n19-field:#222;--n19-field-line:#3d5c99;--n19-box:#262626;--n19-box-line:#3a3a3a;--n19-logo:url("https://limg.imgsmail.ru/splash/v/i/logo_big-fp-fc63e19c4d.png")}
+body,body :is(p,a,button,input,span,li,label,div,h1,h2,h3){font-family:var(--n19-font)!important}
+.ph-logo .ph-logo__img{content:var(--n19-logo)!important}
+:where(:root:not([data-n19-safe])) .ph-logo .ph-logo__img,.ph-logo:where(:root:not([data-n19-safe])) .ph-logo__img{width:106px!important;height:30px!important}
+.ph-logo .ph-logo__img{object-fit:contain!important}
+.ph-projects .ph-project__link,.ph-projects button.ph-project,.ph-project__register{color:var(--n19-link)!important;font-size:13px!important;font-weight:400!important;background:transparent!important}
+.ph-projects .ph-project__link:hover,.ph-project__register:hover{text-decoration:underline!important}
+button.ph-login{background:transparent!important;color:var(--n19-link)!important;font-size:13px!important;font-weight:400!important;border-radius:0!important;box-shadow:none!important}
+button.ph-login:hover{text-decoration:underline!important}
+#mailbox.mailbox,[data-testid="mailbox"]{background:var(--n19-box)!important;box-shadow:inset 0 0 0 1px var(--n19-box-line)!important;border-radius:0!important}
+#mailbox .resplash-btn{border-radius:2px!important;font-size:13px!important;font-weight:700!important}
+#mailbox .resplash-btn_primary{background:var(--n19-brand)!important;color:var(--n19-brand-text)!important}
+.search-arrow__bg{border:2px solid var(--n19-field-line)!important;border-radius:2px!important;background:var(--n19-field)!important;box-shadow:inset 2px 2px 7px -2px rgba(0,0,0,.1)!important}
+[data-testid="search-button"].search-arrow__button{background:var(--n19-go)!important;border:1px solid var(--n19-go)!important;border-radius:2px!important;color:var(--n19-go-text)!important}
+[data-testid="search-button"].search-arrow__button:hover{background:var(--n19-go-hover)!important;border-color:var(--n19-go-hover)!important}
+[data-testid="search-button"].search-arrow__button *{color:inherit!important}
