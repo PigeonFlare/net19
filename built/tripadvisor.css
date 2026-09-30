@@ -25,3 +25,4 @@ main form[role="search"] button:not([type="submit"]):last-of-type:hover{backgrou
 [data-automation="tab-list"] [role="tab"] svg{fill:var(--n19-green)!important}
 main a img,main picture img,main a>div:has(picture){border-radius:2px!important}
 [data-net19-hidden],#GAI_REVIEWS{display:none!important}
+[data-automation="topNav_rewards"],[data-automation^="footer_section"] li:has(a[href*="bugcrowd.com"],a[href$="/developers"],a[href*="/AddListing"],a[href$="/Articles"]),footer a:is([href*="tiktok.com/"],[href*="youtube.com/"]){display:none!important}

@@ -11,3 +11,4 @@ header.wt-bb-xs,#gnav-header{border-bottom-color:var(--n19-rule)!important}
 .v2-listing-card .search-half-unit-mt:has(form[action*="/cart/listing"]),.listing-card-video-process-label{display:none!important}
 .wt-chip-group [class*="wt-chip"],[data-clg-id="WtChipGroup"] :is(button,a,label){border-radius:3px!important}
 [data-appears-component-name="reviews_feature_tags"]{display:none!important}
+#desktop-category-topnav [data-ui="top-nav-category-list"]>li:not(:has(a[href*="/hub/gifts"],a[href*="vintage"],a[href*="/giftcards"])),.chrome-footer__heading,:is([data-appears-component-name="sort-reviews-menu"],[data-ui="sort-reviews-menu"],#sort-reviews-menu){display:none!important}

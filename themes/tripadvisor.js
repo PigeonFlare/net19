@@ -1,4 +1,5 @@
 globalThis.net19Theme = {
+  intended: '[data-net19-hidden], [data-automation="topNav_rewards"], [data-automation^="footer_section"] li:has(a[href*="bugcrowd.com"], a[href$="/developers"], a[href*="/AddListing"], a[href$="/Articles"]), footer a:is([href*="tiktok.com/"], [href*="youtube.com/"])',
   light: { '#002b11': '#000a12', '#335541': '#4a4a4a', '#00eb5b': '#00a680', '#00852f': '#00a680' },
   dark: { '#002b11': '#000a12', '#335541': '#4a4a4a', '#00eb5b': '#00a680', '#00852f': '#00a680' },
 };
@@ -13,6 +14,11 @@ globalThis.net19Theme = {
         && !target.parentElement.querySelector('input, textarea, select')
         && target.parentElement.querySelectorAll('button, a').length <= 1) target = target.parentElement;
       if (!target.hasAttribute('data-net19-hidden')) target.setAttribute('data-net19-hidden', '');
+    }
+    for (const input of document.querySelectorAll('[data-automation="planModeFreeTextInput"]')) {
+      let target = input;
+      while (target.parentElement && target.parentElement.offsetHeight < 400 && !target.parentElement.id) target = target.parentElement;
+      if (target !== input && !target.hasAttribute('data-net19-hidden')) target.setAttribute('data-net19-hidden', '');
     }
   };
   net19.watch(hide);
