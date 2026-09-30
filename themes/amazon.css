@@ -27,7 +27,7 @@ body, body #a-page { font-family: Arial, sans-serif !important; }
 #nav-belt #nav-logo { margin-left: 44px !important; }
 #nav-belt #nav-global-location-slot { position: absolute !important; left: 8px !important; top: 55px !important; height: 44px !important; width: 190px !important; display: flex !important; align-items: center !important; }
 #nav-belt #nav-global-location-slot > * { height: auto !important; }
-#nav-belt > .nav-fill { flex: 0 1 638px !important; margin-left: 44px !important; }
+#nav-belt > .nav-fill { flex: 0 1 638px !important; max-width: calc(100vw - 600px) !important; margin-left: 44px !important; }
 #nav-belt > .nav-right { position: absolute !important; right: 0 !important; top: 52px !important; height: 44px !important; }
 #nav-belt #nav-tools { height: 44px !important; align-items: center !important; }
 #nav-belt #nav-tools { display: flex !important; padding: 0 !important; }
