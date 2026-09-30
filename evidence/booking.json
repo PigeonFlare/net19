@@ -171,7 +171,7 @@
    "note": "product tab and footer link"
   },
   {
-   "match": "^Airport taxis$",
+   "match": "^(Airport taxis|Airport transfers|Transfers)$",
    "in2019": true,
    "evidence": [
     "h1",
@@ -179,7 +179,7 @@
     "h3",
     "h4"
    ],
-   "note": "product tab"
+   "note": "product tab (the 2019 Airport Taxis tab, now labelled Transfers or Airport transfers)"
   },
   {
    "match": "^Cruises$",
@@ -419,6 +419,14 @@
    "action": "kept: legal"
   },
   {
+   "match": "^Opens .+ information$",
+   "in2019": false,
+   "evidence": [
+    "per-result trader information link required by the EU Digital Services Act (2024); not on the 2019 results page (s1)"
+   ],
+   "action": "kept: legal"
+  },
+  {
    "match": "^Filters$|^Filter by:?$",
    "in2019": true,
    "evidence": [
@@ -439,7 +447,7 @@
    ]
   },
   {
-   "match": "^(Home|United Kingdom|Greater London|London)$|^Hotels on Booking\\.com$|^Hotels in .+",
+   "match": "^(Home|United Kingdom|Greater London|London|France|Ile de France|Paris)$|^Hotels on Booking\\.com$|^Hotels in .+",
    "in2019": true,
    "evidence": [
     "s1",
@@ -501,7 +509,7 @@
    "note": "helpfulness Yes/No buttons on the property page"
   },
   {
-   "match": "^Wonderful .+|^[\\d.]+ miles from downtown$|^Subway Access$|^.+, London ?Show on map$|^Standard Double Room$|^Deluxe Double Room$|^Double Room$|^Studio$|^.+ (Room|Suite|Apartment|Studio)$",
+   "match": "^Wonderful .+|^[\\d.]+ miles from downtown$|^Subway Access$|^.+Show on map$|^Standard Double Room$|^Deluxe Double Room$|^Double Room$|^Studio$|^.+ (Room|Suite|Apartment|Studio)$",
    "in2019": true,
    "evidence": [
     "p1"
