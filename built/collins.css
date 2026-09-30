@@ -27,3 +27,10 @@ h2.h2_entry{font-weight:400!important;font-size:30px!important}
 .dc .word-frequency-container .level{border-radius:50%!important}
 .hom>.gramGrp>.pos,.hom>.gramGrp.pos,.type-drv .gramGrp .pos{color:var(--n19-text)!important;font-weight:400!important;font-size:16px!important}
 .miniWordle,a[href*="/games/wordle-helper"],span:has(>a[href*="/games/wordle-helper"]){display:none!important}
+#ai-assistant-chat,.idm-assistant{display:none!important}
+body>header .major-links-container.sub :is(div,span):has(>a[href*="/dictionary/english-korean"],>span>a[href*="/dictionary/english-korean"],>a[href*="/dictionary/english-japanese"],>span>a[href*="/dictionary/english-japanese"]){display:none!important}
+body>header .major-links-container.sub .moreButton{display:none!important}
+footer a:is([href*="instagram.com"],[href*="linkedin"i],[aria-label*="linkedin"i],[href*="/security"i]){display:none!important}
+.res_cell_right .pB-quiz .quizBlock{background:var(--n19-tab)!important;border:1px solid #333!important;border-radius:0!important}
+.res_cell_right .miniScrabble a{border-radius:0!important}
+:where(:root:not([data-n19-safe])) body>header .header-complete-top>.majorlinksblock{flex:1 1 auto!important}

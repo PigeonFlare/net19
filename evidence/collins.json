@@ -1,0 +1,444 @@
+{
+ "theme": "collins",
+ "era": "2019 collinsdictionary.com desktop: black #110d0a header with the white Collins logo, Log In, a small nav (Dictionary, Quiz, Thesaurus, School, Translator, Grammar, Scrabble, Blog), a white search field with the language picker, and on entry pages a 'Definition of' heading, a light-blue tab row, headword bands with red frequency dots and a Quick Word Challenge box. Arquivo captures from March to November 2019 agree; the November home page already carries the 'Free online dictionary, thesaurus and reference materials' layout the site still uses.",
+ "sources": [
+  {
+   "id": "h1",
+   "url": "https://arquivo.pt/wayback/20190321094102/https://www.collinsdictionary.com/",
+   "date": "2019-03-21",
+   "shows": "home: black header with Collins logo, Sign Up / Log In, Dictionary Video Thesaurus School Translator Grammar Scrabble Blog links, English language select in search box, Free Online Dictionary heading, language links (English French German Spanish Italian Chinese Portuguese Hindi), translator box, trending words, word of the day, newsletter Submit, footer columns"
+  },
+  {
+   "id": "h2",
+   "url": "https://arquivo.pt/wayback/20190908135031/https://www.collinsdictionary.com/",
+   "date": "2019-09-08",
+   "shows": "home: same header with Quiz, heading Free Online Dictionary and Thesaurus, Facebook and Twitter buttons, Free online dictionary, thesaurus and reference materials, Collins still leading the way, 200 years, footer: Browse the English Dictionary A-Z, Languages, View more, More from Collins (API, B2B Partnerships, Collins COBUILD, Collins ELT, HarperCollins Publishers, Word Banks, About Us, Consent Management, Contact Us, Privacy Policy, Terms & Conditions), This page in"
+  },
+  {
+   "id": "h3",
+   "url": "https://arquivo.pt/wayback/20191117044137/https://www.collinsdictionary.com/",
+   "date": "2019-11-17",
+   "shows": "home after the late-2019 refresh: Log In, Dictionary Thesaurus Translator Grammar School Quiz, English Dictionary search field, English/French/Hindi language links, h1 Free online dictionary, thesaurus and reference materials, 200 years, corpora, word of the day, quiz with Next, Browse all official Collins dictionaries, Contact Us, Terms & Conditions"
+  },
+  {
+   "id": "e1",
+   "url": "https://arquivo.pt/wayback/20190523024419/https://www.collinsdictionary.com/dictionary/english/achieve",
+   "date": "2019-05-23",
+   "shows": "entry page achieve: header, Definition of heading, tab row, headword band with word frequency dots, definitions, More Synonyms, example sentences, trends, translations, nearby words, Quick Word Challenge quiz with Next, footer"
+  },
+  {
+   "id": "e2",
+   "url": "https://arquivo.pt/wayback/20190710165415/https://www.collinsdictionary.com/dictionary/english/absurd",
+   "date": "2019-07-10",
+   "shows": "entry page absurd: Definition of 'absurd', tabs Learner/Video/English/American/Example sentences/Trends, absurd in British, absurd in American, Example sentences containing, Trends of, Translations for, Nearby words of, Related Terms of, Source, Quick Word Challenge with Next, Facebook and Twitter share buttons"
+  },
+  {
+   "id": "e3",
+   "url": "https://arquivo.pt/wayback/20190721210355/https://www.collinsdictionary.com/dictionary/english/house-guest",
+   "date": "2019-07-21",
+   "shows": "entry page house guest: same header, tabs, definition blocks, sidebar quiz and footer"
+  }
+ ],
+ "features": [
+  {
+   "match": "^Go to the homepage$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "e1",
+    "e2",
+    "e3"
+   ],
+   "note": "Collins logo link",
+   "required": true
+  },
+  {
+   "match": "^Log In$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "e1",
+    "e2",
+    "e3"
+   ],
+   "note": "account link",
+   "required": true
+  },
+  {
+   "match": "^(Language|English Dictionary|Dictionary)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "e1",
+    "e2",
+    "e3"
+   ],
+   "note": "dictionary link in the header nav"
+  },
+  {
+   "match": "^Translator$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "e1",
+    "e2",
+    "e3"
+   ],
+   "note": "header nav",
+   "required": true
+  },
+  {
+   "match": "^Games$",
+   "in2019": true,
+   "evidence": [
+    "h2",
+    "h3"
+   ],
+   "note": "the 2019 Quiz link (/quiz/), renamed"
+  },
+  {
+   "match": "^Schools?$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "e1",
+    "e2",
+    "e3"
+   ],
+   "note": "School link"
+  },
+  {
+   "match": "^Blog$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "e2"
+   ],
+   "note": "header nav"
+  },
+  {
+   "match": "^Resources$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2"
+   ],
+   "note": "footer View more column in 2019"
+  },
+  {
+   "match": "^English Dictionary$",
+   "in2019": true,
+   "evidence": [
+    "h3"
+   ],
+   "note": "search field",
+   "required": true
+  },
+  {
+   "match": "^reset button$",
+   "in2019": true,
+   "evidence": [
+    "e1",
+    "e2",
+    "e3"
+   ],
+   "note": "clear and search buttons in the search field"
+  },
+  {
+   "match": "^(English|French|German|Italian|Spanish|Portuguese|Hindi|Chinese)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h3"
+   ],
+   "note": "language dictionary links"
+  },
+  {
+   "match": "^More$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2"
+   ],
+   "note": "more dictionaries (View all dictionaries...)"
+  },
+  {
+   "match": "^(Korean|Japanese)$",
+   "in2019": false,
+   "evidence": [
+    "Korean and Japanese dictionaries are not in any 2019 language list (h1, h2, e2 footer); hidden"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^(header|form|footer) area$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "e1",
+    "e2",
+    "e3"
+   ],
+   "note": "page frame"
+  },
+  {
+   "match": "^Free online dictionary, thesaurus,? and reference materials$",
+   "in2019": true,
+   "evidence": [
+    "h2",
+    "h3"
+   ],
+   "note": "home heading",
+   "required": true,
+   "pages": [
+    "start"
+   ]
+  },
+  {
+   "match": "^Sign up now$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2"
+   ],
+   "note": "newsletter sign up (Sign Up / Submit in 2019)"
+  },
+  {
+   "match": "^Browse all official Collins dictionaries$",
+   "in2019": true,
+   "evidence": [
+    "h3"
+   ],
+   "note": "footer"
+  },
+  {
+   "match": "^(About Us|Contact Us|Terms & Conditions|Privacy Policy|B2B Partnerships|Collins COBUILD|Collins ELT|HarperCollins Publishers|Word Banks|Advertise with us|Dictionary API|API)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "e2"
+   ],
+   "note": "footer links (Advertising and API in 2019)"
+  },
+  {
+   "match": "^FAQs$",
+   "in2019": true,
+   "evidence": [
+    "h2"
+   ],
+   "note": "footer help link beside Contact Us"
+  },
+  {
+   "match": "^(Manage Your Privacy Choices|California Privacy Rights|Consent Management)$",
+   "in2019": true,
+   "evidence": [
+    "h2"
+   ],
+   "note": "privacy links (Consent Management in 2019)"
+  },
+  {
+   "match": "^Security$",
+   "in2019": false,
+   "evidence": [
+    "no Security link in any 2019 footer (h1, h2, e2); hidden"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^Go to our (Twitter profile|Facebook page)$",
+   "in2019": true,
+   "evidence": [
+    "h2",
+    "e2"
+   ],
+   "note": "Facebook and Twitter buttons"
+  },
+  {
+   "match": "^(Follow us on Instagram|php gotoLinkedin)$",
+   "in2019": false,
+   "evidence": [
+    "2019 pages show only Facebook and Twitter (h2, e2); Instagram and LinkedIn icons hidden"
+   ],
+   "action": "hidden"
+  },
+  {
+   "match": "^200 years$",
+   "in2019": true,
+   "evidence": [
+    "h2",
+    "h3"
+   ],
+   "note": "home article link"
+  },
+  {
+   "match": "^corpora$",
+   "in2019": true,
+   "evidence": [
+    "h2",
+    "h3"
+   ],
+   "note": "home article link"
+  },
+  {
+   "match": "^(Privacy Policy|Agree and Close|Do not Share or Sell my Personal Information)$",
+   "in2019": true,
+   "evidence": [
+    "h2"
+   ],
+   "note": "consent banner, legally required",
+   "action": "kept: legal"
+  },
+  {
+   "match": "^Definition of ",
+   "in2019": true,
+   "evidence": [
+    "e1",
+    "e2",
+    "e3"
+   ],
+   "note": "entry heading",
+   "required": true,
+   "pages": [
+    "entry"
+   ]
+  },
+  {
+   "match": "^absurd$",
+   "in2019": true,
+   "evidence": [
+    "e1",
+    "e2",
+    "e3"
+   ],
+   "note": "headword and translations"
+  },
+  {
+   "match": " in (British|American) English$",
+   "in2019": true,
+   "evidence": [
+    "e1",
+    "e2",
+    "e3"
+   ],
+   "note": "British and American sections"
+  },
+  {
+   "match": "^Examples of .* in a sentence",
+   "in2019": true,
+   "evidence": [
+    "e1",
+    "e2",
+    "e3"
+   ],
+   "note": "Example sentences"
+  },
+  {
+   "match": "^COBUILD Collocations",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "e2"
+   ],
+   "note": "collocations (New collocations added to dictionary, h1)"
+  },
+  {
+   "match": "^Trends of ",
+   "in2019": true,
+   "evidence": [
+    "e1",
+    "e2",
+    "e3"
+   ],
+   "note": "Trends"
+  },
+  {
+   "match": "^In other languages ",
+   "in2019": true,
+   "evidence": [
+    "e1",
+    "e2",
+    "e3"
+   ],
+   "note": "Translations for"
+  },
+  {
+   "match": "^Browse nearby entries ",
+   "in2019": true,
+   "evidence": [
+    "e1",
+    "e2",
+    "e3"
+   ],
+   "note": "Nearby words"
+  },
+  {
+   "match": "^Related terms of ",
+   "in2019": true,
+   "evidence": [
+    "e2"
+   ],
+   "note": "Related Terms"
+  },
+  {
+   "match": "^(Definitions|Summary|Synonyms|Sentences|Pronunciation|Collocations|Trends|Translations|Examples|Video)$",
+   "in2019": true,
+   "evidence": [
+    "e1",
+    "e2",
+    "e3"
+   ],
+   "note": "entry tab row (2019: Learner, Video, English, American, Example sentences, Trends)"
+  },
+  {
+   "match": "^Scrabble Tools$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "e2"
+   ],
+   "note": "Scrabble link"
+  },
+  {
+   "match": "^Next$",
+   "in2019": true,
+   "evidence": [
+    "e1",
+    "e2",
+    "h3"
+   ],
+   "note": "Quick Word Challenge quiz"
+  },
+  {
+   "match": "^(IPA Pronunciation Guide|Definition of .*|Synonyms of .*|absurdo)$",
+   "in2019": true,
+   "evidence": [
+    "e1",
+    "e2",
+    "e3"
+   ],
+   "note": "pronunciation, synonym and translation links in the entry"
+  },
+  {
+   "match": "^(Search|arrow_upward)$",
+   "in2019": false,
+   "evidence": [
+    "Collins AI assistant chat (#ai-assistant-chat) is not on any 2019 entry page (e1-e3); hidden"
+   ],
+   "action": "hidden"
+  }
+ ]
+}
