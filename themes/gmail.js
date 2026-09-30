@@ -18,7 +18,7 @@
       return DARK.test(id) ? 'dark' : 'light';
     },
     watch: ['class', 'style'],
-    keep: 'html[data-n19-picture] :is(header#gb, .aeN, .aqn, .wp, .wq)',
+    keep: 'html[data-n19-picture] :is(header#gb, .aeN, .aqn, .wp, .wq), .aoI .T-I:is(.aoO, .hG)',
     reflip: 'html[data-n19-picture] header#gb form',
     searchLabel: 'Search mail',
     later: /^(?:ai inbox|ask gmail|ask gemini|gemini|summari[sz]e this (?:email|conversation|thread)|summary|help me write|polish|refine|formali[sz]e|elaborate|shorten|chat|spaces|meet|new meeting|join a meeting|start a meeting|my meetings|new chat|share in chat|react(?:ion)?s?|add reaction|add emoji reaction|emoji reaction|track package|track your package|package tracking|arriving (?:today|tomorrow|soon)|out for delivery|manage subscriptions|subscriptions|purchases|google one|get more storage with google one|studio|workspace studio|google workspace studio|flows|new flow|create a flow|discover flows)$/i,

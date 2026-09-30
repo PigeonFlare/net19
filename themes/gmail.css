@@ -104,6 +104,8 @@ html:not([data-n19-picture]) .zA.yO { background: var(--n19-row-read) !important
 .iY .ha h2.hP { font-family: var(--n19-title-font) !important; font-size: 22px !important; font-weight: 400 !important; }
 .iY .gD, .iY .go { font-family: var(--n19-font) !important; }
 .amn .T-I, .ams { border-radius: 4px !important; }
+.nH:has(> div > div > .amr) { position: static !important; }
+.amn > div:has(button) { display: none !important; }
 .iY .wrsVRe, .iY .R1Zuwf { display: none !important; }
 
 .XyWBof, .GYfbG, .KYatzc, .eJPjde, .einvLd, .N5.x4Und, div.Zmxtcf { display: none !important; }
@@ -115,7 +117,8 @@ html:not([data-n19-picture]) .zA.yO { background: var(--n19-row-read) !important
 .nH.Hd .aDh { background: var(--n19-page) !important; }
 .nH.Hd [command="sdt"], .nH.Hd [aria-label^="Help me write" i], .nH.Hd [data-tooltip^="Help me write" i] { display: none !important; }
 .aoI .T-I.aoO { border-radius: 4px !important; background: var(--n19-accent) !important; color: var(--n19-on-accent) !important; }
-.aoI .dC .T-I.hG { border-radius: 0 4px 4px 0 !important; background: var(--n19-accent) !important; }
+.aoI .dC .T-I.hG { border-radius: 0 4px 4px 0 !important; background: var(--n19-accent) !important; color: var(--n19-on-accent) !important; }
+html[data-net19-mode="dark"] .aoI .dC .T-I.hG .G-asx { filter: invert(1) !important; }
 
 html { --n19-cat-primary: #d93025; --n19-cat-social: #1a73e8; --n19-cat-promotions: #188038; --n19-cat-updates: #e37400; --n19-cat-forums: #9334e6;
   --n19-dropdown: url("https://www.gstatic.com/images/icons/material/system/2x/arrow_drop_down_black_24dp.png"); }

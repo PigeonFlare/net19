@@ -625,6 +625,14 @@
       "pages": [
         "compose"
       ]
+    },
+    {
+      "match": "^(You can.t react with an emoji.*|Add reaction|Add emoji reaction|React with an emoji.*)$",
+      "in2019": false,
+      "evidence": [
+        "Gmail emoji reactions launched in 2023; the 2019 open-message views (s1b, s13) end with Reply and Forward only"
+      ],
+      "action": "hidden (.amn > div:has(button)); the Reply/Forward bar is in flow again instead of Gmail's post-2019 sticky footer"
     }
   ]
 }
