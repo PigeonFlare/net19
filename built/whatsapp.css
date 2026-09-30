@@ -161,3 +161,4 @@ html .app-wrapper-web [data-n19-wa="title"]{font-size:28px!important;font-weight
 html .app-wrapper-web>div:has(#link-device-instructions-list) [data-icon="wa-wordmark"] svg{display:none!important}
 html .app-wrapper-web>div:has(#link-device-instructions-list) [data-icon="wa-wordmark"]::after{content:attr(data-n19-label);color:#fff;font:600 14px/20px var(--n19-font, Roboto, "Segoe UI", Helvetica, Arial, sans-serif);letter-spacing:.02em}
 html:where(:root:not([data-n19-safe])) .app-wrapper-web>div:has(#link-device-instructions-list) [data-icon="wa-wordmark"]::after{white-space:nowrap}
+html:where(:root:not([data-n19-safe])) .app-wrapper-web div:has(>div>[data-testid="link_device_auto_logout_toggle"]){margin-top:-20px!important}
