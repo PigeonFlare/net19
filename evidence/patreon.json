@@ -1,6 +1,6 @@
 {
  "theme": "patreon",
- "era": "",
+ "era": "2019 Patreon (the 2018-2020 marketing site): white header with the Patreon wordmark, Product, For creators, Pricing, Resources, a search for creators and creations, Log in and a coral Create on Patreon / Get started button; home sections CREATE ON YOUR OWN TERMS, Who uses Patreon, How does it work, What's included; footer with Lite/Pro/Premium, Blog, Patreon U, Help Center & FAQ, App Directory, Developers, About, Press, Careers, Policy & Terms, Sitemap and Facebook/Instagram/Twitter. The post-2019 Updates link, feature-marketing footer column, Newsroom, Mobile, app badges, brand assets, YouTube and LinkedIn links are hidden.",
  "sources": [
   {
    "id": "about-a20190704",
@@ -37,6 +37,12 @@
    "url": "https://arquivo.pt/noFrame/replay/20191030180619/https://www.patreon.com/",
    "date": "2019-10-30",
    "shows": "home page as served on 2019-10-30 (Arquivo.pt capture rendered with its archived 2019 CSS)"
+  },
+  {
+   "id": "home-raw20191030",
+   "url": "https://arquivo.pt/wayback/20191030180619/https://www.patreon.com/",
+   "date": "2019-10-30",
+   "shows": "home page markup: Log in, Create on Patreon, Product, For creators, Pricing, Resources, Search (Search creators and creations…), CREATE ON YOUR OWN TERMS, Get started, Who uses Patreon (Podcasters, Video Creators, Musicians, Visual Artists, Communities, Writers & Journalists, Gaming Creators, Nonprofits, Tutorials and Education, Creators of all kinds), Works with Patreon, See all apps, Resources just for you; Site Footer with Lite, Pro, Premium, Blog, Patreon U, Help Center & FAQ, App Directory, Developers, About, Press, Careers, Policy & Terms, Sitemap, Patreon on Facebook / Instagram / Twitter"
   }
  ],
  "features": [
@@ -137,6 +143,104 @@
     "home-a20191030"
    ],
    "note": "header Pricing / Resources menus"
+  },
+  {
+   "match": "^(Creators|Features|For creators|Product|Patreon for Creators)$",
+   "in2019": true,
+   "evidence": [
+    "home-raw20191030",
+    "home-a20190630",
+    "home-a20191030"
+   ],
+   "note": "header menus: 2019 Product (the Lite/Pro/Premium feature pages, now named Features) and For creators (now Creators)",
+   "required": false
+  },
+  {
+   "match": "^(Find a Creator|Search|Search creators and creations…?|form area)$",
+   "in2019": true,
+   "evidence": [
+    "home-raw20191030",
+    "home-a20190630",
+    "home-a20191030"
+   ],
+   "note": "header creator search",
+   "required": true
+  },
+  {
+   "match": "^(main area|footer area|Site Footer|.* area)$",
+   "in2019": true,
+   "evidence": [
+    "home-raw20191030",
+    "home-a20190630",
+    "home-a20191030"
+   ],
+   "note": "page body and site footer"
+  },
+  {
+   "match": "^(Artists|Game devs|Visual Artists|Gaming Creators|Podcasters|Video creators|Musicians|Writers|Communities|Nonprofits)$",
+   "in2019": true,
+   "evidence": [
+    "home-raw20191030",
+    "home-a20190630",
+    "home-a20191030"
+   ],
+   "note": "creator types (2019 Who uses Patreon: Visual Artists, Gaming Creators and the rest)"
+  },
+  {
+   "match": "^(Starting a Patreon is free|Pricing)$",
+   "in2019": true,
+   "evidence": [
+    "home-raw20191030",
+    "home-a20190630",
+    "home-a20191030"
+   ],
+   "note": "pricing link (2019 Pricing, Lite / Pro / Premium)"
+  },
+  {
+   "match": "^(Partners & integrations|App Directory|Works with Patreon)$",
+   "in2019": true,
+   "evidence": [
+    "home-raw20191030",
+    "home-a20190630",
+    "home-a20191030"
+   ],
+   "note": "2019 Works with Patreon / App Directory"
+  },
+  {
+   "match": "^(Twitter|Facebook|Instagram)$",
+   "in2019": true,
+   "evidence": [
+    "home-raw20191030",
+    "home-a20190630",
+    "home-a20191030"
+   ],
+   "note": "Patreon on Facebook / Instagram / Twitter"
+  },
+  {
+   "match": "^(Creators\\. Fans\\. Nothing in between\\.|Turning passions into businesses|More ways to earn|Unlock growth|Your world to create|Create on your terms|Build real community|Set up shop)$",
+   "in2019": false,
+   "action": "kept: the home page's own marketing copy and its section links, the counterpart of the 2019 home sections (CREATE ON YOUR OWN TERMS, How does it work, What's included); page content, not site chrome",
+   "evidence": [
+    "home-raw20191030",
+    "home-a20190630",
+    "home-a20191030"
+   ]
+  },
+  {
+   "match": "^(Terms of Use & policies|Cookie policy|Accessibility|Impressum|Privacy policy|English \\(United States\\) \\(en-US\\)|United States|USD|.*\\([a-z]{2}(-[A-Z]{2})?\\)|[A-Z]{3})$",
+   "in2019": false,
+   "action": "kept: legal links and the language, country and currency selectors",
+   "evidence": []
+  },
+  {
+   "match": "^(Updates|Where real community thrives|Grow your community|Support for your business|Earning made easy|Start a membership|Set up a shop|Newsroom|Mobile|Brand assets & guidelines|Get it on Google Play|Download on the App Store|YouTube|LinkedIn)$",
+   "in2019": false,
+   "evidence": [
+    "home-raw20191030",
+    "home-a20190630",
+    "home-a20191030"
+   ],
+   "note": "not in the 2019 header or footer; hidden by the theme"
   }
  ]
 }

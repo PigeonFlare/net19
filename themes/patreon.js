@@ -7,5 +7,5 @@ globalThis.net19Theme = {
     if (followsDevice) return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     return null;
   },
-  later: /^(?:chats?|open chats?|give a gift|gift a membership)$/i,
+  later: /^(?:chats?|open chats?|give a gift|gift a membership|updates|where real community thrives|grow your community|support for your business|earning made easy|start a membership|set up a shop|newsroom|mobile|brand assets & guidelines|get it on google play|download on the app store|youtube|linkedin)$/i,
 };
