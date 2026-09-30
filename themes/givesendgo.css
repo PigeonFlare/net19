@@ -85,3 +85,4 @@ div.w-full:has(> img[class*="h-[80px]"]):has(+ footer) { display: none !importan
 a[href="/giver-army"], a[href$="givesendgo.com/giver-army"] { display: none !important; }
 div.min-h-screen[style*="teal-hero.jpg"] { background-image: none !important; background-color: var(--n19-band) !important; }
 div.min-h-screen[style*="teal-hero.jpg"] .overflow-hidden.ring { border-radius: 4px !important; box-shadow: 0 1px 3px rgba(0, 0, 0, .2) !important; backdrop-filter: none !important; }
+header :is(a, button), header :is(a, button):hover { text-shadow: none !important; }
