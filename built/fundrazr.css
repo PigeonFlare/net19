@@ -79,3 +79,4 @@ body:is(.wp-singular,.page,.home,.single,.blog,.archive,.search) #ajax-content-w
 #ajax-content-wrap .nectar-animated-gradient{display:none!important}
 :where(:root:not([data-n19-safe])) #cmp-grid .widget .details p.description,#cmp-grid:where(:root:not([data-n19-safe])) .widget .details p.description{display:-webkit-box!important;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden!important}
 a.connect-icon,li:has(>a.connect-icon),a[href*="connectionpoint.com"],#to-top{display:none!important}
+#ajax-content-wrap .wpb_row.top-level :is(h1,h2):not(.vc_col-sm-6 *),#ajax-content-wrap .wpb_row.top-level :is(h1,h2):not(.vc_col-sm-6 *) em{color:#fff!important}
