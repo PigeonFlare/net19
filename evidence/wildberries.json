@@ -1,0 +1,325 @@
+{
+ "theme": "wildberries",
+ "era": "2019 wildberries.ru desktop (same for every visitor): a deep purple #481173 header with a magenta #cb11ab gradient circle on the left, the white wildberries logo, a translucent white search field with search-by-photo, Адреса / Мои доставки / Корзина, and an uppercase white category menu (Женщинам, Мужчинам, Детям …); results with sort by популярности / рейтингу / цене / скидке and 40 / 100 / 200 per page; product pages with В корзину and В лист ожидания. Captures March to October 2019 agree. Live-checked read-only in a real Chrome (wildberries.ru blocks headless browsers); the uppercase inline category menu is now a burger menu and is not rebuilt.",
+ "sources": [
+  {
+   "id": "h1",
+   "url": "https://arquivo.pt/wayback/20190326232924/https://www.wildberries.ru/",
+   "date": "2019-03-26",
+   "shows": "home: purple header with the wildberries logo, search (Искать, Сбросить), Адреса, Мои доставки, Корзина; uppercase category menu Женщинам, Мужчинам, Детям, Обувь, Аксессуары ... Бренды, Весна 2019, Акции; footer (Партнерам, Аренда, Сервис и поддержка, О нас, Контакты, Вакансии, Пункты самовывоза, Мобильное приложение)"
+  },
+  {
+   "id": "h2",
+   "url": "https://arquivo.pt/wayback/20190624061545/https://www.wildberries.ru/",
+   "date": "2019-06-24",
+   "shows": "home: same header and menu, top links Бесплатная доставка, Персональная скидка, Звонок с сайта, FAQ dropdown"
+  },
+  {
+   "id": "h3",
+   "url": "https://arquivo.pt/wayback/20190902203014/https://www.wildberries.ru/",
+   "date": "2019-09-02",
+   "shows": "home: header, category menu (… Ювелирные украшения, PREMIUM, Подарки, Школа, Тренды, Бренды, Осень 2019, Акции), full footer (Пресс-центр, Преимущества, Сертификаты, Наши скидки, Проверка совместимости); header CSS: #481173 background with a #cb11ab to #631174 gradient circle, white uppercase 14px menu, translucent 4px-radius search field with a search-by-photo icon"
+  },
+  {
+   "id": "s1",
+   "url": "https://arquivo.pt/wayback/20191012202009/https://www.wildberries.ru/catalog/0/search.aspx?search=ticwatch&pagesize=100&sort=popular",
+   "date": "2019-10-12",
+   "shows": "search results: header, query in the search field, sort by популярности / рейтингу / цене / скидке / обновлению, page size 40 / 100 / 200, product cards with price, old price and −% badge, Вместе с «ticwatch» ищут, Возможно, Вам понравится, Наверх"
+  },
+  {
+   "id": "s2",
+   "url": "https://arquivo.pt/wayback/20191012202000/https://www.wildberries.ru/brands/kingston",
+   "date": "2019-10-12",
+   "shows": "brand results: breadcrumbs Главная / Бренды на «K», h1 Каталог Kingston, the same sort and page-size controls, product cards"
+  },
+  {
+   "id": "s3",
+   "url": "https://arquivo.pt/wayback/20190927164605/https://www.wildberries.ru/brands/john-frieda",
+   "date": "2019-09-27",
+   "shows": "brand results: header, menu, product cards"
+  },
+  {
+   "id": "p1",
+   "url": "https://arquivo.pt/wayback/20191020093840/https://www.wildberries.ru/catalog/1938429/detail.aspx",
+   "date": "2019-10-20",
+   "shows": "product: Назад, 53 отзыва, Нашли дешевле?, share link (Ссылка на товар, Копировать, Отправить ссылку), В корзину, Перейти в корзину, В лист ожидания, Нашли неточность в описании?, C этим товаром искали, h2 brand / title, Отзывы, Вопросы, Написать отзыв, Жалоба на представителя бренда"
+  },
+  {
+   "id": "p2",
+   "url": "https://arquivo.pt/wayback/20191020093944/https://www.wildberries.ru/catalog/1202272/detail.aspx",
+   "date": "2019-10-20",
+   "shows": "product: same layout, 125 отзывов, В корзину, В лист ожидания"
+  },
+  {
+   "id": "p3",
+   "url": "https://arquivo.pt/wayback/20190927164818/https://www.wildberries.ru/catalog/319494/detail.aspx",
+   "date": "2019-09-27",
+   "shows": "product: same header and product layout"
+  }
+ ],
+ "features": [
+  {
+   "match": "^Wildberries$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "s1",
+    "s2",
+    "s3",
+    "p1",
+    "p2",
+    "p3"
+   ],
+   "note": "logo",
+   "required": true
+  },
+  {
+   "match": "^(Найти на Wildberries|Искать|Очистить поиск|Сбросить|Поиск по фото|Искать по фото)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "s1",
+    "s2",
+    "s3",
+    "p1",
+    "p2",
+    "p3"
+   ],
+   "note": "search field, clear and search-by-photo (the 2019 header CSS has .icon-photo)",
+   "required": true
+  },
+  {
+   "match": "^(Адреса|Войти|Корзина|Мои доставки|Доставки)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "s1",
+    "s2",
+    "s3",
+    "p1",
+    "p2",
+    "p3"
+   ],
+   "note": "header shortcuts",
+   "required": true
+  },
+  {
+   "match": "^(Навигация по сайту|Каталог|Меню)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "s1",
+    "s2",
+    "s3",
+    "p1",
+    "p2",
+    "p3"
+   ],
+   "note": "category menu entry (2019 showed the category menu inline)"
+  },
+  {
+   "match": "^Москва$",
+   "in2019": true,
+   "evidence": [
+    "h3"
+   ],
+   "note": "city in the top line (.header-top .geo)"
+  },
+  {
+   "match": "^Бренды$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h3",
+    "s1"
+   ],
+   "note": "Бренды link in the 2019 category menu"
+  },
+  {
+   "match": "^(Wibes|Отели|Авиабилеты|Туры с.*|Ресейл|Для бизнеса.*|Еаптека|Работа в RWB.*|WB Клуб|Новостройки|Track|Ещё.*)$",
+   "in2019": false,
+   "evidence": [
+    "the 2019 top line had only Бесплатная доставка, Персональная скидка, Звонок с сайта and FAQ (h2, h3)"
+   ],
+   "action": "hidden: header#header li.j-wibes, .j-hotels, .j-avia, .j-funSun, .j-resale, .j-business, .j-eapteka, .j-work, .j-wbClub, .j-realty, .j-wbTrack, .j-more"
+  },
+  {
+   "match": "^(RUB|₽|KZT|BYN)$",
+   "in2019": false,
+   "evidence": [
+    "no currency switch in any 2019 header (h1-h3)"
+   ],
+   "action": "hidden: .header__currency"
+  },
+  {
+   "match": "^Чат$",
+   "in2019": false,
+   "evidence": [
+    "2019 offered Звонок с сайта, not a chat widget (h1-h3)"
+   ],
+   "action": "hidden: .chat-navigation, .j-btn-chat-open"
+  },
+  {
+   "match": "^(header area|main area|article area|repeated div|repeated article)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h2",
+    "h3",
+    "s1",
+    "s2",
+    "s3",
+    "p1",
+    "p2",
+    "p3"
+   ],
+   "note": "page regions"
+  },
+  {
+   "match": "^(Покупателям|Компания|Приложение|Частые вопросы|О нас|Пресс[‑-]служба|Пресс-центр|Контакты|Социальные сети|ВКонтакте|Одноклассники|Продавцам и партн[её]рам|Продавать товары|Предложить помещение|Открыть пункт выдачи)$",
+   "in2019": true,
+   "evidence": [
+    "h1",
+    "h3"
+   ],
+   "note": "footer columns: Сервис и поддержка, Партнерам, Аренда, Пункты самовывоза, О нас, Пресс-центр, Контакты, Мобильное приложение",
+   "required": true,
+   "pages": [
+    "home"
+   ]
+  },
+  {
+   "match": "^(Наши проекты|Wibes|WB Stream|Track|WB Forms)$",
+   "in2019": false,
+   "evidence": [
+    "no Our projects column in the 2019 footer (h1, h3)"
+   ],
+   "action": "hidden: .footer__list-wrap--ourprojects"
+  },
+  {
+   "match": "^(Покупать как бизнес|Доставка по клику из пункта выдачи|Гид по безопасности|Сообщить о мошенничестве)$",
+   "in2019": false,
+   "evidence": [
+    "not in the 2019 footer (h1, h3)"
+   ],
+   "action": "hidden: theme.later labels"
+  },
+  {
+   "match": "^(ОС Аврора|Telegram)$",
+   "in2019": false,
+   "evidence": [
+    "no Aurora OS app or Telegram link in 2019 (h1, h3)"
+   ],
+   "action": "hidden: a[href*=avrora], .footer-social__icon--telegram"
+  },
+  {
+   "match": "^(Как обрабатываем ваши персональные данные|рекомендательные технологии|Окей)$",
+   "in2019": false,
+   "evidence": [
+    "legal and cookie notices required after 2019"
+   ],
+   "action": "kept: legal"
+  },
+  {
+   "match": "^(Добавить в избранное|В лист ожидания)$",
+   "in2019": true,
+   "evidence": [
+    "p1",
+    "p2"
+   ],
+   "note": "favourites / waiting list"
+  },
+  {
+   "match": "^(Р.?е.?к.?л.?а.?м.?а|Реклама)$",
+   "in2019": false,
+   "evidence": [
+    "ad label on sponsored cards, post-2019"
+   ],
+   "action": "kept: result label"
+  },
+  {
+   "match": "^(\\d+ (сентября|октября|ноября|декабря|января|февраля|марта|апреля|мая|июня|июля|августа)|Завтра|Послезавтра|Сегодня)$",
+   "in2019": false,
+   "evidence": [
+    "delivery dates on result cards are post-2019"
+   ],
+   "action": "kept: result detail"
+  },
+  {
+   "match": "^Размер карточки$",
+   "in2019": false,
+   "evidence": [
+    "2019 results had page-size links 40 / 100 / 200 (s1, s2), not a card-size switch"
+   ],
+   "action": "hidden: theme.later label"
+  },
+  {
+   "match": "^(популярности|рейтингу|цене|скидке|обновлению|По популярности|Сортировка.*)$",
+   "in2019": true,
+   "evidence": [
+    "s1",
+    "s2"
+   ],
+   "note": "sort controls",
+   "pages": [
+    "search"
+   ]
+  },
+  {
+   "match": "^(Назад|Главная|К предыдущей странице)$",
+   "in2019": true,
+   "evidence": [
+    "p1",
+    "s2"
+   ],
+   "note": "breadcrumbs and back link"
+  },
+  {
+   "match": "^(В корзину|Добавить в корзину|Перейти в корзину)$",
+   "in2019": true,
+   "evidence": [
+    "p1",
+    "p2"
+   ],
+   "note": "add to cart",
+   "required": true,
+   "pages": [
+    "item"
+   ]
+  },
+  {
+   "match": "^(Купить|Купить сейчас|Подробнее о продавце)$",
+   "in2019": false,
+   "evidence": [
+    "not on 2019 product pages (p1-p3)"
+   ],
+   "action": "kept: product purchase controls"
+  },
+  {
+   "match": "^(Поделиться.*|Пожаловаться|Отзывы.*|Оценки.*|Вопросы.*|Смотреть все отзывы|Перейти к отзывам|Характеристики и описание|Все варианты|Похожие|В каталог бренда|Следующее фото|Предыдущее фото|Следующие миниатюры|Следующие цвета|Смотреть все фото и видео|РАСПРОДАЖА)$",
+   "in2019": true,
+   "evidence": [
+    "p1",
+    "p2",
+    "p3"
+   ],
+   "note": "product page sections and actions (2019: share link, Жалоба, Отзывы, Вопросы, photo gallery, colour choice, sale badge)"
+  },
+  {
+   "match": "^что означает метка Оригинал\\?$",
+   "in2019": false,
+   "evidence": [
+    "the Оригинал label is post-2019"
+   ],
+   "action": "hidden: theme.later label"
+  }
+ ]
+}

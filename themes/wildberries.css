@@ -1,7 +1,7 @@
-html { --n19-magenta: #cb11ab; --n19-magenta-hover: #b00e94; --n19-purple: #481173; --n19-red: #f91155; --n19-text: #242424; --n19-page: #fff; --n19-radius: 4px; }
+html { --n19-magenta: #cb11ab; --n19-magenta-hover: #b00e94; --n19-purple: #481173; --n19-plum: #631174; --n19-red: #f91155; --n19-text: #242424; --n19-page: #fff; --n19-radius: 4px; }
 html[data-net19-mode="dark"] { --n19-text: #e6e6e6; --n19-page: #161616; }
 
-header#header.header { background-color: var(--n19-magenta) !important; background-image: linear-gradient(90deg, var(--n19-magenta) 0%, var(--n19-purple) 100%) !important; }
+header#header.header { background-color: var(--n19-purple) !important; background-image: radial-gradient(circle at 12% 50%, var(--n19-magenta) 0, var(--n19-plum) 38%, var(--n19-purple) 62%) !important; }
 header#header .navbar-pc__link, header#header .navbar-pc__link p, header#header .simple-menu__link { color: #fff !important; }
 #searchBlock .search-catalog__block, #searchBlock .search-catalog__input-wrapper { border-radius: var(--n19-radius) !important; }
 header#header .nav-element__burger { border-radius: var(--n19-radius) !important; }
@@ -11,5 +11,5 @@ header#header .nav-element__burger { border-radius: var(--n19-radius) !important
 
 button.mo-button:is(.mo-button_view_fill, .mo-button_view_fillLight), a.btn-main, button.btn-main { border-radius: var(--n19-radius) !important; }
 
-header#header li:is(.j-wibes, .j-hotels, .j-avia, .j-funSun, .j-resale, .j-wbClub, .j-realty, .j-wbTrack, .j-work, .j-eapteka, .j-business),
-#searchByImageContainer { display: none !important; }
+header#header li:is(.j-wibes, .j-hotels, .j-avia, .j-funSun, .j-resale, .j-wbClub, .j-realty, .j-wbTrack, .j-work, .j-eapteka, .j-business, .j-more),
+.header__currency, .chat-navigation, .j-btn-chat-open, .footer__list-wrap--ourprojects, a[href*="avrora"], .footer-social__icon--telegram { display: none !important; }
