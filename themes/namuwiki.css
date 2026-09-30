@@ -27,3 +27,4 @@ html:not([data-net19-mode="dark"]) body:not(.theseed-dark-mode) { --espejo-link-
 #app { font-family: var(--n19-font) !important; }
 
 #app div:not(article *):has(a[href^="/Go?q="]):not(:has(article, h1, form, input, a[href="/RecentChanges"])) { display: none !important; }
+footer a:is([href*="play.google.com"], [href*="apps.apple.com"]) { display: none !important; }

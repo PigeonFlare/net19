@@ -4,3 +4,4 @@ html:root,html body,html body.theseed-light-mode,html body.theseed-dark-mode{--e
 html:not([data-net19-mode="dark"]) body:not(.theseed-dark-mode){--espejo-link-color:#0275d8!important;--espejo-link-hover-color:#014c8c!important;--espejo-card-background-color:#fff!important;--espejo-component-border-color:var(--n19-rule)!important}
 #app{font-family:var(--n19-font)!important}
 #app div:not(article *):has(a[href^="/Go?q="]):not(:has(article,h1,form,input,a[href="/RecentChanges"])){display:none!important}
+footer a:is([href*="play.google.com"],[href*="apps.apple.com"]){display:none!important}

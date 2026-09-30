@@ -1,4 +1,5 @@
 globalThis.net19Theme = {
+  intended: 'footer a[href*="play.google.com"], footer a[href*="apps.apple.com"]',
   detect: () => {
     const body = document.body;
     if (body?.classList.contains('theseed-dark-mode')) return 'dark';

@@ -1,0 +1,126 @@
+{
+  "theme": "namuwiki",
+  "era": "2019 namu.wiki on the seed engine with the default senkawa skin: teal #008275 top bar with the 나무위키 logo, 최근 변경, 최근 토론, 특수 기능 menu, member menu and a search field with random / search / go buttons; white article card on grey with 역링크 / 토론 / 편집 / 역사 / ACL buttons; footer with Contáctenos / Términos de uso (umanle S.R.L.). The site served the same skin to every visitor; signed-in users could switch skin, but senkawa was the default.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://arquivo.pt/wayback/20190619004138/https://namu.wiki/w/%EB%82%98%EB%AC%B4%EC%9C%84%ED%82%A4:%EB%8C%80%EB%AC%B8",
+      "date": "2019-06-19",
+      "shows": "front page: 나무위키 logo, 최근 변경, 최근 토론, 특수 기능 (게시판, 작성이 필요한 문서, ...), 나무라이브, member menu (스킨 설정, 어두운 화면으로, 로그인), search 'Search', sidebar 최근 변경 / 헤드라인 최신글, article buttons Star / 역링크 / 토론 / 편집 / 역사 / ACL, footer Contáctenos / Términos de uso / the seed engine"
+    },
+    {
+      "id": "s2",
+      "url": "https://arquivo.pt/wayback/20190922025409/https://namu.wiki/w/%EB%82%98%EB%AC%B4%EC%9C%84%ED%82%A4:%EB%8C%80%EB%AC%B8",
+      "date": "2019-09-22",
+      "shows": "front page: same header, member menu, search, article buttons and footer as s1"
+    },
+    {
+      "id": "s3",
+      "url": "https://arquivo.pt/wayback/20191011221642/https://namu.wiki/w/%EA%B2%BD%EB%A5%9C",
+      "date": "2019-10-11",
+      "shows": "article page (경륜): same header and search, article title with 역링크 / 토론 / 편집 / 역사 / ACL, table of contents, footnotes, categories"
+    },
+    {
+      "id": "s4",
+      "url": "https://thewiki.kr/w/%EC%9C%84%ED%82%A4/%EC%8A%A4%ED%82%A8",
+      "date": "2019",
+      "shows": "wiki skin history: senkawa as the default the seed skin on namu.wiki until the 2020s redesign"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header area|main area|footer area|form area|repeated .*)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "page frame; repeated items are content"
+    },
+    {
+      "match": "^나무위키(:.*)?$",
+      "in2019": true,
+      "required": true,
+      "pages": [
+        "home"
+      ],
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required: logo; links to 나무위키: pages are article content"
+    },
+    {
+      "match": "^최근 변경$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required"
+    },
+    {
+      "match": "^최근 토론$",
+      "in2019": true,
+      "required": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "required"
+    },
+    {
+      "match": "^특수 기능$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ]
+    },
+    {
+      "match": "^(여기에서 검색|Search|검색|이동|아무 문서로 이동|RandomPage)$",
+      "in2019": true,
+      "required": false,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "search field, search/go buttons and random page"
+    },
+    {
+      "match": "^(역링크|토론|편집|역사|ACL|Star|별찜|분류|각주)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s3"
+      ],
+      "note": "article buttons"
+    },
+    {
+      "match": "^(Contáctenos|Términos de uso|Contact|Terms of Use)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2"
+      ],
+      "note": "footer links"
+    },
+    {
+      "match": "^(Privacy Policy|Terms of Service|개인정보처리방침|이용약관)$",
+      "in2019": false,
+      "evidence": [
+        "privacy / terms links added later"
+      ],
+      "action": "kept: legal"
+    },
+    {
+      "match": "^나무위키 뷰어 - (Play Store|App Store)$",
+      "in2019": false,
+      "evidence": [
+        "the 나무위키 viewer app links are not in the 2019 footer (s1, s2)"
+      ],
+      "action": "hidden"
+    }
+  ]
+}
