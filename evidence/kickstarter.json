@@ -73,6 +73,27 @@
     "project-a20190922"
    ],
    "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^Kickstarter$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "about-a20190702",
+    "discover-a20190313",
+    "discover-a20190912"
+   ],
+   "note": "Kickstarter logo in the header"
+  },
+  {
+   "match": "^(Film|Games|Music|Publishing)$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a20190303",
+    "home-a20190630"
+   ],
+   "note": "home page category navigation (Arts ... Publishing row, 2019 captures)"
   }
  ]
 }

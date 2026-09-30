@@ -63,6 +63,50 @@
     "reviews-a20191212"
    ],
    "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^(Open menu|Entertainment|Games|Movies|TV|PlayStation|Xbox|Nintendo|Tech|Latest|Search|Privacy Policy|Terms of Use)$",
+   "in2019": true,
+   "evidence": [
+    "reviews-a20191212"
+   ],
+   "note": "labels in the 2019-12-12 US capture: Open Menu, the Games / PlayStation / Xbox / Nintendo / Entertainment / Movies / Tech menus, the TV and Latest sort/filter tabs, Search, and the Privacy Policy / Terms of Use footer links"
+  },
+  {
+   "match": "^IGN$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "reviews-a20191212"
+   ],
+   "note": "IGN logo in the header"
+  },
+  {
+   "match": "^(News|Reviews)$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "reviews-a20191212"
+   ],
+   "note": "News / Reviews header navigation"
+  },
+  {
+   "match": "^Search$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "reviews-a20191212"
+   ],
+   "note": "header search"
+  },
+  {
+   "match": "^Open menu$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "reviews-a20191212"
+   ],
+   "note": "header menu button (Open Menu)"
   }
  ]
 }

@@ -96,6 +96,47 @@
     "home-a20191030"
    ],
    "note": "the same label is on the cited 2019 capture(s)"
+  },
+  {
+   "match": "^Patreon$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a20190303"
+   ],
+   "note": "Patreon logo in the header"
+  },
+  {
+   "match": "^Log in$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "about-a20190704",
+    "creator-a20190919",
+    "creator2-a20191107"
+   ],
+   "note": "header Log in"
+  },
+  {
+   "match": "^Get Started$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "home-a20190630",
+    "home-a20191030"
+   ],
+   "note": "header Get Started button"
+  },
+  {
+   "match": "^(Pricing|Resources)$",
+   "in2019": true,
+   "required": true,
+   "evidence": [
+    "about-a20190704",
+    "home-a20190630",
+    "home-a20191030"
+   ],
+   "note": "header Pricing / Resources menus"
   }
  ]
 }
