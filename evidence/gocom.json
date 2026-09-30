@@ -35,6 +35,39 @@
  ],
  "features": [
   {
+   "match": "^(ABCN Logo|ABC News)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201911",
+    "home-a201907",
+    "abc-a201901"
+   ],
+   "note": "2019 masthead logo",
+   "required": true
+  },
+  {
+   "match": "^(Video|Live|Shows)$",
+   "in2019": true,
+   "evidence": [
+    "abc-a201901",
+    "abc-a201904",
+    "home-a201903"
+   ],
+   "note": "2019 top navigation",
+   "required": true
+  },
+  {
+   "match": "^(U\\.S\\.|Politics|International|Entertainment)$",
+   "in2019": true,
+   "evidence": [
+    "home-a201903",
+    "home-a201907",
+    "home-a201911"
+   ],
+   "note": "2019 section navigation",
+   "required": true
+  },
+  {
    "match": "^(TikTok|STREAM NOW|Stream Now|Snap|Try Hulu|Try Disney\\+|Add ABC News as a preferred source.*)$",
    "in2019": false,
    "evidence": [
