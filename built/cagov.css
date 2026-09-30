@@ -21,3 +21,4 @@ main .section-primary.lineart.bg-p2 :is(h1,h2,p,li,span){color:var(--n19-panel-t
 main .section-primary.lineart.bg-p2 a{color:var(--n19-blue)!important}
 html[data-net19-mode="dark"] main .section-primary.lineart.bg-p2 a{color:#7cc4e8!important}
 main a.link-grid,main .btn,main [class*="bg-gray-50"]{border-radius:0!important}
+.utility-header .btn-official{display:none!important}

@@ -1,6 +1,6 @@
 {
  "theme": "cagov",
- "era": "",
+ "era": "2019 CA.gov on the California State Web Template v5: utility bar (Home, social, State Agencies, Contact Us, Translate, Settings), CA.gov logo, topic navigation, large search, service quick links, promo carousel, California by the numbers, Trending News, Campaigns / Alerts / About / Support footer",
  "sources": [
   {
    "id": "home-h201903",
@@ -25,6 +25,18 @@
    "url": "wayback-2019-ref:https://www.ca.gov/",
    "date": "2019",
    "shows": "home page as served in 2019 (Wayback 2019 capture rendered with its archived CSS)"
+  },
+  {
+   "id": "home-h201911-labels",
+   "url": "https://arquivo.pt/noFrame/replay/20191114064812/https://www.ca.gov/",
+   "date": "2019-11-14",
+   "shows": "home markup: utility bar (Home, Facebook, Twitter, State Agencies, Contact Us, Translate, Settings), topic nav (Getting Services, Doing Business, Working, Learning, Living, Visiting, Government), Search this website, Find State Agencies / Find State Services / Common Questions / Explore / More Services, promo panels (REAL ID, Immigrant Guide, Cannabis portal, Disaster Resources), statistics (Million people, Largest Economy, annual visitors, Labor Force), Data Sets, Trending News with View More Stories, footer Campaigns (Register to Vote, Save Our Water, Flex Alert), Alerts (Amber Alert, Cal Alerts, My Hazards), About (Governor, Lt. Governor, California Data), Support (State Directory, Feedback Survey, Technical Issues), Website Feedback"
+  },
+  {
+   "id": "serp-a202008",
+   "url": "https://arquivo.pt/noFrame/replay/20200827191040/https://www.ca.gov/serp/",
+   "date": "2020-08-27",
+   "shows": "search results page on the same 2019 State Template v5 (the 2019 home search form posts to /serp): breadcrumb, Search Results heading, Google Custom Search results (enhanced by Google), same header and footer"
   }
  ],
  "features": [
@@ -109,6 +121,82 @@
     "footer area",
     "form area"
    ]
+  },
+  {
+   "match": "^(header area|Main navigation|CA\\.gov official logo|CA\\.gov icon|Services|Departments|About California|Get help)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201911-labels",
+    "home-h201907"
+   ],
+   "note": "2019 header: CA.gov logo and topic navigation (Getting Services, State Agencies, Visiting/About, Support / Contact Us)"
+  },
+  {
+   "match": "^(Español|한국어|Tagalog|Tiếng Việt|繁體中文)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201911-labels"
+   ],
+   "note": "language links: the 2019 utility bar Translate control (Google Translate)"
+  },
+  {
+   "match": "^(Find government services and information|search area)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201911-labels",
+    "home-h201903"
+   ],
+   "note": "2019 large home search"
+  },
+  {
+   "match": "^(Find government services and information|Popular services|repeated h3|Popular topics|repeated div|View all topics|California highlights|article area|Learn more about California|California by the numbers|In the spotlight|View all news\\(external link\\))$",
+   "in2019": true,
+   "evidence": [
+    "home-h201911-labels",
+    "home-h201907"
+   ],
+   "note": "2019 home modules: service quick links (Find State Services, More Services), topic categories, promo panels, statistics (California by the numbers), Trending News with View More Stories"
+  },
+  {
+   "match": "^(Gavin Newsom|Eleni Kounalakis|Governor’s cabinet)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201911-labels"
+   ],
+   "note": "2019 About links: Governor, Lt. Governor"
+  },
+  {
+   "match": "^(Did you find what you were looking for\\?|Yes|No|aside area)$",
+   "in2019": true,
+   "evidence": [
+    "home-h201911-labels"
+   ],
+   "note": "2019 Website Feedback / Feedback Survey"
+  },
+  {
+   "match": "^(About this website|State careers\\(external link\\)|California data\\(external link\\)|State directory\\(external link\\)|Technical help|Contact information|Register to vote\\(external link\\)|Save our water\\(external link\\)|Flex alert\\(external link\\)|Amber alert\\(external link\\)|Cal alerts\\(external link\\)|My hazards\\(external link\\))$",
+   "in2019": true,
+   "evidence": [
+    "home-h201911-labels",
+    "home-h201903"
+   ],
+   "note": "2019 footer: Campaigns, Alerts, About, Support and Working links"
+  },
+  {
+   "match": "^(You are here|main area|enhanced by Google)$",
+   "in2019": true,
+   "evidence": [
+    "serp-a202008"
+   ],
+   "note": "search page breadcrumb and Google Custom Search results"
+  },
+  {
+   "match": "^Official California website$",
+   "in2019": false,
+   "evidence": [
+    "absent from the 2019 utility bar (home-h201911-labels)"
+   ],
+   "action": "hidden"
   }
  ]
 }
