@@ -1,0 +1,80 @@
+{
+  "theme": "substack",
+  "era": "2019 Substack publications: white top bar with 48px logo and name, bold system-sans post titles, Spectral 17px body, date · heart · comment · share meta row, orange #ff6719 (or publication accent) buttons, #f8f8f8 footer",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://arquivo.pt/wayback/20190929065905/https://www.exponentialview.co/",
+      "date": "2019-09-29",
+      "shows": "publication home: centered logo, bold sans name, grey tagline, email field with accent Subscribe button, Let me read it first, 'A Substack newsletter by', Privacy / Terms"
+    },
+    {
+      "id": "s2",
+      "url": "https://arquivo.pt/wayback/20191011074032/https://cdn.substack.com/theme/main.css?s=exponentialview",
+      "date": "2019-10-11",
+      "shows": "publication stylesheet: body Spectral 17px #1a1a1a, post titles 'SF Compact Display'/system sans 700 2.56em, subtitle 19px #757575, table.post-meta 14px weight 300 #757575 with heart (liked #e42626), comments and share icons, blockquote accent rule, footer #f8f8f8"
+    },
+    {
+      "id": "s3",
+      "url": "https://arquivo.pt/wayback/20191011074101/https://cdn.substack.com/theme/substack.css?s=www",
+      "date": "2019-10-11",
+      "shows": "substack.com stylesheet: .button.primary #ff6719 with white text, same post header and meta styles"
+    },
+    {
+      "id": "s4",
+      "url": "https://arquivo.pt/wayback/20191224182551/https://chinai.substack.com/p/",
+      "date": "2019-12-24",
+      "shows": "post page: top bar with logo, name, Subscribe and menu (About, Archive, Sign in), title, subtitle, date and like/comment/share row, Subscribe band, footer '© 2019 ... See privacy terms' and Publish on Substack pill"
+    },
+    {
+      "id": "s5",
+      "url": "https://on.substack.com/p/we-have-a-real-logo-now",
+      "date": "2019-04-26",
+      "shows": "the orange bookmark logo introduced April 2019"
+    },
+    {
+      "id": "s6",
+      "url": "https://on.substack.com/p/recommendations",
+      "date": "2022-04-12",
+      "shows": "recommendations launch; restacks, Notes (2023), Chat (2022) and the reader app (2021-2022) are later"
+    }
+  ],
+  "features": [
+    {
+      "match": "^(header|nav|footer|main|section|article|form|search|aside|dialog|region|contentinfo) area$|^repeated |^(Main)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "page regions and repeated post items"
+    },
+    {
+      "match": "^(Subscribe|Subscribe now|Sign in|Log in|Login|About|Archive|Home|Share|Like.*|View comments.*|Comments?|Discussion.*|Top|New|Latest|Previous|Next|Privacy|Terms|Collection notice|Publish on Substack|Start (writing|publishing)|Type your email.*|Let me read it first|No thanks|Ready for more\\?)$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s2",
+        "s4"
+      ],
+      "note": "top bar, meta row, archive, subscribe forms and footer"
+    },
+    {
+      "match": "^(Search|Share Publication|Restack|Restacks?|Get (the )?app|Download (the )?app|Open in app|Notes|Chat|Recommendations?|Discover more from .*|“.*”.*)$",
+      "in2019": false,
+      "evidence": [
+        "header search and share icons are absent from the 2019 top bar (s4); restacks and recommendations 2022, Notes 2023, Chat 2022, apps 2022 (s6); reader testimonials on the welcome page are also later"
+      ],
+      "note": "hidden"
+    },
+    {
+      "match": "^(?=.{12,}$).*\\s.*$",
+      "in2019": true,
+      "evidence": [
+        "s1",
+        "s4"
+      ],
+      "note": "post titles, subtitles and text (content)"
+    }
+  ]
+}

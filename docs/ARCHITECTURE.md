@@ -126,7 +126,7 @@ Settings are `{ enabled, disabledHosts }`. Only the popup can change them. Switc
 
 | Permission | Purpose |
 | --- | --- |
-| Host access to the themed domains (153 domains for 163 themes) | Register the themes and navigation rules on those sites only |
+| Host access to the themed domains (155 domains for 165 themes) | Register the themes and navigation rules on those sites only |
 | `scripting` | Register the document-start theme scripts |
 | `declarativeNetRequestWithHostAccess` | The legacy-skin parameter on Wikipedia and other wikis |
 | `storage` | The two switches, and the site sections currently on a theme's safe layer |

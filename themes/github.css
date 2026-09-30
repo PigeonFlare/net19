@@ -2,7 +2,7 @@ html { --n19-header: #24292e; --n19-header-text: #fff; --n19-header-dim: rgba(25
   --n19-hero: #2b3137; --n19-hero-lead: rgba(255,255,255,.6); --n19-signup-box: #fafbfc; --n19-signup-text: #24292e; --n19-signup-note: #6a737d; --n19-signup-green: #2ebc4f; --n19-signup-green-hover: #28a745;
   --n19-bg: #fff; --n19-bg-2: #fafbfc; --n19-bg-3: #f6f8fa; --n19-text: #24292e; --n19-text-2: #586069; --n19-link: #0366d6; --n19-border: #e1e4e8; --n19-row-border: #eaecef;
   --n19-btn-from: #fafbfc; --n19-btn-to: #eff3f6; --n19-btn-hover-from: #f0f3f6; --n19-btn-hover-to: #e6ebf1; --n19-btn-border: rgba(27,31,35,.2); --n19-btn-text: #24292e;
-  --n19-primary-from: #34d058; --n19-primary-to: #28a745; --n19-primary-hover-from: #2fcb53; --n19-primary-hover-to: #269f42;
+  --n19-primary-from: #2ea44f; --n19-primary-to: #22863a; --n19-primary-hover-from: #2c974b; --n19-primary-hover-to: #1e7b34;
   --n19-tab-edge: #e36209; --n19-counter: rgba(27,31,35,.08); --n19-field-border: #d1d5da; --n19-field-inset: inset 0 1px 2px rgba(27,31,35,.075);
   --n19-commit-bar: #f1f8ff; --n19-commit-border: #c8e1ff; --n19-folder: #79b8ff; --n19-file: #6a737d;
   --n19-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }

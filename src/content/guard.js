@@ -185,6 +185,7 @@ import { rgba } from './color.js';
     ':is(input,textarea)[data-net19-ink="dark"]{caret-color:#1d1d1f!important}:is(input,textarea)[data-net19-ink="dark"]::placeholder{color:#5f6368!important;-webkit-text-fill-color:#5f6368!important;opacity:1!important}' +
     ':is(input,textarea)[data-net19-ink="light"]{caret-color:#f5f5f7!important}:is(input,textarea)[data-net19-ink="light"]::placeholder{color:#bdc1c6!important;-webkit-text-fill-color:#bdc1c6!important;opacity:1!important}';
   const original = new WeakMap(), inline = new WeakMap();
+  let blendSeen = new WeakSet();
   let blendDark = null, fades = new Map();
   const fadeOf = e => { if (!e || e === root || e.nodeType !== 1) return 1; let f = fades.get(e); if (f === undefined) { f = +getComputedStyle(e).opacity * fadeOf(up(e)); fades.set(e, f); } return f; };
   let textCache = null;
@@ -240,15 +241,20 @@ import { rgba } from './color.js';
     const view = { w: innerWidth, h: innerHeight };
     const changes = [];
     const dark = root.getAttribute('data-net19-mode') === 'dark';
-    if (dark !== blendDark) { blendDark = dark; for (const e of document.querySelectorAll('[data-net19-blend]')) e.removeAttribute('data-net19-blend'); }
+    if (dark !== blendDark) { blendDark = dark; blendSeen = new WeakSet(); for (const e of document.querySelectorAll('[data-net19-blend]')) e.removeAttribute('data-net19-blend'); }
+    if (dark) for (const media of document.querySelectorAll('img, picture, video, canvas')) {
+      if (blendSeen.has(media)) continue;
+      blendSeen.add(media);
+      for (let e = media, i = 0; e && e !== root && i < 4; e = e.parentElement, i++) if (getComputedStyle(e).mixBlendMode === 'multiply') { e.setAttribute('data-net19-blend', ''); break; }
+    }
     for (const el of textElements()) {
       if (el.closest('script, style, noscript, [data-net19-hidden]')) continue;
+      const box = el.getBoundingClientRect();
+      if (box.width < 2 || box.height < 2 || box.bottom < 0 || box.top > view.h || box.right < 0 || box.left > view.w) continue;
       for (let e = el, i = 0; e && e !== root && i < 12; e = up(e), i++) {
         const { blend } = layer(e);
         if ((dark && blend === 'multiply') || (!dark && blend === 'screen')) { if (!e.hasAttribute('data-net19-blend')) e.setAttribute('data-net19-blend', ''); }
       }
-      const box = el.getBoundingClientRect();
-      if (box.width < 2 || box.height < 2 || box.bottom < 0 || box.top > view.h || box.right < 0 || box.left > view.w) continue;
       const style = getComputedStyle(el);
       if (style.visibility !== 'visible' || +style.opacity < .1 || parseFloat(style.fontSize) < 8) continue;
       let text = original.get(el);
@@ -354,16 +360,16 @@ import { rgba } from './color.js';
     }
   };
 
-  let dirty = true, timer = 0, lastRun = 0;
+  let dirty = true, timer = 0, lastRun = 0, cost = 0;
   const soon = (delay = 250) => {
     if (timer) return;
     timer = setTimeout(() => {
       timer = 0;
       if (!dirty) return;
-      const wait = 600 - (performance.now() - lastRun);
+      const wait = Math.max(600, cost * 6) - (performance.now() - lastRun);
       if (wait > 0) { soon(wait); return; }
       dirty = false; lastRun = performance.now();
-      (globalThis.requestIdleCallback || (f => f()))(() => { protect(); check(); }, { timeout: 300 });
+      (globalThis.requestIdleCallback || (f => f()))(() => { const began = performance.now(); protect(); check(); cost = performance.now() - began; lastRun = performance.now(); }, { timeout: 300 });
     }, delay);
   };
   const start = () => {
