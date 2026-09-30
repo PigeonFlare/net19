@@ -122,7 +122,7 @@ div[role="banner"] :is([aria-label="Menu"], [aria-label="Meta AI"], [aria-label=
 [data-n19-fb="hero"] span { font: bold 20px/28px Helvetica, Arial, sans-serif !important; --x-lineHeight: 28px; --x---base-line-clamp-line-height: 28px; letter-spacing: normal !important;
   color: var(--n19-heading) !important; max-width: 400px !important; width: 400px !important; margin: 0 !important; padding: 0 !important; display: block !important; }
 [data-n19-fb="hero"] [data-n19-fb="features"] { display: block !important; margin: 36px 0 0 !important; width: 450px !important; font: 15px/20px Helvetica, Arial, sans-serif; color: var(--n19-land-soft); }
-[data-n19-fb="hero"] [data-n19-fb="feature"] { display: block !important; margin: 0 0 32px !important; }
+[data-n19-fb="hero"] [data-n19-fb="feature"] { display: block !important; margin: 0 0 20px !important; }
 [data-n19-fb="feature"] b { color: var(--n19-heading); font-weight: bold; margin-right: 4px; }
 [data-n19-fb="login"] { width: 400px !important; min-width: 0 !important; padding-top: 22px !important; }
 [data-n19-fb="login"] div:not([data-n19-fb^="f-"], [data-n19-fb^="f-"] *) { width: 100% !important; height: auto !important; padding: 0 !important; margin: 0 !important; justify-content: flex-start !important; }
