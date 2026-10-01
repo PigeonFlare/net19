@@ -1,6 +1,6 @@
 # net19 privacy policy
 
-Effective September 30, 2026. Applies to net19 0.21.0.
+Effective September 30, 2026. Applies to net19 0.22.0.
 
 Net19 restyles 171 popular websites to look as they did in 2019. It has no developer-operated server, account system, analytics, advertisements, remote AI, or telemetry.
 

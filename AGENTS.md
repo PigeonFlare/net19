@@ -62,3 +62,4 @@
 - Finished work goes straight to `main` on GitHub by default: first bring in every other local commit, confirm they work together and with what is already pushed (build, `npm test`, `tsc --noEmit`), then push. Commits are authored by PigeonFlare only, with no AI co-author or session trailers.
 - Build and package the exact verified source. Stage an explicit file list; inspect the staged file names and diff before publication.
 - Do not delegate routine work. Keep tool output and progress reports focused.
+- The claude.ai project holds one notes doc, `claude/net19-notes.md`: open issues, method notes and pitfalls that the repo can't hold. Edit it in place; never add per-task report docs (commit messages and `docs/` carry the history), and delete entries once they're fixed.
