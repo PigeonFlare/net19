@@ -104,7 +104,8 @@ globalThis.net19Theme = (() => {
     for (const meta of document.querySelectorAll('ytd-watch-flexy ytd-watch-metadata')) {
       const fold = meta.querySelector('#above-the-fold');
       const tip = meta.querySelector('ytd-watch-info-text tp-yt-paper-tooltip #tooltip');
-      let parts = (tip?.textContent || '').split(/\s+[•·]\s+/).map(part => part.trim()).filter(Boolean);
+      const playing = (meta.querySelector('ytd-watch-info-text #subtitle')?.textContent || '').trim();
+      let parts = (tip?.textContent || '').split(/\s+[•·]\s+/).map(part => part.trim()).filter(part => part && part !== playing);
       if (parts.length < 2) {
         const info = meta.querySelector('ytd-watch-info-text');
         const label = (info?.querySelector('#view-count')?.getAttribute('aria-label') || '').trim();
