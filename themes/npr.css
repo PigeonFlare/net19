@@ -20,7 +20,7 @@ html[data-net19-mode="dark"] .npr-header :is(.navigation__shop, .navigation__don
 .npr-header :is([class*="donate"], :has(> .navigation__donate)) { background: transparent !important; box-shadow: none !important; border-radius: 0 !important; }
 html[data-net19-mode="dark"] .npr-header a[data-net19-donate] { color: #ff4d5e !important; }
 #main-menu.menu--main, .npr-header .menu--main { background: var(--n19-bar) !important; }
-.npr-header .menu--main .menu__item, .npr-header .menu--main .menu__item-inner > a { font-family: var(--npr19-cond) !important; font-stretch: condensed; font-weight: 700 !important; 
+.npr-header .menu--main .menu__item, .npr-header .menu--main .menu__item-inner > a { font-family: var(--npr19-cond) !important; font-stretch: condensed; font-weight: 700 !important;
   text-transform: uppercase !important; color: var(--n19-bar-text) !important; }
 .npr-header .menu--main .menu__item-inner > a { padding: 0 12px 0 14px !important; }
 .npr-header .menu--main .menu__item-inner > a:hover { opacity: .85; text-decoration: none !important; }
