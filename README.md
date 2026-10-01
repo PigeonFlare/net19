@@ -33,7 +33,7 @@ A Chrome extension that shows popular websites as they looked in **2019**.
 ## Report a problem or request a site
 
 - **Something looks broken?** [Report a broken site](https://github.com/PigeonFlare/net19/issues/new?template=broken-site.yml)
-- **Want a site themed?** [Request a site](https://github.com/PigeonFlare/net19/issues/new?template=site-request.yml). Add a 👍 to [existing requests](https://github.com/PigeonFlare/net19/issues?q=is%3Aissue+is%3Aopen+label%3A%22site+request%22+sort%3Areactions-%2B1-desc) to boost them instead of opening duplicates. Remember that major websites might lack a tailored theme if they had a similar design in 2019, so screenshots from 2019 are much appreciated.
+- **Want a site themed?** [Request a site](https://github.com/PigeonFlare/net19/issues/new?template=site-request.yml). Add a thumbs up to [existing requests](https://github.com/PigeonFlare/net19/issues?q=is%3Aissue+is%3Aopen+label%3A%22site+request%22+sort%3Areactions-%2B1-desc) to boost them instead of opening duplicates. Remember that major websites might lack a tailored theme if they had a similar design in 2019, so screenshots from 2019 are much appreciated.
 
 ## Limits
 
