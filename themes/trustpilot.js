@@ -36,13 +36,7 @@ globalThis.net19Theme = {
     for (const input of document.querySelectorAll('main input[placeholder^="Search by keyword" i]')) hide(input.closest('form, [role="search"]') || input.parentElement);
     for (const p of document.querySelectorAll('main :is(p, h3, h4)')) if (/^May use AI-assist/i.test(p.textContent.trim())) hide(p);
     for (const b of document.querySelectorAll('[class*="styles_heroSearch"] button[class*="CDS_Button_circle"]:not([data-n19-label])')) b.setAttribute('data-n19-label', 'Search');
-    for (const el of document.querySelectorAll('header a, header button, footer a, main h1, main h2, [role="tab"], main nav button')) {
-      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
-      for (let node = walker.nextNode(); node; node = walker.nextNode()) {
-        const to = WORDS.get(node.data.trim());
-        if (to) { node.data = to; break; }
-      }
-    }
+    for (const el of document.querySelectorAll('header a, header button, footer a, main h1, main h2, [role="tab"], main nav button')) net19.rename(el, WORDS);
   };
   net19.watch(fix, { childList: true, subtree: true, characterData: true });
 })();
@@ -53,12 +47,7 @@ globalThis.net19Theme = {
     const hero = document.querySelector('[class*="styles_heroContainer"]');
     if (hero && !hero.hasAttribute('data-net19-keep')) { hero.removeAttribute('data-net19-scrim'); hero.setAttribute('data-net19-keep', ''); }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
-  const start = () => {
-    later();
-    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
-    new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-recolor'] });
-  };
-  net19.onBody(start);
+  const later = net19.frame(mark);
+  net19.onBody(() => { new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-recolor'] }); });
+  net19.watch(mark);
 })();

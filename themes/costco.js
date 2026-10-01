@@ -9,8 +9,7 @@ globalThis.net19Theme = {
     for (const [selector, from, to] of WORDS) {
       const el = document.querySelector(selector);
       if (!el) continue;
-      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
-      for (let node = walker.nextNode(); node; node = walker.nextNode()) if (from.test(node.data.trim())) { node.data = to; break; }
+      net19.rename(el, from, to);
     }
   };
   net19.watch(fix, { childList: true, subtree: true, characterData: true });

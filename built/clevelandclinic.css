@@ -71,6 +71,5 @@ header[aria-label="Site Header"]>div.print\:hidden:first-child .bg-gray-300{back
 :where(:root:not([data-n19-safe])) header[aria-label="Site Header"]>div.flex.flex-row:has(>a>div>img)>div:last-child{padding-top:34px!important}
 :where(:root:not([data-n19-safe])) header[aria-label="Site Header"]>div.flex.flex-row:has(>a>div>img)>a:first-child img{height:40px!important}
 :where(:root:not([data-n19-safe])) header[aria-label="Site Header"]>div.flex.flex-row:has(>a>div>img)>a:first-child>div{margin:14px 0 0 16px!important}
-:where(:root:not([data-n19-safe])) header[aria-label="Site Header"]>div.flex.flex-row:has(>a>div>img)>div.flex-1 ul li>:is(a,button){padding-top:2px!important;padding-bottom:8px!important}
 :where(:root:not([data-n19-safe])) header[aria-label="Site Header"]>div.flex.flex-row:has(>a>div>img)>div.flex-1 ul li>:is(a,button){padding-top:5px!important;padding-bottom:5px!important}
 :where(:root:not([data-n19-safe])) nav.flex-wrap:has(>a[href^="#"]){row-gap:6px!important}

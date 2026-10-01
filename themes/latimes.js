@@ -15,8 +15,5 @@ globalThis.net19Theme = {
       if (link.textContent.trim() === 'Voices') for (const node of link.childNodes) if (node.nodeType === 3 && node.textContent.trim() === 'Voices') node.textContent = node.textContent.replace('Voices', 'Opinion');
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(document); }); };
-  const start = () => { fix(document); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); };
-  net19.onBody(start);
+  net19.watch(() => fix(document));
 })();

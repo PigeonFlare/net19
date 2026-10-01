@@ -5,7 +5,7 @@ globalThis.net19Theme = { keep: 'store-card-promo store-button[appearance*="butt
   const NAMES = { 'Microsoft 365': 'Office', 'XBOX': 'Xbox' };
   const LATER_LINKS = /^(Azure|Copilot|Small Business|Explore Copilot|Microsoft AI|AI for education|Support for AI marketplace apps|Microsoft Copilot)$/;
   const later2019 = el => { if (el && !el.hasAttribute('data-n19-later')) el.setAttribute('data-n19-later', ''); };
-  const relabel = (el, from, to) => { const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT); for (let n = walker.nextNode(); n; n = walker.nextNode()) if (n.data.trim() === from) n.data = n.data.replace(from, to); };
+  const relabel = net19.rename;
   const restore = () => {
     for (const link of document.querySelectorAll('header a:not([data-n19-seen]), footer a:not([data-n19-seen]), main a:not([data-n19-seen])')) {
       link.setAttribute('data-n19-seen', '');
@@ -32,12 +32,7 @@ globalThis.net19Theme = { keep: 'store-card-promo store-button[appearance*="butt
     if (!root.hasAttribute('data-net19-recolor')) return;
     for (const el of document.querySelectorAll(SEL)) if (!el.hasAttribute('data-net19-keep')) { el.removeAttribute('data-net19-scrim'); el.setAttribute('data-net19-keep', ''); }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
-  const start = () => {
-    later();
-    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
-    new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-recolor'] });
-  };
-  net19.onBody(start);
+  const later = net19.frame(mark);
+  net19.onBody(() => { new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-recolor'] }); });
+  net19.watch(mark);
 })();

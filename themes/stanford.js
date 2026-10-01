@@ -33,8 +33,7 @@ globalThis.net19Theme = {
   };
   const timed = () => {
     for (const ms of [0, 400, 1500, 4000]) setTimeout(pass, ms);
-    let queued = false;
-    new MutationObserver(() => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; pass(); }); }).observe(document.documentElement, { childList: true, subtree: true });
+    new MutationObserver(net19.frame(pass)).observe(document.documentElement, { childList: true, subtree: true });
   };
   if (document.readyState === 'loading') addEventListener('DOMContentLoaded', timed, { once: true }); else timed();
 })();

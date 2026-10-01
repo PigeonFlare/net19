@@ -138,19 +138,13 @@ globalThis.net19Theme = {
       search.append(label);
     }
     for (const el of document.querySelectorAll('header button, header [role="button"]')) {
-      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
-      for (let node = walker.nextNode(); node; node = walker.nextNode()) if (/^\s*Search or ask Copilot\s*$/i.test(node.data)) node.data = 'Search GitHub Docs';
+      net19.rename(el, /^Search or ask Copilot$/i, 'Search GitHub Docs');
     }
     for (const button of document.querySelectorAll('#repo-content-pjax-container button[data-variant="primary"], react-partial button[data-variant="primary"]')) {
-      const walker = document.createTreeWalker(button, NodeFilter.SHOW_TEXT);
-      for (let node = walker.nextNode(); node; node = walker.nextNode()) if (node.data.trim() === 'Code') node.data = node.data.replace('Code', 'Clone or download');
+      net19.rename(button, 'Code', 'Clone or download');
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
-  const start = () => {
-    fix(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
-    addEventListener('load', later, { once: true }); addEventListener('resize', later); for (const t of [1000, 3000, 6000]) setTimeout(later, t);
-  };
-  net19.onBody(start);
+  const later = net19.frame(fix);
+  net19.onBody(() => { addEventListener('load', later, { once: true }); addEventListener('resize', later); for (const t of [1000, 3000, 6000]) setTimeout(later, t); });
+  net19.watch(fix);
 })();

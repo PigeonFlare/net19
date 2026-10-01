@@ -9,8 +9,7 @@ globalThis.net19Theme = { intended: '[data-n19-quick]' };
       }
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
+  const later = net19.frame(mark);
   const start = () => { mark(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); };
   start();
 })();

@@ -130,7 +130,7 @@ nav[class*="guilds_"], nav[class*="guilds_"] [class*="scroller_"], [class*="side
 }
 [class*="sidebar_"]:after { display: none !important; }
 [data-list-id="guildsnav"] { padding-top: 12px !important; }
-[data-list-id="guildsnav"] :is([class^="listItem_"], [class*=" listItem_"]) { margin: 0 0 8px !important; }
+[data-list-id="guildsnav"] :is([class^="listItem_"], [class*=" listItem_"]) { margin: 0 0 8px !important; display: flex !important; justify-content: center !important; }
 [data-list-id="guildsnav"] foreignObject { mask: none !important; }
 [data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"]):not(foreignObject *):has(> svg > foreignObject)[style*="width: 32px"] { zoom: 1 !important; transform: scale(1.5); transform-origin: 50% 50%; margin: 8px 0 !important; }
 [data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"]):not(foreignObject *):has(> svg > foreignObject)[style*="width: 40px"] { zoom: 1 !important; transform: scale(1.2); transform-origin: 50% 50%; margin: 4px 0 !important; }
@@ -144,10 +144,7 @@ nav[class*="guilds_"], nav[class*="guilds_"] [class*="scroller_"], [class*="side
 [data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"]):not(foreignObject *)[style*="width: 44px"] > :is([class^="upperBadge_"], [class*=" upperBadge_"]) { transform: scale(.916667); transform-origin: 100% 0; }
 [data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"]):not(foreignObject *)[style*="width: 52px"] > :is([class^="lowerBadge_"], [class*=" lowerBadge_"]) { transform: scale(1.083333); transform-origin: 100% 100%; }
 [data-list-id="guildsnav"] :is([class^="wrapper_"], [class*=" wrapper_"]):not(foreignObject *)[style*="width: 52px"] > :is([class^="upperBadge_"], [class*=" upperBadge_"]) { transform: scale(1.083333); transform-origin: 100% 0; }
-[data-list-id="guildsnav"] foreignObject > *, [data-list-id="guildsnav"] foreignObject > * > :is(img, [class*="childWrapper_"], [class*="icon_"]) { width: 100% !important; height: 100% !important; }
-[data-list-id="guildsnav"] foreignObject > *, [data-list-id="guildsnav"] foreignObject > * > :is(img, [class*="childWrapper_"], [class*="icon_"]) {
-  border-radius: 50% !important; transition: border-radius .15s ease-out, background-color .15s ease-out !important; overflow: hidden;
-}
+[data-list-id="guildsnav"] foreignObject > *, [data-list-id="guildsnav"] foreignObject > * > :is(img, [class*="childWrapper_"], [class*="icon_"]) { width: 100% !important; height: 100% !important; border-radius: 50% !important; transition: border-radius .15s ease-out, background-color .15s ease-out !important; overflow: hidden; }
 [data-list-id="guildsnav"] :is([class^="blobContainer_"], [class*=" blobContainer_"]):is(:hover, [class*="selected_"]) foreignObject > *,
 [data-list-id="guildsnav"] :is([class^="blobContainer_"], [class*=" blobContainer_"]):is(:hover, [class*="selected_"]) foreignObject > * > :is(img, [class*="childWrapper_"], [class*="icon_"]),
 [data-list-id="guildsnav"] foreignObject > :is(:hover, [class*="selected_"]), [data-list-id="guildsnav"] foreignObject > :is(:hover, [class*="selected_"]) > * {
@@ -174,7 +171,6 @@ nav[class*="guilds_"], nav[class*="guilds_"] [class*="scroller_"], [class*="side
   box-shadow: 0 0 0 3px var(--n19-tertiary);
 }
 
-[data-list-id="guildsnav"] :is([class^="listItem_"], [class*=" listItem_"]) { display: flex !important; justify-content: center !important; }
 [class*="sidebar_"] :is([class^="sidebarList_"], [class*=" sidebarList_"]) > nav { padding-bottom: 56px !important; }
 html [class*="sidebarList_"] {
   --background-base-lowest: var(--n19-secondary) !important; --background-gradient-high: initial !important;

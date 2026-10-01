@@ -9,8 +9,7 @@ globalThis.net19Theme = {
     for (const [selector, from, to] of WORDS) {
       const el = document.querySelector(selector);
       if (!el) continue;
-      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
-      for (let node = walker.nextNode(); node; node = walker.nextNode()) if (from.test(node.data.trim())) { node.data = to; break; }
+      net19.rename(el, from, to);
     }
   };
   net19.watch(fix, { childList: true, subtree: true, characterData: true });
@@ -22,12 +21,7 @@ globalThis.net19Theme = {
     if (!root.hasAttribute('data-net19-recolor')) return;
     for (const el of document.querySelectorAll(SEL)) if (!el.hasAttribute('data-net19-keep')) { el.removeAttribute('data-net19-scrim'); el.setAttribute('data-net19-keep', ''); }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
-  const start = () => {
-    later();
-    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
-    new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-recolor'] });
-  };
-  net19.onBody(start);
+  const later = net19.frame(mark);
+  net19.onBody(() => { new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-recolor'] }); });
+  net19.watch(mark);
 })();

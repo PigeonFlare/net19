@@ -115,8 +115,7 @@ globalThis.net19Theme = {
     location.replace('/search?' + plain);
   };
   leaveAiMode();
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; leaveAiMode(); }); };
+  const later = net19.frame(leaveAiMode);
   new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
   addEventListener('popstate', leaveAiMode);
 })();
@@ -181,8 +180,7 @@ globalThis.net19Theme = {
     }
   };
   const run = () => { if (location.pathname !== '/search') return; modules(); shapes(); };
-  let timer = 0;
-  const later = () => { if (timer) return; timer = requestAnimationFrame(() => { timer = 0; run(); }); };
-  const start = () => { new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); addEventListener('load', later, { once: true }); run(); };
-  net19.onBody(start);
+  const later = net19.frame(run);
+  addEventListener('load', later, { once: true });
+  net19.watch(run);
 })();

@@ -8,9 +8,8 @@ html[data-net19-mode="dark"] { --n19-bar: #1b1d21; --n19-text: #e6e6e6; --n19-na
 .top-header a.logo-link { width: 118px !important; height: 32px !important; background: var(--n19-logo) 0 50% / contain no-repeat !important; }
 .top-header a.logo-link > * { visibility: hidden !important; }
 .top-header input { background: var(--n19-field) !important; border: 1px solid var(--n19-field-line) !important; border-radius: 15px !important; color: var(--n19-text) !important; }
-.top-header input ~ button:has(svg[id*="search"]) { background: var(--n19-go) !important; color: var(--n19-go-text) !important; border-radius: 0 15px 15px 0 !important; }
+.top-header input ~ button:has(svg[id*="search"]) { background: var(--n19-go) !important; color: var(--n19-go-text) !important; border-radius: 0 15px 15px 0 !important; padding: 0 14px !important; width: auto !important; font-size: 14px !important; }
 .top-header input ~ button:has(svg[id*="search"]) svg { display: none !important; }
-.top-header input ~ button:has(svg[id*="search"]) { padding: 0 14px !important; width: auto !important; font-size: 14px !important; }
 .top-header :is(a.jump-link, a.user-icon) { color: var(--n19-text) !important; }
 .top-header .icon-link { filter: none !important; }
 .top-header a.user-icon .login-button { background: var(--n19-soft) !important; color: var(--n19-soft-text) !important; border: 1px solid var(--n19-field-line) !important; }

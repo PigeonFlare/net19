@@ -4,7 +4,7 @@ body, button, input { font-family: "Helvetica Neue", Helvetica, Arial, sans-seri
 .sui-rounded-full:not([aria-label*="slide" i]):not([class*="sui-w-"]), .sui-rounded-lg, .sui-rounded-md, .sui-rounded-base, .sui-rounded-xl, [class*="sui-rounded-[12px]"],
 .sui-rounded-sm, [class*="sui-rounded-t-"], [class*="sui-rounded-b-"] { border-radius: 0 !important; }
 .bento-clip-path-rounded { clip-path: none !important; }
-#header-root { border-bottom: 3px solid var(--n19-orange) !important; box-shadow: none !important; }
+#header-root { border-bottom: 3px solid var(--n19-orange) !important; box-shadow: none !important; top: 0 !important; }
 #header-root form.sui-rounded-base, #header-root form { background: var(--n19-field) !important; border: 1px solid var(--n19-border) !important; }
 #header-root form button[type="submit"], #header-root form button[aria-label*="search" i] { background: var(--n19-orange) !important; border-radius: 0 !important; }
 .sui-bg-brand:is(button, a), button.sui-bg-brand, a.sui-bg-brand { border-radius: 0 !important; box-shadow: inset 0 -3px 0 var(--n19-orange-dark) !important; }
@@ -12,7 +12,6 @@ button.sui-rounded-full.sui-border-solid, a.sui-rounded-full.sui-border-solid { 
 [data-testid="header-b2c-magic-apron"], button[aria-label^="Magic Apron" i], [data-component="ExpandableFab"] { display: none !important; }
 
 #header-tophat { display: none !important; }
-#header-root { top: 0 !important; }
 #header-content > div.sui-flex.sui-items-center { height: 80px !important; }
 #header-content > div.sui-flex.sui-items-center > div:first-child a, #header-content > div.sui-flex.sui-items-center > div:first-child a svg,
 #header-content > div.sui-flex.sui-items-center > div:first-child a img { width: 50px !important; height: 50px !important; }

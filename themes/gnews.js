@@ -23,8 +23,7 @@ globalThis.net19Theme = {
       const to = RENAME[name];
       if (!to) continue;
       a.setAttribute('aria-label', to);
-      const walker = document.createTreeWalker(a, NodeFilter.SHOW_TEXT);
-      for (let n = walker.nextNode(); n; n = walker.nextNode()) if (n.nodeValue.trim() === name) n.nodeValue = n.nodeValue.replace(name, to);
+      net19.rename(a, name, to);
     }
     for (const link of document.querySelectorAll('main a[href*="finance.google.com"][href*="source=news"]:not([data-n19-seen])')) {
       link.setAttribute('data-n19-seen', '');
@@ -41,8 +40,7 @@ globalThis.net19Theme = {
       if (on !== a.hasAttribute('data-n19-current')) a.toggleAttribute('data-n19-current', on);
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
-  const start = () => { fix(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); addEventListener('popstate', later); };
-  net19.onBody(start);
+  const later = net19.frame(fix);
+  net19.onBody(() => { addEventListener('popstate', later); });
+  net19.watch(fix);
 })();

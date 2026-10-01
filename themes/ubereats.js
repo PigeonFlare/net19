@@ -13,8 +13,7 @@ globalThis.net19Theme = { intended: '[data-n19-later]' };
       if (header && getComputedStyle(header.parentElement).position === 'absolute') keep(header);
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
+  const later = net19.frame(mark);
   const start = () => {
     later();
     new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
@@ -28,8 +27,7 @@ globalThis.net19Theme = { intended: '[data-n19-later]' };
       if (!el.hasAttribute('data-n19-find') && /^\s*Find food\s*$/i.test(el.textContent) && !el.querySelector('img')) el.setAttribute('data-n19-find', '');
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
+  const later = net19.frame(mark);
   const start = () => { later(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); };
   start();
 })();
@@ -56,8 +54,7 @@ globalThis.net19Theme = { intended: '[data-n19-later]' };
       card.setAttribute('data-n19-later', '');
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
+  const later = net19.frame(mark);
   const start = () => { mark(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, characterData: true }); };
   start();
 })();

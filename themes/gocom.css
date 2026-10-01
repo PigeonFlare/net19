@@ -3,13 +3,12 @@ html[data-net19-mode="dark"] { --n19-text: #fff; --n19-meta: #999; --n19-rule: #
 
 nav.navigation { box-shadow: 0 1px 3px rgba(0,0,0,.12) !important; }
 nav.navigation .navigation__container { max-width: none !important; margin: 0 !important; padding: 0 20px !important; }
-nav.navigation .navigation__menu { justify-content: flex-start !important; }
+nav.navigation .navigation__menu { justify-content: flex-start !important; align-items: center !important; }
 nav.navigation .navLogo { margin: 0 24px 0 0 !important; }
 nav.navigation .navigation__menu > .navLogo, nav.navigation .navigation__menu > :has(> .navLogo) { order: -1 !important; }
 nav.navigation .navigation__menu > :first-child:not(.navLogo):not(:has(> .navLogo)) { order: 1 !important; margin-left: 12px !important; }
-nav.navigation .navigation__group--main { order: 0 !important; }
+nav.navigation .navigation__group--main { order: 0 !important; margin-left: 0 !important; justify-content: flex-start !important; }
 nav.navigation .navLogo__icon { height: 40px !important; width: 116px !important; background-size: contain !important; background-position: left center !important; }
-nav.navigation .navigation__group--main { margin-left: 0 !important; justify-content: flex-start !important; }
 nav.navigation .navMenu25__text { text-transform: uppercase !important; letter-spacing: .08em !important; font: 700 13px/40px var(--n19-font) !important; }
 nav.navigation .navigation__stream { display: none !important; }
 nav.navigation--has-subnav h2, nav.navigation--has-subnav h2 a, nav.navigation--has-subnav h2 span { font-family: var(--n19-font) !important; font-size: 12px !important; }
@@ -35,7 +34,6 @@ html[data-net19-mode="dark"] [data-testid="prism-article-body"] p { color: #ddd 
 [data-testid="prism-image"], [data-testid="prism-image"] img, [data-testid="prism-card"], [data-testid="prism-card"] img, [data-testid="prism-ratio-frame"], .MediaPlaceholder, .MediaPlaceholder img, [data-testid="prism-Badge"], [data-testid="prism-Tag"], [data-testid="prism-Button"] { border-radius: 0 !important; }
 [data-testid="prism-card"] h2, [data-testid="prism-card"] h3, [data-testid="prism-card"] h2 *, [data-testid="prism-card"] h3 * { font-family: var(--n19-font) !important; letter-spacing: 0 !important; }
 main :is(h1, h2, h3)[class] { letter-spacing: 0 !important; }
-nav.navigation .navigation__menu { align-items: center !important; }
 nav.navigation .navLogo { align-self: center !important; height: auto !important; }
 main [data-testid^="prism-"], main [data-testid^="prism-"] > :is(div, a, picture, img) { border-radius: 0 !important; }
 a[href*="tiktok.com"], a[href*="snapchat.com"], li:has(> a[href*="tiktok.com"]), li:has(> a[href*="snapchat.com"]) { display: none !important; }

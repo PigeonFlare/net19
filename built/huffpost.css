@@ -14,7 +14,7 @@ html[data-net19-mode="dark"]{--n19-bar:#000;--n19-bar-text:#fff;--n19-green:#0db
 .subnav__main-logo__container{background:transparent!important}
 :where(:root:not([data-n19-safe])) .subnav__main-logo,.subnav__main-logo:where(:root:not([data-n19-safe])){position:absolute!important;left:50%!important;top:-58px!important;transform:translateX(-50%)!important;height:38px!important;display:flex!important;align-items:center!important}
 :where(:root:not([data-n19-safe])) .subnav__main-logo h1,.subnav__main-logo:where(:root:not([data-n19-safe])) h1,:where(:root:not([data-n19-safe])) .subnav__main-logo .front-title,.subnav__main-logo:where(:root:not([data-n19-safe])) .front-title{height:auto!important;margin:0!important;padding:0!important}
-:where(:root:not([data-n19-safe])) svg.subnav__main-logo__svg{height:34px!important;width:auto!important;max-width:260px!important;margin:0!important;display:block!important}
+:where(:root:not([data-n19-safe])) svg.subnav__main-logo__svg{max-width:260px!important;margin:0!important;display:block!important}
 svg.subnav__main-logo__svg,svg.subnav__main-logo__svg *{fill:var(--n19-green)!important;color:var(--n19-green)!important}
 :where(:root:not([data-n19-safe])) nav#nav.subnav{height:36px!important;min-height:0!important}
 nav#nav.subnav{border-top:1px solid #242424!important;border-bottom:none!important}

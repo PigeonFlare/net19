@@ -19,15 +19,12 @@ globalThis.net19Theme = {
       el.removeAttribute('data-net19-scrim'); el.setAttribute('data-net19-keep', '');
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
-  const start = () => {
-    later();
-    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
+  const later = net19.frame(mark);
+  net19.onBody(() => {
     addEventListener('load', later, { once: true });
     new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-recolor'] });
-  };
-  net19.onBody(start);
+  });
+  net19.watch(mark);
 })();
 (() => {
   const fix = () => {
@@ -39,8 +36,7 @@ globalThis.net19Theme = {
     let first = true;
     for (let node = walker.nextNode(); node; node = walker.nextNode()) { if (!node.data.trim()) continue; node.data = first ? 'RedCard' : ''; first = false; }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
+  const later = net19.frame(fix);
   new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
 })();
 (() => {
@@ -51,8 +47,7 @@ globalThis.net19Theme = {
       if (box && !box.hasAttribute('data-n19-post2019') && box.querySelector('input')) box.setAttribute('data-n19-post2019', '');
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
+  const later = net19.frame(mark);
   const start = () => { mark(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();

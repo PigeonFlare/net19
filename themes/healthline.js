@@ -6,8 +6,7 @@ globalThis.net19Theme = {
   const words = { 'Health Conditions': 'Health Topics' };
   const fix = () => {
     for (const el of document.querySelectorAll('#site-header [role="menuitem"]')) {
-      const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
-      for (let n = walker.nextNode(); n; n = walker.nextNode()) if (words[n.textContent.trim()]) n.textContent = n.textContent.replace(n.textContent.trim(), words[n.textContent.trim()]);
+      net19.rename(el, words);
     }
     for (const list of document.querySelectorAll('[role="tablist"]')) if (/^Top Reads/.test(list.textContent.trim()) && !list.hasAttribute('data-n19-later')) list.setAttribute('data-n19-later', '');
   };
@@ -19,6 +18,6 @@ globalThis.net19Theme = {
   addEventListener('popstate', mark);
   let last = location.pathname;
   const check = () => { if (location.pathname !== last) { last = location.pathname; mark(); } };
-  const start = () => new MutationObserver(() => requestAnimationFrame(check)).observe(document.body, { childList: true });
+  const start = () => new MutationObserver(net19.frame(check)).observe(document.body, { childList: true });
   net19.onBody(start);
 })();

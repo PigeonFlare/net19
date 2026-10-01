@@ -52,8 +52,7 @@ globalThis.net19Theme = {
     tag.append(badge.cloneNode(true), 'Verified account');
     badge.after(tag);
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); verified(); }); };
+  const later = net19.frame(() => { fix(); verified(); });
   const start = () => {
     fix(); verified();
     new MutationObserver(records => { for (const r of records) if (!(r.target instanceof Element && r.target.closest('[data-n19-tt]'))) { later(); return; } })

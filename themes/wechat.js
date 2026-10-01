@@ -17,7 +17,7 @@ globalThis.net19Theme = (() => {
       if (!item.hasAttribute('data-net19-hidden')) item.setAttribute('data-net19-hidden', '');
     }
   };
-  const start = () => { fix(); new MutationObserver(() => requestAnimationFrame(fix)).observe(document.documentElement, { childList: true, subtree: true }); };
+  const start = () => { fix(); new MutationObserver(net19.frame(fix)).observe(document.documentElement, { childList: true, subtree: true }); };
   const settle = () => setTimeout(start, 800);
   if (document.readyState === 'complete') settle(); else addEventListener('load', settle, { once: true });
 })();

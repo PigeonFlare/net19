@@ -202,9 +202,7 @@
       if (to) span.textContent = to;
     }
   };
-  let queued = false;
-  const start = () => { rename(); new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; rename(); }); } }).observe(document.documentElement, { childList: true, subtree: true, characterData: true }); };
-  net19.onBody(start);
+  net19.watch(rename, { childList: true, subtree: true, characterData: true });
 })();
 
 (() => {
@@ -221,7 +219,6 @@
       if (block && !block.hasAttribute('data-net19-hidden')) block.setAttribute('data-net19-hidden', '');
     }
   };
-  let queued = false;
-  const start = () => { fix(); new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; fix(); }); } }).observe(document.documentElement, { childList: true, subtree: true }); };
+  const start = () => { fix(); new MutationObserver(net19.frame(fix)).observe(document.documentElement, { childList: true, subtree: true }); };
   if (document.body) start(); else document.addEventListener('DOMContentLoaded', start, { once: true });
 })();

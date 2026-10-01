@@ -56,12 +56,6 @@ globalThis.net19Theme = {
       if (!el.firstElementChild && /^\s*Blazed\s*$/i.test(el.textContent) && !el.hasAttribute('data-net19-hidden')) el.setAttribute('data-net19-hidden', '');
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
-  const start = () => {
-    fix();
-    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
-  };
-  net19.onBody(start);
+  net19.watch(fix, { childList: true, subtree: true, characterData: true });
 })();
 globalThis.net19Theme.words = {"Comunidades": "Communities", "Cambiar la paleta": "Change palette", "Communautés": "Communities", "Changer la palette": "Change palette", "Mudar paleta": "Change palette", "Community": "Communities", "Cambia colori": "Change palette", "コミュニティ": "Communities", "パレットを変更": "Change palette", "社区": "Communities", "更改调色板": "Change palette", "커뮤니티": "Communities", "팔레트 바꾸기": "Change palette", "Сообщества": "Communities", "Изменить палитру": "Change palette", "समुदाय": "Communities", "पैलेट बदलें": "Change palette"};

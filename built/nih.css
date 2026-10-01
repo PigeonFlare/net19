@@ -22,8 +22,8 @@ header.ncbi-header .header-button,#account_login{text-decoration:underline!impor
 :where(:root:not([data-n19-safe])) #home-page .intro .content-wrap,#home-page:where(:root:not([data-n19-safe])) .intro .content-wrap{max-width:none!important;padding:18px 20px 14px!important}
 :where(:root:not([data-n19-safe])) #home-page .intro #search-form,#home-page:where(:root:not([data-n19-safe])) .intro #search-form{margin:0!important;padding:0!important}
 :where(:root:not([data-n19-safe])) #home-page .intro #search-form .inner-wrap,#home-page:where(:root:not([data-n19-safe])) .intro #search-form .inner-wrap{display:grid!important;grid-template-columns:200px minmax(0, 620px)!important;column-gap:20px!important;align-items:center!important;padding:0!important;margin:0!important}
-:where(:root:not([data-n19-safe])) #home-page .intro .pubmed-logo,#home-page:where(:root:not([data-n19-safe])) .intro .pubmed-logo{grid-row:1 / span 2;margin:0!important;padding:0!important}
-:where(:root:not([data-n19-safe])) #home-page .intro .pubmed-logo img,#home-page:where(:root:not([data-n19-safe])) .intro .pubmed-logo img{width:170px!important;height:auto!important}
+:where(:root:not([data-n19-safe])) #home-page .intro .pubmed-logo,#home-page:where(:root:not([data-n19-safe])) .intro .pubmed-logo{margin:0!important;padding:0!important}
+:where(:root:not([data-n19-safe])) #home-page .intro .pubmed-logo img,#home-page:where(:root:not([data-n19-safe])) .intro .pubmed-logo img{height:auto!important}
 :where(:root:not([data-n19-safe])) #home-page .intro .search-input,#home-page:where(:root:not([data-n19-safe])) .intro .search-input,:where(:root:not([data-n19-safe])) #home-page .intro .search-links-wrapper,#home-page:where(:root:not([data-n19-safe])) .intro .search-links-wrapper{grid-column:2;margin:0!important;padding:0!important;width:auto!important}
 #search-form .term-input,form.search-form input[type="search"],form.search-form input[type="text"]{border-radius:0!important}
 :where(:root:not([data-n19-safe])) #search-form .term-input,#search-form:where(:root:not([data-n19-safe])) .term-input,:where(:root:not([data-n19-safe])) form.search-form input[type="search"],:where(:root:not([data-n19-safe])) form.search-form input[type="text"]{height:26px!important;min-height:26px!important}
@@ -183,6 +183,7 @@ html[data-n19-www]:where(:root:not([data-n19-safe])) .region-hero .usa-hero__cal
 html[data-n19-www] .region-hero .usa-hero__callout .usa-button{line-height:1.2!important}
 html[data-n19-www]:where(:root:not([data-n19-safe])) main#main-content{max-width:1194px!important;margin:0 auto!important;padding:0 0 20px!important}
 html[data-n19-www] main#main-content{background:var(--n19-www-wrap)!important}
+html[data-n19-www]:where(:root:not([data-n19-safe])) main#main-content{margin-top:0!important}
 html[data-n19-www]:where(:root:not([data-n19-safe])) main#main-content>.grid-container{max-width:none!important;padding:0 22px!important}
 html[data-n19-www] main#main-content :is(h2,h3.usa-card__heading){font-family:var(--n19-www-font)!important}
 html[data-n19-www] main#main-content h2{color:var(--n19-www-head)!important;font-size:20px!important;font-weight:400!important;line-height:1.3!important;border-bottom:1px solid var(--n19-www-rule)!important}
@@ -213,7 +214,7 @@ html[data-n19-www] #block-identifier{font-size:13px!important}
 html[data-n19-www] #block-identifier :is(p,li,a){color:var(--n19-www-text)!important;font-size:13px!important}
 html[data-n19-www] #block-identifier a{color:var(--n19-www-link)!important;text-decoration:none!important}
 html[data-n19-www]:where(:root:not([data-n19-safe])) #block-identifier .usa-identifier__container{max-width:1194px!important;margin:0 auto!important;justify-content:center!important}
-html[data-n19-www]:where(:root:not([data-n19-safe])) #block-identifier ul{display:flex!important;flex-wrap:wrap!important;justify-content:center!important;columns:auto!important}
+html[data-n19-www]:where(:root:not([data-n19-safe])) #block-identifier ul{flex-wrap:wrap!important;justify-content:center!important;columns:auto!important}
 html[data-n19-www]:where(:root:not([data-n19-safe])) #block-identifier li{width:auto!important}
 html[data-n19-www] #block-identifier li{border-left:1px solid #c8c7bf!important}
 html[data-n19-www]:where(:root:not([data-n19-safe])) #block-identifier li{padding:0 10px!important;margin:2px 0!important}
@@ -224,7 +225,6 @@ html:has(meta[name="ncbi_app"][content="pubmed"]):where(:root:not([data-n19-safe
 html[data-n19-www] nav.usa-nav li.usa-nav__primary-item>.usa-nav__link>span::after,html[data-n19-www] nav.usa-nav li.usa-nav__primary-item>.usa-nav__link>span::before{display:none!important}
 html[data-n19-www] .usa-nav__secondary-item:not([hidden]):has(>a:not([data-net19-hidden])){border-left:0!important}
 html[data-n19-www] .usa-nav__secondary-item+.usa-nav__secondary-item:has(>a:not([data-net19-hidden])){border-left:1px solid #ddd!important}
-html[data-n19-www]:where(:root:not([data-n19-safe])) main#main-content{margin-top:0!important}
 html[data-n19-www] main#main-content .paragraph--type--card-group{background:var(--n19-www-band)!important}
 html[data-n19-www]:where(:root:not([data-n19-safe])) main#main-content .paragraph--type--card-group{margin:0 -22px!important;padding:18px 22px 20px!important}
 html[data-n19-www]:where(:root:not([data-n19-safe])) main#main-content .usa-card-group{margin:0 -10px!important}

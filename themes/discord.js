@@ -56,15 +56,9 @@ globalThis.net19Theme = {
     if (sheetEl.textContent !== text) sheetEl.textContent = text;
     if (!sheetEl.isConnected) (document.head || root).prepend(sheetEl);
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; update(); }); };
-  const start = () => {
-    update();
-    new MutationObserver(later).observe(document.documentElement, { attributes: true, attributeFilter: ['class', 'data-net19-mode'] });
-    if (document.head) new MutationObserver(later).observe(document.head, { childList: true });
-    addEventListener('load', later, { once: true });
-  };
-  net19.onBody(start);
+  const later = net19.frame(update);
+  net19.onBody(() => { if (document.head) new MutationObserver(later).observe(document.head, { childList: true }); addEventListener('load', later, { once: true }); });
+  net19.watch(update, { attributes: true, attributeFilter: ['class', 'data-net19-mode'] });
 })();
 (() => {
   if (!/^\/(?:$|download|nitro|safety|company|blog|careers|developers|servers|community)/.test(location.pathname)) return;
@@ -99,10 +93,6 @@ globalThis.net19Theme = {
     }
     for (const band of document.querySelectorAll('.home--hero, .discord_banner, header.nav')) if (!band.hasAttribute('data-net19-keep')) band.setAttribute('data-net19-keep', '');
   };
-  const start = () => {
-    fix();
-    new MutationObserver(fix).observe(document.documentElement, { childList: true, subtree: true });
-    new MutationObserver(() => requestAnimationFrame(fix)).observe(document.documentElement, { attributes: true, attributeFilter: ['data-net19-recolor', 'data-net19-mode'] });
-  };
-  net19.onBody(start);
+  net19.onBody(() => { new MutationObserver(fix).observe(document.documentElement, { childList: true, subtree: true }); });
+  net19.watch(fix, { attributes: true, attributeFilter: ['data-net19-recolor', 'data-net19-mode'] });
 })();

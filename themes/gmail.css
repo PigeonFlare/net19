@@ -9,7 +9,7 @@ html {
   --n19-row-shadow: inset 1px 0 0 #dadce0, inset -1px 0 0 #dadce0, 0 1px 2px 0 rgba(60,64,67,.3), 0 1px 3px 1px rgba(60,64,67,.15);
   --n19-font: Roboto, RobotoDraft, Helvetica, Arial, sans-serif; --n19-title-font: "Google Sans", Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
   --n19-logo: url("https://ssl.gstatic.com/ui/v1/icons/mail/rfr/logo_gmail_lockup_default_2x.png");
-  --n19-plus: url("https://www.gstatic.com/images/icons/material/colored_icons/2x/create_32dp.png");
+  --n19-plus: url("https://www.gstatic.com/images/icons/material/colored_icons/2x/create_32dp.png"); --n19-cat-primary: #d93025; --n19-cat-social: #1a73e8; --n19-cat-promotions: #188038; --n19-cat-updates: #e37400; --n19-cat-forums: #9334e6; --n19-dropdown: url("https://www.gstatic.com/images/icons/material/system/2x/arrow_drop_down_black_24dp.png");
 }
 html[data-net19-mode="dark"] {
   --n19-page: #202124; --n19-text: #e8eaed; --n19-text-2: #9aa0a6; --n19-text-3: #80868b; --n19-icon: #9aa0a6;
@@ -120,8 +120,6 @@ html:not([data-n19-picture]) .zA.yO { background: var(--n19-row-read) !important
 .aoI .dC .T-I.hG { border-radius: 0 4px 4px 0 !important; background: var(--n19-accent) !important; color: var(--n19-on-accent) !important; }
 html[data-net19-mode="dark"] .aoI .dC .T-I.hG .G-asx { filter: invert(1) !important; }
 
-html { --n19-cat-primary: #d93025; --n19-cat-social: #1a73e8; --n19-cat-promotions: #188038; --n19-cat-updates: #e37400; --n19-cat-forums: #9334e6;
-  --n19-dropdown: url("https://www.gstatic.com/images/icons/material/system/2x/arrow_drop_down_black_24dp.png"); }
 html[data-net19-mode="dark"] { --n19-cat-primary: #f28b82; --n19-cat-social: #8ab4f8; --n19-cat-promotions: #81c995; --n19-cat-updates: #fcad70; --n19-cat-forums: #d7aefb;
   --n19-dropdown: url("https://www.gstatic.com/images/icons/material/system/2x/arrow_drop_down_white_24dp.png"); }
 .J-KU-KO.aIf-aLe::before { background-color: var(--n19-cat-primary) !important; }

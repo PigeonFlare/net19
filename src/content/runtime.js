@@ -1,5 +1,5 @@
 (() => {
-  if (typeof globalThis.net19?.watch === 'function') return;
+  if (typeof globalThis.net19?.rename === 'function') return;
   const WORDS = {
     'Search': { es: 'Buscar', fr: 'Rechercher', pt: 'Pesquisar', it: 'Cerca', ja: '検索', zh: '搜索', ko: '검색', ru: 'Поиск', hi: 'खोजें', ar: 'بحث' },
     'Sign Up': { es: 'Registrarse', fr: 'S’inscrire', pt: 'Cadastre-se', it: 'Iscriviti', ja: '登録', zh: '注册', ko: '가입하기', ru: 'Регистрация', hi: 'साइन अप करें', ar: 'إنشاء حساب' },
@@ -52,7 +52,19 @@
     onBody(() => { new MutationObserver(later).observe(document.documentElement, options); run(); });
     return later;
   };
-  globalThis.net19 = { lang, say, english, onBody, frame, watch };
+  const rename = (el, from, to) => {
+    if (!el) return 0;
+    const look = to !== undefined ? t => { if (typeof from === 'string') return t === from ? to : undefined; from.lastIndex = 0; return from.test(t) ? to : undefined; }
+      : typeof from === 'function' ? from : from instanceof Map ? t => from.get(t) : t => Object.hasOwn(from, t) ? from[t] : undefined;
+    let count = 0;
+    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+    for (let node = walker.nextNode(); node; node = walker.nextNode()) {
+      const text = node.data.trim(), next = text && look(text);
+      if (typeof next === 'string' && next !== text) { node.data = node.data.replace(text, next); count++; }
+    }
+    return count;
+  };
+  globalThis.net19 = { lang, say, english, onBody, frame, watch, rename };
   globalThis.net19Lang = lang;
   globalThis.net19Say = say;
   globalThis.net19English = english;

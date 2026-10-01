@@ -2,7 +2,7 @@ html { --n19-page: #dae0e6; --n19-card: #fff; --n19-card-2: #f6f7f8; --n19-vote:
   --n19-action: #878a8c; --n19-border: #ccc; --n19-border-hover: #898989; --n19-line: #edeff1; --n19-hover: rgba(26,26,27,.1); --n19-blue: #0079d3;
   --n19-blue-hover: #1484d6; --n19-on-blue: #fff; --n19-link: #0079d3; --n19-field: #f6f7f8; --n19-field-border: #edeff1; --n19-header: #fff;
   --n19-wordmark: #1c1c1c; --n19-up: #ff4500; --n19-down: #7193ff; --n19-thread: #edeff1; --n19-thread-hover: #0079d3; --n19-flair: #edeff1; --n19-strip: #0079d3;
-  --n19-font: IBMPlexSans, "IBM Plex Sans", Arial, sans-serif; --n19-body-font: "Noto Sans", Arial, sans-serif; }
+  --n19-font: IBMPlexSans, "IBM Plex Sans", Arial, sans-serif; --n19-body-font: "Noto Sans", Arial, sans-serif; --n19-tip: #0e1113; --n19-tab-text: var(--n19-key, #0079d3); --n19-action-key: var(--n19-key, #0079d3); }
 html[data-net19-mode="dark"] { --n19-page: #030303; --n19-card: #1a1a1b; --n19-card-2: #272729; --n19-vote: #161617; --n19-text: #d7dadc; --n19-title: #d7dadc; --n19-meta: #818384;
   --n19-action: #818384; --n19-border: #343536; --n19-border-hover: #818384; --n19-line: #343536; --n19-hover: rgba(215,218,220,.1); --n19-blue: #d7dadc;
   --n19-blue-hover: #e8eaeb; --n19-on-blue: #1a1a1b; --n19-link: #4fbcff; --n19-field: #272729; --n19-field-border: #343536; --n19-header: #1a1a1b;
@@ -131,7 +131,7 @@ shreddit-comment [data-n19-points] { margin: 0 0 0 4px; white-space: nowrap; }
 shreddit-comment .ssr-thread-line, shreddit-comment .threadline, shreddit-comment [data-testid="main-thread-line"], shreddit-comment [data-testid="branch-line"] { --color-neutral-border-weak: var(--n19-thread); --color-neutral-border: var(--n19-thread); }
 shreddit-comment .ssr-thread-line::before, shreddit-comment .ssr-thread-line { border-color: var(--n19-thread) !important; }
 shreddit-comment .ssr-thread-line:hover { --color-neutral-border-weak: var(--n19-thread-hover); }
-shreddit-comment [slot="comment"] { font-family: var(--n19-body-font) !important; }
+shreddit-comment [slot="comment"] { font-family: var(--n19-body-font) !important; padding-left: 0 !important; }
 shreddit-comment-action-row :is(button.button, a.button, button[rpl]) { background: transparent !important; border: 0 !important; border-radius: 2px !important; box-shadow: none !important;
   color: var(--n19-action) !important; font-size: 12px !important; font-weight: 700 !important; padding: 4px !important; }
 shreddit-comment-action-row :is(button.button, a.button, button[rpl]):hover { background: var(--n19-hover) !important; }
@@ -192,7 +192,6 @@ shreddit-post[view-type="cardView"] { padding-bottom: 0 !important; }
 community-highlight-carousel, shreddit-community-highlights, [id="community-highlights"], achievements-progress-toast,
 [class*="floating-translation"], shreddit-translation-toggle, translation-toggle { display: none !important; }
 
-html { --n19-tip: #0e1113; }
 html[data-net19-mode="dark"] { --n19-tip: #fff; }
 rpl-tooltip > [slot="content"], rpl-tooltip > [slot="shortcut"] { background: var(--n19-tip) !important; }
 [data-net19-hidden] { display: none !important; }
@@ -260,7 +259,6 @@ auth-flow-google-one-tap-prompt { display: none !important; }
 shreddit-comment > details > .comment-main-grid > div.col-start-2.relative:has(> div[slot="actionRow"]) { position: static !important; }
 shreddit-comment > details > .comment-main-grid > .ssr-thread-line { top: 20px !important; }
 shreddit-comment [slot="commentAvatar"] { height: 0 !important; overflow: hidden !important; }
-shreddit-comment [slot="comment"] { padding-left: 0 !important; }
 shreddit-comment [slot="comment"] > div { margin-left: 0 !important; margin-right: 0 !important; }
 shreddit-comment [slot="comment"] p { margin: 0 0 7px !important; }
 shreddit-comment [slot="comment"] p:last-child { margin-bottom: 0 !important; }
@@ -276,16 +274,16 @@ reddit-header-large div.h-\[40px\] > div > div { width: 100% !important; max-wid
 #subgrid-container:has(.main-container > main > div > shreddit-async-loader[bundlename="shreddit_sort_dropdown"]) { gap: 0 !important; }
 
 #subgrid-container:has(> .search-results-navigation-masthead-desktop) { padding-top: 0 !important; }
-.masthead.search-results-navigation-masthead-desktop { background: var(--n19-card) !important; position: relative !important; top: 0 !important; z-index: 3 !important; border: 0 !important; margin: 0 !important; }
+.masthead.search-results-navigation-masthead-desktop { position: relative !important; top: 0 !important; z-index: 3 !important; border: 0 !important; margin: 0 !important; }
 .masthead.search-results-navigation-masthead-desktop > div { padding: 0 !important; }
 #search-results-page-tabgroup > a[class~="button"] { text-transform: none !important; font: 500 14px/18px var(--n19-font) !important; letter-spacing: 0 !important; height: 44px !important;
   padding: 0 12px !important; color: var(--n19-meta) !important; background: transparent !important; border-radius: 0 !important; }
 #search-results-page-tabgroup > a[class~="button"]:is([faceplate-tab-selected], [aria-selected="true"], [aria-current="page"]) { color: var(--n19-text) !important; box-shadow: inset 0 -2px 0 var(--n19-blue) !important; }
-search-results-page-tabs div[slot="tabs"] > div { padding-top: 12px !important; }
-search-results-page-tabs div[slot="filters"] { position: relative !important; z-index: 0 !important; padding: 4px 0 !important; box-sizing: border-box !important; height: 40px !important; }
+search-results-page-tabs div[slot="tabs"] > div { }
+search-results-page-tabs div[slot="filters"] { position: relative !important; z-index: 0 !important; box-sizing: border-box !important; border-top: 0 !important; }
 search-results-page-tabs div[slot="filters"] :is(button, a)[class~="button"] { color: var(--n19-text) !important; font: 700 12px/16px var(--n19-font) !important; letter-spacing: .5px !important;
   text-transform: uppercase !important; background: transparent !important; }
-main#main-content > div.search-results-filter-spacer-desktop { height: 20px !important; min-height: 20px !important; }
+main#main-content > div.search-results-filter-spacer-desktop { }
 main#main-content > div.bg-neutral-background:has(> search-telemetry-tracker, > hr.list-divider-line) { background: var(--n19-card) !important; border: 1px solid var(--n19-border) !important; border-radius: 4px !important;
   min-height: 0 !important; overflow: hidden !important; padding: 0 !important; }
 main#main-content search-telemetry-tracker > div[data-testid^="search-post"] { padding: 8px 16px 8px 8px !important; border-radius: 0 !important; justify-content: flex-start !important; align-items: flex-start !important; gap: 12px !important; }
@@ -335,12 +333,11 @@ auth-flow-modal [slot="primaryButton"] button[disabled], auth-flow-modal [slot="
 auth-flow-modal [slot="primaryButton"] button * { color: inherit !important; }
 [data-testid="search-results-sidebar"] [data-testid="search-subreddit-desc-text"] { display: block !important; -webkit-line-clamp: none !important; line-clamp: none !important; white-space: nowrap !important;
   overflow: hidden !important; text-overflow: ellipsis !important; }
-search-results-page-tabs div[slot="filters"] { border-top: 0 !important; }
 shreddit-comment .comment-action-row-hl { display: none !important; }
 #subgrid-container main#main-content > div:has(> shreddit-async-loader[bundlename="shreddit_sort_dropdown"])::before,
 .masthead.search-results-navigation-masthead-desktop::before, search-results-page-tabs div[slot="filters"]::before {
   content: ''; position: absolute; top: 0; bottom: var(--n19-band-extra, 0px); left: -100vmax; right: -100vmax; background: var(--n19-card); z-index: -1; pointer-events: none; }
-.main-container:has(.search-results-filter-spacer-desktop) > #right-sidebar-container { margin-top: 20px !important; }
+.main-container:has(.search-results-filter-spacer-desktop) > #right-sidebar-container { }
 .main-container:has(.search-results-filter-spacer-desktop) [data-testid="search-results-sticky-sidebar"] { top: 68px !important; max-height: calc(100vh - 68px) !important; }
 aside.subreddit-right-rail-community-info faceplate-tracker[noun="menu_click"] > a[class~="button-secondary"] { background: transparent !important; border: 1px solid var(--n19-blue) !important; border-radius: 4px !important;
   color: var(--n19-blue) !important; font: 700 12px/16px var(--n19-font) !important; letter-spacing: .5px !important; text-transform: uppercase !important; }
@@ -353,7 +350,7 @@ aside.subreddit-right-rail-community-info faceplate-tracker[noun="menu_click"] >
 [data-n19-idcard-head] > img { width: 44px; height: 60px; object-fit: contain; margin: 0; }
 [data-n19-idcard-head] > span { padding: 0 0 6px; color: var(--n19-text); font: 500 16px/20px var(--n19-font); }
 [data-n19-idcard] > p { margin: 8px 12px 12px; color: var(--n19-text); font: 400 14px/21px var(--n19-body-font); }
-[data-n19-idcard-button] { display: block; margin: 0 12px 12px; height: 32px; border-radius: 4px; background: var(--n19-blue); color: var(--n19-on-blue) !important; text-align: center;
+[data-n19-idcard-button] { display: block; margin: 0 12px 12px; border-radius: 4px; background: var(--n19-blue); color: var(--n19-on-blue) !important; text-align: center;
   font: 700 14px/32px var(--n19-font); letter-spacing: .5px; text-transform: uppercase; text-decoration: none !important; }
 [data-n19-idcard-button]:hover { background: var(--n19-blue-hover); }
 [data-n19-premium] { display: flex; align-items: center; gap: 12px; margin: 0 0 16px; padding: 12px; background: var(--n19-card); border: 1px solid var(--n19-border); border-radius: 4px;
@@ -392,7 +389,6 @@ shreddit-feed :is(shreddit-post[view-type="compactView"], shreddit-ad-post[data-
 shreddit-ad-post[data-n19-classic] [slot="title"] .headline { font-size: 16px !important; line-height: 20px !important; font-weight: 500 !important; }
 shreddit-ad-post[data-n19-classic] [slot="thumbnail"] :is(img, video) { width: 96px !important; height: 72px !important; object-fit: cover !important; border-radius: 4px !important; }
 
-html { --n19-tab-text: var(--n19-key, #0079d3); --n19-action-key: var(--n19-key, #0079d3); }
 html[data-net19-mode="dark"] { --n19-tab-text: var(--n19-text); --n19-action-key: var(--n19-blue); }
 .masthead.subreddit-feed-masthead { display: none !important; }
 #subgrid-container:has(> [data-n19-masthead]) { padding-top: 0 !important; gap: 0 !important; }
@@ -454,7 +450,7 @@ shreddit-post[view-context="CommentsPage"][subreddit-prefixed-name^="r/"] #pdp-c
 .masthead.search-results-navigation-masthead-desktop > :is([data-n19-search-head], div) { position: relative; }
 .masthead > [data-n19-search-head]::before, search-results-page-tabs div[slot="tabs"]::before {
   content: ''; position: absolute; top: 0; bottom: 0; left: -100vmax; right: -100vmax; background: var(--n19-card); z-index: -1; pointer-events: none; }
-search-results-page-tabs div[slot="tabs"] { position: relative !important; z-index: 0; border-bottom: 1px solid var(--n19-line); }
+search-results-page-tabs div[slot="tabs"] { position: relative !important; z-index: 0; }
 [data-n19-search-head] { padding: 16px 0 12px; z-index: 0; }
 [data-n19-search-head] > h1 { margin: 0 0 4px !important; color: var(--n19-text); font: 500 24px/28px var(--n19-font); min-height: 0; }
 [data-n19-search-head] > h1:empty { display: none; }

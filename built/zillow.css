@@ -19,7 +19,7 @@ h1[class*="StyledHeading-c11n"],h1[class*="Text-c11n"]{font-family:"Ivar Display
 [class*="StyledParagraph-c11n"]{color:var(--n19-text-2)}
 :where(:root:not([data-n19-safe])) .with-product-nav__top-and-main div:has(>div>div>h1[class*="StyledHeading-c11n"]),.with-product-nav__top-and-main:where(:root:not([data-n19-safe])) div:has(>div>div>h1[class*="StyledHeading-c11n"]){width:100%!important;box-sizing:border-box!important}
 :where(:root:not([data-n19-safe])) .with-product-nav__top-and-main div:has(>div>h1[class*="StyledHeading-c11n"]),.with-product-nav__top-and-main:where(:root:not([data-n19-safe])) div:has(>div>h1[class*="StyledHeading-c11n"]){margin-left:auto!important;margin-right:auto!important;width:640px!important;max-width:100%!important}
-.with-product-nav__top-and-main div:has(>div>h1[class*="StyledHeading-c11n"]){text-align:center!important}
+.with-product-nav__top-and-main div:has(>div>h1[class*="StyledHeading-c11n"]){text-align:center!important;background-image:linear-gradient(transparent, transparent)!important}
 .with-product-nav__top-and-main h1[class*="StyledHeading-c11n"]{font-size:48px!important;line-height:1.2!important;text-align:center!important}
 :where(:root:not([data-n19-safe])) .with-product-nav__top-and-main h1[class*="StyledHeading-c11n"],.with-product-nav__top-and-main:where(:root:not([data-n19-safe])) h1[class*="StyledHeading-c11n"]{white-space:normal!important;width:100%!important;margin-bottom:24px!important}
 :where(:root:not([data-n19-safe])) .with-product-nav__top-and-main div:has(>div>h1[class*="StyledHeading-c11n"])>div,.with-product-nav__top-and-main:where(:root:not([data-n19-safe])) div:has(>div>h1[class*="StyledHeading-c11n"])>div{width:100%!important;max-width:none!important}
@@ -31,5 +31,4 @@ h1[class*="StyledHeading-c11n"],h1[class*="Text-c11n"]{font-family:"Ivar Display
 .with-product-nav__top-and-main h1[class*="StyledHeading-c11n"],.with-product-nav__top-and-main h1[class*="StyledHeading-c11n"] *{color:var(--n19-hero-text)!important;-webkit-text-fill-color:currentColor!important}
 .with-product-nav__product-nav{display:none!important}
 :where(:root:not([data-n19-safe])) .with-product-nav__wrapper,.with-product-nav__wrapper:where(:root:not([data-n19-safe])){grid-template-columns:0 minmax(0, 1fr)!important}
-.with-product-nav__top-and-main div:has(>div>h1[class*="StyledHeading-c11n"]){background-image:linear-gradient(transparent, transparent)!important}
 [data-n19-post]{display:none!important}

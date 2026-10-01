@@ -15,8 +15,7 @@ globalThis.net19Theme = {
       if (text === 'Service & Repair') { const item = link.closest('nav nav > div') || link; if (!item.hasAttribute('data-n19-post')) item.setAttribute('data-n19-post', ''); continue; }
       const to = NAV.get(text);
       if (!to) continue;
-      const walker = document.createTreeWalker(link, NodeFilter.SHOW_TEXT);
-      for (let node = walker.nextNode(); node; node = walker.nextNode()) if (node.data.trim() === text) { node.data = to; break; }
+      net19.rename(link, text, to);
     }
     for (const heading of document.querySelectorAll('#content h2')) if (/^Kelley Knows Motorcycles/i.test(heading.textContent.trim())) { const block = heading.closest('[data-cy="SectionWrapper"]'); if (block && !block.hasAttribute('data-n19-post')) block.setAttribute('data-n19-post', ''); }
     for (const heading of document.querySelectorAll('#content :is(h2, h3)')) {
@@ -27,8 +26,8 @@ globalThis.net19Theme = {
     }
     return !!h1;
   };
-  let queued = false, observer = null;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
+  let observer = null;
+  const later = net19.frame(fix);
   const start = () => {
     fix();
     observer = new MutationObserver(later);

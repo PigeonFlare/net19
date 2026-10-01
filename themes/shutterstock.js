@@ -25,8 +25,7 @@ globalThis.net19Theme = {
       if (box && !box.hasAttribute('data-net19-later-section')) box.setAttribute('data-net19-later-section', '');
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
+  const later = net19.frame(fix);
   const start = () => { fix(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); };
   start();
 })();

@@ -14,8 +14,7 @@ globalThis.net19Theme = {
       if (chip.hasAttribute('data-n19-interest') !== later) chip.toggleAttribute('data-n19-interest', later);
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
+  const later = net19.frame(mark);
   const start = () => { mark(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['data-n19-interest'] }); addEventListener('load', later); };
   start();
 })();

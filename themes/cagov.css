@@ -8,8 +8,7 @@ html:root { --border-radius-large: 0 !important; --border-radius-small: 0 !impor
 .utility-header a, .utility-header button, .utility-header span, .utility-header [class*="icon"] { color: var(--n19-bar-text) !important; }
 
 header#header { box-shadow: 0 2px 5px rgba(0,0,0,.2) !important; }
-.top-level-nav .first-level-link { color: var(--n19-nav) !important; font-size: 15px !important; }
-.top-level-nav .first-level-link { line-height: 26px !important; }
+.top-level-nav .first-level-link { color: var(--n19-nav) !important; font-size: 15px !important; line-height: 26px !important; }
 .utility-header a { text-decoration: none !important; }
 header.global-header .section-default { box-shadow: none !important; border-bottom: 0 !important; }
 

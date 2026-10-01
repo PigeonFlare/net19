@@ -523,8 +523,7 @@ html[data-n19-yt="www"],html[data-n19-yt="www"] ytd-app,html[data-n19-yt="www"] 
 :is(html[data-n19-yt="www"]) .html5-video-player .ytp-play-progress,:is(html[data-n19-yt="www"]) .html5-video-player .ytp-scrubber-button{background:#f00!important}
 :is(html[data-n19-yt="www"]) .html5-video-player :is(.ytp-left-controls,.ytp-right-controls,.ytp-time-wrapper,.ytp-chrome-controls .ytp-button,.ytp-time-display){border-radius:0!important;background:transparent!important;box-shadow:none!important;backdrop-filter:none!important}
 :is(html[data-n19-yt="www"]) .html5-video-player .ytp-chrome-bottom .ytp-chrome-controls{background:transparent!important}
-:where(:root:not([data-n19-safe])) :is(html[data-n19-yt="www"]) .html5-video-player .ytp-gradient-bottom,:is(html[data-n19-yt="www"]):where(:root:not([data-n19-safe])) .html5-video-player .ytp-gradient-bottom{display:block!important}
-:where(:root:not([data-n19-safe])) :is(html[data-n19-yt="www"]) .html5-video-player .ytp-gradient-bottom,:is(html[data-n19-yt="www"]):where(:root:not([data-n19-safe])) .html5-video-player .ytp-gradient-bottom{height:110px!important}
+:where(:root:not([data-n19-safe])) :is(html[data-n19-yt="www"]) .html5-video-player .ytp-gradient-bottom,:is(html[data-n19-yt="www"]):where(:root:not([data-n19-safe])) .html5-video-player .ytp-gradient-bottom{display:block!important;height:110px!important}
 :is(html[data-n19-yt="www"]) .html5-video-player .ytp-gradient-bottom{background:linear-gradient(to top, rgba(0, 0, 0, .75), rgba(0, 0, 0, .35) 55%, rgba(0, 0, 0, 0))!important}
 :is(html[data-n19-yt="www"]) .html5-video-player .ytp-volume-area{background:transparent!important;border-radius:0!important;box-shadow:none!important;backdrop-filter:none!important}
 :is(html[data-n19-yt="www"]) .html5-video-player .ytp-time-display,:is(html[data-n19-yt="www"]) .html5-video-player .ytp-chrome-controls .ytp-button{text-shadow:0 0 2px rgba(0, 0, 0, .8)!important}

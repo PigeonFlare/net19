@@ -12,8 +12,7 @@ html:not([data-net19-app]) #root header button:hover{color:var(--n19-text)!impor
 html:not([data-net19-app]) #root header a[href*="login"i],html:not([data-net19-app]) #root header a[href*="signup"i]{font-size:13px!important;font-weight:400!important;border-radius:4px!important;background:transparent!important;box-shadow:none!important}
 html:not([data-net19-app]) #root header a[href*="signup"i]{border:1px solid var(--n19-border)!important}
 html:not([data-net19-app]) #root header :is(div,nav,ul)[class],html:not([data-net19-app]) [data-is-layer-marker] :is(div,nav,ul)[class]{border-radius:4px!important}
-html:not([data-net19-app]) #root main h1,html:not([data-net19-app]) #root main h1 *{color:var(--n19-text)!important;-webkit-text-fill-color:var(--n19-text)!important;background:none!important}
-html:not([data-net19-app]) #root main h1,html:not([data-net19-app]) #root main h1 *{font-weight:700!important;letter-spacing:0!important;font-size:52px!important;line-height:1.2!important}
+html:not([data-net19-app]) #root main h1,html:not([data-net19-app]) #root main h1 *{color:var(--n19-text)!important;-webkit-text-fill-color:var(--n19-text)!important;background:none!important;font-weight:700!important;letter-spacing:0!important;font-size:52px!important;line-height:1.2!important}
 html:not([data-net19-app]) #root main h1+span+span,html:not([data-net19-app]) #root main h1~span{color:#555!important;-webkit-text-fill-color:#555!important;font-size:17px!important;font-weight:400!important}
 html[data-net19-mode="dark"] #root main h1~span{color:#bbb!important;-webkit-text-fill-color:#bbb!important}
 html:not([data-net19-app]) #root main h1~div button,html:not([data-net19-app]) #root main h1~div a[href]{background:var(--n19-teal)!important;color:var(--n19-on-teal)!important;-webkit-text-fill-color:var(--n19-on-teal)!important;border-radius:4px!important;box-shadow:none!important;font-size:14px!important}

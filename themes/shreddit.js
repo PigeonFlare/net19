@@ -726,8 +726,7 @@ globalThis.net19Theme = {
     header(); masthead(); aboutCard(); searchPage(); profile(); sortBar(); idCard(); trendingTitle(); footer(); after2019(); pinned();
     times(document);
   };
-  let queued = false;
-  function later() { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; scan(); }); }
+  const later = net19.frame(scan);
   const start = () => {
     scan();
     new MutationObserver(() => { retries = 0; later(); }).observe(document.documentElement, { childList: true, subtree: true });

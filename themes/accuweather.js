@@ -12,7 +12,6 @@ globalThis.net19Theme = { intended: '[data-n19-later]', later: /^(?:air quality|
       if (node) node.textContent = node.textContent.replace(node.textContent.trim(), words[node.textContent.trim()]);
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
+  const later = net19.frame(fix);
   fix(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
 })();

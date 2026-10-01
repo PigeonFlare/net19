@@ -9,8 +9,7 @@ globalThis.net19Theme = { intended: 'footer a:is([href*="instagram.com"], [href*
       }
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
+  const later = net19.frame(fix);
   const start = () => { fix(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); };
   start();
 })();
@@ -20,8 +19,7 @@ globalThis.net19Theme = { intended: 'footer a:is([href*="instagram.com"], [href*
     if (!root.hasAttribute('data-net19-recolor')) return;
     for (const el of document.querySelectorAll('nav[aria-label="Main"] a.menuitem.nav-first-element')) if (!el.hasAttribute('data-net19-keep')) el.setAttribute('data-net19-keep', '');
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
+  const later = net19.frame(mark);
   const start = () => {
     later();
     new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });

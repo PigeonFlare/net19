@@ -16,9 +16,9 @@ main[data-testid="home-desktop"] [data-testid="ai-toggle"]{background:transparen
 :where(:root:not([data-n19-safe])) main[data-testid="home-desktop"] [data-testid="ai-toggle"]{padding:0!important}
 main[data-testid="home-desktop"] [data-testid="ai-toggle"]>button:first-child{font-size:0!important}
 :where(:root:not([data-n19-safe])) main[data-testid="home-desktop"] [data-testid="ai-toggle"]>button:first-child{width:44px!important;height:42px!important}
-main[data-testid="home-desktop"] [data-testid="ai-toggle"]>button:first-child{border:0!important;border-radius:0 3px 3px 0!important}
+main[data-testid="home-desktop"] [data-testid="ai-toggle"]>button:first-child{border:0!important}
 :where(:root:not([data-n19-safe])) main[data-testid="home-desktop"] [data-testid="ai-toggle"]>button:first-child{margin:0 -3px 0 0!important;min-width:0!important;padding:0!important;justify-content:center!important}
-main[data-testid="home-desktop"] [data-testid="ai-toggle"]>button:first-child{color:var(--n19-icon)!important;background:transparent!important;box-shadow:none!important}
+main[data-testid="home-desktop"] [data-testid="ai-toggle"]>button:first-child{background:transparent!important;box-shadow:none!important}
 :where(:root:not([data-n19-safe])) main[data-testid="home-desktop"] [data-testid="ai-toggle"]>button:first-child svg{width:18px!important;height:18px!important;margin:0!important}
 main[data-testid="home-desktop"] [data-testid="ai-toggle"]>button:not(:first-child){display:none!important}
 :where(:root:not([data-n19-safe])) main[data-testid="home-desktop"] header>section:last-child{position:absolute!important;top:16px!important;right:16px!important;width:auto!important}

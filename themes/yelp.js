@@ -12,12 +12,7 @@ globalThis.net19Theme = {};
     keep(document.querySelector('section[class*="hero__"]'));
     keep(document.querySelector('header[class*="consumer-header-container"]'));
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
-  const start = () => {
-    later();
-    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
-    new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-recolor'] });
-  };
-  net19.onBody(start);
+  const later = net19.frame(mark);
+  net19.onBody(() => { new MutationObserver(later).observe(root, { attributes: true, attributeFilter: ['data-net19-recolor'] }); });
+  net19.watch(mark);
 })();

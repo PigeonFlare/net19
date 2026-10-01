@@ -33,8 +33,7 @@ globalThis.net19Theme = { intended: 'rt-header-nav-item[slot="shop"], [data-n19-
       }
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); keep(); }); };
+  const later = net19.frame(() => { fix(); keep(); });
   const root = document.documentElement;
   const keep = () => {
     const header = document.querySelector('rt-header')?.closest('header') || document.querySelector('rt-header');

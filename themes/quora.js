@@ -28,8 +28,5 @@ globalThis.net19Theme = {
       if (LATER_CONTROLS.test(label)) control.setAttribute('data-net19-hidden', '');
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; labels(); assistant(); controls(); }); };
-  const start = () => { labels(); assistant(); controls(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); };
-  net19.onBody(start);
+  net19.watch(() => { labels(); assistant(); controls(); });
 })();

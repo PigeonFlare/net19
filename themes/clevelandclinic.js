@@ -8,11 +8,7 @@ globalThis.net19Theme = {
   const mark = el => { if (el && !el.hasAttribute('data-n19-later')) el.setAttribute('data-n19-later', ''); };
   const fix = () => {
     for (const link of document.querySelectorAll('header ul li > :is(a, button), header section a, footer a')) {
-      const walker = document.createTreeWalker(link, NodeFilter.SHOW_TEXT);
-      for (let node = walker.nextNode(); node; node = walker.nextNode()) {
-        const t = node.textContent.trim();
-        if (words[t]) node.textContent = node.textContent.replace(t, words[t]);
-      }
+      net19.rename(link, words);
     }
     for (const label of document.querySelectorAll('header section div.font-bold')) if (text(label) === 'Locations:') mark(label.closest('section'));
     for (const el of document.querySelectorAll('header > div')) if (text(el) === 'Closures & Updates') mark(el);

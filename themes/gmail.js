@@ -39,12 +39,11 @@
     if (globalThis.net19Theme.rejudge) globalThis.net19Theme.rejudge(); else requestAnimationFrame(() => globalThis.net19Theme.rejudge?.());
     if (value === 'dark') requestAnimationFrame(() => requestAnimationFrame(picture));
   };
-  let queued = false;
   const start = () => {
     picture();
     addEventListener('load', () => setTimeout(() => globalThis.net19Theme.rejudge?.(), 600), { once: true });
     for (const wait of [1500, 4000]) setTimeout(() => { picture(); globalThis.net19Theme.rejudge?.(); }, wait);
-    new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; picture(); }); } })
+    new MutationObserver(net19.frame(picture))
       .observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['style'] });
   };
   net19.onBody(start);
@@ -65,10 +64,5 @@
       if (tabs.length >= 2) side.setAttribute('data-net19-studio', '');
     }
   };
-  let queued = false;
-  const start = () => {
-    panel();
-    new MutationObserver(() => { if (!queued) { queued = true; requestAnimationFrame(() => { queued = false; panel(); }); } }).observe(document.documentElement, { childList: true, subtree: true });
-  };
-  net19.onBody(start);
+  net19.watch(panel);
 })();

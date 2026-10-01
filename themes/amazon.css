@@ -19,8 +19,7 @@ body, body #a-page { font-family: Arial, sans-serif !important; }
 #navbar-main #nav-belt { height: 55px !important; }
 #navbar-main #nav-main { height: 44px !important; overflow: visible !important; }
 #nav-main #nav-hamburger-menu { z-index: 2 !important; position: absolute !important; left: 8px !important; top: -46px !important; width: 38px !important; height: 38px !important; padding: 0 !important; margin: 0 !important;
-  display: flex !important; align-items: center !important; justify-content: center !important; border: 1px solid transparent !important; border-radius: 2px !important; box-sizing: border-box !important; }
-#nav-main #nav-hamburger-menu { border-color: transparent !important; }
+  display: flex !important; align-items: center !important; justify-content: center !important; border: 1px solid transparent !important; border-radius: 2px !important; box-sizing: border-box !important; border-color: transparent !important; }
 #nav-main #nav-hamburger-menu:hover { border-color: #fff !important; }
 #nav-main #nav-hamburger-menu .hm-icon { display: block !important; margin: 0 !important; flex: none !important; }
 #nav-main #nav-hamburger-menu .hm-icon-label { display: none !important; }
@@ -29,8 +28,7 @@ body, body #a-page { font-family: Arial, sans-serif !important; }
 #nav-belt #nav-global-location-slot > * { height: auto !important; }
 #nav-belt > .nav-fill { flex: 0 1 638px !important; max-width: calc(100vw - 600px) !important; margin-left: 44px !important; }
 #nav-belt > .nav-right { position: absolute !important; right: 0 !important; top: 52px !important; height: 44px !important; }
-#nav-belt #nav-tools { height: 44px !important; align-items: center !important; }
-#nav-belt #nav-tools { display: flex !important; padding: 0 !important; }
+#nav-belt #nav-tools { height: 44px !important; align-items: center !important; display: flex !important; padding: 0 !important; }
 #nav-belt #nav-tools > :is(a, div) { height: 40px !important; top: 0 !important; margin-top: 0 !important; margin-bottom: 0 !important; padding-bottom: 0 !important; box-sizing: border-box !important; overflow: visible !important; }
 #nav-belt #nav-tools > :is(a, div) > :is(a, div, span):not(.nav-line-1-container, .nav-line-1, .nav-line-2, #nav-cart-count-container) { height: 40px !important; }
 #nav-belt #nav-tools > #nav-cart #nav-cart-text-container { padding-bottom: 5px !important; box-sizing: border-box !important; }

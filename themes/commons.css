@@ -4,7 +4,7 @@ body.skin-vector-legacy { background-color: var(--n19-page); }
 body.skin-vector-legacy .mw-body { background-color: var(--n19-content); }
 
 body.skin-vector-legacy #p-logo a.mw-wiki-logo {
-  background-image: url("https://commons.wikimedia.org/static/images/project-logos/commonswiki.png") !important;
+  
   background-image: image-set(url("https://commons.wikimedia.org/static/images/project-logos/commonswiki.png") 1x, url("https://commons.wikimedia.org/static/images/project-logos/commonswiki-2x.png") 2x) !important;
   background-size: 135px 155px !important; background-position: center center !important; background-repeat: no-repeat !important; }
 
