@@ -143,3 +143,5 @@ html[data-net19-mode="dark"] #gb form button[aria-label="Advanced search"i]{back
 #drive-main-page table[role="grid"]{border:0!important}
 :is([role="tab"],[role="button"])[aria-label="Contacts"]:is([aria-label="Side panel"i] *,.companion-app-switcher-container *){display:none!important}
 #gb span[data-is-tooltip-wrapper]:has(>button[aria-label="AI Overview search"i]),#gb button[aria-label="AI Overview search"i]{display:none!important}
+html[data-net19-mode="dark"] body.docs-gm :is(#docs-titlebar-container,#docs-toolbar-wrapper,#docs-toolbar,.docs-titlebar-buttons,#docs-header) .docs-icon-img{filter:invert(1) hue-rotate(180deg)!important}
+html[data-net19-mode="dark"] body.docs-gm #docs-revisions-appbarbutton::after,html[data-net19-mode="dark"] body.docs-gm :is(.docs-save-indicator-badge,.docs-titlebar-badge .docs-save-indicator-text){color:#bdc1c6!important}
