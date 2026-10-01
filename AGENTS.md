@@ -50,7 +50,7 @@
   - text over a picture or its shading.
 
   Any item is a bug. When the generic recoloring gets a part wrong, fix the theme's tokens for that mode. Name parts drawn for a photo behind them with `keep` (and panels inside those with `reflip`), and drawn surfaces that must invert, such as an editor's canvas, with `flat`.
-- Start theme scripts with `net19.watch(run)` or `net19.onBody(run)` from `runtime.js` (as soon as `<body>` exists), never at `DOMContentLoaded`, and batch work with `requestAnimationFrame` (`net19.frame`), not timers, so nothing of the current design is painted first.
+- Start theme scripts with `net19.watch(run)` or `net19.onBody(run)` from `runtime.js` (as soon as `<body>` exists), never at `DOMContentLoaded`, and batch work with `requestAnimationFrame` (`net19.frame`), not timers, so nothing of the current design is painted first. Rename text with `net19.rename(el, from, to)` or `net19.rename(el, words)` instead of writing a TreeWalker.
 - Pages come in many languages. Match labels through `globalThis.net19English(text)` (and add a site's translations to `theme.words`), add text through `globalThis.net19Say(label)`, only overwrite a site's own wording when `globalThis.net19Lang()` is `en`, and mirror positioned rules for `:dir(rtl)`.
 - Write selectors that survive redesigns: ids, `role`/`aria-*`, `data-testid`, custom element names, `name`/`href` patterns and visible labels before generated class names, above all in rules that hide things.
 - Run `npm run audit:fit -- <id>` for every theme you change. It must report `fit`. The fallback only gates geometry (sizes, positions, spacing, flex and grid); hidden post-2019 features, colors, fonts and pictures always apply.
