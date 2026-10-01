@@ -10,11 +10,5 @@ globalThis.net19Theme = {
       const label = document.createElement('span'); label.setAttribute('data-n19-signin', ''); label.textContent = 'Sign in'; account.prepend(label);
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
-  const start = () => {
-    fix();
-    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
-  };
-  net19.onBody(start);
+  net19.watch(fix, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
 })();

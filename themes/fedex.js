@@ -6,8 +6,7 @@ globalThis.net19Theme = { later: /^ask fedex$/i };
       if (node?.nodeType === 3 && node.textContent.trim() === 'Design & Print') node.textContent = ' Printing Services ';
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
+  const later = net19.frame(fix);
   const start = () => { fix(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); };
   start();
 })();

@@ -1,5 +1,4 @@
 html[lang="en"] body.skin-vector-legacy #p-logo a.mw-wiki-logo {
-  background-image: url("https://en.wikipedia.org/static/images/project-logos/enwiki.png") !important;
   background-image: image-set(url("https://en.wikipedia.org/static/images/project-logos/enwiki.png") 1x, url("https://en.wikipedia.org/static/images/project-logos/enwiki-2x.png") 2x) !important;
   background-size: 135px 155px !important; background-position: center center !important; background-repeat: no-repeat !important; width: 160px !important; height: 160px !important; }
 

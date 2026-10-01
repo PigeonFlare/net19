@@ -13,7 +13,7 @@ net19 is a set of handmade themes and a service worker that registers them. It d
 | `src/themes.ts` | the list of themed sites, their domains and URL rules |
 | `src/background.ts`, `src/navigation.ts`, `src/settings.ts` | the service worker: registers themes, redirects to legacy frontends, stores the two switches |
 | `src/popup.ts` | the popup's two switches |
-| `src/content/runtime.js` | loads before every theme: `net19.watch`/`onBody`/`frame` and the language helpers |
+| `src/content/runtime.js` | loads before every theme: `net19.watch`/`onBody`/`frame`/`rename` and the language helpers |
 | `src/content/palette.js`, `src/content/recolor.js`, `src/content/guard.js`, `src/content/fit.js` | the engine that runs after every theme (light/dark, post-2019 features, readability, redesign fallback) |
 | `evidence/<id>.json` | each theme's 2019 sources and every feature it shows or hides, checked by `tests/` and `npm run audit:inventory` |
 | `scripts/` | build and package; `styles.mjs` compiles `themes/*.css` into `built/` |

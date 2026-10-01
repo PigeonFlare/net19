@@ -3,14 +3,13 @@ html[data-net19-mode="dark"]{--n19-page:#121212;--n19-text:#f2f2f2;--n19-body:#d
 ps-header header{background:var(--n19-page)!important;border-bottom:1px solid var(--n19-rule)!important;box-shadow:none!important}
 ps-header header>button:first-child,ps-header header button[aria-label*="earch"i],ps-header header .dss-header a,ps-header header a[href*="login"i]{border:0!important;border-radius:0!important;background:transparent!important;box-shadow:none!important}
 ps-header header>button:first-child span,ps-header header .dss-header :is(a,button,span){font:400 11px/1 var(--n19-sans)!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:var(--n19-text)!important}
-.page-subheader,.page-subheader>div{background:var(--n19-bar)!important;border:0!important}
+.page-subheader,.page-subheader>div{border:0!important}
 :where(:root:not([data-n19-safe])) .page-subheader,.page-subheader:where(:root:not([data-n19-safe])),:where(:root:not([data-n19-safe])) .page-subheader>div,.page-subheader:where(:root:not([data-n19-safe]))>div{min-height:44px!important;height:44px!important}
 :where(:root:not([data-n19-safe])) .page-subheader nav,.page-subheader:where(:root:not([data-n19-safe])) nav,:where(:root:not([data-n19-safe])) .page-subheader gn-quicklinks,.page-subheader:where(:root:not([data-n19-safe])) gn-quicklinks{margin-top:0!important;margin-bottom:0!important;height:44px!important}
 :where(:root:not([data-n19-safe])) .page-subheader gn-quicklinks>ul,.page-subheader:where(:root:not([data-n19-safe])) gn-quicklinks>ul{min-height:44px!important;height:44px!important;margin:0!important}
 :where(:root:not([data-n19-safe])) .page-subheader gn-quicklinks li,.page-subheader:where(:root:not([data-n19-safe])) gn-quicklinks li{padding:0 9px!important}
-.page-subheader gn-quicklinks li>a{font:700 10px/44px var(--n19-sans)!important;letter-spacing:.12em!important;text-transform:uppercase!important;color:var(--n19-bar-text)!important}
 :where(:root:not([data-n19-safe])) .page-subheader gn-quicklinks li>a,.page-subheader:where(:root:not([data-n19-safe])) gn-quicklinks li>a{min-height:0!important}
-.page-subheader gn-quicklinks li>a:hover{color:#ccc!important;opacity:1!important}
+.page-subheader gn-quicklinks li>a:hover{opacity:1!important}
 .page-subheader gn-quicklinks li>button svg{fill:var(--n19-bar-text)!important}
 :where(:root:not([data-n19-safe])) .page-subheader gn-quicklinks li>button svg,.page-subheader:where(:root:not([data-n19-safe])) gn-quicklinks li>button svg{width:8px!important;height:8px!important}
 .page-subheader gn-quicklinks li:has(>a[href="#"]),.page-subheader gn-quicklinks li:has(>a[href*="/games"]),.page-subheader gn-quicklinks li:has(>a[href*="00000192-"]){display:none!important}

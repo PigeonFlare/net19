@@ -33,7 +33,7 @@ test.beforeEach(async ({}, info) => {
   worker = context.serviceWorkers()[0] ?? await context.waitForEvent('serviceworker'); extensionId = new URL(worker.url()).host;
   await expect.poll(() => worker.evaluate(async () => globalThis.chrome?.scripting ? (await chrome.scripting.getRegisteredContentScripts()).length : 0)).toBeGreaterThan(15);
 });
-test.afterEach(async () => { await context.close(); expect(unexpected).toEqual([]); });
+test.afterEach(async () => { await context?.close(); expect(unexpected).toEqual([]); });
 
 const scripts = () => worker.evaluate(async () => (await chrome.scripting.getRegisteredContentScripts()).map(s => s.id).sort());
 const redirects = () => worker.evaluate(async () => (await chrome.declarativeNetRequest.getDynamicRules()).filter(r => r.action.redirect?.regexSubstitution).length);

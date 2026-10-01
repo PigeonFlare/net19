@@ -29,11 +29,5 @@ globalThis.net19Theme = {
       if (text?.nodeType === 3 && from.test(text.data)) text.data = text.data.replace(from, to);
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
-  const start = () => {
-    fix();
-    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
-  };
-  net19.onBody(start);
+  net19.watch(fix, { childList: true, subtree: true, characterData: true });
 })();

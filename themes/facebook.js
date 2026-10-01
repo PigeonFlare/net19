@@ -27,8 +27,7 @@ globalThis.net19Theme = {
       const text = link.textContent.trim();
       if (FOOT_LATER.test(globalThis.net19English(text))) { let box = link; while (box.parentElement && box.parentElement !== foot && box.parentElement.childElementCount === 1) box = box.parentElement; mark(box, 'later'); continue; }
       if (!FOOT_WORDS.has(text)) continue;
-      const walker = document.createTreeWalker(link, NodeFilter.SHOW_TEXT);
-      for (let node = walker.nextNode(); node; node = walker.nextNode()) if (node.nodeValue.trim() === text) node.nodeValue = FOOT_WORDS.get(text);
+      net19.rename(link, text, FOOT_WORDS.get(text));
       if (text.startsWith('More languages')) mark(link, 'more-languages');
     }
   };

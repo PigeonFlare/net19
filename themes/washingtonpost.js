@@ -29,8 +29,7 @@ globalThis.net19Theme = {
     }
     if (/^Ask The Post AI/.test(document.title)) document.title = document.title.replace(/^Ask The Post AI/, 'Search');
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
+  const later = net19.frame(fix);
   const start = () => { fix(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, characterData: true }); addEventListener("load", later); };
   if (document.body) start();
   else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); start(); } }).observe(document.documentElement || document, { childList: true, subtree: true });

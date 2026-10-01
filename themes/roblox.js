@@ -5,10 +5,7 @@ globalThis.net19Theme = {
 };
 (() => {
   const NAMES = { Charts: 'Games', Marketplace: 'Catalog', Communities: 'Groups', Newsroom: 'Blog', 'Buy Gift Cards': 'Gift Cards' };
-  const rename = el => {
-    const walker = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
-    for (let n = walker.nextNode(); n; n = walker.nextNode()) { const to = NAMES[n.data.trim()]; if (to) n.data = n.data.replace(n.data.trim(), to); }
-  };
+  const rename = el => net19.rename(el, NAMES);
   const run = () => {
     const root = document.documentElement;
     const nav = document.querySelector('#left-navigation-container .left-nav');

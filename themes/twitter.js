@@ -175,8 +175,8 @@ globalThis.net19Theme = {
     if (!sheetEl.isConnected) (document.head || root).append(sheetEl);
     if (added || sheetEl.textContent === '' && out.length) sheetEl.textContent = out.join('\n');
   };
-  let queued = false, pending = [];
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; const roots = pending; pending = []; for (const r of roots) if (r.isConnected) walk(r); marks(); }); };
+  let pending = [];
+  const later = net19.frame(() => { const roots = pending; pending = []; for (const r of roots) if (r.isConnected) walk(r); marks(); });
   const start = () => {
     walk(document.body); marks(); recolor();
     new MutationObserver(records => {
@@ -256,8 +256,7 @@ globalThis.net19Theme = {
       if (node.parentNode === h1) for (const rest of h1.childNodes) if (rest.nodeType === 3 && rest.nodeValue === '.') rest.nodeValue = '';
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
+  const later = net19.frame(fix);
   const start = () => {
     if (location.pathname !== '/') return;
     fix();
@@ -351,8 +350,7 @@ globalThis.net19Theme = {
         const section = h.closest('section, [role="region"]');
         if (kindOf && section) mark(section, kindOf[1]);
         if (kindOf?.[1] === 'trends') {
-          const walker = document.createTreeWalker(h, NodeFilter.SHOW_TEXT);
-          for (let node = walker.nextNode(); node; node = walker.nextNode()) if (/^(?:what’s happening|what's happening|trending now)$/i.test(node.nodeValue.trim())) node.nodeValue = 'Trends for you';
+          net19.rename(h, /^(?:what’s happening|what's happening|trending now)$/i, 'Trends for you');
         }
       }
     }
@@ -365,12 +363,7 @@ globalThis.net19Theme = {
       }
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; layout(); }); };
-  const start = () => {
-    layout();
-    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
-    globalThis.navigation?.addEventListener?.('navigatesuccess', later);
-  };
-  net19.onBody(start);
+  const later = net19.frame(layout);
+  net19.onBody(() => { globalThis.navigation?.addEventListener?.('navigatesuccess', later); });
+  net19.watch(layout);
 })();

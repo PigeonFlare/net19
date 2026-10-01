@@ -96,16 +96,10 @@ globalThis.net19Theme = {
       const text = (control.getAttribute('aria-label') || control.textContent).replace(/\s+/g, ' ').trim();
       if (LATER_RAIL.test(globalThis.net19English(text)) || /^Send in a private message/i.test(text)) hide(control.closest('li') || control);
     }
-    if (settled) for (const root of [bar, ...main.querySelectorAll('button, a')]) {
-      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT);
-      for (let node = walker.nextNode(); node; node = walker.nextNode()) {
-        const to = WORDS.get(node.nodeValue.trim());
-        if (to) node.nodeValue = to;
-      }
-    }
+    if (settled) for (const root of [bar, ...main.querySelectorAll('button, a')]) net19.rename(root, WORDS);
   };
-  let queued = false, settled = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; repost(); guest(); app(); }); };
+  let settled = false;
+  const later = net19.frame(() => { repost(); guest(); app(); });
   const settle = () => setTimeout(() => { settled = true; later(); }, 1500);
   if (document.readyState === 'complete') settle(); else addEventListener('load', settle, { once: true });
   const start = () => {

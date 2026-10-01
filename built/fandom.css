@@ -1,4 +1,4 @@
-html{--n19-nav:#002a32;--n19-nav-link:#00d6d6;--n19-nav-text:#fff;--n19-nav-field:rgba(255,255,255,.1);--n19-nav-rule:rgba(255,255,255,.25);--n19-font:"Helvetica Neue", Helvetica, Arial, sans-serif;--n19-head-font:Rubik, "Helvetica Neue", Helvetica, Arial, sans-serif;--n19-title:#3a3a3a;--n19-page-border:#bcc2c4;--n19-header-band:var(--theme-sticky-nav-background-color, #002a32);--n19-header-text:var(--theme-sticky-nav-text-color, #fff)}
+html{--n19-nav:#002a32;--n19-nav-link:#00d6d6;--n19-nav-text:#fff;--n19-nav-field:rgba(255,255,255,.1);--n19-nav-rule:rgba(255,255,255,.25);--n19-font:"Helvetica Neue", Helvetica, Arial, sans-serif;--n19-head-font:Rubik, "Helvetica Neue", Helvetica, Arial, sans-serif;--n19-title:#3a3a3a;--n19-page-border:#bcc2c4;--n19-header-band:var(--theme-sticky-nav-background-color, #002a32);--n19-header-text:var(--theme-sticky-nav-text-color, #fff);--desktop-global-navigation-width:0px!important;--left-panel-spacing:0px!important}
 html[data-net19-mode="dark"]{--n19-nav:#002a32;--n19-nav-link:#00d6d6;--n19-nav-text:#fff;--n19-nav-field:rgba(255,255,255,.1);--n19-nav-rule:rgba(255,255,255,.25);--n19-title:#e6e6e6;--n19-page-border:#3a4a4f}
 #global-top-navigation{--fandom-global-nav-background-color:var(--n19-nav);--fandom-global-nav-text-color:var(--n19-nav-text);--fandom-global-nav-link-color:var(--n19-nav-link);--fandom-global-nav-icon-color:var(--n19-nav-link);--fandom-global-nav-icon-background-color--hover:rgba(255,255,255,.12);--fandom-global-nav-separator-color:var(--n19-nav-rule);--fandom-global-nav-border-color:var(--n19-nav);background-color:var(--n19-nav)!important;color:var(--n19-nav-text)!important;border-bottom-color:var(--n19-nav)!important}
 html[data-n19-fd-logo] #global-top-navigation .global-top-navigation__fandom-logo{background:var(--n19-fd-logo) no-repeat left center / contain!important}
@@ -16,7 +16,6 @@ html:not([data-n19-fd-logo]) #global-top-navigation .global-top-navigation__fand
 #global-top-navigation .wds-button{background:transparent!important;color:var(--n19-nav-link)!important;border:1px solid var(--n19-nav-link)!important;border-radius:3px!important}
 #global-top-navigation .wds-button:not(.wds-is-secondary){background:var(--n19-nav-link)!important;color:var(--n19-nav)!important}
 #global-explore-navigation{display:none!important}
-html{--desktop-global-navigation-width:0px!important;--left-panel-spacing:0px!important}
 :where(:root:not([data-n19-safe])) .main-container,.main-container:where(:root:not([data-n19-safe])){margin-left:0!important;width:100%!important}
 :where(:root:not([data-n19-safe])) .app-wrapper,.app-wrapper:where(:root:not([data-n19-safe])){margin-left:0!important}
 #community-navigation.fandom-sticky-header{display:none!important}

@@ -1,7 +1,7 @@
 globalThis.net19Theme = {
   detect: () => document.documentElement.classList.contains('theme-dark') ? 'dark' : 'light',
   watch: ['class'],
-  later: /^(?:open chat|chat|chats|start chat|answers|reddit answers|ask|ask reddit answers|new answers|get (?:the )?app|get the reddit app|scan (?:this|the) qr code.*|edit avatar|create avatar|style avatar|avatar|collectible avatars|collectibles|vault|achievements|view achievements|reddit recap|recap|reddit pro|try reddit pro(?:\s*beta)?|contributor program|earn|advertise on reddit|advertise|translate|translate to english|show original|view translation|translations?|see translation|auto-translate)$/i,
+  later: /^(?:answers|reddit answers|ask|ask reddit answers|new answers|get (?:the )?app|get the reddit app|scan (?:this|the) qr code.*|edit avatar|create avatar|style avatar|avatar|collectible avatars|collectibles|vault|achievements|view achievements|reddit recap|recap|reddit pro|try reddit pro(?:\s*beta)?|contributor program|earn|advertise on reddit|advertise|translate|translate to english|show original|view translation|translations?|see translation|auto-translate)$/i,
   keepLabels: /^(?:askreddit|r\/ask\w*)$/i,
 };
 (() => {
@@ -468,7 +468,10 @@ globalThis.net19Theme = {
     const aside = document.querySelector('#right-sidebar-contents aside[aria-label="Profile information"]');
     const user = location.pathname.match(/^\/(?:u|user)\/([^/?#]+)/)?.[1];
     if (!aside || !user) return;
-    const body = aside.querySelector(':scope > faceplate-tracker > div, :scope > div') || aside;
+    const body = aside.querySelector('div.grid')?.parentElement || aside.querySelector(':scope > faceplate-tracker > div, :scope > div') || aside;
+    for (let el = body.previousElementSibling; el; el = el.previousElementSibling) {
+      if (!el.hasAttribute('data-n19-profile-banner') && !el.querySelector('img') && getComputedStyle(el).backgroundImage === 'none') el.setAttribute('data-n19-profile-banner', '');
+    }
     let head = body.querySelector(':scope > [data-n19-profile-head]');
     if (!head) {
       const icon = document.querySelector('#profile-icon, img[data-testid="profile-icon"]');
@@ -501,7 +504,9 @@ globalThis.net19Theme = {
     if (options) {
       let chosen = 'new';
       try { chosen = JSON.parse(options.closest('rpl-dropdown')?.getAttribute('data-faceplate-tracking-context') || '{}').feed_options?.sort || chosen; } catch {}
-      setText(options, chosen.replace(/^\w/, c => c.toUpperCase()));
+      const label = chosen.replace(/^\w/, c => c.toUpperCase());
+      if (options.textContent.trim()) setText(options, label);
+      else if (!options.querySelector('[data-n19-sort-text]')) options.append(make('span', { 'data-n19-sort-text': '' }, label));
       options.setAttribute('data-n19-sort-button', '');
       if (options.getAttribute('aria-label') !== 'Sort') options.setAttribute('aria-label', 'Sort');
     }
@@ -552,7 +557,16 @@ globalThis.net19Theme = {
   const LEGAL_WORDS = new Map([['Reddit Rules', 'Content Policy']]);
   const STAT_LATER = /^Contributions$/;
   const hide = el => { if (el && !el.hasAttribute('data-n19-later')) el.setAttribute('data-n19-later', ''); };
+  const CHAT = ':is(#header-action-item-chat-button, [id*="chat-button" i], button[aria-label*="chat" i], a[aria-label*="chat" i], a[href^="/chat"], a[href*="chat.reddit.com"])';
   const after2019 = () => {
+    for (const header of document.querySelectorAll('reddit-header-large')) {
+      const found = [...header.querySelectorAll(CHAT)];
+      for (const el of header.querySelectorAll('*')) if (el.tagName.includes('CHAT')) found.push(el);
+      for (let el of found) {
+        while (el.parentElement && el.parentElement.children.length === 1 && !el.parentElement.matches('nav, header, reddit-header-large')) el = el.parentElement;
+        hide(el);
+      }
+    }
     for (const a of document.querySelectorAll('#right-sidebar-container .legal-links a, .legal-links a')) {
       const text = a.textContent.replace(/\s+/g, ' ').trim();
       if (LEGAL_LATER.test(globalThis.net19English(text))) hide(a.closest('li') || a);
@@ -634,6 +648,8 @@ globalThis.net19Theme = {
     title.append(make('a', { 'data-n19-domain': '', href, target: '_blank', rel: 'noopener nofollow ugc' }, shown.length > 20 ? shown.slice(0, 20) + '...' : shown));
   };
   const scan = () => {
+    const settings = /^\/settings(?:\/|$)/.test(location.pathname);
+    if (settings !== document.documentElement.hasAttribute('data-n19-settings')) document.documentElement.toggleAttribute('data-n19-settings', settings);
     for (const post of document.querySelectorAll('shreddit-post, shreddit-ad-post')) {
       const classic = post.getAttribute('view-type') === 'compactView' || post.tagName === 'SHREDDIT-AD-POST' && !!post.closest('shreddit-feed')?.querySelector('shreddit-post[view-type="compactView"]');
       if (classic && !post.hasAttribute('data-n19-classic')) post.setAttribute('data-n19-classic', '');
@@ -710,8 +726,7 @@ globalThis.net19Theme = {
     header(); masthead(); aboutCard(); searchPage(); profile(); sortBar(); idCard(); trendingTitle(); footer(); after2019(); pinned();
     times(document);
   };
-  let queued = false;
-  function later() { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; scan(); }); }
+  const later = net19.frame(scan);
   const start = () => {
     scan();
     new MutationObserver(() => { retries = 0; later(); }).observe(document.documentElement, { childList: true, subtree: true });

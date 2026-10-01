@@ -38,8 +38,5 @@
       if (label.length < 40 && MENU.test(label)) item.setAttribute('data-net19-hidden', '');
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
-  const start = () => { fix(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] }); };
-  net19.onBody(start);
+  net19.watch(fix, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
 })();

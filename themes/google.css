@@ -32,7 +32,7 @@ html:root, html #gb, html body {
 }
 body, input, textarea, button { font-family: arial, sans-serif !important; }
 
-form[role="search"] .RNNXgb { background: var(--n19-bg) !important; border: 1px solid var(--n19-border) !important; border-radius: 24px !important; box-shadow: none !important; }
+form[role="search"] .RNNXgb { background: var(--n19-bg) !important; border: 1px solid var(--n19-border) !important; border-radius: 24px !important; box-shadow: none !important; height: 44px !important; min-height: 44px !important; }
 form[role="search"] .RNNXgb:hover, form[role="search"] .emcav .RNNXgb { box-shadow: var(--n19-shadow) !important; border-color: transparent !important; }
 form[role="search"] .SDkEP, form[role="search"] .fM33ce, form[role="search"] .dRYYxd { background: transparent !important; }
 form[role="search"] .aajZCb, .UUbT9, .erkvQe { background: var(--n19-bg) !important; box-shadow: var(--n19-shadow) !important; border-radius: 0 0 24px 24px !important; }
@@ -43,7 +43,6 @@ form[role="search"] :not([style*="none"]) > [aria-label="Search by voice" i] { d
 form[role="search"] .RNNXgb :is(textarea[name="q"], input[name="q"]), form[role="search"] .RNNXgb .a4bIc {
   text-decoration: none !important; outline: none !important; border: 0 !important; box-shadow: none !important; }
 
-form[role="search"] .RNNXgb { height: 44px !important; min-height: 44px !important; }
 form[role="search"] .RNNXgb .SDkEP, form[role="search"] .RNNXgb .dRYYxd, form[role="search"] .RNNXgb .iblpc, form[role="search"] .RNNXgb .a4bIc { height: 44px !important; min-height: 0 !important; }
 form[role="search"] .RNNXgb .ywK6Rd { height: 44px !important; }
 form[role="search"] .RNNXgb .dRYYxd .ywK6Rd:not([style*="none"]) { display: flex !important; align-items: center !important; }
@@ -104,19 +103,17 @@ a[href*="udm=50"], a[href*="udm=39"], a[href*="udm=18"], a[href*="udm=14"], a[hr
 html { --n19-signin: #4285f4; --n19-signin-text: #fff; }
 html[data-net19-mode="dark"] { --n19-signin: #8ab4f8; --n19-signin-text: #202124; }
 #gb a.gb_A, #gb a[href*="ServiceLogin"] { background: var(--n19-signin) !important; color: var(--n19-signin-text) !important; border-radius: 4px !important; font-weight: 700 !important;
-  font-size: 13px !important; height: 30px !important; line-height: 28px !important; min-height: 0 !important; padding: 0 12px !important; box-sizing: border-box !important; border: 1px solid transparent !important; }
-#gb a.gb_A, #gb a[href*="ServiceLogin"] { margin-top: 5px !important; }
+  font-size: 13px !important; height: 30px !important; line-height: 28px !important; min-height: 0 !important; padding: 0 12px !important; box-sizing: border-box !important; border: 1px solid transparent !important; margin-top: 5px !important; }
 #gb a.gb_A span, #gb a[href*="ServiceLogin"] span { font-size: 13px !important; line-height: 28px !important; padding: 0 !important; }
 
 [data-net19-lucky], [data-net19-gsearch] {
   display: inline-flex !important; align-items: center !important; justify-content: center !important; background: var(--n19-button) !important;
   border: 1px solid var(--n19-button) !important; border-radius: 4px !important; box-shadow: none !important; height: 36px !important; min-height: 0 !important;
-  padding: 0 16px !important; margin: 11px 4px !important; color: var(--n19-button-text) !important; font: 14px arial, sans-serif !important; }
+  padding: 0 16px !important; margin: 11px 4px !important; color: var(--n19-button-text) !important; font: 14px arial, sans-serif !important; box-sizing: border-box !important; line-height: 34px !important; vertical-align: top !important; }
 [data-net19-lucky] * { color: inherit !important; font: inherit !important; background: transparent !important; border: 0 !important; box-shadow: none !important; }
 [data-net19-lucky] :is(svg, img) { display: none !important; }
 [data-net19-lucky]:hover, [data-net19-gsearch]:hover { border-color: var(--n19-button-hover-border) !important; color: var(--n19-text) !important; box-shadow: 0 1px 1px rgba(0,0,0,.1) !important; }
 [data-net19-lucky] { text-transform: capitalize !important; }
-[data-net19-lucky], [data-net19-gsearch] { box-sizing: border-box !important; line-height: 34px !important; vertical-align: top !important; }
 [data-net19-gsearch] { cursor: pointer !important; }
 
 [data-net19-logo] { display: flex !important; flex-direction: column !important; align-items: center !important; justify-content: flex-end !important;

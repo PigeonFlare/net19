@@ -145,6 +145,12 @@
       "url": "user-supplied screenshot of a 2019 signed-in Classic feed row (r/politics, 'Jon Stewart Goes Off On Congress During 9/11 Hearing', June 2019)",
       "date": "2019-06",
       "shows": "Classic row: vote column, thumbnail, title with domain link, 'r/sub • Posted by u/x N hours ago' with award icons, then one action line: expand button first, N Comments, Share, Save, Hide, Report; no Give Award or crosspost button in the row"
+    },
+    {
+      "id": "s-chat",
+      "url": "https://web.archive.org/web/20190824030415/https://www.reddithelp.com/en/categories/using-reddit/chat/can-i-opt-out",
+      "date": "2019-08-24",
+      "shows": "Reddit Help (Desktop): \"click on the chat icon at the top of the page (indicated by the speech bubble, to the right of the envelope)\"; profile pages had a chat icon (how-do-i-start-chat)"
     }
   ],
   "features": [
@@ -475,7 +481,16 @@
       "note": "legal footer card"
     },
     {
-      "match": "^(Accessibility|Your Privacy Choices|Best of Reddit.*|News|Explore|简体中文|日本語|Contributions|Reddit Age|Feed options|View Post in|Top Posts|Installed Apps|Advertise on Reddit|Français|Deutsch|Español|Italiano|Verifications|Reddit Answers|Answers|Get App|Get the Reddit app|Advertise on Reddit|Chat|Open chat|Reddit Pro)$",
+      "match": "^(Chat|Chats|Open chat|Start chat)$",
+      "in2019": true,
+      "evidence": [
+        "s-chat"
+      ],
+      "note": "signed-in header speech-bubble chat button existed in 2019 (right of the envelope); hidden at the owner's request",
+      "action": "hidden"
+    },
+    {
+      "match": "^(Accessibility|Your Privacy Choices|Best of Reddit.*|News|Explore|简体中文|日本語|Contributions|Reddit Age|Feed options|View Post in|Top Posts|Installed Apps|Advertise on Reddit|Français|Deutsch|Español|Italiano|Verifications|Reddit Answers|Answers|Get App|Get the Reddit app|Advertise on Reddit|Reddit Pro)$",
       "in2019": false,
       "evidence": [
         "absent from s1-s6; Answers 2024, Explore/News 2024, Contributions/Reddit Age 2023, verifications 2025, privacy choices 2020"

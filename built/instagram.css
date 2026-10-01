@@ -126,8 +126,8 @@ main [role="tablist"] a:not([aria-selected="true"]) svg{color:rgb(var(--n19-text
 #loginForm label:has(input),#loginForm div:has(>input[name]){background:rgb(var(--n19-page))!important;border-color:rgb(var(--n19-border))!important;border-radius:3px!important}
 #loginForm button[type="submit"]{background:rgb(var(--n19-blue))!important;border-radius:4px!important;font-size:14px!important;font-weight:600!important;color:#fff!important}
 [data-n19-ig="page"],[data-n19-ig="right"]{background:rgb(var(--n19-page))!important}
-:where(:root:not([data-n19-safe])) [data-n19-ig="row-login"],[data-n19-ig="row-login"]:where(:root:not([data-n19-safe])){max-width:935px!important;margin:0 auto!important;padding:32px 0!important;justify-content:center!important;gap:32px!important;min-height:0!important}
-:where(:root:not([data-n19-safe])) [data-n19-ig="left"],[data-n19-ig="left"]:where(:root:not([data-n19-safe])){flex:0 1 454px!important;min-width:0!important}
+:where(:root:not([data-n19-safe])) [data-n19-ig="row-login"],[data-n19-ig="row-login"]:where(:root:not([data-n19-safe])){max-width:935px!important;margin:0 auto!important;padding:32px 0!important;justify-content:center!important;gap:32px!important;min-height:0!important;align-items:flex-start!important}
+:where(:root:not([data-n19-safe])) [data-n19-ig="left"],[data-n19-ig="left"]:where(:root:not([data-n19-safe])){flex:0 1 454px!important;min-width:0!important;align-self:flex-start!important}
 [data-n19-ig="left"] i[role="img"],[data-n19-ig="headline"]{display:none!important}
 :where(:root:not([data-n19-safe])) [data-n19-ig="left"] img,[data-n19-ig="left"]:where(:root:not([data-n19-safe])) img{width:100%!important;height:auto!important;margin:0!important}
 [data-n19-ig="rule"]{display:none!important}
@@ -170,7 +170,6 @@ form#login_form div:has(>input[name="email"])>label,form#login_form div:has(>inp
 footer a:is([href*="meta.ai"],[href*="threads."],[href*="/meta_ai"]){display:none!important}
 footer a,footer a *,footer span,[data-n19-ig="railcol"] a[href]:is([href*="instagram.com"],[href^="/legal/"],[href*="developers.facebook"],[href^="/explore/locations"],[href^="/language"]){text-transform:uppercase!important;font-size:12px!important;font-weight:600!important}
 footer a,footer a *{color:rgb(var(--n19-link))!important}
-:where(:root:not([data-n19-safe])) [data-n19-ig="row-login"],[data-n19-ig="row-login"]:where(:root:not([data-n19-safe])){align-items:flex-start!important}
 :where(:root:not([data-n19-safe])) [data-n19-ig="page"],[data-n19-ig="page"]:where(:root:not([data-n19-safe])){justify-content:flex-start!important}
 :where(:root:not([data-n19-safe])) [data-n19-ig="right"],[data-n19-ig="right"]:where(:root:not([data-n19-safe])){justify-content:flex-start!important}
 :where(:root:not([data-n19-safe])) [data-n19-ig="box"]>:first-child,[data-n19-ig="box"]:where(:root:not([data-n19-safe]))>:first-child{height:49px!important;margin:0 auto 20px!important}
@@ -179,5 +178,4 @@ footer a,footer a *{color:rgb(var(--n19-link))!important}
 :where(:root:not([data-n19-safe])) [data-n19-ig="bar"] a[href="/"]:has(svg[aria-label="Instagram"]),[data-n19-ig="bar"]:where(:root:not([data-n19-safe])) a[href="/"]:has(svg[aria-label="Instagram"]){display:block!important;width:103px!important;height:29px!important}
 [data-n19-ig="bar"] a[href="/"]:has(svg[aria-label="Instagram"]){-webkit-mask:url("https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png") center / 103px 29px no-repeat!important;mask:url("https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png") center / 103px 29px no-repeat!important;background:rgb(var(--n19-text))!important}
 [data-n19-ig="bar"] a[href="/"] svg[aria-label="Instagram"]{visibility:hidden!important}
-:where(:root:not([data-n19-safe])) [data-n19-ig="left"],[data-n19-ig="left"]:where(:root:not([data-n19-safe])){align-self:flex-start!important}
 html[data-n19-igwall]:where(:root:not([data-n19-safe])),html[data-n19-igwall]:where(:root:not([data-n19-safe])) body{overflow:auto!important}

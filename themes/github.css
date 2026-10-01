@@ -5,7 +5,7 @@ html { --n19-header: #24292e; --n19-header-text: #fff; --n19-header-dim: rgba(25
   --n19-primary-from: #2ea44f; --n19-primary-to: #22863a; --n19-primary-hover-from: #2c974b; --n19-primary-hover-to: #1e7b34;
   --n19-tab-edge: #e36209; --n19-counter: rgba(27,31,35,.08); --n19-field-border: #d1d5da; --n19-field-inset: inset 0 1px 2px rgba(27,31,35,.075);
   --n19-commit-bar: #f1f8ff; --n19-commit-border: #c8e1ff; --n19-folder: #79b8ff; --n19-file: #6a737d;
-  --n19-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; }
+  --n19-font: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"; --borderRadius-small: 3px; --borderRadius-medium: 3px; --borderRadius-default: 3px; --borderRadius-large: 3px; --fontStack-sansSerif: var(--n19-font); --fontStack-system: var(--n19-font); }
 html[data-net19-mode="dark"] { --n19-header: #161b22; --n19-header-text: #f0f6fc; --n19-header-dim: rgba(240,246,252,.7); --n19-header-field: rgba(255,255,255,.07); --n19-header-border: #30363d;
   --n19-hero: #2b3137; --n19-hero-lead: rgba(255,255,255,.6); --n19-signup-box: #fafbfc; --n19-signup-text: #24292e; --n19-signup-note: #6a737d; --n19-signup-green: #28a745; --n19-signup-green-hover: #22863a;
   --n19-bg: #0d1117; --n19-bg-2: #161b22; --n19-bg-3: #161b22; --n19-text: #c9d1d9; --n19-text-2: #8b949e; --n19-link: #58a6ff; --n19-border: #30363d; --n19-row-border: #21262d;
@@ -13,7 +13,6 @@ html[data-net19-mode="dark"] { --n19-header: #161b22; --n19-header-text: #f0f6fc
   --n19-primary-from: #2ea043; --n19-primary-to: #238636; --n19-primary-hover-from: #3fb950; --n19-primary-hover-to: #2ea043;
   --n19-tab-edge: #f78166; --n19-counter: rgba(110,118,129,.4); --n19-field-border: #30363d; --n19-field-inset: inset 0 1px 0 rgba(0,0,0,.2);
   --n19-commit-bar: #131d2b; --n19-commit-border: #1f3a5f; --n19-folder: #79b8ff; --n19-file: #8b949e; }
-html { --borderRadius-small: 3px; --borderRadius-medium: 3px; --borderRadius-default: 3px; --borderRadius-large: 3px; --fontStack-sansSerif: var(--n19-font); --fontStack-system: var(--n19-font); }
 body, .font-mktg, .HeaderMktg, header.HeaderMktg :is(button, a, span, input), [class*="Primer_Brand__"] { font-family: var(--n19-font) !important; }
 
 .AppHeader, .AppHeader .AppHeader-globalBar, header.HeaderMktg.HeaderMktg.HeaderMktg[data-marketing-header][role="banner"], header.HeaderMktg, .Header { background: var(--n19-header) !important; box-shadow: none !important; backdrop-filter: none !important; }
@@ -27,13 +26,12 @@ header.HeaderMktg nav :is(button, a), header.HeaderMktg nav li > a { font-size: 
 header.HeaderMktg nav > ul > li > div > button:hover, header.HeaderMktg nav > ul > li > a:hover { color: var(--n19-header-dim) !important; }
 header.HeaderMktg button[aria-label^="Search or jump" i] {
   width: 240px !important; justify-content: flex-start !important; background: var(--n19-header-field) !important; border: none !important; border-radius: 3px !important;
-  height: 34px !important; padding: 0 10px !important; align-items: center !important; line-height: 20px !important; color: var(--n19-header-dim) !important; font-size: 14px !important; font-weight: 400 !important;
+  height: 34px !important; padding: 0 10px !important; align-items: center !important; line-height: 20px !important; color: var(--n19-header-dim) !important; font-size: 14px !important; font-weight: 400 !important; position: relative !important;
 }
 header.HeaderMktg button[aria-label^="Search or jump" i] svg { display: none !important; }
 header.HeaderMktg button[aria-label^="Search or jump" i]:has([data-net19-label]) [class*="HeaderSearch-module__label"] { visibility: hidden !important; }
 header.HeaderMktg :has(> button[aria-label^="Search or jump" i]) { width: auto !important; max-width: none !important; margin-inline-end: 16px !important; }
 header.HeaderMktg button[aria-label^="Search or jump" i] > span { justify-content: flex-start !important; text-align: left !important; width: 100% !important; }
-header.HeaderMktg button[aria-label^="Search or jump" i] { position: relative !important; }
 header.HeaderMktg button[aria-label^="Search or jump" i] [data-net19-label] { position: absolute; left: 10px; top: 50%; transform: translateY(-50%); line-height: 20px; color: var(--n19-header-dim) !important; }
 header.HeaderMktg a[href^="/login"] { background: transparent !important; border: none !important; padding: 0 4px !important; font-size: 16px !important; font-weight: 400 !important; }
 header.HeaderMktg a[href^="/signup"] { background: transparent !important; border: 1px solid var(--n19-header-border) !important; border-radius: 3px !important; padding: 4px 8px !important; font-size: 16px !important; font-weight: 400 !important; }
@@ -206,8 +204,7 @@ header.GlobalNav a[data-n19-bell] { display: inline-flex !important; align-items
 header.GlobalNav a[data-n19-bell] svg { fill: currentColor !important; }
 header.GlobalNav [class*="styles-module__right__"] img { width: 20px !important; height: 20px !important; border-radius: 3px !important; }
 
-header.GlobalNav nav[aria-label="Repository"] { background: var(--n19-bg-2) !important; border-bottom: 1px solid var(--n19-border) !important; margin: 0 !important; box-shadow: none !important; }
-header.GlobalNav nav[aria-label="Repository"] { padding: 0 max(16px, calc((100% - 980px) / 2)) !important; box-sizing: border-box !important; }
+header.GlobalNav nav[aria-label="Repository"] { background: var(--n19-bg-2) !important; border-bottom: 1px solid var(--n19-border) !important; margin: 0 !important; box-shadow: none !important; padding: 0 max(16px, calc((100% - 980px) / 2)) !important; box-sizing: border-box !important; }
 header.GlobalNav nav[aria-label="Repository"] > ul { margin: 0 !important; padding: 0 !important; flex: 1 1 auto !important; gap: 0 !important; }
 header.GlobalNav nav[aria-label="Repository"] li:has(> a:is([href$="/actions"], [href*="/agents"])) { display: none !important; }
 @media (min-width: 1012px) { header.GlobalNav nav[aria-label="Repository"] [class*="MoreButtonContainer"] { display: none !important; } }

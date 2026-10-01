@@ -2,14 +2,13 @@ html{--n19-yellow:#fc0;--n19-yellow-press:#f2cf46;--n19-link:#1a0dab;--n19-visit
 html[data-net19-mode="dark"]{--n19-link:#8ab4f8;--n19-visited:#c58af9;--n19-hover:#ff6b6b;--n19-path:#5bb974;--n19-text:#e8e8e8;--n19-text-2:#9a9a9a;--n19-page:#1f1f1f;--n19-gray-page:#161616;--n19-card:#262626;--n19-rule:#3a3a3a;--n19-field:#262626;--n19-logo-ru:url("https://yastatic.net/q/logoaas/v1/%D0%AF%D0%BD%D0%B4%D0%B5%D0%BA%D1%81.svg?color=fff");--n19-logo-en:url("https://yastatic.net/q/logoaas/v1/Yandex.svg?color=fff");--n19-tab:#a0a0a0;--n19-snippet:#d0d0d0;--n19-nav-rule:#3a3a3a}
 html[data-n19-ya="serp"] body :is(.serp-item,.HeaderDesktop,.HeaderForm,.HeaderNav,.Organic,.Path,.OrganicText,.SerpFooter){font-family:var(--n19-font)!important}
 html[data-n19-ya="serp"] .HeaderLogo{background:var(--n19-logo-ru) no-repeat left center / 86px 35px!important}
-html[data-n19-ya="serp"]:where(:root:not([data-n19-safe])) .HeaderLogo{min-width:86px!important}
+html[data-n19-ya="serp"]:where(:root:not([data-n19-safe])) .HeaderLogo{min-width:86px!important;margin-right:18px!important}
 html[data-n19-ya="serp"][data-n19-ya-lang="en"] .HeaderLogo{background-image:var(--n19-logo-en)!important;background-size:80px 31px!important}
 html[data-n19-ya="serp"] .HeaderLogo>*{visibility:hidden!important}
 html[data-n19-ya="serp"] .HeaderForm-InputWrapper,html[data-n19-ya="serp"] .HeaderForm-InputContainer{border-radius:0!important}
 html[data-n19-ya="serp"] .HeaderForm{border-radius:0!important;box-shadow:none!important}
-html[data-n19-ya="serp"] .HeaderForm-InputContainer{border:2px solid var(--n19-yellow)!important;background:var(--n19-field)!important;box-shadow:none!important}
 html[data-n19-ya="serp"]:where(:root:not([data-n19-safe])) .HeaderForm{display:flex!important;align-items:center!important}
-html[data-n19-ya="serp"]:where(:root:not([data-n19-safe])) .HeaderLogo{margin-right:18px!important}
+html[data-n19-ya="serp"] .HeaderForm-InputContainer{border:2px solid var(--n19-yellow)!important;background:var(--n19-field)!important;box-shadow:none!important}
 html[data-n19-ya="serp"]:where(:root:not([data-n19-safe])) .HeaderForm-Submit{display:flex!important;flex:none!important;align-items:center!important;align-self:center!important;position:relative!important;height:40px!important;min-width:84px!important;margin:0 0 0 -2px!important;padding:0 26px 0 18px!important}
 html[data-n19-ya="serp"] .HeaderForm-Submit{border:0!important;background:var(--n19-yellow)!important;color:#000!important;border-radius:0!important;clip-path:polygon(0 0, calc(100% - 12px) 0, 100% 50%, calc(100% - 12px) 100%, 0 100%)!important;font:15px var(--n19-font)!important;cursor:pointer!important;visibility:visible!important;opacity:1!important}
 html[data-n19-ya="serp"]:where(:root:not([data-n19-safe])) .HeaderForm-InputWrapper{flex:1 1 auto!important;min-width:0!important;width:auto!important;max-width:none!important;display:flex!important;align-items:center!important}
@@ -48,12 +47,11 @@ html[data-n19-ya="home"] .search3__inner::before,html[data-n19-ya="home"] .searc
 html[data-n19-ya="home"]:where(:root:not([data-n19-safe])) .search3__input-wrapper{flex:1 1 auto!important;margin:0!important;padding:0!important;height:40px!important;min-height:40px!important}
 html[data-n19-ya="home"]:where(:root:not([data-n19-safe])) :is(.search3__input-outer-container,.search3__input-inner-container,.search3__input){height:40px!important;min-height:40px!important;margin-left:0!important}
 html[data-n19-ya="home"]:where(:root:not([data-n19-safe])) .search3__input{padding:0 8px!important}
-html[data-n19-ya="home"] .search3__input{line-height:40px!important}
+html[data-n19-ya="home"] .search3__input{line-height:40px!important;text-align:left!important}
 html[data-n19-ya="home"]:where(:root:not([data-n19-safe])) .search3__input-inner-container{padding:0!important;left:0!important}
 html[data-n19-ya="home"] .search3__logo{display:none!important}
 html[data-n19-ya="home"] :is(.search3__input,.search3__input-inner-container,.search3__input-outer-container){color:var(--n19-text)!important;font-family:var(--n19-font)!important;font-size:18px!important}
 html[data-n19-ya="home"]:where(:root:not([data-n19-safe])) .search3__input-outer-container{padding-left:4px!important}
-html[data-n19-ya="home"] .search3__input{text-align:left!important}
 html[data-n19-ya="home"] .search3__input::placeholder{text-align:left!important}
 html[data-n19-ya="home"]:where(:root:not([data-n19-safe])) .headline__personal-menu[data-n19-label]{width:auto!important;padding:0 8px!important}
 html[data-n19-ya="home"] .headline__personal-menu[data-n19-label]{font:15px/40px var(--n19-font)!important;color:var(--n19-text)!important}

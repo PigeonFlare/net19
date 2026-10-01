@@ -217,6 +217,17 @@
       "note": "red SUBSCRIBE button, grey SUBSCRIBED + bell, JOIN (channel memberships 2018), channel owner buttons"
     },
     {
+      "match": "^(Community)$",
+      "in2019": false,
+      "scope": "channel header button beside SUBSCRIBE (a[href$=\"/community\"])",
+      "evidence": [
+        "s4",
+        "s5"
+      ],
+      "action": "hidden",
+      "note": "2019 channel header had only SUBSCRIBE (and JOIN); the Community tab stays, only the header button is hidden"
+    },
+    {
       "match": "^(Search filters|Filter|Filters|Upload date|Type|Duration|Features|Sort by|Relevance|View count|Rating)$",
       "in2019": true,
       "evidence": [

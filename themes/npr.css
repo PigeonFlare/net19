@@ -20,9 +20,9 @@ html[data-net19-mode="dark"] .npr-header :is(.navigation__shop, .navigation__don
 .npr-header :is([class*="donate"], :has(> .navigation__donate)) { background: transparent !important; box-shadow: none !important; border-radius: 0 !important; }
 html[data-net19-mode="dark"] .npr-header a[data-net19-donate] { color: #ff4d5e !important; }
 #main-menu.menu--main, .npr-header .menu--main { background: var(--n19-bar) !important; }
-.npr-header .menu--main .menu__item, .npr-header .menu--main .menu__item-inner > a { font-family: var(--npr19-cond) !important; font-stretch: condensed; font-weight: 700 !important; font-size: 14px !important;
-  letter-spacing: .7px !important; text-transform: uppercase !important; color: var(--n19-bar-text) !important; }
-.npr-header .menu--main .menu__item-inner > a { padding: 0 18px 0 20px !important; }
+.npr-header .menu--main .menu__item, .npr-header .menu--main .menu__item-inner > a { font-family: var(--npr19-cond) !important; font-stretch: condensed; font-weight: 700 !important;
+  text-transform: uppercase !important; color: var(--n19-bar-text) !important; }
+.npr-header .menu--main .menu__item-inner > a { padding: 0 12px 0 14px !important; }
 .npr-header .menu--main .menu__item-inner > a:hover { opacity: .85; text-decoration: none !important; }
 .npr-header .menu--main .menu__item-inner > a svg { color: var(--n19-bar-text) !important; fill: currentColor; }
 .npr-header .submenu { background: var(--n19-card) !important; border-radius: 0 !important; box-shadow: 0 2px 6px rgba(0, 0, 0, .25) !important; }
@@ -71,7 +71,6 @@ html[data-net19-mode="dark"] .branding__image-title { filter: invert(1) hue-rota
 .npr-header span.navigation__donate, .npr-header .navigation__donate span { color: #d0021b !important; }
 html[data-net19-mode="dark"] .npr-header span.navigation__donate { color: #ff4d5e !important; }
 .npr-header .menu--main .menu__item, .npr-header .menu--main .menu__item-inner > a { font-size: 13px !important; letter-spacing: .65px !important; }
-.npr-header .menu--main .menu__item-inner > a { padding: 0 12px 0 14px !important; }
 ul.player-extras b { font-family: var(--npr19-cond) !important; font-stretch: condensed; font-weight: 700 !important; font-size: 12px !important; letter-spacing: .65px !important; }
 .npr-footer li:has(> a:is([href="/diversity/"], [href="/ethics/"], [href="/network/"], [href*="/accessibility"], [href="/sections/npr-extra/"], [href="/transcripts/"])),
 .npr-footer a:is([href="/diversity/"], [href="/ethics/"], [href="/network/"], [href*="/accessibility"], [href="/sections/npr-extra/"], [href="/transcripts/"]) { display: none !important; }

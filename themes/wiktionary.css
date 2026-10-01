@@ -4,7 +4,6 @@ body.skin-vector-legacy { background-color: var(--n19-page); }
 body.skin-vector-legacy .mw-body { background-color: var(--n19-content); }
 
 html[lang="en"] body.skin-vector-legacy #p-logo a.mw-wiki-logo {
-  background-image: url("https://en.wiktionary.org/static/images/project-logos/enwiktionary.png") !important;
   background-image: image-set(url("https://en.wiktionary.org/static/images/project-logos/enwiktionary.png") 1x, url("https://en.wiktionary.org/static/images/project-logos/enwiktionary-2x.png") 2x) !important;
   background-size: 136px 165px !important; background-position: center center !important; background-repeat: no-repeat !important; }
 

@@ -18,6 +18,5 @@ globalThis.net19Theme = {
       if (!item.hasAttribute('data-net19-hidden')) item.setAttribute('data-net19-hidden', '');
     }
   };
-  const start = () => { fix(); new MutationObserver(() => requestAnimationFrame(fix)).observe(document.documentElement, { childList: true, subtree: true }); };
-  net19.onBody(start);
+  net19.watch(fix);
 })();

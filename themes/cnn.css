@@ -21,7 +21,7 @@ nav#pageHeader .brand-logo__logo-link svg path { fill: #fff !important; }
 nav#pageHeader .header__nav-item { margin: 0 !important; padding: 0 !important; }
 nav#pageHeader .header__nav-item-link { font-size: 15px !important; font-weight: 400 !important; padding: 0 9px !important; }
 nav#pageHeader .header__nav { margin-left: 8px !important; }
-nav#pageHeader .header__container > .header__left > :is(.header__menu-icon, .header__close-icon) { position: absolute !important; right: 16px !important; top: 4px !important; }
+nav#pageHeader .header__container > .header__left > :is(.header__menu-icon, .header__close-icon) { position: absolute !important; right: 16px !important; top: 4px !important; z-index: 3 !important; }
 nav#pageHeader .header__right { padding-right: 40px !important; }
 nav#pageHeader :is(.header__video-link, .header__audio-link) { font-size: 13px !important; font-weight: 700 !important; }
 nav#pageHeader .header__video-link svg, nav#pageHeader .header__video-link::before, nav#pageHeader .header__audio-link svg { display: none !important; }
@@ -127,7 +127,6 @@ footer#pageFooter .subnav__section:has(> a[href$="/science"], > a[href$="/climat
 html[data-net19-mode="dark"] :is(.byline__link, .byline__name a) { color: #5ba7e0 !important; }
 .container_ribbon button, .container_ribbon [class*="arrow"] { border-radius: 0 !important; border: 0 !important; box-shadow: none !important; }
 .ad-slot-header::before, .ad-slot-header::after, .ad-slot-header__wrapper::before, .ad-slot-header__wrapper::after { background-color: var(--n19-title-bar) !important; }
-nav#pageHeader .header__container > .header__left > :is(.header__menu-icon, .header__close-icon) { z-index: 3 !important; }
 nav#pageHeader :is(.header__close-icon, .header__close-icon svg) { color: var(--n19-bar-text) !important; }
 nav#pageHeader .header__close-icon svg * { stroke: currentColor; }
 nav#pageHeader.header--active .header__subnav-mount > :not(.header__container), nav#pageHeader .subnav { padding-left: 16px !important; }

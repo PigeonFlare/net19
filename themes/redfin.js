@@ -9,8 +9,7 @@ globalThis.net19Theme = {
       if (holder && holder !== header && holder.getAttribute('data-n19-rf') !== 'logo') holder.setAttribute('data-n19-rf', 'logo');
     }
     if (globalThis.net19Lang?.() === 'en') for (const cta of document.querySelectorAll('.combinedLoginLinkWrapper .bp-Button.headerMenuButton')) {
-      const walker = document.createTreeWalker(cta, NodeFilter.SHOW_TEXT);
-      for (let n = walker.nextNode(); n; n = walker.nextNode()) if (/^\s*Join \/ Sign in\s*$/.test(n.data)) n.data = n.data.replace('Join / Sign in', 'Sign Up');
+      net19.rename(cta, 'Join / Sign in', 'Sign Up');
     }
   };
   net19.watch(run);

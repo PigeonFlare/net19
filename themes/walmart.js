@@ -9,20 +9,13 @@ globalThis.net19Theme = {
   const fix = () => {
     for (const input of document.querySelectorAll('header input.search-bar')) if (input.placeholder !== 'Search') input.placeholder = 'Search';
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
-  const start = () => {
-    fix();
-    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
-  };
-  net19.onBody(start);
+  net19.watch(fix, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
 })();
 (() => {
   const SOCIAL = /\bbought (?:since yesterday|in (?:the )?past)/i;
   const mark = () => {
     for (const badge of document.querySelectorAll('[data-testid="badgeTagComponent"]:not([data-net19-hidden])')) if (SOCIAL.test(badge.textContent)) badge.setAttribute('data-net19-hidden', '');
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
+  const later = net19.frame(mark);
   new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
 })();

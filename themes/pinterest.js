@@ -59,8 +59,7 @@
         if (card && card !== list) { mark(card, 'card'); mark(card.parentElement, 'card-row'); mark(card.parentElement?.parentElement, 'card-col'); }
         for (const heading of document.querySelectorAll('[data-n19-pin="welcome"] :is(h1, h2)')) if (/^Sign up to get/i.test(heading.textContent.trim())) mark(heading.parentElement?.childElementCount === 1 ? heading.parentElement : heading, 'later');
         if (settled && card) {
-          const walker = document.createTreeWalker(card, NodeFilter.SHOW_TEXT);
-          for (let node = walker.nextNode(); node; node = walker.nextNode()) if (/^Join Pinterest for free to discover more ideas$/.test(node.nodeValue.trim())) node.nodeValue = 'Find new ideas to try';
+          net19.rename(card, 'Join Pinterest for free to discover more ideas', 'Find new ideas to try');
         }
       }
     }
@@ -79,16 +78,12 @@
       if (/^(?:less ai|more ai|ai|refine|inspire me)$/i.test(pill.textContent.trim())) mark(pill.closest('[data-test-id^="one-bar-module"]') || pill, 'later');
     }
   };
-  let queued = false, settled = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
+  let settled = false;
+  const later = net19.frame(fix);
   const settle = () => setTimeout(() => { settled = true; later(); }, 1500);
   if (document.readyState === 'complete') settle(); else addEventListener('load', settle, { once: true });
-  const start = () => {
-    fix();
-    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
-    addEventListener('resize', later, { passive: true });
-  };
-  net19.onBody(start);
+  addEventListener('resize', later, { passive: true });
+  net19.watch(fix, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
 })();
 (() => {
   const FAMILIES = ['Pin Sans', 'PinSans', 'PinterestSansPro', 'Pinterest Sans', 'Pinterest Sans Pro'];

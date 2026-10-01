@@ -3,7 +3,7 @@ import { test } from 'node:test';
 import { readdirSync, readFileSync, existsSync } from 'node:fs';
 import { settingsFrom } from '../src/settings';
 import { compileTheme } from '../scripts/styles.mjs';
-import { THEMES, THEMED_DOMAINS, siteKey, themeExcludes, themeFiles, themeFor, themeMatches, themePaused } from '../src/themes';
+import { THEMES, THEMED_DOMAINS, siteKey, themeExcludes, themeCover, themeFiles, themeFor, themeMatches, themePaused } from '../src/themes';
 
 const rule = (id: string) => THEMES.find(theme => theme.id === id)!;
 
@@ -26,6 +26,8 @@ test('net19 only touches the sites it has a theme for', () => {
   assert.equal(themeFor('m.youtube.com')?.id, 'youtube');
   assert.equal(themeFor('notyoutube.com'), undefined);
   assert.equal(themeFor('example.com'), undefined);
+  assert.equal(themeFor('mail.google.com')?.id, 'gmail');
+  assert.equal(themeCover(themeFor('mail.aol.com')!, 'mail.aol.com'), 0);
 });
 
 test('the per-site switch pauses the whole site, whichever host it was set on', () => {

@@ -19,8 +19,7 @@ globalThis.net19Theme = { later: /^(?:get (?:the medium )?app|open in app|top hi
     for (const button of byline?.querySelectorAll('button') || []) if (globalThis.net19English?.(button.textContent.trim()) === 'Follow' || button.textContent.trim() === 'Follow') mark(button, 'follow');
     const signUp = document.querySelector('[data-testid="headerSignUpButton"]');
     if (signUp && globalThis.net19Lang?.() === 'en' && signUp.textContent.trim() === 'Sign up') {
-      const walker = document.createTreeWalker(signUp, NodeFilter.SHOW_TEXT);
-      for (let n = walker.nextNode(); n; n = walker.nextNode()) if (n.data.trim() === 'Sign up') { n.data = n.data.replace('Sign up', globalThis.net19Say?.('Get started') || 'Get started'); break; }
+      net19.rename(signUp, 'Sign up', globalThis.net19Say?.('Get started') || 'Get started');
     }
   };
   net19.watch(run);

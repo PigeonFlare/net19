@@ -9,6 +9,7 @@ globalThis.net19Theme = { later: /^(?:set preferred source|bbc verify|bbc indept
   };
   if (document.documentElement) mark(); else document.addEventListener('readystatechange', mark, { once: true });
   addEventListener('popstate', mark);
+  globalThis.navigation?.addEventListener?.('navigatesuccess', mark);
   let last = location.pathname;
   setInterval(() => { if (location.pathname !== last) { last = location.pathname; mark(); } }, 1000);
 })();

@@ -7,7 +7,6 @@ globalThis.net19Theme = { later: /^(AI Solutions|Non-AI)$/i };
     const h1 = document.querySelector('.site-width > div > div > div > div > h1');
     if (h1 && h1.textContent.trim() !== 'Moving the world with images' && /^Amazing imagery/i.test(h1.textContent.trim())) h1.textContent = 'Moving the world with images';
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); }); };
+  const later = net19.frame(fix);
   fix(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true });
 })();

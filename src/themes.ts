@@ -211,9 +211,18 @@ export function themeMatches(theme: HandmadeTheme): string[] {
 
 const within = (host: string, domain: string) => host === domain || host.endsWith(`.${domain}`);
 
+export function themeCover(theme: HandmadeTheme, hostname: string): number {
+  const host = hostname.toLowerCase();
+  return Math.max(0, ...themeMatches(theme).map(pattern => {
+    const site = pattern.split('/')[2] ?? '';
+    return site === host ? 2 : site.startsWith('*.') && within(host, site.slice(2)) ? 1 : 0;
+  }));
+}
+
 export function themeFor(hostname: string): HandmadeTheme | undefined {
   const host = hostname.toLowerCase();
-  return THEMES.find(theme => theme.domains.some(domain => within(host, domain)));
+  const found = THEMES.filter(theme => theme.domains.some(domain => within(host, domain)));
+  return found.reduce<HandmadeTheme | undefined>((best, theme) => !best || themeCover(theme, host) > themeCover(best, host) ? theme : best, undefined);
 }
 
 export function themePaused(theme: HandmadeTheme, disabledHosts: string[]): boolean {

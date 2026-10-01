@@ -33,9 +33,9 @@ html[data-net19-mode="dark"]{--n19-green:#1aad19;--n19-green-hover:#179b16;--n19
 :where(:root:not([data-n19-safe])) .banner__download>:is(.banner__download-item_macos,.banner__download-item_windows),.banner__download:where(:root:not([data-n19-safe]))>:is(.banner__download-item_macos,.banner__download-item_windows){display:flex!important;align-items:center!important;justify-content:center!important}
 :where(:root:not([data-n19-safe])) .banner__download>.banner__download-item_macos,.banner__download:where(:root:not([data-n19-safe]))>.banner__download-item_macos{order:3!important}
 :where(:root:not([data-n19-safe])) .banner__download>.banner__download-item_windows,.banner__download:where(:root:not([data-n19-safe]))>.banner__download-item_windows{order:2!important}
+.banner__download>.banner__download-item_windows{border-right:none!important}
 :where(:root:not([data-n19-safe])) .banner__download>:is(.banner__download-item_ios,.banner__download-item_android),.banner__download:where(:root:not([data-n19-safe]))>:is(.banner__download-item_ios,.banner__download-item_android){order:0!important}
 .banner__download>:is(.banner__download-item_macos,.banner__download-item_windows):hover{background-color:var(--n19-square-hover)!important}
-.banner__download>.banner__download-item_windows{border-right:none!important}
 .banner__download>.banner__download-item_windows i{background:var(--n19-wc-win) no-repeat center / 100%!important}
 .banner__download>.banner__download-item_macos i{background:var(--n19-wc-mac) no-repeat center / 100%!important}
 :where(:root:not([data-n19-safe])) .banner__download>:is(.banner__download-item_macos,.banner__download-item_windows) i,.banner__download:where(:root:not([data-n19-safe]))>:is(.banner__download-item_macos,.banner__download-item_windows) i{width:35px!important;height:35px!important;margin:0!important}

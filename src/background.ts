@@ -15,22 +15,19 @@ function syncScripts(): Promise<unknown> {
     const active = (theme: HandmadeTheme) => config.enabled && !themePaused(theme, config.disabledHosts);
     const oldRules = await chrome.declarativeNetRequest.getDynamicRules();
     const rules = navigationRules(config);
-    if (JSON.stringify(oldRules) !== JSON.stringify(rules)) await chrome.declarativeNetRequest.updateDynamicRules({ removeRuleIds: oldRules.map(rule => rule.id), addRules: rules });
+    if (canonical(oldRules) !== canonical(rules)) await chrome.declarativeNetRequest.updateDynamicRules({ removeRuleIds: oldRules.map(rule => rule.id), addRules: rules });
     const desired: chrome.scripting.RegisteredContentScript[] = THEMES.filter(active).map(theme => ({
       id: `net19-theme-${theme.id}`, matches: themeMatches(theme), ...exclude(themeExcludes(theme, config.pausedSites)), ...themeFiles(theme), runAt: 'document_start', allFrames: !!theme.frames, persistAcrossSessions: true }));
     const paused = [...new Set(config.pausedSites.flatMap(siteMatches))].sort();
     const watched = [...new Set(THEMES.filter(active).flatMap(themeMatches))].sort();
     if (watched.length) desired.push({ id: 'net19-watch', matches: watched, ...exclude(paused), js: ['main.js'], world: 'MAIN', runAt: 'document_start', persistAcrossSessions: true });
-    const signature = (list: chrome.scripting.RegisteredContentScript[]) => JSON.stringify(list.map(s => [s.id, [...s.matches ?? []].sort(), [...s.excludeMatches ?? []].sort(), s.css, s.js, !!s.allFrames, s.world ?? 'ISOLATED']).sort());
-    const current = registered.filter(script => script.id.startsWith('net19-') && !script.id.startsWith(SAFE_ID));
-    if (signature(current) !== signature(desired)) {
-      if (current.length) await chrome.scripting.unregisterContentScripts({ ids: current.map(script => script.id) });
-      if (desired.length) await chrome.scripting.registerContentScripts(desired);
-    }
+    await reconcile(registered.filter(script => script.id.startsWith('net19-') && !script.id.startsWith(SAFE_ID)), desired);
     await syncSafe(config, registered);
   });
   return sync;
 }
+
+const canonical = (value: unknown): string => JSON.stringify(value, (_, v) => v && typeof v === 'object' && !Array.isArray(v) ? Object.fromEntries(Object.entries(v).sort(([a], [b]) => a < b ? -1 : 1)) : v);
 
 const exclude = (list: string[]) => list.length ? { excludeMatches: list } : {};
 
@@ -53,11 +50,21 @@ async function syncSafe(config: Settings, registered: chrome.scripting.Registere
   const desired: chrome.scripting.RegisteredContentScript[] = [[SAFE_ID, 'safe.js', group(false)], [`${SAFE_ID}-narrow`, 'safe-narrow.js', group(true)]]
     .filter(([, , matches]) => matches.length)
     .map(([id, file, matches]) => ({ id: id as string, js: [file as string], matches: matches as string[], ...exclude([...new Set(config.pausedSites.flatMap(siteMatches))].sort()), runAt: 'document_start', persistAcrossSessions: true }));
-  const current = registered.filter(script => script.id.startsWith(SAFE_ID));
-  const signature = (list: chrome.scripting.RegisteredContentScript[]) => JSON.stringify(list.map(s => [s.id, [...s.matches ?? []].sort(), [...s.excludeMatches ?? []].sort()]).sort());
-  if (signature(current) === signature(desired)) return;
-  if (current.length) await chrome.scripting.unregisterContentScripts({ ids: current.map(script => script.id) });
-  if (desired.length) await chrome.scripting.registerContentScripts(desired);
+  await reconcile(registered.filter(script => script.id.startsWith(SAFE_ID)), desired);
+}
+
+type Script = chrome.scripting.RegisteredContentScript;
+const shape = (s: Script) => JSON.stringify([[...s.matches ?? []].sort(), [...s.excludeMatches ?? []].sort(), s.css ?? [], s.js ?? [], !!s.allFrames, s.world ?? 'ISOLATED', s.runAt ?? 'document_idle']);
+
+async function reconcile(current: Script[], desired: Script[]): Promise<void> {
+  const now = new Map(current.map(s => [s.id, s]));
+  const wanted = new Set(desired.map(s => s.id));
+  const gone = current.filter(s => !wanted.has(s.id)).map(s => s.id);
+  const changed = desired.filter(s => now.has(s.id) && shape(now.get(s.id)!) !== shape(s)).map(s => ({ ...s, excludeMatches: s.excludeMatches ?? [] }));
+  const added = desired.filter(s => !now.has(s.id));
+  if (gone.length) await chrome.scripting.unregisterContentScripts({ ids: gone });
+  if (changed.length) await chrome.scripting.updateContentScripts(changed);
+  if (added.length) await chrome.scripting.registerContentScripts(added);
 }
 
 function syncFit(): Promise<unknown> {
@@ -70,7 +77,7 @@ function syncFit(): Promise<unknown> {
 
 async function cleanUp(): Promise<void> {
   const stored = await chrome.storage.local.get(null);
-  const stale = Object.keys(stored).filter(key => key !== SETTINGS_KEY);
+  const stale = Object.keys(stored).filter(key => key !== SETTINGS_KEY && key !== FIT_KEY);
   if (stale.length) await chrome.storage.local.remove(stale);
   await chrome.storage.session.clear();
   const session = await chrome.declarativeNetRequest.getSessionRules();
@@ -102,7 +109,10 @@ chrome.runtime.onMessage.addListener((message, sender, respond) => {
   void handle(message, sender).then(respond, () => respond({ error: 'net19 could not complete this action.' }));
   return true;
 });
-chrome.runtime.onInstalled.addListener(() => { void cleanUp().catch(() => undefined).then(syncScripts).catch(() => undefined); });
+chrome.runtime.onInstalled.addListener(({ reason }) => {
+  const tidy = reason === 'install' || reason === 'update' ? cleanUp().catch(() => undefined) : Promise.resolve();
+  void tidy.then(syncScripts).catch(() => undefined);
+});
 chrome.storage.onChanged.addListener((changes, area) => { if (area === 'local' && changes[FIT_KEY]) void syncFit().catch(() => undefined); });
 chrome.runtime.onStartup.addListener(() => { void syncScripts().catch(() => undefined); });
 void syncScripts().catch(() => undefined);

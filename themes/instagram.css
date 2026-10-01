@@ -133,8 +133,8 @@ main [role="tablist"] a:not([aria-selected="true"]) svg { color: rgb(var(--n19-t
 #loginForm button[type="submit"] { background: rgb(var(--n19-blue)) !important; border-radius: 4px !important; font-size: 14px !important; font-weight: 600 !important; color: #fff !important; }
 
 [data-n19-ig="page"], [data-n19-ig="right"] { background: rgb(var(--n19-page)) !important; }
-[data-n19-ig="row-login"] { max-width: 935px !important; margin: 0 auto !important; padding: 32px 0 !important; justify-content: center !important; gap: 32px !important; min-height: 0 !important; }
-[data-n19-ig="left"] { flex: 0 1 454px !important; min-width: 0 !important; }
+[data-n19-ig="row-login"] { max-width: 935px !important; margin: 0 auto !important; padding: 32px 0 !important; justify-content: center !important; gap: 32px !important; min-height: 0 !important; align-items: flex-start !important; }
+[data-n19-ig="left"] { flex: 0 1 454px !important; min-width: 0 !important; align-self: flex-start !important; }
 [data-n19-ig="left"] i[role="img"], [data-n19-ig="headline"] { display: none !important; }
 [data-n19-ig="left"] img { width: 100% !important; height: auto !important; margin: 0 !important; }
 [data-n19-ig="rule"] { display: none !important; }
@@ -169,12 +169,10 @@ form#login_form div:has(> input[name="email"]) > label, form#login_form div:has(
 footer a:is([href*="meta.ai"], [href*="threads."], [href*="/meta_ai"]) { display: none !important; }
 footer a, footer a *, footer span, [data-n19-ig="railcol"] a[href]:is([href*="instagram.com"], [href^="/legal/"], [href*="developers.facebook"], [href^="/explore/locations"], [href^="/language"]) { text-transform: uppercase !important; font-size: 12px !important; font-weight: 600 !important; }
 footer a, footer a * { color: rgb(var(--n19-link)) !important; }
-[data-n19-ig="row-login"] { align-items: flex-start !important; }
 [data-n19-ig="page"] { justify-content: flex-start !important; }
 [data-n19-ig="right"] { justify-content: flex-start !important; }
 [data-n19-ig="box"] > :first-child { height: 49px !important; margin: 0 auto 20px !important; -webkit-mask: url("https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png") center / 175px 49px no-repeat !important; mask: url("https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png") center / 175px 49px no-repeat !important; background: rgb(var(--n19-text)) !important; }
 [data-n19-ig="box"] > :first-child * { visibility: hidden !important; }
 [data-n19-ig="bar"] a[href="/"]:has(svg[aria-label="Instagram"]) { display: block !important; width: 103px !important; height: 29px !important; -webkit-mask: url("https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png") center / 103px 29px no-repeat !important; mask: url("https://www.instagram.com/static/images/web/mobile_nav_type_logo-2x.png/1b47f9d0e595.png") center / 103px 29px no-repeat !important; background: rgb(var(--n19-text)) !important; }
 [data-n19-ig="bar"] a[href="/"] svg[aria-label="Instagram"] { visibility: hidden !important; }
-[data-n19-ig="left"] { align-self: flex-start !important; }
 html[data-n19-igwall], html[data-n19-igwall] body { overflow: auto !important; }

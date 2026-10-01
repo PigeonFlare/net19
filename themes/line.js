@@ -26,10 +26,8 @@ globalThis.net19Theme = (() => {
       if (/^Life on LINE$/i.test(text)) { const item = link.closest('li'); if (!item.hasAttribute('data-net19-hidden')) item.setAttribute('data-net19-hidden', ''); continue; }
       const to = WORDS.get(text);
       if (!to) continue;
-      const walker = document.createTreeWalker(link, NodeFilter.SHOW_TEXT);
-      for (let node = walker.nextNode(); node; node = walker.nextNode()) if (node.nodeValue.trim() === text) node.nodeValue = to;
+      net19.rename(link, text, to);
     }
   };
-  const start = () => { fix(); new MutationObserver(() => requestAnimationFrame(fix)).observe(document.documentElement, { childList: true, subtree: true }); };
-  net19.onBody(start);
+  net19.watch(fix);
 })();

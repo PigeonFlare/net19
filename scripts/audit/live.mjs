@@ -63,7 +63,7 @@ function inPage() {
     }
     void fr;
   }
-  return { texts, modern, misaligned, inside, mode: document.documentElement.dataset.net19Mode || '', flip: document.documentElement.hasAttribute('data-net19-flip'), title: document.title.slice(0, 50) };
+  return { texts, modern, misaligned, inside, mode: document.documentElement.dataset.net19Mode || '', flip: document.documentElement.hasAttribute('data-net19-recolor'), title: document.title.slice(0, 50) };
 }
 
 const ROWS = ['clipline', 'rowwrap', 'rowalign', 'spill', 'iconovertext', 'gap', 'btnsize', 'scrollreach', 'badgealign', 'loose'];

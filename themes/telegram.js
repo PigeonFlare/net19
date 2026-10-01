@@ -46,8 +46,5 @@
     for (const type of ['pointerdown', 'mousedown', 'pointerup', 'mouseup', 'click']) phone.dispatchEvent(new (type.startsWith('pointer') ? PointerEvent : MouseEvent)(type, { bubbles: true, cancelable: true, button: 0, view: window }));
     setTimeout(later, 750);
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; hide(); choosePhoneLogin(); signInTitle(); }); };
-  const start = () => { hide(); choosePhoneLogin(); new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true }); };
-  net19.onBody(start);
+  const later = net19.watch(() => { hide(); choosePhoneLogin(); signInTitle(); });
 })();

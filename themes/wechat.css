@@ -38,10 +38,9 @@ html[data-net19-mode="dark"] { --n19-green: #1aad19; --n19-green-hover: #179b16;
 .banner__download > :is(.banner__download-item_macos, .banner__download-item_windows) { width: 69px !important; height: 61px !important;
   border: 1px solid var(--n19-square) !important; display: flex !important; align-items: center !important; justify-content: center !important; }
 .banner__download > .banner__download-item_macos { order: 3 !important; }
-.banner__download > .banner__download-item_windows { order: 2 !important; }
+.banner__download > .banner__download-item_windows { order: 2 !important; border-right: none !important; }
 .banner__download > :is(.banner__download-item_ios, .banner__download-item_android) { order: 0 !important; }
 .banner__download > :is(.banner__download-item_macos, .banner__download-item_windows):hover { background-color: var(--n19-square-hover) !important; }
-.banner__download > .banner__download-item_windows { border-right: none !important; }
 .banner__download > .banner__download-item_windows i { background: var(--n19-wc-win) no-repeat center / 100% !important; }
 .banner__download > .banner__download-item_macos i { background: var(--n19-wc-mac) no-repeat center / 100% !important; }
 .banner__download > :is(.banner__download-item_macos, .banner__download-item_windows) i { width: 35px !important; height: 35px !important; margin: 0 !important; }

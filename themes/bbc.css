@@ -81,3 +81,4 @@ html[data-net19-section="news"] nav#main-navigation-container ul[class*="MainNav
 html[data-net19-section="news"] nav#main-navigation-container a { color: #fff !important; }
 html[data-net19-section="news"] nav#main-navigation-container a:is(:hover, :focus-visible), html[data-net19-section="news"] nav#main-navigation-container a:is(:hover, :focus-visible) * { color: #fff !important; background-color: var(--n19-news-dark) !important; }
 [class*="NavigationPanel"] a:is([href*="/watch-live"], [href*="/live/"][class*="WatchLive"]), [class*="NavigationPanel"] [class*="WatchLive"] { display: none !important; }
+#subliminal-banner { display: none !important; }

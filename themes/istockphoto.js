@@ -18,8 +18,7 @@ globalThis.net19Theme = {
       if (banner && !banner.hasAttribute('data-n19-later') && /^Inclusive Storytelling$/i.test(h.textContent.trim())) banner.setAttribute('data-n19-later', '');
     }
   };
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); };
+  const later = net19.frame(mark);
   mark();
   new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
 })();

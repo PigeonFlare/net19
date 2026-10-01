@@ -50,6 +50,7 @@ body,.cc,.cc_pgwn{color:var(--n19-text)!important}
 .dsense_h .dsense_pos{color:#fff!important;font-style:italic!important;font-weight:400!important}
 .dsense{border:0!important}
 .entry-body .dwl .dwla{background:transparent!important;color:var(--n19-text-2)!important;border-radius:0!important}
+:where(:root:not([data-n19-safe])) .entry-body .dwl .dwla,.entry-body:where(:root:not([data-n19-safe])) .dwl .dwla{top:2px!important}
 .entry-body .region,.entry-body .dpron-i .region,.entry-body .dreg{color:var(--n19-red)!important;font-weight:700!important}
 .entry-body .daud .i-volume-up{color:var(--n19-red)!important}
 .entry-body .pron,.entry-body .dpron{color:var(--n19-text)!important}
@@ -80,4 +81,3 @@ body,.cc,.cc_pgwn{color:var(--n19-text)!important}
 .entry-body .dwl,.entry-body .dsense .dwl,.entry-body .def-block>.dwl{border:0!important;box-shadow:none!important;background:transparent!important}
 :where(:root:not([data-n19-safe])) #header #searchBar .chsf>.hdb-l>a:has(>img),#header:where(:root:not([data-n19-safe])) #searchBar .chsf>.hdb-l>a:has(>img){display:block!important;margin-top:3px!important}
 [data-n19-post2019],#main-nav li:has(>a:is([href^="/thesaurus/"],[href^="/games/"])),#sidebarNav a:is([href^="/thesaurus/"],[href^="/games/"]),footer#footer a:is([href*="/editorial/word-of-the-year"],[href*="ai-tool-terms"]){display:none!important}
-:where(:root:not([data-n19-safe])) .entry-body .dwl .dwla,.entry-body:where(:root:not([data-n19-safe])) .dwl .dwla{top:2px!important}

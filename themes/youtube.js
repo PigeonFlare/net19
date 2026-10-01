@@ -49,13 +49,7 @@ globalThis.net19Theme = (() => {
     const field = box.querySelector('input[name="search_query"], textarea[name="search_query"]');
     setTimeout(() => { if (field && document.activeElement !== field) field.focus(); }, 0);
   }, true);
-  let queued = false;
-  const later = () => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; fix(); comments(); sections(); }); };
-  const start = () => {
-    fix(); comments(); sections();
-    new MutationObserver(later).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
-  };
-  net19.onBody(start);
+  net19.watch(() => { fix(); comments(); sections(); }, { childList: true, subtree: true, attributes: true, attributeFilter: ['placeholder'] });
 })();
 (() => {
   if (!/^(www\.)?youtube\.com$/.test(location.hostname)) return;
@@ -73,8 +67,7 @@ globalThis.net19Theme = (() => {
       if (!el.hasAttribute('data-net19-hidden') && SHORTS.test(el.textContent || '')) el.setAttribute('data-net19-hidden', '');
     }
   };
-  let queued = false;
-  const start = () => new MutationObserver(() => { if (queued) return; queued = true; requestAnimationFrame(() => { queued = false; mark(); }); })
+  const start = () => new MutationObserver(net19.frame(mark))
     .observe(document.documentElement, { childList: true, subtree: true });
   if (document.body) { mark(); start(); } else new MutationObserver((_, o) => { if (document.body) { o.disconnect(); mark(); start(); } }).observe(document.documentElement, { childList: true });
 })();

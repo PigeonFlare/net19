@@ -23,8 +23,7 @@ globalThis.net19Theme = {
       const text = button.textContent.trim();
       if (/^(Business|Help)$/.test(text)) { if (!button.closest('li').hasAttribute('data-n19-later')) button.closest('li').setAttribute('data-n19-later', ''); continue; }
       if (!NAV_NAMES[text]) continue;
-      const walker = document.createTreeWalker(button, NodeFilter.SHOW_TEXT);
-      for (let n = walker.nextNode(); n; n = walker.nextNode()) if (n.data.trim() === text) n.data = NAV_NAMES[text];
+      net19.rename(button, text, NAV_NAMES[text]);
     }
   };
   const fix = () => {

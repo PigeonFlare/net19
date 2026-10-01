@@ -17,7 +17,7 @@ html[data-net19-mode="dark"] { --n19-bar: #000; --n19-bar-text: #fff; --n19-gree
 .subnav__main-logo__container { height: 0 !important; min-height: 0 !important; margin: 0 !important; padding: 0 !important; position: relative !important; overflow: visible !important; background: transparent !important; }
 .subnav__main-logo { position: absolute !important; left: 50% !important; top: -58px !important; transform: translateX(-50%) !important; height: 38px !important; display: flex !important; align-items: center !important; }
 .subnav__main-logo h1, .subnav__main-logo .front-title { height: auto !important; margin: 0 !important; padding: 0 !important; }
-svg.subnav__main-logo__svg { height: 34px !important; width: auto !important; max-width: 260px !important; margin: 0 !important; display: block !important; }
+svg.subnav__main-logo__svg { max-width: 260px !important; margin: 0 !important; display: block !important; }
 svg.subnav__main-logo__svg, svg.subnav__main-logo__svg * { fill: var(--n19-green) !important; color: var(--n19-green) !important; }
 nav#nav.subnav { height: 36px !important; min-height: 0 !important; border-top: 1px solid #242424 !important; border-bottom: none !important; }
 .subnav__content { height: 36px !important; }
