@@ -67,7 +67,6 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'twitter', name: 'Twitter', domains: ['x.com', 'twitter.com'] },
   { id: 'linkedin', name: 'LinkedIn', domains: ['linkedin.com'] },
   { id: 'yelp', name: 'Yelp', domains: ['yelp.com'] },
-  { id: 'pinterest', name: 'Pinterest', domains: ['pinterest.com'] },
   { id: 'discord', name: 'Discord', domains: ['discord.com'] },
   { id: 'telegram', name: 'Telegram', domains: ['telegram.org'], matches: ['*://web.telegram.org/*'] },
   { id: 'whatsapp', name: 'WhatsApp', domains: ['whatsapp.com'], matches: ['*://web.whatsapp.com/*'] },
