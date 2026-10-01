@@ -24,9 +24,10 @@ A Chrome extension that shows popular websites as they looked in **2019**.
 - **Any screen, any Chromium browser:** Works in Chrome, Edge, Brave, Opera, Vivaldi and Arc on computers and Chromebooks, and in Android browsers that support extensions (Edge, Lemur, Yandex). On phones and narrow windows, sites keep their own mobile layout with the 2019 colors and fonts, so nothing gets squeezed or cut off.
 - **User privacy:** The extension runs completely locally. No user data is stored except for toggle choices, and the names of site sections whose design currently doesn't fit. ([privacy policy](PRIVACY.md)).
 
-## Complementary projects I found which you should try out
+## Complementary projects I found which you should try out 
 
-[Old Twitter Layout](https://github.com/dimdenGD/OldTwitter) by dimden 
+[Old Twitter Layout](https://github.com/dimdenGD/OldTwitter) by dimden
+
 [YouTube Redux](https://github.com/omnidevZero/YouTubeRedux) by omnidevZero 
 
 ## Report a problem or request a site
