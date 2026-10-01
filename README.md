@@ -5,7 +5,7 @@ A Chrome extension that shows popular websites as they looked in **2019**.
 [Github download](https://github.com/PigeonFlare/net19/archive/refs/heads/main.zip) · [Chrome download](https://chromewebstore.google.com/detail/net19/aomcmjccojigoiehgcomlpbiabllpeif) · [Privacy](PRIVACY.md) · [Architecture](docs/ARCHITECTURE.md) · [Validation](docs/VALIDATION.md)
 
 ## Install 
-1. Clone the folder with `git clone https://github.com/PigeonFlare/net19.git`, or click **Code → Download ZIP** on GitHub and extract it.
+1. Clone the folder with `git clone https://github.com/PigeonFlare/net19.git`, or click **Code** then **Download ZIP** on GitHub and extract it.
 2. Open `chrome://extensions` and turn on **Developer mode**.
 3. Click **Load unpacked** and select the `net19` folder.
 
