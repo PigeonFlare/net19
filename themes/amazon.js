@@ -1,5 +1,5 @@
 globalThis.net19Theme = {
-  keep: '#gwm-Deck :is([class*="card_style_text__"], [class*="card_style_wdHeader__"])',
+  keep: '#nav-search-submit-button, .nav-search-submit, #gwm-Deck :is([class*="card_style_text__"], [class*="card_style_wdHeader__"])',
   later: /^(Pharmacy|Amazon Pharmacy|Amazon Haul|Haul|See options)$/,
   intended: '[data-component-type="s-messaging-widget-results-header"], #productOverview_feature_div, #compatibilityContainerDesktop, [id^="topRefinements/"], #navFooter :is(td, li):has(> a[href*="veeqo"], > a[href*="blinkforhome"]), [data-n19-over]',
 };

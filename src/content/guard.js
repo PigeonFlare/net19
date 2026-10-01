@@ -184,7 +184,8 @@ import { rgba } from './color.js';
     'svg[data-net19-icon="light"]{filter:brightness(0) invert(.92)!important}svg[data-net19-icon="dark"]{filter:brightness(0) invert(.12)!important}' +
     ':is(input,textarea)[data-net19-ink="dark"]{caret-color:#1d1d1f!important}:is(input,textarea)[data-net19-ink="dark"]::placeholder{color:#5f6368!important;-webkit-text-fill-color:#5f6368!important;opacity:1!important}' +
     ':is(input,textarea)[data-net19-ink="light"]{caret-color:#f5f5f7!important}:is(input,textarea)[data-net19-ink="light"]::placeholder{color:#bdc1c6!important;-webkit-text-fill-color:#bdc1c6!important;opacity:1!important}';
-  const original = new WeakMap(), inline = new WeakMap();
+  const original = new WeakMap(), inline = new WeakMap(), inked = new Set();
+  let context = '';
   let blendSeen = new WeakSet();
   let blendDark = null, fades = new Map();
   const fadeOf = e => { if (!e || e === root || e.nodeType !== 1) return 1; let f = fades.get(e); if (f === undefined) { f = +getComputedStyle(e).opacity * fadeOf(up(e)); fades.set(e, f); } return f; };
@@ -237,6 +238,17 @@ import { rgba } from './color.js';
   };
   const check = () => {
     if (!document.body) return;
+    const now = [root.className, document.body.className, root.getAttribute('data-net19-mode'), root.getAttribute('data-net19-recolor'), document.styleSheets.length, document.adoptedStyleSheets.length].join('|');
+    if (now !== context) {
+      context = now;
+      for (const el of inked) {
+        const before = inline.get(el);
+        if (before) { el.style.setProperty('color', before[0], before[1]); el.style.setProperty('-webkit-text-fill-color', before[2], before[3]); if (!before[0]) el.style.removeProperty('color'); if (!before[2]) el.style.removeProperty('-webkit-text-fill-color'); inline.delete(el); }
+        el.removeAttribute('data-net19-ink'); original.delete(el);
+      }
+      inked.clear();
+    }
+    for (const el of inked) if (!el.isConnected) inked.delete(el);
     flips = new Map(); layerOf = new Map(); mediaOf = new Map(); fades = new Map();
     const view = { w: innerWidth, h: innerHeight };
     const changes = [];
@@ -308,8 +320,8 @@ import { rgba } from './color.js';
     for (const [el, ink] of changes) {
       const before = inline.get(el);
       if (before) { el.style.setProperty('color', before[0], before[1]); el.style.setProperty('-webkit-text-fill-color', before[2], before[3]); if (!before[0]) el.style.removeProperty('color'); if (!before[2]) el.style.removeProperty('-webkit-text-fill-color'); inline.delete(el); }
-      if (!ink) { el.removeAttribute('data-net19-ink'); original.delete(el); continue; }
-      el.setAttribute('data-net19-ink', ink);
+      if (!ink) { el.removeAttribute('data-net19-ink'); original.delete(el); inked.delete(el); continue; }
+      el.setAttribute('data-net19-ink', ink); inked.add(el);
       const paint = ink.startsWith('rgb') ? ink : el.getRootNode() !== document ? (ink === 'dark' ? 'rgb(29, 29, 31)' : 'rgb(245, 245, 247)') : null;
       if (paint) {
         inline.set(el, [el.style.getPropertyValue('color'), el.style.getPropertyPriority('color'), el.style.getPropertyValue('-webkit-text-fill-color'), el.style.getPropertyPriority('-webkit-text-fill-color')]);

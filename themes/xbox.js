@@ -1,6 +1,6 @@
 globalThis.net19Theme = {
   intended: '[data-n19-later], a[aria-label^="Play, play games with" i], uhf-footer-nav-group:is([heading="Browse"], [heading="Microsoft Store"], [heading="Rewards"])',
-  keep: 'div:has(> [class*="ProductDetailsHeader-module__backgroundImageContainer"]), .expandableSlider, section.hero > .slides > .slide',
+  keep: '[class*="ProductDetailsHeader-module__container"], div:has(> [class*="ProductDetailsHeader-module__backgroundImageContainer"]), .expandableSlider, section.hero > .slides > .slide',
   later: /^(?:user research at xbox|need help\?\s*let['’]s chat|let['’]s chat|chat now|ask copilot|copilot|xbox copilot|gaming copilot)$/i,
 };
 (() => {

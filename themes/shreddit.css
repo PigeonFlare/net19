@@ -268,9 +268,9 @@ shreddit-comment-action-row > shreddit-comment-share-button { display: flex !imp
 shreddit-comment .comment-main-grid > svg.collapse-container { margin-top: 2px !important; }
 shreddit-comment-action-row :is(button.button, a.button, button[rpl]) { height: 24px !important; min-height: 0 !important; }
 shreddit-app { padding-top: 49px !important; }
-reddit-header-large div.h-\[40px\] { padding: 0 !important; height: 48px !important; align-items: center !important; }
-reddit-header-large div.h-\[40px\] > div { position: static !important; height: 36px !important; align-items: flex-start !important; overflow: visible !important; }
-reddit-header-large div.h-\[40px\] > div > div { width: 100% !important; max-width: 690px !important; margin: 0 auto !important; }
+reddit-header-large nav > div.h-\[40px\] { padding: 0 !important; height: 48px !important; align-items: center !important; }
+reddit-header-large nav > div.h-\[40px\] > div { position: static !important; height: 36px !important; align-items: flex-start !important; overflow: visible !important; }
+reddit-header-large nav > div.h-\[40px\] > div > div { width: 100% !important; max-width: 690px !important; margin: 0 auto !important; }
 #subgrid-container:has(.main-container > main > div > shreddit-async-loader[bundlename="shreddit_sort_dropdown"]) { gap: 0 !important; }
 
 #subgrid-container:has(> .search-results-navigation-masthead-desktop) { padding-top: 0 !important; }

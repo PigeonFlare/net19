@@ -261,9 +261,9 @@ auth-flow-google-one-tap-prompt{display:none!important}
 :where(:root:not([data-n19-safe])) shreddit-comment .comment-main-grid>svg.collapse-container{margin-top:2px!important}
 :where(:root:not([data-n19-safe])) shreddit-comment-action-row :is(button.button,a.button,button[rpl]){height:24px!important;min-height:0!important}
 :where(:root:not([data-n19-safe])) shreddit-app{padding-top:49px!important}
-:where(:root:not([data-n19-safe])) reddit-header-large div.h-\[40px\]{padding:0!important;height:48px!important;align-items:center!important}
-:where(:root:not([data-n19-safe])) reddit-header-large div.h-\[40px\]>div{position:static!important;height:36px!important;align-items:flex-start!important;overflow:visible!important}
-:where(:root:not([data-n19-safe])) reddit-header-large div.h-\[40px\]>div>div{width:100%!important;max-width:690px!important;margin:0 auto!important}
+:where(:root:not([data-n19-safe])) reddit-header-large nav>div.h-\[40px\]{padding:0!important;height:48px!important;align-items:center!important}
+:where(:root:not([data-n19-safe])) reddit-header-large nav>div.h-\[40px\]>div{position:static!important;height:36px!important;align-items:flex-start!important;overflow:visible!important}
+:where(:root:not([data-n19-safe])) reddit-header-large nav>div.h-\[40px\]>div>div{width:100%!important;max-width:690px!important;margin:0 auto!important}
 :where(:root:not([data-n19-safe])) #subgrid-container:has(.main-container>main>div>shreddit-async-loader[bundlename="shreddit_sort_dropdown"]),#subgrid-container:has(.main-container>main>div>shreddit-async-loader[bundlename="shreddit_sort_dropdown"]):where(:root:not([data-n19-safe])){gap:0!important}
 :where(:root:not([data-n19-safe])) #subgrid-container:has(>.search-results-navigation-masthead-desktop),#subgrid-container:has(>.search-results-navigation-masthead-desktop):where(:root:not([data-n19-safe])){padding-top:0!important}
 :where(:root:not([data-n19-safe])) .masthead.search-results-navigation-masthead-desktop,.masthead.search-results-navigation-masthead-desktop:where(:root:not([data-n19-safe])){position:relative!important;top:0!important;z-index:3!important}

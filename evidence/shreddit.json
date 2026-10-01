@@ -486,8 +486,7 @@
       "evidence": [
         "s-chat"
       ],
-      "note": "signed-in header speech-bubble chat button existed in 2019 (right of the envelope); hidden at the owner's request",
-      "action": "hidden"
+      "note": "signed-in header speech-bubble chat button (right of the envelope) and profile chat icon"
     },
     {
       "match": "^(Accessibility|Your Privacy Choices|Best of Reddit.*|News|Explore|简体中文|日本語|Contributions|Reddit Age|Feed options|View Post in|Top Posts|Installed Apps|Advertise on Reddit|Français|Deutsch|Español|Italiano|Verifications|Reddit Answers|Answers|Get App|Get the Reddit app|Advertise on Reddit|Reddit Pro)$",

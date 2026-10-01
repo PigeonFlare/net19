@@ -557,16 +557,7 @@ globalThis.net19Theme = {
   const LEGAL_WORDS = new Map([['Reddit Rules', 'Content Policy']]);
   const STAT_LATER = /^Contributions$/;
   const hide = el => { if (el && !el.hasAttribute('data-n19-later')) el.setAttribute('data-n19-later', ''); };
-  const CHAT = ':is(#header-action-item-chat-button, [id*="chat-button" i], button[aria-label*="chat" i], a[aria-label*="chat" i], a[href^="/chat"], a[href*="chat.reddit.com"])';
   const after2019 = () => {
-    for (const header of document.querySelectorAll('reddit-header-large')) {
-      const found = [...header.querySelectorAll(CHAT)];
-      for (const el of header.querySelectorAll('*')) if (el.tagName.includes('CHAT')) found.push(el);
-      for (let el of found) {
-        while (el.parentElement && el.parentElement.children.length === 1 && !el.parentElement.matches('nav, header, reddit-header-large')) el = el.parentElement;
-        hide(el);
-      }
-    }
     for (const a of document.querySelectorAll('#right-sidebar-container .legal-links a, .legal-links a')) {
       const text = a.textContent.replace(/\s+/g, ' ').trim();
       if (LEGAL_LATER.test(globalThis.net19English(text))) hide(a.closest('li') || a);

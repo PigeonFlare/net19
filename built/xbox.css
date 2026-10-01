@@ -34,3 +34,4 @@ html body span.jump-g:not(#n19-none):not(#n19-none){color:var(--n19-green)!impor
 [data-n19-later]{display:none!important}
 uhf-footer-nav-group:is([heading="Browse"],[heading="Microsoft Store"],[heading="Rewards"]){display:none!important}
 a[aria-label^="Play, play games with"i]{display:none!important}
+[class*="ProductDetailsHeader-module__container"] :is(h1,h2,p,span,div,a,button):not(:is([role="menu"],[role="listbox"],[role="dialog"],[class*="flyoutContent"i],[class*="Flyout-module__flyout_"i]) *){color:#fff!important}
