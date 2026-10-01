@@ -146,6 +146,10 @@ react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]
 react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child a[class*="TopicTag-TopicTag-"] { background: var(--n19-commit-bar) !important; color: var(--n19-link) !important; border-radius: 3px !important; font-size: 12px !important; line-height: 1.5 !important; padding: .3em .9em !important; margin: 0 .5em .5em 0 !important; font-weight: 400 !important; height: auto !important; }
 react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child > div.mt-2 { flex: none !important; width: auto !important; margin: 0 !important; }
 react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child > div.mt-2 :is(a, span) { color: var(--n19-text-2) !important; }
+react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child > [class*="SidebarAbout-module__insights"] { display: flex !important; flex: none !important; width: auto !important; margin: 0 !important; padding: 0 !important; }
+react-app[app-name="code-view"] [class*="SidebarAbout-module__insightStats"] { display: flex !important; align-items: center !important; column-gap: 24px !important; margin: 0 !important; padding: 0 !important; }
+react-app[app-name="code-view"] [class*="SidebarAbout-module__insightItem"] { margin: 0 !important; }
+react-app[app-name="code-view"] [class*="SidebarAbout-module__insightItem"] :is(a, span, strong) { color: var(--n19-text-2) !important; }
 react-app[app-name="code-view"] [class*="SidebarSection-module__sidebarSection"]:first-child > div.mt-2 svg { color: var(--n19-text-2) !important; margin-right: 4px !important; }
 react-app[app-name="code-view"] [class*="PageLayout-PageLayoutContent"]:has([class*="CodeViewSidebar-module__borderGrid"]) :is([class*="PageLayout-ContentWrapper"], [class*="PageLayout-Content-"]) { padding-left: 0 !important; padding-right: 0 !important; margin-left: 0 !important; margin-right: 0 !important; }
 react-app[app-name="code-view"] [class*="OverviewContent-module__Box__"] { padding-left: 0 !important; padding-right: 0 !important; }
