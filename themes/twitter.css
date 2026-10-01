@@ -143,7 +143,7 @@ button:has(> span > svg[data-icon^="icon-grok"]), a[aria-label="Grok"], [data-te
 [data-testid="tweet"] [role="group"] > div:has(> a[href$="/analytics"]), [aria-modal="true"] [role="group"] > div:has(> a[href$="/analytics"]),
 [data-testid="tweet"] [role="group"] div:has(> button:is([data-testid="bookmark"], [data-testid="removeBookmark"])), [data-testid="tweet"] [role="group"] button:is([data-testid="bookmark"], [data-testid="removeBookmark"]),
 [data-engagement-action="generic"]:has(svg[data-icon="icon-bar-chart"]), [data-engagement-action="bookmark"], article div:has(> [data-engagement-action="bookmark"]:only-child),
-[data-n19-tw="views"],
+[data-n19-tw="views"], article [role="group"] > div:has(> :is(a, button)[aria-label*="post analytics" i]),
 [data-testid$="-subscribe"], [data-testid="subscribe"], [data-testid="icon-subscriber"], a[href$="/creator-subscriptions/subscriptions"], a[href$="/superfollows"],
 [data-testid="birdwatch-pivot"], [data-testid="tweet"] a[href$="/history"], [data-testid="scheduleOption"],
 span[aria-label="Verified account"]:has(> svg:is([data-icon*="government"], [data-icon*="business"], [data-icon*="gold"], [data-icon*="gray"], [data-icon*="affiliate"])),

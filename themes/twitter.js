@@ -118,12 +118,13 @@ globalThis.net19Theme = {
       while (box.parentElement && box.parentElement.childElementCount < 3 && !box.parentElement.matches('[data-testid="sidebarColumn"]')) box = box.parentElement;
       if (box.getAttribute('data-n19-tw') !== 'later') box.setAttribute('data-n19-tw', 'later');
     }
-    for (const label of document.querySelectorAll('main article a[href*="/status/"] > div:last-child')) {
-      if (label.textContent.trim() !== 'Views') continue;
-      const link = label.parentElement;
-      if (link.getAttribute('data-n19-tw') === 'views') continue;
-      link.setAttribute('data-n19-tw', 'views');
-      const dot = link.previousElementSibling;
+    const views = document.evaluate('//article//*[not(*) and (normalize-space()="Views" or normalize-space()="View") and not(ancestor-or-self::*[@data-n19-tw="views"]) and not(ancestor::*[@data-testid="tweetText"])]', document, null, XPathResult.ORDERED_NODE_SNAPSHOT_TYPE, null);
+    for (let i = 0; i < views.snapshotLength; i++) {
+      let box = views.snapshotItem(i);
+      while (box.parentElement && /^[\d.,\s]*[KMB]?\s*Views?$/.test(box.parentElement.textContent.trim())) box = box.parentElement;
+      if (!/\d/.test(box.textContent)) continue;
+      box.setAttribute('data-n19-tw', 'views');
+      const dot = box.previousElementSibling;
       if (dot && dot.textContent.trim() === '·') dot.setAttribute('data-n19-tw', 'views');
     }
     for (const svg of document.querySelectorAll('svg[data-testid="icon-verified"]:not([data-n19-tw-seen])')) {

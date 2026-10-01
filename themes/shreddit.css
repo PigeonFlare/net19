@@ -40,9 +40,8 @@ a#reddit-logo { position: relative !important; width: 95px !important; height: 3
 a#reddit-logo > * { visibility: hidden !important; }
 a#reddit-logo::before { content: ''; position: absolute; left: 0; top: 0; width: 32px; height: 32px;
   background: url("https://www.redditstatic.com/logo.svg") no-repeat -10.69px -10.69px / 114.3px 53.4px; }
-a#reddit-logo::after { content: ''; position: absolute; left: 40px; top: 7px; width: 55px; height: 18px;
-  background: url("https://www.redditstatic.com/logo.svg") no-repeat -49.1px -18.4px / 114.3px 53.4px; }
-html[data-net19-mode="dark"] a#reddit-logo::after { filter: invert(1) hue-rotate(180deg) brightness(.9) saturate(1.6); }
+a#reddit-logo::after { content: ''; position: absolute; left: 40px; top: 7px; width: 55px; height: 18px; background: var(--n19-wordmark);
+  -webkit-mask: url("https://www.redditstatic.com/logo.svg") no-repeat -49.1px -18.4px / 114.3px 53.4px; mask: url("https://www.redditstatic.com/logo.svg") no-repeat -49.1px -18.4px / 114.3px 53.4px; }
 reddit-header-large :is(#login-button, #signup-button) { min-width: 120px !important; height: 32px !important; min-height: 0 !important; padding: 0 16px !important; box-sizing: border-box !important;
   border-radius: 4px !important; text-transform: uppercase !important; font-size: 12px !important; font-weight: 700 !important; letter-spacing: .5px !important;
   justify-content: center !important; box-shadow: none !important; }
