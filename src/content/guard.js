@@ -295,7 +295,8 @@ import { rgba } from './color.js';
       const current = el.getAttribute('data-net19-ink');
       const size = parseFloat(style.fontSize), large = size >= 24 || (size >= 18.6 && +style.fontWeight >= 600);
       const chroma = c => Math.max(...c.slice(0, 3)) - Math.min(...c.slice(0, 3));
-      const floor = unknown ? (large ? 4.5 : 6.5) : large ? 3 : chroma(inText) > 90 || chroma(shown) > 90 ? 3 : 4.5;
+      const label = !unknown && chroma(inText) > 90 && lum(shown) > lum(inText) && bg.painter?.closest?.('button, [role="button"], a[href]');
+      const floor = unknown ? (large ? 4.5 : 6.5) : label ? 2.5 : large ? 3 : chroma(inText) > 90 || chroma(shown) > 90 ? 3 : 4.5;
       if (ratio(shown, inText) >= floor) { if (current) changes.push([el, null]); continue; }
       if (!unknown && !current && overPicture(el, box)) continue;
       if (!unknown && !current && !agrees(el, bg.painter)) continue;
