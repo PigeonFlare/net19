@@ -118,11 +118,17 @@ globalThis.net19Theme = (() => {
       meta.setAttribute('data-n19-stats', '');
       const count = COUNT.exec(meta.querySelector('#owner-sub-count')?.textContent || '');
       meta.toggleAttribute('data-n19-subs', countInButton(meta.querySelector('#subscribe-button'), count ? count[1] : ''));
-      for (const button of meta.querySelectorAll('#actions like-button-view-model button[aria-label]')) {
-        const text = button.querySelector('.ytSpecButtonShapeNextButtonTextContent');
-        const exact = digits(button.getAttribute('aria-label'));
-        if (text && exact && !text.firstElementChild && /\d/.test(text.textContent)) setText(text, exact);
-      }
+    }
+  };
+  const likes = () => {
+    for (const button of document.querySelectorAll('ytd-watch-metadata #actions like-button-view-model button')) {
+      const text = button.querySelector('.ytSpecButtonShapeNextButtonTextContent');
+      if (!text || text.firstElementChild) continue;
+      const others = digits(button.getAttribute('aria-label')).replace(/\D/g, '');
+      if (others) button.dataset.n19Others = others;
+      if (!button.dataset.n19Others) continue;
+      const count = +button.dataset.n19Others + (button.getAttribute('aria-pressed') === 'true' ? 1 : 0);
+      if (Number.isFinite(count)) setText(text, count.toLocaleString(document.documentElement.lang || undefined));
     }
   };
   const channelHeader = header => {
@@ -165,8 +171,9 @@ globalThis.net19Theme = (() => {
       about.addEventListener('click', event => {
         event.preventDefault();
         event.stopPropagation();
-        const target = browse.querySelector('yt-page-header-view-model yt-description-preview-view-model :is(.truncated-text-wiz__absolute-button, button, [role="button"], .ytTruncatedTextAbsoluteButton)')
-          || browse.querySelector('yt-page-header-view-model yt-description-preview-view-model');
+        const preview = browse.querySelector('yt-page-header-view-model yt-description-preview-view-model');
+        const target = preview?.querySelector(':is(.truncated-text-wiz__absolute-button, button, [role="button"], .ytTruncatedTextAbsoluteButton):not([disabled]):not([aria-disabled="true"])')
+          || preview?.querySelector('truncated-text-content, .ytAttributedStringHost') || preview;
         target?.click();
       }, true);
       last.after(about);
@@ -406,7 +413,7 @@ globalThis.net19Theme = (() => {
       else if (/^\s*Explore\s*$/.test(title.textContent || '') && !title.querySelector('*') && title.matches('#guide-section-title')) title.textContent = 'Best of YouTube';
     }
   };
-  const run = () => { stats(); channel(); search(); guide(); metadata(); newBadge(); filterLabel(); bestOf(); };
-  net19.watch(run, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['aria-label', 'aria-selected', 'hidden'] });
+  const run = () => { stats(); likes(); channel(); search(); guide(); metadata(); newBadge(); filterLabel(); bestOf(); };
+  net19.watch(run, { childList: true, subtree: true, characterData: true, attributes: true, attributeFilter: ['aria-label', 'aria-selected', 'aria-pressed', 'hidden'] });
 })();
 globalThis.net19Theme.words = {"Capítulos": "Chapters", "Ver todo": "View all", "Transcripción": "Transcript", "Sigue la transcripción para no perderte nada.": "Follow along using the transcript.", "Mostrar transcripción": "Show transcript", "Chapitres": "Chapters", "Tout afficher": "View all", "Transcription": "Transcript", "Suivez la vidéo à l'aide de la transcription.": "Follow along using the transcript.", "Afficher la transcription": "Show transcript", "Capitoli": "Chapters", "チャプター": "Chapters", "章节": "Chapters", "챕터": "Chapters", "Главы": "Chapters", "चैप्टर": "Chapters", "الفصول": "Chapters", "Transcrição": "Transcript", "Trascrizione": "Transcript", "文字起こし": "Transcript", "转写文稿": "Transcript", "스크립트": "Transcript", "Текст видео": "Transcript", "ट्रांसक्रिप्ट": "Transcript", "النص": "Transcript"};

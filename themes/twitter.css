@@ -68,6 +68,7 @@ a[aria-label="X"].size-8:has(> svg[data-icon="icon-logo-x"]) { background-size: 
 [data-testid="SideNav_NewTweet_Button"], [data-testid="tweetButtonInline"], [data-testid="tweetButton"], [data-testid="FloatingActionButtons_Tweet_Button"] {
   background-color: var(--n19-blue) !important; border-color: var(--n19-blue) !important; box-shadow: none !important; }
 [data-testid="SideNav_NewTweet_Button"]:hover, [data-testid="tweetButtonInline"]:hover, [data-testid="tweetButton"]:hover { background-color: var(--n19-blue-hover) !important; }
+:is([data-testid="tweetButtonInline"], [data-testid="tweetButton"]):is(:disabled, [aria-disabled="true"]) { opacity: 1 !important; background-color: color-mix(in srgb, var(--n19-blue) 50%, transparent) !important; border-color: transparent !important; }
 [data-testid="SideNav_NewTweet_Button"] { min-height: 49px !important; }
 [data-testid="SideNav_NewTweet_Button"] span { font-size: 15px !important; font-weight: 700 !important; }
 .bg-gray-1100.rounded-full { background-color: var(--n19-blue) !important; color: #fff !important; }

@@ -118,7 +118,12 @@ import { rgba } from './color.js';
     let boxes = mediaOf.get(e);
     if (!boxes) {
       boxes = [];
-      for (const child of e.children) if (child.matches(MEDIA) || child.querySelector?.(':scope > img, :scope > video, :scope > picture')) boxes.push(child.getBoundingClientRect());
+      const laidOut = node => { let v = node; while (v && v !== e && v.getBoundingClientRect().width < 2) v = v.parentElement; return (v || node).getBoundingClientRect(); };
+      for (const child of e.children) {
+        const videos = child.tagName === 'VIDEO' ? [child] : child.getElementsByTagName('video');
+        if (videos.length) { for (const video of videos) if (video.getClientRects().length) boxes.push(laidOut(video)); }
+        else if (child.matches(MEDIA) || child.querySelector?.(':scope > img, :scope > picture')) boxes.push(child.getBoundingClientRect());
+      }
       mediaOf.set(e, boxes);
     }
     return boxes;
@@ -262,6 +267,7 @@ import { rgba } from './color.js';
     const blends = new Set();
     for (const el of textElements()) {
       if (el.closest('script, style, noscript, [data-net19-hidden]')) continue;
+      if (el.closest(':disabled, [aria-disabled="true"]')) { if (el.hasAttribute('data-net19-ink')) changes.push([el, null]); continue; }
       const box = el.getBoundingClientRect();
       if (box.width < 2 || box.height < 2 || box.bottom < 0 || box.top > view.h || box.right < 0 || box.left > view.w) continue;
       for (let e = el, i = 0; e && e !== root && i < 12; e = up(e), i++) {

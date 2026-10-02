@@ -164,6 +164,7 @@ nav[class*="guilds_"], nav[class*="guilds_"] [class*="scroller_"], [class*="side
   border-radius: 50% !important; background-color: var(--n19-primary) !important; color: var(--n19-green) !important;
   transition: border-radius .15s ease-out, background-color .15s ease-out;
 }
+[data-list-id="guildsnav"] foreignObject > :is([class^="circleIconButton_"], [class*=" circleIconButton_"]) { width: 100% !important; height: 100% !important; }
 [data-list-id="guildsnav"] :is([class^="circleIconButton_"], [class*=" circleIconButton_"]):is(:hover, [class*="selected_"]) {
   border-radius: 16px !important; background-color: var(--n19-green) !important; color: #fff !important;
 }

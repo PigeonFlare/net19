@@ -26,8 +26,8 @@ globalThis.net19Theme = {
     .rpl-vote-button-group button > span { margin: 0 !important; }
     button[upvote][aria-pressed="true"] { color: var(--n19-up) !important; }
     button[downvote][aria-pressed="true"] { color: var(--n19-down) !important; }
-    .rpl-vote-button-group:has(button[upvote][aria-pressed="true"]) > span { color: var(--n19-up) !important; }
-    .rpl-vote-button-group:has(button[downvote][aria-pressed="true"]) > span { color: var(--n19-down) !important; }
+    .rpl-vote-button-group[data-n19-vote="up"] > span { color: var(--n19-up) !important; }
+    .rpl-vote-button-group[data-n19-vote="down"] > span { color: var(--n19-down) !important; }
     h2.condensed-post-title-heading, h1 { margin: 0 0 8px !important; }
     :host([view-type="cardView"]) div:has(> h2.condensed-post-title-heading):has(> div > slot[name="post-flair"]) { display: block !important; font-size: 18px !important; line-height: 22px !important; margin-bottom: 8px !important; padding-right: 8px !important; }
     :host([view-type="cardView"]) div:has(> h2.condensed-post-title-heading):has(> div > slot[name="post-flair"]) > h2.condensed-post-title-heading { display: inline !important; margin: 0 !important; line-height: 22px !important; }
@@ -165,7 +165,7 @@ globalThis.net19Theme = {
   };
   const ICONS = {
     home: ['M10 2.5 2 9.2l1 1.2 1-.8V17h4.5v-5h3v5H16V9.6l1 .8 1-1.2z'],
-    popular: ['M12.5 5h5v5l-1.9-1.9-4.6 4.6-3-3L3.7 14l-1.2-1.2L8 7.3l3 3 3.4-3.4z'],
+    popular: ['M12.5 7h5v5l-1.9-1.9-4.6 4.6-3-3L3.7 16l-1.2-1.2L8 9.3l3 3 3.4-3.4z'],
     all: ['M3 11h3v6H3zM8.5 3h3v14h-3zM14 7h3v10h-3z'],
     caret: ['M5.5 8h9L10 12.7z'],
     community: ['M10 2a8 8 0 1 0 0 16 8 8 0 0 0 0-16zm0 1.8a6.2 6.2 0 1 1 0 12.4 6.2 6.2 0 0 1 0-12.4zM10 6a4 4 0 1 0 0 8 4 4 0 0 0 0-8z'],
@@ -208,7 +208,6 @@ globalThis.net19Theme = {
     items.sort((a, b) => a.textContent.localeCompare(b.textContent, undefined, { sensitivity: 'base' }));
     menu.append(make('div', { 'data-n19-menu-title': '', 'data-n19-mine': '' }, say('My communities')), ...items);
   };
-  const voteStart = new WeakMap();
   let subscribed = null;
   const loadSubscribed = async () => {
     const list = [];
@@ -693,16 +692,20 @@ globalThis.net19Theme = {
       const meta = comment.querySelector(':scope > details > summary [slot="commentMeta"] .author-name-meta');
       const trigger = meta?.closest('span.author-hovercard-trigger');
       if (!trigger) continue;
-      const group = comment.querySelector(':scope > shreddit-comment-action-row')?.shadowRoot?.querySelector('.rpl-vote-button-group');
-      const vote = group ? (group.querySelector('button[upvote][aria-pressed="true"]') ? 1 : group.querySelector('button[downvote][aria-pressed="true"]') ? -1 : 0) : 0;
-      let start = voteStart.get(comment);
-      if (!start) { start = { score: +comment.getAttribute('score'), vote }; voteStart.set(comment, start); }
-      const n = start.score - start.vote + vote;
+      const row = [...comment.querySelectorAll('shreddit-comment-action-row')].find(r => r.closest('shreddit-comment') === comment);
+      const live = row?.shadowRoot?.querySelector('.rpl-vote-button-group > span faceplate-number')?.getAttribute('number');
+      const n = live != null && live !== '' ? +live : +(row?.getAttribute('score') ?? comment.getAttribute('score'));
       if (!Number.isFinite(n)) continue;
       const text = `${pretty(n)} point${n === 1 ? '' : 's'}`;
       const shown = trigger.parentElement.querySelector(':scope > [data-n19-points]');
       if (!shown) mark(trigger, 'data-n19-points', text, s => trigger.after(s));
       else if (shown.textContent !== text) shown.textContent = text;
+    }
+    for (const host of document.querySelectorAll('shreddit-post, shreddit-comment-action-row')) {
+      const group = host.shadowRoot?.querySelector('.rpl-vote-button-group');
+      if (!group) continue;
+      const vote = group.querySelector('button[upvote][aria-pressed="true"]') ? 'up' : group.querySelector('button[downvote][aria-pressed="true"]') ? 'down' : '';
+      if ((group.getAttribute('data-n19-vote') ?? '') !== vote) group.setAttribute('data-n19-vote', vote);
     }
     for (const search of document.querySelectorAll('reddit-search-large, faceplate-search-input, pdp-comment-search-input')) {
       const css = SEARCH + FIELD + (search.tagName === 'REDDIT-SEARCH-LARGE' ? SEARCH_FIELD : '');
@@ -720,7 +723,7 @@ globalThis.net19Theme = {
   const later = net19.frame(scan);
   const start = () => {
     scan();
-    new MutationObserver(() => { retries = 0; later(); }).observe(document.documentElement, { childList: true, subtree: true });
+    new MutationObserver(() => { retries = 0; later(); }).observe(document.documentElement, { childList: true, subtree: true, attributes: true, attributeFilter: ['vote-state', 'score'] });
     addEventListener('click', event => { if (event.composedPath().some(n => n.hasAttribute?.('upvote') || n.hasAttribute?.('downvote'))) for (const wait of [40, 150, 700, 1600]) setTimeout(later, wait); }, true);
     setInterval(() => times(document), 30000);
   };

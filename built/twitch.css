@@ -137,6 +137,7 @@ nav.top-nav [class*="ScKeyboardPromptContainer"]{display:none!important}
 :where(:root:not([data-n19-safe])) .metadata-layout__support>:first-child,.metadata-layout__support:where(:root:not([data-n19-safe]))>:first-child{flex:0 0 auto!important;max-width:100%!important}
 :where(:root:not([data-n19-safe])) .metadata-layout__support>:nth-child(2),.metadata-layout__support:where(:root:not([data-n19-safe]))>:nth-child(2){flex:1 1 auto!important;min-width:0!important;max-width:100%!important;flex-wrap:wrap!important;row-gap:8px!important;justify-content:flex-end!important}
 :where(:root:not([data-n19-safe])) .metadata-layout__support>:nth-child(2)>div,.metadata-layout__support:where(:root:not([data-n19-safe]))>:nth-child(2)>div{flex-wrap:wrap!important;justify-content:flex-end!important;row-gap:8px!important;min-width:0!important;max-width:100%!important}
+.metadata-layout__support>[class*="metadata-layout__secondary"]:not(:has(button,a,svg,img,input)){display:none!important}
 .side-nav__title:has(>[data-net19-hidden]:only-child){display:none!important}
 :where(:root:not([data-n19-safe])) .followed-side-nav-header,.followed-side-nav-header:where(:root:not([data-n19-safe])){margin:4px 0!important}
 :where(:root:not([data-n19-safe])) .followed-side-nav-header [class*="followed-side-nav-header__dropdown"],.followed-side-nav-header:where(:root:not([data-n19-safe])) [class*="followed-side-nav-header__dropdown"]{height:32px!important;padding-right:44px!important;box-sizing:border-box!important}

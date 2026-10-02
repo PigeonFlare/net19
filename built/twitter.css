@@ -24,6 +24,7 @@ a[aria-label="X"].size-8:has(>svg[data-icon="icon-logo-x"]){background-size:24px
 [class*="bg-btn-primary"],[data-testid="SideNav_NewTweet_Button"] *,:is([data-testid="tweetButtonInline"],[data-testid="tweetButton"]) *{color:#fff!important}
 [data-testid="SideNav_NewTweet_Button"],[data-testid="tweetButtonInline"],[data-testid="tweetButton"],[data-testid="FloatingActionButtons_Tweet_Button"]{background-color:var(--n19-blue)!important;border-color:var(--n19-blue)!important;box-shadow:none!important}
 [data-testid="SideNav_NewTweet_Button"]:hover,[data-testid="tweetButtonInline"]:hover,[data-testid="tweetButton"]:hover{background-color:var(--n19-blue-hover)!important}
+:is([data-testid="tweetButtonInline"],[data-testid="tweetButton"]):is(:disabled,[aria-disabled="true"]){opacity:1!important;background-color:color-mix(in srgb, var(--n19-blue) 50%, transparent)!important;border-color:transparent!important}
 :where(:root:not([data-n19-safe])) [data-testid="SideNav_NewTweet_Button"],[data-testid="SideNav_NewTweet_Button"]:where(:root:not([data-n19-safe])){min-height:49px!important}
 [data-testid="SideNav_NewTweet_Button"] span{font-size:15px!important;font-weight:700!important}
 .bg-gray-1100.rounded-full{background-color:var(--n19-blue)!important;color:#fff!important}

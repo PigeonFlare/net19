@@ -631,3 +631,4 @@ html[data-n19-settings]{--n19-page:var(--n19-card)}
 :where(:root:not([data-n19-safe])) [data-n19-profile-banner],[data-n19-profile-banner]:where(:root:not([data-n19-safe])){overflow:visible!important}
 :where(:root:not([data-n19-safe])) #right-sidebar-contents aside[aria-label="Profile information"] :is(div.p-md,div:has(>div.grid)):has(>[data-n19-profile-head]),#right-sidebar-contents:where(:root:not([data-n19-safe])) aside[aria-label="Profile information"] :is(div.p-md,div:has(>div.grid)):has(>[data-n19-profile-head]){padding:12px!important;overflow:visible!important;height:auto!important}
 :where(:root:not([data-n19-safe])) button[data-n19-sort-button] [data-n19-sort-text]{display:inline-block}
+:where(:root:not([data-n19-safe])) shreddit-comment .relative:has(.author-hovercard-trigger:is(:hover,:focus-within)):not(:has(.relative .author-hovercard-trigger:is(:hover,:focus-within))){z-index:5!important}
