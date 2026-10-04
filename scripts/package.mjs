@@ -2,13 +2,13 @@ import { zipSync } from 'fflate';
 import { readdir, readFile, mkdir, writeFile } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 const root = new URL('../', import.meta.url);
-const EXTENSION = /^(?:icons\/\d+\.png|(?:background|popup|content|main|runtime|safe|safe-narrow)\.js|popup\.html|ui\.css|themes\/[a-z0-9]+\.js|built\/[a-z0-9]+\.css|manifest\.json)$/;
+const EXTENSION = /^(?:icons\/\d+\.png|dist\/(?:background|popup|content|main|runtime|safe|safe-narrow)\.js|dist\/themes\/[a-z0-9]+\.css|popup\.html|ui\.css|themes\/[a-z0-9]+\.js|manifest\.json)$/;
 const SOURCES = /^(?:themes\/[a-z0-9]+\.css|icons\/logo\.png)$/;
 const files = {};
 async function collect(directory, prefix = '') {
   for (const entry of (await readdir(directory, { withFileTypes: true })).sort((a, b) => a.name.localeCompare(b.name))) {
     const name = prefix + entry.name;
-    if (entry.isDirectory()) { if (!prefix && ['icons', 'themes', 'built'].includes(entry.name)) await collect(new URL(entry.name + '/', directory), name + '/'); }
+    if (entry.isDirectory()) { if ((!prefix && ['icons', 'themes', 'dist'].includes(entry.name)) || name === 'dist/themes') await collect(new URL(entry.name + '/', directory), name + '/'); }
     else if (EXTENSION.test(name)) files[name] = new Uint8Array(await readFile(new URL(entry.name, directory)));
     else if (prefix && !SOURCES.test(name)) throw new Error(`Unexpected file in the extension: ${name}`);
   }

@@ -51,4 +51,4 @@ npm ci           # install needed tools once
 npm run check    # build and run all tests
 ```
 
-Site designs live in `themes/`, and the main background functionality lives in `src/`. `npm run build` turns `src/` into `background.js`, `popup.js` and `content.js`. Don't edit those three by hand; they're kept in the folder so it loads in Chrome without building. See [Architecture](docs/ARCHITECTURE.md) for how other parts of the extension work together.
+Site designs live in `themes/`, and the main background functionality lives in `src/`. `npm run build` writes everything generated into `dist/`. Don't edit `dist/` by hand; it's committed so the folder loads in Chrome without building. See [Architecture](docs/ARCHITECTURE.md) for how the parts fit together and [Contributing](docs/CONTRIBUTING.md) for how themes are made and checked.

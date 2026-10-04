@@ -12,8 +12,8 @@ export type HandmadeTheme = {
 export function themeFiles(theme: HandmadeTheme): { css: string[]; js: string[] } {
   const base = theme.extends;
   return {
-    css: base ? [`built/${base}.css`, `built/${theme.id}.css`] : [`built/${theme.id}.css`],
-    js: ['runtime.js', `themes/${base ?? theme.id}.js`, 'content.js'],
+    css: base ? [`dist/themes/${base}.css`, `dist/themes/${theme.id}.css`] : [`dist/themes/${theme.id}.css`],
+    js: ['dist/runtime.js', `themes/${base ?? theme.id}.js`, 'dist/content.js'],
   };
 }
 

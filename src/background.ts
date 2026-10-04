@@ -20,7 +20,7 @@ function syncScripts(): Promise<unknown> {
       id: `net19-theme-${theme.id}`, matches: themeMatches(theme), ...exclude(themeExcludes(theme, config.pausedSites)), ...themeFiles(theme), runAt: 'document_start', allFrames: !!theme.frames, persistAcrossSessions: true }));
     const paused = [...new Set(config.pausedSites.flatMap(siteMatches))].sort();
     const watched = [...new Set(THEMES.filter(active).flatMap(themeMatches))].sort();
-    if (watched.length) desired.push({ id: 'net19-watch', matches: watched, ...exclude(paused), js: ['main.js'], world: 'MAIN', runAt: 'document_start', persistAcrossSessions: true });
+    if (watched.length) desired.push({ id: 'net19-watch', matches: watched, ...exclude(paused), js: ['dist/main.js'], world: 'MAIN', runAt: 'document_start', persistAcrossSessions: true });
     await reconcile(registered.filter(script => script.id.startsWith('net19-') && !script.id.startsWith(SAFE_ID)), desired);
     await syncSafe(config, registered);
   });
@@ -47,7 +47,7 @@ async function syncSafe(config: Settings, registered: chrome.scripting.Registere
     return config.enabled && theme && !themePaused(theme, config.disabledHosts);
   });
   const group = (narrow: boolean) => [...new Set(keys.filter(key => key.endsWith(' narrow') === narrow).flatMap(safeMatches))].sort();
-  const desired: chrome.scripting.RegisteredContentScript[] = [[SAFE_ID, 'safe.js', group(false)], [`${SAFE_ID}-narrow`, 'safe-narrow.js', group(true)]]
+  const desired: chrome.scripting.RegisteredContentScript[] = [[SAFE_ID, 'dist/safe.js', group(false)], [`${SAFE_ID}-narrow`, 'dist/safe-narrow.js', group(true)]]
     .filter(([, , matches]) => matches.length)
     .map(([id, file, matches]) => ({ id: id as string, js: [file as string], matches: matches as string[], ...exclude([...new Set(config.pausedSites.flatMap(siteMatches))].sort()), runAt: 'document_start', persistAcrossSessions: true }));
   await reconcile(registered.filter(script => script.id.startsWith(SAFE_ID)), desired);

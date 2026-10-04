@@ -82,11 +82,11 @@ test('theme geometry is gated so a theme can step back to its colors, fonts and 
   ].join('\n'));
 });
 
-test('built stylesheets are up to date with themes/', () => {
+test('compiled stylesheets in dist/themes are up to date with themes/', () => {
   for (const file of readdirSync('themes').filter(name => name.endsWith('.css'))) {
-    assert.equal(readFileSync(`built/${file}`, 'utf8'), compileTheme(readFileSync(`themes/${file}`, 'utf8')), `built/${file} is stale: run npm run build`);
+    assert.equal(readFileSync(`dist/themes/${file}`, 'utf8'), compileTheme(readFileSync(`themes/${file}`, 'utf8')), `dist/themes/${file} is stale: run npm run build`);
   }
-  assert.deepEqual(readdirSync('built').sort(), readdirSync('themes').filter(name => name.endsWith('.css')).sort());
+  assert.deepEqual(readdirSync('dist/themes').sort(), readdirSync('themes').filter(name => name.endsWith('.css')).sort());
 });
 
 test('evidence files back every 2019 feature with a source and name what they hide', () => {

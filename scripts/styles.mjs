@@ -97,7 +97,7 @@ export function compileTheme(css) {
 }
 
 export async function buildStyles(root) {
-  const source = new URL('themes/', root), target = new URL('built/', root);
+  const source = new URL('themes/', root), target = new URL('dist/themes/', root);
   await rm(target, { recursive: true, force: true });
   await mkdir(target, { recursive: true });
   for (const file of (await readdir(source)).filter(name => name.endsWith('.css')).sort()) {
