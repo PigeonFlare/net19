@@ -1,7 +1,7 @@
 globalThis.net19Theme = {
   detect: () => document.documentElement.classList.contains('theme-dark') ? 'dark' : 'light',
   watch: ['class'],
-  later: /^(?:answers|reddit answers|ask|ask reddit answers|new answers|get (?:the )?app|get the reddit app|scan (?:this|the) qr code.*|edit avatar|create avatar|style avatar|avatar|collectible avatars|collectibles|vault|achievements|view achievements|reddit recap|recap|reddit pro|try reddit pro(?:\s*beta)?|contributor program|earn|advertise on reddit|advertise|translate|translate to english|show original|view translation|translations?|see translation|auto-translate)$/i,
+  later: /^(?:showing all content|answers|reddit answers|ask|ask reddit answers|new answers|get (?:the )?app|get the reddit app|scan (?:this|the) qr code.*|edit avatar|create avatar|style avatar|avatar|collectible avatars|collectibles|vault|achievements|view achievements|reddit recap|recap|reddit pro|try reddit pro(?:\s*beta)?|contributor program|earn|advertise on reddit|advertise|translate|translate to english|show original|view translation|translations?|see translation|auto-translate)$/i,
   keepLabels: /^(?:askreddit|r\/ask\w*)$/i,
 };
 (() => {
@@ -41,7 +41,8 @@ globalThis.net19Theme = {
   `;
   const CLASSIC = `
     :host { display: block !important; }
-    .grid { grid-template-columns: auto 1fr !important; }
+    .grid { grid-template-columns: auto minmax(0, 1fr) !important; }
+    .grid > * { min-width: 0 !important; }
     div:has(> slot[name="thumbnail"]) { align-self: start !important; }
     div:has(> div > slot[name="credit-bar"]) { display: flex !important; flex-direction: column !important; margin: 0 !important; }
     div:has(> slot[name="credit-bar"]) { order: 2 !important; margin: 2px 0 0 !important; }
