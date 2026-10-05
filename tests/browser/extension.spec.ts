@@ -258,8 +258,13 @@ test('popup is two switches and a support link, nothing else', async ({}, info) 
   const excluded = () => worker.evaluate(async () => (await chrome.scripting.getRegisteredContentScripts()).filter(s => s.id === 'net19-theme-youtube').flatMap(s => s.excludeMatches ?? []).some(m => m.includes('youtube.com')));
   await expect.poll(excluded).toBe(true);
   await expect.poll(scripts).toContain('net19-theme-google');
-  await site.reload();
   await expect(site.locator('html')).not.toHaveAttribute('data-net19-mode', /.*/);
+  await popup.locator('#site-switch').check();
+  await expect(site.locator('html')).toHaveAttribute('data-net19-mode', /.+/);
+  await popup.locator('#power').uncheck();
+  await expect(site.locator('html')).not.toHaveAttribute('data-net19-mode', /.*/);
+  await popup.locator('#power').check();
+  await expect(site.locator('html')).toHaveAttribute('data-net19-mode', /.+/);
 });
 
 test('the site switch pauses only the exact site it names', async () => {

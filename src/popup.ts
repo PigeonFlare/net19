@@ -14,6 +14,7 @@ const siteSwitch = document.getElementById('site-switch') as HTMLInputElement;
 let settings: Settings;
 let theme: HandmadeTheme | undefined;
 let site = '';
+let tabId: number | undefined;
 
 function paint(): void {
   power.disabled = false;
@@ -21,9 +22,12 @@ function paint(): void {
   siteSwitch.checked = !!theme && !themePaused(theme, settings.disabledHosts) && !settings.pausedSites.includes(site);
   siteSwitch.disabled = !settings.enabled;
 }
+const themedHere = (config: Settings) => !!theme && config.enabled && !themePaused(theme, config.disabledHosts) && !config.pausedSites.includes(site);
 async function save(patch: Partial<Settings>): Promise<void> {
+  const before = themedHere(settings);
   settings = await send<Settings>('SETTINGS', { patch });
   paint();
+  if (tabId !== undefined && themedHere(settings) !== before) await chrome.tabs.reload(tabId).catch(() => undefined);
 }
 power.addEventListener('change', () => { void save({ enabled: power.checked }).catch(paint); });
 siteSwitch.addEventListener('change', () => {
@@ -55,6 +59,7 @@ void (async () => {
   if (theme && !themeCover(theme, host)) theme = undefined;
   if (theme) {
     site = siteKey(host);
+    tabId = tab?.id;
     document.getElementById('site')!.textContent = site;
     siteSwitch.setAttribute('aria-label', theme.name);
     document.getElementById('site-row')!.hidden = false;

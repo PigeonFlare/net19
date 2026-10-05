@@ -10,6 +10,14 @@ body:
       placeholder: https://www.youtube.com/watch?v=...
     validations:
       required: true
+  - type: input
+    id: browser
+    attributes:
+      label: Browser version
+      description: Open chrome://version and copy the first line.
+      placeholder: Google Chrome 141.0.7390.55 (Official Build) (arm64)
+    validations:
+      required: true
   - type: textarea
     id: description
     attributes:
