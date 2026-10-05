@@ -72,7 +72,7 @@ globalThis.net19Theme = {
     #unpacked-actions :is(a, button).button:hover { background: var(--n19-hover) !important; }
     #unpacked-actions > :is([data-item-id="award"], [data-item-id*="repost" i], [data-item-id*="crosspost" i], [data-n19-later]) { display: none !important; }
     #unpacked-actions .rpl-cab--content { text-transform: capitalize !important; color: inherit !important; font: inherit !important; }
-    #unpacked-actions .rpl-cab--leading-icon::before { content: ""; flex: 0 0 20px; width: 20px; height: 20px; margin: 0 6px 0 0; background: currentColor; -webkit-mask: no-repeat center / 20px 20px; mask: no-repeat center / 20px 20px; }
+    #unpacked-actions :is([data-item-id="comments"], [data-item-id="share"], [data-item-id="award"], [data-item-id="report"], [data-item-id="save"], [data-item-id="hide"]) .rpl-cab--leading-icon::before { content: ""; flex: 0 0 20px; width: 20px; height: 20px; margin: 0 6px 0 0; background: currentColor; -webkit-mask: no-repeat center / 20px 20px; mask: no-repeat center / 20px 20px; }
     #unpacked-actions [data-item-id="comments"] .rpl-cab--leading-icon::before { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10%202.5c-4.4%200-8%202.9-8%206.6%200%202%201.1%203.8%202.8%205L4%2017.5l4-2.1c.6.1%201.3.2%202%20.2%204.4%200%208-2.9%208-6.5S14.4%202.5%2010%202.5zm0%2011.3c-.7%200-1.3-.1-1.9-.2l-.4-.1-1.6.8.3-1.4-.5-.3C4.5%2011.7%203.8%2010.4%203.8%209.1%203.8%206.4%206.6%204.3%2010%204.3s6.2%202.1%206.2%204.8-2.8%204.7-6.2%204.7z'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M10%202.5c-4.4%200-8%202.9-8%206.6%200%202%201.1%203.8%202.8%205L4%2017.5l4-2.1c.6.1%201.3.2%202%20.2%204.4%200%208-2.9%208-6.5S14.4%202.5%2010%202.5zm0%2011.3c-.7%200-1.3-.1-1.9-.2l-.4-.1-1.6.8.3-1.4-.5-.3C4.5%2011.7%203.8%2010.4%203.8%209.1%203.8%206.4%206.6%204.3%2010%204.3s6.2%202.1%206.2%204.8-2.8%204.7-6.2%204.7z'/%3E%3C/svg%3E"); }
     #unpacked-actions [data-item-id="share"] .rpl-cab--leading-icon::before { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M11.5%203.5v3.1C6.4%207.2%203.5%2010.6%203%2016c1.7-2.6%204.3-3.9%208.5-3.9v3.2L17.5%209.4z'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M11.5%203.5v3.1C6.4%207.2%203.5%2010.6%203%2016c1.7-2.6%204.3-3.9%208.5-3.9v3.2L17.5%209.4z'/%3E%3C/svg%3E"); }
     #unpacked-actions [data-item-id="award"] .rpl-cab--leading-icon::before { -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M16%207h-2.3c.4-.4.6-1%20.6-1.6C14.3%204%2013.2%203%2011.8%203c-.8%200-1.4.4-1.8%201-.4-.6-1-1-1.8-1C6.8%203%205.7%204%205.7%205.4c0%20.6.2%201.2.6%201.6H4c-.6%200-1%20.4-1%201v2c0%20.6.4%201%201%201v6c0%20.6.4%201%201%201h10c.6%200%201-.4%201-1v-6c.6%200%201-.4%201-1V8c0-.6-.4-1-1-1zm-4.2-2.3c.5%200%20.8.3.8.7s-.3.7-.8.7h-1.1v-.3c0-.6.5-1.1%201.1-1.1zM7.4%205.4c0-.4.3-.7.8-.7.6%200%201.1.5%201.1%201.1v.3H8.2c-.5%200-.8-.3-.8-.7zM9.2%2016H5.8v-6h3.4zm0-7.3H4.8V8.3h4.4zm5%207.3h-3.4v-6h3.4zm1-7.3h-4.4V8.3h4.4z'/%3E%3C/svg%3E"); mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M16%207h-2.3c.4-.4.6-1%20.6-1.6C14.3%204%2013.2%203%2011.8%203c-.8%200-1.4.4-1.8%201-.4-.6-1-1-1.8-1C6.8%203%205.7%204%205.7%205.4c0%20.6.2%201.2.6%201.6H4c-.6%200-1%20.4-1%201v2c0%20.6.4%201%201%201v6c0%20.6.4%201%201%201h10c.6%200%201-.4%201-1v-6c.6%200%201-.4%201-1V8c0-.6-.4-1-1-1zm-4.2-2.3c.5%200%20.8.3.8.7s-.3.7-.8.7h-1.1v-.3c0-.6.5-1.1%201.1-1.1zM7.4%205.4c0-.4.3-.7.8-.7.6%200%201.1.5%201.1%201.1v.3H8.2c-.5%200-.8-.3-.8-.7zM9.2%2016H5.8v-6h3.4zm0-7.3H4.8V8.3h4.4zm5%207.3h-3.4v-6h3.4zm1-7.3h-4.4V8.3h4.4z'/%3E%3C/svg%3E"); }
@@ -556,6 +556,9 @@ globalThis.net19Theme = {
   const LEGAL_WORDS = new Map([['Reddit Rules', 'Content Policy']]);
   const STAT_LATER = /^Contributions$/;
   const hide = el => { if (el && !el.hasAttribute('data-n19-later')) el.setAttribute('data-n19-later', ''); };
+  const gone = el => { hide(el); if (el.getRootNode() !== document) el.style.setProperty('display', 'none', 'important'); };
+  const boxOf = (el, depth) => { for (let e = el, i = 0; e && i <= depth; e = e.parentElement, i++) if (parseFloat(getComputedStyle(e).borderTopWidth) > 0) return e; return null; };
+  const rowWith = (el, pattern) => { for (let e = el.parentElement, i = 0; e && i < 4; e = e.parentElement, i++) if ([...e.querySelectorAll('span, div, p')].some(x => !x.children.length && pattern.test(x.textContent.trim()))) return e.textContent.length < 120 ? e : null; return null; };
   const after2019 = () => {
     for (const a of document.querySelectorAll('#right-sidebar-container .legal-links a, .legal-links a')) {
       const text = a.textContent.replace(/\s+/g, ' ').trim();
@@ -574,6 +577,15 @@ globalThis.net19Theme = {
       if (previous && /^Installed Apps$/i.test(previous.textContent.trim())) hide(previous);
     }
     for (const p of document.querySelectorAll('#right-sidebar-container li p, #right-sidebar-container li span')) if (/^Unlocked by /.test(p.textContent.trim()) && !p.children.length) hide(p);
+    for (const host of document.querySelectorAll('shreddit-post, shreddit-profile-comment, [data-testid="profile-comment"], article')) for (const scope of [host, host.shadowRoot].filter(Boolean)) {
+      const walker = document.createTreeWalker(scope, NodeFilter.SHOW_TEXT, { acceptNode: n => /^\s*(?:Repost to another community|See More Insights)\s*$/i.test(n.nodeValue) ? NodeFilter.FILTER_ACCEPT : NodeFilter.FILTER_SKIP });
+      for (let n = walker.nextNode(); n; n = walker.nextNode()) {
+        const el = n.parentElement;
+        if (!el || el.closest('[data-n19-later]')) continue;
+        if (/repost/i.test(n.nodeValue)) gone(boxOf(el, 3) || el);
+        else gone(rowWith(el, /^[\d.,]+[KkMm]? views?$/) || el);
+      }
+    }
     for (const h of document.querySelectorAll('#right-sidebar-contents :is(h2, h3)')) {
       if (!/^Recent(?:ly viewed)? Posts$/i.test(h.textContent.trim())) continue;
       const box = h.closest('#right-sidebar-contents > *, aside, section') || h.parentElement;

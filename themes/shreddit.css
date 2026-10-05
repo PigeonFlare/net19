@@ -552,3 +552,5 @@ html[data-n19-settings] { --n19-page: var(--n19-card); }
 #right-sidebar-contents aside[aria-label="Profile information"] :is(div.p-md, div:has(> div.grid)):has(> [data-n19-profile-head]) { padding: 12px !important; overflow: visible !important; height: auto !important; }
 button[data-n19-sort-button] [data-n19-sort-text] { display: inline-block; }
 shreddit-comment .relative:has(.author-hovercard-trigger:is(:hover, :focus-within)):not(:has(.relative .author-hovercard-trigger:is(:hover, :focus-within))) { z-index: 5 !important; }
+shreddit-post shreddit-async-loader:has(> unpacking-overflow-menu) { flex: 1 1 0 !important; min-width: 0 !important; max-width: 100% !important; overflow: hidden !important; }
+shreddit-post unpacking-overflow-menu { min-width: 0 !important; max-width: 100% !important; }
