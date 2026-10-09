@@ -1,0 +1,11 @@
+{
+  "name": {
+    "message": "net19: YouTube, Reddit 등 2019년 옛 디자인"
+  },
+  "short_name": {
+    "message": "net19"
+  },
+  "description": {
+    "message": "YouTube, Reddit, Google, Twitter, Gmail, Amazon 등 170개 이상의 사이트를 2019년 클래식 디자인으로 되돌립니다. 라이트/다크 모드."
+  }
+}

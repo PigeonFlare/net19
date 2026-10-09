@@ -1,8 +1,8 @@
 {
   "name": "net19",
-  "version": "0.23.1",
+  "version": "0.23.2",
   "private": true,
-  "description": "Websites as they looked in 2019.",
+  "description": "Bring back the classic 2019 look of YouTube, Reddit, Google, Twitter, Gmail, Amazon and 170+ other sites. Light and dark mode. Free.",
   "type": "module",
   "scripts": {
     "build": "node scripts/build.mjs",

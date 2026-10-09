@@ -13,19 +13,30 @@ When you raise the version, change it in `manifest.json`, `package.json`, `packa
 
 ## Listing
 
-**Name:** net19
+The name and summary come from the package (`_locales/<language>/messages.json`, English in `en`), so the store shows a translated title and summary to people browsing in Spanish, Portuguese, French, German, Italian, Japanese, Korean, Russian and Chinese. The store limits the name to 75 characters and the summary to 132.
 
-**Summary:** Websites as they looked in 2019.
+**Name:** net19: Old 2019 Layout for YouTube, Reddit & More
+
+**Summary:** Bring back the classic 2019 look of YouTube, Reddit, Google, Twitter, Gmail, Amazon and 170+ other sites. Light and dark mode. Free.
 
 **Description:**
 
-net19 restyles more than 160 of the most visited websites, including Google, YouTube, Wikipedia, Reddit, Discord and the big news, shopping and game sites, to look as they did in 2019. Each look is designed by hand, applies before the page first appears, and follows your device's light or dark setting.
+Miss the old YouTube layout, classic Reddit, or the Google and Twitter you were used to? net19 brings back the 2019 design of 170+ popular websites, with no Shorts shelves, AI summaries or redesign clutter.
 
-Wikipedia and other wikis open in their legacy skins, and Reddit feeds open in Reddit's own Classic and Card views.
+Every few months the sites we use every day get overhauled without our input. One day short videos cover everyone's feed, the next there's an AI ready to summarize every post. net19 freezes their design at a time when it felt more functional.
 
-The popup has two switches, net19 on or off and on or off for the current site, and a link to support development.
+What you get
+• The old 2019 layout of YouTube, Reddit, Google Search, Gmail, Google Docs, Twitter (X), Discord, Twitch, Amazon, GitHub, Wikipedia, Instagram, Facebook and many news, shopping and gaming sites
+• Post-2019 features such as Shorts, AI answers and new promo banners hidden, while everything you use keeps working
+• Old Reddit's Classic and Card views, and Wikipedia's classic Vector skin
+• Light and dark mode that follow your device
+• The 2019 look applied before the page appears, with no flash of the new design
+• A switch to turn net19 off for any single site, or everywhere
 
-net19 runs on no other website and sends nothing anywhere: no account, server, analytics or telemetry. Some themes show a site's own older logos or fonts, which your browser loads from that site's own servers or, for a few sites' fonts, from a font service or file host (Google Fonts, Adobe Fonts, CloudFront).
+Private and open source
+net19 runs only on the sites it restyles and sends nothing anywhere: no account, no server, no analytics, no tracking. The code is open source on GitHub, so anyone can check what it does.
+
+Recommend a website or report an issue: https://github.com/PigeonFlare/net19/issues
 
 ## Disclosures
 
