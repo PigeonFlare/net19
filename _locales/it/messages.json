@@ -1,11 +1,11 @@
 {
   "name": {
-    "message": "net19: vecchio layout 2019 per YouTube, Reddit e altro"
+    "message": "net19: vecchio layout 2019 per Google, YouTube, Reddit e altro"
   },
   "short_name": {
     "message": "net19"
   },
   "description": {
-    "message": "Riporta il design classico del 2019 su YouTube, Reddit, Google, Twitter, Gmail, Amazon e oltre 170 siti. Modalità chiara e scura."
+    "message": "Il design classico del 2019 su Google, Gmail, Docs, Discord, Amazon, Wikipedia, Reddit e oltre 170 siti. Modalità chiara e scura."
   }
 }

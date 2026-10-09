@@ -15,20 +15,20 @@ When you raise the version, change it in `manifest.json`, `package.json`, `packa
 
 The name and summary come from the package (`_locales/<language>/messages.json`, English in `en`), so the store shows a translated title and summary to people browsing in Spanish, Portuguese, French, German, Italian, Japanese, Korean, Russian and Chinese. The store limits the name to 75 characters and the summary to 132.
 
-**Name:** net19: Old 2019 Layout for YouTube, Reddit & More
+**Name:** net19: Old 2019 Layout for Google, YouTube, Reddit & More
 
-**Summary:** Bring back the classic 2019 look of YouTube, Reddit, Google, Twitter, Gmail, Amazon and 170+ other sites. Light and dark mode. Free.
+**Summary:** Bring back the 2019 look of Google, Gmail, Docs, Discord, Amazon, Wikipedia, Reddit and 170+ other sites. Light and dark mode.
 
 **Description:**
 
-Miss the old YouTube layout, classic Reddit, or the Google and Twitter you were used to? net19 brings back the 2019 design of 170+ popular websites, with no Shorts shelves, AI summaries or redesign clutter.
+Miss the old Google, the Gmail and Google Docs you were used to, or Discord and Amazon before their redesigns? net19 brings back the 2019 design of 170+ popular websites, including ones with no official way back to their old look, without AI summaries, Shorts shelves or redesign clutter.
 
 Every few months the sites we use every day get overhauled without our input. One day short videos cover everyone's feed, the next there's an AI ready to summarize every post. net19 freezes their design at a time when it felt more functional.
 
 What you get
-• The old 2019 layout of YouTube, Reddit, Google Search, Gmail, Google Docs, Twitter (X), Discord, Twitch, Amazon, GitHub, Wikipedia, Instagram, Facebook and many news, shopping and gaming sites
-• Post-2019 features such as Shorts, AI answers and new promo banners hidden, while everything you use keeps working
-• Old Reddit's Classic and Card views, and Wikipedia's classic Vector skin
+• The 2019 look of Google Search, Gmail, Google Docs and Drive, Discord, Amazon, Wikipedia, GitHub, Twitch, Instagram, Facebook, eBay and many news, shopping and gaming sites, each restyled by hand
+• YouTube, Reddit and Twitter (X) in their 2019 designs too, including old Reddit's Classic and Card views
+• Post-2019 features such as AI answers, Shorts and new promo banners hidden, while everything you use keeps working
 • Light and dark mode that follow your device
 • The 2019 look applied before the page appears, with no flash of the new design
 • A switch to turn net19 off for any single site, or everywhere

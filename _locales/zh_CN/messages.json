@@ -1,11 +1,11 @@
 {
   "name": {
-    "message": "net19：YouTube、Reddit 等网站的 2019 旧版界面"
+    "message": "net19：Google、YouTube、Reddit 等网站的 2019 旧版界面"
   },
   "short_name": {
     "message": "net19"
   },
   "description": {
-    "message": "让 YouTube、Reddit、Google、Twitter、Gmail、Amazon 等 170 多个网站恢复 2019 年的经典设计。支持浅色和深色模式。"
+    "message": "让 Google、Gmail、文档、Discord、Amazon、维基百科、Reddit 等 170 多个网站恢复 2019 年的经典设计。支持浅色和深色模式。"
   }
 }
