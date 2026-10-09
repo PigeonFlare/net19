@@ -281,14 +281,12 @@ test('the site switch pauses only the exact site it names', async () => {
   await expect(popup.locator('#site-switch')).toBeChecked();
   await popup.locator('#site-switch').uncheck();
   await expect.poll(async () => (await worker.evaluate(async () => (await chrome.scripting.getRegisteredContentScripts({ ids: ['net19-theme-youtube'] }))[0]?.excludeMatches ?? []))).toContain('*://music.youtube.com/*');
-  await music.reload();
   await expect(music.locator('html')).not.toHaveAttribute('data-net19-mode', /.*/);
   await expect((await open('https://www.youtube.com/')).locator('html')).toHaveAttribute('data-net19-mode', /.+/);
   await popup.reload();
   await expect(popup.locator('#site-switch')).not.toBeChecked();
   await popup.locator('#site-switch').check();
   await expect.poll(async () => (await worker.evaluate(async () => { const s = (await chrome.scripting.getRegisteredContentScripts()).find(s => s.id === 'net19-theme-youtube'); return s ? (s.excludeMatches ?? []).length : -1; }))).toBe(0);
-  await music.reload();
   await expect(music.locator('html')).toHaveAttribute('data-net19-mode', /.+/);
 });
 
