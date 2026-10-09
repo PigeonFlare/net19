@@ -122,12 +122,11 @@ test('docs and metadata describe the current release', () => {
 
 test('store name and summary stay within limits and name at most three sites', () => {
   const sites = [...new Set(THEMES.map(theme => theme.name.split(/ and | & /)[0]))].filter(name => name.length > 2);
-  for (const locale of readdirSync('_locales')) {
-    const messages = JSON.parse(readFileSync(`_locales/${locale}/messages.json`, 'utf8'));
-    assert.ok(messages.name.message.length <= 75 && messages.description.message.length <= 132, locale);
-    for (const key of ['name', 'description']) {
-      const named = sites.filter(site => messages[key].message.includes(site));
-      assert.ok(named.length <= 3, `${locale} ${key} names ${named.join(', ')}`);
-    }
+  const manifest = JSON.parse(readFileSync('manifest.json', 'utf8'));
+  assert.ok(!existsSync('_locales') && !manifest.default_locale, 'every store language gets its own description to keep clean, so the listing stays English-only');
+  assert.ok(manifest.name.length <= 75 && manifest.description.length <= 132);
+  for (const key of ['name', 'description']) {
+    const named = sites.filter(site => manifest[key].includes(site));
+    assert.ok(named.length <= 3, `${key} names ${named.join(', ')}`);
   }
 });

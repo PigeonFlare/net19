@@ -1,10 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "__MSG_name__",
-  "short_name": "__MSG_short_name__",
-  "default_locale": "en",
-  "version": "0.23.4",
-  "description": "__MSG_description__",
+  "name": "net19: Old 2019 Layout for Google, YouTube, Reddit & More",
+  "version": "0.23.5",
+  "description": "Bring back the classic 2019 design of Google, YouTube and 170+ other popular websites. Light and dark mode, free and private.",
   "minimum_chrome_version": "120",
   "permissions": [
     "storage",

@@ -13,7 +13,7 @@ When you raise the version, change it in `manifest.json`, `package.json`, `packa
 
 ## Listing
 
-The name and summary come from the package (`_locales/<language>/messages.json`, English in `en`), so the store shows a translated title and summary to people browsing in Spanish, Portuguese, French, German, Italian, Japanese, Korean, Russian and Chinese. The store limits the name to 75 characters and the summary to 132.
+The name and summary come from `manifest.json`; the store limits them to 75 and 132 characters. The listing is English-only on purpose. Every language a package declares in `_locales` gets its own description field in the dashboard, copied from the English one at the time, and those copies have to be kept clean by hand: 0.23.4 was rejected for keyword spam because nine of them still held an old description with a list of thirteen sites.
 
 Keep site names out of lists. The store rejected 0.23.3 for keyword spam because the summary named seven sites and the description listed thirteen in a row. Name at most two or three sites in any one place, inside a normal sentence, and let the screenshots show the rest.
 
