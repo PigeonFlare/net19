@@ -6,7 +6,7 @@
 npm ci
 npm run check
 npm audit --omit=dev
-npm run package   # artifacts/net19-<version>.zip
+npm run package   # artifacts/net19-<version>.zip; keeps the two newest releases there and deletes older ones
 ```
 
 When you raise the version, change it in `manifest.json`, `package.json`, `package-lock.json`, and the `PRIVACY.md` header; `npm test` fails until they all match, and until the site counts in `PRIVACY.md` and `docs/ARCHITECTURE.md` match `src/themes.ts`.
