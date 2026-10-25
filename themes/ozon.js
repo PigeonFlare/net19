@@ -5,7 +5,7 @@ globalThis.net19Theme = {
   const mark = () => {
     const header = document.querySelector('[data-widget="header"]');
     if (!header) return;
-    const home = header.querySelector('a[href="/"] img, a[href="https://www.ozon.ru/"] img');
+    const home = header.querySelector(`a[href="/"] img, a[href="https://${location.hostname}/"] img`);
     if (home) { if (!home.hasAttribute('data-n19-oz')) home.setAttribute('data-n19-oz', 'logo'); return; }
     if (header.querySelector('img[data-n19-oz]')) return;
     for (const img of header.querySelectorAll('img')) {

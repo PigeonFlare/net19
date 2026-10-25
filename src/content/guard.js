@@ -241,18 +241,18 @@ import { rgba } from './color.js';
     }
     return colors.size === 1 ? first : null;
   };
+  const forget = () => {
+    for (const el of inked) {
+      const before = inline.get(el);
+      if (before) { el.style.setProperty('color', before[0], before[1]); el.style.setProperty('-webkit-text-fill-color', before[2], before[3]); if (!before[0]) el.style.removeProperty('color'); if (!before[2]) el.style.removeProperty('-webkit-text-fill-color'); inline.delete(el); }
+      el.removeAttribute('data-net19-ink'); original.delete(el);
+    }
+    inked.clear();
+  };
   const check = () => {
     if (!document.body) return;
-    const now = [root.className, document.body.className, root.getAttribute('data-net19-mode'), root.getAttribute('data-net19-recolor'), document.styleSheets.length, document.adoptedStyleSheets.length].join('|');
-    if (now !== context) {
-      context = now;
-      for (const el of inked) {
-        const before = inline.get(el);
-        if (before) { el.style.setProperty('color', before[0], before[1]); el.style.setProperty('-webkit-text-fill-color', before[2], before[3]); if (!before[0]) el.style.removeProperty('color'); if (!before[2]) el.style.removeProperty('-webkit-text-fill-color'); inline.delete(el); }
-        el.removeAttribute('data-net19-ink'); original.delete(el);
-      }
-      inked.clear();
-    }
+    const now = [root.className, document.body.className, root.getAttribute('data-net19-mode'), root.getAttribute('data-net19-recolor'), root.hasAttribute('data-net19-settling'), document.styleSheets.length, document.adoptedStyleSheets.length].join('|');
+    if (now !== context) { context = now; forget(); }
     for (const el of inked) if (!el.isConnected) inked.delete(el);
     flips = new Map(); layerOf = new Map(); mediaOf = new Map(); fades = new Map();
     const view = { w: innerWidth, h: innerHeight };
@@ -387,6 +387,7 @@ import { rgba } from './color.js';
     timer = setTimeout(() => {
       timer = 0;
       if (!dirty) return;
+      if (root.hasAttribute('data-net19-settling')) { soon(100); return; }
       const wait = Math.max(600, cost * 6) - (performance.now() - lastRun);
       if (wait > 0) { soon(wait); return; }
       dirty = false; lastRun = performance.now();
@@ -411,7 +412,10 @@ import { rgba } from './color.js';
       }
       if (added) { dirty = true; soon(); }
     }).observe(root, { childList: true, subtree: true, attributes: true, attributeFilter: ['class', 'style', 'hidden', 'open', 'aria-expanded', 'placeholder', 'aria-label', 'role'] });
-    new MutationObserver(() => { dirty = true; soon(50); }).observe(root, { attributes: true, attributeFilter: ['data-net19-mode', 'data-net19-recolor', 'class'] });
+    new MutationObserver(records => {
+      if (records.some(r => r.attributeName !== 'class' && r.attributeName !== 'data-net19-settling')) forget();
+      dirty = true; soon(50);
+    }).observe(root, { attributes: true, attributeFilter: ['data-net19-mode', 'data-net19-recolor', 'data-net19-settling', 'class'] });
     for (const type of ['pointerover', 'focusin', 'click', 'keyup']) addEventListener(type, () => { dirty = true; soon(); }, { capture: true, passive: true });
     for (const type of ['transitionend', 'animationend']) addEventListener(type, () => { dirty = true; soon(200); }, { capture: true, passive: true });
     addEventListener('scroll', () => { dirty = true; soon(300); }, { capture: true, passive: true });

@@ -73,15 +73,17 @@ export function makeRecolor(target) {
 const SKIP = new Set(['IMG', 'VIDEO', 'CANVAS', 'IFRAME', 'EMBED', 'OBJECT', 'PICTURE', 'SOURCE', 'TRACK', 'SCRIPT', 'STYLE', 'LINK', 'META', 'NOSCRIPT', 'TEMPLATE', 'BR', 'WBR', 'HEAD', 'TITLE', 'image', 'foreignObject', 'mask', 'clipPath', 'defs', 'linearGradient', 'radialGradient', 'stop', 'filter', 'pattern', 'symbol']);
 const SIDES = ['top', 'right', 'bottom', 'left'];
 const OBSERVE = { childList: true, subtree: true, attributes: true, attributeOldValue: true };
-const OWN = /^data-net19-(?:rc|glyph|plain|photo|reading|recolor|mode|pending)$/;
+const OWN = /^data-net19-(?:rc|glyph|plain|photo|reading|recolor|mode|pending|settling)$/;
 const SHAPES = /^(svg|g|path|circle|rect|ellipse|line|polyline|polygon|text|tspan|use)$/;
 
 export function createRecolor(theme) {
   const root = document.documentElement;
   const ATTR = 'data-net19-rc', GLYPH = 'data-net19-glyph', READING = 'data-net19-reading', PLAIN = 'data-net19-plain', PHOTOED = 'data-net19-photo';
   let target = null, tools = null, sheet = null, observer = null, veil = 0;
-  const PENDING = 'data-net19-pending';
+  const PENDING = 'data-net19-pending', SETTLING = 'data-net19-settling';
   const reveal = () => { clearTimeout(veil); veil = 0; root.removeAttribute(PENDING); };
+  let settleTimer = 0;
+  const settled = () => { clearTimeout(settleTimer); settleTimer = 0; root.removeAttribute(SETTLING); };
   const inView = el => { const r = el.getBoundingClientRect(); return (r.width > 0 || r.height > 0) && r.bottom >= 0 && r.top <= innerHeight && r.right >= 0 && r.left <= innerWidth; };
   const sheetsReady = () => { for (const link of document.querySelectorAll('link[rel~="stylesheet" i]')) if (!link.sheet && !link.disabled && (!link.media || matchMedia(link.media).matches)) return false; return true; };
   const roots = new Set();
@@ -92,7 +94,7 @@ export function createRecolor(theme) {
     try { return closedRoot(el) || null; } catch { return null; }
   };
   const ids = new Map();
-  const decided = new WeakMap();
+  let decided = new WeakMap();
 
   const adopt = host => {
     if (roots.has(host)) return;
@@ -241,7 +243,7 @@ export function createRecolor(theme) {
     return id;
   };
 
-  const glyphs = new WeakSet();
+  let glyphs = new WeakSet();
   const ICON = /\.(png|gif|svg)(\b|[?#])|^data:image\/(png|gif|svg)/i;
   const PHOTO = /\.(jpe?g|webp|avif)(\b|[?#])|^data:image\/(jpeg|webp|avif)|[?&](fm|format)=(jpe?g|webp|avif)/i;
   const inkBySource = new Map();
@@ -296,7 +298,7 @@ export function createRecolor(theme) {
     return out;
   };
   let work = [], urgent = [], urgentSet = new Set(), workSet = new Set(), glyphWork = [], textureWork = [], pictureWork = [], first = true;
-  const exact = new WeakSet(), partsOf = new WeakMap();
+  let exact = new WeakSet(), partsOf = new WeakMap();
   const enqueue = (el, precise, soon = precise) => {
     if (precise) exact.add(el);
     if (soon) { if (!urgentSet.has(el)) { urgentSet.add(el); urgent.push(el); } } else if (!workSet.has(el)) { workSet.add(el); work.push(el); }
@@ -382,7 +384,7 @@ export function createRecolor(theme) {
     const eager = first || arriving;
     first = false;
     let near = 0;
-    if (document.body && arriving) {
+    if (document.body && eager) {
       const [nearUrgent, farUrgent] = nearFirst(urgent), [nearWork, farWork] = nearFirst(work);
       urgent = [...nearUrgent, ...nearWork]; work = [...farUrgent, ...farWork];
       for (const el of nearWork) { workSet.delete(el); urgentSet.add(el); }
@@ -401,6 +403,7 @@ export function createRecolor(theme) {
     while (urgent.length && within()) { const size = done < near ? Math.min(200, near - done) : 100; settle(urgent, size); done += size; }
     while (eager && work.length && within()) settle(work, 400);
     if (veil && !urgent.length && document.body && sheetsReady()) reveal();
+    if (settleTimer && !urgent.length) settled();
     judgeNow();
     if (urgent.length || (eager && work.length)) frame = requestAnimationFrame(process);
     else if (work.length && !idle) idle = later(background, { timeout: 800 });
@@ -437,7 +440,7 @@ export function createRecolor(theme) {
       inkOf(src).then(ink => { if (target && ink === (target === 'dark' ? 'light' : 'dark')) el.setAttribute(PLAIN, ''); });
     }
   };
-  const textured = new WeakSet(), pictured = new WeakSet();
+  let textured = new WeakSet(), pictured = new WeakSet();
   const busy = host => {
     const r = host.getBoundingClientRect();
     return host === document.body || host === root || (r.width * r.height > .9 * innerWidth * innerHeight && host.getElementsByTagName('*').length > 250);
@@ -528,7 +531,8 @@ export function createRecolor(theme) {
     const flat = theme.flat ? `,${theme.flat}` : '';
     return `html[data-net19-recolor]{color-scheme:${target}!important${bare ? `;background-color:${canvas}!important` : ''}}` +
       `html[data-net19-recolor] :is([${GLYPH}]${flat}){filter:invert(1) hue-rotate(180deg)!important}` +
-      `html[${PENDING}] body{opacity:0!important}`;
+      `html[${PENDING}] body{opacity:0!important}` +
+      `html[${SETTLING}] *,html[${SETTLING}] *::before,html[${SETTLING}] *::after{transition:none!important}`;
   };
 
   let base = null;
@@ -539,6 +543,7 @@ export function createRecolor(theme) {
     tools = makeRecolor(mode);
     root.setAttribute('data-net19-recolor', mode);
     if (document.readyState === 'loading') { root.setAttribute(PENDING, ''); veil = setTimeout(reveal, 400); }
+    else if (document.body) { root.setAttribute(SETTLING, ''); settleTimer = setTimeout(settled, 1500); }
     base = document.createElement('style');
     base.id = 'net19-recolor-base';
     (document.head || root).append(base);
@@ -568,7 +573,7 @@ export function createRecolor(theme) {
   };
   const stop = () => {
     if (!target) return;
-    reveal();
+    reveal(); settled();
     target = null; tools = null;
     observer?.disconnect(); observer = null;
     for (const type of ['pointerover', 'pointerout', 'focusin', 'focusout', 'pointerdown', 'pointerup', 'keyup', 'transitionend', 'animationend']) removeEventListener(type, onEvent, { capture: true });
@@ -580,6 +585,7 @@ export function createRecolor(theme) {
       host.adoptedStyleSheets = host.adoptedStyleSheets.filter(s => s !== sheet);
     }
     roots.clear(); ids.clear(); inkBySource.clear();
+    decided = new WeakMap(); partsOf = new WeakMap(); exact = new WeakSet(); glyphs = new WeakSet(); textured = new WeakSet(); pictured = new WeakSet();
     sheet = null; base?.remove(); base = null;
     root.removeAttribute('data-net19-recolor');
   };

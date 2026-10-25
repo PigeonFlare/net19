@@ -27,6 +27,11 @@ test('net19 only touches the sites it has a theme for', () => {
   assert.equal(themeFor('notyoutube.com'), undefined);
   assert.equal(themeFor('example.com'), undefined);
   assert.equal(themeFor('mail.google.com')?.id, 'gmail');
+  assert.equal(themeFor('www.google.co.uk')?.id, 'google');
+  assert.ok(themeMatches(rule('gmaps')).includes('*://www.google.de/maps*'));
+  assert.ok(themeMatches(rule('googleapps')).includes('*://www.google.fr/*') && rule('googleapps').exclude!.includes('*://www.google.fr/search*'));
+  for (const host of ['www.amazon.fr', 'www.ebay.de', 'de.yelp.ch', 'www.tripadvisor.ca', 'www.expedia.co.jp', 'www.aol.co.uk'])
+    assert.ok(themeFor(host) && themeCover(themeFor(host)!, host) > 0, host);
   assert.equal(themeCover(themeFor('mail.aol.com')!, 'mail.aol.com'), 0);
 });
 

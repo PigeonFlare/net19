@@ -17,10 +17,22 @@ export function themeFiles(theme: HandmadeTheme): { css: string[]; js: string[] 
   };
 }
 
-const GOOGLE_SEARCH = ['www.google.com', 'google.com'].flatMap(host => ['/', '/?*', '/search*', '/webhp*', '/imghp*'].map(path => `*://${host}${path}`));
+const endings = (name: string, list: string): string[] => list.split(' ').map(ending => `${name}.${ending}`);
+const GOOGLE_REGIONS = endings('google',
+  'ad ae com.af com.ag al am co.ao com.ar as at com.au az ba com.bd be bf bg com.bh bi bj com.bn com.bo com.br bs bt co.bw by com.bz ca cd cf ' +
+  'cg ch ci co.ck cl cm cn com.co co.cr com.cu cv com.cy cz de dj dk dm com.do dz com.ec ee com.eg es com.et fi com.fj fm fr ga ge gg com.gh ' +
+  'com.gi gl gm gr com.gt gy com.hk hn hr ht hu co.id ie co.il im co.in iq is it je com.jm jo co.jp co.ke com.kh ki kg co.kr com.kw kz la ' +
+  'com.lb li lk co.ls lt lu lv com.ly co.ma md me mg mk ml com.mm mn com.mt mu mv mw com.mx com.my co.mz com.na com.ng com.ni ne nl no com.np ' +
+  'nr nu co.nz com.om com.pa com.pe com.pg com.ph com.pk pl pn com.pr ps pt com.py com.qa ro ru rw com.sa com.sb sc se com.sg sh si sk com.sl ' +
+  'sn so sm sr st com.sv td tg co.th com.tj tl tm tn to com.tr tt com.tw co.tz com.ua co.ug co.uk com.uy co.uz com.vc co.ve co.vi com.vn vu ws ' +
+  'rs co.za co.zm co.zw cat');
+const GOOGLE_HOSTS = ['google.com', ...GOOGLE_REGIONS];
+const onGoogle = (domains: string[], path: string) => domains.flatMap(domain => [`*://www.${domain}${path}`, `*://${domain}${path}`]);
+
+const GOOGLE_SEARCH = ['/', '/?*', '/search*', '/webhp*', '/imghp*'].flatMap(path => onGoogle(GOOGLE_HOSTS, path));
 
 const GOOGLE_APPS: Record<string, string[]> = {
-  gmaps: ['*://www.google.com/maps*', '*://google.com/maps*', '*://maps.google.com/*'],
+  gmaps: [...onGoogle(GOOGLE_HOSTS, '/maps*'), '*://maps.google.com/*'],
   gcalendar: ['*://calendar.google.com/*'],
   gcontacts: ['*://contacts.google.com/*'],
   gphotos: ['*://photos.google.com/*'],
@@ -36,14 +48,14 @@ const GOOGLE_APPS: Record<string, string[]> = {
 };
 
 export const THEMES: HandmadeTheme[] = [
-  { id: 'google', name: 'Google', domains: ['google.com'], matches: GOOGLE_SEARCH },
+  { id: 'google', name: 'Google', domains: GOOGLE_HOSTS, matches: GOOGLE_SEARCH },
   { id: 'gmail', name: 'Gmail', domains: ['google.com'], matches: ['*://mail.google.com/*'] },
   { id: 'gdrive', name: 'Google Drive and Docs', domains: ['google.com'], matches: ['*://drive.google.com/*', '*://docs.google.com/*'] },
   { id: 'gnews', name: 'Google News', domains: ['google.com'], matches: ['*://news.google.com/*'] },
-  { id: 'googleapps', name: 'Google', domains: ['google.com', 'about.google', 'blog.google', 'store.google'],
-    matches: ['*://*.google.com/*', '*://google.com/*', '*://about.google/*', '*://blog.google/*', '*://store.google/*', '*://*.store.google/*'],
+  { id: 'googleapps', name: 'Google', domains: [...GOOGLE_HOSTS, 'about.google', 'blog.google', 'store.google'],
+    matches: ['*://*.google.com/*', '*://google.com/*', ...onGoogle(GOOGLE_REGIONS, '/*'), '*://about.google/*', '*://blog.google/*', '*://store.google/*', '*://*.store.google/*'],
     exclude: [...GOOGLE_SEARCH, '*://mail.google.com/*', '*://drive.google.com/*', '*://docs.google.com/*', '*://news.google.com/*', ...Object.values(GOOGLE_APPS).flat()] },
-  ...Object.entries(GOOGLE_APPS).map(([id, matches]): HandmadeTheme => ({ id, name: 'Google', domains: ['google.com'], matches, extends: 'googleapps', ...(id === 'glauncher' ? { frames: true } : {}) })),
+  ...Object.entries(GOOGLE_APPS).map(([id, matches]): HandmadeTheme => ({ id, name: 'Google', domains: id === 'gmaps' ? GOOGLE_HOSTS : ['google.com'], matches, extends: 'googleapps', ...(id === 'glauncher' ? { frames: true } : {}) })),
   { id: 'youtube', name: 'YouTube', domains: ['youtube.com'] },
   { id: 'wikipedia', name: 'Wikipedia', domains: ['wikipedia.org'],
     query: { pattern: '^https://[a-z-]+\\.wikipedia\\.org/wiki/[^?#]*(#.*)?$', params: [['useskin', 'vector']] } },
@@ -52,8 +64,8 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'github', name: 'GitHub', domains: ['github.com'] },
   { id: 'yahoo', name: 'Yahoo', domains: ['yahoo.com'] },
   { id: 'twitch', name: 'Twitch', domains: ['twitch.tv'] },
-  { id: 'amazon', name: 'Amazon', domains: ['amazon.com', 'amazon.co.uk', 'amazon.de', 'amazon.co.jp', 'amazon.in'] },
-  { id: 'ebay', name: 'eBay', domains: ['ebay.com'] },
+  { id: 'amazon', name: 'Amazon', domains: endings('amazon', 'com co.uk de co.jp in ca com.mx com.br fr es it nl com.au sg ae sa se pl com.tr com.be eg ie') },
+  { id: 'ebay', name: 'eBay', domains: endings('ebay', 'com co.uk de fr it es ca com.au at ch ie nl be pl com.sg com.hk com.my ph') },
   { id: 'bing', name: 'Bing', domains: ['bing.com'] },
   { id: 'duckduckgo', name: 'DuckDuckGo', domains: ['duckduckgo.com'] },
   { id: 'stackoverflow', name: 'Stack Overflow', domains: ['stackoverflow.com'] },
@@ -66,7 +78,7 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'instagram', name: 'Instagram', domains: ['instagram.com'] },
   { id: 'twitter', name: 'Twitter', domains: ['x.com', 'twitter.com'] },
   { id: 'linkedin', name: 'LinkedIn', domains: ['linkedin.com'] },
-  { id: 'yelp', name: 'Yelp', domains: ['yelp.com'] },
+  { id: 'yelp', name: 'Yelp', domains: endings('yelp', 'com ca co.uk com.au de fr es it ie at ch be nl co.nz com.sg com.hk co.jp com.br com.mx pl pt se dk no fi cz com.tr') },
   { id: 'discord', name: 'Discord', domains: ['discord.com'] },
   { id: 'telegram', name: 'Telegram', domains: ['telegram.org'], matches: ['*://web.telegram.org/*'] },
   { id: 'whatsapp', name: 'WhatsApp', domains: ['whatsapp.com'], matches: ['*://web.whatsapp.com/*'] },
@@ -77,7 +89,7 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'tiktok', name: 'TikTok', domains: ['tiktok.com'] },
   { id: 'merriamwebster', name: 'Merriam-Webster', domains: ['merriam-webster.com'] },
   { id: 'walmart', name: 'Walmart', domains: ['walmart.com'] },
-  { id: 'tripadvisor', name: 'Tripadvisor', domains: ['tripadvisor.com'] },
+  { id: 'tripadvisor', name: 'Tripadvisor', domains: endings('tripadvisor', 'com co.uk ca com.au de fr es it in ie co.nz com.sg com.my com.ph nl be at ch se dk no fi pt co com.br com.mx com.ar cl jp co.kr com.tw com.hk co.id co.za') },
   { id: 'weather', name: 'The Weather Channel', domains: ['weather.com'] },
   { id: 'spotify', name: 'Spotify', domains: ['spotify.com'] },
   { id: 'indeed', name: 'Indeed', domains: ['indeed.com'] },
@@ -106,17 +118,17 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'fedex', name: 'FedEx', domains: ['fedex.com'] },
   { id: 'lowes', name: "Lowe's", domains: ['lowes.com'] },
   { id: 'wunderground', name: 'Weather Underground', domains: ['wunderground.com'] },
-  { id: 'costco', name: 'Costco', domains: ['costco.com'] },
+  { id: 'costco', name: 'Costco', domains: endings('costco', 'com ca') },
   { id: 'weathergov', name: 'National Weather Service', domains: ['weather.gov'] },
   { id: 'craigslist', name: 'craigslist', domains: ['craigslist.org'] },
   { id: 'trustpilot', name: 'Trustpilot', domains: ['trustpilot.com'] },
   { id: 'canva', name: 'Canva', domains: ['canva.com'] },
   { id: 'ziprecruiter', name: 'ZipRecruiter', domains: ['ziprecruiter.com'] },
   { id: 'genius', name: 'Genius', domains: ['genius.com'] },
-  { id: 'gettyimages', name: 'Getty Images', domains: ['gettyimages.com'] },
+  { id: 'gettyimages', name: 'Getty Images', domains: endings('gettyimages', 'com co.uk ca com.au de fr es it in ie nl be at ch se dk no fi co.jp com.mx com.br ae co.nz pt') },
   { id: 'realtor', name: 'realtor.com', domains: ['realtor.com'] },
   { id: 'nycgov', name: 'NYC.gov', domains: ['nyc.gov'] },
-  { id: 'expedia', name: 'Expedia', domains: ['expedia.com'] },
+  { id: 'expedia', name: 'Expedia', domains: endings('expedia', 'com co.uk ca de fr es it com.au co.in ie co.nz nl be at ch se dk no fi mx com.br co.jp co.kr com.sg com.hk com.my com.ph co.th com.tw com.ar') },
   { id: 'shutterstock', name: 'Shutterstock', domains: ['shutterstock.com'] },
   { id: 'nfl', name: 'NFL', domains: ['nfl.com'] },
   { id: 'collins', name: 'Collins Dictionary', domains: ['collinsdictionary.com'] },
@@ -164,8 +176,8 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'yahoojp', name: 'Yahoo! JAPAN', domains: ['yahoo.co.jp'] },
   { id: 'seznam', name: 'Seznam.cz', domains: ['seznam.cz'] },
   { id: 'trendyol', name: 'Trendyol', domains: ['trendyol.com'] },
-  { id: 'ozon', name: 'Ozon', domains: ['ozon.ru'] },
-  { id: 'wildberries', name: 'Wildberries', domains: ['wildberries.ru'] },
+  { id: 'ozon', name: 'Ozon', domains: endings('ozon', 'ru kz by') },
+  { id: 'wildberries', name: 'Wildberries', domains: endings('wildberries', 'ru by am kg uz ge') },
   { id: 'baidu', name: 'Baidu', domains: ['baidu.com'] },
   { id: 'namuwiki', name: 'Namuwiki', domains: ['namu.wiki'] },
   { id: 'handwiki', name: 'HandWiki', domains: ['handwiki.org'] },
@@ -187,8 +199,8 @@ export const THEMES: HandmadeTheme[] = [
   { id: 'xbox', name: 'Xbox', domains: ['xbox.com'] },
   { id: 'chess', name: 'Chess.com', domains: ['chess.com'] },
   { id: 'roblox', name: 'Roblox', domains: ['roblox.com'] },
-  { id: 'aol', name: 'AOL', domains: ['aol.com'], matches: ['*://www.aol.com/*', '*://aol.com/*'] },
-  { id: 'redfin', name: 'Redfin', domains: ['redfin.com'] },
+  { id: 'aol', name: 'AOL', domains: ['aol.com', 'aol.co.uk', 'aol.ca'], matches: ['aol.com', 'aol.co.uk', 'aol.ca'].flatMap(domain => [`*://www.${domain}/*`, `*://${domain}/*`]) },
+  { id: 'redfin', name: 'Redfin', domains: endings('redfin', 'com ca') },
   { id: 'ups', name: 'UPS', domains: ['ups.com'] },
   { id: 'mailru', name: 'Mail.ru', domains: ['mail.ru'], matches: ['*://mail.ru/*', '*://www.mail.ru/*'] },
   { id: 'qq', name: 'Tencent QQ.com', domains: ['qq.com'], matches: ['*://www.qq.com/*', '*://qq.com/*'] },

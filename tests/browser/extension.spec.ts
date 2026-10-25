@@ -82,6 +82,37 @@ test('the device decides light or dark: a light site is recolored for a dark dev
   await expect.poll(() => light('body', 'background-color')).toBeGreaterThan(.9);
 });
 
+test('switching the device scheme on a loaded page recolors what is in view at once, after a long page, and every switch after that does it again', async () => {
+  const page = await context.newPage();
+  await page.emulateMedia({ colorScheme: 'light' });
+  await page.goto('https://www.youtube.com/');
+  await page.waitForLoadState('load');
+  await page.evaluate(() => {
+    const far = document.createElement('div');
+    far.style.cssText = 'position:absolute;top:6000px;left:0';
+    for (let i = 0; i < 20000; i++) { const row = document.createElement('div'); row.style.cssText = 'color:#111;background:#fff;border:1px solid #ddd'; row.textContent = 'row'; far.append(row); }
+    document.body.prepend(far);
+  });
+  await page.waitForTimeout(1500);
+  const html = page.locator('html');
+  const luma = (selector: string, property: string) => page.locator(selector).evaluate((el, p) => {
+    const m = getComputedStyle(el).getPropertyValue(p).match(/[\d.]+/g)!.map(Number);
+    return (.2126 * m[0] + .7152 * m[1] + .0722 * m[2]) / 255;
+  }, property);
+  for (let round = 0; round < 2; round++) {
+    await page.emulateMedia({ colorScheme: 'dark' });
+    await expect(html).toHaveAttribute('data-net19-recolor', 'dark');
+    await expect.poll(() => luma('h1', 'color'), { timeout: 700 }).toBeGreaterThan(.6);
+    await expect.poll(() => luma('#dim', 'color'), { timeout: 700 }).toBeGreaterThan(.45);
+    await expect(page.locator('#logo')).toHaveAttribute('data-net19-glyph', '');
+    await expect(html).not.toHaveAttribute('data-net19-settling', /.*/);
+    await expect.poll(() => page.locator('#menu, #menu *').evaluateAll(els => els.filter(e => e.getAttribute('data-net19-ink') === 'dark' && getComputedStyle(e.closest('#menu')!).backgroundColor.match(/\d+/g)!.slice(0, 3).every(v => +v < 90)).length)).toBe(0);
+    await page.emulateMedia({ colorScheme: 'light' });
+    await expect(html).not.toHaveAttribute('data-net19-recolor', /.*/);
+    await expect.poll(() => luma('h1', 'color')).toBeLessThan(.3);
+  }
+});
+
 test('content inserted after load is recolored in the frame it appears, in-view first, never hidden, and same-value attribute writes cost nothing', async () => {
   const page = await open('https://www.youtube.com/');
   await expect(page.locator('html')).toHaveAttribute('data-net19-recolor', 'dark');
